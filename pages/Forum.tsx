@@ -212,8 +212,8 @@ const Forum: React.FC = () => {
           </div>
           <button
             type="submit"
-            className="size-[62px] md:size-[68px] bg-primary text-white rounded-[30px] shadow-xl shadow-primary/20 flex items-center justify-center hover:scale-110 active:scale-95 transition-all group shrink-0 disabled:opacity-50"
-            disabled={!newMessage.trim()}
+            className="size-[62px] md:size-[68px] bg-primary text-white rounded-[30px] shadow-xl shadow-primary/20 flex items-center justify-center hover:scale-110 active:scale-95 transition-all group shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={!newMessage.trim() || loading}
           >
             <span className="material-symbols-outlined text-[28px] font-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">send</span>
           </button>

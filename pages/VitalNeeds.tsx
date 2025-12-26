@@ -192,19 +192,28 @@ const VitalNeeds: React.FC = () => {
                         </div>
 
                         <div className="bg-white dark:bg-surface-dark p-8 rounded-[35px] shadow-lg border border-gray-100 dark:border-gray-800">
-                            <h3 className="font-bold dark:text-white mb-6 uppercase tracking-widest text-xs">Recursos Útiles</h3>
+                            <h3 className="font-bold dark:text-white mb-6 uppercase tracking-widest text-xs">Recursos Útiles en Tarragona</h3>
                             <ul className="space-y-4 text-sm text-gray-600 dark:text-gray-300 font-medium">
                                 <li className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition cursor-pointer">
                                     <span className="material-symbols-outlined text-red-500">local_pharmacy</span>
-                                    Farmacias de Guardia
+                                    <div>
+                                        <strong>Farmacia de Guardia</strong>
+                                        <p className="text-xs opacity-70">Rambla Nova, 18 - Abierto 24h</p>
+                                    </div>
                                 </li>
                                 <li className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition cursor-pointer">
                                     <span className="material-symbols-outlined text-blue-500">medical_services</span>
-                                    Centros de Salud (CAP)
+                                    <div>
+                                        <strong>Hospital Joan XXIII</strong>
+                                        <p className="text-xs opacity-70">Urgencias: 977 29 58 00</p>
+                                    </div>
                                 </li>
                                 <li className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition cursor-pointer">
                                     <span className="material-symbols-outlined text-orange-500">soup_kitchen</span>
-                                    Comedores Sociales
+                                    <div>
+                                        <strong>Comedor Social Bonavista</strong>
+                                        <p className="text-xs opacity-70">C/ Vuit, 12 - 13:00</p>
+                                    </div>
                                 </li>
                             </ul>
                         </div>

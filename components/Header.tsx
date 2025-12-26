@@ -44,10 +44,10 @@ export const Header: React.FC = () => {
               placeholder="¿Qué buscas en tu barrio?"
             />
           </div>
-          <button className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-primary/5 text-primary text-xs font-black hover:bg-primary/10 transition-all">
+          <Link to="/announcements" className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-primary/5 text-primary text-xs font-black hover:bg-primary/10 transition-all">
             <span className="material-symbols-outlined text-[18px]">add</span>
             <span>PUBLICAR ALGO</span>
-          </button>
+          </Link>
         </div>
 
         <div className="flex items-center gap-5">
@@ -86,9 +86,9 @@ export const Header: React.FC = () => {
           <span className="font-black dark:text-white tracking-tighter">COMUNITARR</span>
         </Link>
         <div className="flex items-center gap-3">
-          <button className="size-10 flex items-center justify-center bg-primary text-white rounded-xl shadow-lg shadow-primary/30">
+          <Link to="/announcements" className="size-10 flex items-center justify-center bg-primary text-white rounded-xl shadow-lg shadow-primary/30">
             <span className="material-symbols-outlined text-[20px] font-black">add</span>
-          </button>
+          </Link>
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="size-10 flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-xl text-primary border border-gray-100 dark:border-gray-700 transition-transform active:scale-90">
             <span className="material-symbols-outlined font-black">{isMenuOpen ? 'close' : 'menu_open'}</span>
           </button>

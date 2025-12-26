@@ -17,9 +17,12 @@ export const getAssistantResponse = async (prompt: string): Promise<{ text: stri
     });
 
     return { text: response.text || "Lo siento, no pude procesar tu solicitud." };
-  } catch (error) {
+  } catch (error: any) {
     console.error("Gemini Assistant Error:", error);
-    return { text: "Hubo un error al conectar con el asistente." };
+    if (error.message?.includes("API key")) {
+      return { text: "Error: Falta la clave de API de Gemini. Configúrala en Vercel." };
+    }
+    return { text: "Hubo un error al conectar con el asistente. Inténtalo más tarde." };
   }
 };
 
@@ -73,15 +76,18 @@ export const getMapsGroundedPlaces = async (query: string, location?: { lat: num
     const chunks = response.candidates?.[0]?.groundingMetadata?.groundingChunks || [];
 
     const links: GroundingLink[] = chunks
-      .filter((c: any) => c.maps)
+      .filter((c: any) => c.web) // Maps tool usually returns web links in groundingChunks
       .map((c: any) => ({
-        uri: c.maps.uri,
-        title: c.maps.title
+        uri: c.web.uri,
+        title: c.web.title
       }));
 
     return { text, links };
-  } catch (error) {
+  } catch (error: any) {
     console.error("Gemini Maps Error:", error);
-    return { text: "Error al buscar en el mapa.", links: [] };
+    if (error.message?.includes("API key")) {
+      return { text: "Error de configuración: Clave de API inválida o faltante.", links: [] };
+    }
+    return { text: "Error al buscar en el mapa. Intenta de nuevo.", links: [] };
   }
 };

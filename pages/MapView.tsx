@@ -14,14 +14,18 @@ const MapView: React.FC = () => {
   return (
     <div className="h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] w-full relative overflow-hidden font-sans border-l border-gray-100 dark:border-gray-800">
       {/* Background Simulating Map */}
-      <div className="absolute inset-0 bg-[#f8f9fa] dark:bg-[#1a1b1e]">
-        {/* Simple simulated map pattern */}
-        <div className="absolute inset-0 opacity-10 dark:opacity-5" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-        <img
-          src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=1200"
-          className="w-full h-full object-cover opacity-20 grayscale brightness-125 dark:brightness-50"
-          alt="Map"
-        />
+      {/* Background Simulating Map - Actualizado a Tarragona */}
+      <div className="absolute inset-0 bg-[#f8f9fa] dark:bg-[#1a1b1e] z-0">
+        <iframe
+          width="100%"
+          height="100%"
+          frameBorder="0"
+          style={{ border: 0, opacity: 0.8, filter: 'grayscale(0%) contrast(1.1)' }}
+          src={`https://www.google.com/maps/embed/v1/view?key=${import.meta.env.VITE_GEMINI_API_KEY}&center=41.1189,1.2445&zoom=14&maptype=roadmap`}
+          allowFullScreen
+        ></iframe>
+        {/* Overlay para poder interactuar con los pines sin que el iframe capture todos los clics */}
+        <div className="absolute inset-0 pointer-events-none"></div>
       </div>
 
       {/* Floating Header */}
