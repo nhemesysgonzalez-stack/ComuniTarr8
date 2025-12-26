@@ -226,16 +226,24 @@ const MapView: React.FC = () => {
               <div className="space-y-3 bg-gray-50 dark:bg-gray-800/50 p-6 rounded-3xl mb-6">
                 <div className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-gray-400">schedule</span>
-                  <span className="text-xs font-bold dark:text-white">Horario: 09:00 - 20:00</span>
+                  <span className="text-xs font-bold dark:text-white">Horario: {selectedPin.id < 100 ? '09:00 - 20:00 (Est.)' : 'Reciente'}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-gray-400">location_on</span>
-                  <span className="text-xs font-bold dark:text-white">Ubicación: Centro / Rambla</span>
+                  <span className="text-xs font-bold dark:text-white">Ubicación: {selectedPin.id < 100 ? 'Centro / Rambla' : 'Marcador Usuario'}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="material-symbols-outlined text-gray-400">person</span>
-                  <span className="text-xs font-bold dark:text-white">Organiza: Asociación Vecinal</span>
+                  <span className="text-xs font-bold dark:text-white line-clamp-1">
+                    Organiza: {selectedPin.creator_name ? selectedPin.creator_name : (selectedPin.id < 100 ? 'Asociación Vecinal (Demo)' : 'Vecino')}
+                  </span>
                 </div>
+                {selectedPin.creator_neighborhood && (
+                  <div className="flex items-center gap-3">
+                    <span className="material-symbols-outlined text-gray-400">home_work</span>
+                    <span className="text-xs font-bold dark:text-white">Barrio: {selectedPin.creator_neighborhood}</span>
+                  </div>
+                )}
               </div>
 
               <button className="w-full py-4 bg-indigo-600 text-white rounded-2xl font-black uppercase tracking-widest shadow-lg shadow-indigo-600/20 hover:bg-indigo-700 transition-all">
