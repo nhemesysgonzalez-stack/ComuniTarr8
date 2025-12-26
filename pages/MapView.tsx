@@ -25,8 +25,10 @@ const MapView: React.FC = () => {
           allowFullScreen
         ></iframe>
         {/* Overlay para poder interactuar con los pines sin que el iframe capture todos los clics */}
-        <div className="absolute inset-0 pointer-events-none"></div>
+        {/* Overlay para permitir clics en el mapa si se desea, o protegerlo */}
+        {/* <div className="absolute inset-0 pointer-events-none"></div> */}
       </div>
+
 
       {/* Floating Header */}
       <div className="absolute top-8 left-8 right-8 z-10 flex flex-col md:flex-row gap-4">
@@ -47,23 +49,9 @@ const MapView: React.FC = () => {
       </div>
 
       {/* Map Content - SVG or Div with Pins */}
-      <div className="relative w-full h-full p-20 cursor-grab active:cursor-grabbing">
-        {pins.map(pin => (
-          <motion.button
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            whileHover={{ scale: 1.2 }}
-            onClick={() => setSelectedPin(pin)}
-            key={pin.id}
-            className={`absolute size-14 md:size-16 rounded-3xl ${pin.color} text-white flex items-center justify-center shadow-2xl border-4 border-white dark:border-gray-800`}
-            style={{ left: pin.x, top: pin.y }}
-          >
-            <span className="material-symbols-outlined text-2xl font-black">{pin.icon}</span>
-            <div className={`absolute -bottom-1 -right-1 size-5 rounded-lg bg-white dark:bg-gray-800 flex items-center justify-center shadow-lg border-2 border-white dark:border-gray-700`}>
-              <div className={`size-1.5 rounded-full ${pin.color} animate-ping`}></div>
-            </div>
-          </motion.button>
-        ))}
+      {/* Map Content - Overlay para interacción real con mapa en futuras versiones */}
+      <div className="relative w-full h-full p-20 pointer-events-none">
+        {/* Aquí irían los marcadores reales de Google Maps o pines interactivos sobrepuestos si se implementase la lógica avanzada de coordenadas */}
       </div>
 
       {/* Legend */}
@@ -119,7 +107,7 @@ const MapView: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </div >
   );
 };
 
