@@ -143,7 +143,27 @@ const MapView: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <button onClick={() => alert('Información detallada: ' + selectedPin.desc)} className="py-4 bg-primary text-white text-[10px] font-black rounded-2xl shadow-lg shadow-primary/20 uppercase tracking-widest transition-all hover:scale-105 active:scale-95">Más Info</button>
+              {/* Botón Eliminar solo si es el creador */}
+              {/* En una app real, verificaríamos user?.id === selectedPin.creator_id */}
+              {/* Como es demo, permitimos eliminar los que acabamos de crear nosotros (id > 100) */}
+              {selectedPin.id > 100 && (
+                <button
+                  onClick={() => {
+                    setPins(pins.filter(p => p.id !== selectedPin.id));
+                    setSelectedPin(null);
+                    alert('Has eliminado tu reporte correctamente.');
+                  }}
+                  className="col-span-2 py-3 bg-red-100 text-red-600 text-[10px] font-black rounded-2xl uppercase tracking-widest hover:bg-red-200 transition-all mb-2"
+                >
+                  Eliminar Mi Reporte
+                </button>
+              )}
+              <button
+                onClick={() => alert('Información detallada: ' + selectedPin.desc)}
+                className="py-4 bg-primary text-white text-[10px] font-black rounded-2xl shadow-lg shadow-primary/20 uppercase tracking-widest transition-all hover:scale-105 active:scale-95"
+              >
+                Más Info
+              </button>
               <button className="py-4 bg-gray-50 dark:bg-gray-800 text-[10px] font-black dark:text-white rounded-2xl uppercase tracking-widest hover:bg-gray-100 transition-all">Seguir</button>
             </div>
           </motion.div>
