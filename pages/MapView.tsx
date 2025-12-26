@@ -46,7 +46,7 @@ const MapView: React.FC = () => {
     setPins([...pins, newPin]);
     setShowReportModal(false);
     setNewReportTitle('');
-    alert('¡Reporte añadido al mapa! (Aparecerá en el centro como demo)');
+    // Feedback visual es suficiente al ver el pin aparecer
   };
 
   return (
@@ -171,7 +171,6 @@ const MapView: React.FC = () => {
                   onClick={() => {
                     setPins(pins.filter(p => p.id !== selectedPin.id));
                     setSelectedPin(null);
-                    alert('Has eliminado tu reporte correctamente.');
                   }}
                   className="col-span-2 py-3 bg-red-100 text-red-600 text-[10px] font-black rounded-2xl uppercase tracking-widest hover:bg-red-200 transition-all mb-2"
                 >
