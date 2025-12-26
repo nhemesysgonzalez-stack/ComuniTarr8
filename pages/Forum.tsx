@@ -21,7 +21,17 @@ const Forum: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [currentNeighborhood, setCurrentNeighborhood] = useState(user?.user_metadata?.neighborhood || 'GENERAL');
   const [showNeighborhoods, setShowNeighborhoods] = useState(false);
+  const [currentNeighborhood, setCurrentNeighborhood] = useState(user?.user_metadata?.neighborhood || 'GENERAL');
+  const [showNeighborhoods, setShowNeighborhoods] = useState(false);
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  const COMMON_EMOJIS = ['👍', '❤️', '😂', '😮', '😢', '😡', '👋', '🎉', '🏘️', '🚨', '🗑️', '🐕', '🌳', '🔧'];
+
+  const addEmoji = (emoji: string) => {
+    setNewMessage(prev => prev + emoji);
+    setShowEmojiPicker(false);
+  };
 
   useEffect(() => {
     fetchMessages();
@@ -211,9 +221,34 @@ const Forum: React.FC = () => {
               placeholder={`Escribe algo a ${currentNeighborhood}...`}
               className="w-full bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 rounded-[30px] px-8 py-5 font-bold dark:text-white focus:ring-4 ring-primary/10 transition-all outline-none pr-16"
             />
-            <button type="button" className="absolute right-6 text-gray-400 hover:text-primary transition-colors">
+            <button
+              type="button"
+              onClick={() => setShowEmojiPicker(!showEmojiPicker)}
+              className={`absolute right-6 transition-colors ${showEmojiPicker ? 'text-primary' : 'text-gray-400 hover:text-primary'}`}
+            >
               <span className="material-symbols-outlined font-black">add_reaction</span>
             </button>
+            <AnimatePresence>
+              {showEmojiPicker && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: 10 }}
+                  className="absolute bottom-full right-0 mb-4 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-3xl shadow-2xl p-4 grid grid-cols-5 gap-2 w-64 z-50"
+                >
+                  {COMMON_EMOJIS.map(emoji => (
+                    <button
+                      key={emoji}
+                      type="button"
+                      onClick={() => addEmoji(emoji)}
+                      className="size-10 flex items-center justify-center text-xl hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-colors"
+                    >
+                      {emoji}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
           <button
             type="submit"
