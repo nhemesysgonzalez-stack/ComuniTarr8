@@ -11,8 +11,18 @@ const MapView: React.FC = () => {
     { id: 3, type: 'cleanup', x: '35%', y: '60%', title: 'Recogida Playa Miracle', desc: 'Voluntarios reunidos en el punto de cruz roja.', status: 'Activo', color: 'bg-emerald-500', icon: 'volunteer_activism' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
+  const [showDetailModal, setShowDetailModal] = useState(false);
+  const [followedPins, setFollowedPins] = useState<number[]>([]);
   const [newReportTitle, setNewReportTitle] = useState('');
   const [newReportType, setNewReportType] = useState('incident');
+
+  const toggleFollow = (id: number) => {
+    if (followedPins.includes(id)) {
+      setFollowedPins(followedPins.filter(pid => pid !== id));
+    } else {
+      setFollowedPins([...followedPins, id]);
+    }
+  };
 
   const handleAddReport = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,6 +61,12 @@ const MapView: React.FC = () => {
         ></iframe>
         {/* Capa transparente para permitir clicks en los pines flotantes pero dejar ver el mapa debajo */}
         <div className="absolute inset-0 bg-transparent pointer-events-none"></div>
+      </div>
+
+      {/* Banner de Datos de Ejemplo */}
+      <div className="absolute top-0 left-0 right-0 z-20 bg-yellow-400/90 text-black text-[10px] font-black uppercase tracking-widest text-center py-2 px-4 shadow-sm backdrop-blur-sm">
+        <span className="material-symbols-outlined text-sm align-middle mr-2">info</span>
+        Modo Demo: Los marcadores activos son sugerecias de muestra
       </div>
 
 
@@ -159,13 +175,69 @@ const MapView: React.FC = () => {
                 </button>
               )}
               <button
-                onClick={() => alert('Información detallada: ' + selectedPin.desc)}
+                onClick={() => setShowDetailModal(true)}
                 className="py-4 bg-primary text-white text-[10px] font-black rounded-2xl shadow-lg shadow-primary/20 uppercase tracking-widest transition-all hover:scale-105 active:scale-95"
               >
                 Más Info
               </button>
-              <button className="py-4 bg-gray-50 dark:bg-gray-800 text-[10px] font-black dark:text-white rounded-2xl uppercase tracking-widest hover:bg-gray-100 transition-all">Seguir</button>
+              <button
+                onClick={() => toggleFollow(selectedPin.id)}
+                className={`py-4 text-[10px] font-black rounded-2xl uppercase tracking-widest transition-all ${followedPins.includes(selectedPin.id) ? 'bg-green-500 text-white shadow-lg shadow-green-500/20' : 'bg-gray-50 dark:bg-gray-800 dark:text-white hover:bg-gray-100'}`}
+              >
+                {followedPins.includes(selectedPin.id) ? 'Siguiendo' : 'Seguir'}
+              </button>
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Detail Modal (Replacement for Alert) */}
+      <AnimatePresence>
+        {showDetailModal && selectedPin && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] flex items-center justify-center p-4"
+            onClick={() => setShowDetailModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white dark:bg-surface-dark rounded-[40px] p-8 max-w-md w-full shadow-2xl relative"
+            >
+              <button onClick={() => setShowDetailModal(false)} className="absolute top-6 right-6 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <span className="material-symbols-outlined">close</span>
+              </button>
+
+              <div className={`inline-flex items-center justify-center size-16 rounded-2xl ${selectedPin.color} text-white mb-6 shadow-lg`}>
+                <span className="material-symbols-outlined text-3xl">{selectedPin.icon}</span>
+              </div>
+
+              <h3 className="text-2xl font-black dark:text-white mb-2 uppercase leading-tight">{selectedPin.title}</h3>
+              <p className="text-gray-500 dark:text-gray-400 font-bold text-sm mb-6">{selectedPin.desc}</p>
+
+              <div className="space-y-3 bg-gray-50 dark:bg-gray-800/50 p-6 rounded-3xl mb-6">
+                <div className="flex items-center gap-3">
+                  <span className="material-symbols-outlined text-gray-400">schedule</span>
+                  <span className="text-xs font-bold dark:text-white">Horario: 09:00 - 20:00</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="material-symbols-outlined text-gray-400">location_on</span>
+                  <span className="text-xs font-bold dark:text-white">Ubicación: Centro / Rambla</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="material-symbols-outlined text-gray-400">person</span>
+                  <span className="text-xs font-bold dark:text-white">Organiza: Asociación Vecinal</span>
+                </div>
+              </div>
+
+              <button className="w-full py-4 bg-indigo-600 text-white rounded-2xl font-black uppercase tracking-widest shadow-lg shadow-indigo-600/20 hover:bg-indigo-700 transition-all">
+                Contactar Organizador
+              </button>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

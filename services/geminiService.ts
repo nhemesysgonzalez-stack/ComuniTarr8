@@ -9,10 +9,10 @@ export const getAssistantResponse = async (prompt: string): Promise<{ text: stri
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-3-pro-preview',
+      model: 'gemini-1.5-flash',
       contents: prompt,
       config: {
-        systemInstruction: "Eres un asistente comunitario inteligente para la ciudad de Tarragona, España. Ayudas a los vecinos con información local, eventos, y servicios comunitarios. Sé amable, servicial y utiliza un tono cercano.",
+        systemInstruction: "Eres un asistente comunitario útil para Tarragona. Responde breve y amablemente.",
       },
     });
 
@@ -31,7 +31,7 @@ export const getSearchGroundedInfo = async (query: string): Promise<{ text: stri
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
+      model: 'gemini-1.5-flash',
       contents: `Proporciona información actualizada sobre: ${query} en Tarragona.`,
       config: {
         tools: [{ googleSearch: {} }],
