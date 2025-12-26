@@ -1,93 +1,43 @@
 
-import { GoogleGenAI, Type, GenerateContentResponse } from "@google/genai";
 import { GroundingLink } from "../types";
 
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "";
 
 export const getAssistantResponse = async (prompt: string): Promise<{ text: string; links?: GroundingLink[] }> => {
-  const ai = new GoogleGenAI({ apiKey: API_KEY });
-
-  try {
-    const response = await ai.models.generateContent({
-      model: 'gemini-1.5-flash',
-      contents: prompt,
-      config: {
-        systemInstruction: "Eres un asistente comunitario útil para Tarragona. Responde breve y amablemente.",
-      },
-    });
-
-    return { text: response.text || "Lo siento, no pude procesar tu solicitud." };
-  } catch (error: any) {
-    console.error("Gemini Assistant Error:", error);
-    if (error.message?.includes("API key")) {
-      return { text: "Error: Falta la clave de API de Gemini. Configúrala en Vercel." };
-    }
-    return { text: "Hubo un error al conectar con el asistente. Inténtalo más tarde." };
+  if (!API_KEY) {
+    return { text: "❌ ERROR: No se encuentra la VITE_GEMINI_API_KEY." };
   }
-};
 
-export const getSearchGroundedInfo = async (query: string): Promise<{ text: string; links: GroundingLink[] }> => {
-  const ai = new GoogleGenAI({ apiKey: API_KEY });
-
-  try {
-    const response = await ai.models.generateContent({
-      model: 'gemini-1.5-flash',
-      contents: `Proporciona información actualizada sobre: ${query} en Tarragona.`,
-      config: {
-        tools: [{ googleSearch: {} }],
-      },
-    });
-
-    const text = response.text || "No se encontró información reciente.";
-    const chunks = response.candidates?.[0]?.groundingMetadata?.groundingChunks || [];
-
-    const links: GroundingLink[] = chunks
-      .filter((c: any) => c.web)
-      .map((c: any) => ({
-        uri: c.web.uri,
-        title: c.web.title
-      }));
-
-    return { text, links };
-  } catch (error) {
-    console.error("Gemini Search Error:", error);
-    return { text: "Error al buscar información en tiempo real.", links: [] };
-  }
-};
-
-export const getMapsGroundedPlaces = async (query: string, location?: { lat: number; lng: number }): Promise<{ text: string; links: GroundingLink[] }> => {
-  const ai = new GoogleGenAI({ apiKey: API_KEY });
+  // Usamos gemini-2.0-flash que es el que tu clave permite explícitamente y es super moderno
+  const MODEL_ID = "gemini-2.0-flash";
 
   try {
-    const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
-      contents: `¿Dónde puedo encontrar ${query} en Tarragona?`,
-      config: {
-        tools: [{ googleMaps: {} }],
-        toolConfig: {
-          retrievalConfig: {
-            latLng: location ? { latitude: location.lat, longitude: location.lng } : { latitude: 41.1189, longitude: 1.2445 }
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_ID}:generateContent?key=${API_KEY}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          systemInstruction: {
+            parts: [{ text: "Eres un asistente comunitario útil para Tarragona. Responde de forma amable y concisa." }]
           }
-        }
-      },
-    });
+        }),
+      }
+    );
 
-    const text = response.text || "No pude encontrar lugares cercanos.";
-    const chunks = response.candidates?.[0]?.groundingMetadata?.groundingChunks || [];
+    const data = await response.json();
 
-    const links: GroundingLink[] = chunks
-      .filter((c: any) => c.web) // Maps tool usually returns web links in groundingChunks
-      .map((c: any) => ({
-        uri: c.web.uri,
-        title: c.web.title
-      }));
-
-    return { text, links };
-  } catch (error: any) {
-    console.error("Gemini Maps Error:", error);
-    if (error.message?.includes("API key")) {
-      return { text: "Error de configuración: Clave de API inválida o faltante.", links: [] };
+    if (!response.ok) {
+      return { text: `❌ ERROR DE GOOGLE: ${data.error?.message || "Acceso denegado"}` };
     }
-    return { text: "Error al buscar en el mapa. Intenta de nuevo.", links: [] };
+
+    const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Lo siento, no pude generar una respuesta.";
+    return { text: aiText };
+  } catch (error: any) {
+    return { text: "❌ ERROR DE CONEXIÓN: Revisa tu internet." };
   }
 };
+
+export const getSearchGroundedInfo = async (query: string) => ({ text: "No disponible", links: [] });
+export const getMapsGroundedPlaces = async (query: string) => ({ text: "No disponible", links: [] });

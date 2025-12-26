@@ -1,12 +1,54 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
+import { useLanguage } from '../contexts/LanguageContext';
+import { Language } from '../services/translations';
 
 export const Header: React.FC = () => {
   const { user, signOut, updateMetadata } = useAuth();
+  const { language, setLanguage } = useLanguage();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showNeighborhoods, setShowNeighborhoods] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const [isDark, setIsDark] = useState(document.documentElement.classList.contains('dark'));
+
+  const mockNotifications = [
+    { id: 1, title: 'Nueva Incidencia', desc: 'Farola rota en tu zona', time: 'Hace 5m', icon: 'report_problem', color: 'text-red-500' },
+    { id: 2, title: 'Evento Cerca', desc: 'Paella popular este domingo', time: 'Hace 1h', icon: 'event', color: 'text-primary' },
+    { id: 3, title: 'Mercadillo', desc: 'Nuevo sofá gratis en el Serrallo', time: 'Hace 3h', icon: 'shopping_basket', color: 'text-emerald-500' }
+  ];
+
+  const toggleDarkMode = () => {
+    const newDark = !isDark;
+    setIsDark(newDark);
+    if (newDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.theme = 'dark';
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.theme = 'light';
+    }
+  };
+
+  const cycleLanguage = () => {
+    const langs: Language[] = ['es', 'ca', 'en'];
+    const nextIndex = (langs.indexOf(language) + 1) % langs.length;
+    setLanguage(langs[nextIndex]);
+  };
+
+  // Sync theme on mount
+  React.useEffect(() => {
+    const theme = localStorage.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      setIsDark(true);
+    } else {
+      document.documentElement.classList.remove('dark');
+      setIsDark(false);
+    }
+  }, []);
 
   const neighborhoods = [
     'Part Alta', 'Serrallo', 'Eixample', 'Nou Eixample',
@@ -52,18 +94,64 @@ export const Header: React.FC = () => {
 
         <div className="flex items-center gap-5">
           <div className="flex items-center gap-1 bg-gray-50 dark:bg-gray-800 p-1.5 rounded-2xl border border-gray-100 dark:border-gray-700">
-            <button className="flex items-center justify-center size-10 rounded-xl bg-white dark:bg-gray-700 shadow-sm text-primary">
-              <span className="material-symbols-outlined font-black">translate</span>
+            <button
+              onClick={cycleLanguage}
+              className="flex items-center justify-center size-10 rounded-xl bg-white dark:bg-gray-700 shadow-sm text-primary hover:scale-110 transition-all font-black text-[10px]"
+            >
+              {language.toUpperCase()}
             </button>
-            <button className="flex items-center justify-center size-10 rounded-xl text-gray-400 hover:text-primary transition-all">
-              <span className="material-symbols-outlined font-black">light_mode</span>
+            <button
+              onClick={toggleDarkMode}
+              className="flex items-center justify-center size-10 rounded-xl text-gray-400 hover:text-primary hover:bg-white dark:hover:bg-gray-700 transition-all"
+            >
+              <span className="material-symbols-outlined font-black">
+                {isDark ? 'light_mode' : 'dark_mode'}
+              </span>
             </button>
           </div>
 
-          <button className="relative size-12 flex items-center justify-center rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:scale-105 transition-all group">
-            <span className="material-symbols-outlined text-gray-400 group-hover:text-primary font-black">notifications</span>
-            <span className="absolute top-3 right-3 size-2.5 bg-red-500 rounded-full border-2 border-white dark:border-gray-800"></span>
-          </button>
+          <div className="relative">
+            <button
+              onClick={() => setShowNotifications(!showNotifications)}
+              className={`relative size-12 flex items-center justify-center rounded-2xl border-2 transition-all group ${showNotifications ? 'bg-primary text-white border-primary shadow-[0_0_20px_rgba(43,140,238,0.5)]' : 'bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 hover:border-primary/50 hover:scale-110'}`}
+              title="Notificaciones de tu barrio"
+            >
+              <span className={`material-symbols-outlined font-black ${showNotifications ? 'text-white' : 'text-gray-400 group-hover:text-primary'}`}>notifications</span>
+              <span className="absolute top-2.5 right-2.5 size-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-800 animate-pulse shadow-lg"></span>
+            </button>
+
+            {/* Notifications Dropdown */}
+            <AnimatePresence>
+              {showNotifications && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  className="absolute top-16 right-0 w-80 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-[35px] shadow-2xl z-50 p-6 overflow-hidden"
+                >
+                  <div className="flex items-center justify-between mb-6">
+                    <h4 className="text-xs font-black dark:text-white uppercase tracking-widest">Notificaciones</h4>
+                    <span className="text-[9px] font-black text-primary px-2 py-0.5 bg-primary/10 rounded-full">3 NUEVAS</span>
+                  </div>
+                  <div className="space-y-4">
+                    {mockNotifications.map(n => (
+                      <div key={n.id} className="flex gap-4 p-3 rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer group">
+                        <div className={`size-10 rounded-xl bg-gray-100 dark:bg-gray-700 flex items-center justify-center shrink-0`}>
+                          <span className={`material-symbols-outlined text-xl ${n.color}`}>{n.icon}</span>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-[11px] font-black dark:text-white uppercase leading-none mb-1">{n.title}</p>
+                          <p className="text-[10px] font-bold text-gray-500 dark:text-gray-400 line-clamp-1">{n.desc}</p>
+                          <p className="text-[8px] font-black text-gray-400/50 uppercase tracking-tighter mt-1">{n.time}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <button className="w-full mt-6 py-3 bg-gray-50 dark:bg-gray-800 rounded-xl text-[10px] font-black text-gray-400 uppercase tracking-widest hover:text-primary transition-colors">Ver todo lo anterior</button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           <Link to="/profile" className="flex items-center gap-3 p-1.5 pr-4 rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all border border-transparent hover:border-gray-100 dark:hover:border-gray-700">
             <img
@@ -85,11 +173,52 @@ export const Header: React.FC = () => {
           <img src="/logo.svg" className="size-8" alt="L" />
           <span className="font-black dark:text-white tracking-tighter">COMUNITARR</span>
         </Link>
-        <div className="flex items-center gap-3">
-          <Link to="/announcements" className="size-10 flex items-center justify-center bg-primary text-white rounded-xl shadow-lg shadow-primary/30">
-            <span className="material-symbols-outlined text-[20px] font-black">add</span>
-          </Link>
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="size-10 flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-xl text-primary border border-gray-100 dark:border-gray-700 transition-transform active:scale-90">
+        <div className="flex items-center gap-2">
+          {/* Mobile Theme & Lang */}
+          <button onClick={cycleLanguage} className="size-10 flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-xl text-[10px] font-black border border-gray-100 dark:border-gray-700 dark:text-white">
+            {language.toUpperCase()}
+          </button>
+          <button onClick={toggleDarkMode} className="size-10 flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-xl text-gray-400 border border-gray-100 dark:border-gray-700">
+            <span className="material-symbols-outlined text-sm">{isDark ? 'light_mode' : 'dark_mode'}</span>
+          </button>
+
+          {/* Mobile Notifications Bell */}
+          <div className="relative">
+            <button
+              onClick={() => setShowNotifications(!showNotifications)}
+              className={`size-10 flex items-center justify-center rounded-xl border transition-all ${showNotifications ? 'bg-primary text-white border-primary' : 'bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 text-gray-400'}`}
+            >
+              <span className="material-symbols-outlined text-[20px] font-black">notifications</span>
+            </button>
+            <AnimatePresence>
+              {showNotifications && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  className="fixed top-16 left-4 right-4 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-3xl shadow-2xl z-50 p-5"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-[10px] font-black dark:text-white uppercase tracking-widest">Avisos del Barrio</h4>
+                    <button onClick={() => setShowNotifications(false)} className="material-symbols-outlined text-gray-400">close</button>
+                  </div>
+                  <div className="space-y-3">
+                    {mockNotifications.map(n => (
+                      <div key={n.id} className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
+                        <span className={`material-symbols-outlined text-lg ${n.color}`}>{n.icon}</span>
+                        <div>
+                          <p className="text-[10px] font-black dark:text-white leading-none mb-1">{n.title}</p>
+                          <p className="text-[9px] text-gray-500 line-clamp-1">{n.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          <button onClick={() => { setIsMenuOpen(!isMenuOpen); setShowNotifications(false); }} className="size-10 flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-xl text-primary border border-gray-100 dark:border-gray-700 transition-transform active:scale-90">
             <span className="material-symbols-outlined font-black">{isMenuOpen ? 'close' : 'menu_open'}</span>
           </button>
         </div>

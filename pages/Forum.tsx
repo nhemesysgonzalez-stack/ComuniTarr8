@@ -14,6 +14,45 @@ interface Message {
   neighborhood: string;
 }
 
+// Optimization: Move Audio objects outside the component to prevent re-initialization on every render
+const msgSound = new Audio('https://cdn.pixabay.com/audio/2022/03/15/audio_7302256df2.mp3'); // Notification chime
+const buzzSound = new Audio('https://cdn.pixabay.com/audio/2021/08/04/audio_03957297e6.mp3'); // Alert/Buzz
+
+msgSound.preload = 'auto';
+buzzSound.preload = 'auto';
+buzzSound.volume = 0.8;
+msgSound.volume = 0.5;
+
+// Optimization: Memoized Message Component to prevent list re-renders when typing
+const MessageBubble = React.memo(({ msg, isMe }: { msg: Message, isMe: boolean }) => {
+  const isBuzz = msg.content.includes('🔔 ¡ZUMBIDO!') || msg.content.includes('<<ZUMBIDO>>');
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: isMe ? 20 : -20, scale: isBuzz ? 1.2 : 0.9 }}
+      animate={{ opacity: 1, x: 0, scale: 1 }}
+      className={`flex gap-4 ${isMe ? 'flex-row-reverse' : ''} ${isBuzz ? 'animate-pulse' : ''}`}
+    >
+      {!isMe && (
+        <img
+          src={msg.user_metadata?.avatar_url || `https://ui-avatars.com/api/?name=${msg.user_metadata?.full_name}`}
+          className="size-10 md:size-12 rounded-2xl shadow-lg border-2 border-white dark:border-gray-800 object-cover"
+          alt="Avatar"
+        />
+      )}
+      <div className={`max-w-[75%] space-y-1 ${isMe ? 'items-end' : ''}`}>
+        {!isMe && <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-1">{msg.user_metadata?.full_name}</p>}
+        <div className={`p-4 rounded-3xl text-sm font-bold shadow-sm ${isBuzz ? 'bg-yellow-400 text-black border-4 border-yellow-200 shake-animation' : (isMe ? 'bg-primary text-white rounded-tr-none' : 'bg-white dark:bg-surface-dark dark:text-white rounded-tl-none border border-gray-100 dark:border-gray-800')}`}>
+          {msg.content.replace('<<ZUMBIDO>>', '')}
+        </div>
+        <p className="text-[9px] font-black text-gray-400/50 uppercase tracking-tighter px-2">
+          {new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+        </p>
+      </div>
+    </motion.div>
+  );
+});
+
 const Forum: React.FC = () => {
   const { user } = useAuth();
   const [messages, setMessages] = useState<Message[]>([]);
@@ -25,20 +64,39 @@ const Forum: React.FC = () => {
   const [isMuted, setIsMuted] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Sound Effects
-  const msgSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2346/2346-preview.mp3');
-  const buzzSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3');
-
+  // Sound Utility using shared Audio objects
   const playSound = (type: 'msg' | 'buzz') => {
     if (isMuted) return;
-    if (type === 'buzz') {
-      buzzSound.currentTime = 0;
-      buzzSound.play().catch(e => console.log('Audio blocked', e));
-      if (navigator.vibrate) navigator.vibrate(200);
-    } else {
-      msgSound.currentTime = 0;
-      msgSound.play().catch(e => console.log('Audio blocked', e));
+
+    // Attempt to play
+    const sound = type === 'buzz' ? buzzSound : msgSound;
+
+    // In some browsers, we need to handle the promise
+    sound.currentTime = 0;
+    const playPromise = sound.play();
+
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        console.log("Playback failed. User interaction might be needed.", error);
+      });
     }
+
+    if (type === 'buzz' && navigator.vibrate) {
+      navigator.vibrate([100, 50, 100]);
+    }
+  };
+
+  // Helper to "unlock" audio on first interaction if needed
+  const unlockAudio = () => {
+    msgSound.play().then(() => {
+      msgSound.pause();
+      msgSound.currentTime = 0;
+    }).catch(() => { });
+
+    buzzSound.play().then(() => {
+      buzzSound.pause();
+      buzzSound.currentTime = 0;
+    }).catch(() => { });
   };
 
   const COMMON_EMOJIS = ['👍', '❤️', '😂', '😮', '😢', '😡', '👋', '🎉', '🏘️', '🚨', '🗑️', '🐕', '🌳', '🔧'];
@@ -109,20 +167,20 @@ const Forum: React.FC = () => {
   const toggleMute = () => setIsMuted(!isMuted);
 
   const sendBuzz = async () => {
-    // Enviar zumbido
     if (loading) return;
     try {
+      // Optimizacion: sonar localmente de inmediato para feedback instantaneo
+      playSound('buzz');
+
       await safeSupabaseInsert('forum_messages', {
         user_id: user?.id,
-        content: '🔔 ¡ZUMBIDO!',
+        content: '🔔 ¡ZUMBIDO! <<ZUMBIDO>>',
         user_metadata: {
           full_name: user?.user_metadata?.full_name || 'Alguien',
           avatar_url: user?.user_metadata?.avatar_url
         },
         neighborhood: currentNeighborhood
       });
-      // Insertar marcador oculto <<ZUMBIDO>> en el contenido para lógica
-      // Nota: Para simplificar, usamos el texto visible '🔔 ¡ZUMBIDO!' + lógica de detección
     } catch (e) { console.error(e); }
   };
 
@@ -150,7 +208,10 @@ const Forum: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] font-sans">
+    <div
+      className="flex flex-col h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] font-sans"
+      onClick={unlockAudio} // Unlock audio logic on first click anywhere in the forum
+    >
       {/* Header */}
       <div className="p-6 md:p-8 border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-surface-dark flex items-center justify-between shrink-0">
         <div>
@@ -240,36 +301,13 @@ const Forum: React.FC = () => {
             <p className="text-xs font-black uppercase tracking-widest">Conectando...</p>
           </div>
         ) : (
-          messages.map((msg, idx) => {
-            const isMe = msg.user_id === user?.id;
-            const isBuzz = msg.content.includes('🔔 ¡ZUMBIDO!') || msg.content.includes('<<ZUMBIDO>>');
-
-            return (
-              <motion.div
-                initial={{ opacity: 0, x: isMe ? 20 : -20, scale: isBuzz ? 1.2 : 0.9 }}
-                animate={{ opacity: 1, x: 0, scale: 1 }}
-                key={msg.id}
-                className={`flex gap-4 ${isMe ? 'flex-row-reverse' : ''} ${isBuzz ? 'animate-pulse' : ''}`}
-              >
-                {!isMe && (
-                  <img
-                    src={msg.user_metadata?.avatar_url || `https://ui-avatars.com/api/?name=${msg.user_metadata?.full_name}`}
-                    className="size-10 md:size-12 rounded-2xl shadow-lg border-2 border-white dark:border-gray-800 object-cover"
-                    alt="Avatar"
-                  />
-                )}
-                <div className={`max-w-[75%] space-y-1 ${isMe ? 'items-end' : ''}`}>
-                  {!isMe && <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-1">{msg.user_metadata?.full_name}</p>}
-                  <div className={`p-4 rounded-3xl text-sm font-bold shadow-sm ${isBuzz ? 'bg-yellow-400 text-black border-4 border-yellow-200 shake-animation' : (isMe ? 'bg-primary text-white rounded-tr-none' : 'bg-white dark:bg-surface-dark dark:text-white rounded-tl-none border border-gray-100 dark:border-gray-800')}`}>
-                    {msg.content.replace('<<ZUMBIDO>>', '')}
-                  </div>
-                  <p className="text-[9px] font-black text-gray-400/50 uppercase tracking-tighter px-2">
-                    {new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })
+          messages.map((msg) => (
+            <MessageBubble
+              key={msg.id}
+              msg={msg}
+              isMe={msg.user_id === user?.id}
+            />
+          ))
         )}
       </div>
 
