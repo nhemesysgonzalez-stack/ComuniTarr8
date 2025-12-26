@@ -3,15 +3,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
-import { supabase } from '../services/supabaseClient';
 import { safeSupabaseInsert } from '../services/dataHandler';
 
 const Home: React.FC = () => {
-  const { user } = useAuth();
+  const { user, addKarma } = useAuth();
   const { t } = useLanguage();
   const [showIncidentModal, setShowIncidentModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
   const [helpType, setHelpType] = useState<'offer' | 'request'>('request');
+
+  // Experience calculation
+  const karma = user?.user_metadata?.karma || 0;
+  const level = Math.floor(karma / 100) + 1;
+  const expProgress = (karma % 100);
 
   // Incident form state
   const [incidentTitle, setIncidentTitle] = useState('');
@@ -34,7 +38,7 @@ const Home: React.FC = () => {
   const handleIncidentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const { success, isLocal } = await safeSupabaseInsert('incidents', {
+      const { success } = await safeSupabaseInsert('incidents', {
         user_id: user?.id,
         title: incidentTitle,
         description: incidentDescription,
@@ -44,7 +48,8 @@ const Home: React.FC = () => {
       });
 
       if (!success) throw new Error('Falló la creación');
-      alert('¡Incidencia reportada con éxito!');
+      await addKarma(25);
+      alert('¡Incidencia reportada con éxito! +25 XP');
       setShowIncidentModal(false);
       setIncidentTitle('');
       setIncidentDescription('');
@@ -69,7 +74,8 @@ const Home: React.FC = () => {
       });
 
       if (!success) throw new Error('Falló la publicación');
-      alert(helpType === 'offer' ? '¡Servicio ofrecido publicado!' : '¡Solicitud de ayuda publicada!');
+      await addKarma(15);
+      alert(helpType === 'offer' ? '¡Servicio ofrecido publicado! +15 XP' : '¡Solicitud de ayuda publicada! +15 XP');
       setShowHelpModal(false);
       setHelpTitle('');
       setHelpDescription('');
@@ -136,64 +142,79 @@ const Home: React.FC = () => {
 
       {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-        {/* Left Column: What You Can Do */}
-        <section className="lg:col-span-2 space-y-8">
-          <div className="flex items-center justify-between px-2">
+        <div className="lg:col-span-2 space-y-12">
+          {/* What You Can Do */}
+          <section className="space-y-8">
             <h2 className="text-2xl font-black dark:text-white tracking-tighter uppercase">{t('what_can_you_do')}</h2>
-          </div>
-
-          <div className="bg-gradient-to-br from-primary/5 to-indigo-500/5 dark:from-primary/10 dark:to-indigo-500/10 p-8 rounded-[35px] border-2 border-primary/20">
-            <h3 className="text-lg font-black dark:text-white mb-4 flex items-center gap-2">
-              <span className="material-symbols-outlined text-primary">info</span>
-              {t('platform_ready')}
-            </h3>
-            <p className="text-sm font-bold text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              {t('demo_data_msg')}
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="bg-white dark:bg-surface-dark p-4 rounded-2xl">
-                <span className="material-symbols-outlined text-red-500 mb-2">report_problem</span>
-                <h4 className="font-black text-xs dark:text-white mb-1">REPORTAR INCIDENCIAS</h4>
-                <p className="text-[10px] text-gray-500 dark:text-gray-400">Problemas en la calle, averías, etc.</p>
-              </div>
-              <div className="bg-white dark:bg-surface-dark p-4 rounded-2xl">
-                <span className="material-symbols-outlined text-emerald-500 mb-2">shopping_basket</span>
-                <h4 className="font-black text-xs dark:text-white mb-1">VENDER O INTERCAMBIAR</h4>
-                <p className="text-[10px] text-gray-500 dark:text-gray-400">Publica objetos que ya no uses</p>
-              </div>
-              <div className="bg-white dark:bg-surface-dark p-4 rounded-2xl">
-                <span className="material-symbols-outlined text-sky-500 mb-2">event_available</span>
-                <h4 className="font-black text-xs dark:text-white mb-1">ORGANIZAR EVENTOS</h4>
-                <p className="text-[10px] text-gray-500 dark:text-gray-400">Crea quedadas, talleres o fiestas</p>
-              </div>
-              <div className="bg-white dark:bg-surface-dark p-4 rounded-2xl">
-                <span className="material-symbols-outlined text-indigo-500 mb-2">diversity_3</span>
-                <h4 className="font-black text-xs dark:text-white mb-1">PEDIR U OFRECER AYUDA</h4>
-                <p className="text-[10px] text-gray-500 dark:text-gray-400">Servicios, favores, apoyo mutuo</p>
+            <div className="bg-gradient-to-br from-primary/5 to-indigo-500/5 dark:from-primary/10 dark:to-indigo-500/10 p-8 rounded-[35px] border-2 border-primary/20">
+              <h3 className="text-lg font-black dark:text-white mb-4 flex items-center gap-2">
+                <span className="material-symbols-outlined text-primary">info</span>
+                {t('platform_ready')}
+              </h3>
+              <p className="text-sm font-bold text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                {t('demo_data_msg')}
+              </p>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white dark:bg-surface-dark p-4 rounded-2xl">
+                  <span className="material-symbols-outlined text-red-500 mb-2">report_problem</span>
+                  <h4 className="font-black text-xs dark:text-white mb-1">REPORTAR INCIDENCIAS</h4>
+                  <p className="text-[10px] text-gray-500 dark:text-gray-400">Problemas en la calle, averías, etc.</p>
+                </div>
+                <div className="bg-white dark:bg-surface-dark p-4 rounded-2xl">
+                  <span className="material-symbols-outlined text-emerald-500 mb-2">shopping_basket</span>
+                  <h4 className="font-black text-xs dark:text-white mb-1">VENDER O INTERCAMBIAR</h4>
+                  <p className="text-[10px] text-gray-500 dark:text-gray-400">Publica objetos que ya no uses</p>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+
+          {/* Neighborhood News */}
+          <section className="space-y-8">
+            <h2 className="text-2xl font-black dark:text-white tracking-tighter uppercase flex items-center gap-2">
+              <span className="material-symbols-outlined text-primary">newspaper</span>
+              NOTICIAS EN {user?.user_metadata?.neighborhood?.toUpperCase() || 'TU BARRIO'}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                { title: 'Mejoras en Iluminación', desc: 'El ayuntamiento confirma nuevas luminarias LED.', time: 'Hace 2h' },
+                { title: 'Fiesta del Barrio', desc: 'Se buscan voluntarios para la organización.', time: 'Hace 4h' }
+              ].map((news, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -5 }}
+                  className="bg-white dark:bg-surface-dark p-6 rounded-[30px] border border-gray-100 dark:border-gray-800 shadow-xl"
+                >
+                  <p className="text-[10px] font-black text-primary mb-2 uppercase tracking-widest">{news.time}</p>
+                  <h4 className="text-sm font-black dark:text-white mb-2 uppercase">{news.title}</h4>
+                  <p className="text-xs font-bold text-gray-500 dark:text-gray-400 mb-4">{news.desc}</p>
+                  <button className="text-[10px] font-black text-primary uppercase hover:underline">Leer más</button>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+        </div>
 
         {/* Right Column: Widgets */}
         <section className="space-y-10">
-          {/* Level Widget */}
           <div className="bg-primary p-8 rounded-[40px] text-white shadow-2xl shadow-primary/20 relative overflow-hidden group">
             <div className="relative z-10">
               <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-4 opacity-80">{t('neighbor_level')}</p>
               <div className="flex items-end gap-2 mb-6">
-                <h3 className="text-5xl font-black tracking-tighter">LVL 1</h3>
-                <span className="text-sm font-black mb-1 opacity-80">{t('new_neighbor')}</span>
+                <h3 className="text-5xl font-black tracking-tighter">LVL {level}</h3>
+                <span className="text-sm font-black mb-1 opacity-80">{level > 1 ? 'Vecino Activo' : t('new_neighbor')}</span>
               </div>
               <div className="h-4 bg-white/20 rounded-full overflow-hidden border border-white/10 p-0.5">
-                <div className="h-full bg-white rounded-full w-1/4 shadow-lg"></div>
+                <div
+                  className="h-full bg-white rounded-full shadow-lg transition-all duration-1000"
+                  style={{ width: `${expProgress}%` }}
+                ></div>
               </div>
-              <p className="text-[10px] font-bold mt-4 opacity-80">Participa para subir de nivel</p>
+              <p className="text-[10px] font-bold mt-4 opacity-80">{karma} XP Totales • {100 - expProgress} XP para el próximo nivel</p>
             </div>
             <span className="material-symbols-outlined absolute -bottom-4 -right-4 text-9xl text-white/10 rotate-12 transition-transform group-hover:rotate-45 duration-700">stars</span>
           </div>
 
-          {/* Quick Map Widget */}
           <div className="relative h-64 rounded-[40px] overflow-hidden group">
             <img
               src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&q=80&w=400"
@@ -211,7 +232,7 @@ const Home: React.FC = () => {
         </section>
       </div>
 
-      {/* Incident Modal */}
+      {/* Modals */}
       <AnimatePresence>
         {showIncidentModal && (
           <motion.div
@@ -235,49 +256,30 @@ const Home: React.FC = () => {
                 </button>
               </div>
               <form onSubmit={handleIncidentSubmit} className="space-y-4">
-                <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Título</label>
-                  <input
-                    type="text"
-                    value={incidentTitle}
-                    onChange={(e) => setIncidentTitle(e.target.value)}
-                    required
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
-                    placeholder="Ej: Farola rota en Calle Mayor"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Descripción</label>
-                  <textarea
-                    value={incidentDescription}
-                    onChange={(e) => setIncidentDescription(e.target.value)}
-                    required
-                    rows={4}
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none resize-none"
-                    placeholder="Describe el problema..."
-                  />
-                </div>
-                <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Contacto (opcional)</label>
-                  <input
-                    type="text"
-                    value={incidentContact}
-                    onChange={(e) => setIncidentContact(e.target.value)}
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
-                    placeholder="Teléfono o email"
-                  />
-                </div>
-                <button type="submit" className="w-full bg-red-500 text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-red-600 transition-all shadow-lg shadow-red-500/20">
+                <input
+                  type="text"
+                  value={incidentTitle}
+                  onChange={(e) => setIncidentTitle(e.target.value)}
+                  required
+                  placeholder="Título..."
+                  className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none"
+                />
+                <textarea
+                  value={incidentDescription}
+                  onChange={(e) => setIncidentDescription(e.target.value)}
+                  required
+                  rows={4}
+                  placeholder="Descripción..."
+                  className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none"
+                />
+                <button type="submit" className="w-full bg-red-500 text-white py-4 rounded-2xl font-black uppercase transition-all shadow-lg">
                   Enviar Reporte
                 </button>
               </form>
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
 
-      {/* Help Modal */}
-      <AnimatePresence>
         {showHelpModal && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -299,73 +301,20 @@ const Home: React.FC = () => {
                   <span className="material-symbols-outlined">close</span>
                 </button>
               </div>
-
-              {/* Toggle between offer and request */}
               <div className="flex gap-2 mb-6">
-                <button
-                  type="button"
-                  onClick={() => setHelpType('request')}
-                  className={`flex-1 py-3 rounded-2xl font-black text-xs uppercase tracking-widest transition-all ${helpType === 'request' ? 'bg-indigo-500 text-white' : 'bg-gray-100 dark:bg-gray-800 dark:text-gray-400'}`}
-                >
-                  Pedir Ayuda
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setHelpType('offer')}
-                  className={`flex-1 py-3 rounded-2xl font-black text-xs uppercase tracking-widest transition-all ${helpType === 'offer' ? 'bg-indigo-500 text-white' : 'bg-gray-100 dark:bg-gray-800 dark:text-gray-400'}`}
-                >
-                  Ofrecer Servicio
-                </button>
+                <button onClick={() => setHelpType('request')} className={`flex-1 py-3 rounded-2xl font-black text-xs uppercase ${helpType === 'request' ? 'bg-indigo-500 text-white' : 'bg-gray-100 dark:bg-gray-800'}`}>Pedir</button>
+                <button onClick={() => setHelpType('offer')} className={`flex-1 py-3 rounded-2xl font-black text-xs uppercase ${helpType === 'offer' ? 'bg-indigo-500 text-white' : 'bg-gray-100 dark:bg-gray-800'}`}>Ofrecer</button>
               </div>
-
               <form onSubmit={handleHelpSubmit} className="space-y-4">
-                <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Título</label>
-                  <input
-                    type="text"
-                    value={helpTitle}
-                    onChange={(e) => setHelpTitle(e.target.value)}
-                    required
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
-                    placeholder={helpType === 'offer' ? 'Ej: Clases de guitarra' : 'Ej: Necesito ayuda con mudanza'}
-                  />
-                </div>
-                <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Categoría</label>
-                  <input
-                    type="text"
-                    value={helpCategory}
-                    onChange={(e) => setHelpCategory(e.target.value)}
-                    required
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
-                    placeholder="Ej: Educación, Hogar, Transporte..."
-                  />
-                </div>
-                <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Descripción</label>
-                  <textarea
-                    value={helpDescription}
-                    onChange={(e) => setHelpDescription(e.target.value)}
-                    required
-                    rows={3}
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none resize-none"
-                    placeholder="Detalles..."
-                  />
-                </div>
-                <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Contacto</label>
-                  <input
-                    type="text"
-                    value={helpContact}
-                    onChange={(e) => setHelpContact(e.target.value)}
-                    required
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
-                    placeholder="Teléfono o email"
-                  />
-                </div>
-                <button type="submit" className="w-full bg-indigo-500 text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-500/20">
-                  Publicar
-                </button>
+                <input
+                  type="text"
+                  value={helpTitle}
+                  onChange={(e) => setHelpTitle(e.target.value)}
+                  required
+                  placeholder="Título..."
+                  className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none"
+                />
+                <button type="submit" className="w-full bg-indigo-500 text-white py-4 rounded-2xl font-black uppercase shadow-lg">Publicar</button>
               </form>
             </motion.div>
           </motion.div>

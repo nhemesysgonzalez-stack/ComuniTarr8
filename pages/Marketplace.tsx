@@ -18,7 +18,7 @@ interface MarketItem {
 }
 
 const Marketplace: React.FC = () => {
-  const { user } = useAuth();
+  const { user, addKarma } = useAuth();
   const [activeCategory, setActiveCategory] = useState('all');
   const [showAddForm, setShowAddForm] = useState(false);
   const [items, setItems] = useState<MarketItem[]>([]);
@@ -78,7 +78,8 @@ const Marketplace: React.FC = () => {
       });
 
       if (!success) throw new Error('Falló la publicación');
-      alert('¡Producto publicado con éxito!');
+      await addKarma(50); // Puntos por vender/participar
+      alert('¡Producto publicado con éxito! +50 XP Neighborhood points');
       setShowAddForm(false);
       // Reset form
       setItemTitle('');

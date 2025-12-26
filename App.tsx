@@ -29,6 +29,7 @@ import Services from './pages/Services';
 import MapView from './pages/MapView';
 import Login from './pages/Login';
 import NeighborhoodSelection from './pages/NeighborhoodSelection';
+import { SOSButton } from './components/SOSButton';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { logActivity } from './services/activityLogger';
@@ -73,6 +74,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </main>
       </div>
       <ChatWidget />
+      <SOSButton />
     </div>
   );
 };

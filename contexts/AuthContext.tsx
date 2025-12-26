@@ -11,6 +11,7 @@ interface AuthContextType {
     updateMetadata: (metadata: any) => Promise<void>;
     updateEmail: (email: string) => Promise<void>;
     updateAvatar: (file: File) => Promise<string | null>;
+    addKarma: (points: number) => Promise<void>;
     loading: boolean;
 }
 
@@ -109,15 +110,23 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
                 await updateMetadata({ avatar_url: publicUrl });
                 return publicUrl;
             }
+            return null;
         } catch (error) {
             console.error('Error updating avatar:', error);
             throw error;
         }
-        return null;
+    };
+
+    const addKarma = async (points: number) => {
+        if (!user) return;
+        const currentKarma = user.user_metadata?.karma || 0;
+        const newKarma = currentKarma + points;
+
+        await updateMetadata({ karma: newKarma });
     };
 
     return (
-        <AuthContext.Provider value={{ session, user, signIn, signUp, signOut, updateMetadata, updateEmail, updateAvatar, loading }}>
+        <AuthContext.Provider value={{ session, user, signIn, signUp, signOut, updateMetadata, updateEmail, updateAvatar, addKarma, loading }}>
             {children}
         </AuthContext.Provider>
     );
