@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import { useAuth } from '../contexts/AuthContext';
+
 const MapView: React.FC = () => {
+  const { user } = useAuth();
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
@@ -35,7 +38,10 @@ const MapView: React.FC = () => {
       desc: 'Nuevo reporte ciudadano generado ahora mismo.',
       status: 'Nuevo',
       color: newReportType === 'incident' ? 'bg-red-500' : 'bg-blue-500',
-      icon: newReportType === 'incident' ? 'report_problem' : 'info'
+      icon: newReportType === 'incident' ? 'report_problem' : 'info',
+      creator_name: user?.user_metadata?.full_name || 'Vecino Anónimo',
+      creator_neighborhood: user?.user_metadata?.neighborhood || 'General',
+      is_demo: false
     };
     setPins([...pins, newPin]);
     setShowReportModal(false);
@@ -64,10 +70,8 @@ const MapView: React.FC = () => {
       </div>
 
       {/* Banner de Datos de Ejemplo */}
-      <div className="absolute top-0 left-0 right-0 z-20 bg-yellow-400/90 text-black text-[10px] font-black uppercase tracking-widest text-center py-2 px-4 shadow-sm backdrop-blur-sm">
-        <span className="material-symbols-outlined text-sm align-middle mr-2">info</span>
-        Modo Demo: Los marcadores activos son sugerecias de muestra
-      </div>
+      {/* Banner de Datos de Ejemplo (Solo visible si hay pines demo activos y NO se ha cerrado) */}
+      {/* Eliminado a petición para dar sensación más real */}
 
 
       {/* Floating Header */}
