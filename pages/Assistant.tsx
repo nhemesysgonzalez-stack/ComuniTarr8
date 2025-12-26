@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { getAssistantResponse } from '../services/geminiService';
 
 interface ChatMessage {
     id: string;
@@ -9,6 +10,7 @@ interface ChatMessage {
 
 const Assistant: React.FC = () => {
     const [input, setInput] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     const [messages, setMessages] = useState<ChatMessage[]>([
         { id: '1', text: '¡Hola! Soy tu Asistente Vecinal IA. 🤖\nPuedo ayudarte con información sobre horarios de basura, teléfonos de emergencia, o normas de la comunidad. ¿En qué te ayudo hoy?', isUser: false, time: 'Ahora' }
     ]);
@@ -20,38 +22,44 @@ const Assistant: React.FC = () => {
         }
     }, [messages]);
 
-    const handleSend = () => {
-        if (!input.trim()) return;
+    const handleSend = async () => {
+        if (!input.trim() || isLoading) return;
 
+        const userText = input;
         const userMsg: ChatMessage = {
             id: Date.now().toString(),
-            text: input,
+            text: userText,
             isUser: true,
             time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         };
 
         setMessages(prev => [...prev, userMsg]);
         setInput('');
+        setIsLoading(true);
 
-        // Simulate AI Response
-        setTimeout(() => {
-            let replyText = "Entendido. Como soy una demo, aún aprendo, pero pronto podré responderte con precisión sobre eso.";
-            if (input.toLowerCase().includes('basura') || input.toLowerCase().includes('reciclaje')) {
-                replyText = "🗑️ La recogida de basura orgánica es diaria a partir de las 20:00h. El punto limpio móvil viene los jueves a la Plaza del Mercado.";
-            } else if (input.toLowerCase().includes('policia') || input.toLowerCase().includes('emergencia')) {
-                replyText = "🚨 Para emergencias llama al 112. Policía Local de Tarragona: 092. Si es algo vecinal, puedes usar el botón de SOS en la app.";
-            } else if (input.toLowerCase().includes('fiesta') || input.toLowerCase().includes('ruido')) {
-                replyText = "🤫 Las normas de convivencia establecen silencio a partir de las 23:00h entre semana y 00:00h fines de semana.";
-            }
+        try {
+            // Call Real Gemini API
+            const response = await getAssistantResponse(userText);
 
             const botMsg: ChatMessage = {
                 id: (Date.now() + 1).toString(),
-                text: replyText,
+                text: response.text,
                 isUser: false,
                 time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
             };
             setMessages(prev => [...prev, botMsg]);
-        }, 1000);
+        } catch (error) {
+            console.error("Error al obtener respuesta de IA", error);
+            const errorMsg: ChatMessage = {
+                id: (Date.now() + 1).toString(),
+                text: "Lo siento, tuve un problema al conectar con mi cerebro digital. Inténtalo de nuevo.",
+                isUser: false,
+                time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            };
+            setMessages(prev => [...prev, errorMsg]);
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -69,8 +77,8 @@ const Assistant: React.FC = () => {
                             </div>
                             <div className={`flex flex-col ${msg.isUser ? 'items-end' : 'items-start'}`}>
                                 <div className={`p-4 rounded-2xl text-sm md:text-base whitespace-pre-line leading-relaxed shadow-sm ${msg.isUser
-                                        ? 'bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-tr-none'
-                                        : 'bg-indigo-600 text-white rounded-tl-none shadow-indigo-500/10'
+                                    ? 'bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-tr-none'
+                                    : 'bg-indigo-600 text-white rounded-tl-none shadow-indigo-500/10'
                                     }`}>
                                     {msg.text}
                                 </div>
@@ -92,9 +100,10 @@ const Assistant: React.FC = () => {
                     />
                     <button
                         onClick={handleSend}
-                        className="p-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/20"
+                        disabled={isLoading}
+                        className={`p-3 text-white rounded-xl transition shadow-lg shadow-indigo-600/20 ${isLoading ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700'}`}
                     >
-                        <span className="material-symbols-outlined block">send</span>
+                        <span className="material-symbols-outlined block">{isLoading ? 'hourglass_empty' : 'send'}</span>
                     </button>
                 </div>
             </div>
