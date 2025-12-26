@@ -14,23 +14,22 @@ export default defineConfig(({ mode }) => {
       'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
     },
-  },
     build: {
-    chunkSizeWarningLimit: 1000,
+      chunkSizeWarningLimit: 1000,
       rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
+        output: {
+          manualChunks: {
+            vendor: ['react', 'react-dom'],
             ui: ['framer-motion', 'lucide-react'],
-              supabase: ['@supabase/supabase-js']
+            supabase: ['@supabase/supabase-js']
+          }
         }
       }
+    },
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, '.'),
+      }
     }
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, '.'),
-        }
-  }
-};
+  };
 });
