@@ -39,7 +39,23 @@ export const translations = {
         // UI Elements
         choose_neighborhood: 'Elegir Barrio',
         active_neighbor: 'Vecino Activo',
-        my_profile: 'Mi Perfil'
+        my_profile: 'Mi Perfil',
+        // Home Content
+        report_incident: 'Reportar Incidencia',
+        publish_product: 'Publicar Producto',
+        create_event: 'Crear Evento',
+        ask_offer_help: 'Pedir/Ofrecer Ayuda',
+        what_can_you_do: '¿Qué puedes hacer aquí?',
+        platform_ready: 'ComuniTarr está lista para ti',
+        demo_data_msg: 'Esta plataforma muestra datos de ejemplo para demostración. Al crear nuevo contenido (reportes, eventos, etc.), este se guardará y mostrará.',
+        sell_swap: 'VENDER O INTERCAMBIAR',
+        organize_events: 'ORGANIZAR EVENTOS',
+        neighbor_level: 'Nivel de Vecino',
+        new_neighbor: 'Nuevo',
+        explore_map: 'Explora el Mapa',
+        open_map: 'Abrir Mapa',
+        welcome_user: 'HOLA, {name}!',
+        welcome_msg: 'Bienvenido a ComuniTarr. Tu plataforma para conectar, compartir y mejorar {neighborhood}.'
     },
     en: {
         nav_main: 'Main',
@@ -68,7 +84,23 @@ export const translations = {
         assistant: 'AI Assistant',
         choose_neighborhood: 'Choose Neighborhood',
         active_neighbor: 'Active Neighbor',
-        my_profile: 'My Profile'
+        my_profile: 'My Profile',
+        // Home Content
+        report_incident: 'Report Incident',
+        publish_product: 'Publish Product',
+        create_event: 'Create Event',
+        ask_offer_help: 'Ask/Offer Help',
+        what_can_you_do: 'What can you do here?',
+        platform_ready: 'ComuniTarr is ready for you',
+        demo_data_msg: 'This platform shows example data for demonstration. When creating new content (reports, events, etc.), it will be saved and shown.',
+        sell_swap: 'SELL OR SWAP',
+        organize_events: 'ORGANIZE EVENTS',
+        neighbor_level: 'Neighbor Level',
+        new_neighbor: 'New',
+        explore_map: 'Explore Map',
+        open_map: 'Open Map',
+        welcome_user: 'HELLO, {name}!',
+        welcome_msg: 'Welcome to ComuniTarr. Your platform to connect, share and improve {neighborhood}.'
     },
     ca: {
         nav_main: 'Principal',
@@ -97,7 +129,23 @@ export const translations = {
         assistant: 'Assistent IA',
         choose_neighborhood: 'Triar Barri',
         active_neighbor: 'Veí Actiu',
-        my_profile: 'El meu Perfil'
+        my_profile: 'El meu Perfil',
+        // Home Content
+        report_incident: 'Reportar Incidència',
+        publish_product: 'Publicar Producte',
+        create_event: 'Crear Esdeveniment',
+        ask_offer_help: 'Demanar/Oferir Ajuda',
+        what_can_you_do: 'Què pots fer aquí?',
+        platform_ready: 'ComuniTarr està llesta per a tu',
+        demo_data_msg: 'Aquesta plataforma mostra dades de exemple per a demostració. En crear nou contingut (reports, esdeveniments, etc.), aquest es guardarà i mostrarà.',
+        sell_swap: 'VENDRE O INTERCANVIAR',
+        organize_events: 'ORGANITZAR ESDEVENIMENTS',
+        neighbor_level: 'Nivell de Veí',
+        new_neighbor: 'Nou',
+        explore_map: 'Explora el Mapa',
+        open_map: 'Obrir Mapa',
+        welcome_user: 'HOLA, {name}!',
+        welcome_msg: 'Benvingut a ComuniTarr. La teva plataforma per connectar, compartir i millorar {neighborhood}.'
     },
     fr: {
         nav_main: 'Principal',
@@ -126,6 +174,22 @@ export const translations = {
         assistant: 'Assistant IA',
         choose_neighborhood: 'Choisir Quartier',
         active_neighbor: 'Voisin Actif',
-        my_profile: 'Mon Profil'
+        my_profile: 'Mon Profil',
+        // Home Content
+        report_incident: 'Signaler Incident',
+        publish_product: 'Publier Produit',
+        create_event: 'Créer Événement',
+        ask_offer_help: 'Demander/Offrir Aide',
+        what_can_you_do: 'Que pouvez-vous faire ici?',
+        platform_ready: 'ComuniTarr est prêt pour vous',
+        demo_data_msg: 'Cette plateforme montre des données d\'exemple pour démonstration. Lors de la création de nouveau contenu, il sera enregistré et affiché.',
+        sell_swap: 'VENDRE OU ÉCHANGER',
+        organize_events: 'ORGANISER ÉVÉNEMENTS',
+        neighbor_level: 'Niveau de Voisin',
+        new_neighbor: 'Nouveau',
+        explore_map: 'Explorer la Carte',
+        open_map: 'Ouvrir la Carte',
+        welcome_user: 'BONJOUR, {name}!',
+        welcome_msg: 'Bienvenue sur ComuniTarr. Votre plateforme pour connecter, partager et améliorer {neighborhood}.'
     }
 };

@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { useLanguage } from '../contexts/LanguageContext';
 import { supabase } from '../services/supabaseClient';
 import { safeSupabaseInsert } from '../services/dataHandler';
 
 const Home: React.FC = () => {
   const { user } = useAuth();
+  const { t } = useLanguage();
   const [showIncidentModal, setShowIncidentModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
   const [helpType, setHelpType] = useState<'offer' | 'request'>('request');
@@ -23,10 +25,10 @@ const Home: React.FC = () => {
   const [helpContact, setHelpContact] = useState('');
 
   const quickActions = [
-    { icon: 'report_problem', label: 'Reportar Incidencia', action: () => setShowIncidentModal(true), color: 'bg-red-500', shadow: 'shadow-red-500/20' },
-    { icon: 'shopping_basket', label: 'Publicar Producto', to: '/market', color: 'bg-emerald-500', shadow: 'shadow-emerald-500/20' },
-    { icon: 'event_available', label: 'Crear Evento', to: '/calendar', color: 'bg-sky-500', shadow: 'shadow-sky-500/20' },
-    { icon: 'diversity_3', label: 'Pedir/Ofrecer Ayuda', action: () => setShowHelpModal(true), color: 'bg-indigo-500', shadow: 'shadow-indigo-500/20' }
+    { icon: 'report_problem', label: t('report_incident'), action: () => setShowIncidentModal(true), color: 'bg-red-500', shadow: 'shadow-red-500/20' },
+    { icon: 'shopping_basket', label: t('publish_product'), to: '/market', color: 'bg-emerald-500', shadow: 'shadow-emerald-500/20' },
+    { icon: 'event_available', label: t('create_event'), to: '/calendar', color: 'bg-sky-500', shadow: 'shadow-sky-500/20' },
+    { icon: 'diversity_3', label: t('ask_offer_help'), action: () => setShowHelpModal(true), color: 'bg-indigo-500', shadow: 'shadow-indigo-500/20' }
   ];
 
   const handleIncidentSubmit = async (e: React.FormEvent) => {
@@ -92,13 +94,13 @@ const Home: React.FC = () => {
         <div className="relative z-20 max-w-2xl animate-in slide-in-from-left duration-700">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-md text-primary-light text-[10px] font-black uppercase tracking-widest mb-6 border border-primary/30">
             <span className="size-2 bg-primary rounded-full animate-ping"></span>
-            Tu Barrio en Tiempo Real
+            {t('nav_neighborhood')}
           </span>
           <h1 className="text-4xl md:text-7xl font-black text-white leading-[0.9] tracking-tighter mb-4">
-            HOLA, {user?.user_metadata?.full_name?.split(' ')[0] || 'VECINO'}!
+            {t('welcome_user').replace('{name}', user?.user_metadata?.full_name?.split(' ')[0] || 'VECINO')}
           </h1>
           <p className="text-gray-300 text-sm md:text-lg font-bold max-w-lg leading-relaxed">
-            Bienvenido a <span className="text-white underline decoration-primary decoration-4">ComuniTarr</span>. Tu plataforma para conectar, compartir y mejorar <span className="text-white">{user?.user_metadata?.neighborhood || 'tu barrio'}</span>.
+            {t('welcome_msg').replace('{neighborhood}', user?.user_metadata?.neighborhood || 'tu barrio')}
           </p>
         </div>
       </section>
@@ -137,16 +139,16 @@ const Home: React.FC = () => {
         {/* Left Column: What You Can Do */}
         <section className="lg:col-span-2 space-y-8">
           <div className="flex items-center justify-between px-2">
-            <h2 className="text-2xl font-black dark:text-white tracking-tighter uppercase">¿Qué puedes hacer aquí?</h2>
+            <h2 className="text-2xl font-black dark:text-white tracking-tighter uppercase">{t('what_can_you_do')}</h2>
           </div>
 
           <div className="bg-gradient-to-br from-primary/5 to-indigo-500/5 dark:from-primary/10 dark:to-indigo-500/10 p-8 rounded-[35px] border-2 border-primary/20">
             <h3 className="text-lg font-black dark:text-white mb-4 flex items-center gap-2">
               <span className="material-symbols-outlined text-primary">info</span>
-              ComuniTarr está lista para ti
+              {t('platform_ready')}
             </h3>
             <p className="text-sm font-bold text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              Esta plataforma muestra <span className="text-primary font-black">datos de ejemplo</span> para demostración. Al crear nuevo contenido (reportes, eventos, etc.), este se guardará y mostrará, pero los datos preexistentes son ilustrativos.
+              {t('demo_data_msg')}
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-white dark:bg-surface-dark p-4 rounded-2xl">
@@ -178,10 +180,10 @@ const Home: React.FC = () => {
           {/* Level Widget */}
           <div className="bg-primary p-8 rounded-[40px] text-white shadow-2xl shadow-primary/20 relative overflow-hidden group">
             <div className="relative z-10">
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-4 opacity-80">Nivel de Vecino</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-4 opacity-80">{t('neighbor_level')}</p>
               <div className="flex items-end gap-2 mb-6">
                 <h3 className="text-5xl font-black tracking-tighter">LVL 1</h3>
-                <span className="text-sm font-black mb-1 opacity-80">Nuevo</span>
+                <span className="text-sm font-black mb-1 opacity-80">{t('new_neighbor')}</span>
               </div>
               <div className="h-4 bg-white/20 rounded-full overflow-hidden border border-white/10 p-0.5">
                 <div className="h-full bg-white rounded-full w-1/4 shadow-lg"></div>
@@ -202,8 +204,8 @@ const Home: React.FC = () => {
               <div className="size-16 rounded-full bg-white flex items-center justify-center shadow-xl animate-bounce mb-4">
                 <span className="material-symbols-outlined text-primary text-3xl font-black">location_on</span>
               </div>
-              <h4 className="text-white font-black text-lg leading-tight uppercase tracking-tight mb-2">Explora el Mapa</h4>
-              <Link to="/map" className="px-6 py-3 bg-white text-primary text-[10px] font-black rounded-full shadow-lg hover:scale-110 transition-transform uppercase tracking-widest">Abrir Mapa</Link>
+              <h4 className="text-white font-black text-lg leading-tight uppercase tracking-tight mb-2">{t('explore_map')}</h4>
+              <Link to="/map" className="px-6 py-3 bg-white text-primary text-[10px] font-black rounded-full shadow-lg hover:scale-110 transition-transform uppercase tracking-widest">{t('open_map')}</Link>
             </div>
           </div>
         </section>

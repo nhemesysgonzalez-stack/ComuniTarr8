@@ -139,8 +139,13 @@ const Forum: React.FC = () => {
         </AnimatePresence>
 
         <div className="hidden md:flex -space-x-2">
-          {[1, 2, 3, 4].map(i => (
-            <img key={i} src={`https://i.pravatar.cc/100?u=${i}`} className="size-8 rounded-xl border-4 border-white dark:border-surface-dark shadow-lg object-cover" alt="U" />
+          {[
+            'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=100',
+            'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=100',
+            'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100',
+            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100'
+          ].map((url, i) => (
+            <img key={i} src={url} className="size-8 rounded-xl border-4 border-white dark:border-surface-dark shadow-lg object-cover" alt="User" />
           ))}
           <div className="size-8 rounded-xl bg-primary text-white text-[10px] font-black flex items-center justify-center border-4 border-white dark:border-surface-dark shadow-lg">+12</div>
         </div>
