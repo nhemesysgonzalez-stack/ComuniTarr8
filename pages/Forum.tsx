@@ -21,8 +21,6 @@ const Forum: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [currentNeighborhood, setCurrentNeighborhood] = useState(user?.user_metadata?.neighborhood || 'GENERAL');
   const [showNeighborhoods, setShowNeighborhoods] = useState(false);
-  const [currentNeighborhood, setCurrentNeighborhood] = useState(user?.user_metadata?.neighborhood || 'GENERAL');
-  const [showNeighborhoods, setShowNeighborhoods] = useState(false);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
