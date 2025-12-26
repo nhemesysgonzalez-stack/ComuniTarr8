@@ -1,0 +1,7 @@
+{
+  "name": "Copy of ComuniTarr",
+  "description": "A comprehensive neighborhood community platform for Tarragona, featuring forums, marketplace, mutual aid, and AI-powered local assistance with Google Search and Maps grounding.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
