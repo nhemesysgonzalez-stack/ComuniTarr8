@@ -4,29 +4,53 @@ import { motion, AnimatePresence } from 'framer-motion';
 const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
-  const pins = [
-    { id: 1, type: 'incident', x: '40%', y: '45%', title: 'Corte de Agua', desc: 'Mantenimiento urgente en tubería principal.', status: 'En progreso', color: 'bg-red-500', icon: 'report' },
-    { id: 2, type: 'event', x: '60%', y: '30%', title: 'Festa Major Pròxima', desc: 'Preparativos para la fiesta del barrio el próximo finde.', status: 'Abierto', color: 'bg-primary', icon: 'celebration' },
-    { id: 3, type: 'cleanup', x: '30%', y: '65%', title: 'Limpieza Playa del Miracle', desc: 'Grupo de voluntarios para recogida de plásticos.', status: 'Mañana 10:00', color: 'bg-emerald-500', icon: 'park' },
-    { id: 4, type: 'business', x: '75%', y: '55%', title: 'Oferta Brasa Real', desc: 'Menú especial vecinos 2x1 hoy.', status: 'Activo', color: 'bg-amber-500', icon: 'restaurant' }
-  ];
+  const [pins, setPins] = useState<any[]>([
+    // Datos iniciales de DEMO que sí sean realistas para Tarragona (coordenadas relativas aproximadas para demostración visual)
+    { id: 1, type: 'incident', x: '42%', y: '48%', title: 'Obras Rambla Nova', desc: 'Reparación de pavimento frente al teatro.', status: 'En obras', color: 'bg-orange-500', icon: 'construction' },
+    { id: 2, type: 'event', x: '55%', y: '35%', title: 'Mercat Central', desc: 'Feria de productos locales este fin de semana.', status: 'Abierto', color: 'bg-primary', icon: 'storefront' },
+    { id: 3, type: 'cleanup', x: '35%', y: '60%', title: 'Recogida Playa Miracle', desc: 'Voluntarios reunidos en el punto de cruz roja.', status: 'Activo', color: 'bg-emerald-500', icon: 'volunteer_activism' }
+  ]);
+  const [showReportModal, setShowReportModal] = useState(false);
+  const [newReportTitle, setNewReportTitle] = useState('');
+  const [newReportType, setNewReportType] = useState('incident');
+
+  const handleAddReport = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newPin = {
+      id: Date.now(),
+      type: newReportType,
+      x: '50%', // Por defecto en el centro para demo
+      y: '50%',
+      title: newReportTitle,
+      desc: 'Nuevo reporte ciudadano generado ahora mismo.',
+      status: 'Nuevo',
+      color: newReportType === 'incident' ? 'bg-red-500' : 'bg-blue-500',
+      icon: newReportType === 'incident' ? 'report_problem' : 'info'
+    };
+    setPins([...pins, newPin]);
+    setShowReportModal(false);
+    setNewReportTitle('');
+    alert('¡Reporte añadido al mapa! (Aparecerá en el centro como demo)');
+  };
 
   return (
     <div className="h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] w-full relative overflow-hidden font-sans border-l border-gray-100 dark:border-gray-800">
       {/* Background Simulating Map */}
       {/* Background Simulating Map - Actualizado a Tarragona */}
       {/* Background Simulating Map - Taragona Static Placeholder for Demo */}
-      <div className="absolute inset-0 bg-[#f8f9fa] dark:bg-[#1a1b1e] z-0">
-        {/* Using a high-quality static map image of Tarragona to ensure visual accuracy without API key issues in Demo mode */}
-        <img
-          src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/1.2445,41.1189,14,0/1200x800?access_token=YOUR_TOKEN_PLACEHOLDER" // Fallback to a clear styling
-          srcSet="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Map_of_Tarragona.png/1200px-Map_of_Tarragona.png" // Using a generic clear map of the area or similar style
-          className="w-full h-full object-cover dark:invert dark:grayscale"
-          alt="Mapa de Tarragona"
-          // Ensure we use a reliable image source or just a styled placeholder if a real API static map isn't available without key
-          onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1200'; }}
-        />
-        <div className="absolute inset-0 bg-white/20 dark:bg-black/20 backdrop-blur-[1px]"></div>
+      <div className="absolute inset-0 bg-[#e5e7eb] z-0">
+        <iframe
+          width="100%"
+          height="100%"
+          frameBorder="0"
+          style={{ border: 0, opacity: 1, filter: 'contrast(1.05) saturation(1.2)' }}
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11984.664687679365!2d1.2407559134907082!3d41.118021085004576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3f2c525f2af45%3A0x673c683c310c85c3!2sTarragona!5e0!3m2!1ses!2ses!4v1703612345678!5m2!1ses!2ses"
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+        {/* Capa transparente para permitir clicks en los pines flotantes pero dejar ver el mapa debajo */}
+        <div className="absolute inset-0 bg-transparent pointer-events-none"></div>
       </div>
 
 
@@ -41,7 +65,10 @@ const MapView: React.FC = () => {
             <button className="size-12 rounded-2xl bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-primary border border-gray-100 dark:border-gray-700 shadow-lg">
               <span className="material-symbols-outlined font-black">my_location</span>
             </button>
-            <button className="px-6 py-3 rounded-2xl bg-primary text-white text-[10px] font-black shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all uppercase tracking-widest">
+            <button
+              onClick={() => setShowReportModal(true)}
+              className="px-6 py-3 rounded-2xl bg-primary text-white text-[10px] font-black shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all uppercase tracking-widest"
+            >
               Añadir Reporte
             </button>
           </div>
@@ -116,9 +143,54 @@ const MapView: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <button className="py-4 bg-primary text-white text-[10px] font-black rounded-2xl shadow-lg shadow-primary/20 uppercase tracking-widest transition-all hover:scale-105 active:scale-95">Más Info</button>
+              <button onClick={() => alert('Información detallada: ' + selectedPin.desc)} className="py-4 bg-primary text-white text-[10px] font-black rounded-2xl shadow-lg shadow-primary/20 uppercase tracking-widest transition-all hover:scale-105 active:scale-95">Más Info</button>
               <button className="py-4 bg-gray-50 dark:bg-gray-800 text-[10px] font-black dark:text-white rounded-2xl uppercase tracking-widest hover:bg-gray-100 transition-all">Seguir</button>
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Report Modal */}
+      <AnimatePresence>
+        {showReportModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setShowReportModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white dark:bg-surface-dark rounded-[40px] p-8 max-w-sm w-full shadow-2xl"
+            >
+              <h3 className="text-xl font-black dark:text-white mb-4 uppercase">Nuevo Reporte</h3>
+              <form onSubmit={handleAddReport} className="space-y-4">
+                <input
+                  type="text"
+                  placeholder="Título del reporte o evento..."
+                  value={newReportTitle}
+                  onChange={(e) => setNewReportTitle(e.target.value)}
+                  className="w-full bg-gray-50 dark:bg-gray-800 p-4 rounded-2xl font-bold text-sm outline-none focus:ring-2 ring-primary/20 dark:text-white"
+                  autoFocus
+                />
+                <select
+                  value={newReportType}
+                  onChange={(e) => setNewReportType(e.target.value)}
+                  className="w-full bg-gray-50 dark:bg-gray-800 p-4 rounded-2xl font-bold text-sm outline-none dark:text-white"
+                >
+                  <option value="incident">Incidente</option>
+                  <option value="event">Evento</option>
+                  <option value="cleanup">Voluntariado</option>
+                </select>
+                <button type="submit" className="w-full py-4 bg-primary text-white rounded-2xl font-black uppercase tracking-widest shadow-lg">
+                  Publicar en Mapa
+                </button>
+              </form>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
