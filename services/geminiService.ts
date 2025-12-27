@@ -8,8 +8,7 @@ export const getAssistantResponse = async (prompt: string): Promise<{ text: stri
     return { text: "❌ ERROR: No se encuentra la VITE_GEMINI_API_KEY." };
   }
 
-  // Usamos el modelo 'lite' que aparecía en tu lista de permitidos
-  // A veces los modelos lite tienen cuotas más abiertas que los estándar
+  // Intentamos con el modelo más ligero posible para tratar de evadir el 'limit 0'
   const MODEL_ID = "gemini-2.0-flash-lite";
 
   try {
@@ -22,7 +21,7 @@ export const getAssistantResponse = async (prompt: string): Promise<{ text: stri
           contents: [{ parts: [{ text: prompt }] }],
           generationConfig: {
             temperature: 0.7,
-            maxOutputTokens: 1000
+            maxOutputTokens: 500 // Bajamos tokens para no saturar si la cuota es baja
           }
         }),
       }
@@ -31,11 +30,13 @@ export const getAssistantResponse = async (prompt: string): Promise<{ text: stri
     const data = await response.json();
 
     if (!response.ok) {
-      // Informe detallado para saber si es cuota o modelo
-      return { text: `❌ ERROR DE GOOGLE (${response.status}): ${data.error?.message || "Error desconocido"}` };
+      if (data.error?.message?.includes("quota") || data.error?.message?.includes("limit: 0")) {
+        return { text: "⚠️ Google aún no ha activado tu cuota gratuita (Limit: 0). Esto suele ocurrir si la cuenta es nueva o necesita verificar el teléfono en AI Studio. El sistema lo intentará de nuevo automáticamente en unas horas." };
+      }
+      return { text: `❌ ERROR DE GOOGLE: ${data.error?.message || "Acceso restringido"}` };
     }
 
-    const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "No pude generar una respuesta.";
+    const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Respuesta recibida.";
     return { text: aiText };
   } catch (error: any) {
     return { text: "❌ ERROR DE CONEXIÓN: Revisa tu internet." };
