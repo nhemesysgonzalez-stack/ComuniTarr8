@@ -14,7 +14,9 @@ const Home: React.FC = () => {
   const [showHelpModal, setShowHelpModal] = useState(false);
   const [helpType, setHelpType] = useState<'offer' | 'request'>('request');
   const [news, setNews] = useState<any[]>([]);
+  const [recentNeighbors, setRecentNeighbors] = useState<any[]>([]);
   const [loadingNews, setLoadingNews] = useState(true);
+  const [loadingNeighbors, setLoadingNeighbors] = useState(true);
 
   // Experience calculation
   const karma = user?.user_metadata?.karma || 0;
@@ -166,32 +168,66 @@ const Home: React.FC = () => {
           </div>
         </section>
 
-        {/* Level Widget */}
-        <section className="space-y-6">
-          <h2 className="text-2xl font-black">{t('your_progress')}</h2>
-          <div className="bg-gradient-to-br from-primary to-blue-600 p-8 rounded-[40px] text-white shadow-xl shadow-primary/20 relative overflow-hidden">
-            <div className="relative z-10">
-              <div className="flex justify-between items-start mb-6">
-                <div>
-                  <span className="text-sm font-bold opacity-80 uppercase tracking-widest">{t('level')}</span>
-                  <div className="text-5xl font-black">{level}</div>
+        {/* Side widgets */}
+        <div className="space-y-8">
+          {/* Level Widget */}
+          <section className="space-y-6">
+            <h2 className="text-2xl font-black">{t('your_progress')}</h2>
+            <div className="bg-gradient-to-br from-primary to-blue-600 p-8 rounded-[40px] text-white shadow-xl shadow-primary/20 relative overflow-hidden">
+              <div className="relative z-10">
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <span className="text-sm font-bold opacity-80 uppercase tracking-widest">{t('level')}</span>
+                    <div className="text-5xl font-black">{level}</div>
+                  </div>
+                  <div className="size-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center">
+                    <span className="material-symbols-outlined text-4xl tracking-tighter">stars</span>
+                  </div>
                 </div>
-                <div className="size-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center">
-                  <span className="material-symbols-outlined text-4xl tracking-tighter">stars</span>
-                </div>
-              </div>
-              <div className="space-y-2">
-                <div className="flex justify-between text-sm font-bold">
-                  <span>{karma} XP</span>
-                  <span className="opacity-80">{100 - expProgress} XP para Niv. {level + 1}</span>
-                </div>
-                <div className="h-4 bg-white/20 rounded-full overflow-hidden p-1">
-                  <motion.div initial={{ width: 0 }} animate={{ width: `${expProgress}%` }} className="h-full bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm font-bold">
+                    <span>{karma} XP</span>
+                    <span className="opacity-80">{100 - expProgress} XP para Niv. {level + 1}</span>
+                  </div>
+                  <div className="h-4 bg-white/20 rounded-full overflow-hidden p-1">
+                    <motion.div initial={{ width: 0 }} animate={{ width: `${expProgress}%` }} className="h-full bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+
+          {/* New Neighbors Widget */}
+          <section className="space-y-4">
+            <h2 className="text-xl font-black flex items-center gap-2">
+              <span className="material-symbols-outlined text-emerald-500">waving_hand</span>
+              Nuevos Vecinos
+            </h2>
+            <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 border border-gray-100 dark:border-gray-700 shadow-sm space-y-4">
+              {loadingNeighbors ? (
+                <div className="animate-pulse space-y-3">
+                  <div className="h-12 bg-gray-100 rounded-2xl w-full"></div>
+                  <div className="h-12 bg-gray-100 rounded-2xl w-full"></div>
+                </div>
+              ) : recentNeighbors.map((n, i) => (
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  key={n.id}
+                  className="flex items-center gap-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-2xl transition-all"
+                >
+                  <img src={n.avatar_url || `https://ui-avatars.com/api/?name=${n.full_name || 'V'}`} className="size-10 rounded-xl object-cover" alt="V" />
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-black dark:text-white truncate">{n.full_name || 'Nuevo Vecino'}</p>
+                    <p className="text-[10px] text-primary font-bold uppercase tracking-tighter">{n.neighborhood || 'Tarragona'}</p>
+                  </div>
+                  <span className="text-[10px] text-gray-400 font-bold">HOLA</span>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
 
       {/* Modals for Incident and Help would go here (same logic as before) */}
