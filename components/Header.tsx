@@ -240,7 +240,7 @@ export const Header: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-40 bg-white dark:bg-surface-dark animate-in fade-in transition-all overflow-y-auto">
+        <div className="lg:hidden fixed inset-0 z-40 bg-white dark:bg-surface-dark animate-in fade-in transition-all overflow-y-auto custom-scrollbar">
           <div className="pt-20 pb-10 px-8 space-y-8">
             <div className="flex items-center gap-4 p-5 rounded-3xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
               <img

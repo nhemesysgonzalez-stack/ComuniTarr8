@@ -16,6 +16,8 @@ const LocalBusinesses: React.FC = () => {
 
     const handlePartnerSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // 1. Guardar la solicitud del comercio
         const { success } = await safeSupabaseInsert('business_partners', {
             user_id: user?.id,
             business_name: businessName,
@@ -27,7 +29,21 @@ const LocalBusinesses: React.FC = () => {
         });
 
         if (success) {
-            alert('¡Gracias por unirte! Nos pondremos en contacto contigo pronto para activar tus ComuniPoints.');
+            // 2. Generar notificación para Cindy
+            await safeSupabaseInsert('admin_notifications', {
+                type: 'NEW_BUSINESS_PARTNER',
+                title: `Nuevo comercio: ${businessName}`,
+                content: {
+                    business_name: businessName,
+                    type: businessType,
+                    discount: proposedDiscount,
+                    contact: contact,
+                    neighborhood: user?.user_metadata?.neighborhood || 'GENERAL'
+                },
+                admin_email: 'nhemesysgonzalez@gmail.com'
+            });
+
+            alert('¡Gracias por unirte! He enviado una notificación a Cindy. Se pondrá en contacto contigo pronto.');
             setShowPartnerModal(false);
         }
     };
