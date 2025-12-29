@@ -51,7 +51,9 @@ const Admin: React.FC = () => {
             .update({ status: newStatus })
             .eq('id', id);
 
-        if (!error) {
+        if (error) {
+            alert(`Error al actualizar: ${error.message}`);
+        } else {
             alert(`Solicitud ${newStatus === 'approved' ? 'aprobada' : 'rechazada'} con éxito.`);
             fetchAdminData();
         }
