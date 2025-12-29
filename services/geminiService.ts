@@ -8,8 +8,8 @@ export const getAssistantResponse = async (prompt: string): Promise<{ text: stri
     return { text: "❌ ERROR: No se encuentra la VITE_GEMINI_API_KEY." };
   }
 
-  // Intentamos con el modelo más ligero posible para tratar de evadir el 'limit 0'
-  const MODEL_ID = "gemini-2.0-flash-lite";
+  // Cambiamos a 1.5-flash que es el más estable para cuotas gratuitas iniciales
+  const MODEL_ID = "gemini-1.5-flash";
 
   try {
     const response = await fetch(
