@@ -131,20 +131,30 @@ const Admin: React.FC = () => {
                                 </div>
 
                                 <div className="flex items-center gap-3">
-                                    <button
-                                        onClick={() => handleAction(partner.id, 'rejected')}
-                                        className="size-12 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all shadow-sm"
-                                        title="Rechazar"
-                                    >
-                                        <span className="material-symbols-outlined">close</span>
-                                    </button>
-                                    <button
-                                        onClick={() => handleAction(partner.id, 'approved')}
-                                        className="bg-primary text-white h-12 px-6 rounded-2xl font-black text-xs hover:scale-105 transition-all shadow-lg shadow-primary/20 flex items-center gap-2"
-                                    >
-                                        <span className="material-symbols-outlined text-sm">check</span>
-                                        APROBAR COMERCIO
-                                    </button>
+                                    {partner.status === 'pending' ? (
+                                        <>
+                                            <button
+                                                onClick={() => handleAction(partner.id, 'rejected')}
+                                                className="size-12 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all shadow-sm"
+                                                title="Rechazar"
+                                            >
+                                                <span className="material-symbols-outlined">close</span>
+                                            </button>
+                                            <button
+                                                onClick={() => handleAction(partner.id, 'approved')}
+                                                className="bg-primary text-white h-12 px-6 rounded-2xl font-black text-xs hover:scale-105 transition-all shadow-lg shadow-primary/20 flex items-center gap-2"
+                                            >
+                                                <span className="material-symbols-outlined text-sm">check</span>
+                                                APROBAR COMERCIO
+                                            </button>
+                                        </>
+                                    ) : (
+                                        <div className={`size-12 rounded-2xl flex items-center justify-center ${partner.status === 'approved' ? 'bg-emerald-50 text-emerald-500' : 'bg-red-50 text-red-500'}`}>
+                                            <span className="material-symbols-outlined font-black">
+                                                {partner.status === 'approved' ? 'verified' : 'block'}
+                                            </span>
+                                        </div>
+                                    )}
                                 </div>
                             </motion.div>
                         ))
