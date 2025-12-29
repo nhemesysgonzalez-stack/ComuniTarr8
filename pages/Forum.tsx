@@ -15,8 +15,8 @@ interface Message {
 }
 
 // Optimization: Move Audio objects outside the component to prevent re-initialization on every render
-const msgSound = new Audio('https://cdn.pixabay.com/audio/2022/03/15/audio_7302256df2.mp3'); // Notification chime
-const buzzSound = new Audio('https://cdn.pixabay.com/audio/2021/08/04/audio_03957297e6.mp3'); // Alert/Buzz
+const msgSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2358/2358-preview.mp3'); // Notification chime
+const buzzSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2354/2354-preview.mp3'); // Alert/Buzz
 
 msgSound.preload = 'auto';
 buzzSound.preload = 'auto';
@@ -82,7 +82,8 @@ const Forum: React.FC = () => {
     }
 
     if (type === 'buzz' && navigator.vibrate) {
-      navigator.vibrate([100, 50, 100]);
+      // Vibración más potente: 3 ráfagas largas
+      navigator.vibrate([300, 100, 300, 100, 300]);
     }
   };
 
@@ -118,17 +119,17 @@ const Forum: React.FC = () => {
       },
         payload => {
           const newMsg = payload.new as Message;
-          setMessages(prev => {
-            // Solo sonar si es nuevo y no es mío
-            if (newMsg.user_id !== user?.id) {
-              if (newMsg.content.includes('<<ZUMBIDO>>')) {
-                playSound('buzz');
-              } else {
-                playSound('msg');
-              }
+
+          // Solo sonar si es nuevo y no es mío
+          if (newMsg.user_id !== user?.id) {
+            if (newMsg.content.includes('<<ZUMBIDO>>')) {
+              playSound('buzz');
+            } else {
+              playSound('msg');
             }
-            return [...prev, newMsg];
-          });
+          }
+
+          setMessages(prev => [...prev, newMsg]);
         }
       )
       .subscribe();
@@ -315,28 +316,30 @@ const Forum: React.FC = () => {
       <div className="p-6 md:p-10 bg-white dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 shrink-0">
         <form onSubmit={sendMessage} className="flex gap-4 max-w-5xl mx-auto">
           <div className="flex-1 relative flex items-center">
+            <div className="absolute left-4 flex items-center gap-1">
+              <button
+                type="button"
+                onClick={sendBuzz}
+                className="size-10 flex items-center justify-center text-yellow-500 hover:text-yellow-600 hover:scale-125 transition-all bg-yellow-500/10 rounded-full"
+                title="Enviar Zumbido"
+              >
+                <span className="material-symbols-outlined font-black text-[20px]">vibration</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowEmojiPicker(!showEmojiPicker)}
+                className={`size-10 flex items-center justify-center transition-colors rounded-full ${showEmojiPicker ? 'bg-primary/20 text-primary' : 'text-gray-400 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700'}`}
+              >
+                <span className="material-symbols-outlined font-black text-[20px]">add_reaction</span>
+              </button>
+            </div>
             <input
               type="text"
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
-              placeholder={`Escribe algo a ${currentNeighborhood}...`}
-              className="w-full bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 rounded-[30px] px-8 py-5 font-bold dark:text-white focus:ring-4 ring-primary/10 transition-all outline-none pr-16"
+              placeholder={window.innerWidth < 768 ? "Escribe..." : `Escribe algo a ${currentNeighborhood}...`}
+              className="w-full bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 rounded-[30px] pl-28 pr-6 py-5 font-bold dark:text-white focus:ring-4 ring-primary/10 transition-all outline-none"
             />
-            <button
-              type="button"
-              onClick={sendBuzz}
-              className="absolute right-14 text-yellow-500 hover:text-yellow-600 hover:scale-125 transition-all"
-              title="Enviar Zumbido"
-            >
-              <span className="material-symbols-outlined font-black">vibration</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-              className={`absolute right-6 transition-colors ${showEmojiPicker ? 'text-primary' : 'text-gray-400 hover:text-primary'}`}
-            >
-              <span className="material-symbols-outlined font-black">add_reaction</span>
-            </button>
             <AnimatePresence>
               {showEmojiPicker && (
                 <motion.div
@@ -368,8 +371,8 @@ const Forum: React.FC = () => {
           </button>
         </form>
         <p className="text-[9px] font-black text-center text-gray-400 uppercase tracking-widest mt-6 opacity-30 tracking-[0.2em]">Fomenta un ambiente positivo en Tarragona</p>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 
