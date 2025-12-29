@@ -29,6 +29,7 @@ import Services from './pages/Services';
 import MapView from './pages/MapView';
 import Login from './pages/Login';
 import NeighborhoodSelection from './pages/NeighborhoodSelection';
+import Admin from './pages/Admin';
 import { SOSButton } from './components/SOSButton';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -116,6 +117,7 @@ function App() {
                       <Route path="/volunteering" element={<MicroVolunteering />} />
                       <Route path="/stories" element={<CommunityStories />} />
                       <Route path="/announcements" element={<Announcements />} />
+                      <Route path="/admin" element={<Admin />} />
                       <Route path="/select-neighborhood" element={<NeighborhoodSelection />} />
                     </Routes>
                   </Layout>

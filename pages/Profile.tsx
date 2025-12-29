@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const Profile: React.FC = () => {
   const { user, updateMetadata, updateEmail, updateAvatar } = useAuth();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState('info');
   const [email, setEmail] = useState(user?.email || '');
@@ -91,6 +93,15 @@ const Profile: React.FC = () => {
               <div className="flex items-center gap-3 mt-2">
                 <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-black uppercase tracking-widest border border-primary/20">{meta.neighborhood || 'Sin Barrio'}</span>
                 <span className="text-gray-400 font-bold text-xs">• Miembro desde Dic 2023</span>
+                {user?.email === 'nhemesysgonzalez@gmail.com' && (
+                  <button
+                    onClick={() => navigate('/admin')}
+                    className="ml-2 flex items-center gap-2 px-4 py-1.5 bg-primary text-white rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg shadow-primary/30 hover:scale-105 transition-all"
+                  >
+                    <span className="material-symbols-outlined text-sm">admin_panel_settings</span>
+                    PANEL ADMIN
+                  </button>
+                )}
               </div>
             </div>
           </div>
