@@ -8,39 +8,49 @@ export const getAssistantResponse = async (prompt: string): Promise<{ text: stri
     return { text: "❌ ERROR: No se encuentra la VITE_GEMINI_API_KEY." };
   }
 
-  // Cambiamos a 1.5-flash que es el más estable para cuotas gratuitas iniciales
-  const MODEL_ID = "gemini-1.5-flash";
+  // Lista de modelos a intentar en orden de preferencia
+  const MODELS = [
+    "gemini-1.5-flash",
+    "gemini-1.5-flash-latest",
+    "gemini-pro"
+  ];
 
-  try {
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1/models/${MODEL_ID}:generateContent?key=${API_KEY}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: {
-            temperature: 0.7,
-            maxOutputTokens: 500 // Bajamos tokens para no saturar si la cuota es baja
-          }
-        }),
+  let lastError = "";
+
+  for (const model of MODELS) {
+    try {
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Respuesta recibida.";
+        return { text: aiText };
       }
-    );
 
-    const data = await response.json();
-
-    if (!response.ok) {
+      // Si es un error de cuota, lo mostramos directamente porque no servirá de nada probar otro modelo
       if (data.error?.message?.includes("quota") || data.error?.message?.includes("limit: 0")) {
-        return { text: "⚠️ Google aún no ha activado tu cuota gratuita (Limit: 0). Esto suele ocurrir si la cuenta es nueva o necesita verificar el teléfono en AI Studio. El sistema lo intentará de nuevo automáticamente en unas horas." };
+        return { text: "⚠️ Google aún no ha activado tu cuota gratuita (Limit: 0). Tu cuenta está bien configurada, pero Google tarda entre 12 y 24h en 'abrir el grifo' para llaves nuevas. ¡Prueba de nuevo en unas horas!" };
       }
-      return { text: `❌ ERROR DE GOOGLE: ${data.error?.message || "Acceso restringido"}` };
-    }
 
-    const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Respuesta recibida.";
-    return { text: aiText };
-  } catch (error: any) {
-    return { text: "❌ ERROR DE CONEXIÓN: Revisa tu internet." };
+      lastError = data.error?.message || "Error desconocido";
+      console.log(`Modelo ${model} falló, probando el siguiente...`);
+
+    } catch (error: any) {
+      lastError = "Error de conexión";
+    }
   }
+
+  return { text: `❌ ERROR FINAL: Ningún modelo de Google respondió. El último error fue: ${lastError}` };
 };
 
 export const getSearchGroundedInfo = async (query: string) => ({ text: "No disponible", links: [] });
