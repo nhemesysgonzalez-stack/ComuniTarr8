@@ -8,19 +8,21 @@ export const getAssistantResponse = async (prompt: string): Promise<{ text: stri
     return { text: "❌ ERROR: No se encuentra la VITE_GEMINI_API_KEY." };
   }
 
-  // Lista de modelos a intentar en orden de preferencia
-  const MODELS = [
-    "gemini-1.5-flash",
-    "gemini-1.5-flash-latest",
-    "gemini-pro"
+  // Lista de intentos con diferentes versiones y modelos
+  const ATTEMPTS = [
+    { model: "gemini-1.5-flash", api: "v1beta" },
+    { model: "gemini-1.5-flash", api: "v1" },
+    { model: "gemini-2.0-flash-exp", api: "v1beta" },
+    { model: "gemini-1.5-pro", api: "v1beta" },
+    { model: "gemini-1.0-pro", api: "v1" }
   ];
 
-  let lastError = "";
+  let lastDetailedError = "";
 
-  for (const model of MODELS) {
+  for (const attempt of ATTEMPTS) {
     try {
       const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY}`,
+        `https://generativelanguage.googleapis.com/${attempt.api}/models/${attempt.model}:generateContent?key=${API_KEY}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -33,24 +35,23 @@ export const getAssistantResponse = async (prompt: string): Promise<{ text: stri
       const data = await response.json();
 
       if (response.ok) {
-        const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Respuesta recibida.";
-        return { text: aiText };
+        return { text: data.candidates?.[0]?.content?.parts?.[0]?.text || "Respuesta recibida." };
       }
 
-      // Si es un error de cuota, lo mostramos directamente porque no servirá de nada probar otro modelo
       if (data.error?.message?.includes("quota") || data.error?.message?.includes("limit: 0")) {
-        return { text: "⚠️ Google aún no ha activado tu cuota gratuita (Limit: 0). Tu cuenta está bien configurada, pero Google tarda entre 12 y 24h en 'abrir el grifo' para llaves nuevas. ¡Prueba de nuevo en unas horas!" };
+        return { text: "⚠️ Tu cuenta está PERFECTA, pero Google tiene tu cuota en 'Limit: 0' por ser nueva. Esto se activa solo en 12-24h. ¡Ya falta poco!" };
       }
 
-      lastError = data.error?.message || "Error desconocido";
-      console.log(`Modelo ${model} falló, probando el siguiente...`);
+      lastDetailedError = `${attempt.model} (${attempt.api}): ${data.error?.message}`;
 
-    } catch (error: any) {
-      lastError = "Error de conexión";
+    } catch (e) {
+      lastDetailedError = "Error de red";
     }
   }
 
-  return { text: `❌ ERROR FINAL: Ningún modelo de Google respondió. El último error fue: ${lastError}` };
+  return {
+    text: `❌ GOOGLE BLOQUEADO: Ningún modelo ha respondido. \n\nÚltimo error: ${lastDetailedError}\n\n💡 Sugerencia: Si esto sigue así tras 24h, crea una nueva API Key en AI Studio.`
+  };
 };
 
 export const getSearchGroundedInfo = async (query: string) => ({ text: "No disponible", links: [] });
