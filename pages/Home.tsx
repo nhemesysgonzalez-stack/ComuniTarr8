@@ -306,6 +306,22 @@ const Home: React.FC = () => {
         ))}
       </section>
 
+      {/* Promotion Banner */}
+      <section className="bg-gradient-to-r from-orange-500 to-amber-500 rounded-[40px] p-6 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg shadow-orange-500/20">
+        <div className="flex items-center gap-4">
+          <div className="size-12 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+            <span className="material-symbols-outlined text-3xl">share</span>
+          </div>
+          <div>
+            <h3 className="text-xl font-black uppercase tracking-tight leading-none mb-1">¡Haz crecer tu barrio!</h3>
+            <p className="text-sm font-bold opacity-90 max-w-md">Comparte ComuniTarr con tus vecinos y mejora Tarragona juntos.</p>
+          </div>
+        </div>
+        <Link to="/invite" className="px-6 py-3 bg-white text-orange-600 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:scale-105 transition-all shadow-xl shrink-0">
+          OBTENER KIT DE DIFUSIÓN
+        </Link>
+      </section>
+
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Real News Feed */}
         <section className="lg:col-span-2 space-y-6">
