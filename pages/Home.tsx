@@ -255,9 +255,15 @@ const Home: React.FC = () => {
     <div className="p-4 md:p-10 max-w-7xl mx-auto space-y-12 font-sans pb-20 relative">
       <DynamicThemeEffects />
       {/* Hero */}
-      <section className="relative h-[250px] md:h-[400px] rounded-[40px] overflow-hidden shadow-2xl group flex items-center px-6 md:px-16">
+      <section className="relative h-[250px] md:h-[400px] rounded-[40px] overflow-hidden shadow-2xl group flex items-center px-6 md:px-16 bg-gray-900">
+        <img
+          key={heroImage}
+          src={heroImage}
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-100 transition-opacity duration-1000"
+          alt="Tarragona"
+          onLoad={(e) => (e.currentTarget.style.opacity = '1')}
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10"></div>
-        <img src={heroImage} className="absolute inset-0 w-full h-full object-cover" alt="Tarragona" />
         <div className="relative z-20 max-w-2xl">
           <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-4">
             {t('welcome_home')}, <span className="text-primary-light">{user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino'}</span>
