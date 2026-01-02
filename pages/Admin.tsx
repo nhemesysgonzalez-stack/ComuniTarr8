@@ -9,6 +9,7 @@ const Admin: React.FC = () => {
     const { user } = useAuth();
     const navigate = useNavigate();
     const [partners, setPartners] = useState<any[]>([]);
+    const [recentUsers, setRecentUsers] = useState<any[]>([]);
     const [stats, setStats] = useState({ users: 0, partners: 0, news: 0 });
     const [loading, setLoading] = useState(true);
 
@@ -32,7 +33,16 @@ const Admin: React.FC = () => {
 
         if (partnersData) setPartners(partnersData);
 
-        // 2. Cargar estadísticas rápidas
+        // 2. Cargar últimos vecinos registrados
+        const { data: usersData } = await supabase
+            .from('profiles')
+            .select('*')
+            .order('created_at', { ascending: false })
+            .limit(10);
+
+        if (usersData) setRecentUsers(usersData);
+
+        // 3. Cargar estadísticas rápidas
         const { count: userCount } = await supabase.from('profiles').select('*', { count: 'exact', head: true });
         const { count: newsCount } = await supabase.from('announcements').select('*', { count: 'exact', head: true });
 
@@ -159,6 +169,50 @@ const Admin: React.FC = () => {
                             </motion.div>
                         ))
                     )}
+                </div>
+            </section>
+
+            {/* Nuevos Vecinos (Usuarios) */}
+            <section className="space-y-6">
+                <h2 className="text-2xl font-black dark:text-white flex items-center gap-2">
+                    <span className="material-symbols-outlined">group_add</span>
+                    Nuevos Vecinos Registrados
+                </h2>
+
+                <div className="bg-white dark:bg-gray-800 rounded-[40px] border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden">
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left border-collapse">
+                            <thead>
+                                <tr className="border-b border-gray-50 dark:border-gray-700">
+                                    <th className="px-8 py-5 text-[10px] font-black text-gray-400 uppercase tracking-widest">Vecino</th>
+                                    <th className="px-8 py-5 text-[10px] font-black text-gray-400 uppercase tracking-widest">Barrio</th>
+                                    <th className="px-8 py-5 text-[10px] font-black text-gray-400 uppercase tracking-widest">Puntos</th>
+                                    <th className="px-8 py-5 text-[10px] font-black text-gray-400 uppercase tracking-widest">Registro</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {recentUsers.map((u) => (
+                                    <tr key={u.id} className="border-b border-gray-50 dark:border-gray-700 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                                        <td className="px-8 py-4">
+                                            <div className="flex items-center gap-4">
+                                                <img src={u.avatar_url || `https://ui-avatars.com/api/?name=${u.full_name || 'V'}`} className="size-10 rounded-xl object-cover" alt="V" />
+                                                <span className="font-bold dark:text-white">{u.full_name || 'Sin nombre'}</span>
+                                            </div>
+                                        </td>
+                                        <td className="px-8 py-4">
+                                            <span className="text-xs font-black text-primary uppercase">{u.neighborhood || 'GENERAL'}</span>
+                                        </td>
+                                        <td className="px-8 py-4">
+                                            <span className="text-xs font-black dark:text-white">{u.karma || 0} XP</span>
+                                        </td>
+                                        <td className="px-8 py-4 text-xs text-gray-400 font-bold uppercase">
+                                            {new Date(u.created_at).toLocaleDateString()}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
 

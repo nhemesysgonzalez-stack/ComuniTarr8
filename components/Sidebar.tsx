@@ -63,6 +63,7 @@ const Sidebar: React.FC = () => {
             <NavItem to="/map" label={t('map')} icon="explore" color="primary" />
             <NavItem to="/announcements" label={t('announcements')} icon="campaign" color="red" />
             <NavItem to="/calendar" label={t('calendar')} icon="calendar_today" color="sky" />
+            <NavItem to="/neighbors" label={t('neighbors')} icon="waving_hand" color="emerald" />
             <NavItem to="/community-info" label={t('about')} icon="info" color="primary" />
           </div>
         </div>

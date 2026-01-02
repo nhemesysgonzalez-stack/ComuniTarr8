@@ -8,11 +8,103 @@ interface Announcement {
     id: string;
     title: string;
     content: string;
-    type: 'Urgente' | 'Info' | 'Comunidad' | 'Éxito';
+    category: string;
     author_name: string;
     created_at: string;
     neighborhood: string;
+    itinerary?: string;
+    link_url?: string;
+    expires_at?: string;
 }
+
+const AnnouncementItem: React.FC<{ notice: Announcement }> = ({ notice }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={`bg-white dark:bg-surface-dark rounded-[32px] p-8 shadow-xl border-l-[12px] flex flex-col gap-4 items-start transition-all hover:scale-[1.01] ${notice.category === 'URGENTE' ? 'border-l-red-500' :
+                notice.category === 'EVENTO' ? 'border-l-sky-500' :
+                    notice.category === 'EXITO' ? 'border-l-green-500' : 'border-l-blue-500'
+                }`}
+        >
+            <div className="w-full">
+                <div className="flex items-center gap-3 mb-4">
+                    <span className={`px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${notice.category === 'URGENTE' ? 'bg-red-100 text-red-600' :
+                        notice.category === 'EVENTO' ? 'bg-sky-100 text-sky-600' :
+                            notice.category === 'EXITO' ? 'bg-green-100 text-green-600' : 'bg-blue-100 text-blue-600'
+                        }`}>
+                        {notice.category}
+                    </span>
+                    <span className="text-gray-400 font-bold text-[10px]">• {new Date(notice.created_at).toLocaleDateString()}</span>
+                    <span className="flex items-center gap-1 px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded-md text-[9px] font-black text-gray-500 uppercase tracking-tighter">
+                        <span className="material-symbols-outlined text-[12px]">location_on</span>
+                        {notice.neighborhood || 'GENERAL'}
+                    </span>
+                </div>
+                <h3 className="text-2xl font-black dark:text-white mb-2 leading-tight">{notice.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-4">
+                    {notice.content}
+                </p>
+
+                {notice.itinerary && (
+                    <div className="mb-4">
+                        <button
+                            onClick={() => setIsExpanded(!isExpanded)}
+                            className="flex items-center gap-2 text-primary font-black text-xs uppercase tracking-widest hover:underline"
+                        >
+                            <span className="material-symbols-outlined">{isExpanded ? 'expand_less' : 'expand_more'}</span>
+                            {isExpanded ? 'Ocultar Itinerario' : 'Ver Itinerario Completo'}
+                        </button>
+                        <AnimatePresence>
+                            {isExpanded && (
+                                <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: 'auto', opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    className="overflow-hidden"
+                                >
+                                    <div className="mt-4 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-3xl border border-dashed border-primary/30">
+                                        <div className="space-y-3">
+                                            {notice.itinerary.split('\n').map((step, i) => (
+                                                <div key={i} className="flex gap-3 items-start">
+                                                    <span className="text-primary font-black">•</span>
+                                                    <span className="text-sm font-bold dark:text-gray-300">{step}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+                )}
+
+                <div className="flex flex-wrap items-center justify-between gap-4 mt-2">
+                    <div className="flex items-center gap-2">
+                        <div className="size-8 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center text-[10px] font-black text-primary">
+                            {notice.author_name ? notice.author_name.charAt(0) : 'V'}
+                        </div>
+                        <span className="text-xs font-black text-gray-400 uppercase tracking-widest">{notice.author_name || 'Vecino'}</span>
+                    </div>
+
+                    {notice.link_url && (
+                        <a
+                            href={notice.link_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-sm"
+                        >
+                            <span className="material-symbols-outlined text-[18px]">open_in_new</span>
+                            Fuente Oficial
+                        </a>
+                    )}
+                </div>
+            </div>
+        </motion.div>
+    );
+};
 
 const Announcements: React.FC = () => {
     const { user } = useAuth();
@@ -24,6 +116,7 @@ const Announcements: React.FC = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [type, setType] = useState('Info');
+    const [expiresAt, setExpiresAt] = useState('');
 
     useEffect(() => {
         fetchNotices();
@@ -36,7 +129,8 @@ const Announcements: React.FC = () => {
                 supabase
                     .from('announcements')
                     .select('*')
-                    .eq('neighborhood', user?.user_metadata?.neighborhood || 'GENERAL')
+                    .or(`neighborhood.eq.${user?.user_metadata?.neighborhood || 'GENERAL'},neighborhood.eq.GENERAL`)
+                    .or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`)
                     .order('created_at', { ascending: false })
             );
             setNotices(data || []);
@@ -55,8 +149,9 @@ const Announcements: React.FC = () => {
                 author_name: user?.user_metadata?.full_name || 'Vecino',
                 title: title,
                 content: content,
-                type: type,
-                neighborhood: user?.user_metadata?.neighborhood || 'GENERAL'
+                category: type.toUpperCase(),
+                neighborhood: user?.user_metadata?.neighborhood || 'GENERAL',
+                expires_at: expiresAt || null
             });
 
             if (!success) throw new Error('Falló la creación');
@@ -64,6 +159,7 @@ const Announcements: React.FC = () => {
             setShowCreateModal(false);
             setTitle('');
             setContent('');
+            setExpiresAt('');
             fetchNotices();
         } catch (e) {
             console.error(e);
@@ -103,37 +199,7 @@ const Announcements: React.FC = () => {
                 ) : (
                     <div className="space-y-6">
                         {notices.map(notice => (
-                            <motion.div
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                key={notice.id}
-                                className={`bg-white dark:bg-surface-dark rounded-[32px] p-8 shadow-xl border-l-[12px] flex flex-col md:flex-row gap-8 items-start transition-all hover:scale-[1.01] ${notice.type === 'Urgente' ? 'border-l-red-500' :
-                                        notice.type === 'Info' ? 'border-l-blue-500' :
-                                            notice.type === 'Éxito' ? 'border-l-green-500' : 'border-l-orange-500'
-                                    }`}
-                            >
-                                <div className="flex-1">
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <span className={`px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${notice.type === 'Urgente' ? 'bg-red-100 text-red-600' :
-                                                notice.type === 'Info' ? 'bg-blue-100 text-blue-600' :
-                                                    notice.type === 'Éxito' ? 'bg-green-100 text-green-600' : 'bg-orange-100 text-orange-600'
-                                            }`}>
-                                            {notice.type}
-                                        </span>
-                                        <span className="text-gray-400 font-bold text-[10px]">• {new Date(notice.created_at).toLocaleDateString()}</span>
-                                    </div>
-                                    <h3 className="text-2xl font-black dark:text-white mb-2 leading-tight">{notice.title}</h3>
-                                    <p className="text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-6">
-                                        {notice.content}
-                                    </p>
-                                    <div className="flex items-center gap-2">
-                                        <div className="size-6 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center text-[10px] font-black text-gray-500">
-                                            {notice.author_name ? notice.author_name.charAt(0) : 'V'}
-                                        </div>
-                                        <span className="text-sm font-black text-gray-500">{notice.author_name || 'Vecino'}</span>
-                                    </div>
-                                </div>
-                            </motion.div>
+                            <AnnouncementItem key={notice.id} notice={notice} />
                         ))}
                     </div>
                 )}
@@ -186,6 +252,11 @@ const Announcements: React.FC = () => {
                                 <div>
                                     <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Descripción</label>
                                     <textarea value={content} onChange={(e) => setContent(e.target.value)} required rows={4} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-red-500/20 focus:ring-2 resize-none" placeholder="Detalles del aviso..." />
+                                </div>
+                                <div>
+                                    <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Fecha de Caducidad (Opcional)</label>
+                                    <input type="datetime-local" value={expiresAt} onChange={(e) => setExpiresAt(e.target.value)} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-red-500/20 focus:ring-2" />
+                                    <p className="text-[10px] text-gray-400 mt-1 font-bold">El aviso desaparecerá automáticamente después de esta fecha.</p>
                                 </div>
                                 <button type="submit" className="w-full bg-red-600 text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-red-700 transition-all shadow-lg shadow-red-500/20">
                                     PUBLICAR

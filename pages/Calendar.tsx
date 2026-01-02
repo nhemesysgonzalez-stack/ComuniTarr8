@@ -20,7 +20,10 @@ interface Event {
 
 const NeighborhoodCalendar: React.FC = () => {
   const { user } = useAuth();
-  const [selectedMonth, setSelectedMonth] = useState('DICIEMBRE');
+  const now = new Date();
+  const monthNames = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'];
+  const [selectedMonth, setSelectedMonth] = useState(monthNames[now.getMonth()]);
+  const [selectedYear, setSelectedYear] = useState(now.getFullYear());
   const [events, setEvents] = useState<Event[]>([]);
   const [showEventModal, setShowEventModal] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -45,7 +48,7 @@ const NeighborhoodCalendar: React.FC = () => {
         supabase
           .from('events')
           .select('*')
-          .eq('neighborhood', user?.user_metadata?.neighborhood || 'GENERAL')
+          .or(`neighborhood.eq.${user?.user_metadata?.neighborhood || 'GENERAL'},neighborhood.eq.GENERAL`)
           .order('event_date', { ascending: true })
       );
 
@@ -55,6 +58,25 @@ const NeighborhoodCalendar: React.FC = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const changeMonth = (offset: number) => {
+    let newMonthIdx = monthNames.indexOf(selectedMonth) + offset;
+    let newYear = selectedYear;
+    if (newMonthIdx < 0) {
+      newMonthIdx = 11;
+      newYear--;
+    } else if (newMonthIdx > 11) {
+      newMonthIdx = 0;
+      newYear++;
+    }
+    setSelectedMonth(monthNames[newMonthIdx]);
+    setSelectedYear(newYear);
+  };
+
+  const getDaysInMonth = (month: string, year: number) => {
+    const monthIdx = monthNames.indexOf(month);
+    return new Date(year, monthIdx + 1, 0).getDate();
   };
 
   const handleEventSubmit = async (e: React.FormEvent) => {
@@ -90,7 +112,7 @@ const NeighborhoodCalendar: React.FC = () => {
     }
   };
 
-  const days = Array.from({ length: 31 }, (_, i) => i + 1);
+  const days = Array.from({ length: getDaysInMonth(selectedMonth, selectedYear) }, (_, i) => i + 1);
 
   const getEventColor = (category: string) => {
     const colors: Record<string, string> = {
@@ -111,11 +133,11 @@ const NeighborhoodCalendar: React.FC = () => {
           <p className="text-[10px] font-black text-primary uppercase tracking-[0.4em]">¿Qué pasa hoy en {user?.user_metadata?.neighborhood || 'tu barrio'}?</p>
         </div>
         <div className="flex items-center gap-4 bg-white dark:bg-surface-dark p-2 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl">
-          <button className="size-10 flex items-center justify-center rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
+          <button onClick={() => changeMonth(-1)} className="size-10 flex items-center justify-center rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
             <span className="material-symbols-outlined font-black">chevron_left</span>
           </button>
-          <span className="text-sm font-black dark:text-white w-32 text-center tracking-widest">{selectedMonth} 2024</span>
-          <button className="size-10 flex items-center justify-center rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
+          <span className="text-sm font-black dark:text-white w-32 text-center tracking-widest">{selectedMonth} {selectedYear}</span>
+          <button onClick={() => changeMonth(1)} className="size-10 flex items-center justify-center rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
             <span className="material-symbols-outlined font-black">chevron_right</span>
           </button>
         </div>
@@ -129,7 +151,12 @@ const NeighborhoodCalendar: React.FC = () => {
               <div key={d} className="text-center text-[10px] font-black text-gray-400 uppercase tracking-widest">{d}</div>
             ))}
             {days.map(d => {
-              const hasEvent = events.find(e => new Date(e.event_date).getDate() === d);
+              const hasEvent = events.find(e => {
+                const dObj = new Date(e.event_date);
+                return dObj.getDate() === d &&
+                  monthNames[dObj.getMonth()] === selectedMonth &&
+                  dObj.getFullYear() === selectedYear;
+              });
               return (
                 <div key={d} className="aspect-square flex flex-col items-center justify-center relative rounded-2xl md:rounded-[25px] hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all cursor-pointer group">
                   <span className={`text-xs md:text-sm font-black ${hasEvent ? 'text-primary' : 'text-gray-400 dark:text-gray-600'}`}>{d}</span>

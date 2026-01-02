@@ -56,12 +56,14 @@ const MessageBubble = React.memo(({ msg, isMe }: { msg: Message, isMe: boolean }
 const Forum: React.FC = () => {
   const { user } = useAuth();
   const [messages, setMessages] = useState<Message[]>([]);
+  const [activeUsers, setActiveUsers] = useState<any[]>([]);
   const [newMessage, setNewMessage] = useState('');
   const [loading, setLoading] = useState(true);
   const [currentNeighborhood, setCurrentNeighborhood] = useState(user?.user_metadata?.neighborhood || 'GENERAL');
   const [showNeighborhoods, setShowNeighborhoods] = useState(false);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
+  const [showWelcome, setShowWelcome] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   // Sound Utility using shared Audio objects
@@ -158,11 +160,32 @@ const Forum: React.FC = () => {
       );
 
       setMessages(data || []);
+      fetchActiveUsers(data || []);
     } catch (e) {
       console.error(e);
     } finally {
       setLoading(false);
     }
+  };
+
+  const fetchActiveUsers = (msgs: Message[]) => {
+    // Obtener los avatares únicos de los últimos mensajes
+    const seen = new Set();
+    const uniqueUsers: any[] = [];
+
+    // Recorrer mensajes de más reciente a más antiguo
+    [...msgs].reverse().forEach(m => {
+      if (m.user_id && !seen.has(m.user_id)) {
+        seen.add(m.user_id);
+        uniqueUsers.push({
+          id: m.user_id,
+          avatar_url: m.user_metadata?.avatar_url,
+          full_name: m.user_metadata?.full_name
+        });
+      }
+    });
+
+    setActiveUsers(uniqueUsers.slice(0, 5));
   };
 
   const toggleMute = () => setIsMuted(!isMuted);
@@ -272,15 +295,14 @@ const Forum: React.FC = () => {
           </button>
 
           <div className="flex -space-x-2">
-            {[
-              'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=100',
-              'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=100',
-              'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100',
-              'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100'
-            ].map((url, i) => (
-              <img key={i} src={url} className="size-8 rounded-xl border-4 border-white dark:border-surface-dark shadow-lg object-cover" alt="User" />
-            ))}
-            <div className="size-8 rounded-xl bg-primary text-white text-[10px] font-black flex items-center justify-center border-4 border-white dark:border-surface-dark shadow-lg">+12</div>
+            {activeUsers.length > 0 ? (
+              activeUsers.map((u, i) => (
+                <img key={u.id} src={u.avatar_url || `https://ui-avatars.com/api/?name=${u.full_name || 'V'}`} className="size-8 rounded-xl border-4 border-white dark:border-surface-dark shadow-lg object-cover" alt="User" title={u.full_name} />
+              ))
+            ) : (
+              <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest bg-gray-50 dark:bg-gray-800 px-3 py-2 rounded-xl">Chat solitario</div>
+            )}
+            {messages.length > 10 && <div className="size-8 rounded-xl bg-primary text-white text-[10px] font-black flex items-center justify-center border-4 border-white dark:border-surface-dark shadow-lg">+{Math.max(0, messages.length - activeUsers.length)}</div>}
           </div>
         </div>
       </div>
@@ -295,6 +317,51 @@ const Forum: React.FC = () => {
             Conversaciones en {currentNeighborhood}
           </span>
         </div>
+
+        {showWelcome && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-gradient-to-br from-primary/10 to-indigo-500/10 border-2 border-primary/20 p-8 rounded-[40px] relative overflow-hidden group mb-10 mx-auto max-w-5xl"
+          >
+            <button
+              type="button"
+              onClick={() => setShowWelcome(false)}
+              className="absolute top-4 right-4 text-primary/40 hover:text-primary transition-colors"
+            >
+              <span className="material-symbols-outlined font-black">close</span>
+            </button>
+            <div className="flex flex-col md:flex-row gap-6 items-start text-left">
+              <div className="size-16 bg-white dark:bg-gray-800 rounded-2xl flex items-center justify-center text-primary shadow-xl shrink-0">
+                <span className="material-symbols-outlined text-4xl">tips_and_updates</span>
+              </div>
+              <div className="flex-1 space-y-4">
+                <h3 className="text-xl font-black dark:text-white leading-tight">¡Dale vida al barrio de {currentNeighborhood}!</h3>
+                <p className="text-sm font-bold text-gray-500 dark:text-gray-400 leading-snug">
+                  ¿No sabes de qué hablar? Pulsa en cualquiera de estas sugerencias para empezar:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    { text: "¿Qué os parece la peatonalización de la calle Canyelles?", icon: 'conversion_path' },
+                    { text: "Mejores sitios para ver el atardecer en la Part Alta", icon: 'wb_twilight' },
+                    { text: "¿Alguien sabe de alguna ruta de tapas recomendada?", icon: 'restaurant_menu' },
+                    { text: "Propuestas para mejorar la limpieza del barrio", icon: 'cleaning_services' }
+                  ].map((tip, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setNewMessage(tip.text)}
+                      className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-[20px] text-[10px] font-black uppercase text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition-all text-left shadow-sm border border-gray-100 dark:border-gray-700 active:scale-95"
+                    >
+                      <span className="material-symbols-outlined text-[20px] shrink-0">{tip.icon}</span>
+                      <span className="line-clamp-2 leading-tight">{tip.text}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
 
         {loading && messages.length === 0 ? (
           <div className="flex flex-col items-center gap-4 py-20 opacity-20">

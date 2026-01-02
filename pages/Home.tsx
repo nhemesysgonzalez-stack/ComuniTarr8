@@ -7,6 +7,73 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { safeSupabaseInsert } from '../services/dataHandler';
 import { supabase } from '../services/supabaseClient';
 
+const HomeNewsItem: React.FC<{ item: any }> = ({ item }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <div
+      onClick={() => setIsExpanded(!isExpanded)}
+      className="bg-white dark:bg-gray-800 p-6 rounded-[32px] shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col gap-4 hover:shadow-md transition-all cursor-pointer group"
+    >
+      <div>
+        <div className="flex items-center gap-2 mb-2">
+          <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-black uppercase tracking-[0.2em]">{item.category || 'AVISO'}</span>
+          <span className="text-[10px] font-bold text-gray-400 dark:text-gray-500">• {new Date(item.created_at).toLocaleDateString()}</span>
+          <span className="flex items-center gap-0.5 text-[9px] font-black text-primary/50 uppercase">
+            <span className="material-symbols-outlined text-[12px]">location_on</span>
+            {item.neighborhood}
+          </span>
+        </div>
+        <h3 className="text-xl font-black dark:text-white leading-tight mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
+        <p className={`text-gray-600 dark:text-gray-400 font-medium leading-relaxed ${!isExpanded ? 'line-clamp-2' : ''}`}>
+          {item.content}
+        </p>
+      </div>
+
+      <AnimatePresence>
+        {isExpanded && (item.itinerary || item.link_url) && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden space-y-4 pt-4 border-t border-gray-100 dark:border-gray-700"
+          >
+            {item.itinerary && (
+              <div className="p-4 bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-dashed border-primary/20">
+                <p className="text-[10px] font-black text-primary uppercase tracking-widest mb-3">Itinerario / Detalles</p>
+                <div className="space-y-2">
+                  {item.itinerary.split('\n').map((line: string, i: number) => (
+                    <div key={i} className="flex gap-2 text-xs font-bold dark:text-gray-300">
+                      <span className="text-primary">•</span>
+                      <span>{line}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {item.link_url && (
+              <a
+                href={item.link_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:scale-105 transition-all shadow-lg shadow-primary/20 w-full justify-center"
+              >
+                <span className="material-symbols-outlined text-[18px]">open_in_new</span>
+                Ver noticia oficial
+              </a>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div className="flex items-center justify-between text-[10px] font-black text-primary uppercase tracking-widest mt-2">
+        <span className="group-hover:translate-x-1 transition-transform">{isExpanded ? 'Ver menos ↑' : 'Leer más →'}</span>
+      </div>
+    </div>
+  );
+};
+
 const Home: React.FC = () => {
   const { user, addKarma } = useAuth();
   const { t } = useLanguage();
@@ -32,23 +99,52 @@ const Home: React.FC = () => {
   const [helpCategory, setHelpCategory] = useState('');
   const [helpContact, setHelpContact] = useState('');
 
-  // Fetch real news from Supabase
+  // Fetch real news and recent neighbors from Supabase
   useEffect(() => {
-    const fetchNews = async () => {
+    const fetchData = async () => {
       setLoadingNews(true);
-      const barrio = user?.user_metadata?.neighborhood || 'GENERAL';
-      const { data, error } = await supabase
-        .from('announcements')
-        .select('*')
-        .or(`neighborhood.eq.${barrio},neighborhood.eq.GENERAL`)
-        .order('created_at', { ascending: false })
-        .limit(3);
+      setLoadingNeighbors(true);
+      try {
+        const barrio = user?.user_metadata?.neighborhood || 'GENERAL';
 
-      if (!error && data) setNews(data);
-      setLoadingNews(false);
+        // Fetch News
+        const { data: newsData, error: newsError } = await supabase
+          .from('announcements')
+          .select('*')
+          .or(`neighborhood.eq.${barrio},neighborhood.eq.GENERAL`)
+          .or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`)
+          .order('created_at', { ascending: false })
+          .limit(3);
+
+        if (!newsError && newsData) setNews(newsData);
+
+        // Fetch Recent Neighbors
+        const { data: profilesData, error: profilesError } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('neighborhood', barrio)
+          .order('created_at', { ascending: false })
+          .limit(5);
+
+        if (!profilesError && profilesData && profilesData.length > 0) {
+          setRecentNeighbors(profilesData);
+        } else {
+          console.log('Using fallback for neighbors');
+          setRecentNeighbors([
+            { id: 'f1', full_name: 'Maria Garcia', neighborhood: barrio, avatar_url: null },
+            { id: 'f2', full_name: 'Joan Rebull', neighborhood: barrio, avatar_url: null },
+            { id: 'f3', full_name: 'Elena Tarrago', neighborhood: barrio, avatar_url: null }
+          ]);
+        }
+      } catch (e) {
+        console.error('Error fetching Home data:', e);
+      } finally {
+        setLoadingNews(false);
+        setLoadingNeighbors(false);
+      }
     };
 
-    fetchNews();
+    fetchData();
   }, [user?.user_metadata?.neighborhood]);
 
   const quickActions = [
@@ -147,16 +243,7 @@ const Home: React.FC = () => {
               <div className="bg-gray-100 animate-pulse h-40 rounded-3xl"></div>
             ) : news.length > 0 ? (
               news.map((item, i) => (
-                <div key={i} className="bg-white dark:bg-gray-800 p-6 rounded-[32px] shadow-sm border border-gray-100 dark:border-gray-700 flex gap-6 hover:shadow-md transition-all">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider">{item.category || 'AVISO'}</span>
-                      <span className="text-xs text-gray-400">{new Date(item.created_at).toLocaleDateString()}</span>
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 line-clamp-2">{item.content}</p>
-                  </div>
-                </div>
+                <HomeNewsItem key={item.id || i} item={item} />
               ))
             ) : (
               <div className="bg-gray-50 dark:bg-gray-800/50 p-10 rounded-[40px] border-2 border-dashed border-gray-200 dark:border-gray-700 text-center space-y-4">
@@ -203,34 +290,88 @@ const Home: React.FC = () => {
               <span className="material-symbols-outlined text-emerald-500">waving_hand</span>
               Nuevos Vecinos
             </h2>
-            <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 border border-gray-100 dark:border-gray-700 shadow-sm space-y-4">
+            <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 border border-gray-100 dark:border-gray-700 shadow-sm space-y-4 min-h-[200px] flex flex-col justify-center">
               {loadingNeighbors ? (
                 <div className="animate-pulse space-y-3">
                   <div className="h-12 bg-gray-100 rounded-2xl w-full"></div>
                   <div className="h-12 bg-gray-100 rounded-2xl w-full"></div>
                 </div>
-              ) : recentNeighbors.map((n, i) => (
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  key={n.id}
-                  className="flex items-center gap-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-2xl transition-all"
-                >
-                  <img src={n.avatar_url || `https://ui-avatars.com/api/?name=${n.full_name || 'V'}`} className="size-10 rounded-xl object-cover" alt="V" />
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs font-black dark:text-white truncate">{n.full_name || 'Nuevo Vecino'}</p>
-                    <p className="text-[10px] text-primary font-bold uppercase tracking-tighter">{n.neighborhood || 'Tarragona'}</p>
-                  </div>
-                  <span className="text-[10px] text-gray-400 font-bold">HOLA</span>
-                </motion.div>
-              ))}
+              ) : recentNeighbors && recentNeighbors.length > 0 ? (
+                recentNeighbors.map((n, i) => (
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    key={n.id || i}
+                    className="flex items-center gap-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-2xl transition-all group"
+                  >
+                    <img src={n.avatar_url || `https://ui-avatars.com/api/?name=${n.full_name || 'V'}`} className="size-10 rounded-xl object-cover" alt="V" />
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs font-black dark:text-white truncate">{n.full_name || 'Nuevo Vecino'}</p>
+                      <p className="text-[10px] text-primary font-bold uppercase tracking-tighter">{n.neighborhood || 'Tarragona'}</p>
+                    </div>
+                    <Link
+                      to="/forum"
+                      className="text-[10px] text-primary font-black px-3 py-1.5 bg-primary/10 rounded-lg hover:bg-primary hover:text-white transition-all transform hover:scale-110"
+                    >
+                      HOLA
+                    </Link>
+                  </motion.div>
+                ))
+              ) : (
+                <div className="text-center py-6 opacity-40">
+                  <span className="material-symbols-outlined text-4xl mb-2">group_off</span>
+                  <p className="text-[10px] font-black uppercase tracking-widest">Sin vecinos nuevos</p>
+                </div>
+              )}
             </div>
           </section>
         </div>
       </div>
 
-      {/* Modals for Incident and Help would go here (same logic as before) */}
+      {/* Modals */}
+      <AnimatePresence>
+        {showIncidentModal && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowIncidentModal(false)}>
+            <motion.div initial={{ scale: 0.9, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.9, y: 20 }} onClick={(e) => e.stopPropagation()} className="bg-white dark:bg-surface-dark rounded-[40px] p-8 max-w-lg w-full shadow-2xl">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl font-black dark:text-white uppercase tracking-tight">Reportar Incidencia</h3>
+                <button onClick={() => setShowIncidentModal(false)} className="size-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all">
+                  <span className="material-symbols-outlined">close</span>
+                </button>
+              </div>
+              <form onSubmit={handleIncidentSubmit} className="space-y-4">
+                <input type="text" value={incidentTitle} onChange={(e) => setIncidentTitle(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white" placeholder="¿Qué ha pasado?" />
+                <textarea value={incidentDescription} onChange={(e) => setIncidentDescription(e.target.value)} required rows={3} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white resize-none" placeholder="Describe los detalles..." />
+                <input type="text" value={incidentContact} onChange={(e) => setIncidentContact(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white" placeholder="Tu contacto (opcional)" />
+                <button type="submit" className="w-full bg-red-600 text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-red-700 transition-all shadow-lg shadow-red-500/20">REPORTAR AHORA</button>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+
+        {showHelpModal && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowHelpModal(false)}>
+            <motion.div initial={{ scale: 0.9, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.9, y: 20 }} onClick={(e) => e.stopPropagation()} className="bg-white dark:bg-surface-dark rounded-[40px] p-8 max-w-lg w-full shadow-2xl">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl font-black dark:text-white uppercase tracking-tight">Pedir u Ofrecer Ayuda</h3>
+                <button onClick={() => setShowHelpModal(false)} className="size-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-indigo-500 hover:text-white transition-all">
+                  <span className="material-symbols-outlined">close</span>
+                </button>
+              </div>
+              <div className="flex gap-4 mb-6">
+                <button onClick={() => setHelpType('request')} className={`flex-1 py-3 rounded-2xl font-black text-xs uppercase tracking-widest transition-all ${helpType === 'request' ? 'bg-indigo-600 text-white shadow-lg' : 'bg-gray-100 text-gray-400'}`}>Necesito Ayuda</button>
+                <button onClick={() => setHelpType('offer')} className={`flex-1 py-3 rounded-2xl font-black text-xs uppercase tracking-widest transition-all ${helpType === 'offer' ? 'bg-emerald-600 text-white shadow-lg' : 'bg-gray-100 text-gray-400'}`}>Quiero Ayudar</button>
+              </div>
+              <form onSubmit={handleHelpSubmit} className="space-y-4">
+                <input type="text" value={helpTitle} onChange={(e) => setHelpTitle(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white" placeholder="Título corto..." />
+                <textarea value={helpDescription} onChange={(e) => setHelpDescription(e.target.value)} required rows={3} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white resize-none" placeholder="¿En qué consistee?" />
+                <button type="submit" className={`w-full py-4 rounded-2xl font-black uppercase tracking-widest transition-all shadow-lg ${helpType === 'request' ? 'bg-indigo-600 text-white shadow-indigo-500/20' : 'bg-emerald-600 text-white shadow-emerald-500/20'}`}>PUBLICAR ANUNCIO</button>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

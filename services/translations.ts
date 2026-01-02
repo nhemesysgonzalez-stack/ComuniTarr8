@@ -13,6 +13,7 @@ export const translations = {
         map: 'Mapa Interactivo',
         announcements: 'Avisos',
         calendar: 'Calendario',
+        neighbors: 'Nuevos Vecinos',
         about: 'Sobre Nosotros',
 
         // Neighborhood Nav
@@ -66,6 +67,7 @@ export const translations = {
         map: 'Interactive Map',
         announcements: 'Announcements',
         calendar: 'Calendar',
+        neighbors: 'New Neighbors',
         about: 'About Us',
         local_business: 'Local Business',
         clubs: 'Meetups & Clubs',
@@ -111,6 +113,7 @@ export const translations = {
         map: 'Mapa Interactiu',
         announcements: 'Avisos',
         calendar: 'Calendari',
+        neighbors: 'Nous Veïns',
         about: 'Sobre Nosaltres',
         local_business: 'Comerç Local',
         clubs: 'Trobades i Clubs',
@@ -156,6 +159,7 @@ export const translations = {
         map: 'Carte Interactive',
         announcements: 'Annonces',
         calendar: 'Calendrier',
+        neighbors: 'Nouveaux Voisins',
         about: 'À Propos',
         local_business: 'Commerce Local',
         clubs: 'Rencontres et Clubs',
