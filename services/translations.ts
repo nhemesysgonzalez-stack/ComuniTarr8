@@ -104,7 +104,9 @@ export const translations = {
         explore_map: 'Explore Map',
         open_map: 'Open Map',
         welcome_user: 'HELLO, {name}!',
-        welcome_msg: 'Welcome to ComuniTarr. Your platform to connect, share and improve {neighborhood}.'
+        welcome_msg: 'Welcome to ComuniTarr. Your platform to connect, share and improve {neighborhood}.',
+        welcome_home: 'Welcome home',
+        neighbor_desc: 'Your platform to connect, share and improve Tarragona together.'
     },
     ca: {
         nav_main: 'Principal',
@@ -150,7 +152,9 @@ export const translations = {
         explore_map: 'Explora el Mapa',
         open_map: 'Obrir Mapa',
         welcome_user: 'HOLA, {name}!',
-        welcome_msg: 'Benvingut a ComuniTarr. La teva plataforma per connectar, compartir i millorar {neighborhood}.'
+        welcome_msg: 'Benvingut a ComuniTarr. La teva plataforma per connectar, compartir i millorar {neighborhood}.',
+        welcome_home: 'Benvingut a casa',
+        neighbor_desc: 'La teva plataforma per connectar, compartir i millorar Tarragona junts.'
     },
     fr: {
         nav_main: 'Principal',

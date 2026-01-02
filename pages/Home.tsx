@@ -254,21 +254,25 @@ const Home: React.FC = () => {
   return (
     <div className="p-4 md:p-10 max-w-7xl mx-auto space-y-12 font-sans pb-20 relative">
       <DynamicThemeEffects />
-      {/* Hero */}
-      <section className="relative h-[250px] md:h-[400px] rounded-[40px] overflow-hidden shadow-2xl flex items-center px-6 md:px-16">
-        <div
-          className="absolute inset-0 z-0 bg-gray-900"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1514774619374-278a2e519217?q=80&w=1600&auto=format&fit=crop")`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        />
-        <div className="relative z-20 max-w-2xl text-white">
-          <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-4">
+
+      {/* Hero Section */}
+      <section className="relative h-[300px] md:h-[450px] rounded-[40px] overflow-hidden shadow-2xl bg-gray-900 group">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1548532928-b34e3be62fc6?q=80&w=1600&auto=format&fit=crop"
+            className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-700 opacity-70"
+            alt="Tarragona"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent"></div>
+        </div>
+
+        <div className="relative z-20 h-full flex flex-col justify-center px-8 md:px-16 max-w-2xl text-white">
+          <h1 className="text-4xl md:text-7xl font-black leading-tight mb-4 tracking-tighter">
             {t('welcome_home')}, <span className="text-primary-light">{user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino'}</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-200 mb-8 opacity-90">{t('neighbor_desc')}</p>
+          <p className="text-lg md:text-2xl text-gray-200 font-bold opacity-90 max-w-lg mb-8 uppercase tracking-tight">
+            {t('neighbor_desc')}
+          </p>
         </div>
       </section>
 
