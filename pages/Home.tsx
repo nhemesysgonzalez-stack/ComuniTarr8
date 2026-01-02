@@ -139,6 +139,7 @@ const Home: React.FC = () => {
   const [recentNeighbors, setRecentNeighbors] = useState<any[]>([]);
   const [loadingNews, setLoadingNews] = useState(true);
   const [loadingNeighbors, setLoadingNeighbors] = useState(true);
+  const [forumActiveCount, setForumActiveCount] = useState(0);
 
   // Experience calculation
   const karma = user?.user_metadata?.karma || 0;
@@ -187,13 +188,23 @@ const Home: React.FC = () => {
         if (!profilesError && profilesData && profilesData.length > 0) {
           setRecentNeighbors(profilesData);
         } else {
-          console.log('Using fallback for neighbors');
           setRecentNeighbors([
             { id: 'f1', full_name: 'Maria Garcia', neighborhood: barrio, avatar_url: null },
             { id: 'f2', full_name: 'Joan Rebull', neighborhood: barrio, avatar_url: null },
             { id: 'f3', full_name: 'Elena Tarrago', neighborhood: barrio, avatar_url: null }
           ]);
         }
+
+        // Fetch Forum Activity (unique users last 24h)
+        const { data: forumData } = await supabase
+          .from('forum_messages')
+          .select('user_id')
+          .or(`neighborhood.eq.${barrio},neighborhood.eq.GENERAL`)
+          .gte('created_at', new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString());
+
+        const uniqueUsers = new Set(forumData?.map(m => m.user_id)).size;
+        setForumActiveCount(uniqueUsers || 0);
+
       } catch (e) {
         console.error('Error fetching Home data:', e);
       } finally {
@@ -353,10 +364,18 @@ const Home: React.FC = () => {
 
           {/* New Neighbors Widget */}
           <section className="space-y-4">
-            <h2 className="text-xl font-black flex items-center gap-2">
-              <span className="material-symbols-outlined text-emerald-500">waving_hand</span>
-              Nuevos Vecinos
-            </h2>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-black flex items-center gap-2">
+                <span className="material-symbols-outlined text-emerald-500">waving_hand</span>
+                Nuevos Vecinos
+              </h2>
+              {forumActiveCount > 0 && (
+                <div className="flex items-center gap-1.5 px-3 py-1 bg-emerald-500/10 rounded-full animate-pulse border border-emerald-500/20">
+                  <span className="size-1.5 rounded-full bg-emerald-500"></span>
+                  <span className="text-[10px] font-black text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">{forumActiveCount} activos</span>
+                </div>
+              )}
+            </div>
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 border border-gray-100 dark:border-gray-700 shadow-sm space-y-4 min-h-[200px] flex flex-col justify-center">
               {loadingNeighbors ? (
                 <div className="animate-pulse space-y-3">
