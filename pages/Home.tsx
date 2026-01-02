@@ -256,15 +256,14 @@ const Home: React.FC = () => {
       <DynamicThemeEffects />
 
       {/* Hero Section */}
-      <section className="relative h-[300px] md:h-[450px] rounded-[40px] overflow-hidden shadow-2xl bg-gray-900 group">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1548532928-b34e3be62fc6?q=80&w=1600&auto=format&fit=crop"
-            className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-700 opacity-70"
-            alt="Tarragona"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent"></div>
-        </div>
+      <section className="relative h-[300px] md:h-[450px] rounded-[40px] overflow-hidden shadow-2xl bg-gray-900 border border-white/5">
+        <img
+          src="https://images.unsplash.com/photo-1514774619374-278a2e519217?auto=format&fit=crop&q=80&w=1600"
+          className="absolute inset-0 w-full h-full object-cover"
+          alt="Tarragona"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
 
         <div className="relative z-20 h-full flex flex-col justify-center px-8 md:px-16 max-w-2xl text-white">
           <h1 className="text-4xl md:text-7xl font-black leading-tight mb-4 tracking-tighter">
