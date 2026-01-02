@@ -202,7 +202,7 @@ const Home: React.FC = () => {
           .or(`neighborhood.eq.${barrio},neighborhood.eq.GENERAL`)
           .gte('created_at', new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString());
 
-        const uniqueUsers = new Set(forumData?.map(m => m.user_id)).size;
+        const uniqueUsers = new Set((forumData || []).map(m => m.user_id)).size;
         setForumActiveCount(uniqueUsers || 0);
 
       } catch (e) {
@@ -277,10 +277,10 @@ const Home: React.FC = () => {
 
         <div className="relative z-20 h-full flex flex-col justify-center px-8 md:px-16 max-w-2xl text-white">
           <h1 className="text-4xl md:text-7xl font-black leading-tight mb-4 tracking-tighter">
-            {t('welcome_home')}, <span className="text-primary-light">{user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino'}</span>
+            {t('welcome_home') === 'welcome_home' ? 'Bienvenido a casa' : t('welcome_home')}, <span className="text-primary-light">{user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino'}</span>
           </h1>
           <p className="text-lg md:text-2xl text-gray-200 font-bold opacity-90 max-w-lg mb-8 uppercase tracking-tight">
-            {t('neighbor_desc')}
+            {t('neighbor_desc') === 'neighbor_desc' ? 'Tu plataforma para conectar, compartir y mejorar Tarragona juntos.' : t('neighbor_desc')}
           </p>
         </div>
       </section>
