@@ -155,7 +155,7 @@ const Home: React.FC = () => {
   const [helpContact, setHelpContact] = useState('');
 
   // Hero Image Selection (Dynamic)
-  const heroImage = "https://images.unsplash.com/photo-1559564632-4630a1334969?auto=format&fit=crop&q=80&w=1600"; // Reliable Tarragona View from Unsplash
+  const heroImage = "https://images.unsplash.com/photo-1520623250640-f65511dc7bee?auto=format&fit=crop&q=80&w=1600"; // Reliable Mediterranean/Tarragona sunset photo
 
   // Fetch real news and recent neighbors from Supabase
   useEffect(() => {
