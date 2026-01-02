@@ -56,7 +56,9 @@ export const translations = {
         explore_map: 'Explora el Mapa',
         open_map: 'Abrir Mapa',
         welcome_user: 'HOLA, {name}!',
-        welcome_msg: 'Bienvenido a ComuniTarr. Tu plataforma para conectar, compartir y mejorar {neighborhood}.'
+        welcome_msg: 'Bienvenido a ComuniTarr. Tu plataforma para conectar, compartir y mejorar {neighborhood}.',
+        welcome_home: 'Bienvenido a casa',
+        neighbor_desc: 'Tu plataforma para conectar, compartir y mejorar Tarragona juntos.'
     },
     en: {
         nav_main: 'Main',
