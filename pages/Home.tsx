@@ -256,12 +256,11 @@ const Home: React.FC = () => {
       <DynamicThemeEffects />
 
       {/* Hero Section */}
-      <section className="relative h-[300px] md:h-[450px] rounded-[40px] overflow-hidden shadow-2xl bg-gray-900 border border-white/5">
+      <section className="relative h-[250px] md:h-[400px] rounded-[40px] overflow-hidden shadow-2xl flex items-center px-6 md:px-16 bg-gray-900">
         <img
-          src="https://images.unsplash.com/photo-1514774619374-278a2e519217?auto=format&fit=crop&q=80&w=1600"
+          src="https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?auto=format&fit=crop&q=80&w=1200"
           className="absolute inset-0 w-full h-full object-cover"
           alt="Tarragona"
-          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
 
