@@ -256,15 +256,13 @@ const Home: React.FC = () => {
       <DynamicThemeEffects />
       {/* Hero */}
       <section
-        className="relative h-[250px] md:h-[400px] rounded-[40px] overflow-hidden shadow-2xl group flex items-center px-6 md:px-16"
+        className="relative h-[250px] md:h-[400px] rounded-[40px] overflow-hidden shadow-2xl flex items-center px-6 md:px-16"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1514774619374-278a2e519217?auto=format&fit=crop&q=80&w=1600")`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          background: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1548532928-b34e3be62fc6?q=80&w=1600&auto=format&fit=crop") center/cover no-repeat`,
           backgroundColor: '#111827'
         }}
       >
-        <div className="relative z-20 max-w-2xl">
+        <div className="relative z-20 max-w-2xl text-white">
           <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-4">
             {t('welcome_home')}, <span className="text-primary-light">{user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino'}</span>
           </h1>
