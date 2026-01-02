@@ -155,7 +155,7 @@ const Home: React.FC = () => {
   const [helpContact, setHelpContact] = useState('');
 
   // Hero Image Selection (Dynamic)
-  const heroImage = "https://images.unsplash.com/photo-1514774619374-278a2e519217?auto=format&fit=crop&q=80&w=1600"; // Stunning Tarragona Amphitheater
+  const heroImage = "https://images.unsplash.com/photo-1559564632-4630a1334969?auto=format&fit=crop&q=80&w=1600"; // Reliable Tarragona View from Unsplash
 
   // Fetch real news and recent neighbors from Supabase
   useEffect(() => {
