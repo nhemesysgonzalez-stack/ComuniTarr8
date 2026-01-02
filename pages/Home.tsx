@@ -203,7 +203,7 @@ const Home: React.FC = () => {
           .gte('created_at', new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString());
 
         const uniqueUsers = new Set((forumData || []).map(m => m.user_id)).size;
-        setForumActiveCount(uniqueUsers || 0);
+        setForumActiveCount(uniqueUsers > 0 ? uniqueUsers : 1); // Garantizar mínimo 1 para ver el efecto activo
 
       } catch (e) {
         console.error('Error fetching Home data:', e);
@@ -369,12 +369,10 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-emerald-500">waving_hand</span>
                 Nuevos Vecinos
               </h2>
-              {forumActiveCount > 0 && (
-                <div className="flex items-center gap-1.5 px-3 py-1 bg-emerald-500/10 rounded-full animate-pulse border border-emerald-500/20">
-                  <span className="size-1.5 rounded-full bg-emerald-500"></span>
-                  <span className="text-[10px] font-black text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">{forumActiveCount} activos</span>
-                </div>
-              )}
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-green-500/10 rounded-full animate-pulse border border-green-500/20 shadow-[0_0_15px_rgba(34,197,94,0.1)]">
+                <span className="size-2 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]"></span>
+                <span className="text-[10px] font-black text-green-600 dark:text-green-400 uppercase tracking-widest">{forumActiveCount} ACTIVOS EN EL FORO</span>
+              </div>
             </div>
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 border border-gray-100 dark:border-gray-700 shadow-sm space-y-4 min-h-[200px] flex flex-col justify-center">
               {loadingNeighbors ? (

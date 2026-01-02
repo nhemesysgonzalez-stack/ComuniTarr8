@@ -200,6 +200,8 @@ export const translations = {
         explore_map: 'Explorer la Carte',
         open_map: 'Ouvrir la Carte',
         welcome_user: 'BONJOUR, {name}!',
-        welcome_msg: 'Bienvenue sur ComuniTarr. Votre plateforme pour connecter, partager et améliorer {neighborhood}.'
+        welcome_msg: 'Bienvenue sur ComuniTarr. Votre plateforme pour connecter, partager et améliorer {neighborhood}.',
+        welcome_home: 'Bienvenue à la maison',
+        neighbor_desc: 'Votre plateforme pour connecter, partager et améliorer Tarragona ensemble.'
     }
 };
