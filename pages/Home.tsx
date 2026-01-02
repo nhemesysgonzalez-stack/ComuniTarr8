@@ -74,6 +74,61 @@ const HomeNewsItem: React.FC<{ item: any }> = ({ item }) => {
   );
 };
 
+const DynamicThemeEffects: React.FC = () => {
+  const currentMonth = new Date().getMonth(); // 0 = Jan
+  const currentDay = new Date().getDate();
+
+  // Three Kings (Jan 1-6)
+  const isThreeKings = currentMonth === 0 && currentDay <= 6;
+
+  return (
+    <div className="fixed inset-0 pointer-events-none z-[60] overflow-hidden">
+      {isThreeKings && (
+        <motion.div
+          initial={{ x: '-100%' }}
+          animate={{ x: '100vw' }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-10 left-0 flex items-end gap-10 opacity-30 dark:opacity-20"
+        >
+          <div className="flex flex-col items-center">
+            <span className="material-symbols-outlined text-6xl text-amber-500">bedroom_baby</span>
+            <div className="w-20 h-1 bg-amber-500/20 rounded-full blur-sm"></div>
+          </div>
+          <div className="flex flex-col items-center scale-125 mb-4">
+            <span className="material-symbols-outlined text-7xl text-amber-600">person_celebrate</span>
+            <div className="w-24 h-1 bg-amber-600/20 rounded-full blur-sm"></div>
+          </div>
+          <div className="flex flex-col items-center mb-2">
+            <span className="material-symbols-outlined text-6xl text-amber-500">auto_awesome</span>
+            <div className="w-20 h-1 bg-amber-500/20 rounded-full blur-sm"></div>
+          </div>
+        </motion.div>
+      )}
+
+      {/* Subtle Starry Night Effect for Jan */}
+      {currentMonth === 0 && (
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0.1 }}
+              animate={{ opacity: [0.1, 0.5, 0.1] }}
+              transition={{ duration: Math.random() * 3 + 2, repeat: Infinity }}
+              className="absolute bg-white rounded-full"
+              style={{
+                width: Math.random() * 3 + 'px',
+                height: Math.random() * 3 + 'px',
+                top: Math.random() * 100 + '%',
+                left: Math.random() * 100 + '%',
+              }}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
 const Home: React.FC = () => {
   const { user, addKarma } = useAuth();
   const { t } = useLanguage();
@@ -98,6 +153,9 @@ const Home: React.FC = () => {
   const [helpDescription, setHelpDescription] = useState('');
   const [helpCategory, setHelpCategory] = useState('');
   const [helpContact, setHelpContact] = useState('');
+
+  // Hero Image Selection (Dynamic)
+  const heroImage = "https://images.unsplash.com/photo-1514774619374-278a2e519217?auto=format&fit=crop&q=80&w=1600"; // Stunning Tarragona Amphitheater
 
   // Fetch real news and recent neighbors from Supabase
   useEffect(() => {
@@ -194,11 +252,12 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="p-4 md:p-10 max-w-7xl mx-auto space-y-12 font-sans pb-20">
+    <div className="p-4 md:p-10 max-w-7xl mx-auto space-y-12 font-sans pb-20 relative">
+      <DynamicThemeEffects />
       {/* Hero */}
       <section className="relative h-[250px] md:h-[400px] rounded-[40px] overflow-hidden shadow-2xl group flex items-center px-6 md:px-16">
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10"></div>
-        <img src="https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?auto=format&fit=crop&q=80&w=1200" className="absolute inset-0 w-full h-full object-cover" alt="Tarragona" />
+        <img src={heroImage} className="absolute inset-0 w-full h-full object-cover" alt="Tarragona" />
         <div className="relative z-20 max-w-2xl">
           <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-4">
             {t('welcome_home')}, <span className="text-primary-light">{user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino'}</span>
