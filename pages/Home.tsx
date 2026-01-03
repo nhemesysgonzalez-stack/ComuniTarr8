@@ -156,7 +156,7 @@ const Home: React.FC = () => {
   const [helpContact, setHelpContact] = useState('');
 
   // Hero Image Selection (Dynamic)
-  const heroImage = "https://images.unsplash.com/photo-1520623250640-f65511dc7bee?auto=format&fit=crop&q=80&w=1600"; // Reliable Mediterranean/Tarragona sunset photo
+  const heroImage = "https://images.unsplash.com/photo-1555436169-20d93296d16d?auto=format&fit=crop&q=80&w=1600"; // Tarragona Cathedral landscape
 
   // Fetch real news and recent neighbors from Supabase
   useEffect(() => {
@@ -269,7 +269,7 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative h-[250px] md:h-[400px] rounded-[40px] overflow-hidden shadow-2xl flex items-center px-6 md:px-16 bg-gray-900">
         <img
-          src="https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?auto=format&fit=crop&q=80&w=1200"
+          src="https://images.unsplash.com/photo-1555436169-20d93296d16d?auto=format&fit=crop&q=80&w=1600"
           className="absolute inset-0 w-full h-full object-cover"
           alt="Tarragona"
         />

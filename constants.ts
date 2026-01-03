@@ -19,7 +19,7 @@ export const CURRENT_USER = {
     address: 'Carrer Major, 15, Tarragona',
     score: 1250,
     joinedDate: 'Marzo 2024',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    avatar: 'https://ui-avatars.com/api/?name=Juan+Perez&background=0D8ABC&color=fff',
 };
 
 export const CHALLENGES = [
