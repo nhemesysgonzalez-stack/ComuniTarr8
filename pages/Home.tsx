@@ -156,7 +156,7 @@ const Home: React.FC = () => {
   const [helpContact, setHelpContact] = useState('');
 
   // Hero Image Selection (Dynamic)
-  const heroImage = "https://images.unsplash.com/photo-1555436169-20d93296d16d?auto=format&fit=crop&q=80&w=1600"; // Tarragona Cathedral landscape
+  const heroImage = "https://images.unsplash.com/photo-1722520592113-1f681393cd8d?auto=format&fit=crop&q=80&w=1600"; // Tarragona Amphitheater landscape
 
   // Fetch real news and recent neighbors from Supabase
   useEffect(() => {
@@ -175,7 +175,20 @@ const Home: React.FC = () => {
           .order('created_at', { ascending: false })
           .limit(3);
 
-        if (!newsError && newsData) setNews(newsData);
+        const weatherAlert = {
+          id: 'weather-alert',
+          title: "❄️ ALERTA: Nieve y Frío Intenso",
+          content: "Protección Civil activa la alerta por nevadas en cotas bajas a partir de mañana. Se recomienda adelantar el regreso de las vacaciones para evitar colapsos en la AP-7.",
+          category: "URGENTE",
+          neighborhood: "GENERAL",
+          itinerary: "• Cota de nieve: 200-400m\n• Riesgo alto en prelitoral\n• Llevar cadenas y depósito lleno\n• Evitar desplazamientos innecesarios",
+          created_at: new Date().toISOString()
+        };
+
+        const fetchedNews = !newsError && newsData ? newsData : [];
+
+        // Colocar la alerta meteorológica al principio y luego las noticias de la DB
+        setNews([weatherAlert, ...fetchedNews].slice(0, 4));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase
@@ -267,20 +280,24 @@ const Home: React.FC = () => {
       <DynamicThemeEffects />
 
       {/* Hero Section */}
+      {/* Hero Section */}
       <section className="relative h-[250px] md:h-[400px] rounded-[40px] overflow-hidden shadow-2xl flex items-center px-6 md:px-16 bg-gray-900">
         <img
-          src="https://images.unsplash.com/photo-1555436169-20d93296d16d?auto=format&fit=crop&q=80&w=1600"
+          src="https://images.unsplash.com/photo-1722520592113-1f681393cd8d?q=80&w=1600&auto=format&fit=crop"
           className="absolute inset-0 w-full h-full object-cover"
           alt="Tarragona"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1510445740272-d3b16ec28439?auto=format&fit=crop&q=80&w=1600";
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
 
         <div className="relative z-20 h-full flex flex-col justify-center px-8 md:px-16 max-w-2xl text-white">
           <h1 className="text-4xl md:text-7xl font-black leading-tight mb-4 tracking-tighter">
-            {t('welcome_home') === 'welcome_home' ? 'Bienvenido a casa' : t('welcome_home')}, <span className="text-primary-light">{user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino'}</span>
+            {t('welcome_home')}, <span className="text-primary-light">{user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino'}</span>
           </h1>
           <p className="text-lg md:text-2xl text-gray-200 font-bold opacity-90 max-w-lg mb-8 uppercase tracking-tight">
-            {t('neighbor_desc') === 'neighbor_desc' ? 'Tu plataforma para conectar, compartir y mejorar Tarragona juntos.' : t('neighbor_desc')}
+            {t('neighbor_desc')}
           </p>
         </div>
       </section>
