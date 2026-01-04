@@ -23,6 +23,28 @@ const Polls: React.FC = () => {
     const [pollTitle, setPollTitle] = useState('');
     const [pollOptions, setPollOptions] = useState(['', '']);
 
+    const handleVote = async (pollId: string, optionIndex: number, optionText: string) => {
+        const confirmVote = window.confirm(`¿Quieres registrar tu voto para "${optionText}"?`);
+        if (!confirmVote) return;
+
+        try {
+            const { success } = await safeSupabaseInsert('poll_votes', {
+                poll_id: pollId,
+                user_id: user?.id,
+                option_index: optionIndex,
+                option_text: optionText,
+                neighborhood: user?.user_metadata?.neighborhood || 'GENERAL'
+            });
+
+            if (success) {
+                alert(`¡Gracias! Tu voto para "${optionText}" ha sido registrado correctamente.`);
+            }
+        } catch (e) {
+            console.error(e);
+            alert('Hubo un problema al registrar tu voto.');
+        }
+    };
+
     useEffect(() => {
         fetchPolls();
     }, [user?.user_metadata?.neighborhood]);
@@ -160,7 +182,7 @@ const Polls: React.FC = () => {
                                             ].map((opt, i) => (
                                                 <button
                                                     key={i}
-                                                    onClick={() => alert(`¡Voto registrado para ${opt}!`)}
+                                                    onClick={() => handleVote('bona-gent-2025', i, opt)}
                                                     className="p-4 rounded-2xl border-2 border-gray-100 dark:border-gray-800 hover:border-primary hover:bg-primary/5 transition-all text-left group/btn"
                                                 >
                                                     <span className="text-xs font-black dark:text-gray-200 group-hover/btn:text-primary transition-colors uppercase tracking-tight">{opt}</span>
@@ -231,6 +253,7 @@ const Polls: React.FC = () => {
                                             {poll.options.map((option, optIdx) => (
                                                 <button
                                                     key={optIdx}
+                                                    onClick={() => handleVote(poll.id, optIdx, option)}
                                                     className="w-full text-left p-4 rounded-2xl border-2 border-gray-100 dark:border-gray-800 hover:border-cyan-500 hover:bg-cyan-500/5 transition-all group/option"
                                                 >
                                                     <div className="flex items-center justify-between">
