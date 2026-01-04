@@ -121,73 +121,139 @@ const Polls: React.FC = () => {
                         <div className="size-10 border-4 border-cyan-500 border-t-transparent animate-spin rounded-full"></div>
                         <p className="text-xs font-black uppercase tracking-widest">Cargando votaciones...</p>
                     </div>
-                ) : polls.length === 0 ? (
-                    <div className="bg-gradient-to-br from-cyan-500/5 to-blue-500/5 dark:from-cyan-500/10 dark:to-blue-500/10 p-12 rounded-[40px] border-2 border-dashed border-cyan-500/20 text-center max-w-2xl mx-auto">
-                        <span className="material-symbols-outlined text-cyan-500 text-6xl mb-4 block">how_to_vote</span>
-                        <h3 className="text-lg font-black dark:text-white mb-2">No hay votaciones activas</h3>
-                        <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-                            Sé el primero en crear una votación en {user?.user_metadata?.neighborhood || 'tu barrio'}.
-                            Pregunta a los vecinos sobre mejoras, eventos, proyectos o cualquier decisión que afecte a la comunidad.
-                        </p>
-                        <button
-                            onClick={() => setShowCreateModal(true)}
-                            className="px-6 py-3 bg-cyan-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-cyan-600 transition-all shadow-lg shadow-cyan-500/20"
-                        >
-                            CREAR PRIMERA VOTACIÓN
-                        </button>
-                    </div>
                 ) : (
                     <div className="space-y-8">
-                        {polls.map((poll, idx) => (
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: idx * 0.1 }}
-                                key={poll.id}
-                                className="group bg-white dark:bg-surface-dark rounded-[35px] p-8 border border-gray-100 dark:border-gray-800 hover:shadow-2xl hover:border-cyan-500/30 transition-all"
-                            >
-                                <div className="flex items-start gap-6 mb-6">
-                                    <div className="shrink-0 size-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center">
-                                        <span className="material-symbols-outlined text-3xl text-cyan-500">how_to_vote</span>
-                                    </div>
-                                    <div className="flex-1 min-w-0">
-                                        <h3 className="text-xl font-black dark:text-white leading-tight mb-2 group-hover:text-cyan-500 transition-colors">
-                                            {poll.title}
-                                        </h3>
-                                        <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                                            <span className="material-symbols-outlined text-sm">person</span>
-                                            <span className="font-bold">Propuesta por vecino</span>
-                                            <span>•</span>
-                                            <span>{new Date(poll.created_at).toLocaleDateString('es-ES')}</span>
+                        {/* Featured Poll: Bona Gent 2025 */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            className="relative overflow-hidden group bg-gradient-to-br from-indigo-600 to-primary p-1 rounded-[40px] shadow-2xl"
+                        >
+                            <div className="bg-white dark:bg-surface-dark rounded-[38px] p-8 md:p-10 relative overflow-hidden">
+                                <div className="absolute top-0 right-0 p-8 opacity-5">
+                                    <span className="material-symbols-outlined text-[120px]">workspace_premium</span>
+                                </div>
+
+                                <div className="relative z-10 flex flex-col md:flex-row gap-10">
+                                    <div className="flex-1">
+                                        <div className="flex items-center gap-3 mb-6">
+                                            <span className="px-4 py-1.5 bg-primary/10 text-primary rounded-full text-[10px] font-black uppercase tracking-widest border border-primary/20">
+                                                Evento Especial
+                                            </span>
+                                            <span className="text-gray-400 font-bold text-[10px]">• Diari de Tarragona</span>
+                                        </div>
+                                        <h2 className="text-3xl md:text-5xl font-black dark:text-white leading-tight mb-6 tracking-tight">
+                                            ¿Quién es tu <br /><span className="text-primary">Bona Gent 2025?</span>
+                                        </h2>
+                                        <p className="text-gray-500 dark:text-gray-400 font-medium mb-8 max-w-lg">
+                                            Basado en la iniciativa del Diari de Tarragona, vota por el vecino o entidad que más ha destacado por su solidaridad y compromiso.
+                                        </p>
+
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            {[
+                                                "Asier y Hugo Estébanez (Pádel)",
+                                                "David Diestre (Física)",
+                                                "Carolina Gómez (Madre Coraje)",
+                                                "Santos Masegosa (Gastronomía)",
+                                                "Bombers de la Generalitat",
+                                                "Nens del Vendrell (Castells)"
+                                            ].map((opt, i) => (
+                                                <button
+                                                    key={i}
+                                                    onClick={() => alert(`¡Voto registrado para ${opt}!`)}
+                                                    className="p-4 rounded-2xl border-2 border-gray-100 dark:border-gray-800 hover:border-primary hover:bg-primary/5 transition-all text-left group/btn"
+                                                >
+                                                    <span className="text-xs font-black dark:text-gray-200 group-hover/btn:text-primary transition-colors uppercase tracking-tight">{opt}</span>
+                                                </button>
+                                            ))}
                                         </div>
                                     </div>
-                                </div>
 
-                                <div className="space-y-3">
-                                    {poll.options.map((option, optIdx) => (
-                                        <button
-                                            key={optIdx}
-                                            className="w-full text-left p-4 rounded-2xl border-2 border-gray-100 dark:border-gray-800 hover:border-cyan-500 hover:bg-cyan-500/5 transition-all group/option"
-                                        >
-                                            <div className="flex items-center justify-between">
-                                                <span className="font-bold dark:text-white group-hover/option:text-cyan-500 transition-colors">
-                                                    {option}
-                                                </span>
-                                                <span className="material-symbols-outlined text-gray-400 group-hover/option:text-cyan-500 transition-colors">
-                                                    radio_button_unchecked
-                                                </span>
+                                    <div className="hidden lg:flex w-[200px] flex-col items-center justify-center p-6 bg-gray-50 dark:bg-gray-800/50 rounded-[30px] border border-gray-100 dark:border-gray-800">
+                                        <div className="size-16 bg-primary text-white rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-primary/20">
+                                            <span className="material-symbols-outlined text-4xl">emoji_events</span>
+                                        </div>
+                                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-center text-gray-500 mb-2">PARTICIPA</p>
+                                        <p className="text-xs font-bold text-center dark:text-gray-300">Votación abierta hasta final de mes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        <div className="flex items-center gap-4 py-8">
+                            <div className="h-px flex-1 bg-gray-100 dark:bg-gray-800"></div>
+                            <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Otras Votaciones Vecinales</span>
+                            <div className="h-px flex-1 bg-gray-100 dark:bg-gray-800"></div>
+                        </div>
+
+                        {polls.length === 0 ? (
+                            <div className="bg-gradient-to-br from-cyan-500/5 to-blue-500/5 dark:from-cyan-500/10 dark:to-blue-500/10 p-12 rounded-[40px] border-2 border-dashed border-cyan-500/20 text-center max-w-2xl mx-auto">
+                                <span className="material-symbols-outlined text-cyan-500 text-6xl mb-4 block">how_to_vote</span>
+                                <h3 className="text-lg font-black dark:text-white mb-2">No hay más votaciones activas</h3>
+                                <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+                                    Crea una votación para consultar otros temas con tus vecinos en {user?.user_metadata?.neighborhood || 'tu barrio'}.
+                                </p>
+                                <button
+                                    onClick={() => setShowCreateModal(true)}
+                                    className="px-6 py-3 bg-cyan-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-cyan-600 transition-all shadow-lg shadow-cyan-500/20"
+                                >
+                                    CREAR NUEVA VOTACIÓN
+                                </button>
+                            </div>
+                        ) : (
+                            <div className="space-y-8">
+                                {polls.map((poll, idx) => (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: idx * 0.1 }}
+                                        key={poll.id}
+                                        className="group bg-white dark:bg-surface-dark rounded-[35px] p-8 border border-gray-100 dark:border-gray-800 hover:shadow-2xl hover:border-cyan-500/30 transition-all"
+                                    >
+                                        <div className="flex items-start gap-6 mb-6">
+                                            <div className="shrink-0 size-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center">
+                                                <span className="material-symbols-outlined text-3xl text-cyan-500">how_to_vote</span>
                                             </div>
-                                        </button>
-                                    ))}
-                                </div>
+                                            <div className="flex-1 min-w-0">
+                                                <h3 className="text-xl font-black dark:text-white leading-tight mb-2 group-hover:text-cyan-500 transition-colors">
+                                                    {poll.title}
+                                                </h3>
+                                                <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+                                                    <span className="material-symbols-outlined text-sm">person</span>
+                                                    <span className="font-bold">Propuesta por vecino</span>
+                                                    <span>•</span>
+                                                    <span>{new Date(poll.created_at).toLocaleDateString('es-ES')}</span>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-800">
-                                    <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-                                        💡 <strong>Nota:</strong> Esta es una votación informativa creada por un vecino. Los resultados sirven para conocer la opinión de la comunidad.
-                                    </p>
-                                </div>
-                            </motion.div>
-                        ))}
+                                        <div className="space-y-3">
+                                            {poll.options.map((option, optIdx) => (
+                                                <button
+                                                    key={optIdx}
+                                                    className="w-full text-left p-4 rounded-2xl border-2 border-gray-100 dark:border-gray-800 hover:border-cyan-500 hover:bg-cyan-500/5 transition-all group/option"
+                                                >
+                                                    <div className="flex items-center justify-between">
+                                                        <span className="font-bold dark:text-white group-hover/option:text-cyan-500 transition-colors">
+                                                            {option}
+                                                        </span>
+                                                        <span className="material-symbols-outlined text-gray-400 group-hover/option:text-cyan-500 transition-colors">
+                                                            radio_button_unchecked
+                                                        </span>
+                                                    </div>
+                                                </button>
+                                            ))}
+                                        </div>
+
+                                        <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-800">
+                                            <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+                                                💡 <strong>Nota:</strong> Esta es una votación informativa creada por un vecino. Los resultados sirven para conocer la opinión de la comunidad.
+                                            </p>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 )}
 
@@ -292,7 +358,7 @@ const Polls: React.FC = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </div >
+        </div>
     );
 };
 

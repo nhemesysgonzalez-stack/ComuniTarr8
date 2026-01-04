@@ -58,7 +58,10 @@ export const translations = {
         welcome_user: 'HOLA, {name}!',
         welcome_msg: 'Bienvenido a ComuniTarr. Tu plataforma para conectar, compartir y mejorar {neighborhood}.',
         welcome_home: 'Bienvenido a casa',
-        neighbor_desc: 'Tu plataforma para conectar, compartir y mejorar Tarragona juntos.'
+        neighbor_desc: 'Tu plataforma para conectar, compartir y mejorar Tarragona juntos.',
+        news_from: 'Noticias de',
+        your_progress: 'Tu Progreso',
+        level: 'Nivel'
     },
     en: {
         nav_main: 'Main',
@@ -106,7 +109,10 @@ export const translations = {
         welcome_user: 'HELLO, {name}!',
         welcome_msg: 'Welcome to ComuniTarr. Your platform to connect, share and improve {neighborhood}.',
         welcome_home: 'Welcome home',
-        neighbor_desc: 'Your platform to connect, share and improve Tarragona together.'
+        neighbor_desc: 'Your platform to connect, share and improve Tarragona together.',
+        news_from: 'News from',
+        your_progress: 'Your Progress',
+        level: 'Level'
     },
     ca: {
         nav_main: 'Principal',
@@ -154,7 +160,10 @@ export const translations = {
         welcome_user: 'HOLA, {name}!',
         welcome_msg: 'Benvingut a ComuniTarr. La teva plataforma per connectar, compartir i millorar {neighborhood}.',
         welcome_home: 'Benvingut a casa',
-        neighbor_desc: 'La teva plataforma per connectar, compartir i millorar Tarragona junts.'
+        neighbor_desc: 'La teva plataforma per connectar, compartir i millorar Tarragona junts.',
+        news_from: 'Notícies de',
+        your_progress: 'El Teu Progrés',
+        level: 'Nivell'
     },
     fr: {
         nav_main: 'Principal',
@@ -202,6 +211,9 @@ export const translations = {
         welcome_user: 'BONJOUR, {name}!',
         welcome_msg: 'Bienvenue sur ComuniTarr. Votre plateforme pour connecter, partager et améliorer {neighborhood}.',
         welcome_home: 'Bienvenue à la maison',
-        neighbor_desc: 'Votre plateforme pour connecter, partager et améliorer Tarragona ensemble.'
+        neighbor_desc: 'Votre plateforme pour connecter, partager et améliorer Tarragona ensemble.',
+        news_from: 'Nouvelles de',
+        your_progress: 'Votre Progrès',
+        level: 'Niveau'
     }
 };

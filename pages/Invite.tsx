@@ -8,7 +8,7 @@ const Invite: React.FC = () => {
 
     const promoText = `👋 ¡Hola, Vecino de Tarragona! ¿Conoces el secreto mejor guardado de tu barrio?
 
-Presentamos ComuniTarr, la Web App que está transformando la vida vecinal en Tarragona. ¡No necesitas descargar nada! Simplemente escanea el código QR y entra.
+Presentamos ComuniTarr, la Web App que está transformando la vida vecinal en Tarragona. ¡No necesitas descargar nada! Simplemente accede a través del enlace y únete.
 
 ComuniTarr es tu Super App Comunitaria, con funcionalidades que te harán la vida más fácil y conectada:
 🏡 BARRIO VIVO: Conexión y Ocio
@@ -63,28 +63,8 @@ Círculos de Apoyo: Encuentra o forma grupos para apoyo emocional o temático.
                 </p>
             </header>
 
-            <div className="grid md:grid-cols-2 gap-8">
-                {/* Left: QR and Download */}
-                <section className="bg-white dark:bg-surface-dark p-8 rounded-[40px] shadow-2xl border border-gray-100 dark:border-gray-800 flex flex-col items-center text-center space-y-6">
-                    <div className="bg-gray-50 dark:bg-gray-900 p-8 rounded-[40px] border-4 border-dashed border-gray-200 dark:border-gray-800 relative group overflow-hidden">
-                        <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <img
-                            src="/img/qr_official.png"
-                            alt="QR Code"
-                            className="w-48 md:w-64 h-auto rounded-3xl relative z-10 shadow-2xl"
-                        />
-                    </div>
-                    <div className="space-y-2">
-                        <h3 className="text-xl font-black dark:text-white uppercase tracking-tight">Tu Código QR</h3>
-                        <p className="text-xs text-gray-400 font-bold uppercase tracking-widest">Imprímelo o enséñalo en tu móvil</p>
-                    </div>
-                    <button className="w-full bg-gray-900 dark:bg-white dark:text-gray-900 text-white py-4 rounded-3xl font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:scale-105 transition-all">
-                        <span className="material-symbols-outlined">download</span>
-                        DESCARGAR QR KIT
-                    </button>
-                </section>
-
-                {/* Right: Text Copy and Share */}
+            <div className="max-w-2xl mx-auto">
+                {/* Text Copy and Share */}
                 <section className="space-y-6">
                     <div className="bg-white dark:bg-surface-dark p-8 rounded-[40px] shadow-2xl border border-gray-100 dark:border-gray-800 relative">
                         <div className="flex items-center justify-between mb-4">
@@ -97,7 +77,7 @@ Círculos de Apoyo: Encuentra o forma grupos para apoyo emocional o temático.
                                 {copied ? '¡COPIADO!' : 'COPIAR'}
                             </button>
                         </div>
-                        <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-3xl h-[250px] overflow-y-auto text-xs font-bold text-gray-500 dark:text-gray-300 leading-relaxed custom-scrollbar">
+                        <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-3xl h-[300px] overflow-y-auto text-xs font-bold text-gray-500 dark:text-gray-300 leading-relaxed custom-scrollbar">
                             {promoText.split('\n').map((line, i) => <p key={i} className="mb-2">{line}</p>)}
                         </div>
                     </div>
@@ -109,9 +89,9 @@ Círculos de Apoyo: Encuentra o forma grupos para apoyo emocional o temático.
                                 href={opt.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`${opt.color} text-white p-4 rounded-[30px] flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all shadow-lg`}
+                                className={`${opt.color} text-white p-5 rounded-[30px] flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all shadow-lg`}
                             >
-                                <span className="material-symbols-outlined text-2xl">{opt.icon}</span>
+                                <span className="material-symbols-outlined text-3xl">{opt.icon}</span>
                                 <span className="text-[10px] font-black uppercase tracking-tighter">{opt.name}</span>
                             </a>
                         ))}
@@ -127,9 +107,9 @@ Círculos de Apoyo: Encuentra o forma grupos para apoyo emocional o temático.
                 </h3>
                 <div className="grid md:grid-cols-3 gap-6">
                     {[
-                        { title: 'GRUPOS DE WHATSAPP', desc: 'Comparte el mensaje en el grupo de tu comunidad de vecinos o del colegio.' },
-                        { title: 'COMERCIO LOCAL', desc: 'Pide a tu panadería o bar de confianza que pongan el QR en el mostrador.' },
-                        { title: 'REDES SOCIALES', desc: 'Sube el QR a tus Stories de Instagram mencionando a @Tarragona_App.' }
+                        { title: 'GRUPOS DE WHATSAPP', desc: 'Comparte el mensaje viral en el grupo de tu comunidad de vecinos o del colegio.' },
+                        { title: 'COMO ESTADO', desc: 'Pon el enlace directo a la web en tus estados de WhatsApp o Stories.' },
+                        { title: 'BOCA A BOCA', desc: 'Enseña la web directamente en tu móvil a tus amigos y conocidos del barrio.' }
                     ].map((item, i) => (
                         <div key={i} className="space-y-2">
                             <p className="text-xs font-black text-primary uppercase tracking-widest">{item.title}</p>

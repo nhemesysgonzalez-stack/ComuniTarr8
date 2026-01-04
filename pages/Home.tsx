@@ -204,10 +204,19 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
+        const bonaGentNotice = {
+          id: 'bona-gent-2025',
+          title: "🏆 Votaciones: La Bona Gent 2025",
+          content: "¡Ya puedes votar a la 'Bona Gent de Tarragona 2025'! Participa en la sección de Votaciones para elegir a los vecinos y entidades más destacados del año.",
+          category: "EVENTO",
+          neighborhood: "GENERAL",
+          created_at: new Date().toISOString()
+        };
+
         const fetchedNews = !newsError && newsData ? newsData : [];
 
         // Colocar las noticias destacadas al principio y luego las noticias de la DB
-        setNews([weatherAlert, cabalgataNotice, plaBarrisNotice, ...fetchedNews].slice(0, 4));
+        setNews([weatherAlert, bonaGentNotice, cabalgataNotice, plaBarrisNotice, ...fetchedNews].slice(0, 4));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase

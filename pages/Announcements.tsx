@@ -156,6 +156,16 @@ const Announcements: React.FC = () => {
             created_at: new Date().toISOString()
         };
 
+        const bonaGentNotice: Announcement = {
+            id: 'bona-gent-2025',
+            title: "🏆 Votaciones: La Bona Gent 2025",
+            content: "¡Ya puedes votar a la 'Bona Gent de Tarragona 2025'! Participa en la sección de Votaciones para elegir a los vecinos y entidades más destacados del año.",
+            category: "EVENTO",
+            neighborhood: "GENERAL",
+            author_name: "Diari de Tarragona",
+            created_at: new Date().toISOString()
+        };
+
         try {
             const data = await safeSupabaseFetch('announcements',
                 supabase
@@ -166,7 +176,7 @@ const Announcements: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
             const fetched = data || [];
-            setNotices([weatherAlert, cabalgataNotice, plaBarrisNotice, ...fetched]);
+            setNotices([weatherAlert, bonaGentNotice, cabalgataNotice, plaBarrisNotice, ...fetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);
