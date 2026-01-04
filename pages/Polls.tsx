@@ -16,6 +16,7 @@ interface Poll {
 const Polls: React.FC = () => {
     const { user } = useAuth();
     const [polls, setPolls] = useState<Poll[]>([]);
+    const [votedPollIds, setVotedPollIds] = useState<string[]>([]);
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [loading, setLoading] = useState(true);
 
@@ -24,6 +25,12 @@ const Polls: React.FC = () => {
     const [pollOptions, setPollOptions] = useState(['', '']);
 
     const handleVote = async (pollId: string, optionIndex: number, optionText: string) => {
+        // Verificar si ya ha votado
+        if (votedPollIds.includes(pollId)) {
+            alert('Usted ya ha efectuado su voto en esta votación.');
+            return;
+        }
+
         const confirmVote = window.confirm(`¿Quieres registrar tu voto para "${optionText}"?`);
         if (!confirmVote) return;
 
@@ -38,6 +45,7 @@ const Polls: React.FC = () => {
 
             if (success) {
                 alert(`¡Gracias! Tu voto para "${optionText}" ha sido registrado correctamente.`);
+                setVotedPollIds(prev => [...prev, pollId]);
             }
         } catch (e) {
             console.error(e);
@@ -61,6 +69,18 @@ const Polls: React.FC = () => {
             );
 
             setPolls(data || []);
+
+            // Cargar los votos del usuario actual
+            if (user?.id) {
+                const { data: voteData } = await supabase
+                    .from('poll_votes')
+                    .select('poll_id')
+                    .eq('user_id', user.id);
+
+                if (voteData) {
+                    setVotedPollIds(voteData.map(v => v.poll_id));
+                }
+            }
         } catch (e) {
             console.error(e);
         } finally {
@@ -179,15 +199,25 @@ const Polls: React.FC = () => {
                                                 "Santos Masegosa (Gastronomía)",
                                                 "Bombers de la Generalitat",
                                                 "Nens del Vendrell (Castells)"
-                                            ].map((opt, i) => (
-                                                <button
-                                                    key={i}
-                                                    onClick={() => handleVote('bona-gent-2025', i, opt)}
-                                                    className="p-4 rounded-2xl border-2 border-gray-100 dark:border-gray-800 hover:border-primary hover:bg-primary/5 transition-all text-left group/btn"
-                                                >
-                                                    <span className="text-xs font-black dark:text-gray-200 group-hover/btn:text-primary transition-colors uppercase tracking-tight">{opt}</span>
-                                                </button>
-                                            ))}
+                                            ].map((opt, i) => {
+                                                const hasVoted = votedPollIds.includes('bona-gent-2025');
+                                                return (
+                                                    <button
+                                                        key={i}
+                                                        disabled={hasVoted}
+                                                        onClick={() => handleVote('bona-gent-2025', i, opt)}
+                                                        className={`p-4 rounded-2xl border-2 transition-all text-left flex items-center justify-between group/btn ${hasVoted
+                                                                ? 'border-gray-100 dark:border-gray-800 opacity-60 cursor-not-allowed'
+                                                                : 'border-gray-100 dark:border-gray-800 hover:border-primary hover:bg-primary/5'
+                                                            }`}
+                                                    >
+                                                        <span className="text-xs font-black dark:text-gray-200 group-hover/btn:text-primary transition-colors uppercase tracking-tight">{opt}</span>
+                                                        {hasVoted && (
+                                                            <span className="material-symbols-outlined text-primary text-sm font-black">check_circle</span>
+                                                        )}
+                                                    </button>
+                                                );
+                                            })}
                                         </div>
                                     </div>
 
@@ -250,22 +280,29 @@ const Polls: React.FC = () => {
                                         </div>
 
                                         <div className="space-y-3">
-                                            {poll.options.map((option, optIdx) => (
-                                                <button
-                                                    key={optIdx}
-                                                    onClick={() => handleVote(poll.id, optIdx, option)}
-                                                    className="w-full text-left p-4 rounded-2xl border-2 border-gray-100 dark:border-gray-800 hover:border-cyan-500 hover:bg-cyan-500/5 transition-all group/option"
-                                                >
-                                                    <div className="flex items-center justify-between">
-                                                        <span className="font-bold dark:text-white group-hover/option:text-cyan-500 transition-colors">
-                                                            {option}
-                                                        </span>
-                                                        <span className="material-symbols-outlined text-gray-400 group-hover/option:text-cyan-500 transition-colors">
-                                                            radio_button_unchecked
-                                                        </span>
-                                                    </div>
-                                                </button>
-                                            ))}
+                                            {poll.options.map((option, optIdx) => {
+                                                const hasVoted = votedPollIds.includes(poll.id);
+                                                return (
+                                                    <button
+                                                        key={optIdx}
+                                                        disabled={hasVoted}
+                                                        onClick={() => handleVote(poll.id, optIdx, option)}
+                                                        className={`w-full text-left p-4 rounded-2xl border-2 transition-all group/option ${hasVoted
+                                                            ? 'border-gray-100 dark:border-gray-800 opacity-60 cursor-not-allowed'
+                                                            : 'border-gray-100 dark:border-gray-800 hover:border-cyan-500 hover:bg-cyan-500/5'
+                                                            }`}
+                                                    >
+                                                        <div className="flex items-center justify-between">
+                                                            <span className="font-bold dark:text-white group-hover/option:text-cyan-500 transition-colors">
+                                                                {option}
+                                                            </span>
+                                                            <span className="material-symbols-outlined text-gray-400 group-hover/option:text-cyan-500 transition-colors">
+                                                                {hasVoted ? 'check_circle' : 'radio_button_unchecked'}
+                                                            </span>
+                                                        </div>
+                                                    </button>
+                                                );
+                                            })}
                                         </div>
 
                                         <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-800">
