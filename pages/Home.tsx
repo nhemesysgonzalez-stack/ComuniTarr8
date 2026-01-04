@@ -185,10 +185,29 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
+        const cabalgataNotice = {
+          id: 'cabalgata-reyes',
+          title: "🤴 Cabalgata de Reyes: Llegada al Serrallo",
+          content: "Mañana 5 de enero, Sus Majestades llegarán por mar al Moll de Costa a las 18:15h. Se recomienda acudir con antelación y evitar el uso de vehículos particulares en la zona del Puerto por cortes de tráfico.",
+          category: "EVENTO",
+          neighborhood: "EL SERRALLO",
+          itinerary: "• 18:15h: Llegada al Moll de Costa\n• 19:00h: Inicio del desfile por Calle Real\n• 20:00h: Paso por Rambla Nova\n• 20:45h: Recogida de llaves en la Plaza de la Font",
+          created_at: new Date().toISOString()
+        };
+
+        const plaBarrisNotice = {
+          id: 'pla-barris',
+          title: "🏗️ Transformación de la Part Baixa (2026)",
+          content: "Empiezan las 34 actuaciones del Plan de Barrios con una inversión de 25M€. Las obras se centrarán en la rehabilitación de viviendas y la mejora de la accesibilidad en la calle Real.",
+          category: "COMUNIDAD",
+          neighborhood: "GENERAL",
+          created_at: new Date().toISOString()
+        };
+
         const fetchedNews = !newsError && newsData ? newsData : [];
 
-        // Colocar la alerta meteorológica al principio y luego las noticias de la DB
-        setNews([weatherAlert, ...fetchedNews].slice(0, 4));
+        // Colocar las noticias destacadas al principio y luego las noticias de la DB
+        setNews([weatherAlert, cabalgataNotice, plaBarrisNotice, ...fetchedNews].slice(0, 4));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase

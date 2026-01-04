@@ -124,6 +124,38 @@ const Announcements: React.FC = () => {
 
     const fetchNotices = async () => {
         setLoading(true);
+        const weatherAlert: Announcement = {
+            id: 'weather-alert',
+            title: "❄️ ALERTA: Nieve y Frío Intenso",
+            content: "Protección Civil activa la alerta por nevadas en cotas bajas a partir de mañana. Se recomienda adelantar el regreso de las vacaciones para evitar colapsos en la AP-7.",
+            category: "URGENTE",
+            neighborhood: "GENERAL",
+            author_name: "Protección Civil",
+            itinerary: "• Cota de nieve: 200-400m\n• Riesgo alto en prelitoral\n• Llevar cadenas y depósito lleno\n• Evitar desplazamientos innecesarios",
+            created_at: new Date().toISOString()
+        };
+
+        const cabalgataNotice: Announcement = {
+            id: 'cabalgata-reyes',
+            title: "🤴 Cabalgata de Reyes: Llegada al Serrallo",
+            content: "Mañana 5 de enero, Sus Majestades llegarán por mar al Moll de Costa a las 18:15h. Se recomienda acudir con antelación y evitar el uso de vehículos particulares en la zona del Puerto por cortes de tráfico.",
+            category: "EVENTO",
+            neighborhood: "EL SERRALLO",
+            author_name: "Ajuntament de Tarragona",
+            itinerary: "• 18:15h: Llegada al Moll de Costa\n• 19:00h: Inicio del desfile por Calle Real\n• 20:00h: Paso por Rambla Nova\n• 20:45h: Recogida de llaves en la Plaza de la Font",
+            created_at: new Date().toISOString()
+        };
+
+        const plaBarrisNotice: Announcement = {
+            id: 'pla-barris',
+            title: "🏗️ Transformación de la Part Baixa (2026)",
+            content: "Empiezan las 34 actuaciones del Plan de Barrios con una inversión de 25M€. Las obras se centrarán en la rehabilitación de viviendas y la mejora de la accesibilidad en el entorno de la calle Real y alrededores.",
+            category: "COMUNIDAD",
+            neighborhood: "GENERAL",
+            author_name: "Urbanisme Tarragona",
+            created_at: new Date().toISOString()
+        };
+
         try {
             const data = await safeSupabaseFetch('announcements',
                 supabase
@@ -133,9 +165,11 @@ const Announcements: React.FC = () => {
                     .or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`)
                     .order('created_at', { ascending: false })
             );
-            setNotices(data || []);
+            const fetched = data || [];
+            setNotices([weatherAlert, cabalgataNotice, plaBarrisNotice, ...fetched]);
         } catch (e) {
             console.error(e);
+            setNotices([weatherAlert]);
         } finally {
             setLoading(false);
         }
