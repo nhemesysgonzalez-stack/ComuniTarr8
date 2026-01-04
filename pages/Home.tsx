@@ -105,7 +105,6 @@ const DynamicThemeEffects: React.FC = () => {
         </motion.div>
       )}
 
-      {/* Subtle Starry Night Effect for Jan */}
       {currentMonth === 0 && (
         <div className="absolute inset-0">
           {[...Array(20)].map((_, i) => (
@@ -154,9 +153,6 @@ const Home: React.FC = () => {
   const [helpDescription, setHelpDescription] = useState('');
   const [helpCategory, setHelpCategory] = useState('');
   const [helpContact, setHelpContact] = useState('');
-
-  // Hero Image Selection (Dynamic)
-  const heroImage = "https://images.unsplash.com/photo-1722520592113-1f681393cd8d?auto=format&fit=crop&q=80&w=1600"; // Tarragona Amphitheater landscape
 
   // Fetch real news and recent neighbors from Supabase
   useEffect(() => {
@@ -214,8 +210,6 @@ const Home: React.FC = () => {
         };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
-
-        // Colocar las noticias destacadas al principio y luego las noticias de la DB
         setNews([weatherAlert, bonaGentNotice, cabalgataNotice, plaBarrisNotice, ...fetchedNews].slice(0, 4));
 
         // Fetch Recent Neighbors
@@ -236,7 +230,7 @@ const Home: React.FC = () => {
           ]);
         }
 
-        // Fetch Forum Activity (unique users last 24h)
+        // Fetch Forum Activity
         const { data: forumData } = await supabase
           .from('forum_messages')
           .select('user_id')
@@ -244,7 +238,7 @@ const Home: React.FC = () => {
           .gte('created_at', new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString());
 
         const uniqueUsers = new Set((forumData || []).map(m => m.user_id)).size;
-        setForumActiveCount(uniqueUsers > 0 ? uniqueUsers : 1); // Garantizar mínimo 1 para ver el efecto activo
+        setForumActiveCount(uniqueUsers > 0 ? uniqueUsers : 1);
 
       } catch (e) {
         console.error('Error fetching Home data:', e);
@@ -303,11 +297,19 @@ const Home: React.FC = () => {
     } catch (err) { console.error(err); }
   };
 
+  const currentPoll = {
+    id: 'poll-1',
+    question: '¿Qué mejora te gustaría ver en tu barrio?',
+    options: ['Más zonas verdes', 'Mejor transporte público', 'Más seguridad', 'Eventos culturales'],
+    category: 'ENCUESTA',
+    neighborhood: user?.user_metadata?.neighborhood || 'GENERAL',
+    created_at: new Date().toISOString()
+  };
+
   return (
     <div className="p-4 md:p-10 max-w-7xl mx-auto space-y-12 font-sans pb-20 relative">
       <DynamicThemeEffects />
 
-      {/* Hero Section */}
       {/* Hero Section */}
       <section className="relative h-[250px] md:h-[400px] rounded-[40px] overflow-hidden shadow-2xl flex items-center px-6 md:px-16 bg-gray-900">
         <img
@@ -351,6 +353,38 @@ const Home: React.FC = () => {
         ))}
       </section>
 
+      {/* Featured Vote Banner: Bona Gent 2025 */}
+      <section className="relative overflow-hidden group bg-gradient-to-r from-cyan-600 to-blue-700 rounded-[40px] p-8 md:p-12 text-white shadow-2xl shadow-cyan-500/30">
+        <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:scale-110 transition-transform duration-700">
+          <span className="material-symbols-outlined text-[150px]">workspace_premium</span>
+        </div>
+        <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
+          <div className="flex-1 text-center md:text-left">
+            <span className="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest mb-6 border border-white/20">
+              Iniciativa Local
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tighter leading-none">
+              ¿Quién es la <br /><span className="text-cyan-200">Bona Gent 2025?</span>
+            </h2>
+            <p className="text-lg opacity-90 font-bold mb-8 max-w-xl">
+              Vota por los vecinos que hacen de Tarragona un lugar mejor. ¡Tu voto cuenta para reconocer el compromiso vecinal!
+            </p>
+            <Link
+              to="/polls"
+              className="inline-flex items-center gap-4 px-8 py-5 bg-white text-cyan-600 rounded-[30px] font-black text-xs uppercase tracking-widest shadow-xl hover:scale-105 active:scale-95 transition-all group/btn"
+            >
+              VOTAR AHORA
+              <span className="material-symbols-outlined font-black group-hover:translate-x-1 transition-transform">how_to_vote</span>
+            </Link>
+          </div>
+          <div className="hidden lg:flex flex-col items-center justify-center w-64 h-64 bg-white/10 backdrop-blur-md rounded-[40px] border border-white/20 p-8 text-center">
+            <span className="material-symbols-outlined text-6xl mb-4 text-cyan-200">emoji_events</span>
+            <p className="text-xs font-black uppercase tracking-widest">Reconocimiento Vecinal</p>
+            <p className="text-[10px] font-bold opacity-60 mt-2">Colabora con el Diari de Tarragona</p>
+          </div>
+        </div>
+      </section>
+
       {/* Promotion Banner */}
       <section className="bg-gradient-to-r from-orange-500 to-amber-500 rounded-[40px] p-6 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg shadow-orange-500/20">
         <div className="flex items-center gap-4">
@@ -368,7 +402,6 @@ const Home: React.FC = () => {
       </section>
 
       <div className="grid lg:grid-cols-3 gap-8">
-        {/* Real News Feed */}
         <section className="lg:col-span-2 space-y-6">
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-black flex items-center gap-3">
@@ -394,9 +427,7 @@ const Home: React.FC = () => {
           </div>
         </section>
 
-        {/* Side widgets */}
         <div className="space-y-8">
-          {/* Level Widget */}
           <section className="space-y-6">
             <h2 className="text-2xl font-black">{t('your_progress')}</h2>
             <div className="bg-gradient-to-br from-primary to-blue-600 p-8 rounded-[40px] text-white shadow-xl shadow-primary/20 relative overflow-hidden">
@@ -423,7 +454,6 @@ const Home: React.FC = () => {
             </div>
           </section>
 
-          {/* New Neighbors Widget */}
           <section className="space-y-4">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-black flex items-center gap-2">
@@ -471,10 +501,39 @@ const Home: React.FC = () => {
               )}
             </div>
           </section>
+
+          <section className="space-y-4">
+            <h2 className="text-xl font-black flex items-center gap-2">
+              <span className="material-symbols-outlined text-purple-500">how_to_vote</span>
+              Encuesta del Barrio
+            </h2>
+            <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 border border-gray-100 dark:border-gray-700 shadow-sm space-y-4">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="px-3 py-1 bg-purple-500/10 text-purple-500 rounded-full text-[10px] font-black uppercase tracking-[0.2em]">{currentPoll.category}</span>
+                <span className="text-[10px] font-bold text-gray-400 dark:text-gray-500">• {new Date(currentPoll.created_at).toLocaleDateString()}</span>
+              </div>
+              <h3 className="text-lg font-black dark:text-white leading-tight mb-4">{currentPoll.question}</h3>
+              <div className="space-y-3">
+                {currentPoll.options.map((opt, i) => (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      const confirmVote = window.confirm(`¿Quieres registrar tu voto para ${opt}?`);
+                      if (confirmVote) {
+                        alert(`¡Gracias! Tu voto para ${opt} ha sido registrado correctamente.`);
+                      }
+                    }}
+                    className="p-4 rounded-2xl border-2 border-gray-100 dark:border-gray-800 hover:border-primary hover:bg-primary/5 transition-all text-left group/btn w-full"
+                  >
+                    <span className="text-xs font-black dark:text-gray-200 group-hover/btn:text-primary transition-colors uppercase tracking-tight">{opt}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </section>
         </div>
       </div>
 
-      {/* Modals */}
       <AnimatePresence>
         {showIncidentModal && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowIncidentModal(false)}>
@@ -510,7 +569,7 @@ const Home: React.FC = () => {
               </div>
               <form onSubmit={handleHelpSubmit} className="space-y-4">
                 <input type="text" value={helpTitle} onChange={(e) => setHelpTitle(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white" placeholder="Título corto..." />
-                <textarea value={helpDescription} onChange={(e) => setHelpDescription(e.target.value)} required rows={3} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white resize-none" placeholder="¿En qué consistee?" />
+                <textarea value={helpDescription} onChange={(e) => setHelpDescription(e.target.value)} required rows={3} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white resize-none" placeholder="¿En qué consiste?" />
                 <button type="submit" className={`w-full py-4 rounded-2xl font-black uppercase tracking-widest transition-all shadow-lg ${helpType === 'request' ? 'bg-indigo-600 text-white shadow-indigo-500/20' : 'bg-emerald-600 text-white shadow-emerald-500/20'}`}>PUBLICAR ANUNCIO</button>
               </form>
             </motion.div>
