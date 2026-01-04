@@ -16,7 +16,7 @@ interface Message {
 
 // Optimization: Move Audio objects outside the component to prevent re-initialization on every render
 const msgSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2358/2358-preview.mp3'); // Notification chime
-const buzzSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2354/2354-preview.mp3'); // Alert/Buzz
+const buzzSound = new Audio('https://assets.mixkit.co/active_storage/sfx/3142/3142-preview.mp3'); // Impactful Vibration Sound
 
 msgSound.preload = 'auto';
 buzzSound.preload = 'auto';
@@ -110,9 +110,22 @@ const Forum: React.FC = () => {
   };
 
   useEffect(() => {
+    if ("Notification" in window && Notification.permission === "default") {
+      Notification.requestPermission();
+    }
+
     fetchMessages();
-    const subscription = supabase
-      .channel(`forum_${currentNeighborhood}`)
+
+    // Setup Presence and PostgreSQL Changes
+    const channel = supabase.channel(`forum_presence_${currentNeighborhood}`, {
+      config: {
+        presence: {
+          key: user?.id,
+        },
+      },
+    });
+
+    channel
       .on('postgres_changes', {
         event: 'INSERT',
         schema: 'public',
@@ -121,23 +134,52 @@ const Forum: React.FC = () => {
       },
         payload => {
           const newMsg = payload.new as Message;
-
-          // Solo sonar si es nuevo y no es mío
           if (newMsg.user_id !== user?.id) {
             if (newMsg.content.includes('<<ZUMBIDO>>')) {
               playSound('buzz');
+              if (Notification.permission === 'granted') {
+                new Notification('📳 ¡ZUMBIDO VECINAL!', {
+                  body: `${newMsg.user_metadata?.full_name} te ha enviado un zumbido`,
+                  icon: '/logo.svg'
+                });
+              }
             } else {
               playSound('msg');
+              if (Notification.permission === 'granted') {
+                new Notification(`Nuevo mensaje en ${currentNeighborhood}`, {
+                  body: `${newMsg.user_metadata?.full_name}: ${newMsg.content.substring(0, 50)}...`,
+                  icon: '/logo.svg'
+                });
+              }
             }
           }
-
           setMessages(prev => [...prev, newMsg]);
         }
       )
-      .subscribe();
+      .on('presence', { event: 'sync' }, () => {
+        const state = channel.presenceState();
+        const onlineUsers = Object.values(state).flat().map((p: any) => ({
+          id: p.user_id,
+          full_name: p.full_name,
+          avatar_url: p.avatar_url
+        }));
+        // Remove duplicates if same user is in multiple tabs
+        const uniqueOnline = onlineUsers.filter((v, i, a) => a.findIndex(t => t.id === v.id) === i);
+        setActiveUsers(uniqueOnline);
+      })
+      .subscribe(async (status) => {
+        if (status === 'SUBSCRIBED') {
+          await channel.track({
+            user_id: user?.id,
+            full_name: user?.user_metadata?.full_name,
+            avatar_url: user?.user_metadata?.avatar_url,
+            online_at: new Date().toISOString(),
+          });
+        }
+      });
 
     return () => {
-      supabase.removeChannel(subscription);
+      supabase.removeChannel(channel);
     };
   }, [currentNeighborhood]);
 
@@ -169,11 +211,11 @@ const Forum: React.FC = () => {
   };
 
   const fetchActiveUsers = (msgs: Message[]) => {
-    // Obtener los avatares únicos de los últimos mensajes
+    // Si no hay presencia todavía, usamos los autores de los últimos mensajes como fallback
+    if (activeUsers.length > 0) return;
+
     const seen = new Set();
     const uniqueUsers: any[] = [];
-
-    // Recorrer mensajes de más reciente a más antiguo
     [...msgs].reverse().forEach(m => {
       if (m.user_id && !seen.has(m.user_id)) {
         seen.add(m.user_id);
@@ -184,7 +226,6 @@ const Forum: React.FC = () => {
         });
       }
     });
-
     setActiveUsers(uniqueUsers.slice(0, 5));
   };
 
@@ -238,17 +279,38 @@ const Forum: React.FC = () => {
     >
       {/* Header */}
       <div className="p-6 md:p-8 border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-surface-dark flex items-center justify-between shrink-0">
-        <div>
-          <h2 className="text-xl md:text-3xl font-black dark:text-white tracking-tighter uppercase leading-none mb-1">FORO VECINAL</h2>
-          <button
-            onClick={() => setShowNeighborhoods(!showNeighborhoods)}
-            className="flex items-center gap-1 group"
-          >
-            <span className="text-[10px] font-black text-primary uppercase tracking-[0.3em] group-hover:underline">
-              {currentNeighborhood}
-            </span>
-            <span className="material-symbols-outlined text-xs text-primary font-black">keyboard_arrow_down</span>
-          </button>
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center gap-3">
+            <h2 className="text-xl md:text-3xl font-black dark:text-white tracking-tighter uppercase leading-none">FORO VECINAL</h2>
+            <div className="flex items-center gap-1 px-2 py-1 bg-green-500/10 rounded-lg">
+              <span className="size-2 rounded-full bg-green-500 animate-pulse"></span>
+              <span className="text-[9px] font-black text-green-600 uppercase tracking-widest">{activeUsers.length} ONLINE</span>
+            </div>
+          </div>
+
+          <div className="flex gap-2">
+            <button
+              onClick={() => setCurrentNeighborhood('GENERAL')}
+              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood === 'GENERAL' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
+            >
+              🌍 Canal General
+            </button>
+            <button
+              onClick={() => {
+                const myNeighborhood = user?.user_metadata?.neighborhood || NEIGHBORHOODS[0];
+                setCurrentNeighborhood(myNeighborhood);
+              }}
+              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood !== 'GENERAL' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
+            >
+              🏠 Mi Barrio ({user?.user_metadata?.neighborhood || 'Seleccionar'})
+            </button>
+            <button
+              onClick={() => setShowNeighborhoods(!showNeighborhoods)}
+              className="size-10 flex items-center justify-center bg-gray-100 text-gray-500 rounded-xl hover:bg-gray-200"
+            >
+              <span className="material-symbols-outlined">more_horiz</span>
+            </button>
+          </div>
         </div>
 
         {/* Mute Button */}
@@ -343,9 +405,11 @@ const Forum: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
                     { text: "¿Qué os parece la peatonalización de la calle Canyelles?", icon: 'conversion_path' },
-                    { text: "Mejores sitios para ver el atardecer en la Part Alta", icon: 'wb_twilight' },
-                    { text: "¿Alguien sabe de alguna ruta de tapas recomendada?", icon: 'restaurant_menu' },
-                    { text: "Propuestas para mejorar la limpieza del barrio", icon: 'cleaning_services' }
+                    { text: "Propuestas para mejorar la limpieza en la Part Baixa", icon: 'cleaning_services' },
+                    { text: "¿A qué hora salís mañana para ver entrar a los Reyes al Serrallo?", icon: 'rebase_edit' },
+                    { text: "Busco equipo para jugar a pádel en el Nàstic", icon: 'sports_tennis' },
+                    { text: "¿Alguien sabe si hay mercado en la Plaza del Fórum mañana?", icon: 'storefront' },
+                    { text: "¡He visto un perrito perdido por Sant Pere i Sant Pau!", icon: 'pets' }
                   ].map((tip, i) => (
                     <button
                       key={i}
