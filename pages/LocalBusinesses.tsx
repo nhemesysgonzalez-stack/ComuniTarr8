@@ -1,9 +1,11 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
-import { safeSupabaseInsert } from '../services/dataHandler';
+import { safeSupabaseFetch, safeSupabaseInsert } from '../services/dataHandler';
+import { supabase } from '../services/supabaseClient';
+import { Link } from 'react-router-dom';
 
 const LocalBusinesses: React.FC = () => {
     const { user } = useAuth();
@@ -12,7 +14,32 @@ const LocalBusinesses: React.FC = () => {
     const [businessName, setBusinessName] = useState('');
     const [businessType, setBusinessType] = useState('Tienda');
     const [proposedDiscount, setProposedDiscount] = useState('');
+    const [requiredPoints, setRequiredPoints] = useState('50');
     const [contact, setContact] = useState('');
+    const [partners, setPartners] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetchApprovedPartners();
+    }, [user?.user_metadata?.neighborhood]);
+
+    const fetchApprovedPartners = async () => {
+        setLoading(true);
+        try {
+            const data = await safeSupabaseFetch('business_partners',
+                supabase
+                    .from('business_partners')
+                    .select('*')
+                    .eq('status', 'approved')
+                    .or(`neighborhood.eq.${user?.user_metadata?.neighborhood || 'GENERAL'},neighborhood.eq.GENERAL`)
+            );
+            setPartners(data || []);
+        } catch (err) {
+            console.error(err);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     const handlePartnerSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -23,6 +50,7 @@ const LocalBusinesses: React.FC = () => {
             business_name: businessName,
             business_type: businessType,
             proposed_discount: proposedDiscount,
+            required_points: parseInt(requiredPoints) || 50,
             contact_info: contact,
             neighborhood: user?.user_metadata?.neighborhood || 'GENERAL',
             status: 'pending'
@@ -37,6 +65,7 @@ const LocalBusinesses: React.FC = () => {
                     business_name: businessName,
                     type: businessType,
                     discount: proposedDiscount,
+                    points_required: requiredPoints,
                     contact: contact,
                     neighborhood: user?.user_metadata?.neighborhood || 'GENERAL'
                 },
@@ -69,30 +98,92 @@ const LocalBusinesses: React.FC = () => {
                 </div>
             </section>
 
-            {/* Explicación del Sistema */}
-            <section className="max-w-7xl mx-auto py-20 px-6 grid md:grid-cols-3 gap-12">
-                <div className="bg-white dark:bg-gray-800 p-10 rounded-[40px] shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">
-                    <div className="size-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6">
-                        <span className="material-symbols-outlined text-4xl text-blue-600">volunteer_activism</span>
+            {/* Recompensas Disponibles */}
+            <section className="max-w-7xl mx-auto py-20 px-6 space-y-12">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <div>
+                        <h2 className="text-4xl font-black dark:text-white uppercase tracking-tighter mb-2">Recompensas en {user?.user_metadata?.neighborhood || 'Tarragona'}</h2>
+                        <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px]">Canjea tus ComuniPoints por estos beneficios exclusivos</p>
                     </div>
-                    <h3 className="text-2xl font-black dark:text-white">Los vecinos ayudan</h3>
-                    <p className="text-gray-500 dark:text-gray-400">Los vecinos ganan puntos al realizar acciones positivas en el barrio (recados, clases, ayuda mutua).</p>
+                    <div className="px-6 py-3 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl flex items-center gap-3">
+                        <span className="material-symbols-outlined text-emerald-600">payments</span>
+                        <div className="text-left">
+                            <p className="text-[8px] font-black text-emerald-600 uppercase tracking-widest leading-none mb-1">Tu Saldo Actual</p>
+                            <p className="text-xl font-black text-emerald-600 leading-none">{user?.user_metadata?.comuni_points || 0} CP</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div className="bg-white dark:bg-gray-800 p-10 rounded-[40px] shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">
-                    <div className="size-16 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center mb-6">
-                        <span className="material-symbols-outlined text-4xl text-orange-600">currency_exchange</span>
+                {loading ? (
+                    <div className="flex flex-col items-center gap-4 py-20 opacity-20">
+                        <div className="size-10 border-4 border-primary border-t-transparent animate-spin rounded-full"></div>
+                        <p className="text-xs font-black uppercase tracking-widest">Cargando ofertas...</p>
                     </div>
-                    <h3 className="text-2xl font-black dark:text-white">Canjean en tu local</h3>
-                    <p className="text-gray-500 dark:text-gray-400">Tú decides qué beneficio ofreces (ej: 10% dto, un café gratis, 2x1) a cambio de una cantidad de puntos.</p>
-                </div>
+                ) : partners.length === 0 ? (
+                    <div className="bg-white dark:bg-surface-dark p-20 rounded-[40px] text-center border-2 border-dashed border-gray-200 dark:border-gray-800">
+                        <span className="material-symbols-outlined text-gray-300 text-6xl mb-4">redeem</span>
+                        <h3 className="text-xl font-black dark:text-white mb-2 uppercase">Próximamente más recompensas</h3>
+                        <p className="text-gray-500 max-w-md mx-auto italic">Estamos aprobando nuevos comercios en tu zona. ¡Vuelve pronto o invita a tu tienda favorita!</p>
+                    </div>
+                ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {partners.map((partner) => (
+                            <motion.div
+                                key={partner.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="bg-white dark:bg-surface-dark rounded-[40px] overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-2xl hover:border-emerald-500/30 transition-all group"
+                            >
+                                <div className="h-48 bg-gradient-to-br from-emerald-500/10 to-primary/10 flex items-center justify-center relative">
+                                    <span className="material-symbols-outlined text-7xl text-emerald-500/20 group-hover:scale-125 transition-transform duration-500">
+                                        {partner.business_type === 'Restauración' ? 'restaurant' :
+                                            partner.business_type === 'Alimentación' ? 'shopping_cart' :
+                                                partner.business_type === 'Moda / Regalos' ? 'apparel' : 'storefront'}
+                                    </span>
+                                    <div className="absolute bottom-4 left-6 bg-white/90 dark:bg-surface-dark/90 backdrop-blur-md px-4 py-2 rounded-2xl shadow-xl">
+                                        <p className="text-2xl font-black text-emerald-600 leading-none">{partner.required_points || 50} <span className="text-[10px] uppercase font-black">CP</span></p>
+                                    </div>
+                                </div>
+                                <div className="p-8 space-y-4">
+                                    <div className="flex items-start justify-between">
+                                        <div>
+                                            <h3 className="text-xl font-black dark:text-white leading-tight">{partner.proposed_discount}</h3>
+                                            <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-1">{partner.business_name}</p>
+                                        </div>
+                                        <span className="material-symbols-outlined text-emerald-500">verified</span>
+                                    </div>
+                                    <div className="h-[2px] bg-gray-50 dark:bg-gray-800 w-full"></div>
+                                    <div className="flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400">
+                                        <span className="material-symbols-outlined text-sm">location_on</span>
+                                        {partner.neighborhood}
+                                    </div>
+                                    <button
+                                        disabled={(user?.user_metadata?.comuni_points || 0) < (partner.required_points || 50)}
+                                        onClick={() => {
+                                            alert(`¡Genial! Presenta este código en ${partner.business_name} para obtener tu recompensa: CP-${Math.random().toString(36).substring(7).toUpperCase()}`);
+                                        }}
+                                        className={`w-full py-4 rounded-2xl font-black text-xs uppercase tracking-widest transition-all ${(user?.user_metadata?.comuni_points || 0) >= (partner.required_points || 50)
+                                                ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/20 hover:scale-105 active:scale-95'
+                                                : 'bg-gray-100 text-gray-400 cursor-not-allowed grayscale'
+                                            }`}
+                                    >
+                                        {(user?.user_metadata?.comuni_points || 0) >= (partner.required_points || 50) ? 'Canjear Recompensa' : 'Puntos insuficientes'}
+                                    </button>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                )}
 
-                <div className="bg-white dark:bg-gray-800 p-10 rounded-[40px] shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">
-                    <div className="size-16 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mb-6">
-                        <span className="material-symbols-outlined text-4xl text-green-600">trending_up</span>
+                <div className="bg-gradient-to-br from-gray-900 to-black p-12 rounded-[50px] text-white flex flex-col md:flex-row items-center justify-between gap-8 mt-12 overflow-hidden relative shadow-2xl">
+                    <span className="material-symbols-outlined text-[200px] absolute -right-20 -bottom-20 opacity-5 -rotate-12">volunteer_activism</span>
+                    <div className="space-y-4 relative z-10 max-w-xl text-center md:text-left">
+                        <h3 className="text-3xl font-black leading-tight uppercase tracking-tighter">¿Quieres más ComuniPoints?</h3>
+                        <p className="text-gray-400 font-medium">Sigue ayudando a tus vecinos reportando baches, regando plantas o participando en las votaciones del barrio.</p>
                     </div>
-                    <h3 className="text-2xl font-black dark:text-white">Ganas visibilidad</h3>
-                    <p className="text-gray-500 dark:text-gray-400">Aparecerás destacado en el mapa como "Comercio Aliado" y atraerás a los vecinos más activos y solidarios.</p>
+                    <Link to="/" className="shrink-0 bg-white text-black px-10 py-5 rounded-[25px] font-black text-xs uppercase tracking-[0.2em] shadow-2xl hover:scale-105 transition-all relative z-10">
+                        Hacer una buena acción
+                    </Link>
                 </div>
             </section>
 
@@ -131,9 +222,24 @@ const LocalBusinesses: React.FC = () => {
                                         </select>
                                     </div>
                                     <div>
-                                        <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2 block mx-2">Tu propuesta inicial</label>
-                                        <input required value={proposedDiscount} onChange={e => setProposedDiscount(e.target.value)} className="w-full bg-gray-50 dark:bg-gray-800 border-none rounded-3xl p-5 font-bold outline-none ring-primary/20 focus:ring-4 transition-all" placeholder="Ej: 10% descuento" />
+                                        <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2 block mx-2">Título de la Recompensa</label>
+                                        <input required value={proposedDiscount} onChange={e => setProposedDiscount(e.target.value)} className="w-full bg-gray-50 dark:bg-gray-800 border-none rounded-3xl p-5 font-bold outline-none ring-primary/20 focus:ring-4 transition-all" placeholder="Ej: 10% dto. o Café gratis" />
                                     </div>
+                                </div>
+                                <div>
+                                    <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2 block mx-2">ComuniPoints necesarios para canjear</label>
+                                    <div className="relative">
+                                        <input
+                                            type="number"
+                                            required
+                                            value={requiredPoints}
+                                            onChange={e => setRequiredPoints(e.target.value)}
+                                            className="w-full bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 border-none rounded-3xl p-5 font-black outline-none ring-emerald-500/20 focus:ring-4 transition-all pl-14"
+                                        />
+                                        <span className="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-emerald-500">payments</span>
+                                        <span className="absolute right-5 top-1/2 -translate-y-1/2 text-[10px] font-black text-emerald-600/50 uppercase">CP MÍNIMOS</span>
+                                    </div>
+                                    <p className="text-[9px] font-bold text-gray-400 mt-2 ml-2 italic">* El vecino verá que necesita {requiredPoints} CP para obtener tu "{proposedDiscount || 'oferta'}"</p>
                                 </div>
                                 <div>
                                     <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2 block mx-2">Email o Teléfono de contacto</label>

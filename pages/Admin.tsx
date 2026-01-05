@@ -133,6 +133,10 @@ const Admin: React.FC = () => {
                                             <span className="bg-emerald-500/10 text-emerald-500 text-[10px] font-black px-2 py-0.5 rounded-full uppercase">
                                                 Propuesta: {partner.proposed_discount}
                                             </span>
+                                            <span className="bg-amber-500/10 text-amber-500 text-[10px] font-black px-2 py-0.5 rounded-full uppercase flex items-center gap-1">
+                                                <span className="material-symbols-outlined text-[10px]">payments</span>
+                                                Coste: {partner.required_points || 50} CP
+                                            </span>
                                             <span className={`text-[10px] font-black px-2 py-0.5 rounded-full uppercase ${partner.status === 'pending' ? 'bg-orange-500/10 text-orange-500' : 'bg-green-500/10 text-green-500'}`}>
                                                 {partner.status}
                                             </span>
