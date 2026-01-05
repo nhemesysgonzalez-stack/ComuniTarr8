@@ -14,7 +14,7 @@ interface Poll {
 }
 
 const Polls: React.FC = () => {
-    const { user, addKarma } = useAuth();
+    const { user, addPoints } = useAuth();
     const [polls, setPolls] = useState<Poll[]>([]);
     const [votedPollIds, setVotedPollIds] = useState<string[]>([]);
     const [showCreateModal, setShowCreateModal] = useState(false);
@@ -44,8 +44,8 @@ const Polls: React.FC = () => {
             });
 
             if (success) {
-                await addKarma(20); // Recompensa por votar
-                alert(`¡Gracias! Tu voto para "${optionText}" ha sido registrado correctamente. +20 XP Neighborhood points`);
+                await addPoints(20, 5); // Recompensa por votar
+                alert(`¡Gracias! Tu voto para "${optionText}" ha sido registrado correctamente. +20 XP / +5 ComuniPoints`);
                 setVotedPollIds(prev => [...prev, pollId]);
             }
         } catch (e) {
@@ -107,8 +107,8 @@ const Polls: React.FC = () => {
             });
 
             if (!success) throw new Error('Falló la creación');
-            await addKarma(50); // Recompensa por crear consulta
-            alert('¡Votación creada con éxito! +50 XP');
+            await addPoints(50, 15); // Recompensa por crear consulta
+            alert('¡Votación creada con éxito! +50 XP / +15 ComuniPoints');
             setShowCreateModal(false);
             setPollTitle('');
             setPollOptions(['', '']);

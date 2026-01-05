@@ -129,7 +129,7 @@ const DynamicThemeEffects: React.FC = () => {
 };
 
 const Home: React.FC = () => {
-  const { user, addKarma } = useAuth();
+  const { user, addPoints } = useAuth();
   const { t } = useLanguage();
   const [showIncidentModal, setShowIncidentModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
@@ -270,8 +270,8 @@ const Home: React.FC = () => {
         status: 'open'
       });
       if (success) {
-        await addKarma(25);
-        alert('¡Incidencia reportada! +25 XP');
+        await addPoints(25, 10);
+        alert('¡Incidencia reportada! +25 XP / +10 ComuniPoints');
         setShowIncidentModal(false);
       }
     } catch (err) { console.error(err); }
@@ -290,8 +290,8 @@ const Home: React.FC = () => {
         neighborhood: user?.user_metadata?.neighborhood || 'GENERAL'
       });
       if (success) {
-        await addKarma(15);
-        alert('¡Publicado con éxito! +15 XP');
+        await addPoints(50, 25);
+        alert('¡Publicado con éxito! +50 XP / +25 ComuniPoints');
         setShowHelpModal(false);
       }
     } catch (err) { console.error(err); }

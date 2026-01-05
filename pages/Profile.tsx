@@ -93,11 +93,17 @@ const Profile: React.FC = () => {
               <div className="flex items-center gap-3 mt-2">
                 <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-black uppercase tracking-widest border border-primary/20">{meta.neighborhood || 'Sin Barrio'}</span>
                 <span className="text-gray-400 font-bold text-xs">• Miembro desde Dic 2023</span>
-                <div className="flex items-center gap-2 px-3 py-1 bg-amber-500/10 text-amber-600 rounded-full text-[10px] font-black uppercase tracking-widest border border-amber-500/20">
-                  <span className="material-symbols-outlined text-sm">stars</span>
-                  <span>NV. {Math.floor((meta.karma || 0) / 100) + 1}</span>
-                  <span className="opacity-40">•</span>
-                  <span>{meta.karma || 0} XP</span>
+                <div className="flex flex-wrap gap-2">
+                  <div className="flex items-center gap-2 px-3 py-1 bg-amber-500/10 text-amber-600 rounded-full text-[10px] font-black uppercase tracking-widest border border-amber-500/20" title="Experiencia Acumulada">
+                    <span className="material-symbols-outlined text-sm">stars</span>
+                    <span>NV. {Math.floor((meta.karma || 0) / 100) + 1}</span>
+                    <span className="opacity-40">•</span>
+                    <span>{meta.karma || 0} XP</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-3 py-1 bg-emerald-500/10 text-emerald-600 rounded-full text-[10px] font-black uppercase tracking-widest border border-emerald-500/20" title="Saldo Canjeable">
+                    <span className="material-symbols-outlined text-sm">payments</span>
+                    <span>{meta.comuni_points || 0} CP</span>
+                  </div>
                 </div>
                 {user?.email === 'nhemesysgonzalez@gmail.com' && (
                   <button

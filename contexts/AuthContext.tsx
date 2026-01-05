@@ -11,7 +11,7 @@ interface AuthContextType {
     updateMetadata: (metadata: any) => Promise<void>;
     updateEmail: (email: string) => Promise<void>;
     updateAvatar: (file: File) => Promise<string | null>;
-    addKarma: (points: number) => Promise<void>;
+    addPoints: (xp: number, coins: number) => Promise<void>;
     loading: boolean;
 }
 
@@ -117,31 +117,41 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
     };
 
-    const addKarma = async (points: number) => {
+    const addPoints = async (xp: number, coins: number) => {
         if (!user) return;
+
         const currentKarma = user.user_metadata?.karma || 0;
-        const newKarma = currentKarma + points;
+        const currentCoins = user.user_metadata?.comuni_points || 0;
+
+        const newKarma = currentKarma + xp;
+        const newCoins = currentCoins + coins;
 
         // 1. Update Auth Metadata
-        await updateMetadata({ karma: newKarma });
+        await updateMetadata({
+            karma: newKarma,
+            comuni_points: newCoins
+        });
 
-        // 2. Sync with profiles table in the public schema for visibility in database
+        // 2. Sync with profiles table
         try {
             const { error } = await supabase
                 .from('profiles')
-                .update({ karma: newKarma })
+                .update({
+                    karma: newKarma,
+                    comuni_points: newCoins
+                })
                 .eq('id', user.id);
 
             if (error) {
-                console.warn('Could not sync karma to profiles table, might not exist yet:', error);
+                console.warn('Could not sync points to profiles table:', error);
             }
         } catch (e) {
-            console.error('Error syncing karma:', e);
+            console.error('Error syncing points:', e);
         }
     };
 
     return (
-        <AuthContext.Provider value={{ session, user, signIn, signUp, signOut, updateMetadata, updateEmail, updateAvatar, addKarma, loading }}>
+        <AuthContext.Provider value={{ session, user, signIn, signUp, signOut, updateMetadata, updateEmail, updateAvatar, addPoints, loading }}>
             {children}
         </AuthContext.Provider>
     );
