@@ -54,7 +54,7 @@ const MessageBubble = React.memo(({ msg, isMe }: { msg: Message, isMe: boolean }
 });
 
 const Forum: React.FC = () => {
-  const { user } = useAuth();
+  const { user, addKarma } = useAuth();
   const [messages, setMessages] = useState<Message[]>([]);
   const [activeUsers, setActiveUsers] = useState<any[]>([]);
   const [newMessage, setNewMessage] = useState('');
@@ -246,6 +246,7 @@ const Forum: React.FC = () => {
         },
         neighborhood: currentNeighborhood
       });
+      await addKarma(10); // Recompensa por interactuar (Zumbido)
     } catch (e) { console.error(e); }
   };
 
@@ -266,6 +267,7 @@ const Forum: React.FC = () => {
       });
 
       if (!success) throw new Error('Falló envío');
+      await addKarma(5); // Recompensa por cada mensaje enviado
       setNewMessage('');
     } catch (e) {
       console.error(e);

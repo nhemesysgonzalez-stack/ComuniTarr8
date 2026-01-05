@@ -14,7 +14,7 @@ interface Poll {
 }
 
 const Polls: React.FC = () => {
-    const { user } = useAuth();
+    const { user, addKarma } = useAuth();
     const [polls, setPolls] = useState<Poll[]>([]);
     const [votedPollIds, setVotedPollIds] = useState<string[]>([]);
     const [showCreateModal, setShowCreateModal] = useState(false);
@@ -44,7 +44,8 @@ const Polls: React.FC = () => {
             });
 
             if (success) {
-                alert(`¡Gracias! Tu voto para "${optionText}" ha sido registrado correctamente.`);
+                await addKarma(20); // Recompensa por votar
+                alert(`¡Gracias! Tu voto para "${optionText}" ha sido registrado correctamente. +20 XP Neighborhood points`);
                 setVotedPollIds(prev => [...prev, pollId]);
             }
         } catch (e) {
@@ -106,7 +107,8 @@ const Polls: React.FC = () => {
             });
 
             if (!success) throw new Error('Falló la creación');
-            alert('¡Votación creada con éxito!');
+            await addKarma(50); // Recompensa por crear consulta
+            alert('¡Votación creada con éxito! +50 XP');
             setShowCreateModal(false);
             setPollTitle('');
             setPollOptions(['', '']);
@@ -207,8 +209,8 @@ const Polls: React.FC = () => {
                                                         disabled={hasVoted}
                                                         onClick={() => handleVote('bona-gent-2025', i, opt)}
                                                         className={`p-4 rounded-2xl border-2 transition-all text-left flex items-center justify-between group/btn ${hasVoted
-                                                                ? 'border-gray-100 dark:border-gray-800 opacity-60 cursor-not-allowed'
-                                                                : 'border-gray-100 dark:border-gray-800 hover:border-primary hover:bg-primary/5'
+                                                            ? 'border-gray-100 dark:border-gray-800 opacity-60 cursor-not-allowed'
+                                                            : 'border-gray-100 dark:border-gray-800 hover:border-primary hover:bg-primary/5'
                                                             }`}
                                                     >
                                                         <span className="text-xs font-black dark:text-gray-200 group-hover/btn:text-primary transition-colors uppercase tracking-tight">{opt}</span>

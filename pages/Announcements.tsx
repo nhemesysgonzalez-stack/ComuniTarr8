@@ -107,7 +107,7 @@ const AnnouncementItem: React.FC<{ notice: Announcement }> = ({ notice }) => {
 };
 
 const Announcements: React.FC = () => {
-    const { user } = useAuth();
+    const { user, addKarma } = useAuth();
     const [notices, setNotices] = useState<Announcement[]>([]);
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [loading, setLoading] = useState(true);
@@ -199,7 +199,8 @@ const Announcements: React.FC = () => {
             });
 
             if (!success) throw new Error('Falló la creación');
-            alert('¡Aviso publicado con éxito!');
+            await addKarma(30); // Recompensa por informar al barrio
+            alert('¡Aviso publicado con éxito! +30 XP Neighborhood points');
             setShowCreateModal(false);
             setTitle('');
             setContent('');

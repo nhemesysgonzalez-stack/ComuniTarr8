@@ -122,7 +122,22 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         const currentKarma = user.user_metadata?.karma || 0;
         const newKarma = currentKarma + points;
 
+        // 1. Update Auth Metadata
         await updateMetadata({ karma: newKarma });
+
+        // 2. Sync with profiles table in the public schema for visibility in database
+        try {
+            const { error } = await supabase
+                .from('profiles')
+                .update({ karma: newKarma })
+                .eq('id', user.id);
+
+            if (error) {
+                console.warn('Could not sync karma to profiles table, might not exist yet:', error);
+            }
+        } catch (e) {
+            console.error('Error syncing karma:', e);
+        }
     };
 
     return (
