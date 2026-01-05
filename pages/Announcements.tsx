@@ -126,43 +126,43 @@ const Announcements: React.FC = () => {
         setLoading(true);
         const weatherAlert: Announcement = {
             id: 'weather-alert',
-            title: "❄️ ALERTA: Nieve y Frío Intenso",
-            content: "Protección Civil activa la alerta por nevadas en cotas bajas a partir de mañana. Se recomienda adelantar el regreso de las vacaciones para evitar colapsos en la AP-7.",
+            title: "❄️ ALERTA: Ola de Frío y Nieve",
+            content: "Protección Civil activa la alerta por frío intenso. En Tarragona estamos a 4°C (sensación de 1°C). Se esperan nevadas ligeras por la noche y posibles complicaciones en la C-14.",
             category: "URGENTE",
             neighborhood: "GENERAL",
             author_name: "Protección Civil",
-            itinerary: "• Cota de nieve: 200-400m\n• Riesgo alto en prelitoral\n• Llevar cadenas y depósito lleno\n• Evitar desplazamientos innecesarios",
+            itinerary: "• Temperatura: 4°C (Mínima 0°C)\n• Riesgo nieve: 20% noche\n• Carretera C-14: Cortes parciales por nieve en interior\n• Recomendación: Evitar desplazamientos nocturnos",
             created_at: new Date().toISOString()
         };
 
         const cabalgataNotice: Announcement = {
             id: 'cabalgata-reyes',
-            title: "🤴 Cabalgata de Reyes: Llegada al Serrallo",
-            content: "Mañana 5 de enero, Sus Majestades llegarán por mar al Moll de Costa a las 18:15h. Se recomienda acudir con antelación y evitar el uso de vehículos particulares en la zona del Puerto por cortes de tráfico.",
+            title: "🤴 HOY: Cabalgata de Reyes en Tarragona",
+            content: "Sus Majestades llegan hoy al Serrallo. Habrá cortes de tráfico en todo el centro desde las 18:00h. ¡Ven a recibir a Melchor, Gaspar y Baltasar!",
             category: "EVENTO",
             neighborhood: "EL SERRALLO",
             author_name: "Ajuntament de Tarragona",
-            itinerary: "• 18:15h: Llegada al Moll de Costa\n• 19:00h: Inicio del desfile por Calle Real\n• 20:00h: Paso por Rambla Nova\n• 20:45h: Recogida de llaves en la Plaza de la Font",
+            itinerary: "• 18:15h: Llegada al Serrallo (Barco)\n• 19:00h: Inicio en Calle Real\n• 20:00h: Rambla Nova / Fuente Centenario\n• 20:30h: Entrega de llaves - Plaza de la Font",
             created_at: new Date().toISOString()
         };
 
-        const plaBarrisNotice: Announcement = {
-            id: 'pla-barris',
-            title: "🏗️ Transformación de la Part Baixa (2026)",
-            content: "Empiezan las 34 actuaciones del Plan de Barrios con una inversión de 25M€. Las obras se centrarán en la rehabilitación de viviendas y la mejora de la accesibilidad en el entorno de la calle Real y alrededores.",
+        const tortellNotice: Announcement = {
+            id: 'tortell-reis',
+            title: "🥐 ¡Ya está aquí el Tortell de Reis!",
+            content: "El tradicional Tortell de Reis Tarragoní ya está disponible en las pastelerías locales. ¡No te quedes sin el tuyo para mañana!",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
-            author_name: "Urbanisme Tarragona",
+            author_name: "Gremio Pasteleros",
             created_at: new Date().toISOString()
         };
 
-        const bonaGentNotice: Announcement = {
-            id: 'bona-gent-2025',
-            title: "🏆 Votaciones: La Bona Gent 2025",
-            content: "¡Ya puedes votar a la 'Bona Gent de Tarragona 2025'! Participa en la sección de Votaciones para elegir a los vecinos y entidades más destacados del año.",
-            category: "EVENTO",
-            neighborhood: "GENERAL",
-            author_name: "Diari de Tarragona",
+        const nasticNotice: Announcement = {
+            id: 'nastic-barri',
+            title: "🏗️ Nuevo Barrio del Nàstic",
+            content: "Tarragona está a punto de desbloquear el Plan Parcial 34 para el nuevo barrio del Nàstic. Aprobación prevista para febrero.",
+            category: "COMUNIDAD",
+            neighborhood: "EIXAMPLE",
+            author_name: "Urbanisme",
             created_at: new Date().toISOString()
         };
 
@@ -176,7 +176,7 @@ const Announcements: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
             const fetched = data || [];
-            setNotices([weatherAlert, bonaGentNotice, cabalgataNotice, plaBarrisNotice, ...fetched]);
+            setNotices([weatherAlert, cabalgataNotice, tortellNotice, nasticNotice, ...fetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);
