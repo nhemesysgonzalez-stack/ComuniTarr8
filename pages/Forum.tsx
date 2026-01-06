@@ -1,57 +1,51 @@
+
 import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../services/supabaseClient';
 import { safeSupabaseFetch, safeSupabaseInsert } from '../services/dataHandler';
-import { motion, AnimatePresence } from 'framer-motion';
-import { NEIGHBORHOODS } from '../constants';
 
 interface Message {
   id: string;
   user_id: string;
   content: string;
-  created_at: string;
-  user_metadata: any;
+  user_metadata: {
+    full_name: string;
+    avatar_url?: string;
+  };
   neighborhood: string;
+  created_at: string;
 }
 
-// Optimization: Move Audio objects outside the component to prevent re-initialization on every render
-const msgSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2358/2358-preview.mp3'); // Notification chime
-const buzzSound = new Audio('https://assets.mixkit.co/active_storage/sfx/3142/3142-preview.mp3'); // Impactful Vibration Sound
+const NEIGHBORHOODS = [
+  'GENERAL',
+  'PART ALTA',
+  'EIXAMPLE',
+  'BARRIS MARÍTIMS',
+  'LLEVANT',
+  'PONENT',
+  'NORD',
+  'EL SERRALLO'
+];
 
-msgSound.preload = 'auto';
-buzzSound.preload = 'auto';
-buzzSound.volume = 0.8;
-msgSound.volume = 0.5;
+// Audio assets shared across component instances
+const msgSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2358/2358-preview.mp3');
+const buzzSound = new Audio('https://assets.mixkit.co/active_storage/sfx/1344/1344-preview.mp3');
+msgSound.volume = 0.3;
+buzzSound.volume = 0.5;
 
-// Optimization: Memoized Message Component to prevent list re-renders when typing
-const MessageBubble = React.memo(({ msg, isMe }: { msg: Message, isMe: boolean }) => {
-  const isBuzz = msg.content.includes('🔔 ¡ZUMBIDO!') || msg.content.includes('<<ZUMBIDO>>');
+// Function to unlock audio context (call on user interaction)
+const unlockAudio = () => {
+  msgSound.play().then(() => {
+    msgSound.pause();
+    msgSound.currentTime = 0;
+  }).catch(() => { });
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: isMe ? 20 : -20, scale: isBuzz ? 1.2 : 0.9 }}
-      animate={{ opacity: 1, x: 0, scale: 1 }}
-      className={`flex gap-4 ${isMe ? 'flex-row-reverse' : ''} ${isBuzz ? 'animate-pulse' : ''}`}
-    >
-      {!isMe && (
-        <img
-          src={msg.user_metadata?.avatar_url || `https://ui-avatars.com/api/?name=${msg.user_metadata?.full_name}`}
-          className="size-10 md:size-12 rounded-2xl shadow-lg border-2 border-white dark:border-gray-800 object-cover"
-          alt="Avatar"
-        />
-      )}
-      <div className={`max-w-[75%] space-y-1 ${isMe ? 'items-end' : ''}`}>
-        {!isMe && <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-1">{msg.user_metadata?.full_name}</p>}
-        <div className={`p-4 rounded-3xl text-sm font-bold shadow-sm ${isBuzz ? 'bg-yellow-400 text-black border-4 border-yellow-200 shake-animation' : (isMe ? 'bg-primary text-white rounded-tr-none' : 'bg-white dark:bg-surface-dark dark:text-white rounded-tl-none border border-gray-100 dark:border-gray-800')}`}>
-          {msg.content.replace('<<ZUMBIDO>>', '')}
-        </div>
-        <p className="text-[9px] font-black text-gray-400/50 uppercase tracking-tighter px-2">
-          {new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-        </p>
-      </div>
-    </motion.div>
-  );
-});
+  buzzSound.play().then(() => {
+    buzzSound.pause();
+    buzzSound.currentTime = 0;
+  }).catch(() => { });
+};
 
 const Forum: React.FC = () => {
   const { user, addPoints } = useAuth();
@@ -69,114 +63,36 @@ const Forum: React.FC = () => {
   // Sound Utility using shared Audio objects
   const playSound = (type: 'msg' | 'buzz') => {
     if (isMuted) return;
-
-    // Attempt to play
-    const sound = type === 'buzz' ? buzzSound : msgSound;
-
-    // In some browsers, we need to handle the promise
+    const sound = type === 'msg' ? msgSound : buzzSound;
     sound.currentTime = 0;
-    const playPromise = sound.play();
-
-    if (playPromise !== undefined) {
-      playPromise.catch(error => {
-        console.log("Playback failed. User interaction might be needed.", error);
-      });
-    }
-
-    if (type === 'buzz' && navigator.vibrate) {
-      // Vibración más potente: 3 ráfagas largas
-      navigator.vibrate([300, 100, 300, 100, 300]);
-    }
-  };
-
-  // Helper to "unlock" audio on first interaction if needed
-  const unlockAudio = () => {
-    msgSound.play().then(() => {
-      msgSound.pause();
-      msgSound.currentTime = 0;
-    }).catch(() => { });
-
-    buzzSound.play().then(() => {
-      buzzSound.pause();
-      buzzSound.currentTime = 0;
-    }).catch(() => { });
-  };
-
-  const COMMON_EMOJIS = ['👍', '❤️', '😂', '😮', '😢', '😡', '👋', '🎉', '🏘️', '🚨', '🗑️', '🐕', '🌳', '🔧'];
-
-  const addEmoji = (emoji: string) => {
-    setNewMessage(prev => prev + emoji);
-    setShowEmojiPicker(false);
+    sound.play().catch(e => console.warn('Audio playback blocked:', e));
   };
 
   useEffect(() => {
-    if ("Notification" in window && Notification.permission === "default") {
-      Notification.requestPermission();
-    }
-
     fetchMessages();
 
-    // Setup Presence and PostgreSQL Changes
-    const channel = supabase.channel(`forum_presence_${currentNeighborhood}`, {
-      config: {
-        presence: {
-          key: user?.id,
-        },
-      },
-    });
-
-    channel
+    // Suscribirse a nuevos mensajes en tiempo real
+    const channel = supabase
+      .channel('public:forum_messages')
       .on('postgres_changes', {
         event: 'INSERT',
         schema: 'public',
         table: 'forum_messages',
         filter: `neighborhood=eq.${currentNeighborhood}`
-      },
-        payload => {
-          const newMsg = payload.new as Message;
-          if (newMsg.user_id !== user?.id) {
-            if (newMsg.content.includes('<<ZUMBIDO>>')) {
-              playSound('buzz');
-              if (Notification.permission === 'granted') {
-                new Notification('📳 ¡ZUMBIDO VECINAL!', {
-                  body: `${newMsg.user_metadata?.full_name} te ha enviado un zumbido`,
-                  icon: '/logo.svg'
-                });
-              }
-            } else {
-              playSound('msg');
-              if (Notification.permission === 'granted') {
-                new Notification(`Nuevo mensaje en ${currentNeighborhood}`, {
-                  body: `${newMsg.user_metadata?.full_name}: ${newMsg.content.substring(0, 50)}...`,
-                  icon: '/logo.svg'
-                });
-              }
-            }
+      }, (payload) => {
+        const newMsg = payload.new as Message;
+        setMessages(prev => [...prev, newMsg]);
+
+        // Notificacion sonora si no es nuestro propio mensaje
+        if (newMsg.user_id !== user?.id) {
+          if (newMsg.content.includes('<<ZUMBIDO>>')) {
+            playSound('buzz');
+          } else {
+            playSound('msg');
           }
-          setMessages(prev => [...prev, newMsg]);
         }
-      )
-      .on('presence', { event: 'sync' }, () => {
-        const state = channel.presenceState();
-        const onlineUsers = Object.values(state).flat().map((p: any) => ({
-          id: p.user_id,
-          full_name: p.full_name,
-          avatar_url: p.avatar_url
-        }));
-        // Remove duplicates if same user is in multiple tabs
-        const uniqueOnline = onlineUsers.filter((v, i, a) => a.findIndex(t => t.id === v.id) === i);
-        setActiveUsers(uniqueOnline);
       })
-      .subscribe(async (status) => {
-        if (status === 'SUBSCRIBED') {
-          await channel.track({
-            user_id: user?.id,
-            full_name: user?.user_metadata?.full_name,
-            avatar_url: user?.user_metadata?.avatar_url,
-            online_at: new Date().toISOString(),
-          });
-        }
-      });
+      .subscribe();
 
     return () => {
       supabase.removeChannel(channel);
@@ -211,9 +127,7 @@ const Forum: React.FC = () => {
   };
 
   const fetchActiveUsers = (msgs: Message[]) => {
-    // Si no hay presencia todavía, usamos los autores de los últimos mensajes como fallback
     if (activeUsers.length > 0) return;
-
     const seen = new Set();
     const uniqueUsers: any[] = [];
     [...msgs].reverse().forEach(m => {
@@ -234,9 +148,7 @@ const Forum: React.FC = () => {
   const sendBuzz = async () => {
     if (loading) return;
     try {
-      // Optimizacion: sonar localmente de inmediato para feedback instantaneo
       playSound('buzz');
-
       await safeSupabaseInsert('forum_messages', {
         user_id: user?.id,
         content: '🔔 ¡ZUMBIDO! <<ZUMBIDO>>',
@@ -246,11 +158,10 @@ const Forum: React.FC = () => {
         },
         neighborhood: currentNeighborhood
       });
-      await addPoints(10, 2); // Recompensa por interactuar (Zumbido)
+      await addPoints(10, 2);
     } catch (e) { console.error(e); }
   };
 
-  // Sobrescribir submit para detectar zumbido interno
   const sendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!newMessage.trim()) return;
@@ -258,7 +169,7 @@ const Forum: React.FC = () => {
     try {
       const { success } = await safeSupabaseInsert('forum_messages', {
         user_id: user?.id,
-        content: newMessage, // Si el usuario escribe <<ZUMBIDO>> manualmente funcionará igual
+        content: newMessage,
         user_metadata: {
           full_name: user?.user_metadata?.full_name || 'Vecino Anónimo',
           avatar_url: user?.user_metadata?.avatar_url
@@ -267,70 +178,107 @@ const Forum: React.FC = () => {
       });
 
       if (!success) throw new Error('Falló envío');
-      await addPoints(5, 1); // Recompensa por cada mensaje enviado
+      await addPoints(5, 1);
       setNewMessage('');
     } catch (e) {
       console.error(e);
     }
   };
 
+  const trendingTopics = [
+    {
+      id: 'tortell-debate',
+      title: '🥐 El Gran Debate del Tortell',
+      description: '¿Con o sin fruta? ¿Nata natural o trufa? ¡Vota el mejor de Tarragona!',
+      participating: 15
+    },
+    {
+      id: 'frio-polar',
+      title: '❄️ Consejos contra el Frío',
+      description: 'Cómo proteger las tuberías y plantas esta semana.',
+      participating: 8
+    }
+  ];
+
   return (
-    <div
-      className="flex flex-col h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] font-sans"
-      onClick={unlockAudio} // Unlock audio logic on first click anywhere in the forum
-    >
+    <div className="flex flex-col h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] font-sans" onClick={unlockAudio}>
       {/* Header */}
-      <div className="p-6 md:p-8 border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-surface-dark flex items-center justify-between shrink-0">
+      <div className="p-6 md:p-8 border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-surface-dark flex flex-col lg:flex-row lg:items-center justify-between gap-6 shrink-0">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
             <h2 className="text-xl md:text-3xl font-black dark:text-white tracking-tighter uppercase leading-none">FORO VECINAL</h2>
             <div className="flex items-center gap-1 px-2 py-1 bg-green-500/10 rounded-lg">
               <span className="size-2 rounded-full bg-green-500 animate-pulse"></span>
-              <span className="text-[9px] font-black text-green-600 uppercase tracking-widest">{activeUsers.length} ONLINE</span>
+              <span className="text-[9px] font-black text-green-600 uppercase tracking-widest">{activeUsers.length || 1} ONLINE</span>
             </div>
           </div>
 
           <div className="flex gap-2">
             <button
               onClick={() => setCurrentNeighborhood('GENERAL')}
-              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood === 'GENERAL' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
+              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood === 'GENERAL' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'}`}
             >
               🌍 Canal General
             </button>
             <button
-              onClick={() => {
-                const myNeighborhood = user?.user_metadata?.neighborhood || NEIGHBORHOODS[0];
-                setCurrentNeighborhood(myNeighborhood);
-              }}
-              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood !== 'GENERAL' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
+              onClick={() => setCurrentNeighborhood(user?.user_metadata?.neighborhood || 'GENERAL')}
+              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood !== 'GENERAL' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'}`}
             >
-              🏠 Mi Barrio ({user?.user_metadata?.neighborhood || 'Seleccionar'})
+              🏠 Mi Barrio ({user?.user_metadata?.neighborhood || 'MI ZONA'})
             </button>
             <button
               onClick={() => setShowNeighborhoods(!showNeighborhoods)}
-              className="size-10 flex items-center justify-center bg-gray-100 text-gray-500 rounded-xl hover:bg-gray-200"
+              className="size-10 flex items-center justify-center bg-gray-100 dark:bg-gray-800 text-gray-500 rounded-xl hover:bg-gray-200 transition-all"
             >
-              <span className="material-symbols-outlined">more_horiz</span>
+              <span className="material-symbols-outlined">map</span>
             </button>
           </div>
         </div>
 
-        {/* Mute Button */}
-        <button onClick={toggleMute} className="md:hidden p-2 text-gray-400">
-          <span className="material-symbols-outlined">{isMuted ? 'volume_off' : 'volume_up'}</span>
-        </button>
-
-        {/* Neighborhood Selector Dropdown */}
-        <AnimatePresence>
-          {showNeighborhoods && (
+        {/* Trending Widget - Desktop Only */}
+        <div className="hidden lg:flex gap-6">
+          {trendingTopics.map(topic => (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="absolute top-24 left-8 z-50 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-3xl shadow-2xl p-4 w-64 max-h-64 overflow-y-auto custom-scrollbar"
+              key={topic.id}
+              whileHover={{ scale: 1.02 }}
+              className="bg-amber-500/10 border border-amber-500/20 p-4 rounded-2xl w-60 flex flex-col justify-between"
             >
-              <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3 px-2">Cambiar de Barrio</p>
-              <div className="space-y-1">
+              <div>
+                <h4 className="text-[10px] font-black text-amber-700 uppercase tracking-widest mb-1">{topic.title}</h4>
+                <p className="text-[9px] font-bold text-amber-900/60 leading-tight">{topic.description}</p>
+              </div>
+              <div className="flex items-center justify-between mt-2">
+                <span className="text-[8px] font-black text-amber-700">{topic.participating} VECINOS</span>
+                <button onClick={() => setNewMessage(`Sobre el debate del Tortell: `)} className="text-[8px] font-black uppercase bg-white px-2 py-1 rounded-md shadow-sm text-amber-700">Participar</button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile Trending Widget */}
+      <div className="lg:hidden bg-amber-500/5 p-4 border-b border-amber-500/10 flex gap-4 overflow-x-auto shrink-0 no-scrollbar">
+        {trendingTopics.map(topic => (
+          <div key={topic.id} className="min-w-[220px] bg-white dark:bg-gray-800 p-3 rounded-xl border border-amber-500/20 shadow-sm shrink-0">
+            <h4 className="text-[9px] font-black text-amber-600 uppercase tracking-widest mb-1">{topic.title}</h4>
+            <p className="text-[8px] font-bold text-gray-500 line-clamp-1">{topic.description}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Neighborhood Selector Dropdown Overlay */}
+      <AnimatePresence>
+        {showNeighborhoods && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/20 backdrop-blur-sm" onClick={() => setShowNeighborhoods(false)}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-[40px] shadow-2xl p-8 w-full max-w-sm"
+            >
+              <h3 className="text-xl font-black dark:text-white uppercase mb-6 text-center">Explorar otros barrios</h3>
+              <div className="grid grid-cols-1 gap-2">
                 {NEIGHBORHOODS.map(n => (
                   <button
                     key={n}
@@ -338,174 +286,117 @@ const Forum: React.FC = () => {
                       setCurrentNeighborhood(n);
                       setShowNeighborhoods(false);
                     }}
-                    className={`w-full text-left px-4 py-2 rounded-xl text-xs font-bold transition-all ${currentNeighborhood === n ? 'bg-primary text-white' : 'hover:bg-gray-50 dark:hover:bg-gray-800 dark:text-white'}`}
+                    className={`w-full px-6 py-4 rounded-2xl text-xs font-bold transition-all text-center ${currentNeighborhood === n ? 'bg-primary text-white shadow-lg' : 'bg-gray-50 dark:bg-gray-800 dark:text-white hover:bg-gray-100'}`}
                   >
                     {n}
                   </button>
                 ))}
               </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-
-        <div className="hidden md:flex items-center gap-4">
-          {/* Botón Silenciar Desktop */}
-          <button
-            onClick={toggleMute}
-            className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${isMuted ? 'bg-red-100 text-red-500' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
-          >
-            <span className="material-symbols-outlined text-sm">{isMuted ? 'volume_off' : 'volume_up'}</span>
-            {isMuted ? 'Silenciado' : 'Sonido On'}
-          </button>
-
-          <div className="flex -space-x-2">
-            {activeUsers.length > 0 ? (
-              activeUsers.map((u, i) => (
-                <img key={u.id} src={u.avatar_url || `https://ui-avatars.com/api/?name=${u.full_name || 'V'}`} className="size-8 rounded-xl border-4 border-white dark:border-surface-dark shadow-lg object-cover" alt="User" title={u.full_name} />
-              ))
-            ) : (
-              <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest bg-gray-50 dark:bg-gray-800 px-3 py-2 rounded-xl">Chat solitario</div>
-            )}
-            {messages.length > 10 && <div className="size-8 rounded-xl bg-primary text-white text-[10px] font-black flex items-center justify-center border-4 border-white dark:border-surface-dark shadow-lg">+{Math.max(0, messages.length - activeUsers.length)}</div>}
           </div>
-        </div>
-      </div>
-
-      {/* Messages */}
-      <div
-        ref={scrollRef}
-        className="flex-1 overflow-y-auto p-6 md:p-10 space-y-8 bg-gray-50/50 dark:bg-background-dark/30 custom-scrollbar"
-      >
-        <div className="text-center py-4">
-          <span className="px-4 py-1.5 bg-gray-200 dark:bg-gray-800 rounded-full text-[10px] font-black text-gray-500 uppercase tracking-widest">
-            Conversaciones en {currentNeighborhood}
-          </span>
-        </div>
-
-        {showWelcome && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-gradient-to-br from-primary/10 to-indigo-500/10 border-2 border-primary/20 p-8 rounded-[40px] relative overflow-hidden group mb-10 mx-auto max-w-5xl"
-          >
-            <button
-              type="button"
-              onClick={() => setShowWelcome(false)}
-              className="absolute top-4 right-4 text-primary/40 hover:text-primary transition-colors"
-            >
-              <span className="material-symbols-outlined font-black">close</span>
-            </button>
-            <div className="flex flex-col md:flex-row gap-6 items-start text-left">
-              <div className="size-16 bg-white dark:bg-gray-800 rounded-2xl flex items-center justify-center text-primary shadow-xl shrink-0">
-                <span className="material-symbols-outlined text-4xl">tips_and_updates</span>
-              </div>
-              <div className="flex-1 space-y-4">
-                <h3 className="text-xl font-black dark:text-white leading-tight">¡Dale vida al barrio de {currentNeighborhood}!</h3>
-                <p className="text-sm font-bold text-gray-500 dark:text-gray-400 leading-snug">
-                  ¿No sabes de qué hablar? Pulsa en cualquiera de estas sugerencias para empezar:
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {[
-                    { text: "¿Qué os parece la peatonalización de la calle Canyelles?", icon: 'conversion_path' },
-                    { text: "Propuestas para mejorar la limpieza en la Part Baixa", icon: 'cleaning_services' },
-                    { text: "¿A qué hora salís mañana para ver entrar a los Reyes al Serrallo?", icon: 'rebase_edit' },
-                    { text: "Busco equipo para jugar a pádel en el Nàstic", icon: 'sports_tennis' },
-                    { text: "¿Alguien sabe si hay mercado en la Plaza del Fórum mañana?", icon: 'storefront' },
-                    { text: "¡He visto un perrito perdido por Sant Pere i Sant Pau!", icon: 'pets' }
-                  ].map((tip, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setNewMessage(tip.text)}
-                      className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-[20px] text-[10px] font-black uppercase text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition-all text-left shadow-sm border border-gray-100 dark:border-gray-700 active:scale-95"
-                    >
-                      <span className="material-symbols-outlined text-[20px] shrink-0">{tip.icon}</span>
-                      <span className="line-clamp-2 leading-tight">{tip.text}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
         )}
+      </AnimatePresence>
 
-        {loading && messages.length === 0 ? (
-          <div className="flex flex-col items-center gap-4 py-20 opacity-20">
+      {/* Messages Area */}
+      <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 md:p-12 space-y-8 bg-gray-50/50 dark:bg-background-dark/30 custom-scrollbar">
+        {loading ? (
+          <div className="h-full flex flex-col items-center justify-center gap-4 opacity-50">
             <div className="size-10 border-4 border-primary border-t-transparent animate-spin rounded-full"></div>
-            <p className="text-xs font-black uppercase tracking-widest">Conectando...</p>
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Cargando conversación...</p>
+          </div>
+        ) : messages.length === 0 ? (
+          <div className="h-full flex flex-col items-center justify-center text-center p-12 space-y-4">
+            <div className="size-20 bg-primary/10 rounded-[30px] flex items-center justify-center">
+              <span className="material-symbols-outlined text-4xl text-primary">chat_bubble</span>
+            </div>
+            <h3 className="text-2xl font-black dark:text-white uppercase tracking-tighter">¡Sé el primero en hablar!</h3>
+            <p className="text-gray-500 font-medium max-w-xs mx-auto">Comparte algo con tus vecinos de {currentNeighborhood}. ¡Gana 5 ComuniPoints por mensaje!</p>
           </div>
         ) : (
-          messages.map((msg) => (
-            <MessageBubble
-              key={msg.id}
-              msg={msg}
-              isMe={msg.user_id === user?.id}
-            />
-          ))
+          messages.map((msg, i) => {
+            const isMine = msg.user_id === user?.id;
+            const isBuzz = msg.content.includes('<<ZUMBIDO>>');
+
+            if (isBuzz) {
+              return (
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  key={msg.id}
+                  className="flex justify-center my-6"
+                >
+                  <div className="bg-red-500 text-white px-8 py-4 rounded-3xl font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-red-500/30 animate-bounce">
+                    🔔 Zumbido de {msg.user_metadata?.full_name}
+                  </div>
+                </motion.div>
+              );
+            }
+
+            return (
+              <motion.div
+                initial={{ opacity: 0, x: isMine ? 20 : -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                key={msg.id}
+                className={`flex ${isMine ? 'justify-end' : 'justify-start'} group`}
+              >
+                <div className={`flex gap-4 max-w-[85%] md:max-w-[70%] ${isMine ? 'flex-row-reverse' : 'flex-row'}`}>
+                  <div className="shrink-0">
+                    <div className="size-10 rounded-2xl bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center font-black text-xs overflow-hidden shadow-sm">
+                      {msg.user_metadata?.avatar_url ? (
+                        <img src={msg.user_metadata.avatar_url} alt="" className="size-full object-cover" />
+                      ) : (
+                        msg.user_metadata?.full_name?.charAt(0) || '?'
+                      )}
+                    </div>
+                  </div>
+                  <div className={`flex flex-col ${isMine ? 'items-end' : 'items-start'}`}>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-[10px] font-black dark:text-white uppercase tracking-wider">{msg.user_metadata?.full_name}</span>
+                      <span className="text-[9px] font-bold text-gray-400">{new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                    </div>
+                    <div className={`p-4 rounded-[24px] font-medium text-sm leading-relaxed shadow-sm ${isMine ? 'bg-primary text-white rounded-tr-none' : 'bg-white dark:bg-surface-dark dark:text-white rounded-tl-none border border-gray-100 dark:border-gray-800'}`}>
+                      {msg.content}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })
         )}
       </div>
 
-      {/* Input */}
-      <div className="p-6 md:p-10 bg-white dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 shrink-0">
-        <form onSubmit={sendMessage} className="flex gap-4 max-w-5xl mx-auto">
-          <div className="flex-1 relative flex items-center">
-            <div className="absolute left-4 flex items-center gap-1">
-              <button
-                type="button"
-                onClick={sendBuzz}
-                className="size-10 flex items-center justify-center text-yellow-500 hover:text-yellow-600 hover:scale-125 transition-all bg-yellow-500/10 rounded-full"
-                title="Enviar Zumbido"
-              >
-                <span className="material-symbols-outlined font-black text-[20px]">vibration</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-                className={`size-10 flex items-center justify-center transition-colors rounded-full ${showEmojiPicker ? 'bg-primary/20 text-primary' : 'text-gray-400 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700'}`}
-              >
-                <span className="material-symbols-outlined font-black text-[20px]">add_reaction</span>
-              </button>
-            </div>
+      {/* Input Area */}
+      <div className="p-6 md:p-10 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-surface-dark shrink-0">
+        <form onSubmit={sendMessage} className="relative max-w-5xl mx-auto flex items-center gap-4">
+          <button
+            type="button"
+            onClick={sendBuzz}
+            className="size-14 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all shadow-sm active:scale-90 group"
+            title="Enviar Zumbido"
+          >
+            <span className="material-symbols-outlined text-2xl group-hover:animate-ping">notifications_active</span>
+          </button>
+
+          <div className="flex-1 relative group">
             <input
               type="text"
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
-              placeholder={window.innerWidth < 768 ? "Escribe..." : `Escribe algo a ${currentNeighborhood}...`}
-              className="w-full bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 rounded-[30px] pl-28 pr-6 py-5 font-bold dark:text-white focus:ring-4 ring-primary/10 transition-all outline-none"
+              placeholder={`Escribe en ${currentNeighborhood}...`}
+              className="w-full bg-gray-50 dark:bg-gray-800 border-none rounded-2xl px-6 py-4 font-bold dark:text-white outline-none ring-primary/20 focus:ring-4 transition-all"
             />
-            <AnimatePresence>
-              {showEmojiPicker && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9, y: 10 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.9, y: 10 }}
-                  className="absolute bottom-full right-0 mb-4 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-3xl shadow-2xl p-4 grid grid-cols-5 gap-2 w-64 z-50"
-                >
-                  {COMMON_EMOJIS.map(emoji => (
-                    <button
-                      key={emoji}
-                      type="button"
-                      onClick={() => addEmoji(emoji)}
-                      className="size-10 flex items-center justify-center text-xl hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-colors"
-                    >
-                      {emoji}
-                    </button>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
           </div>
+
           <button
             type="submit"
-            className="size-[62px] md:size-[68px] bg-primary text-white rounded-[30px] shadow-xl shadow-primary/20 flex items-center justify-center hover:scale-110 active:scale-95 transition-all group shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
-            disabled={!newMessage.trim() || loading}
+            className="size-14 rounded-2xl bg-primary text-white flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20 disabled:opacity-50"
+            disabled={!newMessage.trim()}
           >
-            <span className="material-symbols-outlined text-[28px] font-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">send</span>
+            <span className="material-symbols-outlined font-black">send</span>
           </button>
         </form>
-        <p className="text-[9px] font-black text-center text-gray-400 uppercase tracking-widest mt-6 opacity-30 tracking-[0.2em]">Fomenta un ambiente positivo en Tarragona</p>
-      </div >
-    </div >
+      </div>
+    </div>
   );
 };
 
