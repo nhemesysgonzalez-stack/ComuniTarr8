@@ -90,20 +90,22 @@ const DynamicThemeEffects: React.FC = () => {
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[9px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP EN EL FORO</span>
+          <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🟠 NUEVA INCIDENCIA REPORTADA EN PART ALTA</span>
+          <span className="flex items-center gap-2">🟠 INCIDENCIA REPORTADA: RAMA CAÍDA EN PART ALTA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🔵 JOAN R. HA CANJEADO UN VALE EN 'EL CONDE'</span>
+          <span className="flex items-center gap-2">🔵 UN VECINO HA CANJEADO PUNTOS POR UN DESCUENTO LOCAL</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🟢 12 VECINOS ACTIVOS EN EL CHAT DE PONENT</span>
+          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 85 VECINOS HAN VOTADO EN 'BONA GENT'</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🟡 NUEVO COMERCIO ASOCIADO: 'PASTISSERIA VELVET'</span>
+          <span className="flex items-center gap-2">🟢 15 VECINOS ACTIVOS AHORA EN EL CANAL GENERAL</span>
+          <span className="opacity-30">•</span>
+          <span className="flex items-center gap-2">🟡 NUEVA SOLICITUD DE COMERCIO ALIADO RECIBIDA</span>
           <span className="opacity-30">•</span>
           {/* Duplicate for seamless loop */}
-          <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP EN EL FORO</span>
+          <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🟠 NUEVA INCIDENCIA REPORTADA EN PART ALTA</span>
+          <span className="flex items-center gap-2">🟠 INCIDENCIA REPORTADA: RAMA CAÍDA EN PART ALTA</span>
         </motion.div>
       </div>
 

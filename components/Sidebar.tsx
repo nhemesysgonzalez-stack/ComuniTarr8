@@ -25,8 +25,10 @@ const Sidebar: React.FC = () => {
     }
   };
 
-  const NavItem: React.FC<{ to: string; label: string; icon: string; color: string }> = ({ to, label, icon, color }) => {
+  const NavItem: React.FC<{ to: string; label: string; icon: string; color: string; hasActivity?: boolean }> = ({ to, label, icon, color, hasActivity }) => {
     const active = isActive(to);
+    const [isPending, startTransition] = React.useTransition();
+
     const colorVariants: Record<string, string> = {
       primary: active ? 'bg-primary text-white shadow-primary/30' : 'text-gray-500 dark:text-gray-400 hover:text-primary',
       red: active ? 'bg-red-500 text-white shadow-red-500/30' : 'text-gray-500 dark:text-gray-400 hover:text-red-500',
@@ -38,9 +40,22 @@ const Sidebar: React.FC = () => {
     };
 
     return (
-      <Link to={to} className={`flex items-center gap-3 px-4 py-3 rounded-2xl transition-all duration-300 font-bold ${active ? `${colorVariants[color]} shadow-lg font-black` : `${colorVariants[color]} hover:bg-gray-50 dark:hover:bg-gray-800`}`}>
-        <span className="material-symbols-outlined text-[22px]">{icon}</span>
-        <span className="text-sm">{label}</span>
+      <Link
+        to={to}
+        onClick={(e) => {
+          if (active) return;
+          // Optimizar navegación suave
+          startTransition(() => { });
+        }}
+        className={`flex items-center justify-between group px-4 py-3 rounded-2xl transition-all duration-300 font-bold ${active ? `${colorVariants[color]} shadow-lg font-black` : `${colorVariants[color]} hover:bg-gray-50 dark:hover:bg-gray-800`}`}
+      >
+        <div className="flex items-center gap-3">
+          <span className="material-symbols-outlined text-[22px]">{icon}</span>
+          <span className="text-sm">{label}</span>
+        </div>
+        {hasActivity && !active && (
+          <span className="flex size-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)] animate-pulse"></span>
+        )}
       </Link>
     );
   };
@@ -61,7 +76,7 @@ const Sidebar: React.FC = () => {
           <div className="space-y-1">
             <NavItem to="/" label={t('feed')} icon="grid_view" color="primary" />
             <NavItem to="/map" label={t('map')} icon="explore" color="primary" />
-            <NavItem to="/announcements" label={t('announcements')} icon="campaign" color="red" />
+            <NavItem to="/announcements" label={t('announcements')} icon="campaign" color="red" hasActivity={true} />
             <NavItem to="/calendar" label={t('calendar')} icon="calendar_today" color="sky" />
             <NavItem to="/neighbors" label={t('neighbors')} icon="waving_hand" color="emerald" />
             <NavItem to="/invite" label="Kits de Difusión" icon="campaign" color="orange" />
@@ -74,7 +89,7 @@ const Sidebar: React.FC = () => {
           <div className="space-y-1">
             <NavItem to="/local-businesses" label={t('local_business')} icon="storefront" color="primary" />
             <NavItem to="/clubs" label={t('clubs')} icon="groups" color="primary" />
-            <NavItem to="/forum" label={t('forum')} icon="chat" color="indigo" />
+            <NavItem to="/forum" label={t('forum')} icon="chat" color="indigo" hasActivity={true} />
             <NavItem to="/workshops" label={t('workshops')} icon="school" color="primary" />
           </div>
         </div>
@@ -95,8 +110,8 @@ const Sidebar: React.FC = () => {
           <div className="space-y-1">
             <NavItem to="/market" label={t('market')} icon="shopping_bag" color="primary" />
             <NavItem to="/services" label={t('mutual_aid')} icon="handshake" color="emerald" />
-            <NavItem to="/patrols" label={t('patrols')} icon="shield" color="red" />
-            <NavItem to="/polls" label={t('polls')} icon="how_to_vote" color="primary" />
+            <NavItem to="/patrols" label={t('patrols')} icon="shield" color="red" hasActivity={true} />
+            <NavItem to="/polls" label={t('polls')} icon="how_to_vote" color="primary" hasActivity={true} />
             <NavItem to="/emergency" label={t('emergency')} icon="emergency" color="red" />
             <NavItem to="/assistant" label={t('assistant')} icon="smart_toy" color="indigo" />
           </div>
