@@ -78,37 +78,8 @@ const DynamicThemeEffects: React.FC = () => {
   const currentMonth = new Date().getMonth(); // 0 = Jan
   const currentDay = new Date().getDate();
 
-  // Three Kings (Jan 1-6)
-  const isThreeKings = currentMonth === 0 && currentDay <= 6;
-
   return (
     <div className="fixed inset-0 pointer-events-none z-[60] overflow-hidden">
-      {/* Live Activity Ticker */}
-      <div className="absolute top-0 left-0 right-0 bg-primary/90 backdrop-blur-md py-2 z-[70] overflow-hidden border-b border-white/10">
-        <motion.div
-          animate={{ x: [0, -1000] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          className="flex whitespace-nowrap items-center gap-10 text-white text-[9px] font-black uppercase tracking-[0.2em]"
-        >
-          <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🟠 INCIDENCIA REPORTADA: RAMA CAÍDA EN PART ALTA</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🔵 UN VECINO HA CANJEADO PUNTOS POR UN DESCUENTO LOCAL</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 85 VECINOS HAN VOTADO EN 'BONA GENT'</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🟢 15 VECINOS ACTIVOS AHORA EN EL CANAL GENERAL</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🟡 NUEVA SOLICITUD DE COMERCIO ALIADO RECIBIDA</span>
-          <span className="opacity-30">•</span>
-          {/* Duplicate for seamless loop */}
-          <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🟠 INCIDENCIA REPORTADA: RAMA CAÍDA EN PART ALTA</span>
-        </motion.div>
-      </div>
-
       {/* Snowfall Effect */}
       <div className="absolute inset-0">
         {[...Array(40)].map((_, i) => (
@@ -234,15 +205,6 @@ const Home: React.FC = () => {
           category: "COMUNIDAD",
           neighborhood: "GENERAL",
           itinerary: "• Apertura: 10:00h\n• Zonas: Rambla, C/ Unió, Parc Central\n• Tip: Se recomienda transporte público por alta afluencia",
-          created_at: new Date().toISOString()
-        };
-
-        const plaBarrisNotice = {
-          id: 'pla-barris',
-          title: "🏗️ Transformación de la Part Baixa (2026)",
-          content: "Empiezan las 34 actuaciones del Plan de Barrios con una inversión de 25M€. Las obras se centrarán en la rehabilitación de viviendas y la mejora de la accesibilidad en la calle Real.",
-          category: "COMUNIDAD",
-          neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
@@ -569,9 +531,10 @@ const Home: React.FC = () => {
                         alert(`¡Gracias! Tu voto para ${opt} ha sido registrado correctamente.`);
                       }
                     }}
-                    className="p-4 rounded-2xl border-2 border-gray-100 dark:border-gray-800 hover:border-primary hover:bg-primary/5 transition-all text-left group/btn w-full"
+                    className="p-4 rounded-2xl border-2 border-gray-100 dark:border-gray-800 hover:border-primary hover:bg-primary/5 transition-all text-left group/btn w-full flex items-center justify-between"
                   >
                     <span className="text-xs font-black dark:text-gray-200 group-hover/btn:text-primary transition-colors uppercase tracking-tight">{opt}</span>
+                    <span className="material-symbols-outlined text-sm opacity-0 group-hover/btn:opacity-100 transition-all">how_to_vote</span>
                   </button>
                 ))}
               </div>

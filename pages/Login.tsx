@@ -43,7 +43,8 @@ const Login: React.FC = () => {
                     full_name: fullName,
                     neighborhood: neighborhood
                 }, avatarFile);
-                alert('Revisa tu email para confirmar la cuenta (si no se confirma automático, entra con tus datos)');
+                alert('🎉 ¡BIENVENIDO A COMUNITARR! Ya eres parte de la comunidad. Ya puedes entrar con tu email y contraseña.');
+                setIsLogin(true);
             }
         } catch (error: any) {
             alert(error.message);
