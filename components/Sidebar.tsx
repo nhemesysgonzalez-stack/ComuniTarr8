@@ -116,6 +116,15 @@ const Sidebar: React.FC = () => {
             <NavItem to="/assistant" label={t('assistant')} icon="smart_toy" color="indigo" />
           </div>
         </div>
+
+        {user?.email === 'nhemesysgonzalez@gmail.com' && (
+          <div>
+            <p className="px-4 text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3">Administración</p>
+            <div className="space-y-1">
+              <NavItem to="/admin" label="Panel de Control" icon="shield_person" color="purple" />
+            </div>
+          </div>
+        )}
       </nav>
 
       <div className="mt-auto pt-6 border-t border-gray-100 dark:border-gray-800 space-y-4">
