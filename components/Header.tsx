@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -90,9 +91,9 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <>
-      {/* Top Header Desktop */}
-      <header className="hidden lg:flex bg-white/70 dark:bg-surface-dark/70 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 h-20 items-center justify-between px-10 sticky top-0 z-40 transition-all font-sans">
+    <div className="sticky top-0 z-50 w-full max-w-full overflow-x-hidden">
+      {/* Desktop Header Content */}
+      <header className="hidden lg:flex bg-white/70 dark:bg-surface-dark/70 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 h-20 items-center justify-between px-10 transition-all font-sans">
         <div className="flex items-center gap-6">
           <div className="flex items-center bg-gray-50/50 dark:bg-gray-800/50 rounded-2xl px-5 py-3 border border-gray-100 dark:border-gray-700 focus-within:ring-2 ring-primary/20 transition-all w-96 group">
             <span className="material-symbols-outlined text-gray-400 group-focus-within:text-primary transition-colors">search</span>
@@ -182,12 +183,12 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Mobile Header */}
-      <header className="lg:hidden bg-white/80 dark:bg-surface-dark/80 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 h-16 flex items-center justify-between px-6 sticky top-0 z-50">
+      {/* Mobile Header Content */}
+      <header className="lg:hidden bg-white/80 dark:bg-surface-dark/80 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 h-16 flex items-center justify-between px-6 transition-all">
         <Link to="/" className="flex flex-col">
           <div className="flex items-center gap-2">
             <img src="/logo.svg" className="size-8" alt="L" />
-            <span className="font-black dark:text-white tracking-tighter text-sm">COMUNITARR</span>
+            <span className="font-black dark:text-white tracking-tighter text-sm uppercase">ComuniTarr</span>
           </div>
           <span className="text-[7px] font-black text-primary uppercase tracking-[0.2em] leading-none mt-0.5">Vecindario 2.0</span>
         </Link>
@@ -242,8 +243,8 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Global Activity Ticker - Below header */}
-      <div className="bg-primary/95 backdrop-blur-md py-1.5 overflow-hidden border-b border-white/10 z-40 relative">
+      {/* Global Activity Ticker - Part of the Header Unit */}
+      <div className="bg-primary/95 backdrop-blur-md py-1.5 overflow-hidden border-b border-white/10 relative w-full max-w-full">
         <motion.div
           animate={{ x: [0, -1200] }}
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
@@ -271,10 +272,25 @@ export const Header: React.FC = () => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      {
-        isMenuOpen && (
-          <div className="lg:hidden fixed inset-0 z-40 bg-white dark:bg-surface-dark animate-in fade-in transition-all overflow-y-auto custom-scrollbar">
-            <div className="pt-20 pb-10 px-8 space-y-8">
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            className="lg:hidden fixed inset-0 z-[60] bg-white dark:bg-surface-dark overflow-y-auto custom-scrollbar"
+          >
+            <div className="pt-8 pb-10 px-8 space-y-8">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <img src="/logo.svg" className="size-8" alt="L" />
+                  <span className="font-black dark:text-white tracking-tighter text-sm uppercase">MENÚ</span>
+                </div>
+                <button onClick={() => setIsMenuOpen(false)} className="size-10 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full">
+                  <span className="material-symbols-outlined">close</span>
+                </button>
+              </div>
+
               <div className="flex items-center gap-4 p-5 rounded-3xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
                 <img
                   src={user?.user_metadata?.avatar_url || 'https://ui-avatars.com/api/?name=' + (user?.user_metadata?.full_name || 'V')}
@@ -327,9 +343,9 @@ export const Header: React.FC = () => {
                 </Link>
               </div>
             </div>
-          </div>
-        )
-      }
-    </>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };

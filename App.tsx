@@ -68,9 +68,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   }, [location]);
 
   return (
-    <div className="flex bg-background-light dark:bg-background-dark min-h-screen font-sans">
+    <div className="flex bg-background-light dark:bg-background-dark min-h-screen font-sans overflow-x-hidden">
       <Sidebar />
-      <div className="flex-1 flex flex-col min-h-screen">
+      <div className="flex-1 flex flex-col min-h-screen min-w-0 overflow-x-hidden">
         <Header />
         <main className="flex-1 pb-20 lg:pb-0 relative">
           {children}
