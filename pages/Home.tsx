@@ -83,27 +83,37 @@ const DynamicThemeEffects: React.FC = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-[60] overflow-hidden">
-      {isThreeKings && (
-        <motion.div
-          initial={{ x: '-100%' }}
-          animate={{ x: '100vw' }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-10 left-0 flex items-end gap-10 opacity-30 dark:opacity-20"
-        >
-          <div className="flex flex-col items-center">
-            <span className="material-symbols-outlined text-6xl text-amber-500">bedroom_baby</span>
-            <div className="w-20 h-1 bg-amber-500/20 rounded-full blur-sm"></div>
-          </div>
-          <div className="flex flex-col items-center scale-125 mb-4">
-            <span className="material-symbols-outlined text-7xl text-amber-600">person_celebrate</span>
-            <div className="w-24 h-1 bg-amber-600/20 rounded-full blur-sm"></div>
-          </div>
-          <div className="flex flex-col items-center mb-2">
-            <span className="material-symbols-outlined text-6xl text-amber-500">auto_awesome</span>
-            <div className="w-20 h-1 bg-amber-500/20 rounded-full blur-sm"></div>
-          </div>
-        </motion.div>
-      )}
+      {/* Snowfall Effect */}
+      <div className="absolute inset-0">
+        {[...Array(40)].map((_, i) => (
+          <motion.div
+            key={`snow-${i}`}
+            initial={{
+              top: -20,
+              left: Math.random() * 100 + '%',
+              opacity: Math.random() * 0.5 + 0.3,
+              scale: Math.random() * 0.5 + 0.5
+            }}
+            animate={{
+              top: '110%',
+              left: (Math.random() * 100 + (Math.random() * 20 - 10)) + '%',
+              rotate: 360
+            }}
+            transition={{
+              duration: Math.random() * 10 + 10,
+              repeat: Infinity,
+              ease: "linear",
+              delay: Math.random() * 20
+            }}
+            className="absolute text-white/40 pointer-events-none"
+          >
+            <span className="material-symbols-outlined text-[12px]">ac_unit</span>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Frost Vignette */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-transparent to-cyan-500/5 pointer-events-none"></div>
 
       {currentMonth === 0 && (
         <div className="absolute inset-0">
@@ -173,21 +183,21 @@ const Home: React.FC = () => {
 
         const weatherAlert = {
           id: 'weather-alert',
-          title: "❄️ ALERTA: Nieve y Frío Intenso",
-          content: "Protección Civil activa la alerta por nevadas en cotas bajas a partir de mañana. Se recomienda adelantar el regreso de las vacaciones para evitar colapsos en la AP-7.",
+          title: "🥶 HELADAS: Frío Polar en Tarragona",
+          content: "Temperaturas en desplome. Hoy 6 de enero despertamos con 1°C y sensación térmica de -2°C. Protección Civil mantiene la alerta por heladas y riesgo de placas de hielo en calles sombrías.",
           category: "URGENTE",
           neighborhood: "GENERAL",
-          itinerary: "• Cota de nieve: 200-400m\n• Riesgo alto en prelitoral\n• Llevar cadenas y depósito lleno\n• Evitar desplazamientos innecesarios",
+          itinerary: "• Mínima: 1°C / Máxima: 9°C\n• Viento: Gregal con rachas frías\n• Alerta: Hielo en calzada\n• Recomendación: Revisar calefacciones y tuberías exteriores",
           created_at: new Date().toISOString()
         };
 
-        const cabalgataNotice = {
-          id: 'cabalgata-reyes',
-          title: "🤴 Cabalgata de Reyes: Llegada al Serrallo",
-          content: "Mañana 5 de enero, Sus Majestades llegarán por mar al Moll de Costa a las 18:15h. Se recomienda acudir con antelación y evitar el uso de vehículos particulares en la zona del Puerto por cortes de tráfico.",
-          category: "EVENTO",
-          neighborhood: "EL SERRALLO",
-          itinerary: "• 18:15h: Llegada al Moll de Costa\n• 19:00h: Inicio del desfile por Calle Real\n• 20:00h: Paso por Rambla Nova\n• 20:45h: Recogida de llaves en la Plaza de la Font",
+        const reyesNotice = {
+          id: 'reyes-tarragona',
+          title: "🎁 ¡Feliz Día de Reyes, Tarragona!",
+          content: "Tras la mágica noche de ayer, los Reyes Magos han dejado sus regalos en todos los hogares. Recordamos a los vecinos que el servicio de recogida de cartón se reforzará hoy para gestionar el exceso de embalajes.",
+          category: "COMUNIDAD",
+          neighborhood: "GENERAL",
+          itinerary: "• Plegar cajas antes de depositar\n• Usar contenedores azules (Papel/Cartón)\n• No dejar cajas fuera del contenedor\n• Mañana empiezan las rebajas oficiales",
           created_at: new Date().toISOString()
         };
 
@@ -210,7 +220,7 @@ const Home: React.FC = () => {
         };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([weatherAlert, bonaGentNotice, cabalgataNotice, plaBarrisNotice, ...fetchedNews].slice(0, 4));
+        setNews([weatherAlert, bonaGentNotice, reyesNotice, plaBarrisNotice, ...fetchedNews].slice(0, 4));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase

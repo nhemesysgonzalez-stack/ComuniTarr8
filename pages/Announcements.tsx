@@ -126,30 +126,30 @@ const Announcements: React.FC = () => {
         setLoading(true);
         const weatherAlert: Announcement = {
             id: 'weather-alert',
-            title: "❄️ ALERTA: Ola de Frío y Nieve",
-            content: "Protección Civil activa la alerta por frío intenso. En Tarragona estamos a 4°C (sensación de 1°C). Se esperan nevadas ligeras por la noche y posibles complicaciones en la C-14.",
+            title: "🥶 ALERTA: Frío Polar (1°C)",
+            content: "Se registran temperaturas mínimas récord en la provincia. Hoy 6 de enero la sensación térmica en la Part Alta es de -2°C. Máxima precaución con las placas de hielo en zonas de sombra.",
             category: "URGENTE",
             neighborhood: "GENERAL",
             author_name: "Protección Civil",
-            itinerary: "• Temperatura: 4°C (Mínima 0°C)\n• Riesgo nieve: 20% noche\n• Carretera C-14: Cortes parciales por nieve en interior\n• Recomendación: Evitar desplazamientos nocturnos",
+            itinerary: "• Temperatura hoy: 1°C / 9°C\n• Viento: Gregal (Frío seco)\n• Riesgo: Hielo en aceras y calzadas\n• Recomendación: Cuidar a personas mayores y mascotas",
             created_at: new Date().toISOString()
         };
 
-        const cabalgataNotice: Announcement = {
-            id: 'cabalgata-reyes',
-            title: "🤴 HOY: Cabalgata de Reyes en Tarragona",
-            content: "Sus Majestades llegan hoy al Serrallo. Habrá cortes de tráfico en todo el centro desde las 18:00h. ¡Ven a recibir a Melchor, Gaspar y Baltasar!",
+        const reyesNotice: Announcement = {
+            id: 'reyes-tarragona',
+            title: "🎁 ¡Felices Reyes, Vecinos!",
+            content: "Esperamos que hayáis disfrutado de los regalos. Hoy hay refuerzo de limpieza en toda Tarragona para la recogida de embalajes.",
             category: "EVENTO",
-            neighborhood: "EL SERRALLO",
-            author_name: "Ajuntament de Tarragona",
-            itinerary: "• 18:15h: Llegada al Serrallo (Barco)\n• 19:00h: Inicio en Calle Real\n• 20:00h: Rambla Nova / Fuente Centenario\n• 20:30h: Entrega de llaves - Plaza de la Font",
+            neighborhood: "GENERAL",
+            author_name: "Ajuntament",
+            itinerary: "• Refuerzo contenedores de cartón\n• Punto limpio móvil disponible mañana\n• ¡Disfrutad del día de fiesta!",
             created_at: new Date().toISOString()
         };
 
         const tortellNotice: Announcement = {
             id: 'tortell-reis',
-            title: "🥐 ¡Ya está aquí el Tortell de Reis!",
-            content: "El tradicional Tortell de Reis Tarragoní ya está disponible en las pastelerías locales. ¡No te quedes sin el tuyo para mañana!",
+            title: "🥐 Día del Tortell de Reis",
+            content: "Hoy es el día de disfrutar del Tortell en familia. ¡Suerte a los que encuentren la figura y cuidado con el haba!",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
             author_name: "Gremio Pasteleros",
@@ -176,7 +176,7 @@ const Announcements: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
             const fetched = data || [];
-            setNotices([weatherAlert, cabalgataNotice, tortellNotice, nasticNotice, ...fetched]);
+            setNotices([weatherAlert, reyesNotice, tortellNotice, nasticNotice, ...fetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);
