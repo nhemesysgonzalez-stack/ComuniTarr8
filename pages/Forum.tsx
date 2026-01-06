@@ -59,6 +59,7 @@ const Forum: React.FC = () => {
   const [isMuted, setIsMuted] = useState(false);
   const [showWelcome, setShowWelcome] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   // Sound Utility using shared Audio objects
   const playSound = (type: 'msg' | 'buzz') => {
@@ -185,6 +186,17 @@ const Forum: React.FC = () => {
     }
   };
 
+  const handleTopicClick = (topicId: string) => {
+    if (topicId === 'tortell-debate') {
+      setNewMessage('Para mí el mejor Tortell de Tarragona es el de... y la nata tiene que ser... ');
+    } else if (topicId === 'frio-polar') {
+      setNewMessage('¿Qué consejos dais para proteger las plantas del balcón con este frío? ');
+    }
+    setTimeout(() => {
+      inputRef.current?.focus();
+    }, 100);
+  };
+
   const trendingTopics = [
     {
       id: 'tortell-debate',
@@ -249,7 +261,12 @@ const Forum: React.FC = () => {
               </div>
               <div className="flex items-center justify-between mt-2">
                 <span className="text-[8px] font-black text-amber-700">{topic.participating} VECINOS</span>
-                <button onClick={() => setNewMessage(`Sobre el debate del Tortell: `)} className="text-[8px] font-black uppercase bg-white px-2 py-1 rounded-md shadow-sm text-amber-700">Participar</button>
+                <button
+                  onClick={() => handleTopicClick(topic.id)}
+                  className="text-[8px] font-black uppercase bg-white px-2 py-1 rounded-md shadow-sm text-amber-700 hover:bg-amber-500 hover:text-white transition-colors"
+                >
+                  Participar
+                </button>
               </div>
             </motion.div>
           ))}
@@ -259,7 +276,11 @@ const Forum: React.FC = () => {
       {/* Mobile Trending Widget */}
       <div className="lg:hidden bg-amber-500/5 p-4 border-b border-amber-500/10 flex gap-4 overflow-x-auto shrink-0 no-scrollbar">
         {trendingTopics.map(topic => (
-          <div key={topic.id} className="min-w-[220px] bg-white dark:bg-gray-800 p-3 rounded-xl border border-amber-500/20 shadow-sm shrink-0">
+          <div
+            key={topic.id}
+            onClick={() => handleTopicClick(topic.id)}
+            className="min-w-[220px] bg-white dark:bg-gray-800 p-3 rounded-xl border border-amber-500/20 shadow-sm shrink-0 active:scale-95 transition-transform"
+          >
             <h4 className="text-[9px] font-black text-amber-600 uppercase tracking-widest mb-1">{topic.title}</h4>
             <p className="text-[8px] font-bold text-gray-500 line-clamp-1">{topic.description}</p>
           </div>
@@ -297,8 +318,45 @@ const Forum: React.FC = () => {
         )}
       </AnimatePresence>
 
-      {/* Messages Area */}
       <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 md:p-12 space-y-8 bg-gray-50/50 dark:bg-background-dark/30 custom-scrollbar">
+
+        {/* Featured / Seeded Messages for General Debate */}
+        {currentNeighborhood === 'GENERAL' && (
+          <div className="space-y-6 mb-12">
+            <div className="flex justify-center">
+              <span className="px-4 py-1 bg-amber-100 text-amber-700 rounded-full text-[9px] font-black uppercase tracking-widest border border-amber-200">
+                Debate Destacado: Día de Reyes
+              </span>
+            </div>
+
+            <div className="flex justify-start gap-4">
+              <div className="size-10 rounded-2xl bg-amber-500 flex items-center justify-center font-black text-white shrink-0 shadow-lg shadow-amber-500/20">MT</div>
+              <div className="flex flex-col items-start max-w-[80%]">
+                <span className="text-[10px] font-black uppercase mb-1">Maru Torres</span>
+                <div className="p-4 bg-white dark:bg-surface-dark rounded-2xl rounded-tl-none border-l-4 border-amber-500 shadow-sm text-sm">
+                  ¡Feliz día de Reyes! 👑 Abro debate: ¿Cuál es el mejor Tortell de Tarragona? Yo voto por la <b>Pastisseria Conde</b>, ¡la nata es increíble!
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-start gap-4">
+              <div className="size-10 rounded-2xl bg-blue-500 flex items-center justify-center font-black text-white shrink-0 shadow-lg shadow-blue-500/20">JR</div>
+              <div className="flex flex-col items-start max-w-[80%]">
+                <span className="text-[10px] font-black uppercase mb-1">Joan Rebull</span>
+                <div className="p-4 bg-white dark:bg-surface-dark rounded-2xl rounded-tl-none border-l-4 border-blue-500 shadow-sm text-sm">
+                  ¡Uff! Yo prefiero la <b>Pastisseria Velvet</b>. Pero lo importante... ¿sois de nata natural o de la artificial? Yo si no es nata de verdad, ni lo pruebo 😤
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-center py-4">
+              <div className="h-px bg-gray-100 dark:bg-gray-800 flex-1"></div>
+              <span className="px-4 text-[8px] font-black text-gray-400 uppercase tracking-widest">Conversación en directo</span>
+              <div className="h-px bg-gray-100 dark:bg-gray-800 flex-1"></div>
+            </div>
+          </div>
+        )}
+
         {loading ? (
           <div className="h-full flex flex-col items-center justify-center gap-4 opacity-50">
             <div className="size-10 border-4 border-primary border-t-transparent animate-spin rounded-full"></div>
@@ -379,6 +437,7 @@ const Forum: React.FC = () => {
 
           <div className="flex-1 relative group">
             <input
+              ref={inputRef}
               type="text"
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
