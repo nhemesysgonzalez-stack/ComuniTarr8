@@ -53,6 +53,7 @@ const Forum: React.FC = () => {
   const [activeUsers, setActiveUsers] = useState<any[]>([]);
   const [newMessage, setNewMessage] = useState('');
   const [loading, setLoading] = useState(true);
+  const [isPending, startTransition] = React.useTransition();
   const [currentNeighborhood, setCurrentNeighborhood] = useState(user?.user_metadata?.neighborhood || 'GENERAL');
   const [showNeighborhoods, setShowNeighborhoods] = useState(false);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
@@ -227,13 +228,13 @@ const Forum: React.FC = () => {
 
           <div className="flex gap-2">
             <button
-              onClick={() => setCurrentNeighborhood('GENERAL')}
+              onClick={() => startTransition(() => setCurrentNeighborhood('GENERAL'))}
               className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood === 'GENERAL' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'}`}
             >
               🌍 Canal General
             </button>
             <button
-              onClick={() => setCurrentNeighborhood(user?.user_metadata?.neighborhood || 'GENERAL')}
+              onClick={() => startTransition(() => setCurrentNeighborhood(user?.user_metadata?.neighborhood || 'GENERAL'))}
               className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood !== 'GENERAL' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'}`}
             >
               🏠 Mi Barrio ({user?.user_metadata?.neighborhood || 'MI ZONA'})
@@ -304,8 +305,10 @@ const Forum: React.FC = () => {
                   <button
                     key={n}
                     onClick={() => {
-                      setCurrentNeighborhood(n);
-                      setShowNeighborhoods(false);
+                      startTransition(() => {
+                        setCurrentNeighborhood(n);
+                        setShowNeighborhoods(false);
+                      });
                     }}
                     className={`w-full px-6 py-4 rounded-2xl text-xs font-bold transition-all text-center ${currentNeighborhood === n ? 'bg-primary text-white shadow-lg' : 'bg-gray-50 dark:bg-gray-800 dark:text-white hover:bg-gray-100'}`}
                   >
