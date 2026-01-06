@@ -135,24 +135,24 @@ const Announcements: React.FC = () => {
             created_at: new Date().toISOString()
         };
 
-        const reyesNotice: Announcement = {
-            id: 'reyes-tarragona',
-            title: "🎁 ¡Felices Reyes, Vecinos!",
-            content: "Esperamos que hayáis disfrutado de los regalos. Hoy hay refuerzo de limpieza en toda Tarragona para la recogida de embalajes.",
+        const tourNotice: Announcement = {
+            id: 'tour-france-tarragona',
+            title: "🚲 Tarragona: Inicio del Tour 2026",
+            content: "Se confirma que nuestra ciudad acogerá la salida de la 2ª etapa del Tour de France 2026. Un evento mundial que pondrá a Tarragona en el mapa del ciclismo profesional.",
             category: "EVENTO",
             neighborhood: "GENERAL",
-            author_name: "Ajuntament",
-            itinerary: "• Refuerzo contenedores de cartón\n• Punto limpio móvil disponible mañana\n• ¡Disfrutad del día de fiesta!",
+            author_name: "Ayuntamiento",
+            itinerary: "• Sede: Salida desde Anfiteatro Romà\n• Fecha: Julio 2026\n• Gran impacto económico previsto",
             created_at: new Date().toISOString()
         };
 
-        const tortellNotice: Announcement = {
-            id: 'tortell-reis',
-            title: "🥐 Día del Tortell de Reis",
-            content: "Hoy es el día de disfrutar del Tortell en familia. ¡Suerte a los que encuentren la figura y cuidado con el haba!",
+        const rebaixesNotice: Announcement = {
+            id: 'rebaixes-gener',
+            title: "🛍️ Rebaixes de Gener: ¡Mañana!",
+            content: "Prepárate para el inicio de las rebajas mañana 7 de enero. Apoya a los comercios de tu barrio y aprovecha las mejores ofertas del año.",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
-            author_name: "Gremio Pasteleros",
+            author_name: "Comerç TGN",
             created_at: new Date().toISOString()
         };
 
@@ -176,7 +176,7 @@ const Announcements: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
             const fetched = data || [];
-            setNotices([weatherAlert, reyesNotice, tortellNotice, nasticNotice, ...fetched]);
+            setNotices([weatherAlert, tourNotice, rebaixesNotice, nasticNotice, ...fetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

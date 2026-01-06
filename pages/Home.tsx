@@ -83,6 +83,30 @@ const DynamicThemeEffects: React.FC = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-[60] overflow-hidden">
+      {/* Live Activity Ticker */}
+      <div className="absolute top-0 left-0 right-0 bg-primary/90 backdrop-blur-md py-2 z-[70] overflow-hidden border-b border-white/10">
+        <motion.div
+          animate={{ x: [0, -1000] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          className="flex whitespace-nowrap items-center gap-10 text-white text-[9px] font-black uppercase tracking-[0.2em]"
+        >
+          <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP EN EL FORO</span>
+          <span className="opacity-30">•</span>
+          <span className="flex items-center gap-2">🟠 NUEVA INCIDENCIA REPORTADA EN PART ALTA</span>
+          <span className="opacity-30">•</span>
+          <span className="flex items-center gap-2">🔵 JOAN R. HA CANJEADO UN VALE EN 'EL CONDE'</span>
+          <span className="opacity-30">•</span>
+          <span className="flex items-center gap-2">🟢 12 VECINOS ACTIVOS EN EL CHAT DE PONENT</span>
+          <span className="opacity-30">•</span>
+          <span className="flex items-center gap-2">🟡 NUEVO COMERCIO ASOCIADO: 'PASTISSERIA VELVET'</span>
+          <span className="opacity-30">•</span>
+          {/* Duplicate for seamless loop */}
+          <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP EN EL FORO</span>
+          <span className="opacity-30">•</span>
+          <span className="flex items-center gap-2">🟠 NUEVA INCIDENCIA REPORTADA EN PART ALTA</span>
+        </motion.div>
+      </div>
+
       {/* Snowfall Effect */}
       <div className="absolute inset-0">
         {[...Array(40)].map((_, i) => (
@@ -191,13 +215,23 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
-        const reyesNotice = {
-          id: 'reyes-tarragona',
-          title: "🎁 ¡Feliz Día de Reyes, Tarragona!",
-          content: "Tras la mágica noche de ayer, los Reyes Magos han dejado sus regalos en todos los hogares. Recordamos a los vecinos que el servicio de recogida de cartón se reforzará hoy para gestionar el exceso de embalajes.",
+        const tourFranceNotice = {
+          id: 'tour-france-tarragona',
+          title: "🚲 TOUR DE FRANÇA 2026: ¡Sortida des de Tarragona!",
+          content: "Confirmado: Tarragona será la ciudad de salida de la segunda etapa del Tour de France en julio de 2026. Una noticia histórica para el deporte y la promoción internacional de nuestra ciudad.",
+          category: "EVENTO",
+          neighborhood: "GENERAL",
+          itinerary: "• Jul 2026: Salida desde el Anfiteatro\n• Recorrido por la Costa Daurada\n• Impacto previsto: 15M€\n• Presentación oficial: Mañana en el Ayuntamiento",
+          created_at: new Date().toISOString()
+        };
+
+        const rebaixesNotice = {
+          id: 'rebaixes-gener',
+          title: "🛍️ MAÑANA: Inicio de Rebaixes de Gener",
+          content: "Mañana 7 de enero arrancan oficialmente las rebajas de invierno. Apoya al comercio local de Tarragona y aprovecha descuentos de hasta el 50% en las calles comerciales.",
           category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Plegar cajas antes de depositar\n• Usar contenedores azules (Papel/Cartón)\n• No dejar cajas fuera del contenedor\n• Mañana empiezan las rebajas oficiales",
+          itinerary: "• Apertura: 10:00h\n• Zonas: Rambla, C/ Unió, Parc Central\n• Tip: Se recomienda transporte público por alta afluencia",
           created_at: new Date().toISOString()
         };
 
@@ -220,7 +254,7 @@ const Home: React.FC = () => {
         };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([weatherAlert, bonaGentNotice, reyesNotice, plaBarrisNotice, ...fetchedNews].slice(0, 4));
+        setNews([weatherAlert, tourFranceNotice, rebaixesNotice, bonaGentNotice, ...fetchedNews].slice(0, 4));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase
