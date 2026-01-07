@@ -252,22 +252,21 @@ export const Header: React.FC = () => {
         >
           <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🟠 INCIDENCIA REPORTADA: RAMA CAÍDA EN PART ALTA</span>
+          <span className="flex items-center gap-2">🛍️ REBAIXES: ¡EMPIEZAN HOY LOS DESCUENTOS EN TARRAGONA!</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🔵 UN VECINO HA CANJEADO PUNTOS POR UN DESCUENTO LOCAL</span>
+          <span className="flex items-center gap-2">🚓 SEGURIDAD: BALANCE DE LA RAVE CON 207 IDENTIFICADOS</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 85 VECINOS HAN VOTADO EN 'BONA GENT'</span>
+          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 102 VECINOS HAN VOTADO EN 'BONA GENT'</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🟢 15 VECINOS ACTIVOS AHORA EN EL CANAL GENERAL</span>
+          <span className="flex items-center gap-2">🔵 UN VECINO HA CANJEADO PUNTOS EN COMERCIO LOCAL</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🟡 NUEVA SOLICITUD DE COMERCIO ALIADO RECIBIDA</span>
+          <span className="flex items-center gap-2">🟡 NUEVO COMERCIO 'BOUTIQUE MONA' SE UNE A LA RED</span>
           <span className="opacity-30">•</span>
-          {/* Loop duplicates */}
           <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🟠 INCIDENCIA REPORTADA: RAMA CAÍDA EN PART ALTA</span>
+          <span className="flex items-center gap-2">🛍️ REBAIXES: ¡EMPIEZAN HOY LOS DESCUENTOS EN TARRAGONA!</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 85 VECINOS HAN VOTADO EN 'BONA GENT'</span>
+          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 102 VECINOS HAN VOTADO EN 'BONA GENT'</span>
         </motion.div>
       </div>
 

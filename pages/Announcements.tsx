@@ -126,12 +126,12 @@ const Announcements: React.FC = () => {
         setLoading(true);
         const weatherAlert: Announcement = {
             id: 'weather-alert',
-            title: "🥶 ALERTA: Frío Polar (1°C)",
-            content: "Se registran temperaturas mínimas récord en la provincia. Hoy 6 de enero la sensación térmica en la Part Alta es de -2°C. Máxima precaución con las placas de hielo en zonas de sombra.",
+            title: "🥶 ALERTA: Frío Ártico (0°C)",
+            content: "La masa de aire polar se asienta en Tarragona. Hoy 7 de enero la mínima ha bajado a los 0°C en el Barri del Port y la Part Alta. El viento de Mistral aumentará la sensación de frío durante la tarde.",
             category: "URGENTE",
             neighborhood: "GENERAL",
             author_name: "Protección Civil",
-            itinerary: "• Temperatura hoy: 1°C / 9°C\n• Viento: Gregal (Frío seco)\n• Riesgo: Hielo en aceras y calzadas\n• Recomendación: Cuidar a personas mayores y mascotas",
+            itinerary: "• Temperatura hoy: 0°C / 10°C\n• Viento: Mistral fuerte en zonas altas\n• Riesgo: Heladas fuertes nocturnas\n• Recomendación: No dejar mascotas en el exterior",
             created_at: new Date().toISOString()
         };
 
@@ -148,21 +148,21 @@ const Announcements: React.FC = () => {
 
         const rebaixesNotice: Announcement = {
             id: 'rebaixes-gener',
-            title: "🛍️ Rebaixes de Gener: ¡Mañana!",
-            content: "Prepárate para el inicio de las rebajas mañana 7 de enero. Apoya a los comercios de tu barrio y aprovecha las mejores ofertas del año.",
+            title: "🛍️ HOY: Inicio de las Rebajas",
+            content: "Hoy día 7 de enero se abren oficialmente las Rebajas de Invierno. Las tiendas de la Rambla Nova y el Casco Antiguo ya ofrecen descuentos de hasta el 50%. ¡Aprovecha para consumir local!",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
-            author_name: "Comerç TGN",
+            author_name: "Tarragona Comerç",
             created_at: new Date().toISOString()
         };
 
-        const nasticNotice: Announcement = {
-            id: 'nastic-barri',
-            title: "🏗️ Nuevo Barrio del Nàstic",
-            content: "Tarragona está a punto de desbloquear el Plan Parcial 34 para el nuevo barrio del Nàstic. Aprobación prevista para febrero.",
-            category: "COMUNIDAD",
-            neighborhood: "EIXAMPLE",
-            author_name: "Urbanisme",
+        const raveNotice: Announcement = {
+            id: 'rave-final-report',
+            title: "🚓 Balance Final: Rave Ilegal",
+            content: "Finaliza el operativo contra la fiesta ilegal en Tarragona. Se confirma la identificación de 207 personas y se han tramitado 45 denuncias por conducir bajo los efectos de sustancias.",
+            category: "URGENTE",
+            neighborhood: "GENERAL",
+            author_name: " Mossos / G.U.",
             created_at: new Date().toISOString()
         };
 
@@ -176,7 +176,7 @@ const Announcements: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
             const fetched = data || [];
-            setNotices([weatherAlert, tourNotice, rebaixesNotice, nasticNotice, ...fetched]);
+            setNotices([weatherAlert, raveNotice, rebaixesNotice, tourNotice, ...fetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

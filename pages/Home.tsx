@@ -180,11 +180,11 @@ const Home: React.FC = () => {
 
         const weatherAlert = {
           id: 'weather-alert',
-          title: "🥶 HELADAS: Frío Polar en Tarragona",
-          content: "Temperaturas en desplome. Hoy 6 de enero despertamos con 1°C y sensación térmica de -2°C. Protección Civil mantiene la alerta por heladas y riesgo de placas de hielo en calles sombrías.",
+          title: "🥶 HELADAS: Alerta Amarilla en Tarragona",
+          content: "Seguimos bajo la influencia de la masa de aire ártico. Hoy 7 de enero despertamos con 0°C en el centro y -2°C en barrios de montaña. Protección Civil mantiene la alerta por placas de hielo en la vía pública.",
           category: "URGENTE",
           neighborhood: "GENERAL",
-          itinerary: "• Mínima: 1°C / Máxima: 9°C\n• Viento: Gregal con rachas frías\n• Alerta: Hielo en calzada\n• Recomendación: Revisar calefacciones y tuberías exteriores",
+          itinerary: "• T. Mínima: 0°C / T. Máxima: 10°C\n• Viento: Mistral moderado\n• Alerta: Placas de hielo en calzadas sombrías\n• Consejo: Evitar el riego de plantas exteriores para no generar hielo",
           created_at: new Date().toISOString()
         };
 
@@ -200,11 +200,11 @@ const Home: React.FC = () => {
 
         const rebaixesNotice = {
           id: 'rebaixes-gener',
-          title: "🛍️ MAÑANA: Inicio de Rebaixes de Gener",
-          content: "Mañana 7 de enero arrancan oficialmente las rebajas de invierno. Apoya al comercio local de Tarragona y aprovecha descuentos de hasta el 50% en las calles comerciales.",
+          title: "🛍️ HOY: ¡Empiezan las Rebaixes de Gener!",
+          content: "Hoy 7 de enero arrancan oficialmente las rebajas de invierno en Tarragona. Grandes descuentos en el comercio local y centros comerciales de la ciudad. ¡Apoya a los negocios de tu barrio!",
           category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Apertura: 10:00h\n• Zonas: Rambla, C/ Unió, Parc Central\n• Tip: Se recomienda transporte público por alta afluencia",
+          itinerary: "• Apertura: 10:00h\n• Rebajas: Hasta el 50% de descuento\n• Ubicaciones: Rambla Nova, Parc Central, Corte Inglés\n• Transporte: Se recomienda la red de buses municipales",
           created_at: new Date().toISOString()
         };
 
@@ -217,8 +217,18 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
+        const raveNotice = {
+          id: 'rave-tgn-update',
+          title: "🚓 Balance 'Rave' Ilegal: 207 Identificados",
+          content: "Los Mossos d'Esquadra y Guardia Urbana cierran el dispositivo de la fiesta ilegal en Tarragona. El balance incluye 45 positivos en drogas y 207 vehículos controlados durante el desalojo.",
+          category: "URGENTE",
+          neighborhood: "GENERAL",
+          itinerary: "• Positivos drogas: 45 conductores\n• Denuncias armas: 3 incautaciones\n• Desalojo: Sin incidentes graves\n• Ubicación: Zona boscosa cercana a la N-240",
+          created_at: new Date().toISOString()
+        };
+
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([weatherAlert, tourFranceNotice, rebaixesNotice, bonaGentNotice, ...fetchedNews].slice(0, 4));
+        setNews([weatherAlert, rebaixesNotice, raveNotice, tourFranceNotice, bonaGentNotice, ...fetchedNews].slice(0, 4));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase
