@@ -180,11 +180,11 @@ const Home: React.FC = () => {
 
         const weatherAlert = {
           id: 'weather-alert',
-          title: "🥶 HELADAS: Alerta Amarilla en Tarragona",
-          content: "Seguimos bajo la influencia de la masa de aire ártico. Hoy 7 de enero despertamos con 0°C en el centro y -2°C en barrios de montaña. Protección Civil mantiene la alerta por placas de hielo en la vía pública.",
+          title: "💨 ALERTA: Fuertes Vientos en Tarragona",
+          content: "Protección Civil activa la alerta amarilla por fuertes rachas de viento y fenómenos costeros en la provincia de Tarragona hoy 8 de enero. Se recomienda precaución en zonas elevadas y paseos marítimos.",
           category: "URGENTE",
           neighborhood: "GENERAL",
-          itinerary: "• T. Mínima: 0°C / T. Máxima: 10°C\n• Viento: Mistral moderado\n• Alerta: Placas de hielo en calzadas sombrías\n• Consejo: Evitar el riego de plantas exteriores para no generar hielo",
+          itinerary: "• Viento: Rachas de hasta 70km/h\n• Fenómenos costeros: Alerta Amarilla\n• T. Máxima: 16°C / T. Mínima: 10°C\n• Consejo: Asegurar toldos y macetas en balcones",
           created_at: new Date().toISOString()
         };
 
@@ -199,12 +199,12 @@ const Home: React.FC = () => {
         };
 
         const rebaixesNotice = {
-          id: 'rebaixes-gener',
-          title: "🛍️ HOY: ¡Empiezan las Rebaixes de Gener!",
-          content: "Hoy 7 de enero arrancan oficialmente las rebajas de invierno en Tarragona. Grandes descuentos en el comercio local y centros comerciales de la ciudad. ¡Apoya a los negocios de tu barrio!",
+          id: 'rebaixes-gener-active',
+          title: "🛍️ REBAIXES: Segundo Día de Descuentos",
+          content: "Las rebajas de invierno continúan con gran afluencia en Tarragona. Se espera un aumento del 1.9% en contratos comerciales en la provincia para esta campaña. ¡No pierdas las mejores oportunidades!",
           category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Apertura: 10:00h\n• Rebajas: Hasta el 50% de descuento\n• Ubicaciones: Rambla Nova, Parc Central, Corte Inglés\n• Transporte: Se recomienda la red de buses municipales",
+          itinerary: "• Zonas: Rambla Nova, Parc Central, C/ Unió\n• Oportunidad: Hasta un 70% en moda seleccionada\n• Local: Apoya al 'Petit Comerç' de tu barrio",
           created_at: new Date().toISOString()
         };
 
@@ -217,18 +217,27 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
-        const raveNotice = {
-          id: 'rave-tgn-update',
-          title: "🚓 Balance 'Rave' Ilegal: 207 Identificados",
-          content: "Los Mossos d'Esquadra y Guardia Urbana cierran el dispositivo de la fiesta ilegal en Tarragona. El balance incluye 45 positivos en drogas y 207 vehículos controlados durante el desalojo.",
+        const trafficNotice = {
+          id: 'traffic-ap7-wind',
+          title: "🚗 TRAFICO: Incidencias por Viento en AP-7",
+          content: "Accidente en la AP-7 a la altura de L'Hospitalet de l'Infant debido al fuerte viento. Se ve afectado un carril en sentido sur. También se prevén movilizaciones en el Puerto de Tarragona.",
           category: "URGENTE",
           neighborhood: "GENERAL",
-          itinerary: "• Positivos drogas: 45 conductores\n• Denuncias armas: 3 incautaciones\n• Desalojo: Sin incidentes graves\n• Ubicación: Zona boscosa cercana a la N-240",
+          itinerary: "• Tramo: L'Hospitalet - Tarragona\n• Puerto: Posibles movilizaciones agrarias\n• Estado: Precaución extrema al volante",
+          created_at: new Date().toISOString()
+        };
+
+        const exhibitionNotice = {
+          id: 'exp-pati-jaume',
+          title: "🎨 HOY: Exposición 'A mà alçada'",
+          content: "Inauguración de la exposición de poesía visual, acuarelas y cómic hoy a las 19:00h en el Pati de Jaume I. Una cita cultural imperdible en el corazón de la ciudad.",
+          category: "EVENTO",
+          neighborhood: "PART ALTA",
           created_at: new Date().toISOString()
         };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([weatherAlert, rebaixesNotice, raveNotice, tourFranceNotice, bonaGentNotice, ...fetchedNews].slice(0, 4));
+        setNews([weatherAlert, trafficNotice, rebaixesNotice, exhibitionNotice, bonaGentNotice, ...fetchedNews].slice(0, 4));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase

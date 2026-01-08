@@ -60,6 +60,8 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
   return <>{children}</>;
 };
 
+import { FloatingCommunityWidget } from './components/FloatingCommunityWidget';
+
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
 
@@ -77,6 +79,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </main>
       </div>
       <ChatWidget />
+      <FloatingCommunityWidget />
       <SOSButton />
     </div>
   );

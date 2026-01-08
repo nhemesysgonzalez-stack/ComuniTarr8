@@ -252,21 +252,21 @@ export const Header: React.FC = () => {
         >
           <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛍️ REBAIXES: ¡EMPIEZAN HOY LOS DESCUENTOS EN TARRAGONA!</span>
+          <span className="flex items-center gap-2">💨 ALERTA: Fuertes Vientos en Tarragona</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚓 SEGURIDAD: BALANCE DE LA RAVE CON 207 IDENTIFICADOS</span>
+          <span className="flex items-center gap-2">🚗 TRÁFICO: INCIDENCIA EN AP-7 POR VIENTO (L'HOSPITALET)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 102 VECINOS HAN VOTADO EN 'BONA GENT'</span>
+          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 118 VECINOS HAN VOTADO EN 'BONA GENT'</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🔵 UN VECINO HA CANJEADO PUNTOS EN COMERCIO LOCAL</span>
+          <span className="flex items-center gap-2">🎨 CULTURA: HOY 19H EXPOSICIÓN 'A MÀ ALÇADA' EN PATI JAUME I</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🟡 NUEVO COMERCIO 'BOUTIQUE MONA' SE UNE A LA RED</span>
+          <span className="flex items-center gap-2">🛍️ REBAIXES: Segundo Día de Descuentos</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛍️ REBAIXES: ¡EMPIEZAN HOY LOS DESCUENTOS EN TARRAGONA!</span>
+          <span className="flex items-center gap-2">💨 ALERTA: Fuertes Vientos en Tarragona</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 102 VECINOS HAN VOTADO EN 'BONA GENT'</span>
+          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 118 VECINOS HAN VOTADO EN 'BONA GENT'</span>
         </motion.div>
       </div>
 
