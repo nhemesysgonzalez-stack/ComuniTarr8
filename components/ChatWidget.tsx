@@ -40,7 +40,7 @@ export const ChatWidget: React.FC = () => {
     setIsLoading(true);
 
     let assistantResponse: { text: string; links?: GroundingLink[] } = { text: "" };
-    
+
     // Simple heuristic to decide which AI tool to use
     if (input.toLowerCase().includes('donde') || input.toLowerCase().includes('lugar') || input.toLowerCase().includes('cerca')) {
       assistantResponse = await getMapsGroundedPlaces(input);
@@ -58,7 +58,7 @@ export const ChatWidget: React.FC = () => {
     };
 
     setMessages(prev => [...prev, assistantMsg]);
-    
+
     // If there are grounding links, add them as a separate small message or append
     if (assistantResponse.links && assistantResponse.links.length > 0) {
       const linksText = "Fuentes encontradas:\n" + assistantResponse.links.map(l => `- [${l.title}](${l.uri})`).join('\n');
@@ -74,9 +74,9 @@ export const ChatWidget: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div className="fixed bottom-6 left-6 z-50 flex flex-col items-start">
       {isOpen && (
-        <div className="mb-4 w-80 md:w-96 h-[500px] bg-white dark:bg-surface-dark rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 flex flex-col overflow-hidden animate-in slide-in-from-bottom-5">
+        <div className="mb-4 w-80 md:w-96 h-[500px] bg-white dark:bg-surface-dark rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 flex flex-col overflow-hidden animate-in slide-in-from-left-5">
           <header className="bg-primary p-4 text-white flex justify-between items-center shrink-0">
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined">smart_toy</span>
@@ -86,15 +86,14 @@ export const ChatWidget: React.FC = () => {
               <span className="material-symbols-outlined">close</span>
             </button>
           </header>
-          
+
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.map(msg => (
               <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] p-3 rounded-2xl ${
-                  msg.sender === 'user' 
-                    ? 'bg-primary text-white rounded-br-none' 
+                <div className={`max-w-[85%] p-3 rounded-2xl ${msg.sender === 'user'
+                    ? 'bg-primary text-white rounded-br-none'
                     : 'bg-gray-100 dark:bg-gray-800 text-text-main dark:text-gray-200 rounded-bl-none'
-                }`}>
+                  }`}>
                   <p className="text-sm whitespace-pre-wrap">{msg.text}</p>
                   <p className="text-[10px] mt-1 opacity-60 text-right">
                     {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
@@ -118,15 +117,15 @@ export const ChatWidget: React.FC = () => {
 
           <div className="p-4 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
             <div className="flex gap-2">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSend()}
                 placeholder="Pregunta algo..."
                 className="flex-1 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:ring-primary focus:border-primary dark:text-white"
               />
-              <button 
+              <button
                 onClick={handleSend}
                 disabled={isLoading}
                 className="bg-primary text-white p-2 rounded-xl hover:bg-primary-hover transition disabled:opacity-50"
@@ -137,12 +136,11 @@ export const ChatWidget: React.FC = () => {
           </div>
         </div>
       )}
-      
-      <button 
+
+      <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`size-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
-          isOpen ? 'bg-gray-200 dark:bg-gray-700 text-text-main dark:text-white rotate-90' : 'bg-primary text-white hover:scale-110'
-        }`}
+        className={`size-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-gray-200 dark:bg-gray-700 text-text-main dark:text-white rotate-90' : 'bg-primary text-white hover:scale-110'
+          }`}
       >
         <span className="material-symbols-outlined text-3xl">
           {isOpen ? 'close' : 'chat_bubble'}
