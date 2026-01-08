@@ -61,6 +61,21 @@ const Forum: React.FC = () => {
   const [showWelcome, setShowWelcome] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [tickerIndex, setTickerIndex] = useState(0);
+
+  const tickerMessages = [
+    { user: 'Pau T.', text: '¡Bon dia! ¿Sabeis si la expo del Pati Jaume I es gratis?' },
+    { user: 'Mireia R.', text: 'Ojo con el viento por la zona del Hospitalet, está fatal.' },
+    { user: 'Joan B.', text: 'Acabo de pasar por la Rambla y las rebajas están a tope 🛍️' },
+    { user: 'Carme S.', text: '¡Votado! Ojalá gane la asociación del Serrallo para Bona Gent.' }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTickerIndex(prev => (prev + 1) % tickerMessages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   // Sound Utility using shared Audio objects
   const playSound = (type: 'msg' | 'buzz') => {
@@ -448,6 +463,25 @@ const Forum: React.FC = () => {
 
       {/* Input Area */}
       <div className="p-6 md:p-10 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-surface-dark shrink-0">
+        {/* Mobile Community Ticker (Cintillo) */}
+        <div className="lg:hidden mb-4 overflow-hidden bg-primary/5 rounded-xl py-2 px-4 flex items-center gap-3 border border-primary/10">
+          <span className="material-symbols-outlined text-primary text-sm animate-pulse">forum</span>
+          <div className="flex-1 overflow-hidden relative h-4">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={tickerIndex}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="text-[10px] font-bold text-gray-500 dark:text-gray-400 absolute inset-0 truncate"
+              >
+                <span className="text-primary font-black uppercase text-[8px] mr-2">{tickerMessages[tickerIndex].user}:</span>
+                {tickerMessages[tickerIndex].text}
+              </motion.p>
+            </AnimatePresence>
+          </div>
+        </div>
+
         <form onSubmit={sendMessage} className="relative max-w-5xl mx-auto flex items-center gap-4">
           <button
             type="button"

@@ -74,7 +74,7 @@ export const ChatWidget: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 left-6 z-50 flex flex-col items-start">
+    <div className="hidden lg:flex fixed bottom-6 left-[120px] z-50 flex-col items-start">
       {isOpen && (
         <div className="mb-4 w-80 md:w-96 h-[500px] bg-white dark:bg-surface-dark rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 flex flex-col overflow-hidden animate-in slide-in-from-left-5">
           <header className="bg-primary p-4 text-white flex justify-between items-center shrink-0">
@@ -91,8 +91,8 @@ export const ChatWidget: React.FC = () => {
             {messages.map(msg => (
               <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`max-w-[85%] p-3 rounded-2xl ${msg.sender === 'user'
-                    ? 'bg-primary text-white rounded-br-none'
-                    : 'bg-gray-100 dark:bg-gray-800 text-text-main dark:text-gray-200 rounded-bl-none'
+                  ? 'bg-primary text-white rounded-br-none'
+                  : 'bg-gray-100 dark:bg-gray-800 text-text-main dark:text-gray-200 rounded-bl-none'
                   }`}>
                   <p className="text-sm whitespace-pre-wrap">{msg.text}</p>
                   <p className="text-[10px] mt-1 opacity-60 text-right">

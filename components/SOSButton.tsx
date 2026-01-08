@@ -28,7 +28,7 @@ export const SOSButton: React.FC = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => !isAlerting && triggerSOS()}
-                className="fixed bottom-24 left-8 lg:bottom-8 lg:left-8 z-[100] size-16 lg:size-20 bg-red-600 text-white rounded-full shadow-[0_0_40px_rgba(220,38,38,0.5)] flex items-center justify-center group overflow-hidden border-4 border-white dark:border-gray-800"
+                className="hidden lg:flex fixed bottom-8 left-8 z-[100] size-20 bg-red-600 text-white rounded-full shadow-[0_0_40px_rgba(220,38,38,0.5)] items-center justify-center group overflow-hidden border-4 border-white dark:border-gray-800"
             >
                 <motion.div
                     animate={isAlerting ? { scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] } : {}}
@@ -47,7 +47,7 @@ export const SOSButton: React.FC = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[110] bg-red-600/90 backdrop-blur-md flex flex-col items-center justify-center text-white"
+                        className="fixed inset-0 z-[120] bg-red-600/90 backdrop-blur-md flex flex-col items-center justify-center text-white"
                     >
                         <motion.div
                             animate={{ scale: [1, 1.2, 1] }}

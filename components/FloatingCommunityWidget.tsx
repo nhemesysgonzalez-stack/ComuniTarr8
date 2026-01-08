@@ -41,7 +41,7 @@ export const FloatingCommunityWidget: React.FC = () => {
     }, []);
 
     return (
-        <div className="fixed bottom-24 left-6 lg:bottom-10 lg:left-[340px] z-[60] flex flex-col items-start gap-3 pointer-events-none">
+        <div className="hidden lg:flex fixed bottom-10 left-[340px] z-[60] flex-col items-start gap-3 pointer-events-none">
             <AnimatePresence>
                 {messages.map((msg, idx) => (
                     <motion.div

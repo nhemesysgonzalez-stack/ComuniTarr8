@@ -302,8 +302,22 @@ export const Header: React.FC = () => {
                 </div>
               </div>
 
+              <div className="space-y-3">
+                <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] px-2">Accesos Rápidos</p>
+                <div className="grid grid-cols-2 gap-2">
+                  <Link to="/emergency" onClick={() => setIsMenuOpen(false)} className="flex flex-col items-center justify-center p-6 rounded-[32px] bg-red-500 text-white shadow-lg shadow-red-500/20 gap-3">
+                    <span className="material-symbols-outlined text-3xl font-black">emergency</span>
+                    <span className="text-[9px] font-black uppercase tracking-widest text-center">EMERGENCIAS (SOS)</span>
+                  </Link>
+                  <Link to="/assistant" onClick={() => setIsMenuOpen(false)} className="flex flex-col items-center justify-center p-6 rounded-[32px] bg-primary text-white shadow-lg shadow-primary/20 gap-3">
+                    <span className="material-symbols-outlined text-3xl font-black">smart_toy</span>
+                    <span className="text-[9px] font-black uppercase tracking-widest text-center">ASISTENTE IA</span>
+                  </Link>
+                </div>
+              </div>
+
               <div className="grid grid-cols-1 gap-2">
-                {navItems.map(item => (
+                {navItems.filter(item => !['/emergency', '/assistant'].includes(item.to)).map(item => (
                   <Link
                     key={item.to}
                     to={item.to}
