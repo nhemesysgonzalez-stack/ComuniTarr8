@@ -41,14 +41,14 @@ export const FloatingCommunityWidget: React.FC = () => {
     }, []);
 
     return (
-        <div className="fixed bottom-24 right-6 z-[60] flex flex-col items-end gap-3 pointer-events-none">
+        <div className="fixed bottom-24 right-6 lg:bottom-10 lg:left-[340px] lg:right-auto z-[60] flex flex-col items-end lg:items-start gap-3 pointer-events-none">
             <AnimatePresence>
                 {messages.map((msg, idx) => (
                     <motion.div
                         key={msg.id}
-                        initial={{ opacity: 0, x: 50, scale: 0.8 }}
+                        initial={{ opacity: 0, x: window.innerWidth > 1024 ? -50 : 50, scale: 0.8 }}
                         animate={{ opacity: 1, x: 0, scale: 1 }}
-                        exit={{ opacity: 0, x: 50, scale: 0.8 }}
+                        exit={{ opacity: 0, x: window.innerWidth > 1024 ? -50 : 50, scale: 0.8 }}
                         transition={{ delay: idx * 0.1 }}
                         className="pointer-events-auto bg-white/90 dark:bg-surface-dark/90 backdrop-blur-xl p-3 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 max-w-[240px] flex gap-3 items-start"
                     >
