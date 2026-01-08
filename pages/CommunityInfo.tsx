@@ -20,14 +20,21 @@ const CommunityInfo: React.FC = () => {
                 { title: 'Seguridad y Privacidad', desc: 'Protege la información de tus vecinos. No compartas datos sensibles sin permiso.', icon: 'verified_user', color: 'text-blue-500', bg: 'bg-blue-50 dark:bg-blue-900/20' }
             ],
 
-            features_title: 'Funciones Principales',
+            features_title: 'Lo que encontrarás en tu Menú',
             features_desc: 'Herramientas diseñadas para potenciar la vida vecinal.',
             features: [
                 { title: 'Avisos y Alertas', desc: 'Mantente informado sobre cortes de agua, obras o emergencias en tiempo real.', icon: 'campaign' },
-                { title: 'Mercado Local', desc: 'Apoya a los comercios de tu barrio y encuentra productos de segunda mano cerca de ti.', icon: 'storefront' },
-                { title: 'Ayuda Mutua', desc: 'Ofrece tus habilidades o pide ayuda para tareas puntuales. Solidaridad en acción.', icon: 'handshake' },
-                { title: 'Seguridad Vecinal', desc: 'Sistemas de reporte y colaboración para mantener las calles seguras.', icon: 'shield' }
+                { title: 'Foro: Empleo y Talento', desc: 'Encuentra trabajo en tu propio barrio o publica vacantes para tus vecinos.', icon: 'work' },
+                { title: 'Seguridad y Preppers', desc: 'Preparación para el entorno petroquímico y protocolos PLASEQTA.', icon: 'shield' },
+                { title: 'Mercado Local', desc: 'Apoya a los comercios de tu barrio y encuentra gangas cerca de ti.', icon: 'storefront' },
+                { title: 'Ayuda Mutua', desc: 'Ofrece tus habilidades o pide ayuda para tareas puntuales. Solidaridad.', icon: 'handshake' },
+                { title: 'Mapa Interactivo', desc: 'Explora recursos, comercios e incidencias en el mapa real de Tarragona.', icon: 'explore' },
+                { title: 'Asistente IA', desc: 'Nuestro asistente digital para resolver cualquier duda sobre la ciudad.', icon: 'smart_toy' },
+                { title: 'Calendario', desc: 'No te pierdas ningún evento, fiesta o curso en tu barrio.', icon: 'calendar_month' }
             ],
+
+            philosophy_title: 'Una App Viva, no Impuesta',
+            philosophy_desc: 'ComuniTarr es una herramienta creada para los vecinos y por los vecinos. Aquí la interacción es total: nada está impuesto, la comunidad es quien le da vida día a día con sus historias, avisos y ayuda mutua.',
 
             final_message: 'Juntos hacemos barrio. Únete y participa activamente.'
         },
@@ -167,6 +174,17 @@ const CommunityInfo: React.FC = () => {
                             </p>
                         </div>
                     ))}
+                </div>
+            </section>
+
+            {/* Philosophy Section */}
+            <section className="max-w-4xl mx-auto text-center py-10">
+                <div className="bg-primary/5 dark:bg-primary/10 p-10 md:p-16 rounded-[60px] border border-primary/20">
+                    <span className="material-symbols-outlined text-6xl text-primary mb-6">workspace_premium</span>
+                    <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 leading-tight">{c.philosophy_title}</h2>
+                    <p className="text-xl text-gray-600 dark:text-gray-300 font-bold leading-relaxed italic">
+                        "{c.philosophy_desc}"
+                    </p>
                 </div>
             </section>
 

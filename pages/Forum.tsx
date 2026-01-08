@@ -192,6 +192,8 @@ const Forum: React.FC = () => {
       setNewMessage('Para mí el mejor Tortell de Tarragona es el de... y la nata tiene que ser... ');
     } else if (topicId === 'frio-polar') {
       setNewMessage('¿Qué consejos dais para proteger las plantas del balcón con este frío? ');
+    } else if (topicId === 'prepper-tgn') {
+      setNewMessage('¿Cuáles son los mejores consejos para estar preparados ante una alerta química en Tarragona? ');
     }
     setTimeout(() => {
       inputRef.current?.focus();
@@ -210,6 +212,12 @@ const Forum: React.FC = () => {
       title: '❄️ Consejos contra el Frío',
       description: 'Cómo proteger las tuberías y plantas esta semana.',
       participating: 8
+    },
+    {
+      id: 'prepper-tgn',
+      title: '🛡️ Seguridad Petroquímica',
+      description: 'Protocolos PLASEQTA y consejos de preparación vecinal.',
+      participating: 21
     }
   ];
 
@@ -235,9 +243,21 @@ const Forum: React.FC = () => {
             </button>
             <button
               onClick={() => startTransition(() => setCurrentNeighborhood(user?.user_metadata?.neighborhood || 'GENERAL'))}
-              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood !== 'GENERAL' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'}`}
+              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood !== 'GENERAL' && currentNeighborhood !== 'EMPLEO' && currentNeighborhood !== 'SEGURIDAD' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'}`}
             >
               🏠 Mi Barrio ({user?.user_metadata?.neighborhood || 'MI ZONA'})
+            </button>
+            <button
+              onClick={() => startTransition(() => setCurrentNeighborhood('EMPLEO'))}
+              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood === 'EMPLEO' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/20' : 'bg-gray-100 text-emerald-600 hover:bg-emerald-50 dark:bg-gray-800 dark:text-emerald-400'}`}
+            >
+              💼 Empleo
+            </button>
+            <button
+              onClick={() => startTransition(() => setCurrentNeighborhood('SEGURIDAD'))}
+              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood === 'SEGURIDAD' ? 'bg-orange-600 text-white shadow-lg shadow-orange-600/20' : 'bg-gray-100 text-orange-600 hover:bg-orange-50 dark:bg-gray-800 dark:text-orange-400'}`}
+            >
+              🛡️ Seguridad/Preppers
             </button>
             <button
               onClick={() => setShowNeighborhoods(!showNeighborhoods)}
