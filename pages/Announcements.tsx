@@ -126,12 +126,12 @@ const Announcements: React.FC = () => {
         setLoading(true);
         const weatherAlert: Announcement = {
             id: 'weather-alert',
-            title: "💨 ALERTA: Fuertes Vientos",
-            content: "Rachas de hasta 70km/h hoy 8 de enero. Alerta amarilla activada por Protección Civil. Evitad zonas con andamios o árboles grandes y asegurad objetos en balcones.",
+            title: "🥶 AVISO: Frío Intenso (3°C)",
+            content: "Se espera una caída de las temperaturas hoy 9 de enero. El cielo estará despejado pero el frío será intenso durante la madrugada y la mañana. Se recomienda precaución en carreteras secundarias por posibles heladas.",
             category: "URGENTE",
             neighborhood: "GENERAL",
             author_name: "Protección Civil",
-            itinerary: "• Pico de viento: Mediodía\n• Riesgo: Caída de ramas y objetos\n• Costa: Mala mar",
+            itinerary: "• Mínima: 3°C / Máxima: 13°C\n• Riesgo: Heladas en zonas de sombra\n• Estado: Cielo despejado",
             created_at: new Date().toISOString()
         };
 
@@ -148,21 +148,21 @@ const Announcements: React.FC = () => {
 
         const rebaixesNotice: Announcement = {
             id: 'rebaixes-gener-active',
-            title: "🛍️ Rebaixes: ¡Seguimos!",
-            content: "Segundo día de rebajas con gran actividad en la Rambla Nova. Las tiendas locales están operando con descuentos agresivos. ¡Buen momento para apoyar al comercio de proximidad!",
+            title: "🛍️ Rebajas: Tercer Día",
+            content: "Continúa la campaña de rebajas con descuentos crecientes en Tarragona. Es un momento ideal para visitar los comercios locales y disfrutar de las promociones de invierno.",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
             author_name: "Tarragona Comerç",
             created_at: new Date().toISOString()
         };
 
-        const exhibitionNotice: Announcement = {
-            id: 'exp-pati-jaume',
-            title: "🎨 HOY: Expo 'A mà alçada'",
-            content: "Inauguración hoy a las 19:00h en el Pati de Jaume I. Poesía visual y cómic. Una oportunidad fantástica para apoyar a los artistas locales.",
-            category: "EVENTO",
-            neighborhood: "PART ALTA",
-            author_name: "Cultura TGN",
+        const maintenanceNotice: Announcement = {
+            id: 'mantenimiento-luz-part-baixa',
+            title: "🔌 CORTES: Mantenimiento Eléctrico",
+            content: "Aviso de cortes programados por Endesa hoy 9 de enero en sectores de la Part Baixa para mejora de la red. Horario previsto: de 09:00h a 14:00h.",
+            category: "URGENTE",
+            neighborhood: "BARRIS MARÍTIMS",
+            author_name: "Endesa / Ayto.",
             created_at: new Date().toISOString()
         };
 
@@ -176,7 +176,7 @@ const Announcements: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
             const fetched = data || [];
-            setNotices([weatherAlert, exhibitionNotice, rebaixesNotice, tourNotice, ...fetched]);
+            setNotices([weatherAlert, maintenanceNotice, rebaixesNotice, tourNotice, ...fetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

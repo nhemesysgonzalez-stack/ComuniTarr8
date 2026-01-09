@@ -64,10 +64,10 @@ const Forum: React.FC = () => {
   const [tickerIndex, setTickerIndex] = useState(0);
 
   const tickerMessages = [
-    { user: 'Pau T.', text: '¡Bon dia! ¿Sabeis si la expo del Pati Jaume I es gratis?' },
-    { user: 'Mireia R.', text: 'Ojo con el viento por la zona del Hospitalet, está fatal.' },
-    { user: 'Joan B.', text: 'Acabo de pasar por la Rambla y las rebajas están a tope 🛍️' },
-    { user: 'Carme S.', text: '¡Votado! Ojalá gane la asociación del Serrallo para Bona Gent.' }
+    { user: 'Pau T.', text: '¡Vaya frío hoy! Menos mal que hace sol 🥶☀️' },
+    { user: 'Mireia R.', text: '¿Alguien sabe si el corte de luz en Part Baixa afecta a C/ Real?' },
+    { user: 'Joan B.', text: 'Tercer día de rebajas y sigue habiendo chollos en el centro.' },
+    { user: 'Carme S.', text: 'Ya están saliendo los caballos para entrenar los Tres Tombs 🐎' }
   ];
 
   useEffect(() => {

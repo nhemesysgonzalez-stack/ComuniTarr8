@@ -180,11 +180,11 @@ const Home: React.FC = () => {
 
         const weatherAlert = {
           id: 'weather-alert',
-          title: "💨 ALERTA: Fuertes Vientos en Tarragona",
-          content: "Protección Civil activa la alerta amarilla por fuertes rachas de viento y fenómenos costeros en la provincia de Tarragona hoy 8 de enero. Se recomienda precaución en zonas elevadas y paseos marítimos.",
+          title: "🥶 FRÍO: Madrugada a 3°C en Tarragona",
+          content: "Hoy 9 de enero despertamos con cielos despejados pero temperaturas mínimas en descenso. Se recomienda precaución en la conducción a primeras horas por posibles placas de escarcha en zonas de umbría.",
           category: "URGENTE",
           neighborhood: "GENERAL",
-          itinerary: "• Viento: Rachas de hasta 70km/h\n• Fenómenos costeros: Alerta Amarilla\n• T. Máxima: 16°C / T. Mínima: 10°C\n• Consejo: Asegurar toldos y macetas en balcones",
+          itinerary: "• T. Mínima: 3°C / T. Máxima: 13°C\n• Viento: Poniente flojo\n• Sol: Despejado todo el día\n• Recomendación: Abrigar bien a niños y mayores",
           created_at: new Date().toISOString()
         };
 
@@ -200,11 +200,11 @@ const Home: React.FC = () => {
 
         const rebaixesNotice = {
           id: 'rebaixes-gener-active',
-          title: "🛍️ REBAIXES: Segundo Día de Descuentos",
-          content: "Las rebajas de invierno continúan con gran afluencia en Tarragona. Se espera un aumento del 1.9% en contratos comerciales en la provincia para esta campaña. ¡No pierdas las mejores oportunidades!",
+          title: "🛍️ REBAIXES: Tercer Día de Ofertazas",
+          content: "Las rebajas de invierno pisan el acelerador. Algunos comercios locales de la Part Alta y el Eixample ya anuncian 'segundas rebajas' en artículos seleccionados. ¡Pasea y apoya al barrio!",
           category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Zonas: Rambla Nova, Parc Central, C/ Unió\n• Oportunidad: Hasta un 70% en moda seleccionada\n• Local: Apoya al 'Petit Comerç' de tu barrio",
+          itinerary: "• Descuentos: Hasta el 70%\n• Comercios: Más de 200 locales adheridos\n• Horario: Mayoritariamente hasta las 20:30h\n• Tip: El pequeño comercio ofrece trato personalizado",
           created_at: new Date().toISOString()
         };
 
@@ -217,27 +217,27 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
-        const trafficNotice = {
-          id: 'traffic-ap7-wind',
-          title: "🚗 TRAFICO: Incidencias por Viento en AP-7",
-          content: "Accidente en la AP-7 a la altura de L'Hospitalet de l'Infant debido al fuerte viento. Se ve afectado un carril en sentido sur. También se prevén movilizaciones en el Puerto de Tarragona.",
-          category: "URGENTE",
-          neighborhood: "GENERAL",
-          itinerary: "• Tramo: L'Hospitalet - Tarragona\n• Puerto: Posibles movilizaciones agrarias\n• Estado: Precaución extrema al volante",
+        const tresTombsNotice = {
+          id: 'tres-tombs-prep',
+          title: "🐎 CULTURA: Preparativos 'Els Tres Tombs'",
+          content: "El Gremio de Mareantes ya prepara la tradicional festividad de Sant Antoni Abat (18 de enero). Se están afinando los carruajes y coordinando con los jinetes locales para el gran desfile.",
+          category: "EVENTO",
+          neighborhood: "SERRALLO",
+          itinerary: "• Fecha: 18 de enero 2026\n• Recorrido: Por definir (Rambla y centro)\n• Tradición: Bendición de animales y panes\n• Entidad: Gremi de Mareantes",
           created_at: new Date().toISOString()
         };
 
-        const exhibitionNotice = {
-          id: 'exp-pati-jaume',
-          title: "🎨 HOY: Exposición 'A mà alçada'",
-          content: "Inauguración de la exposición de poesía visual, acuarelas y cómic hoy a las 19:00h en el Pati de Jaume I. Una cita cultural imperdible en el corazón de la ciudad.",
-          category: "EVENTO",
-          neighborhood: "PART ALTA",
+        const maintenanceNotice = {
+          id: 'electrica-part-baixa',
+          title: "🔌 AVISO: Mantenimiento Eléctrico",
+          content: "Endesa informa de cortes programados hoy entre las 9:00h y las 14:00h en tramos específicos de la Part Baixa por mejora de la red. Consultar números afectados en la web oficial.",
+          category: "URGENTE",
+          neighborhood: "BARRIS MARÍTIMS",
           created_at: new Date().toISOString()
         };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([weatherAlert, trafficNotice, rebaixesNotice, exhibitionNotice, bonaGentNotice, ...fetchedNews].slice(0, 4));
+        setNews([weatherAlert, tresTombsNotice, maintenanceNotice, rebaixesNotice, bonaGentNotice, ...fetchedNews].slice(0, 4));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase
