@@ -64,10 +64,10 @@ const Forum: React.FC = () => {
   const [tickerIndex, setTickerIndex] = useState(0);
 
   const tickerMessages = [
-    { user: 'Pau T.', text: '¡Vaya frío hoy! Menos mal que hace sol 🥶☀️' },
-    { user: 'Mireia R.', text: '¿Alguien sabe si el corte de luz en Part Baixa afecta a C/ Real?' },
-    { user: 'Joan B.', text: 'Tercer día de rebajas y sigue habiendo chollos en el centro.' },
-    { user: 'Carme S.', text: 'Ya están saliendo los caballos para entrenar los Tres Tombs 🐎' }
+    { user: 'Pau T.', text: '¡Qué buen sábado ha quedado para pasear por la Arrabassada! ☀️' },
+    { user: 'Mireia R.', text: 'Increíble la de gente que hay hoy en el Parc Central por las rebajas.' },
+    { user: 'Joan B.', text: 'Acabo de comprar fruta buenísima en el mercadillo, ¡calidad KM 0!' },
+    { user: 'Carme S.', text: '¿Algún sitio recomendado para vermut hoy por la Part Alta?' }
   ];
 
   useEffect(() => {

@@ -126,12 +126,12 @@ const Announcements: React.FC = () => {
         setLoading(true);
         const weatherAlert: Announcement = {
             id: 'weather-alert',
-            title: "🥶 AVISO: Frío Intenso (3°C)",
-            content: "Se espera una caída de las temperaturas hoy 9 de enero. El cielo estará despejado pero el frío será intenso durante la madrugada y la mañana. Se recomienda precaución en carreteras secundarias por posibles heladas.",
+            title: "☀️ Sábado: Sol e Invierno",
+            content: "Cielos despejados para hoy 10 de enero. Ambiente frío pero ideal para actividades al aire libre. Mínimas de 4°C y máximas de 14°C. ¡Disfrutad del sol!",
             category: "URGENTE",
             neighborhood: "GENERAL",
             author_name: "Protección Civil",
-            itinerary: "• Mínima: 3°C / Máxima: 13°C\n• Riesgo: Heladas en zonas de sombra\n• Estado: Cielo despejado",
+            itinerary: "• Estado: Despejado\n• Viento: Flojo\n• UV: Bajo",
             created_at: new Date().toISOString()
         };
 
@@ -148,21 +148,21 @@ const Announcements: React.FC = () => {
 
         const rebaixesNotice: Announcement = {
             id: 'rebaixes-gener-active',
-            title: "🛍️ Rebajas: Tercer Día",
-            content: "Continúa la campaña de rebajas con descuentos crecientes en Tarragona. Es un momento ideal para visitar los comercios locales y disfrutar de las promociones de invierno.",
+            title: "🛍️ Sábado de Rebajas",
+            content: "Primer sábado de la campaña con máxima afluencia en las zonas comerciales. Apoya al comercio de proximidad de Tarragona y evita las grandes aglomeraciones.",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
             author_name: "Tarragona Comerç",
             created_at: new Date().toISOString()
         };
 
-        const maintenanceNotice: Announcement = {
-            id: 'mantenimiento-luz-part-baixa',
-            title: "🔌 CORTES: Mantenimiento Eléctrico",
-            content: "Aviso de cortes programados por Endesa hoy 9 de enero en sectores de la Part Baixa para mejora de la red. Horario previsto: de 09:00h a 14:00h.",
-            category: "URGENTE",
-            neighborhood: "BARRIS MARÍTIMS",
-            author_name: "Endesa / Ayto.",
+        const marketNotice: Announcement = {
+            id: 'mercat-arrabassada-notice',
+            title: "🧺 HOY: Mercat Arrabassada",
+            content: "No te pierdas el mercado de los sábados en la Vall de l'Arrabassada. Productos de proximidad, artesanos y alimentación fresca de 8:30h a 14:00h.",
+            category: "EVENTO",
+            neighborhood: "LLEVANT",
+            author_name: "Asoc. Vecinos",
             created_at: new Date().toISOString()
         };
 
@@ -176,7 +176,7 @@ const Announcements: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
             const fetched = data || [];
-            setNotices([weatherAlert, maintenanceNotice, rebaixesNotice, tourNotice, ...fetched]);
+            setNotices([weatherAlert, marketNotice, rebaixesNotice, tourNotice, ...fetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

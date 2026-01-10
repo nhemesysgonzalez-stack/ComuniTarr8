@@ -180,11 +180,11 @@ const Home: React.FC = () => {
 
         const weatherAlert = {
           id: 'weather-alert',
-          title: "🥶 FRÍO: Madrugada a 3°C en Tarragona",
-          content: "Hoy 9 de enero despertamos con cielos despejados pero temperaturas mínimas en descenso. Se recomienda precaución en la conducción a primeras horas por posibles placas de escarcha en zonas de umbría.",
+          title: "☀️ SÁBADO: Sol y Frío Moderado",
+          content: "Hoy 10 de enero disfrutaremos de un sábado totalmente despejado en Tarragona. Las temperaturas mínimas suben ligeramente pero el ambiente sigue siendo puramente invernal. Ideal para pasear al sol.",
           category: "URGENTE",
           neighborhood: "GENERAL",
-          itinerary: "• T. Mínima: 3°C / T. Máxima: 13°C\n• Viento: Poniente flojo\n• Sol: Despejado todo el día\n• Recomendación: Abrigar bien a niños y mayores",
+          itinerary: "• T. Mínima: 4°C / T. Máxima: 14°C\n• Viento: Calma total\n• Sol: 100% visibilidad\n• Plan: Paseo por la Anella Mediterrània o el Moll de Costa",
           created_at: new Date().toISOString()
         };
 
@@ -200,11 +200,11 @@ const Home: React.FC = () => {
 
         const rebaixesNotice = {
           id: 'rebaixes-gener-active',
-          title: "🛍️ REBAIXES: Tercer Día de Ofertazas",
-          content: "Las rebajas de invierno pisan el acelerador. Algunos comercios locales de la Part Alta y el Eixample ya anuncian 'segundas rebajas' en artículos seleccionados. ¡Pasea y apoya al barrio!",
+          title: "🛍️ REBAIXES: Primer Sábado de Chollos",
+          content: "Día de máxima afluencia en el centro. Las tiendas de la Rambla Nova y el Parc Central operan a pleno rendimiento. Recuerda que el pequeño comercio de barrio ofrece las mejores gangas sin colas.",
           category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Descuentos: Hasta el 70%\n• Comercios: Más de 200 locales adheridos\n• Horario: Mayoritariamente hasta las 20:30h\n• Tip: El pequeño comercio ofrece trato personalizado",
+          itinerary: "• Sábado: Máxima afluencia prevista\n• Transporte: Se recomienda usar el bus municipal (Emunt)\n• Comercio: Apoya a los locales de tu propia calle",
           created_at: new Date().toISOString()
         };
 
@@ -217,27 +217,27 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
-        const tresTombsNotice = {
-          id: 'tres-tombs-prep',
-          title: "🐎 CULTURA: Preparativos 'Els Tres Tombs'",
-          content: "El Gremio de Mareantes ya prepara la tradicional festividad de Sant Antoni Abat (18 de enero). Se están afinando los carruajes y coordinando con los jinetes locales para el gran desfile.",
+        const marketNotice = {
+          id: 'mercat-arrabassada',
+          title: "🧺 HOY: Mercat de l'Arrabassada",
+          content: "Como cada sábado, el mercado de proximidad en la Vall de l'Arrabassada ofrece productos frescos directamente del pagès. Fruta, verdura y quesos artesanos de la zona.",
           category: "EVENTO",
-          neighborhood: "SERRALLO",
-          itinerary: "• Fecha: 18 de enero 2026\n• Recorrido: Por definir (Rambla y centro)\n• Tradición: Bendición de animales y panes\n• Entidad: Gremi de Mareantes",
+          neighborhood: "LLEVANT",
+          itinerary: "• Horario: 8:30h a 14:00h\n• Lugar: Plaza central Arrabassada\n• Producto: KM 0 y ecológico",
           created_at: new Date().toISOString()
         };
 
-        const maintenanceNotice = {
-          id: 'electrica-part-baixa',
-          title: "🔌 AVISO: Mantenimiento Eléctrico",
-          content: "Endesa informa de cortes programados hoy entre las 9:00h y las 14:00h en tramos específicos de la Part Baixa por mejora de la red. Consultar números afectados en la web oficial.",
+        const trafficNotice = {
+          id: 'traffic-shopping',
+          title: "🚗 TRÁFICO: Saturación en Accesos",
+          content: "Previsión de tráfico intenso en los accesos al Parc Central y zonas peatonales por el primer sábado de rebajas. Se recomienda el uso de parkings disuasorios.",
           category: "URGENTE",
-          neighborhood: "BARRIS MARÍTIMS",
+          neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([weatherAlert, tresTombsNotice, maintenanceNotice, rebaixesNotice, bonaGentNotice, ...fetchedNews].slice(0, 4));
+        setNews([weatherAlert, marketNotice, trafficNotice, rebaixesNotice, bonaGentNotice, ...fetchedNews].slice(0, 4));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase
