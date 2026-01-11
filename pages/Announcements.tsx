@@ -126,12 +126,12 @@ const Announcements: React.FC = () => {
         setLoading(true);
         const weatherAlert: Announcement = {
             id: 'weather-alert',
-            title: "☀️ Sábado: Sol e Invierno",
-            content: "Cielos despejados para hoy 10 de enero. Ambiente frío pero ideal para actividades al aire libre. Mínimas de 4°C y máximas de 14°C. ¡Disfrutad del sol!",
+            title: "☁️ Domingo Nuboso",
+            content: "Cielos parcialmente nubosos para hoy 11 de enero. Temperaturas suaves con mínimas de 6°C y máximas de 15°C. Buen día para actividades culturales en interior.",
             category: "URGENTE",
             neighborhood: "GENERAL",
             author_name: "Protección Civil",
-            itinerary: "• Estado: Despejado\n• Viento: Flojo\n• UV: Bajo",
+            itinerary: "• Estado: Parcialmente nuboso\n• Viento: Flojo del este\n• Temperatura agradable",
             created_at: new Date().toISOString()
         };
 
@@ -148,21 +148,31 @@ const Announcements: React.FC = () => {
 
         const rebaixesNotice: Announcement = {
             id: 'rebaixes-gener-active',
-            title: "🛍️ Sábado de Rebajas",
-            content: "Primer sábado de la campaña con máxima afluencia en las zonas comerciales. Apoya al comercio de proximidad de Tarragona y evita las grandes aglomeraciones.",
+            title: "🛍️ Rebajas: Segunda Semana",
+            content: "Domingo tranquilo para compras sin aglomeraciones. Segunda semana de rebajas con nuevos descuentos en comercios del centro. Consulta horarios de apertura dominical.",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
             author_name: "Tarragona Comerç",
             created_at: new Date().toISOString()
         };
 
-        const marketNotice: Announcement = {
-            id: 'mercat-arrabassada-notice',
-            title: "🧺 HOY: Mercat Arrabassada",
-            content: "No te pierdas el mercado de los sábados en la Vall de l'Arrabassada. Productos de proximidad, artesanos y alimentación fresca de 8:30h a 14:00h.",
+        const tresTombsNotice: Announcement = {
+            id: 'tres-tombs-final-week',
+            title: "🐎 Tres Tombs: Última Semana",
+            content: "Quedan 7 días para Sant Antoni Abat. El Gremi de Mareantes ultima los preparativos del tradicional desfile de caballos por Tarragona el próximo sábado 18 de enero.",
             category: "EVENTO",
-            neighborhood: "LLEVANT",
-            author_name: "Asoc. Vecinos",
+            neighborhood: "SERRALLO",
+            author_name: "Gremi Mareantes",
+            created_at: new Date().toISOString()
+        };
+
+        const museumNotice: Announcement = {
+            id: 'mnat-domingo-free',
+            title: "🏛️ MNAT: Entrada Gratuita",
+            content: "Hoy domingo el Museu Nacional Arqueològic abre con entrada gratuita. Visitas guiadas a las 11h y 17h. Una oportunidad perfecta para disfrutar del patrimonio romano.",
+            category: "EVENTO",
+            neighborhood: "PART ALTA",
+            author_name: "MNAT",
             created_at: new Date().toISOString()
         };
 
@@ -176,7 +186,7 @@ const Announcements: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
             const fetched = data || [];
-            setNotices([weatherAlert, marketNotice, rebaixesNotice, tourNotice, ...fetched]);
+            setNotices([weatherAlert, museumNotice, tresTombsNotice, rebaixesNotice, tourNotice, ...fetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

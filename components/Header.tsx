@@ -252,21 +252,21 @@ export const Header: React.FC = () => {
         >
           <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">☀️ SÁBADO: SOL Y FRÍO MODERADO EN TARRAGONA (4°C)</span>
+          <span className="flex items-center gap-2">☁️ DOMINGO: NUBES Y AMBIENTE SUAVE EN TARRAGONA (6°C-15°C)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛍️ REBAIXES: MÁXIMA AFLUENCIA HOY EN ZONAS COMERCIALES</span>
+          <span className="flex items-center gap-2">🏛️ CULTURA: HOY ENTRADA GRATUITA AL MNAT - VISITAS GUIADAS 11H Y 17H</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 158 VECINOS HAN VOTADO EN 'BONA GENT'</span>
+          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 165 VECINOS HAN VOTADO EN 'BONA GENT'</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🧺 MERCAT: HOY MERCADILLO DE PROXIMIDAD EN L'ARRABASSADA (HASTA 14H)</span>
+          <span className="flex items-center gap-2">🐎 TRES TOMBS: QUEDAN 7 DÍAS PARA EL DESFILE DE SANT ANTONI</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛍️ REBAIXES: Primer Sábado de Chollos en el Comercio Local</span>
+          <span className="flex items-center gap-2">🛍️ REBAIXES: Segunda Semana - Domingo Tranquilo para Compras</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">☀️ CLIMA: PERFECTO PARA PASEAR POR EL MOLL DE COSTA</span>
+          <span className="flex items-center gap-2">☁️ CLIMA: PERFECTO PARA VISITAR MUSEOS Y PATRIMONIO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 158 VECINOS HAN VOTADO EN 'BONA GENT'</span>
+          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 165 VECINOS HAN VOTADO EN 'BONA GENT'</span>
         </motion.div>
       </div>
 

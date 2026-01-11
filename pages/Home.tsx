@@ -180,11 +180,11 @@ const Home: React.FC = () => {
 
         const weatherAlert = {
           id: 'weather-alert',
-          title: "☀️ SÁBADO: Sol y Frío Moderado",
-          content: "Hoy 10 de enero disfrutaremos de un sábado totalmente despejado en Tarragona. Las temperaturas mínimas suben ligeramente pero el ambiente sigue siendo puramente invernal. Ideal para pasear al sol.",
+          title: "☁️ DOMINGO: Nubes y Ambiente Suave",
+          content: "Hoy 11 de enero amanecemos con cielos parcialmente nubosos en Tarragona. Las temperaturas se mantienen suaves para la época, con mínimas de 6°C y máximas de 15°C. Buen día para actividades de interior o paseos tranquilos.",
           category: "URGENTE",
           neighborhood: "GENERAL",
-          itinerary: "• T. Mínima: 4°C / T. Máxima: 14°C\n• Viento: Calma total\n• Sol: 100% visibilidad\n• Plan: Paseo por la Anella Mediterrània o el Moll de Costa",
+          itinerary: "• T. Mínima: 6°C / T. Máxima: 15°C\n• Viento: Flojo del este\n• Nubes: Parcialmente nuboso\n• Plan: Visita a museos o paseo por el casco antiguo",
           created_at: new Date().toISOString()
         };
 
@@ -200,11 +200,11 @@ const Home: React.FC = () => {
 
         const rebaixesNotice = {
           id: 'rebaixes-gener-active',
-          title: "🛍️ REBAIXES: Primer Sábado de Chollos",
-          content: "Día de máxima afluencia en el centro. Las tiendas de la Rambla Nova y el Parc Central operan a pleno rendimiento. Recuerda que el pequeño comercio de barrio ofrece las mejores gangas sin colas.",
+          title: "🛍️ REBAIXES: Segunda Semana en Marcha",
+          content: "Las rebajas de invierno entran en su segunda semana con nuevos descuentos en comercios locales. Domingo tranquilo para comprar sin aglomeraciones. Muchas tiendas del centro abren en horario especial.",
           category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Sábado: Máxima afluencia prevista\n• Transporte: Se recomienda usar el bus municipal (Emunt)\n• Comercio: Apoya a los locales de tu propia calle",
+          itinerary: "• Domingo: Menos afluencia, compra tranquila\n• Horario: Consultar apertura dominical\n• Comercio: Apoya al comercio de proximidad",
           created_at: new Date().toISOString()
         };
 
@@ -217,27 +217,28 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
-        const marketNotice = {
-          id: 'mercat-arrabassada',
-          title: "🧺 HOY: Mercat de l'Arrabassada",
-          content: "Como cada sábado, el mercado de proximidad en la Vall de l'Arrabassada ofrece productos frescos directamente del pagès. Fruta, verdura y quesos artesanos de la zona.",
+        const tresTombsNotice = {
+          id: 'tres-tombs-final-week',
+          title: "🐎 CULTURA: Última Semana para 'Els Tres Tombs'",
+          content: "Quedan solo 7 días para la celebración de Sant Antoni Abat (18 de enero). El Gremi de Mareantes ultima los preparativos del tradicional desfile de caballos y carruajes por el centro de Tarragona.",
           category: "EVENTO",
-          neighborhood: "LLEVANT",
-          itinerary: "• Horario: 8:30h a 14:00h\n• Lugar: Plaza central Arrabassada\n• Producto: KM 0 y ecológico",
+          neighborhood: "SERRALLO",
+          itinerary: "• Fecha: 18 de enero 2026\n• Recorrido: Rambla Nova y centro histórico\n• Tradición: Bendición de animales\n• Horario: Mañana del sábado",
           created_at: new Date().toISOString()
         };
 
-        const trafficNotice = {
-          id: 'traffic-shopping',
-          title: "🚗 TRÁFICO: Saturación en Accesos",
-          content: "Previsión de tráfico intenso en los accesos al Parc Central y zonas peatonales por el primer sábado de rebajas. Se recomienda el uso de parkings disuasorios.",
-          category: "URGENTE",
-          neighborhood: "GENERAL",
+        const museumNotice = {
+          id: 'mnat-domingo',
+          title: "🏛️ CULTURA: Domingo en el MNAT",
+          content: "El Museu Nacional Arqueològic de Tarragona abre hoy con entrada gratuita. Una oportunidad perfecta para disfrutar del patrimonio romano en familia. Visitas guiadas a las 11h y 17h.",
+          category: "EVENTO",
+          neighborhood: "PART ALTA",
+          itinerary: "• Horario: 10:00h a 19:00h\n• Entrada: Gratuita los domingos\n• Visitas guiadas: 11h y 17h\n• Lugar: Plaça del Rei",
           created_at: new Date().toISOString()
         };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([weatherAlert, marketNotice, trafficNotice, rebaixesNotice, bonaGentNotice, ...fetchedNews].slice(0, 4));
+        setNews([weatherAlert, tresTombsNotice, museumNotice, rebaixesNotice, bonaGentNotice, ...fetchedNews].slice(0, 4));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase
@@ -481,53 +482,6 @@ const Home: React.FC = () => {
             </div>
           </section>
 
-          <section className="space-y-4">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-black flex items-center gap-2">
-                <span className="material-symbols-outlined text-emerald-500">waving_hand</span>
-                Nuevos Vecinos
-              </h2>
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-green-500/10 rounded-full animate-pulse border border-green-500/20 shadow-[0_0_15px_rgba(34,197,94,0.1)]">
-                <span className="size-2 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]"></span>
-                <span className="text-[10px] font-black text-green-600 dark:text-green-400 uppercase tracking-widest">{forumActiveCount} ACTIVOS EN EL FORO</span>
-              </div>
-            </div>
-            <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 border border-gray-100 dark:border-gray-700 shadow-sm space-y-4 min-h-[200px] flex flex-col justify-center">
-              {loadingNeighbors ? (
-                <div className="animate-pulse space-y-3">
-                  <div className="h-12 bg-gray-100 rounded-2xl w-full"></div>
-                  <div className="h-12 bg-gray-100 rounded-2xl w-full"></div>
-                </div>
-              ) : recentNeighbors && recentNeighbors.length > 0 ? (
-                recentNeighbors.map((n, i) => (
-                  <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                    key={n.id || i}
-                    className="flex items-center gap-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-2xl transition-all group"
-                  >
-                    <img src={n.avatar_url || `https://ui-avatars.com/api/?name=${n.full_name || 'V'}`} className="size-10 rounded-xl object-cover" alt="V" />
-                    <div className="flex-1 min-w-0">
-                      <p className="text-xs font-black dark:text-white truncate">{n.full_name || 'Nuevo Vecino'}</p>
-                      <p className="text-[10px] text-primary font-bold uppercase tracking-tighter">{n.neighborhood || 'Tarragona'}</p>
-                    </div>
-                    <Link
-                      to="/forum"
-                      className="text-[10px] text-primary font-black px-3 py-1.5 bg-primary/10 rounded-lg hover:bg-primary hover:text-white transition-all transform hover:scale-110"
-                    >
-                      HOLA
-                    </Link>
-                  </motion.div>
-                ))
-              ) : (
-                <div className="text-center py-6 opacity-40">
-                  <span className="material-symbols-outlined text-4xl mb-2">group_off</span>
-                  <p className="text-[10px] font-black uppercase tracking-widest">Sin vecinos nuevos</p>
-                </div>
-              )}
-            </div>
-          </section>
 
           <section className="space-y-4">
             <h2 className="text-xl font-black flex items-center gap-2">
