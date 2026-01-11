@@ -11,12 +11,12 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¡Bon dia! ¿Sabeis si la expo del Pati Jaume I es gratis?', neighborhood: 'Part Alta' },
-    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Ojo con el viento por la zona del Hospitalet, está fatal.', neighborhood: 'Llevant' },
-    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: 'Acabo de pasar por la Rambla y las rebajas están a tope 🛍️', neighborhood: 'Eixample' },
+    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: 'Domingo tranquilo... ¿alguien para un café por la Part Alta? ☕', neighborhood: 'Part Alta' },
+    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Acabo de ir al MNAT, entrada gratis hoy. ¡La visita guiada ha estado genial!', neighborhood: 'Part Alta' },
+    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: 'Quedan solo 7 días para Els Tres Tombs, ¡qué ganas tengo! 🐎', neighborhood: 'Serrallo' },
     { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: '¡Votado! Ojalá gane la asociación del Serrallo para Bona Gent.', neighborhood: 'Serrallo' },
-    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: '¿Alguien para un café rápido por la Pl. Imperial?', neighborhood: 'Eixample' },
-    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: 'He visto que hoy hay donación de sangre en la Rambla, ¡animaros!', neighborhood: 'General' },
+    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: 'Rebajas sin aglomeraciones hoy domingo, perfecto para comprar tranquilo.', neighborhood: 'Eixample' },
+    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: 'Con estas nubes apetece un paseo por el casco antiguo. ☁️', neighborhood: 'General' },
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {
