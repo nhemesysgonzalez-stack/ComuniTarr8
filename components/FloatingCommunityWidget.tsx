@@ -11,12 +11,12 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: 'Domingo tranquilo... ¿alguien para un café por la Part Alta? ☕', neighborhood: 'Part Alta' },
-    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Acabo de ir al MNAT, entrada gratis hoy. ¡La visita guiada ha estado genial!', neighborhood: 'Part Alta' },
-    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: 'Quedan solo 7 días para Els Tres Tombs, ¡qué ganas tengo! 🐎', neighborhood: 'Serrallo' },
+    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: 'Lunes de vuelta al trabajo... ¡ánimo a todos! ☕💪', neighborhood: 'Part Alta' },
+    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Menudo tráfico esta mañana en la N-340, salid con tiempo.', neighborhood: 'Llevant' },
+    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: 'Solo 6 días para Els Tres Tombs, ¡ya huelo los buñuelos! 🐎', neighborhood: 'Serrallo' },
     { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: '¡Votado! Ojalá gane la asociación del Serrallo para Bona Gent.', neighborhood: 'Serrallo' },
-    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: 'Rebajas sin aglomeraciones hoy domingo, perfecto para comprar tranquilo.', neighborhood: 'Eixample' },
-    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: 'Con estas nubes apetece un paseo por el casco antiguo. ☁️', neighborhood: 'General' },
+    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: '¿Alguien sabe dónde pedir cita para preinscripción escolar?', neighborhood: 'Eixample' },
+    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: 'Qué sol tan bueno hoy, perfecto para pasear al mediodía. ☀️', neighborhood: 'General' },
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

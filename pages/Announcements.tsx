@@ -126,12 +126,12 @@ const Announcements: React.FC = () => {
         setLoading(true);
         const weatherAlert: Announcement = {
             id: 'weather-alert',
-            title: "☁️ Domingo Nuboso",
-            content: "Cielos parcialmente nubosos para hoy 11 de enero. Temperaturas suaves con mínimas de 6°C y máximas de 15°C. Buen día para actividades culturales en interior.",
+            title: "☀️ Lunes Soleado",
+            content: "Arrancamos la semana con cielos despejados hoy 12 de enero. Temperaturas frescas por la mañana (5°C) pero agradables al mediodía (16°C). Buen día para retomar la rutina.",
             category: "URGENTE",
             neighborhood: "GENERAL",
             author_name: "Protección Civil",
-            itinerary: "• Estado: Parcialmente nuboso\n• Viento: Flojo del este\n• Temperatura agradable",
+            itinerary: "• Estado: Despejado\n• Viento: Calma\n• Abrigar bien por la mañana",
             created_at: new Date().toISOString()
         };
 
@@ -149,7 +149,7 @@ const Announcements: React.FC = () => {
         const rebaixesNotice: Announcement = {
             id: 'rebaixes-gener-active',
             title: "🛍️ Rebajas: Segunda Semana",
-            content: "Domingo tranquilo para compras sin aglomeraciones. Segunda semana de rebajas con nuevos descuentos en comercios del centro. Consulta horarios de apertura dominical.",
+            content: "Lunes ideal para aprovechar las rebajas sin aglomeraciones. Muchos comercios renuevan sus ofertas hoy. Apoya al comercio local de Tarragona.",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
             author_name: "Tarragona Comerç",
@@ -158,21 +158,31 @@ const Announcements: React.FC = () => {
 
         const tresTombsNotice: Announcement = {
             id: 'tres-tombs-final-week',
-            title: "🐎 Tres Tombs: Última Semana",
-            content: "Quedan 7 días para Sant Antoni Abat. El Gremi de Mareantes ultima los preparativos del tradicional desfile de caballos por Tarragona el próximo sábado 18 de enero.",
+            title: "🐎 Tres Tombs: 6 Días",
+            content: "Quedan 6 días para Sant Antoni Abat. El Gremi de Mareantes ultima los preparativos del tradicional desfile de caballos por Tarragona el próximo sábado 18 de enero.",
             category: "EVENTO",
             neighborhood: "SERRALLO",
             author_name: "Gremi Mareantes",
             created_at: new Date().toISOString()
         };
 
-        const museumNotice: Announcement = {
-            id: 'mnat-domingo-free',
-            title: "🏛️ MNAT: Entrada Gratuita",
-            content: "Hoy domingo el Museu Nacional Arqueològic abre con entrada gratuita. Visitas guiadas a las 11h y 17h. Una oportunidad perfecta para disfrutar del patrimonio romano.",
+        const trafficNotice: Announcement = {
+            id: 'traffic-monday-rush',
+            title: "🚗 TRÁFICO: Vuelta al Cole",
+            content: "Lunes de vuelta al trabajo y al colegio. Tráfico intenso previsto en horas punta (8h-9h y 17h-19h). Planifica tu salida con tiempo.",
+            category: "URGENTE",
+            neighborhood: "GENERAL",
+            author_name: "Tráfico TGN",
+            created_at: new Date().toISOString()
+        };
+
+        const schoolNotice: Announcement = {
+            id: 'preinscripcio-escoles',
+            title: "🏫 Preinscripción Escolar",
+            content: "Se abre el periodo de preinscripción para el curso 2026-2027 en escuelas públicas y concertadas. Plazo hasta el 31 de enero.",
             category: "EVENTO",
-            neighborhood: "PART ALTA",
-            author_name: "MNAT",
+            neighborhood: "GENERAL",
+            author_name: "Educació Gencat",
             created_at: new Date().toISOString()
         };
 
@@ -186,7 +196,7 @@ const Announcements: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
             const fetched = data || [];
-            setNotices([weatherAlert, museumNotice, tresTombsNotice, rebaixesNotice, tourNotice, ...fetched]);
+            setNotices([weatherAlert, trafficNotice, schoolNotice, tresTombsNotice, rebaixesNotice, ...fetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

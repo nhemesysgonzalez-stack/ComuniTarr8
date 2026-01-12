@@ -180,11 +180,11 @@ const Home: React.FC = () => {
 
         const weatherAlert = {
           id: 'weather-alert',
-          title: "☁️ DOMINGO: Nubes y Ambiente Suave",
-          content: "Hoy 11 de enero amanecemos con cielos parcialmente nubosos en Tarragona. Las temperaturas se mantienen suaves para la época, con mínimas de 6°C y máximas de 15°C. Buen día para actividades de interior o paseos tranquilos.",
+          title: "☀️ LUNES: Sol para Empezar la Semana",
+          content: "Hoy 12 de enero arrancamos la semana con cielos despejados en Tarragona. Temperaturas frescas por la mañana (5°C) pero agradables al mediodía (16°C). Buen día para retomar la rutina con energía.",
           category: "URGENTE",
           neighborhood: "GENERAL",
-          itinerary: "• T. Mínima: 6°C / T. Máxima: 15°C\n• Viento: Flojo del este\n• Nubes: Parcialmente nuboso\n• Plan: Visita a museos o paseo por el casco antiguo",
+          itinerary: "• T. Mínima: 5°C / T. Máxima: 16°C\n• Viento: Calma\n• Sol: Despejado todo el día\n• Consejo: Abrigar bien por la mañana",
           created_at: new Date().toISOString()
         };
 
@@ -200,11 +200,11 @@ const Home: React.FC = () => {
 
         const rebaixesNotice = {
           id: 'rebaixes-gener-active',
-          title: "🛍️ REBAIXES: Segunda Semana en Marcha",
-          content: "Las rebajas de invierno entran en su segunda semana con nuevos descuentos en comercios locales. Domingo tranquilo para comprar sin aglomeraciones. Muchas tiendas del centro abren en horario especial.",
+          title: "🛍️ REBAIXES: Segunda Semana Activa",
+          content: "Las rebajas de invierno continúan con fuerza. Lunes ideal para aprovechar descuentos sin las aglomeraciones del fin de semana. Muchos comercios renuevan sus ofertas hoy.",
           category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Domingo: Menos afluencia, compra tranquila\n• Horario: Consultar apertura dominical\n• Comercio: Apoya al comercio de proximidad",
+          itinerary: "• Lunes: Menos gente, mejor atención\n• Nuevas ofertas: Consulta escaparates\n• Comercio: Apoya al comercio local",
           created_at: new Date().toISOString()
         };
 
@@ -219,26 +219,36 @@ const Home: React.FC = () => {
 
         const tresTombsNotice = {
           id: 'tres-tombs-final-week',
-          title: "🐎 CULTURA: Última Semana para 'Els Tres Tombs'",
-          content: "Quedan solo 7 días para la celebración de Sant Antoni Abat (18 de enero). El Gremi de Mareantes ultima los preparativos del tradicional desfile de caballos y carruajes por el centro de Tarragona.",
+          title: "🐎 CULTURA: 6 Días para 'Els Tres Tombs'",
+          content: "Quedan solo 6 días para la celebración de Sant Antoni Abat (18 de enero). El Gremi de Mareantes ultima los preparativos del tradicional desfile de caballos y carruajes por el centro de Tarragona.",
           category: "EVENTO",
           neighborhood: "SERRALLO",
-          itinerary: "• Fecha: 18 de enero 2026\n• Recorrido: Rambla Nova y centro histórico\n• Tradición: Bendición de animales\n• Horario: Mañana del sábado",
+          itinerary: "• Fecha: Sábado 18 de enero 2026\n• Recorrido: Rambla Nova y centro histórico\n• Tradición: Bendición de animales\n• Horario: Mañana del sábado",
           created_at: new Date().toISOString()
         };
 
-        const museumNotice = {
-          id: 'mnat-domingo',
-          title: "🏛️ CULTURA: Domingo en el MNAT",
-          content: "El Museu Nacional Arqueològic de Tarragona abre hoy con entrada gratuita. Una oportunidad perfecta para disfrutar del patrimonio romano en familia. Visitas guiadas a las 11h y 17h.",
+        const trafficNotice = {
+          id: 'traffic-monday-rush',
+          title: "🚗 TRÁFICO: Vuelta a la Rutina",
+          content: "Lunes de vuelta al trabajo y al colegio. Se prevé tráfico intenso en horas punta (8h-9h y 17h-19h) en los accesos principales a Tarragona. Planifica tu salida con tiempo.",
+          category: "URGENTE",
+          neighborhood: "GENERAL",
+          itinerary: "• Horas punta: 8h-9h y 17h-19h\n• Zonas: Accesos N-340 y AP-7\n• Consejo: Sal 15 min antes",
+          created_at: new Date().toISOString()
+        };
+
+        const schoolNotice = {
+          id: 'preinscripcio-escoles',
+          title: "🏫 EDUCACIÓN: Preinscripción Abierta",
+          content: "Se abre el periodo de preinscripción para el curso 2026-2027 en escuelas públicas y concertadas de Tarragona. Plazo hasta el 31 de enero. Consulta los centros de tu barrio.",
           category: "EVENTO",
-          neighborhood: "PART ALTA",
-          itinerary: "• Horario: 10:00h a 19:00h\n• Entrada: Gratuita los domingos\n• Visitas guiadas: 11h y 17h\n• Lugar: Plaça del Rei",
+          neighborhood: "GENERAL",
+          itinerary: "• Plazo: Hasta 31 de enero\n• Curso: 2026-2027\n• Info: Departament d'Educació\n• Web: educacio.gencat.cat",
           created_at: new Date().toISOString()
         };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([weatherAlert, tresTombsNotice, museumNotice, rebaixesNotice, bonaGentNotice, ...fetchedNews].slice(0, 4));
+        setNews([weatherAlert, trafficNotice, schoolNotice, tresTombsNotice, rebaixesNotice, ...fetchedNews].slice(0, 4));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase
