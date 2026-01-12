@@ -32,6 +32,7 @@ import NeighborhoodSelection from './pages/NeighborhoodSelection';
 import Admin from './pages/Admin';
 import Neighbors from './pages/Neighbors';
 import Invite from './pages/Invite';
+import Incidents from './pages/Incidents';
 import { SOSButton } from './components/SOSButton';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -126,6 +127,7 @@ function App() {
                       <Route path="/select-neighborhood" element={<NeighborhoodSelection />} />
                       <Route path="/neighbors" element={<Neighbors />} />
                       <Route path="/invite" element={<Invite />} />
+                      <Route path="/incidents" element={<Incidents />} />
                     </Routes>
                   </Layout>
                 </ProtectedRoute>
