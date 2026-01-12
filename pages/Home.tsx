@@ -156,6 +156,8 @@ const Home: React.FC = () => {
   const [incidentTitle, setIncidentTitle] = useState('');
   const [incidentDescription, setIncidentDescription] = useState('');
   const [incidentContact, setIncidentContact] = useState('');
+  const [incidentPhoto, setIncidentPhoto] = useState<File | null>(null);
+  const [incidentPhotoPreview, setIncidentPhotoPreview] = useState<string>('');
   const [helpTitle, setHelpTitle] = useState('');
   const [helpDescription, setHelpDescription] = useState('');
   const [helpCategory, setHelpCategory] = useState('');
@@ -303,7 +305,7 @@ const Home: React.FC = () => {
         user_id: user?.id,
         title: incidentTitle,
         description: incidentDescription,
-        contact_info: incidentContact,
+        contact_info: incidentContact || null,
         neighborhood: user?.user_metadata?.neighborhood || 'GENERAL',
         status: 'open'
       });
@@ -311,8 +313,25 @@ const Home: React.FC = () => {
         await addPoints(25, 10);
         alert('¡Incidencia reportada! +25 XP / +10 ComuniPoints');
         setShowIncidentModal(false);
+        setIncidentTitle('');
+        setIncidentDescription('');
+        setIncidentContact('');
+        setIncidentPhoto(null);
+        setIncidentPhotoPreview('');
       }
     } catch (err) { console.error(err); }
+  };
+
+  const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setIncidentPhoto(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setIncidentPhotoPreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleHelpSubmit = async (e: React.FormEvent) => {
@@ -539,7 +558,32 @@ const Home: React.FC = () => {
               <form onSubmit={handleIncidentSubmit} className="space-y-4">
                 <input type="text" value={incidentTitle} onChange={(e) => setIncidentTitle(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white" placeholder="¿Qué ha pasado?" />
                 <textarea value={incidentDescription} onChange={(e) => setIncidentDescription(e.target.value)} required rows={3} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white resize-none" placeholder="Describe los detalles..." />
-                <input type="text" value={incidentContact} onChange={(e) => setIncidentContact(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white" placeholder="Tu contacto (opcional)" />
+
+                {/* Photo Upload */}
+                <div className="space-y-2">
+                  <label className="block text-xs font-black text-gray-500 dark:text-gray-400 uppercase tracking-widest">📷 Adjuntar Foto (Opcional)</label>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    capture="environment"
+                    onChange={handlePhotoChange}
+                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-black file:bg-primary file:text-white hover:file:bg-primary-hover file:cursor-pointer"
+                  />
+                  {incidentPhotoPreview && (
+                    <div className="relative">
+                      <img src={incidentPhotoPreview} alt="Preview" className="w-full h-48 object-cover rounded-2xl border-2 border-gray-200 dark:border-gray-700" />
+                      <button
+                        type="button"
+                        onClick={() => { setIncidentPhoto(null); setIncidentPhotoPreview(''); }}
+                        className="absolute top-2 right-2 size-8 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all shadow-lg"
+                      >
+                        <span className="material-symbols-outlined text-sm">close</span>
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                <input type="text" value={incidentContact} onChange={(e) => setIncidentContact(e.target.value)} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white" placeholder="Tu contacto (opcional)" />
                 <button type="submit" className="w-full bg-red-600 text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-red-700 transition-all shadow-lg shadow-red-500/20">REPORTAR AHORA</button>
               </form>
             </motion.div>
