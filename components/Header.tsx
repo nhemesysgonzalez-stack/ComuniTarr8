@@ -72,6 +72,7 @@ export const Header: React.FC = () => {
     { to: '/announcements', label: t('announcements'), icon: 'campaign' },
     { to: '/calendar', label: t('calendar'), icon: 'calendar_today' },
     { to: '/neighbors', label: t('neighbors'), icon: 'waving_hand' },
+    { to: '/incidents', label: 'Incidencias', icon: 'report_problem' },
     { to: '/community-info', label: t('about'), icon: 'info' },
     { to: '/local-businesses', label: t('local_business'), icon: 'storefront' },
     { to: '/clubs', label: t('clubs'), icon: 'groups' },
@@ -252,23 +253,23 @@ export const Header: React.FC = () => {
         >
           <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">☀️ LUNES: SOL PARA EMPEZAR LA SEMANA (5°C-16°C)</span>
+          <span className="flex items-center gap-2">🌤️ MARTES: CLIMA ESTABLE CON INTERVALOS NUBOSOS (7°C-17°C)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚗 TRÁFICO: VUELTA AL COLE - INTENSO EN HORAS PUNTA (8H-9H Y 17H-19H)</span>
+          <span className="flex items-center gap-2">🐎 TRES TOMBS: SOLO QUEDAN 5 DÍAS PARA LA FIESTA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 172 VECINOS HAN VOTADO EN 'BONA GENT'</span>
+          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 184 VECINOS HAN VOTADO EN 'BONA GENT'</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🏫 EDUCACIÓN: ABIERTA PREINSCRIPCIÓN ESCOLAR 2026-2027 (HASTA 31 ENERO)</span>
+          <span className="flex items-center gap-2">🧺 MERCADO: HOY MERCADILLO SEMANAL EN CAMPCLAR (HASTA 14H)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🐎 TRES TOMBS: QUEDAN 6 DÍAS PARA EL DESFILE DE SANT ANTONI</span>
+          <span className="flex items-center gap-2">🚌 EMT: ÚLTIMA SEMANA PARA RENOVAR TARJETAS BONIFICADAS SIN CITA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛍️ REBAIXES: Segunda Semana - Lunes Tranquilo para Compras</span>
+          <span className="flex items-center gap-2">🛍️ REBAIXES: Gran Oportunidad en Calzado y Ropa de Hogar</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">☀️ CLIMA: PERFECTO PARA PASEAR AL MEDIODÍA</span>
+          <span className="flex items-center gap-2">🌤️ CLIMA: TARDE AGRADABLE PARA IR DE COMPRAS</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 172 VECINOS HAN VOTADO EN 'BONA GENT'</span>
+          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 184 VECINOS HAN VOTADO EN 'BONA GENT'</span>
         </motion.div>
       </div>
 

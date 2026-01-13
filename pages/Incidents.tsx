@@ -74,9 +74,9 @@ const Incidents: React.FC = () => {
 
     const getStatusText = (status: string) => {
         switch (status) {
-            case 'open': return 'Abierta';
-            case 'in_progress': return 'En Proceso';
-            case 'resolved': return 'Resuelta';
+            case 'open': return 'Reportada';
+            case 'in_progress': return 'Notificada Ayto.';
+            case 'resolved': return 'Archivada';
             default: return status;
         }
     };
@@ -100,16 +100,16 @@ const Incidents: React.FC = () => {
             <div className="flex gap-2 overflow-x-auto pb-2">
                 {[
                     { key: 'all', label: 'Todas', icon: 'list' },
-                    { key: 'open', label: 'Abiertas', icon: 'error' },
-                    { key: 'in_progress', label: 'En Proceso', icon: 'pending' },
-                    { key: 'resolved', label: 'Resueltas', icon: 'check_circle' }
+                    { key: 'open', label: 'Reportadas', icon: 'error' },
+                    { key: 'in_progress', label: 'En Notificación', icon: 'pending' },
+                    { key: 'resolved', label: 'Archivadas', icon: 'check_circle' }
                 ].map((f) => (
                     <button
                         key={f.key}
                         onClick={() => setFilter(f.key as any)}
                         className={`px-4 py-2 rounded-full font-black text-xs uppercase tracking-widest transition-all flex items-center gap-2 whitespace-nowrap ${filter === f.key
-                                ? 'bg-primary text-white shadow-lg'
-                                : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
+                            ? 'bg-primary text-white shadow-lg'
+                            : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
                             }`}
                     >
                         <span className="material-symbols-outlined text-sm">{f.icon}</span>
@@ -208,11 +208,11 @@ const Incidents: React.FC = () => {
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="material-symbols-outlined text-sm text-yellow-500 mt-0.5">check_circle</span>
-                                <span><strong>Seguimiento:</strong> Las incidencias pasan de "Abierta" → "En Proceso" → "Resuelta"</span>
+                                <span><strong>Visibilidad:</strong> El objetivo es hacer visibles los problemas del barrio.</span>
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="material-symbols-outlined text-sm text-green-500 mt-0.5">check_circle</span>
-                                <span><strong>Comunidad:</strong> Todos los vecinos pueden ver y seguir el estado de los problemas</span>
+                                <span><strong>Notificación:</strong> Las incidencias más votadas se notifican al Ayuntamiento por RRSS.</span>
                             </li>
                         </ul>
                     </div>

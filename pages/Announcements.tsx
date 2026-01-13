@@ -126,12 +126,12 @@ const Announcements: React.FC = () => {
         setLoading(true);
         const weatherAlert: Announcement = {
             id: 'weather-alert',
-            title: "☀️ Lunes Soleado",
-            content: "Arrancamos la semana con cielos despejados hoy 12 de enero. Temperaturas frescas por la mañana (5°C) pero agradables al mediodía (16°C). Buen día para retomar la rutina.",
+            title: "🌤️ Martes: Sol y Nubes",
+            content: "Hoy martes 13 esperamos intervalos nubosos sin riesgo de lluvia. Temperaturas subiendo ligeramente (mínima 7°C, máxima 17°C). Viento suave de componente sur por la tarde.",
             category: "URGENTE",
             neighborhood: "GENERAL",
             author_name: "Protección Civil",
-            itinerary: "• Estado: Despejado\n• Viento: Calma\n• Abrigar bien por la mañana",
+            itinerary: "• Estado: Intervalos nubosos\n• Viento: Sur flojo\n• Humedad: 65%",
             created_at: new Date().toISOString()
         };
 
@@ -158,31 +158,31 @@ const Announcements: React.FC = () => {
 
         const tresTombsNotice: Announcement = {
             id: 'tres-tombs-final-week',
-            title: "🐎 Tres Tombs: 6 Días",
-            content: "Quedan 6 días para Sant Antoni Abat. El Gremi de Mareantes ultima los preparativos del tradicional desfile de caballos por Tarragona el próximo sábado 18 de enero.",
+            title: "🐎 Tres Tombs: 5 Días",
+            content: "Solo quedan 5 días. Este sábado 18, Tarragona celebrará Sant Antoni Abat con la tradicional cabalgata. Recuerda que habrá restricciones de tráfico en Rambla Nova esa mañana.",
             category: "EVENTO",
             neighborhood: "SERRALLO",
             author_name: "Gremi Mareantes",
             created_at: new Date().toISOString()
         };
 
-        const trafficNotice: Announcement = {
-            id: 'traffic-monday-rush',
-            title: "🚗 TRÁFICO: Vuelta al Cole",
-            content: "Lunes de vuelta al trabajo y al colegio. Tráfico intenso previsto en horas punta (8h-9h y 17h-19h). Planifica tu salida con tiempo.",
-            category: "URGENTE",
-            neighborhood: "GENERAL",
-            author_name: "Tráfico TGN",
+        const marketNotice: Announcement = {
+            id: 'mercadillo-campclar',
+            title: "🧺 HOY: Mercadillo Campclar",
+            content: "Martes de mercado en Campclar. Fruta fresca, ropa y menaje a buen precio en la gran explanada. Recordamos evitar aparcar en doble fila en las calles adyacentes.",
+            category: "COMUNIDAD",
+            neighborhood: "TORREFORTA",
+            author_name: "Tarragona Comerç",
             created_at: new Date().toISOString()
         };
 
-        const schoolNotice: Announcement = {
-            id: 'preinscripcio-escoles',
-            title: "🏫 Preinscripción Escolar",
-            content: "Se abre el periodo de preinscripción para el curso 2026-2027 en escuelas públicas y concertadas. Plazo hasta el 31 de enero.",
-            category: "EVENTO",
+        const busNotice: Announcement = {
+            id: 'emt-renovacio',
+            title: "🚌 EMT: Renovación Tarjetas",
+            content: "El plazo de renovación anual sin cita previa termina este viernes. Acudid a las oficinas de c/ Soler (9h - 13:30h).",
+            category: "URGENTE",
             neighborhood: "GENERAL",
-            author_name: "Educació Gencat",
+            author_name: "EMT Tarragona",
             created_at: new Date().toISOString()
         };
 
@@ -196,7 +196,7 @@ const Announcements: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
             const fetched = data || [];
-            setNotices([weatherAlert, trafficNotice, schoolNotice, tresTombsNotice, rebaixesNotice, ...fetched]);
+            setNotices([weatherAlert, marketNotice, tresTombsNotice, busNotice, rebaixesNotice, ...fetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

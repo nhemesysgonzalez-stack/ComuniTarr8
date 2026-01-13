@@ -182,11 +182,11 @@ const Home: React.FC = () => {
 
         const weatherAlert = {
           id: 'weather-alert',
-          title: "☀️ LUNES: Sol para Empezar la Semana",
-          content: "Hoy 12 de enero arrancamos la semana con cielos despejados en Tarragona. Temperaturas frescas por la mañana (5°C) pero agradables al mediodía (16°C). Buen día para retomar la rutina con energía.",
+          title: "🌤️ MARTES: Sol y Nubes",
+          content: "Hoy martes 13 esperamos intervalos nubosos sin riesgo de lluvia. Temperaturas subiendo ligeramente (mínima 7°C, máxima 17°C). Viento suave de componente sur por la tarde.",
           category: "URGENTE",
           neighborhood: "GENERAL",
-          itinerary: "• T. Mínima: 5°C / T. Máxima: 16°C\n• Viento: Calma\n• Sol: Despejado todo el día\n• Consejo: Abrigar bien por la mañana",
+          itinerary: "• T. Mínima: 7°C / T. Máxima: 17°C\n• Cielo: Intervalos nubosos\n• Viento: Sur flojo\n• Humedad: 65%",
           created_at: new Date().toISOString()
         };
 
@@ -221,21 +221,31 @@ const Home: React.FC = () => {
 
         const tresTombsNotice = {
           id: 'tres-tombs-final-week',
-          title: "🐎 CULTURA: 6 Días para 'Els Tres Tombs'",
-          content: "Quedan solo 6 días para la celebración de Sant Antoni Abat (18 de enero). El Gremi de Mareantes ultima los preparativos del tradicional desfile de caballos y carruajes por el centro de Tarragona.",
+          title: "🐎 CULTURA: 5 Días para 'Els Tres Tombs'",
+          content: "Solo quedan 5 días. Este sábado 18, Tarragona celebrará Sant Antoni Abat con la tradicional cabalgata. Recuerda que habrá restricciones de tráfico en Rambla Nova esa mañana.",
           category: "EVENTO",
           neighborhood: "SERRALLO",
-          itinerary: "• Fecha: Sábado 18 de enero 2026\n• Recorrido: Rambla Nova y centro histórico\n• Tradición: Bendición de animales\n• Horario: Mañana del sábado",
+          itinerary: "• Fecha: Sábado 18 enero\n• Hora: 11:00h - 14:00h\n• Recorrido: Rambla Nova\n• Tradición: Bendición y caramelos",
           created_at: new Date().toISOString()
         };
 
-        const trafficNotice = {
-          id: 'traffic-monday-rush',
-          title: "🚗 TRÁFICO: Vuelta a la Rutina",
-          content: "Lunes de vuelta al trabajo y al colegio. Se prevé tráfico intenso en horas punta (8h-9h y 17h-19h) en los accesos principales a Tarragona. Planifica tu salida con tiempo.",
+        const marketNotice = {
+          id: 'mercadillo-campclar',
+          title: "🧺 HOY: Mercadillo de Campclar",
+          content: "Martes de mercado en Campclar. Fruta fresca, ropa y menaje a buen precio en la gran explanada. Recordamos evitar aparcar en doble fila en las calles adyacentes.",
+          category: "COMUNIDAD",
+          neighborhood: "TORREFORTA",
+          itinerary: "• Día: Martes\n• Horario: 9:00h - 14:00h\n• Lugar: Explanada Campclar\n• Bus: L6, L54",
+          created_at: new Date().toISOString()
+        };
+
+        const busNotice = {
+          id: 'emt-renovacio',
+          title: "🚌 EMT: Renovación de Tarjetas",
+          content: "La EMT recuerda a los usuarios de tarjetas bonificadas (Jubilats, Escolars) que el plazo de renovación anual sin cita previa termina este viernes. Acudid a las oficinas de c/ Soler.",
           category: "URGENTE",
           neighborhood: "GENERAL",
-          itinerary: "• Horas punta: 8h-9h y 17h-19h\n• Zonas: Accesos N-340 y AP-7\n• Consejo: Sal 15 min antes",
+          itinerary: "• Plazo: Hasta viernes 16\n• Trámite: Presencial\n• Lugar: Oficinas EMT/Soler\n• Horario: 9h - 13:30h",
           created_at: new Date().toISOString()
         };
 
@@ -250,7 +260,7 @@ const Home: React.FC = () => {
         };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([weatherAlert, trafficNotice, schoolNotice, tresTombsNotice, rebaixesNotice, ...fetchedNews].slice(0, 4));
+        setNews([weatherAlert, marketNotice, tresTombsNotice, busNotice, schoolNotice, rebaixesNotice, ...fetchedNews].slice(0, 4));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase

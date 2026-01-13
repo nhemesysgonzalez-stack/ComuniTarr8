@@ -11,12 +11,12 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: 'Lunes de vuelta al trabajo... ¡ánimo a todos! ☕💪', neighborhood: 'Part Alta' },
-    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Menudo tráfico esta mañana en la N-340, salid con tiempo.', neighborhood: 'Llevant' },
-    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: 'Solo 6 días para Els Tres Tombs, ¡ya huelo los buñuelos! 🐎', neighborhood: 'Serrallo' },
-    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: '¡Votado! Ojalá gane la asociación del Serrallo para Bona Gent.', neighborhood: 'Serrallo' },
-    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: '¿Alguien sabe dónde pedir cita para preinscripción escolar?', neighborhood: 'Eixample' },
-    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: 'Qué sol tan bueno hoy, perfecto para pasear al mediodía. ☀️', neighborhood: 'General' },
+    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: 'Hoy toca mercadillo en Campclar, ¡a ver qué chollos encuentro!', neighborhood: 'Torreforta' },
+    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Se está genial esta tarde, ni frío ni calor. Ideal para ir de tiendas.', neighborhood: 'Llevant' },
+    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: '5 días para Els Tres Tombs... ¡Ya tengo la cámara preparada! 📸', neighborhood: 'Serrallo' },
+    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'He ido a la EMT a renovar la tarjeta y había poca cola hoy.', neighborhood: 'General' },
+    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: '¿Hasta cuándo era la preinscripción del cole? ¿Final de mes?', neighborhood: 'Eixample' },
+    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: 'Buen ambiente hoy por la Rambla, se nota que estamos a martes.', neighborhood: 'General' },
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {
