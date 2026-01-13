@@ -41,6 +41,62 @@ const NeighborhoodCalendar: React.FC = () => {
     fetchEvents();
   }, [user?.user_metadata?.neighborhood]);
 
+  // Official Events for January 2026
+  const officialEvents: Event[] = [
+    {
+      id: 'evt-tres-tombs',
+      creator_id: 'admin',
+      title: "🐎 Els Tres Tombs",
+      description: "Tradicional cabalgata de Sant Antoni Abat. Bendición de animales y desfile.",
+      event_date: '2026-01-18',
+      event_time: '11:00',
+      location: 'Rambla Nova',
+      category: 'Cultura',
+      neighborhood: 'GENERAL',
+      contact_info: 'Gremi de Mareantes',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-forum-vivienda',
+      creator_id: 'admin',
+      title: "🏠 Fórum de la Vivienda",
+      description: "Charla abierta sobre las nuevas ayudas al alquiler joven.",
+      event_date: '2026-01-21',
+      event_time: '18:00',
+      location: 'Centro Cívico Torreforta',
+      category: 'Solidario',
+      neighborhood: 'TORREFORTA',
+      contact_info: 'Ajuntament Tarragona',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-cursa-nastic',
+      creator_id: 'admin',
+      title: "🏃 Carrera Solidaria Nàstic",
+      description: "5k y 10k benéficos. Salida desde el Nou Estadi.",
+      event_date: '2026-01-25',
+      event_time: '09:00',
+      location: 'Nou Estadi',
+      category: 'Deporte',
+      neighborhood: 'LLEVANT',
+      contact_info: 'Club Gimnàstic',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-reciclaje',
+      creator_id: 'admin',
+      title: "♻️ Taller Reciclaje Creativo",
+      description: "Aprende a dar segunda vida a tus envases.",
+      event_date: '2026-01-30',
+      event_time: '17:30',
+      location: 'Plaza de la Font',
+      category: 'Ocio',
+      neighborhood: 'PART ALTA',
+      contact_info: 'Green Tarragona',
+      created_at: new Date().toISOString()
+    }
+  ];
+
   const fetchEvents = async () => {
     setLoading(true);
     try {
@@ -49,12 +105,29 @@ const NeighborhoodCalendar: React.FC = () => {
           .from('events')
           .select('*')
           .or(`neighborhood.eq.${user?.user_metadata?.neighborhood || 'GENERAL'},neighborhood.eq.GENERAL`)
+          .gte('event_date', new Date().toISOString().split('T')[0]) // Filter strictly future/today events on DB query if possible, or filter locally
           .order('event_date', { ascending: true })
       );
 
-      setEvents(data || []);
+      const dbEvents = data || [];
+
+      // Combine official events (filtering only future ones) + DB events
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      const allEvents = [...officialEvents, ...dbEvents].filter((e) => {
+        const eDate = new Date(e.event_date);
+        return eDate >= today; // Only show events from today onwards
+      }).sort((a, b) => new Date(a.event_date).getTime() - new Date(b.event_date).getTime());
+
+      // Deduplicate by ID just in case
+      const uniqueEvents = Array.from(new Map(allEvents.map(item => [item.id, item])).values());
+
+      setEvents(uniqueEvents);
     } catch (e) {
       console.error(e);
+      // Fallback to official events if DB fails
+      setEvents(officialEvents.filter(e => new Date(e.event_date) >= new Date()));
     } finally {
       setLoading(false);
     }
