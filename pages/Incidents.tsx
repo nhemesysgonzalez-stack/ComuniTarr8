@@ -11,6 +11,7 @@ interface Incident {
     description: string;
     contact_info?: string;
     neighborhood: string;
+    image_url?: string;
     status: 'open' | 'in_progress' | 'resolved';
     created_at: string;
     profiles?: {
@@ -44,7 +45,8 @@ const Incidents: React.FC = () => {
             avatar_url
           )
         `)
-                .or(`neighborhood.eq.${barrio},neighborhood.eq.GENERAL`)
+                // Removing strict filter so users can see all activity for now
+                // .or(`neighborhood.eq.${barrio},neighborhood.eq.GENERAL`)
                 .order('created_at', { ascending: false });
 
             if (filter !== 'all') {
@@ -176,6 +178,17 @@ const Incidents: React.FC = () => {
                             <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
                                 {incident.description}
                             </p>
+
+                            {/* Image Preview if exists */}
+                            {incident.image_url && (
+                                <div className="mb-4 rounded-2xl overflow-hidden h-48 border border-gray-100 dark:border-gray-700">
+                                    <img
+                                        src={incident.image_url}
+                                        alt={incident.title}
+                                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                </div>
+                            )}
 
                             {/* Footer */}
                             <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">

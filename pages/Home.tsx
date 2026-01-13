@@ -308,17 +308,48 @@ const Home: React.FC = () => {
     { icon: 'diversity_3', label: t('ask_offer_help'), action: () => setShowHelpModal(true), color: 'bg-indigo-500', shadow: 'shadow-indigo-500/20' }
   ];
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleIncidentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+
     try {
+      let imageUrl = null;
+
+      // 1. Upload Photo if exists
+      if (incidentPhoto) {
+        const fileExt = incidentPhoto.name.split('.').pop();
+        const fileName = `${Math.random().toString(36).substring(2)}_${Date.now()}.${fileExt}`;
+        const filePath = `incidents/${fileName}`;
+
+        const { error: uploadError } = await supabase.storage
+          .from('incidents') // Ensure this bucket exists in Supabase
+          .upload(filePath, incidentPhoto);
+
+        if (uploadError) {
+          console.error('Error uploading image:', uploadError);
+          // Continue without image or show error? Let's continue for now but log it
+        } else {
+          const { data: { publicUrl } } = supabase.storage
+            .from('incidents')
+            .getPublicUrl(filePath);
+          imageUrl = publicUrl;
+        }
+      }
+
+      // 2. Insert Incident with Image URL
       const { success } = await safeSupabaseInsert('incidents', {
         user_id: user?.id,
         title: incidentTitle,
         description: incidentDescription,
         contact_info: incidentContact || null,
         neighborhood: user?.user_metadata?.neighborhood || 'GENERAL',
+        image_url: imageUrl, // Save the URL here
         status: 'open'
       });
+
       if (success) {
         await addPoints(25, 10);
         alert('¡Incidencia reportada! +25 XP / +10 ComuniPoints');
@@ -329,7 +360,12 @@ const Home: React.FC = () => {
         setIncidentPhoto(null);
         setIncidentPhotoPreview('');
       }
-    } catch (err) { console.error(err); }
+    } catch (err) {
+      console.error(err);
+      alert('Error al enviar la incidencia. Inténtalo de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -593,7 +629,9 @@ const Home: React.FC = () => {
                 </div>
 
                 <input type="text" value={incidentContact} onChange={(e) => setIncidentContact(e.target.value)} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white" placeholder="Tu contacto (opcional)" />
-                <button type="submit" className="w-full bg-red-600 text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-red-700 transition-all shadow-lg shadow-red-500/20">REPORTAR AHORA</button>
+                <button type="submit" disabled={isSubmitting} className={`w-full bg-red-600 text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-red-700 transition-all shadow-lg shadow-red-500/20 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}>
+                  {isSubmitting ? 'ENVIANDO...' : 'REPORTAR AHORA'}
+                </button>
               </form>
             </motion.div>
           </motion.div>
