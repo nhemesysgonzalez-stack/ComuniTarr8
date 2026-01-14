@@ -253,23 +253,23 @@ export const Header: React.FC = () => {
         >
           <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🌤️ MARTES: CLIMA ESTABLE CON INTERVALOS NUBOSOS (7°C-17°C)</span>
+          <span className="flex items-center gap-2">🌬️ MIÉRCOLES: ATENCIÓN AL VIENTO - RACHAS MODERADAS DE MISTRAL</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🐎 TRES TOMBS: SOLO QUEDAN 5 DÍAS PARA LA FIESTA</span>
+          <span className="flex items-center gap-2">🐎 TRES TOMBS: SOLO QUEDAN 4 DÍAS PARA LA FIESTA EN EL SERRALLO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 184 VECINOS HAN VOTADO EN 'BONA GENT'</span>
+          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 198 VECINOS HAN VOTADO EN 'BONA GENT'</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🧺 MERCADO: HOY MERCADILLO SEMANAL EN CAMPCLAR (HASTA 14H)</span>
+          <span className="flex items-center gap-2">🚧 OBRAS: DESVÍOS EN C/ UNIÓ POR REPARACIONES - BUSCAR ALTERNATIVAS</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚌 EMT: ÚLTIMA SEMANA PARA RENOVAR TARJETAS BONIFICADAS SIN CITA</span>
+          <span className="flex items-center gap-2">📚 CULTURA: CLUB DE LECTURA ESTA TARDE EN BIBLIOTECA PÚBLICA (18:30h)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛍️ REBAIXES: Gran Oportunidad en Calzado y Ropa de Hogar</span>
+          <span className="flex items-center gap-2">🛍️ REBAIXES: Aprovecha los descuentos de mitad de mes</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🌤️ CLIMA: TARDE AGRADABLE PARA IR DE COMPRAS</span>
+          <span className="flex items-center gap-2">🌤️ CLIMA: DÍA SOLEADO PERO VENTOSO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 184 VECINOS HAN VOTADO EN 'BONA GENT'</span>
+          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 198 VECINOS HAN VOTADO EN 'BONA GENT'</span>
         </motion.div>
       </div>
 

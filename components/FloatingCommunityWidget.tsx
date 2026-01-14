@@ -11,12 +11,12 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: 'Hoy toca mercadillo en Campclar, ¡a ver qué chollos encuentro!', neighborhood: 'Torreforta' },
-    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Se está genial esta tarde, ni frío ni calor. Ideal para ir de tiendas.', neighborhood: 'Llevant' },
-    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: '5 días para Els Tres Tombs... ¡Ya tengo la cámara preparada! 📸', neighborhood: 'Serrallo' },
-    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'He ido a la EMT a renovar la tarjeta y había poca cola hoy.', neighborhood: 'General' },
-    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: '¿Hasta cuándo era la preinscripción del cole? ¿Final de mes?', neighborhood: 'Eixample' },
-    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: 'Buen ambiente hoy por la Rambla, se nota que estamos a martes.', neighborhood: 'General' },
+    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: 'Hoy toca abrigarse del viento, el Mistral sopla fuerte en la Parte Alta.', neighborhood: 'Part Alta' },
+    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Atasco en Rambla Nova por las obras de Unió, buscad ruta alternativa.', neighborhood: 'Eixample' },
+    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: '4 días para Els Tres Tombs. Mañana limpian la plaza para el evento.', neighborhood: 'Serrallo' },
+    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: '¿Quién se viene al Club de Lectura luego? Empieza a las 18:30.', neighborhood: 'General' },
+    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: 'Vigilar con las macetas en los balcones, que hace mucho aire.', neighborhood: 'Llevant' },
+    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: 'Día perfecto para trabajar desde casa viendo como se mueven los árboles 🌬️', neighborhood: 'General' },
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

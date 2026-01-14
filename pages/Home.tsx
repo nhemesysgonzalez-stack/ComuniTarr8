@@ -182,11 +182,11 @@ const Home: React.FC = () => {
 
         const weatherAlert = {
           id: 'weather-alert',
-          title: "🌤️ MARTES: Sol y Nubes",
-          content: "Hoy martes 13 esperamos intervalos nubosos sin riesgo de lluvia. Temperaturas subiendo ligeramente (mínima 7°C, máxima 17°C). Viento suave de componente sur por la tarde.",
+          title: "🌬️ MIÉRCOLES: Viento Moderado",
+          content: "Hoy miércoles 14 tendremos cielos despejados pero atención al viento de Mistral que soplará con rachas moderadas. Temperaturas agradables (15°C) pero sensación térmica más baja.",
           category: "URGENTE",
           neighborhood: "GENERAL",
-          itinerary: "• T. Mínima: 7°C / T. Máxima: 17°C\n• Cielo: Intervalos nubosos\n• Viento: Sur flojo\n• Humedad: 65%",
+          itinerary: "• T. Máxima: 15°C\n• Viento: Mistral (30-40 km/h)\n• Precaución: Objetos en balcones",
           created_at: new Date().toISOString()
         };
 
@@ -221,23 +221,34 @@ const Home: React.FC = () => {
 
         const tresTombsNotice = {
           id: 'tres-tombs-final-week',
-          title: "🐎 CULTURA: 5 Días para 'Els Tres Tombs'",
-          content: "Solo quedan 5 días. Este sábado 18, Tarragona celebrará Sant Antoni Abat con la tradicional cabalgata. Recuerda que habrá restricciones de tráfico en Rambla Nova esa mañana.",
+          title: "🐎 CULTURA: 4 Días para 'Els Tres Tombs'",
+          content: "Cuenta atrás: Quedan 4 días. Este domingo 18, Tarragona celebrará Sant Antoni Abat. Los carruajes ya están preparados en el Serrallo para su puesta a punto.",
           category: "EVENTO",
           neighborhood: "SERRALLO",
-          itinerary: "• Fecha: Sábado 18 enero\n• Hora: 11:00h - 14:00h\n• Recorrido: Rambla Nova\n• Tradición: Bendición y caramelos",
+          itinerary: "• Fecha: Domingo 18 enero\n• Hora: 11:00h - 14:00h\n• Recorrido: Rambla Nova\n• Tradición: Bendición y caramelos",
           created_at: new Date().toISOString()
         };
 
-        const marketNotice = {
-          id: 'mercadillo-campclar',
-          title: "🧺 HOY: Mercadillo de Campclar",
-          content: "Martes de mercado en Campclar. Fruta fresca, ropa y menaje a buen precio en la gran explanada. Recordamos evitar aparcar en doble fila en las calles adyacentes.",
-          category: "COMUNIDAD",
-          neighborhood: "TORREFORTA",
-          itinerary: "• Día: Martes\n• Horario: 9:00h - 14:00h\n• Lugar: Explanada Campclar\n• Bus: L6, L54",
+        const worksNotice = {
+          id: 'obras-unio',
+          title: "🚧 OBRAS: Corte en C/ Unió",
+          content: "A partir de hoy, corte parcial de tráfico en el tramo bajo de la calle Unió por reparaciones de alcantarillado. Se recomienda usar vías alternativas para acceder al mercado.",
+          category: "URGENTE",
+          neighborhood: "CENTRO",
+          itinerary: "• Duración: 3 días\n• Afectación: Carril derecho\n• Buses: Líneas 21 y 22 desviadas",
           created_at: new Date().toISOString()
         };
+
+        const cultureNotice = {
+          id: 'club-lectura',
+          title: "📚 CULTURA: Club de Lectura Hoy",
+          content: "Esta tarde a las 18:30h, sesión abierta del Club de Lectura en la Biblioteca Pública. Se comentará 'La Plaça del Diamant'. Entrada libre hasta completar aforo.",
+          category: "EVENTO",
+          neighborhood: "GENERAL",
+          itinerary: "• Hora: 18:30h\n• Lugar: Biblioteca Pública (C/ Fortuny)\n• Libro: La Plaça del Diamant",
+          created_at: new Date().toISOString()
+        };
+
 
         const busNotice = {
           id: 'emt-renovacio',
@@ -260,7 +271,7 @@ const Home: React.FC = () => {
         };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([weatherAlert, marketNotice, tresTombsNotice, busNotice, schoolNotice, rebaixesNotice, ...fetchedNews].slice(0, 4));
+        setNews([weatherAlert, worksNotice, tresTombsNotice, busNotice, cultureNotice, rebaixesNotice, ...fetchedNews].slice(0, 5));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase
