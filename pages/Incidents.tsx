@@ -69,13 +69,17 @@ const Incidents: React.FC = () => {
         if (!window.confirm('¿Estás seguro de que quieres eliminar esta incidencia?')) return;
 
         try {
-            // 1. Delete from DB
+            // 1. Delete from DB (Remote)
             const { error } = await supabase.from('incidents').delete().eq('id', id);
-            if (error) throw error;
 
-            // 2. Delete Image from Storage if exists
-            if (imageUrl) {
-                // Extracts filename from URL: .../incidents/filename.jpg -> filename.jpg
+            // 2. Delete from LocalStorage (Important: This is why it reappears)
+            const localKey = 'local_incidents';
+            const localData = JSON.parse(localStorage.getItem(localKey) || '[]');
+            const updatedLocalData = localData.filter((inc: any) => inc.id !== id);
+            localStorage.setItem(localKey, JSON.stringify(updatedLocalData));
+
+            // 3. Delete Image from Storage if exists
+            if (imageUrl && !imageUrl.includes('unsplash.com')) {
                 const fileName = imageUrl.split('/').pop();
                 if (fileName) {
                     await supabase.storage.from('incidents').remove([fileName]);
@@ -83,7 +87,7 @@ const Incidents: React.FC = () => {
             }
 
             setIncidents(prev => prev.filter(inc => inc.id !== id));
-            alert('Incidencia eliminada correctamente.');
+            alert('Incidencia eliminada correctamente de la nube y del dispositivo.');
         } catch (err: any) {
             console.error('Error deleting incident:', err);
             alert('No se pudo eliminar: ' + err.message);
