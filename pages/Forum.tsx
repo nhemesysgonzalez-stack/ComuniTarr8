@@ -203,12 +203,12 @@ const Forum: React.FC = () => {
   };
 
   const handleTopicClick = (topicId: string) => {
-    if (topicId === 'tortell-debate') {
-      setNewMessage('Para mí el mejor Tortell de Tarragona es el de... y la nata tiene que ser... ');
-    } else if (topicId === 'frio-polar') {
-      setNewMessage('¿Qué consejos dais para proteger las plantas del balcón con este frío? ');
-    } else if (topicId === 'prepper-tgn') {
-      setNewMessage('¿Cuáles son los mejores consejos para estar preparados ante una alerta química en Tarragona? ');
+    if (topicId === 'nastic-semis') {
+      setNewMessage('¡Qué sufrimiento ayer! Pero ya estamos en semis. ¿Quién se apunta a ir a ver la ida? 🏟️');
+    } else if (topicId === 'viento-mistral') {
+      setNewMessage('Ojo con las motos en la Rambla, el viento pega muy fuerte hoy. 🌬️');
+    } else if (topicId === 'tres-tombs') {
+      setNewMessage('¿Sabéis si este año pasan por la calle Real? Tengo que avisar a mi abuela. 🐎');
     }
     setTimeout(() => {
       inputRef.current?.focus();
@@ -217,22 +217,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'tortell-debate',
-      title: '🥐 El Gran Debate del Tortell',
-      description: '¿Con o sin fruta? ¿Nata natural o trufa? ¡Vota el mejor de Tarragona!',
+      id: 'nastic-semis',
+      title: '⚽ ¡Nàstic a Semis!',
+      description: 'Euforia tras la victoria de anoche. Organizando viaje para la ida.',
+      participating: 42
+    },
+    {
+      id: 'viento-mistral',
+      title: '🌬️ Alerta Viento',
+      description: 'Caída de ramas y objetos. Precaución en zonas altas.',
+      participating: 28
+    },
+    {
+      id: 'tres-tombs',
+      title: '🐎 Tres Tombs (3 Días)',
+      description: 'Preparativos en el Serrallo. Buscando voluntarios.',
       participating: 15
-    },
-    {
-      id: 'frio-polar',
-      title: '❄️ Consejos contra el Frío',
-      description: 'Cómo proteger las tuberías y plantas esta semana.',
-      participating: 8
-    },
-    {
-      id: 'prepper-tgn',
-      title: '🛡️ Seguridad Petroquímica',
-      description: 'Protocolos PLASEQTA y consejos de preparación vecinal.',
-      participating: 21
     }
   ];
 
@@ -363,7 +363,7 @@ const Forum: React.FC = () => {
           <div className="space-y-6 mb-12">
             <div className="flex justify-center">
               <span className="px-4 py-1 bg-amber-100 text-amber-700 rounded-full text-[9px] font-black uppercase tracking-widest border border-amber-200">
-                Debate Destacado: Día de Reyes
+                Debate Destacado: ¡Victoria Grana!
               </span>
             </div>
 
@@ -372,7 +372,7 @@ const Forum: React.FC = () => {
               <div className="flex flex-col items-start max-w-[80%]">
                 <span className="text-[10px] font-black uppercase mb-1">Maru Torres</span>
                 <div className="p-4 bg-white dark:bg-surface-dark rounded-2xl rounded-tl-none border-l-4 border-amber-500 shadow-sm text-sm">
-                  ¡Feliz día de Reyes! 👑 Abro debate: ¿Cuál es el mejor Tortell de Tarragona? Yo voto por la <b>Pastisseria Conde</b>, ¡la nata es increíble!
+                  ¿Habéis recuperado la voz? 😅 ¡Vaya partidazo ayer en el Nou Estadi! El ambiente fue increíble. ¿Quién se apunta a recibir al equipo el domingo?
                 </div>
               </div>
             </div>
@@ -382,7 +382,7 @@ const Forum: React.FC = () => {
               <div className="flex flex-col items-start max-w-[80%]">
                 <span className="text-[10px] font-black uppercase mb-1">Joan Rebull</span>
                 <div className="p-4 bg-white dark:bg-surface-dark rounded-2xl rounded-tl-none border-l-4 border-blue-500 shadow-sm text-sm">
-                  ¡Uff! Yo prefiero la <b>Pastisseria Velvet</b>. Pero lo importante... ¿sois de nata natural o de la artificial? Yo si no es nata de verdad, ni lo pruebo 😤
+                  ¡Sigo afónico! 🧣 Fue épico. Por cierto, ¿alguien sabe si pondrán pantallas gigantes para la semifinal? Sería genial verlo todos juntos en la Plaça de la Font.
                 </div>
               </div>
             </div>
