@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { supabase } from '../services/supabaseClient';
+import { safeSupabaseFetch } from '../services/dataHandler';
 
 interface Incident {
     id: string;
@@ -53,9 +54,9 @@ const Incidents: React.FC = () => {
                 query = query.eq('status', filter);
             }
 
-            const { data, error } = await query;
+            const data = await safeSupabaseFetch('incidents', query);
 
-            if (!error && data) {
+            if (data) {
                 setIncidents(data);
             }
         } catch (err) {

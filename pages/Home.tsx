@@ -336,7 +336,7 @@ const Home: React.FC = () => {
       setSubmitStatus('GUARDANDO DATOS...');
 
       // 2. Insert Incident with Image URL
-      const { success } = await safeSupabaseInsert('incidents', {
+      const { success, isLocal } = await safeSupabaseInsert('incidents', {
         user_id: user?.id,
         title: incidentTitle,
         description: incidentDescription,
@@ -348,7 +348,11 @@ const Home: React.FC = () => {
 
       if (success) {
         await addPoints(25, 10);
-        alert('¡Incidencia reportada! +25 XP / +10 ComuniPoints');
+        if (isLocal) {
+          alert('⚠️ MODO DEMO: Se ha guardado solo en este dispositivo (local). Revisa el script SQL de permisos para que se suba a la nube.');
+        } else {
+          alert('✅ ¡Incidencia reportada con éxito en la nube! +25 XP / +10 ComuniPoints');
+        }
         setShowIncidentModal(false);
         setIncidentTitle('');
         setIncidentDescription('');
@@ -356,7 +360,7 @@ const Home: React.FC = () => {
         setIncidentPhoto(null);
         setIncidentPhotoPreview('');
       } else {
-        alert('Error al guardar la incidencia en la base de datos.');
+        alert('❌ Error al guardar la incidencia.');
       }
     } catch (err: any) {
       console.error(err);
