@@ -600,36 +600,31 @@ const Home: React.FC = () => {
                 <div className="space-y-3">
                   <label className="block text-xs font-black text-gray-500 dark:text-gray-400 uppercase tracking-widest">📷 FOTO DE LA INCIDENCIA</label>
 
-                  <input
-                    ref={fileInputRef}
-                    type="file"
-                    accept="image/*"
-                    onChange={handlePhotoChange}
-                    className="hidden" // Hidden native input
-                  />
-
                   {!incidentPhotoPreview ? (
-                    <button
-                      type="button"
-                      onClick={() => fileInputRef.current?.click()}
-                      className="w-full py-4 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-2xl flex flex-col items-center justify-center gap-2 text-gray-400 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all group"
-                    >
+                    <label className="w-full py-4 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-2xl flex flex-col items-center justify-center gap-2 text-gray-400 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all group cursor-pointer">
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handlePhotoChange}
+                        className="hidden"
+                      />
                       <span className="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">add_a_photo</span>
                       <span className="text-xs font-black uppercase tracking-widest">Toca para adjuntar imagen</span>
-                    </button>
+                    </label>
                   ) : (
                     <div className="relative rounded-2xl overflow-hidden border-2 border-primary/20 group">
                       <img src={incidentPhotoPreview} alt="Preview" className="w-full h-48 object-cover" />
 
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                        <button
-                          type="button"
-                          onClick={() => fileInputRef.current?.click()}
-                          className="size-10 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-all"
-                          title="Cambiar foto"
-                        >
+                        <label className="size-10 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-all cursor-pointer" title="Cambiar foto">
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handlePhotoChange}
+                            className="hidden"
+                          />
                           <span className="material-symbols-outlined">edit</span>
-                        </button>
+                        </label>
                         <button
                           type="button"
                           onClick={() => { setIncidentPhoto(null); setIncidentPhotoPreview(''); }}
