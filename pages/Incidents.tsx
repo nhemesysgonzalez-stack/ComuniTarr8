@@ -90,10 +90,10 @@ const Incidents: React.FC = () => {
                 <div>
                     <h1 className="text-4xl md:text-5xl font-black dark:text-white uppercase tracking-tight flex items-center gap-3">
                         <span className="material-symbols-outlined text-5xl text-red-500">report_problem</span>
-                        Incidencias del Barrio
+                        {t('incidents_title')}
                     </h1>
                     <p className="text-sm text-gray-500 dark:text-gray-400 font-bold mt-2">
-                        Reporta y sigue el estado de los problemas de tu comunidad
+                        {t('incidents_subtitle')}
                     </p>
                 </div>
             </div>
@@ -101,10 +101,10 @@ const Incidents: React.FC = () => {
             {/* Filters */}
             <div className="flex gap-2 overflow-x-auto pb-2">
                 {[
-                    { key: 'all', label: 'Todas', icon: 'list' },
-                    { key: 'open', label: 'Reportadas', icon: 'error' },
-                    { key: 'in_progress', label: 'En Notificación', icon: 'pending' },
-                    { key: 'resolved', label: 'Archivadas', icon: 'check_circle' }
+                    { key: 'all', label: t('filter_all'), icon: 'list' },
+                    { key: 'open', label: t('filter_reported'), icon: 'error' },
+                    { key: 'in_progress', label: t('filter_progress'), icon: 'pending' },
+                    { key: 'resolved', label: t('filter_archived'), icon: 'check_circle' }
                 ].map((f) => (
                     <button
                         key={f.key}
@@ -135,10 +135,10 @@ const Incidents: React.FC = () => {
                 <div className="text-center py-20">
                     <span className="material-symbols-outlined text-8xl text-gray-300 dark:text-gray-700 mb-4">sentiment_satisfied</span>
                     <h3 className="text-2xl font-black text-gray-400 dark:text-gray-600 uppercase">
-                        {filter === 'all' ? 'No hay incidencias reportadas' : `No hay incidencias ${getStatusText(filter).toLowerCase()}`}
+                        {filter === 'all' ? t('no_incidents_all') : t('no_incidents_filtered')}
                     </h3>
                     <p className="text-sm text-gray-400 dark:text-gray-600 mt-2">
-                        ¡Tu barrio está en perfecto estado!
+                        {t('neighborhood_perfect_state')}
                     </p>
                 </div>
             ) : (
@@ -162,7 +162,7 @@ const Incidents: React.FC = () => {
                                     <div className="flex-1 min-w-0">
                                         <p className="text-xs font-black dark:text-white truncate">{incident.profiles?.full_name || 'Vecino Anónimo'}</p>
                                         <p className="text-[10px] text-gray-400 dark:text-gray-500 font-bold">
-                                            {new Date(incident.created_at).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
+                                            {new Date(incident.created_at).toLocaleDateString(user?.user_metadata?.language === 'en' ? 'en-US' : 'es-ES', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
                                         </p>
                                     </div>
                                 </div>
@@ -199,7 +199,7 @@ const Incidents: React.FC = () => {
                                 {incident.contact_info && (
                                     <button className="text-[10px] font-black text-gray-400 hover:text-primary transition-colors uppercase tracking-widest flex items-center gap-1">
                                         <span className="material-symbols-outlined text-sm">contact_page</span>
-                                        Contacto
+                                        {t('contact_button')}
                                     </button>
                                 )}
                             </div>
@@ -213,19 +213,19 @@ const Incidents: React.FC = () => {
                 <div className="flex items-start gap-4">
                     <span className="material-symbols-outlined text-4xl text-red-500">info</span>
                     <div>
-                        <h3 className="text-lg font-black dark:text-white mb-2">¿Cómo funciona?</h3>
+                        <h3 className="text-lg font-black dark:text-white mb-2">{t('how_it_works')}</h3>
                         <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                             <li className="flex items-start gap-2">
                                 <span className="material-symbols-outlined text-sm text-red-500 mt-0.5">check_circle</span>
-                                <span><strong>Reporta:</strong> Usa el botón "Reportar Incidencia" desde la página principal</span>
+                                <span><strong>{t('report_step')}:</strong> {t('report_step_desc')}</span>
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="material-symbols-outlined text-sm text-yellow-500 mt-0.5">check_circle</span>
-                                <span><strong>Visibilidad:</strong> El objetivo es hacer visibles los problemas del barrio.</span>
+                                <span><strong>{t('visibility_step')}:</strong> {t('visibility_step_desc')}</span>
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="material-symbols-outlined text-sm text-green-500 mt-0.5">check_circle</span>
-                                <span><strong>Notificación:</strong> Las incidencias más votadas se notifican al Ayuntamiento por RRSS.</span>
+                                <span><strong>{t('notify_step')}:</strong> {t('notify_step_desc')}</span>
                             </li>
                         </ul>
                     </div>

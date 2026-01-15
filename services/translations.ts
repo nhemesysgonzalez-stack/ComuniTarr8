@@ -63,7 +63,27 @@ export const translations = {
         neighbor_desc: 'Tu plataforma para conectar, compartir y mejorar Tarragona juntos.',
         news_from: 'Noticias de',
         your_progress: 'Tu Progreso',
-        level: 'Nivel'
+        level: 'Nivel',
+
+        // Incidents Page
+        incidents_nav: 'Incidencias',
+        incidents_title: 'Incidencias del Barrio',
+        incidents_subtitle: 'Reporta y sigue el estado de los problemas de tu comunidad',
+        filter_all: 'Todas',
+        filter_reported: 'Reportadas',
+        filter_progress: 'En Proceso',
+        filter_archived: 'Archivadas',
+        no_incidents_all: 'No hay incidencias reportadas',
+        no_incidents_filtered: 'No hay incidencias en este estado',
+        neighborhood_perfect_state: '¡Tu barrio está en perfecto estado!',
+        contact_button: 'Contacto',
+        how_it_works: '¿Cómo funciona?',
+        report_step: 'Reporta',
+        report_step_desc: 'Usa el botón "Reportar Incidencia" desde la página principal',
+        visibility_step: 'Visibilidad',
+        visibility_step_desc: 'El objetivo es hacer visibles los problemas del barrio.',
+        notify_step: 'Notificación',
+        notify_step_desc: 'Las incidencias más graves se notifican al Ayuntamiento.'
     },
     en: {
         nav_main: 'Main',
@@ -116,7 +136,27 @@ export const translations = {
         neighbor_desc: 'Your platform to connect, share and improve Tarragona together.',
         news_from: 'News from',
         your_progress: 'Your Progress',
-        level: 'Level'
+        level: 'Level',
+
+        // Incidents Page
+        incidents_nav: 'Incidents',
+        incidents_title: 'Neighborhood Incidents',
+        incidents_subtitle: 'Report and track issues in your community',
+        filter_all: 'All',
+        filter_reported: 'Reported',
+        filter_progress: 'In Progress',
+        filter_archived: 'Archived',
+        no_incidents_all: 'No incidents reported',
+        no_incidents_filtered: 'No incidents in this status',
+        neighborhood_perfect_state: 'Your neighborhood is in perfect condition!',
+        contact_button: 'Contact',
+        how_it_works: 'How it works?',
+        report_step: 'Report',
+        report_step_desc: 'Use the "Report Incident" button on the main page',
+        visibility_step: 'Visibility',
+        visibility_step_desc: 'The goal is to make neighborhood issues visible.',
+        notify_step: 'Notification',
+        notify_step_desc: 'Major issues are notified to the City Council.'
     },
     ca: {
         nav_main: 'Principal',
@@ -169,7 +209,27 @@ export const translations = {
         neighbor_desc: 'La teva plataforma per connectar, compartir i millorar Tarragona junts.',
         news_from: 'Notícies de',
         your_progress: 'El Teu Progrés',
-        level: 'Nivell'
+        level: 'Nivell',
+
+        // Incidents Page
+        incidents_nav: 'Incidències',
+        incidents_title: 'Incidències del Barri',
+        incidents_subtitle: 'Reporta i segueix l\'estat dels problemes de la teva comunitat',
+        filter_all: 'Totes',
+        filter_reported: 'Reportades',
+        filter_progress: 'En Procés',
+        filter_archived: 'Arxivades',
+        no_incidents_all: 'No hi ha incidències reportades',
+        no_incidents_filtered: 'No hi ha incidències en aquest estat',
+        neighborhood_perfect_state: 'El teu barri està en perfecte estat!',
+        contact_button: 'Contacte',
+        how_it_works: 'Com funciona?',
+        report_step: 'Reporta',
+        report_step_desc: 'Utilitza el botó "Reportar Incidència" des de la pàgina principal',
+        visibility_step: 'Visibilitat',
+        visibility_step_desc: 'L\'objectiu és fer visibles els problemes del barri.',
+        notify_step: 'Notificació',
+        notify_step_desc: 'Les incidències més greus es notifiquen a l\'Ajuntament.'
     },
     fr: {
         nav_main: 'Principal',
@@ -222,6 +282,26 @@ export const translations = {
         neighbor_desc: 'Votre plateforme pour connecter, partager et améliorer Tarragona ensemble.',
         news_from: 'Nouvelles de',
         your_progress: 'Votre Progrès',
-        level: 'Niveau'
+        level: 'Niveau',
+
+        // Incidents Page
+        incidents_nav: 'Incidents',
+        incidents_title: 'Incidents de Quartier',
+        incidents_subtitle: 'Signalez et suivez les problèmes de votre communauté',
+        filter_all: 'Tous',
+        filter_reported: 'Signalés',
+        filter_progress: 'En Cours',
+        filter_archived: 'Archivés',
+        no_incidents_all: 'Aucun incident signalé',
+        no_incidents_filtered: 'Aucun incident dans cet état',
+        neighborhood_perfect_state: 'Votre quartier est en parfait état!',
+        contact_button: 'Contact',
+        how_it_works: 'Comment ça marche?',
+        report_step: 'Signaler',
+        report_step_desc: 'Utilisez le bouton "Signaler Incident" sur la page principale',
+        visibility_step: 'Visibilité',
+        visibility_step_desc: 'L\'objectif est de rendre visibles les problèmes du quartier.',
+        notify_step: 'Notification',
+        notify_step_desc: 'Les incidents majeurs sont signalés à la mairie.'
     }
 };

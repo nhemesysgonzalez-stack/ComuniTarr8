@@ -72,7 +72,7 @@ export const Header: React.FC = () => {
     { to: '/announcements', label: t('announcements'), icon: 'campaign' },
     { to: '/calendar', label: t('calendar'), icon: 'calendar_today' },
     { to: '/neighbors', label: t('neighbors'), icon: 'waving_hand' },
-    { to: '/incidents', label: 'Incidencias', icon: 'report_problem' },
+    { to: '/incidents', label: t('incidents_nav'), icon: 'report_problem' },
     { to: '/community-info', label: t('about'), icon: 'info' },
     { to: '/local-businesses', label: t('local_business'), icon: 'storefront' },
     { to: '/clubs', label: t('clubs'), icon: 'groups' },
