@@ -26,11 +26,10 @@ const Incidents: React.FC = () => {
     const { t } = useLanguage();
     const [incidents, setIncidents] = useState<Incident[]>([]);
     const [loading, setLoading] = useState(true);
-    const [filter, setFilter] = useState<'all' | 'open' | 'in_progress' | 'resolved'>('all');
 
     useEffect(() => {
         fetchIncidents();
-    }, [user, filter]);
+    }, [user]);
 
     const fetchIncidents = async () => {
         setLoading(true);
@@ -41,10 +40,6 @@ const Incidents: React.FC = () => {
                 .select(`*, profiles(full_name, avatar_url)`)
                 .order('created_at', { ascending: false });
 
-            if (filter !== 'all') {
-                query = query.eq('status', filter);
-            }
-
             let data = await safeSupabaseFetch('incidents', query);
 
             // 2. If no data or fail, try a flat fetch (without join) to be safe
@@ -53,8 +48,6 @@ const Incidents: React.FC = () => {
                     .from('incidents')
                     .select('*')
                     .order('created_at', { ascending: false });
-
-                if (filter !== 'all') simpleQuery = simpleQuery.eq('status', filter);
 
                 const backupData = await safeSupabaseFetch('incidents', simpleQuery);
                 if (backupData && backupData.length > 0) {
@@ -72,21 +65,28 @@ const Incidents: React.FC = () => {
         }
     };
 
-    const getStatusColor = (status: string) => {
-        switch (status) {
-            case 'open': return 'bg-red-500';
-            case 'in_progress': return 'bg-yellow-500';
-            case 'resolved': return 'bg-green-500';
-            default: return 'bg-gray-500';
-        }
-    };
+    const handleDelete = async (id: string, imageUrl?: string) => {
+        if (!window.confirm('¿Estás seguro de que quieres eliminar esta incidencia?')) return;
 
-    const getStatusText = (status: string) => {
-        switch (status) {
-            case 'open': return 'Reportada';
-            case 'in_progress': return 'Notificada Ayto.';
-            case 'resolved': return 'Archivada';
-            default: return status;
+        try {
+            // 1. Delete from DB
+            const { error } = await supabase.from('incidents').delete().eq('id', id);
+            if (error) throw error;
+
+            // 2. Delete Image from Storage if exists
+            if (imageUrl) {
+                // Extracts filename from URL: .../incidents/filename.jpg -> filename.jpg
+                const fileName = imageUrl.split('/').pop();
+                if (fileName) {
+                    await supabase.storage.from('incidents').remove([fileName]);
+                }
+            }
+
+            setIncidents(prev => prev.filter(inc => inc.id !== id));
+            alert('Incidencia eliminada correctamente.');
+        } catch (err: any) {
+            console.error('Error deleting incident:', err);
+            alert('No se pudo eliminar: ' + err.message);
         }
     };
 
@@ -96,36 +96,16 @@ const Incidents: React.FC = () => {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
                     <h1 className="text-4xl md:text-5xl font-black dark:text-white uppercase tracking-tight flex items-center gap-3">
-                        <span className="material-symbols-outlined text-5xl text-red-500">report_problem</span>
-                        {t('incidents_title')}
+                        <span className="material-symbols-outlined text-5xl text-red-500">campaign</span>
+                        Avisos Civis
                     </h1>
                     <p className="text-sm text-gray-500 dark:text-gray-400 font-bold mt-2">
-                        {t('incidents_subtitle')}
+                        Gestiona tus avisos y consulta los reportes del barrio.
                     </p>
                 </div>
             </div>
 
-            {/* Filters */}
-            <div className="flex gap-2 overflow-x-auto pb-2">
-                {[
-                    { key: 'all', label: t('filter_all'), icon: 'list' },
-                    { key: 'open', label: t('filter_reported'), icon: 'error' },
-                    { key: 'in_progress', label: t('filter_progress'), icon: 'pending' },
-                    { key: 'resolved', label: t('filter_archived'), icon: 'check_circle' }
-                ].map((f) => (
-                    <button
-                        key={f.key}
-                        onClick={() => setFilter(f.key as any)}
-                        className={`px-4 py-2 rounded-full font-black text-xs uppercase tracking-widest transition-all flex items-center gap-2 whitespace-nowrap ${filter === f.key
-                            ? 'bg-primary text-white shadow-lg'
-                            : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
-                            }`}
-                    >
-                        <span className="material-symbols-outlined text-sm">{f.icon}</span>
-                        {f.label}
-                    </button>
-                ))}
-            </div>
+
 
             {/* Incidents List */}
             {loading ? (
@@ -140,13 +120,10 @@ const Incidents: React.FC = () => {
                 </div>
             ) : incidents.length === 0 ? (
                 <div className="text-center py-20">
-                    <span className="material-symbols-outlined text-8xl text-gray-300 dark:text-gray-700 mb-4">sentiment_satisfied</span>
-                    <h3 className="text-2xl font-black text-gray-400 dark:text-gray-600 uppercase">
-                        {filter === 'all' ? t('no_incidents_all') : t('no_incidents_filtered')}
+                    <span className="material-symbols-outlined text-8xl text-gray-300 dark:text-gray-700 mb-4">notifications_off</span>
+                    <h3 className="text-2xl font-black text-gray-400 dark:text-gray-600 uppercase italic">
+                        No hay avisos publicados
                     </h3>
-                    <p className="text-sm text-gray-400 dark:text-gray-600 mt-2">
-                        {t('neighborhood_perfect_state')}
-                    </p>
                 </div>
             ) : (
                 <div className="grid gap-4 md:grid-cols-2">
@@ -156,10 +133,21 @@ const Incidents: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.05 }}
-                            className="bg-white dark:bg-gray-800 rounded-3xl p-6 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all group"
+                            className="bg-white dark:bg-gray-800 rounded-3xl p-6 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all group relative"
                         >
+                            {/* Actions (Delete if owner) */}
+                            {user?.id === incident.user_id && (
+                                <button
+                                    onClick={() => handleDelete(incident.id, incident.image_url)}
+                                    className="absolute top-6 right-6 size-10 rounded-full bg-red-50 text-red-500 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all z-20 shadow-sm"
+                                    title="Eliminar reporte"
+                                >
+                                    <span className="material-symbols-outlined text-xl">delete</span>
+                                </button>
+                            )}
+
                             {/* Header */}
-                            <div className="flex items-start justify-between mb-4">
+                            <div className="flex items-start justify-between mb-4 pr-12">
                                 <div className="flex items-center gap-3 flex-1">
                                     <img
                                         src={incident.profiles?.avatar_url || `https://ui-avatars.com/api/?name=${incident.profiles?.full_name || 'V'}`}
@@ -167,15 +155,12 @@ const Incidents: React.FC = () => {
                                         alt="Avatar"
                                     />
                                     <div className="flex-1 min-w-0">
-                                        <p className="text-xs font-black dark:text-white truncate">{incident.profiles?.full_name || 'Vecino Anónimo'}</p>
+                                        <p className="text-xs font-black dark:text-white truncate">{incident.profiles?.full_name || 'Vecino'}</p>
                                         <p className="text-[10px] text-gray-400 dark:text-gray-500 font-bold">
-                                            {new Date(incident.created_at).toLocaleDateString(user?.user_metadata?.language === 'en' ? 'en-US' : 'es-ES', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
+                                            {new Date(incident.created_at).toLocaleDateString()}
                                         </p>
                                     </div>
                                 </div>
-                                <span className={`px-3 py-1 rounded-full text-[10px] font-black text-white uppercase tracking-widest ${getStatusColor(incident.status)}`}>
-                                    {getStatusText(incident.status)}
-                                </span>
                             </div>
 
                             {/* Content */}
