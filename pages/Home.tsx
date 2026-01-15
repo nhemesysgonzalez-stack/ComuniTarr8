@@ -300,28 +300,31 @@ const Home: React.FC = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const [submitStatus, setSubmitStatus] = useState('');
+
   const handleIncidentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
     setIsSubmitting(true);
+    setSubmitStatus('INICIANDO...');
 
     try {
       let imageUrl = null;
 
       // 1. Upload Photo if exists
       if (incidentPhoto) {
-        const fileExt = incidentPhoto.name.split('.').pop();
+        setSubmitStatus('SUBIENDO IMAGEN...');
+        const fileExt = incidentPhoto.name.split('.').pop() || 'jpg';
         const fileName = `${Math.random().toString(36).substring(2)}_${Date.now()}.${fileExt}`;
         const filePath = `incidents/${fileName}`;
 
         const { error: uploadError } = await supabase.storage
-          .from('incidents') // Ensure this bucket exists in Supabase
+          .from('incidents')
           .upload(filePath, incidentPhoto);
 
         if (uploadError) {
           console.error('Error uploading image:', uploadError);
-          alert('Hubo un error al subir la imagen, pero la incidencia se enviará sin ella.');
-          // Continue without image or show error? Let's continue for now but log it
+          alert(`Error al subir imagen: ${uploadError.message}. Se intentará sin foto.`);
         } else {
           const { data: { publicUrl } } = supabase.storage
             .from('incidents')
@@ -330,6 +333,8 @@ const Home: React.FC = () => {
         }
       }
 
+      setSubmitStatus('GUARDANDO DATOS...');
+
       // 2. Insert Incident with Image URL
       const { success } = await safeSupabaseInsert('incidents', {
         user_id: user?.id,
@@ -337,7 +342,7 @@ const Home: React.FC = () => {
         description: incidentDescription,
         contact_info: incidentContact || null,
         neighborhood: user?.user_metadata?.neighborhood || 'GENERAL',
-        image_url: imageUrl, // Save the URL here
+        image_url: imageUrl,
         status: 'open'
       });
 
@@ -350,12 +355,15 @@ const Home: React.FC = () => {
         setIncidentContact('');
         setIncidentPhoto(null);
         setIncidentPhotoPreview('');
+      } else {
+        alert('Error al guardar la incidencia en la base de datos.');
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      alert('Error al enviar la incidencia. Inténtalo de nuevo.');
+      alert(`Error inesperado: ${err.message || err}`);
     } finally {
       setIsSubmitting(false);
+      setSubmitStatus('');
     }
   };
 
@@ -636,11 +644,22 @@ const Home: React.FC = () => {
                       </div>
                     </div>
                   )}
+                  {incidentPhoto && (
+                    <div className="text-[10px] font-bold text-gray-400 text-center mt-2">
+                      Archivo: {incidentPhoto.name} ({(incidentPhoto.size / 1024 / 1024).toFixed(2)} MB)
+                    </div>
+                  )}
                 </div>
 
                 <input type="text" value={incidentContact} onChange={(e) => setIncidentContact(e.target.value)} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white" placeholder="Tu contacto (opcional)" />
-                <button type="submit" disabled={isSubmitting} className={`w-full bg-red-600 text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-red-700 transition-all shadow-lg shadow-red-500/20 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}>
-                  {isSubmitting ? 'ENVIANDO...' : 'REPORTAR AHORA'}
+
+                <button type="submit" disabled={isSubmitting} className={`w-full bg-red-600 text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-red-700 transition-all shadow-lg shadow-red-500/20 flex flex-col items-center justify-center ${isSubmitting ? 'opacity-80 cursor-not-allowed' : ''}`}>
+                  {isSubmitting ? (
+                    <>
+                      <span className="material-symbols-outlined animate-spin text-xl mb-1">refresh</span>
+                      <span className="text-[10px]">{submitStatus || 'PROCESANDO...'}</span>
+                    </>
+                  ) : 'REPORTAR AHORA'}
                 </button>
               </form>
             </motion.div>
