@@ -187,15 +187,24 @@ const Incidents: React.FC = () => {
                             </p>
 
                             {/* Image Preview if exists */}
-                            {incident.image_url && (
-                                <div className="mb-4 rounded-2xl overflow-hidden h-48 border border-gray-100 dark:border-gray-700">
+                            <div className="mb-4 rounded-2xl overflow-hidden h-48 border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 flex items-center justify-center relative group">
+                                {incident.image_url ? (
                                     <img
                                         src={incident.image_url}
                                         alt={incident.title}
                                         className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                        onError={(e) => {
+                                            console.error("Error cargando imagen:", incident.image_url);
+                                            (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80'; // Fallback city image
+                                        }}
                                     />
-                                </div>
-                            )}
+                                ) : (
+                                    <div className="flex flex-col items-center gap-2 opacity-20">
+                                        <span className="material-symbols-outlined text-4xl">image_not_supported</span>
+                                        <span className="text-[10px] font-black uppercase">Sin imagen</span>
+                                    </div>
+                                )}
+                            </div>
 
                             {/* Footer */}
                             <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">

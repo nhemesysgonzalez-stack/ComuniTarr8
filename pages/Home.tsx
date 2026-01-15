@@ -311,7 +311,6 @@ const Home: React.FC = () => {
     try {
       let imageUrl = null;
 
-      // 1. Upload Photo if exists
       if (incidentPhoto) {
         setSubmitStatus('SUBIENDO IMAGEN...');
         const fileExt = incidentPhoto.name.split('.').pop() || 'jpg';
@@ -323,8 +322,7 @@ const Home: React.FC = () => {
           .upload(filePath, incidentPhoto);
 
         if (uploadError) {
-          console.error('Error uploading image:', uploadError);
-          alert(`Error al subir imagen: ${uploadError.message}. Se intentará sin foto.`);
+          alert(`Error al subir imagen: ${uploadError.message}`);
         } else {
           const { data: { publicUrl } } = supabase.storage
             .from('incidents')
@@ -335,8 +333,8 @@ const Home: React.FC = () => {
 
       setSubmitStatus('GUARDANDO DATOS...');
 
-      // 2. Insert Incident with Image URL
-      const { success, isLocal } = await safeSupabaseInsert('incidents', {
+      // Direct insert to catch exact error
+      const { error: dbError } = await supabase.from('incidents').insert([{
         user_id: user?.id,
         title: incidentTitle,
         description: incidentDescription,
@@ -344,27 +342,37 @@ const Home: React.FC = () => {
         neighborhood: user?.user_metadata?.neighborhood || 'GENERAL',
         image_url: imageUrl,
         status: 'open'
-      });
+      }]);
 
-      if (success) {
-        await addPoints(25, 10);
-        if (isLocal) {
-          alert('⚠️ MODO DEMO: Se ha guardado solo en este dispositivo (local). Revisa el script SQL de permisos para que se suba a la nube.');
-        } else {
-          alert('✅ ¡Incidencia reportada con éxito en la nube! +25 XP / +10 ComuniPoints');
-        }
-        setShowIncidentModal(false);
-        setIncidentTitle('');
-        setIncidentDescription('');
-        setIncidentContact('');
-        setIncidentPhoto(null);
-        setIncidentPhotoPreview('');
+      if (dbError) {
+        console.error('Database Error:', dbError);
+        // Fallback to local
+        const localKey = `local_incidents`;
+        const currentData = JSON.parse(localStorage.getItem(localKey) || '[]');
+        localStorage.setItem(localKey, JSON.stringify([{
+          id: crypto.randomUUID(),
+          title: incidentTitle,
+          description: incidentDescription,
+          neighborhood: user?.user_metadata?.neighborhood || 'GENERAL',
+          image_url: imageUrl,
+          status: 'open',
+          created_at: new Date().toISOString()
+        }, ...currentData]));
+
+        alert(`⚠️ MODO LOCAL: No se guardó en la nube. Error de Supabase: "${dbError.message}". Revisa el SQL Editor.`);
       } else {
-        alert('❌ Error al guardar la incidencia.');
+        await addPoints(25, 10);
+        alert('✅ ¡Incidencia reportada con éxito en la nube!');
       }
+
+      setShowIncidentModal(false);
+      setIncidentTitle('');
+      setIncidentDescription('');
+      setIncidentPhoto(null);
+      setIncidentPhotoPreview('');
+
     } catch (err: any) {
-      console.error(err);
-      alert(`Error inesperado: ${err.message || err}`);
+      alert(`Error inesperado: ${err.message}`);
     } finally {
       setIsSubmitting(false);
       setSubmitStatus('');
