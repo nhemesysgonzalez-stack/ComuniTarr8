@@ -126,19 +126,19 @@ const Announcements: React.FC = () => {
         setLoading(true);
         const weatherAlert: Announcement = {
             id: 'weather-alert',
-            title: "🌬️ MIÉRCOLES: Viento",
-            content: "Hoy miércoles 14 tendremos cielos despejados pero atención al viento de Mistral que soplará con rachas moderadas. Temperaturas agradables (15°C).",
+            title: "🌬️ JUEVES: Sigue el Viento",
+            content: "Este jueves 15 continuamos con rachas de Mistral. Precaución con el mobiliario de terrazas. Cielos despejados y temperaturas frescas (14°C).",
             category: "URGENTE",
             neighborhood: "GENERAL",
             author_name: "Protección Civil",
-            itinerary: "• Viento: Mistral (30-40 km/h)\n• Precaución: Objetos en balcones",
+            itinerary: "• Viento: Mistral (Moderado/Fuerte)\n• Aviso: Hasta las 18:00h",
             created_at: new Date().toISOString()
         };
 
         const tourNotice: Announcement = {
             id: 'tour-france-tarragona',
             title: "🚲 Tarragona: Inicio del Tour 2026",
-            content: "Se confirma que nuestra ciudad acogerá la salida de la 2ª etapa del Tour de France 2026. Un evento mundial que pondrá a Tarragona en el mapa del ciclismo profesional.",
+            content: "Confirmado: Tarragona acogerá la salida de la 2ª etapa del Tour de France 2026. Un hito histórico para el deporte en nuestra ciudad.",
             category: "EVENTO",
             neighborhood: "GENERAL",
             author_name: "Ayuntamiento",
@@ -148,8 +148,8 @@ const Announcements: React.FC = () => {
 
         const rebaixesNotice: Announcement = {
             id: 'rebaixes-gener-active',
-            title: "🛍️ Rebajas: Segunda Semana",
-            content: "Lunes ideal para aprovechar las rebajas sin aglomeraciones. Muchos comercios renuevan sus ofertas hoy. Apoya al comercio local de Tarragona.",
+            title: "🛍️ Rebajas: Jueves de Oportunidades",
+            content: "Ecuador de la segunda semana. Muchos comercios del centro ofrecen descuentos adicionales hoy. ¡Apoya al comercio local!",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
             author_name: "Tarragona Comerç",
@@ -158,8 +158,8 @@ const Announcements: React.FC = () => {
 
         const tresTombsNotice: Announcement = {
             id: 'tres-tombs-final-week',
-            title: "🐎 Tres Tombs: 4 Días",
-            content: "Cuenta atrás: Quedan 4 días. Este domingo 18, Tarragona celebrará Sant Antoni Abat. Los carruajes ya están preparados en el Serrallo para su puesta a punto.",
+            title: "🐎 Tres Tombs: 3 Días",
+            content: "Cuenta atrás: Solo quedan 3 días. Este domingo 18, Tarragona celebrará Sant Antoni Abat. Recordad que habrá cortes de tráfico en Rambla Nova.",
             category: "EVENTO",
             neighborhood: "SERRALLO",
             author_name: "Gremi Mareantes",
@@ -168,8 +168,8 @@ const Announcements: React.FC = () => {
 
         const worksNotice: Announcement = {
             id: 'obras-unio',
-            title: "🚧 OBRAS: Corte en C/ Unió",
-            content: "A partir de hoy, corte parcial de tráfico en el tramo bajo de la calle Unió por reparaciones de alcantarillado. Se recomienda usar vías alternativas.",
+            title: "🚧 OBRAS: C/ Unió (Día 2)",
+            content: "Continúan los trabajos de alcantarillado en la calle Unió. Tráfico lento en la zona. Se recomienda evitar el acceso desde la Rambla.",
             category: "URGENTE",
             neighborhood: "CENTRO",
             author_name: "Ajuntament TGN",
@@ -177,12 +177,12 @@ const Announcements: React.FC = () => {
         };
 
         const cultureNotice: Announcement = {
-            id: 'club-lectura',
-            title: "📚 CULTURA: Club de Lectura",
-            content: "Esta tarde a las 18:30h, sesión abierta del Club de Lectura en la Biblioteca Pública. Se comentará 'La Plaça del Diamant'.",
+            id: 'expo-mnat',
+            title: "🏛️ CULTURA: Nueva Expo MNAT",
+            content: "Hoy se inaugura la exposición temporal sobre el Teatro Romano en el Museu Nacional Arqueològic. Entrada gratuita para residentes esta tarde.",
             category: "EVENTO",
-            neighborhood: "GENERAL",
-            author_name: "Biblioteca Pública",
+            neighborhood: "PART ALTA",
+            author_name: "MNAT",
             created_at: new Date().toISOString()
         };
 

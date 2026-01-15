@@ -253,21 +253,21 @@ export const Header: React.FC = () => {
         >
           <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🌬️ MIÉRCOLES: ATENCIÓN AL VIENTO - RACHAS MODERADAS DE MISTRAL</span>
+          <span className="flex items-center gap-2">🌬️ JUEVES: ATENCIÓN AL VIENTO - RACHAS MODERADAS DE MISTRAL</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🐎 TRES TOMBS: SOLO QUEDAN 4 DÍAS PARA LA FIESTA EN EL SERRALLO</span>
+          <span className="flex items-center gap-2">🐎 TRES TOMBS: SOLO QUEDAN 3 DÍAS PARA LA FIESTA EN EL SERRALLO</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 198 VECINOS HAN VOTADO EN 'BONA GENT'</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🚧 OBRAS: DESVÍOS EN C/ UNIÓ POR REPARACIONES - BUSCAR ALTERNATIVAS</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">📚 CULTURA: CLUB DE LECTURA ESTA TARDE EN BIBLIOTECA PÚBLICA (18:30h)</span>
+          <span className="flex items-center gap-2">🏛️ CULTURA: NUEVA EXPO EN EL MNAT SOBRE EL TEATRO ROMANO - GRATIS HOY</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛍️ REBAIXES: Aprovecha los descuentos de mitad de mes</span>
+          <span className="flex items-center gap-2">🛍️ REBAIXES: Jueves de oportunidades en el comercio local</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🌤️ CLIMA: DÍA SOLEADO PERO VENTOSO</span>
+          <span className="flex items-center gap-2">🌤️ CLIMA: SOLEADO PERO VENTOSO (MISTRAL)</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 198 VECINOS HAN VOTADO EN 'BONA GENT'</span>
         </motion.div>

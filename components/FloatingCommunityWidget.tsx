@@ -11,12 +11,12 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: 'Hoy toca abrigarse del viento, el Mistral sopla fuerte en la Parte Alta.', neighborhood: 'Part Alta' },
-    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Atasco en Rambla Nova por las obras de Unió, buscad ruta alternativa.', neighborhood: 'Eixample' },
-    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: '4 días para Els Tres Tombs. Mañana limpian la plaza para el evento.', neighborhood: 'Serrallo' },
-    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: '¿Quién se viene al Club de Lectura luego? Empieza a las 18:30.', neighborhood: 'General' },
-    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: 'Vigilar con las macetas en los balcones, que hace mucho aire.', neighborhood: 'Llevant' },
-    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: 'Día perfecto para trabajar desde casa viendo como se mueven los árboles 🌬️', neighborhood: 'General' },
+    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¡Qué grandes el Nàstic ayer! A semis sufriendo pero clasificados ❤️🤍', neighborhood: 'Part Alta' },
+    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Ojo en C/ Unió, siguen las vallas de las obras y hay cola.', neighborhood: 'Eixample' },
+    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: '3 días para Els Tres Tombs 🐎. ¿Sabéis si el recorrido es el de siempre?', neighborhood: 'Serrallo' },
+    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'Alguien para ir a la expo del MNAT esta tarde? Es gratis.', neighborhood: 'General' },
+    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: 'El viento no para... se me ha volado medio tenderete 😅', neighborhood: 'Llevant' },
+    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: '¿Habéis visto las ofertas en la tienda de bicis de la Rambla? Brutal.', neighborhood: 'General' },
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

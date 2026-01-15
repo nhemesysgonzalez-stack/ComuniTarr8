@@ -19,3 +19,4 @@ build.log
 *.njsproj
 *.sln
 *.sw?
+.vercel

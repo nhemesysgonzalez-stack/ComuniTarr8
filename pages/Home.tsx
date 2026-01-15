@@ -182,96 +182,73 @@ const Home: React.FC = () => {
 
         const weatherAlert = {
           id: 'weather-alert',
-          title: "🌬️ MIÉRCOLES: Viento Moderado",
-          content: "Hoy miércoles 14 tendremos cielos despejados pero atención al viento de Mistral que soplará con rachas moderadas. Temperaturas agradables (15°C) pero sensación térmica más baja.",
-          category: "URGENTE",
+          title: "🌬️ JUEVES: Alerta Viento",
+          content: "Precaución: El viento de Mistral sopla con fuerza hoy jueves. Rachas de hasta 70km/h en zonas altas. Se recomienda retirar macetas y objetos de balcones.",
+          category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• T. Máxima: 15°C\n• Viento: Mistral (30-40 km/h)\n• Precaución: Objetos en balcones",
+          itinerary: "• Viento: Mistral Fuerte\n• Temp: 14°C\n• Aviso: Hasta noche",
           created_at: new Date().toISOString()
         };
 
-        const tourFranceNotice = {
-          id: 'tour-france-tarragona',
-          title: "🚲 TOUR DE FRANÇA 2026: ¡Sortida des de Tarragona!",
-          content: "Confirmado: Tarragona será la ciudad de salida de la segunda etapa del Tour de France en julio de 2026. Una noticia histórica para el deporte y la promoción internacional de nuestra ciudad.",
-          category: "EVENTO",
+        const nasticNotice = {
+          id: 'nastic-semis-2026',
+          title: "⚽ DEPORTES: ¡El Nàstic a Semifinales!",
+          content: "El Nàstic de Tarragona se clasifica para las semifinales de la Copa Catalunya tras vencer a la Montañesa en una emocionante tanda de penaltis. La afición grana celebra el pase.",
+          category: "DEPORTES",
           neighborhood: "GENERAL",
-          itinerary: "• Jul 2026: Salida desde el Anfiteatro\n• Recorrido por la Costa Daurada\n• Impacto previsto: 15M€\n• Presentación oficial: Mañana en el Ayuntamiento",
           created_at: new Date().toISOString()
         };
 
         const rebaixesNotice = {
           id: 'rebaixes-gener-active',
-          title: "🛍️ REBAIXES: Segunda Semana Activa",
-          content: "Las rebajas de invierno continúan con fuerza. Lunes ideal para aprovechar descuentos sin las aglomeraciones del fin de semana. Muchos comercios renuevan sus ofertas hoy.",
+          title: "🛍️ REBAIXES: Oportunidades de Jueves",
+          content: "Siguen las rebajas. Este jueves es ideal para visitar las tiendas del centro sin aglomeraciones. El comercio local de Tarragona ofrece descuentos de hasta el 50%.",
           category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Lunes: Menos gente, mejor atención\n• Nuevas ofertas: Consulta escaparates\n• Comercio: Apoya al comercio local",
-          created_at: new Date().toISOString()
-        };
-
-        const bonaGentNotice = {
-          id: 'bona-gent-2025',
-          title: "🏆 Votaciones: La Bona Gent 2025",
-          content: "¡Ya puedes votar a la 'Bona Gent de Tarragona 2025'! Participa en la sección de Votaciones para elegir a los vecinos y entidades más destacados del año.",
-          category: "EVENTO",
-          neighborhood: "GENERAL",
+          itinerary: "• Consejo: Visita tiendas locales\n• Horario: Comercial habitual",
           created_at: new Date().toISOString()
         };
 
         const tresTombsNotice = {
-          id: 'tres-tombs-final-week',
-          title: "🐎 CULTURA: 4 Días para 'Els Tres Tombs'",
-          content: "Cuenta atrás: Quedan 4 días. Este domingo 18, Tarragona celebrará Sant Antoni Abat. Los carruajes ya están preparados en el Serrallo para su puesta a punto.",
+          id: 'tres-tombs-countdown',
+          title: "🐎 CULTURA: 3 Días para 'Els Tres Tombs'",
+          content: "¡Cuenta atrás! Solo quedan 3 días. Este domingo 18 de enero, los Tres Tombs llenarán Tarragona de tradición. Los carruajes ultiman detalles en el Serrallo.",
           category: "EVENTO",
           neighborhood: "SERRALLO",
-          itinerary: "• Fecha: Domingo 18 enero\n• Hora: 11:00h - 14:00h\n• Recorrido: Rambla Nova\n• Tradición: Bendición y caramelos",
-          created_at: new Date().toISOString()
+          itinerary: "• Fecha: Domingo 18\n• Hora: 11:00h - 14:00h\n• Recorrido: Rambla Nova",
+          created_at: new Date(Date.now() - 3600000).toISOString()
         };
 
-        const worksNotice = {
-          id: 'obras-unio',
-          title: "🚧 OBRAS: Corte en C/ Unió",
-          content: "A partir de hoy, corte parcial de tráfico en el tramo bajo de la calle Unió por reparaciones de alcantarillado. Se recomienda usar vías alternativas para acceder al mercado.",
+        const ap7Notice = {
+          id: 'ap7-accident',
+          title: "⚠️ TRÁFICO: Retenciones AP-7",
+          content: "Precaución: Retenciones importantes esta mañana en la AP-7 (tramo Mont-roig - Cambrils) por la retirada de un vehículo accidentado. Buscad vías alternativas si viajáis hacia el sur.",
           category: "URGENTE",
-          neighborhood: "CENTRO",
-          itinerary: "• Duración: 3 días\n• Afectación: Carril derecho\n• Buses: Líneas 21 y 22 desviadas",
+          neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
         const cultureNotice = {
-          id: 'club-lectura',
-          title: "📚 CULTURA: Club de Lectura Hoy",
-          content: "Esta tarde a las 18:30h, sesión abierta del Club de Lectura en la Biblioteca Pública. Se comentará 'La Plaça del Diamant'. Entrada libre hasta completar aforo.",
-          category: "EVENTO",
-          neighborhood: "GENERAL",
-          itinerary: "• Hora: 18:30h\n• Lugar: Biblioteca Pública (C/ Fortuny)\n• Libro: La Plaça del Diamant",
+          id: 'expo-transitar',
+          title: "🎨 AGENDA: Nueva Expo 'Transitar'",
+          content: "Hoy a las 12:00h se inaugura la exposición 'Transitar. Orientar-se en un món canviant' en el Refugi 1 del Moll de Costa. Una reflexión visual imperdible.",
+          category: "CULTURA",
+          neighborhood: "PORT",
+          itinerary: "• Hora: 12:00h (Inauguración)\n• Lugar: Moll de Costa, Refugi 1\n• Acceso: Gratuito",
           created_at: new Date().toISOString()
         };
 
-
-        const busNotice = {
-          id: 'emt-renovacio',
-          title: "🚌 EMT: Renovación de Tarjetas",
-          content: "La EMT recuerda a los usuarios de tarjetas bonificadas (Jubilats, Escolars) que el plazo de renovación anual sin cita previa termina este viernes. Acudid a las oficinas de c/ Soler.",
-          category: "URGENTE",
+        const moraNovaNotice = {
+          id: 'mora-nova-ia',
+          title: "🏭 ECONOMÍA: Gigafactoría de IA",
+          content: "Móra la Nova mantiene firme su candidatura para acoger la futura gigafactoría europea de Inteligencia Artificial. Un proyecto clave para el territorio.",
+          category: "ECONOMÍA",
           neighborhood: "GENERAL",
-          itinerary: "• Plazo: Hasta viernes 16\n• Trámite: Presencial\n• Lugar: Oficinas EMT/Soler\n• Horario: 9h - 13:30h",
-          created_at: new Date().toISOString()
-        };
-
-        const schoolNotice = {
-          id: 'preinscripcio-escoles',
-          title: "🏫 EDUCACIÓN: Preinscripción Abierta",
-          content: "Se abre el periodo de preinscripción para el curso 2026-2027 en escuelas públicas y concertadas de Tarragona. Plazo hasta el 31 de enero. Consulta los centros de tu barrio.",
-          category: "EVENTO",
-          neighborhood: "GENERAL",
-          itinerary: "• Plazo: Hasta 31 de enero\n• Curso: 2026-2027\n• Info: Departament d'Educació\n• Web: educacio.gencat.cat",
           created_at: new Date().toISOString()
         };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([weatherAlert, worksNotice, tresTombsNotice, busNotice, cultureNotice, rebaixesNotice, ...fetchedNews].slice(0, 5));
+        setNews([weatherAlert, nasticNotice, ap7Notice, cultureNotice, tresTombsNotice, moraNovaNotice, rebaixesNotice, ...fetchedNews].slice(0, 6));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase
