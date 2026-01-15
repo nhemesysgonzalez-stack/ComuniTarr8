@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -163,6 +163,8 @@ const Home: React.FC = () => {
   const [helpCategory, setHelpCategory] = useState('');
   const [helpContact, setHelpContact] = useState('');
 
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
   // Fetch real news and recent neighbors from Supabase
   useEffect(() => {
     const fetchData = async () => {
@@ -318,6 +320,7 @@ const Home: React.FC = () => {
 
         if (uploadError) {
           console.error('Error uploading image:', uploadError);
+          alert('Hubo un error al subir la imagen, pero la incidencia se enviará sin ella.');
           // Continue without image or show error? Let's continue for now but log it
         } else {
           const { data: { publicUrl } } = supabase.storage
@@ -594,24 +597,48 @@ const Home: React.FC = () => {
                 <textarea value={incidentDescription} onChange={(e) => setIncidentDescription(e.target.value)} required rows={3} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white resize-none" placeholder="Describe los detalles..." />
 
                 {/* Photo Upload */}
-                <div className="space-y-2">
-                  <label className="block text-xs font-black text-gray-500 dark:text-gray-400 uppercase tracking-widest">📷 Adjuntar Foto (Opcional)</label>
+                <div className="space-y-3">
+                  <label className="block text-xs font-black text-gray-500 dark:text-gray-400 uppercase tracking-widest">📷 FOTO DE LA INCIDENCIA</label>
+
                   <input
+                    ref={fileInputRef}
                     type="file"
                     accept="image/*"
                     onChange={handlePhotoChange}
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-black file:bg-primary file:text-white hover:file:bg-primary-hover file:cursor-pointer"
+                    className="hidden" // Hidden native input
                   />
-                  {incidentPhotoPreview && (
-                    <div className="relative">
-                      <img src={incidentPhotoPreview} alt="Preview" className="w-full h-48 object-cover rounded-2xl border-2 border-gray-200 dark:border-gray-700" />
-                      <button
-                        type="button"
-                        onClick={() => { setIncidentPhoto(null); setIncidentPhotoPreview(''); }}
-                        className="absolute top-2 right-2 size-8 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all shadow-lg"
-                      >
-                        <span className="material-symbols-outlined text-sm">close</span>
-                      </button>
+
+                  {!incidentPhotoPreview ? (
+                    <button
+                      type="button"
+                      onClick={() => fileInputRef.current?.click()}
+                      className="w-full py-4 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-2xl flex flex-col items-center justify-center gap-2 text-gray-400 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all group"
+                    >
+                      <span className="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">add_a_photo</span>
+                      <span className="text-xs font-black uppercase tracking-widest">Toca para adjuntar imagen</span>
+                    </button>
+                  ) : (
+                    <div className="relative rounded-2xl overflow-hidden border-2 border-primary/20 group">
+                      <img src={incidentPhotoPreview} alt="Preview" className="w-full h-48 object-cover" />
+
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                        <button
+                          type="button"
+                          onClick={() => fileInputRef.current?.click()}
+                          className="size-10 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-all"
+                          title="Cambiar foto"
+                        >
+                          <span className="material-symbols-outlined">edit</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => { setIncidentPhoto(null); setIncidentPhotoPreview(''); }}
+                          className="size-10 bg-red-500/80 backdrop-blur-md text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all"
+                          title="Eliminar foto"
+                        >
+                          <span className="material-symbols-outlined">delete</span>
+                        </button>
+                      </div>
                     </div>
                   )}
                 </div>
