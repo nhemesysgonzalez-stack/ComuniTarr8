@@ -333,8 +333,7 @@ const Home: React.FC = () => {
 
       setSubmitStatus('GUARDANDO DATOS...');
 
-      // Direct insert to catch exact error
-      const { error: dbError } = await supabase.from('incidents').insert([{
+      const incidentData = {
         user_id: user?.id,
         title: incidentTitle,
         description: incidentDescription,
@@ -342,20 +341,19 @@ const Home: React.FC = () => {
         neighborhood: user?.user_metadata?.neighborhood || 'GENERAL',
         image_url: imageUrl,
         status: 'open'
-      }]);
+      };
+
+      // 2. Insert to Supabase
+      const { error: dbError } = await supabase.from('incidents').insert([incidentData]);
 
       if (dbError) {
         console.error('Database Error:', dbError);
-        // Fallback to local
+        // Fallback to local WITH the imageUrl if it exists
         const localKey = `local_incidents`;
         const currentData = JSON.parse(localStorage.getItem(localKey) || '[]');
         localStorage.setItem(localKey, JSON.stringify([{
+          ...incidentData,
           id: crypto.randomUUID(),
-          title: incidentTitle,
-          description: incidentDescription,
-          neighborhood: user?.user_metadata?.neighborhood || 'GENERAL',
-          image_url: imageUrl,
-          status: 'open',
           created_at: new Date().toISOString()
         }, ...currentData]));
 
@@ -368,6 +366,7 @@ const Home: React.FC = () => {
       setShowIncidentModal(false);
       setIncidentTitle('');
       setIncidentDescription('');
+      setIncidentContact('');
       setIncidentPhoto(null);
       setIncidentPhotoPreview('');
 
