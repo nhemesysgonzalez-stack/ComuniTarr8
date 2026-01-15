@@ -35,26 +35,32 @@ const Incidents: React.FC = () => {
     const fetchIncidents = async () => {
         setLoading(true);
         try {
-            const barrio = user?.user_metadata?.neighborhood || 'GENERAL';
-
+            // 1. Try fetching with profiles join
             let query = supabase
                 .from('incidents')
-                .select(`
-          *,
-          profiles (
-            full_name,
-            avatar_url
-          )
-        `)
-                // Removing strict filter so users can see all activity for now
-                // .or(`neighborhood.eq.${barrio},neighborhood.eq.GENERAL`)
+                .select(`*, profiles(full_name, avatar_url)`)
                 .order('created_at', { ascending: false });
 
             if (filter !== 'all') {
                 query = query.eq('status', filter);
             }
 
-            const data = await safeSupabaseFetch('incidents', query);
+            let data = await safeSupabaseFetch('incidents', query);
+
+            // 2. If no data or fail, try a flat fetch (without join) to be safe
+            if (!data || data.length === 0) {
+                let simpleQuery = supabase
+                    .from('incidents')
+                    .select('*')
+                    .order('created_at', { ascending: false });
+
+                if (filter !== 'all') simpleQuery = simpleQuery.eq('status', filter);
+
+                const backupData = await safeSupabaseFetch('incidents', simpleQuery);
+                if (backupData && backupData.length > 0) {
+                    data = backupData;
+                }
+            }
 
             if (data) {
                 setIncidents(data);
