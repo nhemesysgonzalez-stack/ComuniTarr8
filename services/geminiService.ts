@@ -12,9 +12,9 @@ export const getAssistantResponse = async (prompt: string): Promise<{ text: stri
   const ATTEMPTS = [
     { model: "gemini-1.5-flash", api: "v1beta" },
     { model: "gemini-1.5-flash", api: "v1" },
-    { model: "gemini-2.0-flash-exp", api: "v1beta" },
     { model: "gemini-1.5-pro", api: "v1beta" },
-    { model: "gemini-1.0-pro", api: "v1" }
+    { model: "gemini-1.0-pro", api: "v1beta" },
+    { model: "gemini-2.0-flash-exp", api: "v1beta" }
   ];
 
   let lastDetailedError = "";
@@ -52,7 +52,7 @@ export const getAssistantResponse = async (prompt: string): Promise<{ text: stri
   }
 
   return {
-    text: `❌ SISTEMA BLOQUEADO (v1.1): Ningún modelo de Google ha respondido. \n\nÚltimo error: ${lastDetailedError}\n\n💡 RECOMENDACIÓN: Si ves este mensaje v1.1, significa que Google ha bloqueado TODOS los modelos para tu clave. Crea una clave nueva en AI Studio ahora mismo para saltarte el bloqueo.`
+    text: `❌ ERROR CRÍTICO (v1.2): Ningún modelo de Google ha respondido con tu clave nueva. \n\nÚltimo error: ${lastDetailedError}\n\n💡 RECAPITULACIÓN: Si ves este mensaje v1.2, tu navegador ya está actualizado. Si sigue fallando, es OBLIGATORIO completar el 'Paso 2 de 2' de verificación de pago en Google AI Studio (aunque sea gratis) para que te activen la cuota.`
   };
 };
 
