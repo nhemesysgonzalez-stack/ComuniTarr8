@@ -212,6 +212,30 @@ const Challenges: React.FC = () => {
               </div>
 
               <form onSubmit={handleChallengeSubmit} className="space-y-4">
+                <div className="p-4 bg-emerald-50 dark:bg-emerald-900/10 rounded-3xl mb-4 text-center">
+                  <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {[
+                      { t: 'Recogida de Ropa', d: 'Recogida de mantas y abrigos para el refugio local. Punto de entrega: Local Social.', c: '611888222' },
+                      { t: 'Limpieza de Playa', d: 'Quedada el domingo a las 10:00 para recoger plásticos en la playa del Miracle.', c: '633444555' },
+                      { t: 'Banco de Alimentos', d: 'Buscamos donaciones de arroz, pasta y legumbres para familias necesitadas del barrio.', c: '655666777' }
+                    ].map((idea, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => {
+                          setChallengeTitle(idea.t);
+                          setChallengeDescription(idea.d);
+                          setChallengeContact(idea.c);
+                        }}
+                        className="px-3 py-1.5 bg-white dark:bg-gray-800 border border-emerald-200 dark:border-emerald-700 rounded-xl text-[9px] font-black uppercase text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all shadow-sm"
+                      >
+                        + {idea.t}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
                 <div>
                   <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Título del Reto</label>
                   <input

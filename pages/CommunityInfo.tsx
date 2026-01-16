@@ -29,7 +29,7 @@ const CommunityInfo: React.FC = () => {
                 { title: 'Mercado Local', desc: 'Apoya a los comercios de tu barrio y encuentra gangas cerca de ti.', icon: 'storefront' },
                 { title: 'Ayuda Mutua', desc: 'Ofrece tus habilidades o pide ayuda para tareas puntuales. Solidaridad.', icon: 'handshake' },
                 { title: 'Mapa Interactivo', desc: 'Explora recursos, comercios e incidencias en el mapa real de Tarragona.', icon: 'explore' },
-                { title: 'Asistente IA', desc: 'Nuestro asistente digital para resolver cualquier duda sobre la ciudad.', icon: 'smart_toy' },
+                { title: 'Asistente IA', desc: 'Nuestro asistente digital para resolver cualquier duda sobre la ciudad.', icon: 'handshake' },
                 { title: 'Calendario', desc: 'No te pierdas ningún evento, fiesta o curso en tu barrio.', icon: 'calendar_month' }
             ],
 

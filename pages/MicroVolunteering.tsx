@@ -214,6 +214,30 @@ const MicroVolunteering: React.FC = () => {
                             </div>
 
                             <form onSubmit={handleOpportunitySubmit} className="space-y-4">
+                                <div className="p-4 bg-blue-50 dark:bg-blue-900/10 rounded-3xl mb-4">
+                                    <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
+                                    <div className="flex flex-wrap gap-2 justify-center">
+                                        {[
+                                            { t: 'Pasear perro', d: 'Necesito que alguien pasee a mi perro mañana por la mañana (20 min).', c: '600000000' },
+                                            { t: 'Ayuda con la compra', d: 'Ayudar a subir las bolsas de la compra hasta el 3er piso.', c: '611000222' },
+                                            { t: 'Clases de Móvil', d: 'Explicar a una persona mayor cómo usar WhatsApp.', c: '622333444' }
+                                        ].map((idea, i) => (
+                                            <button
+                                                key={i}
+                                                type="button"
+                                                onClick={() => {
+                                                    setOpportunityTitle(idea.t);
+                                                    setOpportunityDescription(idea.d);
+                                                    setOpportunityContact(idea.c);
+                                                }}
+                                                className="px-3 py-1.5 bg-white dark:bg-gray-800 border border-blue-200 dark:border-blue-700 rounded-xl text-[9px] font-black uppercase text-blue-500 hover:bg-blue-500 hover:text-white transition-all shadow-sm"
+                                            >
+                                                + {idea.t}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
                                 <div>
                                     <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">¿Qué necesitas?</label>
                                     <input

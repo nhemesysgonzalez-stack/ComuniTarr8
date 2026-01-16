@@ -88,7 +88,7 @@ export const Header: React.FC = () => {
     { to: '/patrols', label: t('patrols'), icon: 'shield' },
     { to: '/polls', label: t('polls'), icon: 'how_to_vote' },
     { to: '/emergency', label: t('emergency'), icon: 'emergency' },
-    { to: '/assistant', label: t('assistant'), icon: 'smart_toy' }
+    { to: '/assistant', label: t('assistant'), icon: 'handshake' }
   ];
 
   return (
@@ -312,9 +312,9 @@ export const Header: React.FC = () => {
                     <span className="material-symbols-outlined text-3xl font-black">emergency</span>
                     <span className="text-[9px] font-black uppercase tracking-widest text-center">EMERGENCIAS (SOS)</span>
                   </Link>
-                  <Link to="/assistant" onClick={() => setIsMenuOpen(false)} className="flex flex-col items-center justify-center p-6 rounded-[32px] bg-primary text-white shadow-lg shadow-primary/20 gap-3">
-                    <span className="material-symbols-outlined text-3xl font-black">smart_toy</span>
-                    <span className="text-[9px] font-black uppercase tracking-widest text-center">ASISTENTE IA</span>
+                  <Link to="/assistant" onClick={() => setIsMenuOpen(false)} className="flex flex-col items-center justify-center p-6 rounded-[32px] bg-emerald-600 text-white shadow-lg shadow-emerald-600/20 gap-3">
+                    <span className="material-symbols-outlined text-3xl font-black">handshake</span>
+                    <span className="text-[9px] font-black uppercase tracking-widest text-center">MEDIADOR VECINAL</span>
                   </Link>
                 </div>
               </div>

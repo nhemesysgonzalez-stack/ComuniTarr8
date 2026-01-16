@@ -21,61 +21,54 @@ const mockMessages: Message[] = [
 
 export const FloatingCommunityWidget: React.FC = () => {
     const [messages, setMessages] = useState<Message[]>([]);
-    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        // Simulate incoming messages every 15-30 seconds
-        const interval = setInterval(() => {
+        const cycleMessages = () => {
+            // Pick a message
             const randomMsg = mockMessages[Math.floor(Math.random() * mockMessages.length)];
             const newMsg = { ...randomMsg, id: Date.now() };
 
-            setMessages(prev => [newMsg, ...prev].slice(0, 3));
+            setMessages([newMsg]);
 
-            // Auto-open briefly if closed? No, maybe just a notification dot
-        }, 15000);
+            // Hide after 10 seconds
+            setTimeout(() => {
+                setMessages([]);
+            }, 10000);
+        };
 
-        // Initial message
-        setMessages([{ ...mockMessages[0], id: Date.now() }]);
+        // Initial run
+        cycleMessages();
+
+        // Repeat every 90 seconds (1.5 minutes)
+        const interval = setInterval(cycleMessages, 90000);
 
         return () => clearInterval(interval);
     }, []);
 
     return (
-        <div className="hidden lg:flex fixed bottom-10 left-[420px] z-[60] flex-col items-start gap-3 pointer-events-none">
+        <div className="fixed bottom-24 md:bottom-10 left-4 md:left-[420px] z-[60] flex flex-col items-start gap-3 pointer-events-none">
             <AnimatePresence>
                 {messages.map((msg, idx) => (
                     <motion.div
                         key={msg.id}
                         initial={{ opacity: 0, x: -50, scale: 0.8 }}
                         animate={{ opacity: 1, x: 0, scale: 1 }}
-                        exit={{ opacity: 0, x: -50, scale: 0.8 }}
-                        transition={{ delay: idx * 0.1 }}
-                        className="pointer-events-auto bg-white/90 dark:bg-surface-dark/90 backdrop-blur-xl p-3 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 max-w-[240px] flex gap-3 items-start"
+                        exit={{ opacity: 0, x: -50, scale: 0.8, transition: { duration: 1 } }}
+                        className="pointer-events-auto bg-white/95 dark:bg-surface-dark/95 backdrop-blur-xl p-3 rounded-2xl shadow-2xl border border-emerald-500/20 max-w-[220px] md:max-w-[240px] flex gap-3 items-start"
                     >
-                        <img src={msg.avatar} className="size-8 rounded-full border border-primary/20" alt="" />
+                        <img src={msg.avatar} className="size-8 rounded-full border border-emerald-500/20" alt="" />
                         <div className="flex-1 min-w-0">
                             <div className="flex justify-between items-center mb-0.5">
                                 <span className="text-[10px] font-black dark:text-white truncate">{msg.user}</span>
-                                <span className="text-[8px] font-bold text-primary uppercase ml-2">{msg.neighborhood}</span>
+                                <span className="text-[8px] font-bold text-emerald-500 uppercase ml-2">{msg.neighborhood}</span>
                             </div>
-                            <p className="text-[10px] text-gray-600 dark:text-gray-400 font-medium leading-snug line-clamp-2">
+                            <p className="text-[10px] text-gray-600 dark:text-gray-400 font-medium leading-snug line-clamp-3">
                                 {msg.text}
                             </p>
                         </div>
                     </motion.div>
-                )).reverse()}
+                ))}
             </AnimatePresence>
-
-            <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setIsOpen(!isOpen)}
-                className="pointer-events-auto size-14 rounded-full bg-primary text-white shadow-2xl flex items-center justify-center relative overflow-hidden group border-4 border-white dark:border-gray-900"
-            >
-                <span className="material-symbols-outlined text-2xl group-hover:rotate-12 transition-transform">forum</span>
-                <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-                <span className="absolute -top-1 -right-1 size-4 bg-green-500 border-2 border-white dark:border-gray-900 rounded-full animate-pulse"></span>
-            </motion.button>
         </div>
     );
 };

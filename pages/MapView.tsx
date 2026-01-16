@@ -8,10 +8,12 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    // Datos iniciales de DEMO que sí sean realistas para Tarragona (coordenadas relativas aproximadas para demostración visual)
-    { id: 1, type: 'incident', x: '42%', y: '48%', title: 'Obras Rambla Nova', desc: 'Reparación de pavimento frente al teatro.', status: 'En obras', color: 'bg-orange-500', icon: 'construction' },
-    { id: 2, type: 'event', x: '55%', y: '35%', title: 'Mercat Central', desc: 'Feria de productos locales este fin de semana.', status: 'Abierto', color: 'bg-primary', icon: 'storefront' },
-    { id: 3, type: 'cleanup', x: '35%', y: '60%', title: 'Recogida Playa Miracle', desc: 'Voluntarios reunidos en el punto de cruz roja.', status: 'Activo', color: 'bg-emerald-500', icon: 'volunteer_activism' }
+    { id: 1, type: 'incident', x: '42%', y: '38%', title: 'Obras Rambla Nova', desc: 'Reparación de pavimento frente al teatro.', status: 'En obras', color: 'bg-orange-500', icon: 'construction', glow: 'shadow-[0_0_30px_rgba(249,115,22,0.6)]' },
+    { id: 2, type: 'event', x: '55%', y: '25%', title: 'Mercat Central', desc: 'Feria de productos locales este fin de semana.', status: 'Abierto', color: 'bg-primary', icon: 'storefront', glow: 'shadow-[0_0_40px_rgba(43,140,238,0.7)]' },
+    { id: 3, type: 'cleanup', x: '35%', y: '50%', title: 'Recogida Playa Miracle', desc: 'Voluntarios reunidos en el punto de cruz roja.', status: 'Activo', color: 'bg-emerald-500', icon: 'volunteer_activism', glow: 'shadow-[0_0_35px_rgba(16,185,129,0.6)]' },
+    { id: 4, type: 'event', x: '62%', y: '45%', title: 'Concierto Philip Glass', desc: 'Teatre Tarragona, últimas entradas disponibles.', status: 'Esta noche', color: 'bg-indigo-500', icon: 'music_note', glow: 'shadow-[0_0_30px_rgba(99,102,241,0.6)]' },
+    { id: 5, type: 'incident', x: '48%', y: '55%', title: 'Patrulla Vecinal', desc: 'Ronda de seguridad activa en el centro.', status: 'En curso', color: 'bg-blue-600', icon: 'shield', glow: 'shadow-[0_0_20px_rgba(37,99,235,0.4)]' },
+    { id: 6, type: 'cleanup', x: '25%', y: '30%', title: 'Taller San Salvador', desc: 'Taller de reciclaje creativo para niños.', status: 'Mañana', color: 'bg-emerald-500', icon: 'recycling' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);
@@ -105,7 +107,7 @@ const MapView: React.FC = () => {
             whileHover={{ scale: 1.2 }}
             onClick={() => setSelectedPin(pin)}
             key={pin.id}
-            className={`absolute size-14 md:size-16 rounded-3xl ${pin.color} text-white flex items-center justify-center shadow-2xl border-4 border-white dark:border-gray-800 cursor-pointer z-10`}
+            className={`absolute size-14 md:size-16 rounded-3xl ${pin.color} ${pin.glow || ''} text-white flex items-center justify-center shadow-2xl border-4 border-white dark:border-gray-800 cursor-pointer z-10`}
             style={{ left: pin.x, top: pin.y }}
           >
             <span className="material-symbols-outlined text-2xl font-black">{pin.icon}</span>

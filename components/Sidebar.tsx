@@ -114,7 +114,7 @@ const Sidebar: React.FC = () => {
             <NavItem to="/patrols" label={t('patrols')} icon="shield" color="red" hasActivity={true} />
             <NavItem to="/polls" label={t('polls')} icon="how_to_vote" color="primary" hasActivity={true} />
             <NavItem to="/emergency" label={t('emergency')} icon="emergency" color="red" />
-            <NavItem to="/assistant" label={t('assistant')} icon="smart_toy" color="indigo" />
+            <NavItem to="/assistant" label={t('assistant')} icon="handshake" color="emerald" />
           </div>
         </div>
 

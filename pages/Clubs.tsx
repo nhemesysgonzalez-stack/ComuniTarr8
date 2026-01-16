@@ -207,6 +207,30 @@ const Clubs: React.FC = () => {
                             </div>
 
                             <form onSubmit={handleClubSubmit} className="space-y-4">
+                                <div className="p-4 bg-pink-50 dark:bg-pink-900/10 rounded-3xl mb-4">
+                                    <p className="text-[10px] font-black text-pink-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
+                                    <div className="flex flex-wrap gap-2 justify-center">
+                                        {[
+                                            { t: 'Pádel Vecinal', d: 'Buscamos gente para jugar partidos los jueves por la tarde en las pistas del barrio.', c: '611222333' },
+                                            { t: 'Club de Lectura', d: 'Nos reunimos una vez al mes para comentar un libro y tomar café.', c: '644555666' },
+                                            { t: 'Juegos de Mesa', d: 'Quedadas los viernes noche para jugar a Catán, Dixit y más.', c: '677888999' }
+                                        ].map((idea, i) => (
+                                            <button
+                                                key={i}
+                                                type="button"
+                                                onClick={() => {
+                                                    setClubName(idea.t);
+                                                    setClubDescription(idea.d);
+                                                    setClubContact(idea.c);
+                                                }}
+                                                className="px-3 py-1.5 bg-white dark:bg-gray-800 border border-pink-200 dark:border-pink-700 rounded-xl text-[9px] font-black uppercase text-pink-500 hover:bg-pink-500 hover:text-white transition-all shadow-sm"
+                                            >
+                                                + {idea.t}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
                                 <div>
                                     <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Nombre del Club</label>
                                     <input

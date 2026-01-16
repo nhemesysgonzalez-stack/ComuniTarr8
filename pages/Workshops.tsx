@@ -180,6 +180,32 @@ const Workshops: React.FC = () => {
                             </div>
 
                             <form onSubmit={handleSubmit} className="space-y-4">
+                                <div className="p-4 bg-emerald-50 dark:bg-emerald-900/10 rounded-3xl mb-4 text-center">
+                                    <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
+                                    <div className="flex flex-wrap gap-2 justify-center">
+                                        {[
+                                            { t: 'Huerto Urbano', i: 'Pedro S.', d: 'Sábado 11:00 AM', desc: 'Aprende a cultivar tus propios tomates y lechugas en el balcón.', c: '688000111' },
+                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Lunes 18:30 PM', desc: 'Sácale provecho a tu móvil: fotos, seguridad y apps útiles.', c: '699222333' },
+                                            { t: 'Costura Básica', i: 'Julia L.', d: 'Miércoles 17:00 PM', desc: 'Aprende a coser botones, bajos y arreglos sencillos.', c: '611444555' }
+                                        ].map((idea, i) => (
+                                            <button
+                                                key={i}
+                                                type="button"
+                                                onClick={() => {
+                                                    setTitle(idea.t);
+                                                    setInstructor(idea.i);
+                                                    setDate(idea.d);
+                                                    setDescription(idea.desc);
+                                                    setContact(idea.c);
+                                                }}
+                                                className="px-3 py-1.5 bg-white dark:bg-gray-800 border border-emerald-200 dark:border-emerald-700 rounded-xl text-[9px] font-black uppercase text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all shadow-sm"
+                                            >
+                                                + {idea.t}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
                                 <div className="grid grid-cols-2 gap-4">
                                     <div>
                                         <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Título</label>
