@@ -12,7 +12,7 @@ const Assistant: React.FC = () => {
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [messages, setMessages] = useState<ChatMessage[]>([
-        { id: '1', text: '¡Hola! Soy tu Asistente Vecinal IA. 🤖\nPuedo ayudarte con información sobre horarios de basura, teléfonos de emergencia, o normas de la comunidad. ¿En qué te ayudo hoy?', isUser: false, time: 'Ahora' }
+        { id: '1', text: '¡Hola! Soy tu Mediador Vecinal. 🤝\nEstoy aquí para ayudarte con dudas sobre convivencia, servicios del barrio o lo que está pasando hoy en Tarragona. ¿Cómo puedo ayudarte?', isUser: false, time: 'Ahora' }
     ]);
     const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -68,17 +68,17 @@ const Assistant: React.FC = () => {
                 {messages.map(msg => (
                     <div key={msg.id} className={`flex ${msg.isUser ? 'justify-end' : 'justify-start'}`}>
                         <div className={`flex gap-3 max-w-[85%] md:max-w-[70%] ${msg.isUser ? 'flex-row-reverse' : 'flex-row'}`}>
-                            <div className={`size-10 rounded-full shrink-0 flex items-center justify-center ${msg.isUser ? 'bg-gray-200' : 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30'}`}>
+                            <div className={`size-10 rounded-full shrink-0 flex items-center justify-center ${msg.isUser ? 'bg-gray-200' : 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/30'}`}>
                                 {msg.isUser ? (
                                     <span className="material-symbols-outlined text-gray-500">person</span>
                                 ) : (
-                                    <span className="material-symbols-outlined text-xl">smart_toy</span>
+                                    <span className="material-symbols-outlined text-xl">handshake</span>
                                 )}
                             </div>
                             <div className={`flex flex-col ${msg.isUser ? 'items-end' : 'items-start'}`}>
                                 <div className={`p-4 rounded-2xl text-sm md:text-base whitespace-pre-line leading-relaxed shadow-sm ${msg.isUser
                                     ? 'bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-tr-none'
-                                    : 'bg-indigo-600 text-white rounded-tl-none shadow-indigo-500/10'
+                                    : 'bg-emerald-600 text-white rounded-tl-none shadow-emerald-500/10'
                                     }`}>
                                     {msg.text}
                                 </div>
@@ -101,7 +101,7 @@ const Assistant: React.FC = () => {
                     <button
                         onClick={handleSend}
                         disabled={isLoading}
-                        className={`p-3 text-white rounded-xl transition shadow-lg shadow-indigo-600/20 ${isLoading ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700'}`}
+                        className={`p-3 text-white rounded-xl transition shadow-lg shadow-emerald-600/20 ${isLoading ? 'bg-gray-400 cursor-not-allowed' : 'bg-emerald-600 hover:bg-emerald-700'}`}
                     >
                         <span className="material-symbols-outlined block">{isLoading ? 'hourglass_empty' : 'send'}</span>
                     </button>
