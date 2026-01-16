@@ -63,36 +63,38 @@ const Assistant: React.FC = () => {
     };
 
     return (
-        <div className="flex flex-col h-[calc(100vh-65px)] bg-gray-50 dark:bg-background-dark">
-            <div className="flex-1 overflow-y-auto p-4 md:p-8 space-y-6" ref={scrollRef}>
-                {messages.map(msg => (
-                    <div key={msg.id} className={`flex ${msg.isUser ? 'justify-end' : 'justify-start'}`}>
-                        <div className={`flex gap-3 max-w-[85%] md:max-w-[70%] ${msg.isUser ? 'flex-row-reverse' : 'flex-row'}`}>
-                            <div className={`size-10 rounded-full shrink-0 flex items-center justify-center ${msg.isUser ? 'bg-gray-200' : 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/30'}`}>
-                                {msg.isUser ? (
-                                    <span className="material-symbols-outlined text-gray-500">person</span>
-                                ) : (
-                                    <span className="material-symbols-outlined text-xl">handshake</span>
-                                )}
-                            </div>
-                            <div className={`flex flex-col ${msg.isUser ? 'items-end' : 'items-start'}`}>
-                                <div className={`p-4 rounded-2xl text-sm md:text-base whitespace-pre-line leading-relaxed shadow-sm ${msg.isUser
-                                    ? 'bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-tr-none'
-                                    : 'bg-emerald-600 text-white rounded-tl-none shadow-emerald-500/10'
-                                    }`}>
-                                    {msg.text}
+        <div className="flex flex-col h-[calc(100vh-65px)] bg-gray-50 dark:bg-background-dark overflow-hidden">
+            <div className="flex-1 overflow-y-auto" ref={scrollRef}>
+                <div className="max-w-3xl mx-auto w-full p-4 md:p-8 space-y-6">
+                    {messages.map(msg => (
+                        <div key={msg.id} className={`flex ${msg.isUser ? 'justify-end' : 'justify-start'}`}>
+                            <div className={`flex gap-3 max-w-[90%] md:max-w-[85%] ${msg.isUser ? 'flex-row-reverse' : 'flex-row'}`}>
+                                <div className={`size-10 rounded-full shrink-0 flex items-center justify-center ${msg.isUser ? 'bg-gray-200' : 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/30'}`}>
+                                    {msg.isUser ? (
+                                        <span className="material-symbols-outlined text-gray-500">person</span>
+                                    ) : (
+                                        <span className="material-symbols-outlined text-xl">handshake</span>
+                                    )}
                                 </div>
-                                <span className="text-[10px] text-gray-400 mt-1 px-1">{msg.time}</span>
+                                <div className={`flex flex-col ${msg.isUser ? 'items-end' : 'items-start'}`}>
+                                    <div className={`p-4 rounded-2xl text-sm md:text-base whitespace-pre-line leading-relaxed shadow-sm ${msg.isUser
+                                        ? 'bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-tr-none'
+                                        : 'bg-emerald-600 text-white rounded-tl-none shadow-emerald-500/10'
+                                        }`}>
+                                        {msg.text}
+                                    </div>
+                                    <span className="text-[10px] text-gray-400 mt-1 px-1">{msg.time}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
 
             <div className="p-4 bg-white dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800">
-                <div className="max-w-4xl mx-auto flex items-center gap-2 bg-gray-100 dark:bg-gray-800 rounded-2xl p-2 pr-2">
+                <div className="max-w-3xl mx-auto w-full flex items-center gap-2 bg-gray-100 dark:bg-gray-800 rounded-2xl p-2 pr-2">
                     <input
-                        className="flex-1 bg-transparent border-none focus:ring-0 px-4 py-3 text-sm md:text-base dark:text-white"
+                        className="flex-1 bg-transparent border-none focus:ring-0 px-4 py-3 text-sm md:text-base dark:text-white outline-none"
                         placeholder="Pregúntame algo sobre el barrio..."
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
