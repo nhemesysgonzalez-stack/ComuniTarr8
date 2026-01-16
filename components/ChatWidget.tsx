@@ -10,7 +10,7 @@ export const ChatWidget: React.FC = () => {
     {
       id: '1',
       sender: 'assistant',
-      text: '¡Hola! Soy tu asistente de ComuniTarr. ¿En qué puedo ayudarte hoy? Puedo buscar eventos recientes, lugares cercanos o responder dudas sobre el barrio.',
+      text: '¡Hola! Soy tu Mediador Vecinal. 🤝\nTe ayudo con la convivencia, trámites y lo que pasa hoy en el barrio. ¿En qué puedo orientarte?',
       timestamp: new Date()
     }
   ]);
@@ -74,13 +74,13 @@ export const ChatWidget: React.FC = () => {
   };
 
   return (
-    <div className="hidden lg:flex fixed bottom-6 left-[120px] z-50 flex-col items-start">
+    <div className="hidden lg:flex fixed bottom-6 left-[100px] z-50 flex-col items-start translate-x-1">
       {isOpen && (
-        <div className="mb-4 w-80 md:w-96 h-[500px] bg-white dark:bg-surface-dark rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 flex flex-col overflow-hidden animate-in slide-in-from-left-5">
-          <header className="bg-primary p-4 text-white flex justify-between items-center shrink-0">
+        <div className="mb-4 w-72 h-[500px] bg-white dark:bg-surface-dark rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 flex flex-col overflow-hidden animate-in slide-in-from-left-5">
+          <header className="bg-emerald-600 p-4 text-white flex justify-between items-center shrink-0">
             <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined">smart_toy</span>
-              <span className="font-bold">Asistente AI</span>
+              <span className="material-symbols-outlined">handshake</span>
+              <span className="font-black text-xs uppercase tracking-widest">Mediador Vecinal</span>
             </div>
             <button onClick={() => setIsOpen(false)} className="hover:bg-white/20 p-1 rounded transition">
               <span className="material-symbols-outlined">close</span>
@@ -90,11 +90,11 @@ export const ChatWidget: React.FC = () => {
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.map(msg => (
               <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] p-3 rounded-2xl ${msg.sender === 'user'
-                  ? 'bg-primary text-white rounded-br-none'
+                <div className={`max-w-[90%] p-3 rounded-2xl text-xs font-medium leading-relaxed ${msg.sender === 'user'
+                  ? 'bg-emerald-600 text-white rounded-br-none'
                   : 'bg-gray-100 dark:bg-gray-800 text-text-main dark:text-gray-200 rounded-bl-none'
                   }`}>
-                  <p className="text-sm whitespace-pre-wrap">{msg.text}</p>
+                  <p className="whitespace-pre-wrap">{msg.text}</p>
                   <p className="text-[10px] mt-1 opacity-60 text-right">
                     {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </p>
@@ -128,7 +128,7 @@ export const ChatWidget: React.FC = () => {
               <button
                 onClick={handleSend}
                 disabled={isLoading}
-                className="bg-primary text-white p-2 rounded-xl hover:bg-primary-hover transition disabled:opacity-50"
+                className="bg-emerald-600 text-white p-2 rounded-xl hover:bg-emerald-700 transition disabled:opacity-50"
               >
                 <span className="material-symbols-outlined">send</span>
               </button>
@@ -139,11 +139,11 @@ export const ChatWidget: React.FC = () => {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`size-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-gray-200 dark:bg-gray-700 text-text-main dark:text-white rotate-90' : 'bg-primary text-white hover:scale-110'
+        className={`size-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-gray-200 dark:bg-gray-700 text-text-main dark:text-white rotate-90' : 'bg-emerald-600 text-white hover:scale-110'
           }`}
       >
         <span className="material-symbols-outlined text-3xl">
-          {isOpen ? 'close' : 'chat_bubble'}
+          {isOpen ? 'close' : 'handshake'}
         </span>
       </button>
     </div>
