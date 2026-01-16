@@ -40,9 +40,9 @@ const getSimulatedResponse = (prompt: string): string => {
     return "Gestión de residuos en TGN ♻️:\n\n• Recogida de voluminosos (muebles/trastos): Gratuita llamando al 977 296 222.\n• Deixalleria Móvil: Consulta los horarios en tu barrio. Si vas a la fija (Polígono Entrevies), puedes obtener bonificaciones en la tasa de la basura.\n• Horario orgánica: Obligatorio de 20h a 22h.";
   }
 
-  // 7. Noticias y Eventos de Hoy (VIERNES 16 ENERO 2026)
+  // 7. Noticias y Eventos de Hoy (VIERNES 16 ENERO 2026 - Tarde/Noche)
   if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("lluvia") || p.includes("tiempo")) {
-    return "Resumen para hoy Viernes 16 de enero 📍:\n\n• 🌧️ CLIMA: Alerta Amarilla por lluvias a partir de la tarde. ¡Cierra las ventanas!\n• 🎻 CULTURA: Philip Glass actúa en el Teatre Tarragona a las 20:30h.\n• 🐎 TRES TOMBS: Faltan 2 días para el domingo. Los caballos ya están listos.\n• ⚽ DEPORTES: El Nàstic sigue celebrando su pase a semis del pasado miércoles.\n• 🍯 GASTRONOMÍA: Una miel de Tarragona ha sido premiada como la mejor del mundo.";
+    return "Resumen de esta TARDE/NOCHE, Viernes 16 de enero 📍:\n\n• 🌧️ CLIMA: Comienza a llover en Tarragona. Precaución en los desplazamientos por calzada mojada.\n• 🎻 CULTURA: ¡Entradas agotadas para Philip Glass! El concierto empieza a las 20:30h en el Teatre Tarragona.\n• 🐎 TRES TOMBS: Faltan 2 días. El vallado en la Rambla Nova ya está instalado.\n• 🏁 CONVIVENCIA: Los jugadores del Nàstic han visitado el barrio esta tarde con gran éxito.\n• 🚧 OBRAS: Finalizan los trabajos del día en C/ Unió, aunque el tráfico sigue restringido.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)

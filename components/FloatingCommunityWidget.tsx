@@ -11,12 +11,12 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¡Qué grandes el Nàstic el miércoles! A semis sufriendo pero clasificados ❤️🤍', neighborhood: 'Part Alta' },
-    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Ojo con la lluvia, están empezando a caer las primeras gotas en el centro.', neighborhood: 'Eixample' },
-    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: 'Solo 2 días para Els Tres Tombs 🐎. Ya están los carruajes listos!', neighborhood: 'Serrallo' },
-    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'Alguien para ir al concierto de Philip Glass esta noche? 🎻', neighborhood: 'General' },
-    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: 'Dicen que han dado un premio a la miel de aquí. Habrá que probarla!', neighborhood: 'Llevant' },
-    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: '¿Habéis visto las rebajas de moda este viernes? Hay chollos.', neighborhood: 'General' },
+    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¡Vaya chaparrón está cayendo! 🌧️ Guardad los coches si podéis, que va para largo.', neighborhood: 'Part Alta' },
+    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '¿Alguien ya en el Teatre Tarragona? He visto una cola enorme para Philip Glass.', neighborhood: 'Eixample' },
+    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: 'Ya no se puede aparcar en la Rambla por las vallas de los Tres Tombs. Avisados quedáis!', neighborhood: 'Serrallo' },
+    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'Los niños han flipado con la visita de los jugadores del Nàstic esta tarde. ¡Grandes! ⚽', neighborhood: 'Serrallo' },
+    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: 'Mucho ojo al conducir por la T-11, el suelo está muy brillante por la lluvia.', neighborhood: 'Llevant' },
+    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: 'He pillado las últimas ofertas del Mercat para la cena de hoy. ¡Rico rico!', neighborhood: 'General' },
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

@@ -183,73 +183,64 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-alert',
-          title: "🌧️ VIERNES: Alerta Lluvia",
-          content: "Atención: Se esperan lluvias moderadas a partir de la tarde. Riesgo de acumulaciones en el litoral por masa de aire frío. No olvides el paraguas.",
+          id: 'weather-alert-pm',
+          title: "🌧️ TARDE: Comienza a Llover",
+          content: "Atención: La masa de aire frío ya está sobre Tarragona. Se recomienda precaución en los desplazamientos por suelo mojado. Las lluvias persistirán durante toda la noche.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Tarde/Noche: Lluvias\n• Temp: 11°C - 15°C\n• Aviso: Litoral Sur",
+          itinerary: "• Tarde: Lluvia moderada\n• Noche: Lluvias intensas\n• Temp: 12°C\n• Aviso: Suelo resbaladizo",
+          created_at: new Date().toISOString()
+        };
+
+        const cultureNotice = {
+          id: 'philip-glass-tonight',
+          title: "🎻 CULTURA: Últimas horas para Philip Glass",
+          content: "¡Todo listo en el Teatre Tarragona! El concierto de violín comienza a las 20:30h. Quedan menos de 10 entradas en taquilla. No te pierdas este evento internacional.",
+          category: "CULTURA",
+          neighborhood: "CENTRE",
+          itinerary: "• Apertura: 20:00h\n• Inicio: 20:30h\n• Lugar: Teatre Tarragona",
           created_at: new Date().toISOString()
         };
 
         const nasticNotice = {
-          id: 'nastic-semis-2026',
-          title: "⚽ DEPORTES: ¡El Nàstic a Semifinales!",
-          content: "El Nàstic de Tarragona se clasificó el pasado miércoles para las semifinales de la Copa Catalunya tras vencer a la Montañesa. La ciudad sigue celebrando el pase grana.",
+          id: 'nastic-afternoon',
+          title: "⚽ DEPORTES: El Nàstic visita el Barrio",
+          content: "Esta tarde, varios jugadores del primer equipo han estado en el campus municipal con los más jóvenes. Gran ambiente tras la clasificación a semis de Copa Catalunya.",
           category: "DEPORTES",
           neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
-        const cultureNotice = {
-          id: 'philip-glass-concert',
-          title: "🎻 CULTURA: Philip Glass hoy",
-          content: "Esta noche el Teatre Tarragona acoge un concierto único de violín con obras de Philip Glass. Quedan las últimas entradas en taquilla para las 20:30h.",
-          category: "CULTURA",
-          neighborhood: "CENTRE",
-          itinerary: "• Hora: 20:30h\n• Lugar: Teatre Tarragona\n• Tipo: Concierto Violín",
-          created_at: new Date().toISOString()
-        };
-
-        const tresTombsNotice = {
-          id: 'tres-tombs-countdown',
-          title: "🐎 CULTURA: 2 Días para 'Els Tres Tombs'",
-          content: "¡Cuenta atrás! Solo quedan 2 días. Este domingo 18 de enero, los Tres Tombs llenarán Tarragona de tradición. Comienza el montaje de vallas en la Rambla.",
-          category: "EVENTO",
-          neighborhood: "SERRALLO",
-          itinerary: "• Fecha: Domingo 18\n• Hora: 11:00h\n• Estado: Preparativos",
-          created_at: new Date(Date.now() - 3600000).toISOString()
-        };
-
-        const ap7Notice = {
-          id: 'ap7-accident',
-          title: "⚠️ TRÁFICO: Retenciones AP-7",
-          content: "Precaución: Retenciones importantes esta mañana en la AP-7 (tramo Mont-roig - Cambrils) por la retirada de un vehículo accidentado. Buscad vías alternativas si viajáis hacia el sur.",
+        const trafficNotice = {
+          id: 'traffic-pm-update',
+          title: "⚠️ TRÁFICO: Precaución T-11",
+          content: "Tráfico fluido en la T-11 y A-7 a esta hora, pero se pide máxima cautela por la visibilidad reducida debido a la lluvia. Luces encendidas y distancia de seguridad.",
           category: "URGENTE",
           neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
-        const honeyNotice = {
-          id: 'better-honey-award',
-          title: "🍯 TARRAGONA: Mejor Miel del Mundo",
-          content: "¡Orgullo local! Una explotación de Tarragona ha sido premiada por fabricar 'la mejor miel del mundo'. La noticia destaca la calidad del sector primario tarraconense.",
+        const retailNotice = {
+          id: 'mercat-central-friday',
+          title: "🛒 COMERCIO: Viernes en el Mercat",
+          content: "Últimas ofertas de la tarde en el Mercat Central. Vendedores locales destacan la gran calidad del pescado fresco de hoy, ideal para el fin de semana.",
           category: "COMUNIDAD",
           neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
-        const trafficeNotice = {
-          id: 'traffic-a7-scooter',
-          title: "⚠️ SUCESOS: Patinete en la A-7",
-          content: "Precaución: Esta mañana se ha detectado a un hombre circulando en patinete eléctrico por la autovía A-7. Se ruega máxima precaución y respeto a las normas.",
-          category: "URGENTE",
+        const tresTombsNotice = {
+          id: 'tres-tombs-vallas',
+          title: "🐎 CULTURA: Vallado de la Rambla",
+          content: "Comienza la instalación de vallas de seguridad en la Rambla Nova para los Tres Tombs del domingo. Restricción parcial de aparcamiento en zonas señalizadas.",
+          category: "EVENTO",
           neighborhood: "GENERAL",
+          itinerary: "• Estado: Montaje vallas\n• Afectación: Rambla Nova",
           created_at: new Date().toISOString()
         };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([weatherAlert, nasticNotice, cultureNotice, tresTombsNotice, honeyNotice, trafficeNotice, ...fetchedNews].slice(0, 6));
+        setNews([weatherAlert, cultureNotice, nasticNotice, trafficNotice, retailNotice, tresTombsNotice, ...fetchedNews].slice(0, 6));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase

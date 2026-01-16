@@ -251,25 +251,25 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
+          <span className="flex items-center gap-2">🌧️ TARDE: COMIENZA A LLOVER EN TARRAGONA - PRECAUCIÓN AL VOLANTE</span>
+          <span className="opacity-30">•</span>
+          <span className="flex items-center gap-2">🎻 CULTURA: ÚLTIMAS 10 ENTRADAS PARA PHILIP GLASS (20:30H TEATRE TARRAGONA)</span>
+          <span className="opacity-30">•</span>
+          <span className="flex items-center gap-2">🐎 TRES TOMBS: MONTADAS LAS VALLAS DE SEGURIDAD EN LA RAMBLA NOVA</span>
+          <span className="opacity-30">•</span>
+          <span className="flex items-center gap-2">⚽ NASTIC: GRAN JORNADA DE LOS JUGADORES CON LOS NIÑOS DEL BARRIO</span>
+          <span className="opacity-30">•</span>
+          <span className="flex items-center gap-2">🗳️ BONA GENT: 312 VECINOS YA HAN VOTADO - ¡VOTA ANTES DEL LUNES!</span>
+          <span className="opacity-30">•</span>
+          <span className="flex items-center gap-2">🛒 COMERCIO: ÚLTIMAS OFERTAS DE LA SEMANA EN EL MERCAT CENTRAL</span>
+          <span className="opacity-30">•</span>
+          <span className="flex items-center gap-2">🌧️ CLIMA: SE ESPERAN LLUVIAS DURANTE TODA LA NOCHE EN EL LITORAL</span>
+          <span className="opacity-30">•</span>
+          <span className="flex items-center gap-2">🎻 CULTURA: PHILIP GLASS HOY EN EL TEATRE TARRAGONA</span>
+          <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🌧️ VIERNES: PRECAUCIÓN POR LLUVIA - POSIBLES ACUMULACIONES POR LA TARDE</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🐎 TRES TOMBS: SOLO QUEDAN 2 DÍAS PARA LA FIESTA EN EL SERRALLO</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 215 VECINOS HAN VOTADO EN 'BONA GENT'</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎻 CULTURA: CONCIERTO PHILIP GLASS HOY EN EL TEATRE TARRAGONA</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🍯 TARRAGONA: PREMIO A LA MEJOR MIEL DEL MUNDO PARA EL SECTOR LOCAL</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛍️ REBAIXES: Siguen los descuentos del 50% en el comercio del centro</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🌧️ CLIMA: Nublado con lluvias débiles por la tarde</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🗳️ VOTACIÓN ACTIVA: 215 VECINOS HAN VOTADO EN 'BONA GENT'</span>
+          <span className="flex items-center gap-2">🐎 TRES TOMBS: DOMINGO 18 - 11:00H</span>
         </motion.div>
       </div>
 

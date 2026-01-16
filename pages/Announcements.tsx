@@ -125,75 +125,54 @@ const Announcements: React.FC = () => {
     const fetchNotices = async () => {
         setLoading(true);
         const weatherAlert: Announcement = {
-            id: 'weather-alert',
-            title: "🌧️ VIERNES: Llega la Lluvia",
-            content: "Este viernes 16 cambiamos el Mistral por lluvia. Se esperan precipitaciones débiles por la tarde. Temperaturas entre 11°C y 15°C. Precaución en la carretera.",
+            id: 'weather-alert-pm',
+            title: "🌧️ TARDE: Comienza a Llover",
+            content: "Las lluvias ya han llegado a Tarragona. Se recomienda evitar desplazamientos innecesarios y precaución por calzada resbaladiza. Las precipitaciones irán a más durante la madrugada.",
             category: "URGENTE",
             neighborhood: "GENERAL",
             author_name: "Protección Civil",
-            itinerary: "• Clima: Lluvias débil/moderada\n• Aviso: Tarde de viernes",
-            created_at: new Date().toISOString()
-        };
-
-        const tourNotice: Announcement = {
-            id: 'tour-france-tarragona',
-            title: "🚲 Tarragona: Inicio del Tour 2026",
-            content: "Confirmado: Tarragona acogerá la salida de la 2ª etapa del Tour de France 2026. Un hito histórico para el deporte en nuestra ciudad.",
-            category: "EVENTO",
-            neighborhood: "GENERAL",
-            author_name: "Ayuntamiento",
-            itinerary: "• Sede: Salida desde Anfiteatro Romà\n• Fecha: Julio 2026\n• Gran impacto económico previsto",
-            created_at: new Date().toISOString()
-        };
-
-        const honeyNotice: Announcement = {
-            id: 'honey-award-tgn',
-            title: "🍯 Tarragona tiene la Mejor Miel",
-            content: "Una producción local de Tarragona ha sido reconocida como la 'mejor miel del mundo' en un certamen internacional. ¡Enhorabuena a nuestros apicultores!",
-            category: "COMUNIDAD",
-            neighborhood: "GENERAL",
-            author_name: "Economía Local",
-            created_at: new Date().toISOString()
-        };
-
-        const rebaixesNotice: Announcement = {
-            id: 'rebaixes-gener-active',
-            title: "🛍️ Rebajas: Viernes de Moda",
-            content: "Fin de semana de rebajas a la vista. Aprovecha este viernes para las últimas tallas en los comercios de Parque Central y el centro de la ciudad.",
-            category: "COMUNIDAD",
-            neighborhood: "GENERAL",
-            author_name: "Tarragona Comerç",
-            created_at: new Date().toISOString()
-        };
-
-        const tresTombsNotice: Announcement = {
-            id: 'tres-tombs-final-week',
-            title: "🐎 Tres Tombs: 2 Días",
-            content: "Cuenta atrás: Solo quedan 2 días para la gran cabalgata. Este domingo 18, Tarragona celebrará Sant Antoni Abat. Preparativos en marcha.",
-            category: "EVENTO",
-            neighborhood: "SERRALLO",
-            author_name: "Gremi Mareantes",
+            itinerary: "• Clima: Lluvia moderada\n• Aviso: Noche de viernes",
             created_at: new Date().toISOString()
         };
 
         const worksNotice: Announcement = {
-            id: 'obras-unio',
-            title: "🚧 OBRAS: C/ Unió (Día 2)",
-            content: "Continúan los trabajos de alcantarillado en la calle Unió. Tráfico lento en la zona. Se recomienda evitar el acceso desde la Rambla.",
+            id: 'obras-unio-pm',
+            title: "🚧 OBRAS: C/ Unió (Tarde)",
+            content: "Los trabajos de alcantarillado en la calle Unió han finalizado por hoy. La calle sigue cortada al tráfico, pero los equipos de obra se retiran hasta mañana.",
             category: "URGENTE",
             neighborhood: "CENTRO",
             author_name: "Ajuntament TGN",
             created_at: new Date().toISOString()
         };
 
-        const cultureNotice: Announcement = {
-            id: 'philip-glass-concert',
-            title: "🎻 Philip Glass hoy",
-            content: "Últimas entradas para el concierto de Philip Glass esta noche en el Teatre Tarragona. Una velada mágica de violín minimalista en nuestra ciudad.",
+        const tresTombsNotice: Announcement = {
+            id: 'tres-tombs-vallas-pm',
+            title: "🐎 TRES TOMBS: Vallas Listas",
+            content: "Completado el vallado de seguridad en la Rambla Nova y el Serrallo. Rogamos a los vecinos que respeten la señalización de prohibido aparcar para el domingo.",
             category: "EVENTO",
+            neighborhood: "GENERAL",
+            author_name: "Gremi Mareantes",
+            created_at: new Date().toISOString()
+        };
+
+        const cultureNotice: Announcement = {
+            id: 'philip-glass-tonight',
+            title: "🎻 Philip Glass: Entradas Agotadas",
+            content: "Se han vendido las últimas entradas para el concierto de esta noche. El Teatre Tarragona abrirá puertas a las 20:00h para el inicio a las 20:30h.",
+            category: "EXITO",
             neighborhood: "CENTRE",
             author_name: "Tarragona Cultura",
-            itinerary: "• Inicio: 20:30h\n• Lugar: Teatre Tarragona\n• Tipo: Concierto Violín",
+            itinerary: "• Inicio: 20:30h\n• Estado: AFORO COMPLETO",
+            created_at: new Date().toISOString()
+        };
+
+        const rebaixesNotice: Announcement = {
+            id: 'nastic-afternoon-pm',
+            title: "⚽ NASTIC: Visita al Barrio",
+            content: "Gran acogida esta tarde a los jugadores del Nàstic en el barrio. Firmas de autógrafos y fotos con los socios más jóvenes tras el entreno vespertino.",
+            category: "COMUNIDAD",
+            neighborhood: "GENERAL",
+            author_name: "Nàstic de Tarragona",
             created_at: new Date().toISOString()
         };
 
