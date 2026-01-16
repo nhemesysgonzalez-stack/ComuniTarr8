@@ -195,7 +195,7 @@ const Home: React.FC = () => {
         const nasticNotice = {
           id: 'nastic-semis-2026',
           title: "⚽ DEPORTES: ¡El Nàstic a Semifinales!",
-          content: "El Nàstic de Tarragona se clasifica para las semifinales de la Copa Catalunya tras vencer a la Montañesa en una emocionante tanda de penaltis. La afición grana celebra el pase.",
+          content: "El Nàstic de Tarragona se clasificó el pasado miércoles para las semifinales de la Copa Catalunya tras vencer a la Montañesa. La ciudad sigue celebrando el pase grana.",
           category: "DEPORTES",
           neighborhood: "GENERAL",
           created_at: new Date().toISOString()

@@ -52,7 +52,7 @@ export const getAssistantResponse = async (prompt: string): Promise<{ text: stri
   }
 
   return {
-    text: `❌ ERROR CRÍTICO (v1.2): Ningún modelo de Google ha respondido con tu clave nueva. \n\nÚltimo error: ${lastDetailedError}\n\n💡 RECAPITULACIÓN: Si ves este mensaje v1.2, tu navegador ya está actualizado. Si sigue fallando, es OBLIGATORIO completar el 'Paso 2 de 2' de verificación de pago en Google AI Studio (aunque sea gratis) para que te activen la cuota.`
+    text: `❌ SISTEMA BLOQUEADO (v1.3): Google sigue rechazando tu clave. \n\nÚltimo error: ${lastDetailedError}\n\n💡 DIAGNÓSTICO FINAL (v1.3): Si ves esto, tu código es el de HOY VIERNES. El bloqueo es 100% de Google. Debes verificar tu identidad/pago en AI Studio para que te den permiso de uso.`
   };
 };
 

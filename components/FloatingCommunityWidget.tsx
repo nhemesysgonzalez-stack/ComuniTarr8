@@ -11,7 +11,7 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¡Qué grandes el Nàstic ayer! A semis sufriendo pero clasificados ❤️🤍', neighborhood: 'Part Alta' },
+    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¡Qué grandes el Nàstic el miércoles! A semis sufriendo pero clasificados ❤️🤍', neighborhood: 'Part Alta' },
     { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Ojo con la lluvia, están empezando a caer las primeras gotas en el centro.', neighborhood: 'Eixample' },
     { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: 'Solo 2 días para Els Tres Tombs 🐎. Ya están los carruajes listos!', neighborhood: 'Serrallo' },
     { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'Alguien para ir al concierto de Philip Glass esta noche? 🎻', neighborhood: 'General' },
