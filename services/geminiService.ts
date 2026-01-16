@@ -22,36 +22,46 @@ const getSimulatedResponse = (prompt: string): string => {
 
   // 3. Ruidos y Convivencia
   if (p.includes("ruido") || p.includes("fiesta") || p.includes("musica") || p.includes("molestia")) {
-    return "Dada mi función de Mediador Vecinal ⚖️, te sugiero esto para ruidos:\n\n1. Intenta hablar primero con el vecino de forma amistosa; a veces no son conscientes del volumen.\n2. La normativa municipal establece el descanso de 22:00h a 08:00h.\n3. Si la situación es recurrente o grave, puedes reportarlo en la sección de 'Incidencias' de nuestra app para que la comunidad tome nota.";
+    return "Dada mi función de Mediador Vecinal ⚖️, te sugiero esto para ruidos:\n\n1. Resolución Amistosa: Habla con el vecino en un momento de calma. A veces no son conscientes del impacto.\n2. Normativa: El horario de descanso es de 22:00h a 08:00h. Durante el día, el límite es de 35dB en interiores.\n3. Escalada: Si no cesa, puedes contactar con el Administrador de Fincas o, en casos extremos, con la Guardia Urbana (092).";
   }
 
-  // 4. Noticias de Hoy (VIERNES 16 ENERO 2026)
-  if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento")) {
-    return "Lo más relevante hoy Viernes 16 de enero en Tarragona 📍:\n\n• 🌧️ TENEMOS ALERTA POR LLUVIA a partir de la tarde. Tenlo en cuenta para tus planes en el exterior.\n• 🎻 Esta noche hay concierto de Philip Glass en el Teatre Tarragona (20:30h).\n• 🐎 Solo quedan 2 días para Els Tres Tombs. El domingo será el gran desfile.\n• ⚽ Seguimos celebrando el pase a semis del Nàstic del pasado miércoles.";
+  // 4. Ley de Propiedad Horizontal (LPH)
+  if (p.includes("ley") || p.includes("comunidad") || p.includes("vecinos") || p.includes("estatutos") || p.includes("junta")) {
+    return "Como experto en convivencia ⚖️, te informo sobre la Ley de Propiedad Horizontal:\n\n• Obras: Si quieres reformar tu piso, no puedes alterar la estructura o fachada sin permiso de la Junta.\n• Cuotas: Todos los vecinos deben contribuir a los gastos comunes según su coeficiente.\n• Mayorías: Para instalar ascensor o suprimir barreras arquitectónicas, basta con la mayoría de votos.\n• ¿Tienes una duda específica sobre un acta o una derrama?";
   }
 
-  // 5. Nàstic
-  if (p.includes("nastic") || p.includes("futbol")) {
-    return "¡Orgullo Grana! ❤️🤍 El Nàstic se clasificó para las semifinales de la Copa Catalunya el pasado miércoles tras ganar a la Montañesa. El equipo está en un gran momento y la ciudad está volcada con ellos.";
+  // 5. Trámites en Tarragona (OMAC)
+  if (p.includes("trámite") || p.includes("padron") || p.includes("papel") || p.includes("cita") || p.includes("ayuntamiento") || p.includes("omac")) {
+    return "Para trámites municipales en Tarragona 🏛️:\n\n• La OMAC (Oficina Municipal d'Atenció Ciutadana) requiere cita previa. Puedes pedirla en la web tarragona.cat o llamando al 010.\n• Empadronamiento: Necesitas DNI/NIE y el contrato de alquiler o escritura de la vivienda.\n• Volante de convivencia: Se puede obtener online con certificado digital al instante.";
   }
 
-  // 6. Tres Tombs
-  if (p.includes("tres tombs") || p.includes("caballos") || p.includes("domingo")) {
-    return "Sobre Els Tres Tombs 🐎:\n\nSe celebra este domingo 18 de enero. Es una tradición preciosa en honor a Sant Antoni Abat. Habrá un desfile de carruajes y bendición de animales en la Rambla Nova. ¡No te lo pierdas!";
+  // 6. Basura, Reciclaje y Deixalleria
+  if (p.includes("basura") || p.includes("reciclaj") || p.includes("contenedor") || p.includes("mueble") || p.includes("punto limpio") || p.includes("deixalleria")) {
+    return "Gestión de residuos en TGN ♻️:\n\n• Recogida de voluminosos (muebles/trastos): Gratuita llamando al 977 296 222.\n• Deixalleria Móvil: Consulta los horarios en tu barrio. Si vas a la fija (Polígono Entrevies), puedes obtener bonificaciones en la tasa de la basura.\n• Horario orgánica: Obligatorio de 20h a 22h.";
   }
 
-  // 7. Lluvia / Tiempo
-  if (p.includes("tiempo") || p.includes("lluvia") || p.includes("clima")) {
-    return "Previsión para hoy ☁️: Se espera un cambio de tiempo. Por la tarde es muy probable que empiece a llover de forma débil/moderada en Tarragona. Las temperaturas se mantienen frescas, entre 11°C y 15°C.";
+  // 7. Noticias y Eventos de Hoy (VIERNES 16 ENERO 2026)
+  if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("lluvia") || p.includes("tiempo")) {
+    return "Resumen para hoy Viernes 16 de enero 📍:\n\n• 🌧️ CLIMA: Alerta Amarilla por lluvias a partir de la tarde. ¡Cierra las ventanas!\n• 🎻 CULTURA: Philip Glass actúa en el Teatre Tarragona a las 20:30h.\n• 🐎 TRES TOMBS: Faltan 2 días para el domingo. Los caballos ya están listos.\n• ⚽ DEPORTES: El Nàstic sigue celebrando su pase a semis del pasado miércoles.\n• 🍯 GASTRONOMÍA: Una miel de Tarragona ha sido premiada como la mejor del mundo.";
   }
 
-  // 8. Ayuda / APP
-  if (p.includes("ayuda") || p.includes("funciona") || p.includes("puntos")) {
-    return "En ComuniTarr puedes ganar puntos (CP) colaborando: reporta incidencias, ayuda a vecinos en el Marketplace o participa en el foro. Cuanto más colabores, más nivel de 'Buen Vecino' tendrás 🏆.";
+  // 8. Aparcar (Zona Blava / Verda)
+  if (p.includes("aparcar") || p.includes("coche") || p.includes("parking") || p.includes("zona azul") || p.includes("zona verde")) {
+    return "Aparcamiento en Tarragona 🚗:\n\n• Si eres residente, tienes tarifa súper reducida en zona verde (aprox. 0,40€/día). Debes tramitarlo en la OMAC.\n• Parking Saavedra y Lluís Companys son opciones céntricas si la zona azul está completa.\n• Aplicación: Te recomiendo descargar 'AparcarTGN' para gestionar los tickets desde el móvil.";
+  }
+
+  // 9. Nàstic y Tres Tombs
+  if (p.includes("nastic") || p.includes("futbol") || p.includes("caballos") || p.includes("tres tombs")) {
+    return "¡Actualidad del Barrio! 🐎⚽\n\n• El Nàstic está en semifinales de Copa Catalunya tras la épica del miércoles.\n• Los Tres Tombs del domingo 18 saldrán desde la Rambla Nova. Es el evento más esperado del fin de semana.";
+  }
+
+  // 10. Ayuda / APP
+  if (p.includes("ayuda") || p.includes("funciona") || p.includes("puntos") || p.includes("token")) {
+    return "¡Bienvenido a ComuniTarr! 🏘️\nPuedes ganar 'Puntos de Vecino' reportando incidencias reales o ayudando en el Marketplace. Estos puntos te darán insignias y acceso a ventajas locales exclusivas en comercios del barrio.";
   }
 
   // Default
-  return "Como tu Mediador Vecinal 🤝, me gustaría darte una respuesta precisa. ¿Podrías darme más detalles o preguntarme sobre la convivencia, las noticias de hoy o los servicios del barrio?";
+  return "Como tu Mediador Vecinal ⚖️, mi objetivo es que la convivencia sea perfecta. ¿Necesitas saber algo sobre normativas, trámites municipales o qué está pasando hoy en la ciudad?";
 };
 
 export const getAssistantResponse = async (prompt: string): Promise<{ text: string; links?: GroundingLink[] }> => {
