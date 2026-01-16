@@ -39,7 +39,9 @@ export const getAssistantResponse = async (prompt: string): Promise<{ text: stri
       }
 
       if (data.error?.message?.includes("quota") || data.error?.message?.includes("limit: 0")) {
-        return { text: "⚠️ Tu cuenta está PERFECTA, pero Google tiene tu cuota en 'Limit: 0' por ser nueva. Esto se activa solo en 12-24h. ¡Ya falta poco!" };
+        console.warn(`Quota reached for ${attempt.model}, trying next...`);
+        lastDetailedError = `Cuota excedida en ${attempt.model}`;
+        continue;
       }
 
       lastDetailedError = `${attempt.model} (${attempt.api}): ${data.error?.message}`;
@@ -50,7 +52,7 @@ export const getAssistantResponse = async (prompt: string): Promise<{ text: stri
   }
 
   return {
-    text: `❌ GOOGLE BLOQUEADO: Ningún modelo ha respondido. \n\nÚltimo error: ${lastDetailedError}\n\n💡 Sugerencia: Si esto sigue así tras 24h, crea una nueva API Key en AI Studio.`
+    text: `❌ SISTEMA BLOQUEADO (v1.1): Ningún modelo de Google ha respondido. \n\nÚltimo error: ${lastDetailedError}\n\n💡 RECOMENDACIÓN: Si ves este mensaje v1.1, significa que Google ha bloqueado TODOS los modelos para tu clave. Crea una clave nueva en AI Studio ahora mismo para saltarte el bloqueo.`
   };
 };
 

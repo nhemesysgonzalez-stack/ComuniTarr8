@@ -205,10 +205,10 @@ const Forum: React.FC = () => {
   const handleTopicClick = (topicId: string) => {
     if (topicId === 'nastic-semis') {
       setNewMessage('¡Qué sufrimiento ayer! Pero ya estamos en semis. ¿Quién se apunta a ir a ver la ida? 🏟️');
-    } else if (topicId === 'viento-mistral') {
-      setNewMessage('Ojo con las motos en la Rambla, el viento pega muy fuerte hoy. 🌬️');
+    } else if (topicId === 'alerta-lluvia') {
+      setNewMessage('¿Sabéis si han cortado algún acceso por la lluvia? Dicen que cae fuerte en el Serrallo. 🌧️');
     } else if (topicId === 'tres-tombs') {
-      setNewMessage('¿Sabéis si este año pasan por la calle Real? Tengo que avisar a mi abuela. 🐎');
+      setNewMessage('¿Mañana es el ensayo general de los caballos? Solo faltan 2 días para la fiesta. 🐎');
     }
     setTimeout(() => {
       inputRef.current?.focus();
@@ -223,16 +223,16 @@ const Forum: React.FC = () => {
       participating: 42
     },
     {
-      id: 'viento-mistral',
-      title: '🌬️ Alerta Viento',
-      description: 'Caída de ramas y objetos. Precaución en zonas altas.',
-      participating: 28
+      id: 'alerta-lluvia',
+      title: '🌧️ Alerta por Lluvias',
+      description: 'Preocupación por posibles inundaciones en barrios bajos.',
+      participating: 35
     },
     {
       id: 'tres-tombs',
-      title: '🐎 Tres Tombs (3 Días)',
-      description: 'Preparativos en el Serrallo. Buscando voluntarios.',
-      participating: 15
+      title: '🐎 Tres Tombs (2 Días)',
+      description: 'Últimos ensayos y preparativos. Domingo de tradición.',
+      participating: 19
     }
   ];
 

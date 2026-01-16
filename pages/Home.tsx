@@ -184,11 +184,11 @@ const Home: React.FC = () => {
 
         const weatherAlert = {
           id: 'weather-alert',
-          title: "🌬️ JUEVES: Alerta Viento",
-          content: "Precaución: El viento de Mistral sopla con fuerza hoy jueves. Rachas de hasta 70km/h en zonas altas. Se recomienda retirar macetas y objetos de balcones.",
+          title: "🌧️ VIERNES: Alerta Lluvia",
+          content: "Atención: Se esperan lluvias moderadas a partir de la tarde. Riesgo de acumulaciones en el litoral por masa de aire frío. No olvides el paraguas.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Viento: Mistral Fuerte\n• Temp: 14°C\n• Aviso: Hasta noche",
+          itinerary: "• Tarde/Noche: Lluvias\n• Temp: 11°C - 15°C\n• Aviso: Litoral Sur",
           created_at: new Date().toISOString()
         };
 
@@ -201,23 +201,23 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
-        const rebaixesNotice = {
-          id: 'rebaixes-gener-active',
-          title: "🛍️ REBAIXES: Oportunidades de Jueves",
-          content: "Siguen las rebajas. Este jueves es ideal para visitar las tiendas del centro sin aglomeraciones. El comercio local de Tarragona ofrece descuentos de hasta el 50%.",
-          category: "COMUNIDAD",
-          neighborhood: "GENERAL",
-          itinerary: "• Consejo: Visita tiendas locales\n• Horario: Comercial habitual",
+        const cultureNotice = {
+          id: 'philip-glass-concert',
+          title: "🎻 CULTURA: Philip Glass hoy",
+          content: "Esta noche el Teatre Tarragona acoge un concierto único de violín con obras de Philip Glass. Quedan las últimas entradas en taquilla para las 20:30h.",
+          category: "CULTURA",
+          neighborhood: "CENTRE",
+          itinerary: "• Hora: 20:30h\n• Lugar: Teatre Tarragona\n• Tipo: Concierto Violín",
           created_at: new Date().toISOString()
         };
 
         const tresTombsNotice = {
           id: 'tres-tombs-countdown',
-          title: "🐎 CULTURA: 3 Días para 'Els Tres Tombs'",
-          content: "¡Cuenta atrás! Solo quedan 3 días. Este domingo 18 de enero, los Tres Tombs llenarán Tarragona de tradición. Los carruajes ultiman detalles en el Serrallo.",
+          title: "🐎 CULTURA: 2 Días para 'Els Tres Tombs'",
+          content: "¡Cuenta atrás! Solo quedan 2 días. Este domingo 18 de enero, los Tres Tombs llenarán Tarragona de tradición. Comienza el montaje de vallas en la Rambla.",
           category: "EVENTO",
           neighborhood: "SERRALLO",
-          itinerary: "• Fecha: Domingo 18\n• Hora: 11:00h - 14:00h\n• Recorrido: Rambla Nova",
+          itinerary: "• Fecha: Domingo 18\n• Hora: 11:00h\n• Estado: Preparativos",
           created_at: new Date(Date.now() - 3600000).toISOString()
         };
 
@@ -230,27 +230,26 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
-        const cultureNotice = {
-          id: 'expo-transitar',
-          title: "🎨 AGENDA: Nueva Expo 'Transitar'",
-          content: "Hoy a las 12:00h se inaugura la exposición 'Transitar. Orientar-se en un món canviant' en el Refugi 1 del Moll de Costa. Una reflexión visual imperdible.",
-          category: "CULTURA",
-          neighborhood: "PORT",
-          itinerary: "• Hora: 12:00h (Inauguración)\n• Lugar: Moll de Costa, Refugi 1\n• Acceso: Gratuito",
+        const honeyNotice = {
+          id: 'better-honey-award',
+          title: "🍯 TARRAGONA: Mejor Miel del Mundo",
+          content: "¡Orgullo local! Una explotación de Tarragona ha sido premiada por fabricar 'la mejor miel del mundo'. La noticia destaca la calidad del sector primario tarraconense.",
+          category: "COMUNIDAD",
+          neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
-        const moraNovaNotice = {
-          id: 'mora-nova-ia',
-          title: "🏭 ECONOMÍA: Gigafactoría de IA",
-          content: "Móra la Nova mantiene firme su candidatura para acoger la futura gigafactoría europea de Inteligencia Artificial. Un proyecto clave para el territorio.",
-          category: "ECONOMÍA",
+        const trafficeNotice = {
+          id: 'traffic-a7-scooter',
+          title: "⚠️ SUCESOS: Patinete en la A-7",
+          content: "Precaución: Esta mañana se ha detectado a un hombre circulando en patinete eléctrico por la autovía A-7. Se ruega máxima precaución y respeto a las normas.",
+          category: "URGENTE",
           neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([weatherAlert, nasticNotice, ap7Notice, cultureNotice, tresTombsNotice, moraNovaNotice, rebaixesNotice, ...fetchedNews].slice(0, 6));
+        setNews([weatherAlert, nasticNotice, cultureNotice, tresTombsNotice, honeyNotice, trafficeNotice, ...fetchedNews].slice(0, 6));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase

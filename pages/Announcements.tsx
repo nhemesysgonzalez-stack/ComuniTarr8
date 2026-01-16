@@ -126,12 +126,12 @@ const Announcements: React.FC = () => {
         setLoading(true);
         const weatherAlert: Announcement = {
             id: 'weather-alert',
-            title: "🌬️ JUEVES: Sigue el Viento",
-            content: "Este jueves 15 continuamos con rachas de Mistral. Precaución con el mobiliario de terrazas. Cielos despejados y temperaturas frescas (14°C).",
+            title: "🌧️ VIERNES: Llega la Lluvia",
+            content: "Este viernes 16 cambiamos el Mistral por lluvia. Se esperan precipitaciones débiles por la tarde. Temperaturas entre 11°C y 15°C. Precaución en la carretera.",
             category: "URGENTE",
             neighborhood: "GENERAL",
             author_name: "Protección Civil",
-            itinerary: "• Viento: Mistral (Moderado/Fuerte)\n• Aviso: Hasta las 18:00h",
+            itinerary: "• Clima: Lluvias débil/moderada\n• Aviso: Tarde de viernes",
             created_at: new Date().toISOString()
         };
 
@@ -146,10 +146,20 @@ const Announcements: React.FC = () => {
             created_at: new Date().toISOString()
         };
 
+        const honeyNotice: Announcement = {
+            id: 'honey-award-tgn',
+            title: "🍯 Tarragona tiene la Mejor Miel",
+            content: "Una producción local de Tarragona ha sido reconocida como la 'mejor miel del mundo' en un certamen internacional. ¡Enhorabuena a nuestros apicultores!",
+            category: "COMUNIDAD",
+            neighborhood: "GENERAL",
+            author_name: "Economía Local",
+            created_at: new Date().toISOString()
+        };
+
         const rebaixesNotice: Announcement = {
             id: 'rebaixes-gener-active',
-            title: "🛍️ Rebajas: Jueves de Oportunidades",
-            content: "Ecuador de la segunda semana. Muchos comercios del centro ofrecen descuentos adicionales hoy. ¡Apoya al comercio local!",
+            title: "🛍️ Rebajas: Viernes de Moda",
+            content: "Fin de semana de rebajas a la vista. Aprovecha este viernes para las últimas tallas en los comercios de Parque Central y el centro de la ciudad.",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
             author_name: "Tarragona Comerç",
@@ -158,8 +168,8 @@ const Announcements: React.FC = () => {
 
         const tresTombsNotice: Announcement = {
             id: 'tres-tombs-final-week',
-            title: "🐎 Tres Tombs: 3 Días",
-            content: "Cuenta atrás: Solo quedan 3 días. Este domingo 18, Tarragona celebrará Sant Antoni Abat. Recordad que habrá cortes de tráfico en Rambla Nova.",
+            title: "🐎 Tres Tombs: 2 Días",
+            content: "Cuenta atrás: Solo quedan 2 días para la gran cabalgata. Este domingo 18, Tarragona celebrará Sant Antoni Abat. Preparativos en marcha.",
             category: "EVENTO",
             neighborhood: "SERRALLO",
             author_name: "Gremi Mareantes",
@@ -177,12 +187,13 @@ const Announcements: React.FC = () => {
         };
 
         const cultureNotice: Announcement = {
-            id: 'expo-mnat',
-            title: "🏛️ CULTURA: Nueva Expo MNAT",
-            content: "Hoy se inaugura la exposición temporal sobre el Teatro Romano en el Museu Nacional Arqueològic. Entrada gratuita para residentes esta tarde.",
+            id: 'philip-glass-concert',
+            title: "🎻 Philip Glass hoy",
+            content: "Últimas entradas para el concierto de Philip Glass esta noche en el Teatre Tarragona. Una velada mágica de violín minimalista en nuestra ciudad.",
             category: "EVENTO",
-            neighborhood: "PART ALTA",
-            author_name: "MNAT",
+            neighborhood: "CENTRE",
+            author_name: "Tarragona Cultura",
+            itinerary: "• Inicio: 20:30h\n• Lugar: Teatre Tarragona\n• Tipo: Concierto Violín",
             created_at: new Date().toISOString()
         };
 

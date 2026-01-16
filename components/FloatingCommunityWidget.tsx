@@ -12,11 +12,11 @@ interface Message {
 
 const mockMessages: Message[] = [
     { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¡Qué grandes el Nàstic ayer! A semis sufriendo pero clasificados ❤️🤍', neighborhood: 'Part Alta' },
-    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Ojo en C/ Unió, siguen las vallas de las obras y hay cola.', neighborhood: 'Eixample' },
-    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: '3 días para Els Tres Tombs 🐎. ¿Sabéis si el recorrido es el de siempre?', neighborhood: 'Serrallo' },
-    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'Alguien para ir a la expo del MNAT esta tarde? Es gratis.', neighborhood: 'General' },
-    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: 'El viento no para... se me ha volado medio tenderete 😅', neighborhood: 'Llevant' },
-    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: '¿Habéis visto las ofertas en la tienda de bicis de la Rambla? Brutal.', neighborhood: 'General' },
+    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Ojo con la lluvia, están empezando a caer las primeras gotas en el centro.', neighborhood: 'Eixample' },
+    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: 'Solo 2 días para Els Tres Tombs 🐎. Ya están los carruajes listos!', neighborhood: 'Serrallo' },
+    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'Alguien para ir al concierto de Philip Glass esta noche? 🎻', neighborhood: 'General' },
+    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: 'Dicen que han dado un premio a la miel de aquí. Habrá que probarla!', neighborhood: 'Llevant' },
+    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: '¿Habéis visto las rebajas de moda este viernes? Hay chollos.', neighborhood: 'General' },
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {
