@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../services/supabaseClient';
 import { safeSupabaseFetch, safeSupabaseInsert } from '../services/dataHandler';
+import { logActivity } from '../services/activityLogger';
 
 interface Message {
   id: string;
@@ -214,6 +215,7 @@ const Forum: React.FC = () => {
       playSound('buzz');
       setIsShaking(true);
       setTimeout(() => setIsShaking(false), 500);
+      await logActivity('Enviar Zumbido', { neighborhood: currentNeighborhood });
       await safeSupabaseInsert('forum_messages', {
         user_id: user?.id,
         content: '🔔 ¡ZUMBIDO! <<ZUMBIDO>>',
@@ -244,6 +246,7 @@ const Forum: React.FC = () => {
 
       if (!success) throw new Error('Falló envío');
       await addPoints(5, 1);
+      await logActivity('Mensaje Foro', { neighborhood: currentNeighborhood, content: newMessage.substring(0, 30) });
       setNewMessage('');
     } catch (e) {
       console.error(e);

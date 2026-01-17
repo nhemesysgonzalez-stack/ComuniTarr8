@@ -6,6 +6,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { safeSupabaseInsert } from '../services/dataHandler';
 import { supabase } from '../services/supabaseClient';
+import { logActivity } from '../services/activityLogger';
 
 const HomeNewsItem: React.FC<{ item: any }> = ({ item }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -349,6 +350,7 @@ const Home: React.FC = () => {
         alert(`⚠️ MODO LOCAL: No se guardó en la nube. Error de Supabase: "${dbError.message}". Revisa el SQL Editor.`);
       } else {
         await addPoints(25, 10);
+        await logActivity('Reportar Incidencia', { title: incidentTitle, neighborhood: user?.user_metadata?.neighborhood });
         alert('✅ ¡Incidencia reportada con éxito en la nube!');
       }
 
@@ -393,6 +395,7 @@ const Home: React.FC = () => {
       });
       if (success) {
         await addPoints(50, 25);
+        await logActivity('Ofrecer Ayuda', { title: helpTitle, type: helpType, neighborhood: user?.user_metadata?.neighborhood });
         alert('¡Publicado con éxito! +50 XP / +25 ComuniPoints');
         setShowHelpModal(false);
       }

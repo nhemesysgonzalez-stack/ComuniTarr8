@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../services/supabaseClient';
 import { safeSupabaseFetch, safeSupabaseInsert } from '../services/dataHandler';
+import { logActivity } from '../services/activityLogger';
 
 interface Poll {
     id: string;
@@ -45,6 +46,7 @@ const Polls: React.FC = () => {
 
             if (success) {
                 await addPoints(20, 5); // Recompensa por votar
+                await logActivity('Votar en Encuesta', { pollId, optionText, neighborhood: user?.user_metadata?.neighborhood });
                 alert(`¡Gracias! Tu voto para "${optionText}" ha sido registrado correctamente. +20 XP / +5 ComuniPoints`);
                 setVotedPollIds(prev => [...prev, pollId]);
             }
@@ -108,6 +110,7 @@ const Polls: React.FC = () => {
 
             if (!success) throw new Error('Falló la creación');
             await addPoints(50, 15); // Recompensa por crear consulta
+            await logActivity('Crear Encuesta', { title: pollTitle, neighborhood: user?.user_metadata?.neighborhood });
             alert('¡Votación creada con éxito! +50 XP / +15 ComuniPoints');
             setShowCreateModal(false);
             setPollTitle('');

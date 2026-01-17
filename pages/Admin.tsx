@@ -10,12 +10,14 @@ const Admin: React.FC = () => {
     const navigate = useNavigate();
     const [partners, setPartners] = useState<any[]>([]);
     const [recentUsers, setRecentUsers] = useState<any[]>([]);
+    const [recentActivity, setRecentActivity] = useState<any[]>([]);
+    const [activityStats, setActivityStats] = useState<any[]>([]);
     const [stats, setStats] = useState({ users: 0, partners: 0, news: 0 });
     const [loading, setLoading] = useState(true);
 
     // SEGURIDAD: Solo Cindy puede entrar
     useEffect(() => {
-        if (!user || user.email !== 'nhemesysgonzalez@gmail.com') {
+        if (!user || (user.email !== 'nhemesysgonzalez@gmail.com' && user.email !== 'nhemesysgonzalez@hotmail.com')) {
             navigate('/');
         } else {
             fetchAdminData();
@@ -25,34 +27,62 @@ const Admin: React.FC = () => {
     const fetchAdminData = async () => {
         setLoading(true);
 
-        // 1. Cargar solicitudes de comercios
-        const { data: partnersData } = await supabase
-            .from('business_partners')
-            .select('*')
-            .order('created_at', { ascending: false });
+        try {
+            // 1. Cargar solicitudes de comercios
+            const { data: partnersData } = await supabase
+                .from('business_partners')
+                .select('*')
+                .order('created_at', { ascending: false });
 
-        if (partnersData) setPartners(partnersData);
+            if (partnersData) setPartners(partnersData);
 
-        // 2. Cargar últimos vecinos registrados
-        const { data: usersData } = await supabase
-            .from('profiles')
-            .select('*')
-            .order('created_at', { ascending: false })
-            .limit(10);
+            // 2. Cargar últimos vecinos registrados (Todos para Cindy)
+            const { data: usersData } = await supabase
+                .from('profiles')
+                .select('*')
+                .order('created_at', { ascending: false });
 
-        if (usersData) setRecentUsers(usersData);
+            if (usersData) setRecentUsers(usersData);
 
-        // 3. Cargar estadísticas rápidas
-        const { count: userCount } = await supabase.from('profiles').select('*', { count: 'exact', head: true });
-        const { count: newsCount } = await supabase.from('announcements').select('*', { count: 'exact', head: true });
+            // 3. Cargar Actividad Reciente
+            const { data: activityData } = await supabase
+                .from('activity_logs')
+                .select('*, profiles(full_name, avatar_url)')
+                .order('created_at', { ascending: false })
+                .limit(50);
 
-        setStats({
-            users: userCount || 0,
-            partners: partnersData?.length || 0,
-            news: newsCount || 0
-        });
+            if (activityData) setRecentActivity(activityData);
 
-        setLoading(false);
+            // 4. Calcular Estadísticas de Actividad (Agrupar por acción)
+            const { data: groupData } = await supabase
+                .from('activity_logs')
+                .select('action');
+
+            if (groupData) {
+                const counts = groupData.reduce((acc: any, curr: any) => {
+                    acc[curr.action] = (acc[curr.action] || 0) + 1;
+                    return acc;
+                }, {});
+                const sortedStats = Object.entries(counts)
+                    .map(([name, count]) => ({ name, count: count as number }))
+                    .sort((a, b) => b.count - a.count);
+                setActivityStats(sortedStats);
+            }
+
+            // 5. Cargar estadísticas rápidas
+            const { count: userCount } = await supabase.from('profiles').select('*', { count: 'exact', head: true });
+            const { count: newsCount } = await supabase.from('announcements').select('*', { count: 'exact', head: true });
+
+            setStats({
+                users: userCount || 0,
+                partners: partnersData?.length || 0,
+                news: newsCount || 0
+            });
+        } catch (error) {
+            console.error('Error fetching admin data:', error);
+        } finally {
+            setLoading(false);
+        }
     };
 
     const handleAction = async (id: string, newStatus: 'approved' | 'rejected') => {
@@ -176,11 +206,84 @@ const Admin: React.FC = () => {
                 </div>
             </section>
 
+            {/* Dashboard Stats Extra */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {activityStats.slice(0, 3).map((stat, i) => (
+                    <div key={i} className="bg-white dark:bg-gray-800 p-6 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                        <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Top Acción</p>
+                        <h3 className="text-lg font-black dark:text-white uppercase">{stat.name}</h3>
+                        <p className="text-3xl font-black text-primary">{stat.count} <span className="text-xs opacity-50">votos/clics</span></p>
+                    </div>
+                ))}
+            </div>
+
+            {/* Nueva sección: Actividad en Tiempo Real */}
+            <section className="grid lg:grid-cols-2 gap-10">
+                <div className="space-y-6">
+                    <h2 className="text-2xl font-black dark:text-white flex items-center gap-2">
+                        <span className="material-symbols-outlined text-primary">analytics</span>
+                        Actividad en Tiempo Real
+                    </h2>
+                    <div className="bg-white dark:bg-gray-800 rounded-[40px] border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden max-h-[500px] overflow-y-auto custom-scrollbar">
+                        {recentActivity.length === 0 ? (
+                            <div className="p-10 text-center text-gray-400 font-bold">No hay actividad registrada aún</div>
+                        ) : (
+                            recentActivity.map((activity) => (
+                                <div key={activity.id} className="p-5 border-b border-gray-50 dark:border-gray-700 flex items-center gap-4 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                                    <img
+                                        src={activity.profiles?.avatar_url || `https://ui-avatars.com/api/?name=${activity.profiles?.full_name || 'V'}`}
+                                        className="size-10 rounded-xl"
+                                        alt=""
+                                    />
+                                    <div className="flex-1 min-w-0">
+                                        <p className="text-sm font-bold dark:text-white truncate">
+                                            {activity.profiles?.full_name || 'Vecino'}
+                                            <span className="text-primary mx-2">→</span>
+                                            <span className="font-black text-xs uppercase tracking-tighter">{activity.action}</span>
+                                        </p>
+                                        <p className="text-[10px] text-gray-400 font-bold uppercase">
+                                            {new Date(activity.created_at).toLocaleString()}
+                                        </p>
+                                    </div>
+                                    <div className="text-[8px] font-black bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-gray-500">
+                                        {activity.details?.neighborhood || 'GENERAL'}
+                                    </div>
+                                </div>
+                            ))
+                        )}
+                    </div>
+                </div>
+
+                <div className="space-y-6">
+                    <h2 className="text-2xl font-black dark:text-white flex items-center gap-2">
+                        <span className="material-symbols-outlined text-emerald-500">trending_up</span>
+                        Frecuencia de Módulos
+                    </h2>
+                    <div className="bg-white dark:bg-gray-800 rounded-[40px] p-8 border border-gray-100 dark:border-gray-700 shadow-sm space-y-6">
+                        {activityStats.map((stat, i) => (
+                            <div key={i} className="space-y-2">
+                                <div className="flex justify-between items-end">
+                                    <span className="text-xs font-black uppercase tracking-widest dark:text-white">{stat.name}</span>
+                                    <span className="text-xs font-black text-primary">{stat.count} ACCIONES</span>
+                                </div>
+                                <div className="h-3 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+                                    <motion.div
+                                        initial={{ width: 0 }}
+                                        animate={{ width: `${Math.min((stat.count / (activityStats[0]?.count || 1)) * 100, 100)}%` }}
+                                        className="h-full bg-primary"
+                                    />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Nuevos Vecinos (Usuarios) */}
             <section className="space-y-6">
                 <h2 className="text-2xl font-black dark:text-white flex items-center gap-2">
                     <span className="material-symbols-outlined">group_add</span>
-                    Nuevos Vecinos Registrados
+                    Listado Completo de Vecinos ({recentUsers.length})
                 </h2>
 
                 <div className="bg-white dark:bg-gray-800 rounded-[40px] border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden">
