@@ -101,10 +101,21 @@ const Forum: React.FC = () => {
     return () => clearInterval(simulationInterval);
   }, []);
 
-  const generateVirtualMessage = async (isReplyTo?: string, originalPrompt?: string) => {
-    // 10% chance of being the Mediador Vecinal if it's a technical/advice reply
-    const isAssistant = isReplyTo && (originalPrompt?.toLowerCase().includes('ayuda') || originalPrompt?.toLowerCase().includes('como') || originalPrompt?.toLowerCase().includes('@mediador'));
+  const generateVirtualMessage = async (isReplyTo?: string, originalPrompt?: string, isChain?: boolean) => {
+    // Broaden keywords for the Mediador
+    const p = originalPrompt?.toLowerCase() || "";
+    const isAssistant = isReplyTo && (
+      p.includes('ayuda') ||
+      p.includes('como') ||
+      p.includes('qué') ||
+      p.includes('que hago') ||
+      p.includes('hacer') ||
+      p.includes('saber') ||
+      p.includes('@mediador') ||
+      p.includes('pregunt')
+    );
 
+    // Choose neighbor (Mediador has priority for technical stuff)
     const neighbor = isAssistant
       ? { id: 'v-ai', full_name: 'Mediador Vecinal ⚖️', avatar_url: 'https://img.icons8.com/isometric/512/scales.png', status: 'online' }
       : virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
@@ -119,7 +130,8 @@ const Forum: React.FC = () => {
       "¿Alguna recomendación para comer hoy por el Serrallo? 🐟",
       "He visto que están arreglando las baldosas en la Calle Unió. ¡Ya tocaba!",
       "¿Alguien se anima a un café rápido en la Plaza del Rey?",
-      "Acabo de ver a los jugadores del Nàstic por el centro. ¡Majísimos!"
+      "Acabo de ver a los jugadores del Nàstic por el centro. ¡Majísimos!",
+      "¿Habéis probado los pasteles de la cafetería nueva? Increíbles."
     ];
 
     const replyScripts = [
@@ -127,10 +139,15 @@ const Forum: React.FC = () => {
       `¿En serio ${isReplyTo}? No lo sabía...`,
       `¡Qué bueno saludarte ${isReplyTo}!`,
       `Opino lo mismo que tú.`,
-      `Gracias por la info, me sirve mucho.`
+      `Gracias por la info, me sirve mucho.`,
+      `¡Bienvenido al foro, ${isReplyTo}! Da gusto ver gente nueva por aquí.`
     ];
 
     setIsTyping(neighbor.full_name);
+
+    // Random delay between 2 and 5 seconds for realism
+    const delay = isAssistant ? 2000 : (2000 + Math.random() * 3000);
+
     setTimeout(async () => {
       setIsTyping(null);
       let content = "";
@@ -145,16 +162,24 @@ const Forum: React.FC = () => {
       }
 
       const mockMsg: Message = {
-        id: `sim-${Date.now()}`,
+        id: `sim-${Date.now()}-${neighbor.id}`,
         user_id: neighbor.id,
         content: content,
         user_metadata: { full_name: neighbor.full_name, avatar_url: neighbor.avatar_url },
         neighborhood: currentNeighborhood,
         created_at: new Date().toISOString()
       };
+
       setMessages(prev => [...prev, mockMsg]);
       playSound('msg');
-    }, isAssistant ? 1500 : 3000);
+
+      // Trigger a Follow-up message (Create a "Burst" of conversation)
+      if (!isChain && Math.random() < 0.7) {
+        setTimeout(() => {
+          generateVirtualMessage(neighbor.full_name.split(' ')[0], content, true);
+        }, 3000 + Math.random() * 4000);
+      }
+    }, delay);
   };
 
   useEffect(() => {
@@ -191,13 +216,7 @@ const Forum: React.FC = () => {
           return [...filtered, newMsg];
         });
 
-        // If a real user sends a message, trigger a simulated reply from a virtual neighbor
-        if (newMsg.user_id === user?.id) {
-          setTimeout(() => {
-            generateVirtualMessage(user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino', newMsg.content);
-          }, 4000 + Math.random() * 4000);
-        }
-
+        // Trigger reply logic (already handled locally but good for other users)
         if (newMsg.user_id !== user?.id) {
           if (newMsg.content.includes('<<ZUMBIDO>>')) {
             playSound('buzz');
@@ -303,6 +322,9 @@ const Forum: React.FC = () => {
     setMessages(prev => [...prev, tempMsg]);
     const messageToSend = newMessage;
     setNewMessage('');
+
+    // Trigger AI/Neighbor response IMMEDIATELY locally for the current user
+    generateVirtualMessage(user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino', messageToSend);
 
     try {
       const { success } = await safeSupabaseInsert('forum_messages', {
