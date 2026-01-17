@@ -112,7 +112,9 @@ const Forum: React.FC = () => {
       p.includes('hacer') ||
       p.includes('saber') ||
       p.includes('@mediador') ||
-      p.includes('pregunt')
+      p.includes('pregunt') ||
+      p.includes('llov') ||
+      p.includes('tiempo')
     );
 
     // Choose neighbor (Mediador has priority for technical stuff)
@@ -121,17 +123,15 @@ const Forum: React.FC = () => {
       : virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
 
     const scripts = [
-      "¿Habéis visto qué sol hace hoy? Ideal para los preparativos de mañana. ☀️",
+      "¿Habéis visto cómo se ha puesto a llover? ¡Vaya cambio de tiempo! ⛈️",
       "Ojo que esta noche ya no se puede aparcar en la Rambla por los Tres Tombs. 🐎",
-      "Sigo impresionado con el concierto de anoche. ¡Qué suerte tener esto en TGN! 🎻",
-      "¿Alguien sabe si el mercadillo del Foro está muy lleno hoy? 🛒",
-      "Voy de camino a la limpieza de la Part Alta. ¡Traed guantes! 🧹",
+      "Sigo impresionado con el concierto de anoche de Philip Glass. ¡Fue increíble! 🎻",
+      "¿Alguien sabe si el mercadillo del Foro ha cerrado por la lluvia? 🛒",
       "¡Qué ganas de que sea mañana! Los niños están emocionados con los caballos. 🐎",
-      "¿Alguna recomendación para comer hoy por el Serrallo? 🐟",
+      "¿Alguna recomendación para comer hoy a cubierto por el Serrallo? 🐟",
       "He visto que están arreglando las baldosas en la Calle Unió. ¡Ya tocaba!",
-      "¿Alguien se anima a un café rápido en la Plaza del Rey?",
-      "Acabo de ver a los jugadores del Nàstic por el centro. ¡Majísimos!",
-      "¿Habéis probado los pasteles de la cafetería nueva? Increíbles."
+      "¿Alguien se anima a un café rápido en la Plaza del Rey mientras escampa?",
+      "Acabo de ver a los jugadores del Nàstic por el centro. ¡Majísimos!"
     ];
 
     const replyScripts = [
@@ -140,7 +140,9 @@ const Forum: React.FC = () => {
       `¡Qué bueno saludarte ${isReplyTo}!`,
       `Opino lo mismo que tú.`,
       `Gracias por la info, me sirve mucho.`,
-      `¡Bienvenido al foro, ${isReplyTo}! Da gusto ver gente nueva por aquí.`
+      `¡Bienvenido al foro, ${isReplyTo}! Da gusto ver gente nueva por aquí.`,
+      "Aquí en mi barrio también está cayendo una buena... ⛈️",
+      "¡Vaya tiempo se ha quedado para ser sábado!"
     ];
 
     setIsTyping(neighbor.full_name);

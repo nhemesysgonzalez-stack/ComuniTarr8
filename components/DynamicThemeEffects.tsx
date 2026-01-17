@@ -1,70 +1,62 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
-const DynamicThemeEffects: React.FC = () => {
+const DynamicThemeEffects: React.FC = React.memo(() => {
+    const location = useLocation();
+
+    // Solo mostrar en la Home (Welcome screen)
+    const isHome = location.pathname === '/';
+
+    const rainDrops = useMemo(() => [...Array(100)].map((_, i) => ({
+        id: i,
+        duration: Math.random() * 0.8 + 0.6, // Más lenta y suave
+        left: Math.random() * 110,
+        height: Math.random() * 20 + 10,
+        delay: Math.random() * 2,
+        opacity: Math.random() * 0.3 + 0.2
+    })), []);
+
+    if (!isHome) return null;
+
     return (
         <div className="fixed inset-0 pointer-events-none z-[10000] overflow-hidden">
-            {/* Diluvio (Dense Rainfall) */}
+            {/* Lluvia Suave para Home */}
             <div className="absolute inset-0">
-                {[...Array(200)].map((_, i) => {
-                    const duration = Math.random() * 0.3 + 0.2;
-                    const left = Math.random() * 130 - 15;
-                    const height = Math.random() * 40 + 30;
-
-                    return (
-                        <motion.div
-                            key={`rain-${i}`}
-                            initial={{ y: -200, x: 0 }}
-                            animate={{
-                                y: 1200,
-                                x: -200 // Wind effect
-                            }}
-                            transition={{
-                                duration: duration,
-                                repeat: Infinity,
-                                ease: "linear",
-                                delay: Math.random() * 2
-                            }}
-                            className="absolute pointer-events-none"
+                {rainDrops.map((drop) => (
+                    <motion.div
+                        key={`rain-${drop.id}`}
+                        initial={{ y: -100 }}
+                        animate={{ y: 1000 }}
+                        transition={{
+                            duration: drop.duration,
+                            repeat: Infinity,
+                            ease: "linear",
+                            delay: drop.delay
+                        }}
+                        className="absolute pointer-events-none"
+                        style={{
+                            left: drop.left + '%',
+                            opacity: drop.opacity
+                        }}
+                    >
+                        <div
+                            className="bg-white/40 rounded-full"
                             style={{
-                                left: left + '%',
-                                opacity: Math.random() * 0.5 + 0.4
+                                width: '1.5px',
+                                height: drop.height + 'px'
                             }}
-                        >
-                            <div
-                                className="bg-white/80 rounded-full"
-                                style={{
-                                    width: '2px',
-                                    height: height + 'px',
-                                    filter: 'blur(0.5px)',
-                                    boxShadow: '0 0 8px rgba(255,255,255,0.4)'
-                                }}
-                            ></div>
-                        </motion.div>
-                    );
-                })}
+                        ></div>
+                    </motion.div>
+                ))}
             </div>
 
-            {/* Thunder Flash */}
-            <motion.div
-                animate={{
-                    opacity: [0, 0, 0.4, 0, 0.2, 0, 0],
-                }}
-                transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    repeatDelay: 8
-                }}
-                className="absolute inset-0 bg-white pointer-events-none z-[10001]"
-            />
-
-            {/* Heavy Atmosphere Overlay */}
-            <div className="absolute inset-0 bg-blue-950/20 pointer-events-none backdrop-blur-[0.5px]"></div>
-
-            {/* Splash effect at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white/10 to-transparent pointer-events-none"></div>
+            {/* Suave tinte atmosférico sin relámpagos */}
+            <div className="absolute inset-0 bg-blue-900/5 pointer-events-none"></div>
         </div>
     );
-};
+});
+
+DynamicThemeEffects.displayName = 'DynamicThemeEffects';
 
 export default DynamicThemeEffects;
