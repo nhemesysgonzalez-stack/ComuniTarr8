@@ -55,13 +55,43 @@ const getSimulatedResponse = (prompt: string): string => {
     return "¡Actualidad del Barrio! 🐎⚽\n\n• El Nàstic está en semifinales de Copa Catalunya tras la épica del miércoles.\n• Los Tres Tombs del domingo 18 saldrán desde la Rambla Nova. Es el evento más esperado del fin de semana.";
   }
 
-  // 10. Ayuda / APP
-  if (p.includes("ayuda") || p.includes("funciona") || p.includes("puntos") || p.includes("token")) {
-    return "¡Bienvenido a ComuniTarr! 🏘️\nPuedes ganar 'Puntos de Vecino' reportando incidencias reales o ayudando en el Marketplace. Estos puntos te darán insignias y acceso a ventajas locales exclusivas en comercios del barrio.";
+  // 10. Mascotas y Animales
+  if (p.includes("perro") || p.includes("gato") || p.includes("mascota") || p.includes("pipican") || p.includes("colonia")) {
+    return "Convivencia con animales en TGN 🐾:\n\n• Censo: Es obligatorio inscribir a tu mascota en el registro municipal. Puedes hacerlo en la OMAC.\n• Pipicanes: Hay zonas habilitadas en el Parque de la Ciudad, Francolí y varios barrios. ¡Recuerda recoger siempre los excrementos!\n• Playas: En temporada baja pueden ir a la playa, pero del 1 de abril al 15 de octubre solo está permitido en la zona habilitada de la Playa del Miracle.";
+  }
+
+  // 11. Limpieza de Calles (Plà de Xoc)
+  if (p.includes("sucio") || p.includes("limp") || p.includes("nevera") || p.includes("calle") || p.includes("mancha")) {
+    return "Sobre la limpieza del barrio 🧹:\n\n• El Ayuntamiento tiene activo el 'Plà de Xoc' de limpieza intensiva. Si ves una mancha o residuo persistente, repórtalo en esta app o llama al Teléfono del Verde (977 296 222).\n• Recuerda que dejar muebles fuera del día de recogida conlleva multas de hasta 300€.";
+  }
+
+  // 12. Sanidad y Salud (CAP)
+  if (p.includes("medico") || p.includes("cap") || p.includes("urgen") || p.includes("farmacia") || p.includes("hospital")) {
+    return "Información sanitaria en Tarragona 🏥:\n\n• Urgencias: Tienes el Hospital Joan XXIII (centro público) y el Hospital de Santa Tecla (centro céntrico).\n• CAP: Para tu cita previa, usa la app 'La Meva Salut' o llama al 93 326 89 01.\n• Farmacias de guardia: Puedes consultar la farmacia abierta hoy en el listado oficial del Colegio de Farmacéuticos (COFT).";
+  }
+
+  // 13. Impuestos y Facturas (IBI/BASE)
+  if (p.includes("impuesto") || p.includes("ibi") || p.includes("base") || p.includes("multa") || p.includes("pagar")) {
+    return "Gestión de tributos 💰:\n\n• El IBI y otras tasas municipales en Tarragona se gestionan a través de BASE (Diputació de Tarragona).\n• Oficina: Calle de l'Assalt, 12. Es mejor pedir cita previa online.\n• Bonificaciones: Los edificios con placas solares o familias numerosas pueden pedir descuentos en el IBI.";
+  }
+
+  // 14. Gente Mayor y Ayuda a Domicilio
+  if (p.includes("mayor") || p.includes("abuelo") || p.includes("teleasistencia") || p.includes("soledad") || p.includes("ayuda a domicilio")) {
+    return "Apoyo a nuestros mayores 👵👴:\n\n• Teleasistencia: El Ayuntamiento ofrece un servicio de botón rojo para emergencias en casa. Consúltalo en Servicios Sociales.\n• Centros de Día: Hay centros municipales en casi todos los barrios (Tarragona II, Sant Salvador, etc.) con actividades dinámicas.\n• Acompañamiento: Varias asociaciones como Cruz Roja TGN tienen programas contra la soledad no deseada.";
+  }
+
+  // 15. Seguridad y Denuncias
+  if (p.includes("seguridad") || p.includes("robar") || p.includes("policia") || p.includes("guardia urbana") || p.includes("mossos")) {
+    return "Seguridad ciudadana 🚓:\n\n• Emergencias: Llama siempre al 112.\n• Denuncias: Para cosas menores, puedes ir a la comisaría de la Guardia Urbana (C/ Arquebisbe Pont i Gol) o a Mossos (Campo Claro).\n• Consejos: Especial atención en zonas turísticas como la Catedral o el Anfiteatro para evitar hurtos.";
+  }
+
+  // 16. Ayuda / APP
+  if (p.includes("ayuda") || p.includes("funciona") || p.includes("puntos") || p.includes("token") || p.includes("xp")) {
+    return "¡Bienvenido a ComuniTarr! 🏘️\nPuedes ganar 'ComuniPoints' y 'Karma (XP)' de varias formas:\n1. Reportando incidencias reales (fotos de baches, luces fundidas...).\n2. Participando en votaciones vecinales.\n3. Ofreciendo o demandando ayuda en el Marketplace.\n4. Interactuando en el foro.\n¡Usa el mapa para ver qué necesitan tus vecinos ahora mismo!";
   }
 
   // Default
-  return "Como tu Mediador Vecinal ⚖️, mi objetivo es que la convivencia sea perfecta. ¿Necesitas saber algo sobre normativas, trámites municipales o qué está pasando hoy en la ciudad?";
+  return "Como tu Mediador Vecinal ⚖️, mi base de conocimientos cubre normativa (LPH), convivencia, limpieza, trámites (OMAC/BASE), agenda cultural tarraconense y más. ¿En qué puedo ayudarte específicamente hoy?";
 };
 
 export const getAssistantResponse = async (prompt: string): Promise<{ text: string; links?: GroundingLink[] }> => {

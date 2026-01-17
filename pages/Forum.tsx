@@ -5,6 +5,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../services/supabaseClient';
 import { safeSupabaseFetch, safeSupabaseInsert } from '../services/dataHandler';
 import { logActivity } from '../services/activityLogger';
+import { getAssistantResponse } from '../services/geminiService';
 
 interface Message {
   id: string;
@@ -100,8 +101,14 @@ const Forum: React.FC = () => {
     return () => clearInterval(simulationInterval);
   }, []);
 
-  const generateVirtualMessage = (isReplyTo?: string) => {
-    const neighbor = virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
+  const generateVirtualMessage = async (isReplyTo?: string, originalPrompt?: string) => {
+    // 10% chance of being the Mediador Vecinal if it's a technical/advice reply
+    const isAssistant = isReplyTo && (originalPrompt?.toLowerCase().includes('ayuda') || originalPrompt?.toLowerCase().includes('como') || originalPrompt?.toLowerCase().includes('@mediador'));
+
+    const neighbor = isAssistant
+      ? { id: 'v-ai', full_name: 'Mediador Vecinal ⚖️', avatar_url: 'https://img.icons8.com/isometric/512/scales.png', status: 'online' }
+      : virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
+
     const scripts = [
       "¿Habéis visto qué sol hace hoy? Ideal para los preparativos de mañana. ☀️",
       "Ojo que esta noche ya no se puede aparcar en la Rambla por los Tres Tombs. 🐎",
@@ -109,7 +116,10 @@ const Forum: React.FC = () => {
       "¿Alguien sabe si el mercadillo del Foro está muy lleno hoy? 🛒",
       "Voy de camino a la limpieza de la Part Alta. ¡Traed guantes! 🧹",
       "¡Qué ganas de que sea mañana! Los niños están emocionados con los caballos. 🐎",
-      "¿Alguna recomendación para comer hoy por el Serrallo? 🐟"
+      "¿Alguna recomendación para comer hoy por el Serrallo? 🐟",
+      "He visto que están arreglando las baldosas en la Calle Unió. ¡Ya tocaba!",
+      "¿Alguien se anima a un café rápido en la Plaza del Rey?",
+      "Acabo de ver a los jugadores del Nàstic por el centro. ¡Majísimos!"
     ];
 
     const replyScripts = [
@@ -121,11 +131,18 @@ const Forum: React.FC = () => {
     ];
 
     setIsTyping(neighbor.full_name);
-    setTimeout(() => {
+    setTimeout(async () => {
       setIsTyping(null);
-      const content = isReplyTo
-        ? `@${isReplyTo} ${replyScripts[Math.floor(Math.random() * replyScripts.length)]}`
-        : scripts[Math.floor(Math.random() * scripts.length)];
+      let content = "";
+
+      if (isAssistant && originalPrompt) {
+        const aiRes = await getAssistantResponse(originalPrompt);
+        content = `@${isReplyTo} ${aiRes.text}`;
+      } else {
+        content = isReplyTo
+          ? `@${isReplyTo} ${replyScripts[Math.floor(Math.random() * replyScripts.length)]}`
+          : scripts[Math.floor(Math.random() * scripts.length)];
+      }
 
       const mockMsg: Message = {
         id: `sim-${Date.now()}`,
@@ -137,7 +154,7 @@ const Forum: React.FC = () => {
       };
       setMessages(prev => [...prev, mockMsg]);
       playSound('msg');
-    }, 3000);
+    }, isAssistant ? 1500 : 3000);
   };
 
   useEffect(() => {
@@ -177,8 +194,8 @@ const Forum: React.FC = () => {
         // If a real user sends a message, trigger a simulated reply from a virtual neighbor
         if (newMsg.user_id === user?.id) {
           setTimeout(() => {
-            generateVirtualMessage(user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino');
-          }, 5000 + Math.random() * 5000);
+            generateVirtualMessage(user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino', newMsg.content);
+          }, 4000 + Math.random() * 4000);
         }
 
         if (newMsg.user_id !== user?.id) {
