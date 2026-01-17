@@ -77,42 +77,68 @@ const Forum: React.FC = () => {
     { id: 'v1', full_name: 'Pau T.', avatar_url: 'https://i.pravatar.cc/150?u=pau', status: 'online' },
     { id: 'v2', full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia', status: 'busy' },
     { id: 'v3', full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan', status: 'online' },
-    { id: 'v4', full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme', status: 'away' }
+    { id: 'v4', full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme', status: 'away' },
+    { id: 'v5', full_name: 'Luis M.', avatar_url: 'https://i.pravatar.cc/150?u=luis', status: 'online' },
+    { id: 'v6', full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe', status: 'online' },
+    { id: 'v7', full_name: 'Maria G.', avatar_url: 'https://i.pravatar.cc/150?u=maria', status: 'busy' }
   ];
+
+  const handleReply = (name: string) => {
+    setNewMessage(`@${name} `);
+    inputRef.current?.focus();
+  };
 
   // Simulation Logic: Seed messages about today Saturday 17th
   useEffect(() => {
     const simulationInterval = setInterval(() => {
-      // 20% chance of a virtual message every 45s if no real activity
-      if (Math.random() < 0.2) {
-        const neighbor = virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
-        const scripts = [
-          "¿Habéis visto qué sol hace hoy? Ideal para los preparativos de mañana. ☀️",
-          "Ojo que esta noche ya no se puede aparcar en la Rambla por los Tres Tombs. 🐎",
-          "Sigo impresionado con el concierto de anoche. ¡Qué suerte tener esto en TGN! 🎻",
-          "¿Alguien sabe si el mercadillo del Foro está muy lleno hoy? 🛒",
-          "Voy de camino a la limpieza de la Part Alta. ¡Traed guantes! 🧹"
-        ];
-
-        setIsTyping(neighbor.full_name);
-        setTimeout(() => {
-          setIsTyping(null);
-          const mockMsg: Message = {
-            id: `sim-${Date.now()}`,
-            user_id: neighbor.id,
-            content: scripts[Math.floor(Math.random() * scripts.length)],
-            user_metadata: { full_name: neighbor.full_name, avatar_url: neighbor.avatar_url },
-            neighborhood: 'GENERAL',
-            created_at: new Date().toISOString()
-          };
-          setMessages(prev => [...prev, mockMsg]);
-          playSound('msg');
-        }, 3000);
+      // 15% chance of a virtual message every 40s if no real activity
+      if (Math.random() < 0.15) {
+        generateVirtualMessage();
       }
-    }, 45000);
+    }, 40000);
 
     return () => clearInterval(simulationInterval);
   }, []);
+
+  const generateVirtualMessage = (isReplyTo?: string) => {
+    const neighbor = virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
+    const scripts = [
+      "¿Habéis visto qué sol hace hoy? Ideal para los preparativos de mañana. ☀️",
+      "Ojo que esta noche ya no se puede aparcar en la Rambla por los Tres Tombs. 🐎",
+      "Sigo impresionado con el concierto de anoche. ¡Qué suerte tener esto en TGN! 🎻",
+      "¿Alguien sabe si el mercadillo del Foro está muy lleno hoy? 🛒",
+      "Voy de camino a la limpieza de la Part Alta. ¡Traed guantes! 🧹",
+      "¡Qué ganas de que sea mañana! Los niños están emocionados con los caballos. 🐎",
+      "¿Alguna recomendación para comer hoy por el Serrallo? 🐟"
+    ];
+
+    const replyScripts = [
+      `¡Totalmente de acuerdo, ${isReplyTo}!`,
+      `¿En serio ${isReplyTo}? No lo sabía...`,
+      `¡Qué bueno saludarte ${isReplyTo}!`,
+      `Opino lo mismo que tú.`,
+      `Gracias por la info, me sirve mucho.`
+    ];
+
+    setIsTyping(neighbor.full_name);
+    setTimeout(() => {
+      setIsTyping(null);
+      const content = isReplyTo
+        ? `@${isReplyTo} ${replyScripts[Math.floor(Math.random() * replyScripts.length)]}`
+        : scripts[Math.floor(Math.random() * scripts.length)];
+
+      const mockMsg: Message = {
+        id: `sim-${Date.now()}`,
+        user_id: neighbor.id,
+        content: content,
+        user_metadata: { full_name: neighbor.full_name, avatar_url: neighbor.avatar_url },
+        neighborhood: 'GENERAL',
+        created_at: new Date().toISOString()
+      };
+      setMessages(prev => [...prev, mockMsg]);
+      playSound('msg');
+    }, 3000);
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -143,6 +169,13 @@ const Forum: React.FC = () => {
       }, (payload) => {
         const newMsg = payload.new as Message;
         setMessages(prev => [...prev, newMsg]);
+
+        // If a real user sends a message, trigger a simulated reply from a virtual neighbor
+        if (newMsg.user_id === user?.id) {
+          setTimeout(() => {
+            generateVirtualMessage(user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino');
+          }, 5000 + Math.random() * 5000);
+        }
 
         if (newMsg.user_id !== user?.id) {
           if (newMsg.content.includes('<<ZUMBIDO>>')) {
@@ -398,7 +431,12 @@ const Forum: React.FC = () => {
                     </div>
                     <div className={`flex flex-col ${isMine ? 'items-end' : 'items-start'}`}>
                       <div className="flex items-center gap-2 mb-1 px-1">
-                        <span className="text-[9px] font-black dark:text-gray-400 uppercase tracking-widest">{msg.user_metadata?.full_name} dice:</span>
+                        <span
+                          onClick={() => !isMine && handleReply(msg.user_metadata?.full_name?.split(' ')[0] || 'Vecino')}
+                          className={`text-[9px] font-black uppercase tracking-widest cursor-pointer hover:text-primary transition-colors ${isMine ? 'dark:text-gray-400' : 'text-primary animate-pulse'}`}
+                        >
+                          {msg.user_metadata?.full_name} {isMine ? '(Tú)' : '← Responder'}
+                        </span>
                         <span className="text-[8px] font-bold text-gray-400">{new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                       </div>
                       <div className={`p-4 rounded-[28px] font-bold text-sm leading-relaxed shadow-lg ${isMine ? 'bg-[#3b82f6] text-white rounded-tr-none' : 'bg-white dark:bg-surface-dark dark:text-white rounded-tl-none border border-gray-100 dark:border-gray-800'}`}>
