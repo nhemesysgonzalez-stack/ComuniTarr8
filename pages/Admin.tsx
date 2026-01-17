@@ -221,6 +221,34 @@ const Admin: React.FC = () => {
             <section className="grid lg:grid-cols-2 gap-10">
                 <div className="space-y-6">
                     <h2 className="text-2xl font-black dark:text-white flex items-center gap-2">
+                        <span className="material-symbols-outlined text-amber-500">military_tech</span>
+                        Ranking de Actividad
+                    </h2>
+                    <div className="bg-white dark:bg-gray-800 rounded-[40px] border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden">
+                        {recentUsers.slice(0, 8).sort((a, b) => (b.karma || 0) - (a.karma || 0)).map((u, i) => (
+                            <div key={u.id} className="p-5 border-b border-gray-50 dark:border-gray-700 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                                <div className="flex items-center gap-4">
+                                    <span className="text-lg font-black text-gray-300 w-6">#{i + 1}</span>
+                                    <img src={u.avatar_url || `https://ui-avatars.com/api/?name=${u.full_name}`} className="size-10 rounded-xl" alt="" />
+                                    <div>
+                                        <p className="text-sm font-black dark:text-white">{u.full_name}</p>
+                                        <p className="text-[9px] font-black text-gray-400 font-bold uppercase tracking-widest">{u.neighborhood || 'SIN BARRIO'}</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center gap-4">
+                                    <div className="text-right">
+                                        <p className="text-sm font-black text-primary leading-none">{u.karma || 0} XP</p>
+                                        <p className="text-[9px] font-black text-amber-600 uppercase tracking-widest leading-none mt-1">{u.comuni_points || 0} CP</p>
+                                    </div>
+                                    <span className="material-symbols-outlined text-gray-200">chevron_right</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="space-y-6">
+                    <h2 className="text-2xl font-black dark:text-white flex items-center gap-2">
                         <span className="material-symbols-outlined text-primary">analytics</span>
                         Actividad en Tiempo Real
                     </h2>

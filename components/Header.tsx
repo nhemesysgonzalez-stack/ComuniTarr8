@@ -259,13 +259,9 @@ export const Header: React.FC = () => {
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">⚠️ AVISO: PROHIBIDO APARCAR EN EL RECORRIDO DE TRES TOMBS DESDE ESTA NOCHE</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🧹 COMUNIDAD: LIMPIEZA VOLUNTARIA DE CALLES TRAS LA LLUVIA (12:00H PART ALTA)</span>
-          <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🛒 MERCAT: SABADO DE PRODUCTO LOCAL EN EL FORO Y PLAZA DE LA FONT</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">⚽ NASTIC: PREPARATIVOS PARA EL PRÓXIMO ENCUENTRO TRAS EL ÉXITO EN COPA</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🗳️ BONA GENT: ÚLTIMO FIN DE SEMANA PARA VOTAR POR EL MEJOR VECINO DEL AÑO</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🐎 MAÑANA: NO OS PERDÁIS LA BENDICIÓN DE ANIMALES A LAS 11:00H</span>
         </motion.div>

@@ -388,37 +388,6 @@ const Home: React.FC = () => {
         ))}
       </section>
 
-      {/* Featured Vote Banner: Bona Gent 2025 */}
-      <section className="relative overflow-hidden group bg-gradient-to-r from-cyan-600 to-blue-700 rounded-[40px] p-8 md:p-12 text-white shadow-2xl shadow-cyan-500/30">
-        <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:scale-110 transition-transform duration-700">
-          <span className="material-symbols-outlined text-[150px]">workspace_premium</span>
-        </div>
-        <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
-          <div className="flex-1 text-center md:text-left">
-            <span className="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest mb-6 border border-white/20">
-              Iniciativa Local
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tighter leading-none">
-              ¿Quién es la <br /><span className="text-cyan-200">Bona Gent 2025?</span>
-            </h2>
-            <p className="text-lg opacity-90 font-bold mb-8 max-w-xl">
-              Vota por los vecinos que hacen de Tarragona un lugar mejor. ¡Tu voto cuenta para reconocer el compromiso vecinal!
-            </p>
-            <Link
-              to="/polls"
-              className="inline-flex items-center gap-4 px-8 py-5 bg-white text-cyan-600 rounded-[30px] font-black text-xs uppercase tracking-widest shadow-xl hover:scale-105 active:scale-95 transition-all group/btn"
-            >
-              VOTAR AHORA
-              <span className="material-symbols-outlined font-black group-hover:translate-x-1 transition-transform">how_to_vote</span>
-            </Link>
-          </div>
-          <div className="hidden lg:flex flex-col items-center justify-center w-64 h-64 bg-white/10 backdrop-blur-md rounded-[40px] border border-white/20 p-8 text-center">
-            <span className="material-symbols-outlined text-6xl mb-4 text-cyan-200">emoji_events</span>
-            <p className="text-xs font-black uppercase tracking-widest">Reconocimiento Vecinal</p>
-            <p className="text-[10px] font-bold opacity-60 mt-2">Colabora con el Diari de Tarragona</p>
-          </div>
-        </div>
-      </section>
 
       {/* Promotion Banner */}
       <section className="bg-gradient-to-r from-orange-500 to-amber-500 rounded-[40px] p-6 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg shadow-orange-500/20">
