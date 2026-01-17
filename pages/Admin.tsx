@@ -17,7 +17,7 @@ const Admin: React.FC = () => {
 
     // SEGURIDAD: Solo Cindy puede entrar
     useEffect(() => {
-        if (!user || (user.email !== 'nhemesysgonzalez@gmail.com' && user.email !== 'nhemesysgonzalez@hotmail.com')) {
+        if (!user || user.email !== 'nhemesysgonzalez@gmail.com') {
             navigate('/');
         } else {
             fetchAdminData();

@@ -132,7 +132,7 @@ const Forum: React.FC = () => {
         user_id: neighbor.id,
         content: content,
         user_metadata: { full_name: neighbor.full_name, avatar_url: neighbor.avatar_url },
-        neighborhood: 'GENERAL',
+        neighborhood: currentNeighborhood,
         created_at: new Date().toISOString()
       };
       setMessages(prev => [...prev, mockMsg]);
@@ -168,7 +168,11 @@ const Forum: React.FC = () => {
         filter: `neighborhood=eq.${currentNeighborhood}`
       }, (payload) => {
         const newMsg = payload.new as Message;
-        setMessages(prev => [...prev, newMsg]);
+        setMessages(prev => {
+          // Filtrar el mensaje temporal optimista para evitar duplicados
+          const filtered = prev.filter(m => !(m.id.toString().startsWith('temp-') && m.content === newMsg.content && m.user_id === newMsg.user_id));
+          return [...filtered, newMsg];
+        });
 
         // If a real user sends a message, trigger a simulated reply from a virtual neighbor
         if (newMsg.user_id === user?.id) {
@@ -266,10 +270,27 @@ const Forum: React.FC = () => {
     e.preventDefault();
     if (!newMessage.trim()) return;
 
+    const tempMsg: Message = {
+      id: `temp-${Date.now()}`,
+      user_id: user?.id || 'anon',
+      content: newMessage,
+      user_metadata: {
+        full_name: user?.user_metadata?.full_name || 'Vecino Anónimo',
+        avatar_url: user?.user_metadata?.avatar_url
+      },
+      neighborhood: currentNeighborhood,
+      created_at: new Date().toISOString()
+    };
+
+    // Optimistic Update
+    setMessages(prev => [...prev, tempMsg]);
+    const messageToSend = newMessage;
+    setNewMessage('');
+
     try {
       const { success } = await safeSupabaseInsert('forum_messages', {
         user_id: user?.id,
-        content: newMessage,
+        content: messageToSend,
         user_metadata: {
           full_name: user?.user_metadata?.full_name || 'Vecino Anónimo',
           avatar_url: user?.user_metadata?.avatar_url
@@ -277,10 +298,14 @@ const Forum: React.FC = () => {
         neighborhood: currentNeighborhood
       });
 
-      if (!success) throw new Error('Falló envío');
+      if (!success) {
+        // Remove temp message if failed
+        setMessages(prev => prev.filter(m => m.id !== tempMsg.id));
+        throw new Error('Falló envío');
+      }
+
       await addPoints(5, 1);
-      await logActivity('Mensaje Foro', { neighborhood: currentNeighborhood, content: newMessage.substring(0, 30) });
-      setNewMessage('');
+      await logActivity('Mensaje Foro', { neighborhood: currentNeighborhood, content: messageToSend.substring(0, 30) });
     } catch (e) {
       console.error(e);
     }
