@@ -58,17 +58,60 @@ const Forum: React.FC = () => {
   const [showNeighborhoods, setShowNeighborhoods] = useState(false);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
-  const [showWelcome, setShowWelcome] = useState(true);
+  const [isShaking, setIsShaking] = useState(false);
+  const [isTyping, setIsTyping] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const [tickerIndex, setTickerIndex] = useState(0);
 
   const tickerMessages = [
-    { user: 'Pau T.', text: 'Menudo viento hace hoy en el balcón del Mediterráneo, ¡agarraos! 🌬️' },
-    { user: 'Mireia R.', text: 'Cuidado con la calle Unió, está cortada y hay mucho tráfico.' },
-    { user: 'Joan B.', text: '¡4 días para ver los caballos! ¿Ya tenéis sitio reservado?' },
-    { user: 'Carme S.', text: 'Me apunto al Club de Lectura esta tarde, me encanta ese libro.' }
+    { user: 'Pau T.', text: 'El sol de hoy es engañoso, ¡hace un frío que pela! ☀️🧣' },
+    { user: 'Mireia R.', text: 'Philip Glass anoche fue de otro planeta... ¡qué nivel! 🎻' },
+    { user: 'Joan B.', text: 'Acabo de ver pasar los primeros caballos por la Rambla. ¡Emoción! 🐎' },
+    { user: 'Carme S.', text: '¿Quién viene a la limpieza de la Part Alta a las 12:00? 🧹' }
   ];
+
+  // Virtual Neighbors for Simulation
+  const virtualNeighbors = [
+    { id: 'v1', full_name: 'Pau T.', avatar_url: 'https://i.pravatar.cc/150?u=pau', status: 'online' },
+    { id: 'v2', full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia', status: 'busy' },
+    { id: 'v3', full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan', status: 'online' },
+    { id: 'v4', full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme', status: 'away' }
+  ];
+
+  // Simulation Logic: Seed messages about today Saturday 17th
+  useEffect(() => {
+    const simulationInterval = setInterval(() => {
+      // 20% chance of a virtual message every 45s if no real activity
+      if (Math.random() < 0.2) {
+        const neighbor = virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
+        const scripts = [
+          "¿Habéis visto qué sol hace hoy? Ideal para los preparativos de mañana. ☀️",
+          "Ojo que esta noche ya no se puede aparcar en la Rambla por los Tres Tombs. 🐎",
+          "Sigo impresionado con el concierto de anoche. ¡Qué suerte tener esto en TGN! 🎻",
+          "¿Alguien sabe si el mercadillo del Foro está muy lleno hoy? 🛒",
+          "Voy de camino a la limpieza de la Part Alta. ¡Traed guantes! 🧹"
+        ];
+
+        setIsTyping(neighbor.full_name);
+        setTimeout(() => {
+          setIsTyping(null);
+          const mockMsg: Message = {
+            id: `sim-${Date.now()}`,
+            user_id: neighbor.id,
+            content: scripts[Math.floor(Math.random() * scripts.length)],
+            user_metadata: { full_name: neighbor.full_name, avatar_url: neighbor.avatar_url },
+            neighborhood: 'GENERAL',
+            created_at: new Date().toISOString()
+          };
+          setMessages(prev => [...prev, mockMsg]);
+          playSound('msg');
+        }, 3000);
+      }
+    }, 45000);
+
+    return () => clearInterval(simulationInterval);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -88,7 +131,7 @@ const Forum: React.FC = () => {
   useEffect(() => {
     fetchMessages();
 
-    // Suscribirse a nuevos mensajes en tiempo real
+    // Subscribe to new messages
     const channel = supabase
       .channel('public:forum_messages')
       .on('postgres_changes', {
@@ -100,10 +143,11 @@ const Forum: React.FC = () => {
         const newMsg = payload.new as Message;
         setMessages(prev => [...prev, newMsg]);
 
-        // Notificacion sonora si no es nuestro propio mensaje
         if (newMsg.user_id !== user?.id) {
           if (newMsg.content.includes('<<ZUMBIDO>>')) {
             playSound('buzz');
+            setIsShaking(true);
+            setTimeout(() => setIsShaking(false), 500);
           } else {
             playSound('msg');
           }
@@ -144,20 +188,22 @@ const Forum: React.FC = () => {
   };
 
   const fetchActiveUsers = (msgs: Message[]) => {
-    if (activeUsers.length > 0) return;
+    const virtuals = virtualNeighbors.map(v => ({ ...v, isVirtual: true }));
     const seen = new Set();
-    const uniqueUsers: any[] = [];
-    [...msgs].reverse().forEach(m => {
-      if (m.user_id && !seen.has(m.user_id)) {
+    const uniqueUsers: any[] = [...virtuals];
+
+    msgs.forEach(m => {
+      if (m.user_id && !seen.has(m.user_id) && !m.id.startsWith('sim-')) {
         seen.add(m.user_id);
         uniqueUsers.push({
           id: m.user_id,
           avatar_url: m.user_metadata?.avatar_url,
-          full_name: m.user_metadata?.full_name
+          full_name: m.user_metadata?.full_name,
+          status: 'online'
         });
       }
     });
-    setActiveUsers(uniqueUsers.slice(0, 5));
+    setActiveUsers(uniqueUsers.slice(0, 12)); // Show more "online" users
   };
 
   const toggleMute = () => setIsMuted(!isMuted);
@@ -166,6 +212,8 @@ const Forum: React.FC = () => {
     if (loading) return;
     try {
       playSound('buzz');
+      setIsShaking(true);
+      setTimeout(() => setIsShaking(false), 500);
       await safeSupabaseInsert('forum_messages', {
         user_id: user?.id,
         content: '🔔 ¡ZUMBIDO! <<ZUMBIDO>>',
@@ -204,11 +252,11 @@ const Forum: React.FC = () => {
 
   const handleTopicClick = (topicId: string) => {
     if (topicId === 'nastic-semis') {
-      setNewMessage('¡Qué sufrimiento ayer! Pero ya estamos en semis. ¿Quién se apunta a ir a ver la ida? 🏟️');
-    } else if (topicId === 'alerta-lluvia') {
-      setNewMessage('¿Sabéis si han cortado algún acceso por la lluvia? Dicen que cae fuerte en el Serrallo. 🌧️');
+      setNewMessage('¡Qué resaca emocional del partido de anoche! ⚽ ¿Creéis que llegaremos a la final?');
+    } else if (topicId === 'sol-sabado') {
+      setNewMessage('¡Por fin sol! ☀️ ¿Alguien para ir a la limpieza de la Part Alta ahora a las 12:00?');
     } else if (topicId === 'tres-tombs') {
-      setNewMessage('¿Mañana es el ensayo general de los caballos? Solo faltan 2 días para la fiesta. 🐎');
+      setNewMessage('Mañana los Tres Tombs. ¡Recordad quitar los coches o se los lleva la grúa! 🐎');
     }
     setTimeout(() => {
       inputRef.current?.focus();
@@ -217,276 +265,170 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'nastic-semis',
-      title: '⚽ ¡Nàstic a Semis!',
-      description: 'Euforia tras la victoria de anoche. Organizando viaje para la ida.',
-      participating: 42
+      id: 'sol-sabado',
+      title: '☀️ Sábado de Sol',
+      description: 'Tras la lluvia, Tarragona brilla. Planes para hoy.',
+      participating: 28
     },
     {
-      id: 'alerta-lluvia',
-      title: '🌧️ Alerta por Lluvias',
-      description: 'Preocupación por posibles inundaciones en barrios bajos.',
-      participating: 35
+      id: 'nastic-semis',
+      title: '⚽ El Sueño Grana',
+      description: 'Debate sobre la alineación para el próximo partido.',
+      participating: 54
     },
     {
       id: 'tres-tombs',
-      title: '🐎 Tres Tombs (2 Días)',
-      description: 'Últimos ensayos y preparativos. Domingo de tradición.',
-      participating: 19
+      title: '🐎 Tres Tombs (Mañana)',
+      description: 'Restricciones de tráfico y horarios del desfile.',
+      participating: 31
     }
   ];
 
   return (
-    <div className="flex flex-col h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] font-sans" onClick={unlockAudio}>
+    <div className={`flex flex-col h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] font-sans transition-transform duration-100 ${isShaking ? 'translate-x-2 -translate-y-2' : ''}`} onClick={unlockAudio}>
       {/* Header */}
-      <div className="p-6 md:p-8 border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-surface-dark flex flex-col lg:flex-row lg:items-center justify-between gap-6 shrink-0">
+      <div className="p-6 md:p-8 border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-surface-dark flex flex-col lg:flex-row lg:items-center justify-between gap-6 shrink-0 relative overflow-hidden">
+        {/* MSN style top bar */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-green-400 to-blue-400"></div>
+
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
-            <h2 className="text-xl md:text-3xl font-black dark:text-white tracking-tighter uppercase leading-none">FORO VECINAL</h2>
+            <h2 className="text-xl md:text-3xl font-black dark:text-white tracking-tighter uppercase leading-none">COMMUNITY MESSENGER</h2>
             <div className="flex items-center gap-1 px-2 py-1 bg-green-500/10 rounded-lg">
               <span className="size-2 rounded-full bg-green-500 animate-pulse"></span>
-              <span className="text-[9px] font-black text-green-600 uppercase tracking-widest">{activeUsers.length || 1} ONLINE</span>
+              <span className="text-[9px] font-black text-green-600 uppercase tracking-widest">{activeUsers.length + 8} ACTIVOS</span>
             </div>
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2">
             <button
               onClick={() => startTransition(() => setCurrentNeighborhood('GENERAL'))}
-              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood === 'GENERAL' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'}`}
+              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shrink-0 ${currentNeighborhood === 'GENERAL' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'}`}
             >
               🌍 Canal General
             </button>
             <button
               onClick={() => startTransition(() => setCurrentNeighborhood(user?.user_metadata?.neighborhood || 'GENERAL'))}
-              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood !== 'GENERAL' && currentNeighborhood !== 'EMPLEO' && currentNeighborhood !== 'SEGURIDAD' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'}`}
+              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shrink-0 ${currentNeighborhood !== 'GENERAL' && currentNeighborhood !== 'EMPLEO' && currentNeighborhood !== 'SEGURIDAD' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'}`}
             >
-              🏠 Mi Barrio ({user?.user_metadata?.neighborhood || 'MI ZONA'})
+              🏠 Mi Barrio
             </button>
             <button
               onClick={() => startTransition(() => setCurrentNeighborhood('EMPLEO'))}
-              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood === 'EMPLEO' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/20' : 'bg-gray-100 text-emerald-600 hover:bg-emerald-50 dark:bg-gray-800 dark:text-emerald-400'}`}
+              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shrink-0 ${currentNeighborhood === 'EMPLEO' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/20' : 'bg-gray-100 text-emerald-600 hover:bg-emerald-50 dark:bg-gray-800 dark:text-emerald-400'}`}
             >
               💼 Empleo
             </button>
             <button
               onClick={() => startTransition(() => setCurrentNeighborhood('SEGURIDAD'))}
-              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${currentNeighborhood === 'SEGURIDAD' ? 'bg-orange-600 text-white shadow-lg shadow-orange-600/20' : 'bg-gray-100 text-orange-600 hover:bg-orange-50 dark:bg-gray-800 dark:text-orange-400'}`}
+              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shrink-0 ${currentNeighborhood === 'SEGURIDAD' ? 'bg-orange-600 text-white shadow-lg shadow-orange-600/20' : 'bg-gray-100 text-orange-600 hover:bg-orange-50 dark:bg-gray-800 dark:text-orange-400'}`}
             >
-              🛡️ Seguridad/Preppers
-            </button>
-            <button
-              onClick={() => setShowNeighborhoods(!showNeighborhoods)}
-              className="size-10 flex items-center justify-center bg-gray-100 dark:bg-gray-800 text-gray-500 rounded-xl hover:bg-gray-200 transition-all"
-            >
-              <span className="material-symbols-outlined">map</span>
+              🛡️ Seguridad
             </button>
           </div>
         </div>
 
-        {/* Trending Widget - Desktop Only */}
-        <div className="hidden lg:flex gap-6">
-          {trendingTopics.map(topic => (
-            <motion.div
-              key={topic.id}
-              whileHover={{ scale: 1.02 }}
-              className="bg-amber-500/10 border border-amber-500/20 p-4 rounded-2xl w-60 flex flex-col justify-between"
-            >
-              <div>
-                <h4 className="text-[10px] font-black text-amber-700 uppercase tracking-widest mb-1">{topic.title}</h4>
-                <p className="text-[9px] font-bold text-amber-900/60 leading-tight">{topic.description}</p>
+        {/* Status Bar / Avatars */}
+        <div className="flex items-center gap-2">
+          {activeUsers.slice(0, 6).map((u, i) => (
+            <div key={i} className="relative group cursor-help">
+              <img src={u.avatar_url || `https://i.pravatar.cc/100?u=${u.id}`} className="size-10 rounded-xl border-2 border-white dark:border-gray-800 shadow-md grayscale-[0.5] hover:grayscale-0 transition-all" alt="" />
+              <span className={`absolute -bottom-1 -right-1 size-3 rounded-full border-2 border-white dark:border-gray-800 ${u.status === 'online' ? 'bg-green-500' : u.status === 'busy' ? 'bg-red-500' : 'bg-amber-500'}`}></span>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 text-white text-[8px] font-black rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
+                {u.full_name} ({u.status || 'online'})
               </div>
-              <div className="flex items-center justify-between mt-2">
-                <span className="text-[8px] font-black text-amber-700">{topic.participating} VECINOS</span>
-                <button
-                  onClick={() => handleTopicClick(topic.id)}
-                  className="text-[8px] font-black uppercase bg-white px-2 py-1 rounded-md shadow-sm text-amber-700 hover:bg-amber-500 hover:text-white transition-colors"
-                >
-                  Participar
-                </button>
-              </div>
-            </motion.div>
+            </div>
           ))}
+          <div className="size-10 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-[10px] font-black text-gray-400">+12</div>
         </div>
       </div>
 
-      {/* Mobile Trending Widget */}
-      <div className="lg:hidden bg-amber-500/5 p-4 border-b border-amber-500/10 flex gap-4 overflow-x-auto shrink-0 no-scrollbar">
-        {trendingTopics.map(topic => (
-          <div
-            key={topic.id}
-            onClick={() => handleTopicClick(topic.id)}
-            className="min-w-[220px] bg-white dark:bg-gray-800 p-3 rounded-xl border border-amber-500/20 shadow-sm shrink-0 active:scale-95 transition-transform"
-          >
-            <h4 className="text-[9px] font-black text-amber-600 uppercase tracking-widest mb-1">{topic.title}</h4>
-            <p className="text-[8px] font-bold text-gray-500 line-clamp-1">{topic.description}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* Neighborhood Selector Dropdown Overlay */}
-      <AnimatePresence>
-        {showNeighborhoods && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/20 backdrop-blur-sm" onClick={() => setShowNeighborhoods(false)}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-[40px] shadow-2xl p-8 w-full max-w-sm"
-            >
-              <h3 className="text-xl font-black dark:text-white uppercase mb-6 text-center">Explorar otros barrios</h3>
-              <div className="grid grid-cols-1 gap-2">
-                {NEIGHBORHOODS.map(n => (
-                  <button
-                    key={n}
-                    onClick={() => {
-                      startTransition(() => {
-                        setCurrentNeighborhood(n);
-                        setShowNeighborhoods(false);
-                      });
-                    }}
-                    className={`w-full px-6 py-4 rounded-2xl text-xs font-bold transition-all text-center ${currentNeighborhood === n ? 'bg-primary text-white shadow-lg' : 'bg-gray-50 dark:bg-gray-800 dark:text-white hover:bg-gray-100'}`}
-                  >
-                    {n}
-                  </button>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
-      <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 md:p-12 space-y-8 bg-gray-50/50 dark:bg-background-dark/30 custom-scrollbar">
-
-        {/* Featured / Seeded Messages for General Debate */}
-        {currentNeighborhood === 'GENERAL' && (
-          <div className="space-y-6 mb-12">
-            <div className="flex justify-center">
-              <span className="px-4 py-1 bg-amber-100 text-amber-700 rounded-full text-[9px] font-black uppercase tracking-widest border border-amber-200">
-                Debate Destacado: ¡Victoria Grana!
-              </span>
-            </div>
-
-            <div className="flex justify-start gap-4">
-              <div className="size-10 rounded-2xl bg-amber-500 flex items-center justify-center font-black text-white shrink-0 shadow-lg shadow-amber-500/20">MT</div>
-              <div className="flex flex-col items-start max-w-[80%]">
-                <span className="text-[10px] font-black uppercase mb-1">Maru Torres</span>
-                <div className="p-4 bg-white dark:bg-surface-dark rounded-2xl rounded-tl-none border-l-4 border-amber-500 shadow-sm text-sm">
-                  ¿Habéis recuperado la voz? 😅 ¡Vaya partidazo ayer en el Nou Estadi! El ambiente fue increíble. ¿Quién se apunta a recibir al equipo el domingo?
-                </div>
-              </div>
-            </div>
-
-            <div className="flex justify-start gap-4">
-              <div className="size-10 rounded-2xl bg-blue-500 flex items-center justify-center font-black text-white shrink-0 shadow-lg shadow-blue-500/20">JR</div>
-              <div className="flex flex-col items-start max-w-[80%]">
-                <span className="text-[10px] font-black uppercase mb-1">Joan Rebull</span>
-                <div className="p-4 bg-white dark:bg-surface-dark rounded-2xl rounded-tl-none border-l-4 border-blue-500 shadow-sm text-sm">
-                  ¡Sigo afónico! 🧣 Fue épico. Por cierto, ¿alguien sabe si pondrán pantallas gigantes para la semifinal? Sería genial verlo todos juntos en la Plaça de la Font.
-                </div>
-              </div>
-            </div>
-
-            <div className="flex justify-center py-4">
-              <div className="h-px bg-gray-100 dark:bg-gray-800 flex-1"></div>
-              <span className="px-4 text-[8px] font-black text-gray-400 uppercase tracking-widest">Conversación en directo</span>
-              <div className="h-px bg-gray-100 dark:bg-gray-800 flex-1"></div>
-            </div>
-          </div>
-        )}
+      <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 md:p-12 space-y-8 bg-[#f5f7fa] dark:bg-background-dark/30 custom-scrollbar">
 
         {loading ? (
           <div className="h-full flex flex-col items-center justify-center gap-4 opacity-50">
             <div className="size-10 border-4 border-primary border-t-transparent animate-spin rounded-full"></div>
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Cargando conversación...</p>
-          </div>
-        ) : messages.length === 0 ? (
-          <div className="h-full flex flex-col items-center justify-center text-center p-12 space-y-4">
-            <div className="size-20 bg-primary/10 rounded-[30px] flex items-center justify-center">
-              <span className="material-symbols-outlined text-4xl text-primary">chat_bubble</span>
-            </div>
-            <h3 className="text-2xl font-black dark:text-white uppercase tracking-tighter">¡Sé el primero en hablar!</h3>
-            <p className="text-gray-500 font-medium max-w-xs mx-auto">Comparte algo con tus vecinos de {currentNeighborhood}. ¡Gana 5 ComuniPoints por mensaje!</p>
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Estableciendo conexión...</p>
           </div>
         ) : (
-          messages.map((msg, i) => {
-            const isMine = msg.user_id === user?.id;
-            const isBuzz = msg.content.includes('<<ZUMBIDO>>');
+          <div className="space-y-6">
+            <div className="flex justify-center mb-8">
+              <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
+                Sábado 17 Enero 2026 - Charlas del Barrio
+              </span>
+            </div>
 
-            if (isBuzz) {
+            {messages.map((msg, i) => {
+              const isMine = msg.user_id === user?.id;
+              const isBuzz = msg.content.includes('<<ZUMBIDO>>');
+
+              if (isBuzz) {
+                return (
+                  <motion.div
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1.1, opacity: 1 }}
+                    key={msg.id}
+                    className="flex justify-center my-6"
+                  >
+                    <div className="bg-red-500 text-white px-10 py-5 rounded-[40px] font-black text-xs uppercase tracking-[0.3em] shadow-[0_20px_50px_rgba(239,68,68,0.3)] animate-pulse flex items-center gap-4 border-4 border-white">
+                      <span className="material-symbols-outlined shrink-0">notifications_active</span>
+                      ¡ZUMBIDO DE {msg.user_metadata?.full_name}!
+                      <span className="material-symbols-outlined shrink-0">notifications_active</span>
+                    </div>
+                  </motion.div>
+                );
+              }
+
               return (
                 <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
                   key={msg.id}
-                  className="flex justify-center my-6"
+                  className={`flex ${isMine ? 'justify-end' : 'justify-start'} group`}
                 >
-                  <div className="bg-red-500 text-white px-8 py-4 rounded-3xl font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-red-500/30 animate-bounce">
-                    🔔 Zumbido de {msg.user_metadata?.full_name}
+                  <div className={`flex gap-4 max-w-[85%] md:max-w-[70%] ${isMine ? 'flex-row-reverse' : 'flex-row'}`}>
+                    <div className="shrink-0 pt-1">
+                      <div className="relative group">
+                        <img src={msg.user_metadata?.avatar_url || `https://i.pravatar.cc/100?u=${msg.user_id}`} className="size-10 rounded-2xl object-cover border-2 border-white dark:border-gray-800 shadow-sm" alt="" />
+                        <span className="absolute -bottom-1 -right-1 size-3 rounded-full bg-green-500 border-2 border-white dark:border-gray-800"></span>
+                      </div>
+                    </div>
+                    <div className={`flex flex-col ${isMine ? 'items-end' : 'items-start'}`}>
+                      <div className="flex items-center gap-2 mb-1 px-1">
+                        <span className="text-[9px] font-black dark:text-gray-400 uppercase tracking-widest">{msg.user_metadata?.full_name} dice:</span>
+                        <span className="text-[8px] font-bold text-gray-400">{new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                      </div>
+                      <div className={`p-4 rounded-[28px] font-bold text-sm leading-relaxed shadow-lg ${isMine ? 'bg-[#3b82f6] text-white rounded-tr-none' : 'bg-white dark:bg-surface-dark dark:text-white rounded-tl-none border border-gray-100 dark:border-gray-800'}`}>
+                        {msg.content}
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               );
-            }
+            })}
 
-            return (
-              <motion.div
-                initial={{ opacity: 0, x: isMine ? 20 : -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                key={msg.id}
-                className={`flex ${isMine ? 'justify-end' : 'justify-start'} group`}
-              >
-                <div className={`flex gap-4 max-w-[85%] md:max-w-[70%] ${isMine ? 'flex-row-reverse' : 'flex-row'}`}>
-                  <div className="shrink-0">
-                    <div className="size-10 rounded-2xl bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center font-black text-xs overflow-hidden shadow-sm">
-                      {msg.user_metadata?.avatar_url ? (
-                        <img src={msg.user_metadata.avatar_url} alt="" className="size-full object-cover" />
-                      ) : (
-                        msg.user_metadata?.full_name?.charAt(0) || '?'
-                      )}
-                    </div>
-                  </div>
-                  <div className={`flex flex-col ${isMine ? 'items-end' : 'items-start'}`}>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] font-black dark:text-white uppercase tracking-wider">{msg.user_metadata?.full_name}</span>
-                      <span className="text-[9px] font-bold text-gray-400">{new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
-                    </div>
-                    <div className={`p-4 rounded-[24px] font-medium text-sm leading-relaxed shadow-sm ${isMine ? 'bg-primary text-white rounded-tr-none' : 'bg-white dark:bg-surface-dark dark:text-white rounded-tl-none border border-gray-100 dark:border-gray-800'}`}>
-                      {msg.content}
-                    </div>
-                  </div>
+            {isTyping && (
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-3 text-gray-400 ml-14">
+                <div className="flex gap-1">
+                  <span className="size-1.5 bg-gray-300 rounded-full animate-bounce"></span>
+                  <span className="size-1.5 bg-gray-300 rounded-full animate-bounce [animation-delay:0.2s]"></span>
+                  <span className="size-1.5 bg-gray-300 rounded-full animate-bounce [animation-delay:0.4s]"></span>
                 </div>
+                <span className="text-[10px] font-black uppercase tracking-widest">{isTyping} está escribiendo...</span>
               </motion.div>
-            );
-          })
+            )}
+          </div>
         )}
       </div>
 
       {/* Input Area */}
       <div className="p-6 md:p-10 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-surface-dark shrink-0">
-        {/* Mobile Community Ticker (Cintillo) */}
-        <div className="lg:hidden mb-4 overflow-hidden bg-primary/5 rounded-xl py-2 px-4 flex items-center gap-3 border border-primary/10">
-          <span className="material-symbols-outlined text-primary text-sm animate-pulse">forum</span>
-          <div className="flex-1 overflow-hidden relative h-4">
-            <AnimatePresence mode="wait">
-              <motion.p
-                key={tickerIndex}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="text-[10px] font-bold text-gray-500 dark:text-gray-400 absolute inset-0 truncate"
-              >
-                <span className="text-primary font-black uppercase text-[8px] mr-2">{tickerMessages[tickerIndex].user}:</span>
-                {tickerMessages[tickerIndex].text}
-              </motion.p>
-            </AnimatePresence>
-          </div>
-        </div>
 
         <form onSubmit={sendMessage} className="relative max-w-5xl mx-auto flex items-center gap-4">
           <button
             type="button"
             onClick={sendBuzz}
-            className="size-14 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all shadow-sm active:scale-90 group"
+            className="size-14 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all shadow-sm active:scale-90 group border-2 border-red-100"
             title="Enviar Zumbido"
           >
             <span className="material-symbols-outlined text-2xl group-hover:animate-ping">notifications_active</span>
@@ -498,19 +440,37 @@ const Forum: React.FC = () => {
               type="text"
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
-              placeholder={`Escribe en ${currentNeighborhood}...`}
-              className="w-full bg-gray-50 dark:bg-gray-800 border-none rounded-2xl px-6 py-4 font-bold dark:text-white outline-none ring-primary/20 focus:ring-4 transition-all"
+              onFocus={() => { if (messages.length === 0) unlockAudio(); }}
+              placeholder={`Escribe un mensaje en ${currentNeighborhood}...`}
+              className="w-full bg-gray-50 dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-3xl px-6 py-4 font-bold dark:text-white outline-none ring-primary/20 focus:ring-4 focus:border-primary transition-all pr-20"
             />
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2">
+              <button type="button" className="p-2 text-gray-400 hover:text-primary transition-colors">
+                <span className="material-symbols-outlined text-xl">mood</span>
+              </button>
+            </div>
           </div>
 
           <button
             type="submit"
-            className="size-14 rounded-2xl bg-primary text-white flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20 disabled:opacity-50"
+            className="size-14 rounded-2xl bg-[#3b82f6] text-white flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl shadow-blue-500/30 disabled:opacity-50 border-b-4 border-blue-700"
             disabled={!newMessage.trim()}
           >
             <span className="material-symbols-outlined font-black">send</span>
           </button>
         </form>
+
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          {trendingTopics.map(topic => (
+            <button
+              key={topic.id}
+              onClick={() => handleTopicClick(topic.id)}
+              className="px-4 py-2 bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-900/30 rounded-full text-[9px] font-black text-amber-700 dark:text-amber-500 uppercase tracking-widest hover:bg-amber-500 hover:text-white transition-all"
+            >
+              #{topic.title.replace(' ', '')}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
