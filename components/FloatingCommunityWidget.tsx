@@ -11,12 +11,12 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¡Vaya chaparrón está cayendo! 🌧️ Guardad los coches si podéis, que va para largo.', neighborhood: 'Part Alta' },
-    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '¿Alguien ya en el Teatre Tarragona? He visto una cola enorme para Philip Glass.', neighborhood: 'Eixample' },
-    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: 'Ya no se puede aparcar en la Rambla por las vallas de los Tres Tombs. Avisados quedáis!', neighborhood: 'Serrallo' },
-    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'Los niños han flipado con la visita de los jugadores del Nàstic esta tarde. ¡Grandes! ⚽', neighborhood: 'Serrallo' },
-    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: 'Mucho ojo al conducir por la T-11, el suelo está muy brillante por la lluvia.', neighborhood: 'Llevant' },
-    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: 'He pillado las últimas ofertas del Mercat para la cena de hoy. ¡Rico rico!', neighborhood: 'General' },
+    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¡Menos mal que ha salido el sol! ☀️ Hoy toca paseo por la playa para secar los ánimos.', neighborhood: 'Part Alta' },
+    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Increíble lo de Philip Glass anoche 🎻. Todavía tengo los pelos de punta.', neighborhood: 'Eixample' },
+    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: 'Recordad que esta noche quitan los coches de la Rambla por los caballos mañana 🐎.', neighborhood: 'Serrallo' },
+    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: '¿Quién se apunta a la limpieza de la Part Alta a las 12:00? Llevo bolsas y guantes 🧹.', neighborhood: 'Part Alta' },
+    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: 'Pescado fresco de hoy en el Mercat. ¡El temporal de ayer no ha podido con los barcos! 🐟', neighborhood: 'Llevant' },
+    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: '¿Habéis visto el nuevo mural que han hecho cerca del anfiteatro? Es precioso.', neighborhood: 'General' },
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

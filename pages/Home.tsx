@@ -183,64 +183,63 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-alert-pm',
-          title: "🌧️ TARDE: Comienza a Llover",
-          content: "Atención: La masa de aire frío ya está sobre Tarragona. Se recomienda precaución en los desplazamientos por suelo mojado. Las lluvias persistirán durante toda la noche.",
+          id: 'weather-sat-morning',
+          title: "☀️ SÁBADO: Sale el Sol",
+          content: "Tras las lluvias de anoche, Tarragona amanece con cielos despejados. Temperaturas frescas (10°C - 14°C). Ideal para pasear, pero abrigaos.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Tarde: Lluvia moderada\n• Noche: Lluvias intensas\n• Temp: 12°C\n• Aviso: Suelo resbaladizo",
+          itinerary: "• Mañana: Soleado\n• Tarde: Nubes altas\n• Temp: 12°C\n• Aviso: Sin lluvia hoy",
           created_at: new Date().toISOString()
         };
 
         const cultureNotice = {
-          id: 'philip-glass-tonight',
-          title: "🎻 CULTURA: Últimas horas para Philip Glass",
-          content: "¡Todo listo en el Teatre Tarragona! El concierto de violín comienza a las 20:30h. Quedan menos de 10 entradas en taquilla. No te pierdas este evento internacional.",
-          category: "CULTURA",
+          id: 'philip-glass-success',
+          title: "🎉 ÉXITO: Philip Glass cautiva",
+          content: "Lleno total anoche en el Teatre Tarragona. El público ovacionó en pie el recital de violín minimalista. Una noche inolvidable para la cultura local.",
+          category: "EXITO",
           neighborhood: "CENTRE",
-          itinerary: "• Apertura: 20:00h\n• Inicio: 20:30h\n• Lugar: Teatre Tarragona",
           created_at: new Date().toISOString()
         };
 
-        const nasticNotice = {
-          id: 'nastic-afternoon',
-          title: "⚽ DEPORTES: El Nàstic visita el Barrio",
-          content: "Esta tarde, varios jugadores del primer equipo han estado en el campus municipal con los más jóvenes. Gran ambiente tras la clasificación a semis de Copa Catalunya.",
-          category: "DEPORTES",
+        const tresTombsNotice = {
+          id: 'tres-tombs-preparativos',
+          title: "🐎 MAÑANA: Els Tres Tombs",
+          content: "Últimos preparativos para la gran cabalgata de mañana domingo a las 11:00h. Los animales ya están llegando a los establos municipales.",
+          category: "EVENTO",
           neighborhood: "GENERAL",
+          itinerary: "• Domingo 18: 11:00h\n• Lugar: Rambla Nova\n• Tradición: Bendición anual",
+          created_at: new Date().toISOString()
+        };
+
+        const communityClean = {
+          id: 'post-rain-clean',
+          title: "🧹 COMUNIDAD: Limpieza Post-Lluvia",
+          content: "Varios vecinos están quedando hoy a las 12:00h en la Plaça dels Sedassos para retirar hojas y ramas acumuladas tras el temporal de anoche.",
+          category: "COMUNIDAD",
+          neighborhood: "PART ALTA",
+          created_at: new Date().toISOString()
+        };
+
+        const forumMarket = {
+          id: 'saturday-market-forum',
+          title: "🛒 MERCAT: Sábado de Foro",
+          content: "El mercadillo de los sábados en la zona del Foro está en plena actividad. Productos de proximidad y gran ambiente vecinal hasta las 14:00h.",
+          category: "COMERCIO",
+          neighborhood: "CENTRO",
           created_at: new Date().toISOString()
         };
 
         const trafficNotice = {
-          id: 'traffic-pm-update',
-          title: "⚠️ TRÁFICO: Precaución T-11",
-          content: "Tráfico fluido en la T-11 y A-7 a esta hora, pero se pide máxima cautela por la visibilidad reducida debido a la lluvia. Luces encendidas y distancia de seguridad.",
+          id: 'traffic-sat-update',
+          title: "⚠️ TRÁFICO: Rambla Nova restringida",
+          content: "Recordatorio: El tramo central de la Rambla Nova sigue vallado por Els Tres Tombs. Evitad el acceso en coche al centro si es posible.",
           category: "URGENTE",
           neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
-        const retailNotice = {
-          id: 'mercat-central-friday',
-          title: "🛒 COMERCIO: Viernes en el Mercat",
-          content: "Últimas ofertas de la tarde en el Mercat Central. Vendedores locales destacan la gran calidad del pescado fresco de hoy, ideal para el fin de semana.",
-          category: "COMUNIDAD",
-          neighborhood: "GENERAL",
-          created_at: new Date().toISOString()
-        };
-
-        const tresTombsNotice = {
-          id: 'tres-tombs-vallas',
-          title: "🐎 CULTURA: Vallado de la Rambla",
-          content: "Comienza la instalación de vallas de seguridad en la Rambla Nova para los Tres Tombs del domingo. Restricción parcial de aparcamiento en zonas señalizadas.",
-          category: "EVENTO",
-          neighborhood: "GENERAL",
-          itinerary: "• Estado: Montaje vallas\n• Afectación: Rambla Nova",
-          created_at: new Date().toISOString()
-        };
-
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([weatherAlert, cultureNotice, nasticNotice, trafficNotice, retailNotice, tresTombsNotice, ...fetchedNews].slice(0, 6));
+        setNews([weatherAlert, tresTombsNotice, communityClean, cultureNotice, forumMarket, trafficNotice, ...fetchedNews].slice(0, 6));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase

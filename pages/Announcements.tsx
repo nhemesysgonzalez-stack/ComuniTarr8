@@ -125,20 +125,20 @@ const Announcements: React.FC = () => {
     const fetchNotices = async () => {
         setLoading(true);
         const weatherAlert: Announcement = {
-            id: 'weather-alert-pm',
-            title: "🌧️ TARDE: Comienza a Llover",
-            content: "Las lluvias ya han llegado a Tarragona. Se recomienda evitar desplazamientos innecesarios y precaución por calzada resbaladiza. Las precipitaciones irán a más durante la madrugada.",
-            category: "URGENTE",
+            id: 'weather-sat-sun',
+            title: "☀️ SÁBADO: Vuelve la calma",
+            content: "Tras las lluvias de anoche, hoy sábado disfrutaremos de un día despejado. Las temperaturas seguirán siendo invernales. Precaución con los charcos en zonas bajas.",
+            category: "COMUNIDAD",
             neighborhood: "GENERAL",
             author_name: "Protección Civil",
-            itinerary: "• Clima: Lluvia moderada\n• Aviso: Noche de viernes",
+            itinerary: "• Hoy: Sol y cielo azul\n• Domingo: Buen tiempo para Tres Tombs",
             created_at: new Date().toISOString()
         };
 
         const worksNotice: Announcement = {
-            id: 'obras-unio-pm',
-            title: "🚧 OBRAS: C/ Unió (Tarde)",
-            content: "Los trabajos de alcantarillado en la calle Unió han finalizado por hoy. La calle sigue cortada al tráfico, pero los equipos de obra se retiran hasta mañana.",
+            id: 'obras-unio-sat',
+            title: "🚧 OBRAS: C/ Unió (Fase 3)",
+            content: "Los trabajos continúan este sábado para intentar agilizar la reapertura el lunes. El acceso peatonal está garantizado pero con restricciones.",
             category: "URGENTE",
             neighborhood: "CENTRO",
             author_name: "Ajuntament TGN",
@@ -146,33 +146,33 @@ const Announcements: React.FC = () => {
         };
 
         const tresTombsNotice: Announcement = {
-            id: 'tres-tombs-vallas-pm',
-            title: "🐎 TRES TOMBS: Vallas Listas",
-            content: "Completado el vallado de seguridad en la Rambla Nova y el Serrallo. Rogamos a los vecinos que respeten la señalización de prohibido aparcar para el domingo.",
+            id: 'tres-tombs-countdown-sat',
+            title: "🐎 MAÑANA: Gran Cabalgata",
+            content: "Todo preparado para mañana domingo. El desfile comenzará a las 11:00h en la Rambla Nova. Recordad que está prohibido aparcar en todo el recorrido desde hoy a las 22:00h.",
             category: "EVENTO",
             neighborhood: "GENERAL",
             author_name: "Gremi Mareantes",
+            itinerary: "• Salida: 11:00h\n• Recorrido: Rambla, C/ Unió, Part Baixa",
             created_at: new Date().toISOString()
         };
 
-        const cultureNotice: Announcement = {
-            id: 'philip-glass-tonight',
-            title: "🎻 Philip Glass: Entradas Agotadas",
-            content: "Se han vendido las últimas entradas para el concierto de esta noche. El Teatre Tarragona abrirá puertas a las 20:00h para el inicio a las 20:30h.",
+        const cleaningNotice: Announcement = {
+            id: 'cleanup-sat',
+            title: "🧹 INICIATIVA: Limpieza de charcos",
+            content: "Quedada vecinal en la Part Alta para limpiar el barro y hojas de las alcantarillas tras la tormenta. ¡Ven con tu escoba a las 12:00h!",
+            category: "COMUNIDAD",
+            neighborhood: "PART ALTA",
+            author_name: "Vecinos Part Alta",
+            created_at: new Date().toISOString()
+        };
+
+        const cultureSuccess: Announcement = {
+            id: 'philip-glass-done',
+            title: "🎻 ÉXITO: Concierto Philip Glass",
+            content: "Crónica de anoche: Un Teatre Tarragona entregado disfrutó del mejor minimalismo mundial. Gracias a todos por hacer posible este lleno absoluto.",
             category: "EXITO",
             neighborhood: "CENTRE",
             author_name: "Tarragona Cultura",
-            itinerary: "• Inicio: 20:30h\n• Estado: AFORO COMPLETO",
-            created_at: new Date().toISOString()
-        };
-
-        const rebaixesNotice: Announcement = {
-            id: 'nastic-afternoon-pm',
-            title: "⚽ NASTIC: Visita al Barrio",
-            content: "Gran acogida esta tarde a los jugadores del Nàstic en el barrio. Firmas de autógrafos y fotos con los socios más jóvenes tras el entreno vespertino.",
-            category: "COMUNIDAD",
-            neighborhood: "GENERAL",
-            author_name: "Nàstic de Tarragona",
             created_at: new Date().toISOString()
         };
 
@@ -186,7 +186,7 @@ const Announcements: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
             const fetched = data || [];
-            setNotices([weatherAlert, worksNotice, tresTombsNotice, cultureNotice, rebaixesNotice, ...fetched]);
+            setNotices([weatherAlert, tresTombsNotice, cleaningNotice, cultureSuccess, worksNotice, ...fetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

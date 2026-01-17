@@ -251,25 +251,23 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">🌧️ TARDE: COMIENZA A LLOVER EN TARRAGONA - PRECAUCIÓN AL VOLANTE</span>
+          <span className="flex items-center gap-2">☀️ SÁBADO: VUELVE EL SOL A TARRAGONA - DISFRUTA DE UN FIN DE SEMANA DESPEJADO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎻 CULTURA: ÚLTIMAS 10 ENTRADAS PARA PHILIP GLASS (20:30H TEATRE TARRAGONA)</span>
+          <span className="flex items-center gap-2">🎉 ÉXITO TOTAL: PHILIP GLASS LLENA EL TEATRE TARRAGONA EN UNA NOCHE MÁGICA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🐎 TRES TOMBS: MONTADAS LAS VALLAS DE SEGURIDAD EN LA RAMBLA NOVA</span>
+          <span className="flex items-center gap-2">🐎 TRES TOMBS: TODO LISTO PARA MAÑANA DOMINGO (11:00H RAMBLA NOVA)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">⚽ NASTIC: GRAN JORNADA DE LOS JUGADORES CON LOS NIÑOS DEL BARRIO</span>
+          <span className="flex items-center gap-2">⚠️ AVISO: PROHIBIDO APARCAR EN EL RECORRIDO DE TRES TOMBS DESDE ESTA NOCHE</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🗳️ BONA GENT: 312 VECINOS YA HAN VOTADO - ¡VOTA ANTES DEL LUNES!</span>
+          <span className="flex items-center gap-2">🧹 COMUNIDAD: LIMPIEZA VOLUNTARIA DE CALLES TRAS LA LLUVIA (12:00H PART ALTA)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛒 COMERCIO: ÚLTIMAS OFERTAS DE LA SEMANA EN EL MERCAT CENTRAL</span>
+          <span className="flex items-center gap-2">🛒 MERCAT: SABADO DE PRODUCTO LOCAL EN EL FORO Y PLAZA DE LA FONT</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🌧️ CLIMA: SE ESPERAN LLUVIAS DURANTE TODA LA NOCHE EN EL LITORAL</span>
+          <span className="flex items-center gap-2">⚽ NASTIC: PREPARATIVOS PARA EL PRÓXIMO ENCUENTRO TRAS EL ÉXITO EN COPA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎻 CULTURA: PHILIP GLASS HOY EN EL TEATRE TARRAGONA</span>
+          <span className="flex items-center gap-2">🗳️ BONA GENT: ÚLTIMO FIN DE SEMANA PARA VOTAR POR EL MEJOR VECINO DEL AÑO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🟢 MARU T. ACABA DE GANAR 50 CP POR PARTICIPAR EN EL FORO</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🐎 TRES TOMBS: DOMINGO 18 - 11:00H</span>
+          <span className="flex items-center gap-2">🐎 MAÑANA: NO OS PERDÁIS LA BENDICIÓN DE ANIMALES A LAS 11:00H</span>
         </motion.div>
       </div>
 

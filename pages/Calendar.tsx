@@ -44,19 +44,6 @@ const NeighborhoodCalendar: React.FC = () => {
   // Official Events for January 2026
   const officialEvents: Event[] = [
     {
-      id: 'evt-philip-glass',
-      creator_id: 'admin',
-      title: "🎻 Concierto: Philip Glass",
-      description: "Recital de violín minimalista con obras del compositor Philip Glass.",
-      event_date: '2026-01-16',
-      event_time: '20:30',
-      location: 'Teatre Tarragona',
-      category: 'Cultura',
-      neighborhood: 'CENTRE',
-      contact_info: 'Tarragona Cultura',
-      created_at: new Date().toISOString()
-    },
-    {
       id: 'evt-tres-tombs',
       creator_id: 'admin',
       title: "🐎 Els Tres Tombs",

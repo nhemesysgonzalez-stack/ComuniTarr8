@@ -40,9 +40,9 @@ const getSimulatedResponse = (prompt: string): string => {
     return "Gestión de residuos en TGN ♻️:\n\n• Recogida de voluminosos (muebles/trastos): Gratuita llamando al 977 296 222.\n• Deixalleria Móvil: Consulta los horarios en tu barrio. Si vas a la fija (Polígono Entrevies), puedes obtener bonificaciones en la tasa de la basura.\n• Horario orgánica: Obligatorio de 20h a 22h.";
   }
 
-  // 7. Noticias y Eventos de Hoy (VIERNES 16 ENERO 2026 - Tarde/Noche)
-  if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("lluvia") || p.includes("tiempo")) {
-    return "Resumen de esta TARDE/NOCHE, Viernes 16 de enero 📍:\n\n• 🌧️ CLIMA: Comienza a llover en Tarragona. Precaución en los desplazamientos por calzada mojada.\n• 🎻 CULTURA: ¡Entradas agotadas para Philip Glass! El concierto empieza a las 20:30h en el Teatre Tarragona.\n• 🐎 TRES TOMBS: Faltan 2 días. El vallado en la Rambla Nova ya está instalado.\n• 🏁 CONVIVENCIA: Los jugadores del Nàstic han visitado el barrio esta tarde con gran éxito.\n• 🚧 OBRAS: Finalizan los trabajos del día en C/ Unió, aunque el tráfico sigue restringido.";
+  // 7. Noticias y Eventos de Hoy (SÁBADO 17 ENERO 2026)
+  if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("sol") || p.includes("tiempo")) {
+    return "Resumen para hoy SÁBADO 17 de enero ☀️:\n\n• ☀️ CLIMA: Vuelve el sol tras las lluvias. Día despejado pero fresco (máx 14°C).\n• 🎉 ÉXITO: Gran acogida al concierto de Philip Glass de anoche. ¡Lleno absoluto!\n• 🐎 TRES TOMBS: Mañana domingo a las 11:00h en la Rambla Nova. Hoy es el último día para ver los preparativos.\n• 🧹 COMUNIDAD: Jornada voluntaria de limpieza a las 12:00h en la Part Alta para despejar alcantarillas.\n• 🛒 OCIO: Mercadillo tradicional en la zona del Foro y Plaza de la Font.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)
