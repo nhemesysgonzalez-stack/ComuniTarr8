@@ -76,62 +76,39 @@ const HomeNewsItem: React.FC<{ item: any }> = ({ item }) => {
 };
 
 const DynamicThemeEffects: React.FC = () => {
-  const currentMonth = new Date().getMonth(); // 0 = Jan
-  const currentDay = new Date().getDate();
-
   return (
     <div className="fixed inset-0 pointer-events-none z-[60] overflow-hidden">
-      {/* Snowfall Effect */}
+      {/* Rainfall Effect */}
       <div className="absolute inset-0">
-        {[...Array(40)].map((_, i) => (
+        {[...Array(50)].map((_, i) => (
           <motion.div
-            key={`snow-${i}`}
+            key={`rain-${i}`}
             initial={{
-              top: -20,
-              left: Math.random() * 100 + '%',
-              opacity: Math.random() * 0.5 + 0.3,
-              scale: Math.random() * 0.5 + 0.5
+              top: -100,
+              left: Math.random() * 120 + '%',
+              opacity: Math.random() * 0.4 + 0.1,
+              scale: Math.random() * 0.5 + 0.2
             }}
             animate={{
-              top: '110%',
-              left: (Math.random() * 100 + (Math.random() * 20 - 10)) + '%',
-              rotate: 360
+              top: '120%',
+              left: (parseFloat(Math.random() * 120 + '') - 10) + '%'
             }}
             transition={{
-              duration: Math.random() * 10 + 10,
+              duration: Math.random() * 0.8 + 0.7,
               repeat: Infinity,
               ease: "linear",
-              delay: Math.random() * 20
+              delay: Math.random() * 2
             }}
-            className="absolute text-white/40 pointer-events-none"
+            className="absolute text-blue-400/40 pointer-events-none"
+            style={{ transform: 'rotate(15deg)' }}
           >
-            <span className="material-symbols-outlined text-[12px]">ac_unit</span>
+            <span className="material-symbols-outlined text-[10px] scale-y-150">water_drop</span>
           </motion.div>
         ))}
       </div>
 
-      {/* Frost Vignette */}
-      <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-transparent to-cyan-500/5 pointer-events-none"></div>
-
-      {currentMonth === 0 && (
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0.1 }}
-              animate={{ opacity: [0.1, 0.5, 0.1] }}
-              transition={{ duration: Math.random() * 3 + 2, repeat: Infinity }}
-              className="absolute bg-white rounded-full"
-              style={{
-                width: Math.random() * 3 + 'px',
-                height: Math.random() * 3 + 'px',
-                top: Math.random() * 100 + '%',
-                left: Math.random() * 100 + '%',
-              }}
-            />
-          ))}
-        </div>
-      )}
+      {/* Rainfall Atmosphere */}
+      <div className="absolute inset-0 bg-blue-900/5 pointer-events-none"></div>
     </div>
   );
 };
