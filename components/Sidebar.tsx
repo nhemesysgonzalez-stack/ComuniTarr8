@@ -88,7 +88,10 @@ const Sidebar: React.FC = () => {
         <div>
           <p className="px-4 text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3">{t('nav_neighborhood')}</p>
           <div className="space-y-1">
-            <NavItem to="/local-businesses" label={t('local_business')} icon="storefront" color="primary" />
+            <div className="relative group">
+              <NavItem to="/local-businesses" label={t('local_business')} icon="storefront" color="emerald" />
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 bg-amber-400 text-[8px] font-black px-1.5 py-0.5 rounded-md shadow-sm border border-amber-500 animate-bounce pointer-events-none text-amber-900 uppercase">Ofertas</span>
+            </div>
             <NavItem to="/clubs" label={t('clubs')} icon="groups" color="primary" />
             <NavItem to="/forum" label={t('forum')} icon="chat" color="indigo" hasActivity={true} />
             <NavItem to="/workshops" label={t('workshops')} icon="school" color="primary" />

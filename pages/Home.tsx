@@ -152,15 +152,6 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
-        const communityClean = {
-          id: 'post-rain-clean',
-          title: "🧹 COMUNIDAD: Limpieza Post-Lluvia",
-          content: "Varios vecinos están quedando hoy a las 12:00h en la Plaça dels Sedassos para retirar hojas y ramas acumuladas tras el temporal de anoche.",
-          category: "COMUNIDAD",
-          neighborhood: "PART ALTA",
-          created_at: new Date().toISOString()
-        };
-
         const forumMarket = {
           id: 'saturday-market-forum',
           title: "🛒 MERCAT: Sábado de Foro",
@@ -180,7 +171,7 @@ const Home: React.FC = () => {
         };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([weatherAlert, tresTombsNotice, communityClean, cultureNotice, forumMarket, trafficNotice, ...fetchedNews].slice(0, 6));
+        setNews([weatherAlert, tresTombsNotice, forumMarket, cultureNotice, trafficNotice, ...fetchedNews].slice(0, 6));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase
@@ -222,10 +213,10 @@ const Home: React.FC = () => {
   }, [user?.user_metadata?.neighborhood]);
 
   const quickActions = [
+    { icon: 'storefront', label: t('local_business'), to: '/local-businesses', color: 'bg-emerald-600', shadow: 'shadow-emerald-600/20' },
     { icon: 'report_problem', label: t('report_incident'), action: () => setShowIncidentModal(true), color: 'bg-red-500', shadow: 'shadow-red-500/20' },
-    { icon: 'shopping_basket', label: t('publish_product'), to: '/market', color: 'bg-emerald-500', shadow: 'shadow-emerald-500/20' },
-    { icon: 'event_available', label: t('create_event'), to: '/calendar', color: 'bg-sky-500', shadow: 'shadow-sky-500/20' },
-    { icon: 'diversity_3', label: t('ask_offer_help'), action: () => setShowHelpModal(true), color: 'bg-indigo-500', shadow: 'shadow-indigo-500/20' }
+    { icon: 'shopping_basket', label: t('publish_product'), to: '/market', color: 'bg-sky-500', shadow: 'shadow-sky-500/20' },
+    { icon: 'school', label: t('workshops'), to: '/workshops', color: 'bg-indigo-500', shadow: 'shadow-indigo-500/20' }
   ];
 
   const [isSubmitting, setIsSubmitting] = useState(false);
