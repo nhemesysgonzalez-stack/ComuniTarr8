@@ -46,8 +46,8 @@ const getSimulatedResponse = (prompt: string): string => {
   }
 
   // 17. EMPLEO Y MERCADO LABORAL
-  if (p.includes("trabajo") || p.includes("empleo") || p.includes("laboral") || p.includes("curro") || p.includes("busco") || p.includes("paro")) {
-    return "Situación Laboral en Tarragona 💼:\n\n• Canales: Te recomiendo mirar el SOC (Servei d'Ocupació) en la calle Smith o la web de Tarragona Impulsa.\n• Ofertas actuales: Hay mucha demanda de logística en el Puerto y personal de refuerzo en el Hospital Joan XXIII.\n• Hostelería: El Serrallo y el Eixample siempre buscan refuerzos para fin de semana (debes tener el carné de manipulador).\n• Consejos: Sube tu CV a JobToday o InfoJobs filtrando por Tarragona, y mantente atento al canal de EMPLEO de esta App.";
+  if (p.includes("trabajo") || p.includes("empleo") || p.includes("laboral") || p.includes("curro") || p.includes("busco") || p.includes("paro") || p.includes("oferta") || p.includes("mediador")) {
+    return "Ofertas Laborales Disponibles en Tarragona 💼:\n\n1. 🐟 Ayudante de Cocina - Serrallo (fines de semana) → Contacto: 655 443 3xx\n2. 👗 Dependienta Media Jornada - Rambla Nova (tardes) → CV en mano en tienda\n3. 🍎 Reponedor Turno Noche - Mercat Central (febrero) → Consultar directamente\n4. 🌱 Jardinero Part Alta - Por horas → Consultar en el foro\n5. 🚢 5 Mozos de Almacén - Puerto Terminal Marítima → SOC Tarragona\n6. 🧼 Limpieza Oficinas - Polígono Entrevies → Vacante urgente\n7. 💻 Coworking Programadores - Centro → Consultar en canal Empleo\n8. 🏥 Auxiliar Administrativo - Hospital Joan XXIII → Para cubrir baja\n9. 📚 Profesor de Inglés - Academias (tardes) → Consultar SOC\n\n• Web recomendada: soc.gencat.cat o Tarragona Impulsa";
   }
 
   // 8. Aparcar (Zona Blava / Verda)
