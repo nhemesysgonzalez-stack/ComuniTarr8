@@ -95,6 +95,11 @@ const getSimulatedResponse = (prompt: string): string => {
     return "¡Bienvenido a ComuniTarr! 🏘️\nPuedes ganar 'ComuniPoints' y 'Karma (XP)' de varias formas:\n1. Reportando incidencias reales (fotos de baches, luces fundidas...).\n2. Participando en votaciones vecinales.\n3. Ofreciendo o demandando ayuda en el Marketplace.\n4. Interactuando en el foro.\n¡Usa el mapa para ver qué necesitan tus vecinos ahora mismo!";
   }
 
+  // 16. Preppers y Seguridad (Petroquímicas Tarragona)
+  if (p.includes("prepper") || p.includes("emergencia") || p.includes("petroqu") || p.includes("sirena") || p.includes("kit") || p.includes("evacuac") || p.includes("fuga")) {
+    return "Canal Preppers / TGN Segura 🛡️:\n\n• Petroquímicas: Tarragona tiene uno de los mayores polígonos petroquímicos de Europa. En caso de sirena, lo habitual es CONFINAMIENTO (cerrar puertas/ventanas).\n• Kit de Emergencia: Agua (6L/persona), linterna, radio a pilas, botiquín, mantas térmicas, copias de documentos.\n• Sirenas: Si suenan 3 veces seguidas = alerta química. Quedarse en casa, cerrar todo, seguir @emergenciescat.\n• Puntos de Encuentro: Cada barrio tiene zonas señalizadas (Francolí, Parque de la Ciudad, Plaza Imperial Tarraco).\n• Botiquín: Gasas, antiséptico, analgésicos, mascarillas FFP2/FFP3, esparadrapo.\n• App recomendada: ALERTA (de Protecció Civil de Catalunya) para recibir avisos en tiempo real.";
+  }
+
   // Default
   return "Como tu Mediador Vecinal ⚖️, mi base de conocimientos cubre normativa (LPH), convivencia, limpieza, trámites (OMAC/BASE), agenda cultural tarraconense y más. ¿En qué puedo ayudarte específicamente hoy?";
 };

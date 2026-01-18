@@ -158,6 +158,18 @@ const Forum: React.FC = () => {
         "Busco gente para practicar intercambio de idiomas: yo ofrezco catalán/español por inglés. 🌍",
         "¿Alguien se anima a una tarde de juegos de mesa en alguna cafetería? 🎲"
       ];
+    } else if (currentNeighborhood === 'PREPPERS') {
+      scripts = [
+        "¿Alguien sabe qué hacer si suena la sirena de la petroquímica? ¿Evacuar o quedarse en casa? ⚠️",
+        "He leído que debemos tener siempre un kit de emergencia. Agua, linternas, radio... ¿Qué más? 🎒",
+        "En caso de fuga tóxica en el Polígono Sur, lo recomendable es cerrar ventanas y puertas. 🚪🔒",
+        "Yo tengo baterías externas cargadas y velas por si hay apagón. Cada uno en su casa. 🕯️",
+        "¿Sabéis dónde están los puntos de encuentro de emergencia en vuestro barrio? 🏛️",
+        "Me gustaría que hicieran simulacros de evacuación más seguido. Mucha gente no sabe qué hacer. 🚨",
+        "Recomiendo seguir @emergenciescat en Twitter. Avisan rápido de cualquier incidencia. 📱",
+        "Tengo dudas sobre las mascarillas FFP3. ¿Son necesarias para una fuga química o con FFP2 vale? 😷",
+        "¿Alguien tiene botiquines actualizados? El mío tiene tiritas de hace 5 años... 🩹"
+      ];
     } else {
       // Fallback for other neighborhoods
       scripts = [
@@ -448,7 +460,7 @@ const Forum: React.FC = () => {
             </button>
             <button
               onClick={() => startTransition(() => setCurrentNeighborhood(user?.user_metadata?.neighborhood || 'GENERAL'))}
-              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shrink-0 ${currentNeighborhood !== 'GENERAL' && currentNeighborhood !== 'EMPLEO' && currentNeighborhood !== 'SEGURIDAD' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'}`}
+              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shrink-0 ${currentNeighborhood !== 'GENERAL' && currentNeighborhood !== 'EMPLEO' && currentNeighborhood !== 'ENCUENTROS' && currentNeighborhood !== 'PREPPERS' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'}`}
             >
               🏠 Mi Barrio
             </button>
@@ -465,10 +477,10 @@ const Forum: React.FC = () => {
               ❤️ Encuentros
             </button>
             <button
-              onClick={() => startTransition(() => setCurrentNeighborhood('SEGURIDAD'))}
-              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shrink-0 ${currentNeighborhood === 'SEGURIDAD' ? 'bg-orange-600 text-white shadow-lg shadow-orange-600/20' : 'bg-gray-100 text-orange-600 hover:bg-orange-50 dark:bg-gray-800 dark:text-orange-400'}`}
+              onClick={() => startTransition(() => setCurrentNeighborhood('PREPPERS'))}
+              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shrink-0 ${currentNeighborhood === 'PREPPERS' ? 'bg-orange-600 text-white shadow-lg shadow-orange-600/20' : 'bg-gray-100 text-orange-600 hover:bg-orange-50 dark:bg-gray-800 dark:text-orange-400'}`}
             >
-              🛡️ Seguridad
+              🛡️ Preppers / TGN Segura
             </button>
           </div>
         </div>
