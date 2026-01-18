@@ -123,15 +123,15 @@ const Forum: React.FC = () => {
       : virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
 
     const scripts = [
-      "¿Habéis visto cómo se ha puesto a llover? ¡Vaya cambio de tiempo! ⛈️",
-      "Ojo que esta noche ya no se puede aparcar en la Rambla por los Tres Tombs. 🐎",
-      "Sigo impresionado con el concierto de anoche de Philip Glass. ¡Fue increíble! 🎻",
-      "¿Alguien sabe si el mercadillo del Foro ha cerrado por la lluvia? 🛒",
-      "¡Qué ganas de que sea mañana! Los niños están emocionados con los caballos. 🐎",
-      "¿Alguna recomendación para comer hoy a cubierto por el Serrallo? 🐟",
-      "He visto que están arreglando las baldosas en la Calle Unió. ¡Ya tocaba!",
-      "¿Alguien se anima a un café rápido en la Plaza del Rey mientras escampa?",
-      "Acabo de ver a los jugadores del Nàstic por el centro. ¡Majísimos!"
+      "¡Vaya mañana más espectacular hace! ☀️ El día perfecto para los Tres Tombs.",
+      "Ojo que el centro está imposible por los caballos. Mejor dejar el coche lejos. 🐎",
+      "Sigo leyendo maravillas sobre el concierto de Philip Glass. ¡Menudo éxito! 🎻",
+      "¿Alguien sabe a qué hora es la bendición principal en la Rambla? 🐎",
+      "¡Qué alegría da ver Tarragona así de llena y con sol después de la lluvia! ☀️",
+      "¿Alguna recomendación para hacer el vermut hoy después de los caballos? 🍺",
+      "He visto que mucha gente ha ido con sus mascotas a bendecirlas. ¡Qué tierno! 🐶",
+      "Dicen que los restaurantes del Serrallo ya están casi a tope para hoy. ¡Avisados quedáis!",
+      "¿Alguien se anima a dar un paseo por la Muralla después de comer? El día lo pide."
     ];
 
     const replyScripts = [

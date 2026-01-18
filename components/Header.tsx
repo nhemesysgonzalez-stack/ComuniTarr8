@@ -251,19 +251,17 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">☀️ SÁBADO: VUELVE EL SOL A TARRAGONA - DISFRUTA DE UN FIN DE SEMANA DESPEJADO</span>
+          <span className="flex items-center gap-2">☀️ DOMINGO: DÍA RADIANTE EN TARRAGONA - ¡DISFRUTAD DEL SOL Y ELS TRES TOMBS!</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎉 ÉXITO TOTAL: PHILIP GLASS LLENA EL TEATRE TARRAGONA EN UNA NOCHE MÁGICA</span>
+          <span className="flex items-center gap-2">🐎 TRES TOMBS: LA CABALGATA YA RECORRE LA RAMBLA NOVA - AMBIENTE ESPECTACULAR</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🐎 TRES TOMBS: TODO LISTO PARA MAÑANA DOMINGO (11:00H RAMBLA NOVA)</span>
+          <span className="flex items-center gap-2">⚠️ URGENTE: CENTRO CORTADO AL TRÁFICO - RECOMENDAMOS ACCESO POR VÍA AUGUSTA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">⚠️ AVISO: PROHIBIDO APARCAR EN EL RECORRIDO DE TRES TOMBS DESDE ESTA NOCHE</span>
+          <span className="flex items-center gap-2">🎉 CULTURA: UNANIMIDAD EN LA PRENSA POR EL ÉXITO DE PHILIP GLASS "EL MAGO DEL MINIMALISMO"</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛒 MERCAT: SABADO DE PRODUCTO LOCAL EN EL FORO Y PLAZA DE LA FONT</span>
+          <span className="flex items-center gap-2">🚶‍♀️ PASEO: EL SERRALLO SE LLENA PARA EL VERMUT DOMINICAL TRAS LA BENDICIÓN</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">⚽ NASTIC: PREPARATIVOS PARA EL PRÓXIMO ENCUENTRO TRAS EL ÉXITO EN COPA</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🐎 MAÑANA: NO OS PERDÁIS LA BENDICIÓN DE ANIMALES A LAS 11:00H</span>
+          <span className="flex items-center gap-2">🐎 TRADICIÓN: ÚLTIMAS BENDICIONES DE MASCOTAS FRENTE A LA IGLESIA DE S. ANTONI</span>
         </motion.div>
       </div>
 
