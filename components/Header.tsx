@@ -251,17 +251,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">☀️ DOMINGO: DÍA RADIANTE EN TARRAGONA - ¡DISFRUTAD DEL SOL Y ELS TRES TOMBS!</span>
+          <span className="flex items-center gap-2">⛈️ DOMINGO NOCHE: LLUVIA INTENSA EN TARRAGONA - PRECAUCIÓN AL VOLANTE</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🐎 TRES TOMBS: LA CABALGATA YA RECORRE LA RAMBLA NOVA - AMBIENTE ESPECTACULAR</span>
+          <span className="flex items-center gap-2">🐎 TRES TOMBS: FINALIZA LA JORNADA CON GRAN ÉXITO - GRACIAS A TODOS LOS PARTICIPANTES</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">⚠️ URGENTE: CENTRO CORTADO AL TRÁFICO - RECOMENDAMOS ACCESO POR VÍA AUGUSTA</span>
+          <span className="flex items-center gap-2">⚠️ TRÁFICO: CIRCULACIÓN NORMALIZADA EN EL CENTRO - PRECAUCIÓN POR ASFALTO DESLIZANTE</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎉 CULTURA: UNANIMIDAD EN LA PRENSA POR EL ÉXITO DE PHILIP GLASS "EL MAGO DEL MINIMALISMO"</span>
+          <span className="flex items-center gap-2">🏢 EMPLEO: NUEVAS VACANTES DISPONIBLES EN EL SECTOR LOGÍSTICO DEL PUERTO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚶‍♀️ PASEO: EL SERRALLO SE LLENA PARA EL VERMUT DOMINICAL TRAS LA BENDICIÓN</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🐎 TRADICIÓN: ÚLTIMAS BENDICIONES DE MASCOTAS FRENTE A LA IGLESIA DE S. ANTONI</span>
+          <span className="flex items-center gap-2">🌙 NOCHE: TEMPERATURAS EN DESCENSO (9°C) - SE RECOMIENDA ABRIGO</span>
         </motion.div>
       </div>
 

@@ -123,27 +123,31 @@ const Forum: React.FC = () => {
       : virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
 
     let scripts = [
-      "¡Vaya mañana más espectacular hace! ☀️ El día perfecto para los Tres Tombs.",
-      "Ojo que el centro está imposible por los caballos. Mejor dejar el coche lejos. 🐎",
-      "Sigo leyendo maravillas sobre el concierto de Philip Glass. ¡Menudo éxito! 🎻",
-      "¿Alguien sabe a qué hora es la bendición principal en la Rambla? 🐎",
-      "¡Qué alegría da ver Tarragona así de llena y con sol después de la lluvia! ☀️",
-      "¿Alguna recomendación para hacer el vermut hoy después de los caballos? 🍺",
-      "He visto que mucha gente ha ido con sus mascotas a bendecirlas. ¡Qué tierno! 🐶",
-      "Dicen que los restaurantes del Serrallo ya están casi a tope para hoy. ¡Avisados quedáis!",
-      "¿Alguien se anima a dar un paseo por la Muralla después de comer? El día lo pide."
+      "¡Vaya tarde de lluvia se ha quedado! ⛈️ Menos mal que hemos podido ver los caballos por la mañana.",
+      "Ojo al conducir por la Part Alta, que las piedras resbalan una barbaridad con el agua. ⚠️",
+      "¿Algún plan para pasar este domingo noche en casa? Toca peli y manta. 🍿",
+      "Qué pena la lluvia, pero al menos el campo lo necesitaba. 🌧️",
+      "He oído que el Nàstic juega el próximo finde, ¡habrá que ir preparando bufandas!",
+      "¿Alguien más está escuchando los truenos? Parece que va para largo. ⚡",
+      "Mañana lunes toca vuelta al trabajo... ¡ánimo a todos!",
+      "¿Sabía alguien que van a reformar la calle principal en febrero? Lo acabo de leer.",
+      "Qué bien ha estado Els Tres Tombs este año, a pesar del susto final con la lluvia. 🐎"
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
       scripts = [
-        "He visto que buscan ayudante de cocina en el Serrallo para los findes. Contacto: 6554433xx 🐟",
-        "En la tienda de ropa de la Rambla Nova necesitan dependienta media jornada. Suelen pedir CV en mano. 👗",
-        "¿Sabe alguien si el Mercat Central busca reponedores para turno de noche? 🍎",
+        "He visto que buscan ayudante de cocina en el Serrallo para empezar ya. Contacto: 6554433xx 🐟",
+        "En la tienda de ropa de la Rambla Nova necesitan dependienta media jornada (tardes). 👗",
+        "¿Sabe alguien si el Mercat Central busca reponedores para turno de noche en febrero? 🍎",
         "Busco a alguien que sepa de jardinería para cuidar un patio en la Part Alta. Pago por horas. 🌱",
-        "Me han dicho que en el Puerto están contratando mozos de almacén para la campaña de febrero. 🚢",
-        "Si alguien busca trabajo de limpieza de oficinas, conozco una empresa de aquí que siempre busca gente. 🧼"
+        "Me han dicho que en el Puerto (Terminal Marítima) están contratando 5 mozos de almacén. 🚢",
+        "Si alguien busca trabajo de limpieza de oficinas, hay una vacante en Polígono Entrevies. 🧼",
+        "Soy programador y busco gente para montar un coworking por el centro. ¿Alguien interesado? 💻",
+        "En el Hospital Juan XXIII buscan auxiliar administrativo para cubrir una baja. 🏥",
+        "¿Conocéis alguna academia que busque profesor de inglés para las tardes? 📚"
       ];
-    } else if (currentNeighborhood === 'ENCUENTROS') {
+    }
+    else if (currentNeighborhood === 'ENCUENTROS') {
       scripts = [
         "Soy nuevo en el barrio y me encantaría conocer gente para ir a caminar por la playa. 🏖️",
         "¿Algún soltero/a que se anime a ir al teatro el próximo fin de semana? 🎭",
@@ -167,13 +171,13 @@ const Forum: React.FC = () => {
 
     const replyScripts = [
       `¡Totalmente de acuerdo, ${isReplyTo}!`,
-      `¿En serio ${isReplyTo}? No lo sabía...`,
+      `¿Me puedes dar más detalles sobre eso, ${isReplyTo}?`,
       `¡Qué bueno saludarte ${isReplyTo}!`,
-      `Opino lo mismo que tú.`,
-      `Gracias por la info, me sirve mucho.`,
+      `Opino lo mismo que tú, me parece interesante.`,
+      `Gracias por la info, me sirve mucho para mañana.`,
       `¡Bienvenido al foro, ${isReplyTo}! Da gusto ver gente nueva por aquí.`,
-      "Aquí en mi barrio también está cayendo una buena... ⛈️",
-      "¡Vaya tiempo se ha quedado para ser sábado!"
+      "Aquí en mi barrio también está lloviendo fuerte... ⛈️",
+      "Vaya cambio de tiempo, ¡mañana a currar con paraguas!"
     ];
 
     setIsTyping(neighbor.full_name);

@@ -124,54 +124,53 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-sun-morning',
-          title: "☀️ DOMINGO: ¡Vuelve el Sol!",
-          content: "Tarragona amanece radiante para recibir els Tres Tombs. Temperaturas primaverales (14°C - 18°C). El día perfecto para salir a la calle.",
+          id: 'weather-rain-night',
+          title: "⛈️ AVISO: Noche de Lluvias",
+          content: "Tras una mañana soleada, la lluvia se ha instalado en Tarragona. Se espera que persista hasta la madrugada del lunes. Precaución en zonas inundables.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Mañana: Despejado\n• Tarde: Sol y nubes\n• Temp: 16°C\n• Aviso: Protector solar recomendado",
+          itinerary: "• Noche: Lluvia moderada\n• Viento: 20 km/h\n• Temp: 10°C\n• Aviso: Paraguas imprescindible",
           created_at: new Date().toISOString()
         };
 
-        const cultureNotice = {
-          id: 'philip-glass-critica',
-          title: "🌟 CRÍTICA: Noche para la historia",
-          content: "La prensa local califica de 'sublime' el recital de Philip Glass. Tarragona se posiciona como referente cultural del Mediterráneo.",
-          category: "CULTURA",
+        const employmentNews = {
+          id: 'employment-port-tgn',
+          title: "💼 EMPLEO: Ofertas en el Puerto",
+          content: "Empresas logísticas del Puerto de Tarragona buscan operarios para el turno de noche y fin de semana. Consultad el canal de Empleo en el Foro.",
+          category: "EMPLEO",
           neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
-        const tresTombsNotice = {
-          id: 'tres-tombs-hoy',
-          title: "🐎 HOY: Els Tres Tombs",
-          content: "¡Ya ha empezado! La bendición de animales en la Rambla Nova está atrayendo a cientos de familias. No os perdáis el desfile de carruajes.",
+        const tresTombsRecap = {
+          id: 'tres-tombs-recap',
+          title: "🐎 ÉXITO: Els Tres Tombs 2026",
+          content: "Miles de tarraconenses han disfrutado hoy de la tradición a pesar del cambio de tiempo final. La organización agradece el civismo.",
           category: "EVENTO",
           neighborhood: "GENERAL",
-          itinerary: "• Inicio: 11:00h (AHORA)\n• Lugar: Rambla Nova\n• Acto: Bendición de mascotas",
           created_at: new Date().toISOString()
         };
 
-        const sundayWalk = {
-          id: 'sunday-walk-tgn',
-          title: "🚶‍♀️ PASEO: Domingo de Mar",
-          content: "Tras la cabalgata, el Paseo Marítimo y el Serrallo son la mejor opción para el vermut dominical con este sol radiante.",
-          category: "OCIO",
-          neighborhood: "SERRALLO",
+        const sundayNight = {
+          id: 'sunday-night-quiet',
+          title: "🌙 CIERRE SEMANAL: Noche Tranquila",
+          content: "Ambiente calmado en el centro bajo la lluvia. Momento perfecto para planificar la semana laboral que empieza mañana.",
+          category: "NOTICIAS",
+          neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
         const trafficNotice = {
-          id: 'traffic-sun-emergency',
-          title: "⚠️ URGENTE: Centro Cortado",
-          content: "La Rambla Nova y calles adyacentes están totalmente cortadas al tráfico por Els Tres Tombs. Usad el parking de la Tabacalera.",
+          id: 'traffic-rain-safety',
+          title: "⚠️ TRÁFICO: Asfalto Mojado",
+          content: "Las calles vuelven a estar abiertas tras Els Tres Tombs, pero el suelo está muy resbaladizo en la Part Alta. Conducid con cuidado.",
           category: "TRÁFICO",
           neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
-        setNews([tresTombsNotice, weatherAlert, trafficNotice, cultureNotice, sundayWalk, ...fetchedNews].slice(0, 6));
+        setNews([weatherAlert, employmentNews, tresTombsRecap, sundayNight, trafficNotice, ...fetchedNews].slice(0, 6));
 
         // Fetch Recent Neighbors
         const { data: profilesData, error: profilesError } = await supabase

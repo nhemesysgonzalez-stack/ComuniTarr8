@@ -40,9 +40,14 @@ const getSimulatedResponse = (prompt: string): string => {
     return "Gestión de residuos en TGN ♻️:\n\n• Recogida de voluminosos (muebles/trastos): Gratuita llamando al 977 296 222.\n• Deixalleria Móvil: Consulta los horarios en tu barrio. Si vas a la fija (Polígono Entrevies), puedes obtener bonificaciones en la tasa de la basura.\n• Horario orgánica: Obligatorio de 20h a 22h.";
   }
 
-  // 7. Noticias y Eventos de Hoy (DOMINGO 18 ENERO 2026)
-  if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("sol") || p.includes("tiempo")) {
-    return "Resumen para hoy DOMINGO 18 de enero ☀️:\n\n• 🐎 TRES TOMBS: ¡Es el gran día! La bendición de animales y el desfile por la Rambla Nova empiezan a las 11:30h. Hay mucha gente, ¡ven con tiempo!\n• ☀️ CLIMA: Día espectacular y soleado (máx 15°C). Perfecto para estar en la calle.\n• 🎻 RESACA CULTURAL: Sigue el eco del éxito de Philip Glass en el Teatre Tarragona.\n• 🐟 SERRALLO: Ambiente festivo en el barrio marítimo tras los caballos. Restaurantes al 100%.\n• ⚠️ TRÁFICO: Cortes de calles en todo el centro por el recorrido de los carruajes.";
+  // 7. Noticias y Eventos de Hoy (DOMINGO 18 ENERO 2026 - Tarde/Noche)
+  if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("sol") || p.includes("tiempo") || p.includes("lluv")) {
+    return "Resumen para la tarde-noche del DOMINGO 18 de enero ⛈️:\n\n• ⛈️ TIEMPO: Alerta por lluvias intensas en toda la costa. La lluvia no cesará hasta mañana.\n• 🐎 TRES TOMBS: Los eventos concluyeron con éxito al mediodía antes de la tormenta.\n• ⚠️ TRÁFICO: Calzada muy resbaladiza en el centro y Part Alta. Evita el coche si no es necesario.\n• 💼 MAÑANA: Prepárate para el lunes. El canal de EMPLEO tiene nuevas vacantes para el Puerto de TGN.\n• 🎻 CULTURA: El Teatro Tarragona descansa hoy tras el gran éxito de todo el fin de semana.";
+  }
+
+  // 17. EMPLEO Y MERCADO LABORAL
+  if (p.includes("trabajo") || p.includes("empleo") || p.includes("laboral") || p.includes("curro") || p.includes("busco") || p.includes("paro")) {
+    return "Situación Laboral en Tarragona 💼:\n\n• Canales: Te recomiendo mirar el SOC (Servei d'Ocupació) en la calle Smith o la web de Tarragona Impulsa.\n• Ofertas actuales: Hay mucha demanda de logística en el Puerto y personal de refuerzo en el Hospital Joan XXIII.\n• Hostelería: El Serrallo y el Eixample siempre buscan refuerzos para fin de semana (debes tener el carné de manipulador).\n• Consejos: Sube tu CV a JobToday o InfoJobs filtrando por Tarragona, y mantente atento al canal de EMPLEO de esta App.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)
