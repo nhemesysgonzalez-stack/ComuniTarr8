@@ -150,7 +150,18 @@ const Forum: React.FC = () => {
         "Busco grupo para jugar a pádel o simplemente tomar algo tranquilo por el centro. 🍻",
         "¡Qué difícil es hacer amigos de adulto! ¿Alguien se apunta a un club de lectura por aquí? 📚",
         "Me encanta la historia romana de Tarragona. ¿Algún apasionado para ir de rutas juntos? 🏛️",
-        "¿Alguien libre para ir a pasear al peque o al perro y charlar un rato? 🐕"
+        "¿Gente joven para salir de fiesta o tomar algo por la noche? ¡Manifestaos! 💃",
+        "Busco gente para practicar intercambio de idiomas: yo ofrezco catalán/español por inglés. 🌍",
+        "¿Alguien se anima a una tarde de juegos de mesa en alguna cafetería? 🎲"
+      ];
+    } else {
+      // Fallback for other neighborhoods
+      scripts = [
+        "¡Qué buen ambiente hay hoy por aquí!",
+        "¿Habéis visto las nuevas ofertas en el comercio local?",
+        "Tarragona está preciosa con este sol. ✨",
+        "¿Alguien recomienda algún sitio para cenar hoy?",
+        "¡Qué alegría ver a tanta gente participando!"
       ];
     }
 
@@ -578,10 +589,40 @@ const Forum: React.FC = () => {
               className="w-full bg-gray-50 dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-3xl px-6 py-4 font-bold dark:text-white outline-none ring-primary/20 focus:ring-4 focus:border-primary transition-all pr-20"
             />
             <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2">
-              <button type="button" className="p-2 text-gray-400 hover:text-primary transition-colors">
+              <button
+                type="button"
+                onClick={() => setShowEmojiPicker(!showEmojiPicker)}
+                className={`p-2 transition-colors ${showEmojiPicker ? 'text-primary' : 'text-gray-400 hover:text-primary'}`}
+              >
                 <span className="material-symbols-outlined text-xl">mood</span>
               </button>
             </div>
+
+            <AnimatePresence>
+              {showEmojiPicker && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: 10 }}
+                  className="absolute bottom-full right-0 mb-4 p-4 bg-white dark:bg-surface-dark rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-800 grid grid-cols-6 gap-2 z-50 w-64"
+                >
+                  {['❤️', '😂', '🙌', '🎉', '🔥', '👏', '🐎', '☀️', '💼', '💪', '🏠', '📍'].map(emoji => (
+                    <button
+                      key={emoji}
+                      type="button"
+                      onClick={() => {
+                        setNewMessage(prev => prev + emoji);
+                        setShowEmojiPicker(false);
+                        inputRef.current?.focus();
+                      }}
+                      className="size-8 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg text-lg transition-transform hover:scale-125"
+                    >
+                      {emoji}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           <button

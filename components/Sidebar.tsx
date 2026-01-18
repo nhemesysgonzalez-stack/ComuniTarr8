@@ -44,7 +44,6 @@ const Sidebar: React.FC = () => {
         to={to}
         onClick={(e) => {
           if (active) return;
-          // Optimizar navegación suave
           startTransition(() => { });
         }}
         className={`flex items-center justify-between group px-4 py-3 rounded-2xl transition-all duration-300 font-bold ${active ? `${colorVariants[color]} shadow-lg font-black` : `${colorVariants[color]} hover:bg-gray-50 dark:hover:bg-gray-800`}`}
@@ -104,7 +103,7 @@ const Sidebar: React.FC = () => {
             <NavItem to="/challenges" label={t('challenges')} icon="military_tech" color="primary" />
             <NavItem to="/volunteering" label={t('volunteering')} icon="volunteer_activism" color="emerald" />
             <NavItem to="/support" label={t('support')} icon="diversity_1" color="purple" />
-            <NavItem to="/stories" label={t('stories')} icon="sentiment_satisfied" color="orange" />
+            <NavItem to="/stories" label={t('stories')} icon="photo_library" color="orange" />
             <NavItem to="/vital" label={t('vital_care')} icon="favorite" color="red" />
           </div>
         </div>

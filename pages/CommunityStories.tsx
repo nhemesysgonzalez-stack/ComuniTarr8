@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 const CommunityStories: React.FC = () => {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const [stories, setStories] = useState([
-        { id: '1', user: 'Laura P.', content: 'Los caballos hoy en la Rambla estaban espectaculares. ¡Qué tradición tan bonita!', icon: 'horse_racing', date: 'Hoy, 11:30', image: 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?q=80&w=800&auto=format&fit=crop' },
-        { id: '2', user: 'Marc S.', content: 'Ayudando a un vecino a mover unas cajas tras la mudanza. ¡Buen ejercicio dominical!', icon: 'handshake', date: 'Hace 2 horas', image: 'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=800&auto=format&fit=crop' },
-        { id: '3', user: 'Ana G.', content: 'He plantado mi primer árbol en el jardín comunitario.', icon: 'forest', date: 'Ayer', image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800&auto=format&fit=crop' },
+        { id: '1', user: 'Admin', content: 'Espectacular Els Tres Tombs en la Rambla Nova esta mañana. ¡Tarragona luce preciosa! 🐎☀️', icon: 'horse_racing', date: 'Hoy, 12:00', image: 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?q=80&w=800&auto=format&fit=crop' },
+        { id: '2', user: 'Laura P.', content: '¡Bendición de mascotas! Mis perritos están encantados. 🐶✨', icon: 'pets', date: 'Hoy, 11:30', image: 'https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?q=80&w=800&auto=format&fit=crop' },
+        { id: '3', user: 'Marc S.', content: 'En el Serrallo ya huele a vermut dominical. ¡Salud vecinos! 🍷', icon: 'glass_wine', date: 'Hace 1 hora', image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop' },
     ]);
 
     const [newStory, setNewStory] = useState('');
