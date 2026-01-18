@@ -181,16 +181,47 @@ const Forum: React.FC = () => {
       ];
     }
 
-    const replyScripts = [
-      `¡Totalmente de acuerdo, ${isReplyTo}!`,
-      `¿Me puedes dar más detalles sobre eso, ${isReplyTo}?`,
-      `¡Qué bueno saludarte ${isReplyTo}!`,
-      `Opino lo mismo que tú, me parece interesante.`,
-      `Gracias por la info, me sirve mucho para mañana.`,
-      `¡Bienvenido al foro, ${isReplyTo}! Da gusto ver gente nueva por aquí.`,
-      "Aquí en mi barrio también está lloviendo fuerte... ⛈️",
-      "Vaya cambio de tiempo, ¡mañana a currar con paraguas!"
-    ];
+    // Respuestas específicas según el canal
+    let replyScripts = [];
+
+    if (currentNeighborhood === 'EMPLEO') {
+      replyScripts = [
+        `Interesante oferta, ${isReplyTo}. ¿Sabes si piden experiencia?`,
+        `Yo también estoy buscando trabajo en ese sector, ${isReplyTo}.`,
+        `Gracias por compartir la info, ${isReplyTo}. Voy a mirar esa oferta.`,
+        `¿Alguien ha trabajado ahí? ¿Qué tal las condiciones?`,
+        `Yo dejé CV la semana pasada y aún no me han llamado...`,
+        `¿Sabéis si piden certificados específicos para ese puesto?`
+      ];
+    } else if (currentNeighborhood === 'PREPPERS') {
+      replyScripts = [
+        `Totalmente de acuerdo, ${isReplyTo}. La prevención es clave.`,
+        `Yo también tengo esa duda, ${isReplyTo}. ¿Alguien lo sabe?`,
+        `Gracias por la info, ${isReplyTo}. No lo sabía.`,
+        `Es importante que todos estemos preparados para emergencias.`,
+        `¿Habéis hecho algún curso de primeros auxilios?`,
+        `Yo tengo guardado el número de Protecció Civil por si acaso.`
+      ];
+    } else if (currentNeighborhood === 'ENCUENTROS') {
+      replyScripts = [
+        `Me apunto, ${isReplyTo}! ¿Cuándo quedamos?`,
+        `Yo también estoy buscando gente para hacer planes, ${isReplyTo}.`,
+        `¡Qué buena idea, ${isReplyTo}! Cuenta conmigo.`,
+        `¿Alguien más se anima? Cuantos más mejor.`,
+        `Yo soy nuevo por aquí y me encantaría conocer gente.`,
+        `¿Hacemos un grupo de WhatsApp para coordinar?`
+      ];
+    } else {
+      // Respuestas generales para otros canales
+      replyScripts = [
+        `¡Totalmente de acuerdo, ${isReplyTo}!`,
+        `¿Me puedes dar más detalles sobre eso, ${isReplyTo}?`,
+        `¡Qué bueno saludarte ${isReplyTo}!`,
+        `Opino lo mismo que tú, me parece interesante.`,
+        `Gracias por la info, me sirve mucho.`,
+        `¡Bienvenido al foro, ${isReplyTo}! Da gusto ver gente nueva por aquí.`
+      ];
+    }
 
     setIsTyping(neighbor.full_name);
 
