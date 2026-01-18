@@ -122,7 +122,7 @@ const Forum: React.FC = () => {
       ? { id: 'v-ai', full_name: 'Mediador Vecinal ⚖️', avatar_url: 'https://img.icons8.com/isometric/512/scales.png', status: 'online' }
       : virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
 
-    const scripts = [
+    let scripts = [
       "¡Vaya mañana más espectacular hace! ☀️ El día perfecto para los Tres Tombs.",
       "Ojo que el centro está imposible por los caballos. Mejor dejar el coche lejos. 🐎",
       "Sigo leyendo maravillas sobre el concierto de Philip Glass. ¡Menudo éxito! 🎻",
@@ -133,6 +133,26 @@ const Forum: React.FC = () => {
       "Dicen que los restaurantes del Serrallo ya están casi a tope para hoy. ¡Avisados quedáis!",
       "¿Alguien se anima a dar un paseo por la Muralla después de comer? El día lo pide."
     ];
+
+    if (currentNeighborhood === 'EMPLEO') {
+      scripts = [
+        "He visto que buscan ayudante de cocina en el Serrallo para los findes. Contacto: 6554433xx 🐟",
+        "En la tienda de ropa de la Rambla Nova necesitan dependienta media jornada. Suelen pedir CV en mano. 👗",
+        "¿Sabe alguien si el Mercat Central busca reponedores para turno de noche? 🍎",
+        "Busco a alguien que sepa de jardinería para cuidar un patio en la Part Alta. Pago por horas. 🌱",
+        "Me han dicho que en el Puerto están contratando mozos de almacén para la campaña de febrero. 🚢",
+        "Si alguien busca trabajo de limpieza de oficinas, conozco una empresa de aquí que siempre busca gente. 🧼"
+      ];
+    } else if (currentNeighborhood === 'ENCUENTROS') {
+      scripts = [
+        "Soy nuevo en el barrio y me encantaría conocer gente para ir a caminar por la playa. 🏖️",
+        "¿Algún soltero/a que se anime a ir al teatro el próximo fin de semana? 🎭",
+        "Busco grupo para jugar a pádel o simplemente tomar algo tranquilo por el centro. 🍻",
+        "¡Qué difícil es hacer amigos de adulto! ¿Alguien se apunta a un club de lectura por aquí? 📚",
+        "Me encanta la historia romana de Tarragona. ¿Algún apasionado para ir de rutas juntos? 🏛️",
+        "¿Alguien libre para ir a pasear al peque o al perro y charlar un rato? 🐕"
+      ];
+    }
 
     const replyScripts = [
       `¡Totalmente de acuerdo, ${isReplyTo}!`,
@@ -420,6 +440,12 @@ const Forum: React.FC = () => {
               className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shrink-0 ${currentNeighborhood === 'EMPLEO' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/20' : 'bg-gray-100 text-emerald-600 hover:bg-emerald-50 dark:bg-gray-800 dark:text-emerald-400'}`}
             >
               💼 Empleo
+            </button>
+            <button
+              onClick={() => startTransition(() => setCurrentNeighborhood('ENCUENTROS'))}
+              className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shrink-0 ${currentNeighborhood === 'ENCUENTROS' ? 'bg-pink-500 text-white shadow-lg shadow-pink-500/20' : 'bg-gray-100 text-pink-500 hover:bg-pink-50 dark:bg-gray-800 dark:text-pink-400'}`}
+            >
+              ❤️ Encuentros
             </button>
             <button
               onClick={() => startTransition(() => setCurrentNeighborhood('SEGURIDAD'))}
