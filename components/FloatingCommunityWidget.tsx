@@ -11,12 +11,17 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¡Menos mal que ha salido el sol! ☀️ Hoy toca paseo por la playa para secar los ánimos.', neighborhood: 'Part Alta' },
-    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Increíble lo de Philip Glass anoche 🎻. Todavía tengo los pelos de punta.', neighborhood: 'Eixample' },
-    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: 'Recordad que esta noche quitan los coches de la Rambla por los caballos mañana 🐎.', neighborhood: 'Serrallo' },
-    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: '¿Quién se apunta a la limpieza de la Part Alta a las 12:00? Llevo bolsas y guantes 🧹.', neighborhood: 'Part Alta' },
-    { id: 5, user: 'Xavi M.', avatar: 'https://i.pravatar.cc/150?u=xavi', text: 'Pescado fresco de hoy en el Mercat. ¡El temporal de ayer no ha podido con los barcos! 🐟', neighborhood: 'Llevant' },
-    { id: 6, user: 'Laia G.', avatar: 'https://i.pravatar.cc/150?u=laia', text: '¿Habéis visto el nuevo mural que han hecho cerca del anfiteatro? Es precioso.', neighborhood: 'General' },
+    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: 'Vaya temporal... Al menos los Tres Tombs fueron antes de la lluvia 🐎⛈️', neighborhood: 'Part Alta' },
+    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Noche tranquila de domingo. Toca organizar la semana laboral 📚☕', neighborhood: 'Eixample' },
+    { id: 3, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: '¿Alguien ha visto las ofertas de empleo del Puerto? Creo que buscan gente 🚢', neighborhood: 'Serrallo' },
+    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'Cuidado con el suelo mojado si salís, que está muy resbaladizo ⚠️🌧️', neighborhood: 'Part Alta' },
+];
+
+const tickerMessages = [
+    { user: 'Pau T.', text: 'Vaya temporal... Al menos los Tres Tombs fueron antes de la lluvia 🐎⛈️' },
+    { user: 'Mireia R.', text: 'Noche tranquila de domingo. Toca organizar la semana laboral 📚☕' },
+    { user: 'Joan B.', text: '¿Alguien ha visto las ofertas de empleo del Puerto? Creo que buscan gente 🚢' },
+    { user: 'Carme S.', text: 'Cuidado con el suelo mojado si salís, que está muy resbaladizo ⚠️🌧️' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

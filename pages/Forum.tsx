@@ -67,10 +67,10 @@ const Forum: React.FC = () => {
   const [tickerIndex, setTickerIndex] = useState(0);
 
   const tickerMessages = [
-    { user: 'Pau T.', text: 'El sol de hoy es engañoso, ¡hace un frío que pela! ☀️🧣' },
-    { user: 'Mireia R.', text: 'Philip Glass anoche fue de otro planeta... ¡qué nivel! 🎻' },
-    { user: 'Joan B.', text: 'Acabo de ver pasar los primeros caballos por la Rambla. ¡Emoción! 🐎' },
-    { user: 'Carme S.', text: '¿Quién viene a la limpieza de la Part Alta a las 12:00? 🧹' }
+    { user: 'Pau T.', text: 'Vaya temporal... Al menos los Tres Tombs fueron antes de la lluvia 🐎⛈️' },
+    { user: 'Mireia R.', text: 'Noche tranquila de domingo. Toca organizar la semana laboral 📚☕' },
+    { user: 'Joan B.', text: '¿Alguien ha visto las ofertas de empleo del Puerto? Creo que buscan gente 🚢' },
+    { user: 'Carme S.', text: 'Cuidado con el suelo mojado si salís, que está muy resbaladizo ⚠️🌧️' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -388,12 +388,14 @@ const Forum: React.FC = () => {
   };
 
   const handleTopicClick = (topicId: string) => {
-    if (topicId === 'nastic-semis') {
-      setNewMessage('¡Qué resaca emocional del partido de anoche! ⚽ ¿Creéis que llegaremos a la final?');
-    } else if (topicId === 'sol-sabado') {
-      setNewMessage('¡Por fin sol! ☀️ ¿Alguien para ir a la limpieza de la Part Alta ahora a las 12:00?');
-    } else if (topicId === 'tres-tombs') {
-      setNewMessage('Mañana los Tres Tombs. ¡Recordad quitar los coches o se los lleva la grúa! 🐎');
+    if (topicId === 'lluvia-domingo') {
+      setNewMessage('¡Menuda lluvia se ha quedado! ⛈️ Menos mal que pudimos ver Els Tres Tombs por la mañana.');
+    } else if (topicId === 'lunes-comienzo') {
+      setNewMessage('Mañana lunes... ¿Alguien más con pocas ganas de madrugar? ☕😴');
+    } else if (topicId === 'empleo-puerto') {
+      setNewMessage('¿Alguien ha ido a dejar CV al Puerto? He oído que buscan bastante gente 🚢');
+    } else if (topicId === 'tres-tombs-exito') {
+      setNewMessage('Enhorabuena a los organizadores de Els Tres Tombs. ¡Ha sido espectacular! 🐎✨');
     }
     setTimeout(() => {
       inputRef.current?.focus();
@@ -402,22 +404,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'sol-sabado',
-      title: '☀️ Sábado de Sol',
-      description: 'Tras la lluvia, Tarragona brilla. Planes para hoy.',
-      participating: 28
+      id: 'lluvia-domingo',
+      title: '⛈️ Lluvia Nocturna',
+      description: 'El temporal sigue. Compartid fotos y precauciones.',
+      participating: 34
     },
     {
-      id: 'nastic-semis',
-      title: '⚽ El Sueño Grana',
-      description: 'Debate sobre la alineación para el próximo partido.',
-      participating: 54
+      id: 'lunes-comienzo',
+      title: '☕ Lunes a la Vista',
+      description: 'Consejos para arrancar la semana con energía.',
+      participating: 42
     },
     {
-      id: 'tres-tombs',
-      title: '🐎 Tres Tombs (Mañana)',
-      description: 'Restricciones de tráfico y horarios del desfile.',
-      participating: 31
+      id: 'empleo-puerto',
+      title: '🚢 Empleo: Puerto TGN',
+      description: 'Ofertas de logística y almacén. Compartid info.',
+      participating: 29
     }
   ];
 
