@@ -40,9 +40,9 @@ const getSimulatedResponse = (prompt: string): string => {
     return "Gestión de residuos en TGN ♻️:\n\n• Recogida de voluminosos (muebles/trastos): Gratuita llamando al 977 296 222.\n• Deixalleria Móvil: Consulta los horarios en tu barrio. Si vas a la fija (Polígono Entrevies), puedes obtener bonificaciones en la tasa de la basura.\n• Horario orgánica: Obligatorio de 20h a 22h.";
   }
 
-  // 7. Noticias y Eventos de Hoy (SÁBADO 17 ENERO 2026)
+  // 7. Noticias y Eventos de Hoy (DOMINGO 18 ENERO 2026)
   if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("sol") || p.includes("tiempo")) {
-    return "Resumen para hoy SÁBADO 17 de enero ☀️:\n\n• ☀️ CLIMA: Vuelve el sol tras las lluvias. Día despejado pero fresco (máx 14°C).\n• 🎉 ÉXITO: Gran acogida al concierto de Philip Glass de anoche. ¡Lleno absoluto!\n• 🐎 TRES TOMBS: Mañana domingo a las 11:00h en la Rambla Nova. Hoy es el último día para ver los preparativos.\n• 🧹 COMUNIDAD: Jornada voluntaria de limpieza a las 12:00h en la Part Alta para despejar alcantarillas.\n• 🛒 OCIO: Mercadillo tradicional en la zona del Foro y Plaza de la Font.";
+    return "Resumen para hoy DOMINGO 18 de enero ☀️:\n\n• 🐎 TRES TOMBS: ¡Es el gran día! La bendición de animales y el desfile por la Rambla Nova empiezan a las 11:30h. Hay mucha gente, ¡ven con tiempo!\n• ☀️ CLIMA: Día espectacular y soleado (máx 15°C). Perfecto para estar en la calle.\n• 🎻 RESACA CULTURAL: Sigue el eco del éxito de Philip Glass en el Teatre Tarragona.\n• 🐟 SERRALLO: Ambiente festivo en el barrio marítimo tras los caballos. Restaurantes al 100%.\n• ⚠️ TRÁFICO: Cortes de calles en todo el centro por el recorrido de los carruajes.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)
