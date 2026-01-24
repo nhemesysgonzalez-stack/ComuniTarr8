@@ -1,20 +1,34 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { supabase } from '../services/supabaseClient';
+import { useAuth } from '../contexts/AuthContext';
 
 const CommunityStories: React.FC = () => {
+    const { user } = useAuth();
     const fileInputRef = useRef<HTMLInputElement>(null);
-    const [stories, setStories] = useState([
-        { id: '1', user: 'Admin', content: 'Espectacular Els Tres Tombs en la Rambla Nova esta mañana. ¡Tarragona luce preciosa! 🐎☀️', icon: 'horse_racing', date: 'Hoy, 12:00', image: 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?q=80&w=800&auto=format&fit=crop' },
-        { id: '2', user: 'Laura P.', content: '¡Bendición de mascotas! Mis perritos están encantados. 🐶✨', icon: 'pets', date: 'Hoy, 11:30', image: 'https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?q=80&w=800&auto=format&fit=crop' },
-        { id: '3', user: 'Marc S.', content: 'En el Serrallo ya huele a vermut dominical. ¡Salud vecinos! 🍷', icon: 'glass_wine', date: 'Hace 1 hora', image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop' },
-    ]);
+    const [stories, setStories] = useState<any[]>([]);
+
+    useEffect(() => {
+        fetchStories();
+    }, []);
+
+    const fetchStories = async () => {
+        const { data, error } = await supabase
+            .from('stories')
+            .select('*')
+            .order('created_at', { ascending: false });
+
+        if (data) setStories(data);
+    };
 
     const [newStory, setNewStory] = useState('');
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [imageFile, setImageFile] = useState<File | null>(null);
 
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (file) {
+            setImageFile(file);
             const reader = new FileReader();
             reader.onloadend = () => {
                 setSelectedImage(reader.result as string);
@@ -23,20 +37,57 @@ const CommunityStories: React.FC = () => {
         }
     };
 
-    const handleAddStory = () => {
+    const handleAddStory = async () => {
         if (!newStory && !selectedImage) return;
-        const story = {
-            id: Date.now().toString(),
-            user: 'Yo (Administradora)',
-            content: newStory,
-            icon: 'camera',
-            date: 'Ahora mismo',
-            image: selectedImage
-        };
-        setStories([story, ...stories]);
-        setNewStory('');
-        setSelectedImage(null);
-        alert('¡Publicado en la Galería del Barrio! 🎉');
+        if (!user) {
+            alert('Debes iniciar sesión para publicar.');
+            return;
+        }
+
+        try {
+            let publicUrl = null;
+
+            // 1. Upload Image if exists
+            if (imageFile) {
+                const fileExt = imageFile.name.split('.').pop();
+                const fileName = `${user.id}-${Date.now()}.${fileExt}`;
+                const { error: uploadError } = await supabase.storage
+                    .from('gallery')
+                    .upload(fileName, imageFile);
+
+                if (uploadError) throw uploadError;
+
+                const { data } = supabase.storage
+                    .from('gallery')
+                    .getPublicUrl(fileName);
+
+                publicUrl = data.publicUrl;
+            }
+
+            // 2. Insert into DB
+            const { error: dbError } = await supabase
+                .from('stories')
+                .insert({
+                    user_id: user.id,
+                    user_name: user.user_metadata?.full_name || 'Vecino',
+                    content: newStory,
+                    image_url: publicUrl,
+                    icon: 'camera'
+                });
+
+            if (dbError) throw dbError;
+
+            // 3. Reset and Refresh
+            setNewStory('');
+            setSelectedImage(null);
+            setImageFile(null);
+            fetchStories();
+            alert('¡Publicado en la Nube del Barrio! ☁️🎉');
+
+        } catch (error) {
+            console.error('Error sharing story:', error);
+            alert('Hubo un error al subir tu historia. Por favor intenta de nuevo.');
+        }
     };
 
     return (
@@ -133,9 +184,9 @@ const CommunityStories: React.FC = () => {
                             key={story.id}
                             className="break-inside-avoid bg-white dark:bg-surface-dark rounded-[40px] overflow-hidden shadow-xl border border-gray-100 dark:border-gray-800 hover:shadow-2xl transition-all group"
                         >
-                            {story.image && (
+                            {story.image_url && (
                                 <div className="relative overflow-hidden aspect-[4/5]">
-                                    <img src={story.image} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="" />
+                                    <img src={story.image_url} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
                                         <p className="text-white text-xs font-bold italic">"{story.content}"</p>
                                     </div>
@@ -144,14 +195,14 @@ const CommunityStories: React.FC = () => {
                             <div className="p-8">
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="size-10 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center text-orange-600 font-black text-xs">
-                                        {story.user.charAt(0)}
+                                        {story.user_name?.charAt(0) || 'V'}
                                     </div>
                                     <div>
-                                        <h4 className="font-black text-sm dark:text-white leading-none mb-1">{story.user}</h4>
-                                        <p className="text-[10px] text-gray-400 font-bold uppercase">{story.date}</p>
+                                        <h4 className="font-black text-sm dark:text-white leading-none mb-1">{story.user_name}</h4>
+                                        <p className="text-[10px] text-gray-400 font-bold uppercase">{new Date(story.created_at).toLocaleDateString()}</p>
                                     </div>
                                 </div>
-                                {!story.image && (
+                                {!story.image_url && (
                                     <p className="text-lg dark:text-gray-200 leading-relaxed font-medium italic mb-4">
                                         "{story.content}"
                                     </p>
