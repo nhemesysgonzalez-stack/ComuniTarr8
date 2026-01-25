@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Language } from '../services/translations';
+import RadioPlayer from './RadioPlayer';
 
 export const Header: React.FC = () => {
   const { user, signOut, updateMetadata } = useAuth();
@@ -251,15 +252,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">☀️ VIERNES: SOL Y BUEN TIEMPO PARA EL FIN DE SEMANA - MÁXIMAS DE 16°C</span>
+          <span className="flex items-center gap-2">☀️ DOMINGO: DÍA DESPEJADO Y SOLEADO - AMBIENTE FRÍO CON MÍNIMAS DE 5°C</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎭 CULTURA: CICLO DE TEATRO EN EL METROPOL - ÚLTIMAS ENTRADAS DISPONIBLES</span>
+          <span className="flex items-center gap-2">🏃 DEPORTE: ¡ÉXITO DE PARTICIPACIÓN EN LA CARRERA SOLIDARIA DEL NÀSTIC!</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛍️ COMERCIO: REBAJAS DE ENERO - OPORTUNIDADES EN MODA Y HOGAR</span>
+          <span className="flex items-center gap-2">🏺 CULTURA: MERCADILLO DE ANTIGÜEDADES EN LA CATEDRAL HASTA LAS 14:00H</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎉 OCIO: ALTA OCUPACIÓN EN RESTAURANTES PARA ESTA NOCHE - SE RECOMIENDA RESERVAR</span>
+          <span className="flex items-center gap-2">🍸 OCIO: DISFRUTA DEL VERMUT AL SOL EN EL SERRALLO O PLAÇA DE LA FONT</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">⚠️ TRÁFICO: CIRCULACIÓN FLUIDA - PRECAUCIÓN EN ACCESOS POR OPERACIÓN SALIDA</span>
+          <span className="flex items-center gap-2">🚗 TRÁFICO: CIRCULACIÓN TRANQUILA - SE ESPERA RETORNO FLUIDO POR LA TARDE</span>
         </motion.div>
       </div>
 
@@ -336,6 +337,10 @@ export const Header: React.FC = () => {
                     </button>
                   ))}
                 </div>
+              </div>
+
+              <div className="py-4">
+                <RadioPlayer />
               </div>
 
               <div className="flex gap-4 pt-10">

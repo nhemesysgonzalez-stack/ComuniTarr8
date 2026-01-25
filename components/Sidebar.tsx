@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
+import RadioPlayer from './RadioPlayer';
 
 const Sidebar: React.FC = () => {
   const { user, signOut, updateMetadata } = useAuth();
@@ -129,6 +130,8 @@ const Sidebar: React.FC = () => {
           </div>
         )}
       </nav>
+
+      <RadioPlayer />
 
       <div className="mt-auto pt-6 border-t border-gray-100 dark:border-gray-800 space-y-4">
         {/* Language Selector */}

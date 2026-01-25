@@ -54,9 +54,9 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     return "Para trámites municipales en Tarragona 🏛️:\n\n• La OMAC (Oficina Municipal d'Atenció Ciutadana) requiere cita previa. Puedes pedirla en la web tarragona.cat o llamando al 010.\n• Empadronamiento: Necesitas DNI/NIE y el contrato de alquiler o escritura de la vivienda.\n• Volante de convivencia: Se puede obtener online con certificado digital al instante.";
   }
 
-  // 7. Noticias y Eventos de Hoy (SÁBADO 24 ENERO 2026 - Fin de Semana)
+  // 7. Noticias y Eventos de Hoy (DOMINGO 25 ENERO 2026 - Día de Sol y Deporte)
   if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("sol") || p.includes("tiempo") || p.includes("lluv") || p.includes("plan")) {
-    return "Resumen para el SÁBADO 24 de enero ☁️:\n\n• ☁️ TIEMPO: Día mayormente nublado y ventoso en la costa (Alerta Amarilla). Máx 13°C.\n• 🕯️ CONCIERTO: Tributo 'Candlelight: Lo Mejor de Hans Zimmer' hoy a las 21:00h en El Seminario.\n• 🐎 TRADICIÓN: Fiestas de Sant Antoni en Vila-seca (cerca). Diada castellera 'Xiquets de Vila-seca' a las 12:00h.\n• ⚔️ HISTORIA: Recreación de Gladiadores en el Anfiteatro (sábados por la mañana).\n• � COSTA: Precaución en los espigones por fuerte oleaje.";
+    return "Resumen para el DOMINGO 25 de enero ☀️:\n\n• ☀️ TIEMPO: Día soleado y despejado. Tramuntana débil y ambiente frío pero agradable al sol. Máx 12°C.\n• 🏃 DEPORTE: ¡Hoy es la Carrera Solidaria del Nàstic! Salida del Nou Estadi. Todo un éxito de participación.\n• 🏺 MERCADILLO: Tradicional mercado de antigüedades en la Plaza de la Catedral (mañanas).\n• 🍸 OCIO: Día típico de vermut en El Serrallo o la Plaza de la Font. Disfruta del sol antes de que baje la temperatura.\n• 🚗 TRÁFICO: Circulación fluida. Precaución en el retorno de tarde en la T-11 y A-7.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)

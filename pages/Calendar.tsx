@@ -44,29 +44,29 @@ const NeighborhoodCalendar: React.FC = () => {
   // Official Events for January 2026
   const officialEvents: Event[] = [
     {
-      id: 'evt-forum-vivienda',
-      creator_id: 'admin',
-      title: "🏠 Fórum de la Vivienda",
-      description: "Charla abierta sobre las nuevas ayudas al alquiler joven.",
-      event_date: '2026-01-21',
-      event_time: '18:00',
-      location: 'Centro Cívico Torreforta',
-      category: 'Solidario',
-      neighborhood: 'TORREFORTA',
-      contact_info: 'Ajuntament Tarragona',
-      created_at: new Date().toISOString()
-    },
-    {
       id: 'evt-cursa-nastic',
       creator_id: 'admin',
       title: "🏃 Carrera Solidaria Nàstic",
-      description: "5k y 10k benéficos. Salida desde el Nou Estadi.",
+      description: "5k y 10k benéficos. Salida desde el Nou Estadi. ¡Hoy mismo!",
       event_date: '2026-01-25',
       event_time: '09:00',
       location: 'Nou Estadi',
       category: 'Deporte',
       neighborhood: 'LLEVANT',
       contact_info: 'Club Gimnàstic',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-mercatio-catedral',
+      creator_id: 'admin',
+      title: "🏺 Mercadillo de Antigüedades",
+      description: "Tradicional mercado de domingos en la Part Alta.",
+      event_date: '2026-01-25',
+      event_time: '10:00',
+      location: 'Plaza de la Catedral',
+      category: 'Cultura',
+      neighborhood: 'PART ALTA',
+      contact_info: 'Asoc. Coleccionistas',
       created_at: new Date().toISOString()
     },
     {

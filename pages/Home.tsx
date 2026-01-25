@@ -146,46 +146,46 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-saturday-cloudy',
-          title: "☁️ SÁBADO: Nublado y Alerta",
-          content: "Día mayormente gris en Tarragona. Cielos cubiertos y alerta amarilla por oleaje en la costa. Temp. Máx 13°C.",
+          id: 'weather-sunday-sunny',
+          title: "☀️ DOMINGO: Sol y Frío",
+          content: "Cielos despejados hoy en Tarragona. La Tramuntana remite pero bajan las temperaturas mínimas. Ideal para pasear al sol. Máx 12°C.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Mañana: Lluvias débiles (40%)\n• Tarde: Nublado (12°C)\n• Noche: Fresco (8°C)\n• Alerta: Oleaje fuerte",
+          itinerary: "• Mañana: Soleado (7°C)\n• Tarde: Despejado (11°C)\n• Noche: Muy frío (4°C)\n• Viento: Moderado en calma",
           created_at: new Date().toISOString()
         };
 
         const employmentNews = {
-          id: 'employment-weekend',
-          title: "💼 EMPLEO: Oportunidades Enero",
-          content: "Nuevas vacantes publicadas hoy: Operarios de lavandería, Carretilleros y Administrativos logísticos en la zona.",
+          id: 'employment-monday-prep',
+          title: "💼 EMPLEO: Preparando la Semana",
+          content: "Nuevas ofertas para mañana lunes: Personal para hostelería en Port Esportiu y mozos de almacén para Entrevies.",
           category: "EMPLEO",
           neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
         const culturalNews = {
-          id: 'culture-candlelight',
-          title: "🕯️ CULTURA: Candlelight Hoy",
-          content: "Esta noche (21:00h) 'Lo Mejor de Hans Zimmer' en El Seminario. Experiencia única a la luz de las velas.",
+          id: 'culture-cathedral-market',
+          title: "🏛️ CULTURA: Antigüedades",
+          content: "Esta mañana en los alrededores de la Catedral: Mercado de antigüedades y coleccionismo. Un clásico del domingo.",
           category: "CULTURA",
           neighborhood: "PART ALTA",
           created_at: new Date().toISOString()
         };
 
         const eventVibes = {
-          id: 'saturday-tradition',
-          title: "🐎 TRADICIÓN: Sant Antoni",
-          content: "Ambiente festivo en Vila-seca por los Tres Tombs y la diada castellera. Ideal para acercarse esta mañana.",
-          category: "OCIO",
-          neighborhood: "GENERAL",
+          id: 'sunday-nastic-race',
+          title: "🏃 DEPORTE: Carrera Nàstic",
+          content: "¡Éxito total en la Carrera Solidaria del Nàstic esta mañana! Cientos de vecinos han teñido de grana la ciudad.",
+          category: "DEPORTE",
+          neighborhood: "LLEVANT",
           created_at: new Date().toISOString()
         };
 
         const trafficNotice = {
-          id: 'traffic-coast',
-          title: "⚠️ TRÁFICO: Precaución Costa",
-          content: "Circulación fluida en A-7. Se ruega precaución en carreteras cercanas al litoral debido al fuerte viento lateral.",
+          id: 'traffic-sunday-fluid',
+          title: "🚗 TRÁFICO: Retorno fluido",
+          content: "Circulación tranquila en los accesos a la ciudad. Se espera algo más de movimiento en la T-11 a media tarde.",
           category: "TRÁFICO",
           neighborhood: "GENERAL",
           created_at: new Date().toISOString()

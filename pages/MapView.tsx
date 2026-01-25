@@ -9,11 +9,11 @@ const MapView: React.FC = () => {
 
   const [pins, setPins] = useState<any[]>([
     { id: 1, type: 'incident', x: '42%', y: '38%', title: 'Obras Rambla Nova', desc: 'Reparación de pavimento finalizada. Precaución con pintura fresca.', status: 'Finalizado', color: 'bg-green-500', icon: 'check_circle', glow: 'shadow-[0_0_30px_rgba(16,185,129,0.4)]' },
-    { id: 2, type: 'event', x: '55%', y: '25%', title: 'Mercat Central', desc: 'Ofertas de martes en frescos y pescado del día.', status: 'Abierto', color: 'bg-primary', icon: 'storefront', glow: 'shadow-[0_0_40px_rgba(43,140,238,0.7)]' },
-    { id: 3, type: 'cleanup', x: '35%', y: '50%', title: 'Punto Limpio Móvil', desc: 'Recogida de residuos especiales en Part Alta hoy.', status: 'Activo', color: 'bg-emerald-500', icon: 'recycling', glow: 'shadow-[0_0_35px_rgba(16,185,129,0.6)]' },
-    { id: 4, type: 'event', x: '62%', y: '45%', title: 'MNAT Tarraco', desc: 'Museu Nacional Arqueològic. Consultar horarios de invierno.', status: 'Abierto', color: 'bg-indigo-500', icon: 'museum', glow: 'shadow-[0_0_30px_rgba(99,102,241,0.6)]' },
-    { id: 5, type: 'incident', x: '48%', y: '55%', title: 'Patrulla Vecinal', desc: 'Ronda de seguridad activa en el centro.', status: 'En curso', color: 'bg-blue-600', icon: 'shield', glow: 'shadow-[0_0_20px_rgba(37,99,235,0.4)]' },
-    { id: 6, type: 'cleanup', x: '25%', y: '30%', title: 'Charla Sostenibilidad', desc: 'Evento comunitario esta tarde en San Salvador.', status: 'Hoy 18:00', color: 'bg-emerald-500', icon: 'groups' }
+    { id: 2, type: 'event', x: '75%', y: '35%', title: 'Carrera Nàstic', desc: '¡En curso! Cientos de corredores en la zona del Nou Estadi.', status: 'ACTIVO', color: 'bg-orange-500', icon: 'run', glow: 'shadow-[0_0_40px_rgba(249,115,22,0.7)]' },
+    { id: 3, type: 'event', x: '35%', y: '45%', title: 'Mercadillo Catedral', desc: 'Antigüedades y coleccionismo. Abierto hasta las 14:00h.', status: 'Abierto', color: 'bg-primary', icon: 'storefront', glow: 'shadow-[0_0_35px_rgba(43,140,238,0.6)]' },
+    { id: 4, type: 'event', x: '62%', y: '45%', title: 'MNAT Tarraco', desc: 'Museu Nacional Arqueològic. Abierto hoy domingo (gratis matinal).', status: 'Abierto', color: 'bg-indigo-500', icon: 'museum', glow: 'shadow-[0_0_30px_rgba(99,102,241,0.6)]' },
+    { id: 5, type: 'incident', x: '48%', y: '55%', title: 'Control Tráfico T-11', desc: 'Regulación por afluencia en centro comercial.', status: 'En curso', color: 'bg-blue-600', icon: 'traffic', glow: 'shadow-[0_0_20px_rgba(37,99,235,0.4)]' },
+    { id: 6, type: 'cleanup', x: '15%', y: '65%', title: 'Vermut Vecinal', desc: 'Encuentro en el Serrallo tras la carrera.', status: '13:00h', color: 'bg-emerald-500', icon: 'liquor' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);
