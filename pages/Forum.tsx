@@ -70,6 +70,7 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
+    { user: 'ComuniTarr 📢', text: '📻 ¡Novedad! Ya puedes escuchar Tarragona Ràdio en directo desde el menú lateral.' },
     { user: 'Pau T.', text: '¡Qué mañana más buena ha quedado para correr la carrera del Nàstic! 🏃💨' },
     { user: 'Mireia R.', text: 'Día de sol pero frío. El vermut en el Serrallo va a entrar solo hoy ☀️🍸' },
     { user: 'Joan B.', text: 'He pillado una joyita en el mercadillo de la Catedral, ¡qué tesoros! 🏺✨' },

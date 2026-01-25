@@ -254,6 +254,8 @@ export const Header: React.FC = () => {
         >
           <span className="flex items-center gap-2">☀️ DOMINGO: DÍA DESPEJADO Y SOLEADO - AMBIENTE FRÍO CON MÍNIMAS DE 5°C</span>
           <span className="opacity-30">•</span>
+          <span className="flex items-center gap-2">📻 ¡NUEVO! ESCUCHA TARRAGONA RÀDIO EN DIRECTO DESDE EL MENÚ DE TU APP</span>
+          <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🏃 DEPORTE: ¡ÉXITO DE PARTICIPACIÓN EN LA CARRERA SOLIDARIA DEL NÀSTIC!</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🏺 CULTURA: MERCADILLO DE ANTIGÜEDADES EN LA CATEDRAL HASTA LAS 14:00H</span>

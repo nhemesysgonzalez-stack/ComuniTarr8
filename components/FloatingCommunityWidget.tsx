@@ -11,6 +11,7 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '📻 ¡Novedad! Ya puedes escuchar Tarragona Ràdio en directo desde el menú lateral. ¡Pruébalo!', neighborhood: 'GENERAL' },
     { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¡Mañana ideal para la carrera del Nàstic! ¿Quién más corre? 🏃💨', neighborhood: 'Llevant' },
     { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Día de sol pero frío. ¡A disfrutar del vermut al sol! ☀️🍸', neighborhood: 'Eixample' },
     { id: 3, user: 'Joan B.', text: 'Increíble el mercadillo de la Catedral hoy, ¡muchas joyas! 🏺✨', avatar: 'https://i.pravatar.cc/150?u=joan', neighborhood: 'Part Alta' },
