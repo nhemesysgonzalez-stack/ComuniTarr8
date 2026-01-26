@@ -8,12 +8,12 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'incident', x: '42%', y: '38%', title: 'Obras Rambla Nova', desc: 'Reparación de pavimento finalizada. Precaución con pintura fresca.', status: 'Finalizado', color: 'bg-green-500', icon: 'check_circle', glow: 'shadow-[0_0_30px_rgba(16,185,129,0.4)]' },
-    { id: 2, type: 'event', x: '75%', y: '35%', title: 'Carrera Nàstic', desc: '¡En curso! Cientos de corredores en la zona del Nou Estadi.', status: 'ACTIVO', color: 'bg-orange-500', icon: 'run', glow: 'shadow-[0_0_40px_rgba(249,115,22,0.7)]' },
-    { id: 3, type: 'event', x: '35%', y: '45%', title: 'Mercadillo Catedral', desc: 'Antigüedades y coleccionismo. Abierto hasta las 14:00h.', status: 'Abierto', color: 'bg-primary', icon: 'storefront', glow: 'shadow-[0_0_35px_rgba(43,140,238,0.6)]' },
-    { id: 4, type: 'event', x: '62%', y: '45%', title: 'MNAT Tarraco', desc: 'Museu Nacional Arqueològic. Abierto hoy domingo (gratis matinal).', status: 'Abierto', color: 'bg-indigo-500', icon: 'museum', glow: 'shadow-[0_0_30px_rgba(99,102,241,0.6)]' },
-    { id: 5, type: 'incident', x: '48%', y: '55%', title: 'Control Tráfico T-11', desc: 'Regulación por afluencia en centro comercial.', status: 'En curso', color: 'bg-blue-600', icon: 'traffic', glow: 'shadow-[0_0_20px_rgba(37,99,235,0.4)]' },
-    { id: 6, type: 'cleanup', x: '15%', y: '65%', title: 'Vermut Vecinal', desc: 'Encuentro en el Serrallo tras la carrera.', status: '13:00h', color: 'bg-emerald-500', icon: 'liquor' }
+    { id: 1, type: 'cleanup', x: '42%', y: '38%', title: 'Limpieza Contenedores', desc: 'Mantenimiento intensivo programado para hoy en la Rambla.', status: 'Activo', color: 'bg-emerald-500', icon: 'cleaning_services', glow: 'shadow-[0_0_30px_rgba(16,185,129,0.4)]' },
+    { id: 2, type: 'incident', x: '55%', y: '25%', title: 'Obras Via Augusta', desc: 'Carril cortado por reparación de tubería. Desvío señalizado.', status: 'EN CURSO', color: 'bg-red-500', icon: 'engineering', glow: 'shadow-[0_0_40px_rgba(239,68,68,0.7)]' },
+    { id: 3, type: 'event', x: '35%', y: '45%', title: 'Reunión Proyecto', desc: 'Debate sobre la nueva Rambla. Antiga Audiència (19:00h).', status: 'Hoy 19:00', color: 'bg-primary', icon: 'groups', glow: 'shadow-[0_0_35px_rgba(43,140,238,0.6)]' },
+    { id: 4, type: 'event', x: '15%', y: '30%', title: 'Taller San Salvador', desc: 'Formación para adultos en el Centro Cívico hoy matinal.', status: 'Finalizando', color: 'bg-indigo-500', icon: 'school', glow: 'shadow-[0_0_30px_rgba(99,102,241,0.6)]' },
+    { id: 5, type: 'incident', x: '78%', y: '45%', title: 'Tráfico A-7', desc: 'Circulación lenta acceso Llevant. Típico lunes mañana.', status: 'Poco Fluido', color: 'bg-blue-600', icon: 'traffic', glow: 'shadow-[0_0_20px_rgba(37,99,235,0.4)]' },
+    { id: 6, type: 'event', x: '50%', y: '70%', title: 'Yoga Miracle', desc: 'Sesión post-jornada laboral en la playa.', status: '18:30h', color: 'bg-purple-500', icon: 'self_improvement' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

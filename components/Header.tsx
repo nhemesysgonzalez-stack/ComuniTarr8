@@ -252,17 +252,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">☀️ DOMINGO: DÍA DESPEJADO Y SOLEADO - AMBIENTE FRÍO CON MÍNIMAS DE 5°C</span>
+          <span className="flex items-center gap-2">☁️ LUNES: CIELOS CUBIERTOS CON PROBABILIDAD DE LLUVIA POR LA TARDE - MÁXIMAS DE 14°C</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">📻 ¡NUEVO! ESCUCHA TARRAGONA RÀDIO EN DIRECTO DESDE EL MENÚ DE TU APP</span>
+          <span className="flex items-center gap-2">📻 COMUNIRADIO: ESCUCHA TARRAGONA RÀDIO 96.7 FM EN DIRECTO DESDE EL MENÚ</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🏃 DEPORTE: ¡ÉXITO DE PARTICIPACIÓN EN LA CARRERA SOLIDARIA DEL NÀSTIC!</span>
+          <span className="flex items-center gap-2">🚗 TRÁFICO: HORA PUNTA INTENSA EN ACCESOS - RETENCIONES EN LA ENTRADA POR A-7 Y T-11</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🏺 CULTURA: MERCADILLO DE ANTIGÜEDADES EN LA CATEDRAL HASTA LAS 14:00H</span>
+          <span className="flex items-center gap-2">🤝 CIUDAD: REUNIÓN PROYECTO RAMBLA PEATONAL HOY A LAS 19:00H EN ANTIGA AUDIÈNCIA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🍸 OCIO: DISFRUTA DEL VERMUT AL SOL EN EL SERRALLO O PLAÇA DE LA FONT</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚗 TRÁFICO: CIRCULACIÓN TRANQUILA - SE ESPERA RETORNO FLUIDO POR LA TARDE</span>
+          <span className="flex items-center gap-2">💼 EMPLEO: NUEVAS VACANTES DE MANTENIMIENTO Y SERVICIOS PUBLICADAS ESTA MAÑANA</span>
         </motion.div>
       </div>
 

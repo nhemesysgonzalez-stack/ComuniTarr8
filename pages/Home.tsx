@@ -146,46 +146,46 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-sunday-sunny',
-          title: "☀️ DOMINGO: Sol y Frío",
-          content: "Cielos despejados hoy en Tarragona. La Tramuntana remite pero bajan las temperaturas mínimas. Ideal para pasear al sol. Máx 12°C.",
+          id: 'weather-monday-rain',
+          title: "🌧️ LUNES: Nuboso y Lluvias",
+          content: "Empieza la semana con cielos cubiertos. Se esperan lluvias débiles a partir del mediodía. Temperaturas entre 8°C y 14°C.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Mañana: Soleado (7°C)\n• Tarde: Despejado (11°C)\n• Noche: Muy frío (4°C)\n• Viento: Moderado en calma",
+          itinerary: "• Mañana: Muy nuboso (9°C)\n• Tarde: Lluvia débil (13°C)\n• Noche: Humedad alta (10°C)\n• Aviso: Paraguas necesario",
           created_at: new Date().toISOString()
         };
 
         const employmentNews = {
-          id: 'employment-monday-prep',
-          title: "💼 EMPLEO: Preparando la Semana",
-          content: "Nuevas ofertas para mañana lunes: Personal para hostelería en Port Esportiu y mozos de almacén para Entrevies.",
+          id: 'employment-monday-open',
+          title: "💼 EMPLEO: Inicio de Semana",
+          content: "Abiertas nuevas convocatorias para técnicos de mantenimiento en el Polígono Sur y atención al cliente en el centro.",
           category: "EMPLEO",
           neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
         const culturalNews = {
-          id: 'culture-cathedral-market',
-          title: "🏛️ CULTURA: Antigüedades",
-          content: "Esta mañana en los alrededores de la Catedral: Mercado de antigüedades y coleccionismo. Un clásico del domingo.",
+          id: 'culture-week-agenda',
+          title: "🎭 CULTURA: Agenda Semanal",
+          content: "Presentada la programación del Teatro Metropol para febrero. Abierta la venta de abonos desde esta mañana.",
           category: "CULTURA",
-          neighborhood: "PART ALTA",
+          neighborhood: "EIXAMPLE",
           created_at: new Date().toISOString()
         };
 
         const eventVibes = {
-          id: 'sunday-nastic-race',
-          title: "🏃 DEPORTE: Carrera Nàstic",
-          content: "¡Éxito total en la Carrera Solidaria del Nàstic esta mañana! Cientos de vecinos han teñido de grana la ciudad.",
-          category: "DEPORTE",
-          neighborhood: "LLEVANT",
+          id: 'monday-back-to-school',
+          title: "🏫 CIUDAD: Retorno Rutina",
+          content: "Normalidad en el transporte público en este primer lunes tras las fiestas de Sant Antoni. Refuerzo en líneas escolares.",
+          category: "AVISO",
+          neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
         const trafficNotice = {
-          id: 'traffic-sunday-fluid',
-          title: "🚗 TRÁFICO: Retorno fluido",
-          content: "Circulación tranquila en los accesos a la ciudad. Se espera algo más de movimiento en la T-11 a media tarde.",
+          id: 'traffic-monday-peak',
+          title: "🚗 TRÁFICO: Hora Punta",
+          content: "Retenciones habituales en los accesos por la A-7 y T-11 entrada Tarragona. Circulación lenta en Av. Roma.",
           category: "TRÁFICO",
           neighborhood: "GENERAL",
           created_at: new Date().toISOString()

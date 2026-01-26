@@ -54,9 +54,9 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     return "Para trámites municipales en Tarragona 🏛️:\n\n• La OMAC (Oficina Municipal d'Atenció Ciutadana) requiere cita previa. Puedes pedirla en la web tarragona.cat o llamando al 010.\n• Empadronamiento: Necesitas DNI/NIE y el contrato de alquiler o escritura de la vivienda.\n• Volante de convivencia: Se puede obtener online con certificado digital al instante.";
   }
 
-  // 7. Noticias y Eventos de Hoy (DOMINGO 25 ENERO 2026 - Día de Sol y Deporte)
+  // 7. Noticias y Eventos de Hoy (LUNES 26 ENERO 2026 - Inicio de Semana)
   if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("sol") || p.includes("tiempo") || p.includes("lluv") || p.includes("plan")) {
-    return "Resumen para el DOMINGO 25 de enero ☀️:\n\n• ☀️ TIEMPO: Día soleado y despejado. Tramuntana débil y ambiente frío pero agradable al sol. Máx 12°C.\n• 🏃 DEPORTE: ¡Hoy es la Carrera Solidaria del Nàstic! Salida del Nou Estadi. Todo un éxito de participación.\n• 🏺 MERCADILLO: Tradicional mercado de antigüedades en la Plaza de la Catedral (mañanas).\n• 🍸 OCIO: Día típico de vermut en El Serrallo o la Plaza de la Font. Disfruta del sol antes de que baje la temperatura.\n• 🚗 TRÁFICO: Circulación fluida. Precaución en el retorno de tarde en la T-11 y A-7.";
+    return "Resumen para el LUNES 26 de enero 🌧️:\n\n• 🌧️ TIEMPO: Cielo cubierto con lluvias débiles previstas para la tarde. Temp. Máx 14°C.\n• 🚗 TRÁFICO: Hora punta intensa en los accesos (A-7 y T-11). Precaución por suelo deslizante si empieza a llover.\n• 🤝 CIUDAD: Hoy a las 19:00h reunión en la Antiga Audiència sobre el proyecto peatonal de la Rambla Nueva.\n• 🎭 CULTURA: Abierta la venta de abonos para la nueva temporada del Teatro Metropol.\n• 💼 EMPLEO: Revisad las nuevas vacantes de mantenimiento publicadas esta mañana en el canal de empleo.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)

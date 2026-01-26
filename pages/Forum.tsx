@@ -71,11 +71,11 @@ const Forum: React.FC = () => {
 
   const tickerMessages = [
     { user: 'ComuniTarr 📢', text: '📻 ¡Novedad! Ya puedes escuchar Tarragona Ràdio en directo desde el menú lateral.' },
-    { user: 'Pau T.', text: '¡Qué mañana más buena ha quedado para correr la carrera del Nàstic! 🏃💨' },
-    { user: 'Mireia R.', text: 'Día de sol pero frío. El vermut en el Serrallo va a entrar solo hoy ☀️🍸' },
-    { user: 'Joan B.', text: 'He pillado una joyita en el mercadillo de la Catedral, ¡qué tesoros! 🏺✨' },
-    { user: 'Carme S.', text: 'Mañana tranquila de domingo, ¿algún plan para esta tarde con niños? 👨‍👩‍👧‍👦' },
-    { user: 'Luis M.', text: 'Disfrutad del sol que mañana lunes vuelve la rutina. ¡Buen domingo! ☕📖' }
+    { user: 'Pau T.', text: 'Primer café del lunes... ¡Ánimo con la semana! Que no se os olvide el paraguas 🌧️☕' },
+    { user: 'Mireia R.', text: 'Mucho tráfico hoy en la entrada por la T-11, paciencia conductores 🚗😤' },
+    { user: 'Joan B.', text: '¿Algún sitio abierto para desayunar por la Rambla que sea rápido? 🥐🥖' },
+    { user: 'Carme S.', text: 'Lunes de planificación. Recordad que han abierto inscripciones para el Metropol 🎭' },
+    { user: 'Luis M.', text: 'Cielo muy gris, parece que va a caer una buena a mediodía ☁️🌧️' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -149,15 +149,15 @@ const Forum: React.FC = () => {
       : virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
 
     let scripts = [
-      "¡Qué solazo ☀️! Hacía falta después de tanto gris. Aunque sopla frío.",
-      "Vengo de la carrera del Nàstic y el ambiente era increíble. ¡Tarragona grana! 🏃🔴",
-      "¿Algún plan para este mediodía? Yo me voy directo al Serrallo de vermut. 🍸🍤",
-      "He visto cosas preciosas en el mercadillo de la Catedral esta mañana. 🏺✨",
-      "Día ideal para pasear por la Anella Mediterrània y que a los niños les dé el aire. 🚲",
-      "Mañana lunes... se acaba lo bueno. ¿Alguien sabe si hay huelga de buses mañana? 🚌",
-      "¡Qué paz hay hoy en la Part Alta! Se nota que es domingo. ⛪",
-      "¿Recomendáis algún sitio para comer paella por el centro que no sea muy caro? 🥘",
-      "Disfrutad del domingo, ¡vecinos! A cargar pilas para la semana. 💪☀️"
+      "¡Buenos días! Empezamos semana con ganas y mucho café ☕💪.",
+      "Ojo que en la A-7 hay un poco de lío a la altura de la entrada centro. 🚗⚠️",
+      "¿Sabemos si hoy lloverá mucho? He visto el cielo muy cerrado hacia el puerto. 🌧️",
+      "Lunes de volver a la oficina. ¡Qué corto se me ha hecho el finde! 😅",
+      "Reunión esta tarde sobre el proyecto de la Rambla Nova, ¡hay que ir! 🤝",
+      "He visto que esta mañana reforzaban la línea escolar de buses, buena falta hacía. 🚌",
+      "¿Alguna oferta de trabajo nueva para esta semana? Me paso por el canal empleo. 💼",
+      "Café y a por el lunes. ¡Cuidado con los charcos que se van a montar! 🌂",
+      "Ánimo vecinos, ¡que el viernes llega en nada! (o eso dicen) 😂✨"
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
@@ -602,7 +602,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Domingo 25 Enero 2026 - Día de Sol y Deporte
+                  Lunes 26 Enero 2026 - Inicio de Semana y Rutina
                 </span>
               </div>
 
