@@ -252,7 +252,7 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">⛅ MARTES: MEJORÍA EN EL TIEMPO TRAS LAS LLUVIAS - CIELOS DESPEJADOS POR LA TARDE</span>
+          <span className="flex items-center gap-2">☁️ MARTES: MAÑANA MUY NUBOSA Y GRIS EN TARRAGONA - HUMEDAD PERSISTENTE DEL 90%</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">📻 COMUNIRADIO: ESCUCHA TARRAGONA RÀDIO 96.7 FM EN DIRECTO DESDE EL MENÚ</span>
           <span className="opacity-30">•</span>

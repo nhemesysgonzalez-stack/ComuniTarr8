@@ -146,12 +146,12 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-tuesday-clear',
-          title: "⛅ MARTES: Nubes y Claros",
-          content: "Tras las lluvias de ayer, hoy el cielo se abre progresivamente. Humedad alta por la mañana y tarde agradable. Máx 15°C.",
+          id: 'weather-tuesday-cloudy',
+          title: "☁️ MARTES: Muy Nuboso",
+          content: "Cielos muy cubiertos esta mañana en Tarragona. La humedad persiste tras las lluvias y el sol tardará más en asomar de lo previsto. Máx 14°C.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Mañana: Brumas (10°C)\n• Tarde: Sol y nubes (14°C)\n• Noche: Despejado (9°C)\n• Estado: Humedad persistente",
+          itinerary: "• Mañana: Muy Nublado (11°C)\n• Tarde: Cubierto/Claros (14°C)\n• Noche: Brumas (10°C)\n• Aviso: Alta Humedad (90%)",
           created_at: new Date().toISOString()
         };
 

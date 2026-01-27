@@ -56,7 +56,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 7. Noticias y Eventos de Hoy (MARTES 27 ENERO 2026 - Día de Mercado)
   if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("sol") || p.includes("tiempo") || p.includes("lluv") || p.includes("plan")) {
-    return "Resumen para el MARTES 27 de enero ⛅:\n\n• ⛅ TIEMPO: El cielo se despeja tras las lluvias. Tarde soleada con máximas de 15°C.\n• 🏙️ RAMBLA: Gran acogida del proyecto peatonal en la reunión de ayer. Se abre periodo de alegaciones.\n• 🛍️ MERCADO: Día de mercadillo en Bonavista y actividad en el Mercat Central. Ideal para frescos.\n• 🍳 EVENTO: Taller de cocina mediterránea a las 17:30h en la sala taller del Mercat Central.\n• 💼 EMPLEO: Disponibles nuevas vacantes en el sector sanitario (geriátricos) publicadas hoy.";
+    return "Resumen para el MARTES 27 de enero ☁️:\n\n• ☁️ TIEMPO: Mañana muy nubosa y gris en Tarragona. Alta humedad (90%) tras las lluvias de ayer. Máx 14°C.\n• 🏙️ RAMBLA: Gran acogida del proyecto peatonal en la reunión de ayer. Se abre periodo de alegaciones.\n• 🛍️ MERCADO: Día de mercadillo en Bonavista y actividad en el Mercat Central. ¡Cuidado al caminar con los bancos de niebla!\n• 🍳 EVENTO: Taller de cocina mediterránea a las 17:30h en la sala taller del Mercat Central.\n• 💼 EMPLEO: Disponibles nuevas vacantes en el sector sanitario (geriátricos) publicadas hoy.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)

@@ -71,7 +71,7 @@ const Forum: React.FC = () => {
 
   const tickerMessages = [
     { user: 'ComuniTarr 📢', text: '📻 ¡Novedad! Ya puedes escuchar Tarragona Ràdio en directo desde el menú lateral.' },
-    { user: 'Pau T.', text: 'Parece que el cielo se abre tras la lluvia de ayer... ¡Buen martes! ⛅☕' },
+    { user: 'Pau T.', text: 'Vaya mañana más gris se ha quedado. El sol no quiere salir hoy... ☁️☕' },
     { user: 'Mireia R.', text: 'Impresionante la cantidad de gente en el mercadillo hoy, ¡vaya chollos! 🛍️✨' },
     { user: 'Joan B.', text: '¿Algún resumen de la reunión de la Rambla de ayer? Me tuve que ir antes 🏙️🤔' },
     { user: 'Carme S.', text: 'A las 17:30 taller de cocina en el Mercat, ¡nos vemos allí! 🍳🥬' },
@@ -149,7 +149,7 @@ const Forum: React.FC = () => {
       : virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
 
     let scripts = [
-      "¡Buenos días! Un martes más tranquilo que ayer, parece que el sol asoma ☀️.",
+      "¡Buenos días! Un martes muy gris y nublado ☁️. Esperemos que abra pronto.",
       "He pasado por el Mercat Central y hay una animación increíble. 🛍️🛒",
       "¡Qué buena pinta tiene el taller de cocina de esta tarde! ¿Alguien se ha apuntado? 🍳",
       "La reunión de la Rambla de ayer fue muy productiva, se notan las ganas de mejora. 🏙️🤝",
