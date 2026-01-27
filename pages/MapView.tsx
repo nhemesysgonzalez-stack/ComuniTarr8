@@ -8,12 +8,12 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'cleanup', x: '42%', y: '38%', title: 'Limpieza Contenedores', desc: 'Mantenimiento intensivo programado para hoy en la Rambla.', status: 'Activo', color: 'bg-emerald-500', icon: 'cleaning_services', glow: 'shadow-[0_0_30px_rgba(16,185,129,0.4)]' },
-    { id: 2, type: 'incident', x: '55%', y: '25%', title: 'Obras Via Augusta', desc: 'Carril cortado por reparación de tubería. Desvío señalizado.', status: 'EN CURSO', color: 'bg-red-500', icon: 'engineering', glow: 'shadow-[0_0_40px_rgba(239,68,68,0.7)]' },
-    { id: 3, type: 'event', x: '35%', y: '45%', title: 'Reunión Proyecto', desc: 'Debate sobre la nueva Rambla. Antiga Audiència (19:00h).', status: 'Hoy 19:00', color: 'bg-primary', icon: 'groups', glow: 'shadow-[0_0_35px_rgba(43,140,238,0.6)]' },
-    { id: 4, type: 'event', x: '15%', y: '30%', title: 'Taller San Salvador', desc: 'Formación para adultos en el Centro Cívico hoy matinal.', status: 'Finalizando', color: 'bg-indigo-500', icon: 'school', glow: 'shadow-[0_0_30px_rgba(99,102,241,0.6)]' },
-    { id: 5, type: 'incident', x: '78%', y: '45%', title: 'Tráfico A-7', desc: 'Circulación lenta acceso Llevant. Típico lunes mañana.', status: 'Poco Fluido', color: 'bg-blue-600', icon: 'traffic', glow: 'shadow-[0_0_20px_rgba(37,99,235,0.4)]' },
-    { id: 6, type: 'event', x: '50%', y: '70%', title: 'Yoga Miracle', desc: 'Sesión post-jornada laboral en la playa.', status: '18:30h', color: 'bg-purple-500', icon: 'self_improvement' }
+    { id: 1, type: 'cleanup', x: '42%', y: '38%', title: 'Mantenimiento Parques', desc: 'Tareas de poda en el Parque de la Ciudad tras la lluvia.', status: 'Activo', color: 'bg-emerald-500', icon: 'yard', glow: 'shadow-[0_0_30px_rgba(16,185,129,0.4)]' },
+    { id: 2, type: 'event', x: '55%', y: '25%', title: 'Mercat Central', desc: 'Ofertas de martes en frescos y ambiente matinal.', status: 'ABIERTO', color: 'bg-primary', icon: 'shopping_basket', glow: 'shadow-[0_0_40px_rgba(43,140,238,0.7)]' },
+    { id: 3, type: 'event', x: '35%', y: '45%', title: 'Taller de Cocina', desc: 'Mercat Central (Sala Taller) a las 17:30h.', status: 'Hoy 17:30', color: 'bg-indigo-500', icon: 'skillet', glow: 'shadow-[0_0_35px_rgba(99,102,241,0.6)]' },
+    { id: 4, type: 'event', x: '15%', y: '30%', title: 'Networking Impulsa', desc: 'Encuentro emprendedores en TGN Impulsa.', status: 'Hoy 18:00', color: 'bg-orange-500', icon: 'lightbulb', glow: 'shadow-[0_0_30px_rgba(249,115,22,0.6)]' },
+    { id: 5, type: 'incident', x: '78%', y: '45%', title: 'Nudo Llevant', desc: 'Limpieza de calzada. Circulación con precaución.', status: 'En curso', color: 'bg-blue-600', icon: 'cleaning_services', glow: 'shadow-[0_0_20px_rgba(37,99,235,0.4)]' },
+    { id: 6, type: 'event', x: '55%', y: '60%', title: 'Post-Rambla Meet', desc: 'Charla informal sobre las ideas presentadas ayer.', status: '19:00h', color: 'bg-primary', icon: 'forum' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

@@ -146,46 +146,46 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-monday-rain',
-          title: "🌧️ LUNES: Nuboso y Lluvias",
-          content: "Empieza la semana con cielos cubiertos. Se esperan lluvias débiles a partir del mediodía. Temperaturas entre 8°C y 14°C.",
+          id: 'weather-tuesday-clear',
+          title: "⛅ MARTES: Nubes y Claros",
+          content: "Tras las lluvias de ayer, hoy el cielo se abre progresivamente. Humedad alta por la mañana y tarde agradable. Máx 15°C.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Mañana: Muy nuboso (9°C)\n• Tarde: Lluvia débil (13°C)\n• Noche: Humedad alta (10°C)\n• Aviso: Paraguas necesario",
+          itinerary: "• Mañana: Brumas (10°C)\n• Tarde: Sol y nubes (14°C)\n• Noche: Despejado (9°C)\n• Estado: Humedad persistente",
           created_at: new Date().toISOString()
         };
 
         const employmentNews = {
-          id: 'employment-monday-open',
-          title: "💼 EMPLEO: Inicio de Semana",
-          content: "Abiertas nuevas convocatorias para técnicos de mantenimiento en el Polígono Sur y atención al cliente en el centro.",
+          id: 'employment-tuesday-offers',
+          title: "💼 EMPLEO: Sanidad y Logística",
+          content: "Nuevas ofertas publicadas hoy: Auxiliares de enfermería para centros geriátricos y mozos para el puerto comercial.",
           category: "EMPLEO",
           neighborhood: "GENERAL",
           created_at: new Date().toISOString()
         };
 
         const culturalNews = {
-          id: 'culture-week-agenda',
-          title: "🎭 CULTURA: Agenda Semanal",
-          content: "Presentada la programación del Teatro Metropol para febrero. Abierta la venta de abonos desde esta mañana.",
-          category: "CULTURA",
-          neighborhood: "EIXAMPLE",
+          id: 'culture-rambla-meeting',
+          title: "🏙️ CIUDAD: Proyecto Rambla",
+          content: "Gran éxito en la reunión de ayer. Se han recogido más de 50 propuestas vecinales para el nuevo tramo peatonal.",
+          category: "ACTUALIDAD",
+          neighborhood: "CENTRO",
           created_at: new Date().toISOString()
         };
 
         const eventVibes = {
-          id: 'monday-back-to-school',
-          title: "🏫 CIUDAD: Retorno Rutina",
-          content: "Normalidad en el transporte público en este primer lunes tras las fiestas de Sant Antoni. Refuerzo en líneas escolares.",
-          category: "AVISO",
-          neighborhood: "GENERAL",
+          id: 'tuesday-market-bonavista',
+          title: "🛍️ COMERCIO: Mercadillo",
+          content: "Actividad intensa hoy en los mercados locales. Encuentra los mejores frescos de temporada y ofertas en textil.",
+          category: "OCIO",
+          neighborhood: "BONAVISTA",
           created_at: new Date().toISOString()
         };
 
         const trafficNotice = {
-          id: 'traffic-monday-peak',
-          title: "🚗 TRÁFICO: Hora Punta",
-          content: "Retenciones habituales en los accesos por la A-7 y T-11 entrada Tarragona. Circulación lenta en Av. Roma.",
+          id: 'traffic-tuesday-normal',
+          title: "🚗 TRÁFICO: Fluidez matinal",
+          content: "Circulación fluida en la mayoría de arterias principales. Pequeña retención en el Nudo de Llevant por limpieza.",
           category: "TRÁFICO",
           neighborhood: "GENERAL",
           created_at: new Date().toISOString()

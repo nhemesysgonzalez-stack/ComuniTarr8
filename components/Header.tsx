@@ -252,15 +252,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">☁️ LUNES: CIELOS CUBIERTOS CON PROBABILIDAD DE LLUVIA POR LA TARDE - MÁXIMAS DE 14°C</span>
+          <span className="flex items-center gap-2">⛅ MARTES: MEJORÍA EN EL TIEMPO TRAS LAS LLUVIAS - CIELOS DESPEJADOS POR LA TARDE</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">📻 COMUNIRADIO: ESCUCHA TARRAGONA RÀDIO 96.7 FM EN DIRECTO DESDE EL MENÚ</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚗 TRÁFICO: HORA PUNTA INTENSA EN ACCESOS - RETENCIONES EN LA ENTRADA POR A-7 Y T-11</span>
+          <span className="flex items-center gap-2">🛒 COMERCIO: DÍA DE MERCADILLO EN BONAVISTA Y OFERTAS DE TEMPORADA EN EL MERCAT CENTRAL</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🤝 CIUDAD: REUNIÓN PROYECTO RAMBLA PEATONAL HOY A LAS 19:00H EN ANTIGA AUDIÈNCIA</span>
+          <span className="flex items-center gap-2">🏙️ CIUDAD: GRAN ACOGIDA DEL PROYECTO RAMBLA PEATONAL EN LA REUNIÓN VECINAL DE AYER</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">💼 EMPLEO: NUEVAS VACANTES DE MANTENIMIENTO Y SERVICIOS PUBLICADAS ESTA MAÑANA</span>
+          <span className="flex items-center gap-2">💼 EMPLEO: NUEVAS VACANTES EN EL SECTOR SANITARIO Y LOGÍSTICA PUBLICADAS HOY</span>
         </motion.div>
       </div>
 

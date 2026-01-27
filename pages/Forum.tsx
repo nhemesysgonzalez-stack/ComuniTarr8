@@ -71,11 +71,11 @@ const Forum: React.FC = () => {
 
   const tickerMessages = [
     { user: 'ComuniTarr 📢', text: '📻 ¡Novedad! Ya puedes escuchar Tarragona Ràdio en directo desde el menú lateral.' },
-    { user: 'Pau T.', text: 'Primer café del lunes... ¡Ánimo con la semana! Que no se os olvide el paraguas 🌧️☕' },
-    { user: 'Mireia R.', text: 'Mucho tráfico hoy en la entrada por la T-11, paciencia conductores 🚗😤' },
-    { user: 'Joan B.', text: '¿Algún sitio abierto para desayunar por la Rambla que sea rápido? 🥐🥖' },
-    { user: 'Carme S.', text: 'Lunes de planificación. Recordad que han abierto inscripciones para el Metropol 🎭' },
-    { user: 'Luis M.', text: 'Cielo muy gris, parece que va a caer una buena a mediodía ☁️🌧️' }
+    { user: 'Pau T.', text: 'Parece que el cielo se abre tras la lluvia de ayer... ¡Buen martes! ⛅☕' },
+    { user: 'Mireia R.', text: 'Impresionante la cantidad de gente en el mercadillo hoy, ¡vaya chollos! 🛍️✨' },
+    { user: 'Joan B.', text: '¿Algún resumen de la reunión de la Rambla de ayer? Me tuve que ir antes 🏙️🤔' },
+    { user: 'Carme S.', text: 'A las 17:30 taller de cocina en el Mercat, ¡nos vemos allí! 🍳🥬' },
+    { user: 'Luis M.', text: 'Humedad por las nubes hoy, pero las temperaturas suben un poco 🌡️📈' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -149,15 +149,15 @@ const Forum: React.FC = () => {
       : virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
 
     let scripts = [
-      "¡Buenos días! Empezamos semana con ganas y mucho café ☕💪.",
-      "Ojo que en la A-7 hay un poco de lío a la altura de la entrada centro. 🚗⚠️",
-      "¿Sabemos si hoy lloverá mucho? He visto el cielo muy cerrado hacia el puerto. 🌧️",
-      "Lunes de volver a la oficina. ¡Qué corto se me ha hecho el finde! 😅",
-      "Reunión esta tarde sobre el proyecto de la Rambla Nova, ¡hay que ir! 🤝",
-      "He visto que esta mañana reforzaban la línea escolar de buses, buena falta hacía. 🚌",
-      "¿Alguna oferta de trabajo nueva para esta semana? Me paso por el canal empleo. 💼",
-      "Café y a por el lunes. ¡Cuidado con los charcos que se van a montar! 🌂",
-      "Ánimo vecinos, ¡que el viernes llega en nada! (o eso dicen) 😂✨"
+      "¡Buenos días! Un martes más tranquilo que ayer, parece que el sol asoma ☀️.",
+      "He pasado por el Mercat Central y hay una animación increíble. 🛍️🛒",
+      "¡Qué buena pinta tiene el taller de cocina de esta tarde! ¿Alguien se ha apuntado? 🍳",
+      "La reunión de la Rambla de ayer fue muy productiva, se notan las ganas de mejora. 🏙️🤝",
+      "Ojo que todavía quedan charcos de ayer, ¡no os salpiquéis! 😂💦",
+      "¿Sabéis si hay alguna farmacia de guardia hoy por la zona centro? 🏥",
+      "He subido una foto de las nubes saliendo del puerto en la galería, ¡estaba precioso! 📸",
+      "Martes de mercado, hoy toca paella con productos frescos. 🥘🦐",
+      "Ánimo con la jornada, ¡que el café siga fluyendo! ☕💪"
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
@@ -602,7 +602,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Lunes 26 Enero 2026 - Inicio de Semana y Rutina
+                  Martes 27 Enero 2026 - Día de Mercado y Proyectos
                 </span>
               </div>
 
