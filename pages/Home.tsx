@@ -205,12 +205,11 @@ const Home: React.FC = () => {
 
         setNews([weatherAlert, eventVibes, culturalNews, employmentNews, trafficNotice, ...validFetchedNews].slice(0, 6));
 
-        // Fetch Recent Neighbors
+        // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase
           .from('profiles')
           .select('*')
-          .eq('neighborhood', barrio)
-          .order('created_at', { ascending: false })
+          .order('karma', { ascending: false })
           .limit(5);
 
         if (!profilesError && profilesData && profilesData.length > 0) {
@@ -511,7 +510,7 @@ const Home: React.FC = () => {
                   <img src={neighbor.avatar_url || `https://ui-avatars.com/api/?name=${neighbor.full_name}&background=random`} className="size-10 rounded-xl object-cover" alt="" />
                   <div className="flex-1">
                     <p className="text-xs font-black dark:text-white leading-none mb-1">{neighbor.full_name}</p>
-                    <p className="text-[10px] text-gray-400 uppercase tracking-wider">{Math.floor(Math.random() * 500) + 100} XP esta semana</p>
+                    <p className="text-[10px] text-gray-400 uppercase tracking-wider">{neighbor.karma || 0} XP acumulados</p>
                   </div>
                   <div className="text-xs font-bold text-green-500 bg-green-50 dark:bg-green-500/10 px-2 py-1 rounded-lg">
                     ▲
