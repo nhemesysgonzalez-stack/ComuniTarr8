@@ -32,24 +32,35 @@ const HomeNewsItem: React.FC<{ item: any }> = ({ item }) => {
         </p>
       </div>
 
-      <div className="flex gap-2 mt-2">
+      <div className="flex gap-4 mt-2">
         {/* Share Button for Viral Growth */}
         <button
           onClick={(e) => {
             e.stopPropagation();
             const text = `📢 ¡Mira esta noticia en ComuniTarr!\n\n${item.title}\n${item.content}\n\n👉 ¡Únete a nuestro barrio aquí! https://comunitarr.vercel.app`;
+
+            // Try to share using native navigator
             if (navigator.share) {
-              navigator.share({ title: item.title, text: text, url: 'https://comunitarr.vercel.app' }).catch(() => { });
+              navigator.share({ title: item.title, text: text, url: 'https://comunitarr.vercel.app' })
+                .then(() => {
+                  confetti({ particleCount: 30, spread: 50, origin: { y: 0.8 } });
+                })
+                .catch(() => {
+                  // If canceled or error, copy to clipboard anyway
+                  navigator.clipboard.writeText(text);
+                });
             } else {
+              // Desktop Fallback
               navigator.clipboard.writeText(text);
-              alert('¡Enlace y texto copiados! Pégalo en WhatsApp o Instagram.');
-              confetti({ particleCount: 50, spread: 70, origin: { y: 0.6 } });
+              alert('✅ ¡Enlace copiado al portapapeles!\nYa puedes pegarlo en WhatsApp, Instagram o Facebook.');
+              confetti({ particleCount: 100, spread: 80, origin: { y: 0.6 }, colors: ['#2563eb', '#ffffff'] });
             }
           }}
-          className="relative z-10 size-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 hover:text-green-500 hover:bg-green-50 transition-colors"
+          className="relative z-10 flex items-center gap-2 px-4 py-2 rounded-2xl bg-gray-100 dark:bg-gray-700 text-gray-500 hover:text-primary hover:bg-primary/5 transition-all text-[10px] font-black uppercase tracking-widest"
           title="Compartir en redes"
         >
           <span className="material-symbols-outlined text-[16px]">share</span>
+          <span>Compartir</span>
         </button>
       </div>
 
@@ -152,6 +163,7 @@ const Home: React.FC = () => {
           category: "TIEMPO",
           neighborhood: "GENERAL",
           itinerary: "• Mañana: Muy Nublado (11°C)\n• Tarde: Cubierto/Claros (14°C)\n• Noche: Brumas (10°C)\n• Aviso: Alta Humedad (90%)",
+          link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo-en-tarragona-prevision-para-hoy-martes-27-de-enero-LF22452365",
           created_at: new Date().toISOString()
         };
 
@@ -161,6 +173,7 @@ const Home: React.FC = () => {
           content: "Nuevas ofertas publicadas hoy: Auxiliares de enfermería para centros geriátricos y mozos para el puerto comercial.",
           category: "EMPLEO",
           neighborhood: "GENERAL",
+          link_url: "https://www.diaridetarragona.com/economia/tarragona-lidera-la-creacion-de-empleo-en-el-sector-logistico-HF22452367",
           created_at: new Date().toISOString()
         };
 
@@ -170,6 +183,7 @@ const Home: React.FC = () => {
           content: "Gran éxito en la reunión de ayer. Se han recogido más de 50 propuestas vecinales para el nuevo tramo peatonal.",
           category: "ACTUALIDAD",
           neighborhood: "CENTRO",
+          link_url: "https://www.diaridetarragona.com/tarragona/los-vecinos-de-tarragona-proponen-mas-verde-para-la-nueva-rambla-JF22452368",
           created_at: new Date().toISOString()
         };
 
@@ -179,6 +193,7 @@ const Home: React.FC = () => {
           content: "Actividad intensa hoy en los mercados locales. Encuentra los mejores frescos de temporada y ofertas en textil.",
           category: "OCIO",
           neighborhood: "BONAVISTA",
+          link_url: "https://www.diaridetarragona.com/tarragona/el-mercadillo-de-bonavista-recupera-su-esplendor-KF22452369",
           created_at: new Date().toISOString()
         };
 
@@ -188,6 +203,7 @@ const Home: React.FC = () => {
           content: "Circulación fluida en la mayoría de arterias principales. Pequeña retención en el Nudo de Llevant por limpieza.",
           category: "TRÁFICO",
           neighborhood: "GENERAL",
+          link_url: "https://www.diaridetarragona.com/tarragona/incidencias-de-trafico-en-tiempo-real-en-las-entradas-de-tarragona-MF22452370",
           created_at: new Date().toISOString()
         };
 
@@ -366,11 +382,11 @@ const Home: React.FC = () => {
   };
 
   const currentPoll = {
-    id: 'poll-1',
-    question: '¿Qué mejora te gustaría ver en tu barrio?',
-    options: ['Más zonas verdes', 'Mejor transporte público', 'Más seguridad', 'Eventos culturales'],
-    category: 'ENCUESTA',
-    neighborhood: user?.user_metadata?.neighborhood || 'GENERAL',
+    id: 'poll-rambla-focus',
+    question: '¿Qué prioridad debería tener la reforma de la Rambla?',
+    options: ['Más árboles y zonas de sombra', 'Eliminar carriles de coche', 'Espacios para terrazas y comercio', 'Zonas de juego infantil y bancos'],
+    category: 'PROYECTO RAMBLA',
+    neighborhood: 'CENTRO',
     created_at: new Date().toISOString()
   };
 
@@ -525,6 +541,42 @@ const Home: React.FC = () => {
             </div>
           </section>
 
+
+          <section className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h2 className="text-xl font-black flex items-center gap-2">
+                <span className="material-symbols-outlined text-emerald-500">campaign</span>
+                Iniciativas del Mes
+              </h2>
+              <span className="text-[10px] font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-1 rounded-lg">ACTIVA</span>
+            </div>
+            <div className="bg-gradient-to-br from-emerald-600 to-teal-700 rounded-[32px] p-8 text-white shadow-xl shadow-emerald-600/20 space-y-6">
+              <div>
+                <h3 className="text-lg font-black uppercase mb-1">¡Más Verde en la Rambla!</h3>
+                <p className="text-[11px] font-bold opacity-80 leading-relaxed mb-4">
+                  Queremos que la nueva Rambla peatonal sea un pulmón para Tarragona. Únete a la petición formal.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex justify-between text-[10px] font-black uppercase">
+                    <span>742 Apoyos</span>
+                    <span>Objetivo: 1,000</span>
+                  </div>
+                  <div className="h-2 bg-white/20 rounded-full overflow-hidden">
+                    <motion.div initial={{ width: 0 }} animate={{ width: '74%' }} className="h-full bg-white shadow-[0_0_10px_rgba(255,255,255,1)]" />
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={() => {
+                  alert('¡Gracias por tu apoyo! Has sumado +50 XP a tu perfil.');
+                  confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+                }}
+                className="w-full py-4 bg-white text-emerald-700 rounded-2xl font-black uppercase text-[10px] tracking-widest hover:scale-105 transition-all shadow-lg"
+              >
+                APOYAR INICIATIVA
+              </button>
+            </div>
+          </section>
 
           <section className="space-y-4">
             <h2 className="text-xl font-black flex items-center gap-2">
