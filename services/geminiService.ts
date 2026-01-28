@@ -104,6 +104,11 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     return "Seguridad ciudadana 🚓:\n\n• Emergencias: Llama siempre al 112.\n• Denuncias: Para cosas menores, puedes ir a la comisaría de la Guardia Urbana (C/ Arquebisbe Pont i Gol) o a Mossos (Campo Claro).\n• Consejos: Especial atención en zonas turísticas como la Catedral o el Anfiteatro para evitar hurtos.";
   }
 
+  // 15.5 Recomendaciones Puerto Deportivo (Gastronomía)
+  if ((p.includes("puerto deportivo") || p.includes("port esportiu")) && (p.includes("cenar") || p.includes("comer") || p.includes("restaurante") || p.includes("recomienda"))) {
+    return "Gastronomía en el Puerto Deportivo de Tarragona 🍽️:\n\n• L'Àncora: Un clásico para pescados frescos y arroces con vistas al mar.\n• Rincón de Diego: Alta cocina mediterránea con un toque innovador.\n• El Pescador: Muy buen ambiente y marisco de calidad.\n• La Botiga: Ideal para picar algo o probar sus arroces marineros.\n¡Te recomiendo reservar, sobre todo si es para cenar frente a los barcos!";
+  }
+
   // 16. Ayuda / APP
   if (p.includes("ayuda") || p.includes("funciona") || p.includes("puntos") || p.includes("token") || p.includes("xp")) {
     return "¡Bienvenido a ComuniTarr! 🏘️\nPuedes ganar 'ComuniPoints' y 'Karma (XP)' de varias formas:\n1. Reportando incidencias reales (fotos de baches, luces fundidas...).\n2. Participando en votaciones vecinales.\n3. Ofreciendo o demandando ayuda en el Marketplace.\n4. Interactuando en el foro.\n¡Usa el mapa para ver qué necesitan tus vecinos ahora mismo!";
