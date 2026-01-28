@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '📻 ¡Buenos días! ¿Qué tal vuestro martes? No olvidéis sintonizar la radio para estar al día.', neighborhood: 'GENERAL' },
-    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: 'El sol empieza a calentar un poquito tras la lluvia de ayer. ¡Día de mercado! ☀️🧺', neighborhood: 'Llevant' },
-    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Me han encantado algunas de las propuestas para la Rambla de ayer, ¡ojalá se hagan realidad! 🏙️✨', neighborhood: 'Eixample' },
-    { id: 3, user: 'Joan B.', text: 'En el mercadillo de Bonavista hay hoy unas ofertas de fruta brutales 🍎🍌', avatar: 'https://i.pravatar.cc/150?u=joan', neighborhood: 'Bonavista' },
-    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: '¿Quién viene al taller de cocina esta tarde en el Mercat? 🍳🥒', neighborhood: 'Centro' },
-    { id: 5, user: 'Luis M.', avatar: 'https://i.pravatar.cc/150?u=luis', text: 'Martes productivo, ¡la app hoy va como un tiro con las noticias frescas! 🚀💪', neighborhood: 'Part Alta' },
-    { id: 6, user: 'Elena G.', avatar: 'https://i.pravatar.cc/150?u=elena', text: 'He visto las ofertas de sanidad de hoy en el canal empleo, ¡muy interesantes! 💉🏥', neighborhood: 'Llevant' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '📻 ¡Feliz miércoles! Aprovecha el sol hoy, pero cuidado con el viento. ☀️💨', neighborhood: 'GENERAL' },
+    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¡Vaya Mestral sopla hoy! He tenido que recoger los toldos de la terraza. 💨🏠', neighborhood: 'Llevant' },
+    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '¿Quién se apunta al cine esta tarde? Ponen Alcarràs en la Audiència. 🎬🍿', neighborhood: 'Part Alta' },
+    { id: 3, user: 'Joan B.', text: 'Increíble la ayuda del taller digital. ¡Mi abuelo ya sabe usar WhatsApp! 📱👴', avatar: 'https://i.pravatar.cc/150?u=joan', neighborhood: 'Ponente' },
+    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: '¡Ya somos más de 850 por la Rambla verde! Vamos, que llegamos a los 1000. 🌲💪', neighborhood: 'Centro' },
+    { id: 5, user: 'Luis M.', avatar: 'https://i.pravatar.cc/150?u=luis', text: 'Miércoles de sol, ideal para un café rápido en la Rambla Nova. ☕☀️', neighborhood: 'Centro' },
+    { id: 6, user: 'Elena G.', avatar: 'https://i.pravatar.cc/150?u=elena', text: 'He visto las ofertas de programador de hoy, ¡el sector tech se mueve! 💻🚀', neighborhood: 'Llevant' },
 ];
 
 const tickerMessages = [
-    { user: 'Pau T.', text: '¡Martes de mercado! 🧺' },
-    { user: 'Mireia R.', text: 'Muy buen ambiente en el networking hoy 💡' },
-    { user: 'Joan B.', text: 'Radio Tarragona suena genial en directo 📻' },
-    { user: 'Carme S.', text: '¡Hoy paella con lo del mercado! 🥘' },
-    { user: 'Luis M.', text: 'Fluidez en los accesos de entrada 🚗' }
+    { user: 'Pau T.', text: '¡Cuidado con el viento hoy! 💨' },
+    { user: 'Mireia R.', text: 'Cine a las 18:30h, ¡nos vemos! 🎬' },
+    { user: 'Joan B.', text: 'La radio de la app es un puntazo 📻' },
+    { user: 'Carme S.', text: 'Seguid apoyando la reforma de la Rambla 🌲' },
+    { user: 'Luis M.', text: 'Paciencia en las zonas con andamios 🏗️' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

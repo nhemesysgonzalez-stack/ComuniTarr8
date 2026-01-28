@@ -71,11 +71,11 @@ const Forum: React.FC = () => {
 
   const tickerMessages = [
     { user: 'ComuniTarr 📢', text: '📻 ¡Novedad! Ya puedes escuchar Tarragona Ràdio en directo desde el menú lateral.' },
-    { user: 'Pau T.', text: 'Vaya mañana más gris se ha quedado. El sol no quiere salir hoy... ☁️☕' },
-    { user: 'Mireia R.', text: 'Impresionante la cantidad de gente en el mercadillo hoy, ¡vaya chollos! 🛍️✨' },
-    { user: 'Joan B.', text: '¿Algún resumen de la reunión de la Rambla de ayer? Me tuve que ir antes 🏙️🤔' },
-    { user: 'Carme S.', text: 'A las 17:30 taller de cocina en el Mercat, ¡nos vemos allí! 🍳🥬' },
-    { user: 'Luis M.', text: 'Humedad por las nubes hoy, pero las temperaturas suben un poco 🌡️📈' }
+    { user: 'Pau T.', text: 'Vaya ráfagas de viento hoy, ¡que no se os vuele el sombrero! ☀️💨' },
+    { user: 'Mireia R.', text: 'Hoy toca tarde de cine en la Antiga Audiència, ¿quién se apunta? 🎬🍿' },
+    { user: 'Joan B.', text: 'El taller para los abuelos en Ponent está a tope, qué buena iniciativa 📱👴' },
+    { user: 'Carme S.', text: 'Miércoles de sol, ideal para pasear aunque haga aire. ¡Feliz día! ☀️🚲' },
+    { user: 'Luis M.', text: 'Aviso: He visto contenedores volcados por el viento en la zona de Llevant ⚠️🧤' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -149,15 +149,15 @@ const Forum: React.FC = () => {
       : virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
 
     let scripts = [
-      "¡Buenos días! Un martes muy gris y nublado ☁️. Esperemos que abra pronto.",
-      "He pasado por el Mercat Central y hay una animación increíble. 🛍️🛒",
-      "¡Qué buena pinta tiene el taller de cocina de esta tarde! ¿Alguien se ha apuntado? 🍳",
-      "La reunión de la Rambla de ayer fue muy productiva, se notan las ganas de mejora. 🏙️🤝",
-      "Ojo que todavía quedan charcos de ayer, ¡no os salpiquéis! 😂💦",
-      "¿Sabéis si hay alguna farmacia de guardia hoy por la zona centro? 🏥",
-      "He subido una foto de las nubes saliendo del puerto en la galería, ¡estaba precioso! 📸",
-      "Martes de mercado, hoy toca paella con productos frescos. 🥘🦐",
-      "Ánimo con la jornada, ¡que el café siga fluyendo! ☕💪"
+      "¡Buenos días! Un miércoles radiante pero con mucho viento ☀️💨.",
+      "Ojo al caminar cerca de obras, el Mestral está soplando fuerte. 🏗️⚠️",
+      "He subido a la Part Alta y se ve el mar precioso con este sol. 📸🌅",
+      "¿Sabemos a qué hora empieza el cine esta tarde? Me suena que a las 18:30. 🎬",
+      "Animo con el ombligo de la semana, ¡el finde ya asoma! ☕💪",
+      "¿Habéis visto que la radio se oye súper bien incluso con el móvil bloqueado? 📻✨",
+      "He participado en el taller digital de Ponent y ha sido muy útil para los mayores. 📱👴",
+      "¿Alguna recomendación para cenar por la zona del Puerto Deportivo? 🍽️",
+      "Se ha volado una maceta de mi vecino, ¡sujetad bien todo! 😂💨"
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
@@ -602,7 +602,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Martes 27 Enero 2026 - Día de Mercado y Proyectos
+                  Miércoles 28 Enero 2026 - Sol, Viento y Comunidad
                 </span>
               </div>
 

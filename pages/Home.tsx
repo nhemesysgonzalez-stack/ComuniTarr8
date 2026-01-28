@@ -157,53 +157,53 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-tuesday-cloudy',
-          title: "☁️ MARTES: Muy Nuboso",
-          content: "Cielos muy cubiertos esta mañana en Tarragona. La humedad persiste tras las lluvias y el sol tardará más en asomar de lo previsto. Máx 14°C.",
+          id: 'weather-wednesday-wind',
+          title: "☀️ MIÉRCOLES: Sol y Viento",
+          content: "Cielos despejados hoy en Tarragona, aunque soplará viento de componente noroeste (Mestral) con rachas moderadas. Máx 16°C.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Mañana: Muy Nublado (11°C)\n• Tarde: Cubierto/Claros (14°C)\n• Noche: Brumas (10°C)\n• Aviso: Alta Humedad (90%)",
-          link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo-en-tarragona-prevision-para-hoy-martes-27-de-enero-LF22452365",
+          itinerary: "• Mañana: Soleado (11°C)\n• Tarde: Viento moderado (15°C)\n• Noche: Cielo despejado (9°C)\n• Aviso: Precaución con objetos en balcones",
+          link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo-en-tarragona-la-prevision-para-el-miercoles-28-de-enero-LF22452401",
           created_at: new Date().toISOString()
         };
 
         const employmentNews = {
-          id: 'employment-tuesday-offers',
-          title: "💼 EMPLEO: Sanidad y Logística",
-          content: "Nuevas ofertas publicadas hoy: Auxiliares de enfermería para centros geriátricos y mozos para el puerto comercial.",
+          id: 'employment-wednesday-tech',
+          title: "💼 EMPLEO: Sector Tecnológico",
+          content: "Empresas del parque tecnológico abren proceso de selección para desarrolladores junior y analistas de datos.",
           category: "EMPLEO",
-          neighborhood: "GENERAL",
-          link_url: "https://www.diaridetarragona.com/economia/tarragona-lidera-la-creacion-de-empleo-en-el-sector-logistico-HF22452367",
+          neighborhood: "PONENTE",
+          link_url: "https://www.diaridetarragona.com/economia/el-sector-tecnologico-en-tarragona-busca-talento-local-HF22452402",
           created_at: new Date().toISOString()
         };
 
         const culturalNews = {
-          id: 'culture-rambla-meeting',
-          title: "🏙️ CIUDAD: Proyecto Rambla",
-          content: "Gran éxito en la reunión de ayer. Se han recogido más de 50 propuestas vecinales para el nuevo tramo peatonal.",
-          category: "ACTUALIDAD",
-          neighborhood: "CENTRO",
-          link_url: "https://www.diaridetarragona.com/tarragona/los-vecinos-de-tarragona-proponen-mas-verde-para-la-nueva-rambla-JF22452368",
+          id: 'culture-wed-cinema',
+          title: "🎬 CULTURA: Cine en V.O.",
+          content: "Ciclo de cine europeo esta tarde en el Antiguo Ayuntamiento. Entrada libre hasta completar aforo.",
+          category: "CULTURA",
+          neighborhood: "PART ALTA",
+          link_url: "https://www.diaridetarragona.com/cultura/el-cine-en-version-original-llega-al-corazon-de-tarragona-JF22452403",
           created_at: new Date().toISOString()
         };
 
         const eventVibes = {
-          id: 'tuesday-market-bonavista',
-          title: "🛍️ COMERCIO: Mercadillo",
-          content: "Actividad intensa hoy en los mercados locales. Encuentra los mejores frescos de temporada y ofertas en textil.",
-          category: "OCIO",
-          neighborhood: "BONAVISTA",
-          link_url: "https://www.diaridetarragona.com/tarragona/el-mercadillo-de-bonavista-recupera-su-esplendor-KF22452369",
+          id: 'wed-rambla-petition-update',
+          title: "🌲 CIUDAD: Petición Rambla",
+          content: "¡Superados los 850 apoyos! La iniciativa para una Rambla más verde está a un paso de su objetivo de 1.000 firmas.",
+          category: "ACTUALIDAD",
+          neighborhood: "CENTRO",
+          link_url: "https://www.diaridetarragona.com/tarragona/la-movilizacion-vecinal-por-la-nueva-rambla-no-deja-de-crecer-KF22452404",
           created_at: new Date().toISOString()
         };
 
         const trafficNotice = {
-          id: 'traffic-tuesday-normal',
-          title: "🚗 TRÁFICO: Fluidez matinal",
-          content: "Circulación fluida en la mayoría de arterias principales. Pequeña retención en el Nudo de Llevant por limpieza.",
+          id: 'traffic-wed-fluid',
+          title: "🚗 TRÁFICO: Circulación fluida",
+          content: "Mañana tranquila en la red vial. Sin incidencias destacables en la T-11 ni en los accesos por Llevant.",
           category: "TRÁFICO",
           neighborhood: "GENERAL",
-          link_url: "https://www.diaridetarragona.com/tarragona/incidencias-de-trafico-en-tiempo-real-en-las-entradas-de-tarragona-MF22452370",
+          link_url: "https://www.diaridetarragona.com/tarragona/incidencias-de-trafico-en-tarragona-hoy-MF22452405",
           created_at: new Date().toISOString()
         };
 
@@ -558,11 +558,11 @@ const Home: React.FC = () => {
                 </p>
                 <div className="space-y-2">
                   <div className="flex justify-between text-[10px] font-black uppercase">
-                    <span>742 Apoyos</span>
+                    <span>857 Apoyos</span>
                     <span>Objetivo: 1,000</span>
                   </div>
                   <div className="h-2 bg-white/20 rounded-full overflow-hidden">
-                    <motion.div initial={{ width: 0 }} animate={{ width: '74%' }} className="h-full bg-white shadow-[0_0_10px_rgba(255,255,255,1)]" />
+                    <motion.div initial={{ width: 0 }} animate={{ width: '85.7%' }} className="h-full bg-white shadow-[0_0_10px_rgba(255,255,255,1)]" />
                   </div>
                 </div>
               </div>

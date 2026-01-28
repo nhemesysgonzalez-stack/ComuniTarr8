@@ -252,15 +252,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">☁️ MARTES: MAÑANA MUY NUBOSA Y GRIS EN TARRAGONA - HUMEDAD PERSISTENTE DEL 90%</span>
+          <span className="flex items-center gap-2">☀️ MIÉRCOLES: DÍA SOLEADO PERO CON VIENTO DE MESTRAL - MÁXIMAS DE 16°C</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">📻 COMUNIRADIO: ESCUCHA TARRAGONA RÀDIO 96.7 FM EN DIRECTO DESDE EL MENÚ</span>
+          <span className="flex items-center gap-2">📻 COMUNIRADIO: RECUERDA QUE PUEDES ESCUCHAR LA FM LOCAL DESDE EL MENÚ MÓVIL</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛒 COMERCIO: DÍA DE MERCADILLO EN BONAVISTA Y OFERTAS DE TEMPORADA EN EL MERCAT CENTRAL</span>
+          <span className="flex items-center gap-2">🌲 CIUDAD: LA PETICIÓN POR MÁS VERDE EN LA RAMBLA ALCANZA LAS 850 FIRMAS</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🏙️ CIUDAD: GRAN ACOGIDA DEL PROYECTO RAMBLA PEATONAL EN LA REUNIÓN VECINAL DE AYER</span>
+          <span className="flex items-center gap-2">🎬 CULTURA: CICLO DE CINE EN V.O. ESTA TARDE A LAS 18:30H EN LA ANTIGA AUDIÈNCIA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">💼 EMPLEO: NUEVAS VACANTES EN EL SECTOR SANITARIO Y LOGÍSTICA PUBLICADAS HOY</span>
+          <span className="flex items-center gap-2">📱 SOCIAL: ÉXITO DEL TALLER DIGITAL PARA MAYORES EN EL CENTRO CÍVICO DE PONENT</span>
         </motion.div>
       </div>
 

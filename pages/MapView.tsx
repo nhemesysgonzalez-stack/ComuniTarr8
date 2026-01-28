@@ -8,12 +8,12 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'cleanup', x: '42%', y: '38%', title: 'Mantenimiento Parques', desc: 'Tareas de poda en el Parque de la Ciudad tras la lluvia.', status: 'Activo', color: 'bg-emerald-500', icon: 'yard', glow: 'shadow-[0_0_30px_rgba(16,185,129,0.4)]' },
-    { id: 2, type: 'event', x: '55%', y: '25%', title: 'Mercat Central', desc: 'Ofertas de martes en frescos y ambiente matinal.', status: 'ABIERTO', color: 'bg-primary', icon: 'shopping_basket', glow: 'shadow-[0_0_40px_rgba(43,140,238,0.7)]' },
-    { id: 3, type: 'event', x: '35%', y: '45%', title: 'Taller de Cocina', desc: 'Mercat Central (Sala Taller) a las 17:30h.', status: 'Hoy 17:30', color: 'bg-indigo-500', icon: 'skillet', glow: 'shadow-[0_0_35px_rgba(99,102,241,0.6)]' },
-    { id: 4, type: 'event', x: '15%', y: '30%', title: 'Networking Impulsa', desc: 'Encuentro emprendedores en TGN Impulsa.', status: 'Hoy 18:00', color: 'bg-orange-500', icon: 'lightbulb', glow: 'shadow-[0_0_30px_rgba(249,115,22,0.6)]' },
-    { id: 5, type: 'incident', x: '78%', y: '45%', title: 'Nudo Llevant', desc: 'Limpieza de calzada. Circulación con precaución.', status: 'En curso', color: 'bg-blue-600', icon: 'cleaning_services', glow: 'shadow-[0_0_20px_rgba(37,99,235,0.4)]' },
-    { id: 6, type: 'event', x: '55%', y: '60%', title: 'Post-Rambla Meet', desc: 'Charla informal sobre las ideas presentadas ayer.', status: '19:00h', color: 'bg-primary', icon: 'forum' }
+    { id: 1, type: 'incident', x: '42%', y: '38%', title: 'Aviso Viento', desc: 'Rachas fuertes de Mestral. Precaución con macetas y toldos.', status: 'Activo', color: 'bg-orange-500', icon: 'air', glow: 'shadow-[0_0_30px_rgba(249,115,22,0.4)]' },
+    { id: 2, type: 'cleanup', x: '55%', y: '25%', title: 'Recogida de Hojas', desc: 'Limpieza intensiva en Av. Catalunya por acumulación hoy.', status: 'En curso', color: 'bg-emerald-500', icon: 'cleaning_services', glow: 'shadow-[0_0_40px_rgba(16,185,129,0.7)]' },
+    { id: 3, type: 'event', x: '35%', y: '45%', title: 'Cine V.O.', desc: 'Proyección en Antiga Audiència a las 18:30h.', status: 'Hoy 18:30', color: 'bg-indigo-500', icon: 'movie', glow: 'shadow-[0_0_35px_rgba(99,102,241,0.6)]' },
+    { id: 4, type: 'event', x: '15%', y: '40%', title: 'Taller Digital', desc: 'Formación para mayores en Centro Cívico Ponent.', status: 'Finalizando', color: 'bg-primary', icon: 'smartphone', glow: 'shadow-[0_0_30px_rgba(43,140,238,0.6)]' },
+    { id: 5, type: 'cleanup', x: '78%', y: '45%', title: 'Punto Limpio Llevant', desc: 'El camión de reciclaje está hoy en la zona de playas.', status: 'Hasta las 14h', color: 'bg-emerald-600', icon: 'recycling' },
+    { id: 6, type: 'incident', x: '48%', y: '55%', title: 'Arreglo Fachada', desc: 'Andamios en Calle Unió. Paso estrecho para peatones.', status: 'Precaución', color: 'bg-red-500', icon: 'construction' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

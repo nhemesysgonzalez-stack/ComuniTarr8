@@ -54,9 +54,9 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     return "Para trámites municipales en Tarragona 🏛️:\n\n• La OMAC (Oficina Municipal d'Atenció Ciutadana) requiere cita previa. Puedes pedirla en la web tarragona.cat o llamando al 010.\n• Empadronamiento: Necesitas DNI/NIE y el contrato de alquiler o escritura de la vivienda.\n• Volante de convivencia: Se puede obtener online con certificado digital al instante.";
   }
 
-  // 7. Noticias y Eventos de Hoy (MARTES 27 ENERO 2026 - Día de Mercado)
+  // 7. Noticias y Eventos de Hoy (MIÉRCOLES 28 ENERO 2026 - Sol y Viento)
   if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("sol") || p.includes("tiempo") || p.includes("lluv") || p.includes("plan")) {
-    return "Resumen para el MARTES 27 de enero ☁️:\n\n• ☁️ TIEMPO: Mañana muy nubosa y gris en Tarragona. Alta humedad (90%) tras las lluvias de ayer. Máx 14°C.\n• 🏙️ RAMBLA: Gran acogida del proyecto peatonal en la reunión de ayer. Se abre periodo de alegaciones.\n• 🛍️ MERCADO: Día de mercadillo en Bonavista y actividad en el Mercat Central. ¡Cuidado al caminar con los bancos de niebla!\n• 🍳 EVENTO: Taller de cocina mediterránea a las 17:30h en la sala taller del Mercat Central.\n• 💼 EMPLEO: Disponibles nuevas vacantes en el sector sanitario (geriátricos) publicadas hoy.";
+    return "Resumen para el MIÉRCOLES 28 de enero ☀️💨:\n\n• ☀️ TIEMPO: Día soleado y despejado, pero con viento de Mestral (noroeste) moderado. Temp. Máx 16°C.\n• 🌲 RAMBLA: La petición 'Más Verde en la Rambla' ya supera las 850 firmas. ¡Queda poco para el objetivo!\n• 🎬 CULTURA: Ciclo de Cine en V.O. esta tarde a las 18:30h en la Antiga Audiència.\n• 📱 SOCIAL: Taller de ayuda digital para mayores esta mañana en el Centro Cívico de Ponent.\n• 🚗 TRÁFICO: Circulación fluida en los accesos. Sin incidencias por el viento hasta ahora.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)
