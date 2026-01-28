@@ -130,27 +130,10 @@ const Forum: React.FC = () => {
   const generateVirtualMessage = async (isReplyTo?: string, originalPrompt?: string, isChain?: boolean) => {
     // Broaden keywords for the Mediador
     const p = originalPrompt?.toLowerCase() || "";
-    const isAssistant = isReplyTo && (
-      p.includes('ayuda') ||
-      p.includes('como') ||
-      p.includes('cómo') ||
-      p.includes('qué') ||
-      p.includes('que') ||
-      p.includes('que hago') ||
-      p.includes('qué hago') ||
-      p.includes('hacer') ||
-      p.includes('saber') ||
-      p.includes('@mediador') ||
-      p.includes('pregunt') ||
-      p.includes('llov') ||
-      p.includes('tiempo') ||
-      p.includes('primera vez') ||
-      p.includes('que se hace') ||
-      p.includes('qué se hace') ||
-      p.includes('funciona') ||
-      p.includes('como va') ||
-      p.includes('cómo va')
-    );
+    const isQuestion = p.includes('?') || p.includes('cómo') || p.includes('como') || p.includes('qué') || p.includes('que') || p.includes('sabéis') || p.includes('sabeis') || p.includes('donde') || p.includes('dónde');
+    const isHelpRequest = p.includes('ayuda') || p.includes('primera vez') || p.includes('funciona') || p.includes('hacer') || p.includes('hace');
+
+    const isAssistant = isReplyTo && (isQuestion || isHelpRequest || p.includes('@mediador') || p.includes('mediador'));
 
     // Choose neighbor (Mediador has priority for technical stuff)
     const neighbor = isAssistant
@@ -348,14 +331,16 @@ const Forum: React.FC = () => {
           return [...filtered, newMsg];
         });
 
-        // Trigger reply logic (already handled locally but good for other users)
-        if (newMsg.user_id !== user?.id) {
+        // Trigger reply logic (AI / Simulation)
+        if (newMsg.user_id !== user?.id && !newMsg.id.toString().startsWith('sim-')) {
           if (newMsg.content.includes('<<ZUMBIDO>>')) {
             playSound('buzz');
             setIsShaking(true);
             setTimeout(() => setIsShaking(false), 500);
           } else {
             playSound('msg');
+            // Important: Trigger simulated response so everyone sees the Mediator answering real users
+            generateVirtualMessage(newMsg.user_metadata?.full_name?.split(' ')[0] || 'Vecino', newMsg.content);
           }
         }
       })
