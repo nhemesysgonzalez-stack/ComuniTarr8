@@ -128,171 +128,113 @@ const Forum: React.FC = () => {
   };
 
   const generateVirtualMessage = async (isReplyTo?: string, originalPrompt?: string, isChain?: boolean) => {
-    // Broaden keywords for the Mediador
     const p = originalPrompt?.toLowerCase() || "";
-    const isQuestion = p.includes('?') || p.includes('cómo') || p.includes('como') || p.includes('qué') || p.includes('que') || p.includes('sabéis') || p.includes('sabeis') || p.includes('donde') || p.includes('dónde');
-    const isHelpRequest = p.includes('ayuda') || p.includes('primera vez') || p.includes('funciona') || p.includes('hacer') || p.includes('hace');
 
+    // Improved detection logic
+    const isQuestion = p.includes('?') || p.includes('cómo') || p.includes('como') || p.includes('qué') || p.includes('que ') || p.includes('sabéis') || p.includes('sabeis') || p.includes('donde') || p.includes('dónde');
+    const isHelpRequest = p.includes('ayuda') || p.includes('primera vez') || p.includes('no sé') || p.includes('no se') || p.includes('funciona') || p.includes('hacer') || p.includes('hace');
+    const isGreeting = p.includes('hola') || p.includes('buenos días') || p.includes('buenas tardes') || p.includes('saludos') || p.includes('buenas');
+
+    // Priority for Mediator if it's a question or app help
     const isAssistant = isReplyTo && (isQuestion || isHelpRequest || p.includes('@mediador') || p.includes('mediador'));
 
-    // Choose neighbor (Mediador has priority for technical stuff)
-    const neighbor = isAssistant
-      ? { id: 'v-ai', full_name: 'Mediador Vecinal ⚖️', avatar_url: 'https://img.icons8.com/isometric/512/scales.png', status: 'online' }
-      : virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
-
+    // Base initiation scripts
     let scripts = [
       "¡Buenos días! Un miércoles radiante pero con mucho viento ☀️💨.",
       "Ojo al caminar cerca de obras, el Mestral está soplando fuerte. 🏗️⚠️",
       "He subido a la Part Alta y se ve el mar precioso con este sol. 📸🌅",
-      "¿Sabemos a qué hora empieza el cine esta tarde? Me suena que a las 18:30. 🎬",
       "Animo con el ombligo de la semana, ¡el finde ya asoma! ☕💪",
-      "¿Habéis visto que la radio se oye súper bien incluso con el móvil bloqueado? 📻✨",
-      "He participado en el taller digital de Ponent y ha sido muy útil para los mayores. 📱👴",
       "¿Alguna recomendación para cenar por la zona del Puerto Deportivo? 🍽️",
       "Se ha volado una maceta de mi vecino, ¡sujetad bien todo! 😂💨"
     ];
 
-    if (currentNeighborhood === 'EMPLEO') {
-      scripts = [
-        "He visto oferta de Operario de Lavandería en Constantí (Randstad). Urgente. 🧺",
-        "Buscan Administrativo Logístico en Tarragona ciudad. Jornada completa. 📑",
-        "En Reus necesitan Carretilleros (Eurofirms). Turnos rotativos. 📦",
-        "Oferta de Ayudante de Camarero para fines de semana en el centro (Job Today). ☕",
-        "Se busca Repartidor con carnet B para paquetería en Tarragona. 🚚",
-        "Buscan recepcionista de noche con inglés para hotel en Llevant. 🏨",
-        "¿Alguien con título para cuidar mayores? Hay vacante en residencia TGN. 👵",
-        "En el Polígono Riu Clar buscan mozos de almacén para campaña. 🏭",
-        "¿Sabéis si en el Port Aventura ya están contratando para la nueva temporada? 🎢",
-        "He visto carteles de 'Se Busca Personal' en varias tiendas del Parc Central. 🛍️"
-      ];
-    }
-    else if (currentNeighborhood === 'ENCUENTROS') {
-      scripts = [
-        "Soy nuevo en el barrio y me encantaría conocer gente para ir a caminar por la playa. 🏖️",
-        "¿Algún soltero/a que se anime a ir al teatro el próximo fin de semana? 🎭",
-        "Busco grupo para jugar a pádel o simplemente tomar algo tranquilo por el centro. 🍻",
-        "¡Qué difícil es hacer amigos de adulto! ¿Alguien se apunta a un club de lectura por aquí? 📚",
-        "Me encanta la historia romana de Tarragona. ¿Algún apasionado para ir de rutas juntos? 🏛️",
-        "¿Gente joven para salir de fiesta o tomar algo por la noche? ¡Manifestaos! 💃",
-        "Busco gente para practicar intercambio de idiomas: yo ofrezco catalán/español por inglés. 🌍",
-        "¿Alguien se anima a una tarde de juegos de mesa en alguna cafetería? 🎲"
-      ];
-    } else if (currentNeighborhood === 'PREPPERS') {
-      scripts = [
-        "¿Alguien sabe qué hacer si suena la sirena de la petroquímica? ¿Evacuar o quedarse en casa? ⚠️",
-        "He leído que debemos tener siempre un kit de emergencia. Agua, linternas, radio... ¿Qué más? 🎒",
-        "En caso de fuga tóxica en el Polígono Sur, lo recomendable es cerrar ventanas y puertas. 🚪🔒",
-        "Yo tengo baterías externas cargadas y velas por si hay apagón. Cada uno en su casa. 🕯️",
-        "¿Sabéis dónde están los puntos de encuentro de emergencia en vuestro barrio? 🏛️",
-        "Me gustaría que hicieran simulacros de evacuación más seguido. Mucha gente no sabe qué hacer. 🚨",
-        "Recomiendo seguir @emergenciescat en Twitter. Avisan rápido de cualquier incidencia. 📱",
-        "Tengo dudas sobre las mascarillas FFP3. ¿Son necesarias para una fuga química o con FFP2 vale? 😷",
-        "¿Alguien tiene botiquines actualizados? El mío tiene tiritas de hace 5 años... 🩹"
-      ];
-    } else {
-      // Fallback for other neighborhoods
-      scripts = [
-        "¡Qué buen ambiente hay hoy por aquí!",
-        "¿Habéis visto las nuevas ofertas en el comercio local?",
-        "Tarragona está preciosa con este sol. ✨",
-        "¿Alguien recomienda algún sitio para cenar hoy?",
-        "¡Qué alegría ver a tanta gente participando!"
-      ];
-    }
-
-    // Detect tutorial requests or new users
-    const isNewUser = p.includes('primera vez') || p.includes('no sé como va') || p.includes('cómo funciona') || p.includes('qué hay que hacer');
+    // Base reply scripts
+    let replyScripts = [
+      `¡Totalmente de acuerdo, ${isReplyTo}!`,
+      `¿Me puedes dar más detalles sobre eso, ${isReplyTo}?`,
+      `¡Qué bueno saludarte ${isReplyTo}!`,
+      `Opino lo mismo que tú, me parece interesante.`,
+      `Gracias por la info, me sirve mucho.`,
+      `¡Vaya, no lo sabía! Gracias por comentarlo, ${isReplyTo}.`
+    ];
 
     if (currentNeighborhood === 'EMPLEO') {
-      replyScripts = [
-        `Interesante oferta, ${isReplyTo}. ¿Sabes si piden experiencia?`,
-        `Yo también estoy buscando trabajo en ese sector, ${isReplyTo}.`,
-        `Gracias por compartir la info, ${isReplyTo}. Voy a mirar esa oferta.`,
-        `¿Alguien ha trabajado ahí? ¿Qué tal las condiciones?`,
-        `Yo dejé CV la semana pasada y aún no me han llamado...`,
-        `¿Sabéis si piden certificados específicos para ese puesto?`
-      ];
-    } else if (currentNeighborhood === 'PREPPERS') {
-      replyScripts = [
-        `Totalmente de acuerdo, ${isReplyTo}. La prevención es clave.`,
-        `Yo también tengo esa duda, ${isReplyTo}. ¿Alguien lo sabe?`,
-        `Gracias por la info, ${isReplyTo}. No lo sabía.`,
-        `Es importante que todos estemos preparados para emergencias.`,
-        `¿Habéis hecho algún curso de primeros auxilios?`,
-        `Yo tengo guardado el número de Protecció Civil por si acaso.`
-      ];
-    } else if (currentNeighborhood === 'ENCUENTROS') {
-      replyScripts = [
-        `Me apunto, ${isReplyTo}! ¿Cuándo quedamos?`,
-        `Yo también estoy buscando gente para hacer planes, ${isReplyTo}.`,
-        `¡Qué buena idea, ${isReplyTo}! Cuenta conmigo.`,
-        `¿Alguien más se anima? Cuantos más mejor.`,
-        `Yo soy nuevo por aquí y me encantaría conocer gente.`,
-        `¿Hacemos un grupo de WhatsApp para coordinar?`
-      ];
-    } else if (isNewUser) {
+      scripts = ["¿Habéis visto las ofertas de hoy? Hay cosas interesantes en logística. 📦", "Busco trabajo de administrativo, ¿sabéis de algo? 📑"];
+      replyScripts = [`Interesante oferta, ${isReplyTo}. ¿Sabes si piden experiencia?`, `Yo también estoy buscando en ese sector.`];
+    } else if (isHelpRequest) {
       replyScripts = [
         `¡Bienvenida ${isReplyTo}! Es muy fácil: este es el Foro para hablar. Tienes el Mapa 📍 para avisos y el Inicio 🏠 para noticias.`,
-        `¡Hola! No te preocupes ${isReplyTo}. Usa el menú lateral para moverte y no olvides la Radio 📻 para el paseo.`,
-        `¡Bienvenida! Si participas ganas XP y subes en el Top Vecinos 🏆. ¡Danos tu opinión sobre la Rambla!`,
-        `¡Hola ${isReplyTo}! Aquí nos ayudamos todos. Si ves algo roto en la calle, repórtalo en 'Incidencias' en el Inicio.`,
-        `¡Tranquila! Es como un grupo de vecinos pero bien organizado. ¡Disfruta la app! ✨`
-      ];
-    } else if (isGreeting) {
-      replyScripts = [
-        `¡Muy buenas, ${isReplyTo}! ¿Qué tal va el miércoles?`,
-        `¡Hola ${isReplyTo}! Un placer saludarte.`,
-        `¡Bienvenido al foro, ${isReplyTo}! Da gusto ver gente nueva por aquí.`,
-        `¡Hola! ¿Cómo va todo por tu zona, ${isReplyTo}?`,
-        `¡Buenas! ¿Has visto las noticias de hoy? Soplan ráfagas fuertes de viento.`
-      ];
-    } else {
-      // Respuestas generales para otros canales
-      replyScripts = [
-        `¡Totalmente de acuerdo, ${isReplyTo}!`,
-        `¿Me puedes dar más detalles sobre eso, ${isReplyTo}?`,
-        `¡Qué bueno saludarte ${isReplyTo}!`,
-        `Opino lo mismo que tú, me parece interesante.`,
-        `Gracias por la info, me sirve mucho.`,
-        `¡Vaya, no lo sabía! Gracias por comentarlo, ${isReplyTo}.`
+        `¡Hola! No te preocupes ${isReplyTo}. Usa el menú lateral para moverte y no olvides la Radio 📻.`,
+        `¡Bienvenida! Si participas ganas XP y subes en el Top Vecinos 🏆.`,
+        `¡Hola ${isReplyTo}! Aquí nos ayudamos todos. Si ves algo roto, repórtalo en 'Incidencias' en el Inicio.`
       ];
     }
 
+    // Choose character
+    const neighbor = isAssistant
+      ? { id: 'v-ai', full_name: 'Mediador Vecinal ⚖️', avatar_url: 'https://img.icons8.com/isometric/512/scales.png', status: 'online' }
+      : virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
+
+    // Show typing indicator immediately
     setIsTyping(neighbor.full_name);
 
-    // Random delay between 2 and 5 seconds for realism
-    const delay = isAssistant ? 2000 : (2000 + Math.random() * 3000);
+    // Dynamic delay: faster for AI help, slower for casual chat
+    const delay = isAssistant ? 1500 : (2000 + Math.random() * 3000);
 
     setTimeout(async () => {
-      setIsTyping(null);
-      let content = "";
+      let finalContent = "";
 
       if (isAssistant && originalPrompt) {
-        const aiRes = await getAssistantResponse(originalPrompt, currentNeighborhood);
-        content = `@${isReplyTo} ${aiRes.text}`;
+        // Real or simulated AI response
+        try {
+          const aiRes = await getAssistantResponse(originalPrompt, currentNeighborhood);
+          finalContent = `@${isReplyTo} ${aiRes.text}`;
+        } catch (e) {
+          finalContent = `@${isReplyTo} ¡Hola! Soy el mediador. Parece que tengo un problema de conexión, but dime: ¿en qué puedo ayudarte?`;
+        }
+      } else if (isReplyTo) {
+        // Context-aware reply scripts
+        let possibleReplies = [];
+        if (isGreeting) {
+          possibleReplies = [
+            `¡Hola, ${isReplyTo}! ¿Cómo va el miércoles? ☀️`,
+            `¡Muy buenas! Un placer verte por aquí, @${isReplyTo}.`,
+            `¡Hola ${isReplyTo}! ¿Has visto lo del viento de hoy? Está fuerte. 💨`,
+            `¡Buenas tardes! ¿Qué tal el barrio hoy?`
+          ];
+        } else {
+          possibleReplies = replyScripts;
+        }
+        finalContent = possibleReplies[Math.floor(Math.random() * possibleReplies.length)];
+        // Ensure it mentions the user if it's a reply and doesn't already
+        if (!finalContent.includes(isReplyTo)) finalContent = `@${isReplyTo} ${finalContent}`;
       } else {
-        content = isReplyTo
-          ? `@${isReplyTo} ${replyScripts[Math.floor(Math.random() * replyScripts.length)]}`
-          : scripts[Math.floor(Math.random() * scripts.length)];
+        // Random initiation scripts
+        finalContent = scripts[Math.floor(Math.random() * scripts.length)];
       }
+
+      // Final sanity check for content
+      if (!finalContent) finalContent = "¡Vaya día hace hoy! ✨";
 
       const mockMsg: Message = {
         id: `sim-${Date.now()}-${neighbor.id}`,
         user_id: neighbor.id,
-        content: content,
+        content: finalContent,
         user_metadata: { full_name: neighbor.full_name, avatar_url: neighbor.avatar_url },
         neighborhood: currentNeighborhood,
         created_at: new Date().toISOString()
       };
 
+      // Add message and hide indicator
       setMessages(prev => [...prev, mockMsg]);
+      setIsTyping(null);
       playSound('msg');
 
-      // Trigger a Follow-up message (Create a "Burst" of conversation)
-      if (!isChain && Math.random() < 0.7) {
+      // Occasional chain follow-up
+      if (!isChain && !isAssistant && Math.random() < 0.4) {
         setTimeout(() => {
-          generateVirtualMessage(neighbor.full_name.split(' ')[0], content, true);
-        }, 3000 + Math.random() * 4000);
+          generateVirtualMessage(neighbor.full_name.split(' ')[0], finalContent, true);
+        }, 4000 + Math.random() * 4000);
       }
     }, delay);
   };
