@@ -10,9 +10,14 @@ const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "";
 const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'): string => {
   const p = prompt.toLowerCase();
 
-  // 1. Saludos
+  // 1. Saludos y Presentación
   if (p.includes("hola") || p.includes("buenos dias") || p.includes("buenas tardes") || p === "mediador" || p === "@mediador") {
     return "¡Hola! Soy tu Mediador Vecinal ⚖️. Estoy aquí para ayudarte a convivir mejor en el barrio y resolver dudas sobre la comunidad. ¿En qué puedo orientarte hoy?";
+  }
+
+  // 1.1 Guía de Inicio / Qué se hace
+  if (p.includes("que se hace") || p.includes("qué se hace") || p.includes("hace aquí") || p.includes("cómo va") || p.includes("como va") || p.includes("funciona") || p.includes("primera vez")) {
+    return "¡Bienvenido/a a ComuniTarr! 🏘️ Es muy sencillo:\n\n• 🏠 INICIO: Lee las noticias del Diari de Tarragona y apoya iniciativas como la de la Rambla.\n• 📍 MAPA: Mira avisos de obras o incidencias en tiempo real.\n• 💬 FORO: Habla con otros vecinos (reales y virtuales) como estás haciendo ahora.\n• 📻 RADIO: Dale al play en el menú lateral para escuchar Tarragona Ràdio.\n• 🏆 XP: Cada vez que participas sumas puntos para el 'Top Vecinos'.\n¿Te ayudo con algo más?";
   }
 
   // 17. EMPLEO Y MERCADO LABORAL (PRIORIDAD ALTA SI ESTAMOS EN CANAL EMPLEO)

@@ -133,14 +133,23 @@ const Forum: React.FC = () => {
     const isAssistant = isReplyTo && (
       p.includes('ayuda') ||
       p.includes('como') ||
+      p.includes('cómo') ||
       p.includes('qué') ||
+      p.includes('que') ||
       p.includes('que hago') ||
+      p.includes('qué hago') ||
       p.includes('hacer') ||
       p.includes('saber') ||
       p.includes('@mediador') ||
       p.includes('pregunt') ||
       p.includes('llov') ||
-      p.includes('tiempo')
+      p.includes('tiempo') ||
+      p.includes('primera vez') ||
+      p.includes('que se hace') ||
+      p.includes('qué se hace') ||
+      p.includes('funciona') ||
+      p.includes('como va') ||
+      p.includes('cómo va')
     );
 
     // Choose neighbor (Mediador has priority for technical stuff)
