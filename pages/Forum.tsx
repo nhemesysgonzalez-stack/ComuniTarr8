@@ -208,8 +208,8 @@ const Forum: React.FC = () => {
       ];
     }
 
-    // Respuestas específicas según el canal
-    let replyScripts = [];
+    // Detect tutorial requests or new users
+    const isNewUser = p.includes('primera vez') || p.includes('no sé como va') || p.includes('cómo funciona') || p.includes('qué hay que hacer');
 
     if (currentNeighborhood === 'EMPLEO') {
       replyScripts = [
@@ -238,6 +238,22 @@ const Forum: React.FC = () => {
         `Yo soy nuevo por aquí y me encantaría conocer gente.`,
         `¿Hacemos un grupo de WhatsApp para coordinar?`
       ];
+    } else if (isNewUser) {
+      replyScripts = [
+        `¡Bienvenida ${isReplyTo}! Es muy fácil: este es el Foro para hablar. Tienes el Mapa 📍 para avisos y el Inicio 🏠 para noticias.`,
+        `¡Hola! No te preocupes ${isReplyTo}. Usa el menú lateral para moverte y no olvides la Radio 📻 para el paseo.`,
+        `¡Bienvenida! Si participas ganas XP y subes en el Top Vecinos 🏆. ¡Danos tu opinión sobre la Rambla!`,
+        `¡Hola ${isReplyTo}! Aquí nos ayudamos todos. Si ves algo roto en la calle, repórtalo en 'Incidencias' en el Inicio.`,
+        `¡Tranquila! Es como un grupo de vecinos pero bien organizado. ¡Disfruta la app! ✨`
+      ];
+    } else if (isGreeting) {
+      replyScripts = [
+        `¡Muy buenas, ${isReplyTo}! ¿Qué tal va el miércoles?`,
+        `¡Hola ${isReplyTo}! Un placer saludarte.`,
+        `¡Bienvenido al foro, ${isReplyTo}! Da gusto ver gente nueva por aquí.`,
+        `¡Hola! ¿Cómo va todo por tu zona, ${isReplyTo}?`,
+        `¡Buenas! ¿Has visto las noticias de hoy? Soplan ráfagas fuertes de viento.`
+      ];
     } else {
       // Respuestas generales para otros canales
       replyScripts = [
@@ -246,7 +262,7 @@ const Forum: React.FC = () => {
         `¡Qué bueno saludarte ${isReplyTo}!`,
         `Opino lo mismo que tú, me parece interesante.`,
         `Gracias por la info, me sirve mucho.`,
-        `¡Bienvenido al foro, ${isReplyTo}! Da gusto ver gente nueva por aquí.`
+        `¡Vaya, no lo sabía! Gracias por comentarlo, ${isReplyTo}.`
       ];
     }
 
