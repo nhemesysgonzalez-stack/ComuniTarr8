@@ -252,15 +252,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">☀️ MIÉRCOLES: DÍA SOLEADO PERO CON VIENTO DE MESTRAL - MÁXIMAS DE 16°C</span>
+          <span className="flex items-center gap-2">☁️ JUEVES: DÍA DE NUBES Y CLAROS - LAS TEMPERATURAS BAJAN A 14°C</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">📻 COMUNIRADIO: RECUERDA QUE PUEDES ESCUCHAR LA FM LOCAL DESDE EL MENÚ MÓVIL</span>
+          <span className="flex items-center gap-2">📻 COMUNIRADIO: SINTONIZA LA MEJOR MÚSICA LOCAL MIENTRAS NAVEGAS POR LA APP</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🌲 CIUDAD: LA PETICIÓN POR MÁS VERDE EN LA RAMBLA ALCANZA LAS 850 FIRMAS</span>
+          <span className="flex items-center gap-2">🚧 CIUDAD: LAS OBRAS DE LA CALLE UNIÓ AVANZAN SEGÚN LO PREVISTO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎬 CULTURA: CICLO DE CINE EN V.O. ESTA TARDE A LAS 18:30H EN LA ANTIGA AUDIÈNCIA</span>
+          <span className="flex items-center gap-2">🎨 CULTURA: INAUGURACIÓN DE LA NUEVA EXPOSICIÓN EN EL MAMT A LAS 19:00H</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">📱 SOCIAL: ÉXITO DEL TALLER DIGITAL PARA MAYORES EN EL CENTRO CÍVICO DE PONENT</span>
+          <span className="flex items-center gap-2">🚗 TRÁFICO: PRECAUCIÓN EN LA VÍA AUGUSTA POR RETENCIONES EN HORA PUNTA</span>
         </motion.div>
       </div>
 

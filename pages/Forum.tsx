@@ -70,12 +70,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'ComuniTarr 📢', text: '📻 ¡Novedad! Ya puedes escuchar Tarragona Ràdio en directo desde el menú lateral.' },
-    { user: 'Pau T.', text: 'Vaya ráfagas de viento hoy, ¡que no se os vuele el sombrero! ☀️💨' },
-    { user: 'Mireia R.', text: 'Hoy toca tarde de cine en la Antiga Audiència, ¿quién se apunta? 🎬🍿' },
-    { user: 'Joan B.', text: 'El taller para los abuelos en Ponent está a tope, qué buena iniciativa 📱👴' },
-    { user: 'Carme S.', text: 'Miércoles de sol, ideal para pasear aunque haga aire. ¡Feliz día! ☀️🚲' },
-    { user: 'Luis M.', text: 'Aviso: He visto contenedores volcados por el viento en la zona de Llevant ⚠️🧤' }
+    { user: 'ComuniTarr 📢', text: '📻 ¡Novedad! Sintoniza ComuniRadio para las últimas noticias del barrio.' },
+    { user: 'Pau T.', text: 'Parece que hoy el viento nos da un respiro, pero han bajado las temperaturas. ☁️🧥' },
+    { user: 'Mireia R.', text: '¿Alguien va a la inauguración del MAMT esta tarde? 🎨✨' },
+    { user: 'Joan B.', text: 'Ojo con el tráfico en la Vía Augusta, está un poco colapsado. 🚗⚠️' },
+    { user: 'Carme S.', text: 'Jueves de nubes, ideal para un chocolate caliente en la Plaza de la Font. ☕🍫' },
+    { user: 'Luis M.', text: 'Aviso: Hay obras en la Calle Unió, mejor evitar la zona si vais con prisa. 🚧🧤' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -140,12 +140,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts
     let scripts = [
-      "¡Buenos días! Un miércoles radiante pero con mucho viento ☀️💨.",
-      "Ojo al caminar cerca de obras, el Mestral está soplando fuerte. 🏗️⚠️",
-      "He subido a la Part Alta y se ve el mar precioso con este sol. 📸🌅",
-      "Animo con el ombligo de la semana, ¡el finde ya asoma! ☕💪",
-      "¿Alguna recomendación para cenar por la zona del Puerto Deportivo? 🍽️",
-      "Se ha volado una maceta de mi vecino, ¡sujetad bien todo! 😂💨"
+      "¡Buenos días! Un jueves más fresquito, toca abrigarse un poco más. ☁️🧥",
+      "¿Habéis visto cómo avanzan las obras de la Calle Unió? Ya casi está. 🚧✨",
+      "Esta tarde toca visita al MAMT, ¡la nueva expo tiene buena pinta! 🎨📸",
+      "Ánimo con el jueves, que mañana ya es viernes y se nota en el ambiente. ☕💪",
+      "¿Alguien sabe si hay mercado hoy en la Plaza del Fòrum? 🍎🧺",
+      "He visto que están podando árboles en la Rambla, cuidado al pasar. 🌳⚠️"
     ];
 
     // Base reply scripts
@@ -197,10 +197,10 @@ const Forum: React.FC = () => {
         let possibleReplies = [];
         if (isGreeting) {
           possibleReplies = [
-            `¡Hola, ${isReplyTo}! ¿Cómo va el miércoles? ☀️`,
-            `¡Muy buenas! Un placer verte por aquí, @${isReplyTo}.`,
-            `¡Hola ${isReplyTo}! ¿Has visto lo del viento de hoy? Está fuerte. 💨`,
-            `¡Buenas tardes! ¿Qué tal el barrio hoy?`
+            `¡Hola, ${isReplyTo}! ¿Cómo llevas el jueves? ☁️`,
+            `¡Muy buenas! ¿Vas a ir a lo del MAMT esta tarde? @${isReplyTo}.`,
+            `¡Hola ${isReplyTo}! Sí, hoy hace más frío que ayer, ¿verdad? 🧥`,
+            `¡Buenas tardes! ¿Qué tal el ambiente por el barrio?`
           ];
         } else {
           possibleReplies = replyScripts;
@@ -554,7 +554,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Miércoles 28 Enero 2026 - Sol, Viento y Comunidad
+                  Jueves 29 Enero 2026 - Nubes, Claros y Comunidad
                 </span>
               </div>
 

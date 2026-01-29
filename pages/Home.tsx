@@ -157,50 +157,50 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-wednesday-wind',
-          title: "☀️ MIÉRCOLES: Sol y Viento",
-          content: "Cielos despejados hoy en Tarragona, aunque soplará viento de componente noroeste (Mestral) con rachas moderadas. Máx 16°C.",
+          id: 'weather-thursday-clouds',
+          title: "☁️ JUEVES: Nubes y Claros",
+          content: "Día marcado por la nubosidad variable en Tarragona. Las temperaturas bajan ligeramente, con máximas de 14°C. No se descarta alguna gota aislada por la tarde.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Mañana: Soleado (11°C)\n• Tarde: Viento moderado (15°C)\n• Noche: Cielo despejado (9°C)\n• Aviso: Precaución con objetos en balcones",
-          link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo-en-tarragona-la-prevision-para-el-miercoles-28-de-enero-LF22452401",
+          itinerary: "• Mañana: Nuboso (9°C)\n• Tarde: Nubes y claros (13°C)\n• Noche: Frío (7°C)\n• Aviso: Toca sacar la chaqueta más gruesa",
+          link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo-en-tarragona-la-prevision-para-el-jueves-29-de-enero-LF22452401",
           created_at: new Date().toISOString()
         };
 
         const employmentNews = {
-          id: 'employment-wednesday-tech',
-          title: "💼 EMPLEO: Sector Tecnológico",
-          content: "Empresas del parque tecnológico abren proceso de selección para desarrolladores junior y analistas de datos.",
+          id: 'employment-thursday-retail',
+          title: "💼 EMPLEO: Refuerzo en Comercio",
+          content: "Tiendas del centro histórico buscan personal para la campaña de primavera. Se valora conocimiento de idiomas.",
           category: "EMPLEO",
-          neighborhood: "PONENTE",
-          link_url: "https://www.diaridetarragona.com/economia/el-sector-tecnologico-en-tarragona-busca-talento-local-HF22452402",
+          neighborhood: "PART ALTA",
+          link_url: "https://www.diaridetarragona.com/economia/el-comercio-de-tarragona-empieza-a-reforzar-plantillas-HF22452402",
           created_at: new Date().toISOString()
         };
 
         const culturalNews = {
-          id: 'culture-wed-cinema',
-          title: "🎬 CULTURA: Cine en V.O.",
-          content: "Ciclo de cine europeo esta tarde en el Antiguo Ayuntamiento. Entrada libre hasta completar aforo.",
+          id: 'culture-thu-mamt',
+          title: "🎨 CULTURA: Nueva Expo MAMT",
+          content: "Inauguración de la muestra de artistas locales en el Museo de Arte Moderno. Entrada gratuita hoy a partir de las 19:00h.",
           category: "CULTURA",
           neighborhood: "PART ALTA",
-          link_url: "https://www.diaridetarragona.com/cultura/el-cine-en-version-original-llega-al-corazon-de-tarragona-JF22452403",
+          link_url: "https://www.diaridetarragona.com/cultura/el-mamt-abre-sus-puertas-al-talento-emergente-tarraconense-JF22452403",
           created_at: new Date().toISOString()
         };
 
         const eventVibes = {
-          id: 'wed-rambla-petition-update',
-          title: "🌲 CIUDAD: Petición Rambla",
-          content: "¡Superados los 850 apoyos! La iniciativa para una Rambla más verde está a un paso de su objetivo de 1.000 firmas.",
+          id: 'thu-unio-works-update',
+          title: "🚧 CIUDAD: Obras Calle Unió",
+          content: "Avanzan a buen ritmo los trabajos de peatonalización. Se espera que el tramo central esté listo antes de Semana Santa.",
           category: "ACTUALIDAD",
           neighborhood: "CENTRO",
-          link_url: "https://www.diaridetarragona.com/tarragona/la-movilizacion-vecinal-por-la-nueva-rambla-no-deja-de-crecer-KF22452404",
+          link_url: "https://www.diaridetarragona.com/tarragona/las-obras-de-la-calle-unio-encaran-su-fase-final-KF22452404",
           created_at: new Date().toISOString()
         };
 
         const trafficNotice = {
-          id: 'traffic-wed-fluid',
-          title: "🚗 TRÁFICO: Circulación fluida",
-          content: "Mañana tranquila en la red vial. Sin incidencias destacables en la T-11 ni en los accesos por Llevant.",
+          id: 'traffic-thu-slow',
+          title: "🚗 TRÁFICO: Lento en accesos",
+          content: "Retenciones habituales en la entrada por la Vía Augusta debido a las obras. Se recomienda usar el acceso por la A-7.",
           category: "TRÁFICO",
           neighborhood: "GENERAL",
           link_url: "https://www.diaridetarragona.com/tarragona/incidencias-de-trafico-en-tarragona-hoy-MF22452405",
