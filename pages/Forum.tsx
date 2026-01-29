@@ -410,14 +410,12 @@ const Forum: React.FC = () => {
   };
 
   const handleTopicClick = (topicId: string) => {
-    if (topicId === 'candlelight') {
-      setNewMessage('¡Qué ganas del concierto de Hans Zimmer esta noche! 🕯️🎻 ¿Alguien más va?');
-    } else if (topicId === 'sant-antoni') {
-      setNewMessage('¿Habéis visto los Tres Tombs en Vila-seca? ¡Qué ambiente! 🐎✨');
+    if (topicId === 'mamt-expo') {
+      setNewMessage('¿Alguien va a ir a la inauguración del MAMT esta tarde? 🎨✨');
+    } else if (topicId === 'obras-unio') {
+      setNewMessage('¿Qué os parece cómo está quedando la Calle Unió con las obras? 🚧');
     } else if (topicId === 'viento-costa') {
-      setNewMessage('Ojo con las olas en el Miracle, están llegando al paseo casi 🌊⚠️');
-    } else if (topicId === 'rebajas-finde') {
-      setNewMessage('Voy al centro de compras. ¿Quedan tallas o ya está todo arrasado? 🛍️👀');
+      setNewMessage('Vaya bajada de temperaturas hoy... ¡toca abrigarse! ☁️🧥');
     }
     setTimeout(() => {
       inputRef.current?.focus();
@@ -426,22 +424,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'candlelight',
-      title: '🕯️ Candlelight Hans Zimmer',
-      description: 'Concierto tributo hoy a las 21h en El Seminario. Entradas agotadas.',
-      participating: 124
+      id: 'mamt-expo',
+      title: '🎨 Expo MAMT Inauguración',
+      description: 'Hoy a las 19:00h. Nueva muestra de artistas locales en la Part Alta.',
+      participating: 156
     },
     {
-      id: 'sant-antoni',
-      title: '🐎 Sant Antoni Vila-seca',
-      description: 'Fiesta mayor de invierno cerca: Tres Tombs y Castells.',
-      participating: 98
+      id: 'obras-unio',
+      title: '🚧 Obras Calle Unió',
+      description: 'Debate sobre la peatonalización y el avance de los trabajos.',
+      participating: 89
     },
     {
       id: 'viento-costa',
-      title: '🌊 Alerta Oleaje',
-      description: 'Aviso amarillo en la costa. Precaución en zonas expuestas.',
-      participating: 76
+      title: '☁️ Tiempo Jueves',
+      description: 'Bajada de temperaturas y nubes. ¿Sacamos ya el abrigo gordo?',
+      participating: 112
     }
   ];
 
