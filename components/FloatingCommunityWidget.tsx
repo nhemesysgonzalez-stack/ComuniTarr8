@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '📻 ¡Feliz jueves! Hoy bajan un poco las temperaturas, no olvidéis la chaqueta. ☁️🧥', neighborhood: 'GENERAL' },
-    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: 'Qué tranquilidad hoy sin tanto viento. Ideal para pasear por el Serrallo. ⚓🚶‍♂️', neighborhood: 'Serrallo' },
-    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '¡Nos vemos en el MAMT esta tarde! La expo promete mucho. 🎨✨', neighborhood: 'Part Alta' },
-    { id: 3, user: 'Joan B.', text: 'Cuidado con el tráfico en la entrada por Vía Augusta, está parado. 🚗⚠️', avatar: 'https://i.pravatar.cc/150?u=joan', neighborhood: 'Llevant' },
-    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'Jueves de mercado en el Fòrum, ¡fruta buenísima hoy! 🍎🧺', neighborhood: 'Part Alta' },
-    { id: 5, user: 'Luis M.', avatar: 'https://i.pravatar.cc/150?u=luis', text: 'Las obras de la Calle Unió van volando, ¡qué ganas de verla terminada! 🚧👏', neighborhood: 'Centro' },
-    { id: 6, user: 'Elena G.', avatar: 'https://i.pravatar.cc/150?u=elena', text: '¿Alguien sabe si el taller de reciclaje de mañana necesita inscripción? ♻️🤔', neighborhood: 'Centro' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🌧️ ¡Buenos días! Hoy toca paraguas. Recordad que recogemos comida para mascotas en la Asociación. 🐾', neighborhood: 'GENERAL' },
+    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¿Alguien sabe si las clases de Nacho siguen hoy a pesar de la lluvia? 📚🤔', neighborhood: 'Serrallo' },
+    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '¡Qué buena iniciativa lo del círculo de apoyo para el estrés! Me hace mucha falta. 💜🧘‍♀️', neighborhood: 'Part Alta' },
+    { id: 3, user: 'Joan B.', text: 'El suelo de la Baixada de la Misericòrdia resbala mucho con la lluvia, ¡cuidado! 🚗⚠️', avatar: 'https://i.pravatar.cc/150?u=joan', neighborhood: 'Part Alta' },
+    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'He dejado un saco de pienso en el local. ¡Espero que ayude a los peludos! 🐶🐱', neighborhood: 'Part Alta' },
+    { id: 5, user: 'Luis M.', avatar: 'https://i.pravatar.cc/150?u=luis', text: 'Viernes de sofá y manta con este tiempo... o concierto en el Metropol. 🎭🛋️', neighborhood: 'Centro' },
+    { id: 6, user: 'Elena G.', avatar: 'https://i.pravatar.cc/150?u=elena', text: 'He visto un anuncio de clases de Inglés en el mercadillo, ¿alguien tiene el contacto? 🇬🇧🏛️', neighborhood: 'Centro' },
 ];
 
 const tickerMessages = [
-    { user: 'Pau T.', text: '¡Cuidado con el viento hoy! 💨' },
-    { user: 'Mireia R.', text: 'Cine a las 18:30h, ¡nos vemos! 🎬' },
-    { user: 'Joan B.', text: 'La radio de la app es un puntazo 📻' },
-    { user: 'Carme S.', text: 'Seguid apoyando la reforma de la Rambla 🌲' },
-    { user: 'Luis M.', text: 'Paciencia en las zonas con andamios 🏗️' }
+    { user: 'Pau T.', text: '¡No olvidéis el paraguas hoy! 🌧️' },
+    { user: 'Mireia R.', text: 'Apuntada al círculo de apoyo 💜' },
+    { user: 'Joan B.', text: 'Tráfico lento en el centro 🚗' },
+    { user: 'Carme S.', text: 'Donad comida para mascotas 🐾' },
+    { user: 'Luis M.', text: '¡Buen fin de semana a todos! 🏠' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

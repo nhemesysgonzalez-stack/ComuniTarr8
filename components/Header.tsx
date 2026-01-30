@@ -252,15 +252,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">☁️ JUEVES: DÍA DE NUBES Y CLAROS - LAS TEMPERATURAS BAJAN A 14°C</span>
+          <span className="flex items-center gap-2">🌧️ VIERNES: LLUVIAS DÉBILES EN TARRAGONA - NO OLVIDES TU PARAGUAS</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">📻 COMUNIRADIO: SINTONIZA LA MEJOR MÚSICA LOCAL MIENTRAS NAVEGAS POR LA APP</span>
+          <span className="flex items-center gap-2">📢 NUEVOS ANUNCIOS: CONSULTA LAS SECCIONES DE AYUDA MUTUA, MERCADILLO Y CÍRCULOS DE APOYO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚧 CIUDAD: LAS OBRAS DE LA CALLE UNIÓ AVANZAN SEGÚN LO PREVISTO</span>
+          <span className="flex items-center gap-2">🐾 SOLIDARIDAD: RECOGIDA DE COMIDA PARA MASCOTAS HOY EN LA ASOCIACIÓN VECINAL</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎨 CULTURA: INAUGURACIÓN DE LA NUEVA EXPOSICIÓN EN EL MAMT A LAS 19:00H</span>
+          <span className="flex items-center gap-2">🎭 CULTURA: ÚLTIMAS ENTRADAS PARA EL CONCIERTO DE JAZZ EN EL METROPOL</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚗 TRÁFICO: PRECAUCIÓN EN LA VÍA AUGUSTA POR RETENCIONES EN HORA PUNTA</span>
+          <span className="flex items-center gap-2">🚧 CIUDAD: LAS OBRAS DE LA CALLE UNIÓ SIGUEN AFECTANDO AL TRÁFICO EN EL CENTRO</span>
         </motion.div>
       </div>
 

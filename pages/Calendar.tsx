@@ -41,36 +41,10 @@ const NeighborhoodCalendar: React.FC = () => {
     fetchEvents();
   }, [user?.user_metadata?.neighborhood]);
 
-  // Official Events for January 2026
+  // Official Events for January/February 2026
   const officialEvents: Event[] = [
     {
-      id: 'evt-mamt-inauguracion',
-      creator_id: 'admin',
-      title: "🎨 Inauguración Expo MAMT",
-      description: "Apertura de la nueva exposición de artistas locales. Vino de honor al finalizar.",
-      event_date: '2026-01-29',
-      event_time: '19:00',
-      location: 'Museo de Arte Moderno (MAMT)',
-      category: 'Cultura',
-      neighborhood: 'PART ALTA',
-      contact_info: 'MAMT Tarragona',
-      created_at: new Date().toISOString()
-    },
-    {
-      id: 'evt-mercado-forum',
-      creator_id: 'admin',
-      title: "🍎 Mercado Ecológico",
-      description: "Productos de proximidad y artesanía local en el corazón de la Part Alta.",
-      event_date: '2026-01-29',
-      event_time: '09:00',
-      location: 'Plaza del Fòrum',
-      category: 'Ocio',
-      neighborhood: 'PART ALTA',
-      contact_info: 'Ayto. Tarragona',
-      created_at: new Date().toISOString()
-    },
-    {
-      id: 'evt-reciclaje',
+      id: 'evt-reciclaje-creative',
       creator_id: 'admin',
       title: "♻️ Taller Reciclaje Creativo",
       description: "Aprende a dar segunda vida a tus envases. Trae tus propios materiales.",
@@ -80,6 +54,32 @@ const NeighborhoodCalendar: React.FC = () => {
       category: 'Ocio',
       neighborhood: 'PART ALTA',
       contact_info: 'Green Tarragona',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-metropol-jazz',
+      creator_id: 'admin',
+      title: "🎷 Jazz en el Metropol",
+      description: "Concierto de fin de semana con artistas locales. Descuento para vecinos.",
+      event_date: '2026-01-30',
+      event_time: '21:00',
+      location: 'Teatro Metropol',
+      category: 'Cultura',
+      neighborhood: 'CENTRO',
+      contact_info: 'Taquillas Metropol',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-carretera-san-mago',
+      creator_id: 'admin',
+      title: "🚶 Caminata por la Anella Verda",
+      description: "Salida grupal para estirar las piernas y disfrutar de la naturaleza.",
+      event_date: '2026-01-31',
+      event_time: '10:00',
+      location: 'Pont del Diable (Parking)',
+      category: 'Deporte',
+      neighborhood: 'GENERAL',
+      contact_info: 'Excursionistas TGN',
       created_at: new Date().toISOString()
     }
   ];

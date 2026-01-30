@@ -44,7 +44,32 @@ const VitalNeeds: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
 
-            setNeeds(data || []);
+            const mockNeeds: VitalNeed[] = [
+                {
+                    id: 'mock-n1',
+                    creator_id: 'v4',
+                    type: 'food',
+                    title: 'Transporte Alimentos Protectora',
+                    description: 'Estamos coordinando la entrega de lo recogido. ¿Alguien con coche puede ayudar a llevar los sacos al refugio mañana?',
+                    contact_info: '622 34 56 78',
+                    is_urgent: false,
+                    neighborhood: 'GENERAL',
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'mock-n2',
+                    creator_id: 'v5',
+                    type: 'medical',
+                    title: 'Recado Farmacia (Lluvia)',
+                    description: 'Con la lluvia no puedo salir de casa (movilidad reducida). ¿Alguien que baje a la farmacia de guardia y me traiga la medicación?',
+                    contact_info: '655 11 22 33',
+                    is_urgent: true,
+                    neighborhood: 'GENERAL',
+                    created_at: new Date().toISOString()
+                }
+            ];
+
+            setNeeds(data && data.length > 0 ? data : mockNeeds);
         } catch (e) {
             console.error(e);
         } finally {
@@ -120,6 +145,30 @@ const VitalNeeds: React.FC = () => {
             </div>
 
             <main className="max-w-6xl mx-auto p-6 md:p-12 -mt-10 relative z-20">
+                {/* Solidarity Initiatives Section */}
+                <section className="mb-12 bg-white dark:bg-surface-dark rounded-[40px] p-8 shadow-xl border border-gray-100 dark:border-gray-800 flex flex-col md:flex-row items-center gap-8 border-l-[12px] border-l-emerald-500">
+                    <div className="size-24 rounded-3xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center shrink-0">
+                        <span className="material-symbols-outlined text-4xl text-emerald-600">pets</span>
+                    </div>
+                    <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                            <span className="px-2 py-0.5 bg-emerald-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">INICIATIVA DEL DÍA</span>
+                            <span className="text-[10px] font-bold text-gray-400 uppercase">TIEMPO LIMITADO</span>
+                        </div>
+                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Donación de Comida para Mascotas 🐾</h2>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
+                            Estamos recogiendo pienso, latas y mantas para los animales refugiados esta semana de lluvia. Todo lo recaudado se entregará a la protectora local de Tarragona.
+                        </p>
+                    </div>
+                    <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
+                        <a href="tel:622345678" className="px-6 py-4 bg-emerald-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                            <span className="material-symbols-outlined text-sm">call</span>
+                            622 34 56 78
+                        </a>
+                        <p className="text-[9px] text-center font-bold text-gray-400">Preguntar por Laura</p>
+                    </div>
+                </section>
+
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Needs List */}
                     <div className="lg:col-span-2 space-y-8">

@@ -70,12 +70,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'ComuniTarr 📢', text: '📻 ¡Novedad! Sintoniza ComuniRadio para las últimas noticias del barrio.' },
-    { user: 'Pau T.', text: 'Parece que hoy el viento nos da un respiro, pero han bajado las temperaturas. ☁️🧥' },
-    { user: 'Mireia R.', text: '¿Alguien va a la inauguración del MAMT esta tarde? 🎨✨' },
-    { user: 'Joan B.', text: 'Ojo con el tráfico en la Vía Augusta, está un poco colapsado. 🚗⚠️' },
-    { user: 'Carme S.', text: 'Jueves de nubes, ideal para un chocolate caliente en la Plaza de la Font. ☕🍫' },
-    { user: 'Luis M.', text: 'Aviso: Hay obras en la Calle Unió, mejor evitar la zona si vais con prisa. 🚧🧤' }
+    { user: 'ComuniTarr 📢', text: '🌧️ ¡Viernes de paraguas! Recordad la recogida de comida para peludos en el Local Social.' },
+    { user: 'Pau T.', text: '¿Alguien sabe si el concierto del Metropol se cancela por la lluvia? Espero que no. 🎷' },
+    { user: 'Mireia R.', text: 'El círculo de apoyo para adolescentes empieza en 15 min. ¡Aún podéis venir! 🧘‍♀️' },
+    { user: 'Joan B.', text: 'Mucho cuidado en la Baixada de la Misericòrdia, el suelo está muy resbaladizo. 🚗⚠️' },
+    { user: 'Carme S.', text: 'He dejado tres sacos de pienso. ¡Ánimo con la iniciativa! 🐾🐶' },
+    { user: 'Luis M.', text: '¿Quedan entradas para el Jazz esta noche? Me han dicho que vuelan. 🎭🎺' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -140,12 +140,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts
     let scripts = [
-      "¡Buenos días! Un jueves más fresquito, toca abrigarse un poco más. ☁️🧥",
-      "¿Habéis visto cómo avanzan las obras de la Calle Unió? Ya casi está. 🚧✨",
-      "Esta tarde toca visita al MAMT, ¡la nueva expo tiene buena pinta! 🎨📸",
-      "Ánimo con el jueves, que mañana ya es viernes y se nota en el ambiente. ☕💪",
-      "¿Alguien sabe si hay mercado hoy en la Plaza del Fòrum? 🍎🧺",
-      "He visto que están podando árboles en la Rambla, cuidado al pasar. 🌳⚠️"
+      "¡Buenos días! Vaya viernes más gris, no olvidéis el paraguas. 🌧️☂️",
+      "¿Habéis llevado ya algo para la protectora? Están en el Local Social. 🐾",
+      "Qué ganas de ver el concierto de Jazz esta noche en el Metropol. 🎷✨",
+      "Cuidado al bajar por la Part Alta, que las piedras mojadas son un peligro. ⚠️🚲",
+      "¿Alguien sabe si Nacho da clases hoy con este tiempo? @Nacho 📚",
+      "¡Feliz viernes a todos! A pesar de la lluvia, Tarragona tiene su encanto. ☕☔"
     ];
 
     // Base reply scripts
@@ -197,10 +197,10 @@ const Forum: React.FC = () => {
         let possibleReplies = [];
         if (isGreeting) {
           possibleReplies = [
-            `¡Hola, ${isReplyTo}! ¿Cómo llevas el jueves? ☁️`,
-            `¡Muy buenas! ¿Vas a ir a lo del MAMT esta tarde? @${isReplyTo}.`,
-            `¡Hola ${isReplyTo}! Sí, hoy hace más frío que ayer, ¿verdad? 🧥`,
-            `¡Buenas tardes! ¿Qué tal el ambiente por el barrio?`
+            `¡Hola, ${isReplyTo}! ¿Cómo va ese viernes pasado por agua? 🌧️`,
+            `¡Muy buenas! ¿Nos vemos luego en el Metropol? @${isReplyTo}.`,
+            `¡Hola ${isReplyTo}! Sí, hoy mejor quedarse a cubierto. ☕`,
+            `¡Buenas tardes! ¿Habéis visto lo de la comida para perros? Es genial.`
           ];
         } else {
           possibleReplies = replyScripts;
@@ -410,12 +410,12 @@ const Forum: React.FC = () => {
   };
 
   const handleTopicClick = (topicId: string) => {
-    if (topicId === 'mamt-expo') {
-      setNewMessage('¿Alguien va a ir a la inauguración del MAMT esta tarde? 🎨✨');
-    } else if (topicId === 'obras-unio') {
-      setNewMessage('¿Qué os parece cómo está quedando la Calle Unió con las obras? 🚧');
-    } else if (topicId === 'viento-costa') {
-      setNewMessage('Vaya bajada de temperaturas hoy... ¡toca abrigarse! ☁️🧥');
+    if (topicId === 'maraton-solidaria') {
+      setNewMessage('¿Alguien va a llevar comida para la protectora hoy? 🐾');
+    } else if (topicId === 'jazz-metropol') {
+      setNewMessage('¿Quién se apunta al concierto de Jazz en el Metropol esta noche? 🎷');
+    } else if (topicId === 'tiempo-lluvia') {
+      setNewMessage('Vaya viernes pasado por agua... ¡a ver si escampa! 🌧️');
     }
     setTimeout(() => {
       inputRef.current?.focus();
@@ -424,22 +424,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'mamt-expo',
-      title: '🎨 Expo MAMT Inauguración',
-      description: 'Hoy a las 19:00h. Nueva muestra de artistas locales en la Part Alta.',
-      participating: 156
+      id: 'maraton-solidaria',
+      title: '🐾 Ayuda Protectora',
+      description: 'Recogida de comida y mantas para peludos hoy en el Local Social.',
+      participating: 184
     },
     {
-      id: 'obras-unio',
-      title: '🚧 Obras Calle Unió',
-      description: 'Debate sobre la peatonalización y el avance de los trabajos.',
-      participating: 89
+      id: 'jazz-metropol',
+      title: '🎷 Jazz en el Metropol',
+      description: 'Concierto de viernes noche. Entradas casi agotadas.',
+      participating: 96
     },
     {
-      id: 'viento-costa',
-      title: '☁️ Tiempo Jueves',
-      description: 'Bajada de temperaturas y nubes. ¿Sacamos ya el abrigo gordo?',
-      participating: 112
+      id: 'tiempo-lluvia',
+      title: '🌧️ Viernes de Lluvia',
+      description: 'Previsiones, suelos resbaladizos y planes a cubierto.',
+      participating: 215
     }
   ];
 
@@ -552,7 +552,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Jueves 29 Enero 2026 - Nubes, Claros y Comunidad
+                  Viernes 30 Enero 2026 - Lluvia y Solidaridad Vecinal
                 </span>
               </div>
 

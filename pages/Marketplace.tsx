@@ -55,7 +55,32 @@ const Marketplace: React.FC = () => {
           .order('created_at', { ascending: false })
       );
 
-      setItems(data || []);
+      const mockItems: MarketItem[] = [
+        {
+          id: 'm-1',
+          user_id: 'v1',
+          title: 'Paraguas Resistente TGN',
+          description: 'Casi nuevo, aguanta bien el viento. Ideal para hoy.',
+          price: '5',
+          category: 'hogar',
+          neighborhood: 'GENERAL',
+          contact_info: '611 22 33 44',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'm-2',
+          user_id: 'v2',
+          title: 'Lote libros fantasía',
+          description: 'Saga completa para leer este finde de lluvia.',
+          price: '15',
+          category: 'ocio',
+          neighborhood: 'GENERAL',
+          contact_info: '622 99 88 77',
+          created_at: new Date().toISOString()
+        }
+      ];
+
+      setItems(data && data.length > 0 ? data : mockItems);
     } catch (e) {
       console.error(e);
     } finally {
@@ -137,6 +162,32 @@ const Marketplace: React.FC = () => {
             {cat.label}
           </button>
         ))}
+      </div>
+
+      {/* Featured Service Ad */}
+      <div className="mb-16 bg-white dark:bg-surface-dark rounded-[40px] border-4 border-dashed border-primary/20 p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 hover:border-primary/40 transition-all">
+        <div className="size-32 md:size-48 bg-gray-100 dark:bg-gray-800 rounded-[35px] flex items-center justify-center shrink-0">
+          <span className="material-symbols-outlined text-7xl text-primary">school</span>
+        </div>
+        <div className="flex-1">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="px-3 py-1 bg-primary text-white text-[9px] font-black uppercase tracking-widest rounded-full">DESTACADO</span>
+            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">SERVICIO VECINAL</span>
+          </div>
+          <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Clases de Refuerzo Escolar 📚</h2>
+          <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed">
+            ¿Necesitas ayuda con las mates o el inglés? Soy Nacho, vecino de la Part Alta y ofrezco clases para primaria y ESO. Metodología amena y resultados garantizados. ¡Infórmate sin compromiso!
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a href="tel:655892144" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
+              <span className="material-symbols-outlined text-sm">call</span>
+              655 89 21 44
+            </a>
+            <span className="px-6 py-3 bg-gray-50 dark:bg-gray-800 dark:text-white rounded-xl text-xs font-black">
+              DESDE 12€/HORA
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* Grid */}

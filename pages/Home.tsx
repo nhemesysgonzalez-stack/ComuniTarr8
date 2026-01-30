@@ -157,50 +157,50 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-thursday-clouds',
-          title: "☁️ JUEVES: Nubes y Claros",
-          content: "Día marcado por la nubosidad variable en Tarragona. Las temperaturas bajan ligeramente, con máximas de 14°C. No se descarta alguna gota aislada por la tarde.",
+          id: 'weather-friday-jan30',
+          title: "🌧️ VIERNES: Lluvia Débil",
+          content: "Tarragona amanece con cielos cubiertos. Se esperan precipitaciones débiles durante la mañana. Temperaturas estables entre 9°C y 14°C. ¡No olvides el paraguas!",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Mañana: Nuboso (9°C)\n• Tarde: Nubes y claros (13°C)\n• Noche: Frío (7°C)\n• Aviso: Toca sacar la chaqueta más gruesa",
-          link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo-en-tarragona-la-prevision-para-el-jueves-29-de-enero-LF22452401",
+          itinerary: "• Mañana: Llovizna (10°C)\n• Tarde: Muy nuboso (13°C)\n• Noche: Cielos cubiertos (8°C)\n• Aviso: Suelo resbaladizo en la Part Alta",
+          link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo-en-tarragona-la-prevision-para-el-viernes-30-de-enero-LF22452401",
           created_at: new Date().toISOString()
         };
 
-        const employmentNews = {
-          id: 'employment-thursday-retail',
-          title: "💼 EMPLEO: Refuerzo en Comercio",
-          content: "Tiendas del centro histórico buscan personal para la campaña de primavera. Se valora conocimiento de idiomas.",
-          category: "EMPLEO",
-          neighborhood: "PART ALTA",
-          link_url: "https://www.diaridetarragona.com/economia/el-comercio-de-tarragona-empieza-a-reforzar-plantillas-HF22452402",
+        const petFoodInitiative = {
+          id: 'pet-food-donation-jan30',
+          title: "🐾 AYUDA: Donación Comida Mascotas",
+          content: "Iniciativa vecinal para recoger pienso y latas para el refugio local. Punto de recogida en la Asociación de Vecinos.",
+          category: "SOLIDARIO",
+          neighborhood: "GENERAL",
+          itinerary: "• Lugar: Local Social Vía Augusta\n• Horario: 10:00 - 18:00\n• Contacto: 622 34 56 78 (Laura)",
           created_at: new Date().toISOString()
         };
 
         const culturalNews = {
-          id: 'culture-thu-mamt',
-          title: "🎨 CULTURA: Nueva Expo MAMT",
-          content: "Inauguración de la muestra de artistas locales en el Museo de Arte Moderno. Entrada gratuita hoy a partir de las 19:00h.",
+          id: 'culture-fri-events',
+          title: "🎭 CULTURA: Música en el Metropol",
+          content: "Esta noche concierto de jazz fusión. Quedan las últimas entradas disponibles en taquilla. Los vecinos de Tarragona tienen un 10% de descuento.",
           category: "CULTURA",
-          neighborhood: "PART ALTA",
-          link_url: "https://www.diaridetarragona.com/cultura/el-mamt-abre-sus-puertas-al-talento-emergente-tarraconense-JF22452403",
+          neighborhood: "CENTRO",
+          link_url: "https://www.diaridetarragona.com/cultura/el-teatro-metropol-vibra-con-el-jazz-este-viernes-JF22452403",
           created_at: new Date().toISOString()
         };
 
-        const eventVibes = {
-          id: 'thu-unio-works-update',
-          title: "🚧 CIUDAD: Obras Calle Unió",
-          content: "Avanzan a buen ritmo los trabajos de peatonalización. Se espera que el tramo central esté listo antes de Semana Santa.",
-          category: "ACTUALIDAD",
-          neighborhood: "CENTRO",
-          link_url: "https://www.diaridetarragona.com/tarragona/las-obras-de-la-calle-unio-encaran-su-fase-final-KF22452404",
+        const classesAd = {
+          id: 'classes-math-english',
+          title: "📚 CLASES: Apoyo escolar hoy",
+          content: "Vecino ofrece clases de refuerzo de Matemáticas e Inglés para primaria y ESO. Primera sesión gratuita para vecinos del barrio.",
+          category: "SERVICIOS",
+          neighborhood: "GENERAL",
+          itinerary: "• Contacto: 655 89 21 44 (Nacho)\n• Disponibilidad: Tardes de lunes a viernes",
           created_at: new Date().toISOString()
         };
 
         const trafficNotice = {
-          id: 'traffic-thu-slow',
-          title: "🚗 TRÁFICO: Lento en accesos",
-          content: "Retenciones habituales en la entrada por la Vía Augusta debido a las obras. Se recomienda usar el acceso por la A-7.",
+          id: 'traffic-fri-weekend',
+          title: "🚗 TRÁFICO: Salida de fin de semana",
+          content: "Se prevé aumento del tráfico en la A-7 y N-340 a partir de las 15:00. Las obras en la Calle Unió siguen afectando al desvío por Rambla Nova.",
           category: "TRÁFICO",
           neighborhood: "GENERAL",
           link_url: "https://www.diaridetarragona.com/tarragona/incidencias-de-trafico-en-tarragona-hoy-MF22452405",
@@ -219,7 +219,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([weatherAlert, eventVibes, culturalNews, employmentNews, trafficNotice, ...validFetchedNews].slice(0, 6));
+        setNews([weatherAlert, petFoodInitiative, culturalNews, classesAd, trafficNotice, ...validFetchedNews].slice(0, 6));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

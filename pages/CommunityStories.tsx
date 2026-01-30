@@ -21,6 +21,32 @@ const CommunityStories: React.FC = () => {
         if (data) setStories(data);
     };
 
+    const handleLike = async (storyId: string, currentLikes: number) => {
+        try {
+            const { error } = await supabase
+                .from('stories')
+                .update({ likes: (currentLikes || 0) + 1 })
+                .eq('id', storyId);
+
+            if (error) throw error;
+
+            // Update local state
+            setStories(prev => prev.map(s => s.id === storyId ? { ...s, likes: (s.likes || 0) + 1 } : s));
+        } catch (error) {
+            console.error('Error liking story:', error);
+        }
+    };
+
+    const [commentingOn, setCommentingOn] = useState<string | null>(null);
+    const [commentText, setCommentText] = useState('');
+
+    const handleComment = (storyId: string) => {
+        const comment = prompt('Escribe tu comentario:');
+        if (comment) {
+            alert('¡Comentario enviado! (Próximamente se guardará en la base de datos)');
+        }
+    };
+
     const [newStory, setNewStory] = useState('');
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const [imageFile, setImageFile] = useState<File | null>(null);
@@ -208,13 +234,19 @@ const CommunityStories: React.FC = () => {
                                     </p>
                                 )}
                                 <div className="flex items-center gap-4 pt-4 border-t border-gray-50 dark:border-gray-800">
-                                    <button className="flex items-center gap-1.5 text-rose-500">
+                                    <button
+                                        onClick={() => handleLike(story.id, story.likes)}
+                                        className="flex items-center gap-1.5 text-rose-500 hover:scale-110 transition-transform"
+                                    >
                                         <span className="material-symbols-outlined text-lg">favorite</span>
-                                        <span className="text-[10px] font-black">24</span>
+                                        <span className="text-[10px] font-black">{story.likes || 0}</span>
                                     </button>
-                                    <button className="flex items-center gap-1.5 text-gray-400">
+                                    <button
+                                        onClick={() => handleComment(story.id)}
+                                        className="flex items-center gap-1.5 text-gray-400 hover:text-primary transition-colors"
+                                    >
                                         <span className="material-symbols-outlined text-lg">chat_bubble</span>
-                                        <span className="text-[10px] font-black">2</span>
+                                        <span className="text-[10px] font-black">Comentar</span>
                                     </button>
                                 </div>
                             </div>

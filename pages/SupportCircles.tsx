@@ -40,7 +40,28 @@ const SupportCircles: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
 
-            setCircles(data || []);
+            const mockCircles: SupportCircle[] = [
+                {
+                    id: 'mock-1',
+                    initiator_id: 'v1',
+                    title: 'Apoyo Ansiedad Escolar',
+                    neighborhood: 'GENERAL',
+                    description: 'Grupo para padres y adolescentes lidiando con el estrés de los exámenes y la presión social. Nos apoyamos y compartimos recursos.',
+                    contact_info: '611 22 33 44',
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'mock-2',
+                    initiator_id: 'v2',
+                    title: 'Duelo por Mascotas',
+                    neighborhood: 'GENERAL',
+                    description: 'Para quienes han perdido a un compañero peludo y necesitan hablar con personas que entiendan ese dolor.',
+                    contact_info: '622 99 88 77',
+                    created_at: new Date().toISOString()
+                }
+            ];
+
+            setCircles(data && data.length > 0 ? data : mockCircles);
         } catch (e) {
             console.error(e);
         } finally {
@@ -97,6 +118,40 @@ const SupportCircles: React.FC = () => {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 md:px-10 py-16">
+                {/* Featured Ad - Mental Health */}
+                <div className="mb-16 bg-gradient-to-br from-indigo-600 to-purple-700 rounded-[40px] overflow-hidden shadow-2xl flex flex-col md:flex-row items-center relative group">
+                    <div className="md:w-1/2 p-10 md:p-16 relative z-10 text-white">
+                        <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest mb-6">Iniciativa Destacada • Salud Mental</span>
+                        <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight">¿Sientes estrés o ansiedad?</h2>
+                        <p className="text-lg opacity-90 font-medium mb-8 leading-relaxed">
+                            No estás solo. Ofrecemos acompañamiento gratuito y grupos de apoyo para adolescentes y adultos que luchan con la presión diaria. Aprende técnicas de mindfulness y gestión emocional con vecinos titulados.
+                        </p>
+                        <div className="flex flex-wrap gap-4">
+                            <a href="tel:611223344" className="px-8 py-4 bg-white text-indigo-700 rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2">
+                                <span className="material-symbols-outlined text-sm">call</span>
+                                LLAMAR AHORA
+                            </a>
+                            <a href="https://wa.me/34611223344" className="px-8 py-4 bg-emerald-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2">
+                                <span className="material-symbols-outlined text-sm">chat</span>
+                                WHATSAPP
+                            </a>
+                        </div>
+                    </div>
+                    <div className="md:w-1/2 h-64 md:h-[500px] relative">
+                        <img
+                            src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?q=80&w=800&auto=format&fit=crop"
+                            className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
+                            alt="Stress Support"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 md:from-transparent to-transparent"></div>
+                    </div>
+                    {/* Decorative badge */}
+                    <div className="absolute top-10 right-10 size-24 bg-yellow-400 rounded-full flex flex-col items-center justify-center text-indigo-900 rotate-12 shadow-2xl z-20 hidden md:flex">
+                        <span className="text-[10px] font-black uppercase">Felicidad</span>
+                        <span className="text-2xl font-black italic">GRATIS</span>
+                    </div>
+                </div>
+
                 {loading ? (
                     <div className="flex flex-col items-center gap-4 py-20 opacity-20">
                         <div className="size-10 border-4 border-purple-500 border-t-transparent animate-spin rounded-full"></div>
