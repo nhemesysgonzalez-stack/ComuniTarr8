@@ -59,23 +59,34 @@ const Marketplace: React.FC = () => {
         {
           id: 'm-1',
           user_id: 'v1',
-          title: 'Paraguas Resistente TGN',
-          description: 'Casi nuevo, aguanta bien el viento. Ideal para hoy.',
-          price: '5',
-          category: 'hogar',
+          title: 'Bicicleta de Paseo Decathlon',
+          description: 'Color negro, poco uso. Perfecta para moverse por la ciudad ahora que deja de llover.',
+          price: '85',
+          category: 'ocio',
           neighborhood: 'GENERAL',
-          contact_info: '611 22 33 44',
+          contact_info: '652 11 00 99 (Albert)',
           created_at: new Date().toISOString()
         },
         {
           id: 'm-2',
           user_id: 'v2',
-          title: 'Lote libros fantasía',
-          description: 'Saga completa para leer este finde de lluvia.',
-          price: '15',
-          category: 'ocio',
+          title: 'Estufa de gas (Butano)',
+          description: 'Funciona perfectamente. Incluye manguera y regulador. Ideal para estos días de frío.',
+          price: '25',
+          category: 'hogar',
           neighborhood: 'GENERAL',
-          contact_info: '622 99 88 77',
+          contact_info: '633 44 55 66 (Laura)',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'm-3',
+          user_id: 'v3',
+          title: 'Paraguas reforzado antiviento',
+          description: 'Sin estrenar. Muy resistente, especial para el viento de Tarragona.',
+          price: '10',
+          category: 'hogar',
+          neighborhood: 'GENERAL',
+          contact_info: '611 22 33 44 (Pau)',
           created_at: new Date().toISOString()
         }
       ];
@@ -167,24 +178,24 @@ const Marketplace: React.FC = () => {
       {/* Featured Service Ad */}
       <div className="mb-16 bg-white dark:bg-surface-dark rounded-[40px] border-4 border-dashed border-primary/20 p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 hover:border-primary/40 transition-all">
         <div className="size-32 md:size-48 bg-gray-100 dark:bg-gray-800 rounded-[35px] flex items-center justify-center shrink-0">
-          <span className="material-symbols-outlined text-7xl text-primary">school</span>
+          <span className="material-symbols-outlined text-7xl text-orange-500">chair</span>
         </div>
         <div className="flex-1">
           <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-primary text-white text-[9px] font-black uppercase tracking-widest rounded-full">DESTACADO</span>
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">SERVICIO VECINAL</span>
+            <span className="px-3 py-1 bg-orange-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">URGE POR MUDANZA</span>
+            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">PARTICULAR - PART ALTA</span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Clases de Refuerzo Escolar 📚</h2>
+          <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Mesa de Roble + 6 Sillas 🪑</h2>
           <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed">
-            ¿Necesitas ayuda con las mates o el inglés? Soy Nacho, vecino de la Part Alta y ofrezco clases para primaria y ESO. Metodología amena y resultados garantizados. ¡Infórmate sin compromiso!
+            Vendo conjunto de comedor por traslado. Madera maciza en perfecto estado. Hay que venir a recogerlo a la Part Alta (cerca de la Catedral). ¡Precio negociable si se recoge este finde!
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="tel:655892144" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
+            <a href="tel:641223456" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
               <span className="material-symbols-outlined text-sm">call</span>
-              655 89 21 44
+              641 22 34 56 (Maria)
             </a>
             <span className="px-6 py-3 bg-gray-50 dark:bg-gray-800 dark:text-white rounded-xl text-xs font-black">
-              DESDE 12€/HORA
+              120€ TODO EL PACK
             </span>
           </div>
         </div>

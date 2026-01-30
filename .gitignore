@@ -20,3 +20,4 @@ build.log
 *.sln
 *.sw?
 .vercel
+.env*.local

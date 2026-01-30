@@ -98,12 +98,40 @@ const Workshops: React.FC = () => {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 py-10 text-center">
+            {/* Featured Class / Service Ad */}
+            <div className="max-w-6xl mx-auto px-6 mb-12">
+                <div className="bg-white dark:bg-surface-dark rounded-[40px] border-4 border-dashed border-emerald-500/20 p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 hover:border-emerald-500/40 transition-all">
+                    <div className="size-32 md:size-48 bg-emerald-100 dark:bg-emerald-900/30 rounded-[35px] flex items-center justify-center shrink-0">
+                        <span className="material-symbols-outlined text-7xl text-emerald-600">school</span>
+                    </div>
+                    <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-4">
+                            <span className="px-3 py-1 bg-emerald-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">DESTACADO</span>
+                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">APOYO ESCOLAR</span>
+                        </div>
+                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Clases de Refuerzo Escolar con Nacho 📚</h2>
+                        <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
+                            ¿Necesitas ayuda con las mates o el inglés? Soy Nacho, vecino de la Part Alta y ofrezco clases para primaria y ESO. Metodología amena y resultados garantizados. ¡Infórmate sin compromiso!
+                        </p>
+                        <div className="flex flex-wrap gap-4">
+                            <a href="tel:655892144" className="flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
+                                <span className="material-symbols-outlined text-sm">call</span>
+                                655 89 21 44
+                            </a>
+                            <span className="px-6 py-3 bg-gray-50 dark:bg-gray-800 dark:text-white rounded-xl text-xs font-black">
+                                DESDE 12€/HORA
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-6 pb-10 text-center">
                 <button
                     onClick={() => setShowCreateModal(true)}
                     className="bg-emerald-600 text-white px-10 py-4 rounded-2xl font-black text-sm hover:scale-105 transition-all shadow-xl shadow-emerald-600/20"
                 >
-                    PROPONER UN TALLER
+                    CONVERTIRME EN INSTRUCTOR
                 </button>
             </div>
 

@@ -129,7 +129,7 @@ const SupportCircles: React.FC = () => {
                         <div className="flex flex-wrap gap-4">
                             <a href="tel:611223344" className="px-8 py-4 bg-white text-indigo-700 rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2">
                                 <span className="material-symbols-outlined text-sm">call</span>
-                                LLAMAR AHORA
+                                611 22 33 44
                             </a>
                             <a href="https://wa.me/34611223344" className="px-8 py-4 bg-emerald-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2">
                                 <span className="material-symbols-outlined text-sm">chat</span>

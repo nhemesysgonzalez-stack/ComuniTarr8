@@ -62,7 +62,7 @@ const VitalNeeds: React.FC = () => {
                     type: 'medical',
                     title: 'Recado Farmacia (Lluvia)',
                     description: 'Con la lluvia no puedo salir de casa (movilidad reducida). ¿Alguien que baje a la farmacia de guardia y me traiga la medicación?',
-                    contact_info: '655 11 22 33',
+                    contact_info: '655 89 21 00',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
