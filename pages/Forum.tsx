@@ -70,12 +70,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'ComuniTarr 📢', text: '🌧️ ¡Viernes de paraguas! Recordad la recogida de comida para peludos en el Local Social.' },
-    { user: 'Pau T.', text: '¿Alguien sabe si el concierto del Metropol se cancela por la lluvia? Espero que no. 🎷' },
-    { user: 'Mireia R.', text: 'El círculo de apoyo para adolescentes empieza en 15 min. ¡Aún podéis venir! 🧘‍♀️' },
-    { user: 'Joan B.', text: 'Mucho cuidado en la Baixada de la Misericòrdia, el suelo está muy resbaladizo. 🚗⚠️' },
-    { user: 'Carme S.', text: 'He dejado tres sacos de pienso. ¡Ánimo con la iniciativa! 🐾🐶' },
-    { user: 'Luis M.', text: '¿Quedan entradas para el Jazz esta noche? Me han dicho que vuelan. 🎭🎺' }
+    { user: 'ComuniTarr 📢', text: '🌞 ¡Sábado de sol y viento! Precaución con las rachas fuertes de Mestral en la Part Alta.' },
+    { user: 'Pau T.', text: '¿Quién se apunta al mercado de antigüedades del Portal de Sant Antoni? 🏺' },
+    { user: 'Mireia R.', text: 'Día ideal para un paseo por el muelle, pero ojo que el viento sopla de cara al volver. 🚲' },
+    { user: 'Joan B.', text: 'He visto un aviso de maceta caída por el viento en la C/ Cavallers, ¡cuidado! ⚠️' },
+    { user: 'Carme S.', text: 'Seguimos con la recogida de comida en el Local Social. ¡Ayer fue un éxito! 🐾' },
+    { user: 'Luis M.', text: '¿Sabéis si han abierto ya las terrazas de la Plaça de la Font con este sol? ☕☀️' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -140,12 +140,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts
     let scripts = [
-      "¡Buenos días! Vaya viernes más gris, no olvidéis el paraguas. 🌧️☂️",
-      "¿Habéis llevado ya algo para la protectora? Están en el Local Social. 🐾",
-      "Qué ganas de ver el concierto de Jazz esta noche en el Metropol. 🎷✨",
-      "Cuidado al bajar por la Part Alta, que las piedras mojadas son un peligro. ⚠️🚲",
-      "¿Alguien sabe si Nacho da clases hoy con este tiempo? @Nacho 📚",
-      "¡Feliz viernes a todos! A pesar de la lluvia, Tarragona tiene su encanto. ☕☔"
+      "¡Buenos días! Qué alegría ver el sol hoy, aunque el viento despeina un poco. 🌞💨",
+      "¿Nos vemos en el mercadillo del Portal de Sant Antoni? He visto cosas muy chulas. 🏺",
+      "Cuidado con los toldos y macetas, que el Mestral está soplando con ganas hoy. ⚠️",
+      "Voy a dar una vuelta con la bici por el Farralló, ¿alguien se apunta? 🚲✨",
+      "¿Sabéis si hoy hay vermut musical en algún sitio de la Part Alta? 🥂🎷",
+      "¡Feliz sábado! Aprovechad la luz de hoy, que Tarragona brilla diferente. ☕✨"
     ];
 
     // Base reply scripts
@@ -197,10 +197,10 @@ const Forum: React.FC = () => {
         let possibleReplies = [];
         if (isGreeting) {
           possibleReplies = [
-            `¡Hola, ${isReplyTo}! ¿Cómo va ese viernes pasado por agua? 🌧️`,
-            `¡Muy buenas! ¿Nos vemos luego en el Metropol? @${isReplyTo}.`,
-            `¡Hola ${isReplyTo}! Sí, hoy mejor quedarse a cubierto. ☕`,
-            `¡Buenas tardes! ¿Habéis visto lo de la comida para perros? Es genial.`
+            `¡Hola, ${isReplyTo}! ¿Disfrutando del sol de sábado? 🌞`,
+            `¡Muy buenas! ¿Vas a ir luego al mercadillo del Portal? @${isReplyTo}.`,
+            `¡Hola ${isReplyTo}! Sí, con este viento mejor llevar chaqueta hoy. 💨`,
+            `¡Buenas tardes! ¿Viste lo de la bici? Yo me lo estoy pensando.`
           ];
         } else {
           possibleReplies = replyScripts;
@@ -410,12 +410,12 @@ const Forum: React.FC = () => {
   };
 
   const handleTopicClick = (topicId: string) => {
-    if (topicId === 'maraton-solidaria') {
-      setNewMessage('¿Alguien va a llevar comida para la protectora hoy? 🐾');
-    } else if (topicId === 'jazz-metropol') {
-      setNewMessage('¿Quién se apunta al concierto de Jazz en el Metropol esta noche? 🎷');
-    } else if (topicId === 'tiempo-lluvia') {
-      setNewMessage('Vaya viernes pasado por agua... ¡a ver si escampa! 🌧️');
+    if (topicId === 'mercadillo-antiguedades') {
+      setNewMessage('¿Alguien va al mercado del Portal de Sant Antoni hoy? 🏺');
+    } else if (topicId === 'paseo-viento') {
+      setNewMessage('¿Subimos al muelle a pesar del viento o mejor terraza al sol? 🚲☀️');
+    } else if (topicId === 'viento-mestral') {
+      setNewMessage('¡Ojo con las macetas en los balcones, que el viento sopla fuerte! 💨⚠️');
     }
     setTimeout(() => {
       inputRef.current?.focus();
@@ -424,22 +424,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'maraton-solidaria',
-      title: '🐾 Ayuda Protectora',
-      description: 'Recogida de comida y mantas para peludos hoy en el Local Social.',
-      participating: 184
+      id: 'mercadillo-antiguedades',
+      title: '🏺 Antigüedades',
+      description: 'Tesoros y curiosidades hoy en el Portal de Sant Antoni.',
+      participating: 156
     },
     {
-      id: 'jazz-metropol',
-      title: '🎷 Jazz en el Metropol',
-      description: 'Concierto de viernes noche. Entradas casi agotadas.',
-      participating: 96
+      id: 'paseo-viento',
+      title: '🚲 Paseo Ventoso',
+      description: 'Rutas en bici y caminatas por el litoral hoy sábado.',
+      participating: 112
     },
     {
-      id: 'tiempo-lluvia',
-      title: '🌧️ Viernes de Lluvia',
-      description: 'Previsiones, suelos resbaladizos y planes a cubierto.',
-      participating: 215
+      id: 'viento-mestral',
+      title: '💨 Viento Mestral',
+      description: 'Avisos y precaución por ráfagas fuertes en el casco antiguo.',
+      participating: 198
     }
   ];
 
@@ -552,7 +552,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Viernes 30 Enero 2026 - Lluvia y Solidaridad Vecinal
+                  Sábado 31 Enero 2026 - Sol, Viento y Comunidad
                 </span>
               </div>
 

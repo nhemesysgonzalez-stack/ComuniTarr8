@@ -157,13 +157,13 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-friday-jan30',
-          title: "🌧️ VIERNES: Lluvia Débil",
-          content: "Tarragona amanece con cielos cubiertos. Se esperan precipitaciones débiles durante la mañana. Temperaturas estables entre 9°C y 14°C. ¡No olvides el paraguas!",
+          id: 'weather-sat-jan31',
+          title: "🌞 SÁBADO: Sol y Viento",
+          content: "Cielos despejados hoy en Tarragona, aunque con rachas fuertes de viento (Mestral). Las temperaturas suben hasta los 17°C. ¡Ideal para pasear pero cuidado en zonas altas!",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Mañana: Llovizna (10°C)\n• Tarde: Muy nuboso (13°C)\n• Noche: Cielos cubiertos (8°C)\n• Aviso: Suelo resbaladizo en la Part Alta",
-          link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo-en-tarragona-la-prevision-para-el-viernes-30-de-enero-LF22452401",
+          itinerary: "• Mañana: Soleado / Viento (12°C)\n• Tarde: Despejado (17°C)\n• Noche: Fresco y ventoso (9°C)\n• Aviso: Precaución con objetos en balcones.",
+          link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo-en-tarragona-la-prevision-para-el-sabado-31-de-enero-LF22452401",
           created_at: new Date().toISOString()
         };
 
@@ -178,12 +178,12 @@ const Home: React.FC = () => {
         };
 
         const culturalNews = {
-          id: 'culture-fri-events',
-          title: "🎭 CULTURA: Música en el Metropol",
-          content: "Esta noche concierto de jazz fusión. Quedan las últimas entradas disponibles en taquilla. Los vecinos de Tarragona tienen un 10% de descuento.",
+          id: 'culture-sat-events',
+          title: "🏺 CULTURA: Mercado de Antigüedades",
+          content: "Sábado en el Portal de Sant Antoni. Gran variedad de objetos curiosos y artesanía local. ¡Último finde de la exposición del Serrallo!",
           category: "CULTURA",
-          neighborhood: "CENTRO",
-          link_url: "https://www.diaridetarragona.com/cultura/el-teatro-metropol-vibra-con-el-jazz-este-viernes-JF22452403",
+          neighborhood: "PART ALTA",
+          link_url: "https://www.diaridetarragona.com/cultura/el-mercadillo-de-tarragona-vuelve-con-fuerza-este-sabado-JF22452403",
           created_at: new Date().toISOString()
         };
 
@@ -198,12 +198,12 @@ const Home: React.FC = () => {
         };
 
         const trafficNotice = {
-          id: 'traffic-fri-weekend',
-          title: "🚗 TRÁFICO: Salida de fin de semana",
-          content: "Se prevé aumento del tráfico en la A-7 y N-340 a partir de las 15:00. Las obras en la Calle Unió siguen afectando al desvío por Rambla Nova.",
-          category: "TRÁFICO",
-          neighborhood: "GENERAL",
-          link_url: "https://www.diaridetarragona.com/tarragona/incidencias-de-trafico-en-tarragona-hoy-MF22452405",
+          id: 'traffic-sat-weekend',
+          title: "🚲 OCIO: Paseo Ciclista por el Port",
+          content: "Mañana de sábado ideal para la bicicleta ahora que no llueve. Pero ojo con el viento de cara al volver por el Moll de Llevant.",
+          category: "DEPORTE",
+          neighborhood: "SERRALLO",
+          link_url: "https://www.diaridetarragona.com/tarragona/planes-al-aire-libre-en-tarragona-este-fin-de-semana-MF22452405",
           created_at: new Date().toISOString()
         };
 

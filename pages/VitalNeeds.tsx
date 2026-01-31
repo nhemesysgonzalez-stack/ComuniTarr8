@@ -155,9 +155,9 @@ const VitalNeeds: React.FC = () => {
                             <span className="px-2 py-0.5 bg-emerald-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">INICIATIVA DEL DÍA</span>
                             <span className="text-[10px] font-bold text-gray-400 uppercase">TIEMPO LIMITADO</span>
                         </div>
-                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Donación de Comida para Mascotas 🐾</h2>
+                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Recogida de Comida para Mascotas 🐾</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            Estamos recogiendo pienso, latas y mantas para los animales refugiados esta semana de lluvia. Todo lo recaudado se entregará a la protectora local de Tarragona.
+                            Seguimos recogiendo pienso y mantas para los animales refugiados tras las lluvias de ayer. Todo lo recaudado se entregará hoy sábado a la protectora local de Tarragona.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
@@ -185,7 +185,10 @@ const VitalNeeds: React.FC = () => {
                             </div>
                         ) : (
                             <div className="space-y-6">
-                                <h2 className="text-2xl font-black dark:text-white mb-4">Solicitudes Vecinales</h2>
+                                <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-100 dark:border-gray-800">
+                                    <h2 className="text-2xl font-black dark:text-white uppercase tracking-tight">Tablón Comunitario</h2>
+                                    <span className="px-3 py-1 bg-amber-100 text-amber-600 rounded-full text-[9px] font-black uppercase tracking-widest border border-amber-200">Simulación del Sistema</span>
+                                </div>
                                 {needs.map(need => (
                                     <motion.div
                                         initial={{ opacity: 0, y: 10 }}
@@ -240,31 +243,37 @@ const VitalNeeds: React.FC = () => {
                             </button>
                         </div>
 
-                        <div className="bg-white dark:bg-surface-dark p-8 rounded-[35px] shadow-lg border border-gray-100 dark:border-gray-800">
-                            <h3 className="font-bold dark:text-white mb-6 uppercase tracking-widest text-xs">Recursos Útiles en Tarragona</h3>
+                        <div className="bg-white dark:bg-surface-dark p-8 rounded-[35px] shadow-lg border-2 border-red-500/20 dark:border-red-900/30">
+                            <h3 className="font-black text-red-600 dark:text-red-400 mb-6 uppercase tracking-widest text-xs flex items-center gap-2">
+                                <span className="material-symbols-outlined text-sm">verified</span>
+                                Recursos Reales (24h)
+                            </h3>
                             <ul className="space-y-4 text-sm text-gray-600 dark:text-gray-300 font-medium">
-                                <li className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition cursor-pointer">
+                                <li className="flex items-center gap-3 p-3 bg-red-50 dark:bg-red-900/20 rounded-2xl border border-red-100 dark:border-red-800/30">
                                     <span className="material-symbols-outlined text-red-500">local_pharmacy</span>
                                     <div>
-                                        <strong>Farmacia de Guardia</strong>
-                                        <p className="text-xs opacity-70">Rambla Nova, 18 - Abierto 24h</p>
+                                        <strong className="block text-red-700 dark:text-red-300">Farmàcia Fullana (24h)</strong>
+                                        <p className="text-[10px] opacity-70">C/ de la Unió, 1 - 977 23 30 84</p>
                                     </div>
                                 </li>
-                                <li className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition cursor-pointer">
+                                <li className="flex items-center gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border border-blue-100 dark:border-blue-800/30">
                                     <span className="material-symbols-outlined text-blue-500">medical_services</span>
                                     <div>
-                                        <strong>Hospital Joan XXIII</strong>
-                                        <p className="text-xs opacity-70">Urgencias: 977 29 58 00</p>
+                                        <strong className="block text-blue-700 dark:text-blue-300">Hospital Joan XXIII</strong>
+                                        <p className="text-[10px] opacity-70">Urgencias: 977 29 58 00</p>
                                     </div>
                                 </li>
-                                <li className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition cursor-pointer">
+                                <li className="flex items-center gap-3 p-3 bg-orange-50 dark:bg-orange-900/20 rounded-2xl border border-orange-100 dark:border-orange-800/30">
                                     <span className="material-symbols-outlined text-orange-500">soup_kitchen</span>
                                     <div>
-                                        <strong>Comedor Social Bonavista</strong>
-                                        <p className="text-xs opacity-70">C/ Vuit, 12 - 13:00</p>
+                                        <strong className="block text-orange-700 dark:text-orange-300">Menjador Social Bonavista</strong>
+                                        <p className="text-[10px] opacity-70">C/ Vint, 2 - 977 54 91 80</p>
                                     </div>
                                 </li>
                             </ul>
+                            <p className="mt-6 text-[9px] text-gray-400 font-bold uppercase tracking-widest text-center">
+                                Información verificada para Tarragona
+                            </p>
                         </div>
                     </div>
                 </div>

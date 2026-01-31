@@ -8,12 +8,12 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'incident', x: '42%', y: '38%', title: 'Suelo Resbaladizo', desc: '¡Atención! La lluvia ha dejado las calles de mármol de la Part Alta muy peligrosas.', status: 'Activo', color: 'bg-red-500', icon: 'warning', glow: 'shadow-[0_0_30px_rgba(239,68,68,0.4)]' },
-    { id: 2, type: 'cleanup', x: '55%', y: '25%', title: 'Recogida de Comida', desc: 'Punto de entrega para la donación de comida para mascotas. Local Social.', status: 'Hasta 18h', color: 'bg-emerald-500', icon: 'pets', glow: 'shadow-[0_0_40px_rgba(16,185,129,0.7)]' },
-    { id: 3, type: 'event', x: '35%', y: '45%', title: 'Jazz Metropol', desc: 'Concierto esta noche. Las colas se formarán a cubierto en el hall.', status: 'Hoy 21:00', color: 'bg-indigo-500', icon: 'music_note', glow: 'shadow-[0_0_35px_rgba(99,102,241,0.6)]' },
-    { id: 4, type: 'incident', x: '15%', y: '40%', title: 'Corte Carrer Unió', desc: 'Obras y lluvia complican el acceso al centro. Desvíos señalizados.', status: 'Precaución', color: 'bg-orange-500', icon: 'construction', glow: 'shadow-[0_0_30px_rgba(249,115,22,0.4)]' },
-    { id: 5, type: 'cleanup', x: '78%', y: '45%', title: 'Cuidado Playas', desc: 'Bandera amarilla por estado del mar y lluvia. Evitar paseos por rocas.', status: 'Precaución', color: 'bg-emerald-600', icon: 'waves' },
-    { id: 6, type: 'event', x: '48%', y: '55%', title: 'Apoyo Ansiedad', desc: 'Charla en el centro cívico sobre gestión del estrés escolar.', status: 'Mañana 11h', color: 'bg-purple-500', icon: 'psychology' }
+    { id: 1, type: 'incident', x: '42%', y: '38%', title: 'Viento Fuerte (Mestral)', desc: 'Rachas fuertes de viento en la Part Alta. Evitad dejar objetos sueltos en balcones.', status: 'Activo', color: 'bg-red-500', icon: 'air', glow: 'shadow-[0_0_30px_rgba(239,68,68,0.4)]' },
+    { id: 2, type: 'cleanup', x: '55%', y: '25%', title: 'Recogida de Comida', desc: 'Punto de entrega para la donación de comida para mascotas. ¡Ayer fue un éxito!', status: 'Hasta 18h', color: 'bg-emerald-500', icon: 'pets', glow: 'shadow-[0_0_40px_rgba(16,185,129,0.7)]' },
+    { id: 3, type: 'event', x: '35%', y: '45%', title: 'Mercado Antigüedades', desc: 'Mercadillo hoy en el Portal de Sant Antoni. Gran afluencia esperada.', status: 'Hoy 09:00-20:00', color: 'bg-indigo-500', icon: 'store', glow: 'shadow-[0_0_35px_rgba(99,102,241,0.6)]' },
+    { id: 4, type: 'incident', x: '15%', y: '40%', title: 'Aviso Viento Puerto', desc: 'Precaución en el Moll de Llevant por rachas laterales. No recomendado para bicis ligeras hoy.', status: 'Precaución', color: 'bg-orange-500', icon: 'warning', glow: 'shadow-[0_0_30px_rgba(249,115,22,0.4)]' },
+    { id: 5, type: 'cleanup', x: '78%', y: '45%', title: 'Estado del Mar', desc: 'Fuerte oleaje por el viento. Mantener distancia de seguridad en el espigón.', status: 'Alerta Amarilla', color: 'bg-emerald-600', icon: 'waves' },
+    { id: 6, type: 'event', x: '48%', y: '55%', title: 'Vermut Comunitario', desc: 'Quedada informal al sol pero resguardados del viento.', status: 'Hoy 13:00', color: 'bg-purple-500', icon: 'celebration' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

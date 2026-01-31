@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🌧️ ¡Buenos días! Hoy toca paraguas. Recordad que recogemos comida para mascotas en la Asociación. 🐾', neighborhood: 'GENERAL' },
-    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¿Alguien sabe si las clases de Nacho siguen hoy a pesar de la lluvia? 📚🤔', neighborhood: 'Serrallo' },
-    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '¡Qué buena iniciativa lo del círculo de apoyo para el estrés! Me hace mucha falta. 💜🧘‍♀️', neighborhood: 'Part Alta' },
-    { id: 3, user: 'Joan B.', text: 'El suelo de la Baixada de la Misericòrdia resbala mucho con la lluvia, ¡cuidado! 🚗⚠️', avatar: 'https://i.pravatar.cc/150?u=joan', neighborhood: 'Part Alta' },
-    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'He dejado un saco de pienso en el local. ¡Espero que ayude a los peludos! 🐶🐱', neighborhood: 'Part Alta' },
-    { id: 5, user: 'Luis M.', avatar: 'https://i.pravatar.cc/150?u=luis', text: 'Viernes de sofá y manta con este tiempo... o concierto en el Metropol. 🎭🛋️', neighborhood: 'Centro' },
-    { id: 6, user: 'Elena G.', avatar: 'https://i.pravatar.cc/150?u=elena', text: 'He visto un anuncio de clases de Inglés en el mercadillo, ¿alguien tiene el contacto? 🇬🇧🏛️', neighborhood: 'Centro' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🌞 ¡Feliz sábado! Aprovechad el sol hoy. Cuidado con el viento de Mestral en balcones y terrazas. 💨', neighborhood: 'GENERAL' },
+    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¿Alguien va al mercadillo del Portal de Sant Antoni? Busco una pieza de cerámica antigua. 🏺🏺', neighborhood: 'Serrallo' },
+    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Día perfecto para pedalear por el rompeolas, aunque a la vuelta el viento sopla fuerte. 🚲💨', neighborhood: 'Part Alta' },
+    { id: 3, user: 'Joan B.', text: 'He visto un toldo medio suelto por el viento en C/ Major. ¡Avisados estáis! ⚠️🏠', avatar: 'https://i.pravatar.cc/150?u=joan', neighborhood: 'Part Alta' },
+    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: '¡Qué luz tiene hoy Tarragona! Ideal para hacer fotos por las murallas. 📸✨', neighborhood: 'Part Alta' },
+    { id: 5, user: 'Luis M.', avatar: 'https://i.pravatar.cc/150?u=luis', text: '¿Alguna terraza resguardada del viento para hacer el vermut hoy? 🥂☀️', neighborhood: 'Centro' },
+    { id: 6, user: 'Elena G.', avatar: 'https://i.pravatar.cc/150?u=elena', text: '¡Mañana de sábado clásica! Mercadillo y luego paseo por el puerto. Nos vemos por ahí. 👋🏛️', neighborhood: 'Centro' },
 ];
 
 const tickerMessages = [
-    { user: 'Pau T.', text: '¡No olvidéis el paraguas hoy! 🌧️' },
-    { user: 'Mireia R.', text: 'Apuntada al círculo de apoyo 💜' },
-    { user: 'Joan B.', text: 'Tráfico lento en el centro 🚗' },
-    { user: 'Carme S.', text: 'Donad comida para mascotas 🐾' },
-    { user: 'Luis M.', text: '¡Buen fin de semana a todos! 🏠' }
+    { user: 'Pau T.', text: '¡Nos vemos en el mercadillo! 🏺' },
+    { user: 'Mireia R.', text: 'Paseo en bici por el puerto 🚲' },
+    { user: 'Joan B.', text: 'Cuidado con el viento fuerte 💨' },
+    { user: 'Carme S.', text: 'Tarragona brilla hoy ☀️' },
+    { user: 'Luis M.', text: '¡Buen sábado a todos! 🥂' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

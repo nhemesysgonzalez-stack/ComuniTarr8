@@ -44,42 +44,42 @@ const NeighborhoodCalendar: React.FC = () => {
   // Official Events for January/February 2026
   const officialEvents: Event[] = [
     {
-      id: 'evt-reciclaje-creative',
+      id: 'evt-port-bike',
       creator_id: 'admin',
-      title: "♻️ Taller Reciclaje Creativo",
-      description: "Aprende a dar segunda vida a tus envases. Trae tus propios materiales.",
-      event_date: '2026-01-30',
-      event_time: '17:30',
-      location: 'Plaza de la Font',
-      category: 'Ocio',
-      neighborhood: 'PART ALTA',
-      contact_info: 'Green Tarragona',
-      created_at: new Date().toISOString()
-    },
-    {
-      id: 'evt-metropol-jazz',
-      creator_id: 'admin',
-      title: "🎷 Jazz en el Metropol",
-      description: "Concierto de fin de semana con artistas locales. Descuento para vecinos.",
-      event_date: '2026-01-30',
-      event_time: '21:00',
-      location: 'Teatro Metropol',
-      category: 'Cultura',
-      neighborhood: 'CENTRO',
-      contact_info: 'Taquillas Metropol',
-      created_at: new Date().toISOString()
-    },
-    {
-      id: 'evt-carretera-san-mago',
-      creator_id: 'admin',
-      title: "🚶 Caminata por la Anella Verda",
-      description: "Salida grupal para estirar las piernas y disfrutar de la naturaleza.",
+      title: "🚲 Paseo Ciclista Puerto",
+      description: "Quedada en el Serrallo para recorrer el rompeolas. ¡Trae agua y protección solar!",
       event_date: '2026-01-31',
-      event_time: '10:00',
-      location: 'Pont del Diable (Parking)',
+      event_time: '11:00',
+      location: 'Moll de Costa (Serrallo)',
       category: 'Deporte',
+      neighborhood: 'SERRALLO',
+      contact_info: 'Bici-TGN',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-antiquities-market',
+      creator_id: 'admin',
+      title: "🏺 Mercado Antigüedades",
+      description: "Mercadillo tradicional con objetos vintage, libros y artesanía local.",
+      event_date: '2026-01-31',
+      event_time: '09:00',
+      location: 'Portal de Sant Antoni',
+      category: 'Cultura',
+      neighborhood: 'PART ALTA',
+      contact_info: 'Asoc. Vecinos Part Alta',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-sunday-paella',
+      creator_id: 'admin',
+      title: "🥘 Paella Popular Domingo",
+      description: "Comida vecinal para celebrar el fin de semana. Reserva tu ticket en el local social antes de hoy a las 20h.",
+      event_date: '2026-02-01',
+      event_time: '14:00',
+      location: 'Local Social Vía Augusta',
+      category: 'Fiesta',
       neighborhood: 'GENERAL',
-      contact_info: 'Excursionistas TGN',
+      contact_info: 'Admin ComuniTarr',
       created_at: new Date().toISOString()
     }
   ];

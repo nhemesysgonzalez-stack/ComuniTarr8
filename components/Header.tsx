@@ -252,15 +252,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">🌧️ VIERNES: LLUVIAS DÉBILES EN TARRAGONA - NO OLVIDES TU PARAGUAS</span>
+          <span className="flex items-center gap-2">🌞 SÁBADO: CIELOS DESPEJADOS Y VIENTO DE TRAMONTANA - CUIDADO EN BALCONES</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">📢 NUEVOS ANUNCIOS: CONSULTA LAS SECCIONES DE AYUDA MUTUA, MERCADILLO Y CÍRCULOS DE APOYO</span>
+          <span className="flex items-center gap-2">📢 COMUNIDAD: ÚLTIMO DÍA PARA PARTICIPAR EN LA ENCUESTA SOBRE LA REFORMA DE LA RAMBLA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🐾 SOLIDARIDAD: RECOGIDA DE COMIDA PARA MASCOTAS HOY EN LA ASOCIACIÓN VECINAL</span>
+          <span className="flex items-center gap-2">🏺 CULTURA: MERCADO DE ANTIGÜEDADES HOY EN EL PORTAL DE SANT ANTONI</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎭 CULTURA: ÚLTIMAS ENTRADAS PARA EL CONCIERTO DE JAZZ EN EL METROPOL</span>
+          <span className="flex items-center gap-2">🚲 DEPORTE: PASEO CICLISTA POR EL PUERTO - CONDICIONES ÓPTIMAS SALVO POR EL VIENTO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚧 CIUDAD: LAS OBRAS DE LA CALLE UNIÓ SIGUEN AFECTANDO AL TRÁFICO EN EL CENTRO</span>
+          <span className="flex items-center gap-2">🐾 SOLIDARIDAD: GRACIAS POR LAS DONACIONES DE AYER, SEGUIMOS RECOGIENDO PIENSO</span>
         </motion.div>
       </div>
 

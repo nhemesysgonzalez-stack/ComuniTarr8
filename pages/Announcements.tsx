@@ -125,13 +125,13 @@ const Announcements: React.FC = () => {
     const fetchNotices = async () => {
         setLoading(true);
         const weatherAlert: Announcement = {
-            id: 'weather-tuesday-rain',
-            title: "🌧️ MARTES: Lluvia Ligera",
-            content: "Se esperan lluvias débiles intermitentes durante toda la mañana y tarde. Recomendamos precaución al caminar por las zonas adoquinadas de la Part Alta, que pueden resultar resbaladizas.",
+            id: 'weather-sat-wind',
+            title: "🌞 SÁBADO: Sol y Viento Mestral",
+            content: "Cielos despejados pero con rachas fuertes de viento hoy en Tarragona. Se recomienda retirar macetas y objetos de los balcones para evitar accidentes por el viento.",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
             author_name: "Protección Civil",
-            itinerary: "• Martes: Lluvia intermitente (max 12°C)\n• Miércoles: Cielos nublados sin lluvia",
+            itinerary: "• Sábado: Soleado y Ventoso (max 17°C)\n• Domingo: Menos viento, mismos cielos despejados",
             created_at: new Date().toISOString()
         };
 
@@ -146,23 +146,23 @@ const Announcements: React.FC = () => {
         };
 
         const mnatSuccess: Announcement = {
-            id: 'mnat-success-announcement',
-            title: "🏛️ CULTURA: Gran acogida en el MNAT",
-            content: "Agradecemos la gran participación de ayer en la jornada de puertas abiertas. El patrimonio de Tarraco sigue siendo el nexo de unión de nuestra comunidad.",
-            category: "EXITO",
+            id: 'mnat-workshop-sat',
+            title: "🎨 TALLER: Hoy en el MNAT",
+            content: "Recordamos que hoy sábado a las 11:30h se realiza el taller infantil de mosaicos romanos. ¡Últimas plazas disponibles para los pequeños vecinos!",
+            category: "EVENTO",
             neighborhood: "GENERAL",
             author_name: "Museu d'Història",
-            itinerary: "• Próxima actividad: Taller infantil (Sábado)",
+            itinerary: "• Sábado 11:30: Inicio Taller Infantil\n• Duración aproximada: 2 horas",
             created_at: new Date().toISOString()
         };
 
-        const cityCleanup: Announcement = {
-            id: 'cleanup-update-tue',
-            title: "🧹 LIMPIEZA: Finalización de tareas",
-            content: "Las brigadas municipales confirman que ya no quedan restos de los eventos del fin de semana. La ciudad vuelve a su estado impecable para afrontar el resto de la semana.",
+        const cityVibe: Announcement = {
+            id: 'weekend-vibe-sat',
+            title: "🏺 MERCADILLO: Viva la Part Alta",
+            content: "El Portal de Sant Antoni ya está en marcha con el mercado de antigüedades. Los comercios abren hasta tarde hoy para disfrutar del ambiente de sábado.",
             category: "COMUNIDAD",
-            neighborhood: "GENERAL",
-            author_name: "Brigada Municipal",
+            neighborhood: "PART ALTA",
+            author_name: "Dinamización Vecinal",
             created_at: new Date().toISOString()
         };
 
@@ -186,7 +186,7 @@ const Announcements: React.FC = () => {
                 return diffDays <= 7;
             });
 
-            setNotices([weatherAlert, mnatSuccess, cityCleanup, commerceNotice, ...validFetched]);
+            setNotices([weatherAlert, mnatSuccess, cityVibe, commerceNotice, ...validFetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

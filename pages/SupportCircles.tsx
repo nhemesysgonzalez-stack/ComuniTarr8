@@ -53,9 +53,9 @@ const SupportCircles: React.FC = () => {
                 {
                     id: 'mock-2',
                     initiator_id: 'v2',
-                    title: 'Duelo por Mascotas',
+                    title: 'Círculo de Apoyo: Duelo Animal',
                     neighborhood: 'GENERAL',
-                    description: 'Para quienes han perdido a un compañero peludo y necesitan hablar con personas que entiendan ese dolor.',
+                    description: 'Iniciativa vecinal para compartir el dolor por la pérdida de una mascota. (Referencia profesional: Duelo Animal / COPC Tarragona).',
                     contact_info: '622 99 88 77',
                     created_at: new Date().toISOString()
                 }
@@ -173,51 +173,59 @@ const SupportCircles: React.FC = () => {
                         </button>
                     </div>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {circles.map((circle, idx) => (
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: idx * 0.1 }}
-                                key={circle.id}
-                                className="group bg-white dark:bg-surface-dark rounded-[35px] p-8 border border-gray-100 dark:border-gray-800 hover:shadow-2xl hover:border-purple-500/30 transition-all"
-                            >
-                                <div className="flex items-start gap-6 mb-6">
-                                    <div className="shrink-0 size-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
-                                        <span className="material-symbols-outlined text-3xl text-purple-500">groups</span>
-                                    </div>
-                                    <div className="flex-1 min-w-0">
-                                        <h3 className="text-xl font-black dark:text-white leading-tight mb-2 group-hover:text-purple-500 transition-colors">
-                                            {circle.title}
-                                        </h3>
-                                        <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                                            <span className="material-symbols-outlined text-sm">person</span>
-                                            <span className="font-bold">Iniciado por vecino</span>
+                    <div className="space-y-8">
+                        <div className="flex items-center justify-between px-6 pb-6 border-b border-purple-500/10 mb-8">
+                            <h2 className="text-3xl font-black dark:text-white uppercase tracking-tight">Círculos en {user?.user_metadata?.neighborhood || 'Part Alta'}</h2>
+                            <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-[9px] font-black uppercase tracking-widest border border-purple-200 shadow-sm">
+                                Dinámica de Simulación
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            {circles.map((circle, idx) => (
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: idx * 0.1 }}
+                                    key={circle.id}
+                                    className="group bg-white dark:bg-surface-dark rounded-[35px] p-8 border border-gray-100 dark:border-gray-800 hover:shadow-2xl hover:border-purple-500/30 transition-all"
+                                >
+                                    <div className="flex items-start gap-6 mb-6">
+                                        <div className="shrink-0 size-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
+                                            <span className="material-symbols-outlined text-3xl text-purple-500">groups</span>
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                            <h3 className="text-xl font-black dark:text-white leading-tight mb-2 group-hover:text-purple-500 transition-colors">
+                                                {circle.title}
+                                            </h3>
+                                            <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+                                                <span className="material-symbols-outlined text-sm">person</span>
+                                                <span className="font-bold">Iniciado por vecino</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                                    {circle.description}
-                                </p>
+                                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                                        {circle.description}
+                                    </p>
 
-                                <div className="flex items-center justify-between pt-6 border-t border-gray-100 dark:border-gray-800">
-                                    {circle.contact_info && (
-                                        <>
-                                            <span className="text-[10px] font-bold text-gray-400">
-                                                📞 {circle.contact_info}
-                                            </span>
-                                            <a
-                                                href={`tel:${circle.contact_info}`}
-                                                className="px-5 py-2.5 bg-purple-500/10 text-purple-500 rounded-xl text-xs font-black hover:bg-purple-500 hover:text-white transition-all"
-                                            >
-                                                UNIRME
-                                            </a>
-                                        </>
-                                    )}
-                                </div>
-                            </motion.div>
-                        ))}
+                                    <div className="flex items-center justify-between pt-6 border-t border-gray-100 dark:border-gray-800">
+                                        {circle.contact_info && (
+                                            <>
+                                                <span className="text-[10px] font-bold text-gray-400">
+                                                    📞 {circle.contact_info}
+                                                </span>
+                                                <a
+                                                    href={`tel:${circle.contact_info}`}
+                                                    className="px-5 py-2.5 bg-purple-500/10 text-purple-500 rounded-xl text-xs font-black hover:bg-purple-500 hover:text-white transition-all"
+                                                >
+                                                    UNIRME
+                                                </a>
+                                            </>
+                                        )}
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 )}
 
