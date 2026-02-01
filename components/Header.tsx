@@ -252,15 +252,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">🌞 SÁBADO: CIELOS DESPEJADOS Y VIENTO DE TRAMONTANA - CUIDADO EN BALCONES</span>
+          <span className="flex items-center gap-2">☁️ DOMINGO: CIELOS NUBOSOS Y DÍA TRANQUILO - IDEAL PARA ACTIVIDADES VECINALES</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">📢 COMUNIDAD: ÚLTIMO DÍA PARA PARTICIPAR EN LA ENCUESTA SOBRE LA REFORMA DE LA RAMBLA</span>
+          <span className="flex items-center gap-2">🥘 COMUNIDAD: HOY PAELLA POPULAR EN EL LOCAL SOCIAL VÍA AUGUSTA A PARTIR DE LAS 13:00</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🏺 CULTURA: MERCADO DE ANTIGÜEDADES HOY EN EL PORTAL DE SANT ANTONI</span>
+          <span className="flex items-center gap-2">🚶‍♀️ OCIO: CAMINATA POR EL CAMÍ DE RONDA HOY A LAS 10:30 - PUNTO DE ENCUENTRO ARRABASSADA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚲 DEPORTE: PASEO CICLISTA POR EL PUERTO - CONDICIONES ÓPTIMAS SALVO POR EL VIENTO</span>
+          <span className="flex items-center gap-2">🏺 CULTURA: ÚLTIMAS VISITAS A LA EXPOSICIÓN DEL SERRALLO ANTES DEL CIERRE DE TEMPORADA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🐾 SOLIDARIDAD: GRACIAS POR LAS DONACIONES DE AYER, SEGUIMOS RECOGIENDO PIENSO</span>
+          <span className="flex items-center gap-2">🐾 SOLIDARIDAD: GRAN ÉXITO DE LA RECOGIDA DE AYER, HOY HACEMOS EL REPARTO AL REFUGIO</span>
         </motion.div>
       </div>
 

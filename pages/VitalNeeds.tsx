@@ -155,9 +155,9 @@ const VitalNeeds: React.FC = () => {
                             <span className="px-2 py-0.5 bg-emerald-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">INICIATIVA DEL DÍA</span>
                             <span className="text-[10px] font-bold text-gray-400 uppercase">TIEMPO LIMITADO</span>
                         </div>
-                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Recogida de Comida para Mascotas 🐾</h2>
+                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Entrega de Comida a la Protectora 🐾</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            Seguimos recogiendo pienso y mantas para los animales refugiados tras las lluvias de ayer. Todo lo recaudado se entregará hoy sábado a la protectora local de Tarragona.
+                            ¡Misión cumplida! Hoy domingo estamos transportando todo el pienso y mantas recolectados durante la semana. Gracias a los 142 voluntarios que han hecho esto posible. Si aún tienes algo pequeño, puedes traerlo al Local Social antes de las 13:00.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">

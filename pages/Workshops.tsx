@@ -109,9 +109,9 @@ const Workshops: React.FC = () => {
                             <span className="px-3 py-1 bg-emerald-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">DESTACADO</span>
                             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">APOYO ESCOLAR</span>
                         </div>
-                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Clases de Refuerzo Escolar con Nacho 📚</h2>
+                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Clases de Refuerzo Hoy Domingo 📚</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            ¿Necesitas ayuda con las mates o el inglés? Soy Nacho, vecino de la Part Alta y ofrezco clases para primaria y ESO. Metodología amena y resultados garantizados. ¡Infórmate sin compromiso!
+                            ¿Exámenes a la vista? Aprovecha este domingo nublado para ponerte al día. Soy Nacho, vecino de la Part Alta y ofrezco sesiones intensivas hoy y durante la semana. ¡Consúltame disponibilidad!
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <a href="tel:655892144" className="flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">

@@ -70,12 +70,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'ComuniTarr 📢', text: '🌞 ¡Sábado de sol y viento! Precaución con las rachas fuertes de Mestral en la Part Alta.' },
-    { user: 'Pau T.', text: '¿Quién se apunta al mercado de antigüedades del Portal de Sant Antoni? 🏺' },
-    { user: 'Mireia R.', text: 'Día ideal para un paseo por el muelle, pero ojo que el viento sopla de cara al volver. 🚲' },
-    { user: 'Joan B.', text: 'He visto un aviso de maceta caída por el viento en la C/ Cavallers, ¡cuidado! ⚠️' },
-    { user: 'Carme S.', text: 'Seguimos con la recogida de comida en el Local Social. ¡Ayer fue un éxito! 🐾' },
-    { user: 'Luis M.', text: '¿Sabéis si han abierto ya las terrazas de la Plaça de la Font con este sol? ☕☀️' }
+    { user: 'ComuniTarr 📢', text: '☁️ Domingo nublado pero perfecto para la paella vecinal en el Local Social.' },
+    { user: 'Pau T.', text: '¿Quién se apunta a la caminata por el Camí de Ronda? Salimos a las 10:30. 🚶‍♂️' },
+    { user: 'Mireia R.', text: '¡Qué buena pinta tiene la paella de hoy! Nos vemos en un rato. 🥘' },
+    { user: 'Joan B.', text: 'Día de relax y lectura. ¿Alguna recomendación de libro ambientado en Tarragona? 📖' },
+    { user: 'Carme S.', text: 'Acabamos de salir hacia el refugio con todas las donaciones. ¡Mil gracias! 🐾' },
+    { user: 'Luis M.', text: 'Ideal para vermut bajo el cielo gris, ¡que no llueva por favor! 🥂☁️' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -140,12 +140,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts
     let scripts = [
-      "¡Buenos días! Qué alegría ver el sol hoy, aunque el viento despeina un poco. 🌞💨",
-      "¿Nos vemos en el mercadillo del Portal de Sant Antoni? He visto cosas muy chulas. 🏺",
-      "Cuidado con los toldos y macetas, que el Mestral está soplando con ganas hoy. ⚠️",
-      "Voy a dar una vuelta con la bici por el Farralló, ¿alguien se apunta? 🚲✨",
-      "¿Sabéis si hoy hay vermut musical en algún sitio de la Part Alta? 🥂🎷",
-      "¡Feliz sábado! Aprovechad la luz de hoy, que Tarragona brilla diferente. ☕✨"
+      "¡Feliz domingo! Hoy toca paella vecinal, ¿quién viene? 🥘✨",
+      "Día nublado pero con encanto. ¿Alguien para ir a caminar por el litoral? 🚶‍♀️☁️",
+      "Qué bien se está hoy de relax. Aprovechando el domingo tranquilo. ☕📖",
+      "¿Ya han salido los voluntarios hacia la protectora? ¡Vaya éxito! 🐾❤️",
+      "¿Recomendáis algún sitio para tomar algo hoy por la tarde? 🥂",
+      "¡Buenos días! Disfrutad del primer domingo de febrero. ✨"
     ];
 
     // Base reply scripts
@@ -161,6 +161,22 @@ const Forum: React.FC = () => {
     if (currentNeighborhood === 'EMPLEO') {
       scripts = ["¿Habéis visto las ofertas de hoy? Hay cosas interesantes en logística. 📦", "Busco trabajo de administrativo, ¿sabéis de algo? 📑"];
       replyScripts = [`Interesante oferta, ${isReplyTo}. ¿Sabes si piden experiencia?`, `Yo también estoy buscando en ese sector.`];
+    } else if (currentNeighborhood === 'ENCUENTROS') {
+      scripts = [
+        "¿Alguien para ir a tomar algo hoy por el casco antiguo? 🥂❤️",
+        "Me encanta la calma de este domingo nublado. ¿Un café y charla? ☕✨",
+        "¡Ya te sigo! Por cierto, si alguien busca compañero para la paella o un café luego... ☕ Mi ig es @marc_tgn o md por aquí.",
+        "Oye, que me ha encantado tu perfil. Si te apetece hablar más tranquilos, búscame en Telegram: @vecino_tgn 😉",
+        "¡La paella del Local Social va a estar increíble! Allí nos vemos. 🥘",
+        "¡Hola! Soy nueva en el barrio y me encantaría conocer gente maja. 👋",
+        "¿Vermut vecinal hoy? ¡Yo pongo las aceitunas! 🍸"
+      ];
+      replyScripts = [
+        `¡Me apunto a ese café, ${isReplyTo}! Charlamos cuando quieras.`,
+        `¡Qué buena propuesta! Yo también soy fan del casco antiguo.`,
+        `Bienvenida al barrio, ${isReplyTo}. Me llamo Pau, ¡encantado!`,
+        `Yo también salgo a correr, si quieres mañana coincidimos. 🏃‍♂️`
+      ];
     } else if (isHelpRequest) {
       replyScripts = [
         `¡Bienvenida ${isReplyTo}! Es muy fácil: este es el Foro para hablar. Tienes el Mapa 📍 para avisos y el Inicio 🏠 para noticias.`,
@@ -197,10 +213,10 @@ const Forum: React.FC = () => {
         let possibleReplies = [];
         if (isGreeting) {
           possibleReplies = [
-            `¡Hola, ${isReplyTo}! ¿Disfrutando del sol de sábado? 🌞`,
-            `¡Muy buenas! ¿Vas a ir luego al mercadillo del Portal? @${isReplyTo}.`,
-            `¡Hola ${isReplyTo}! Sí, con este viento mejor llevar chaqueta hoy. 💨`,
-            `¡Buenas tardes! ¿Viste lo de la bici? Yo me lo estoy pensando.`
+            `¡Hola, ${isReplyTo}! ¿Nos vemos luego en la paella? 🥘`,
+            `¡Muy buenas! ¿Estás para la caminata por las calas? @${isReplyTo}.`,
+            `¡Hola ${isReplyTo}! Sí, un domingo de relax total. ☁️`,
+            `¡Buenas tardes! Disfrutando del domingo tranquilo por aquí.`
           ];
         } else {
           possibleReplies = replyScripts;
@@ -424,22 +440,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'mercadillo-antiguedades',
-      title: '🏺 Antigüedades',
-      description: 'Tesoros y curiosidades hoy en el Portal de Sant Antoni.',
+      id: 'paella-popular',
+      title: '🥘 Paella Popular',
+      description: 'El evento estrella de hoy en el local social.',
+      participating: 245
+    },
+    {
+      id: 'caminata-llevant',
+      title: '🚶‍♀️ Caminata Llevant',
+      description: 'Grupo para ir hoy por el Camí de Ronda.',
+      participating: 89
+    },
+    {
+      id: 'relax-domingo',
+      title: '☁️ Relax Domingo',
+      description: 'Planes tranquilos para el primer domingo de febrero.',
       participating: 156
-    },
-    {
-      id: 'paseo-viento',
-      title: '🚲 Paseo Ventoso',
-      description: 'Rutas en bici y caminatas por el litoral hoy sábado.',
-      participating: 112
-    },
-    {
-      id: 'viento-mestral',
-      title: '💨 Viento Mestral',
-      description: 'Avisos y precaución por ráfagas fuertes en el casco antiguo.',
-      participating: 198
     }
   ];
 
@@ -541,7 +557,37 @@ const Forum: React.FC = () => {
           </div>
         </div>
 
-        <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 md:p-12 space-y-8 bg-[#f5f7fa] dark:bg-background-dark/30 custom-scrollbar">
+        {/* Specialized UI for ENCUENTROS */}
+        {currentNeighborhood === 'ENCUENTROS' && (
+          <div className="bg-gradient-to-r from-pink-500/10 to-purple-500/10 py-4 px-8 border-b border-pink-100 dark:border-pink-900/30 overflow-hidden relative">
+            <motion.div
+              animate={{ x: [0, -100, 0] }}
+              transition={{ duration: 10, repeat: Infinity }}
+              className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20"
+            >
+              <span className="material-symbols-outlined absolute top-2 left-10 text-pink-500 animate-bounce">favorite</span>
+              <span className="material-symbols-outlined absolute top-5 left-1/2 text-purple-500 animate-pulse">favorite</span>
+              <span className="material-symbols-outlined absolute top-2 right-20 text-pink-400 animate-bounce [animation-delay:1s]">favorite</span>
+            </motion.div>
+            <div className="flex items-center justify-between relative z-10">
+              <div className="flex items-center gap-4">
+                <div className="size-12 rounded-full bg-pink-500 flex items-center justify-center text-white shadow-lg shadow-pink-500/30">
+                  <span className="material-symbols-outlined">favorite</span>
+                </div>
+                <div>
+                  <h3 className="text-sm font-black text-pink-600 dark:text-pink-400 uppercase tracking-widest">Cupido Vecinal</h3>
+                  <p className="text-[10px] font-bold text-gray-500">Conoce a tus vecinos en un ambiente relajado y divertido.</p>
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <span className="px-3 py-1 bg-white dark:bg-gray-800 rounded-full text-[9px] font-black text-pink-500 border border-pink-100 uppercase tracking-tighter">14 Candidatos hoy</span>
+                <span className="px-3 py-1 bg-pink-500 text-white rounded-full text-[9px] font-black uppercase tracking-tighter shadow-md">Modo Love Activo</span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div ref={scrollRef} className={`flex-1 overflow-y-auto p-6 md:p-12 space-y-8 custom-scrollbar transition-colors ${currentNeighborhood === 'ENCUENTROS' ? 'bg-pink-50/30 dark:bg-pink-900/5' : 'bg-[#f5f7fa] dark:bg-background-dark/30'}`}>
 
           {loading ? (
             <div className="h-full flex flex-col items-center justify-center gap-4 opacity-50">
@@ -552,7 +598,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Sábado 31 Enero 2026 - Sol, Viento y Comunidad
+                  Domingo 1 Febrero 2026 - Paella, Comunidad y Relax ☁️
                 </span>
               </div>
 
@@ -601,8 +647,13 @@ const Forum: React.FC = () => {
                           </span>
                           <span className="text-[8px] font-bold text-gray-400">{new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                         </div>
-                        <div className={`p-4 rounded-[28px] font-bold text-sm leading-relaxed shadow-lg ${isMine ? 'bg-[#3b82f6] text-white rounded-tr-none' : 'bg-white dark:bg-surface-dark dark:text-white rounded-tl-none border border-gray-100 dark:border-gray-800'}`}>
+                        <div className={`p-4 rounded-[28px] font-bold text-sm leading-relaxed shadow-lg ${isMine
+                          ? (currentNeighborhood === 'ENCUENTROS' ? 'bg-gradient-to-br from-pink-500 to-rose-600 text-white rounded-tr-none shadow-pink-500/20' : 'bg-[#3b82f6] text-white rounded-tr-none')
+                          : (currentNeighborhood === 'ENCUENTROS' ? 'bg-white dark:bg-surface-dark dark:text-white rounded-tl-none border-2 border-pink-100 dark:border-pink-900/30' : 'bg-white dark:bg-surface-dark dark:text-white rounded-tl-none border border-gray-100 dark:border-gray-800')}`}>
                           {msg.content}
+                          {currentNeighborhood === 'ENCUENTROS' && !isMine && Math.random() > 0.8 && (
+                            <div className="absolute -right-2 -bottom-2 size-6 rounded-full bg-pink-500 text-white flex items-center justify-center text-[8px] animate-bounce shadow-lg">❤️</div>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -686,7 +737,7 @@ const Forum: React.FC = () => {
 
             <button
               type="submit"
-              className="size-14 rounded-2xl bg-[#3b82f6] text-white flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl shadow-blue-500/30 disabled:opacity-50 border-b-4 border-blue-700"
+              className={`size-14 rounded-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl disabled:opacity-50 border-b-4 ${currentNeighborhood === 'ENCUENTROS' ? 'bg-pink-500 border-pink-700 shadow-pink-500/30' : 'bg-[#3b82f6] border-blue-700 shadow-blue-500/30'} text-white`}
               disabled={!newMessage.trim()}
             >
               <span className="material-symbols-outlined font-black">send</span>

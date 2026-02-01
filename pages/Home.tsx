@@ -157,13 +157,13 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-sat-jan31',
-          title: "🌞 SÁBADO: Sol y Viento",
-          content: "Cielos despejados hoy en Tarragona, aunque con rachas fuertes de viento (Mestral). Las temperaturas suben hasta los 17°C. ¡Ideal para pasear pero cuidado en zonas altas!",
+          id: 'weather-sun-feb01',
+          title: "☁️ DOMINGO: Medio Nublado",
+          content: "Cielos con intervalos nubosos hoy en Tarragona. Temperaturas suaves rondando los 15°C. Un día tranquilo para actividades vecinales a cubierto o paseos cortos.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Mañana: Soleado / Viento (12°C)\n• Tarde: Despejado (17°C)\n• Noche: Fresco y ventoso (9°C)\n• Aviso: Precaución con objetos en balcones.",
-          link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo-en-tarragona-la-prevision-para-el-sabado-31-de-enero-LF22452401",
+          itinerary: "• Mañana: Nuboso (11°C)\n• Mediodía: Grandes claros (15°C)\n• Tarde: Nubosidad variable (14°C)\n• Noche: Fresco (10°C)",
+          link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo-en-tarragona-prevision-domingo-1-de-febrero-LF22452410",
           created_at: new Date().toISOString()
         };
 
@@ -177,13 +177,13 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
-        const culturalNews = {
-          id: 'culture-sat-events',
-          title: "🏺 CULTURA: Mercado de Antigüedades",
-          content: "Sábado en el Portal de Sant Antoni. Gran variedad de objetos curiosos y artesanía local. ¡Último finde de la exposición del Serrallo!",
-          category: "CULTURA",
-          neighborhood: "PART ALTA",
-          link_url: "https://www.diaridetarragona.com/cultura/el-mercadillo-de-tarragona-vuelve-con-fuerza-este-sabado-JF22452403",
+        const paellaPopular = {
+          id: 'paella-popular-feb01',
+          title: "🥘 EVENTO: Paella Popular",
+          content: "Hoy celebramos la unión vecinal en el Local Social de la Vía Augusta. ¡Aún quedan algunos tickets de última hora! Música y buen ambiente asegurado.",
+          category: "COMUNIDAD",
+          neighborhood: "GENERAL",
+          itinerary: "• 13:00 Apertura de puertas\n• 14:30 Gran Paella\n• 16:00 Sobremesa musical",
           created_at: new Date().toISOString()
         };
 
@@ -197,13 +197,13 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
-        const trafficNotice = {
-          id: 'traffic-sat-weekend',
-          title: "🚲 OCIO: Paseo Ciclista por el Port",
-          content: "Mañana de sábado ideal para la bicicleta ahora que no llueve. Pero ojo con el viento de cara al volver por el Moll de Llevant.",
+        const sundayWalk = {
+          id: 'sunday-walk-llevant',
+          title: "🚶‍♀️ OCIO: Caminata por las Calas",
+          content: "Día ideal para el Camí de Ronda. El cielo nublado evita el calor excesivo. Quedada en la Playa de la Arrabassada para ir hasta la Mora.",
           category: "DEPORTE",
-          neighborhood: "SERRALLO",
-          link_url: "https://www.diaridetarragona.com/tarragona/planes-al-aire-libre-en-tarragona-este-fin-de-semana-MF22452405",
+          neighborhood: "LLEVANT",
+          link_url: "https://www.diaridetarragona.com/tarragona/rutas-a-pie-por-tarragona-este-domingo-MF22452412",
           created_at: new Date().toISOString()
         };
 
@@ -219,7 +219,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([weatherAlert, petFoodInitiative, culturalNews, classesAd, trafficNotice, ...validFetchedNews].slice(0, 6));
+        setNews([weatherAlert, paellaPopular, sundayWalk, petFoodInitiative, classesAd, ...validFetchedNews].slice(0, 6));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

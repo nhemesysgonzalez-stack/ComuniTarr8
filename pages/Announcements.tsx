@@ -125,43 +125,44 @@ const Announcements: React.FC = () => {
     const fetchNotices = async () => {
         setLoading(true);
         const weatherAlert: Announcement = {
-            id: 'weather-sat-wind',
-            title: "🌞 SÁBADO: Sol y Viento Mestral",
-            content: "Cielos despejados pero con rachas fuertes de viento hoy en Tarragona. Se recomienda retirar macetas y objetos de los balcones para evitar accidentes por el viento.",
+            id: 'weather-sun-cloudy',
+            title: "☁️ DOMINGO: Previsión Medio Nublado",
+            content: "Hoy disfrutamos de cielos con nubes y claros. El viento de ayer ha amainado significativamente. Temperaturas muy agradables para el paseo dominical por la Rambla y el Puerto.",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
             author_name: "Protección Civil",
-            itinerary: "• Sábado: Soleado y Ventoso (max 17°C)\n• Domingo: Menos viento, mismos cielos despejados",
+            itinerary: "• Mañana: Intervalos nubosos (11°C)\n• Tarde: Más claros (15°C)\n• Noche: Cielos despejados (10°C)",
             created_at: new Date().toISOString()
         };
 
-        const commerceNotice: Announcement = {
-            id: 'rebajas-martes',
-            title: "🛍️ COMERCIO: Rebajas de Enero",
-            content: "Los comercios de la Part Alta y Calle Unión informan de nuevas promociones especiales durante esta semana. Apoya al comercio local disfrutando de las ofertas de temporada.",
-            category: "COMUNIDAD",
-            neighborhood: "CENTRO",
-            author_name: "Asoc. Comerciantes",
-            created_at: new Date().toISOString()
-        };
-
-        const mnatSuccess: Announcement = {
-            id: 'mnat-workshop-sat',
-            title: "🎨 TALLER: Hoy en el MNAT",
-            content: "Recordamos que hoy sábado a las 11:30h se realiza el taller infantil de mosaicos romanos. ¡Últimas plazas disponibles para los pequeños vecinos!",
+        const paellaAnnouncement: Announcement = {
+            id: 'paella-popular-sun',
+            title: "🥘 EVENTO: Gran Paella Popular",
+            content: "¡Hoy es el gran día! Nos reunimos en el Local Social de la Vía Augusta para compartir una paella vecinal. Quedan los últimos cubiertos disponibles por cancelación de última hora.",
             category: "EVENTO",
             neighborhood: "GENERAL",
-            author_name: "Museu d'Història",
-            itinerary: "• Sábado 11:30: Inicio Taller Infantil\n• Duración aproximada: 2 horas",
+            author_name: "Asoc. Vecinos",
+            itinerary: "• 13:00 - Vermut vecinal\n• 14:30 - Paella Gigante\n• 16:30 - Baile y café",
             created_at: new Date().toISOString()
         };
 
-        const cityVibe: Announcement = {
-            id: 'weekend-vibe-sat',
-            title: "🏺 MERCADILLO: Viva la Part Alta",
-            content: "El Portal de Sant Antoni ya está en marcha con el mercado de antigüedades. Los comercios abren hasta tarde hoy para disfrutar del ambiente de sábado.",
-            category: "COMUNIDAD",
-            neighborhood: "PART ALTA",
+        const coastalWalk: Announcement = {
+            id: 'walk-coastal-sun',
+            title: "🚶‍♀️ ACTIVIDAD: Caminata por el Litoral",
+            content: "Día perfecto para el Camí de Ronda. Un grupo de vecinos sale desde la Arrabassada en breve. No olvidéis calzado cómodo y algo de agua.",
+            category: "EVENTO",
+            neighborhood: "LLEVANT",
+            author_name: "Pau T.",
+            itinerary: "• 10:30 - Salida Arrabassada\n• 12:30 - Llegada a la Mora\n• 13:00 - Regreso opcional en bus",
+            created_at: new Date().toISOString()
+        };
+
+        const deliverySuccess: Announcement = {
+            id: 'delivery-pets-sun',
+            title: "🐾 ÉXITO: Reparto al Refugio",
+            content: "La furgoneta de voluntarios ya ha salido hacia la protectora con los más de 200kg de comida recogidos ayer. ¡Gracias a todos los que colaborasteis!",
+            category: "EXITO",
+            neighborhood: "GENERAL",
             author_name: "Dinamización Vecinal",
             created_at: new Date().toISOString()
         };
@@ -186,7 +187,7 @@ const Announcements: React.FC = () => {
                 return diffDays <= 7;
             });
 
-            setNotices([weatherAlert, mnatSuccess, cityVibe, commerceNotice, ...validFetched]);
+            setNotices([weatherAlert, paellaAnnouncement, coastalWalk, deliverySuccess, ...validFetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

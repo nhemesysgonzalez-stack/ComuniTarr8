@@ -8,12 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'incident', x: '42%', y: '38%', title: 'Viento Fuerte (Mestral)', desc: 'Rachas fuertes de viento en la Part Alta. Evitad dejar objetos sueltos en balcones.', status: 'Activo', color: 'bg-red-500', icon: 'air', glow: 'shadow-[0_0_30px_rgba(239,68,68,0.4)]' },
-    { id: 2, type: 'cleanup', x: '55%', y: '25%', title: 'Recogida de Comida', desc: 'Punto de entrega para la donación de comida para mascotas. ¡Ayer fue un éxito!', status: 'Hasta 18h', color: 'bg-emerald-500', icon: 'pets', glow: 'shadow-[0_0_40px_rgba(16,185,129,0.7)]' },
-    { id: 3, type: 'event', x: '35%', y: '45%', title: 'Mercado Antigüedades', desc: 'Mercadillo hoy en el Portal de Sant Antoni. Gran afluencia esperada.', status: 'Hoy 09:00-20:00', color: 'bg-indigo-500', icon: 'store', glow: 'shadow-[0_0_35px_rgba(99,102,241,0.6)]' },
-    { id: 4, type: 'incident', x: '15%', y: '40%', title: 'Aviso Viento Puerto', desc: 'Precaución en el Moll de Llevant por rachas laterales. No recomendado para bicis ligeras hoy.', status: 'Precaución', color: 'bg-orange-500', icon: 'warning', glow: 'shadow-[0_0_30px_rgba(249,115,22,0.4)]' },
-    { id: 5, type: 'cleanup', x: '78%', y: '45%', title: 'Estado del Mar', desc: 'Fuerte oleaje por el viento. Mantener distancia de seguridad en el espigón.', status: 'Alerta Amarilla', color: 'bg-emerald-600', icon: 'waves' },
-    { id: 6, type: 'event', x: '48%', y: '55%', title: 'Vermut Comunitario', desc: 'Quedada informal al sol pero resguardados del viento.', status: 'Hoy 13:00', color: 'bg-purple-500', icon: 'celebration' }
+    { id: 1, type: 'event', x: '58%', y: '45%', title: 'Paella Popular', desc: 'Gran comida comunitaria hoy en el Local Social. ¡Buen provecho!', status: 'Hoy 13:00', color: 'bg-primary', icon: 'restaurant', glow: 'shadow-[0_0_30px_rgba(43,140,238,0.4)]' },
+    { id: 2, type: 'event', x: '75%', y: '55%', title: 'Caminata Llevant', desc: 'Punto de inicio para la caminata por el Camí de Ronda hasta la Mora.', status: 'Hoy 10:30', color: 'bg-orange-500', icon: 'directions_walk', glow: 'shadow-[0_0_40px_rgba(249,115,22,0.6)]' },
+    { id: 3, type: 'cleanup', x: '45%', y: '25%', title: 'Reparto Protectora', desc: 'Salida de la furgoneta con la comida recogida ayer hacia el refugio.', status: 'En curso', color: 'bg-emerald-500', icon: 'pets', glow: 'shadow-[0_0_35px_rgba(16,185,129,0.5)]' },
+    { id: 4, type: 'incident', x: '42%', y: '38%', title: 'Cielo Nuboso', desc: 'Cielos cubiertos en la Part Alta. Ideal para pasear sin el sol directo.', status: 'Informativo', color: 'bg-indigo-400', icon: 'cloud', glow: 'shadow-[0_0_30px_rgba(129,140,248,0.3)]' },
+    { id: 5, type: 'event', x: '52%', y: '65%', title: 'Vermut de Domingo', desc: 'Ambiente tranquilo de domingo en las terrazas del Serrallo.', status: 'Mediodía', color: 'bg-purple-500', icon: 'celebration' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);
