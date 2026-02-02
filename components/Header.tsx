@@ -252,15 +252,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">☁️ DOMINGO: CIELOS NUBOSOS Y DÍA TRANQUILO - IDEAL PARA ACTIVIDADES VECINALES</span>
+          <span className="flex items-center gap-2">☀️ LUNES: CIELOS DESPEJADOS Y 16°C - INICIO DE SEMANA CON ENERGÍA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🥘 COMUNIDAD: HOY PAELLA POPULAR EN EL LOCAL SOCIAL VÍA AUGUSTA A PARTIR DE LAS 13:00</span>
+          <span className="flex items-center gap-2">🧹 COMUNIDAD: LIMPIEZA POST-PAELLA HOY A LAS 18:00 EN EL LOCAL SOCIAL</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚶‍♀️ OCIO: CAMINATA POR EL CAMÍ DE RONDA HOY A LAS 10:30 - PUNTO DE ENCUENTRO ARRABASSADA</span>
+          <span className="flex items-center gap-2">🚗 TRÁFICO: RETENCIONES EN ACCESO VÍA AUGUSTA POR OBRAS DE PODA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🏺 CULTURA: ÚLTIMAS VISITAS A LA EXPOSICIÓN DEL SERRALLO ANTES DEL CIERRE DE TEMPORADA</span>
+          <span className="flex items-center gap-2">📚 SERVICIOS: NUEVOS GRUPOS DE REFUERZO ESCOLAR EN EL CENTRO CÍVICO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🐾 SOLIDARIDAD: GRAN ÉXITO DE LA RECOGIDA DE AYER, HOY HACEMOS EL REPARTO AL REFUGIO</span>
+          <span className="flex items-center gap-2">🧘‍♀️ MAÑANA: YOGA AL ATARDECER EN EL PARC DE LA CIUTAT (GRATUITO)</span>
         </motion.div>
       </div>
 

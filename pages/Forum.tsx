@@ -140,12 +140,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts
     let scripts = [
-      "¡Buenos días! Ánimo con este lunes. 💪☕",
-      "¿Alguien va a la limpieza del local social esta tarde? Yo me apunto. 🧹",
-      "Todavía pensando en lo buena que estaba la paella ayer... 🥘🤤",
-      "Vaya tráfico hay hoy en los accesos a Tarragona, paciencia. 🚗",
-      "¡Feliz semana a todos! Que sea leve el lunes. ✨",
-      "¿Sabéis si hay alguna farmacia de guardia por el centro? 💊"
+      "¡Buenos días! Vaya cielo encapotado tenemos hoy... ☁️",
+      "Recordad: Hoy a las 18h limpieza del local social. ¡Nos vemos allí! 🧹",
+      "¿Alguien más atrapado en el tráfico de Vía Augusta? 🚗😩",
+      "Animo con el lunes vecinos, ¡que la semana pasa volando! 💪",
+      "Ayer la paella estuvo genial, hoy toca volver a la rutina... 📉",
+      "¿Sabéis si la biblioteca abre por la tarde hoy lunes? 📚"
     ];
 
     // Base reply scripts
@@ -774,17 +774,16 @@ const Forum: React.FC = () => {
                 >
                   ✕
                 </button>
-                <h2 className="text-xl font-black mb-4 text-center">Ofertas Laborales en Tarragona</h2>
+                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Lunes 02/02</h2>
                 <ul className="space-y-2">
-                  <li>🧺 <strong>Operario/a Lavandería - Constantí</strong> (Randstad) – Incorporación Inmediata</li>
-                  <li>📑 <strong>Administrativo/a Logístico - Tarragona</strong> (Randstad) – Jornada Completa</li>
-                  <li>📦 <strong>Carretillero/a - Reus</strong> (Eurofirms) – Turnos rotativos</li>
-                  <li>☕ <strong>Ayudante de Camarero/a - TGN Centro</strong> (Job Today) – Fines de semana</li>
-                  <li>🚚 <strong>Repartidor Carnet B - Tarragona</strong> – Urge contratación</li>
-                  <li>🏨 <strong>Recepcionista de Noche - Hotel Llevant</strong> – Inglés alto</li>
-                  <li>👵 <strong>Cuidador/a Mayores - Residencia TGN</strong> – Turno tarde</li>
-                  <li>🏭 <strong>Mozos de Almacén - Polígono Riu Clar</strong> – Campaña puntual</li>
-                  <li>🛍️ <strong>Dependienta/e Refuerzo - Parc Central</strong> – Fines de semana</li>
+                  <li>🚧 <strong>Controlador Acceso Obras - Vía Augusta</strong> (Adecco) – Urgente x Poda</li>
+                  <li>🧹 <strong>Personal de Limpieza - Refuerzo Lunes</strong> (Eulen) – Turno tarde</li>
+                  <li>🎓 <strong>Profesor/a Repaso Inglés - Part Alta</strong> (Academia TGN) – Tardes</li>
+                  <li>📦 <strong>Mozos descarga - Puerto Tarragona</strong> (Randstad) – Incorporación inmediata</li>
+                  <li>☕ <strong>Barista con experiencia - Rambla Nova</strong> – Jornada completa</li>
+                  <li>🚚 <strong>Repartidor Paquetería - Zona Francolí</strong> – Carnet B necesario</li>
+                  <li>👵 <strong>Auxiliar Ayuda Domicilio - Llevant</strong> – Fines de semana</li>
+                  <li>💻 <strong>Administrativo Contable - Polígono</strong> – Sustitución baja</li>
                 </ul>
                 <button
                   onClick={() => setShowJobOffers(false)}

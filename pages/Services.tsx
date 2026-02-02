@@ -45,7 +45,46 @@ const Services: React.FC = () => {
           .eq('neighborhood', user?.user_metadata?.neighborhood || 'GENERAL')
           .order('created_at', { ascending: false })
       );
-      setServices(data || []);
+      const mockServices: Service[] = [
+        {
+          id: 's-1',
+          title: 'Clases de Matemáticas ESO/Bach',
+          user_name: 'Nacho V.',
+          location: 'Part Alta',
+          image_url: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=400',
+          category: 'Clases y Tutorías',
+          description: 'Ingeniero ofrece clases de refuerzo para empezar la semana con buen pie. Me desplazo a domicilio.',
+          contact_info: '655 00 11 22',
+          neighborhood: 'PART ALTA',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 's-2',
+          title: 'Paseo perros mañanas',
+          user_name: 'Sofia L.',
+          location: 'Eixample',
+          image_url: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&q=80&w=400',
+          category: 'Mascotas',
+          description: '¿Trabajas el lunes por la mañana? Yo paseo a tu perro por el parque. Amante de los animales.',
+          contact_info: '644 99 88 77',
+          neighborhood: 'EIXAMPLE',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 's-3',
+          title: 'Ayuda con la compra semanal',
+          user_name: 'Carlos M.',
+          location: 'General',
+          image_url: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=400',
+          category: 'Recados y Compras',
+          description: 'Hago recados y compras para personas mayores que no quieran salir con este día nublado.',
+          contact_info: 'Enviad Mensaje',
+          neighborhood: 'GENERAL',
+          created_at: new Date().toISOString()
+        }
+      ];
+
+      setServices(data && data.length > 0 ? data : mockServices);
     } catch (e) {
       console.error(e);
     } finally {

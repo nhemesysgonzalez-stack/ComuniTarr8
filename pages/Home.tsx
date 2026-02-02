@@ -158,11 +158,11 @@ const Home: React.FC = () => {
 
         const weatherAlert = {
           id: 'weather-mon-feb02',
-          title: "☀️ LUNES: Buen Tiempo",
-          content: "Inicio de semana soleado y con temperaturas agradables. Ideal para retomar la rutina con energía. Se esperan cielos despejados todo el día.",
+          title: "☁️ LUNES: Día Nublado",
+          content: "Cielos cubiertos pero temperatura agradable (16°C). No se espera lluvia, pero el sol estará tímido hoy. Ideal para actividades tranquilas.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Mañana: Soleado (12°C)\n• Tarde: Nubes altas (16°C)\n• Noche: Fresco (11°C)",
+          itinerary: "• Mañana: Nublado (14°C)\n• Tarde: Cubierto (16°C)\n• Noche: Fresco (12°C)",
           link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo",
           created_at: new Date().toISOString()
         };
@@ -180,17 +180,17 @@ const Home: React.FC = () => {
         const paellaPopular = {
           id: 'paella-recap-feb02',
           title: "🥘 ÉXITO: Paella Vecinal",
-          content: "Ayer disfrutamos de un gran día de comunidad. Más de 200 vecinos compartieron mesa. Las fotos ya están disponibles en el grupo de Facebook.",
+          content: "Ayer domingo disfrutamos de un gran día. Más de 200 vecinos compartieron mesa. ¡Hoy a las 18h limpieza final del local!",
           category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Asistentes: 240\n• Recaudación: 1.200€ para fiestas\n• Próximo evento: Calçotada",
+          itinerary: "• Asistentes: 240\n• Recaudación: 1.200€ para fiestas\n• Limpieza: Hoy 18:00h",
           created_at: new Date().toISOString()
         };
 
         const classesAd = {
           id: 'classes-math-english',
           title: "📚 CLASES: Apoyo escolar",
-          content: "Vecino ofrece clases de refuerzo de Matemáticas e Inglés para primaria y ESO. Empieza la semana organizando el estudio.",
+          content: "Empieza la semana con fuerza. Vecino ofrece clases de refuerzo de Matemáticas e Inglés para primaria y ESO.",
           category: "SERVICIOS",
           neighborhood: "GENERAL",
           itinerary: "• Contacto: 655 89 21 44 (Nacho)\n• Disponibilidad: Tardes de lunes a viernes",
@@ -199,8 +199,8 @@ const Home: React.FC = () => {
 
         const trafficAlert = {
           id: 'traffic-alert-mon',
-          title: "🚗 TRÁFICO: Obras y Retenciones",
-          content: "Precaución en los accesos a la Part Alta por poda de árboles en C/ Mayor. Se recomienda uso de transporte público esta mañana.",
+          title: "🚗 TRÁFICO: Retenciones Vía Augusta",
+          content: "Precaución en los accesos a la Part Alta y Vía Augusta por poda de árboles urgente. Tráfico lento.",
           category: "AVISO",
           neighborhood: "PART ALTA",
           link_url: "https://www.tarragona.cat/mobilitat",

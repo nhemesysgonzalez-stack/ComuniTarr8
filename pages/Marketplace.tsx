@@ -59,34 +59,45 @@ const Marketplace: React.FC = () => {
         {
           id: 'm-1',
           user_id: 'v1',
-          title: 'Bicicleta de Paseo Decathlon',
-          description: 'Color negro, poco uso. Perfecta para ir al trabajo ahora que hace buen tiempo.',
-          price: '85',
+          title: 'Libros 3º ESO Matemáticas',
+          description: 'Vendo libros de texto seminuevos. Editorial Santillana. Forrados y cuidados.',
+          price: '25',
           category: 'ocio',
           neighborhood: 'GENERAL',
-          contact_info: '652 11 00 99 (Albert)',
+          contact_info: '652 11 00 99 (Marta)',
           created_at: new Date().toISOString()
         },
         {
           id: 'm-2',
           user_id: 'v2',
-          title: 'Estufa de gas (Butano)',
-          description: 'Funciona perfectamente. Ideal para estas noches de frío en Febrero.',
-          price: '25',
+          title: 'Cafetera Nespresso + Cápsulas',
+          description: 'Perfecta para el café de las mañanas. La vendo por cambiar a superautomática. Regalo dispensador.',
+          price: '40',
           category: 'hogar',
           neighborhood: 'GENERAL',
-          contact_info: '633 44 55 66 (Laura)',
+          contact_info: '633 44 55 66 (David)',
           created_at: new Date().toISOString()
         },
         {
           id: 'm-3',
           user_id: 'v3',
-          title: 'Mesa de Terraza + Sillas',
-          description: 'Conjunto ideal para el balcón. Muy resistente. Urge por mudanza.',
-          price: '45',
-          category: 'hogar',
+          title: 'Chaqueta Impermeable Talla M',
+          description: 'Marca Quechua. Color azul marino. Ideal para días nublados como hoy.',
+          price: '15',
+          category: 'moda',
           neighborhood: 'GENERAL',
-          contact_info: '611 22 33 44 (Pau)',
+          contact_info: '611 22 33 44 (Laura)',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'm-4',
+          user_id: 'v4',
+          title: 'Teclado Mecánico Logitech',
+          description: 'Para teletrabajo. Switches marrones (silenciosos). Nuevo vale 100€.',
+          price: '55',
+          category: 'tech',
+          neighborhood: 'GENERAL',
+          contact_info: '699 88 77 66 (Carlos)',
           created_at: new Date().toISOString()
         }
       ];
@@ -178,24 +189,24 @@ const Marketplace: React.FC = () => {
       {/* Featured Service Ad */}
       <div className="mb-16 bg-white dark:bg-surface-dark rounded-[40px] border-4 border-dashed border-primary/20 p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 hover:border-primary/40 transition-all">
         <div className="size-32 md:size-48 bg-gray-100 dark:bg-gray-800 rounded-[35px] flex items-center justify-center shrink-0">
-          <span className="material-symbols-outlined text-7xl text-orange-500">chair</span>
+          <span className="material-symbols-outlined text-7xl text-blue-500">directions_car</span>
         </div>
         <div className="flex-1">
           <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-orange-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">URGE ESTA SEMANA</span>
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">PARTICULAR - PART ALTA</span>
+            <span className="px-3 py-1 bg-blue-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">ALQUILER MENSUAL</span>
+            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">PARTICULAR - CENTRO</span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Mesa de Roble + 6 Sillas 🪑</h2>
+          <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Plaza Parking C/ Unió 🅿️</h2>
           <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed">
-            Vendo conjunto de comedor por traslado inmediato. Madera maciza en perfecto estado. Hay que venir a recogerlo ANTES DEL MIÉRCOLES a la Part Alta. ¡Precio final rebajado!
+            Alquilo plaza de parking para coche mediano/grande. Puerta automática y fácil maniobra. ¡Olvídate de buscar sitio al llegar de trabajar! Disponible desde hoy 2 de Febrero.
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="tel:641223456" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
               <span className="material-symbols-outlined text-sm">call</span>
-              641 22 34 56 (Maria)
+              641 22 34 56 (Jordi)
             </a>
             <span className="px-6 py-3 bg-gray-50 dark:bg-gray-800 dark:text-white rounded-xl text-xs font-black">
-              120€ TODO EL PACK
+              80€ / MES
             </span>
           </div>
         </div>
