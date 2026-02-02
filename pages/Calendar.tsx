@@ -44,32 +44,6 @@ const NeighborhoodCalendar: React.FC = () => {
   // Official Events for January/February 2026
   const officialEvents: Event[] = [
     {
-      id: 'evt-sunday-paella',
-      creator_id: 'admin',
-      title: "🥘 Paella Popular Domingo",
-      description: "Comida vecinal para celebrar el fin de semana. ¡Nos vemos en el local social! Tickets a 5€ en puerta.",
-      event_date: '2026-02-01',
-      event_time: '14:00',
-      location: 'Local Social Vía Augusta',
-      category: 'Fiesta',
-      neighborhood: 'GENERAL',
-      contact_info: 'Admin ComuniTarr (655 00 11 22)',
-      created_at: new Date().toISOString()
-    },
-    {
-      id: 'evt-sunday-walk',
-      creator_id: 'admin',
-      title: "🚶‍♀️ Caminata por las Calas",
-      description: "Caminata suave por el Camí de Ronda. Punto de encuentro Playa de la Arrabassada.",
-      event_date: '2026-02-01',
-      event_time: '10:30',
-      location: 'Playa Arrabassada (Chiringuito)',
-      category: 'Deporte',
-      neighborhood: 'LLEVANT',
-      contact_info: '611 22 33 44 (Pau)',
-      created_at: new Date().toISOString()
-    },
-    {
       id: 'evt-monday-cleanup',
       creator_id: 'admin',
       title: "🧹 Limpieza Post-Paella",
@@ -79,7 +53,20 @@ const NeighborhoodCalendar: React.FC = () => {
       location: 'Local Social Vía Augusta',
       category: 'Solidario',
       neighborhood: 'GENERAL',
-      contact_info: 'Admin ComuniTarr',
+      contact_info: 'Admin ComuniTarr (655 00 11 22)',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-tuesday-yoga',
+      creator_id: 'admin',
+      title: "🧘‍♀️ Yoga al Atardecer",
+      description: "Clase gratuita para liberar el estrés del inicio de semana. Trae tu esterilla.",
+      event_date: '2026-02-03',
+      event_time: '19:30',
+      location: 'Parc de la Ciutat',
+      category: 'Deporte',
+      neighborhood: 'GENERAL',
+      contact_info: 'Mireia R. (644 99 88 77)',
       created_at: new Date().toISOString()
     }
   ];

@@ -60,7 +60,7 @@ const Marketplace: React.FC = () => {
           id: 'm-1',
           user_id: 'v1',
           title: 'Bicicleta de Paseo Decathlon',
-          description: 'Color negro, poco uso. Perfecta para el paseo de domingo ahora que el viento ha parado.',
+          description: 'Color negro, poco uso. Perfecta para ir al trabajo ahora que hace buen tiempo.',
           price: '85',
           category: 'ocio',
           neighborhood: 'GENERAL',
@@ -71,7 +71,7 @@ const Marketplace: React.FC = () => {
           id: 'm-2',
           user_id: 'v2',
           title: 'Estufa de gas (Butano)',
-          description: 'Funciona perfectamente. Ideal para tardes tranquilas de domingo en casa.',
+          description: 'Funciona perfectamente. Ideal para estas noches de frío en Febrero.',
           price: '25',
           category: 'hogar',
           neighborhood: 'GENERAL',
@@ -82,7 +82,7 @@ const Marketplace: React.FC = () => {
           id: 'm-3',
           user_id: 'v3',
           title: 'Mesa de Terraza + Sillas',
-          description: 'Conjunto ideal para el balcón. Muy resistente. Urge por mudanza este domingo.',
+          description: 'Conjunto ideal para el balcón. Muy resistente. Urge por mudanza.',
           price: '45',
           category: 'hogar',
           neighborhood: 'GENERAL',
@@ -182,12 +182,12 @@ const Marketplace: React.FC = () => {
         </div>
         <div className="flex-1">
           <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-orange-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">URGE HOY DOMINGO</span>
+            <span className="px-3 py-1 bg-orange-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">URGE ESTA SEMANA</span>
             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">PARTICULAR - PART ALTA</span>
           </div>
           <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Mesa de Roble + 6 Sillas 🪑</h2>
           <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed">
-            Vendo conjunto de comedor por traslado inmediato. Madera maciza en perfecto estado. Hay que venir a recogerlo HOY domingo a la Part Alta. ¡Precio final rebajado!
+            Vendo conjunto de comedor por traslado inmediato. Madera maciza en perfecto estado. Hay que venir a recogerlo ANTES DEL MIÉRCOLES a la Part Alta. ¡Precio final rebajado!
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="tel:641223456" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">

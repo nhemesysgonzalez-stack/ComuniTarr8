@@ -157,53 +157,53 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-sun-feb01',
-          title: "☁️ DOMINGO: Medio Nublado",
-          content: "Cielos con intervalos nubosos hoy en Tarragona. Temperaturas suaves rondando los 15°C. Un día tranquilo para actividades vecinales a cubierto o paseos cortos.",
+          id: 'weather-mon-feb02',
+          title: "☀️ LUNES: Buen Tiempo",
+          content: "Inicio de semana soleado y con temperaturas agradables. Ideal para retomar la rutina con energía. Se esperan cielos despejados todo el día.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Mañana: Nuboso (11°C)\n• Mediodía: Grandes claros (15°C)\n• Tarde: Nubosidad variable (14°C)\n• Noche: Fresco (10°C)",
-          link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo-en-tarragona-prevision-domingo-1-de-febrero-LF22452410",
+          itinerary: "• Mañana: Soleado (12°C)\n• Tarde: Nubes altas (16°C)\n• Noche: Fresco (11°C)",
+          link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo",
           created_at: new Date().toISOString()
         };
 
         const petFoodInitiative = {
           id: 'pet-food-donation-jan30',
-          title: "🐾 AYUDA: Donación Comida Mascotas",
-          content: "Iniciativa vecinal para recoger pienso y latas para el refugio local. Punto de recogida en la Asociación de Vecinos.",
+          title: "🐾 RESULTADOS: Recogida Comida",
+          content: "¡Gracias! La campaña ha sido un éxito rotundo. Ayer domingo se entregaron 200kg de alimentos al refugio protector.",
           category: "SOLIDARIO",
           neighborhood: "GENERAL",
-          itinerary: "• Lugar: Local Social Vía Augusta\n• Horario: 10:00 - 18:00\n• Contacto: 622 34 56 78 (Laura)",
+          itinerary: "• Total: 215kg comida\n• Mantas: 45 unidades\n• Próxima recogida: Marzo",
           created_at: new Date().toISOString()
         };
 
         const paellaPopular = {
-          id: 'paella-popular-feb01',
-          title: "🥘 EVENTO: Paella Popular",
-          content: "Hoy celebramos la unión vecinal en el Local Social de la Vía Augusta. ¡Aún quedan algunos tickets de última hora! Música y buen ambiente asegurado.",
+          id: 'paella-recap-feb02',
+          title: "🥘 ÉXITO: Paella Vecinal",
+          content: "Ayer disfrutamos de un gran día de comunidad. Más de 200 vecinos compartieron mesa. Las fotos ya están disponibles en el grupo de Facebook.",
           category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• 13:00 Apertura de puertas\n• 14:30 Gran Paella\n• 16:00 Sobremesa musical",
+          itinerary: "• Asistentes: 240\n• Recaudación: 1.200€ para fiestas\n• Próximo evento: Calçotada",
           created_at: new Date().toISOString()
         };
 
         const classesAd = {
           id: 'classes-math-english',
-          title: "📚 CLASES: Apoyo escolar hoy",
-          content: "Vecino ofrece clases de refuerzo de Matemáticas e Inglés para primaria y ESO. Primera sesión gratuita para vecinos del barrio.",
+          title: "📚 CLASES: Apoyo escolar",
+          content: "Vecino ofrece clases de refuerzo de Matemáticas e Inglés para primaria y ESO. Empieza la semana organizando el estudio.",
           category: "SERVICIOS",
           neighborhood: "GENERAL",
           itinerary: "• Contacto: 655 89 21 44 (Nacho)\n• Disponibilidad: Tardes de lunes a viernes",
           created_at: new Date().toISOString()
         };
 
-        const sundayWalk = {
-          id: 'sunday-walk-llevant',
-          title: "🚶‍♀️ OCIO: Caminata por las Calas",
-          content: "Día ideal para el Camí de Ronda. El cielo nublado evita el calor excesivo. Quedada en la Playa de la Arrabassada para ir hasta la Mora.",
-          category: "DEPORTE",
-          neighborhood: "LLEVANT",
-          link_url: "https://www.diaridetarragona.com/tarragona/rutas-a-pie-por-tarragona-este-domingo-MF22452412",
+        const trafficAlert = {
+          id: 'traffic-alert-mon',
+          title: "🚗 TRÁFICO: Obras y Retenciones",
+          content: "Precaución en los accesos a la Part Alta por poda de árboles en C/ Mayor. Se recomienda uso de transporte público esta mañana.",
+          category: "AVISO",
+          neighborhood: "PART ALTA",
+          link_url: "https://www.tarragona.cat/mobilitat",
           created_at: new Date().toISOString()
         };
 
@@ -219,7 +219,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([weatherAlert, paellaPopular, sundayWalk, petFoodInitiative, classesAd, ...validFetchedNews].slice(0, 6));
+        setNews([weatherAlert, paellaPopular, trafficAlert, petFoodInitiative, classesAd, ...validFetchedNews].slice(0, 6));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

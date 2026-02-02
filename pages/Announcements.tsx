@@ -125,42 +125,41 @@ const Announcements: React.FC = () => {
     const fetchNotices = async () => {
         setLoading(true);
         const weatherAlert: Announcement = {
-            id: 'weather-sun-cloudy',
-            title: "☁️ DOMINGO: Previsión Medio Nublado",
-            content: "Hoy disfrutamos de cielos con nubes y claros. El viento de ayer ha amainado significativamente. Temperaturas muy agradables para el paseo dominical por la Rambla y el Puerto.",
+            id: 'weather-mon-cloudy',
+            title: "🌤️ LUNES: Sol y Nubes",
+            content: "Arrancamos la semana con cielos despejados y algunas nubes altas. Temperaturas agradables de 14ºC. Ideal para retomar la rutina con energía.",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
-            author_name: "Protección Civil",
-            itinerary: "• Mañana: Intervalos nubosos (11°C)\n• Tarde: Más claros (15°C)\n• Noche: Cielos despejados (10°C)",
+            author_name: "AEMET",
+            itinerary: "• Mañana: Soleado (10°C)\n• Tarde: Nubes altas (14°C)\n• Noche: Fresco (8°C)",
             created_at: new Date().toISOString()
         };
 
         const paellaAnnouncement: Announcement = {
-            id: 'paella-popular-sun',
-            title: "🥘 EVENTO: Gran Paella Popular",
-            content: "¡Hoy es el gran día! Nos reunimos en el Local Social de la Vía Augusta para compartir una paella vecinal. Quedan los últimos cubiertos disponibles por cancelación de última hora.",
-            category: "EVENTO",
+            id: 'paella-success-mon',
+            title: "🥘 ÉXITO: Gran Paella Vecinal",
+            content: "¡Gracias a todos! Ayer disfrutamos de un domingo increíble con más de 200 vecinos. La paella fue un éxito y el ambiente inmejorable. ¡Repetiremos pronto!",
+            category: "EXITO",
             neighborhood: "GENERAL",
             author_name: "Asoc. Vecinos",
-            itinerary: "• 13:00 - Vermut vecinal\n• 14:30 - Paella Gigante\n• 16:30 - Baile y café",
+            itinerary: "• Asistentes: +200\n• Raciones: 250\n• Donativos: 450€",
             created_at: new Date().toISOString()
         };
 
-        const coastalWalk: Announcement = {
-            id: 'walk-coastal-sun',
-            title: "🚶‍♀️ ACTIVIDAD: Caminata por el Litoral",
-            content: "Día perfecto para el Camí de Ronda. Un grupo de vecinos sale desde la Arrabassada en breve. No olvidéis calzado cómodo y algo de agua.",
-            category: "EVENTO",
-            neighborhood: "LLEVANT",
-            author_name: "Pau T.",
-            itinerary: "• 10:30 - Salida Arrabassada\n• 12:30 - Llegada a la Mora\n• 13:00 - Regreso opcional en bus",
+        const constructionNotice: Announcement = {
+            id: 'construction-calle-mayor',
+            title: "🚧 AVISO: Obras en C/ Mayor",
+            content: "Desde hoy lunes y hasta el miércoles, habrá cortes intermitentes en la Calle Mayor por poda de arbolado. Rogamos precaución y buscar rutas alternas.",
+            category: "URGENTE",
+            neighborhood: "PART ALTA",
+            author_name: "Ayuntamiento",
             created_at: new Date().toISOString()
         };
 
         const deliverySuccess: Announcement = {
             id: 'delivery-pets-sun',
             title: "🐾 ÉXITO: Reparto al Refugio",
-            content: "La furgoneta de voluntarios ya ha salido hacia la protectora con los más de 200kg de comida recogidos ayer. ¡Gracias a todos los que colaborasteis!",
+            content: "La furgoneta de voluntarios entregó ayer con éxito todo el material recogido. La protectora nos envía un enorme agradecimiento.",
             category: "EXITO",
             neighborhood: "GENERAL",
             author_name: "Dinamización Vecinal",

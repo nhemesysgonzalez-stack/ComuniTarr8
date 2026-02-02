@@ -70,12 +70,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'ComuniTarr 📢', text: '☁️ Domingo nublado pero perfecto para la paella vecinal en el Local Social.' },
-    { user: 'Pau T.', text: '¿Quién se apunta a la caminata por el Camí de Ronda? Salimos a las 10:30. 🚶‍♂️' },
-    { user: 'Mireia R.', text: '¡Qué buena pinta tiene la paella de hoy! Nos vemos en un rato. 🥘' },
-    { user: 'Joan B.', text: 'Día de relax y lectura. ¿Alguna recomendación de libro ambientado en Tarragona? 📖' },
-    { user: 'Carme S.', text: 'Acabamos de salir hacia el refugio con todas las donaciones. ¡Mil gracias! 🐾' },
-    { user: 'Luis M.', text: 'Ideal para vermut bajo el cielo gris, ¡que no llueva por favor! 🥂☁️' }
+    { user: 'ComuniTarr 📢', text: '🌤️ Lunes de actividad. Recuerda: Hoy limpieza post-paella en el Local Social a las 18h.' },
+    { user: 'Pau T.', text: '¡Buenos días! Un café doble por favor... qué sueño tengo hoy. ☕💤' },
+    { user: 'Mireia R.', text: 'El tráfico en la Vía Augusta está imposible esta mañana, salid con tiempo. 🚗⚠️' },
+    { user: 'Joan B.', text: 'Gran día ayer en la paellada, gracias a los organizadores. ¡A por la semana! 💪' },
+    { user: 'Carme S.', text: 'Recordad que hoy retomamos los talleres de costura en el centro cívico. 🧵' },
+    { user: 'Luis M.', text: '¿Alguien sabe si abre la copistería de la Rambla a mediodía? 🖨️' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -140,42 +140,41 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts
     let scripts = [
-      "¡Feliz domingo! Hoy toca paella vecinal, ¿quién viene? 🥘✨",
-      "Día nublado pero con encanto. ¿Alguien para ir a caminar por el litoral? 🚶‍♀️☁️",
-      "Qué bien se está hoy de relax. Aprovechando el domingo tranquilo. ☕📖",
-      "¿Ya han salido los voluntarios hacia la protectora? ¡Vaya éxito! 🐾❤️",
-      "¿Recomendáis algún sitio para tomar algo hoy por la tarde? 🥂",
-      "¡Buenos días! Disfrutad del primer domingo de febrero. ✨"
+      "¡Buenos días! Ánimo con este lunes. 💪☕",
+      "¿Alguien va a la limpieza del local social esta tarde? Yo me apunto. 🧹",
+      "Todavía pensando en lo buena que estaba la paella ayer... 🥘🤤",
+      "Vaya tráfico hay hoy en los accesos a Tarragona, paciencia. 🚗",
+      "¡Feliz semana a todos! Que sea leve el lunes. ✨",
+      "¿Sabéis si hay alguna farmacia de guardia por el centro? 💊"
     ];
 
     // Base reply scripts
     let replyScripts = [
-      `¡Totalmente de acuerdo, ${isReplyTo}!`,
+      `¡Totalmente de acuerdo, ${isReplyTo}! Maldito lunes.`,
       `¿Me puedes dar más detalles sobre eso, ${isReplyTo}?`,
-      `¡Qué bueno saludarte ${isReplyTo}!`,
-      `Opino lo mismo que tú, me parece interesante.`,
-      `Gracias por la info, me sirve mucho.`,
+      `¡Buenos días ${isReplyTo}! A por la semana.`,
+      `Yo también me pasaré luego, nos vemos allí.`,
+      `Gracias por el aviso del tráfico, ${isReplyTo}.`,
       `¡Vaya, no lo sabía! Gracias por comentarlo, ${isReplyTo}.`
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
-      scripts = ["¿Habéis visto las ofertas de hoy? Hay cosas interesantes en logística. 📦", "Busco trabajo de administrativo, ¿sabéis de algo? 📑"];
-      replyScripts = [`Interesante oferta, ${isReplyTo}. ¿Sabes si piden experiencia?`, `Yo también estoy buscando en ese sector.`];
+      scripts = ["¿Habéis visto las nuevas ofertas de Randstad para esta semana? 📦", "Empiezo hoy en el nuevo curro, ¡deseadme suerte! 🤞"];
+      replyScripts = [`¡Mucha suerte en tu primer día, ${isReplyTo}!`, `Voy a echar un vistazo a Infojobs, gracias.`];
     } else if (currentNeighborhood === 'ENCUENTROS') {
       scripts = [
-        "¿Alguien para ir a tomar algo hoy por el casco antiguo? 🥂❤️",
-        "Me encanta la calma de este domingo nublado. ¿Un café y charla? ☕✨",
-        "¡Ya te sigo! Por cierto, si alguien busca compañero para la paella o un café luego... ☕ Mi ig es @marc_tgn o md por aquí.",
-        "Oye, que me ha encantado tu perfil. Si te apetece hablar más tranquilos, búscame en Telegram: @vecino_tgn 😉",
-        "¡La paella del Local Social va a estar increíble! Allí nos vemos. 🥘",
-        "¡Hola! Soy nueva en el barrio y me encantaría conocer gente maja. 👋",
-        "¿Vermut vecinal hoy? ¡Yo pongo las aceitunas! 🍸"
+        "¿Quién se anima a un afterwork hoy para empezar bien la semana? 🍻",
+        "Busco compi de gym para ir por las tardes. 💪",
+        "¡Qué pereza el lunes! ¿Un café para espabilar? ☕✨",
+        "Ayer conocí gente majísima en la paella. ¿Repetimos quedada? 😊",
+        "Si alguien quiere ir a correr por el milagro a las 19h, avisad. 🏃‍♂️",
+        "¡Hola! Buscando planes tranquilos para entre semana. 👋"
       ];
       replyScripts = [
-        `¡Me apunto a ese café, ${isReplyTo}! Charlamos cuando quieras.`,
-        `¡Qué buena propuesta! Yo también soy fan del casco antiguo.`,
-        `Bienvenida al barrio, ${isReplyTo}. Me llamo Pau, ¡encantado!`,
-        `Yo también salgo a correr, si quieres mañana coincidimos. 🏃‍♂️`
+        `¡Me apunto a ese afterwork, ${isReplyTo}!`,
+        `Yo voy al gimnasio del puerto, si te va bien...`,
+        `¡Café necesario! Dime sitio y hora, ${isReplyTo}.`,
+        `Yo también salgo a correr, si quieres hoy coincidimos. 🏃‍♂️`
       ];
     } else if (isHelpRequest) {
       replyScripts = [
@@ -213,10 +212,10 @@ const Forum: React.FC = () => {
         let possibleReplies = [];
         if (isGreeting) {
           possibleReplies = [
-            `¡Hola, ${isReplyTo}! ¿Nos vemos luego en la paella? 🥘`,
-            `¡Muy buenas! ¿Estás para la caminata por las calas? @${isReplyTo}.`,
-            `¡Hola ${isReplyTo}! Sí, un domingo de relax total. ☁️`,
-            `¡Buenas tardes! Disfrutando del domingo tranquilo por aquí.`
+            `¡Hola, ${isReplyTo}! A por el lunes con fuerza. 💪`,
+            `¡Muy buenas! ¿Qué tal el fin de semana? @${isReplyTo}.`,
+            `¡Hola ${isReplyTo}! Aquí arrancando motores. ☕`,
+            `¡Buenos días! ¿Nos vemos en la limpieza de tarde?`
           ];
         } else {
           possibleReplies = replyScripts;
@@ -431,7 +430,7 @@ const Forum: React.FC = () => {
     } else if (topicId === 'paseo-viento') {
       setNewMessage('¿Subimos al muelle a pesar del viento o mejor terraza al sol? 🚲☀️');
     } else if (topicId === 'viento-mestral') {
-      setNewMessage('¡Ojo con las macetas en los balcones, que el viento sopla fuerte! 💨⚠️');
+      setNewMessage('¡Ojo con las macetas en los balcones, que el viento sopla fuerte. 💨⚠️');
     }
     setTimeout(() => {
       inputRef.current?.focus();
@@ -440,22 +439,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'paella-popular',
-      title: '🥘 Paella Popular',
-      description: 'El evento estrella de hoy en el local social.',
-      participating: 245
+      id: 'resaca-paella',
+      title: '🥘 Resaca Paella',
+      description: 'Comentarios y fotos del evento de ayer.',
+      participating: 189
     },
     {
-      id: 'caminata-llevant',
-      title: '🚶‍♀️ Caminata Llevant',
-      description: 'Grupo para ir hoy por el Camí de Ronda.',
-      participating: 89
+      id: 'lunes-motivacion',
+      title: '💪 Lunes Energía',
+      description: 'Empezando la semana con fuerza.',
+      participating: 112
     },
     {
-      id: 'relax-domingo',
-      title: '☁️ Relax Domingo',
-      description: 'Planes tranquilos para el primer domingo de febrero.',
-      participating: 156
+      id: 'ofertas-empleo',
+      title: '💼 Ofertas Semanales',
+      description: 'Nuevas vacantes publicadas hoy lunes.',
+      participating: 98
     }
   ];
 
@@ -598,7 +597,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Domingo 1 Febrero 2026 - Paella, Comunidad y Relax ☁️
+                  Lunes 2 Febrero 2026 - Vuelta a la Rutina & Energía 💪
                 </span>
               </div>
 
