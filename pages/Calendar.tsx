@@ -47,13 +47,13 @@ const NeighborhoodCalendar: React.FC = () => {
       id: 'evt-sunday-paella',
       creator_id: 'admin',
       title: "🥘 Paella Popular Domingo",
-      description: "Comida vecinal para celebrar el fin de semana. ¡Nos vemos en el local social!",
+      description: "Comida vecinal para celebrar el fin de semana. ¡Nos vemos en el local social! Tickets a 5€ en puerta.",
       event_date: '2026-02-01',
       event_time: '14:00',
       location: 'Local Social Vía Augusta',
       category: 'Fiesta',
       neighborhood: 'GENERAL',
-      contact_info: 'Admin ComuniTarr',
+      contact_info: 'Admin ComuniTarr (655 00 11 22)',
       created_at: new Date().toISOString()
     },
     {
