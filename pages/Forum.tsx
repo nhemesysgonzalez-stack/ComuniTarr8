@@ -70,12 +70,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'ComuniTarr 📢', text: '🌤️ Lunes de actividad. Recuerda: Hoy limpieza post-paella en el Local Social a las 18h.' },
-    { user: 'Pau T.', text: '¡Buenos días! Un café doble por favor... qué sueño tengo hoy. ☕💤' },
-    { user: 'Mireia R.', text: 'El tráfico en la Vía Augusta está imposible esta mañana, salid con tiempo. 🚗⚠️' },
-    { user: 'Joan B.', text: 'Gran día ayer en la paellada, gracias a los organizadores. ¡A por la semana! 💪' },
-    { user: 'Carme S.', text: 'Recordad que hoy retomamos los talleres de costura en el centro cívico. 🧵' },
-    { user: 'Luis M.', text: '¿Alguien sabe si abre la copistería de la Rambla a mediodía? 🖨️' }
+    { user: 'ComuniTarr 📢', text: '🌬️ Martes con Mistral. Precaución: Viento fuerte en zonas altas. Asegurad objetos en terrazas.' },
+    { user: 'Mireia R.', text: '¡No olvidéis la clase de Yoga hoy a las 19:30 en el Parc! Traed esterilla. 🧘‍♀️' },
+    { user: 'Pau T.', text: 'El mercadillo del Fòrum está genial hoy. Las alcachofas están increíbles. 🥬' },
+    { user: 'Joan B.', text: 'El local quedó impecable ayer, gracias a todos los que ayudasteis. ✨' },
+    { user: 'Carme S.', text: 'Cuidado al salir con paraguas, el viento os lo arrancará. 💨⚠️' },
+    { user: 'Luis M.', text: '¿Alguien va a correr hoy? Con el viento mejor quedarse en el gimnasio... 🏃‍♂️' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -425,12 +425,12 @@ const Forum: React.FC = () => {
   };
 
   const handleTopicClick = (topicId: string) => {
-    if (topicId === 'mercadillo-antiguedades') {
-      setNewMessage('¿Alguien va al mercado del Portal de Sant Antoni hoy? 🏺');
-    } else if (topicId === 'paseo-viento') {
-      setNewMessage('¿Subimos al muelle a pesar del viento o mejor terraza al sol? 🚲☀️');
-    } else if (topicId === 'viento-mestral') {
-      setNewMessage('¡Ojo con las macetas en los balcones, que el viento sopla fuerte. 💨⚠️');
+    if (topicId === 'viento-mestral') {
+      setNewMessage('¡Ojo con las macetas en los balcones, que el viento sopla fuerte! 💨⚠️');
+    } else if (topicId === 'yoga-tarde') {
+      setNewMessage('¿Quién viene a Yoga esta tarde? ¡Yo llevo esterilla extra por si alguien necesita! 🧘‍♀️');
+    } else if (topicId === 'mercadillo-martes') {
+      setNewMessage('¿Alguien ha ido ya al mercadillo del Fòrum? ¿Qué hay hoy? 🥬');
     }
     setTimeout(() => {
       inputRef.current?.focus();
@@ -439,22 +439,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'resaca-paella',
-      title: '🥘 Resaca Paella',
-      description: 'Comentarios y fotos del evento de ayer.',
-      participating: 189
+      id: 'viento-mestral',
+      title: '🌬️ Viento Fuerte',
+      description: 'Consejos y precauciones por el Mistral.',
+      participating: 156
     },
     {
-      id: 'lunes-motivacion',
-      title: '💪 Lunes Energía',
-      description: 'Empezando la semana con fuerza.',
-      participating: 112
+      id: 'yoga-tarde',
+      title: '🧘‍♀️ Yoga 19:30',
+      description: 'Clase abierta en el Parc hoy.',
+      participating: 87
     },
     {
-      id: 'ofertas-empleo',
-      title: '💼 Ofertas Semanales',
-      description: 'Nuevas vacantes publicadas hoy lunes.',
-      participating: 98
+      id: 'mercadillo-martes',
+      title: '🥬 Mercadillo Fòrum',
+      description: 'Frutas y verduras frescas hasta 14h.',
+      participating: 132
     }
   ];
 
@@ -597,7 +597,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Lunes 2 Febrero 2026 - Vuelta a la Rutina & Energía 💪
+                  Martes 3 Febrero 2026 - Viento y Actividades 🌬️🧘‍♀️
                 </span>
               </div>
 
