@@ -60,13 +60,39 @@ const NeighborhoodCalendar: React.FC = () => {
       id: 'evt-tuesday-yoga',
       creator_id: 'admin',
       title: "🧘‍♀️ Yoga al Atardecer",
-      description: "Clase gratuita para liberar el estrés del inicio de semana. Trae tu esterilla.",
+      description: "Clase gratuita para liberar el estrés. Trae tu esterilla. ¡Hoy martes!",
       event_date: '2026-02-03',
       event_time: '19:30',
       location: 'Parc de la Ciutat',
       category: 'Deporte',
       neighborhood: 'GENERAL',
       contact_info: 'Mireia R. (644 99 88 77)',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-workshop-carnival',
+      creator_id: 'admin',
+      title: "🎭 Taller Máscaras Carnaval",
+      description: "Prepara tu disfraz para la Rúa. Materiales incluidos. Para todas las edades.",
+      event_date: '2026-02-05',
+      event_time: '17:00',
+      location: 'Centro Cívico Part Alta',
+      category: 'Cultura',
+      neighborhood: 'PART ALTA',
+      contact_info: 'Associació de Veïns',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-calcotada',
+      creator_id: 'admin',
+      title: "🔥 Calçotada Popular",
+      description: "¡Ya llega! Tickets a la venta en el local social. 10€ socios, 15€ no socios.",
+      event_date: '2026-02-08',
+      event_time: '13:00',
+      location: 'Zona Picnic Pont del Diable',
+      category: 'Fiesta',
+      neighborhood: 'GENERAL',
+      contact_info: 'Comissió de Festes',
       created_at: new Date().toISOString()
     }
   ];

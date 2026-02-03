@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'cleanup', x: '58%', y: '45%', title: 'Limpieza Post-Paella', desc: '¡Quedada a las 18h! Vamos a dejar el local social impecable.', status: 'Hoy 18:00', color: 'bg-emerald-500', icon: 'cleaning_services', glow: 'shadow-[0_0_30px_rgba(16,185,129,0.4)]' },
-    { id: 2, type: 'incident', x: '75%', y: '55%', title: 'Retenciones Tráfico', desc: 'Poda de árboles en Vía Augusta. Tráfico lento en ambos sentidos.', status: 'Precaución', color: 'bg-red-500', icon: 'traffic', glow: 'shadow-[0_0_40px_rgba(239,68,68,0.6)]' },
-    { id: 3, type: 'event', x: '45%', y: '25%', title: 'Refuerzo Escolar', desc: 'Grupo de estudio de matemáticas en el Centro Cívico.', status: 'Hoy 17:30', color: 'bg-indigo-500', icon: 'school', glow: 'shadow-[0_0_35px_rgba(99,102,241,0.5)]' },
-    { id: 4, type: 'incident', x: '42%', y: '38%', title: 'Cielo Nuboso', desc: 'Día gris en Tarragona. Probabilidad de llovizna tarde-noche.', status: 'Informativo', color: 'bg-gray-400', icon: 'cloud', glow: 'shadow-[0_0_30px_rgba(156,163,175,0.3)]' },
-    { id: 5, type: 'event', x: '52%', y: '65%', title: 'Yoga Atardecer', desc: 'Clase gratuita mañana martes, inscripciones abiertas hoy.', status: 'Inscripciones', color: 'bg-purple-500', icon: 'self_improvement' }
+    { id: 1, type: 'event', x: '52%', y: '65%', title: 'Yoga al Atardecer', desc: 'Clase abierta en el parque. Trae tu esterilla. ¡Gratis!', status: 'Hoy 19:30', color: 'bg-purple-500', icon: 'self_improvement', glow: 'shadow-[0_0_30px_rgba(168,85,247,0.4)]' },
+    { id: 2, type: 'event', x: '42%', y: '35%', title: 'Mercadillo Martes', desc: 'Frutas y verduras frescas en la Plaça del Fòrum.', status: 'Hasta 14:00', color: 'bg-orange-500', icon: 'storefront', glow: 'shadow-[0_0_35px_rgba(249,115,22,0.5)]' },
+    { id: 3, type: 'incident', x: '75%', y: '45%', title: 'Viento Fuerte', desc: 'Precaución en zonas expuestas por rachas de viento.', status: 'Alerta', color: 'bg-blue-400', icon: 'air', glow: 'shadow-[0_0_40px_rgba(96,165,250,0.6)]' },
+    { id: 4, type: 'event', x: '48%', y: '28%', title: 'Cuentacuentos', desc: 'Actividad infantil en la Biblioteca Pública.', status: 'Hoy 17:30', color: 'bg-indigo-500', icon: 'local_library', glow: 'shadow-[0_0_30px_rgba(99,102,241,0.3)]' },
+    { id: 5, type: 'cleanup', x: '58%', y: '45%', title: 'Local Social', desc: 'El local está abierto para juegos de mesa esta tarde.', status: 'Abierto', color: 'bg-emerald-500', icon: 'meeting_room' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

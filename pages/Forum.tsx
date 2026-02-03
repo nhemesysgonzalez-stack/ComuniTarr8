@@ -140,12 +140,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts
     let scripts = [
-      "¡Buenos días! Vaya cielo encapotado tenemos hoy... ☁️",
-      "Recordad: Hoy a las 18h limpieza del local social. ¡Nos vemos allí! 🧹",
-      "¿Alguien más atrapado en el tráfico de Vía Augusta? 🚗😩",
-      "Animo con el lunes vecinos, ¡que la semana pasa volando! 💪",
-      "Ayer la paella estuvo genial, hoy toca volver a la rutina... 📉",
-      "¿Sabéis si la biblioteca abre por la tarde hoy lunes? 📚"
+      "¡Vaya viento hace hoy! Agarraos fuerte... 🌬️",
+      "¿Alguien va a la clase de Yoga de Mireia a las 19:30? 🧘‍♀️",
+      "He comprado unas naranjas buenísimas en el mercadillo del Fòrum. 🍊",
+      "El local social quedó super limpio ayer, ¡qué gusto da verlo así! ✨",
+      "Cuidado con las motos hoy, el viento lateral es peligroso en la A-7. ⚠️",
+      "¿Alguien tiene apuntes de Historia de 2º de Bachillerato? 📚"
     ];
 
     // Base reply scripts
@@ -774,16 +774,16 @@ const Forum: React.FC = () => {
                 >
                   ✕
                 </button>
-                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Lunes 02/02</h2>
+                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Martes 03/02</h2>
                 <ul className="space-y-2">
-                  <li>🚧 <strong>Controlador Acceso Obras - Vía Augusta</strong> (Adecco) – Urgente x Poda</li>
-                  <li>🧹 <strong>Personal de Limpieza - Refuerzo Lunes</strong> (Eulen) – Turno tarde</li>
-                  <li>🎓 <strong>Profesor/a Repaso Inglés - Part Alta</strong> (Academia TGN) – Tardes</li>
-                  <li>📦 <strong>Mozos descarga - Puerto Tarragona</strong> (Randstad) – Incorporación inmediata</li>
-                  <li>☕ <strong>Barista con experiencia - Rambla Nova</strong> – Jornada completa</li>
-                  <li>🚚 <strong>Repartidor Paquetería - Zona Francolí</strong> – Carnet B necesario</li>
-                  <li>👵 <strong>Auxiliar Ayuda Domicilio - Llevant</strong> – Fines de semana</li>
-                  <li>💻 <strong>Administrativo Contable - Polígono</strong> – Sustitución baja</li>
+                  <li>🚚 <strong>Repartidor/a Moto - Burger King</strong> – Urgente, turnos noche</li>
+                  <li>🔧 <strong>Ayudante Fontanería - Zona Centro</strong> (Instalaciones TGN) – Formación a cargo</li>
+                  <li>🏨 <strong>Camarero/a Pisos - Hotel Imperial</strong> – Temporada Semana Santa</li>
+                  <li>👵 <strong>Acompañamiento - Part Alta</strong> – Señora mayor, 4h/día mañanas</li>
+                  <li>💻 <strong>Programador Junior React - Remoto</strong> (TechTGN) – Híbrido</li>
+                  <li>📦 <strong>Mozos Almacén - Valls</strong> – Turno de noche, transporte incluido</li>
+                  <li>🥖 <strong>Panadero/a - Forn de Pa Rambla</strong> – Experiencia con masa madre</li>
+                  <li>🏫 <strong>Monitor/a Comedor - Colegio Sant Pau</strong> – 12:30 a 15:00</li>
                 </ul>
                 <button
                   onClick={() => setShowJobOffers(false)}

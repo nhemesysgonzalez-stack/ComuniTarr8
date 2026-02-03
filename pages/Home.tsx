@@ -157,52 +157,52 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-mon-feb02',
-          title: "☁️ LUNES: Día Nublado",
-          content: "Cielos cubiertos pero temperatura agradable (16°C). No se espera lluvia, pero el sol estará tímido hoy. Ideal para actividades tranquilas.",
+          id: 'weather-tue-feb03',
+          title: "🌬️ MARTES: Viento",
+          content: "Día ventoso en la ciudad. Rachas de Mistral de hasta 50km/h. Cielos despejados pero sensación térmica fresca. ¡Abrigaos!",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Mañana: Nublado (14°C)\n• Tarde: Cubierto (16°C)\n• Noche: Fresco (12°C)",
+          itinerary: "• Mañana: Viento (13°C)\n• Tarde: Sol y Viento (15°C)\n• Noche: Fresco (11°C)",
           link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo",
           created_at: new Date().toISOString()
         };
 
         const petFoodInitiative = {
-          id: 'pet-food-donation-jan30',
-          title: "🐾 RESULTADOS: Recogida Comida",
-          content: "¡Gracias! La campaña ha sido un éxito rotundo. Ayer domingo se entregaron 200kg de alimentos al refugio protector.",
-          category: "SOLIDARIO",
+          id: 'cleanup-success-feb02',
+          title: "✨ ÉXITO: Local Impecable",
+          content: "¡Gracias a la brigada de limpieza de ayer! El local social ha quedado como nuevo tras la paella. Listos para las actividades de la semana.",
+          category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Total: 215kg comida\n• Mantas: 45 unidades\n• Próxima recogida: Marzo",
+          itinerary: "• Participantes: 15 vecinos\n• Estado: Disponible\n• Próximo: Yoga hoy",
           created_at: new Date().toISOString()
         };
 
         const paellaPopular = {
-          id: 'paella-recap-feb02',
-          title: "🥘 ÉXITO: Paella Vecinal",
-          content: "Ayer domingo disfrutamos de un gran día. Más de 200 vecinos compartieron mesa. ¡Hoy a las 18h limpieza final del local!",
-          category: "COMUNIDAD",
-          neighborhood: "GENERAL",
-          itinerary: "• Asistentes: 240\n• Recaudación: 1.200€ para fiestas\n• Limpieza: Hoy 18:00h",
+          id: 'yoga-class-feb03',
+          title: "🧘‍♀️ HOY: Yoga al Atardecer",
+          content: "Clase abierta y gratuita en el Parc de la Ciutat. Trae tu esterilla y agua. Nivel principiante e intermedio.",
+          category: "SALUD",
+          neighborhood: "PARC CIUTAT",
+          itinerary: "• Hora: 19:30\n• Lugar: Zona Césped\n• Monitora: Mireia",
           created_at: new Date().toISOString()
         };
 
         const classesAd = {
-          id: 'classes-math-english',
-          title: "📚 CLASES: Apoyo escolar",
-          content: "Empieza la semana con fuerza. Vecino ofrece clases de refuerzo de Matemáticas e Inglés para primaria y ESO.",
-          category: "SERVICIOS",
-          neighborhood: "GENERAL",
-          itinerary: "• Contacto: 655 89 21 44 (Nacho)\n• Disponibilidad: Tardes de lunes a viernes",
+          id: 'market-tuesday',
+          title: "🥬 MERCADILLO: Martes",
+          content: "Los puestos de fruta y verdura ecológica están hoy en la Plaça del Fòrum hasta las 14:00. ¡Apoya el comercio local!",
+          category: "COMERCIO",
+          neighborhood: "PART ALTA",
+          itinerary: "• Horario: 09:00 - 14:00\n• Destacado: Alcachofas y Naranjas",
           created_at: new Date().toISOString()
         };
 
         const trafficAlert = {
-          id: 'traffic-alert-mon',
-          title: "🚗 TRÁFICO: Retenciones Vía Augusta",
-          content: "Precaución en los accesos a la Part Alta y Vía Augusta por poda de árboles urgente. Tráfico lento.",
+          id: 'traffic-alert-tue',
+          title: "⚠️ AVISO: Viento en Ctra.",
+          content: "Precaución motos y camiones en A-7 y Vía Augusta por rachas de viento lateral. Tráfico fluido por lo demás.",
           category: "AVISO",
-          neighborhood: "PART ALTA",
+          neighborhood: "GENERAL",
           link_url: "https://www.tarragona.cat/mobilitat",
           created_at: new Date().toISOString()
         };

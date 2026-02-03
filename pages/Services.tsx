@@ -65,7 +65,7 @@ const Services: React.FC = () => {
           location: 'Eixample',
           image_url: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&q=80&w=400',
           category: 'Mascotas',
-          description: '¿Trabajas el lunes por la mañana? Yo paseo a tu perro por el parque. Amante de los animales.',
+          description: '¿Trabajas por la mañana? Yo paseo a tu perro por el parque. Amante de los animales y con experiencia.',
           contact_info: '644 99 88 77',
           neighborhood: 'EIXAMPLE',
           created_at: new Date().toISOString()

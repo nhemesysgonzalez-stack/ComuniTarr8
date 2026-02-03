@@ -252,15 +252,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">☀️ LUNES: CIELOS DESPEJADOS Y 16°C - INICIO DE SEMANA CON ENERGÍA</span>
+          <span className="flex items-center gap-2">🌬️ MARTES: VIENTO MODERADO (MISTRAL) - PRECAUCIÓN EN ZONAS ALTAS</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🧹 COMUNIDAD: LIMPIEZA POST-PAELLA HOY A LAS 18:00 EN EL LOCAL SOCIAL</span>
+          <span className="flex items-center gap-2">🧘‍♀️ HOY: CLASE ABIERTA DE YOGA EN PARC DE LA CIUTAT A LAS 19:30</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚗 TRÁFICO: RETENCIONES EN ACCESO VÍA AUGUSTA POR OBRAS DE PODA</span>
+          <span className="flex items-center gap-2">🧹 COMUNIDAD: ¡GRACIAS A TODOS! EL LOCAL SOCIAL QUEDÓ IMPECABLE AYER</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">📚 SERVICIOS: NUEVOS GRUPOS DE REFUERZO ESCOLAR EN EL CENTRO CÍVICO</span>
+          <span className="flex items-center gap-2">🛒 MERCADILLO: FRUTAS Y VERDURAS FRESCAS HOY EN PLAÇA DEL FÒRUM (HASTA 14:00)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🧘‍♀️ MAÑANA: YOGA AL ATARDECER EN EL PARC DE LA CIUTAT (GRATUITO)</span>
+          <span className="flex items-center gap-2">🚌 MOVILIDAD: TARRAGONA IMPULSA NUEVAS RUTAS DE BUS NOCTURNO PARA FINES DE SEMANA</span>
         </motion.div>
       </div>
 
