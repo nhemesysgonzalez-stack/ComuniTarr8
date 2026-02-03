@@ -51,6 +51,15 @@ const SupportCircles: React.FC = () => {
                     created_at: new Date().toISOString()
                 },
                 {
+                    id: 'mock-tue-caregivers',
+                    initiator_id: 'vadmin',
+                    title: '☕ Café de Cuidadores (Martes)',
+                    neighborhood: 'CENTRO',
+                    description: 'Reunión semanal de los martes para cuidadores de personas dependientes. ¡Hoy nos vemos en la cafetería del Centro Cívico!',
+                    contact_info: '655 12 34 56 (Elena)',
+                    created_at: new Date().toISOString()
+                },
+                {
                     id: 'mock-2',
                     initiator_id: 'v2',
                     title: 'Círculo de Apoyo: Duelo Animal',
