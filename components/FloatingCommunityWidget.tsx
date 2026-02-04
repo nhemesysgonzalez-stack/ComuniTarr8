@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🌬️ Aviso por viento fuerte en la Part Alta. Asegurad macetas y toldos. ¡Precaución! ⚠️', neighborhood: 'GENERAL' },
-    { id: 1, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¿Alguien ha visto si han traído alcachofas al mercadillo del Fòrum? 🥬😋', neighborhood: 'Serrallo' },
-    { id: 2, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '¡Todo listo para la clase de Yoga de esta tarde! Recordad traer esterilla. 🧘‍♀️✨', neighborhood: 'Part Alta' },
-    { id: 3, user: 'Joan B.', text: 'El local social ha quedado genial después de la limpieza de ayer. ¡Buen trabajo equipo! 👏', avatar: 'https://i.pravatar.cc/150?u=joan', neighborhood: 'Part Alta' },
-    { id: 4, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: '¡Vaya ráfagas de viento! Se me ha volado una silla de la terraza... 💨', neighborhood: 'Part Alta' },
-    { id: 5, user: 'Luis M.', avatar: 'https://i.pravatar.cc/150?u=luis', text: 'Martes de rutina a tope. ¿Alguien para correr por el muelle al mediodía (si no sopla mucho)? 🏃‍♂️', neighborhood: 'Centro' },
-    { id: 6, user: 'Elena G.', avatar: 'https://i.pravatar.cc/150?u=elena', text: '¡Qué buenas las mandarinas del mercadillo! 🍊', neighborhood: 'Centro' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '☁️ Miércoles nublado con posibles chubascos por la tarde. Llevad paraguas. 🌧️⚠️', neighborhood: 'GENERAL' },
+    { id: 1, user: 'Elena G.', avatar: 'https://i.pravatar.cc/150?u=elena', text: '¿Quién va a la asamblea vecinal de esta tarde a las 19:00? 📢', neighborhood: 'Centro' },
+    { id: 2, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: '¡Nuevo Directorio de Negocios en ComuniTarr! Ya he subido mi taller. 🏪✨', neighborhood: 'Part Alta' },
+    { id: 3, user: 'Pau T.', text: 'Mañana jueves voy al mercadillo artesanal de la Part Alta. ¿Alguien más? 🛍️', avatar: 'https://i.pravatar.cc/150?u=pau', neighborhood: 'Serrallo' },
+    { id: 4, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Escuchad ComuniTarr Radio, están hablando del nuevo directorio. 📻', neighborhood: 'Centro' },
+    { id: 5, user: 'Luis M.', avatar: 'https://i.pravatar.cc/150?u=luis', text: 'Con esta nube apetece un café caliente. ¿Alguien libre? ☕', neighborhood: 'Centro' },
+    { id: 6, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: '¡Me encanta que podamos anunciar nuestros negocios gratis! 💼', neighborhood: 'Part Alta' },
 ];
 
 const tickerMessages = [
-    { user: 'Pau T.', text: '¿Alcachofas en el mercado? 🥬' },
-    { user: 'Mireia R.', text: 'Yoga hoy 19:30 🧘‍♀️' },
-    { user: 'Joan B.', text: '¡Local Social limpio! ✨' },
-    { user: 'Admin', text: 'Alerta Viento 🌬️' },
-    { user: 'Carme S.', text: '¡Cuidado con las macetas! 🪴' }
+    { user: 'Elena G.', text: 'Asamblea hoy 19:00 📢' },
+    { user: 'Joan B.', text: 'Directorio Negocios 🏪' },
+    { user: 'Pau T.', text: 'Mercadillo mañana 🛍️' },
+    { user: 'Admin', text: 'Radio en Vivo 📻' },
+    { user: 'Mireia R.', text: 'Tiempo nublado ☁️' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

@@ -26,13 +26,19 @@ Mercadillo: Compra, vende o intercambia artículos de segunda mano en tu comunid
 Micro-Voluntarios: Participa en pequeñas acciones solidarias que mejoran tu entorno.
 Círculos de Apoyo: Encuentra o forma grupos para apoyo emocional o temático.
 
+🏪 NUEVO: ¡DIRECTORIO DE NEGOCIOS LOCALES!
+Anuncia tu negocio GRATIS en ComuniTarr. Somos los voceros de tus negocios, dándoles visibilidad en toda la comunidad. Ya sea tu taller, tienda, servicio o emprendimiento, ¡hazlo visible!
+
+📻 RADIO EN DIRECTO 24/7
+Disfruta de ComuniTarr Radio con música ambiente, avisos del barrio y retransmisiones en vivo. ¡Tu emisora vecinal!
+
 ✨ ¡Y mucho más! Incluyendo un Mapa Interactivo, Calendario de Eventos y un Asistente IA para ayudarte en lo que necesites.
 
 ¿A qué esperas para unirte a la comunidad más activa de Tarragona?
 
 🔗 Visita: https://tarragonavecinal.vercel.app
 
-#ComuniTarr #Tarragona #BarriosTarragona #Webapp #VecinosConectados #ComercioLocal #AyudaMutua`;
+#ComuniTarr #Tarragona #BarriosTarragona #Webapp #VecinosConectados #ComercioLocal #AyudaMutua #DirectorioNegocios #RadioEnVivo`;
 
     const handleCopy = () => {
         navigator.clipboard.writeText(promoText);

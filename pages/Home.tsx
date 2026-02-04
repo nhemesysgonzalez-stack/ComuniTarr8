@@ -157,53 +157,54 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-tue-feb03',
-          title: "🌬️ MARTES: Viento",
-          content: "Día ventoso en la ciudad. Rachas de Mistral de hasta 50km/h. Cielos despejados pero sensación térmica fresca. ¡Abrigaos!",
+          id: 'weather-wed-feb04',
+          title: "☁️ MIÉRCOLES: Nublado y Fresco",
+          content: "Día nublado con posibles chubascos por la tarde. Temperaturas frescas entre 11°C y 14°C. Llevad paraguas por si acaso.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Mañana: Viento (13°C)\n• Tarde: Sol y Viento (15°C)\n• Noche: Fresco (11°C)",
+          itinerary: "• Mañana: Nublado (11°C)\n• Tarde: Chubascos (13°C)\n• Noche: Despejando (10°C)",
           link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo",
           created_at: new Date().toISOString()
         };
 
-        const petFoodInitiative = {
-          id: 'cleanup-success-feb02',
-          title: "✨ ÉXITO: Local Impecable",
-          content: "¡Gracias a la brigada de limpieza de ayer! El local social ha quedado como nuevo tras la paella. Listos para las actividades de la semana.",
+        const communityMeeting = {
+          id: 'community-meeting-feb04',
+          title: "📢 HOY: Reunión Vecinal",
+          content: "Asamblea de barrio a las 19:00 en el local social. Temas: reforma de la Rambla, ordenanzas de ruido y nueva zona verde. ¡Participa!",
           category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Participantes: 15 vecinos\n• Estado: Disponible\n• Próximo: Yoga hoy",
+          itinerary: "• Hora: 19:00\n• Lugar: Local Social\n• Temas: Rambla, Ruido, Zonas Verdes",
           created_at: new Date().toISOString()
         };
 
-        const paellaPopular = {
-          id: 'yoga-class-feb03',
-          title: "🧘‍♀️ HOY: Yoga al Atardecer",
-          content: "Clase abierta y gratuita en el Parc de la Ciutat. Trae tu esterilla y agua. Nivel principiante e intermedio.",
-          category: "SALUD",
-          neighborhood: "PARC CIUTAT",
-          itinerary: "• Hora: 19:30\n• Lugar: Zona Césped\n• Monitora: Mireia",
+        const businessDirectory = {
+          id: 'business-directory-launch',
+          title: "🏪 NUEVO: Directorio de Negocios",
+          content: "¡Estreno del Directorio de Negocios Locales! Anuncia tu negocio gratis en ComuniTarr. Somos los voceros de tus negocios. ¡Únete!",
+          category: "COMUNIDAD",
+          neighborhood: "GENERAL",
+          itinerary: "• Función: Directorio gratuito\n• Para: Negocios locales\n• Acceso: Menú Principal",
+          link_url: "/local-businesses",
           created_at: new Date().toISOString()
         };
 
-        const classesAd = {
-          id: 'market-tuesday',
-          title: "🥬 MERCADILLO: Martes",
-          content: "Los puestos de fruta y verdura ecológica están hoy en la Plaça del Fòrum hasta las 14:00. ¡Apoya el comercio local!",
+        const marketThursday = {
+          id: 'market-thursday-preview',
+          title: "🛍️ MAÑANA: Mercadillo Jueves",
+          content: "Recordatorio: Mañana jueves el mercadillo de la Part Alta con productos artesanales y de segunda mano. ¡No te lo pierdas!",
           category: "COMERCIO",
           neighborhood: "PART ALTA",
-          itinerary: "• Horario: 09:00 - 14:00\n• Destacado: Alcachofas y Naranjas",
+          itinerary: "• Día: Jueves 5 Feb\n• Horario: 09:00 - 14:00\n• Destacado: Artesanía local",
           created_at: new Date().toISOString()
         };
 
-        const trafficAlert = {
-          id: 'traffic-alert-tue',
-          title: "⚠️ AVISO: Viento en Ctra.",
-          content: "Precaución motos y camiones en A-7 y Vía Augusta por rachas de viento lateral. Tráfico fluido por lo demás.",
-          category: "AVISO",
+        const radioLive = {
+          id: 'radio-live-wed',
+          title: "📻 RADIO: En directo",
+          content: "ComuniTarr Radio activa las 24h. Escucha música ambiente, avisos del barrio y retransmisiones en directo de eventos vecinales.",
+          category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          link_url: "https://www.tarragona.cat/mobilitat",
+          itinerary: "• Estado: EN VIVO\n• Acceso: Menú lateral\n• Contenido: Música + Avisos",
           created_at: new Date().toISOString()
         };
 
@@ -219,7 +220,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([weatherAlert, paellaPopular, trafficAlert, petFoodInitiative, classesAd, ...validFetchedNews].slice(0, 6));
+        setNews([weatherAlert, communityMeeting, businessDirectory, radioLive, marketThursday, ...validFetchedNews].slice(0, 6));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase
@@ -260,7 +261,7 @@ const Home: React.FC = () => {
   }, [user?.user_metadata?.neighborhood]);
 
   const quickActions = [
-    { icon: 'storefront', label: t('local_business'), to: '/local-businesses', color: 'bg-emerald-600', shadow: 'shadow-emerald-600/20' },
+    { icon: 'business_center', label: 'Directorio Negocios', to: '/business-directory', color: 'bg-emerald-600', shadow: 'shadow-emerald-600/20' },
     { icon: 'report_problem', label: t('report_incident'), action: () => setShowIncidentModal(true), color: 'bg-red-500', shadow: 'shadow-red-500/20' },
     { icon: 'shopping_basket', label: t('publish_product'), to: '/market', color: 'bg-sky-500', shadow: 'shadow-sky-500/20' },
     { icon: 'school', label: t('workshops'), to: '/workshops', color: 'bg-indigo-500', shadow: 'shadow-indigo-500/20' }

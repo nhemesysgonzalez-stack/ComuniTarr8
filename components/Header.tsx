@@ -76,6 +76,7 @@ export const Header: React.FC = () => {
     { to: '/incidents', label: t('incidents_nav'), icon: 'report_problem' },
     { to: '/community-info', label: t('about'), icon: 'info' },
     { to: '/local-businesses', label: t('local_business'), icon: 'storefront' },
+    { to: '/business-directory', label: 'Directorio Negocios', icon: 'business_center' },
     { to: '/clubs', label: t('clubs'), icon: 'groups' },
     { to: '/forum', label: t('forum'), icon: 'chat' },
     { to: '/workshops', label: t('workshops'), icon: 'school' },
@@ -252,15 +253,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">🌬️ MARTES: VIENTO MODERADO (MISTRAL) - PRECAUCIÓN EN ZONAS ALTAS</span>
+          <span className="flex items-center gap-2">☁️ MIÉRCOLES: NUBLADO CON POSIBLES CHUBASCOS - LLEVAD PARAGUAS</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🧘‍♀️ HOY: CLASE ABIERTA DE YOGA EN PARC DE LA CIUTAT A LAS 19:30</span>
+          <span className="flex items-center gap-2">📢 HOY 19:00: ASAMBLEA VECINAL EN LOCAL SOCIAL - REFORMA RAMBLA Y ZONAS VERDES</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🧹 COMUNIDAD: ¡GRACIAS A TODOS! EL LOCAL SOCIAL QUEDÓ IMPECABLE AYER</span>
+          <span className="flex items-center gap-2">🏪 NUEVO: DIRECTORIO DE NEGOCIOS LOCALES - ¡ANUNCIA TU NEGOCIO GRATIS!</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛒 MERCADILLO: FRUTAS Y VERDURAS FRESCAS HOY EN PLAÇA DEL FÒRUM (HASTA 14:00)</span>
+          <span className="flex items-center gap-2">📻 COMUNITARR RADIO EN VIVO 24/7 - SOMOS LOS VOCEROS DE TUS NEGOCIOS</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚌 MOVILIDAD: TARRAGONA IMPULSA NUEVAS RUTAS DE BUS NOCTURNO PARA FINES DE SEMANA</span>
+          <span className="flex items-center gap-2">🛍️ MAÑANA JUEVES: MERCADILLO ARTESANAL EN PART ALTA (09:00-14:00)</span>
         </motion.div>
       </div>
 

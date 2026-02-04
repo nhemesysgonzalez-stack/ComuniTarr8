@@ -70,12 +70,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'ComuniTarr 📢', text: '🌬️ Martes con Mistral. Precaución: Viento fuerte en zonas altas. Asegurad objetos en terrazas.' },
-    { user: 'Mireia R.', text: '¡No olvidéis la clase de Yoga hoy a las 19:30 en el Parc! Traed esterilla. 🧘‍♀️' },
-    { user: 'Pau T.', text: 'El mercadillo del Fòrum está genial hoy. Las alcachofas están increíbles. 🥬' },
-    { user: 'Joan B.', text: 'El local quedó impecable ayer, gracias a todos los que ayudasteis. ✨' },
-    { user: 'Carme S.', text: 'Cuidado al salir con paraguas, el viento os lo arrancará. 💨⚠️' },
-    { user: 'Luis M.', text: '¿Alguien va a correr hoy? Con el viento mejor quedarse en el gimnasio... 🏃‍♂️' }
+    { user: 'ComuniTarr 📢', text: '☁️ Miércoles nublado. Posibles chubascos por la tarde. Llevad paraguas. 🌧️' },
+    { user: 'Elena G.', text: '¿Quién va a la asamblea vecinal hoy a las 19:00? Es sobre la reforma de la Rambla. 📢' },
+    { user: 'Joan B.', text: '¡Estreno del Directorio de Negocios! Ya he añadido mi taller. 🏪✨' },
+    { user: 'Pau T.', text: 'Recordad: mañana jueves mercadillo artesanal en Part Alta de 9-14h. 🛍️' },
+    { user: 'Mireia R.', text: 'ComuniTarr Radio está en directo 24/7. ¡Somos los voceros de tus negocios! 📻' },
+    { user: 'Luis M.', text: 'Con este tiempo apetece café caliente. ¿Alguien libre esta tarde? ☕' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -140,21 +140,21 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts
     let scripts = [
-      "¡Vaya viento hace hoy! Agarraos fuerte... 🌬️",
-      "¿Alguien va a la clase de Yoga de Mireia a las 19:30? 🧘‍♀️",
-      "He comprado unas naranjas buenísimas en el mercadillo del Fòrum. 🍊",
-      "El local social quedó super limpio ayer, ¡qué gusto da verlo así! ✨",
-      "Cuidado con las motos hoy, el viento lateral es peligroso en la A-7. ⚠️",
+      "☁️ Menudo día gris hace hoy... ¿lloverá?",
+      "¿Quién va a la asamblea vecinal de esta tarde a las 19:00? 📢",
+      "Acabo de poner mi negocio en el nuevo directorio. ¡Qué fácil! 🏪",
+      "Mañana jueves toca mercadillo artesanal, siempre encuentro cosas chulas. 🛍️",
+      "Estoy escuchando ComuniTarr Radio, tienen buena música. 📻",
       "¿Alguien tiene apuntes de Historia de 2º de Bachillerato? 📚"
     ];
 
     // Base reply scripts
     let replyScripts = [
-      `¡Totalmente de acuerdo, ${isReplyTo}! Maldito lunes.`,
+      `¡Totalmente de acuerdo, ${isReplyTo}! Miércoles tranquilo.`,
       `¿Me puedes dar más detalles sobre eso, ${isReplyTo}?`,
-      `¡Buenos días ${isReplyTo}! A por la semana.`,
+      `¡Buenos días ${isReplyTo}! Mitad de semana ya.`,
       `Yo también me pasaré luego, nos vemos allí.`,
-      `Gracias por el aviso del tráfico, ${isReplyTo}.`,
+      `Gracias por el aviso, ${isReplyTo}.`,
       `¡Vaya, no lo sabía! Gracias por comentarlo, ${isReplyTo}.`
     ];
 
@@ -163,10 +163,10 @@ const Forum: React.FC = () => {
       replyScripts = [`¡Mucha suerte en tu primer día, ${isReplyTo}!`, `Voy a echar un vistazo a Infojobs, gracias.`];
     } else if (currentNeighborhood === 'ENCUENTROS') {
       scripts = [
-        "¿Quién se anima a un afterwork hoy para empezar bien la semana? 🍻",
+        "¿Quién se anima a un afterwork hoy para relajarnos? 🍻",
         "Busco compi de gym para ir por las tardes. 💪",
-        "¡Qué pereza el lunes! ¿Un café para espabilar? ☕✨",
-        "Ayer conocí gente majísima en la paella. ¿Repetimos quedada? 😊",
+        "¡Mitad de semana! ¿Un café para aguantar? ☕✨",
+        "Ayer conocí gente majísima en la asamblea. ¿Repetimos quedada? 😊",
         "Si alguien quiere ir a correr por el milagro a las 19h, avisad. 🏃‍♂️",
         "¡Hola! Buscando planes tranquilos para entre semana. 👋"
       ];
@@ -212,10 +212,10 @@ const Forum: React.FC = () => {
         let possibleReplies = [];
         if (isGreeting) {
           possibleReplies = [
-            `¡Hola, ${isReplyTo}! A por el lunes con fuerza. 💪`,
-            `¡Muy buenas! ¿Qué tal el fin de semana? @${isReplyTo}.`,
+            `¡Hola, ${isReplyTo}! A por el miércoles con ganas. 💪`,
+            `¡Muy buenas! ¿Qué tal la semana? @${isReplyTo}.`,
             `¡Hola ${isReplyTo}! Aquí arrancando motores. ☕`,
-            `¡Buenos días! ¿Nos vemos en la limpieza de tarde?`
+            `¡Buenos días! ¿Nos vemos en la asamblea de tarde?`
           ];
         } else {
           possibleReplies = replyScripts;
@@ -425,12 +425,12 @@ const Forum: React.FC = () => {
   };
 
   const handleTopicClick = (topicId: string) => {
-    if (topicId === 'viento-mestral') {
-      setNewMessage('¡Ojo con las macetas en los balcones, que el viento sopla fuerte! 💨⚠️');
-    } else if (topicId === 'yoga-tarde') {
-      setNewMessage('¿Quién viene a Yoga esta tarde? ¡Yo llevo esterilla extra por si alguien necesita! 🧘‍♀️');
-    } else if (topicId === 'mercadillo-martes') {
-      setNewMessage('¿Alguien ha ido ya al mercadillo del Fòrum? ¿Qué hay hoy? 🥬');
+    if (topicId === 'asamblea-vecinal') {
+      setNewMessage('¿Alguien tiene la orden del día de la asamblea de las 19:00? 📢');
+    } else if (topicId === 'directorio-negocios') {
+      setNewMessage('¿Cómo añado mi negocio al nuevo directorio? Me interesa mucho. 🏪');
+    } else if (topicId === 'mercadillo-jueves') {
+      setNewMessage('¿Qué tipo de artesanía suele haber en el mercadillo? 🛍️');
     }
     setTimeout(() => {
       inputRef.current?.focus();
@@ -439,21 +439,21 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'viento-mestral',
-      title: '🌬️ Viento Fuerte',
-      description: 'Consejos y precauciones por el Mistral.',
+      id: 'asamblea-vecinal',
+      title: '📢 Asamblea 19:00',
+      description: 'Reunión vecinal hoy en local social.',
       participating: 156
     },
     {
-      id: 'yoga-tarde',
-      title: '🧘‍♀️ Yoga 19:30',
-      description: 'Clase abierta en el Parc hoy.',
-      participating: 87
+      id: 'directorio-negocios',
+      title: '🏪 Nuevo Directorio',
+      description: 'Anuncia tu negocio gratis.',
+      participating: 203
     },
     {
-      id: 'mercadillo-martes',
-      title: '🥬 Mercadillo Fòrum',
-      description: 'Frutas y verduras frescas hasta 14h.',
+      id: 'mercadillo-jueves',
+      title: '🛍️ Mercadillo Mañana',
+      description: 'Artesanía en Part Alta de 9-14h.',
       participating: 132
     }
   ];
@@ -597,7 +597,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Martes 3 Febrero 2026 - Viento y Actividades 🌬️🧘‍♀️
+                  Miércoles 4 Febrero 2026 - Nublado y Asamblea ☁️📢
                 </span>
               </div>
 
