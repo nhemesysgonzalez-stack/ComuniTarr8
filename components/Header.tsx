@@ -253,15 +253,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">☁️ MIÉRCOLES: NUBLADO CON POSIBLES CHUBASCOS - LLEVAD PARAGUAS</span>
+          <span className="flex items-center gap-2">🌬️ JUEVES: ALERTA VIENTO FUERTE - RACHAS DE 80KM/H - PRECAUCIÓN</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">📢 HOY 19:00: ASAMBLEA VECINAL EN LOCAL SOCIAL - REFORMA RAMBLA Y ZONAS VERDES</span>
+          <span className="flex items-center gap-2">🏭 AVISO: SIMULACRO PLASEQTA (PETROQUÍMICA) A LAS 12:00 - NO SE ALARME</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🏪 NUEVO: DIRECTORIO DE NEGOCIOS LOCALES - ¡ANUNCIA TU NEGOCIO GRATIS!</span>
+          <span className="flex items-center gap-2">🛍️ HOY HOY: MERCADILLO ARTESANAL EN PART ALTA (09:00-14:00)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">📻 COMUNITARR RADIO EN VIVO 24/7 - SOMOS LOS VOCEROS DE TUS NEGOCIOS</span>
+          <span className="flex items-center gap-2">🔦 PREPPERS TGN: NUEVA GUÍA "QUÉ COMER SI SE VA LA LUZ" DISPONIBLE</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛍️ MAÑANA JUEVES: MERCADILLO ARTESANAL EN PART ALTA (09:00-14:00)</span>
+          <span className="flex items-center gap-2">📻 COMUNITARR RADIO: ESPECIAL SEGURIDAD Y AUTOAPROVISIONAMIENTO</span>
         </motion.div>
       </div>
 

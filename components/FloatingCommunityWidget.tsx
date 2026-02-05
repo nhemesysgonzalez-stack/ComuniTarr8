@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '☁️ Miércoles nublado con posibles chubascos por la tarde. Llevad paraguas. 🌧️⚠️', neighborhood: 'GENERAL' },
-    { id: 1, user: 'Elena G.', avatar: 'https://i.pravatar.cc/150?u=elena', text: '¿Quién va a la asamblea vecinal de esta tarde a las 19:00? 📢', neighborhood: 'Centro' },
-    { id: 2, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: '¡Nuevo Directorio de Negocios en ComuniTarr! Ya he subido mi taller. 🏪✨', neighborhood: 'Part Alta' },
-    { id: 3, user: 'Pau T.', text: 'Mañana jueves voy al mercadillo artesanal de la Part Alta. ¿Alguien más? 🛍️', avatar: 'https://i.pravatar.cc/150?u=pau', neighborhood: 'Serrallo' },
-    { id: 4, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'Escuchad ComuniTarr Radio, están hablando del nuevo directorio. 📻', neighborhood: 'Centro' },
-    { id: 5, user: 'Luis M.', avatar: 'https://i.pravatar.cc/150?u=luis', text: 'Con esta nube apetece un café caliente. ¿Alguien libre? ☕', neighborhood: 'Centro' },
-    { id: 6, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: '¡Me encanta que podamos anunciar nuestros negocios gratis! 💼', neighborhood: 'Part Alta' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🌬️ Alerta de Viento Fuerte activada para hoy Jueves. Asegurad macetas y toldos. ⚠️', neighborhood: 'GENERAL' },
+    { id: 1, user: 'Protección Civil', avatar: '/logo.svg', text: '🏭 Simulacro PLASEQTA a las 12:00. Sonarán las sirenas. Es solo una prueba. 📢', neighborhood: 'GENERAL' },
+    { id: 2, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: 'En el mercadillo de hoy hay puestos nuevos de comida en conserva. ¡Ideal para tener reservas! 🥫', neighborhood: 'Part Alta' },
+    { id: 3, user: 'Pau T.', text: '¡Qué viento hace en el Serrallo! Se me ha volado la gorra. 🧢💨', avatar: 'https://i.pravatar.cc/150?u=pau', neighborhood: 'Serrallo' },
+    { id: 4, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'He subido al foro una guía sobre qué hacer con la comida si se va la luz. Muy útil. 🔦', neighborhood: 'Centro' },
+    { id: 5, user: 'Luis M.', avatar: 'https://i.pravatar.cc/150?u=luis', text: '¿Alguien ha notado olor extraño cerca del polígono? 🏭🤔', neighborhood: 'Ponent' },
+    { id: 6, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'Hoy me quedo en casa haciendo pan. ¡Día de prepper total! 🍞', neighborhood: 'Part Alta' },
 ];
 
 const tickerMessages = [
-    { user: 'Elena G.', text: 'Asamblea hoy 19:00 📢' },
-    { user: 'Joan B.', text: 'Directorio Negocios 🏪' },
-    { user: 'Pau T.', text: 'Mercadillo mañana 🛍️' },
-    { user: 'Admin', text: 'Radio en Vivo 📻' },
-    { user: 'Mireia R.', text: 'Tiempo nublado ☁️' }
+    { user: 'Admin', text: 'Viento Fuerte 🌬️' },
+    { user: 'Prot. Civil', text: 'Simulacro 12:00 🏭' },
+    { user: 'Joan B.', text: 'Mercadillo Hoy 🛍️' },
+    { user: 'Mireia R.', text: 'Guía Apagón 🔦' },
+    { user: 'Luis M.', text: 'Olor Polígono? 🤔' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

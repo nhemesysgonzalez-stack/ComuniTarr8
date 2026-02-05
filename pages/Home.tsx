@@ -157,54 +157,54 @@ const Home: React.FC = () => {
           .limit(3);
 
         const weatherAlert = {
-          id: 'weather-wed-feb04',
-          title: "☁️ MIÉRCOLES: Nublado y Fresco",
-          content: "Día nublado con posibles chubascos por la tarde. Temperaturas frescas entre 11°C y 14°C. Llevad paraguas por si acaso.",
+          id: 'weather-thu-feb05',
+          title: "🌬️ JUEVES: Alerta Viento Fuerte",
+          content: "Protección Civil activa alerta por rachas de viento de hasta 80km/h. Precaución con macetas, toldos y mobiliario exterior.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Mañana: Nublado (11°C)\n• Tarde: Chubascos (13°C)\n• Noche: Despejando (10°C)",
+          itinerary: "• Mañana: Viento Fuerte (10°C)\n• Tarde: Rachas Max 80km/h\n• Noche: Amaina (8°C)",
           link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo",
           created_at: new Date().toISOString()
         };
 
-        const communityMeeting = {
-          id: 'community-meeting-feb04',
-          title: "📢 HOY: Reunión Vecinal",
-          content: "Asamblea de barrio a las 19:00 en el local social. Temas: reforma de la Rambla, ordenanzas de ruido y nueva zona verde. ¡Participa!",
-          category: "COMUNIDAD",
+        const plaseqtaDrill = {
+          id: 'plaseqta-simulacrum-feb05',
+          title: "🏭 HOY 12:00: Simulacro PLASEQTA",
+          content: "Atención: A las 12:00 sonarán las sirenas de aviso de riesgo químico. ES UN SIMULACRO. No es necesario confinarse, pero manténgase informado.",
+          category: "SEGURIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Hora: 19:00\n• Lugar: Local Social\n• Temas: Rambla, Ruido, Zonas Verdes",
+          itinerary: "• Hora: 12:00\n• Tipo: Prueba de Sirenas\n• Acción: Solo Informativo",
           created_at: new Date().toISOString()
         };
 
-        const businessDirectory = {
-          id: 'business-directory-launch',
-          title: "🏪 NUEVO: Directorio de Negocios",
-          content: "¡Estreno del Directorio de Negocios Locales! Anuncia tu negocio gratis en ComuniTarr. Somos los voceros de tus negocios. ¡Únete!",
-          category: "COMUNIDAD",
+        const prepperGuide = {
+          id: 'prepper-guide-power',
+          title: "🔦 PREPPERS: Guía Apagón y Alimentos",
+          content: "Nueva guía comunitaria: 'Qué comer y cómo conservar alimentos si se va la luz'. Consejos prácticos de nuestros vecinos expertos en autosuficiencia.",
+          category: "SALUD",
           neighborhood: "GENERAL",
-          itinerary: "• Función: Directorio gratuito\n• Para: Negocios locales\n• Acceso: Menú Principal",
-          link_url: "/local-businesses",
+          itinerary: "• Tema: Seguridad Alimentaria\n• Recurso: PDF en Foro\n• Kit: Linterna + Conservas",
+          link_url: "/vital",
           created_at: new Date().toISOString()
         };
 
         const marketThursday = {
-          id: 'market-thursday-preview',
-          title: "🛍️ MAÑANA: Mercadillo Jueves",
-          content: "Recordatorio: Mañana jueves el mercadillo de la Part Alta con productos artesanales y de segunda mano. ¡No te lo pierdas!",
+          id: 'market-thursday-today',
+          title: "🛍️ HOY: Mercadillo Jueves",
+          content: "El mercadillo de la Part Alta está abierto hasta las 14:00. Productos frescos, artesanía y puestos de comida preparada de larga duración.",
           category: "COMERCIO",
           neighborhood: "PART ALTA",
-          itinerary: "• Día: Jueves 5 Feb\n• Horario: 09:00 - 14:00\n• Destacado: Artesanía local",
+          itinerary: "• Día: HOY Jueves 5 Feb\n• Horario: 09:00 - 14:00\n• Destacado: Conservas artesanas",
           created_at: new Date().toISOString()
         };
 
         const radioLive = {
-          id: 'radio-live-wed',
-          title: "📻 RADIO: En directo",
-          content: "ComuniTarr Radio activa las 24h. Escucha música ambiente, avisos del barrio y retransmisiones en directo de eventos vecinales.",
+          id: 'radio-live-thu',
+          title: "📻 RADIO: Especial Seguridad",
+          content: "En directo: Entrevista al responsable de Protección Civil sobre el riesgo petroquímico y consejos de seguridad vecinal.",
           category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Estado: EN VIVO\n• Acceso: Menú lateral\n• Contenido: Música + Avisos",
+          itinerary: "• Estado: EN VIVO\n• Tema: PLASEQTA + Preppers\n• Invitado: Protección Civil",
           created_at: new Date().toISOString()
         };
 
@@ -220,7 +220,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([weatherAlert, communityMeeting, businessDirectory, radioLive, marketThursday, ...validFetchedNews].slice(0, 6));
+        setNews([weatherAlert, plaseqtaDrill, marketThursday, prepperGuide, radioLive, ...validFetchedNews].slice(0, 6));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

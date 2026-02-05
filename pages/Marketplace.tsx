@@ -59,10 +59,10 @@ const Marketplace: React.FC = () => {
         {
           id: 'm-1',
           user_id: 'v1',
-          title: 'Esterilla de Yoga Antideslizante',
-          description: 'Casi nueva. Marca Lululemon. La vendo porque me han regalado otra. Perfecta para la clase de hoy.',
-          price: '30',
-          category: 'ocio',
+          title: 'Cortavientos North Face Talla M',
+          description: 'Perfecto para días como hoy. Lo vendo porque me queda grande. Usado dos veces.',
+          price: '45',
+          category: 'moda',
           neighborhood: 'GENERAL',
           contact_info: '652 11 00 99 (Mireia)',
           created_at: new Date().toISOString()
@@ -70,9 +70,9 @@ const Marketplace: React.FC = () => {
         {
           id: 'm-2',
           user_id: 'v2',
-          title: 'Radiador de Aceite Pequeño',
-          description: 'Calienta muy rápido. Ideal para habitación pequeña ahora que refresca con el viento.',
-          price: '20',
+          title: 'Lámpara de Camping LED (Recargable)',
+          description: 'Luz muy potente. Ideal para tener en casa por si se va la luz o para camping. Tengo dos.',
+          price: '15',
           category: 'hogar',
           neighborhood: 'GENERAL',
           contact_info: '633 44 55 66 (Paco)',
@@ -81,10 +81,10 @@ const Marketplace: React.FC = () => {
         {
           id: 'm-3',
           user_id: 'v3',
-          title: '2 Entradas Concierto Sala Zero',
-          description: 'Para este viernes. Grupo tributo a Queen. Las vendo al mismo precio de coste por no poder ir.',
-          price: '15',
-          category: 'ocio',
+          title: 'Botas de Agua N38',
+          description: 'Por si llueve esta tarde. Están nuevas, con etiqueta.',
+          price: '20',
+          category: 'moda',
           neighborhood: 'GENERAL',
           contact_info: '611 22 33 44 (Ana)',
           created_at: new Date().toISOString()
@@ -92,10 +92,10 @@ const Marketplace: React.FC = () => {
         {
           id: 'm-4',
           user_id: 'v4',
-          title: 'Abrigo Plumas Mujer Talla L',
-          description: 'Muy abrigado. Color negro. Poco uso.',
-          price: '45',
-          category: 'moda',
+          title: 'Pack Conservas Caseras (Mermelada)',
+          description: 'Hechas ayer. Mermelada de naranja amarga. Pack de 3 botes.',
+          price: '12',
+          category: 'hogar',
           neighborhood: 'GENERAL',
           contact_info: '699 88 77 66 (Carmen)',
           created_at: new Date().toISOString()

@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '52%', y: '65%', title: 'Yoga al Atardecer', desc: 'Clase abierta en el parque. Trae tu esterilla. ¡Gratis!', status: 'Hoy 19:30', color: 'bg-purple-500', icon: 'self_improvement', glow: 'shadow-[0_0_30px_rgba(168,85,247,0.4)]' },
-    { id: 2, type: 'event', x: '42%', y: '35%', title: 'Mercadillo Martes', desc: 'Frutas y verduras frescas en la Plaça del Fòrum.', status: 'Hasta 14:00', color: 'bg-orange-500', icon: 'storefront', glow: 'shadow-[0_0_35px_rgba(249,115,22,0.5)]' },
-    { id: 3, type: 'incident', x: '75%', y: '45%', title: 'Viento Fuerte', desc: 'Precaución en zonas expuestas por rachas de viento.', status: 'Alerta', color: 'bg-blue-400', icon: 'air', glow: 'shadow-[0_0_40px_rgba(96,165,250,0.6)]' },
-    { id: 4, type: 'event', x: '48%', y: '28%', title: 'Cuentacuentos', desc: 'Actividad infantil en la Biblioteca Pública.', status: 'Hoy 17:30', color: 'bg-indigo-500', icon: 'local_library', glow: 'shadow-[0_0_30px_rgba(99,102,241,0.3)]' },
-    { id: 5, type: 'cleanup', x: '58%', y: '45%', title: 'Local Social', desc: 'El local está abierto para juegos de mesa esta tarde.', status: 'Abierto', color: 'bg-emerald-500', icon: 'meeting_room' }
+    { id: 1, type: 'incident', x: '52%', y: '65%', title: 'Árbol Caído', desc: 'Rama grande obstaculizando la acera debido al viento.', status: 'En Proceso', color: 'bg-red-500', icon: 'forest', glow: 'shadow-[0_0_30px_rgba(239,68,68,0.4)]' },
+    { id: 2, type: 'event', x: '42%', y: '35%', title: 'Mercadillo Jueves', desc: 'Puestos de fruta y verdura hasta las 14h. ¡Hoy hay conservas!', status: 'Abierto Ahora', color: 'bg-orange-500', icon: 'storefront', glow: 'shadow-[0_0_35px_rgba(249,115,22,0.5)]' },
+    { id: 3, type: 'incident', x: '75%', y: '45%', title: 'Alerta Viento', desc: 'Zona expuesta a rachas fuertes. Evitar paso.', status: 'Alerta', color: 'bg-blue-400', icon: 'air', glow: 'shadow-[0_0_40px_rgba(96,165,250,0.6)]' },
+    { id: 4, type: 'cleanup', x: '48%', y: '28%', title: 'Punto Info PLASEQTA', desc: 'Carpa informativa sobre el simulacro de hoy.', status: 'Hoy 10-13h', color: 'bg-indigo-500', icon: 'info', glow: 'shadow-[0_0_30px_rgba(99,102,241,0.3)]' },
+    { id: 5, type: 'event', x: '58%', y: '45%', title: 'Taller Preppers', desc: 'Charla sobre kits de emergencia y apagones.', status: '18:30', color: 'bg-emerald-500', icon: 'flashlight_on' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

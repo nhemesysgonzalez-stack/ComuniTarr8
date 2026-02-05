@@ -70,12 +70,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'ComuniTarr 📢', text: '☁️ Miércoles nublado. Posibles chubascos por la tarde. Llevad paraguas. 🌧️' },
-    { user: 'Elena G.', text: '¿Quién va a la asamblea vecinal hoy a las 19:00? Es sobre la reforma de la Rambla. 📢' },
-    { user: 'Joan B.', text: '¡Estreno del Directorio de Negocios! Ya he añadido mi taller. 🏪✨' },
-    { user: 'Pau T.', text: 'Recordad: mañana jueves mercadillo artesanal en Part Alta de 9-14h. 🛍️' },
-    { user: 'Mireia R.', text: 'ComuniTarr Radio está en directo 24/7. ¡Somos los voceros de tus negocios! 📻' },
-    { user: 'Luis M.', text: 'Con este tiempo apetece café caliente. ¿Alguien libre esta tarde? ☕' }
+    { user: 'ComuniTarr 📢', text: '💨 JUEVES: Alerta amarilla por Viento. Precaución en la calle. ⚠️' },
+    { user: 'Prot. Civil', text: '🏭 A las 12:00 Simulacro PLASEQTA. Sonarán sirenas. Solo es una prueba. 📢' },
+    { user: 'Joan B.', text: '¡El mercadillo de Part Alta está abierto! Aprovechad antes de comer. 🛍️' },
+    { user: 'Pau T.', text: 'Interesante la charla sobre alimentos sin electricidad en el canal Preppers. 🔦' },
+    { user: 'Mireia R.', text: 'Radio en directo cubriendo el simulacro. 📻' },
+    { user: 'Luis M.', text: '¿Se ha ido la luz en San Pedro o es mi casa? 🤔' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -140,12 +140,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts
     let scripts = [
-      "☁️ Menudo día gris hace hoy... ¿lloverá?",
-      "¿Quién va a la asamblea vecinal de esta tarde a las 19:00? 📢",
-      "Acabo de poner mi negocio en el nuevo directorio. ¡Qué fácil! 🏪",
-      "Mañana jueves toca mercadillo artesanal, siempre encuentro cosas chulas. 🛍️",
-      "Estoy escuchando ComuniTarr Radio, tienen buena música. 📻",
-      "¿Alguien tiene apuntes de Historia de 2º de Bachillerato? 📚"
+      "💨 Hoy sopla fuerte el viento... cuidado con las macetas.",
+      "¿Habéis oído el aviso del simulacro de la petroquímica? Es a las 12. 🏭",
+      "Me voy a pasar por el mercadillo a comprar verduras frescas antes de que llueva. 🛍️",
+      "He visto la guía de preppers sobre los apagones, muy interesante lo de las conservas. 🔦",
+      "¿Alguien sabe si el taller de esta tarde se mantiene con este viento? 🤔",
+      "¡Buenos días vecinos! Mucho ánimo con el jueves. ☕"
     ];
 
     // Base reply scripts
@@ -439,21 +439,21 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'asamblea-vecinal',
-      title: '📢 Asamblea 19:00',
-      description: 'Reunión vecinal hoy en local social.',
-      participating: 156
+      id: 'plaseqta',
+      title: '🚨 Simulacro 12h',
+      description: 'Sirenas riesgo químico.',
+      participating: 342
     },
     {
-      id: 'directorio-negocios',
-      title: '🏪 Nuevo Directorio',
-      description: 'Anuncia tu negocio gratis.',
-      participating: 203
+      id: 'viento-fuerte',
+      title: '💨 Alerta Viento',
+      description: 'Rachas 80km/h.',
+      participating: 215
     },
     {
       id: 'mercadillo-jueves',
-      title: '🛍️ Mercadillo Mañana',
-      description: 'Artesanía en Part Alta de 9-14h.',
+      title: '🛍️ Mercadillo Hoy',
+      description: 'Part Alta abierto.',
       participating: 132
     }
   ];
@@ -597,7 +597,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Miércoles 4 Febrero 2026 - Nublado y Asamblea ☁️📢
+                  Jueves 5 Febrero 2026 - Viento Fuerte y Simulacro 💨🏭
                 </span>
               </div>
 
@@ -774,16 +774,16 @@ const Forum: React.FC = () => {
                 >
                   ✕
                 </button>
-                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Martes 03/02</h2>
+                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Jueves 05/02</h2>
                 <ul className="space-y-2">
-                  <li>🚚 <strong>Repartidor/a Moto - Burger King</strong> – Urgente, turnos noche</li>
-                  <li>🔧 <strong>Ayudante Fontanería - Zona Centro</strong> (Instalaciones TGN) – Formación a cargo</li>
-                  <li>🏨 <strong>Camarero/a Pisos - Hotel Imperial</strong> – Temporada Semana Santa</li>
-                  <li>👵 <strong>Acompañamiento - Part Alta</strong> – Señora mayor, 4h/día mañanas</li>
-                  <li>💻 <strong>Programador Junior React - Remoto</strong> (TechTGN) – Híbrido</li>
-                  <li>📦 <strong>Mozos Almacén - Valls</strong> – Turno de noche, transporte incluido</li>
-                  <li>🥖 <strong>Panadero/a - Forn de Pa Rambla</strong> – Experiencia con masa madre</li>
-                  <li>🏫 <strong>Monitor/a Comedor - Colegio Sant Pau</strong> – 12:30 a 15:00</li>
+                  <li>🏭 <strong>Operario/a Planta - IQOXE</strong> – Turnos rotativos, curso PRL indispensable</li>
+                  <li>🧹 <strong>Personal Limpieza - Port Tarragona</strong> – Sustitución 2 semanas</li>
+                  <li>🍽️ <strong>Ayudante Cocina - El Serrallo</strong> – Fines de semana y festivos</li>
+                  <li>👴 <strong>Cuidador/a Interno/a - Bonavista</strong> – Experiencia con Alzheimer</li>
+                  <li>📦 <strong>Repartidor/a Paquetería - Zona Franca</strong> – Carnet B, vehículo propio valorable</li>
+                  <li>💊 <strong>Auxiliar Farmacia - Centro</strong> – Jornada completa, contrato indefinido</li>
+                  <li>🎓 <strong>Profesor/a Repaso Inglés</strong> – Tardes, zona Universitat</li>
+                  <li>🏗️ <strong>Peón Obra - Reforma Rambla</strong> – Incorporación inmediata</li>
                 </ul>
                 <button
                   onClick={() => setShowJobOffers(false)}
