@@ -48,9 +48,9 @@ const VitalNeeds: React.FC = () => {
                 {
                     id: 'mock-n1',
                     creator_id: 'v4',
-                    type: 'food',
-                    title: 'Ayuda Compra (Viento)',
-                    description: 'Con estas rachas de viento no me atrevo a salir a comprar el pan y la leche. ¿Algún vecino que vaya al súper y me lo pueda subir? Vivo en el 3º.',
+                    type: 'other',
+                    title: 'Ayuda Limpiar Terraza',
+                    description: 'Tengo toda la terraza llena de hojas y tierra del viento de ayer. ¿Algún chaval que quiera ganarse una propina ayudándome a barrer?',
                     contact_info: '622 34 56 78',
                     is_urgent: false,
                     neighborhood: 'GENERAL',
@@ -60,10 +60,10 @@ const VitalNeeds: React.FC = () => {
                     id: 'mock-n2',
                     creator_id: 'v5',
                     type: 'other',
-                    title: 'Bajar Toldo Atascado',
-                    description: 'Se me ha atascado el toldo y con el viento me da miedo que se rompa. Necesito alguien alto o con escalera para ayudarme a recogerlo.',
+                    title: 'Coche para Concierto',
+                    description: 'Voy a la Sala Zero esta noche y vivo en San Pere y San Pau. ¿Alguien baja en coche y tiene sitio? Comparto gasolina.',
                     contact_info: '655 89 21 00',
-                    is_urgent: true,
+                    is_urgent: false,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }
@@ -146,26 +146,26 @@ const VitalNeeds: React.FC = () => {
 
             <main className="max-w-6xl mx-auto p-6 md:p-12 -mt-10 relative z-20">
                 {/* Solidarity Initiatives Section */}
-                <section className="mb-12 bg-white dark:bg-surface-dark rounded-[40px] p-8 shadow-xl border border-gray-100 dark:border-gray-800 flex flex-col md:flex-row items-center gap-8 border-l-[12px] border-l-orange-500">
-                    <div className="size-24 rounded-3xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center shrink-0">
-                        <span className="material-symbols-outlined text-4xl text-orange-600">flashlight_on</span>
+                <section className="mb-12 bg-white dark:bg-surface-dark rounded-[40px] p-8 shadow-xl border border-gray-100 dark:border-gray-800 flex flex-col md:flex-row items-center gap-8 border-l-[12px] border-l-emerald-500">
+                    <div className="size-24 rounded-3xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center shrink-0">
+                        <span className="material-symbols-outlined text-4xl text-emerald-600">cleaning_services</span>
                     </div>
                     <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
-                            <span className="px-2 py-0.5 bg-orange-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">INICIATIVA DEL DÍA</span>
-                            <span className="text-[10px] font-bold text-gray-400 uppercase">GRUPO PREPPERS</span>
+                            <span className="px-2 py-0.5 bg-emerald-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">ACCIÓN VECINAL</span>
+                            <span className="text-[10px] font-bold text-gray-400 uppercase">POST-TEMPORAL</span>
                         </div>
-                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Kit ''Si Se Va La Luz'' 🔦</h2>
+                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Limpieza de Parques 🧹</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            Debido a la alerta de viento y riesgo de cortes, estamos repartiendo guías impresas sobre cómo conservar alimentos sin nevera y kits básicos de iluminación a personas mayores que vivan solas. ¿Puedes ayudar a repartir en tu bloque?
+                            El viento ha dejado los parques llenos de ramas. Antes del fin de semana, organizamos cuadrillas para limpiar zonas de juego infantil. Si tienes guantes y tiempo, ¡acércate!
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Gracias por unirte al grupo de reparto.'); }} className="px-6 py-4 bg-orange-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
-                            <span className="material-symbols-outlined text-sm">handshake</span>
-                            ME APUNTO A REPARTIR
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Gracias por unirte a la limpieza.'); }} className="px-6 py-4 bg-emerald-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                            <span className="material-symbols-outlined text-sm">nature_people</span>
+                            AYUDAR A LIMPIAR
                         </a>
-                        <p className="text-[9px] text-center font-bold text-gray-400">Coordinado por Vecinos TGN</p>
+                        <p className="text-[9px] text-center font-bold text-gray-400">Puntos: Parque Ciudad y Francolí</p>
                     </div>
                 </section>
 

@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🌬️ Alerta de Viento Fuerte activada para hoy Jueves. Asegurad macetas y toldos. ⚠️', neighborhood: 'GENERAL' },
-    { id: 1, user: 'Protección Civil', avatar: '/logo.svg', text: '🏭 Simulacro PLASEQTA a las 12:00. Sonarán las sirenas. Es solo una prueba. 📢', neighborhood: 'GENERAL' },
-    { id: 2, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: 'En el mercadillo de hoy hay puestos nuevos de comida en conserva. ¡Ideal para tener reservas! 🥫', neighborhood: 'Part Alta' },
-    { id: 3, user: 'Pau T.', text: '¡Qué viento hace en el Serrallo! Se me ha volado la gorra. 🧢💨', avatar: 'https://i.pravatar.cc/150?u=pau', neighborhood: 'Serrallo' },
-    { id: 4, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: 'He subido al foro una guía sobre qué hacer con la comida si se va la luz. Muy útil. 🔦', neighborhood: 'Centro' },
-    { id: 5, user: 'Luis M.', avatar: 'https://i.pravatar.cc/150?u=luis', text: '¿Alguien ha notado olor extraño cerca del polígono? 🏭🤔', neighborhood: 'Ponent' },
-    { id: 6, user: 'Carme S.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'Hoy me quedo en casa haciendo pan. ¡Día de prepper total! 🍞', neighborhood: 'Part Alta' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '☀️ ¡Por fin sol! Las brigadas ya han retirado el árbol de la Rambla. Buen viernes. 👍', neighborhood: 'GENERAL' },
+    { id: 1, user: 'Marc P.', avatar: 'https://i.pravatar.cc/150?u=marc', text: '¿Os enterasteis de las sirenas ayer? En Bonavista sonaron fuertísimo. 🏭🔊', neighborhood: 'Ponent' },
+    { id: 2, user: 'Maria L.', avatar: 'https://i.pravatar.cc/150?u=maria', text: 'Esta noche concierto en la Sala Zero. ¿Quién se apunta? 🎸🍻', neighborhood: 'Part Alta' },
+    { id: 3, user: 'PrepperTGN', text: 'He subido info sobre máscaras de gas y sellado de ventanas. Nunca se sabe... 😷🪟', avatar: '/logo.svg', neighborhood: 'GENERAL' },
+    { id: 4, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: '¡Qué ganas de vermut mañana en la plaça del Fòrum! 🍸', neighborhood: 'Part Alta' },
+    { id: 5, user: 'Paco R.', avatar: 'https://i.pravatar.cc/150?u=paco', text: 'Tengo leña de las ramas caídas si alguien quiere para chimenea. 🪵', neighborhood: 'Monnars' },
+    { id: 6, user: 'Ana M.', avatar: 'https://i.pravatar.cc/150?u=ana', text: '¿Alguna oferta de camarera para el finde? 💼', neighborhood: 'Centro' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: 'Viento Fuerte 🌬️' },
-    { user: 'Prot. Civil', text: 'Simulacro 12:00 🏭' },
-    { user: 'Joan B.', text: 'Mercadillo Hoy 🛍️' },
-    { user: 'Mireia R.', text: 'Guía Apagón 🔦' },
-    { user: 'Luis M.', text: 'Olor Polígono? 🤔' }
+    { user: 'Admin', text: 'Sol y Calma ☀️' },
+    { user: 'Marc P.', text: 'Sirenas fuertes ayer 🔊' },
+    { user: 'Maria L.', text: 'Concierto Hoy 🎸' },
+    { user: 'PrepperTGN', text: 'Guía Máscaras 😷' },
+    { user: 'Paco R.', text: 'Regalo Leña 🪵' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

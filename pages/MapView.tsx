@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'incident', x: '52%', y: '65%', title: 'Árbol Caído', desc: 'Rama grande obstaculizando la acera debido al viento.', status: 'En Proceso', color: 'bg-red-500', icon: 'forest', glow: 'shadow-[0_0_30px_rgba(239,68,68,0.4)]' },
-    { id: 2, type: 'event', x: '42%', y: '35%', title: 'Mercadillo Jueves', desc: 'Puestos de fruta y verdura hasta las 14h. ¡Hoy hay conservas!', status: 'Abierto Ahora', color: 'bg-orange-500', icon: 'storefront', glow: 'shadow-[0_0_35px_rgba(249,115,22,0.5)]' },
-    { id: 3, type: 'incident', x: '75%', y: '45%', title: 'Alerta Viento', desc: 'Zona expuesta a rachas fuertes. Evitar paso.', status: 'Alerta', color: 'bg-blue-400', icon: 'air', glow: 'shadow-[0_0_40px_rgba(96,165,250,0.6)]' },
-    { id: 4, type: 'cleanup', x: '48%', y: '28%', title: 'Punto Info PLASEQTA', desc: 'Carpa informativa sobre el simulacro de hoy.', status: 'Hoy 10-13h', color: 'bg-indigo-500', icon: 'info', glow: 'shadow-[0_0_30px_rgba(99,102,241,0.3)]' },
-    { id: 5, type: 'event', x: '58%', y: '45%', title: 'Taller Preppers', desc: 'Charla sobre kits de emergencia y apagones.', status: '18:30', color: 'bg-emerald-500', icon: 'flashlight_on' }
+    { id: 1, type: 'cleanup', x: '51%', y: '64%', title: 'Retirada Ramas', desc: 'Brigada municipal troceando árbol caído ayer.', status: 'En Proceso', color: 'bg-emerald-500', icon: 'forest', glow: 'shadow-[0_0_30px_rgba(16,185,129,0.4)]' },
+    { id: 2, type: 'event', x: '45%', y: '80%', title: 'Concierto Sala Zero', desc: 'Tributo a Queen. Apertura puertas 20:30.', status: 'Esta Noche', color: 'bg-purple-500', icon: 'music_note', glow: 'shadow-[0_0_35px_rgba(168,85,247,0.5)]' },
+    { id: 3, type: 'incident', x: '75%', y: '45%', title: 'Semáforo Averiado', desc: 'Intermitente tras el viento. Policía regulando.', status: 'Precaución', color: 'bg-yellow-500', icon: 'traffic', glow: 'shadow-[0_0_40px_rgba(234,179,8,0.6)]' },
+    { id: 4, type: 'event', x: '42%', y: '35%', title: 'Vermut Fòrum', desc: 'Preparativos para mañana. Escenario montado.', status: 'Mañana', color: 'bg-orange-500', icon: 'celebration', glow: 'shadow-[0_0_30px_rgba(249,115,22,0.3)]' },
+    { id: 5, type: 'cleanup', x: '15%', y: '65%', title: 'Charla Prepper', desc: 'Centro Cívico Torreforta. Tema: Riesgo Químico.', status: 'Sábado 17h', color: 'bg-gray-700', icon: 'masks' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

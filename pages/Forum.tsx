@@ -70,12 +70,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'ComuniTarr 📢', text: '💨 JUEVES: Alerta amarilla por Viento. Precaución en la calle. ⚠️' },
-    { user: 'Prot. Civil', text: '🏭 A las 12:00 Simulacro PLASEQTA. Sonarán sirenas. Solo es una prueba. 📢' },
-    { user: 'Joan B.', text: '¡El mercadillo de Part Alta está abierto! Aprovechad antes de comer. 🛍️' },
-    { user: 'Pau T.', text: 'Interesante la charla sobre alimentos sin electricidad en el canal Preppers. 🔦' },
-    { user: 'Mireia R.', text: 'Radio en directo cubriendo el simulacro. 📻' },
-    { user: 'Luis M.', text: '¿Se ha ido la luz en San Pedro o es mi casa? 🤔' }
+    { user: 'ComuniTarr 📢', text: '☀️ VIERNES: Cielo despejado. Temperatura agradable 15°C. ¡A disfrutar!' },
+    { user: 'Prot. Civil', text: '✅ El simulacro del PLASEQTA finalizó correctamente. Gracias por la colaboración.' },
+    { user: 'Joan B.', text: '¿Alguien para el vermut de mañana en el Serrallo? 🍸' },
+    { user: 'PrepperTGN', text: 'Nuevo debate: Máscaras antigás y refugio en casa. Hilo oficial abierto. 😷' },
+    { user: 'Laura V.', text: 'Esta noche TRIBUTO A QUEEN en la Sala Zero. ¡Me sobran 2 entradas! 🎸' },
+    { user: 'Luis M.', text: 'Han quedado ramas en la acera de enfrente, ¿aviso al Ayuntamiento? 🧹' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -140,12 +140,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts
     let scripts = [
-      "💨 Hoy sopla fuerte el viento... cuidado con las macetas.",
-      "¿Habéis oído el aviso del simulacro de la petroquímica? Es a las 12. 🏭",
-      "Me voy a pasar por el mercadillo a comprar verduras frescas antes de que llueva. 🛍️",
-      "He visto la guía de preppers sobre los apagones, muy interesante lo de las conservas. 🔦",
-      "¿Alguien sabe si el taller de esta tarde se mantiene con este viento? 🤔",
-      "¡Buenos días vecinos! Mucho ánimo con el jueves. ☕"
+      "☀️ ¡Qué día más bueno se ha quedado después del viento de ayer!",
+      "Al final las sirenas del simulacro se oyeron bien fuerte en mi calle. 🔊",
+      "¿Quién se apunta a unas cañas esta tarde en la Plaça de la Font? 🍻",
+      "He leido el hilo de las máscaras de gas... nunca se es demasiado precavido viviendo aquí. 🏭",
+      "¡Viernes! ¿Qué planes tenéis? Yo concierto en la Sala Zero. 🎸",
+      "¿Sabéis si ya han limpiado las ramas de la Rambla? Tengo que pasar con el coche. 🚗"
     ];
 
     // Base reply scripts
@@ -439,22 +439,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'plaseqta',
-      title: '🚨 Simulacro 12h',
-      description: 'Sirenas riesgo químico.',
-      participating: 342
+      id: 'plaseqta-resultados',
+      title: '✅ Fin Simulacro',
+      description: 'Resultados y opiniones.',
+      participating: 412
     },
     {
-      id: 'viento-fuerte',
-      title: '💨 Alerta Viento',
-      description: 'Rachas 80km/h.',
-      participating: 215
+      id: 'agenda-finde',
+      title: '🎉 Planes Finde',
+      description: 'Conciertos y Vermut.',
+      participating: 289
     },
     {
-      id: 'mercadillo-jueves',
-      title: '🛍️ Mercadillo Hoy',
-      description: 'Part Alta abierto.',
-      participating: 132
+      id: 'preppers-mascaras',
+      title: '😷 Kit Químico',
+      description: 'Debate máscaras antigás.',
+      participating: 156
     }
   ];
 
@@ -597,7 +597,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Jueves 5 Febrero 2026 - Viento Fuerte y Simulacro 💨🏭
+                  Viernes 6 Febrero 2026 - Sol y Agenda Cultural ☀️🎉
                 </span>
               </div>
 
@@ -774,16 +774,16 @@ const Forum: React.FC = () => {
                 >
                   ✕
                 </button>
-                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Jueves 05/02</h2>
+                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Viernes 06/02</h2>
                 <ul className="space-y-2">
-                  <li>🏭 <strong>Operario/a Planta - IQOXE</strong> – Turnos rotativos, curso PRL indispensable</li>
-                  <li>🧹 <strong>Personal Limpieza - Port Tarragona</strong> – Sustitución 2 semanas</li>
-                  <li>🍽️ <strong>Ayudante Cocina - El Serrallo</strong> – Fines de semana y festivos</li>
-                  <li>👴 <strong>Cuidador/a Interno/a - Bonavista</strong> – Experiencia con Alzheimer</li>
-                  <li>📦 <strong>Repartidor/a Paquetería - Zona Franca</strong> – Carnet B, vehículo propio valorable</li>
-                  <li>💊 <strong>Auxiliar Farmacia - Centro</strong> – Jornada completa, contrato indefinido</li>
-                  <li>🎓 <strong>Profesor/a Repaso Inglés</strong> – Tardes, zona Universitat</li>
-                  <li>🏗️ <strong>Peón Obra - Reforma Rambla</strong> – Incorporación inmediata</li>
+                  <li>🍹 <strong>Camarero/a Extra - Sala Zero</strong> – Para esta noche y mañana (Urgente)</li>
+                  <li>🧹 <strong>Limpieza Refuerzo - Camping</strong> – Preparación temporada fin de semana</li>
+                  <li>🎸 <strong>Técnico Sonido - Eventos</strong> – Montaje escenarios local</li>
+                  <li>🍽️ <strong>Ayudante Cocina - Rest. El Pòsit</strong> – Turno partido fin de semana</li>
+                  <li>🚲 <strong>Repartidor Glovo/Uber</strong> – Alta demanda prevista para la noche</li>
+                  <li>👴 <strong>Cuidador/a Fin de Semana</strong> – Acompañamiento señor mayor</li>
+                  <li>🏪 <strong>Dependiente/a Tienda 24h</strong> – Turno noche viernes/sábado</li>
+                  <li>🚛 <strong>Conductor/a Furgoneta</strong> – Reparto última milla (mañanas)</li>
                 </ul>
                 <button
                   onClick={() => setShowJobOffers(false)}

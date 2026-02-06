@@ -253,15 +253,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">🌬️ JUEVES: ALERTA VIENTO FUERTE - RACHAS DE 80KM/H - PRECAUCIÓN</span>
+          <span className="flex items-center gap-2">☀️ VIERNES: CIELO DESPEJADO - SE ACABÓ EL VIENTO - 15°C</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🏭 AVISO: SIMULACRO PLASEQTA (PETROQUÍMICA) A LAS 12:00 - NO SE ALARME</span>
+          <span className="flex items-center gap-2">✅ PLASEQTA: SIMULACRO FINALIZADO SIN INCIDENCIAS - GRACIAS POR COLABORAR</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛍️ HOY HOY: MERCADILLO ARTESANAL EN PART ALTA (09:00-14:00)</span>
+          <span className="flex items-center gap-2">🎉 AGENDA FINDE: CONCIERTOS EN SALA ZERO Y VERMUT EN EL SERRALLO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🔦 PREPPERS TGN: NUEVA GUÍA "QUÉ COMER SI SE VA LA LUZ" DISPONIBLE</span>
+          <span className="flex items-center gap-2">🏭 PREPPERS TGN: "¿QUÉ MÁSCARA NECESITO?" - NUEVO HILO EN EL FORO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">📻 COMUNITARR RADIO: ESPECIAL SEGURIDAD Y AUTOAPROVISIONAMIENTO</span>
+          <span className="flex items-center gap-2">🚧 INCIDENCIAS: BRIGADAS LIMPIANDO RAMAS EN RAMBLA NOVA</span>
         </motion.div>
       </div>
 
