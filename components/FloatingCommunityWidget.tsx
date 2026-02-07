@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '☀️ ¡Por fin sol! Las brigadas ya han retirado el árbol de la Rambla. Buen viernes. 👍', neighborhood: 'GENERAL' },
-    { id: 1, user: 'Marc P.', avatar: 'https://i.pravatar.cc/150?u=marc', text: '¿Os enterasteis de las sirenas ayer? En Bonavista sonaron fuertísimo. 🏭🔊', neighborhood: 'Ponent' },
-    { id: 2, user: 'Maria L.', avatar: 'https://i.pravatar.cc/150?u=maria', text: 'Esta noche concierto en la Sala Zero. ¿Quién se apunta? 🎸🍻', neighborhood: 'Part Alta' },
-    { id: 3, user: 'PrepperTGN', text: 'He subido info sobre máscaras de gas y sellado de ventanas. Nunca se sabe... 😷🪟', avatar: '/logo.svg', neighborhood: 'GENERAL' },
-    { id: 4, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: '¡Qué ganas de vermut mañana en la plaça del Fòrum! 🍸', neighborhood: 'Part Alta' },
-    { id: 5, user: 'Paco R.', avatar: 'https://i.pravatar.cc/150?u=paco', text: 'Tengo leña de las ramas caídas si alguien quiere para chimenea. 🪵', neighborhood: 'Monnars' },
-    { id: 6, user: 'Ana M.', avatar: 'https://i.pravatar.cc/150?u=ana', text: '¿Alguna oferta de camarera para el finde? 💼', neighborhood: 'Centro' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🍸 ¡La Plaça del Fòrum está a tope! Recordad mantener la zona limpia. ♻️', neighborhood: 'Part Alta' },
+    { id: 1, user: 'Jordi F.', avatar: 'https://i.pravatar.cc/150?u=jordi', text: '¿Alguien tiene un ticket de sobra para la Calçotada de mañana? 🙏', neighborhood: 'Serrallo' },
+    { id: 2, user: 'PrepperTGN', avatar: '/logo.svg', text: 'Llevo muestras de máscaras FFP3 y filtros ABEC al taller de esta tarde. 🏭😷', neighborhood: 'Ponent' },
+    { id: 3, user: 'Lucía M.', text: '¡Qué solazo! Bajando a la Arrabassada a pasear al perro. 🐕☀️', avatar: 'https://i.pravatar.cc/150?u=lucia', neighborhood: 'Llevant' },
+    { id: 4, user: 'Marc P.', avatar: 'https://i.pravatar.cc/150?u=marc', text: 'El DJ del vermut se está saliendo. ¡Veníos! 🎶', neighborhood: 'Part Alta' },
+    { id: 5, user: 'Elena R.', avatar: 'https://i.pravatar.cc/150?u=elena', text: 'Tengo sitio en el coche para ir mañana al Pont del Diable. 🚗', neighborhood: 'Centro' },
+    { id: 6, user: 'Paco V.', avatar: 'https://i.pravatar.cc/150?u=paco', text: 'He hecho mermelada de naranja. ¿Intercambiamos en el local? 🍊', neighborhood: 'Torreforta' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: 'Sol y Calma ☀️' },
-    { user: 'Marc P.', text: 'Sirenas fuertes ayer 🔊' },
-    { user: 'Maria L.', text: 'Concierto Hoy 🎸' },
-    { user: 'PrepperTGN', text: 'Guía Máscaras 😷' },
-    { user: 'Paco R.', text: 'Regalo Leña 🪵' }
+    { user: 'Admin', text: 'Vermut ON FIRE 🍸' },
+    { user: 'Jordi F.', text: 'Busco Ticket Calçotada 🎫' },
+    { user: 'PrepperTGN', text: 'Taller 17:00 🏭' },
+    { user: 'Lucía M.', text: 'Sol en Arrabassada ☀️' },
+    { user: 'Marc P.', text: 'Musica en vivo 🎶' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

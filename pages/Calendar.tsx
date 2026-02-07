@@ -44,23 +44,10 @@ const NeighborhoodCalendar: React.FC = () => {
   // Official Events for January/February 2026
   const officialEvents: Event[] = [
     {
-      id: 'evt-fri-concert',
-      creator_id: 'admin',
-      title: "🎸 Concierto: Tributo Queen",
-      description: "Música en vivo para empezar el finde. Sala Zero.",
-      event_date: '2026-02-06',
-      event_time: '21:00',
-      location: 'Sala Zero - Port',
-      category: 'Ocio',
-      neighborhood: 'SERRALLO',
-      contact_info: 'Sala Zero',
-      created_at: new Date().toISOString()
-    },
-    {
       id: 'evt-sat-vermut',
       creator_id: 'admin',
       title: "🍸 Vermut Electrónico",
-      description: "DJ local y tapas al sol. El viento ya paró, ¡aprovechemos!",
+      description: "¡ESTA MAÑANA! DJ local, sol y tapas. El plan perfecto.",
       event_date: '2026-02-07',
       event_time: '12:00',
       location: 'Plaça del Fòrum',
@@ -72,8 +59,8 @@ const NeighborhoodCalendar: React.FC = () => {
     {
       id: 'evt-sat-preppers',
       creator_id: 'admin',
-      title: "🏭 Taller: Riesgo Químico",
-      description: "Análisis del simulacro de ayer y taller de sellado de ventanas.",
+      title: "🏭 Taller: Análisis PLASEQTA",
+      description: "Debate post-simulacro y revisión de mochilas de emergencia.",
       event_date: '2026-02-07',
       event_time: '17:00',
       location: 'Centro Cívico Torreforta',
@@ -83,10 +70,10 @@ const NeighborhoodCalendar: React.FC = () => {
       created_at: new Date().toISOString()
     },
     {
-      id: 'evt-calcotada',
+      id: 'evt-sun-calcotada',
       creator_id: 'admin',
       title: "🔥 Calçotada Popular",
-      description: "Domingo de brasa. Tickets casi agotados.",
+      description: "La gran fiesta de invierno. Salsa casera y carne a la brasa. ¡Mañana!",
       event_date: '2026-02-08',
       event_time: '13:00',
       location: 'Zona Picnic Pont del Diable',

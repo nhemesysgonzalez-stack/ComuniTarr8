@@ -70,12 +70,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'ComuniTarr 📢', text: '☀️ VIERNES: Cielo despejado. Temperatura agradable 15°C. ¡A disfrutar!' },
-    { user: 'Prot. Civil', text: '✅ El simulacro del PLASEQTA finalizó correctamente. Gracias por la colaboración.' },
-    { user: 'Joan B.', text: '¿Alguien para el vermut de mañana en el Serrallo? 🍸' },
-    { user: 'PrepperTGN', text: 'Nuevo debate: Máscaras antigás y refugio en casa. Hilo oficial abierto. 😷' },
-    { user: 'Laura V.', text: 'Esta noche TRIBUTO A QUEEN en la Sala Zero. ¡Me sobran 2 entradas! 🎸' },
-    { user: 'Luis M.', text: 'Han quedado ramas en la acera de enfrente, ¿aviso al Ayuntamiento? 🧹' }
+    { user: 'ComuniTarr 📢', text: '☀️ SÁBADO: 17°C y Sol. ¡Disfrutad del aire libre! 🌳' },
+    { user: 'Marc P.', text: 'En el Vermut del Fòrum no cabe un alfiler. ¡Venid pronto! 🍸' },
+    { user: 'PrepperTGN', text: 'Recordatorio: Taller "Mochila 72h" a las 17:00 en Torreforta. 🎒' },
+    { user: 'Elena R.', text: 'Vendo 1 ticket para la Calçotada de mañana. Me ha surgido un viaje. 🎫' },
+    { user: 'Jordi F.', text: '¡Cuidado con el tráfico en Portal St. Antoni, está cortado! 🚗' },
+    { user: 'Luisa M.', text: '¿Alguien ha visto mi perro? Se ha escapado en el Parc Francolí. 🐕' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -140,12 +140,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts
     let scripts = [
-      "☀️ ¡Qué día más bueno se ha quedado después del viento de ayer!",
-      "Al final las sirenas del simulacro se oyeron bien fuerte en mi calle. 🔊",
-      "¿Quién se apunta a unas cañas esta tarde en la Plaça de la Font? 🍻",
-      "He leido el hilo de las máscaras de gas... nunca se es demasiado precavido viviendo aquí. 🏭",
-      "¡Viernes! ¿Qué planes tenéis? Yo concierto en la Sala Zero. 🎸",
-      "¿Sabéis si ya han limpiado las ramas de la Rambla? Tengo que pasar con el coche. 🚗"
+      "¡Vaya ambiente hay en el vermut! Os dejo una foto. 📸",
+      "¿A qué hora empieza la calçotada mañana? No me aclaro con el ticket. 🔥",
+      "Si alguien va al taller de Preppers en Torreforta, ¿me podeis recoger? Vivo en Campclar. 🏭",
+      "Qué gusto da ver Tarragona con este sol después del temporal. ☀️",
+      "Busco 2 tickets para la Calçotada del Diable, ¡se han agotado! Pagó el doble. 🎫",
+      "Recomendadme un sitio para cenar hoy tranquilos, que el centro está a tope. 🍽️"
     ];
 
     // Base reply scripts
@@ -439,22 +439,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'plaseqta-resultados',
-      title: '✅ Fin Simulacro',
-      description: 'Resultados y opiniones.',
-      participating: 412
+      id: 'vermut-forum',
+      title: '🍸 Vermut TGN',
+      description: 'Fotos y ambiente Plaça Fòrum.',
+      participating: 523
     },
     {
-      id: 'agenda-finde',
-      title: '🎉 Planes Finde',
-      description: 'Conciertos y Vermut.',
-      participating: 289
+      id: 'calcotada-diable',
+      title: '🔥 Calçotada',
+      description: 'Organización coche y tickets.',
+      participating: 310
     },
     {
-      id: 'preppers-mascaras',
-      title: '😷 Kit Químico',
-      description: 'Debate máscaras antigás.',
-      participating: 156
+      id: 'preppers-taller',
+      title: '🏭 Taller Prepper',
+      description: 'Riesgo químico en PONENT.',
+      participating: 189
     }
   ];
 
@@ -597,7 +597,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Viernes 6 Febrero 2026 - Sol y Agenda Cultural ☀️🎉
+                  Sábado 7 Febrero 2026 - Vermut y Sol ☀️🍸
                 </span>
               </div>
 
@@ -774,16 +774,16 @@ const Forum: React.FC = () => {
                 >
                   ✕
                 </button>
-                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Viernes 06/02</h2>
+                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Sábado 07/02</h2>
                 <ul className="space-y-2">
-                  <li>🍹 <strong>Camarero/a Extra - Sala Zero</strong> – Para esta noche y mañana (Urgente)</li>
-                  <li>🧹 <strong>Limpieza Refuerzo - Camping</strong> – Preparación temporada fin de semana</li>
-                  <li>🎸 <strong>Técnico Sonido - Eventos</strong> – Montaje escenarios local</li>
-                  <li>🍽️ <strong>Ayudante Cocina - Rest. El Pòsit</strong> – Turno partido fin de semana</li>
-                  <li>🚲 <strong>Repartidor Glovo/Uber</strong> – Alta demanda prevista para la noche</li>
-                  <li>👴 <strong>Cuidador/a Fin de Semana</strong> – Acompañamiento señor mayor</li>
-                  <li>🏪 <strong>Dependiente/a Tienda 24h</strong> – Turno noche viernes/sábado</li>
-                  <li>🚛 <strong>Conductor/a Furgoneta</strong> – Reparto última milla (mañanas)</li>
+                  <li>🍹 <strong>Camarero/a Refuerzo - Vermut</strong> – Incorporación Inmediata (hoy)</li>
+                  <li>🔥 <strong>Brasero/a Calçotada</strong> – Para mañana domingo en Pont del Diable</li>
+                  <li>🧹 <strong>Limpieza Eventos</strong> – Post-Vermut (tarde/noche)</li>
+                  <li>👶 <strong>Canguro Noche Sábado</strong> – Zona Llevant (Bilingüe preferible)</li>
+                  <li>🍕 <strong>Repartidor/a Pizzería</strong> – Fines de semana noche</li>
+                  <li>🎧 <strong>DJ Residente Chiringuito</strong> – Casting para temporada de verano</li>
+                  <li>🚑 <strong>Técnico/a Sanitario Eventos</strong> – Cobertura actos festivos</li>
+                  <li>🍽️ <strong>Lavaplatos Extra</strong> – Restaurante Port Esportiu</li>
                 </ul>
                 <button
                   onClick={() => setShowJobOffers(false)}

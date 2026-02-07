@@ -156,55 +156,55 @@ const Home: React.FC = () => {
           .order('created_at', { ascending: false })
           .limit(3);
 
-        const weatherWeekend = {
-          id: 'weather-fri-feb06',
-          title: "☀️ VIERNES: Sol y 15°C",
-          content: "El viento ha amainado. Nos espera un fin de semana despejado y agradable. Perfecto para actividades al aire libre.",
-          category: "TIEMPO",
-          neighborhood: "GENERAL",
-          itinerary: "• Viernes: Sol (15°C)\n• Sábado: Despejado (16°C)\n• Domingo: Suave (17°C)",
-          link_url: "https://www.diaridetarragona.com/tarragona/el-tiempo",
+        const vermutSaturday = {
+          id: 'vermut-sat-feb07',
+          title: "🍸 AHORA: Vermut Electrónico",
+          content: "¡Ya ha empezado! La Plaça del Fòrum vibra con DJ local y el mejor vermut de la ciudad. Ambiente familiar y festivo hasta las 15:00.",
+          category: "OCIO",
+          neighborhood: "PART ALTA",
+          itinerary: "• Hora: Hasta 15:00\n• Lugar: Plaça Fòrum\n• Ambiente: Festivo",
+          link_url: "/map",
           created_at: new Date().toISOString()
         };
 
-        const postDrill = {
-          id: 'plaseqta-post-feb06',
-          title: "✅ PLASEQTA: Éxito del Simulacro",
-          content: "Protección Civil califica de éxito el simulacro de ayer. Los sensores funcionaron y las sirenas se oyeron en toda la zona. Informe completo en el foro.",
-          category: "SEGURIDAD",
+        const calcotadaPreview = {
+          id: 'calcotada-sun-feb08',
+          title: "🔥 MAÑANA: Calçotada Popular",
+          content: "Último aviso: Los tickets para la Calçotada en Pont del Diable se están agotando. Venta anticipada en el Local Social hasta hoy a las 20:00.",
+          category: "FIESTA",
           neighborhood: "GENERAL",
-          itinerary: "• Resultado: 100% Cobertura\n• Incidencias: Ninguna\n• Próximo: 2027",
+          itinerary: "• Domingo: 13:00\n• Lugar: Pont del Diable\n• Precio: 12€ / 15€",
           created_at: new Date().toISOString()
         };
 
-        const prepperChemical = {
-          id: 'prepper-guide-chemical',
-          title: "🏭 PREPPERS: Riesgo Químico",
-          content: "Tras el simulacro, debatimos: ¿Tienes tu kit de sellado en casa? Nueva guía sobre tipos de máscaras y cinta americana.",
+        const prepperAnalysis = {
+          id: 'prepper-analysis-simulacrum',
+          title: "🏭 PREPPERS: Taller Post-Simulacro",
+          content: "Esta tarde (17:00) en C.C. Torreforta: Analizamos qué falló y qué funcionó en el simulacro de ayer. Trae tu mochila de emergencia para revisarla.",
           category: "SEGURIDAD",
           neighborhood: "PONENT",
-          itinerary: "• Tema: Confinamiento\n• Kit: Cinta + Plástico\n• Guía: PDF Disponible",
+          itinerary: "• Tema: Análisis PLASEQTA\n• Taller: Mochila 72h\n• Hora: 17:00",
           link_url: "/vital",
           created_at: new Date().toISOString()
         };
 
-        const agendaWeekend = {
-          id: 'agenda-weekend-feb06',
-          title: "🎉 AGENDA: Finde en Tarragona",
-          content: "Viernes noche: Conciertos en Sala Zero. Sábado: Vermut electrónico en el Serrallo. Domingo: Caminata popular.",
-          category: "OCIO",
-          neighborhood: "GENERAL",
-          itinerary: "• Viernes: Música en vivo\n• Sábado: Vermut + DJ\n• Domingo: Deporte",
+        const incidentTraffic = {
+          id: 'incident-traffic-sat',
+          title: "🚗 TRÁFICO: Corte Part Alta",
+          content: "Debido a la afluencia del vermut, se restringe el acceso de vehículos a la Part Alta por el Portal de Sant Antoni. Aparcad en zona Francolí.",
+          category: "AVISO",
+          neighborhood: "PART ALTA",
+          itinerary: "• Corte: Acceso Vehículos\n• Alternativa: Parking Francolí\n• Duración: Hasta 16:00",
           created_at: new Date().toISOString()
         };
 
-        const incidentCleanup = {
-          id: 'incidents-cleanup-fri',
-          title: "🚧 LIMPIEZA: Ramas Caídas",
-          content: "Las brigadas municipales están retirando las ramas caídas por el viento de ayer en Rambla Nova y Parc de la Ciutat. Precaución.",
-          category: "AVISO",
-          neighborhood: "CENTRO",
-          itinerary: "• Estado: En Progreso\n• Zonas: Parques\n• Fin Previsto: 14:00",
+        const weatherSaturday = {
+          id: 'weather-sat-feb07',
+          title: "☀️ EL TIEMPO: Sábado Radiante",
+          content: "Día perfecto. Cielo azul, sin viento y 17°C de máxima. Ideal para terraza y paseos por la playa.",
+          category: "TIEMPO",
+          neighborhood: "GENERAL",
+          itinerary: "• Hoy: Sol (17°C)\n• Noche: Fresco (10°C)\n• Mañana: Sol y Nubes",
           created_at: new Date().toISOString()
         };
 
@@ -220,7 +220,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([weatherWeekend, postDrill, agendaWeekend, prepperChemical, incidentCleanup, ...validFetchedNews].slice(0, 6));
+        setNews([vermutSaturday, weatherSaturday, calcotadaPreview, prepperAnalysis, incidentTraffic, ...validFetchedNews].slice(0, 6));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase
