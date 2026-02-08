@@ -49,8 +49,8 @@ const VitalNeeds: React.FC = () => {
                     id: 'mock-n1',
                     creator_id: 'v4',
                     type: 'other',
-                    title: 'Búsqueda Perro (Tobby)',
-                    description: 'Se ha perdido mi Golden Retriever por la zona del Francolí. Lleva collar rojo. Si alguien lo ve, por favor avisad. Estamos buscándolo ahora.',
+                    title: 'Chaqueta Perdida',
+                    description: 'Me he dejado una chaqueta vaquera con llaves en el bolsillo en la zona de mesas 4. ¿Alguien la ha visto?',
                     contact_info: '622 34 56 78',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
@@ -60,8 +60,8 @@ const VitalNeeds: React.FC = () => {
                     id: 'mock-n2',
                     creator_id: 'v5',
                     type: 'other',
-                    title: 'Transporte Calçotada (Ida)',
-                    description: 'Busco hueco en coche para ir a Pont del Diable mañana. Vivo en San Pedro y San Pablo.',
+                    title: 'Bajada al Centro',
+                    description: 'Mi grupo se queda más tiempo pero yo tengo que bajar ya y no tengo coche. ¿Alguien baja para Tarragona?',
                     contact_info: '655 89 21 00',
                     is_urgent: false,
                     neighborhood: 'GENERAL',
@@ -146,26 +146,26 @@ const VitalNeeds: React.FC = () => {
 
             <main className="max-w-6xl mx-auto p-6 md:p-12 -mt-10 relative z-20">
                 {/* Solidarity Initiatives Section */}
-                <section className="mb-12 bg-white dark:bg-surface-dark rounded-[40px] p-8 shadow-xl border border-gray-100 dark:border-gray-800 flex flex-col md:flex-row items-center gap-8 border-l-[12px] border-l-orange-500">
-                    <div className="size-24 rounded-3xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center shrink-0">
-                        <span className="material-symbols-outlined text-4xl text-orange-600">directions_car</span>
+                <section className="mb-12 bg-white dark:bg-surface-dark rounded-[40px] p-8 shadow-xl border border-gray-100 dark:border-gray-800 flex flex-col md:flex-row items-center gap-8 border-l-[12px] border-l-red-500">
+                    <div className="size-24 rounded-3xl bg-red-100 dark:bg-red-900/30 flex items-center justify-center shrink-0">
+                        <span className="material-symbols-outlined text-4xl text-red-600">commute</span>
                     </div>
                     <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
-                            <span className="px-2 py-0.5 bg-orange-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">ORGANIZACIÓN VECINAL</span>
-                            <span className="text-[10px] font-bold text-gray-400 uppercase">CALÇOTADA MAÑANA</span>
+                            <span className="px-2 py-0.5 bg-red-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">OPERACIÓN RETORNO</span>
+                            <span className="text-[10px] font-bold text-gray-400 uppercase">EVITAR ATASCOS</span>
                         </div>
-                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Compartir Coche: Pont del Diable 🚗</h2>
+                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Bajada Compartida N-240 🚗</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            Para evitar colapsar el parking de Pont del Diable mañana, estamos organizando coches compartidos desde Plaza Imperial y Campus Catalunya. ¡Ahorra gasolina y conoce vecinos!
+                            La N-240 está colapsada. Si bajas al centro y tienes sitios libres, avisa para evitar que suban más coches a buscar gente. Coordinamos salidas escalonadas desde el parking de tierra.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Gracias. Te hemos añadido a la lista de conductores.'); }} className="px-6 py-4 bg-orange-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
-                            <span className="material-symbols-outlined text-sm">minor_crash</span>
-                            OFREZCO PLAZAS
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Gracias. Tu coche ha sido registrado para bajar gente.'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                            <span className="material-symbols-outlined text-sm">group_add</span>
+                            TENGO SITIO LIBRE
                         </a>
-                        <p className="text-[9px] text-center font-bold text-gray-400">Salida: Dom 12:30h</p>
+                        <p className="text-[9px] text-center font-bold text-gray-400">Coordina: Voluntarios Tráfico</p>
                     </div>
                 </section>
 

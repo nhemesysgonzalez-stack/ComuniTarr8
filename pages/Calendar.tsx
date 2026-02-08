@@ -44,42 +44,55 @@ const NeighborhoodCalendar: React.FC = () => {
   // Official Events for January/February 2026
   const officialEvents: Event[] = [
     {
-      id: 'evt-sat-vermut',
+      id: 'evt-sun-calcotada-live',
       creator_id: 'admin',
-      title: "🍸 Vermut Electrónico",
-      description: "¡ESTA MAÑANA! DJ local, sol y tapas. El plan perfecto.",
-      event_date: '2026-02-07',
-      event_time: '12:00',
-      location: 'Plaça del Fòrum',
-      category: 'Fiesta',
-      neighborhood: 'PART ALTA',
-      contact_info: 'Assoc. Estalupa',
-      created_at: new Date().toISOString()
-    },
-    {
-      id: 'evt-sat-preppers',
-      creator_id: 'admin',
-      title: "🏭 Taller: Análisis PLASEQTA",
-      description: "Debate post-simulacro y revisión de mochilas de emergencia.",
-      event_date: '2026-02-07',
-      event_time: '17:00',
-      location: 'Centro Cívico Torreforta',
-      category: 'Cultura',
-      neighborhood: 'PONENT',
-      contact_info: 'Grupo Preppers TGN',
-      created_at: new Date().toISOString()
-    },
-    {
-      id: 'evt-sun-calcotada',
-      creator_id: 'admin',
-      title: "🔥 Calçotada Popular",
-      description: "La gran fiesta de invierno. Salsa casera y carne a la brasa. ¡Mañana!",
+      title: "🔥 Calçotada Popular (En Curso)",
+      description: "La fiesta continúa en Pont del Diable hasta las 18:00. Música y buen ambiente.",
       event_date: '2026-02-08',
       event_time: '13:00',
       location: 'Zona Picnic Pont del Diable',
       category: 'Fiesta',
       neighborhood: 'GENERAL',
       contact_info: 'Comissió de Festes',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-sun-solar',
+      creator_id: 'admin',
+      title: "☀️ Taller Cocina Solar",
+      description: "Demostración práctica de cocción con hornos solares. ¡Trae tus gafas de sol!",
+      event_date: '2026-02-08',
+      event_time: '16:00',
+      location: 'Parque Francolí',
+      category: 'Cultura',
+      neighborhood: 'PONENT',
+      contact_info: 'Preppers TGN',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-mon-market',
+      creator_id: 'admin',
+      title: "🛍️ Mercadillo Bonavista",
+      description: "El mercadillo más grande. Ropa, comida y paradas de segunda mano.",
+      event_date: '2026-02-09',
+      event_time: '09:00',
+      location: 'Bonavista',
+      category: 'Ocio',
+      neighborhood: 'PONENT',
+      contact_info: 'Ajuntament',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-mon-meditation',
+      creator_id: 'admin',
+      title: "🧘 Meditación Lunes",
+      description: "Empieza la semana con calma. Grupo abierto y gratuito.",
+      event_date: '2026-02-09',
+      event_time: '19:00',
+      location: 'Playa del Milagro',
+      category: 'Deporte',
+      neighborhood: 'GENERAL',
+      contact_info: 'Asoc. Respir',
       created_at: new Date().toISOString()
     }
   ];

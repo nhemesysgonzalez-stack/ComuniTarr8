@@ -253,15 +253,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">☀️ SÁBADO: DÍA ESPECTACULAR 17°C - ¡TODOS A LA CALLE!</span>
+          <span className="flex items-center gap-2">🔥 DOMINGO: ¡ÉXITO DE LA CALÇOTADA! - GRACIAS A LOS 500 ASISTENTES</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🍸 AHORA: VERMUT ELECTRÓNICO EN PLAÇA DEL FÒRUM - ¡AMBIENTAZO!</span>
+          <span className="flex items-center gap-2">🚗 TRÁFICO: RETENCIONES EN N-240 BAJADA PONT DEL DIABLE - PACIENCIA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🏭 PREPPERS TGN: TALLER "ANÁLISIS SIMULACRO" A LAS 17:00 EN TORREFORTA</span>
+          <span className="flex items-center gap-2">☀️ PREPPERS TGN: HOY "COCINA SOLAR" - ¡APROVECHA EL SOL DE TARDE!</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🔥 MAÑANA DOMINGO: CALÇOTADA POPULAR EN PONT DEL DIABLE - ÚLTIMOS TICKETS</span>
+          <span className="flex items-center gap-2">🛋️ TARDE DE DOMINGO: CINE EN EL CENTRO CÍVICO (18:00)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛒 MERCADILLO INTERCAMBIO: TRAE TUS CONSERVAS CASERAS AL LOCAL SOCIAL</span>
+          <span className="flex items-center gap-2">🎒 PREPARA LA SEMANA: MAÑANA LUNES MERCADILLO EN BONAVISTA</span>
         </motion.div>
       </div>
 

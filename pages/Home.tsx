@@ -156,55 +156,55 @@ const Home: React.FC = () => {
           .order('created_at', { ascending: false })
           .limit(3);
 
-        const vermutSaturday = {
-          id: 'vermut-sat-feb07',
-          title: "🍸 AHORA: Vermut Electrónico",
-          content: "¡Ya ha empezado! La Plaça del Fòrum vibra con DJ local y el mejor vermut de la ciudad. Ambiente familiar y festivo hasta las 15:00.",
-          category: "OCIO",
-          neighborhood: "PART ALTA",
-          itinerary: "• Hora: Hasta 15:00\n• Lugar: Plaça Fòrum\n• Ambiente: Festivo",
-          link_url: "/map",
-          created_at: new Date().toISOString()
-        };
-
-        const calcotadaPreview = {
-          id: 'calcotada-sun-feb08',
-          title: "🔥 MAÑANA: Calçotada Popular",
-          content: "Último aviso: Los tickets para la Calçotada en Pont del Diable se están agotando. Venta anticipada en el Local Social hasta hoy a las 20:00.",
-          category: "FIESTA",
+        const calcotadaSuccess = {
+          id: 'calcotada-success-feb08',
+          title: "🔥 ÉXITO: Calçotada 2026",
+          content: "Más de 500 vecinos han disfrutado hoy en el Pont del Diable. Ambiente inmejorable, sol y mucha salsa. ¡Gracias a los voluntarios!",
+          category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Domingo: 13:00\n• Lugar: Pont del Diable\n• Precio: 12€ / 15€",
+          itinerary: "• Asistentes: +500\n• Incidencias: 0\n• Próximo: Carnaval",
+          link_url: "/gallery",
           created_at: new Date().toISOString()
         };
 
-        const prepperAnalysis = {
-          id: 'prepper-analysis-simulacrum',
-          title: "🏭 PREPPERS: Taller Post-Simulacro",
-          content: "Esta tarde (17:00) en C.C. Torreforta: Analizamos qué falló y qué funcionó en el simulacro de ayer. Trae tu mochila de emergencia para revisarla.",
-          category: "SEGURIDAD",
+        const trafficAlert = {
+          id: 'traffic-n240-sun',
+          title: "🚗 TRÁFICO: Retenciones N-240",
+          content: "Operación retorno de la Calçotada: Tráfico lento en la bajada desde San Salvador hacia Tarragona. Se recomienda paciencia.",
+          category: "AVISO",
+          neighborhood: "S. SALVADOR",
+          itinerary: "• Vía: N-240\n• Estado: Colapso\n• Alternativa: A-7",
+          created_at: new Date().toISOString()
+        };
+
+        const prepperSolar = {
+          id: 'prepper-solar-cooking',
+          title: "☀️ PREPPERS: Cocina Solar",
+          content: "Aprovechando el sol de tarde, en el Foro estamos compartiendo resultados de hornos solares caseros. ¡Cocina gratis y sin gas!",
+          category: "ECO",
           neighborhood: "PONENT",
-          itinerary: "• Tema: Análisis PLASEQTA\n• Taller: Mochila 72h\n• Hora: 17:00",
+          itinerary: "• Tema: Energía Solar\n• Demo: Fotos en Foro\n• Coste: 0€",
           link_url: "/vital",
           created_at: new Date().toISOString()
         };
 
-        const incidentTraffic = {
-          id: 'incident-traffic-sat',
-          title: "🚗 TRÁFICO: Corte Part Alta",
-          content: "Debido a la afluencia del vermut, se restringe el acceso de vehículos a la Part Alta por el Portal de Sant Antoni. Aparcad en zona Francolí.",
-          category: "AVISO",
-          neighborhood: "PART ALTA",
-          itinerary: "• Corte: Acceso Vehículos\n• Alternativa: Parking Francolí\n• Duración: Hasta 16:00",
+        const mondayForecast = {
+          id: 'weather-mon-feb09',
+          title: "🌤️ LUNES: Vuelta al Cole",
+          content: "Mañana lunes se espera un día tranquilo, con sol y nubes altas. Temperaturas suaves (16°C). Perfecto para empezar la semana.",
+          category: "TIEMPO",
+          neighborhood: "GENERAL",
+          itinerary: "• Lunes: Sol/Nubes\n• Temp: 16°C\n• Viento: Calma",
           created_at: new Date().toISOString()
         };
 
-        const weatherSaturday = {
-          id: 'weather-sat-feb07',
-          title: "☀️ EL TIEMPO: Sábado Radiante",
-          content: "Día perfecto. Cielo azul, sin viento y 17°C de máxima. Ideal para terraza y paseos por la playa.",
-          category: "TIEMPO",
-          neighborhood: "GENERAL",
-          itinerary: "• Hoy: Sol (17°C)\n• Noche: Fresco (10°C)\n• Mañana: Sol y Nubes",
+        const lostAndFound = {
+          id: 'lost-property-calcotada',
+          title: "🧥 OBJETOS PERDIDOS",
+          content: "Se han encontrado varias chaquetas y llaves en la zona de picnic del Pont del Diable. Están guardadas en el Local Social.",
+          category: "AVISO",
+          neighborhood: "S. SALVADOR",
+          itinerary: "• Recogida: Local Social\n• Horario: L-V 17-20h\n• Info: Foro",
           created_at: new Date().toISOString()
         };
 
@@ -220,7 +220,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([vermutSaturday, weatherSaturday, calcotadaPreview, prepperAnalysis, incidentTraffic, ...validFetchedNews].slice(0, 6));
+        setNews([calcotadaSuccess, trafficAlert, prepperSolar, mondayForecast, lostAndFound, ...validFetchedNews].slice(0, 6));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

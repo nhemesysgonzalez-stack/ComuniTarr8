@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🍸 ¡La Plaça del Fòrum está a tope! Recordad mantener la zona limpia. ♻️', neighborhood: 'Part Alta' },
-    { id: 1, user: 'Jordi F.', avatar: 'https://i.pravatar.cc/150?u=jordi', text: '¿Alguien tiene un ticket de sobra para la Calçotada de mañana? 🙏', neighborhood: 'Serrallo' },
-    { id: 2, user: 'PrepperTGN', avatar: '/logo.svg', text: 'Llevo muestras de máscaras FFP3 y filtros ABEC al taller de esta tarde. 🏭😷', neighborhood: 'Ponent' },
-    { id: 3, user: 'Lucía M.', text: '¡Qué solazo! Bajando a la Arrabassada a pasear al perro. 🐕☀️', avatar: 'https://i.pravatar.cc/150?u=lucia', neighborhood: 'Llevant' },
-    { id: 4, user: 'Marc P.', avatar: 'https://i.pravatar.cc/150?u=marc', text: 'El DJ del vermut se está saliendo. ¡Veníos! 🎶', neighborhood: 'Part Alta' },
-    { id: 5, user: 'Elena R.', avatar: 'https://i.pravatar.cc/150?u=elena', text: 'Tengo sitio en el coche para ir mañana al Pont del Diable. 🚗', neighborhood: 'Centro' },
-    { id: 6, user: 'Paco V.', avatar: 'https://i.pravatar.cc/150?u=paco', text: 'He hecho mermelada de naranja. ¿Intercambiamos en el local? 🍊', neighborhood: 'Torreforta' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🔥 ¡Qué gran día en el Pont del Diable! Gracias a la comisión de fiestas por la organización. 👏', neighborhood: 'GENERAL' },
+    { id: 1, user: 'Sergi R.', avatar: 'https://i.pravatar.cc/150?u=sergi', text: 'Ojo si bajáis en coche, la N-240 está parada. Mejor esperar un rato. 🚗🛑', neighborhood: 'San Pere' },
+    { id: 2, user: 'PrepperTGN', avatar: '/logo.svg', text: 'Con este sol de tarde estoy probando mi horno solar casero. ¡Funciona! ☀️🍳', neighborhood: 'Ponent' },
+    { id: 3, user: 'Anna V.', text: '¿Alguien se ha encontrado una chaqueta azul en la zona de barbacoas? 🧥', avatar: 'https://i.pravatar.cc/150?u=anna', neighborhood: 'Serrallo' },
+    { id: 4, user: 'Marc P.', avatar: 'https://i.pravatar.cc/150?u=marc', text: 'Me he comido 50 calçots... necesito una siesta urgente. 😴', neighborhood: 'Part Alta' },
+    { id: 5, user: 'Laura G.', avatar: 'https://i.pravatar.cc/150?u=laura', text: '¡Mañana vuelta a la rutina! ¿Alguien sabe si hay huelga de buses? 🚌', neighborhood: 'Centro' },
+    { id: 6, user: 'Paco V.', avatar: 'https://i.pravatar.cc/150?u=paco', text: 'Me ha sobrado salsa romesco casera. Si alguien quiere un bote, que avise. 🍯', neighborhood: 'Torreforta' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: 'Vermut ON FIRE 🍸' },
-    { user: 'Jordi F.', text: 'Busco Ticket Calçotada 🎫' },
-    { user: 'PrepperTGN', text: 'Taller 17:00 🏭' },
-    { user: 'Lucía M.', text: 'Sol en Arrabassada ☀️' },
-    { user: 'Marc P.', text: 'Musica en vivo 🎶' }
+    { user: 'Admin', text: 'Calçotada Épica 🔥' },
+    { user: 'Sergi R.', text: 'Atasco N-240 🚗' },
+    { user: 'PrepperTGN', text: 'Cocina Solar ☀️' },
+    { user: 'Anna V.', text: 'Chaqueta perdida 🧥' },
+    { user: 'Marc P.', text: 'Siesta time 😴' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

@@ -70,12 +70,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'ComuniTarr 📢', text: '☀️ SÁBADO: 17°C y Sol. ¡Disfrutad del aire libre! 🌳' },
-    { user: 'Marc P.', text: 'En el Vermut del Fòrum no cabe un alfiler. ¡Venid pronto! 🍸' },
-    { user: 'PrepperTGN', text: 'Recordatorio: Taller "Mochila 72h" a las 17:00 en Torreforta. 🎒' },
-    { user: 'Elena R.', text: 'Vendo 1 ticket para la Calçotada de mañana. Me ha surgido un viaje. 🎫' },
-    { user: 'Jordi F.', text: '¡Cuidado con el tráfico en Portal St. Antoni, está cortado! 🚗' },
-    { user: 'Luisa M.', text: '¿Alguien ha visto mi perro? Se ha escapado en el Parc Francolí. 🐕' }
+    { user: 'ComuniTarr 📢', text: '🔥 DOMINGO: ¡Éxito total en la Calçotada Popular! Gracias a todos.' },
+    { user: 'Sergi R.', text: 'AVISO: Retenciones importantes en N-240 dirección centro. Evitad la zona. 🚗' },
+    { user: 'PrepperTGN', text: '¡El horno solar ha funcionado! Pasad por el foro para ver resultados. ☀️' },
+    { user: 'Anna V.', text: 'Busco bufanda roja perdida en Pont del Diable. Valor sentimental. 🧣' },
+    { user: 'Marc P.', text: '¿Alguien para una partida de pádel mañana por la tarde? 🎾' },
+    { user: 'Luisa M.', text: '¡Tobby ha aparecido! Gracias a todos por compartir. 🐕✅' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -140,12 +140,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts
     let scripts = [
-      "¡Vaya ambiente hay en el vermut! Os dejo una foto. 📸",
-      "¿A qué hora empieza la calçotada mañana? No me aclaro con el ticket. 🔥",
-      "Si alguien va al taller de Preppers en Torreforta, ¿me podeis recoger? Vivo en Campclar. 🏭",
-      "Qué gusto da ver Tarragona con este sol después del temporal. ☀️",
-      "Busco 2 tickets para la Calçotada del Diable, ¡se han agotado! Pagó el doble. 🎫",
-      "Recomendadme un sitio para cenar hoy tranquilos, que el centro está a tope. 🍽️"
+      "¡Madre mía qué hartón de calçots! No ceno en una semana. 🧅",
+      "Alguien sabe si el bus 54 pasa con normalidad? Hay mucho tráfico en la nacional. 🚌",
+      "He subido la foto de mi horno solar al hilo de Preppers. ¡Hemos hecho arroz! ☀️🍚",
+      "Me he dejado una bufanda roja en el picnic... si alguien la ve... 🧣",
+      "Mañana lunes otra vez... qué corto se hace el fin de semana. 😫",
+      "¿A qué hora abre el mercadillo de Bonavista mañana? Quiero ir pronto. 🛍️"
     ];
 
     // Base reply scripts
@@ -439,22 +439,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'vermut-forum',
-      title: '🍸 Vermut TGN',
-      description: 'Fotos y ambiente Plaça Fòrum.',
-      participating: 523
+      id: 'calcotada-fotos',
+      title: '🔥 Fotos Calçotada',
+      description: 'Comparte tus mejores momentos.',
+      participating: 645
     },
     {
-      id: 'calcotada-diable',
-      title: '🔥 Calçotada',
-      description: 'Organización coche y tickets.',
-      participating: 310
+      id: 'atasco-n240',
+      title: '🚗 Atasco N-240',
+      description: 'Estado del tráfico en directo.',
+      participating: 312
     },
     {
-      id: 'preppers-taller',
-      title: '🏭 Taller Prepper',
-      description: 'Riesgo químico en PONENT.',
-      participating: 189
+      id: 'preppers-solar',
+      title: '☀️ Cocina Solar',
+      description: 'Recetas sin electricidad.',
+      participating: 145
     }
   ];
 
@@ -597,7 +597,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Sábado 7 Febrero 2026 - Vermut y Sol ☀️🍸
+                  Domingo 8 Febrero 2026 - Calçots y Relax ☀️🔥
                 </span>
               </div>
 
@@ -774,16 +774,16 @@ const Forum: React.FC = () => {
                 >
                   ✕
                 </button>
-                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Sábado 07/02</h2>
+                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Domingo 08/02</h2>
                 <ul className="space-y-2">
-                  <li>🍹 <strong>Camarero/a Refuerzo - Vermut</strong> – Incorporación Inmediata (hoy)</li>
-                  <li>🔥 <strong>Brasero/a Calçotada</strong> – Para mañana domingo en Pont del Diable</li>
-                  <li>🧹 <strong>Limpieza Eventos</strong> – Post-Vermut (tarde/noche)</li>
-                  <li>👶 <strong>Canguro Noche Sábado</strong> – Zona Llevant (Bilingüe preferible)</li>
-                  <li>🍕 <strong>Repartidor/a Pizzería</strong> – Fines de semana noche</li>
-                  <li>🎧 <strong>DJ Residente Chiringuito</strong> – Casting para temporada de verano</li>
-                  <li>🚑 <strong>Técnico/a Sanitario Eventos</strong> – Cobertura actos festivos</li>
-                  <li>🍽️ <strong>Lavaplatos Extra</strong> – Restaurante Port Esportiu</li>
+                  <li>🚛 <strong>Repartidor/a Furgoneta</strong> – Ruta Comarcas (Lunes a Viernes)</li>
+                  <li>🧹 <strong>Limpieza Oficinas - Mañanas</strong> – Zona Polígono Francolí (06:00-10:00)</li>
+                  <li>🏗️ <strong>Peón Especialista - Construcción</strong> – Obra nueva en Juan XXIII</li>
+                  <li>🛒 <strong>Reponedor/a Supermercado</strong> – Turno de reposición nocturna</li>
+                  <li>👴 <strong>Auxiliar Ayuda Domicilio</strong> – Horario de tardes. Carnet conducir req.</li>
+                  <li>🍽️ <strong>Ayudante Cocina - Menú Diario</strong> – Polígono Riu Clar</li>
+                  <li>💻 <strong>Administrativo/a Contable</strong> – Media jornada, sustitución</li>
+                  <li>🚗 <strong>Chófer VTC</strong> – Turno de noche fin de semana</li>
                 </ul>
                 <button
                   onClick={() => setShowJobOffers(false)}
