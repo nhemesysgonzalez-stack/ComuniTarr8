@@ -48,8 +48,8 @@ export const FloatingCommunityWidget: React.FC = () => {
         // Initial run
         cycleMessages();
 
-        // Repeat every 90 seconds (1.5 minutes)
-        const interval = setInterval(cycleMessages, 90000);
+        // Repeat every 45 seconds (Active!)
+        const interval = setInterval(cycleMessages, 45000);
 
         return () => clearInterval(interval);
     }, []);

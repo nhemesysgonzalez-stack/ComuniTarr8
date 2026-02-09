@@ -97,14 +97,25 @@ const Forum: React.FC = () => {
   // Simulation Logic: Seed messages about today Monday 19th morning
   useEffect(() => {
     const simulationInterval = setInterval(() => {
-      // 15% chance of a virtual message every 40s if no real activity
-      if (Math.random() < 0.15) {
+      // 40% chance of a virtual message every 10s (Much more active)
+      if (Math.random() < 0.40) {
         generateVirtualMessage();
       }
-    }, 40000);
+    }, 10000);
 
     return () => clearInterval(simulationInterval);
   }, []);
+
+  // Seed initial messages if empty to avoid "dead" feeling
+  useEffect(() => {
+    if (!loading && messages.length === 0) {
+      const initialSeeds = [
+        { id: 'seed-1', user_id: 'v2', content: '¿A qué hora empieza la venta de sillas en el teatro? Hay cola ya... 🎟️', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'CENTRO', created_at: new Date(Date.now() - 1000 * 60 * 5).toISOString() },
+        { id: 'seed-2', user_id: 'v6', content: 'Acabo de ver el montaje de gradas en la Rambla. ¡Qué ganas de Rua! 🤩', user_metadata: { full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe' }, neighborhood: 'GENERAL', created_at: new Date(Date.now() - 1000 * 60 * 2).toISOString() }
+      ];
+      setMessages(initialSeeds as Message[]);
+    }
+  }, [loading, messages.length]);
 
   // Admin Insights Fetching
   useEffect(() => {
@@ -138,14 +149,16 @@ const Forum: React.FC = () => {
     // Priority for Mediator if it's a question or app help
     const isAssistant = isReplyTo && (isQuestion || isHelpRequest || p.includes('@mediador') || p.includes('mediador'));
 
-    // Base initiation scripts
+    // Base initiation scripts (Monday Afternoon / Carnival Hype)
     let scripts = [
-      "¡Qué sueño tengo hoy! La vuelta a la rutina cuesta... ☕",
-      "¿Alguien sabe si quedan sillas para la Rua del sábado? En la web da error. 🎭",
-      "He comprado 3kg de hielo para probar el truco de la nevera de los preppers. ❄️",
-      "Busco alguien que sepa coser bajo para mi disfraz, pago bien. 🪡",
-      "El mercadillo de Bonavista está imposible de gente, id con tiempo. 🛍️",
-      "¡Venga ánimo con el lunes que el jueves ya estamos comiendo butifarra! 🌭"
+      "¡Qué sueño tengo... hora del café de la tarde ☕!",
+      "He pasado por la Rambla y ya están poniendo las vallas para el sábado. 🚧",
+      "Alguien sabe si el taller de cocina solar de los preppers se grabó? Me lo perdí. ☀️",
+      "Busco purpurina biodegradable, ¿dónde compráis? ✨",
+      "¡Madre mía el viento que hace hoy! Cuidado con los sombreros. 🌬️",
+      "¿Alguien para bajar a ver el mar un rato? Necesito desconectar. 🌊",
+      "Estoy cosiendo el disfraz y me he quedado sin hilo rojo... socorro. 🧵",
+      "¡Qué ganas de que llegue el Carnaval! 🎉"
     ];
 
     // Base reply scripts
