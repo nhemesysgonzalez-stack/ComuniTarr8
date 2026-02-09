@@ -139,6 +139,31 @@ const Home: React.FC = () => {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  // Carnival Vibes Effect 🎭
+  useEffect(() => {
+    // School of confetti to celebrate Carnival Week
+    const duration = 3 * 1000;
+    const animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+    const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min;
+
+    const interval: any = setInterval(function () {
+      const timeLeft = animationEnd - Date.now();
+
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+
+      const particleCount = 50 * (timeLeft / duration);
+      // since particles fall down, start a bit higher than random
+      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+    }, 250);
+
+    return () => clearInterval(interval);
+  }, []);
+
   // Fetch real news and recent neighbors from Supabase
   useEffect(() => {
     const fetchData = async () => {
@@ -156,55 +181,56 @@ const Home: React.FC = () => {
           .order('created_at', { ascending: false })
           .limit(3);
 
-        const calcotadaSuccess = {
-          id: 'calcotada-success-feb08',
-          title: "🔥 ÉXITO: Calçotada 2026",
-          content: "Más de 500 vecinos han disfrutado hoy en el Pont del Diable. Ambiente inmejorable, sol y mucha salsa. ¡Gracias a los voluntarios!",
-          category: "COMUNIDAD",
+        const carnivalPrep = {
+          id: 'carnival-prep-mon-feb09',
+          title: "🎭 CARNAVAL: Cuenta Atrás",
+          content: "¡Solo quedan 3 días para el Dijous Gras! Las comparsas ultiman detalles. Consulta el programa oficial y compra tus sillas para la Rua.",
+          category: "FIESTA",
           neighborhood: "GENERAL",
-          itinerary: "• Asistentes: +500\n• Incidencias: 0\n• Próximo: Carnaval",
-          link_url: "/gallery",
+          itinerary: "• Jueves: Butifarra\n• Sábado: Rua Artesania\n• Tickets: Ya venta",
+          link_url: "https://www.tarragona.cat/cultura/festes-i-cultura-popular/carnaval/carnaval-2026/actes-dia-a-dia-1",
           created_at: new Date().toISOString()
         };
 
-        const trafficAlert = {
-          id: 'traffic-n240-sun',
-          title: "🚗 TRÁFICO: Retenciones N-240",
-          content: "Operación retorno de la Calçotada: Tráfico lento en la bajada desde San Salvador hacia Tarragona. Se recomienda paciencia.",
-          category: "AVISO",
-          neighborhood: "S. SALVADOR",
-          itinerary: "• Vía: N-240\n• Estado: Colapso\n• Alternativa: A-7",
-          created_at: new Date().toISOString()
-        };
-
-        const prepperSolar = {
-          id: 'prepper-solar-cooking',
-          title: "☀️ PREPPERS: Cocina Solar",
-          content: "Aprovechando el sol de tarde, en el Foro estamos compartiendo resultados de hornos solares caseros. ¡Cocina gratis y sin gas!",
-          category: "ECO",
+        const prepperFridge = {
+          id: 'prepper-fridge-tips',
+          title: "❄️ PREPPERS: ¿Si se va la luz?",
+          content: "Guía de Seguridad Alimentaria: Cómo mantener la nevera fría durante un apagón petroquímico y qué alimentos tirar si pasan 4 horas.",
+          category: "SEGURIDAD",
           neighborhood: "PONENT",
-          itinerary: "• Tema: Energía Solar\n• Demo: Fotos en Foro\n• Coste: 0€",
+          itinerary: "• Regla: NO abrir puerta\n• Hielo: Tener bolsas\n• Riesgo: Carne/Lácteos",
           link_url: "/vital",
           created_at: new Date().toISOString()
         };
 
-        const mondayForecast = {
-          id: 'weather-mon-feb09',
-          title: "🌤️ LUNES: Vuelta al Cole",
-          content: "Mañana lunes se espera un día tranquilo, con sol y nubes altas. Temperaturas suaves (16°C). Perfecto para empezar la semana.",
-          category: "TIEMPO",
-          neighborhood: "GENERAL",
-          itinerary: "• Lunes: Sol/Nubes\n• Temp: 16°C\n• Viento: Calma",
+        const mondayJobs = {
+          id: 'jobs-monday-feb09',
+          title: "💼 EMPLEO: Campaña Carnaval",
+          content: "Se buscan 50 extras de camarero y seguridad para los eventos de Carnaval en Tarragona centro. Urge incorporación.",
+          category: "EMPLEO",
+          neighborhood: "PART ALTA",
+          itinerary: "• Puestos: 50+\n• Contrato: Temporal\n• Info: Ver Foro",
+          link_url: "/forum",
           created_at: new Date().toISOString()
         };
 
-        const lostAndFound = {
-          id: 'lost-property-calcotada',
-          title: "🧥 OBJETOS PERDIDOS",
-          content: "Se han encontrado varias chaquetas y llaves en la zona de picnic del Pont del Diable. Están guardadas en el Local Social.",
-          category: "AVISO",
-          neighborhood: "S. SALVADOR",
-          itinerary: "• Recogida: Local Social\n• Horario: L-V 17-20h\n• Info: Foro",
+        const marketBonavista = {
+          id: 'market-bonavista-mon',
+          title: "🛍️ MERCADILLO: Especial Disfraces",
+          content: "Hoy en Bonavista: Paradas con telas, complementos y disfraces a buen precio. ¡Aprovecha la mañana!",
+          category: "OCIO",
+          neighborhood: "BONAVISTA",
+          itinerary: "• Lugar: Esplanada\n• Hora: Hasta 14:00\n• Bus: Línea 54",
+          created_at: new Date().toISOString()
+        };
+
+        const weatherMonday = {
+          id: 'weather-mon-feb09-live',
+          title: "☁️ EL TIEMPO: Lunes Nublado",
+          content: "Cielos cubiertos pero sin lluvia. Temperatura suave (16°C). Perfecto para hacer recados antes del Carnaval.",
+          category: "TIEMPO",
+          neighborhood: "GENERAL",
+          itinerary: "• Hoy: Nubes (16°C)\n• Mañana: Sol\n• Viento: Leve",
           created_at: new Date().toISOString()
         };
 
@@ -220,7 +246,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([calcotadaSuccess, trafficAlert, prepperSolar, mondayForecast, lostAndFound, ...validFetchedNews].slice(0, 6));
+        setNews([carnivalPrep, prepperFridge, mondayJobs, marketBonavista, weatherMonday, ...validFetchedNews].slice(0, 6));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

@@ -253,15 +253,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">🔥 DOMINGO: ¡ÉXITO DE LA CALÇOTADA! - GRACIAS A LOS 500 ASISTENTES</span>
+          <span className="flex items-center gap-2">🎭 LUNES 9: VUELTA A LA RUTINA CON ALEGRÍA - ¡EL CARNAVAL YA VIENE!</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚗 TRÁFICO: RETENCIONES EN N-240 BAJADA PONT DEL DIABLE - PACIENCIA</span>
+          <span className="flex items-center gap-2">🚌 TRÁFICO: FLUIDO EN ACCESOS A COLEGIOS - GRACIAS POR NO APARCAR EN DOBLE FILA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">☀️ PREPPERS TGN: HOY "COCINA SOLAR" - ¡APROVECHA EL SOL DE TARDE!</span>
+          <span className="flex items-center gap-2">❄️ PREPPERS TGN: HOY "CONSERVACIÓN DE ALIMENTOS SIN LUZ" - TALLER ONLINE 19:00</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛋️ TARDE DE DOMINGO: CINE EN EL CENTRO CÍVICO (18:00)</span>
+          <span className="flex items-center gap-2">🎭 CARNAVAL 2026: VENTA DE SILLAS PARA LA RUA EN TAQUILLAS TEATRO TARRAGONA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎒 PREPARA LA SEMANA: MAÑANA LUNES MERCADILLO EN BONAVISTA</span>
+          <span className="flex items-center gap-2">💼 EMPLEO: NUEVAS OFERTAS DE REFUERZO PARA HOSTELERÍA (CAMPAÑA CARNAVAL)</span>
         </motion.div>
       </div>
 

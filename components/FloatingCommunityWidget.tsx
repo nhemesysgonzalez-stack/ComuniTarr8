@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🔥 ¡Qué gran día en el Pont del Diable! Gracias a la comisión de fiestas por la organización. 👏', neighborhood: 'GENERAL' },
-    { id: 1, user: 'Sergi R.', avatar: 'https://i.pravatar.cc/150?u=sergi', text: 'Ojo si bajáis en coche, la N-240 está parada. Mejor esperar un rato. 🚗🛑', neighborhood: 'San Pere' },
-    { id: 2, user: 'PrepperTGN', avatar: '/logo.svg', text: 'Con este sol de tarde estoy probando mi horno solar casero. ¡Funciona! ☀️🍳', neighborhood: 'Ponent' },
-    { id: 3, user: 'Anna V.', text: '¿Alguien se ha encontrado una chaqueta azul en la zona de barbacoas? 🧥', avatar: 'https://i.pravatar.cc/150?u=anna', neighborhood: 'Serrallo' },
-    { id: 4, user: 'Marc P.', avatar: 'https://i.pravatar.cc/150?u=marc', text: 'Me he comido 50 calçots... necesito una siesta urgente. 😴', neighborhood: 'Part Alta' },
-    { id: 5, user: 'Laura G.', avatar: 'https://i.pravatar.cc/150?u=laura', text: '¡Mañana vuelta a la rutina! ¿Alguien sabe si hay huelga de buses? 🚌', neighborhood: 'Centro' },
-    { id: 6, user: 'Paco V.', avatar: 'https://i.pravatar.cc/150?u=paco', text: 'Me ha sobrado salsa romesco casera. Si alguien quiere un bote, que avise. 🍯', neighborhood: 'Torreforta' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🎭 ¡Buenos días! Arrancamos semana de CARNAVAL. ¿Tenéis listos los disfraces? 🎉', neighborhood: 'GENERAL' },
+    { id: 1, user: 'Marta S.', avatar: 'https://i.pravatar.cc/150?u=marta', text: 'Busco tela de lentejuelas dorada urgente. ¿Alguien sabe dónde queda? 🧵✨', neighborhood: 'Centro' },
+    { id: 2, user: 'PrepperTGN', avatar: '/logo.svg', text: 'Si se va la luz, lo primero es NO abrir la nevera. Aguantará el frío 4-6 horas. ❄️🚫', neighborhood: 'Ponent' },
+    { id: 3, user: 'Jordi R.', text: 'El mercadillo de Bonavista hoy está a tope de cosas para Carnaval. ¡Corred! 🏃‍♂️🎭', avatar: 'https://i.pravatar.cc/150?u=jordi', neighborhood: 'Bonavista' },
+    { id: 4, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Lunes otra vez... pero con ganas de la Rua del sábado. 💃', neighborhood: 'Part Alta' },
+    { id: 5, user: 'Carlos M.', avatar: 'https://i.pravatar.cc/150?u=carlos', text: '¿Alguien para compartir coche al Polígono Riu Clar? Salgo a las 07:30. 🚗', neighborhood: 'S. Pere i S. Pau' },
+    { id: 6, user: 'Paco V.', avatar: 'https://i.pravatar.cc/150?u=paco', text: 'Vendo máquina de coser antigua pero funciona perfecta. Ideal disfraces. 🪡', neighborhood: 'Torreforta' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: 'Calçotada Épica 🔥' },
-    { user: 'Sergi R.', text: 'Atasco N-240 🚗' },
-    { user: 'PrepperTGN', text: 'Cocina Solar ☀️' },
-    { user: 'Anna V.', text: 'Chaqueta perdida 🧥' },
-    { user: 'Marc P.', text: 'Siesta time 😴' }
+    { user: 'Admin', text: 'Semana Carnaval 🎭' },
+    { user: 'Marta S.', text: 'Busco Lentejuelas ✨' },
+    { user: 'PrepperTGN', text: 'Tip Nevera ❄️' },
+    { user: 'Jordi R.', text: 'Mercadillo ON 🔥' },
+    { user: 'Carlos M.', text: 'Coche Riu Clar 🚗' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

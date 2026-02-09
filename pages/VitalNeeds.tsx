@@ -49,21 +49,21 @@ const VitalNeeds: React.FC = () => {
                     id: 'mock-n1',
                     creator_id: 'v4',
                     type: 'other',
-                    title: 'Chaqueta Perdida',
-                    description: 'Me he dejado una chaqueta vaquera con llaves en el bolsillo en la zona de mesas 4. ¿Alguien la ha visto?',
+                    title: 'Pistola Silicona',
+                    description: 'Se me ha roto la pistola de silicona caliente y estoy a medias con el disfraz del niño. ¿Alguien me presta una en Bonavista?',
                     contact_info: '622 34 56 78',
                     is_urgent: true,
-                    neighborhood: 'GENERAL',
+                    neighborhood: 'BONAVISTA',
                     created_at: new Date().toISOString()
                 },
                 {
                     id: 'mock-n2',
                     creator_id: 'v5',
                     type: 'other',
-                    title: 'Bajada al Centro',
-                    description: 'Mi grupo se queda más tiempo pero yo tengo que bajar ya y no tengo coche. ¿Alguien baja para Tarragona?',
+                    title: 'Transporte a Reus',
+                    description: 'Tengo el coche en el taller y necesito estar en Reus a las 15:00 por trabajo. Pago gasolina.',
                     contact_info: '655 89 21 00',
-                    is_urgent: false,
+                    is_urgent: true,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }
@@ -146,26 +146,26 @@ const VitalNeeds: React.FC = () => {
 
             <main className="max-w-6xl mx-auto p-6 md:p-12 -mt-10 relative z-20">
                 {/* Solidarity Initiatives Section */}
-                <section className="mb-12 bg-white dark:bg-surface-dark rounded-[40px] p-8 shadow-xl border border-gray-100 dark:border-gray-800 flex flex-col md:flex-row items-center gap-8 border-l-[12px] border-l-red-500">
-                    <div className="size-24 rounded-3xl bg-red-100 dark:bg-red-900/30 flex items-center justify-center shrink-0">
-                        <span className="material-symbols-outlined text-4xl text-red-600">commute</span>
+                <section className="mb-12 bg-white dark:bg-surface-dark rounded-[40px] p-8 shadow-xl border border-gray-100 dark:border-gray-800 flex flex-col md:flex-row items-center gap-8 border-l-[12px] border-l-purple-500">
+                    <div className="size-24 rounded-3xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center shrink-0">
+                        <span className="material-symbols-outlined text-4xl text-purple-600">palette</span>
                     </div>
                     <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
-                            <span className="px-2 py-0.5 bg-red-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">OPERACIÓN RETORNO</span>
-                            <span className="text-[10px] font-bold text-gray-400 uppercase">EVITAR ATASCOS</span>
+                            <span className="px-2 py-0.5 bg-purple-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">SOS CARNAVAL</span>
+                            <span className="text-[10px] font-bold text-gray-400 uppercase">AYUDA VECINAL</span>
                         </div>
-                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Bajada Compartida N-240 🚗</h2>
+                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Costura de Emergencia 🧵</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            La N-240 está colapsada. Si bajas al centro y tienes sitios libres, avisa para evitar que suban más coches a buscar gente. Coordinamos salidas escalonadas desde el parking de tierra.
+                            ¿Te ha pillado el toro con el disfraz? Varias vecinas expertas en costura ofrecen ayuda 'exprés' esta semana en el Local Social para arreglos de última hora. ¡Que nadie se quede sin Rua!
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Gracias. Tu coche ha sido registrado para bajar gente.'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
-                            <span className="material-symbols-outlined text-sm">group_add</span>
-                            TENGO SITIO LIBRE
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Gracias. Te esperamos en el Local Social de 17h a 20h.'); }} className="px-6 py-4 bg-purple-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                            <span className="material-symbols-outlined text-sm">volunteer_activism</span>
+                            NECESITO AYUDA
                         </a>
-                        <p className="text-[9px] text-center font-bold text-gray-400">Coordina: Voluntarios Tráfico</p>
+                        <p className="text-[9px] text-center font-bold text-gray-400">Voluntarias: Grupo de Dones</p>
                     </div>
                 </section>
 

@@ -70,12 +70,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'ComuniTarr 📢', text: '🔥 DOMINGO: ¡Éxito total en la Calçotada Popular! Gracias a todos.' },
-    { user: 'Sergi R.', text: 'AVISO: Retenciones importantes en N-240 dirección centro. Evitad la zona. 🚗' },
-    { user: 'PrepperTGN', text: '¡El horno solar ha funcionado! Pasad por el foro para ver resultados. ☀️' },
-    { user: 'Anna V.', text: 'Busco bufanda roja perdida en Pont del Diable. Valor sentimental. 🧣' },
-    { user: 'Marc P.', text: '¿Alguien para una partida de pádel mañana por la tarde? 🎾' },
-    { user: 'Luisa M.', text: '¡Tobby ha aparecido! Gracias a todos por compartir. 🐕✅' }
+    { user: 'ComuniTarr 📢', text: '🎭 LUNES: ¡Empieza la semana de Carnaval! Revisa el calendario.' },
+    { user: 'Marta L.', text: 'Busco grupo para salir en una comparsa, me han fallado mis amigas. 💃' },
+    { user: 'PrepperTGN', text: 'NUEVO HILO: Cómo mantener la cadena de frío sin electricidad. Vital en riesgo químico. ❄️' },
+    { user: 'Juan R.', text: 'El tráfico en Av. Catalunya está fluido hoy, sorprendente. 🚗' },
+    { user: 'Sonia P.', text: 'Vendo 2 entradas para la Disbauxa (sábado noche) porque trabajo. 🎟️' },
+    { user: 'Pedro A.', text: '¿Algún fontanero urgente? Se me ha roto una tubería. 🔧' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -140,12 +140,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts
     let scripts = [
-      "¡Madre mía qué hartón de calçots! No ceno en una semana. 🧅",
-      "Alguien sabe si el bus 54 pasa con normalidad? Hay mucho tráfico en la nacional. 🚌",
-      "He subido la foto de mi horno solar al hilo de Preppers. ¡Hemos hecho arroz! ☀️🍚",
-      "Me he dejado una bufanda roja en el picnic... si alguien la ve... 🧣",
-      "Mañana lunes otra vez... qué corto se hace el fin de semana. 😫",
-      "¿A qué hora abre el mercadillo de Bonavista mañana? Quiero ir pronto. 🛍️"
+      "¡Qué sueño tengo hoy! La vuelta a la rutina cuesta... ☕",
+      "¿Alguien sabe si quedan sillas para la Rua del sábado? En la web da error. 🎭",
+      "He comprado 3kg de hielo para probar el truco de la nevera de los preppers. ❄️",
+      "Busco alguien que sepa coser bajo para mi disfraz, pago bien. 🪡",
+      "El mercadillo de Bonavista está imposible de gente, id con tiempo. 🛍️",
+      "¡Venga ánimo con el lunes que el jueves ya estamos comiendo butifarra! 🌭"
     ];
 
     // Base reply scripts
@@ -439,22 +439,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'calcotada-fotos',
-      title: '🔥 Fotos Calçotada',
-      description: 'Comparte tus mejores momentos.',
-      participating: 645
+      id: 'ideas-carnaval',
+      title: '🎭 Ideas Disfraz',
+      description: 'Comparte tu diseño o pide ayuda.',
+      participating: 845
     },
     {
-      id: 'atasco-n240',
-      title: '🚗 Atasco N-240',
-      description: 'Estado del tráfico en directo.',
+      id: 'preppers-nevera',
+      title: '❄️ Nevera sin Luz',
+      description: 'Trucos conservación alimentos.',
       participating: 312
     },
     {
-      id: 'preppers-solar',
-      title: '☀️ Cocina Solar',
-      description: 'Recetas sin electricidad.',
-      participating: 145
+      id: 'empleo-lunes',
+      title: '💼 Ofertas Lunes',
+      description: 'Refuerzos para Carnaval.',
+      participating: 245
     }
   ];
 
@@ -597,7 +597,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Domingo 8 Febrero 2026 - Calçots y Relax ☀️🔥
+                  Lunes 9 Febrero 2026 - Semana de Carnaval 🎭✨
                 </span>
               </div>
 
@@ -774,16 +774,16 @@ const Forum: React.FC = () => {
                 >
                   ✕
                 </button>
-                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Domingo 08/02</h2>
+                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Lunes 09/02</h2>
                 <ul className="space-y-2">
-                  <li>🚛 <strong>Repartidor/a Furgoneta</strong> – Ruta Comarcas (Lunes a Viernes)</li>
-                  <li>🧹 <strong>Limpieza Oficinas - Mañanas</strong> – Zona Polígono Francolí (06:00-10:00)</li>
-                  <li>🏗️ <strong>Peón Especialista - Construcción</strong> – Obra nueva en Juan XXIII</li>
-                  <li>🛒 <strong>Reponedor/a Supermercado</strong> – Turno de reposición nocturna</li>
-                  <li>👴 <strong>Auxiliar Ayuda Domicilio</strong> – Horario de tardes. Carnet conducir req.</li>
-                  <li>🍽️ <strong>Ayudante Cocina - Menú Diario</strong> – Polígono Riu Clar</li>
-                  <li>💻 <strong>Administrativo/a Contable</strong> – Media jornada, sustitución</li>
-                  <li>🚗 <strong>Chófer VTC</strong> – Turno de noche fin de semana</li>
+                  <li>🎭 <strong>Seguridad Eventos Carnaval</strong> – 20 vacantes para los desfiles (Sáb/Dom)</li>
+                  <li>🍹 <strong>Camareros/as Barra Móvil</strong> – Para la Rua de l'Artesania (Sábado)</li>
+                  <li>🧵 <strong>Costurero/a Express</strong> – Taller de disfraces en Torreforta (Urgente)</li>
+                  <li>🚛 <strong>Conductor Carroza</strong> – Necesario permiso C+E (Sábado tarde)</li>
+                  <li>🧹 <strong>Limpieza Viaria Especial</strong> – Refuerzo nocturno Carnaval</li>
+                  <li>💄 <strong>Maquillador/a Fantasía</strong> – Para comparsa grande (Sábado mañana)</li>
+                  <li>📦 <strong>Mozo de Almacén</strong> – Carga y descarga material festivo</li>
+                  <li>👴 <strong>Cuidador/a</strong> – Noche del sábado (padres salen de fiesta)</li>
                 </ul>
                 <button
                   onClick={() => setShowJobOffers(false)}
