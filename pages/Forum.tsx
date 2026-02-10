@@ -469,344 +469,306 @@ const Forum: React.FC = () => {
     }
   ];
 
+  // Quick Emojis for the "Retro" bar
+  const quickEmojis = ['👋', '😂', '😎', '😮', '😢', '😡'];
+
   return (
-    <div className={`flex h-[calc(100vh-80px)] font-sans transition-transform duration-100 ${isShaking ? 'translate-x-2 -translate-y-2' : ''} bg-[#f0f2f5] dark:bg-background-dark/30`} onClick={unlockAudio}>
-      {/* Admin Activity Sidebar (Real Users only for admin nhemesysgonzalez@gmail.com) */}
-      {isAdmin && (
-        <motion.div
-          initial={{ x: -300 }}
-          animate={{ x: 0 }}
-          className="hidden xl:flex w-72 bg-white/80 dark:bg-surface-dark/80 backdrop-blur-xl border-r border-gray-100 dark:border-gray-800 flex-col shrink-0 overflow-hidden"
-        >
-          <div className="p-6 border-b border-gray-100 dark:border-gray-800 bg-primary/5">
-            <h3 className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-1">Admin Insights</h3>
-            <p className="text-[8px] font-bold text-gray-500 uppercase tracking-widest">Actividad Real del Sistema</p>
-          </div>
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar">
-            {adminActivities.length === 0 ? (
-              <p className="text-[9px] text-center text-gray-400 py-10">Esperando actividad...</p>
-            ) : (
-              adminActivities.map((act, i) => (
-                <div key={i} className="bg-white dark:bg-gray-800/50 p-3 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm flex gap-3 items-start animate-in fade-in slide-in-from-left-4">
-                  <img src={act.profiles?.avatar_url || `https://ui-avatars.com/api/?name=${act.profiles?.full_name || 'V'}`} className="size-6 rounded-lg" alt="" />
-                  <div className="flex-1 min-w-0">
-                    <p className="text-[9px] font-black dark:text-white truncate">{act.profiles?.full_name || 'Alguien'}</p>
-                    <p className="text-[8px] font-bold text-primary uppercase tracking-tighter">{act.action}</p>
-                    <p className="text-[7px] text-gray-400 font-bold uppercase mt-1">{new Date(act.created_at).toLocaleTimeString()}</p>
-                  </div>
-                </div>
-              ))
-            )}
-          </div>
-        </motion.div>
-      )}
+    <div className={`flex h-[calc(100vh-80px)] font-sans transition-transform duration-100 ${isShaking ? 'translate-x-2 -translate-y-2' : ''} bg-gray-50 dark:bg-gray-900`} onClick={unlockAudio}>
 
-      {/* Main Forum Area */}
-      <div className="flex-1 flex flex-col min-w-0">
-        <div className="p-6 md:p-8 border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-surface-dark flex flex-col lg:flex-row lg:items-center justify-between gap-6 shrink-0 relative overflow-hidden glass">
-
-          {/* MSN style top bar */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-green-400 to-blue-400"></div>
-
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <h2 className="text-xl md:text-3xl font-black dark:text-white tracking-tighter uppercase leading-none">COMMUNITY MESSENGER</h2>
-              <div className="flex items-center gap-1 px-2 py-1 bg-green-500/10 rounded-lg">
-                <span className="size-2 rounded-full bg-green-500 animate-pulse"></span>
-                <span className="text-[9px] font-black text-green-600 uppercase tracking-widest">{activeUsers.length + 8} ACTIVOS</span>
-              </div>
+      {/* Sidebar / Contact List (Desktop: Left, Mobile: Top/Drawer style or simplified) */}
+      <div className="hidden md:flex w-80 flex-col bg-white dark:bg-gray-800 border-r border-gray-100 dark:border-gray-700 z-10">
+        {/* User Profile Header (Blue Gradient) */}
+        <div className="p-6 bg-gradient-to-b from-blue-400 to-blue-500 text-white rounded-bl-[30px] shadow-lg relative overflow-hidden">
+          <div className="relative z-10 flex items-center gap-4">
+            <div className="relative">
+              <img src={user?.user_metadata?.avatar_url || "/logo.svg"} className="size-14 rounded-full border-2 border-white shadow-md bg-white" alt="Profile" />
+              <div className="absolute bottom-0 right-0 size-4 bg-green-400 border-2 border-white rounded-full"></div>
             </div>
-
-            <div className="flex gap-2 overflow-x-auto no-scrollbar pb-2">
-              <button
-                onClick={() => startTransition(() => setCurrentNeighborhood('GENERAL'))}
-                className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shrink-0 ${currentNeighborhood === 'GENERAL' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'}`}
-                aria-label="Canal General"
-              >
-                🌍 Canal General
-              </button>
-              <button
-                onClick={() => startTransition(() => setCurrentNeighborhood(user?.user_metadata?.neighborhood || 'GENERAL'))}
-                className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shrink-0 ${currentNeighborhood !== 'GENERAL' && currentNeighborhood !== 'EMPLEO' && currentNeighborhood !== 'ENCUENTROS' && currentNeighborhood !== 'PREPPERS' ? 'bg-primary text-white shadow-lg' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'}`}
-              >
-                🏠 Mi Barrio
-              </button>
-              <button
-                onClick={() => startTransition(() => setCurrentNeighborhood('EMPLEO'))}
-                className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shrink-0 ${currentNeighborhood === 'EMPLEO' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/20' : 'bg-gray-100 text-emerald-600 hover:bg-emerald-50 dark:bg-gray-800 dark:text-emerald-400'}`}
-              >
-                💼 Empleo
-              </button>
-              <button
-                onClick={() => startTransition(() => setCurrentNeighborhood('ENCUENTROS'))}
-                className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shrink-0 ${currentNeighborhood === 'ENCUENTROS' ? 'bg-pink-500 text-white shadow-lg shadow-pink-500/20' : 'bg-gray-100 text-pink-500 hover:bg-pink-50 dark:bg-gray-800 dark:text-pink-400'}`}
-              >
-                ❤️ Encuentros
-              </button>
-              <button
-                onClick={() => startTransition(() => setCurrentNeighborhood('PREPPERS'))}
-                className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shrink-0 ${currentNeighborhood === 'PREPPERS' ? 'bg-orange-600 text-white shadow-lg shadow-orange-600/20' : 'bg-gray-100 text-orange-600 hover:bg-orange-50 dark:bg-gray-800 dark:text-orange-400'}`}
-              >
-                🛡️ Preppers / TGN Segura
-              </button>
+            <div className="min-w-0">
+              <h2 className="font-black text-lg truncate">{user?.user_metadata?.full_name || 'Vecino'}</h2>
+              <div className="flex items-center gap-1 opacity-90 cursor-pointer hover:bg-white/20 px-2 py-0.5 rounded-full transition-colors w-fit">
+                <span className="text-[10px] uppercase font-bold tracking-wider">Disponible ▾</span>
+              </div>
+              <p className="text-[10px] italic opacity-80 mt-1 truncate">"¡Disfrutando del Carnaval! 🎭"</p>
             </div>
           </div>
+          {/* Decorative Circles */}
+          <div className="absolute -top-10 -right-10 size-32 bg-white/10 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-0 right-0 size-20 bg-blue-300/20 rounded-full blur-xl"></div>
+        </div>
 
-          {/* Status Bar / Avatars */}
-          <div className="flex items-center gap-2">
-            {activeUsers.slice(0, 6).map((u, i) => (
-              <div key={i} className="relative group cursor-help">
-                <img src={u.avatar_url || `https://i.pravatar.cc/100?u=${u.id}`} className="size-10 rounded-xl border-2 border-white dark:border-gray-800 shadow-md grayscale-[0.5] hover:grayscale-0 transition-all" alt="" />
-                <span className={`absolute -bottom-1 -right-1 size-3 rounded-full border-2 border-white dark:border-gray-800 ${u.status === 'online' ? 'bg-green-500' : u.status === 'busy' ? 'bg-red-500' : 'bg-amber-500'}`}></span>
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 text-white text-[8px] font-black rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50">
-                  {u.full_name} ({u.status || 'online'})
-                </div>
-              </div>
-            ))}
-            <div className="size-10 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-[10px] font-black text-gray-400">+12</div>
+        {/* Search Bar */}
+        <div className="p-4">
+          <div className="relative">
+            <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">search</span>
+            <input
+              type="text"
+              placeholder="Buscar vecinos o grupos..."
+              className="w-full bg-gray-100 dark:bg-gray-700/50 rounded-full py-2 pl-9 pr-4 text-xs font-bold text-gray-600 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400/50"
+            />
           </div>
         </div>
 
-        {/* Specialized UI for ENCUENTROS */}
-        {currentNeighborhood === 'ENCUENTROS' && (
-          <div className="bg-gradient-to-r from-pink-500/10 to-purple-500/10 py-4 px-8 border-b border-pink-100 dark:border-pink-900/30 overflow-hidden relative">
-            <motion.div
-              animate={{ x: [0, -100, 0] }}
-              transition={{ duration: 10, repeat: Infinity }}
-              className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20"
+        {/* Group Lists (Accordion Style) */}
+        <div className="flex-1 overflow-y-auto px-2 space-y-1 custom-scrollbar">
+          {/* GENERAL DISCUSSION */}
+          <div className="mb-2">
+            <button
+              onClick={() => startTransition(() => setCurrentNeighborhood('GENERAL'))}
+              className={`w-full flex items-center gap-3 p-3 rounded-2xl transition-all ${currentNeighborhood === 'GENERAL' ? 'bg-blue-50 dark:bg-blue-900/20' : 'hover:bg-gray-50 dark:hover:bg-gray-800'}`}
             >
-              <span className="material-symbols-outlined absolute top-2 left-10 text-pink-500 animate-bounce">favorite</span>
-              <span className="material-symbols-outlined absolute top-5 left-1/2 text-purple-500 animate-pulse">favorite</span>
-              <span className="material-symbols-outlined absolute top-2 right-20 text-pink-400 animate-bounce [animation-delay:1s]">favorite</span>
-            </motion.div>
-            <div className="flex items-center justify-between relative z-10">
-              <div className="flex items-center gap-4">
-                <div className="size-12 rounded-full bg-pink-500 flex items-center justify-center text-white shadow-lg shadow-pink-500/30">
-                  <span className="material-symbols-outlined">favorite</span>
-                </div>
-                <div>
-                  <h3 className="text-sm font-black text-pink-600 dark:text-pink-400 uppercase tracking-widest">Cupido Vecinal</h3>
-                  <p className="text-[10px] font-bold text-gray-500">Conoce a tus vecinos en un ambiente relajado y divertido.</p>
-                </div>
+              <div className={`size-10 rounded-full flex items-center justify-center shrink-0 ${currentNeighborhood === 'GENERAL' ? 'bg-blue-500 text-white shadow-md shadow-blue-500/30' : 'bg-gray-200 dark:bg-gray-700 text-gray-500'}`}>
+                <span className="material-symbols-outlined text-lg">public</span>
               </div>
-              <div className="flex gap-2">
-                <span className="px-3 py-1 bg-white dark:bg-gray-800 rounded-full text-[9px] font-black text-pink-500 border border-pink-100 uppercase tracking-tighter">14 Candidatos hoy</span>
-                <span className="px-3 py-1 bg-pink-500 text-white rounded-full text-[9px] font-black uppercase tracking-tighter shadow-md">Modo Love Activo</span>
+              <div className="flex-1 text-left">
+                <h3 className={`text-xs font-black uppercase tracking-wider ${currentNeighborhood === 'GENERAL' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-400'}`}>Discusión General</h3>
+                <p className="text-[10px] text-gray-400 font-bold truncate">35 vecinos activos</p>
               </div>
+            </button>
+          </div>
+
+          {/* SECURITY UPDATES */}
+          <div className="mb-2">
+            <button
+              onClick={() => startTransition(() => setCurrentNeighborhood('PREPPERS'))}
+              className={`w-full flex items-center gap-3 p-3 rounded-2xl transition-all ${currentNeighborhood === 'PREPPERS' ? 'bg-orange-50 dark:bg-orange-900/20' : 'hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+            >
+              <div className={`size-10 rounded-full flex items-center justify-center shrink-0 ${currentNeighborhood === 'PREPPERS' ? 'bg-orange-500 text-white shadow-md shadow-orange-500/30' : 'bg-gray-200 dark:bg-gray-700 text-gray-500'}`}>
+                <span className="material-symbols-outlined text-lg">shield</span>
+              </div>
+              <div className="flex-1 text-left">
+                <h3 className={`text-xs font-black uppercase tracking-wider ${currentNeighborhood === 'PREPPERS' ? 'text-orange-600 dark:text-orange-400' : 'text-gray-600 dark:text-gray-400'}`}>Seguridad / Preppers</h3>
+                <p className="text-[10px] text-gray-400 font-bold truncate">Avisos Viento</p>
+              </div>
+            </button>
+          </div>
+
+          {/* JOB OFFERS */}
+          <div className="mb-2">
+            <button
+              onClick={() => startTransition(() => setCurrentNeighborhood('EMPLEO'))}
+              className={`w-full flex items-center gap-3 p-3 rounded-2xl transition-all ${currentNeighborhood === 'EMPLEO' ? 'bg-green-50 dark:bg-green-900/20' : 'hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+            >
+              <div className={`size-10 rounded-full flex items-center justify-center shrink-0 ${currentNeighborhood === 'EMPLEO' ? 'bg-green-500 text-white shadow-md shadow-green-500/30' : 'bg-gray-200 dark:bg-gray-700 text-gray-500'}`}>
+                <span className="material-symbols-outlined text-lg">work</span>
+              </div>
+              <div className="flex-1 text-left">
+                <h3 className={`text-xs font-black uppercase tracking-wider ${currentNeighborhood === 'EMPLEO' ? 'text-green-600 dark:text-green-400' : 'text-gray-600 dark:text-gray-400'}`}>Empleo</h3>
+                <p className="text-[10px] text-gray-400 font-bold truncate">Ofertas Carnaval</p>
+              </div>
+            </button>
+          </div>
+
+          {/* ENCUENTROS */}
+          <div className="mb-2">
+            <button
+              onClick={() => startTransition(() => setCurrentNeighborhood('ENCUENTROS'))}
+              className={`w-full flex items-center gap-3 p-3 rounded-2xl transition-all ${currentNeighborhood === 'ENCUENTROS' ? 'bg-pink-50 dark:bg-pink-900/20' : 'hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+            >
+              <div className={`size-10 rounded-full flex items-center justify-center shrink-0 ${currentNeighborhood === 'ENCUENTROS' ? 'bg-pink-500 text-white shadow-md shadow-pink-500/30' : 'bg-gray-200 dark:bg-gray-700 text-gray-500'}`}>
+                <span className="material-symbols-outlined text-lg">favorite</span>
+              </div>
+              <div className="flex-1 text-left">
+                <h3 className={`text-xs font-black uppercase tracking-wider ${currentNeighborhood === 'ENCUENTROS' ? 'text-pink-600 dark:text-pink-400' : 'text-gray-600 dark:text-gray-400'}`}>Encuentros</h3>
+                <p className="text-[10px] text-gray-400 font-bold truncate">Modo Love</p>
+              </div>
+            </button>
+          </div>
+
+          <div className="px-4 py-2 mt-4">
+            <h4 className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2">Vecinos Online (5/12)</h4>
+            <div className="space-y-2">
+              {activeUsers.slice(0, 5).map((u, i) => (
+                <div key={i} className="flex items-center gap-2 px-1">
+                  <div className="relative">
+                    <img src={u.avatar_url || "/logo.svg"} className="size-8 rounded-full bg-gray-200" alt="" />
+                    <span className={`absolute -bottom-0.5 -right-0.5 size-2.5 border-2 border-white rounded-full ${u.status === 'online' ? 'bg-green-500' : 'bg-amber-500'}`}></span>
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-bold text-gray-700 dark:text-gray-300 truncate">{u.full_name}</p>
+                    <p className="text-[8px] text-gray-400 truncate">{u.status === 'online' ? 'En el barrio' : 'Ocupado'}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        )}
+        </div>
+      </div>
 
-        <div ref={scrollRef} className={`flex-1 overflow-y-auto p-6 md:p-12 space-y-8 custom-scrollbar transition-colors ${currentNeighborhood === 'ENCUENTROS' ? 'bg-pink-50/30 dark:bg-pink-900/5' : 'bg-[#f5f7fa] dark:bg-background-dark/30'}`}>
-
-          {loading ? (
-            <div className="h-full flex flex-col items-center justify-center gap-4 opacity-50">
-              <div className="size-10 border-4 border-primary border-t-transparent animate-spin rounded-full"></div>
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Estableciendo conexión...</p>
+      {/* Main Chat Area */}
+      <div className="flex-1 flex flex-col min-w-0 bg-[#f0f2f5] dark:bg-gray-900/50 relative">
+        {/* Chat Header */}
+        <div className="bg-white dark:bg-gray-800 p-4 shadow-sm border-b border-gray-100 dark:border-gray-700 flex items-center justify-between z-20">
+          <div className="flex items-center gap-4">
+            {/* Mobile Back / Menu Trigger would go here */}
+            <div className="size-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-500">
+              <span className="material-symbols-outlined">
+                {currentNeighborhood === 'GENERAL' ? 'public' :
+                  currentNeighborhood === 'PREPPERS' ? 'shield' :
+                    currentNeighborhood === 'EMPLEO' ? 'work' : 'forum'}
+              </span>
             </div>
-          ) : (
-            <div className="space-y-6">
-              <div className="flex justify-center mb-8">
-                <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Martes 10 Febrero 2026 - Viento y Preppers 🌬️☣️
-                </span>
-              </div>
+            <div>
+              <h2 className="text-sm md:text-base font-black text-gray-800 dark:text-white uppercase tracking-tight">
+                {currentNeighborhood === 'GENERAL' ? 'Discusión General' :
+                  currentNeighborhood === 'PREPPERS' ? 'Seguridad y Preppers' : currentNeighborhood}
+              </h2>
+              <p className="text-[10px] font-bold text-gray-400 flex items-center gap-1">
+                <span className="size-2 bg-green-500 rounded-full animate-pulse"></span>
+                Actividad reciente: Alta
+              </p>
+            </div>
+          </div>
 
-              {messages.map((msg, i) => {
-                const isMine = msg.user_id === user?.id;
-                const isBuzz = msg.content.includes('<<ZUMBIDO>>');
+          <div className="flex items-center gap-2">
+            <button className="size-8 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-center text-blue-500 transition-colors">
+              <span className="material-symbols-outlined text-lg">videocam</span>
+            </button>
+            <button className="size-8 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-center text-blue-500 transition-colors">
+              <span className="material-symbols-outlined text-lg">call</span>
+            </button>
+            <button className="size-8 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-center text-gray-400 transition-colors">
+              <span className="material-symbols-outlined text-lg">more_vert</span>
+            </button>
+          </div>
+        </div>
 
-                if (isBuzz) {
-                  return (
-                    <motion.div
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      animate={{ scale: 1.1, opacity: 1 }}
-                      key={msg.id}
-                      className="flex justify-center my-6"
-                    >
-                      <div className="bg-red-500 text-white px-10 py-5 rounded-[40px] font-black text-xs uppercase tracking-[0.3em] shadow-[0_20px_50px_rgba(239,68,68,0.3)] animate-pulse flex items-center gap-4 border-4 border-white">
-                        <span className="material-symbols-outlined shrink-0">notifications_active</span>
-                        ¡ZUMBIDO DE {msg.user_metadata?.full_name}!
-                        <span className="material-symbols-outlined shrink-0">notifications_active</span>
-                      </div>
-                    </motion.div>
-                  );
-                }
+        {/* Messages Area */}
+        <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 custom-scrollbar">
+          {/* Date Divider */}
+          <div className="flex justify-center my-4">
+            <span className="px-4 py-1.5 bg-gray-200 dark:bg-gray-700 rounded-full text-[10px] font-black text-gray-500 dark:text-gray-300 uppercase tracking-widest shadow-sm">
+              Hoy
+            </span>
+          </div>
 
-                return (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    key={msg.id}
-                    className={`flex ${isMine ? 'justify-end' : 'justify-start'} group`}
-                  >
-                    <div className={`flex gap-4 max-w-[85%] md:max-w-[70%] ${isMine ? 'flex-row-reverse' : 'flex-row'}`}>
-                      <div className="shrink-0 pt-1">
-                        <div className="relative group">
-                          <img src={msg.user_metadata?.avatar_url || `https://i.pravatar.cc/100?u=${msg.user_id}`} className="size-10 rounded-2xl object-cover border-2 border-white dark:border-gray-800 shadow-sm" alt="" />
-                          <span className="absolute -bottom-1 -right-1 size-3 rounded-full bg-green-500 border-2 border-white dark:border-gray-800"></span>
-                        </div>
-                      </div>
-                      <div className={`flex flex-col ${isMine ? 'items-end' : 'items-start'}`}>
-                        <div className="flex items-center gap-2 mb-1 px-1">
-                          <span
-                            onClick={() => !isMine && handleReply(msg.user_metadata?.full_name?.split(' ')[0] || 'Vecino')}
-                            className={`text-[9px] font-black uppercase tracking-widest cursor-pointer hover:text-primary transition-colors ${isMine ? 'dark:text-gray-400' : 'text-primary animate-pulse'}`}
-                          >
-                            {msg.user_metadata?.full_name} {isMine ? '(Tú)' : '← Responder'}
-                          </span>
-                          <span className="text-[8px] font-bold text-gray-400">{new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
-                        </div>
-                        <div className={`p-4 rounded-[28px] font-bold text-sm leading-relaxed shadow-lg ${isMine
-                          ? (currentNeighborhood === 'ENCUENTROS' ? 'bg-gradient-to-br from-pink-500 to-rose-600 text-white rounded-tr-none shadow-pink-500/20' : 'bg-[#3b82f6] text-white rounded-tr-none')
-                          : (currentNeighborhood === 'ENCUENTROS' ? 'bg-white dark:bg-surface-dark dark:text-white rounded-tl-none border-2 border-pink-100 dark:border-pink-900/30' : 'bg-white dark:bg-surface-dark dark:text-white rounded-tl-none border border-gray-100 dark:border-gray-800')}`}>
-                          {msg.content}
-                          {currentNeighborhood === 'ENCUENTROS' && !isMine && Math.random() > 0.8 && (
-                            <div className="absolute -right-2 -bottom-2 size-6 rounded-full bg-pink-500 text-white flex items-center justify-center text-[8px] animate-bounce shadow-lg">❤️</div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
+          {messages.map((msg, i) => {
+            const isMine = msg.user_id === user?.id;
+            const isBuzz = msg.content.includes('<<ZUMBIDO>>');
 
-              {isTyping && (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-3 text-gray-400 ml-14">
-                  <div className="flex gap-1">
-                    <span className="size-1.5 bg-gray-300 rounded-full animate-bounce"></span>
-                    <span className="size-1.5 bg-gray-300 rounded-full animate-bounce [animation-delay:0.2s]"></span>
-                    <span className="size-1.5 bg-gray-300 rounded-full animate-bounce [animation-delay:0.4s]"></span>
+            if (isBuzz) {
+              return (
+                <div key={msg.id} className="flex justify-center my-8">
+                  <div className="bg-white dark:bg-gray-800 px-6 py-3 rounded-2xl shadow-[0_5px_20px_rgba(59,130,246,0.15)] border-2 border-blue-100 dark:border-blue-900/30 flex items-center gap-3 animate-bounce">
+                    <span className="material-symbols-outlined text-blue-500 text-2xl">vibration</span>
+                    <span className="text-xs font-black text-blue-500 uppercase tracking-widest italic">
+                      {isMine ? 'Has enviado un zumbido' : `${msg.user_metadata.full_name?.split(' ')[0]} ha enviado un zumbido`}
+                    </span>
                   </div>
-                  <span className="text-[10px] font-black uppercase tracking-widest">{isTyping} está escribiendo...</span>
-                </motion.div>
-              )}
+                </div>
+              );
+            }
+
+            return (
+              <div key={msg.id} className={`flex w-full ${isMine ? 'justify-end' : 'justify-start'} group animate-in fade-in slide-in-from-bottom-2`}>
+                <div className={`flex gap-3 max-w-[85%] md:max-w-[70%] ${isMine ? 'flex-row-reverse' : 'flex-row'}`}>
+                  {/* Avatar */}
+                  <div className="shrink-0 pt-1">
+                    <img src={msg.user_metadata?.avatar_url || `https://i.pravatar.cc/100?u=${msg.user_id}`} className="size-8 md:size-10 rounded-full border-2 border-white dark:border-gray-800 shadow-sm object-cover" alt="" />
+                  </div>
+
+                  {/* Message Bubble */}
+                  <div className={`flex flex-col ${isMine ? 'items-end' : 'items-start'}`}>
+                    <div className={`px-4 py-3 md:px-6 md:py-4 relative shadow-sm text-sm leading-relaxed ${isMine
+                        ? 'bg-blue-500 text-white rounded-[20px] rounded-tr-sm'
+                        : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-[20px] rounded-tl-sm border border-gray-100 dark:border-gray-700'
+                      }`}>
+                      {msg.content}
+                      <span className={`text-[9px] font-bold block mt-1 ${isMine ? 'text-blue-200/80 text-right' : 'text-gray-400 text-left'}`}>
+                        {new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                      </span>
+                    </div>
+                    {!isMine && (
+                      <span className="text-[9px] font-bold text-gray-400 ml-2 mt-1">{msg.user_metadata?.full_name}</span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+          {isTyping && (
+            <div className="flex items-center gap-2 text-gray-400 ml-12 text-xs font-bold animate-pulse">
+              <span className="material-symbols-outlined text-sm">edit</span>
+              {isTyping} está escribiendo...
             </div>
           )}
         </div>
 
-        {/* Input Area */}
-        <div className="p-6 md:p-10 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-surface-dark shrink-0">
+        {/* Input Area (Retro Style) */}
+        <div className="bg-white dark:bg-gray-800 p-4 border-t border-gray-100 dark:border-gray-700 z-20">
+          <form onSubmit={sendMessage} className="max-w-4xl mx-auto flex flex-col gap-3">
 
-          <form onSubmit={sendMessage} className="relative max-w-5xl mx-auto flex items-center gap-4">
-            <button
-              type="button"
-              onClick={sendBuzz}
-              className="size-14 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all shadow-sm active:scale-90 group border-2 border-red-100"
-              title="Enviar Zumbido"
-            >
-              <span className="material-symbols-outlined text-2xl group-hover:animate-ping">notifications_active</span>
-            </button>
-
-            <div className="flex-1 relative group">
-              <input
-                ref={inputRef}
-                type="text"
-                value={newMessage}
-                onChange={(e) => setNewMessage(e.target.value)}
-                onFocus={() => { if (messages.length === 0) unlockAudio(); }}
-                placeholder={`Escribe un mensaje en ${currentNeighborhood}...`}
-                className="w-full bg-gray-50 dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-3xl px-6 py-4 font-bold dark:text-white outline-none ring-primary/20 focus:ring-4 focus:border-primary transition-all pr-20"
-              />
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2">
+            {/* Toolbar: Quick Emojis & Actions */}
+            <div className="flex items-center justify-between px-2">
+              {/* Quick Emojis (3D Style Imitation) */}
+              <div className="flex gap-2 md:gap-4 overflow-x-auto no-scrollbar py-1">
+                {quickEmojis.map(emoji => (
+                  <button
+                    key={emoji}
+                    type="button"
+                    onClick={() => { setNewMessage(prev => prev + emoji); inputRef.current?.focus(); }}
+                    className="size-8 md:size-10 flex items-center justify-center text-xl md:text-2xl hover:scale-125 transition-transform cursor-pointer drop-shadow-md filter hover:brightness-110 active:scale-95"
+                    style={{ textShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
+                  >
+                    {emoji}
+                  </button>
+                ))}
                 <button
                   type="button"
                   onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-                  className={`p-2 transition-colors ${showEmojiPicker ? 'text-primary' : 'text-gray-400 hover:text-primary'}`}
+                  className="size-8 md:size-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full text-gray-500 hover:text-blue-500 transition-colors"
                 >
-                  <span className="material-symbols-outlined text-xl">mood</span>
+                  <span className="material-symbols-outlined transform rotate-90">add_reaction</span>
                 </button>
               </div>
 
-              <AnimatePresence>
-                {showEmojiPicker && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9, y: 10 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.9, y: 10 }}
-                    className="absolute bottom-full right-0 mb-4 p-4 bg-white dark:bg-surface-dark rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-800 grid grid-cols-6 gap-2 z-50 w-64"
-                  >
-                    {['❤️', '😂', '🙌', '🎉', '🔥', '👏', '🐎', '☀️', '💼', '💪', '🏠', '📍'].map(emoji => (
-                      <button
-                        key={emoji}
-                        type="button"
-                        onClick={() => {
-                          setNewMessage(prev => prev + emoji);
-                          setShowEmojiPicker(false);
-                          inputRef.current?.focus();
-                        }}
-                        className="size-8 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg text-lg transition-transform hover:scale-125"
-                      >
-                        {emoji}
-                      </button>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {/* Zumbido Button */}
+              <button
+                type="button"
+                onClick={sendBuzz}
+                className="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-blue-50 text-blue-600 rounded-full hover:bg-blue-100 active:scale-95 transition-all text-[10px] md:text-xs font-black uppercase tracking-widest border border-blue-200"
+                title="Enviar Zumbido a todos"
+              >
+                <span className="material-symbols-outlined text-base md:text-lg animate-tada">vibration</span>
+                <span className="hidden md:inline">Zumbido</span>
+              </button>
             </div>
 
-            <button
-              type="submit"
-              className={`size-14 rounded-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-xl disabled:opacity-50 border-b-4 ${currentNeighborhood === 'ENCUENTROS' ? 'bg-pink-500 border-pink-700 shadow-pink-500/30' : 'bg-[#3b82f6] border-blue-700 shadow-blue-500/30'} text-white`}
-              disabled={!newMessage.trim()}
-            >
-              <span className="material-symbols-outlined font-black">send</span>
-            </button>
+            {/* Input Field ROW */}
+            <div className="flex items-end gap-3">
+              <div className="flex-1 relative bg-gray-50 dark:bg-gray-900/50 rounded-[24px] border border-gray-200 dark:border-gray-600 focus-within:ring-2 focus-within:ring-blue-400 focus-within:border-transparent transition-all">
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={newMessage}
+                  onChange={(e) => setNewMessage(e.target.value)}
+                  onFocus={() => { if (messages.length === 0) unlockAudio(); }}
+                  placeholder={`Escribe un mensaje en ${currentNeighborhood === 'PREPPERS' ? 'Seguridad' : 'el canal'}...`}
+                  className="w-full bg-transparent border-none px-6 py-3.5 focus:ring-0 text-sm font-medium text-gray-800 dark:text-gray-100 placeholder:text-gray-400"
+                />
+                <div className="absolute right-2 bottom-2 flex gap-1">
+                  <button type="button" className="p-2 text-gray-400 hover:text-blue-500 transition-colors rounded-full hover:bg-white/50">
+                    <span className="material-symbols-outlined text-xl">image</span>
+                  </button>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={!newMessage.trim()}
+                className="size-12 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-lg shadow-blue-500/30 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:scale-100 transition-all"
+              >
+                <span className="material-symbols-outlined text-xl font-bold fill-current">send</span>
+              </button>
+            </div>
           </form>
 
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            {trendingTopics.map(topic => (
-              <button
-                key={topic.id}
-                onClick={() => handleTopicClick(topic.id)}
-                className="px-4 py-2 bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-900/30 rounded-full text-[9px] font-black text-amber-700 dark:text-amber-500 uppercase tracking-widest hover:bg-amber-500 hover:text-white transition-all"
-              >
-                #{topic.title.replace(' ', '')}
-              </button>
-            ))}
-            {/* Job Offers Button */}
-            <button
-              onClick={() => setShowJobOffers(true)}
-              className="ml-2 px-4 py-2 bg-green-500/10 border border-green-500 dark:border-green-400 rounded-full text-[9px] font-black text-green-600 dark:text-green-400 uppercase tracking-widest hover:bg-green-500 hover:text-white transition-all"
-              aria-label="Abrir lista de ofertas laborales"
-            >
-              Ver Ofertas Laborales
-            </button>
+          {/* Mobile Channel Toggles (Visible only on very small screens if sidebar hidden) */}
+          <div className="md:hidden mt-4 flex gap-2 overflow-x-auto no-scrollbar pb-2">
+            {/* Simplified mobile nav chips could go here if needed, but we rely on top-level nav for now */}
           </div>
-
-          {/* Job Offers Modal */}
-          {showJobOffers && (
-            <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50" role="dialog" aria-modal="true">
-              <div className="bg-white dark:bg-surface-dark rounded-xl shadow-2xl max-w-md w-full p-6 overflow-y-auto max-h-[80vh] relative">
-                <button
-                  onClick={() => setShowJobOffers(false)}
-                  className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
-                  aria-label="Cerrar ofertas laborales"
-                >
-                  ✕
-                </button>
-                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Martes 10/02</h2>
-                <ul className="space-y-2">
-                  <li>🧹 <strong>Limpieza Urgente (Viento)</strong> – Retirada de ramas y suciedad en comunidades (Hoy/Mañana)</li>
-                  <li>🛵 <strong>Repartidores (Plus Viento)</strong> – Hamburguesería centro (Moto propia)</li>
-                  <li>👶 <strong>Monitor/a Comedor</strong> – Sustitución baja médica en Sant Pere y Sant Pau</li>
-                  <li>🏗️ <strong>Operario Mantenimiento</strong> – Revisión tejados y antenas post-viento (Urgente)</li>
-                  <li>🎭 <strong>Acomodador/a Teatro</strong> – Para eventos de Carnaval (Jueves-Domingo)</li>
-                  <li>🚛 <strong>Mozo Carga y Descarga</strong> – Turno noche en polígono (Indiferente experiencia)</li>
-                  <li>👵 <strong>Acompañante personas mayores</strong> – Paseos y recados mañanas</li>
-                  <li>💻 <strong>Técnico Informático Junior</strong> – Puesto estable en empresa química</li>
-                </ul>
-                <button
-                  onClick={() => setShowJobOffers(false)}
-                  className="mt-4 w-full py-2 bg-gray-200 dark:bg-gray-700 rounded-lg font-black uppercase hover:bg-gray-300 dark:hover:bg-gray-600 transition"
-                  aria-label="Cerrar ofertas laborales"
-                >
-                  Cerrar
-                </button>
-              </div>
-            </div>
-          )}
         </div>
+
       </div>
     </div>
   );
