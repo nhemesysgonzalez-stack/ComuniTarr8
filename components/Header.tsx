@@ -253,15 +253,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">🎭 LUNES 9: VUELTA A LA RUTINA CON ALEGRÍA - ¡EL CARNAVAL YA VIENE!</span>
+          <span className="flex items-center gap-2">⚠️ MARTES 10: ALERTA VIENTO FUERTE - EVITAR PARQUES Y ZONAS CON ÁRBOLES</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚌 TRÁFICO: FLUIDO EN ACCESOS A COLEGIOS - GRACIAS POR NO APARCAR EN DOBLE FILA</span>
+          <span className="flex items-center gap-2">☣️ PREPPERS TGN: RIESGO QUÍMICO POR VIENTO - RECORDATORIO: TENER KIT DE SELLADO LISTO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">❄️ PREPPERS TGN: HOY "CONSERVACIÓN DE ALIMENTOS SIN LUZ" - TALLER ONLINE 19:00</span>
+          <span className="flex items-center gap-2">🎟️ CARNAVAL: ÚLTIMAS ENTRADAS PARA LA RUA EN TAQUILLA (AGOTADAS ONLINE)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎭 CARNAVAL 2026: VENTA DE SILLAS PARA LA RUA EN TAQUILLAS TEATRO TARRAGONA</span>
+          <span className="flex items-center gap-2">💼 EMPLEO: SE BUSCA PERSONAL DE LIMPIEZA URGENTE (DAÑOS POR VIENTO)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">💼 EMPLEO: NUEVAS OFERTAS DE REFUERZO PARA HOSTELERÍA (CAMPAÑA CARNAVAL)</span>
+          <span className="flex items-center gap-2">🚗 TRÁFICO: PRECAUCIÓN EN LA A-7 POR RACHAS LATERALES</span>
         </motion.div>
       </div>
 

@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '18%', y: '60%', title: 'Mercadillo Bonavista', desc: 'HOY: Especial Disfraces. Muy concurrido.', status: 'Abierto', color: 'bg-yellow-500', icon: 'storefront', glow: 'shadow-[0_0_50px_rgba(234,179,8,0.8)]' },
-    { id: 2, type: 'cleanup', x: '45%', y: '30%', title: 'Montaje Gradas', desc: 'Rambla Nova. Instalación de sillas para la Rua.', status: 'Obras', color: 'bg-orange-500', icon: 'construction', glow: 'shadow-[0_0_30px_rgba(249,115,22,0.5)]' },
-    { id: 3, type: 'event', x: '55%', y: '45%', title: 'Taller Preppers', desc: 'Online (Zoom). Tema: Comida sin nevera.', status: '19:00', color: 'bg-gray-700', icon: 'kitchen', glow: 'shadow-[0_0_35px_rgba(55,65,81,0.5)]' },
-    { id: 4, type: 'incident', x: '65%', y: '25%', title: 'Tubería Rota', desc: 'Agua en calzada. Operarios trabajando. Precaución.', status: 'Reparando', color: 'bg-blue-600', icon: 'plumbing' },
-    { id: 5, type: 'incident', x: '35%', y: '75%', title: 'Tráfico Cole', desc: 'Retención puntual salida colegios Campclar.', status: 'Denso', color: 'bg-red-500', icon: 'school' }
+    { id: 1, type: 'incident', x: '40%', y: '50%', title: 'Árbol Caído', desc: 'Rama grande bloquea acera en Ramón y Cajal. Bomberos avisados.', status: 'Peligro', color: 'bg-red-600', icon: 'forest', glow: 'shadow-[0_0_50px_rgba(220,38,38,0.8)]' },
+    { id: 2, type: 'cleanup', x: '25%', y: '65%', title: 'Cola Entradas', desc: 'Cola larga en Teatro Metropol para tickets Carnaval.', status: 'Lleno', color: 'bg-purple-500', icon: 'confirmation_number' },
+    { id: 3, type: 'event', x: '60%', y: '35%', title: 'Simulacro Prepper', desc: 'Ensayo de confinamiento por riesgo químico (Polígono).', status: 'En Vivo', color: 'bg-orange-500', icon: 'warning', glow: 'shadow-[0_0_35px_rgba(249,115,22,0.5)]' },
+    { id: 4, type: 'incident', x: '70%', y: '20%', title: 'Contenedor Volcado', desc: 'El viento ha movido contenedores a la carretera en Llevant.', status: 'Precaución', color: 'bg-yellow-500', icon: 'delete' },
+    { id: 5, type: 'event', x: '50%', y: '60%', title: 'Ensayo Rua', desc: 'Comparsas ensayando en el recinto ferial (indoor).', status: 'Abierto', color: 'bg-pink-500', icon: 'music_note' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

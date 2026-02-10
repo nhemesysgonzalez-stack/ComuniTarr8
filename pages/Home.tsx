@@ -181,56 +181,56 @@ const Home: React.FC = () => {
           .order('created_at', { ascending: false })
           .limit(3);
 
-        const carnivalPrep = {
-          id: 'carnival-prep-mon-feb09',
-          title: "🎭 CARNAVAL: Cuenta Atrás",
-          content: "¡Solo quedan 3 días para el Dijous Gras! Las comparsas ultiman detalles. Consulta el programa oficial y compra tus sillas para la Rua.",
-          category: "FIESTA",
+        const windAlert = {
+          id: 'wind-alert-tue-feb10',
+          title: "🌬️ ALERTA: Viento Fuerte",
+          content: "Protección Civil activa alerta por rachas de más de 80km/h en el Tarragonès. Precaución con objetos en balcones y actividades al aire libre.",
+          category: "AVISO",
           neighborhood: "GENERAL",
-          itinerary: "• Jueves: Butifarra\n• Sábado: Rua Artesania\n• Tickets: Ya venta",
-          link_url: "https://www.tarragona.cat/cultura/festes-i-cultura-popular/carnaval/carnaval-2026/actes-dia-a-dia-1",
+          itinerary: "• Rachas: >80km/h\n• Riesgo: Cornisas/Árboles\n• Fin: Mañana tarde",
+          link_url: "https://www.tarragona.cat/seguretat/proteccio-civil",
           created_at: new Date().toISOString()
         };
 
-        const prepperFridge = {
-          id: 'prepper-fridge-tips',
-          title: "❄️ PREPPERS: ¿Si se va la luz?",
-          content: "Guía de Seguridad Alimentaria: Cómo mantener la nevera fría durante un apagón petroquímico y qué alimentos tirar si pasan 4 horas.",
+        const prepperChem = {
+          id: 'prepper-chem-risk',
+          title: "☣️ PREPPERS: Riesgo Químico",
+          content: "Con este viento, una fuga en el polígono llegaría al centro en minutos. REVISA: Cinta americana y plásticos para sellar ventanas (Refugio Interior).",
           category: "SEGURIDAD",
           neighborhood: "PONENT",
-          itinerary: "• Regla: NO abrir puerta\n• Hielo: Tener bolsas\n• Riesgo: Carne/Lácteos",
+          itinerary: "• Acción: Confinamiento\n• Kit: Radio a pilas\n• Sirenas: Atentos",
           link_url: "/vital",
           created_at: new Date().toISOString()
         };
 
-        const mondayJobs = {
-          id: 'jobs-monday-feb09',
-          title: "💼 EMPLEO: Campaña Carnaval",
-          content: "Se buscan 50 extras de camarero y seguridad para los eventos de Carnaval en Tarragona centro. Urge incorporación.",
+        const tuesdayJobs = {
+          id: 'jobs-tue-feb10',
+          title: "💼 EMPLEO: Martes Activo",
+          content: "Nuevas vacantes: Personal de limpieza (refuerzo viento), repartidores (con plus peligrosidad) y monitores de comedor escolar.",
           category: "EMPLEO",
-          neighborhood: "PART ALTA",
-          itinerary: "• Puestos: 50+\n• Contrato: Temporal\n• Info: Ver Foro",
+          neighborhood: "GENERAL",
+          itinerary: "• Limpieza: Urgente\n• Reparto: Glovo/Uber\n• Escolar: Sustituciones",
           link_url: "/forum",
           created_at: new Date().toISOString()
         };
 
-        const marketBonavista = {
-          id: 'market-bonavista-mon',
-          title: "🛍️ MERCADILLO: Especial Disfraces",
-          content: "Hoy en Bonavista: Paradas con telas, complementos y disfraces a buen precio. ¡Aprovecha la mañana!",
-          category: "OCIO",
-          neighborhood: "BONAVISTA",
-          itinerary: "• Lugar: Esplanada\n• Hora: Hasta 14:00\n• Bus: Línea 54",
+        const carnivalTickets = {
+          id: 'carnival-tickets-last-call',
+          title: "🎭 CARNAVAL: Últimas Entradas",
+          content: "Quedan menos de 100 sillas para la Rua de l'Artesania del sábado. La venta online está saturada, mejor ir a taquilla del Teatro Metropol.",
+          category: "FIESTA",
+          neighborhood: "CENTRO",
+          itinerary: "• Taquilla: 10h-13h\n• Precio: 12€\n• Zona: Rambla Nova",
           created_at: new Date().toISOString()
         };
 
-        const weatherMonday = {
-          id: 'weather-mon-feb09-live',
-          title: "☁️ EL TIEMPO: Lunes Nublado",
-          content: "Cielos cubiertos pero sin lluvia. Temperatura suave (16°C). Perfecto para hacer recados antes del Carnaval.",
+        const weatherTuesday = {
+          id: 'weather-tue-feb10-live',
+          title: "🌡️ EL TIEMPO: Martes Ventoso",
+          content: "Cielos despejados pero viento muy molesto del Noroeste (Mestral). Sensación térmica baja por el viento. Abrígate bien.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Hoy: Nubes (16°C)\n• Mañana: Sol\n• Viento: Leve",
+          itinerary: "• Viento: Mestral\n• Temp: 14°C (ST 8°C)\n• Mar: Alterada",
           created_at: new Date().toISOString()
         };
 
@@ -246,7 +246,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([carnivalPrep, prepperFridge, mondayJobs, marketBonavista, weatherMonday, ...validFetchedNews].slice(0, 6));
+        setNews([windAlert, prepperChem, tuesdayJobs, carnivalTickets, weatherTuesday, ...validFetchedNews].slice(0, 6));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

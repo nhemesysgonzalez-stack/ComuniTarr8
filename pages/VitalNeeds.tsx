@@ -49,22 +49,22 @@ const VitalNeeds: React.FC = () => {
                     id: 'mock-n1',
                     creator_id: 'v4',
                     type: 'other',
-                    title: 'Pistola Silicona',
-                    description: 'Se me ha roto la pistola de silicona caliente y estoy a medias con el disfraz del niño. ¿Alguien me presta una en Bonavista?',
+                    title: 'Persiana Rota',
+                    description: 'El viento me ha desencajado la persiana del comedor y no baja. ¿Alguien manitas en barrio del Puerto?',
                     contact_info: '622 34 56 78',
                     is_urgent: true,
-                    neighborhood: 'BONAVISTA',
+                    neighborhood: 'BARRI DEL PORT',
                     created_at: new Date().toISOString()
                 },
                 {
                     id: 'mock-n2',
                     creator_id: 'v5',
                     type: 'other',
-                    title: 'Transporte a Reus',
-                    description: 'Tengo el coche en el taller y necesito estar en Reus a las 15:00 por trabajo. Pago gasolina.',
+                    title: 'Gato Perdido',
+                    description: 'Se ha escapado mi gato "Misi" por el ruido del viento. Es negro y lleva collar rojo. Zona Monnars.',
                     contact_info: '655 89 21 00',
                     is_urgent: true,
-                    neighborhood: 'GENERAL',
+                    neighborhood: 'LLEVANT',
                     created_at: new Date().toISOString()
                 }
             ];
@@ -146,26 +146,26 @@ const VitalNeeds: React.FC = () => {
 
             <main className="max-w-6xl mx-auto p-6 md:p-12 -mt-10 relative z-20">
                 {/* Solidarity Initiatives Section */}
-                <section className="mb-12 bg-white dark:bg-surface-dark rounded-[40px] p-8 shadow-xl border border-gray-100 dark:border-gray-800 flex flex-col md:flex-row items-center gap-8 border-l-[12px] border-l-purple-500">
-                    <div className="size-24 rounded-3xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center shrink-0">
-                        <span className="material-symbols-outlined text-4xl text-purple-600">palette</span>
+                <section className="mb-12 bg-white dark:bg-surface-dark rounded-[40px] p-8 shadow-xl border border-gray-100 dark:border-gray-800 flex flex-col md:flex-row items-center gap-8 border-l-[12px] border-l-orange-500">
+                    <div className="size-24 rounded-3xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center shrink-0">
+                        <span className="material-symbols-outlined text-4xl text-orange-600">masks</span>
                     </div>
                     <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
-                            <span className="px-2 py-0.5 bg-purple-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">SOS CARNAVAL</span>
-                            <span className="text-[10px] font-bold text-gray-400 uppercase">AYUDA VECINAL</span>
+                            <span className="px-2 py-0.5 bg-orange-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">PREPPERS TGN</span>
+                            <span className="text-[10px] font-bold text-gray-400 uppercase">RIESGO QUÍMICO</span>
                         </div>
-                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Costura de Emergencia 🧵</h2>
+                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Simulacro Confinamiento ☣️</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            ¿Te ha pillado el toro con el disfraz? Varias vecinas expertas en costura ofrecen ayuda 'exprés' esta semana en el Local Social para arreglos de última hora. ¡Que nadie se quede sin Rua!
+                            Debido al fuerte viento dirección ciudad, hoy ensayamos "Confinamiento Rápido". 1. Cierra ventanas. 2. Baja persianas. 3. Sella rendijas con cinta. 4. Escucha la radio.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Gracias. Te esperamos en el Local Social de 17h a 20h.'); }} className="px-6 py-4 bg-purple-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
-                            <span className="material-symbols-outlined text-sm">volunteer_activism</span>
-                            NECESITO AYUDA
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Gracias. Has confirmado tu participación en el simulacro.'); }} className="px-6 py-4 bg-orange-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                            <span className="material-symbols-outlined text-sm">shield</span>
+                            CONFIRMAR SEGURIDAD
                         </a>
-                        <p className="text-[9px] text-center font-bold text-gray-400">Voluntarias: Grupo de Dones</p>
+                        <p className="text-[9px] text-center font-bold text-gray-400">Organiza: Protección Civil Vecinal</p>
                     </div>
                 </section>
 

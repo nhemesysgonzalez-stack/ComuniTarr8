@@ -70,12 +70,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'ComuniTarr 📢', text: '🎭 LUNES: ¡Empieza la semana de Carnaval! Revisa el calendario.' },
-    { user: 'Marta L.', text: 'Busco grupo para salir en una comparsa, me han fallado mis amigas. 💃' },
-    { user: 'PrepperTGN', text: 'NUEVO HILO: Cómo mantener la cadena de frío sin electricidad. Vital en riesgo químico. ❄️' },
-    { user: 'Juan R.', text: 'El tráfico en Av. Catalunya está fluido hoy, sorprendente. 🚗' },
-    { user: 'Sonia P.', text: 'Vendo 2 entradas para la Disbauxa (sábado noche) porque trabajo. 🎟️' },
-    { user: 'Pedro A.', text: '¿Algún fontanero urgente? Se me ha roto una tubería. 🔧' }
+    { user: 'ComuniTarr 📢', text: '⚠️ MARTES: Alerta amarilla por vientos fuertes. Asegurad toldos y persianas.' },
+    { user: 'PrepperTGN', text: 'TALLER URGENTE: Cómo crear una "habitación segura" en caso de nube tóxica y viento hacia la ciudad. ☣️' },
+    { user: 'Mireia P.', text: 'Vendo disfraz de Miercoles Addams talla M, me queda pequeño. 👗' },
+    { user: 'Carlos G.', text: 'Cuidado en la A-7, el viento mueve los camiones. 🚚🌬️' },
+    { user: 'Sonia R.', text: 'Busco canguro para el sábado noche (Rua Artesania). Pago bien. 👶' },
+    { user: 'Pedro A.', text: '¿Alguien tiene un taladro para fijar una pérgola que se me mueve? 🔧' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -151,14 +151,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts (Monday Afternoon / Carnival Hype)
     let scripts = [
-      "¡Qué sueño tengo... hora del café de la tarde ☕!",
-      "He pasado por la Rambla y ya están poniendo las vallas para el sábado. 🚧",
-      "Alguien sabe si el taller de cocina solar de los preppers se grabó? Me lo perdí. ☀️",
-      "Busco purpurina biodegradable, ¿dónde compráis? ✨",
-      "¡Madre mía el viento que hace hoy! Cuidado con los sombreros. 🌬️",
-      "¿Alguien para bajar a ver el mar un rato? Necesito desconectar. 🌊",
-      "Estoy cosiendo el disfraz y me he quedado sin hilo rojo... socorro. 🧵",
-      "¡Qué ganas de que llegue el Carnaval! 🎉"
+      "¡Qué viento hace! Se me ha volado una maceta del balcón, cuidado abajo. 🌬️",
+      "He visto a los Preppers comprando cinta americana en la ferretería... ¿saben algo que no sepamos? ☣️",
+      "Busco 2 entradas para la Disbauxa, pago el doble si hace falta. 🙏",
+      "¿Alguien sabe si se suspende el entrenamiento de fútbol por el viento? ⚽",
+      "Acaban de decir en la radio que cuidado con las cornisas en la Part Alta. 📻",
+      "Mi perro no quiere salir con este ruido, pobrecito. 🐕"
     ];
 
     // Base reply scripts
@@ -452,22 +450,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'ideas-carnaval',
-      title: '🎭 Ideas Disfraz',
-      description: 'Comparte tu diseño o pide ayuda.',
-      participating: 845
+      id: 'alerta-viento',
+      title: '🌬️ Alerta Viento',
+      description: 'Caída de ramas y objetos.',
+      participating: 945
     },
     {
-      id: 'preppers-nevera',
-      title: '❄️ Nevera sin Luz',
-      description: 'Trucos conservación alimentos.',
-      participating: 312
+      id: 'preppers-quimico',
+      title: '☣️ Riesgo Químico',
+      description: 'Sellado de ventanas urgente.',
+      participating: 412
     },
     {
-      id: 'empleo-lunes',
-      title: '💼 Ofertas Lunes',
-      description: 'Refuerzos para Carnaval.',
-      participating: 245
+      id: 'entradas-carnaval',
+      title: '🎟️ Entradas Agotadas',
+      description: 'Reventa y cambios.',
+      participating: 350
     }
   ];
 
@@ -610,7 +608,7 @@ const Forum: React.FC = () => {
             <div className="space-y-6">
               <div className="flex justify-center mb-8">
                 <span className="px-6 py-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                  Lunes 9 Febrero 2026 - Semana de Carnaval 🎭✨
+                  Martes 10 Febrero 2026 - Viento y Preppers 🌬️☣️
                 </span>
               </div>
 
@@ -787,16 +785,16 @@ const Forum: React.FC = () => {
                 >
                   ✕
                 </button>
-                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Lunes 09/02</h2>
+                <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Martes 10/02</h2>
                 <ul className="space-y-2">
-                  <li>🎭 <strong>Seguridad Eventos Carnaval</strong> – 20 vacantes para los desfiles (Sáb/Dom)</li>
-                  <li>🍹 <strong>Camareros/as Barra Móvil</strong> – Para la Rua de l'Artesania (Sábado)</li>
-                  <li>🧵 <strong>Costurero/a Express</strong> – Taller de disfraces en Torreforta (Urgente)</li>
-                  <li>🚛 <strong>Conductor Carroza</strong> – Necesario permiso C+E (Sábado tarde)</li>
-                  <li>🧹 <strong>Limpieza Viaria Especial</strong> – Refuerzo nocturno Carnaval</li>
-                  <li>💄 <strong>Maquillador/a Fantasía</strong> – Para comparsa grande (Sábado mañana)</li>
-                  <li>📦 <strong>Mozo de Almacén</strong> – Carga y descarga material festivo</li>
-                  <li>👴 <strong>Cuidador/a</strong> – Noche del sábado (padres salen de fiesta)</li>
+                  <li>🧹 <strong>Limpieza Urgente (Viento)</strong> – Retirada de ramas y suciedad en comunidades (Hoy/Mañana)</li>
+                  <li>🛵 <strong>Repartidores (Plus Viento)</strong> – Hamburguesería centro (Moto propia)</li>
+                  <li>👶 <strong>Monitor/a Comedor</strong> – Sustitución baja médica en Sant Pere y Sant Pau</li>
+                  <li>🏗️ <strong>Operario Mantenimiento</strong> – Revisión tejados y antenas post-viento (Urgente)</li>
+                  <li>🎭 <strong>Acomodador/a Teatro</strong> – Para eventos de Carnaval (Jueves-Domingo)</li>
+                  <li>🚛 <strong>Mozo Carga y Descarga</strong> – Turno noche en polígono (Indiferente experiencia)</li>
+                  <li>👵 <strong>Acompañante personas mayores</strong> – Paseos y recados mañanas</li>
+                  <li>💻 <strong>Técnico Informático Junior</strong> – Puesto estable en empresa química</li>
                 </ul>
                 <button
                   onClick={() => setShowJobOffers(false)}
