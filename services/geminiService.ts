@@ -44,6 +44,51 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     return "Gestión de residuos en TGN ♻️:\n\n• Recogida de voluminosos (muebles/trastos): Gratuita llamando al 977 296 222.\n• Deixalleria Móvil: Consulta los horarios en tu barrio. Si vas a la fija (Polígono Entrevies), puedes obtener bonificaciones en la tasa de la basura de hasta el 50%.\n• Horario orgánica: Obligatorio de 20h a 22h.\n• Contenedores: Recuerda separar (Amarillo: Envases, Azul: Papel, Verde: Vidrio).";
   }
 
+  // 2.1 TRÁFICO EN TIEMPO REAL
+  if (p.includes("trafico") || p.includes("tráfico") || p.includes("carretera") || p.includes("circulacion") || p.includes("atasco") || p.includes("retenciones") || p.includes("corte")) {
+    return "🚗 TRÁFICO TARRAGONA (Miércoles 11 Feb, 17:45h):\n\n• 🟠 RAMBLA NOVA: Colapso total por montaje de escenario del Carnaval (evitar hasta las 20h).\n• 🟢 N-340: Fluida en ambos sentidos.\n• 🟢 AP-7: Sin incidencias.\n• 🟡 Rotonda Francolí (dirección Reus): Retenciones moderadas por obras.\n• 🟢 Accesos al Puerto: Libres.\n\n💡 Alternativa Rambla: Usa C/ Pere Martell o Ronda Litoral.\n📱 App recomendada: Trànsit / Google Maps.";
+  }
+
+  // 2.2 FARMACIAS DE GUARDIA
+  if (p.includes("farmacia") || p.includes("guardia") || p.includes("medicamento") || p.includes("parafarmacia")) {
+    return "💊 FARMACIAS DE GUARDIA HOY (Miércoles 11 Feb 2026):\n\n• 🏥 Farmacia NAVARRO - Rambla Nova, 88 (24h)\n• 🏥 Farmacia DEL PORT - Pl. Corsini, 12 (hasta 22h)\n• 🏥 Farmacia SANT PERE - C/ Sant Pere, 45 (hasta 23h)\n\n📍 Consulta el listado completo actualizado en:\n👉 www.coft.org (Colegio Oficial de Farmacéuticos de Tarragona)\n\n⚕️ Urgencias médicas: CAP 24h o Hospital Joan XXIII.";
+  }
+
+  // 2.3 COLEGIOS Y EDUCACIÓN
+  if (p.includes("colegio") || p.includes("escuela") || p.includes("escola") || p.includes("instituto") || p.includes("matricula") || p.includes("matrícula") || p.includes("calendario escolar") || p.includes("menu escolar") || p.includes("menú")) {
+    return "🎓 INFORMACIÓN ESCOLAR TARRAGONA (2025-2026):\n\n📅 **CALENDARIO:**\n• Viernes 14 Feb: FIESTA LOCAL (Dijous Gras → Puente largo)\n• 3-9 Mar: Vacaciones de Carnaval\n• Semana Santa: 13-21 Abril\n\n🍽️ **MENÚS ESCOLARES:**\n• Consulta el menú semanal de tu cole en: educacio.gencat.cat/comedores\n• Dietas especiales (alergias/intolerancias): Solicitar en secretaría.\n\n📝 **MATRÍCULA 2026-2027:**\n• Preinscripción: Mayo 2026\n• Consorcio d'Educació: consorci.tarragona.cat\n\n🏫 Colegios destacados: CEIP Pau Delclòs, CEIP Marta Mata, Institut Martí Franquès, Col·legi Sagrada Familia.";
+  }
+
+  // 2.4 SERVICIOS MUNICIPALES (AMPLIADO)
+  if (p.includes("servicio") || p.includes("omac") || p.includes("ventanilla") || p.includes("cita previa") || p.includes("dni") || p.includes("padrón") || p.includes("empadronamiento")) {
+    return "🏛️ SERVICIOS MUNICIPALES TARRAGONA:\n\n📍 **OMAC (Oficina Municipal Atenció Ciutadana):**\n• Pl. de la Font, 1\n• ☎️ 010 / 977 296 100\n• 🌐 tarragona.cat/cita-previa\n• Horario: L-V 8:30-14:00\n\n🔑 **TRÁMITES MÁS COMUNES:**\n• Empadronamiento: DNI/NIE + contrato alquiler/escritura\n• Volante de convivencia: Online con Cl@ve o certificado digital\n• Recogida de muebles: ☎️ 977 296 222 (gratuito)\n• Renovar DNI: Cita en Comisaría Nacional (C/ Lleida)\n\n💳 **PAGOS (IBI, Multas):**\n• Oficina BASE: C/ Assalt, 12 → base.ddgi.cat";
+  }
+
+  // 2.5 PETROQUÍMICAS Y PLASEQTA (EXPANDIDO)
+  if (p.includes("plaseqta") || p.includes("petroqu") || p.includes("alerta quim") || p.includes("sirena") || p.includes("fuga") || p.includes("confinamiento")) {
+    return "🚨 PLASEQTA - PLAN SEGURIDAD PETROQUÍMICAS:\n\n📊 **ESTADO ACTUAL:** 🟢 VERDE (Normalidad)\n\n🔔 **SIRENAS DE ALERTA:**\n• 1 pitido largo (1 min): PRUEBA mensual (primer miércoles)\n• 3 pitidos (3x20 seg): ⚠️ ALERTA QUÍMICA REAL\n\n🏠 **SI SUENA ALERTA:**\n1. Entra en casa INMEDIATAMENTE\n2. Cierra puertas y ventanas\n3. Apaga ventilación/aire acondicionado\n4. Sigue @emergenciescat y 📻 Catalunya Ràdio\n5. NO salgas hasta que se dé el aviso de FIN de alerta\n\n📱 **APP OFICIAL:** ALERTA (Protecció Civil)\n🌐 **INFO EN VIVO:** cetem.gencat.cat\n\n❓ Dudas: ☎️ 112";
+  }
+
+  // 2.6 TRANSPORTE PÚBLICO
+  if (p.includes("autobus") || p.includes("bus") || p.includes("emt") || p.includes("renfe") || p.includes("cercanias") || p.includes("tren") || p.includes("horario")) {
+    return "🚌🚆 TRANSPORTE PÚBLICO TARRAGONA:\n\n**EMT (Autobuses urbanos):**\n• 📱 App: EMT Tarragona\n• Líneas principales: L1 (Circular), L5 (Puerto-Part Alta), L8 (Bonavista)\n• 🆘 HOY: Línea 2 desviada por obras en Rambla Nova\n• Tarjeta T-12: 12,30€ (10 viajes)\n\n**RENFE Cercanías:**\n• R-16: Tarragona ↔ Reus ↔ Salou (cada 30min)\n• R-17: Tarragona ↔ Tortosa\n• 🟢 Sin incidencias hoy\n• 🌐 rodalies.gencat.cat\n\n🚕 **Taxi:** RadioTaxi TGN → ☎️ 977 22 14 14";
+  }
+
+  // 2.7 ACTIVIDADES Y OCIO
+  if (p.includes("actividad") || p.includes("evento") || p.includes("plan") || p.includes("ocio") || p.includes("que hacer") || p.includes("qué hacer")) {
+    return "🎉 QUÉ HACER EN TARRAGONA (Miércoles 11 Feb):\n\n🎭 **HOY:**\n• 17:00-19:00h: Casting Hotel Imperial (extras para spot publicitario)\n• 19:00h: Asamblea Vecinal Part Alta (Centre Cívic)\n• 20:30h: Obra de teatro 'L'Avara' en Teatre Metropol\n\n🎪 **ESTA SEMANA (Carnaval):**\n• Jueves 12: Dijous Gras (cocas de llardons en mercados)\n• Sábado 14-Domingo 15: Rúa del Carnaval (Rambla Nova)\n\n📚 **SIEMPRE:**\n• Museos gratis: Primer domingo de mes\n• Anfiteatro Romano: 9-19h (6€)\n• Balcó del Mediterrani: Vistas espectaculares (gratis)";
+  }
+
+  // 2.8 EMERGENCIAS Y NÚMEROS ÚTILES
+  if (p.includes("emergencia") || p.includes("urgencia") || p.includes("llamar") || p.includes("telefono") || p.includes("teléfono") || p.includes("contacto") || p.includes("numero")) {
+    return "📞 TELÉFONOS ÚTILES TARRAGONA:\n\n🆘 **EMERGENCIAS:**\n• 112: Emergencias generales\n• 092: Guardia Urbana\n• 091: Policía Nacional\n• 088: Mossos d'Esquadra\n• 061: Salut Respon (urgencias sanitarias)\n• 016: Violencia de Género (no deja rastro)\n\n🏛️ **AYUNTAMIENTO:**\n• 010: Información municipal\n• 977 296 222: Recogida muebles, limpieza\n\n🏥 **SANIDAD:**\n• CAP Cita Previa: 93 326 89 01\n• Hospital Joan XXIII: 977 29 58 00\n\n🚨 **PROTECCIÓN CIVIL:** 112";
+  }
+
+  // 2.9 CORTES DE SUMINISTRO Y AVERÍAS
+  if (p.includes("corte") || p.includes("luz") || p.includes("agua") || p.includes("averia") || p.includes("avería") || p.includes("apagon") || p.includes("apagón") || p.includes("fuga agua")) {
+    return "⚡💧 AVERÍAS Y CORTES DE SUMINISTRO:\n\n**ELECTRICIDAD (ENDESA):**\n• Averías: ☎️ 800 760 706 (24h)\n• 🌐 endesa.com/averias\n• ⚠️ Hoy: Sin cortes programados en Tarragona\n\n**AGUA (EMATSA):**\n• Averías: ☎️ 900 670 207 (24h)\n• Fugas en vía pública: Mismo teléfono\n• 🌐 ematsa.cat\n\n**GAS (NATURGY):**\n• Fuga de gas: ☎️ 900 750 750 (¡URGENTE!)\n• Averías: ☎️ 900 100 251\n\n⚠️ Si hueles a gas: NO enciendas luces, ventila y llama YA.";
+  }
+
   // 3. Ruidos y Convivencia
   if (p.includes("ruido") || p.includes("fiesta") || p.includes("musica") || p.includes("molestia")) {
     return "Dada mi función de Mediador Vecinal ⚖️, te sugiero esto para ruidos:\n\n1. Resolución Amistosa: Habla con el vecino en un momento de calma. A veces no son conscientes del impacto.\n2. Normativa: El horario de descanso es de 22:00h a 08:00h. Durante el día, el límite es de 35dB en interiores.\n3. Escalada: Si no cesa, puedes contactar con el Administrador de Fincas o, en casos extremos, con la Guardia Urbana (092).";

@@ -1,9 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const SOSButton: React.FC = () => {
     const [isAlerting, setIsAlerting] = useState(false);
     const [countdown, setCountdown] = useState(3);
+    const [emergencyActive, setEmergencyActive] = useState(false);
+
+    // Simular estado de emergencia PLASEQTA
+    useEffect(() => {
+        // Verificar si hay alerta activa (esto podría venir de una API real)
+        const checkEmergencyStatus = () => {
+            // Por ahora hardcodeado como false, pero podría venir de un estado global o API
+            const plaseqtaStatus = localStorage.getItem('plaseqta_status') || 'GREEN';
+            setEmergencyActive(plaseqtaStatus === 'RED' || plaseqtaStatus === 'ORANGE');
+        };
+
+        checkEmergencyStatus();
+        const interval = setInterval(checkEmergencyStatus, 30000); // Check every 30s
+        return () => clearInterval(interval);
+    }, []);
 
     const triggerSOS = () => {
         setIsAlerting(true);
@@ -28,16 +43,29 @@ export const SOSButton: React.FC = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => !isAlerting && triggerSOS()}
-                className="hidden lg:flex fixed bottom-8 left-8 z-[100] size-20 bg-red-600 text-white rounded-full shadow-[0_0_40px_rgba(220,38,38,0.5)] items-center justify-center group overflow-hidden border-4 border-white dark:border-gray-800"
+                className={`hidden lg:flex fixed bottom-8 left-8 z-[100] size-20 rounded-full shadow-[0_0_40px_rgba(220,38,38,0.5)] items-center justify-center group overflow-hidden border-4 ${emergencyActive
+                        ? 'bg-red-700 border-yellow-400 animate-pulse shadow-[0_0_60px_rgba(220,38,38,0.9)]'
+                        : 'bg-red-600 border-white dark:border-gray-800'
+                    } text-white`}
             >
                 <motion.div
-                    animate={isAlerting ? { scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] } : {}}
+                    animate={isAlerting || emergencyActive ? { scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] } : {}}
                     transition={{ repeat: Infinity, duration: 1 }}
                     className="absolute inset-0 bg-red-400 rounded-full"
                 />
-                <span className="material-symbols-outlined text-3xl lg:text-4xl font-black relative z-10 transition-transform group-hover:rotate-12">warning</span>
+                <span className={`material-symbols-outlined text-3xl lg:text-4xl font-black relative z-10 transition-transform ${emergencyActive ? 'animate-bounce' : 'group-hover:rotate-12'}`}>
+                    {emergencyActive ? 'emergency' : 'warning'}
+                </span>
+
+                {/* Indicator de ALERTA ACTIVA */}
+                {emergencyActive && (
+                    <div className="absolute -top-1 -right-1 size-5 bg-yellow-400 rounded-full border-2 border-white animate-ping" />
+                )}
+
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <p className="text-[10px] font-black uppercase mt-8 relative z-20">SOS</p>
+                    <p className="text-[10px] font-black uppercase mt-8 relative z-20">
+                        {emergencyActive ? '¡ALERTA!' : 'SOS'}
+                    </p>
                 </div>
             </motion.button>
 

@@ -223,6 +223,10 @@ const Forum: React.FC = () => {
           finalContent = `@${isReplyTo} ¡Hola! Soy el mediador. Parece que tengo un problema de conexión, but dime: ¿en qué puedo ayudarte?`;
         }
       } else if (isReplyTo) {
+        // DETECCIÓN DE MENSAJES SIN CONTEXTO (emojis solos, muy cortos)
+        const isEmojiOnly = originalPrompt.length <= 3 && /[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/u.test(originalPrompt);
+        const isVeryShort = originalPrompt.trim().length <= 2;
+
         // Context-aware reply scripts
         let possibleReplies = [];
         if (isGreeting) {
@@ -231,6 +235,16 @@ const Forum: React.FC = () => {
             `¡Muy buenas! ¿Qué tal la semana? @${isReplyTo}.`,
             `¡Hola ${isReplyTo}! Aquí arrancando motores. ☕`,
             `¡Buenos días! ¿Nos vemos en la asamblea de tarde?`
+          ];
+        } else if (isEmojiOnly || isVeryShort) {
+          // Respuestas para emojis o mensajes muy cortos
+          possibleReplies = [
+            `😊 Igualmente, ${isReplyTo}!`,
+            `👍 ¡Bien visto!`,
+            `¡Jajaja! ${isReplyTo} 😂`,
+            `¡Me too! 🙌`,
+            `💯 Totalmente de acuerdo.`,
+            `❤️ ¡Un abrazo!`
           ];
         } else {
           possibleReplies = replyScripts;
