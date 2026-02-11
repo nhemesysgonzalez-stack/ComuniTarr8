@@ -51,9 +51,15 @@ export const Services: React.FC = () => {
                   <span className="text-[10px] font-black uppercase tracking-wider text-green-600">Polígono Sur</span>
                 </div>
               </div>
-              <button className="mt-4 w-full py-3 bg-orange-500 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/30">
+              <a
+                href="https://interior.gencat.cat/ca/arees_dactuacio/proteccio_civil/plans_de_proteccio_civil_a_catalunya/plans_de_proteccio_civil_sectorials/plaseqta/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 w-full py-3 bg-orange-500 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/30 flex items-center justify-center gap-2"
+              >
                 VER MAPA DE AFECTACIÓN
-              </button>
+                <span className="material-symbols-outlined text-sm">open_in_new</span>
+              </a>
             </div>
           </div>
         );
@@ -74,27 +80,33 @@ export const Services: React.FC = () => {
                   <p className="text-[10px] text-gray-500">Quedan 16 días</p>
                 </div>
               </div>
-              <button className="w-full py-3 bg-blue-500 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30">
+              <a
+                href="https://educacio.gencat.cat/ca/departament/calendari-escolar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 bg-blue-500 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2"
+              >
                 VER CALENDARIO COMPLETO
-              </button>
+                <span className="material-symbols-outlined text-sm">open_in_new</span>
+              </a>
             </div>
 
             <div className="bg-indigo-50 dark:bg-indigo-900/10 p-6 rounded-3xl border border-indigo-100 dark:border-indigo-800/30">
               <h3 className="text-lg font-black text-indigo-600 dark:text-indigo-400 mb-2">MENÚS COMEDOR</h3>
               <p className="text-xs text-gray-600 dark:text-gray-400 mb-4 font-medium">Consulta el menú basal y de alérgicos de los principales colegios públicos.</p>
               <div className="grid grid-cols-2 gap-3">
-                <button className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
+                <a href="https://menuescolar.gencat.cat/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
                   CEIP El Miracle
-                </button>
-                <button className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
+                </a>
+                <a href="https://menuescolar.gencat.cat/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
                   Escola Pax
-                </button>
-                <button className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
+                </a>
+                <a href="https://menuescolar.gencat.cat/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
                   Marcel·lí Domingo
-                </button>
-                <button className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
+                </a>
+                <a href="https://educacio.gencat.cat/ca/arees-actuacio/centres-serveis-educatius/serveis-educatius/menjador-escolar/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
                   Ver todos...
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -114,23 +126,23 @@ export const Services: React.FC = () => {
                 </div>
                 <span className="material-symbols-outlined ml-auto text-gray-300 group-hover:text-primary">arrow_forward</span>
               </a>
-              <a href="#" className="bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-4 hover:shadow-md transition-all group">
+              <a href="tel:977296222" className="bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-4 hover:shadow-md transition-all group">
                 <div className="size-10 rounded-full bg-gray-100 dark:bg-gray-800 group-hover:bg-green-500 group-hover:text-white flex items-center justify-center transition-colors">
                   <span className="material-symbols-outlined">delete</span>
                 </div>
                 <div>
                   <p className="font-bold text-sm">Recogida Muebles</p>
-                  <p className="text-[10px] text-gray-500">Teléfono verde limpieza</p>
+                  <p className="text-[10px] text-gray-500">977 296 222 (Teléfono verde)</p>
                 </div>
                 <span className="material-symbols-outlined ml-auto text-gray-300 group-hover:text-green-500">call</span>
               </a>
-              <a href="#" className="bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-4 hover:shadow-md transition-all group">
+              <a href="https://sede.policia.gob.es:38089/Temas/DNI/Cita-Previa/" target="_blank" rel="noopener noreferrer" className="bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-4 hover:shadow-md transition-all group">
                 <div className="size-10 rounded-full bg-gray-100 dark:bg-gray-800 group-hover:bg-blue-500 group-hover:text-white flex items-center justify-center transition-colors">
                   <span className="material-symbols-outlined">badge</span>
                 </div>
                 <div>
                   <p className="font-bold text-sm">Renovar DNI</p>
-                  <p className="text-[10px] text-gray-500">Comisaría Plaza Orleans</p>
+                  <p className="text-[10px] text-gray-500">Cita Previa Online</p>
                 </div>
                 <span className="material-symbols-outlined ml-auto text-gray-300 group-hover:text-blue-500">open_in_new</span>
               </a>
@@ -154,26 +166,26 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <div className="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-xl transition-colors cursor-pointer group">
+                <a href="https://www.emtanemweb.cat/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-xl transition-colors cursor-pointer group">
                   <div className="flex items-center gap-3">
                     <span className="size-8 rounded-lg bg-red-600 text-white font-black flex items-center justify-center">54</span>
                     <div>
                       <p className="text-xs font-bold">Bonavista - Cooperativa</p>
-                      <p className="text-[10px] text-gray-400">Próximo: 4 min (Plaça Imperial)</p>
+                      <p className="text-[10px] text-gray-400">Ver horarios y paradas</p>
                     </div>
                   </div>
-                  <span className="material-symbols-outlined text-gray-300 group-hover:text-primary">chevron_right</span>
-                </div>
-                <div className="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-xl transition-colors cursor-pointer group">
+                  <span className="material-symbols-outlined text-gray-300 group-hover:text-primary">open_in_new</span>
+                </a>
+                <a href="https://www.emtanemweb.cat/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-xl transition-colors cursor-pointer group">
                   <div className="flex items-center gap-3">
                     <span className="size-8 rounded-lg bg-red-600 text-white font-black flex items-center justify-center">6</span>
                     <div>
                       <p className="text-xs font-bold">Campclar - Sant Pere</p>
-                      <p className="text-[10px] text-gray-400">Próximo: 12 min (Estació Bus)</p>
+                      <p className="text-[10px] text-gray-400">Ver horarios y paradas</p>
                     </div>
                   </div>
-                  <span className="material-symbols-outlined text-gray-300 group-hover:text-primary">chevron_right</span>
-                </div>
+                  <span className="material-symbols-outlined text-gray-300 group-hover:text-primary">open_in_new</span>
+                </a>
               </div>
             </div>
             <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
@@ -203,34 +215,67 @@ export const Services: React.FC = () => {
               </p>
 
               <div className="flex flex-col gap-3 relative z-10">
-                <button className="w-full py-3 bg-white text-purple-600 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-gray-100 transition-colors shadow-lg flex items-center justify-center gap-2">
+                <a
+                  href="https://www.anar.org/ayuda-chat-anar/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 bg-white text-purple-600 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-gray-100 transition-colors shadow-lg flex items-center justify-center gap-2"
+                >
                   <span className="material-symbols-outlined">chat_bubble</span>
-                  HABLAR CON UN MEDIADOR (ANÓNIMO)
-                </button>
+                  CHAT ANÓNIMO ANAR (Fundación)
+                </a>
                 <a href="tel:900018018" className="w-full py-3 bg-purple-700 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-purple-800 transition-colors shadow-lg border border-purple-400/50 flex items-center justify-center gap-2">
                   <span className="material-symbols-outlined">call</span>
                   TELÉFONO CONTRA EL ACOSO (900 018 018)
                 </a>
+                <a href="tel:116111" className="w-full py-3 bg-indigo-600 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-indigo-700 transition-colors shadow-lg border border-indigo-400/50 flex items-center justify-center gap-2">
+                  <span className="material-symbols-outlined">phone_in_talk</span>
+                  TELÉFONO DEL MENOR (116 111)
+                </a>
               </div>
             </div>
 
+            <div className="bg-yellow-50 dark:bg-yellow-900/10 p-6 rounded-3xl border border-yellow-200 dark:border-yellow-800">
+              <h3 className="text-lg font-black mb-3 text-yellow-800 dark:text-yellow-400">¿QUÉ ES EL ACOSO ESCOLAR?</h3>
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+                Es cualquier forma de maltrato psicológico, verbal o físico producido entre escolares de forma reiterada. Incluye:
+              </p>
+              <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-1 ml-4">
+                <li>• Insultos, motes, burlas, amenazas</li>
+                <li>• Exclusión social, rechazo, aislamiento</li>
+                <li>• Agresiones físicas (empujones, golpes, palizas)</li>
+                <li>• Ciberacoso (mensajes, publicaciones humillantes)</li>
+                <li>• Robo o daño de pertenencias</li>
+              </ul>
+            </div>
+
             <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-              <h3 className="text-lg font-black mb-4">RECURSOS</h3>
+              <h3 className="text-lg font-black mb-4">RECURSOS Y GUÍAS</h3>
               <div className="space-y-3">
-                <div className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-start gap-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                <a href="https://www.anar.org/wp-content/uploads/2018/02/Gu%C3%ADa-de-actuaci%C3%B3n-contra-el-acoso-escolar.pdf" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-start gap-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
                   <span className="material-symbols-outlined text-purple-500 mt-1">menu_book</span>
-                  <div>
-                    <p className="font-bold text-sm">Guía para padres</p>
-                    <p className="text-[10px] text-gray-500">Cómo detectar si tu hijo sufre bullying.</p>
+                  <div className="flex-1">
+                    <p className="font-bold text-sm">Guía para padres (PDF)</p>
+                    <p className="text-[10px] text-gray-500">Cómo detectar y actuar si tu hijo sufre acoso.</p>
                   </div>
-                </div>
-                <div className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-start gap-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <span className="material-symbols-outlined text-gray-300 group-hover:text-purple-500">open_in_new</span>
+                </a>
+                <a href="https://educacio.gencat.cat/ca/departament/publicacions/colleccions/inclusio-convivencia/conflictes-violencia-centres-educatius/" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-start gap-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
                   <span className="material-symbols-outlined text-blue-500 mt-1">gavel</span>
-                  <div>
-                    <p className="font-bold text-sm">Protocolos Escolares</p>
+                  <div className="flex-1">
+                    <p className="font-bold text-sm">Protocolos Escolares (Gencat)</p>
                     <p className="text-[10px] text-gray-500">Qué debe hacer el colegio por ley.</p>
                   </div>
-                </div>
+                  <span className="material-symbols-outlined text-gray-300 group-hover:text-blue-500">open_in_new</span>
+                </a>
+                <a href="https://www.savethechildren.es/donde/espana/violencia-contra-la-infancia/acoso-escolar-bullying" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-start gap-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
+                  <span className="material-symbols-outlined text-orange-500 mt-1">school</span>
+                  <div className="flex-1">
+                    <p className="font-bold text-sm">Save the Children: Materiales educativos</p>
+                    <p className="text-[10px] text-gray-500">Información completa y recursos de prevención.</p>
+                  </div>
+                  <span className="material-symbols-outlined text-gray-300 group-hover:text-orange-500">open_in_new</span>
+                </a>
               </div>
             </div>
           </div>
