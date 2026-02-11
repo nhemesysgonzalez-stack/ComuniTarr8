@@ -98,12 +98,12 @@ export const Services: React.FC = () => {
                 </div>
               </div>
               <a
-                href="https://www.tinet.cat/portal/plaseqta/recursos_d_interes/sirenas_i_senyalitzacio_de_risc/web_del_plaseqta/index.html"
+                href="https://tinet.cat"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 w-full py-3 bg-green-500 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-green-600 transition-colors shadow-lg shadow-green-500/30 flex items-center justify-center gap-2"
               >
-                VER WEB OFICIAL PLASEQTA
+                VER INFO PLASEQTA (Tinet.cat)
                 <span className="material-symbols-outlined text-sm">open_in_new</span>
               </a>
             </div>
@@ -141,16 +141,16 @@ export const Services: React.FC = () => {
               <h3 className="text-lg font-black text-indigo-600 dark:text-indigo-400 mb-2">MENÚS COMEDOR</h3>
               <p className="text-xs text-gray-600 dark:text-gray-400 mb-4 font-medium">Consulta el menú basal y de alérgicos de los principales colegios públicos.</p>
               <div className="grid grid-cols-2 gap-3">
-                <a href="https://menuescolar.gencat.cat/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
+                <a href="https://educacio.gencat.cat" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
                   CEIP El Miracle
                 </a>
-                <a href="https://menuescolar.gencat.cat/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
+                <a href="https://educacio.gencat.cat" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
                   Escola Pax
                 </a>
-                <a href="https://menuescolar.gencat.cat/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
+                <a href="https://educacio.gencat.cat" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
                   Marcel·lí Domingo
                 </a>
-                <a href="https://educacio.gencat.cat/ca/arees-actuacio/centres-serveis-educatius/serveis-educatius/menjador-escolar/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
+                <a href="https://educacio.gencat.cat" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
                   Ver todos...
                 </a>
               </div>
@@ -182,13 +182,13 @@ export const Services: React.FC = () => {
                 </div>
                 <span className="material-symbols-outlined ml-auto text-gray-300 group-hover:text-green-500">call</span>
               </a>
-              <a href="https://sede.policia.gob.es:38089/Temas/DNI/Cita-Previa/" target="_blank" rel="noopener noreferrer" className="bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-4 hover:shadow-md transition-all group">
+              <a href="https://www.citapreviadnie.es" target="_blank" rel="noopener noreferrer" className="bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-4 hover:shadow-md transition-all group">
                 <div className="size-10 rounded-full bg-gray-100 dark:bg-gray-800 group-hover:bg-blue-500 group-hover:text-white flex items-center justify-center transition-colors">
                   <span className="material-symbols-outlined">badge</span>
                 </div>
                 <div>
                   <p className="font-bold text-sm">Renovar DNI</p>
-                  <p className="text-[10px] text-gray-500">Cita Previa Online</p>
+                  <p className="text-[10px] text-gray-500">Cita Previa Policía Nacional</p>
                 </div>
                 <span className="material-symbols-outlined ml-auto text-gray-300 group-hover:text-blue-500">open_in_new</span>
               </a>
@@ -212,7 +212,7 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <a href="https://www.emtanemweb.cat/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-xl transition-colors cursor-pointer group">
+                <a href="https://www.emtanem.cat" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-xl transition-colors cursor-pointer group">
                   <div className="flex items-center gap-3">
                     <span className="size-8 rounded-lg bg-red-600 text-white font-black flex items-center justify-center">54</span>
                     <div>
@@ -222,7 +222,7 @@ export const Services: React.FC = () => {
                   </div>
                   <span className="material-symbols-outlined text-gray-300 group-hover:text-primary">open_in_new</span>
                 </a>
-                <a href="https://www.emtanemweb.cat/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-xl transition-colors cursor-pointer group">
+                <a href="https://www.emtanem.cat" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-xl transition-colors cursor-pointer group">
                   <div className="flex items-center gap-3">
                     <span className="size-8 rounded-lg bg-red-600 text-white font-black flex items-center justify-center">6</span>
                     <div>
@@ -262,13 +262,13 @@ export const Services: React.FC = () => {
 
               <div className="flex flex-col gap-3 relative z-10">
                 <a
-                  href="https://www.anar.org/ayuda-chat-anar/"
+                  href="https://www.anar.org"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 bg-white text-purple-600 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-gray-100 transition-colors shadow-lg flex items-center justify-center gap-2"
                 >
                   <span className="material-symbols-outlined">chat_bubble</span>
-                  CHAT ANÓNIMO ANAR (Fundación)
+                  WEB FUNDACIÓN ANAR (Ayuda)
                 </a>
                 <a href="tel:900018018" className="w-full py-3 bg-purple-700 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-purple-800 transition-colors shadow-lg border border-purple-400/50 flex items-center justify-center gap-2">
                   <span className="material-symbols-outlined">call</span>
