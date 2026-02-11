@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '⚠️ AVISO VIENTO: Rachas fuertes hoy en Tarragona. Cuidado con macetas y cornisas. 🌬️', neighborhood: 'GENERAL' },
-    { id: 1, user: 'Sandra M.', avatar: 'https://i.pravatar.cc/150?u=sandra', text: '¿Alguien sabe si quedan entradas para la Disbauxa? En la web pone agotado. 😱', neighborhood: 'Part Alta' },
-    { id: 2, user: 'PrepperTGN', avatar: '/logo.svg', text: 'Si escucháis sirenas hoy NO es simulacro. Revisa tu kit de sellado de ventanas. ☣️🚫', neighborhood: 'Ponent' },
-    { id: 3, user: 'Marc V.', text: 'Vendo 3 sacos de confeti biodegradable que me han sobrado. Barato. 🎉', avatar: 'https://i.pravatar.cc/150?u=marc', neighborhood: 'S. Pere i S. Pau' },
-    { id: 4, user: 'Laura G.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'El viento me ha volado la ropa del tendal... si veis una sábana de Bob Esponja en la calle Real... 🧽', neighborhood: 'Barri del Port' },
-    { id: 5, user: 'Javi R.', avatar: 'https://i.pravatar.cc/150?u=javi', text: 'Busco gente para completar comparsa "Los Vikingos". Faltan 2 personas. 🛡️', neighborhood: 'Torreforta' },
-    { id: 6, user: 'Carmen L.', avatar: 'https://i.pravatar.cc/150?u=carmen', text: 'Mi gato se ha asustado con el viento y se ha escapado. Zona Monnars. 🐈', neighborhood: 'Llevant' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🐖 Mañana es Jueves Lardero. ¿Dónde compráis la mejor Coca de Llardons? 😋', neighborhood: 'GENERAL' },
+    { id: 1, user: 'PrepperTGN', avatar: '/logo.svg', text: 'Analizando sirenas de ayer: En Bonavista NO se oyó bien. Hilo de reporte abierto. 📢☣️', neighborhood: 'Ponent' },
+    { id: 2, user: 'Maria C.', avatar: 'https://i.pravatar.cc/150?u=maria', text: '¡Ya tengo mi disfraz de Reina de Corazones acabado! 👑❤️', neighborhood: 'Part Alta' },
+    { id: 3, user: 'Javi F.', text: 'Cuidado en Vidal i Barraquer, están descargando vallas y hay atasco. 🚗', avatar: 'https://i.pravatar.cc/150?u=javi', neighborhood: 'Centro' },
+    { id: 4, user: 'Mercè R.', avatar: 'https://i.pravatar.cc/150?u=merce', text: 'Vendo 2 entradas para el Séquito del viernes, al final no puedo ir. Precio coste. 🎟️', neighborhood: 'S. Pere i S. Pau' },
+    { id: 5, user: 'Toni B.', avatar: 'https://i.pravatar.cc/150?u=toni', text: '¿Alguien sabe si el Mercadona abre mañana mediodía? Necesito huevos. 🥚', neighborhood: 'Torreforta' },
+    { id: 6, user: 'Luisa M.', avatar: 'https://i.pravatar.cc/150?u=luisa', text: 'Cambio cromos de la colección de Carnaval, me faltan los Nanos. 🃏', neighborhood: 'Serrallo' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: 'Alerta Viento 🌬️' },
-    { user: 'Sandra M.', text: 'Busco Entradas 🎟️' },
-    { user: 'PrepperTGN', text: 'Riesgo Químico ☣️' },
-    { user: 'Laura G.', text: 'Sábana perdida 🧽' },
-    { user: 'Javi R.', text: 'Comparsa busca gente 🛡️' }
+    { user: 'Admin', text: 'Mañana Dijous Gras 🐖' },
+    { user: 'PrepperTGN', text: 'Reporte Sirenas 📢' },
+    { user: 'Maria C.', text: 'Disfraz Listo 👑' },
+    { user: 'Javi F.', text: 'Atasco Vidal 🚗' },
+    { user: 'Mercè R.', text: 'Vendo Entradas 🎟️' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

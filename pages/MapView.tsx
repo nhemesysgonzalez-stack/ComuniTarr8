@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'incident', x: '40%', y: '50%', title: 'Árbol Caído', desc: 'Rama grande bloquea acera en Ramón y Cajal. Bomberos avisados.', status: 'Peligro', color: 'bg-red-600', icon: 'forest', glow: 'shadow-[0_0_50px_rgba(220,38,38,0.8)]' },
-    { id: 2, type: 'cleanup', x: '25%', y: '65%', title: 'Cola Entradas', desc: 'Cola larga en Teatro Metropol para tickets Carnaval.', status: 'Lleno', color: 'bg-purple-500', icon: 'confirmation_number' },
-    { id: 3, type: 'event', x: '60%', y: '35%', title: 'Simulacro Prepper', desc: 'Ensayo de confinamiento por riesgo químico (Polígono).', status: 'En Vivo', color: 'bg-orange-500', icon: 'warning', glow: 'shadow-[0_0_35px_rgba(249,115,22,0.5)]' },
-    { id: 4, type: 'incident', x: '70%', y: '20%', title: 'Contenedor Volcado', desc: 'El viento ha movido contenedores a la carretera en Llevant.', status: 'Precaución', color: 'bg-yellow-500', icon: 'delete' },
-    { id: 5, type: 'event', x: '50%', y: '60%', title: 'Ensayo Rua', desc: 'Comparsas ensayando en el recinto ferial (indoor).', status: 'Abierto', color: 'bg-pink-500', icon: 'music_note' }
+    { id: 1, type: 'shop', x: '45%', y: '50%', title: 'Cola Pastelería', desc: 'Mucha gente comprando Coca de Llardons. Rambla Nova.', status: 'Lleno', color: 'bg-orange-500', icon: 'bakery_dining', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.8)]' },
+    { id: 2, type: 'cleanup', x: '40%', y: '30%', title: 'Montaje Gradas', desc: 'Rambla Nova cortada al tráfico carril central.', status: 'Obras', color: 'bg-yellow-600', icon: 'construction' },
+    { id: 3, type: 'event', x: '70%', y: '60%', title: 'Punto Encuentro Prepper', desc: 'Medición de señal de sirenas (test acústico vecinal).', status: 'Activo', color: 'bg-green-600', icon: 'speaker', glow: 'shadow-[0_0_35px_rgba(22,163,74,0.5)]' },
+    { id: 4, type: 'incident', x: '20%', y: '40%', title: 'Perro Encontrado', desc: 'Golden Retriever perdido ayer por el viento. Está en bar Manolo.', status: 'Seguro', color: 'bg-blue-500', icon: 'pets' },
+    { id: 5, type: 'shop', x: '60%', y: '75%', title: 'Rebajas Disfraces', desc: 'Outlet de disfraces en carpa Parc Central.', status: 'Oferta', color: 'bg-pink-500', icon: 'shopping_bag' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

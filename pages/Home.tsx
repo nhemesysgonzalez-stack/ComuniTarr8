@@ -181,56 +181,56 @@ const Home: React.FC = () => {
           .order('created_at', { ascending: false })
           .limit(3);
 
-        const windAlert = {
-          id: 'wind-alert-tue-feb10',
-          title: "🌬️ ALERTA: Viento Fuerte",
-          content: "Protección Civil activa alerta por rachas de más de 80km/h en el Tarragonès. Precaución con objetos en balcones y actividades al aire libre.",
-          category: "AVISO",
+        const dijousGras = {
+          id: 'dijous-gras-prep',
+          title: "🐖 FIESTA: Mañana Dijous Gras",
+          content: "Tarragona se prepara para la butifarra d'ou y la coca de llardons. Las pastelerías prevén colas desde primera hora. ¡No te quedes sin!",
+          category: "CULTURA",
           neighborhood: "GENERAL",
-          itinerary: "• Rachas: >80km/h\n• Riesgo: Cornisas/Árboles\n• Fin: Mañana tarde",
-          link_url: "https://www.tarragona.cat/seguretat/proteccio-civil",
+          itinerary: "• Comida: Butifarra\n• Postre: Coca\n• Evento: Rambla 18h",
+          link_url: "/calendar",
           created_at: new Date().toISOString()
         };
 
-        const prepperChem = {
-          id: 'prepper-chem-risk',
-          title: "☣️ PREPPERS: Riesgo Químico",
-          content: "Con este viento, una fuga en el polígono llegaría al centro en minutos. REVISA: Cinta americana y plásticos para sellar ventanas (Refugio Interior).",
+        const prepperPetro = {
+          id: 'prepper-petro-analysis',
+          title: "☣️ PREPPERS: Análisis Sirenas",
+          content: "Informe post-viento: Zonas de sombra acústica detectadas en Bonavista y Campclar. Debate abierto sobre protocolos de la petroquímica.",
           category: "SEGURIDAD",
           neighborhood: "PONENT",
-          itinerary: "• Acción: Confinamiento\n• Kit: Radio a pilas\n• Sirenas: Atentos",
-          link_url: "/vital",
-          created_at: new Date().toISOString()
-        };
-
-        const tuesdayJobs = {
-          id: 'jobs-tue-feb10',
-          title: "💼 EMPLEO: Martes Activo",
-          content: "Nuevas vacantes: Personal de limpieza (refuerzo viento), repartidores (con plus peligrosidad) y monitores de comedor escolar.",
-          category: "EMPLEO",
-          neighborhood: "GENERAL",
-          itinerary: "• Limpieza: Urgente\n• Reparto: Glovo/Uber\n• Escolar: Sustituciones",
+          itinerary: "• Fallo: Sirena Sur\n• Acción: Reportar\n• Kit: Revisar Radio",
           link_url: "/forum",
           created_at: new Date().toISOString()
         };
 
-        const carnivalTickets = {
-          id: 'carnival-tickets-last-call',
-          title: "🎭 CARNAVAL: Últimas Entradas",
-          content: "Quedan menos de 100 sillas para la Rua de l'Artesania del sábado. La venta online está saturada, mejor ir a taquilla del Teatro Metropol.",
-          category: "FIESTA",
-          neighborhood: "CENTRO",
-          itinerary: "• Taquilla: 10h-13h\n• Precio: 12€\n• Zona: Rambla Nova",
+        const wednesdayJobs = {
+          id: 'jobs-wed-feb11',
+          title: "💼 EMPLEO: Refuerzo Carnaval",
+          content: "Última llamada para contratación de camareros y controladores de acceso para el fin de semana. Entrevistas rápidas hoy.",
+          category: "EMPLEO",
+          neighborhood: "GENERAL",
+          itinerary: "• Puestos: Hostelería\n• Urgente: Incorporación\n• Zona: Parte Alta",
+          link_url: "/forum",
           created_at: new Date().toISOString()
         };
 
-        const weatherTuesday = {
-          id: 'weather-tue-feb10-live',
-          title: "🌡️ EL TIEMPO: Martes Ventoso",
-          content: "Cielos despejados pero viento muy molesto del Noroeste (Mestral). Sensación térmica baja por el viento. Abrígate bien.",
+        const trafficWorks = {
+          id: 'traffic-works-rambla',
+          title: "🚧 TRÁFICO: Montaje Gradas",
+          content: "Corte de carril en Rambla Nova (tramo balcón) por montaje de infraestructuras para la Rua. Desvíos señalizados por Pau Casals.",
+          category: "MOVILIDAD",
+          neighborhood: "CENTRO",
+          itinerary: "• Corte: Rambla Nova\n• Duración: 3 días\n• Bus: Paradas normales",
+          created_at: new Date().toISOString()
+        };
+
+        const weatherWed = {
+          id: 'weather-wed-feb11-live',
+          title: "☀️ EL TIEMPO: Calma tras el viento",
+          content: "El viento amaina. Día soleado pero fresco (Min 6°C / Max 15°C). Perfecto para ultimar compras de Carnaval.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Viento: Mestral\n• Temp: 14°C (ST 8°C)\n• Mar: Alterada",
+          itinerary: "• Cielo: Despejado\n• Viento: Flojo\n• Noche: Fría",
           created_at: new Date().toISOString()
         };
 
@@ -246,7 +246,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([windAlert, prepperChem, tuesdayJobs, carnivalTickets, weatherTuesday, ...validFetchedNews].slice(0, 6));
+        setNews([dijousGras, prepperPetro, wednesdayJobs, trafficWorks, weatherWed, ...validFetchedNews].slice(0, 6));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

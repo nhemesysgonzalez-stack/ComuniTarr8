@@ -70,12 +70,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'ComuniTarr 📢', text: '⚠️ MARTES: Alerta amarilla por vientos fuertes. Asegurad toldos y persianas.' },
-    { user: 'PrepperTGN', text: 'TALLER URGENTE: Cómo crear una "habitación segura" en caso de nube tóxica y viento hacia la ciudad. ☣️' },
-    { user: 'Mireia P.', text: 'Vendo disfraz de Miercoles Addams talla M, me queda pequeño. 👗' },
-    { user: 'Carlos G.', text: 'Cuidado en la A-7, el viento mueve los camiones. 🚚🌬️' },
-    { user: 'Sonia R.', text: 'Busco canguro para el sábado noche (Rua Artesania). Pago bien. 👶' },
-    { user: 'Pedro A.', text: '¿Alguien tiene un taladro para fijar una pérgola que se me mueve? 🔧' }
+    { user: 'ComuniTarr 📢', text: '🐖 MIÉRCOLES: Mañana Jueves Lardero. ¿Ya tienes tu butifarra de huevo?' },
+    { user: 'PrepperTGN', text: 'ENCUESTA: ¿Oíste las sirenas ayer en tu barrio? Estamos creando un mapa de zonas mudas. 📢🗺️' },
+    { user: 'Laura S.', text: 'Busco maquilladora a domicilio para el sábado por la mañana. Somos 4. 💄' },
+    { user: 'David M.', text: 'Vendo 2 entradas grada Rambla, fila 1. Me he roto la pierna. 🦵❌' },
+    { user: 'Elena R.', text: '¡Cuidado en la N-340, retenciones por obras en la rotonda! 🚗' },
+    { user: 'Pedro A.', text: 'Busco disfraz de POCOYO talla 3 años urgente. 👶' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -151,12 +151,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts (Monday Afternoon / Carnival Hype)
     let scripts = [
-      "¡Qué viento hace! Se me ha volado una maceta del balcón, cuidado abajo. 🌬️",
-      "He visto a los Preppers comprando cinta americana en la ferretería... ¿saben algo que no sepamos? ☣️",
-      "Busco 2 entradas para la Disbauxa, pago el doble si hace falta. 🙏",
-      "¿Alguien sabe si se suspende el entrenamiento de fútbol por el viento? ⚽",
-      "Acaban de decir en la radio que cuidado con las cornisas en la Part Alta. 📻",
-      "Mi perro no quiere salir con este ruido, pobrecito. 🐕"
+      "¿Alguien ha probado la coca de llardons de la pastelería Conde? Dicen que es la mejor. 🐖",
+      "Ayer durante el simulacro, en mi calle no se oyó NADA. Vaya seguridad... ☣️",
+      "Busco coche para bajar a la Rua el sábado, el parking estará imposible. 🚗",
+      "¡Qué nervios! Mañana ya empieza todo. ¿Tenéis los disfraces listos? 🎭",
+      "Vendo peluca rosa sin estrenar, cambio de planes a última hora. 💇‍♀️",
+      "Ojo en la Rambla, están cortando carriles para poner las gradas. 🚧"
     ];
 
     // Base reply scripts
@@ -450,21 +450,21 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'alerta-viento',
-      title: '🌬️ Alerta Viento',
-      description: 'Caída de ramas y objetos.',
-      participating: 945
+      id: 'dijous-gras',
+      title: '🐖 Dijous Gras',
+      description: 'Butifarras y coca.',
+      participating: 1205
     },
     {
-      id: 'preppers-quimico',
-      title: '☣️ Riesgo Químico',
-      description: 'Sellado de ventanas urgente.',
-      participating: 412
+      id: 'preppers-sirenas',
+      title: '📢 Fallo Sirenas',
+      description: 'Reporte de zonas mudas.',
+      participating: 530
     },
     {
-      id: 'entradas-carnaval',
-      title: '🎟️ Entradas Agotadas',
-      description: 'Reventa y cambios.',
+      id: 'reventa-entradas',
+      title: '🎟️ Reventa Rua',
+      description: 'Entradas agotadas.',
       participating: 350
     }
   ];
@@ -576,6 +576,16 @@ const Forum: React.FC = () => {
           </div>
 
           <div className="px-4 py-2 mt-4">
+            <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Miércoles 11/02</h2>
+            <ul className="space-y-2">
+              <li>🍹 <strong>Ayudante Barra/Camarero</strong> – Extra Fin de Semana Carnaval (12€/h)</li>
+              <li>🛡️ <strong>Control de Accesos</strong> – Discotecas Puerto Deportivo (Sáb/Dom)</li>
+              <li>🛒 <strong>Reponedor/a Supermercado</strong> – Refuerzo campaña (Butifarras/Coca)</li>
+              <li>💅 <strong>Esteticien / Maquilladora</strong> – Uñas y maquillaje fantasía (Jueves-Sábado)</li>
+              <li>🚛 <strong>Chófer VTC/Taxi</strong> – Alta demanda estimada para el fin de semana</li>
+              <li>🧹 <strong>Limpieza Post-Eventos</strong> – Turnos de madrugada (Domingo/Lunes)</li>
+              <li>📦 <strong>Mozo Almacén Disfraces</strong> – Organización stock últimas ventas</li>
+            </ul>
             <h4 className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2">Vecinos Online (5/12)</h4>
             <div className="space-y-2">
               {activeUsers.slice(0, 5).map((u, i) => (
@@ -670,8 +680,8 @@ const Forum: React.FC = () => {
                   {/* Message Bubble */}
                   <div className={`flex flex-col ${isMine ? 'items-end' : 'items-start'}`}>
                     <div className={`px-4 py-3 md:px-6 md:py-4 relative shadow-sm text-sm leading-relaxed ${isMine
-                        ? 'bg-blue-500 text-white rounded-[20px] rounded-tr-sm'
-                        : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-[20px] rounded-tl-sm border border-gray-100 dark:border-gray-700'
+                      ? 'bg-blue-500 text-white rounded-[20px] rounded-tr-sm'
+                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-[20px] rounded-tl-sm border border-gray-100 dark:border-gray-700'
                       }`}>
                       {msg.content}
                       <span className={`text-[9px] font-bold block mt-1 ${isMine ? 'text-blue-200/80 text-right' : 'text-gray-400 text-left'}`}>

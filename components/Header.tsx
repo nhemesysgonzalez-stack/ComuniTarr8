@@ -253,15 +253,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">⚠️ MARTES 10: ALERTA VIENTO FUERTE - EVITAR PARQUES Y ZONAS CON ÁRBOLES</span>
+          <span className="flex items-center gap-2">🐖 MIÉRCOLES 11: MAÑANA ES DIJOUS GRAS - ¡RESERVA TU COCA DE LLARDONS Y BUTIFARRA D'OU!</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">☣️ PREPPERS TGN: RIESGO QUÍMICO POR VIENTO - RECORDATORIO: TENER KIT DE SELLADO LISTO</span>
+          <span className="flex items-center gap-2">⚠️ PLASEQTA: PROTECCIÓN CIVIL REVISA EL FUNCIONAMIENTO DE SIRENAS TRAS EL VIENTO DE AYER</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎟️ CARNAVAL: ÚLTIMAS ENTRADAS PARA LA RUA EN TAQUILLA (AGOTADAS ONLINE)</span>
+          <span className="flex items-center gap-2">🚧 OBRAS: CORTE PARCIAL EN RAMBLA VELA POR MONTAJE DE GRADAS CARNAVAL</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">💼 EMPLEO: SE BUSCA PERSONAL DE LIMPIEZA URGENTE (DAÑOS POR VIENTO)</span>
+          <span className="flex items-center gap-2">💼 EMPLEO: SE BUSCAN 10 AZAFATOS/AS PARA EVENTOS DE FIN DE SEMANA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚗 TRÁFICO: PRECAUCIÓN EN LA A-7 POR RACHAS LATERALES</span>
+          <span className="flex items-center gap-2">🌡️ TIEMPO: CIELOS DESPEJADOS, BAJADA DE TEMPERATURAS NOCTURNAS (6ºC)</span>
         </motion.div>
       </div>
 
