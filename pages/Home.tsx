@@ -184,7 +184,7 @@ const Home: React.FC = () => {
         const dijousGras = {
           id: 'dijous-gras-prep',
           title: "🐖 FIESTA: Mañana Dijous Gras",
-          content: "Tarragona se prepara para la butifarra d'ou y la coca de llardons. Las pastelerías prevén colas desde primera hora. ¡No te quedes sin!",
+          content: "Pastelerías casi sin stock de Coca de Llardons. Última oportunidad ahora por la tarde. Mercat Central cierra a las 20h.",
           category: "CULTURA",
           neighborhood: "GENERAL",
           itinerary: "• Comida: Butifarra\n• Postre: Coca\n• Evento: Rambla 18h",
@@ -194,8 +194,8 @@ const Home: React.FC = () => {
 
         const prepperPetro = {
           id: 'prepper-petro-analysis',
-          title: "☣️ PREPPERS: Análisis Sirenas",
-          content: "Informe post-viento: Zonas de sombra acústica detectadas en Bonavista y Campclar. Debate abierto sobre protocolos de la petroquímica.",
+          title: "☣️ PREPPERS: Mapa de Silencio",
+          content: "El mapa colaborativo confirma 'zonas mudas' de sirenas en Bonavista Sur y Campclar Oeste. Se enviará informe a Interior mañana.",
           category: "SEGURIDAD",
           neighborhood: "PONENT",
           itinerary: "• Fallo: Sirena Sur\n• Acción: Reportar\n• Kit: Revisar Radio",
@@ -204,33 +204,33 @@ const Home: React.FC = () => {
         };
 
         const wednesdayJobs = {
-          id: 'jobs-wed-feb11',
-          title: "💼 EMPLEO: Refuerzo Carnaval",
-          content: "Última llamada para contratación de camareros y controladores de acceso para el fin de semana. Entrevistas rápidas hoy.",
+          id: 'jobs-wed-afternoon',
+          title: "💼 EMPLEO: Urgente para el finde",
+          content: "Selección EXPRÉS esta tarde (17h-19h) en Hotel Imperial Tarraco. Buscan 15 camareros (12€/h) y 5 auxiliares de seguridad.",
           category: "EMPLEO",
           neighborhood: "GENERAL",
-          itinerary: "• Puestos: Hostelería\n• Urgente: Incorporación\n• Zona: Parte Alta",
+          itinerary: "• Lugar: H. Imperial\n• Hora: 17:00-19:00\n• Traer: CV impreso",
           link_url: "/forum",
           created_at: new Date().toISOString()
         };
 
         const trafficWorks = {
           id: 'traffic-works-rambla',
-          title: "🚧 TRÁFICO: Montaje Gradas",
-          content: "Corte de carril en Rambla Nova (tramo balcón) por montaje de infraestructuras para la Rua. Desvíos señalizados por Pau Casals.",
+          title: "🚧 TRÁFICO: Atasco Tarde",
+          content: "Rambla Nova colapsada por montaje de gradas + salida de colegios. Evitar zona balcón. Usar Vía Augusta.",
           category: "MOVILIDAD",
           neighborhood: "CENTRO",
-          itinerary: "• Corte: Rambla Nova\n• Duración: 3 días\n• Bus: Paradas normales",
+          itinerary: "• Corte: Rambla Nova\n• Estado: Colapso\n• Alternativa: Vía Augusta",
           created_at: new Date().toISOString()
         };
 
         const weatherWed = {
-          id: 'weather-wed-feb11-live',
-          title: "☀️ EL TIEMPO: Calma tras el viento",
-          content: "El viento amaina. Día soleado pero fresco (Min 6°C / Max 15°C). Perfecto para ultimar compras de Carnaval.",
+          id: 'weather-wed-feb11-afternoon',
+          title: "☀️ EL TIEMPO: Tarde apacible",
+          content: "El viento ha parado casi por completo. Tarde perfecta para pasear (13°C) antes de que caiga el sol y el frío (6°C).",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Cielo: Despejado\n• Viento: Flojo\n• Noche: Fría",
+          itinerary: "• Cielo: Despejado\n• Viento: Calma\n• Noche: Abrigo",
           created_at: new Date().toISOString()
         };
 

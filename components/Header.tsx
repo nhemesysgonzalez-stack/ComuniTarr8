@@ -253,15 +253,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">🐖 MIÉRCOLES 11: MAÑANA ES DIJOUS GRAS - ¡RESERVA TU COCA DE LLARDONS Y BUTIFARRA D'OU!</span>
+          <span className="flex items-center gap-2">🚧 TRÁFICO TARDE: COLAPSO EN RAMBLA NOVA (TRAMO BALCÓN) POR MONTAJE GRADAS - USAR VÍA AUGUSTA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">⚠️ PLASEQTA: PROTECCIÓN CIVIL REVISA EL FUNCIONAMIENTO DE SIRENAS TRAS EL VIENTO DE AYER</span>
+          <span className="flex items-center gap-2">💼 EMPLEO URGENTE: ENTREVISTAS EN HOTEL IMPERIAL (17H-19H) - CAMAREROS/AS EXTRA CARNAVAL</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚧 OBRAS: CORTE PARCIAL EN RAMBLA VELA POR MONTAJE DE GRADAS CARNAVAL</span>
+          <span className="flex items-center gap-2">🐖 ALERTA GOLOSA: STOCK BAJO DE COCAS DE LLARDONS EN CENTRO - PROBAD EN TORREFORTA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">💼 EMPLEO: SE BUSCAN 10 AZAFATOS/AS PARA EVENTOS DE FIN DE SEMANA</span>
+          <span className="flex items-center gap-2">☣️ PREPPERS: CONFIRMADO "PUNTO CIEGO" DE SIRENAS EN BONAVISTA SUR</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🌡️ TIEMPO: CIELOS DESPEJADOS, BAJADA DE TEMPERATURAS NOCTURNAS (6ºC)</span>
+          <span className="flex items-center gap-2">☀️ TIEMPO: EL VIENTO HA PARADO. TARDE AGRADABLE (13ºC) PERO NOCHE FRÍA</span>
         </motion.div>
       </div>
 

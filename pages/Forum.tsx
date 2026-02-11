@@ -151,12 +151,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts (Monday Afternoon / Carnival Hype)
     let scripts = [
-      "¿Alguien ha probado la coca de llardons de la pastelería Conde? Dicen que es la mejor. 🐖",
-      "Ayer durante el simulacro, en mi calle no se oyó NADA. Vaya seguridad... ☣️",
-      "Busco coche para bajar a la Rua el sábado, el parking estará imposible. 🚗",
-      "¡Qué nervios! Mañana ya empieza todo. ¿Tenéis los disfraces listos? 🎭",
-      "Vendo peluca rosa sin estrenar, cambio de planes a última hora. 💇‍♀️",
-      "Ojo en la Rambla, están cortando carriles para poner las gradas. 🚧"
+      "Vengo del Mercat... ¡Ni una coca de llardons queda en la Conde! 😱",
+      "¿Alguien va al casting del Imperial Tarraco? Hay mucha cola... 💼",
+      "No bajéis en coche al centro, la Rambla está imposible por las gradas. 🛑",
+      "He conseguido butifarra de huevo en el Corte Inglés, corred que vuelan. 🐖",
+      "Confirmado: En Campclar tampoco se oyeron bien las sirenas ayer. 📢",
+      "¡Vaya tarde buena ha quedado! Sin viento se está de lujo. ☀️"
     ];
 
     // Base reply scripts
@@ -450,22 +450,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'dijous-gras',
-      title: '🐖 Dijous Gras',
-      description: 'Butifarras y coca.',
-      participating: 1205
+      id: 'empleo-hotel-imperial',
+      title: '💼 Casting Hotel',
+      description: 'Llevad CV en mano.',
+      participating: 1530
     },
     {
-      id: 'preppers-sirenas',
-      title: '📢 Fallo Sirenas',
-      description: 'Reporte de zonas mudas.',
-      participating: 530
+      id: 'cocas-agotadas',
+      title: '😨 ¿Cocas Agotadas?',
+      description: 'Buscando pastelería.',
+      participating: 890
     },
     {
-      id: 'reventa-entradas',
-      title: '🎟️ Reventa Rua',
-      description: 'Entradas agotadas.',
-      participating: 350
+      id: 'atasco-rambla',
+      title: '🛑 Atasco Rambla',
+      description: 'Evitar centro (Gradas).',
+      participating: 620
     }
   ];
 
@@ -576,15 +576,24 @@ const Forum: React.FC = () => {
           </div>
 
           <div className="px-4 py-2 mt-4">
-            <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Miércoles 11/02</h2>
-            <ul className="space-y-2">
-              <li>🍹 <strong>Ayudante Barra/Camarero</strong> – Extra Fin de Semana Carnaval (12€/h)</li>
-              <li>🛡️ <strong>Control de Accesos</strong> – Discotecas Puerto Deportivo (Sáb/Dom)</li>
-              <li>🛒 <strong>Reponedor/a Supermercado</strong> – Refuerzo campaña (Butifarras/Coca)</li>
-              <li>💅 <strong>Esteticien / Maquilladora</strong> – Uñas y maquillaje fantasía (Jueves-Sábado)</li>
-              <li>🚛 <strong>Chófer VTC/Taxi</strong> – Alta demanda estimada para el fin de semana</li>
-              <li>🧹 <strong>Limpieza Post-Eventos</strong> – Turnos de madrugada (Domingo/Lunes)</li>
-              <li>📦 <strong>Mozo Almacén Disfraces</strong> – Organización stock últimas ventas</li>
+            <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Miercoles Tarde</h2>
+            <ul className="space-y-4 text-xs md:text-sm">
+              <li className="p-2 border-b border-gray-100 dark:border-gray-700">
+                🍹 <strong>Camareros Extra (Hotel Imperial)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 Rambla Vella 2 • 🕔 17h-19h • Preguntar por Maitre (Sr. García)</span>
+              </li>
+              <li className="p-2 border-b border-gray-100 dark:border-gray-700">
+                🛡️ <strong>Control Accesos (Sala Zero)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📧 cv@salazero.com • Asunto: Carnaval • 15€/h Noche</span>
+              </li>
+              <li className="p-2 border-b border-gray-100 dark:border-gray-700">
+                🛒 <strong>Reponedor Urgente (Spar)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 C/Unió • Incorporación inmediata tarde • Dejar CV en caja</span>
+              </li>
+              <li className="p-2 border-b border-gray-100 dark:border-gray-700">
+                💅 <strong>Maquilladora (Peluquería Loli)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📞 666 555 444 • Refuerzo Jueves/Viernes/Sábado</span>
+              </li>
             </ul>
             <h4 className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2">Vecinos Online (5/12)</h4>
             <div className="space-y-2">
