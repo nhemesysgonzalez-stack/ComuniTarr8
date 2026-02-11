@@ -17,6 +17,7 @@ interface Message {
   };
   neighborhood: string;
   created_at: string;
+  image_url?: string;
 }
 
 const NEIGHBORHOODS = [
@@ -65,6 +66,9 @@ const Forum: React.FC = () => {
   const [showJobOffers, setShowJobOffers] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [tickerIndex, setTickerIndex] = useState(0);
   const [adminActivities, setAdminActivities] = useState<any[]>([]);
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
@@ -256,6 +260,11 @@ const Forum: React.FC = () => {
       setIsTyping(null);
       playSound('msg');
 
+      // PERSISTIR SIMULACIÓN LOCAMENTE (Para que no desaparezcan al cambiar de tab)
+      const localKey = `local_forum_messages_${currentNeighborhood}`;
+      const existing = JSON.parse(localStorage.getItem(localKey) || '[]');
+      localStorage.setItem(localKey, JSON.stringify([...existing, mockMsg].slice(-50))); // Guardar últimos 50
+
       // Occasional chain follow-up
       if (!isChain && !isAssistant && Math.random() < 0.4) {
         setTimeout(() => {
@@ -337,8 +346,17 @@ const Forum: React.FC = () => {
           .limit(100)
       );
 
-      setMessages(data || []);
-      fetchActiveUsers(data || []);
+      // Merge with persisted local simulations
+      const localKey = `local_forum_messages_${currentNeighborhood}`;
+      const localSims = JSON.parse(localStorage.getItem(localKey) || '[]');
+
+      // Combine and sort by date
+      const allMessages = [...(data || []), ...localSims].sort((a, b) =>
+        new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
+      );
+
+      setMessages(allMessages);
+      fetchActiveUsers(allMessages);
     } catch (e) {
       console.error(e);
     } finally {
@@ -387,10 +405,27 @@ const Forum: React.FC = () => {
     } catch (e) { console.error(e); }
   };
 
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) { // 5MB limit
+        alert('Imagen demasiado grande (Máx 5MB)');
+        return;
+      }
+      setImageFile(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setSelectedImage(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const sendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newMessage.trim()) return;
+    if (!newMessage.trim() && !imageFile) return;
 
+    // Optimistic Update with Image
     const tempMsg: Message = {
       id: `temp-${Date.now()}`,
       user_id: user?.id || 'anon',
@@ -400,18 +435,45 @@ const Forum: React.FC = () => {
         avatar_url: user?.user_metadata?.avatar_url
       },
       neighborhood: currentNeighborhood,
-      created_at: new Date().toISOString()
+      created_at: new Date().toISOString(),
+      image_url: selectedImage || undefined
     };
 
-    // Optimistic Update
     setMessages(prev => [...prev, tempMsg]);
     const messageToSend = newMessage;
     setNewMessage('');
+    setSelectedImage(null); // Clear preview immediately for UI responsiveness
 
-    // Trigger AI/Neighbor response IMMEDIATELY locally for the current user
+    // Trigger AI/Neighbor response IMMEDIATELY locally
     generateVirtualMessage(user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino', messageToSend);
 
     try {
+      let publicUrl = null;
+
+      // 1. Upload Image if exists
+      if (imageFile) {
+        const fileExt = imageFile.name.split('.').pop();
+        const fileName = `forum-${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
+        const { error: uploadError } = await supabase.storage
+          .from('forum-images')
+          .upload(fileName, imageFile);
+
+        if (uploadError) {
+          // Try fallback to 'gallery' bucket if 'forum-images' doesn't exist
+          const { error: fallbackError } = await supabase.storage
+            .from('gallery')
+            .upload(fileName, imageFile);
+
+          if (fallbackError) throw fallbackError;
+
+          const { data } = supabase.storage.from('gallery').getPublicUrl(fileName);
+          publicUrl = data.publicUrl;
+        } else {
+          const { data } = supabase.storage.from('forum-images').getPublicUrl(fileName);
+          publicUrl = data.publicUrl;
+        }
+      }
+
       const { success } = await safeSupabaseInsert('forum_messages', {
         user_id: user?.id,
         content: messageToSend,
@@ -419,19 +481,21 @@ const Forum: React.FC = () => {
           full_name: user?.user_metadata?.full_name || 'Vecino Anónimo',
           avatar_url: user?.user_metadata?.avatar_url
         },
-        neighborhood: currentNeighborhood
+        neighborhood: currentNeighborhood,
+        image_url: publicUrl
       });
 
       if (!success) {
-        // Remove temp message if failed
         setMessages(prev => prev.filter(m => m.id !== tempMsg.id));
         throw new Error('Falló envío');
       }
 
+      setImageFile(null); // Clear file state only after successful upload attempt
       await addPoints(5, 1);
-      await logActivity('Mensaje Foro', { neighborhood: currentNeighborhood, content: messageToSend.substring(0, 30) });
+      await logActivity('Mensaje Foro', { neighborhood: currentNeighborhood });
     } catch (e) {
       console.error(e);
+      alert('Error enviando mensaje.');
     }
   };
 
@@ -692,6 +756,16 @@ const Forum: React.FC = () => {
                       ? 'bg-blue-500 text-white rounded-[20px] rounded-tr-sm'
                       : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-[20px] rounded-tl-sm border border-gray-100 dark:border-gray-700'
                       }`}>
+                      {msg.image_url && (
+                        <div className="mb-2 rounded-lg overflow-hidden">
+                          <img
+                            src={msg.image_url}
+                            alt="Adjunto"
+                            className="w-full h-auto max-h-60 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                            onClick={() => window.open(msg.image_url, '_blank')}
+                          />
+                        </div>
+                      )}
                       {msg.content}
                       <span className={`text-[9px] font-bold block mt-1 ${isMine ? 'text-blue-200/80 text-right' : 'text-gray-400 text-left'}`}>
                         {new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
@@ -766,11 +840,37 @@ const Forum: React.FC = () => {
                   className="w-full bg-transparent border-none px-6 py-3.5 focus:ring-0 text-sm font-medium text-gray-800 dark:text-gray-100 placeholder:text-gray-400"
                 />
                 <div className="absolute right-2 bottom-2 flex gap-1">
-                  <button type="button" className="p-2 text-gray-400 hover:text-blue-500 transition-colors rounded-full hover:bg-white/50">
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    className={`p-2 transition-colors rounded-full hover:bg-white/50 ${selectedImage ? 'text-primary bg-primary/10' : 'text-gray-400 hover:text-blue-500'}`}
+                  >
                     <span className="material-symbols-outlined text-xl">image</span>
                   </button>
+                  <input
+                    type="file"
+                    ref={fileInputRef}
+                    className="hidden"
+                    accept="image/*"
+                    onChange={handleImageChange}
+                  />
                 </div>
               </div>
+
+              {/* Image Preview */}
+              {selectedImage && (
+                <div className="absolute bottom-20 left-4 bg-white p-2 rounded-xl shadow-lg border border-gray-200 z-50">
+                  <div className="relative">
+                    <img src={selectedImage} alt="Preview" className="w-20 h-20 object-cover rounded-lg" />
+                    <button
+                      onClick={() => { setSelectedImage(null); setImageFile(null); }}
+                      className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-0.5 shadow-sm hover:scale-110 transition-transform"
+                    >
+                      <span className="material-symbols-outlined text-sm">close</span>
+                    </button>
+                  </div>
+                </div>
+              )}
 
               <button
                 type="submit"
