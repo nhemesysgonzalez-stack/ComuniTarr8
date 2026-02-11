@@ -151,13 +151,13 @@ const CommunityStories: React.FC = () => {
                                     className="flex items-center gap-3 px-6 py-4 bg-gray-100 dark:bg-gray-800 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-gray-200 transition-all"
                                 >
                                     <span className="material-symbols-outlined">add_a_photo</span>
-                                    {selectedImage ? 'Cambiar Foto' : 'Añadir Foto'}
+                                    {selectedImage ? 'Cambiar' : 'Añadir Foto/Vídeo'}
                                 </button>
                                 <input
                                     type="file"
                                     ref={fileInputRef}
                                     className="hidden"
-                                    accept="image/*"
+                                    accept="image/*,video/*"
                                     onChange={handleImageChange}
                                 />
                                 {selectedImage && (
@@ -173,16 +173,20 @@ const CommunityStories: React.FC = () => {
 
                         <div className="relative group">
                             {selectedImage ? (
-                                <div className="aspect-square rounded-[30px] overflow-hidden shadow-xl border-4 border-white dark:border-gray-800">
-                                    <img src={selectedImage} alt="Preview" className="w-full h-full object-cover" />
+                                <div className="aspect-square rounded-[30px] overflow-hidden shadow-xl border-4 border-white dark:border-gray-800 bg-black">
+                                    {selectedImage.startsWith('data:video') ? (
+                                        <video src={selectedImage} className="w-full h-full object-cover" controls />
+                                    ) : (
+                                        <img src={selectedImage} alt="Preview" className="w-full h-full object-cover" />
+                                    )}
                                 </div>
                             ) : (
                                 <div
                                     onClick={() => fileInputRef.current?.click()}
                                     className="aspect-square rounded-[30px] bg-gray-50 dark:bg-gray-800 border-4 border-dashed border-gray-200 dark:border-gray-700 flex flex-col items-center justify-center text-gray-400 cursor-pointer hover:border-orange-500 hover:text-orange-500 transition-all group"
                                 >
-                                    <span className="material-symbols-outlined text-5xl mb-2 group-hover:scale-110 transition-transform">image</span>
-                                    <span className="text-[10px] font-black uppercase tracking-widest">Vista Previa</span>
+                                    <span className="material-symbols-outlined text-5xl mb-2 group-hover:scale-110 transition-transform">add_a_photo</span>
+                                    <span className="text-[10px] font-black uppercase tracking-widest text-center">Foto o Vídeo<br />(Max 2 min)</span>
                                 </div>
                             )}
                         </div>
@@ -211,11 +215,17 @@ const CommunityStories: React.FC = () => {
                             className="break-inside-avoid bg-white dark:bg-surface-dark rounded-[40px] overflow-hidden shadow-xl border border-gray-100 dark:border-gray-800 hover:shadow-2xl transition-all group"
                         >
                             {story.image_url && (
-                                <div className="relative overflow-hidden aspect-[4/5]">
-                                    <img src={story.image_url} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
-                                        <p className="text-white text-xs font-bold italic">"{story.content}"</p>
-                                    </div>
+                                <div className="relative overflow-hidden aspect-[4/5] bg-black">
+                                    {story.image_url.match(/\.(mp4|webm|ogg)$/i) ? (
+                                        <video src={story.image_url} className="w-full h-full object-cover" controls />
+                                    ) : (
+                                        <>
+                                            <img src={story.image_url} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="" />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                                                <p className="text-white text-xs font-bold italic">"{story.content}"</p>
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
                             )}
                             <div className="p-8">

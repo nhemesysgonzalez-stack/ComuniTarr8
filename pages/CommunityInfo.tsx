@@ -7,9 +7,9 @@ const CommunityInfo: React.FC = () => {
     // Content tailored for Spanish based on user request, but structurally ready for other languages if expanded
     const content = {
         es: {
-            title_prefix: 'Centralizando la vida de',
-            title_highlight: 'Tarragona',
-            mission: 'ComuniTarr nace con una misión clara: unir a todos los vecinos en una sola plataforma digital, facilitando la colaboración, la seguridad y el comercio local. Queremos recuperar el sentido de comunidad.',
+            title_prefix: 'Tarragona en tu mano,',
+            title_highlight: 'de vecino a vecino',
+            mission: 'Más que una app, ComuniTarr es el corazón digital de la ciudad. Centralizamos TODA la información (emergencias, empleo, escolarización, servicios) en un solo lugar, pero con un lenguaje cercano, humano y funcional. No somos una red social más; somos una herramienta viva para conectarte con lo que realmente importa en tu barrio.',
 
             rules_title: 'Código de Convivencia',
             rules_subtitle: 'Reglas fundamentales para una comunidad sana',
@@ -30,11 +30,12 @@ const CommunityInfo: React.FC = () => {
                 { title: 'Ayuda Mutua', desc: 'Ofrece tus habilidades o pide ayuda para tareas puntuales. Solidaridad.', icon: 'handshake' },
                 { title: 'Mapa Interactivo', desc: 'Explora recursos, comercios e incidencias en el mapa real de Tarragona.', icon: 'explore' },
                 { title: 'Asistente IA', desc: 'Nuestro asistente digital para resolver cualquier duda sobre la ciudad.', icon: 'handshake' },
+                { title: 'Kit de Difusión', desc: 'Centralizamos webs municipales, emergencias y escolares para que no pierdas tiempo navegando.', icon: 'hub' },
                 { title: 'Calendario', desc: 'No te pierdas ningún evento, fiesta o curso en tu barrio.', icon: 'calendar_month' }
             ],
 
-            philosophy_title: 'Una App Viva, no Impuesta',
-            philosophy_desc: 'ComuniTarr es una herramienta creada para los vecinos y por los vecinos. Aquí la interacción es total: nada está impuesto, la comunidad es quien le da vida día a día con sus historias, avisos y ayuda mutua.',
+            philosophy_title: 'No es Facebook, es tu Barrio',
+            philosophy_desc: 'Aquí no buscamos likes, buscamos soluciones. ComuniTarr te mantiene conectado con tus vecinos más cercanos con un fin práctico: ayudarnos, informarnos y protegernos. Tecnología con alma vecinal.',
 
             final_message: 'Juntos hacemos barrio. Únete y participa activamente.'
         },

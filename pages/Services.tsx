@@ -1,288 +1,296 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useAuth } from '../contexts/AuthContext';
-import { supabase } from '../services/supabaseClient';
-import { safeSupabaseFetch, safeSupabaseInsert } from '../services/dataHandler';
 
-interface Service {
-  id: string;
-  title: string;
-  user_name: string;
-  location: string;
-  image_url: string;
-  category: string;
-  description: string;
-  contact_info: string;
-  neighborhood: string;
-  created_at: string;
-}
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
-const Services: React.FC = () => {
-  const { user } = useAuth();
-  const [selectedCategory, setSelectedCategory] = useState('Todas las categorías');
-  const [services, setServices] = useState<Service[]>([]);
-  const [showCreateModal, setShowCreateModal] = useState(false);
-  const [createType, setCreateType] = useState<'offer' | 'request'>('offer'); // Para futuro uso, por ahora simplificado
-  const [loading, setLoading] = useState(true);
+export const Services: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<'emergencias' | 'escolar' | 'tramites' | 'transporte' | 'bullying'>('emergencias');
 
-  // Form
-  const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('Hogar y Reparaciones');
-  const [description, setDescription] = useState('');
-  const [contact, setContact] = useState('');
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'emergencias':
+        return (
+          <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
+            <div className="bg-red-50 dark:bg-red-900/10 p-6 rounded-3xl border border-red-100 dark:border-red-800/30">
+              <h3 className="text-lg font-black text-red-600 dark:text-red-400 mb-4 flex items-center gap-2">
+                <span className="material-symbols-outlined">sos</span> TELÉFONOS RÁPIDOS
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                <a href="tel:112" className="bg-white dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-red-100 dark:border-red-900/30 flex items-center justify-between hover:scale-105 transition-transform active:scale-95">
+                  <span className="font-black text-2xl text-red-600">112</span>
+                  <span className="text-[10px] font-bold text-gray-500 uppercase">General</span>
+                </a>
+                <a href="tel:092" className="bg-white dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-blue-100 dark:border-blue-900/30 flex items-center justify-between hover:scale-105 transition-transform active:scale-95">
+                  <span className="font-black text-2xl text-blue-600">092</span>
+                  <span className="text-[10px] font-bold text-gray-500 uppercase">Policía Local</span>
+                </a>
+                <a href="tel:061" className="bg-white dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-orange-100 dark:border-orange-900/30 flex items-center justify-between hover:scale-105 transition-transform active:scale-95">
+                  <span className="font-black text-2xl text-orange-600">061</span>
+                  <span className="text-[10px] font-bold text-gray-500 uppercase">Salut Respon</span>
+                </a>
+                <a href="tel:016" className="bg-white dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-purple-100 dark:border-purple-900/30 flex items-center justify-between hover:scale-105 transition-transform active:scale-95">
+                  <span className="font-black text-2xl text-purple-600">016</span>
+                  <span className="text-[10px] font-bold text-gray-500 uppercase">Violencia M.</span>
+                </a>
+              </div>
+            </div>
 
-  useEffect(() => {
-    fetchServices();
-  }, [user?.user_metadata?.neighborhood]);
+            <div className="bg-orange-50 dark:bg-orange-900/10 p-6 rounded-3xl border border-orange-100 dark:border-orange-800/30 relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <span className="material-symbols-outlined text-9xl text-orange-500">factory</span>
+              </div>
+              <h3 className="text-lg font-black text-orange-600 dark:text-orange-400 mb-2 relative z-10">ALERTA QUÍMICA (PLASEQTA)</h3>
+              <p className="text-sm text-gray-700 dark:text-gray-300 mb-4 relative z-10 font-medium">Estado actual de las sirenas y protocolos de seguridad.</p>
 
-  const fetchServices = async () => {
-    setLoading(true);
-    try {
-      const data = await safeSupabaseFetch('services',
-        supabase
-          .from('services')
-          .select('*')
-          .eq('neighborhood', user?.user_metadata?.neighborhood || 'GENERAL')
-          .order('created_at', { ascending: false })
-      );
-      const mockServices: Service[] = [
-        {
-          id: 's-1',
-          title: 'Clases de Matemáticas ESO/Bach',
-          user_name: 'Nacho V.',
-          location: 'Part Alta',
-          image_url: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=400',
-          category: 'Clases y Tutorías',
-          description: 'Ingeniero ofrece clases de refuerzo para empezar la semana con buen pie. Me desplazo a domicilio.',
-          contact_info: '655 00 11 22',
-          neighborhood: 'PART ALTA',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 's-2',
-          title: 'Paseo perros mañanas',
-          user_name: 'Sofia L.',
-          location: 'Eixample',
-          image_url: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&q=80&w=400',
-          category: 'Mascotas',
-          description: '¿Trabajas por la mañana? Yo paseo a tu perro por el parque. Amante de los animales y con experiencia.',
-          contact_info: '644 99 88 77',
-          neighborhood: 'EIXAMPLE',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 's-3',
-          title: 'Ayuda con la compra semanal',
-          user_name: 'Carlos M.',
-          location: 'General',
-          image_url: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=400',
-          category: 'Recados y Compras',
-          description: 'Hago recados y compras para personas mayores que no quieran salir con este día nublado.',
-          contact_info: 'Enviad Mensaje',
-          neighborhood: 'GENERAL',
-          created_at: new Date().toISOString()
-        }
-      ];
+              <div className="flex gap-2 relative z-10">
+                <div className="flex-1 bg-white dark:bg-surface-dark p-3 rounded-xl border border-orange-200 dark:border-orange-700/50 flex flex-col items-center justify-center">
+                  <span className="size-4 rounded-full bg-green-500 animate-pulse mb-1"></span>
+                  <span className="text-[10px] font-black uppercase tracking-wider text-green-600">Polígono Norte</span>
+                </div>
+                <div className="flex-1 bg-white dark:bg-surface-dark p-3 rounded-xl border border-orange-200 dark:border-orange-700/50 flex flex-col items-center justify-center">
+                  <span className="size-4 rounded-full bg-green-500 animate-pulse mb-1"></span>
+                  <span className="text-[10px] font-black uppercase tracking-wider text-green-600">Polígono Sur</span>
+                </div>
+              </div>
+              <button className="mt-4 w-full py-3 bg-orange-500 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/30">
+                VER MAPA DE AFECTACIÓN
+              </button>
+            </div>
+          </div>
+        );
+      case 'escolar':
+        return (
+          <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
+            <div className="bg-blue-50 dark:bg-blue-900/10 p-6 rounded-3xl border border-blue-100 dark:border-blue-800/30">
+              <h3 className="text-lg font-black text-blue-600 dark:text-blue-400 mb-4 flex items-center gap-2">
+                <span className="material-symbols-outlined">school</span> CALENDARIO ESCOLAR
+              </h3>
+              <div className="flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm mb-3">
+                <div className="size-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 font-bold text-xl">
+                  27
+                </div>
+                <div>
+                  <p className="text-xs font-black uppercase text-gray-400">Próximo Festivo</p>
+                  <p className="text-sm font-bold text-gray-800 dark:text-white">Día de libre disposición (Carnaval)</p>
+                  <p className="text-[10px] text-gray-500">Quedan 16 días</p>
+                </div>
+              </div>
+              <button className="w-full py-3 bg-blue-500 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30">
+                VER CALENDARIO COMPLETO
+              </button>
+            </div>
 
-      setServices(data && data.length > 0 ? data : mockServices);
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleServiceSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      const { success } = await safeSupabaseInsert('services', {
-        user_id: user?.id,
-        user_name: user?.user_metadata?.full_name || 'Vecino',
-        title: title,
-        category: category,
-        description: description,
-        contact_info: contact,
-        location: user?.user_metadata?.neighborhood || 'GENERAL',
-        neighborhood: user?.user_metadata?.neighborhood || 'GENERAL',
-        image_url: `https://picsum.photos/seed/${title}/400/300`, // Placeholder dinámico
-        type: createType
-      });
-
-      if (!success) throw new Error('Falló la creación');
-      alert('¡Servicio publicado con éxito!');
-      setShowCreateModal(false);
-      setTitle('');
-      setDescription('');
-      setContact('');
-      fetchServices();
-    } catch (e) {
-      console.error(e);
-      alert('Error al publicar servicio');
-    }
-  };
-
-  const categories = [
-    'Todas las categorías',
-    'Hogar y Reparaciones',
-    'Clases y Tutorías',
-    'Cuidado de Personas',
-    'Mascotas',
-    'Recados y Compras'
-  ];
-
-  const filteredServices = selectedCategory === 'Todas las categorías'
-    ? services
-    : services.filter(s => s.category === selectedCategory);
-
-
-  return (
-    <div className="flex flex-col min-h-screen bg-background-light dark:bg-background-dark font-sans">
-      <div className="bg-white dark:bg-surface-dark border-b border-gray-200 dark:border-gray-800 py-16 text-center px-4">
-        <h1 className="text-5xl font-black text-text-main dark:text-white mb-4">Ayuda Mutua</h1>
-        <p className="text-text-secondary dark:text-gray-400 text-xl max-w-2xl mx-auto">Conecta con tus vecinos para ofrecer tus habilidades o solicitar el apoyo que necesitas. Comunidad unida en {user?.user_metadata?.neighborhood}.</p>
-        <div className="mt-8 flex justify-center gap-4">
-          <button onClick={() => { setCreateType('offer'); setShowCreateModal(true); }} className="bg-primary text-white px-8 py-4 rounded-2xl font-bold hover:bg-primary-hover transition shadow-lg shadow-primary/20">OFRECER SERVICIO</button>
-          <button onClick={() => { setCreateType('request'); setShowCreateModal(true); }} className="bg-white dark:bg-gray-800 border-2 border-primary text-primary px-8 py-4 rounded-2xl font-bold hover:bg-primary/5 transition">PEDIR AYUDA</button>
-        </div>
-      </div>
-
-      <div className="flex-1 max-w-7xl mx-auto w-full p-8 grid grid-cols-1 lg:grid-cols-4 gap-12">
-        <aside className="hidden lg:block space-y-10">
-          <div>
-            <h3 className="font-bold text-xl dark:text-white mb-6">Categorías</h3>
-            <div className="flex flex-col gap-4 text-text-secondary dark:text-gray-300">
-              {categories.map(cat => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`text-left text-sm transition font-medium flex justify-between items-center group ${selectedCategory === cat ? 'text-primary font-bold' : 'hover:text-primary'}`}
-                >
-                  <span>{cat}</span>
-                  <span className={`material-symbols-outlined text-sm transition ${selectedCategory === cat ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'}`}>chevron_right</span>
+            <div className="bg-indigo-50 dark:bg-indigo-900/10 p-6 rounded-3xl border border-indigo-100 dark:border-indigo-800/30">
+              <h3 className="text-lg font-black text-indigo-600 dark:text-indigo-400 mb-2">MENÚS COMEDOR</h3>
+              <p className="text-xs text-gray-600 dark:text-gray-400 mb-4 font-medium">Consulta el menú basal y de alérgicos de los principales colegios públicos.</p>
+              <div className="grid grid-cols-2 gap-3">
+                <button className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
+                  CEIP El Miracle
                 </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-primary/5 dark:bg-primary/10 p-6 rounded-2xl border border-primary/20">
-            <h4 className="font-bold text-primary mb-2">¡Suma Puntos!</h4>
-            <p className="text-xs text-text-secondary dark:text-gray-400 leading-relaxed mb-4">Ayudar a los vecinos te otorga "ComuniPoints" canjeables en el Mercado Solidario.</p>
-          </div>
-        </aside>
-
-        <div className="lg:col-span-3">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-bold dark:text-white">{selectedCategory}</h2>
-          </div>
-
-          {loading ? (
-            <div className="flex flex-col items-center gap-4 py-20 opacity-50">
-              <div className="size-10 border-4 border-primary border-t-transparent animate-spin rounded-full"></div>
-              <p className="text-xs font-black uppercase tracking-widest">Cargando servicios...</p>
-            </div>
-          ) : filteredServices.length === 0 ? (
-            <div className="py-20 text-center bg-gray-50 dark:bg-surface-dark rounded-3xl border border-dashed border-gray-200 dark:border-gray-700">
-              <span className="material-symbols-outlined text-gray-300 text-6xl mb-4">handshake</span>
-              <p className="text-text-secondary font-bold">No hay servicios disponibles en esta categoría actualmente.</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {filteredServices.map(service => (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  key={service.id}
-                  className="bg-white dark:bg-surface-dark rounded-3xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-2xl transition-all duration-300 group"
-                >
-                  <div className="h-48 overflow-hidden relative">
-                    <img src={service.image_url} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="" />
-                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-black uppercase text-primary tracking-widest">
-                      {service.category}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-bold text-2xl dark:text-white mb-2 leading-tight">{service.title}</h3>
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="size-8 rounded-full bg-gray-200 flex items-center justify-center font-bold text-xs">
-                        {service.user_name ? service.user_name.charAt(0) : 'U'}
-                      </div>
-                      <div>
-                        <p className="text-sm font-bold dark:text-white">{service.user_name}</p>
-                        <p className="text-xs text-text-secondary">{service.neighborhood}</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-gray-500 mb-4 line-clamp-2">{service.description}</p>
-                    <div className="flex gap-2">
-                      <button
-                        onClick={() => alert(`Contacta con ${service.user_name} al: ${service.contact_info}`)}
-                        className="flex-1 bg-primary text-white py-3 rounded-xl font-bold text-sm hover:bg-primary-hover transition shadow-md"
-                      >
-                        CONTACTAR
-                      </button>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Create Modal */}
-      <AnimatePresence>
-        {showCreateModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={() => setShowCreateModal(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white dark:bg-surface-dark rounded-[40px] p-8 max-w-lg w-full shadow-2xl"
-            >
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-black dark:text-white uppercase tracking-tight">
-                  {createType === 'offer' ? 'Ofrecer Servicio' : 'Pedir Ayuda'}
-                </h3>
-                <button onClick={() => setShowCreateModal(false)} className="size-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all">
-                  <span className="material-symbols-outlined">close</span>
+                <button className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
+                  Escola Pax
+                </button>
+                <button className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
+                  Marcel·lí Domingo
+                </button>
+                <button className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
+                  Ver todos...
                 </button>
               </div>
+            </div>
+          </div>
+        );
+      case 'tramites':
+        return (
+          <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4">
+            <h3 className="text-lg font-black px-2">TRÁMITES RÁPIDOS</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <a href="https://citaprevia.tarragona.cat" target="_blank" rel="noopener noreferrer" className="bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-4 hover:shadow-md transition-all group">
+                <div className="size-10 rounded-full bg-gray-100 dark:bg-gray-800 group-hover:bg-primary group-hover:text-white flex items-center justify-center transition-colors">
+                  <span className="material-symbols-outlined">calendar_month</span>
+                </div>
+                <div>
+                  <p className="font-bold text-sm">Cita Previa OMAC</p>
+                  <p className="text-[10px] text-gray-500">Ayuntamiento y Padu</p>
+                </div>
+                <span className="material-symbols-outlined ml-auto text-gray-300 group-hover:text-primary">arrow_forward</span>
+              </a>
+              <a href="#" className="bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-4 hover:shadow-md transition-all group">
+                <div className="size-10 rounded-full bg-gray-100 dark:bg-gray-800 group-hover:bg-green-500 group-hover:text-white flex items-center justify-center transition-colors">
+                  <span className="material-symbols-outlined">delete</span>
+                </div>
+                <div>
+                  <p className="font-bold text-sm">Recogida Muebles</p>
+                  <p className="text-[10px] text-gray-500">Teléfono verde limpieza</p>
+                </div>
+                <span className="material-symbols-outlined ml-auto text-gray-300 group-hover:text-green-500">call</span>
+              </a>
+              <a href="#" className="bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-4 hover:shadow-md transition-all group">
+                <div className="size-10 rounded-full bg-gray-100 dark:bg-gray-800 group-hover:bg-blue-500 group-hover:text-white flex items-center justify-center transition-colors">
+                  <span className="material-symbols-outlined">badge</span>
+                </div>
+                <div>
+                  <p className="font-bold text-sm">Renovar DNI</p>
+                  <p className="text-[10px] text-gray-500">Comisaría Plaza Orleans</p>
+                </div>
+                <span className="material-symbols-outlined ml-auto text-gray-300 group-hover:text-blue-500">open_in_new</span>
+              </a>
+            </div>
+          </div>
+        );
+      case 'transporte':
+        return (
+          <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
+            <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
+              <h3 className="text-lg font-black mb-4 flex items-center gap-2">
+                <span className="material-symbols-outlined text-red-500">directions_bus</span> EMT TARRAGONA
+              </h3>
 
-              <form onSubmit={handleServiceSubmit} className="space-y-4">
+              <div className="flex items-center gap-3 mb-4 p-3 bg-yellow-50 dark:bg-yellow-900/10 border border-yellow-200 dark:border-yellow-800 rounded-xl">
+                <span className="material-symbols-outlined text-yellow-600">warning</span>
                 <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Título</label>
-                  <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-primary/20 focus:ring-2" placeholder="Ej: Clases de Inglés" />
+                  <p className="text-xs font-black text-yellow-700 dark:text-yellow-500 uppercase">INCIDENCIA ACTIVA</p>
+                  <p className="text-[10px] text-yellow-800 dark:text-yellow-400 font-medium">Líneas 8, 11, 12 desviadas por Rambla Nova (Gradas Carnaval).</p>
                 </div>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-xl transition-colors cursor-pointer group">
+                  <div className="flex items-center gap-3">
+                    <span className="size-8 rounded-lg bg-red-600 text-white font-black flex items-center justify-center">54</span>
+                    <div>
+                      <p className="text-xs font-bold">Bonavista - Cooperativa</p>
+                      <p className="text-[10px] text-gray-400">Próximo: 4 min (Plaça Imperial)</p>
+                    </div>
+                  </div>
+                  <span className="material-symbols-outlined text-gray-300 group-hover:text-primary">chevron_right</span>
+                </div>
+                <div className="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-xl transition-colors cursor-pointer group">
+                  <div className="flex items-center gap-3">
+                    <span className="size-8 rounded-lg bg-red-600 text-white font-black flex items-center justify-center">6</span>
+                    <div>
+                      <p className="text-xs font-bold">Campclar - Sant Pere</p>
+                      <p className="text-[10px] text-gray-400">Próximo: 12 min (Estació Bus)</p>
+                    </div>
+                  </div>
+                  <span className="material-symbols-outlined text-gray-300 group-hover:text-primary">chevron_right</span>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
+              <h3 className="text-lg font-black mb-4 flex items-center gap-2">
+                <span className="material-symbols-outlined text-blue-500">train</span> CERCANÍAS RENFE
+              </h3>
+              <div className="p-3 bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-800 rounded-xl flex items-center gap-3">
+                <span className="material-symbols-outlined text-green-600">check_circle</span>
                 <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Categoría</label>
-                  <select value={category} onChange={(e) => setCategory(e.target.value)} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-primary/20 focus:ring-2">
-                    {categories.filter(c => c !== 'Todas las categorías').map(c => <option key={c} value={c}>{c}</option>)}
-                  </select>
+                  <p className="text-xs font-black text-green-700 dark:text-green-500 uppercase">SERVICIO NORMAL</p>
+                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Líneas R14, R15, R16 operando sin retrasos.</p>
                 </div>
-                <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Descripción</label>
-                  <textarea value={description} onChange={(e) => setDescription(e.target.value)} required rows={4} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-primary/20 focus:ring-2 resize-none" placeholder="Detalles..." />
-                </div>
-                <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Contacto</label>
-                  <input type="text" value={contact} onChange={(e) => setContact(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-primary/20 focus:ring-2" placeholder="Teléfono o Email" />
-                </div>
-                <button type="submit" className="w-full bg-primary text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-primary-hover transition-all shadow-lg shadow-primary/20">
-                  PUBLICAR
+              </div>
+            </div>
+          </div>
+        );
+      case 'bullying':
+        return (
+          <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
+            <div className="bg-gradient-to-br from-purple-500 to-indigo-600 p-8 rounded-[30px] shadow-lg text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-8 opacity-20">
+                <span className="material-symbols-outlined text-9xl">shield</span>
+              </div>
+              <h3 className="text-2xl font-black mb-2 relative z-10">ZONA SEGURA</h3>
+              <p className="text-sm opacity-90 mb-6 max-w-[80%] relative z-10 leading-relaxed">
+                El acoso escolar no es un juego. Si tú o alguien que conoces necesita ayuda, estamos aquí. Todo es confidencial.
+              </p>
+
+              <div className="flex flex-col gap-3 relative z-10">
+                <button className="w-full py-3 bg-white text-purple-600 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-gray-100 transition-colors shadow-lg flex items-center justify-center gap-2">
+                  <span className="material-symbols-outlined">chat_bubble</span>
+                  HABLAR CON UN MEDIADOR (ANÓNIMO)
                 </button>
-              </form>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                <a href="tel:900018018" className="w-full py-3 bg-purple-700 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-purple-800 transition-colors shadow-lg border border-purple-400/50 flex items-center justify-center gap-2">
+                  <span className="material-symbols-outlined">call</span>
+                  TELÉFONO CONTRA EL ACOSO (900 018 018)
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
+              <h3 className="text-lg font-black mb-4">RECURSOS</h3>
+              <div className="space-y-3">
+                <div className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-start gap-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <span className="material-symbols-outlined text-purple-500 mt-1">menu_book</span>
+                  <div>
+                    <p className="font-bold text-sm">Guía para padres</p>
+                    <p className="text-[10px] text-gray-500">Cómo detectar si tu hijo sufre bullying.</p>
+                  </div>
+                </div>
+                <div className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-start gap-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <span className="material-symbols-outlined text-blue-500 mt-1">gavel</span>
+                  <div>
+                    <p className="font-bold text-sm">Protocolos Escolares</p>
+                    <p className="text-[10px] text-gray-500">Qué debe hacer el colegio por ley.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className="flex gap-6 h-full p-6 md:p-8 max-w-7xl mx-auto items-start">
+      {/* Sidebar Navigation */}
+      <div className="w-20 md:w-64 shrink-0 flex flex-col gap-2 sticky top-8">
+        <button
+          onClick={() => setActiveTab('emergencias')}
+          className={`p-4 rounded-2xl flex md:flex-row flex-col items-center gap-4 transition-all ${activeTab === 'emergencias' ? 'bg-red-500 text-white shadow-lg shadow-red-500/30' : 'bg-white dark:bg-surface-dark text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+        >
+          <span className="material-symbols-outlined text-2xl">local_police</span>
+          <span className="hidden md:block font-black text-xs uppercase tracking-widest">Emergencias</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('escolar')}
+          className={`p-4 rounded-2xl flex md:flex-row flex-col items-center gap-4 transition-all ${activeTab === 'escolar' ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/30' : 'bg-white dark:bg-surface-dark text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+        >
+          <span className="material-symbols-outlined text-2xl">school</span>
+          <span className="hidden md:block font-black text-xs uppercase tracking-widest">Escolar</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('tramites')}
+          className={`p-4 rounded-2xl flex md:flex-row flex-col items-center gap-4 transition-all ${activeTab === 'tramites' ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30' : 'bg-white dark:bg-surface-dark text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+        >
+          <span className="material-symbols-outlined text-2xl">contract_edit</span>
+          <span className="hidden md:block font-black text-xs uppercase tracking-widest">Trámites</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('transporte')}
+          className={`p-4 rounded-2xl flex md:flex-row flex-col items-center gap-4 transition-all ${activeTab === 'transporte' ? 'bg-green-500 text-white shadow-lg shadow-green-500/30' : 'bg-white dark:bg-surface-dark text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+        >
+          <span className="material-symbols-outlined text-2xl">directions_bus</span>
+          <span className="hidden md:block font-black text-xs uppercase tracking-widest">Movilidad</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('bullying')}
+          className={`p-4 rounded-2xl flex md:flex-row flex-col items-center gap-4 transition-all ${activeTab === 'bullying' ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30' : 'bg-white dark:bg-surface-dark text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+        >
+          <span className="material-symbols-outlined text-2xl">volunteer_activism</span>
+          <span className="hidden md:block font-black text-xs uppercase tracking-widest">Anti-Bullying</span>
+        </button>
+      </div>
+
+      {/* Content Area */}
+      <div className="flex-1 min-w-0">
+        <div className="bg-white/50 dark:bg-surface-dark/50 backdrop-blur-xl rounded-[40px] p-6 md:p-10 border border-white/20 shadow-xl min-h-[600px]">
+          {renderContent()}
+        </div>
+      </div>
     </div>
   );
 };
-
-export default Services;

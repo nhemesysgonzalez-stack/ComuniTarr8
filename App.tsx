@@ -25,7 +25,7 @@ import CommunityStories from './pages/CommunityStories';
 import NeighborhoodCalendar from './pages/Calendar';
 import Announcements from './pages/Announcements';
 import Marketplace from './pages/Marketplace';
-import Services from './pages/Services';
+import { Services } from './pages/Services';
 import MapView from './pages/MapView';
 import Login from './pages/Login';
 import NeighborhoodSelection from './pages/NeighborhoodSelection';
