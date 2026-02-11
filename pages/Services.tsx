@@ -70,12 +70,12 @@ export const Services: React.FC = () => {
               </div>
 
               <a
-                href="https://interior.gencat.cat/ca/arees_dactuacio/proteccio_civil/plans_de_proteccio_civil_a_catalunya/plans_de_proteccio_civil_especials/ventcat_pla_especial_davant_lemergencia_per_risc_de_vent_a_catalunya/"
+                href="https://interior.gencat.cat"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3 bg-orange-600 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-orange-700 transition-colors shadow-lg shadow-orange-600/50 flex items-center justify-center gap-2 relative z-10"
               >
-                VER INFO OFICIAL VENTCAT
+                VER INFO PROTECCIÓ CIVIL
                 <span className="material-symbols-outlined text-sm">open_in_new</span>
               </a>
             </div>
@@ -298,19 +298,19 @@ export const Services: React.FC = () => {
             <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
               <h3 className="text-lg font-black mb-4">RECURSOS Y GUÍAS</h3>
               <div className="space-y-3">
-                <a href="https://www.anar.org/necesitas-ayuda/" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-start gap-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
+                <a href="https://www.anar.org" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-start gap-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
                   <span className="material-symbols-outlined text-purple-500 mt-1">menu_book</span>
                   <div className="flex-1">
-                    <p className="font-bold text-sm">Guía ANAR sobre Acoso Escolar</p>
-                    <p className="text-[10px] text-gray-500">Cómo detectar y actuar (Fundación ANAR oficial)</p>
+                    <p className="font-bold text-sm">Fundación ANAR - Recursos</p>
+                    <p className="text-[10px] text-gray-500">Información oficial sobre acoso escolar</p>
                   </div>
                   <span className="material-symbols-outlined text-gray-300 group-hover:text-purple-500">open_in_new</span>
                 </a>
-                <a href="https://interior.gencat.cat/ca/arees_dactuacio/proteccio_civil/plans_de_proteccio_civil_a_catalunya/" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-start gap-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
+                <a href="https://educacio.gencat.cat" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-start gap-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
                   <span className="material-symbols-outlined text-blue-500 mt-1">gavel</span>
                   <div className="flex-1">
-                    <p className="font-bold text-sm">Protocolos de Convivencia (Gencat)</p>
-                    <p className="text-[10px] text-gray-500">Normativa oficial y actuación escolar</p>
+                    <p className="font-bold text-sm">Departament d'Educació</p>
+                    <p className="text-[10px] text-gray-500">Información oficial sobre convivencia escolar</p>
                   </div>
                   <span className="material-symbols-outlined text-gray-300 group-hover:text-blue-500">open_in_new</span>
                 </a>
