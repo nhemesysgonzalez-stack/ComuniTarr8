@@ -34,30 +34,76 @@ export const Services: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-orange-50 dark:bg-orange-900/10 p-6 rounded-3xl border border-orange-100 dark:border-orange-800/30 relative overflow-hidden">
+            <div className="bg-orange-50 dark:bg-orange-900/10 p-6 rounded-3xl border-2 border-orange-400 dark:border-orange-600 relative overflow-hidden animate-pulse">
               <div className="absolute top-0 right-0 p-4 opacity-10">
-                <span className="material-symbols-outlined text-9xl text-orange-500">factory</span>
+                <span className="material-symbols-outlined text-9xl text-orange-600">air</span>
               </div>
-              <h3 className="text-lg font-black text-orange-600 dark:text-orange-400 mb-2 relative z-10">ALERTA QUÍMICA (PLASEQTA)</h3>
+              <div className="flex items-start gap-3 mb-3 relative z-10">
+                <span className="material-symbols-outlined text-3xl text-orange-600 animate-bounce">warning</span>
+                <div>
+                  <h3 className="text-xl font-black text-orange-700 dark:text-orange-400">⚠️ ALERTA ACTIVA: VIENTO EXTREMO</h3>
+                  <p className="text-xs text-orange-600 dark:text-orange-300 font-bold uppercase">VENTCAT - Protecció Civil Generalitat</p>
+                </div>
+              </div>
+              <p className="text-sm text-gray-800 dark:text-gray-200 mb-4 relative z-10 leading-relaxed font-medium">
+                <strong>ES-Alert enviado a todos los móviles.</strong> Se prevén rachas de <strong>+100 km/h</strong> hoy y mañana en toda la costa de Tarragona.
+              </p>
+
+              <div className="bg-white dark:bg-surface-dark p-4 rounded-xl mb-4 relative z-10">
+                <p className="text-xs font-black text-red-600 uppercase mb-2">⛔ Medidas Excepcionales (00:00-20:00 Jueves 12):</p>
+                <ul className="text-xs text-gray-700 dark:text-gray-300 space-y-1 ml-4">
+                  <li>• ❌ Suspendidas: Clases, universidad, actividad sanitaria no urgente</li>
+                  <li>• 🏠 Evita desplazamientos innecesarios. Prioriza teletrabajo.</li>
+                  <li>• 🌳 Parques cerrados (Part Alta, Francolí, Miracle)</li>
+                  <li>• 🏛️ Monumentos cerrados (Passeig Arqueològic, Amfiteatre)</li>
+                </ul>
+              </div>
+
+              <div className="bg-red-100 dark:bg-red-900/30 p-3 rounded-xl mb-3 relative z-10">
+                <p className="text-xs font-black text-red-700 dark:text-red-400 uppercase mb-1">🔴 Recomendaciones Urgentes:</p>
+                <ul className="text-[10px] text-red-800 dark:text-red-300 space-y-0.5 ml-3">
+                  <li>• Retira macetas, toldos y objetos de balcones</li>
+                  <li>• Asegura puertas y ventanas</li>
+                  <li>• Aléjate de fachadas, cornisas y árboles</li>
+                  <li>• Vehículos 2 ruedas: extremar precaución o no circular</li>
+                </ul>
+              </div>
+
+              <a
+                href="https://interior.gencat.cat/ca/arees_dactuacio/proteccio_civil/plans_de_proteccio_civil_a_catalunya/plans_de_proteccio_civil_especials/ventcat_pla_especial_davant_lemergencia_per_risc_de_vent_a_catalunya/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 bg-orange-600 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-orange-700 transition-colors shadow-lg shadow-orange-600/50 flex items-center justify-center gap-2 relative z-10"
+              >
+                VER INFO OFICIAL VENTCAT
+                <span className="material-symbols-outlined text-sm">open_in_new</span>
+              </a>
+            </div>
+
+            <div className="bg-green-50 dark:bg-green-900/10 p-6 rounded-3xl border border-green-100 dark:border-green-800/30 relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <span className="material-symbols-outlined text-9xl text-green-500">factory</span>
+              </div>
+              <h3 className="text-lg font-black text-green-600 dark:text-green-400 mb-2 relative z-10">ALERTA QUÍMICA (PLASEQTA)</h3>
               <p className="text-sm text-gray-700 dark:text-gray-300 mb-4 relative z-10 font-medium">Estado actual de las sirenas y protocolos de seguridad.</p>
 
               <div className="flex gap-2 relative z-10">
-                <div className="flex-1 bg-white dark:bg-surface-dark p-3 rounded-xl border border-orange-200 dark:border-orange-700/50 flex flex-col items-center justify-center">
+                <div className="flex-1 bg-white dark:bg-surface-dark p-3 rounded-xl border border-green-200 dark:border-green-700/50 flex flex-col items-center justify-center">
                   <span className="size-4 rounded-full bg-green-500 animate-pulse mb-1"></span>
                   <span className="text-[10px] font-black uppercase tracking-wider text-green-600">Polígono Norte</span>
                 </div>
-                <div className="flex-1 bg-white dark:bg-surface-dark p-3 rounded-xl border border-orange-200 dark:border-orange-700/50 flex flex-col items-center justify-center">
+                <div className="flex-1 bg-white dark:bg-surface-dark p-3 rounded-xl border border-green-200 dark:border-green-700/50 flex flex-col items-center justify-center">
                   <span className="size-4 rounded-full bg-green-500 animate-pulse mb-1"></span>
                   <span className="text-[10px] font-black uppercase tracking-wider text-green-600">Polígono Sur</span>
                 </div>
               </div>
               <a
-                href="https://interior.gencat.cat/ca/arees_dactuacio/proteccio_civil/plans_de_proteccio_civil_a_catalunya/plans_de_proteccio_civil_sectorials/plaseqta/"
+                href="https://www.tinet.cat/portal/plaseqta/recursos_d_interes/sirenas_i_senyalitzacio_de_risc/web_del_plaseqta/index.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 w-full py-3 bg-orange-500 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/30 flex items-center justify-center gap-2"
+                className="mt-4 w-full py-3 bg-green-500 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-green-600 transition-colors shadow-lg shadow-green-500/30 flex items-center justify-center gap-2"
               >
-                VER MAPA DE AFECTACIÓN
+                VER WEB OFICIAL PLASEQTA
                 <span className="material-symbols-outlined text-sm">open_in_new</span>
               </a>
             </div>
@@ -252,19 +298,19 @@ export const Services: React.FC = () => {
             <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
               <h3 className="text-lg font-black mb-4">RECURSOS Y GUÍAS</h3>
               <div className="space-y-3">
-                <a href="https://www.anar.org/wp-content/uploads/2018/02/Gu%C3%ADa-de-actuaci%C3%B3n-contra-el-acoso-escolar.pdf" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-start gap-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
+                <a href="https://www.anar.org/necesitas-ayuda/" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-start gap-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
                   <span className="material-symbols-outlined text-purple-500 mt-1">menu_book</span>
                   <div className="flex-1">
-                    <p className="font-bold text-sm">Guía para padres (PDF)</p>
-                    <p className="text-[10px] text-gray-500">Cómo detectar y actuar si tu hijo sufre acoso.</p>
+                    <p className="font-bold text-sm">Guía ANAR sobre Acoso Escolar</p>
+                    <p className="text-[10px] text-gray-500">Cómo detectar y actuar (Fundación ANAR oficial)</p>
                   </div>
                   <span className="material-symbols-outlined text-gray-300 group-hover:text-purple-500">open_in_new</span>
                 </a>
-                <a href="https://educacio.gencat.cat/ca/departament/publicacions/colleccions/inclusio-convivencia/conflictes-violencia-centres-educatius/" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-start gap-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
+                <a href="https://interior.gencat.cat/ca/arees_dactuacio/proteccio_civil/plans_de_proteccio_civil_a_catalunya/" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-start gap-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group">
                   <span className="material-symbols-outlined text-blue-500 mt-1">gavel</span>
                   <div className="flex-1">
-                    <p className="font-bold text-sm">Protocolos Escolares (Gencat)</p>
-                    <p className="text-[10px] text-gray-500">Qué debe hacer el colegio por ley.</p>
+                    <p className="font-bold text-sm">Protocolos de Convivencia (Gencat)</p>
+                    <p className="text-[10px] text-gray-500">Normativa oficial y actuación escolar</p>
                   </div>
                   <span className="material-symbols-outlined text-gray-300 group-hover:text-blue-500">open_in_new</span>
                 </a>

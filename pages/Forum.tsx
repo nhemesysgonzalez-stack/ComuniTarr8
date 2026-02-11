@@ -74,12 +74,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'ComuniTarr 📢', text: '🐖 MIÉRCOLES: Mañana Jueves Lardero. ¿Ya tienes tu butifarra de huevo?' },
-    { user: 'PrepperTGN', text: 'ENCUESTA: ¿Oíste las sirenas ayer en tu barrio? Estamos creando un mapa de zonas mudas. 📢🗺️' },
-    { user: 'Laura S.', text: 'Busco maquilladora a domicilio para el sábado por la mañana. Somos 4. 💄' },
-    { user: 'David M.', text: 'Vendo 2 entradas grada Rambla, fila 1. Me he roto la pierna. 🦵❌' },
-    { user: 'Elena R.', text: '¡Cuidado en la N-340, retenciones por obras en la rotonda! 🚗' },
-    { user: 'Pedro A.', text: 'Busco disfraz de POCOYO talla 3 años urgente. 👶' }
+    { user: 'Protecció Civil ⚠️', text: '🚨 ALERTA VIENTO EXTREMO: +100 km/h. Asegura macetas, evita desplazamientos.' },
+    { user: 'ComuniTarr 📢', text: '⛔ CLASES SUSPENDIDAS JUEVES 12: 00:00-20:00h. Parques cerrados.' },
+    { user: 'Maria T.', text: 'He quitado todas las macetas. Si sois de la Part Alta, muchísimo cuidado con árboles. 🌳💨' },
+    { user: 'RENFE Info', text: '🚆 CANCELADOS servicios Jueves por viento. Validez billetes ampliada.' },
+    { user: 'Javi P.', text: 'Cancelan Casting Hotel Imperial. Se reprograma próxima semana. 🎬❌' },
+    { user: 'PrepperTGN', text: 'Tened kit básico preparado: agua, linterna, radio. Puede haber cortes de luz. 🔦🪔' }
   ];
 
   // Virtual Neighbors for Simulation

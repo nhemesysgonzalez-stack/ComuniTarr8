@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🚧 TRÁFICO TARDE: Evitad Rambla Nova tramo Balcón. Montaje de gradas bloquea un carril. Usad Vía Augusta.', neighborhood: 'GENERAL' },
-    { id: 1, user: 'Carlos M.', avatar: 'https://i.pravatar.cc/150?u=carlos', text: '¡Se han acabado las cocas de llardons en la Rambla! ¿Quedan en Torreforta? 😱', neighborhood: 'Centro' },
-    { id: 2, user: 'PrepperTGN', avatar: '/logo.svg', text: 'Mapa de silencio actualizado. Gracias por los reportes de sirenas de ayer. Bonavista es punto ciego. ☣️📍', neighborhood: 'Ponent' },
-    { id: 3, user: 'Laura G.', text: 'Voy hacia el Hotel Imperial a dejar el CV. ¿Alguien sabe si piden inglés? 🇬🇧', avatar: 'https://i.pravatar.cc/150?u=laura', neighborhood: 'Part Alta' },
-    { id: 4, user: 'David R.', avatar: 'https://i.pravatar.cc/150?u=david', text: 'Al final no llueve para Carnaval, ¿no? Que tengo el disfraz de cartón... 📦😅', neighborhood: 'S. Pere i S. Pau' },
-    { id: 5, user: 'Marta S.', avatar: 'https://i.pravatar.cc/150?u=marta', text: 'Vendo 2 entradas grada Viernes (Séquito). Fila 2. Me han surgido viaje. ✈️', neighborhood: 'Llevant' },
-    { id: 6, user: 'Javi P.', avatar: 'https://i.pravatar.cc/150?u=javi', text: 'Se ha calmado el viento por fin. Bajad a la playa que se está de lujo. 🌊', neighborhood: 'Arrabassada' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🚨 ALERTA VIENTO EXTREMO: +100 km/h previstas. Evita desplazamientos. ES-Alert enviado a todos. 💨⚠️', neighborhood: 'GENERAL' },
+    { id: 1, user: 'Protecció Civil', avatar: '/logo.svg', text: '⛔ MAÑANA: Suspendidas clases, universidad y actividad sanitaria no urgente (00:00-20:00h). 🏠', neighborhood: 'GENERAL' },
+    { id: 2, user: 'Maria T.', avatar: 'https://i.pravatar.cc/150?u=maria', text: 'He asegurado la terraza. Si tenéis macetas, quitadlas YA. El pronóstico es muy serio. 🌬️🪴', neighborhood: 'Part Alta' },
+    { id: 3, user: 'PrepperTGN', avatar: '/logo.svg', text: 'Parques cerrados (Francolí, Miracle, Part Alta). Alejaos de árboles y fachadas. Precaución extrema. 🌳⚠️', neighborhood: 'Ponent' },
+    { id: 4, user: 'Javi P.', avatar: 'https://i.pravatar.cc/150?u=javi', text: 'Me han cancelado el viaje a Barcelona. RENFE no opera mañana por el viento. Os lo aviso. 🚆❌', neighborhood: 'Llevant' },
+    { id: 5, user: 'Laura G.', text: 'Casting Hotel Imperial CANCELADO por temporal. Reprogramado próxima semana (os aviso). 🎬', avatar: 'https://i.pravatar.cc/150?u=laura', neighborhood: 'Centro' },
+    { id: 6, user: 'Carlos M.', avatar: 'https://i.pravatar.cc/150?u=carlos', text: 'Cierran el Passeig Arqueològic y Amfiteatre. Tened cuidado si vais por la Part Alta. 🏛️', neighborhood: 'Part Alta' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: 'Atasco Rambla 🚧' },
-    { user: 'Carlos M.', text: 'Sin Cocas 😱' },
-    { user: 'PrepperTGN', text: 'Mapa Silencio 📍' },
-    { user: 'Laura G.', text: 'Casting Hotel 💼' },
-    { user: 'David R.', text: 'Tiempo Calma ☀️' }
+    { user: 'Protecció Civil', text: '⚠️ Alerta Viento +100 km/h' },
+    { user: 'Admin', text: '⛔ Clases Suspendidas Jueves' },
+    { user: 'Maria T.', text: 'Asegurad Macetas YA 🪴' },
+    { user: 'PrepperTGN', text: 'Parques Cerrados 🌳' },
+    { user: 'RENFE', text: 'Serv. Suspendido Jueves 🚆' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {
