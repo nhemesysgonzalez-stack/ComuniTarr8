@@ -70,18 +70,34 @@ const CommunityStories: React.FC = () => {
             return;
         }
 
+        // Limit file size to 50MB
+        if (imageFile && imageFile.size > 50 * 1024 * 1024) {
+            alert('⚠️ El archivo es demasiado grande (Máx 50MB). Intenta con un vídeo más corto o de menor calidad.');
+            return;
+        }
+
         try {
             let publicUrl = null;
 
-            // 1. Upload Image if exists
+            // 1. Upload Image/Video if exists
             if (imageFile) {
                 const fileExt = imageFile.name.split('.').pop();
                 const fileName = `${user.id}-${Date.now()}.${fileExt}`;
+
+                // Show uploading indicator (simple alert for now, could be state)
+                // setIsUploading(true); 
+
                 const { error: uploadError } = await supabase.storage
                     .from('gallery')
-                    .upload(fileName, imageFile);
+                    .upload(fileName, imageFile, {
+                        cacheControl: '3600',
+                        upsert: false
+                    });
 
-                if (uploadError) throw uploadError;
+                if (uploadError) {
+                    console.error('Supabase Storage Error:', uploadError);
+                    throw new Error(`Error subiendo archivo: ${uploadError.message}`);
+                }
 
                 const { data } = supabase.storage
                     .from('gallery')
@@ -98,7 +114,7 @@ const CommunityStories: React.FC = () => {
                     user_name: user.user_metadata?.full_name || 'Vecino',
                     content: newStory,
                     image_url: publicUrl,
-                    icon: 'camera'
+                    icon: imageFile?.type.startsWith('video') ? 'videocam' : 'camera'
                 });
 
             if (dbError) throw dbError;
@@ -110,9 +126,9 @@ const CommunityStories: React.FC = () => {
             fetchStories();
             alert('¡Publicado en la Nube del Barrio! ☁️🎉');
 
-        } catch (error) {
+        } catch (error: any) {
             console.error('Error sharing story:', error);
-            alert('Hubo un error al subir tu historia. Por favor intenta de nuevo.');
+            alert(`Hubo un error: ${error.message || 'Inténtalo de nuevo.'}`);
         }
     };
 
