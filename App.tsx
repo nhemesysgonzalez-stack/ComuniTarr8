@@ -66,11 +66,32 @@ import { FloatingCommunityWidget } from './components/FloatingCommunityWidget';
 import { EmergencyBroadcast } from './components/EmergencyBroadcast';
 import DynamicThemeEffects from './components/DynamicThemeEffects';
 
+import { alertService } from './services/alertService';
+
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
 
   useEffect(() => {
     logActivity('page_view', { path: location.pathname });
+
+    // Conectar con servicios oficiales (VENTCAT/PLASEQTA)
+    const pollAlerts = async () => {
+      const activeAlert = await alertService.checkOfficialAlerts();
+      if (activeAlert) {
+        alertService.sendSystemNotification(activeAlert);
+        // El componente EmergencyBroadcast ya se encarga de mostrar el zumbido visual
+      }
+    };
+
+    pollAlerts();
+    const interval = setInterval(pollAlerts, 60000); // Check every minute
+
+    // Solicitar permiso de notificaciones al inicio
+    if ("Notification" in window && Notification.permission === "default") {
+      Notification.requestPermission();
+    }
+
+    return () => clearInterval(interval);
   }, [location]);
 
   return (
