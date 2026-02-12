@@ -253,15 +253,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">🚧 TRÁFICO TARDE: COLAPSO EN RAMBLA NOVA (TRAMO BALCÓN) POR MONTAJE GRADAS - USAR VÍA AUGUSTA</span>
+          <span className="flex items-center gap-2">💨 TIEMPO: ALERTA NARANJA POR VIENTOS DE 80KM/H - EVITAR BALCÓN DEL MEDITERRANI Y PARQUES</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">💼 EMPLEO URGENTE: ENTREVISTAS EN HOTEL IMPERIAL (17H-19H) - CAMAREROS/AS EXTRA CARNAVAL</span>
+          <span className="flex items-center gap-2">🎭 CARNAVAL: ¡FELIZ DIJOUS GRAS! REPARTO DE COCA DE LLARDONS EN PL. DE LA FONT A LAS 20:00H</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🐖 ALERTA GOLOSA: STOCK BAJO DE COCAS DE LLARDONS EN CENTRO - PROBAD EN TORREFORTA</span>
+          <span className="flex items-center gap-2">🚗 TRÁFICO: INCIDENCIAS EN AV. CATALUNYA POR CAÍDA DE RAMA - CIRCULACIÓN LENTA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">☣️ PREPPERS: CONFIRMADO "PUNTO CIEGO" DE SIRENAS EN BONAVISTA SUR</span>
+          <span className="flex items-center gap-2">🛡️ PREPPERS: SE RECOMIENDA TENER CARGADAS POWERBANKS POR POSIBLES CORTES DE SUMINISTRO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">☀️ TIEMPO: EL VIENTO HA PARADO. TARDE AGRADABLE (13ºC) PERO NOCHE FRÍA</span>
+          <span className="flex items-center gap-2">🐖 DIJOUS GRAS: MERIENDAS POPULARES EN VARIOS BARRIOS - MERCAT CENTRAL ABIERTO HASTA LAS 20H</span>
         </motion.div>
       </div>
 

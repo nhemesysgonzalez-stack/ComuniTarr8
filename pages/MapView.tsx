@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'shop', x: '45%', y: '50%', title: 'Cola Pastelería', desc: 'Mucha gente comprando Coca de Llardons. Rambla Nova.', status: 'Lleno', color: 'bg-orange-500', icon: 'bakery_dining', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.8)]' },
-    { id: 2, type: 'cleanup', x: '40%', y: '30%', title: 'Montaje Gradas', desc: 'Rambla Nova cortada al tráfico carril central.', status: 'Obras', color: 'bg-yellow-600', icon: 'construction' },
-    { id: 3, type: 'event', x: '70%', y: '60%', title: 'Punto Encuentro Prepper', desc: 'Medición de señal de sirenas (test acústico vecinal).', status: 'Activo', color: 'bg-green-600', icon: 'speaker', glow: 'shadow-[0_0_35px_rgba(22,163,74,0.5)]' },
-    { id: 4, type: 'incident', x: '20%', y: '40%', title: 'Perro Encontrado', desc: 'Golden Retriever perdido ayer por el viento. Está en bar Manolo.', status: 'Seguro', color: 'bg-blue-500', icon: 'pets' },
-    { id: 5, type: 'shop', x: '60%', y: '75%', title: 'Rebajas Disfraces', desc: 'Outlet de disfraces en carpa Parc Central.', status: 'Oferta', color: 'bg-pink-500', icon: 'shopping_bag' }
+    { id: 1, type: 'event', x: '45%', y: '50%', title: 'Degustación Butifarra', desc: 'Dijous Gras en el Mercat Central. ¡Ven a probar!', status: 'Activo', color: 'bg-primary', icon: 'restaurant', glow: 'shadow-[0_0_50px_rgba(43,140,238,0.8)]' },
+    { id: 2, type: 'incident', x: '40%', y: '30%', title: 'Rama Caída', desc: 'Av. Catalunya cortada. Bomberos trabajando.', status: 'En Proceso', color: 'bg-red-600', icon: 'warning' },
+    { id: 3, type: 'event', x: '70%', y: '60%', title: 'Plaça de la Font', desc: 'Preparativos para el reparto de Coca de Llardons (20h).', status: 'Preparando', color: 'bg-orange-500', icon: 'bakery_dining', glow: 'shadow-[0_0_35px_rgba(249,115,22,0.5)]' },
+    { id: 4, type: 'cleanup', x: '20%', y: '40%', title: 'Patrulla Viento', desc: 'Vecinos avisando de andamios sueltos en Part Alta.', status: 'Activo', color: 'bg-emerald-600', icon: 'shield' },
+    { id: 5, type: 'shop', x: '60%', y: '75%', title: 'Rebajas Disfraces', desc: 'Última oportunidad antes de la Rúa. Parc Central.', status: 'Oferta', color: 'bg-pink-500', icon: 'shopping_bag' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

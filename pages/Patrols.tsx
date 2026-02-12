@@ -40,7 +40,28 @@ const Patrols: React.FC = () => {
           .order('created_at', { ascending: false })
       );
 
-      setPatrols(data || []);
+      const mockPatrols: PatrolGroup[] = [
+        {
+          id: 'p-1',
+          creator_id: 'v1',
+          name: 'Vigilancia de Terrados (Viento)',
+          description: 'Grupo temporal para revisar que no haya objetos sueltos en azoteas y balcones que puedan caer a la calle hoy.',
+          neighborhood: 'GENERAL',
+          contact_info: '622 33 44 55',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'p-2',
+          creator_id: 'v2',
+          name: 'Acompañamiento Rúa Infantil',
+          description: 'Voluntarios para ayudar a los profes mañana viernes durante el desfile de los peques. ¡Hacen falta chalecos!',
+          neighborhood: 'CENTRO',
+          contact_info: '644 55 66 77',
+          created_at: new Date().toISOString()
+        }
+      ];
+
+      setPatrols(data && data.length > 0 ? data : mockPatrols);
     } catch (e) {
       console.error(e);
     } finally {

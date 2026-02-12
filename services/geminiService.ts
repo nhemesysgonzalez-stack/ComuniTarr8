@@ -27,16 +27,21 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     p.includes("trabajo") || p.includes("empleo") || p.includes("laboral") || p.includes("curro") || p.includes("busco") || p.includes("paro") || p.includes("oferta") ||
     (isJobContext && (p.includes("busco") || p.includes("necesito")))
   ) {
-    return "Ofertas Laborales Recientes en Tarragona (Enero 2026) 💼:\n\n1. 🧺 Operario/a Lavandería - Constantí (Randstad) → Incorporación inmediata.\n2. � Administrativo/a Logístico - Tarragona Ciudad (Randstad) → Jornada completa.\n3. 📦 Carretillero/a Frontal/Retráctil - Reus (Eurofirms) → Turnos rotativos.\n4. ☕ Ayudante de Camarero/a - Tarragona Centro (Job Today) → Fines de semana.\n5. 🚚 Repartidor Carnet B - Tarragona → Urge contratación.\n6. 🏨 Recepcionista de Noche - Hotel zona Llevant → Inglés alto requerido.\n7. 👵 Cuidador/a de Mayores - Residencia TGN → Turno de tarde.\n\n• Web recomendada: Job Today, Randstad y Eurofirms.";
+    return "Ofertas Laborales Urgentes (Jueves 12 Feb - Especial Carnaval) 💼:\n\n1. 🎭 Extras para Comparsas - Rambla Nova → Montaje y apoyo (Solo hoy).\n2. 🍹 Camareros/as de Refuerzo - Hotel Imperial y Sala Zero → Finde Carnaval.\n3. 📦 Reponedor/a Urgente - Supermercados Centro → Refuerzo stock Dijous Gras.\n4. 🛡️ Auxiliar de Seguridad - Control de accesos rúa → Turno noche.\n5. 🥐 Ayudante de Pastelería - Tarragona Centro → Urge por Cocas de Llardons.\n\n• Web recomendada: Job Today y ComuniTarr EMPLEO.";
   }
 
-  // 16. Preppers y Seguridad (Petroquímicas Tarragona) - Prioridad en canal Preppers
-  if (neighborhood === 'PREPPERS' || p.includes("prepper") || p.includes("emergencia") || p.includes("petroqu") || p.includes("sirena") || p.includes("kit") || p.includes("evacuac") || p.includes("fuga")) {
-    // Si estamos en preppers y no hay keyword específica, damos la intro
-    if (neighborhood === 'PREPPERS' && !p.includes("sirena") && !p.includes("kit")) {
-      return "Estás en el canal Preppers / TGN Segura 🛡️. Aquí compartimos info sobre:\n\n• Petroquímicas y sirenas (PLASEQTA).\n• Kits de emergencia y primeros auxilios.\n• Puntos de encuentro y evacuación.\n¿Tienes alguna duda de seguridad?";
+  // 16. Preppers y Seguridad (Petroquímicas / Viento) - Prioridad en canal Preppers
+  if (neighborhood === 'PREPPERS' || p.includes("viento") || p.includes("ventcat") || p.includes("aire") || p.includes("prepper") || p.includes("emergencia") || p.includes("petroqu") || p.includes("sirena") || p.includes("kit") || p.includes("evacuac") || p.includes("fuga")) {
+
+    // Respuesta específica para el VIENTO (Ventcat)
+    if (p.includes("viento") || p.includes("aire") || p.includes("ventcat") || p.includes("hacer")) {
+      return "⚠️ ALERTA VENTCAT (Jueves 12 Feb): Tarragona está en alerta naranja por vientos de >80km/h.\n\n👣 QUÉ HACER:\n1. Evita el Balcó del Mediterrani y zonas con árboles grandes (Rambla, Parcs).\n2. Asegura macetas y toldos en balcones.\n3. Si vas en coche, reduce velocidad y ten cuidado al adelantar camiones.\n4. Aléjate de fachadas en mal estado o andamios.\n\n🛡️ Canal Preppers: ¿Quieres saber cómo preparar tu kit de emergencia por si hay cortes de luz?";
     }
-    return "Canal Preppers / TGN Segura 🛡️:\n\n• Petroquímicas: Tarragona tiene uno de los mayores polígonos petroquímicos de Europa. En caso de sirena, lo habitual es CONFINAMIENTO (cerrar puertas/ventanas).\n• Kit de Emergencia: Agua (6L/persona), linterna, radio a pilas, botiquín, mantas térmicas, copias de documentos.\n• Sirenas: Si suenan 3 veces seguidas = alerta química. Quedarse en casa, cerrar todo, seguir @emergenciescat.\n• Puntos de Encuentro: Cada barrio tiene zonas señalizadas (Francolí, Parque de la Ciudad, Plaza Imperial Tarraco).\n• Botiquín: Gasas, antiséptico, analgésicos, mascarillas FFP2/FFP3, esparadrapo.\n• App recomendada: ALERTA (de Protecció Civil de Catalunya) para recibir avisos en tiempo real.";
+
+    if (neighborhood === 'PREPPERS' && !p.includes("sirena") && !p.includes("kit")) {
+      return "Estás en el canal Preppers / TGN Segura 🛡️. Hoy estamos enfocados en la ALERTA POR VIENTO (Ventcat).\n\n• Sirenas: Si no las oíste ayer, repórtalo en el Mapa 📍.\n• Kits: Revisa linternas por si falla el suministro eléctrico hoy.\n¿Tienes dudas sobre seguridad hoy?";
+    }
+    return "Canal Preppers / TGN Segura 🛡️:\n\n• Alerta Viento: Mestral fuerte hoy. Máxima precaución en zonas altas.\n• Petroquímicas: En caso de sirena, CONFINAMIENTO inmediato.\n• Kit de Emergencia: Agua, linterna, radio a pilas (recomiendo Sangean), botiquín.\n• Sirenas: 3 pitidos largos = Alerta Química.\n• App recomendada: ALERTA (Protecció Civil).";
   }
 
   // 2. Basura y Reciclaje
@@ -46,7 +51,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.1 TRÁFICO EN TIEMPO REAL
   if (p.includes("trafico") || p.includes("tráfico") || p.includes("carretera") || p.includes("circulacion") || p.includes("atasco") || p.includes("retenciones") || p.includes("corte")) {
-    return "🚗 TRÁFICO TARRAGONA (Miércoles 11 Feb, 17:45h):\n\n• 🟠 RAMBLA NOVA: Colapso total por montaje de escenario del Carnaval (evitar hasta las 20h).\n• 🟢 N-340: Fluida en ambos sentidos.\n• 🟢 AP-7: Sin incidencias.\n• 🟡 Rotonda Francolí (dirección Reus): Retenciones moderadas por obras.\n• 🟢 Accesos al Puerto: Libres.\n\n💡 Alternativa Rambla: Usa C/ Pere Martell o Ronda Litoral.\n📱 App recomendada: Trànsit / Google Maps.";
+    return "🚗 TRÁFICO TARRAGONA (Jueves 12 Feb, 09:30h):\n\n• 🔴 AV. CATALUNYA: Circulación lenta por rama caída en la calzada.\n• 🔴 RAMBLA NOVA: Cortada al tráfico por montaje de gradas del Carnaval.\n• 🟡 Accesos T-11: Retenciones por viento fuerte.\n• 🟢 AP-7: Fluida pero con precaución.\n\n💡 Alternativa Centro: Vía Augusta.";
   }
 
   // 2.2 FARMACIAS DE GUARDIA
@@ -56,7 +61,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.3 COLEGIOS Y EDUCACIÓN
   if (p.includes("colegio") || p.includes("escuela") || p.includes("escola") || p.includes("instituto") || p.includes("matricula") || p.includes("matrícula") || p.includes("calendario escolar") || p.includes("menu escolar") || p.includes("menú")) {
-    return "🎓 INFORMACIÓN ESCOLAR TARRAGONA (2025-2026):\n\n📅 **CALENDARIO:**\n• Viernes 14 Feb: FIESTA LOCAL (Dijous Gras → Puente largo)\n• 3-9 Mar: Vacaciones de Carnaval\n• Semana Santa: 13-21 Abril\n\n🍽️ **MENÚS ESCOLARES:**\n• Consulta el menú semanal de tu cole en: educacio.gencat.cat/comedores\n• Dietas especiales (alergias/intolerancias): Solicitar en secretaría.\n\n📝 **MATRÍCULA 2026-2027:**\n• Preinscripción: Mayo 2026\n• Consorcio d'Educació: consorci.tarragona.cat\n\n🏫 Colegios destacados: CEIP Pau Delclòs, CEIP Marta Mata, Institut Martí Franquès, Col·legi Sagrada Familia.";
+    return "🎓 INFORMACIÓN ESCOLAR (Jueves 12 Feb):\n\n📅 **CARNAVAL:**\n• HOY: Dijous Gras (Celebraciones y meriendas en los centros).\n• Viernes 13: La Rueta Infantil (Desfile 10h).\n• 16-20 Feb: Vacaciones de Carnaval (Semana blanca).\n\n🍽️ **MENÚS HOY:**\n• Tradición Dijous Gras: Tortilla de butifarra y Coca de Llardons.";
   }
 
   // 2.4 SERVICIOS MUNICIPALES (AMPLIADO)
@@ -104,9 +109,9 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     return "Para trámites municipales en Tarragona 🏛️:\n\n• La OMAC (Oficina Municipal d'Atenció Ciutadana) requiere cita previa. Puedes pedirla en la web tarragona.cat o llamando al 010.\n• Empadronamiento: Necesitas DNI/NIE y el contrato de alquiler o escritura de la vivienda.\n• Volante de convivencia: Se puede obtener online con certificado digital al instante.";
   }
 
-  // 7. Noticias y Eventos de Hoy (MIÉRCOLES 28 ENERO 2026 - Sol y Viento)
-  if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("sol") || p.includes("tiempo") || p.includes("lluv") || p.includes("plan")) {
-    return "Resumen para el MIÉRCOLES 28 de enero ☀️💨:\n\n• ☀️ TIEMPO: Día soleado y despejado, pero con viento de Mestral (noroeste) moderado. Temp. Máx 16°C.\n• 🌲 RAMBLA: La petición 'Más Verde en la Rambla' ya supera las 850 firmas. ¡Queda poco para el objetivo!\n• 🎬 CULTURA: Ciclo de Cine en V.O. esta tarde a las 18:30h en la Antiga Audiència.\n• 📱 SOCIAL: Taller de ayuda digital para mayores esta mañana en el Centro Cívico de Ponent.\n• 🚗 TRÁFICO: Circulación fluida en los accesos. Sin incidencias por el viento hasta ahora.";
+  // 7. Noticias y Eventos de Hoy (JUEVES 12 FEBRERO 2026 - Viento y Carnaval)
+  if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("viento") || p.includes("tiempo") || p.includes("plan")) {
+    return "Resumen para el JUEVES 12 de febrero 💨🎭:\n\n• 💨 TIEMPO: Alerta naranja por viento (Mestral). Ráfagas de 80km/h.\n• 🎭 CARNAVAL: ¡Hoy es Dijous Gras! Reparto de cocas en Pl. de la Font a las 20h.\n• 🚗 TRÁFICO: Rambla cortada por gradas. Atasco en Av. Catalunya.\n• ☣️ SEGURIDAD: Protecció Civil pide no acercarse a fachadas antiguas.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)
@@ -116,7 +121,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 9. Nàstic y Tres Tombs
   if (p.includes("nastic") || p.includes("futbol") || p.includes("caballos") || p.includes("tres tombs")) {
-    return "¡Actualidad del Barrio! 🐎⚽\n\n• El Nàstic está en semifinales de Copa Catalunya tras la épica del miércoles.\n• Los Tres Tombs del domingo 18 saldrán desde la Rambla Nova. Es el evento más esperado del fin de semana.";
+    return "¡Actualidad del Barrio! 🐎⚽\n\n• El Nàstic juega este domingo en casa. ¡Hay que ir a apoyar!\n• Los Tres Tombs de este domingo 15 saldrán desde la Rambla Nova. Es el evento más esperado del fin de semana post-Carnaval.";
   }
 
   // 10. Mascotas y Animales

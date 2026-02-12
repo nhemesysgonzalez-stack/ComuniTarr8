@@ -216,8 +216,8 @@ const Challenges: React.FC = () => {
                   <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
                   <div className="flex flex-wrap gap-2 justify-center">
                     {[
-                      { t: 'Recogida de Ropa', d: 'Recogida de mantas y abrigos para el refugio local. Punto de entrega: Local Social.', c: '611888222' },
-                      { t: 'Limpieza de Playa', d: 'Quedada el domingo a las 10:00 para recoger plásticos en la playa del Miracle.', c: '633444555' },
+                      { t: 'Seguridad Balcones', d: 'Ayudamos a personas mayores a asegurar macetas y toldos por el viento de hoy.', c: '611888222' },
+                      { t: 'Recogida de Cocas', d: 'Voluntarios para llevar Coca de Llardons a vecinos con movilidad reducida hoy.', c: '633444555' },
                       { t: 'Banco de Alimentos', d: 'Buscamos donaciones de arroz, pasta y legumbres para familias necesitadas del barrio.', c: '655666777' }
                     ].map((idea, i) => (
                       <button

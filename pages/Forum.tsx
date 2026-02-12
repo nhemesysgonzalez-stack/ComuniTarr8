@@ -74,12 +74,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Protecció Civil ⚠️', text: '🚨 ALERTA VIENTO EXTREMO: +100 km/h. Asegura macetas, evita desplazamientos.' },
-    { user: 'ComuniTarr 📢', text: '⛔ CLASES SUSPENDIDAS JUEVES 12: 00:00-20:00h. Parques cerrados.' },
-    { user: 'Maria T.', text: 'He quitado todas las macetas. Si sois de la Part Alta, muchísimo cuidado con árboles. 🌳💨' },
-    { user: 'RENFE Info', text: '🚆 CANCELADOS servicios Jueves por viento. Validez billetes ampliada.' },
-    { user: 'Javi P.', text: 'Cancelan Casting Hotel Imperial. Se reprograma próxima semana. 🎬❌' },
-    { user: 'PrepperTGN', text: 'Tened kit básico preparado: agua, linterna, radio. Puede haber cortes de luz. 🔦🪔' }
+    { user: 'Protecció Civil ⚠️', text: '🚨 ALERTA VIENTO EXTREMO: +90 km/h. Evitad el Balcó del Mediterrani.' },
+    { user: 'ComuniTarr 📢', text: '🎭 ¡FELIZ DIJOUS GRAS! Reparto de cocas en Pl. de la Font a las 20:00h.' },
+    { user: 'Maria T.', text: 'El viento se ha llevado mi maceta del balcón... ¡Tened cuidado fuera! 💨😱' },
+    { user: 'RENFE Info', text: '🚆 Retrasos en R16 por caída de rama en la vía cerca de Torredembarra.' },
+    { user: 'Pau B.', text: '¿Alguien sabe si cancelan el Arribo del Rei por el viento? 👑🌬️' },
+    { user: 'PrepperTGN', text: 'Tened linternas a mano. Con estas rachas puede haber microcortes. 🔦🔋' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -153,14 +153,14 @@ const Forum: React.FC = () => {
     // Priority for Mediator if it's a question or app help
     const isAssistant = isReplyTo && (isQuestion || isHelpRequest || p.includes('@mediador') || p.includes('mediador'));
 
-    // Base initiation scripts (Monday Afternoon / Carnival Hype)
+    // Base initiation scripts (Thursday / Carnival / Wind)
     let scripts = [
       "Vengo del Mercat... ¡Ni una coca de llardons queda en la Conde! 😱",
-      "¿Alguien va al casting del Imperial Tarraco? Hay mucha cola... 💼",
-      "No bajéis en coche al centro, la Rambla está imposible por las gradas. 🛑",
-      "He conseguido butifarra de huevo en el Corte Inglés, corred que vuelan. 🐖",
+      "¿Sabéis si se mantiene el Arribo del Rei a las 18h con este viento? 🌬️",
+      "No bajéis en el coche, Av. Catalunya está medio cortada por una rama. 🛑",
+      "He visto una valla volar en la Rambla. ¡Mucho cuidado al caminar! 💨",
       "Confirmado: En Campclar tampoco se oyeron bien las sirenas ayer. 📢",
-      "¡Vaya tarde buena ha quedado! Sin viento se está de lujo. ☀️"
+      "¡Qué ganas de empezar el Carnaval! A pesar del aire, ¡butifarra y coca! 🐖"
     ];
 
     // Base reply scripts
@@ -528,22 +528,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'empleo-hotel-imperial',
-      title: '💼 Casting Hotel',
-      description: 'Llevad CV en mano.',
-      participating: 1530
+      id: 'viento-extrem-tgn',
+      title: '💨 Viento Extremo',
+      description: 'Alertas y avisos.',
+      participating: 2450
     },
     {
-      id: 'cocas-agotadas',
-      title: '😨 ¿Cocas Agotadas?',
-      description: 'Buscando pastelería.',
-      participating: 890
+      id: 'dijous-gras-cocas',
+      title: '🐖 Dijous Gras',
+      description: '¿Dónde hay stock?',
+      participating: 1890
     },
     {
-      id: 'atasco-rambla',
-      title: '🛑 Atasco Rambla',
-      description: 'Evitar centro (Gradas).',
-      participating: 620
+      id: 'arribo-rei-carnaval',
+      title: '👑 Arribo del Rei',
+      description: 'Hoy a las 18:00h.',
+      participating: 1520
     }
   ];
 

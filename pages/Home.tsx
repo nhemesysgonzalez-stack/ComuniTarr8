@@ -182,55 +182,56 @@ const Home: React.FC = () => {
           .limit(3);
 
         const dijousGras = {
-          id: 'dijous-gras-prep',
-          title: "🐖 FIESTA: Mañana Dijous Gras",
-          content: "Pastelerías casi sin stock de Coca de Llardons. Última oportunidad ahora por la tarde. Mercat Central cierra a las 20h.",
+          id: 'dijous-gras-today',
+          title: "🐖 HOY: Dijous Gras en TGN",
+          title_ca: "🐖 AVUI: Dijous Gras a TGN",
+          content: "Comienza oficialmente el Carnaval. Reparto de Coca de Llardons en Pl. de la Font a las 20h. ¡No te quedes sin tu ración!",
           category: "CULTURA",
           neighborhood: "GENERAL",
-          itinerary: "• Comida: Butifarra\n• Postre: Coca\n• Evento: Rambla 18h",
+          itinerary: "• 13h: Degustación Mercat\n• 18h: Arribo Rei/Reina\n• 20h: Coca Pl. Font",
           link_url: "/calendar",
           created_at: new Date().toISOString()
         };
 
-        const prepperPetro = {
-          id: 'prepper-petro-analysis',
-          title: "☣️ PREPPERS: Mapa de Silencio",
-          content: "El mapa colaborativo confirma 'zonas mudas' de sirenas en Bonavista Sur y Campclar Oeste. Se enviará informe a Interior mañana.",
-          category: "SEGURIDAD",
-          neighborhood: "PONENT",
-          itinerary: "• Fallo: Sirena Sur\n• Acción: Reportar\n• Kit: Revisar Radio",
-          link_url: "/forum",
-          created_at: new Date().toISOString()
-        };
-
-        const wednesdayJobs = {
-          id: 'jobs-wed-afternoon',
-          title: "💼 EMPLEO: Urgente para el finde",
-          content: "Selección EXPRÉS esta tarde (17h-19h) en Hotel Imperial Tarraco. Buscan 15 camareros (12€/h) y 5 auxiliares de seguridad.",
-          category: "EMPLEO",
-          neighborhood: "GENERAL",
-          itinerary: "• Lugar: H. Imperial\n• Hora: 17:00-19:00\n• Traer: CV impreso",
-          link_url: "/forum",
-          created_at: new Date().toISOString()
-        };
-
-        const trafficWorks = {
-          id: 'traffic-works-rambla',
-          title: "🚧 TRÁFICO: Atasco Tarde",
-          content: "Rambla Nova colapsada por montaje de gradas + salida de colegios. Evitar zona balcón. Usar Vía Augusta.",
-          category: "MOVILIDAD",
-          neighborhood: "CENTRO",
-          itinerary: "• Corte: Rambla Nova\n• Estado: Colapso\n• Alternativa: Vía Augusta",
-          created_at: new Date().toISOString()
-        };
-
-        const weatherWed = {
-          id: 'weather-wed-feb11-afternoon',
-          title: "☀️ EL TIEMPO: Tarde apacible",
-          content: "El viento ha parado casi por completo. Tarde perfecta para pasear (13°C) antes de que caiga el sol y el frío (6°C).",
+        const weatherWind = {
+          id: 'weather-wind-alert-feb12',
+          title: "💨 TIEMPO: Alerta por Viento",
+          content: "Mestral fuerte (ráfagas 80km/h). Evitar el Balcón del Mediterráneo y parques. Asegurad objetos en balcones.",
           category: "TIEMPO",
           neighborhood: "GENERAL",
-          itinerary: "• Cielo: Despejado\n• Viento: Calma\n• Noche: Abrigo",
+          itinerary: "• Alerta: Naranja\n• Viento: 80-90 km/h\n• Precaución: Fachadas",
+          link_url: "/forum",
+          created_at: new Date().toISOString()
+        };
+
+        const thursdayJobs = {
+          id: 'jobs-thurs-carnaval',
+          title: "💼 EMPLEO: Refuerzo Carnaval",
+          content: "Últimas vacantes para camareros/as de extra este fin de semana en Part Alta y Serrallo. Pago por horas.",
+          category: "EMPLEO",
+          neighborhood: "GENERAL",
+          itinerary: "• Perfil: Hostelería\n• Días: Vie/Sáb/Dom\n• Inscrip: En el Foro",
+          link_url: "/forum",
+          created_at: new Date().toISOString()
+        };
+
+        const trafficWind = {
+          id: 'traffic-wind-incidents',
+          title: "🚧 TRÁFICO: Incidencias Viento",
+          content: "Av. Catalunya con restricciones por rama caída. Rambla Nova sigue cortada por gradas. Mejor usar transporte público.",
+          category: "MOVILIDAD",
+          neighborhood: "CENTRO",
+          itinerary: "• Corte: Rambla Nova\n• Aviso: Av. Catalunya\n• Alt: Vía Augusta",
+          created_at: new Date().toISOString()
+        };
+
+        const prepperWind = {
+          id: 'prepper-wind-radio',
+          title: "📻 PREPPERS: Radio y Baterías",
+          content: "Ante el viento extremo, recomendamos tener cargadas las powerbanks y pilas para la radio por si hay cortes de luz.",
+          category: "SEGURIDAD",
+          neighborhood: "GENERAL",
+          itinerary: "• Kit: Revisar linternas\n• Com: Radio FM\n• Red: @emergenciescat",
           created_at: new Date().toISOString()
         };
 
@@ -246,7 +247,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([dijousGras, prepperPetro, wednesdayJobs, trafficWorks, weatherWed, ...validFetchedNews].slice(0, 6));
+        setNews([dijousGras, weatherWind, thursdayJobs, trafficWind, prepperWind, ...validFetchedNews].slice(0, 6));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

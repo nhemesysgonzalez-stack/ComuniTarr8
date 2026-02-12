@@ -120,6 +120,19 @@ const NeighborhoodCalendar: React.FC = () => {
       neighborhood: 'PART ALTA',
       contact_info: 'Ball de Diables',
       created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-weather-alert-wind',
+      creator_id: 'admin',
+      title: "⚠️ ALERTA: Viento Fuerte (Ventcat)",
+      description: "Riesgo extremo por ráfagas de viento. Se recomienda precaución en exteriores.",
+      event_date: '2026-02-12',
+      event_time: 'TODO EL DÍA',
+      location: 'Tarragona Ciudad',
+      category: 'Solidario',
+      neighborhood: 'GENERAL',
+      contact_info: 'Protección Civil',
+      created_at: new Date().toISOString()
     }
   ];
 

@@ -59,9 +59,9 @@ const Marketplace: React.FC = () => {
         {
           id: 'm-1',
           user_id: 'v1',
-          title: 'Coca de Llardons Casera',
-          description: 'Hago por encargo para mañana. Receta de la abuela. 12€ la pieza grande. Entregas en el Serrallo.',
-          price: '12',
+          title: 'Coca de Llardons Casera (Excedente)',
+          description: 'Me han sobrado 3 cocas grandes del encargo de hoy. ¡Empiezan a volar! Recién hechas de esta mañana.',
+          price: '10',
           category: 'alimentacion',
           neighborhood: 'SERRALLO',
           contact_info: '652 11 00 99 (Maria)',
@@ -70,20 +70,20 @@ const Marketplace: React.FC = () => {
         {
           id: 'm-2',
           user_id: 'v2',
-          title: 'Radio Emergencia Manivela',
-          description: 'Sangean MMR-88. Carga solar y dinamo. Linterna. Ideal kit prepper. Nueva, en caja.',
-          price: '40',
-          category: 'tecnologia',
+          title: 'Powerbank 30.000mAh (Carga Rápida)',
+          description: 'A estrenar. Con linterna integrada. Ideal por si hay cortes de luz hoy por el viento.',
+          price: '30',
+          category: 'tech',
           neighborhood: 'PONENT',
-          contact_info: '633 44 55 66 (PrepperTGN)',
+          contact_info: '633 44 55 66 (Javi)',
           created_at: new Date().toISOString()
         },
         {
           id: 'm-3',
           user_id: 'v3',
-          title: 'Disfraz Payaso IT (Talla M)',
-          description: 'Incluye máscara, traje y globo. Usado solo una noche. Perfecto para el sábado.',
-          price: '25',
+          title: 'Disfraz Pirata (Niño 6-8 años)',
+          description: 'Completo con espada y parche. Urge vender antes del sábado. Estado impecable.',
+          price: '15',
           category: 'ocio',
           neighborhood: 'CENTRO',
           contact_info: '611 22 33 44 (Jose)',
@@ -92,9 +92,9 @@ const Marketplace: React.FC = () => {
         {
           id: 'm-4',
           user_id: 'v4',
-          title: 'Lote Maquillaje Fantasía',
-          description: 'Cremas, purpurina, pinceles. Marcas prof. (Kryolan). Me retiro del mundillo.',
-          price: '35',
+          title: 'Anorak Plumas Extreme (Talla L)',
+          description: 'Ideal para hoy con el viento que hace. Cortavientos de alta calidad. Muy poco uso.',
+          price: '50',
           category: 'moda',
           neighborhood: 'PART ALTA',
           contact_info: '699 88 77 66 (Ana)',
@@ -198,7 +198,7 @@ const Marketplace: React.FC = () => {
           </div>
           <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Plaza Parking C/ Unió 🅿️</h2>
           <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed">
-            Alquilo plaza de parking para coche mediano/grande. Puerta automática y fácil maniobra. ¡Olvídate de buscar sitio al llegar de trabajar! Disponible desde hoy 2 de Febrero.
+            Alquilo plaza de parking para coche mediano/grande. Puerta automática y fácil maniobra. ¡Olvídate de buscar sitio al llegar de trabajar! Disponible desde hoy 12 de Febrero.
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="tel:641223456" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">

@@ -155,9 +155,9 @@ const VitalNeeds: React.FC = () => {
                             <span className="px-2 py-0.5 bg-red-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">RED SOLIDARIA</span>
                             <span className="text-[10px] font-bold text-gray-400 uppercase">AYUDA MUTUA</span>
                         </div>
-                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Operación Kilo Carnaval 🥫</h2>
+                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Operación Kilo Dijous Gras 🥫</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            Que nadie pase hambre en fiestas. Recogida urgente de alimentos no perecederos (arroz, pasta, legumbres, latas) y productos de higiene infantil en el Local Social de Torreforta.
+                            Que nadie pase hambre en fiestas. Recogida especial de alimentos y Cocas de Llardons para familias en situación de vulnerabilidad. Entrega hoy en Torreforta.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
