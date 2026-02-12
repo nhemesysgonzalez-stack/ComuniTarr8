@@ -8,40 +8,40 @@ const DynamicThemeEffects: React.FC = React.memo(() => {
     // Solo mostrar en la Home (Welcome screen)
     const isHome = location.pathname === '/';
 
-    const raindrops = useMemo(() =>
-        [...Array(25)].map((_, i) => ({
+    const windParticles = useMemo(() =>
+        [...Array(15)].map((_, i) => ({
             id: i,
-            left: `${Math.random() * 100}%`,
-            duration: 0.5 + Math.random() * 0.5,
-            delay: Math.random() * 2,
-            opacity: 0.1 + Math.random() * 0.2
+            top: `${Math.random() * 100}%`,
+            duration: 0.2 + Math.random() * 0.4,
+            delay: Math.random() * 5,
+            opacity: 0.1 + Math.random() * 0.1
         })), []);
 
     if (!isHome) return null;
 
     return (
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-            {/* Lluvia suave nocturna */}
-            {raindrops.map((drop) => (
+            {/* Ráfagas de viento horizontales */}
+            {windParticles.map((p) => (
                 <motion.div
-                    key={drop.id}
-                    className="absolute w-[1px] h-10 bg-blue-300/30"
-                    style={{ left: drop.left, top: -100 }}
+                    key={p.id}
+                    className="absolute h-[1px] w-40 bg-white/20 blur-[1px]"
+                    style={{ top: p.top, left: -200 }}
                     animate={{
-                        top: ['0vh', '110vh'],
-                        opacity: [0, drop.opacity, 0]
+                        left: ['-20vw', '120vw'],
+                        opacity: [0, p.opacity, 0]
                     }}
                     transition={{
-                        duration: drop.duration,
+                        duration: p.duration,
                         repeat: Infinity,
-                        delay: drop.delay,
+                        delay: p.delay,
                         ease: "linear"
                     }}
                 />
             ))}
 
-            {/* Overlay de noche lluviosa */}
-            <div className="absolute inset-0 bg-blue-900/10 mix-blend-multiply"></div>
+            {/* Overlay de día ventoso */}
+            <div className="absolute inset-0 bg-gray-500/5 mix-blend-overlay"></div>
         </div>
     );
 });

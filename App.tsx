@@ -63,6 +63,7 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
 };
 
 import { FloatingCommunityWidget } from './components/FloatingCommunityWidget';
+import { EmergencyBroadcast } from './components/EmergencyBroadcast';
 import DynamicThemeEffects from './components/DynamicThemeEffects';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -84,6 +85,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <ChatWidget />
       <FloatingCommunityWidget />
       <DynamicThemeEffects />
+      <EmergencyBroadcast />
       <SOSButton />
     </div>
   );
