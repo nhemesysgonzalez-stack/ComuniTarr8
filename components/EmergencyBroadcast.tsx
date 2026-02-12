@@ -67,7 +67,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                             </div>
 
                             <h2 className="text-4xl md:text-5xl font-black text-red-600 uppercase tracking-tighter leading-none mb-6">
-                                ALERTA MÁXIMA <br /> TARRAGONA
+                                ALERTA OFICIAL <br /> PROTECCIÓ CIVIL TGN
                             </h2>
 
                             <div className="bg-red-50 rounded-3xl p-6 mb-8 border-2 border-red-100">

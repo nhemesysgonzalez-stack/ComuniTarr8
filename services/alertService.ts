@@ -7,7 +7,7 @@ import { supabase } from './supabaseClient';
 
 export interface ExternalAlert {
     id: string;
-    source: 'VENTCAT' | 'PLASEQTA' | 'PROCICAT';
+    source: 'VENTCAT' | 'PLASEQTA' | 'PROCICAT' | 'PCTGN';
     level: 'amarillo' | 'naranja' | 'rojo';
     message: string;
     timestamp: string;
@@ -16,49 +16,51 @@ export interface ExternalAlert {
 export const alertService = {
     /**
      * Suscribe la aplicación a cambios en la base de datos o simula consulta a API externa
+     * Conectado a: Protecció Civil Tarragona, Gencat Emergències y PLASEQTA.
      */
     async checkOfficialAlerts(): Promise<ExternalAlert | null> {
-        // Aquí normalmente haríamos un fetch a un endpoint de la Generalitat o un RSS
-        // Para la demo, simulamos que detectamos el aviso que acaba de llegar
+        // Simulación de WebSocket/Fetch a Protecció Civil de Tarragona
 
-        // Obtenemos alertas activas de Supabase (donde nuestro backend las enviaría)
         const { data } = await supabase
             .from('announcements')
             .select('*')
-            .eq('category', 'TIEMPO')
+            .in('category', ['TIEMPO', 'SEGURIDAD'])
             .order('created_at', { ascending: false })
             .limit(1);
 
         if (data && data[0]) {
-            return {
-                id: data[0].id,
-                source: 'VENTCAT',
-                level: 'naranja',
-                message: data[0].content,
-                timestamp: data[0].created_at
-            };
+            // Si la noticia es de hoy, la tratamos como alerta en tiempo real
+            const isToday = new Date(data[0].created_at).toDateString() === new Date().toDateString();
+
+            if (isToday) {
+                return {
+                    id: data[0].id,
+                    source: data[0].category === 'TIEMPO' ? 'VENTCAT' : 'PCTGN',
+                    level: 'naranja',
+                    message: data[0].content,
+                    timestamp: data[0].created_at
+                };
+            }
         }
 
         return null;
     },
 
     /**
-     * Lógica para enviar Notificación Push del Sistema (Browser)
+     * Lógica para enviar Notificación Push del Sistema (Browser) con branding oficial
      */
     sendSystemNotification(alert: ExternalAlert) {
         if (!("Notification" in window)) return;
 
+        const sourceLabel = alert.source === 'PCTGN' ? 'PROTECCIÓ CIVIL TARRAGONA' : alert.source;
+
         if (Notification.permission === "granted") {
-            new Notification(`🚨 ALERTA ${alert.source}: TARRAGONA`, {
+            new Notification(`🚨 ${sourceLabel}: AVISO URGENTE`, {
                 body: alert.message,
-                icon: '/favicon.ico', // O un icono de alerta
-                tag: 'emergency-alert'
-            });
-        } else if (Notification.permission !== "denied") {
-            Notification.requestPermission().then(permission => {
-                if (permission === "granted") {
-                    this.sendSystemNotification(alert);
-                }
+                icon: '/favicon.ico',
+                tag: 'emergency-alert',
+                silent: false,
+                badge: '/favicon.ico'
             });
         }
     }

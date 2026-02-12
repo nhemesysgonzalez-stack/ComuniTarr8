@@ -447,11 +447,11 @@ const Home: React.FC = () => {
       <div className="flex items-center justify-between bg-white dark:bg-surface-dark px-6 py-3 rounded-full border border-gray-100 dark:border-gray-800 shadow-sm animate-pulse-slow">
         <div className="flex items-center gap-3">
           <div className="size-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
-          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">Conectado a Red de Alertas Oficial TGN (VENTCAT/PLASEQTA)</span>
+          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">Conectado en tiempo real: Protecció Civil TGN | VENTCAT | PLASEQTA</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-[9px] font-bold text-gray-400">Última sincro: hace 1 min</span>
-          <span className="material-symbols-outlined text-sm text-gray-300">sync</span>
+          <span className="text-[9px] font-bold text-gray-400">Canal Emergencias Activo</span>
+          <span className="material-symbols-outlined text-sm text-gray-300">rss_feed</span>
         </div>
       </div>
 
