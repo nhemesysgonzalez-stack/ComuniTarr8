@@ -21,13 +21,18 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
   }
 
   // 17. EMPLEO Y MERCADO LABORAL (PRIORIDAD ALTA SI ESTAMOS EN CANAL EMPLEO)
-  // Si estamos en el canal de empleo y preguntan algo vago, asumimos empleo, pero NO si preguntan por "limpieza" explícitamente sin 'trabajo'
   const isJobContext = neighborhood === 'EMPLEO';
   if (
     p.includes("trabajo") || p.includes("empleo") || p.includes("laboral") || p.includes("curro") || p.includes("busco") || p.includes("paro") || p.includes("oferta") ||
     (isJobContext && (p.includes("busco") || p.includes("necesito")))
   ) {
-    return "Ofertas Laborales Urgentes (Jueves 12 Feb - Especial Carnaval) 💼:\n\n1. 🎭 Extras para Comparsas - Rambla Nova → Montaje y apoyo (Solo hoy).\n2. 🍹 Camareros/as de Refuerzo - Hotel Imperial y Sala Zero → Finde Carnaval.\n3. 📦 Reponedor/a Urgente - Supermercados Centro → Refuerzo stock Dijous Gras.\n4. 🛡️ Auxiliar de Seguridad - Control de accesos rúa → Turno noche.\n5. 🥐 Ayudante de Pastelería - Tarragona Centro → Urge por Cocas de Llardons.\n\n• Web recomendada: Job Today y ComuniTarr EMPLEO.";
+    return "Ofertas Laborales Urgentes (Jueves 12 Feb - Especial Carnaval & TALENTO +45) 💼:\n\n" +
+      "1. 🎭 Extras para Comparsas - Rambla Nova → Apoyo montaje (Cualquier edad).\n" +
+      "2. 🛡️ Auxiliar de Seguridad - Control rúa → Turno noche.\n" +
+      "3. 🌟 ESPECIAL +45: Gestor de Punto de Información Turística - TGN Impulsa pide experiencia previa en atención ciudadana.\n" +
+      "4. 📦 Logística Dijous Gras - Supermercados Centro → Refuerzo stock.\n" +
+      "5. 🌟 ESPECIAL +45: Mentor para Jóvenes Emprendedores - Cambra de Comerç (Programa PICE).\n\n" +
+      "• ¿Eres mayor de 45? Mira nuestra sección dedicada en SERVICIOS > EMPLEO +45.";
   }
 
   // 16. Preppers y Seguridad (Petroquímicas / Viento) - Prioridad en canal Preppers

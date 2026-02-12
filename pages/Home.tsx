@@ -235,6 +235,28 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
+        const talent45News = {
+          id: 'social-talent-45',
+          title: "🌟 TALENTO +45: Nuevas Ayudas",
+          content: "Si tienes más de 45 años y buscas empleo, Tarragona Impulsa lanza un programa de reinserción. Consulta los detalles en Servicios.",
+          category: "EMPLEO",
+          neighborhood: "GENERAL",
+          itinerary: "• Perfil: +45 años\n• Lugar: Tabacalera\n• Info: Sección Servicios",
+          link_url: "/services",
+          created_at: new Date().toISOString()
+        };
+
+        const womanSupportNews = {
+          id: 'social-woman-support-tgn',
+          title: "💜 TGN por la Igualdad",
+          content: "Recuerda que tienes a tu disposición el SIAD y el teléfono 016 para cualquier necesidad de apoyo o protección. No estás sola.",
+          category: "COMUNIDAD",
+          neighborhood: "GENERAL",
+          itinerary: "• Tel: 016 (24h)\n• Local: SIAD Unió 13\n• Recurso: Mujer y Familia",
+          link_url: "/services",
+          created_at: new Date().toISOString()
+        };
+
         const fetchedNews = !newsError && newsData ? newsData : [];
         const today = new Date();
         today.setHours(0, 0, 0, 0);
@@ -247,7 +269,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([dijousGras, weatherWind, thursdayJobs, trafficWind, prepperWind, ...validFetchedNews].slice(0, 6));
+        setNews([dijousGras, weatherWind, talent45News, womanSupportNews, thursdayJobs, trafficWind, prepperWind, ...validFetchedNews].slice(0, 7));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export const Services: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'emergencias' | 'escolar' | 'tramites' | 'transporte' | 'bullying'>('emergencias');
+  const [activeTab, setActiveTab] = useState<'emergencias' | 'escolar' | 'mujer' | 'empleo45' | 'tramites' | 'transporte' | 'bullying'>('emergencias');
 
   const renderContent = () => {
     switch (activeTab) {
@@ -106,6 +106,113 @@ export const Services: React.FC = () => {
                 VER INFO PLASEQTA (Tinet.cat)
                 <span className="material-symbols-outlined text-sm">open_in_new</span>
               </a>
+            </div>
+          </div>
+        );
+      case 'mujer':
+        return (
+          <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
+            <div className="bg-purple-600 rounded-[35px] p-8 text-white relative overflow-hidden shadow-2xl">
+              <div className="absolute -right-10 -bottom-10 opacity-10">
+                <span className="material-symbols-outlined text-[200px]">female</span>
+              </div>
+              <h3 className="text-3xl font-black mb-4 relative z-10 flex items-center gap-2">
+                <span className="material-symbols-outlined text-4xl">shield_with_heart</span> APOYO A LA MUJER
+              </h3>
+              <p className="text-lg opacity-90 mb-8 max-w-2xl relative z-10 font-bold leading-relaxed">
+                No estás sola. Tarragona dispone de una red de protección y acompañamiento integral para mujeres en situación de vulnerabilidad o violencia.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
+                <a href="tel:016" className="bg-white text-purple-600 p-6 rounded-2xl shadow-xl flex flex-col items-center justify-center text-center hover:scale-105 transition-all">
+                  <span className="text-[10px] uppercase font-black tracking-widest mb-1">Emergencia 24h</span>
+                  <span className="text-5xl font-black">016</span>
+                  <span className="text-xs mt-2 font-bold uppercase">No deja rastro en factura</span>
+                </a>
+                <a href="tel:900900120" className="bg-purple-800 text-white p-6 rounded-2xl shadow-xl flex flex-col items-center justify-center text-center hover:scale-105 transition-all border border-purple-400/30">
+                  <span className="text-[10px] uppercase font-black tracking-widest mb-1">Atención Cataluña</span>
+                  <span className="text-3xl font-black italic">900 900 120</span>
+                  <span className="text-xs mt-2 font-bold uppercase">Acompañamiento SIAD</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
+                <h4 className="font-black text-purple-600 mb-3 uppercase tracking-widest text-xs">Puntos de Atención Local</h4>
+                <ul className="space-y-4">
+                  <li className="flex gap-3">
+                    <span className="material-symbols-outlined text-purple-400">location_on</span>
+                    <div>
+                      <p className="text-sm font-black">SIAD Tarragona</p>
+                      <p className="text-xs text-gray-500">C/ de la Unió, 13 (Servicio de Información y Atención a las Mujeres)</p>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="material-symbols-outlined text-purple-400">call</span>
+                    <div>
+                      <p className="text-xs font-bold">977 296 150</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-purple-50 dark:bg-purple-900/10 p-6 rounded-3xl border border-purple-100 dark:border-purple-800/30">
+                <h4 className="font-black text-purple-700 dark:text-purple-400 mb-3 uppercase tracking-widest text-xs">Recursos y Guías</h4>
+                <p className="text-xs text-gray-600 dark:text-gray-400 mb-4 font-medium italic">"Si necesitas hablar o un lugar seguro, Tarragona cuenta con pisos tutelados de emergencia. Llama al 016 o ven al SIAD."</p>
+                <div className="flex flex-col gap-2">
+                  <a href="https://violenciagenero.igualdad.gob.es/informacionUtil/recursos/Home.htm" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-surface-dark border border-purple-100 rounded-xl text-xs font-bold text-purple-600 text-center">GUÍA DE RECURSOS DEL ESTADO</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case 'empleo45':
+        return (
+          <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
+            <div className="bg-emerald-600 rounded-[35px] p-8 text-white relative overflow-hidden shadow-2xl">
+              <div className="absolute -right-8 -bottom-8 opacity-10">
+                <span className="material-symbols-outlined text-[200px]">person_add</span>
+              </div>
+              <h3 className="text-3xl font-black mb-2 relative z-10">TALENTO +45 TARRAGONA</h3>
+              <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
+                La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
+              </p>
+              <button onClick={() => alert("Próximo Taller de Reinvención Laboral: Martes 17 Feb en Tarragona Impulsa (Tabacalera).")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+                VER PRÓXIMAS ACTIVIDADES
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border-2 border-dashed border-emerald-500/30 shadow-sm">
+                <h4 className="font-black text-emerald-600 mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
+                  <span className="material-symbols-outlined text-base">work_history</span> PROGRAMA "TALENT SÉNIOR"
+                </h4>
+                <div className="space-y-3">
+                  <div className="p-4 bg-emerald-50 dark:bg-emerald-900/10 rounded-2xl">
+                    <p className="text-sm font-black text-emerald-700">Tarragona Impulsa (Ajuntament)</p>
+                    <p className="text-xs text-gray-500 mb-2">Servicio especializado en orientación para mayores de 45.</p>
+                    <a href="https://www.tarragona.cat/tarragonaimpulsa" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black underline uppercase text-emerald-600">Pedir cita orientación</a>
+                  </div>
+                  <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+                    <p className="text-sm font-black text-gray-700 dark:text-white">Cambra de Comerç - PICE Sénior</p>
+                    <p className="text-xs text-gray-500">Programas de formación en digitalización y ventas para perfiles con experiencia.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Anuncios de Apoyo</h4>
+                <div className="space-y-4">
+                  <div className="border-l-4 border-emerald-500 pl-4">
+                    <p className="text-xs font-black dark:text-white">"Se busca operario de mantenimiento con experiencia."</p>
+                    <p className="text-[10px] text-gray-500">Prioridad residentes barrio con +10 años sector. 📞 611 22 33 44</p>
+                  </div>
+                  <div className="border-l-4 border-blue-500 pl-4">
+                    <p className="text-xs font-black dark:text-white">"Asesoría contable para PYMES - Socio Senior."</p>
+                    <p className="text-[10px] text-gray-500">¿Eres gestor jubilado o en paro? Colabora con nuestra red. 📧 senior@tgn.cat</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         );
@@ -341,6 +448,22 @@ export const Services: React.FC = () => {
         >
           <span className="material-symbols-outlined text-2xl">local_police</span>
           <span className="hidden md:block font-black text-xs uppercase tracking-widest">Emergencias</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('mujer')}
+          className={`p-4 rounded-2xl flex md:flex-row flex-col items-center gap-4 transition-all ${activeTab === 'mujer' ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30' : 'bg-white dark:bg-surface-dark text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+        >
+          <span className="material-symbols-outlined text-2xl">female</span>
+          <span className="hidden md:block font-black text-xs uppercase tracking-widest">Mujer</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('empleo45')}
+          className={`p-4 rounded-2xl flex md:flex-row flex-col items-center gap-4 transition-all ${activeTab === 'empleo45' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/30' : 'bg-white dark:bg-surface-dark text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+        >
+          <span className="material-symbols-outlined text-2xl">person_add</span>
+          <span className="hidden md:block font-black text-xs uppercase tracking-widest">Empleo +45</span>
         </button>
 
         <button

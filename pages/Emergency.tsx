@@ -4,11 +4,11 @@ import React from 'react';
 const Emergency: React.FC = () => {
   const contacts = [
     { name: 'Policía Local', number: '092', icon: 'local_police', color: 'bg-blue-100 text-blue-600', link: 'tel:092' },
+    { name: 'Violencia Género', number: '016', icon: 'female', color: 'bg-purple-100 text-purple-600', link: 'tel:016' },
     { name: 'Emergencias Médicas', number: '061', icon: 'medical_services', color: 'bg-orange-100 text-orange-600', link: 'tel:061' },
     { name: 'Bomberos Tarragona', number: '085', icon: 'fire_truck', color: 'bg-red-100 text-red-600', link: 'tel:085' },
+    { name: 'Atención Cataluña', number: '900 900 120', icon: 'support_agent', color: 'bg-purple-100 text-purple-800', link: 'tel:900900120' },
     { name: 'Mossos d\'Esquadra', number: '112', icon: 'shield', color: 'bg-indigo-100 text-indigo-600', link: 'tel:112' },
-    { name: 'Cruz Roja', number: '977 244 711', icon: 'emergency', color: 'bg-rose-100 text-rose-600', link: 'tel:977244711' },
-    { name: 'Servicios Sociales', number: '977 296 100', icon: 'group', color: 'bg-emerald-100 text-emerald-600', link: 'tel:977296100' },
   ];
 
   return (
