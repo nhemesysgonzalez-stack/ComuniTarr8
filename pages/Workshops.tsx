@@ -214,7 +214,8 @@ const Workshops: React.FC = () => {
                                         {[
                                             { t: 'Huerto Urbano', i: 'Pedro S.', d: 'Sábado 11:00 AM', desc: 'Aprende a cultivar tus propios tomates y lechugas en el balcón.', c: '688000111' },
                                             { t: 'Smartphone Pro', i: 'Marta G.', d: 'Lunes 18:30 PM', desc: 'Sácale provecho a tu móvil: fotos, seguridad y apps útiles.', c: '699222333' },
-                                            { t: 'Costura Básica', i: 'Julia L.', d: 'Miércoles 17:00 PM', desc: 'Aprende a coser botones, bajos y arreglos sencillos.', c: '611444555' }
+                                            { t: 'Costura Básica', i: 'Julia L.', d: 'Miércoles 17:00 PM', desc: 'Aprende a coser botones, bajos y arreglos sencillos.', c: '611444555' },
+                                            { t: 'Voluntariado 101', i: 'Punt Voluntariat', d: 'Jueves 19:00 PM', desc: 'Charla introductoria sobre cómo empezar a ayudar en Tarragona.', c: 'Email Punt Voluntariat' }
                                         ].map((idea, i) => (
                                             <button
                                                 key={i}

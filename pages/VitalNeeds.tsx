@@ -49,22 +49,33 @@ const VitalNeeds: React.FC = () => {
                     id: 'mock-n1',
                     creator_id: 'v4',
                     type: 'medical',
-                    title: 'Muletas Niño',
-                    description: 'Mi hijo se ha torcido el tobillo y necesita muletas talla pequeña para unos días. ¿Alguien tiene?',
+                    title: 'Bolsas de Agua Caliente',
+                    description: 'Busco un par de bolsas de agua para una vecina mayor que tiene mucho frío tras la bajada de temperaturas de hoy.',
                     contact_info: '622 34 56 78',
                     is_urgent: true,
-                    neighborhood: 'S. PERE I S. PAU',
+                    neighborhood: 'PART ALTA',
                     created_at: new Date().toISOString()
                 },
                 {
                     id: 'mock-n2',
                     creator_id: 'v5',
                     type: 'other',
-                    title: 'Compartir Taxi Sábado',
-                    description: 'Busco 2 personas para compartir taxi de vuelta desde la Rua (Tarrgona -> Salou) a las 4am.',
+                    title: 'Recogida de Macetas Caídas',
+                    description: 'Me ofrezco para ayudar a limpiar patios y balcones que hayan quedado tras el viento de ayer.',
                     contact_info: '655 89 21 00',
                     is_urgent: false,
                     neighborhood: 'GENERAL',
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'mock-n3',
+                    creator_id: 'v6',
+                    type: 'company',
+                    title: 'Acompañamiento a la Rua',
+                    description: 'Soy voluntaria y acompaño a personas con movilidad reducida a ver el desfile infantil de hoy.',
+                    contact_info: '611 22 33 44',
+                    is_urgent: false,
+                    neighborhood: 'CENTRO',
                     created_at: new Date().toISOString()
                 }
             ];
@@ -135,12 +146,24 @@ const VitalNeeds: React.FC = () => {
                     <p className="text-xl max-w-2xl mx-auto opacity-90 font-medium leading-relaxed mb-8">
                         Una red de seguridad vecinal. Nadie en {user?.user_metadata?.neighborhood || 'Tarragona'} debería sentirse solo o desatendido en momentos difíciles.
                     </p>
-                    <button
-                        onClick={() => setShowCreateModal(true)}
-                        className="bg-white text-red-600 px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl"
-                    >
-                        SOLICITAR AYUDA AHORA
-                    </button>
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <button
+                            onClick={() => setShowCreateModal(true)}
+                            className="bg-white text-red-600 px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl"
+                        >
+                            SOLICITAR AYUDA
+                        </button>
+                        <button
+                            onClick={() => {
+                                setNeedType('company');
+                                setNeedTitle('Iniciativa: ');
+                                setShowCreateModal(true);
+                            }}
+                            className="bg-red-800 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest hover:scale-105 transition-all border border-red-400/30"
+                        >
+                            INSCRIBIR INICIATIVA
+                        </button>
+                    </div>
                 </div>
             </div>
 

@@ -99,6 +99,28 @@ const Marketplace: React.FC = () => {
           neighborhood: 'NORD',
           contact_info: '699 88 77 66 (Ana)',
           created_at: new Date().toISOString()
+        },
+        {
+          id: 'm-5',
+          user_id: 'v5',
+          title: 'Blower / Soplador Eléctrico',
+          description: 'Ideal para limpiar la terraza tras el fuerte viento. Potencia regulable.',
+          price: '30',
+          category: 'hogar',
+          neighborhood: 'S. PERE I S. PAU',
+          contact_info: '611 77 88 99 (Marcos)',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'm-6',
+          user_id: 'v6',
+          title: 'Disfraz Pirata Completo',
+          description: 'Talla M. Lo usé ayer pero está impecable. Con espada y loro de juguete.',
+          price: '15',
+          category: 'ocio',
+          neighborhood: 'SERRALLO',
+          contact_info: '622 11 22 33 (Lluís)',
+          created_at: new Date().toISOString()
         }
       ];
 

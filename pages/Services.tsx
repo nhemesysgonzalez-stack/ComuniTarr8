@@ -441,62 +441,108 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-[200px]">volunteer_activism</span>
               </div>
               <h3 className="text-3xl font-black mb-4 relative z-10 flex items-center gap-2">
-                <span className="material-symbols-outlined text-4xl">favorite</span> VOLUNTARIADO TGN
+                <span className="material-symbols-outlined text-4xl">favorite</span> VOLUNTARIADO TARRAGONA
               </h3>
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-bold leading-relaxed">
-                El abrazo que cambia vidas. Encuentra iniciativas de acompañamiento a bebés, niños, ancianos y personas en soledad en nuestra ciudad.
+                Descubre cómo puedes ayudar. Desde acompañar a bebés hospitalizados hasta proteger nuestras playas y tradiciones. Una ciudad se construye con sus manos.
               </p>
-              <div className="flex gap-4 relative z-10">
-                <a href="mailto:info@tarracosalut.org" className="bg-white text-blue-600 px-6 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
-                  Contactar Punto Voluntariado
+              <div className="flex flex-wrap gap-4 relative z-10">
+                <a href="mailto:voluntariat@tarragona.cat" className="bg-white text-blue-600 px-6 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl flex items-center gap-2">
+                  <span className="material-symbols-outlined text-sm">mail</span>
+                  Punt de Voluntariat TGN
                 </a>
+                <button onClick={() => window.location.hash = '#/micro-volunteering'} className="bg-blue-800 text-white px-6 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all border border-blue-400/30">
+                  Publicar Incitativa Vecinal
+                </button>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Bebés y Niños */}
-              <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm hover:border-blue-500/30 transition-all">
+              {/* Categoría 1: Hospital y Acompañamiento */}
+              <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all">
                 <h4 className="font-black text-blue-600 mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
-                  <span className="material-symbols-outlined">child_care</span> BEBÉS Y NEONATOS
+                  <span className="material-symbols-outlined">hospital</span> HOSPITAL Y ACOMPAÑAMIENTO
                 </h4>
-                <div className="space-y-4">
-                  <div className="p-4 bg-blue-50 dark:bg-blue-900/10 rounded-2xl">
-                    <p className="text-sm font-black dark:text-white">TarracoSalut</p>
-                    <p className="text-xs text-gray-500 mb-2">Acompañamiento pediátrico en Joan XXIII y Santa Tecla. Apoyo a familias e infancia hospitalizada.</p>
-                    <a href="https://tarracosalut.org" target="_blank" className="text-[10px] font-black underline uppercase text-blue-600">Saber más / Unirse</a>
+                <div className="space-y-3">
+                  <div className="p-3 bg-blue-50 dark:bg-blue-900/10 rounded-2xl border border-blue-100 dark:border-blue-800/30">
+                    <p className="text-sm font-black dark:text-white">TarracoSalut (Joan XXIII / Tecla)</p>
+                    <p className="text-[11px] text-gray-500 mb-2">Acompañamiento a niños y adultos hospitalizados que están solos.</p>
+                    <div className="flex gap-2">
+                      <a href="https://tarracosalut.org" target="_blank" className="px-3 py-1.5 bg-blue-500 text-white rounded-lg text-[10px] font-black uppercase tracking-widest">Web</a>
+                      <a href="mailto:info@tarracosalut.org" className="px-3 py-1.5 bg-white text-blue-500 border border-blue-200 rounded-lg text-[10px] font-black uppercase tracking-widest">Email</a>
+                    </div>
                   </div>
-                  <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl">
-                    <p className="text-sm font-black dark:text-white">Som Prematurs</p>
-                    <p className="text-xs text-gray-500 mb-2">Acompañamiento a familias con bebés prematuros en la UCIN del Hospital Joan XXIII.</p>
-                    <a href="https://somprematurs.cat" target="_blank" className="text-[10px] font-black underline uppercase text-gray-500">Info Voluntariado</a>
-                  </div>
-                  <div className="p-3 border-l-4 border-indigo-500 bg-indigo-50/30">
-                    <p className="text-[11px] font-black text-indigo-700">Inspiración: Mamás en Acción</p>
-                    <p className="text-[9px] text-gray-500">Red de voluntarios que abrazan a niños hospitalizados que están solos. (Consulta info@mamasenaccion.es para expansión en TGN).</p>
+                  <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+                    <p className="text-sm font-black dark:text-white">Amics de la Gent Gran</p>
+                    <p className="text-[11px] text-gray-500 mb-2">Acompañamiento domiciliario y telefónico contra la soledad.</p>
+                    <a href="tel:932076773" className="text-[10px] font-black text-blue-600 flex items-center gap-1 hover:underline">
+                      <span className="material-symbols-outlined text-xs">call</span> 93 207 67 73
+                    </a>
                   </div>
                 </div>
               </div>
 
-              {/* Gente Gran y Soledad */}
-              <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm hover:border-emerald-500/30 transition-all">
+              {/* Categoría 2: Inclusión y Social */}
+              <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all">
                 <h4 className="font-black text-emerald-600 mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
-                  <span className="material-symbols-outlined">elderly</span> GENTE GRAN Y SOLEDAD
+                  <span className="material-symbols-outlined">groups</span> INCLUSIÓN Y SOCIAL
                 </h4>
-                <div className="space-y-4">
-                  <div className="p-4 bg-emerald-50 dark:bg-emerald-900/10 rounded-2xl">
-                    <p className="text-sm font-black dark:text-white">Amics de la Gent Gran (Tarragona)</p>
-                    <p className="text-xs text-gray-500 mb-2">Llamadas y visitas semanales a personas mayores en situación de soledad no deseada.</p>
-                    <a href="tel:932076773" className="text-[10px] font-black underline uppercase text-emerald-600">Llamar: 93 207 67 73</a>
+                <div className="space-y-3">
+                  <div className="p-3 bg-emerald-50 dark:bg-emerald-900/10 rounded-2xl border border-emerald-100 dark:border-emerald-800/30">
+                    <p className="text-sm font-black dark:text-white">Down Tarragona</p>
+                    <p className="text-[11px] text-gray-500 mb-2">Apoyo en talleres de ocio y autonomía para personas con Down.</p>
+                    <a href="https://downtarragona.org" target="_blank" className="px-3 py-1.5 bg-emerald-600 text-white rounded-lg text-[10px] font-black uppercase tracking-widest inline-block">Unirse</a>
                   </div>
-                  <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl">
-                    <p className="text-sm font-black dark:text-white">Cruz Roja "Te Acompaña"</p>
-                    <p className="text-xs text-gray-500 mb-2">Programa estatal contra la soledad no deseada con presencia activa en Tarragona.</p>
-                    <a href="tel:900444114" className="text-[10px] font-black underline uppercase text-gray-500">Llamar Gratis: 900 444 114</a>
+                  <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+                    <p className="text-sm font-black dark:text-white">Fundación Alimento TGN</p>
+                    <p className="text-[11px] text-gray-500 mb-2">Recogida y reparto de excedentes alimentarios en la ciudad.</p>
+                    <a href="https://bancalimentstarragona.org" target="_blank" className="text-[10px] font-black text-emerald-600 flex items-center gap-1 hover:underline">
+                      <span className="material-symbols-outlined text-xs">open_in_new</span> bancalimentstarragona.org
+                    </a>
                   </div>
-                  <div className="p-4 bg-blue-50/50 dark:bg-blue-900/10 rounded-2xl border border-blue-100">
-                    <p className="text-sm font-black dark:text-white">Fundación Avismón</p>
-                    <p className="text-xs text-gray-500 mb-2">Acompañamiento a citas médicas y gestión para mayores en riesgo de aislamiento.</p>
-                    <a href="https://avismon.org" target="_blank" className="text-[10px] font-black underline uppercase text-blue-600">Saber más</a>
+                </div>
+              </div>
+
+              {/* Categoría 3: Animales y Medio Ambiente */}
+              <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all">
+                <h4 className="font-black text-orange-600 mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
+                  <span className="material-symbols-outlined">pets</span> ANIMALES Y NATURALEZA
+                </h4>
+                <div className="space-y-3">
+                  <div className="p-3 bg-orange-50 dark:bg-orange-900/10 rounded-2xl border border-orange-100 dark:border-orange-800/30">
+                    <p className="text-sm font-black dark:text-white">Protectora Tarragona (APAPT)</p>
+                    <p className="text-[11px] text-gray-500 mb-2">Paseo de perros, limpieza y cuidado de colonias felinas.</p>
+                    <a href="https://apapt.org" target="_blank" className="text-[10px] font-black text-orange-600 flex items-center gap-1 hover:underline">
+                      <span className="material-symbols-outlined text-xs">volunteer_activism</span> Ver cómo ayudar
+                    </a>
+                  </div>
+                  <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+                    <p className="text-sm font-black dark:text-white">Associació Aurora</p>
+                    <p className="text-[11px] text-gray-500 mb-2">Proyectos de recuperación del litoral y limpieza de playas.</p>
+                    <a href="mailto:info@associacioaurora.org" className="text-[10px] font-black text-orange-600 flex items-center gap-1 hover:underline">
+                      <span className="material-symbols-outlined text-xs">mail</span> Enviar solicitud
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Categoría 4: Urgencias y Alimento */}
+              <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all">
+                <h4 className="font-black text-red-600 mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
+                  <span className="material-symbols-outlined">emergency_share</span> URGENCIAS Y ALIMENTO
+                </h4>
+                <div className="space-y-3">
+                  <div className="p-3 bg-red-50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-800/30">
+                    <p className="text-sm font-black dark:text-white">Càritas Diocesana TGN</p>
+                    <p className="text-[11px] text-gray-500 mb-2">Atención inmediata a personas en exclusión social.</p>
+                    <a href="https://caritasdtarragona.cat" target="_blank" className="px-3 py-1.5 bg-red-600 text-white rounded-lg text-[10px] font-black uppercase tracking-widest inline-block">Colaborar</a>
+                  </div>
+                  <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+                    <p className="text-sm font-black dark:text-white">Cruz Roja Tarragona</p>
+                    <p className="text-[11px] text-gray-500 mb-2">Servicios de socorro, emergencias y apoyo alimentario.</p>
+                    <a href="tel:977244769" className="text-[10px] font-black text-red-600 flex items-center gap-1 hover:underline">
+                      <span className="material-symbols-outlined text-xs">call</span> 977 24 47 69
+                    </a>
                   </div>
                 </div>
               </div>
