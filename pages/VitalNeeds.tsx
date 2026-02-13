@@ -155,15 +155,15 @@ const VitalNeeds: React.FC = () => {
                             <span className="px-2 py-0.5 bg-red-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">RED SOLIDARIA</span>
                             <span className="text-[10px] font-bold text-gray-400 uppercase">AYUDA MUTUA</span>
                         </div>
-                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Operación Kilo Dijous Gras 🥫</h2>
+                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Brigada "Barrio Limpio" 🧹</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            Que nadie pase hambre en fiestas. Recogida especial de alimentos y Cocas de Llardons para familias en situación de vulnerabilidad. Entrega hoy en Torreforta.
+                            Tras el fuerte viento de ayer, muchos vecinos mayores no pueden retirar las ramas y objetos de sus jardines o balcones. ¡Únete a la brigada de ayuda para dejar el barrio listo para el finde!
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Punto de recogida: C/Riu Llobregat 14. Horario 10-13h y 17-20h.'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
-                            <span className="material-symbols-outlined text-sm">inventory_2</span>
-                            DONAR ALIMENTOS
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Punto de encuentro: Farmacia de Plaza de la Font a las 11:00h. Traed guantes.'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                            <span className="material-symbols-outlined text-sm">front_hand</span>
+                            ME APUNTO A AYUDAR
                         </a>
                         <p className="text-[9px] text-center font-bold text-gray-400">Coordina: AAVV Torreforta</p>
                     </div>

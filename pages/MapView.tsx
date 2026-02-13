@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '45%', y: '50%', title: 'Degustación Butifarra', desc: 'Dijous Gras en el Mercat Central. ¡Ven a probar!', status: 'Activo', color: 'bg-primary', icon: 'restaurant', glow: 'shadow-[0_0_50px_rgba(43,140,238,0.8)]' },
-    { id: 2, type: 'incident', x: '40%', y: '30%', title: 'Rama Caída', desc: 'Av. Catalunya cortada. Bomberos trabajando.', status: 'En Proceso', color: 'bg-red-600', icon: 'warning' },
-    { id: 3, type: 'event', x: '70%', y: '60%', title: 'Plaça de la Font', desc: 'Preparativos para el reparto de Coca de Llardons (20h).', status: 'Preparando', color: 'bg-orange-500', icon: 'bakery_dining', glow: 'shadow-[0_0_35px_rgba(249,115,22,0.5)]' },
-    { id: 4, type: 'cleanup', x: '20%', y: '40%', title: 'Patrulla Viento', desc: 'Vecinos avisando de andamios sueltos en Part Alta.', status: 'Activo', color: 'bg-emerald-600', icon: 'shield' },
-    { id: 5, type: 'shop', x: '60%', y: '75%', title: 'Rebajas Disfraces', desc: 'Última oportunidad antes de la Rúa. Parc Central.', status: 'Oferta', color: 'bg-pink-500', icon: 'shopping_bag' }
+    { id: 1, type: 'event', x: '45%', y: '50%', title: 'Inicio Rua Infantil', desc: 'Concentración de escuelas en Rambla Nova.', status: 'En breve (16h)', color: 'bg-primary', icon: 'theater_comedy', glow: 'shadow-[0_0_50px_rgba(43,140,238,0.8)]' },
+    { id: 2, type: 'incident', x: '40%', y: '30%', title: 'Limpieza de Vía', desc: 'Brigada retirando restos de palmera en Av. Catalunya.', status: 'Finalizando', color: 'bg-blue-600', icon: 'cleaning_services' },
+    { id: 3, type: 'event', x: '70%', y: '60%', title: 'Plaça de la Font', desc: 'Fiesta infantil post-desfile. Animación y música.', status: 'Preparando', color: 'bg-orange-500', icon: 'child_care', glow: 'shadow-[0_0_35px_rgba(249,115,22,0.5)]' },
+    { id: 4, type: 'cleanup', x: '25%', y: '45%', title: 'Saneamiento Cornisa', desc: 'Técnicos revisando edificio en C/ Mayor tras el aire.', status: 'Urgente', color: 'bg-red-600', icon: 'emergency' },
+    { id: 5, type: 'shop', x: '60%', y: '75%', title: 'Maquillaje Carnaval', desc: 'Puesto de pintacaras para la Rua en Rambla.', status: 'Abierto', color: 'bg-pink-500', icon: 'palette' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

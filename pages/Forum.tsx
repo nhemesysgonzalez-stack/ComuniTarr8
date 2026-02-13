@@ -74,12 +74,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Protecció Civil ⚠️', text: '🚨 ALERTA VIENTO EXTREMO: +90 km/h. Evitad el Balcó del Mediterrani.' },
-    { user: 'ComuniTarr 📢', text: '🎭 ¡FELIZ DIJOUS GRAS! Reparto de cocas en Pl. de la Font a las 20:00h.' },
-    { user: 'Maria T.', text: 'El viento se ha llevado mi maceta del balcón... ¡Tened cuidado fuera! 💨😱' },
-    { user: 'RENFE Info', text: '🚆 Retrasos en R16 por caída de rama en la vía cerca de Torredembarra.' },
-    { user: 'Pau B.', text: '¿Alguien sabe si cancelan el Arribo del Rei por el viento? 👑🌬️' },
-    { user: 'PrepperTGN', text: 'Tened linternas a mano. Con estas rachas puede haber microcortes. 🔦🔋' }
+    { user: 'Maria J.', text: '💨 Aluciné con el viento de ayer, ¡toda la terraza por el suelo! ¿Alguien sabe si hay brigada hoy?' },
+    { user: 'ComuniTarr 🎭', text: 'Rua Infantil hoy a las 16h. ¡Cuidado con los cortes en Rambla Nova!' },
+    { user: 'Jordi T.', text: '¿Dónde se pueden llevar las ramas caídas? Los contenedores de mi calle están a tope.' },
+    { user: 'Pau B.', text: '🚆 Trenes funcionando con normalidad tras los retrasos de ayer.' },
+    { user: 'Ana G.', text: '¡Vaya disfraces más chulos he visto ya por el centro! Que empiece la fiesta ✨' },
+    { user: 'PrepperTGN', text: 'Recomendado revisar anclajes de toldos hoy, por si vuelve la racha el finde.' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -114,8 +114,8 @@ const Forum: React.FC = () => {
   useEffect(() => {
     if (!loading && messages.length === 0) {
       const initialSeeds = [
-        { id: 'seed-1', user_id: 'v2', content: '¿A qué hora empieza la venta de sillas en el teatro? Hay cola ya... 🎟️', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'CENTRO', created_at: new Date(Date.now() - 1000 * 60 * 5).toISOString() },
-        { id: 'seed-2', user_id: 'v6', content: 'Acabo de ver el montaje de gradas en la Rambla. ¡Qué ganas de Rua! 🤩', user_metadata: { full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe' }, neighborhood: 'GENERAL', created_at: new Date(Date.now() - 1000 * 60 * 2).toISOString() }
+        { id: 'seed-1', user_id: 'v2', content: '¿A qué hora empieza la Rua de Lluïment hoy? ¡Mis hijos ya están en modo carnaval! 🎭👶', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'CENTRO', created_at: new Date(Date.now() - 1000 * 60 * 5).toISOString() },
+        { id: 'seed-2', user_id: 'v6', content: 'Acabo de ver a la brigada retirando las ramas en la Rambla. ¡Buen trabajo! 🧹💪', user_metadata: { full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe' }, neighborhood: 'GENERAL', created_at: new Date(Date.now() - 1000 * 60 * 2).toISOString() }
       ];
       setMessages(initialSeeds as Message[]);
     }
@@ -155,12 +155,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts (Thursday / Carnival / Wind)
     let scripts = [
-      "Vengo del Mercat... ¡Ni una coca de llardons queda en la Conde! 😱",
-      "¿Sabéis si se mantiene el Arribo del Rei a las 18h con este viento? 🌬️",
-      "No bajéis en el coche, Av. Catalunya está medio cortada por una rama. 🛑",
-      "He visto una valla volar en la Rambla. ¡Mucho cuidado al caminar! 💨",
-      "Confirmado: En Campclar tampoco se oyeron bien las sirenas ayer. 📢",
-      "¡Qué ganas de empezar el Carnaval! A pesar del aire, ¡butifarra y coca! 🐖"
+      "¿Sabéis si se puede aparcar hoy en el parking de la Tabacalera? 🚗",
+      "¡Vaya tarde de Carnaval nos espera! Espero que no haga mucho viento. 🎭🌬️",
+      "He visto un cartel suelto en la calle Unió. Avisad si pasáis por allí. ⚠️",
+      "¿Alguna recomendación para cenar algo rápido antes de la Rua? 🍔",
+      "¡Qué bien que ya han limpiado la zona del Balcón! Estaba fatal ayer. 🧹✨",
+      "¡Feliz Viernes de Carnaval a todos! 🎉"
     ];
 
     // Base reply scripts

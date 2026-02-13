@@ -10,7 +10,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
 
     // Logic to auto-show if there is an active alert for today (Feb 12 2026)
     useEffect(() => {
-        const hasSeenAlert = sessionStorage.getItem('hasSeenWindAlertFeb12');
+        const hasSeenAlert = sessionStorage.getItem('hasSeenCautionFeb13');
         if (!hasSeenAlert) {
             setTimeout(() => {
                 setIsVisible(true);
@@ -28,7 +28,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
 
     const handleDismiss = () => {
         setIsVisible(false);
-        sessionStorage.setItem('hasSeenWindAlertFeb12', 'true');
+        sessionStorage.setItem('hasSeenCautionFeb13', 'true');
         if (onDismiss) onDismiss();
     };
 
@@ -72,15 +72,15 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
 
                             <div className="bg-red-50 rounded-3xl p-6 mb-8 border-2 border-red-100">
                                 <p className="text-xl font-black text-gray-900 leading-tight mb-4 uppercase">
-                                    💨 VIENTO EXTREMO (Mestral)
+                                    ⚠️ PRECAUCIÓN E INFORMACIÓN
                                 </p>
                                 <p className="text-gray-600 font-bold leading-relaxed mb-4">
-                                    Rachas superiores a <span className="text-red-600">90 km/h</span> detectadas. Riesgo de caída de ramas y objetos.
+                                    Se retira la alerta Ventcat, pero se pide precaución por <span className="text-red-600">objetos debilitados</span>. Además, hoy empiezan las restricciones por la Rua de Carnaval.
                                 </p>
                                 <ul className="text-left text-xs font-black text-red-700 space-y-2 uppercase tracking-wide">
-                                    <li className="flex items-center gap-2">⚠️ EVITAR BALCÓN DEL MEDITERRANI</li>
-                                    <li className="flex items-center gap-2">⚠️ ASEGURAR MACETAS Y TOLDOS</li>
-                                    <li className="flex items-center gap-2">⚠️ MUCHO CUIDADO CERCA DE ANDAMIOS</li>
+                                    <li className="flex items-center gap-2">🧹 BRIGADAS TRABAJANDO EN LA VÍA</li>
+                                    <li className="flex items-center gap-2">🎭 RAMBLA CORTADA DESDE LAS 16:00H</li>
+                                    <li className="flex items-center gap-2">👨‍👩‍👧‍👦 RUA INFANTIL: MÁXIMA ATENCIÓN</li>
                                 </ul>
                             </div>
 
@@ -92,7 +92,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                             </button>
 
                             <p className="mt-6 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                                SOPORTE SECUNDARIO COMUNITARR - 12 FEB 2026
+                                SOPORTE SECUNDARIO COMUNITARR - 13 FEB 2026
                             </p>
                         </div>
                     </motion.div>

@@ -181,25 +181,25 @@ const Home: React.FC = () => {
           .order('created_at', { ascending: false })
           .limit(3);
 
-        const dijousGras = {
-          id: 'dijous-gras-today',
-          title: "🐖 HOY: Dijous Gras en TGN",
-          title_ca: "🐖 AVUI: Dijous Gras a TGN",
-          content: "Comienza oficialmente el Carnaval. Reparto de Coca de Llardons en Pl. de la Font a las 20h. ¡No te quedes sin tu ración!",
+        const carnivalRua = {
+          id: 'carnival-rua-today',
+          title: "🎭 HOY: Rua de Lluïment Infantil",
+          title_ca: "🎭 AVUI: Rua de Lluïment Infantil",
+          content: "Esta tarde las escuelas de Tarragona llenan de color la Rambla Nova. Ven a animar a los más pequeños en su gran día de Carnaval.",
           category: "CULTURA",
           neighborhood: "GENERAL",
-          itinerary: "• 13h: Degustación Mercat\n• 18h: Arribo Rei/Reina\n• 20h: Coca Pl. Font",
+          itinerary: "• 16:00h: Inicio en Rambla\n• 18:30h: Entrega de premios\n• 20:30h: Baile de disfraces",
           link_url: "/calendar",
           created_at: new Date().toISOString()
         };
 
-        const weatherWind = {
-          id: 'weather-wind-alert-feb12',
-          title: "💨 TIEMPO: Alerta por Viento",
-          content: "Mestral fuerte (ráfagas 80km/h). Evitar el Balcón del Mediterráneo y parques. Asegurad objetos en balcones.",
-          category: "TIEMPO",
+        const weatherCleanup = {
+          id: 'weather-cleanup-feb13',
+          title: "🧹 LIMPIEZA: Post-Temporal",
+          content: "Se retira la alerta Ventcat, pero se pide precaución al pasar cerca de fachadas y cornisas mientras terminen las tareas de retirada de ramas.",
+          category: "SEGURIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Alerta: Naranja\n• Viento: 80-90 km/h\n• Precaución: Fachadas",
+          itinerary: "• Estado: Preasistencia\n• Zona: Vía Augusta/Parques\n• Reportar: Vía ComuniTarr",
           link_url: "/forum",
           created_at: new Date().toISOString()
         };
@@ -269,7 +269,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([dijousGras, weatherWind, talent45News, womanSupportNews, thursdayJobs, trafficWind, prepperWind, ...validFetchedNews].slice(0, 7));
+        setNews([carnivalRua, weatherCleanup, talent45News, womanSupportNews, thursdayJobs, trafficWind, prepperWind, ...validFetchedNews].slice(0, 7));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

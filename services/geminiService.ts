@@ -114,9 +114,9 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     return "Para trámites municipales en Tarragona 🏛️:\n\n• La OMAC (Oficina Municipal d'Atenció Ciutadana) requiere cita previa. Puedes pedirla en la web tarragona.cat o llamando al 010.\n• Empadronamiento: Necesitas DNI/NIE y el contrato de alquiler o escritura de la vivienda.\n• Volante de convivencia: Se puede obtener online con certificado digital al instante.";
   }
 
-  // 7. Noticias y Eventos de Hoy (JUEVES 12 FEBRERO 2026 - Viento y Carnaval)
+  // 7. Noticias y Eventos de Hoy (VIERNES 13 FEBRERO 2026 - Rua Infantil y Limpieza)
   if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("viento") || p.includes("tiempo") || p.includes("plan")) {
-    return "Resumen para el JUEVES 12 de febrero 💨🎭:\n\n• 💨 TIEMPO: Alerta naranja por viento (Mestral). Ráfagas de 80km/h.\n• 🎭 CARNAVAL: ¡Hoy es Dijous Gras! Reparto de cocas en Pl. de la Font a las 20h.\n• 🚗 TRÁFICO: Rambla cortada por gradas. Atasco en Av. Catalunya.\n• ☣️ SEGURIDAD: Protecció Civil pide no acercarse a fachadas antiguas.";
+    return "Resumen para el VIERNES 13 de febrero 🎭🧹:\n\n• 🎭 CARNAVAL: Hoy es la Rua de Lluïment Infantil (16:00h). Desfile de las escuelas por la Rambla.\n• 🧹 LIMPIEZA: Siguen las tareas de retirada de ramas tras el viento de ayer. Precaución en parques.\n• 🚗 MOVILIDAD: Rambla Nova cortada para vehículos desde las 15:30h. Se recomienda usar Park & Ride.\n• 🏥 SALUD: Farmacia de guardia en la Part Alta reforzada para la noche de Carnaval.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)

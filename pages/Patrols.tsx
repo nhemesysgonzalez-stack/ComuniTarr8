@@ -44,19 +44,19 @@ const Patrols: React.FC = () => {
         {
           id: 'p-1',
           creator_id: 'v1',
-          name: 'Vigilancia de Terrados (Viento)',
-          description: 'Grupo temporal para revisar que no haya objetos sueltos en azoteas y balcones que puedan caer a la calle hoy.',
-          neighborhood: 'GENERAL',
+          name: 'Protección Rua Infantil 🎭',
+          description: 'Acompañamiento a los colegios en el desfile de hoy para asegurar que los recorridos estén libres de obstáculos.',
+          neighborhood: 'CENTRO',
           contact_info: '622 33 44 55',
           created_at: new Date().toISOString()
         },
         {
           id: 'p-2',
           creator_id: 'v2',
-          name: 'Acompañamiento Rúa Infantil',
-          description: 'Voluntarios para ayudar a los profes mañana viernes durante el desfile de los peques. ¡Hacen falta chalecos!',
-          neighborhood: 'CENTRO',
-          contact_info: '644 55 66 77',
+          name: 'Brigada "Ojo de Vecino" 🧹',
+          description: 'Aviso de cornisas o ramas que hayan quedado tocadas tras el viento de ayer para avisar a los servicios municipales.',
+          neighborhood: 'PART ALTA',
+          contact_info: '611 99 88 77',
           created_at: new Date().toISOString()
         }
       ];
