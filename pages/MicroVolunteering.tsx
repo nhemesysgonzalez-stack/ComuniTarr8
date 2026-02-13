@@ -218,9 +218,9 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Pasear perro', d: 'Necesito que alguien pasee a mi perro mañana por la mañana (20 min).', c: '600000000' },
-                                            { t: 'Ayuda con la compra', d: 'Ayudar a subir las bolsas de la compra hasta el 3er piso.', c: '611000222' },
-                                            { t: 'Clases de Móvil', d: 'Explicar a una persona mayor cómo usar WhatsApp.', c: '622333444' }
+                                            { t: 'Abrazo a Bebé (Info)', d: 'Me gustaría saber cómo unirme a la iniciativa de abrazar bebés en el Joan XXIII. ¿Alguien tiene el contacto de TarracoSalut?', c: 'Consultar Sección Servicios' },
+                                            { t: 'Acompañamiento Abuelo', d: 'Busco voluntario para acompañar a mi padre de 82 años a dar un paseo por la Rambla esta tarde.', c: '611223344' },
+                                            { t: 'Llamada Amiga', d: '¿Alguien se ofrece para una llamada de 15 min con una vecina que se siente sola hoy?', c: '622778899' }
                                         ].map((idea, i) => (
                                             <button
                                                 key={i}

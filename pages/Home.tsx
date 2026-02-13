@@ -204,16 +204,18 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
-        const thursdayJobs = {
-          id: 'jobs-thurs-carnaval',
-          title: "💼 EMPLEO: Refuerzo Carnaval",
-          content: "Últimas vacantes para camareros/as de extra este fin de semana en Part Alta y Serrallo. Pago por horas.",
-          category: "EMPLEO",
+        const womanSupportNews = { id: 'w-support', title: "💜 MUJER: SIAD Tarragona", content: "Atención psicológica y jurídica gratuita. C/ de la Unió, 13.", category: "SERVICIOS", neighborhood: "GENERAL", itinerary: "• Hora: 09-14h\n• Red: Activa\n• Info: 977 296 150", link_url: "/services", created_at: new Date().toISOString() };
+        const volunteeringNews = {
+          id: 'v-volunteering-tgn',
+          title: "💖 VOLUNTARIADO: El Valor del Acompañamiento",
+          content: "¿Quieres abrazar bebés en neonatos o acompañar a nuestros mayores? Descubre las redes de Solidaridad en Tarragona.",
+          category: "SOLIDARIO",
           neighborhood: "GENERAL",
-          itinerary: "• Perfil: Hostelería\n• Días: Vie/Sáb/Dom\n• Inscrip: En el Foro",
-          link_url: "/forum",
+          itinerary: "• Red: TarracoSalut\n• Red: Amics Gent Gran\n• Info: Ver Servicios",
+          link_url: "/services",
           created_at: new Date().toISOString()
         };
+        const thursdayJobs = { id: 'j-jobs', title: "💼 EMPLEO: +45 Talent", content: "Nuevas ofertas para perfiles con experiencia. Orientación en Tarragona Impulsa.", category: "EMPLEO", neighborhood: "GENERAL", itinerary: "• Ofertas: 12 activas\n• Zona: TGN/Reus\n• Exp: +15 años", link_url: "/services", created_at: new Date().toISOString() };
 
         const trafficWind = {
           id: 'traffic-wind-incidents',
@@ -246,17 +248,6 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
-        const womanSupportNews = {
-          id: 'social-woman-support-tgn',
-          title: "💜 TGN por la Igualdad",
-          content: "Recuerda que tienes a tu disposición el SIAD y el teléfono 016 para cualquier necesidad de apoyo o protección. No estás sola.",
-          category: "COMUNIDAD",
-          neighborhood: "GENERAL",
-          itinerary: "• Tel: 016 (24h)\n• Local: SIAD Unió 13\n• Recurso: Mujer y Familia",
-          link_url: "/services",
-          created_at: new Date().toISOString()
-        };
-
         const fetchedNews = !newsError && newsData ? newsData : [];
         const today = new Date();
         today.setHours(0, 0, 0, 0);
@@ -269,7 +260,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([carnivalRua, weatherCleanup, talent45News, womanSupportNews, thursdayJobs, trafficWind, prepperWind, ...validFetchedNews].slice(0, 7));
+        setNews([carnivalRua, weatherCleanup, talent45News, volunteeringNews, womanSupportNews, thursdayJobs, trafficWind, prepperWind, ...validFetchedNews].slice(0, 8));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

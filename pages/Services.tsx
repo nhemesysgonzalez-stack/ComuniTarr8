@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export const Services: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'emergencias' | 'escolar' | 'mujer' | 'empleo45' | 'tramites' | 'transporte' | 'bullying'>('emergencias');
+  const [activeTab, setActiveTab] = useState<'emergencias' | 'escolar' | 'mujer' | 'empleo45' | 'tramites' | 'transporte' | 'bullying' | 'voluntariado'>('emergencias');
 
   const renderContent = () => {
     switch (activeTab) {
@@ -433,6 +433,76 @@ export const Services: React.FC = () => {
             </div>
           </div>
         );
+      case 'voluntariado':
+        return (
+          <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
+            <div className="bg-blue-600 rounded-[35px] p-8 text-white relative overflow-hidden shadow-2xl">
+              <div className="absolute -right-10 -bottom-10 opacity-10">
+                <span className="material-symbols-outlined text-[200px]">volunteer_activism</span>
+              </div>
+              <h3 className="text-3xl font-black mb-4 relative z-10 flex items-center gap-2">
+                <span className="material-symbols-outlined text-4xl">favorite</span> VOLUNTARIADO TGN
+              </h3>
+              <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-bold leading-relaxed">
+                El abrazo que cambia vidas. Encuentra iniciativas de acompañamiento a bebés, niños, ancianos y personas en soledad en nuestra ciudad.
+              </p>
+              <div className="flex gap-4 relative z-10">
+                <a href="mailto:info@tarracosalut.org" className="bg-white text-blue-600 px-6 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+                  Contactar Punto Voluntariado
+                </a>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Bebés y Niños */}
+              <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm hover:border-blue-500/30 transition-all">
+                <h4 className="font-black text-blue-600 mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
+                  <span className="material-symbols-outlined">child_care</span> BEBÉS Y NEONATOS
+                </h4>
+                <div className="space-y-4">
+                  <div className="p-4 bg-blue-50 dark:bg-blue-900/10 rounded-2xl">
+                    <p className="text-sm font-black dark:text-white">TarracoSalut</p>
+                    <p className="text-xs text-gray-500 mb-2">Acompañamiento pediátrico en Joan XXIII y Santa Tecla. Apoyo a familias e infancia hospitalizada.</p>
+                    <a href="https://tarracosalut.org" target="_blank" className="text-[10px] font-black underline uppercase text-blue-600">Saber más / Unirse</a>
+                  </div>
+                  <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+                    <p className="text-sm font-black dark:text-white">Som Prematurs</p>
+                    <p className="text-xs text-gray-500 mb-2">Acompañamiento a familias con bebés prematuros en la UCIN del Hospital Joan XXIII.</p>
+                    <a href="https://somprematurs.cat" target="_blank" className="text-[10px] font-black underline uppercase text-gray-500">Info Voluntariado</a>
+                  </div>
+                  <div className="p-3 border-l-4 border-indigo-500 bg-indigo-50/30">
+                    <p className="text-[11px] font-black text-indigo-700">Inspiración: Mamás en Acción</p>
+                    <p className="text-[9px] text-gray-500">Red de voluntarios que abrazan a niños hospitalizados que están solos. (Consulta info@mamasenaccion.es para expansión en TGN).</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Gente Gran y Soledad */}
+              <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm hover:border-emerald-500/30 transition-all">
+                <h4 className="font-black text-emerald-600 mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
+                  <span className="material-symbols-outlined">elderly</span> GENTE GRAN Y SOLEDAD
+                </h4>
+                <div className="space-y-4">
+                  <div className="p-4 bg-emerald-50 dark:bg-emerald-900/10 rounded-2xl">
+                    <p className="text-sm font-black dark:text-white">Amics de la Gent Gran (Tarragona)</p>
+                    <p className="text-xs text-gray-500 mb-2">Llamadas y visitas semanales a personas mayores en situación de soledad no deseada.</p>
+                    <a href="tel:932076773" className="text-[10px] font-black underline uppercase text-emerald-600">Llamar: 93 207 67 73</a>
+                  </div>
+                  <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+                    <p className="text-sm font-black dark:text-white">Cruz Roja "Te Acompaña"</p>
+                    <p className="text-xs text-gray-500 mb-2">Programa estatal contra la soledad no deseada con presencia activa en Tarragona.</p>
+                    <a href="tel:900444114" className="text-[10px] font-black underline uppercase text-gray-500">Llamar Gratis: 900 444 114</a>
+                  </div>
+                  <div className="p-4 bg-blue-50/50 dark:bg-blue-900/10 rounded-2xl border border-blue-100">
+                    <p className="text-sm font-black dark:text-white">Fundación Avismón</p>
+                    <p className="text-xs text-gray-500 mb-2">Acompañamiento a citas médicas y gestión para mayores en riesgo de aislamiento.</p>
+                    <a href="https://avismon.org" target="_blank" className="text-[10px] font-black underline uppercase text-blue-600">Saber más</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
       default:
         return null;
     }
@@ -492,10 +562,18 @@ export const Services: React.FC = () => {
 
         <button
           onClick={() => setActiveTab('bullying')}
-          className={`p-4 rounded-2xl flex md:flex-row flex-col items-center gap-4 transition-all ${activeTab === 'bullying' ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30' : 'bg-white dark:bg-surface-dark text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+          className={`p-4 rounded-2xl flex md:flex-row flex-col items-center gap-4 transition-all ${activeTab === 'bullying' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30' : 'bg-white dark:bg-surface-dark text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+        >
+          <span className="material-symbols-outlined text-2xl">security</span>
+          <span className="hidden md:block font-black text-xs uppercase tracking-widest">Anti-Bullying</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('voluntariado')}
+          className={`p-4 rounded-2xl flex md:flex-row flex-col items-center gap-4 transition-all ${activeTab === 'voluntariado' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'bg-white dark:bg-surface-dark text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
         >
           <span className="material-symbols-outlined text-2xl">volunteer_activism</span>
-          <span className="hidden md:block font-black text-xs uppercase tracking-widest">Anti-Bullying</span>
+          <span className="hidden md:block font-black text-xs uppercase tracking-widest">Voluntariado</span>
         </button>
       </div>
 
