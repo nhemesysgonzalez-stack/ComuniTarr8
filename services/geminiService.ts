@@ -86,7 +86,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.7 ACTIVIDADES Y OCIO
   if (p.includes("actividad") || p.includes("evento") || p.includes("plan") || p.includes("ocio") || p.includes("que hacer") || p.includes("qué hacer")) {
-    return "🎉 QUÉ HACER EN TARRAGONA (Miércoles 11 Feb):\n\n🎭 **HOY:**\n• 17:00-19:00h: Casting Hotel Imperial (extras para spot publicitario)\n• 19:00h: Asamblea Vecinal Part Alta (Centre Cívic)\n• 20:30h: Obra de teatro 'L'Avara' en Teatre Metropol\n\n🎪 **ESTA SEMANA (Carnaval):**\n• Jueves 12: Dijous Gras (cocas de llardons en mercados)\n• Sábado 14-Domingo 15: Rúa del Carnaval (Rambla Nova)\n\n📚 **SIEMPRE:**\n• Museos gratis: Primer domingo de mes\n• Anfiteatro Romano: 9-19h (6€)\n• Balcó del Mediterrani: Vistas espectaculares (gratis)";
+    return "🎉 QUÉ HACER EN TARRAGONA (Sábado 14 Feb):\n\n🎭 **HOY (Carnaval):**\n• 11:00h: XIX Baixada del Pajaritu (Cós del Bou)\n• 18:00h: Gran Rua de l'Artesania (Rambla Nova)\n• 23:30h: Verbenas de Carnaval (Locales Part Alta)\n\n❤️ **SANT VALENTÍ:**\n• Cenas románticas en El Serrallo y Part Alta\n• Conciertos de pequeño formato en cafés del centro\n\n📚 **SIEMPRE:**\n• Anfiteatro Romano: 9-19h (6€)\n• Balcó del Mediterrani: Vistas espectaculares (gratis)";
   }
 
   // 2.8 EMERGENCIAS Y NÚMEROS ÚTILES
@@ -114,9 +114,9 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     return "Para trámites municipales en Tarragona 🏛️:\n\n• La OMAC (Oficina Municipal d'Atenció Ciutadana) requiere cita previa. Puedes pedirla en la web tarragona.cat o llamando al 010.\n• Empadronamiento: Necesitas DNI/NIE y el contrato de alquiler o escritura de la vivienda.\n• Volante de convivencia: Se puede obtener online con certificado digital al instante.";
   }
 
-  // 7. Noticias y Eventos de Hoy (VIERNES 13 FEBRERO 2026 - Rua Infantil y Limpieza)
+  // 7. Noticias y Eventos de Hoy (SÁBADO 14 FEBRERO 2026 - Rua Artesania y Pajaritu)
   if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("viento") || p.includes("tiempo") || p.includes("plan")) {
-    return "Resumen para el VIERNES 13 de febrero 🎭🧹:\n\n• 🎭 CARNAVAL: Hoy es la Rua de Lluïment Infantil (16:00h). Desfile de las escuelas por la Rambla.\n• 🧹 LIMPIEZA: Siguen las tareas de retirada de ramas tras el viento de ayer. Precaución en parques.\n• 🚗 MOVILIDAD: Rambla Nova cortada para vehículos desde las 15:30h. Se recomienda usar Park & Ride.\n• 🏥 SALUD: Farmacia de guardia en la Part Alta reforzada para la noche de Carnaval.";
+    return "Resumen para el SÁBADO 14 de febrero 🎭❤️:\n\n• 🎭 CARNAVAL: Hoy es la Gran Rua de l'Artesania (18:00h). ¡Es el desfile principal del año!\n• 🏎️ TRADICIÓN: Esta mañana a las 11h ha sido la Baixada del Pajaritu en la Part Alta.\n• ❤️ SANT VALENTÍ: Muchos planes en pareja combinados con el espíritu festivo del Carnaval.\n• 🚗 MOVILIDAD: Cortes totales en centro ciudad desde media tarde. Mejor ir a pie.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)

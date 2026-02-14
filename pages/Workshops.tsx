@@ -109,9 +109,9 @@ const Workshops: React.FC = () => {
                             <span className="px-3 py-1 bg-emerald-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">DESTACADO</span>
                             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">APOYO ESCOLAR</span>
                         </div>
-                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Masterclass de Maquillaje 🎨</h2>
+                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Vibrando con la Rua 🥁</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Aprende a maquillarte como un profesional para la Rua de hoy. Técnica con purpurina biodegradable y látex. ¡Ven solo o con tu comparsa!
+                            Taller de percusión express para seguir el ritmo de las comparsas hoy. No necesitas instrumento, ¡ponemos los cascos y el ritmo!
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <a href="tel:655892144" className="flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
@@ -119,7 +119,7 @@ const Workshops: React.FC = () => {
                                 655 89 21 44
                             </a>
                             <span className="px-6 py-3 bg-gray-50 dark:bg-gray-800 dark:text-white rounded-xl text-xs font-black">
-                                DESDE 12€/HORA
+                                GRATIS HOY
                             </span>
                         </div>
                     </div>

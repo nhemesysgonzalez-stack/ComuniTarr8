@@ -59,9 +59,9 @@ const Marketplace: React.FC = () => {
         {
           id: 'm-1',
           user_id: 'v1',
-          title: 'Maquillaje Carnaval Profesional',
-          description: 'Paleta completa para caras. Ideal para la Rua de hoy. ¡Luce tu disfraz!',
-          price: '12',
+          title: 'Spray Brillo / Escarcha Carnaval',
+          description: 'Botes nuevos para el pelo y la ropa. Ideal para la Rua de esta tarde.',
+          price: '5',
           category: 'ocio',
           neighborhood: 'CENTRO',
           contact_info: '652 11 00 99 (Maria)',
@@ -70,21 +70,21 @@ const Marketplace: React.FC = () => {
         {
           id: 'm-2',
           user_id: 'v2',
-          title: 'Soplador de hojas / Limpieza',
-          description: 'Potente soplador, ideal para quitar las ramas y hojas secas de tu terraza tras el viento de ayer.',
-          price: '25/día',
+          title: 'Ramo de Rosas Rojas (Encargo)',
+          description: 'Encargué dos y solo necesito uno. Frescas de esta mañana para Sant Valentí.',
+          price: '20',
           category: 'hogar',
-          neighborhood: 'LLEVANT',
+          neighborhood: 'PART ALTA',
           contact_info: '633 44 55 66 (Javi)',
           created_at: new Date().toISOString()
         },
         {
           id: 'm-3',
           user_id: 'v3',
-          title: 'Disfraz Abeja (Bebé 12-18 meses)',
-          description: 'Usado solo una vez. ¡Perfecto para la Rua de Escuelas de hoy!',
-          price: '10',
-          category: 'ocio',
+          title: 'Caja Regalo "Couple" (Nuevo)',
+          description: 'Pack de spa para dos, sin usar. Regalo perfecto de última hora.',
+          price: '35',
+          category: 'hogar',
           neighborhood: 'BARRIS MARÍTIMS',
           contact_info: '611 22 33 44 (Jose)',
           created_at: new Date().toISOString()
@@ -92,34 +92,12 @@ const Marketplace: React.FC = () => {
         {
           id: 'm-4',
           user_id: 'v4',
-          title: 'Guantes de Trabajo Reforzados',
-          description: 'Nuevos. Ideales para ayudar en el desescombro de ramas caídas en el jardín.',
-          price: '8',
-          category: 'hogar',
+          title: 'Zapatos Baile Profesionales',
+          description: 'Talla 38. Ideales para aguantar toda la Rua de Carnaval sin dolor de pies.',
+          price: '40',
+          category: 'moda',
           neighborhood: 'NORD',
           contact_info: '699 88 77 66 (Ana)',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'm-5',
-          user_id: 'v5',
-          title: 'Blower / Soplador Eléctrico',
-          description: 'Ideal para limpiar la terraza tras el fuerte viento. Potencia regulable.',
-          price: '30',
-          category: 'hogar',
-          neighborhood: 'S. PERE I S. PAU',
-          contact_info: '611 77 88 99 (Marcos)',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'm-6',
-          user_id: 'v6',
-          title: 'Disfraz Pirata Completo',
-          description: 'Talla M. Lo usé ayer pero está impecable. Con espada y loro de juguete.',
-          price: '15',
-          category: 'ocio',
-          neighborhood: 'SERRALLO',
-          contact_info: '622 11 22 33 (Lluís)',
           created_at: new Date().toISOString()
         }
       ];

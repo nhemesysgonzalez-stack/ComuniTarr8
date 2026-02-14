@@ -8,8 +8,9 @@ import { supabase } from './supabaseClient';
 export interface ExternalAlert {
     id: string;
     source: 'VENTCAT' | 'PLASEQTA' | 'PROCICAT' | 'PCTGN';
-    level: 'amarillo' | 'naranja' | 'rojo';
+    level: 'amarillo' | 'naranja' | 'rojo' | 'verde';
     message: string;
+    description?: string;
     timestamp: string;
 }
 
@@ -43,7 +44,14 @@ export const alertService = {
             }
         }
 
-        return null;
+        // Mock alert for Carnival Saturday
+        return {
+            id: 'carnaval-sat-2026',
+            source: 'PCTGN',
+            level: 'amarillo',
+            message: "Sábado de Carnaval: Rua de l'Artesania a las 18:00h. Afectaciones al tráfico en centro.",
+            timestamp: new Date().toISOString()
+        };
     },
 
     /**
@@ -55,7 +63,7 @@ export const alertService = {
         const sourceLabel = alert.source === 'PCTGN' ? 'PROTECCIÓ CIVIL TARRAGONA' : alert.source;
 
         if (Notification.permission === "granted") {
-            new Notification(`🚨 ${sourceLabel}: AVISO URGENTE`, {
+            new Notification(`🚨 ${sourceLabel}: AVISO`, {
                 body: alert.message,
                 icon: '/favicon.ico',
                 tag: 'emergency-alert',
@@ -63,5 +71,27 @@ export const alertService = {
                 badge: '/favicon.ico'
             });
         }
-    }
+    },
+
+    // Mock alerts for Saturday Feb 14th
+    mockAlerts: [
+        {
+            id: 'festive-info-carnaval',
+            title: "SÁBADO DE CARNAVAL: RUA DE L'ARTESANIA",
+            description: "Hoy es el gran día. A las 18:00h comienza la Rua de l'Artesania. Afectaciones al tráfico en centro ciudad. Baixada del Pajaritu a las 11:00h.",
+            severity: 'info',
+            source: 'Protecció Civil TGN',
+            date: '2026-02-14T08:00:00Z',
+            neighborhood: 'GENERAL'
+        },
+        {
+            id: 'weather-normalized',
+            title: "RESUMEN METEO: Situación Normalizada",
+            description: "Las ráfagas de viento han remitido. Jornada estable para los actos de Carnaval. Precaución residual por objetos en altura.",
+            severity: 'success',
+            source: 'VENTCAT / PCTGN',
+            date: '2026-02-14T07:30:00Z',
+            neighborhood: 'GENERAL'
+        }
+    ]
 };

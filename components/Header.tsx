@@ -253,15 +253,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">🎭 CARNAVAL: TODO LISTO PARA LA RUA DE LUCIMIENTO INFANTIL ESTA TARDE - AFECTACIONES TRÁFICO</span>
+          <span className="flex items-center gap-2">🎭 CARNAVAL: GRAN RUA DE L'ARTESANIA HOY A LAS 18:00H - MÁS DE 30 COMPARSA Y 3.000 DISFRACES</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🧹 LIMPIEZA: OPERATIVO ESPECIAL TRAS EL VIENTO - RECOGIDA DE RAMAS EN PARQUES Y JARDINES</span>
+          <span className="flex items-center gap-2">🏎️ PAJARITU: XIX BAIXADA DEL PAJARITU HOY A LAS 11:00H EN CÓS DEL BOU Y PEIXATERIA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚗 TRÁFICO: RAMBLA NOVA CORTADA DESDE LAS 16:00H POR EL DESFILE DE ESCUELAS</span>
+          <span className="flex items-center gap-2">❤️ SANT VALENTÍ: TARDE DE CARNAVAL Y CENA ROMÁNTICA EN LOS RESTAURANTES DE LA PART ALTA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚑 SEGURIDAD: REFORZADO EL DISPOSITIVO PREVENTIVO PARA LA NOCHE DEL VIERNES DE CARNAVAL</span>
+          <span className="flex items-center gap-2">🚗 TRÁFICO: CORTES EN AV. RAMÓN Y CAJAL Y RAMBLA NOVA DESDE LAS 16:30H</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛒 MERCAT: EL REY CARNESTOLTES VISITA HOY EL MERCAT CENTRAL A LAS 12:00H</span>
+          <span className="flex items-center gap-2">🌤️ TIEMPO: CIELO DESPEJADO Y SIN VIENTO PARA EL GRAN DESFILE DE ESTA TARDE</span>
         </motion.div>
       </div>
 

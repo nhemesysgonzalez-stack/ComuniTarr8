@@ -181,26 +181,36 @@ const Home: React.FC = () => {
           .order('created_at', { ascending: false })
           .limit(3);
 
-        const carnivalRua = {
-          id: 'carnival-rua-today',
-          title: "🎭 HOY: Rua de Lluïment Infantil",
-          title_ca: "🎭 AVUI: Rua de Lluïment Infantil",
-          content: "Esta tarde las escuelas de Tarragona llenan de color la Rambla Nova. Ven a animar a los más pequeños en su gran día de Carnaval.",
-          category: "CULTURA",
+        const carnivalRuaArtesania = {
+          id: 'carnival-rua-artesania',
+          title: "🎭 HOY 18:00h: La Gran Rua de l'Artesania",
+          content: "El momento más esperado del Carnaval. Más de 3.000 personas en desfile por las calles del centro. ¡Vibrad con las 31 comparsas!",
+          category: "CARNAVAL",
           neighborhood: "GENERAL",
-          itinerary: "• 16:00h: Inicio en Rambla\n• 18:30h: Entrega de premios\n• 20:30h: Baile de disfraces",
+          itinerary: "• Inicio: Av. Ramón y Cajal\n• Recorrido: Rambla Nova -> Rovira i Virgili\n• Final: Av. Catalunya",
           link_url: "/calendar",
           created_at: new Date().toISOString()
         };
 
-        const weatherCleanup = {
-          id: 'weather-cleanup-feb13',
-          title: "🧹 LIMPIEZA: Post-Temporal",
-          content: "Se retira la alerta Ventcat, pero se pide precaución al pasar cerca de fachadas y cornisas mientras terminen las tareas de retirada de ramas.",
-          category: "SEGURIDAD",
+        const baixadaPajaritu = {
+          id: 'baixada-pajaritu-2026',
+          title: "🏎️ 11:00h: XIX Baixada del Pajaritu",
+          content: "Carrera de trastos disfrazados bajando por la Peixateria. Diversión asegurada y mucho ingenio vecinal.",
+          category: "FESTIVO",
+          neighborhood: "PART ALTA",
+          itinerary: "• 09:30h: Expo en Pl. del Rei\n• 11:00h: Inicio carrera\n• Lugar: Cós del Bou",
+          link_url: "/map",
+          created_at: new Date().toISOString()
+        };
+
+        const valentineNews = {
+          id: 'valentine-tgn-2026',
+          title: "❤️ SANT VALENTÍ: Amor en Tarragona",
+          content: "Combina el espíritu del Carnaval con una cena romántica. Muchos locales de la Part Alta y el Serrallo ofrecen menús especiales hoy.",
+          category: "EVENTO",
           neighborhood: "GENERAL",
-          itinerary: "• Estado: Preasistencia\n• Zona: Vía Augusta/Parques\n• Reportar: Vía ComuniTarr",
-          link_url: "/forum",
+          itinerary: "• Tarde: Rua Artesania\n• Noche: Tapas & Amor\n• Info: Ver Local Businesses",
+          link_url: "/local-businesses",
           created_at: new Date().toISOString()
         };
 
@@ -217,23 +227,23 @@ const Home: React.FC = () => {
         };
         const thursdayJobs = { id: 'j-jobs', title: "💼 EMPLEO: +45 Talent", content: "Nuevas ofertas para perfiles con experiencia. Orientación en Tarragona Impulsa.", category: "EMPLEO", neighborhood: "GENERAL", itinerary: "• Ofertas: 12 activas\n• Zona: TGN/Reus\n• Exp: +15 años", link_url: "/services", created_at: new Date().toISOString() };
 
-        const trafficWind = {
-          id: 'traffic-wind-incidents',
-          title: "🚧 TRÁFICO: Incidencias Viento",
-          content: "Av. Catalunya con restricciones por rama caída. Rambla Nova sigue cortada por gradas. Mejor usar transporte público.",
+        const trafficRua = {
+          id: 'traffic-rua-artesania',
+          title: "🚧 TRÁFICO: Cortes por la Rua",
+          content: "Se prohíbe el aparcamiento en todo el recorrido desde las 14:00h. Rambla Nova y Ramón y Cajal cortados a partir de las 16:30h.",
           category: "MOVILIDAD",
           neighborhood: "CENTRO",
-          itinerary: "• Corte: Rambla Nova\n• Aviso: Av. Catalunya\n• Alt: Vía Augusta",
+          itinerary: "• Corte: Ramón y Cajal\n• Corte: Rambla Nova\n• Alt: Av. Roma / Vía Augusta",
           created_at: new Date().toISOString()
         };
 
-        const prepperWind = {
-          id: 'prepper-wind-radio',
-          title: "📻 PREPPERS: Radio y Baterías",
-          content: "Ante el viento extremo, recomendamos tener cargadas las powerbanks y pilas para la radio por si hay cortes de luz.",
-          category: "SEGURIDAD",
-          neighborhood: "GENERAL",
-          itinerary: "• Kit: Revisar linternas\n• Com: Radio FM\n• Red: @emergenciescat",
+        const prepperValentine = {
+          id: 'prepper-valentine-tips',
+          title: "🎁 PREPPERS: Regalo de Época",
+          content: "¿Sin regalo? Las flores de última hora en el Mercat Central son la salvaguarda perfecta. ¡No olvides la reserva!",
+          category: "CONSEJO",
+          neighborhood: "CENTRO",
+          itinerary: "• Lugar: Floristas Mercat\n• Hora: Antes de las 14h\n• Tip: Brinda con cava local",
           created_at: new Date().toISOString()
         };
 
@@ -260,7 +270,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([carnivalRua, weatherCleanup, talent45News, volunteeringNews, womanSupportNews, thursdayJobs, trafficWind, prepperWind, ...validFetchedNews].slice(0, 8));
+        setNews([carnivalRuaArtesania, baixadaPajaritu, valentineNews, volunteeringNews, womanSupportNews, thursdayJobs, trafficRua, prepperValentine, talent45News, ...validFetchedNews].slice(0, 9));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

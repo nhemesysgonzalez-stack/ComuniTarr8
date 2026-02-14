@@ -8,9 +8,9 @@ interface EmergencyBroadcastProps {
 export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismiss }) => {
     const [isVisible, setIsVisible] = useState(false);
 
-    // Logic to auto-show if there is an active alert for today (Feb 12 2026)
+    // Logic to auto-show if there is an active alert for today (Feb 14 2026)
     useEffect(() => {
-        const hasSeenAlert = sessionStorage.getItem('hasSeenCautionFeb13');
+        const hasSeenAlert = sessionStorage.getItem('hasSeenCautionFeb14');
         if (!hasSeenAlert) {
             setTimeout(() => {
                 setIsVisible(true);
@@ -22,13 +22,13 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
     const triggerBuzz = () => {
         if ('vibrate' in navigator) {
             // Emergency pattern: SOS in Morse or just strong pulses
-            navigator.vibrate([500, 200, 500, 200, 500]);
+            navigator.vibrate([200, 100, 200, 100, 200]);
         }
     };
 
     const handleDismiss = () => {
         setIsVisible(false);
-        sessionStorage.setItem('hasSeenCautionFeb13', 'true');
+        sessionStorage.setItem('hasSeenCautionFeb14', 'true');
         if (onDismiss) onDismiss();
     };
 
@@ -39,60 +39,55 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-red-600/90 backdrop-blur-xl"
+                    className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-primary/90 backdrop-blur-xl"
                 >
                     <motion.div
                         initial={{ scale: 0.8, rotate: -5 }}
                         animate={{
                             scale: 1,
                             rotate: 0,
-                            x: [0, -10, 10, -10, 10, 0] // Shake animation
-                        }}
-                        transition={{
-                            duration: 0.5,
-                            animate: { repeat: Infinity, repeatDelay: 5 }
                         }}
                         className="bg-white rounded-[40px] p-8 md:p-12 max-w-xl w-full shadow-[0_0_100px_rgba(255,255,255,0.4)] relative overflow-hidden"
                     >
                         {/* Visual Pulse Background */}
                         <motion.div
-                            animate={{ opacity: [0.1, 0.3, 0.1] }}
-                            transition={{ duration: 1, repeat: Infinity }}
-                            className="absolute inset-0 bg-red-500"
+                            animate={{ opacity: [0.05, 0.15, 0.05] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                            className="absolute inset-0 bg-primary"
                         />
 
                         <div className="relative z-10 text-center">
-                            <div className="size-24 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl animate-pulse">
-                                <span className="material-symbols-outlined text-white text-5xl">warning</span>
+                            <div className="size-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl animate-pulse">
+                                <span className="material-symbols-outlined text-white text-5xl">info</span>
                             </div>
 
-                            <h2 className="text-4xl md:text-5xl font-black text-red-600 uppercase tracking-tighter leading-none mb-6">
-                                ALERTA OFICIAL <br /> PROTECCIÓ CIVIL TGN
+                            <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tighter leading-none mb-6">
+                                AVISO ESPECIAL <br /> CARNAVAL TGN 2026
                             </h2>
 
-                            <div className="bg-red-50 rounded-3xl p-6 mb-8 border-2 border-red-100">
+                            <div className="bg-blue-50 rounded-3xl p-6 mb-8 border-2 border-blue-100">
                                 <p className="text-xl font-black text-gray-900 leading-tight mb-4 uppercase">
-                                    ⚠️ PRECAUCIÓN E INFORMACIÓN
+                                    ⚠️ AFECTACIONES SÁBADO 14 FEB
                                 </p>
                                 <p className="text-gray-600 font-bold leading-relaxed mb-4">
-                                    Se retira la alerta Ventcat, pero se pide precaución por <span className="text-red-600">objetos debilitados</span>. Además, hoy empiezan las restricciones por la Rua de Carnaval.
+                                    Hoy es el día de la <span className="text-primary font-black">Rua de l'Artesania (18:00h)</span> y la <span className="text-orange-600 font-black">Baixada del Pajaritu (11:00h)</span>. Se recomienda transporte público.
                                 </p>
-                                <ul className="text-left text-xs font-black text-red-700 space-y-2 uppercase tracking-wide">
-                                    <li className="flex items-center gap-2">🧹 BRIGADAS TRABAJANDO EN LA VÍA</li>
-                                    <li className="flex items-center gap-2">🎭 RAMBLA CORTADA DESDE LAS 16:00H</li>
-                                    <li className="flex items-center gap-2">👨‍👩‍👧‍👦 RUA INFANTIL: MÁXIMA ATENCIÓN</li>
+                                <ul className="text-left text-xs font-black text-primary space-y-2 uppercase tracking-wide">
+                                    <li className="flex items-center gap-2">🚜 CÓS DEL BOU CORTADO POR EL PAJARITU (MAÑANA)</li>
+                                    <li className="flex items-center gap-2">🎭 CORTE TOTAL RAMÓN Y CAJAL Y RAMBLA (TARDE)</li>
+                                    <li className="flex items-center gap-2">🅿️ PARKING MUNICIPALES: ALTA OCUPACIÓN</li>
                                 </ul>
                             </div>
 
                             <button
                                 onClick={handleDismiss}
-                                className="w-full bg-red-600 text-white py-6 rounded-[25px] font-black text-xl uppercase tracking-widest hover:bg-red-700 active:scale-95 transition-all shadow-2xl shadow-red-600/40"
+                                className="w-full bg-primary text-white py-6 rounded-[25px] font-black text-xl uppercase tracking-widest hover:bg-primary/90 active:scale-95 transition-all shadow-2xl shadow-primary/40"
                             >
-                                HE SIDO INFORMADO
+                                ENTENDIDO, ¡GRACIAS!
                             </button>
 
                             <p className="mt-6 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                                SOPORTE SECUNDARIO COMUNITARR - 13 FEB 2026
+                                INFO ACTUALIZADA - SÁBADO 14 FEB 2026
                             </p>
                         </div>
                     </motion.div>

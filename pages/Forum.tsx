@@ -153,21 +153,21 @@ const Forum: React.FC = () => {
     // Priority for Mediator if it's a question or app help
     const isAssistant = isReplyTo && (isQuestion || isHelpRequest || p.includes('@mediador') || p.includes('mediador'));
 
-    // Base initiation scripts (Thursday / Carnival / Wind)
+    // Base initiation scripts (Saturday / Carnival / Valentine)
     let scripts = [
       "¿Sabéis si se puede aparcar hoy en el parking de la Tabacalera? 🚗",
-      "¡Vaya tarde de Carnaval nos espera! Espero que no haga mucho viento. 🎭🌬️",
-      "He visto un cartel suelto en la calle Unió. Avisad si pasáis por allí. ⚠️",
-      "¿Alguna recomendación para cenar algo rápido antes de la Rua? 🍔",
-      "¡Qué bien que ya han limpiado la zona del Balcón! Estaba fatal ayer. 🧹✨",
-      "¡Feliz Viernes de Carnaval a todos! 🎉"
+      "¡Vaya tarde de Carnaval nos espera! El tiempo está perfecto. 🎭🌤️",
+      "He visto un hueco en la Rambla Nova cerca del Monumento a los Castellers. ¡Corred! 🏰",
+      "¿Alguna recomendación para cenar algo romántico después de la Rua? ❤️",
+      "¡Increíble la Baixada del Pajaritu de esta mañana! Qué risas. 🏎️💨",
+      "¡Feliz Sábado de Carnaval y Feliz San Valentín a todos! 🎉💖"
     ];
 
     // Base reply scripts
     let replyScripts = [
-      `¡Totalmente de acuerdo, ${isReplyTo}! Miércoles tranquilo.`,
+      `¡Totalmente de acuerdo, ${isReplyTo}! Sábado a tope.`,
       `¿Me puedes dar más detalles sobre eso, ${isReplyTo}?`,
-      `¡Buenos días ${isReplyTo}! Mitad de semana ya.`,
+      `¡Buenos días ${isReplyTo}! Disfruta del Carnaval.`,
       `Yo también me pasaré luego, nos vemos allí.`,
       `Gracias por el aviso, ${isReplyTo}.`,
       `¡Vaya, no lo sabía! Gracias por comentarlo, ${isReplyTo}.`
@@ -654,23 +654,23 @@ const Forum: React.FC = () => {
           </div>
 
           <div className="px-4 py-2 mt-4">
-            <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Miercoles Tarde</h2>
+            <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Sábado Carnaval</h2>
             <ul className="space-y-4 text-xs md:text-sm">
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🍹 <strong>Camareros Extra (Hotel Imperial)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Rambla Vella 2 • 🕔 17h-19h • Preguntar por Maitre (Sr. García)</span>
+                🍹 <strong>Camareros Extra (Restaurante El Llorito)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 Part Alta • 🕔 20h-02h • Refuerzo San Valentín • 14€/h</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🛡️ <strong>Control Accesos (Sala Zero)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📧 cv@salazero.com • Asunto: Carnaval • 15€/h Noche</span>
+                🛡️ <strong>Seguridad / Control (Highland TGN)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📧 info@highland.com • Asunto: Sábado Noche • Incorporación hoy</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🛒 <strong>Reponedor Urgente (Spar)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 C/Unió • Incorporación inmediata tarde • Dejar CV en caja</span>
+                🎨 <strong>Ayudante Carrozas (Urgente)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 Av. Ramón y Cajal • 🕔 15h-18h • Ayuda montaje final • ¡Preguntar por Ricard!</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                💅 <strong>Maquilladora (Peluquería Loli)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📞 666 555 444 • Refuerzo Jueves/Viernes/Sábado</span>
+                🌹 <strong>Reparto Flores (Floristería Mimosa)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📞 677 888 999 • Reparto Sant Valentí moto/bici • 10€/hora</span>
               </li>
             </ul>
             <h4 className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2">Vecinos Online (5/12)</h4>

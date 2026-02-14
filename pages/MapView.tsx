@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '45%', y: '50%', title: 'Inicio Rua Infantil', desc: 'Concentración de escuelas en Rambla Nova.', status: 'En breve (16h)', color: 'bg-primary', icon: 'theater_comedy', glow: 'shadow-[0_0_50px_rgba(43,140,238,0.8)]' },
-    { id: 2, type: 'incident', x: '40%', y: '30%', title: 'Limpieza de Vía', desc: 'Brigada retirando restos de palmera en Av. Catalunya.', status: 'Finalizando', color: 'bg-blue-600', icon: 'cleaning_services' },
-    { id: 3, type: 'event', x: '70%', y: '60%', title: 'Plaça de la Font', desc: 'Fiesta infantil post-desfile. Animación y música.', status: 'Preparando', color: 'bg-orange-500', icon: 'child_care', glow: 'shadow-[0_0_35px_rgba(249,115,22,0.5)]' },
-    { id: 4, type: 'cleanup', x: '25%', y: '45%', title: 'Saneamiento Cornisa', desc: 'Técnicos revisando edificio en C/ Mayor tras el aire.', status: 'Urgente', color: 'bg-red-600', icon: 'emergency' },
-    { id: 5, type: 'shop', x: '60%', y: '75%', title: 'Maquillaje Carnaval', desc: 'Puesto de pintacaras para la Rua en Rambla.', status: 'Abierto', color: 'bg-pink-500', icon: 'palette' }
+    { id: 1, type: 'event', x: '45%', y: '50%', title: "Gran Rua l'Artesania", desc: 'Más de 3.000 disfraces en la Rambla Nova.', status: 'Hoy 18:00h', color: 'bg-primary', icon: 'theater_comedy', glow: 'shadow-[0_0_50px_rgba(43,140,238,0.8)]' },
+    { id: 2, type: 'event', x: '65%', y: '25%', title: 'Baixada del Pajaritu', desc: 'Carrera de trastos locos en Cós del Bou.', status: 'Hoy 11:00h', color: 'bg-orange-600', icon: 'directions_car', glow: 'shadow-[0_0_35px_rgba(234,88,12,0.5)]' },
+    { id: 3, type: 'incident', x: '40%', y: '30%', title: 'Corte de Tráfico', desc: 'Av. Ramón y Cajal cortada por montaje de carrozas.', status: 'Desde 16:00h', color: 'bg-red-500', icon: 'block' },
+    { id: 4, type: 'shop', x: '70%', y: '60%', title: 'Mercat Central', desc: 'Últimas compras de flores y disfraces.', status: 'Abierto hasta 15h', color: 'bg-emerald-500', icon: 'shopping_basket' },
+    { id: 5, type: 'shop', x: '60%', y: '75%', title: 'Cena Valentín', desc: 'Muchos restaurantes en el Serrallo con menús especiales.', status: 'Reservas activas', color: 'bg-pink-500', icon: 'favorite' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);
