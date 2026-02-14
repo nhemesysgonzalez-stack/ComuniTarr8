@@ -225,7 +225,7 @@ const Home: React.FC = () => {
           link_url: "/services",
           created_at: new Date().toISOString()
         };
-        const thursdayJobs = { id: 'j-jobs', title: "💼 EMPLEO: +45 Talent", content: "Nuevas ofertas para perfiles con experiencia. Orientación en Tarragona Impulsa.", category: "EMPLEO", neighborhood: "GENERAL", itinerary: "• Ofertas: 12 activas\n• Zona: TGN/Reus\n• Exp: +15 años", link_url: "/services", created_at: new Date().toISOString() };
+        const saturdayJobs = { id: 'j-jobs-sat', title: "💼 EMPLEO: Refuerzo Hostelería", content: "Se buscan camareros extra para la noche de Carnaval y cenas de San Valentín. Alta inmediata.", category: "EMPLEO", neighborhood: "GENERAL", itinerary: "• Ofertas: 8 activas\n• Zona: Part Alta / Serrallo\n• Turno: Noche hoy", link_url: "/forum", created_at: new Date().toISOString() };
 
         const trafficRua = {
           id: 'traffic-rua-artesania',
@@ -270,7 +270,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([carnivalRuaArtesania, baixadaPajaritu, valentineNews, volunteeringNews, womanSupportNews, thursdayJobs, trafficRua, prepperValentine, talent45News, ...validFetchedNews].slice(0, 9));
+        setNews([carnivalRuaArtesania, baixadaPajaritu, valentineNews, volunteeringNews, womanSupportNews, saturdayJobs, trafficRua, prepperValentine, talent45News, ...validFetchedNews].slice(0, 9));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

@@ -11,21 +11,20 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🚨 ALERTA VIENTO EXTREMO: +100 km/h previstas. Evita desplazamientos. ES-Alert enviado a todos. 💨⚠️', neighborhood: 'GENERAL' },
-    { id: 1, user: 'Protecció Civil', avatar: '/logo.svg', text: '⛔ MAÑANA: Suspendidas clases, universidad y actividad sanitaria no urgente (00:00-20:00h). 🏠', neighborhood: 'GENERAL' },
-    { id: 2, user: 'Maria T.', avatar: 'https://i.pravatar.cc/150?u=maria', text: 'He asegurado la terraza. Si tenéis macetas, quitadlas YA. El pronóstico es muy serio. 🌬️🪴', neighborhood: 'Part Alta' },
-    { id: 3, user: 'PrepperTGN', avatar: '/logo.svg', text: 'Parques cerrados (Francolí, Miracle, Part Alta). Alejaos de árboles y fachadas. Precaución extrema. 🌳⚠️', neighborhood: 'Ponent' },
-    { id: 4, user: 'Javi P.', avatar: 'https://i.pravatar.cc/150?u=javi', text: 'Me han cancelado el viaje a Barcelona. RENFE no opera mañana por el viento. Os lo aviso. 🚆❌', neighborhood: 'Llevant' },
-    { id: 5, user: 'Laura G.', text: 'Casting Hotel Imperial CANCELADO por temporal. Reprogramado próxima semana (os aviso). 🎬', avatar: 'https://i.pravatar.cc/150?u=laura', neighborhood: 'Centro' },
-    { id: 6, user: 'Carlos M.', avatar: 'https://i.pravatar.cc/150?u=carlos', text: 'Cierran el Passeig Arqueològic y Amfiteatre. Tened cuidado si vais por la Part Alta. 🏛️', neighborhood: 'Part Alta' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🎭 HOY 18h: Gran Rua de l'Artesania. 3.000 personas llenarán la Rambla Nova. ¡Tened los disfraces listos! 🎊", neighborhood: 'GENERAL' },
+    { id: 1, user: 'Guardia Urbana', avatar: '/logo.svg', text: '⚠️ AVISO: Cortes de tráfico en centro ciudad desde las 16:30h. Se recomienda usar Park & Ride Tabacalera. 🚗', neighborhood: 'GENERAL' },
+    { id: 2, user: 'Pajaritus TGN', avatar: 'https://i.pravatar.cc/150?u=pajaritu', text: '🏁 11:00h: ¡Arranca la Baixada del Pajaritu! Venid a Cós del Bou a ver los trastos más locos. 🏎️💨', neighborhood: 'Part Alta' },
+    { id: 3, user: 'Maria V.', avatar: 'https://i.pravatar.cc/150?u=maria', text: 'He visto rosas preciosas en el Mercat Central por Sant Valentí. ❤️🌹 ¡Y mucho ambiente de Carnaval!', neighborhood: 'Centro' },
+    { id: 4, user: 'Jordi R.', avatar: 'https://i.pravatar.cc/150?u=jordi', text: '¿Alguien sabe si hay sitio para ver la Rua cerca de la Font del Centenari? Está todo a tope ya. 🎭', neighborhood: 'Eixample' },
+    { id: 5, user: 'Laura G.', avatar: 'https://i.pravatar.cc/150?u=laura', text: '¡Buscamos gente para la cena de Carnaval post-Rua! Escribid por el foro de Encuentros. 🥂', neighborhood: 'Serrallo' },
 ];
 
 const tickerMessages = [
-    { user: 'Protecció Civil', text: '⚠️ Alerta Viento +100 km/h' },
-    { user: 'Admin', text: '⛔ Clases Suspendidas Jueves' },
-    { user: 'Maria T.', text: 'Asegurad Macetas YA 🪴' },
-    { user: 'PrepperTGN', text: 'Parques Cerrados 🌳' },
-    { user: 'RENFE', text: 'Serv. Suspendido Jueves 🚆' }
+    { user: 'Admin', text: "🎭 18h: Rua de l'Artesania" },
+    { user: 'Pajaritus', text: '🏎️ 11h: Baixada Pajaritu' },
+    { user: 'TGN Cultura', text: '❤️ Feliz Sant Valentí' },
+    { user: 'G. Urbana', text: '🚗 Cortes en Rambla 16:30' },
+    { user: 'MeteoTGN', text: '🌤️ Tiempo estable hoy' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

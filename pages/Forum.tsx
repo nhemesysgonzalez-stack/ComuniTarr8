@@ -231,10 +231,10 @@ const Forum: React.FC = () => {
         let possibleReplies = [];
         if (isGreeting) {
           possibleReplies = [
-            `¡Hola, ${isReplyTo}! A por el miércoles con ganas. 💪`,
-            `¡Muy buenas! ¿Qué tal la semana? @${isReplyTo}.`,
-            `¡Hola ${isReplyTo}! Aquí arrancando motores. ☕`,
-            `¡Buenos días! ¿Nos vemos en la asamblea de tarde?`
+            `¡Hola, ${isReplyTo}! A por el sábado de Carnaval con ganas. 🎭💪`,
+            `¡Muy buenas! ¿Vais a la Rua hoy? @${isReplyTo}.`,
+            `¡Hola ${isReplyTo}! Aquí preparativos para Sant Valentí. ❤️☕`,
+            `¡Buenos días! ¿Visteis el Pajaritu de esta mañana?`
           ];
         } else if (isEmojiOnly || isVeryShort) {
           // Respuestas para emojis o mensajes muy cortos
@@ -514,12 +514,12 @@ const Forum: React.FC = () => {
   };
 
   const handleTopicClick = (topicId: string) => {
-    if (topicId === 'asamblea-vecinal') {
-      setNewMessage('¿Alguien tiene la orden del día de la asamblea de las 19:00? 📢');
-    } else if (topicId === 'directorio-negocios') {
-      setNewMessage('¿Cómo añado mi negocio al nuevo directorio? Me interesa mucho. 🏪');
-    } else if (topicId === 'mercadillo-jueves') {
-      setNewMessage('¿Qué tipo de artesanía suele haber en el mercadillo? 🛍️');
+    if (topicId === 'rua-artesania-live') {
+      setNewMessage('¿Por dónde va la cabecera de la Rua ahora mismo? 🎭📍');
+    } else if (topicId === 'sant-valenti-planes') {
+      setNewMessage('¿Algún sitio con sitio para cenar pareja hoy? ❤️🍴');
+    } else if (topicId === 'pajaritu-ganadores') {
+      setNewMessage('¡Qué pasada el ganador del Pajaritu de hoy! ¿Alguien tiene fotos? 🏎️🏆');
     }
     setTimeout(() => {
       inputRef.current?.focus();
@@ -528,22 +528,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'viento-extrem-tgn',
-      title: '💨 Viento Extremo',
-      description: 'Alertas y avisos.',
-      participating: 2450
+      id: 'rua-artesania-live',
+      title: "🎭 Rua l'Artesania",
+      description: 'Síguela en directo.',
+      participating: 4250
     },
     {
-      id: 'dijous-gras-cocas',
-      title: '🐖 Dijous Gras',
-      description: '¿Dónde hay stock?',
-      participating: 1890
+      id: 'pajaritu-ganadores',
+      title: '🏎️ Pajaritu 2026',
+      description: 'Recopilación fotos.',
+      participating: 2190
     },
     {
-      id: 'arribo-rei-carnaval',
-      title: '👑 Arribo del Rei',
-      description: 'Hoy a las 18:00h.',
-      participating: 1520
+      id: 'sant-valenti-planes',
+      title: '❤️ Sant Valentí',
+      description: 'Planes y cenas.',
+      participating: 1845
     }
   ];
 
