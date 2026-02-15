@@ -181,36 +181,36 @@ const Home: React.FC = () => {
           .order('created_at', { ascending: false })
           .limit(3);
 
-        const carnivalRuaArtesania = {
-          id: 'carnival-rua-artesania',
-          title: "🎭 HOY 18:00h: La Gran Rua de l'Artesania",
-          content: "El momento más esperado del Carnaval. Más de 3.000 personas en desfile por las calles del centro. ¡Vibrad con las 31 comparsas!",
-          category: "CARNAVAL",
-          neighborhood: "GENERAL",
-          itinerary: "• Inicio: Av. Ramón y Cajal\n• Recorrido: Rambla Nova -> Rovira i Virgili\n• Final: Av. Catalunya",
+        const tresTombsNews = {
+          id: 'tres-tombs-2026',
+          title: "🐎 HOY 11:30h: Els Tres Tombs",
+          content: "Tradición con caballos y carruajes recorriendo la Rambla Nova. Un espectáculo clásico del invierno tarraconense.",
+          category: "TRADICIÓN",
+          neighborhood: "CENTRO",
+          itinerary: "• 11:30h: Inicio en Rambla\n• Recorrido: Círculo por tramo central\n• Final: Bendición de animales",
           link_url: "/calendar",
           created_at: new Date().toISOString()
         };
 
-        const baixadaPajaritu = {
-          id: 'baixada-pajaritu-2026',
-          title: "🏎️ 11:00h: XIX Baixada del Pajaritu",
-          content: "Carrera de trastos disfrazados bajando por la Peixateria. Diversión asegurada y mucho ingenio vecinal.",
-          category: "FESTIVO",
-          neighborhood: "PART ALTA",
-          itinerary: "• 09:30h: Expo en Pl. del Rei\n• 11:00h: Inicio carrera\n• Lugar: Cós del Bou",
-          link_url: "/map",
+        const ruaLluimentNews = {
+          id: 'rua-lluiment-2026',
+          title: "✨ HOY 18:00h: Rua de Lluïment",
+          content: "Las 10 comparsas ganadoras del año pasado vuelven a desfilar con sus mejores galas. ¡Cierre de lujo del fin de semana!",
+          category: "CARNAVAL",
+          neighborhood: "GENERAL",
+          itinerary: "• Inicio: Av. Ramón y Cajal\n• Recorrido: Hasta Av. Catalunya\n• Ambiente: Familiar y espectacular",
+          link_url: "/calendar",
           created_at: new Date().toISOString()
         };
 
-        const valentineNews = {
-          id: 'valentine-tgn-2026',
-          title: "❤️ SANT VALENTÍ: Amor en Tarragona",
-          content: "Combina el espíritu del Carnaval con una cena romántica. Muchos locales de la Part Alta y el Serrallo ofrecen menús especiales hoy.",
-          category: "EVENTO",
+        const postCarnivalCleanupNews = {
+          id: 'post-carnival-cleanup',
+          title: "🧹 LIMPIEZA: Plan Especial",
+          content: "Operativo especial tras la gran afluencia de ayer. Las brigadas trabajan hoy en el centro y Serrallo. ¡Ayúdanos a mantener el barrio limpio!",
+          category: "COMUNIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Tarde: Rua Artesania\n• Noche: Tapas & Amor\n• Info: Ver Local Businesses",
-          link_url: "/local-businesses",
+          itinerary: "• Zona 1: Rambla Nova\n• Zona 2: Plaza de la Font\n• Reportar: Vía ComuniTarr",
+          link_url: "/forum",
           created_at: new Date().toISOString()
         };
 
@@ -227,23 +227,24 @@ const Home: React.FC = () => {
         };
         const saturdayJobs = { id: 'j-jobs-sat', title: "💼 EMPLEO: Refuerzo Hostelería", content: "Se buscan camareros extra para la noche de Carnaval y cenas de San Valentín. Alta inmediata.", category: "EMPLEO", neighborhood: "GENERAL", itinerary: "• Ofertas: 8 activas\n• Zona: Part Alta / Serrallo\n• Turno: Noche hoy", link_url: "/forum", created_at: new Date().toISOString() };
 
-        const trafficRua = {
-          id: 'traffic-rua-artesania',
-          title: "🚧 TRÁFICO: Cortes por la Rua",
-          content: "Se prohíbe el aparcamiento en todo el recorrido desde las 14:00h. Rambla Nova y Ramón y Cajal cortados a partir de las 16:30h.",
+        const trafficSunday = {
+          id: 'traffic-sunday-rua',
+          title: "🚧 TRÁFICO: Cortes Domingo",
+          content: "Cortes temporales por los Tres Tombs (mañana) y la Rua de Lluïment (tarde). Planifica tus desplazamientos.",
           category: "MOVILIDAD",
           neighborhood: "CENTRO",
-          itinerary: "• Corte: Ramón y Cajal\n• Corte: Rambla Nova\n• Alt: Av. Roma / Vía Augusta",
+          itinerary: "• 11-14h: Rambla Nova\n• 17-20h: Ramón y Cajal\n• Alt: Av. Roma",
           created_at: new Date().toISOString()
         };
 
-        const prepperValentine = {
-          id: 'prepper-valentine-tips',
-          title: "🎁 PREPPERS: Regalo de Época",
-          content: "¿Sin regalo? Las flores de última hora en el Mercat Central son la salvaguarda perfecta. ¡No olvides la reserva!",
-          category: "CONSEJO",
-          neighborhood: "CENTRO",
-          itinerary: "• Lugar: Floristas Mercat\n• Hora: Antes de las 14h\n• Tip: Brinda con cava local",
+        const galleryUpdateNews = {
+          id: 'gallery-update-carnival',
+          title: "📸 GALERÍA: Fotos Rua Artesanía",
+          content: "Ya están disponibles las primeras fotos de la gran rúa de ayer. ¡Búscate y comparte las tuyas!",
+          category: "VECINAL",
+          neighborhood: "GENERAL",
+          itinerary: "• Fotos: +50 nuevas\n• Origen: Vecinos TGN\n• Ver: Galería Vecinal",
+          link_url: "/gallery",
           created_at: new Date().toISOString()
         };
 
@@ -270,7 +271,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([carnivalRuaArtesania, baixadaPajaritu, valentineNews, volunteeringNews, womanSupportNews, saturdayJobs, trafficRua, prepperValentine, talent45News, ...validFetchedNews].slice(0, 9));
+        setNews([tresTombsNews, ruaLluimentNews, postCarnivalCleanupNews, galleryUpdateNews, volunteeringNews, womanSupportNews, saturdayJobs, trafficSunday, talent45News, ...validFetchedNews].slice(0, 9));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

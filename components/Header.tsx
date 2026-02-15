@@ -253,15 +253,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">🎭 CARNAVAL: GRAN RUA DE L'ARTESANIA HOY A LAS 18:00H - MÁS DE 30 COMPARSA Y 3.000 DISFRACES</span>
+          <span className="flex items-center gap-2">🐎 TRES TOMBS: DESFILE DE CABALLOS Y CARRUAJES HOY A LAS 11:30H EN LA RAMBLA NOVA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🏎️ PAJARITU: XIX BAIXADA DEL PAJARITU HOY A LAS 11:00H EN CÓS DEL BOU Y PEIXATERIA</span>
+          <span className="flex items-center gap-2">✨ RUA LLUÏMENT: LAS 10 MEJORES COMPARSAS DESFILAN HOY A LAS 18:00H - RAMÓN Y CAJAL</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">❤️ SANT VALENTÍ: TARDE DE CARNAVAL Y CENA ROMÁNTICA EN LOS RESTAURANTES DE LA PART ALTA</span>
+          <span className="flex items-center gap-2">🧹 LIMPIEZA: OPERATIVO DE RECOGIDA TRAS LA GRAN RUA DE AYER - EL SERRALLO Y CENTRO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚗 TRÁFICO: CORTES EN AV. RAMÓN Y CAJAL Y RAMBLA NOVA DESDE LAS 16:30H</span>
+          <span className="flex items-center gap-2">🚗 TRÁFICO: CORTES EN TRAMO ALTO DE RAMBLA POR LOS TRES TOMBS HASTA LAS 14:30H</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🌤️ TIEMPO: CIELO DESPEJADO Y SIN VIENTO PARA EL GRAN DESFILE DE ESTA TARDE</span>
+          <span className="flex items-center gap-2">🎭 CARNAVAL: MAÑANA ÚLTIMO ADIÓS - ENTIERRO Y QUEMA DEL CADAVAL DEL REI CARNESTOLTES</span>
         </motion.div>
       </div>
 

@@ -44,12 +44,12 @@ export const alertService = {
             }
         }
 
-        // Mock alert for Carnival Saturday
+        // Mock alert for Carnival Sunday
         return {
-            id: 'carnaval-sat-2026',
+            id: 'carnaval-sun-2026',
             source: 'PCTGN',
             level: 'amarillo',
-            message: "Sábado de Carnaval: Rua de l'Artesania a las 18:00h. Afectaciones al tráfico en centro.",
+            message: "Domingo de Carnaval: Els Tres Tombs a las 11:30h (Rambla Nova) y Rua de Lluïment a las 18:00h.",
             timestamp: new Date().toISOString()
         };
     },
@@ -73,24 +73,24 @@ export const alertService = {
         }
     },
 
-    // Mock alerts for Saturday Feb 14th
+    // Mock alerts for Sunday Feb 15th
     mockAlerts: [
         {
-            id: 'festive-info-carnaval',
-            title: "SÁBADO DE CARNAVAL: RUA DE L'ARTESANIA",
-            description: "Hoy es el gran día. A las 18:00h comienza la Rua de l'Artesania. Afectaciones al tráfico en centro ciudad. Baixada del Pajaritu a las 11:00h.",
+            id: 'festive-info-tres-tombs',
+            title: "DOMINGO: ELS TRES TOMBS",
+            description: "A partir de las 11:30h, desfile de caballos y carruajes por la Rambla Nova. Tradición y cultura en el centro.",
             severity: 'info',
             source: 'Protecció Civil TGN',
-            date: '2026-02-14T08:00:00Z',
-            neighborhood: 'GENERAL'
+            date: '2026-02-15T09:00:00Z',
+            neighborhood: 'CENTRO'
         },
         {
-            id: 'weather-normalized',
-            title: "RESUMEN METEO: Situación Normalizada",
-            description: "Las ráfagas de viento han remitido. Jornada estable para los actos de Carnaval. Precaución residual por objetos en altura.",
-            severity: 'success',
-            source: 'VENTCAT / PCTGN',
-            date: '2026-02-14T07:30:00Z',
+            id: 'festive-info-rua-lluiment',
+            title: "ESTA TARDE: RUA DE LLUÏMENT",
+            description: "A las 18:00h comienza el desfile de las 10 mejores comparsas del año pasado. Recorrido: Av. Ramón y Cajal hasta Av. Catalunya.",
+            severity: 'info',
+            source: 'Protecció Civil TGN',
+            date: '2026-02-15T13:00:00Z',
             neighborhood: 'GENERAL'
         }
     ]

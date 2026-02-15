@@ -11,20 +11,20 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🎭 HOY 18h: Gran Rua de l'Artesania. 3.000 personas llenarán la Rambla Nova. ¡Tened los disfraces listos! 🎊", neighborhood: 'GENERAL' },
-    { id: 1, user: 'Guardia Urbana', avatar: '/logo.svg', text: '⚠️ AVISO: Cortes de tráfico en centro ciudad desde las 16:30h. Se recomienda usar Park & Ride Tabacalera. 🚗', neighborhood: 'GENERAL' },
-    { id: 2, user: 'Pajaritus TGN', avatar: 'https://i.pravatar.cc/150?u=pajaritu', text: '🏁 11:00h: ¡Arranca la Baixada del Pajaritu! Venid a Cós del Bou a ver los trastos más locos. 🏎️💨', neighborhood: 'Part Alta' },
-    { id: 3, user: 'Maria V.', avatar: 'https://i.pravatar.cc/150?u=maria', text: 'He visto rosas preciosas en el Mercat Central por Sant Valentí. ❤️🌹 ¡Y mucho ambiente de Carnaval!', neighborhood: 'Centro' },
-    { id: 4, user: 'Jordi R.', avatar: 'https://i.pravatar.cc/150?u=jordi', text: '¿Alguien sabe si hay sitio para ver la Rua cerca de la Font del Centenari? Está todo a tope ya. 🎭', neighborhood: 'Eixample' },
-    { id: 5, user: 'Laura G.', avatar: 'https://i.pravatar.cc/150?u=laura', text: '¡Buscamos gente para la cena de Carnaval post-Rua! Escribid por el foro de Encuentros. 🥂', neighborhood: 'Serrallo' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🐎 HOY 11:30h: Els Tres Tombs en la Rambla Nova. Venid a ver los caballos decorados. 🎩🐾", neighborhood: 'CENTRO' },
+    { id: 1, user: 'Limpieza TGN', avatar: '/logo.svg', text: '🧹 Operativo especial de limpieza en marcha. Agradecemos vuestra paciencia mientras dejamos las calles impecables. ✨', neighborhood: 'GENERAL' },
+    { id: 2, user: 'TGN Cultura', avatar: '/logo.svg', text: '✨ 18:00h: Rua de Lluïment. Las 10 comparsas ganadoras desfilan hoy. ¡No os lo perdáis! 🎭', neighborhood: 'GENERAL' },
+    { id: 3, user: 'Paco R.', avatar: 'https://i.pravatar.cc/150?u=paco', text: '¡Vaya rúa la de ayer! Las fotos en la Galería son brutales. ¿Alguien sabe quién ganó el primer premio? 🏆📸', neighborhood: 'Part Alta' },
+    { id: 4, user: 'Marta S.', avatar: 'https://i.pravatar.cc/150?u=marta', text: '¿Sabéis si abren hoy los comercios del centro? Necesito recambio de pilas para la cámara. 🔋📸', neighborhood: 'Centro' },
+    { id: 5, user: 'Guille M.', avatar: 'https://i.pravatar.cc/150?u=guille', text: 'Quedada en el Serrallo para comer fideuá post-Carnaval. ¡Quién se apunta! 🥘🌊', neighborhood: 'Serrallo' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: "🎭 18h: Rua de l'Artesania" },
-    { user: 'Pajaritus', text: '🏎️ 11h: Baixada Pajaritu' },
-    { user: 'TGN Cultura', text: '❤️ Feliz Sant Valentí' },
-    { user: 'G. Urbana', text: '🚗 Cortes en Rambla 16:30' },
-    { user: 'MeteoTGN', text: '🌤️ Tiempo estable hoy' }
+    { user: 'Admin', text: '🐎 11:30h: Tres Tombs' },
+    { user: 'Cultura', text: '✨ 18:00h: Rua Lluïment' },
+    { user: 'Limpieza', text: '🧹 Plan Limpieza Activo' },
+    { user: 'G. Urbana', text: '🚗 Cortes Rambla 11-14h' },
+    { user: 'Vecinos', text: '📸 Fotos Rúa en Galeria' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

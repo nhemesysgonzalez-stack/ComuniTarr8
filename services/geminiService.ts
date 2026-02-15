@@ -26,13 +26,13 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     p.includes("trabajo") || p.includes("empleo") || p.includes("laboral") || p.includes("curro") || p.includes("busco") || p.includes("paro") || p.includes("oferta") ||
     (isJobContext && (p.includes("busco") || p.includes("necesito")))
   ) {
-    return "Ofertas Laborales Urgentes (Jueves 12 Feb - Especial Carnaval & TALENTO +45) 💼:\n\n" +
-      "1. 🎭 Extras para Comparsas - Rambla Nova → Apoyo montaje (Cualquier edad).\n" +
-      "2. 🛡️ Auxiliar de Seguridad - Control rúa → Turno noche.\n" +
-      "3. 🌟 ESPECIAL +45: Gestor de Punto de Información Turística - TGN Impulsa pide experiencia previa en atención ciudadana.\n" +
-      "4. 📦 Logística Dijous Gras - Supermercados Centro → Refuerzo stock.\n" +
-      "5. 🌟 ESPECIAL +45: Mentor para Jóvenes Emprendedores - Cambra de Comerç (Programa PICE).\n\n" +
-      "• ¿Eres mayor de 45? Mira nuestra sección dedicada en SERVICIOS > EMPLEO +45.";
+    return "Ofertas Laborales Urgentes (Domingo 15 Feb - Especial Recogida & Eventos) 💼:\n\n" +
+      "1. 🧹 Brigada de Limpieza Especial - Refuerzo portales y calles tras la Rúa → 15€/h (Hoy).\n" +
+      "2. 🛡️ Auxiliar de Seguridad - Control Rua de Lluïment → Turno tarde (17:30h).\n" +
+      "3. 🍲 Extras Cocina - Restaurantes El Serrallo → Refuerzo turno comida Domingo.\n" +
+      "4. 🚚 Desmontaje Carrozas - Ayuda para mañana lunes → Trabajo físico remunerado.\n" +
+      "5. 🌟 TALENTO +45: Gestor de Punto de Información Turística - TGN Impulsa pide experiencia previa.\n\n" +
+      "• ¿Buscas trabajo estable? Mañana lunes abre la oficina del SOC en Ponent.";
   }
 
   // 16. Preppers y Seguridad (Petroquímicas / Viento) - Prioridad en canal Preppers
@@ -56,17 +56,17 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.1 TRÁFICO EN TIEMPO REAL
   if (p.includes("trafico") || p.includes("tráfico") || p.includes("carretera") || p.includes("circulacion") || p.includes("atasco") || p.includes("retenciones") || p.includes("corte")) {
-    return "🚗 TRÁFICO TARRAGONA (Jueves 12 Feb, 09:30h):\n\n• 🔴 AV. CATALUNYA: Circulación lenta por rama caída en la calzada.\n• 🔴 RAMBLA NOVA: Cortada al tráfico por montaje de gradas del Carnaval.\n• 🟡 Accesos T-11: Retenciones por viento fuerte.\n• 🟢 AP-7: Fluida pero con precaución.\n\n💡 Alternativa Centro: Vía Augusta.";
+    return "🚗 TRÁFICO TARRAGONA (Domingo 15 Feb, 10:45h):\n\n• 🐎 RAMBLA NOVA: Cortada tramo Balcó por Els Tres Tombs (11-14:30h).\n• ✨ AV. RAMÓN Y CAJAL: Cierre programado a las 17:30h por Rua Lluïment.\n• 🟢 ACCESOS A-7/AP-7: Sin incidencias.\n• 🟡 CENTRO: Alta ocupación en parkings municipales.\n\n💡 Alternativa: Park & Ride Tabacalera libre.";
   }
 
   // 2.2 FARMACIAS DE GUARDIA
   if (p.includes("farmacia") || p.includes("guardia") || p.includes("medicamento") || p.includes("parafarmacia")) {
-    return "💊 FARMACIAS DE GUARDIA HOY (Miércoles 11 Feb 2026):\n\n• 🏥 Farmacia NAVARRO - Rambla Nova, 88 (24h)\n• 🏥 Farmacia DEL PORT - Pl. Corsini, 12 (hasta 22h)\n• 🏥 Farmacia SANT PERE - C/ Sant Pere, 45 (hasta 23h)\n\n📍 Consulta el listado completo actualizado en:\n👉 www.coft.org (Colegio Oficial de Farmacéuticos de Tarragona)\n\n⚕️ Urgencias médicas: CAP 24h o Hospital Joan XXIII.";
+    return "💊 FARMACIAS DE GUARDIA HOY (Domingo 15 Feb 2026):\n\n• 🏥 Farmacia FULLANA - C/ de la Unió, 1 (24h)\n• 🏥 Farmacia DEL PORT - Pl. Corsini, 12 (hasta 22h)\n• 🏥 Farmacia SANT PERE - C/ Sant Pere, 45 (hasta 23h)\n\n📍 Farmacia de guardia abierta 24h: FULLANA.\n⚕️ Urgencias médicas: CAP 24h o Hospital Joan XXIII.";
   }
 
   // 2.3 COLEGIOS Y EDUCACIÓN
   if (p.includes("colegio") || p.includes("escuela") || p.includes("escola") || p.includes("instituto") || p.includes("matricula") || p.includes("matrícula") || p.includes("calendario escolar") || p.includes("menu escolar") || p.includes("menú")) {
-    return "🎓 INFORMACIÓN ESCOLAR (Jueves 12 Feb):\n\n📅 **CARNAVAL:**\n• HOY: Dijous Gras (Celebraciones y meriendas en los centros).\n• Viernes 13: La Rueta Infantil (Desfile 10h).\n• 16-20 Feb: Vacaciones de Carnaval (Semana blanca).\n\n🍽️ **MENÚS HOY:**\n• Tradición Dijous Gras: Tortilla de butifarra y Coca de Llardons.";
+    return "🎓 INFORMACIÓN ESCOLAR (Domingo 15 Feb):\n\n📅 **SEMANA BLANCA:**\n• Mañana lunes NO hay clase en mayoría de centros (Vacaciones Carnaval).\n• 16-20 Feb: Actividades de ocio para niños en Centros Cívicos.\n\n💡 Consejo: Revisa si tu centro hace intensiva el lunes.";
   }
 
   // 2.4 SERVICIOS MUNICIPALES (AMPLIADO)
@@ -86,7 +86,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.7 ACTIVIDADES Y OCIO
   if (p.includes("actividad") || p.includes("evento") || p.includes("plan") || p.includes("ocio") || p.includes("que hacer") || p.includes("qué hacer")) {
-    return "🎉 QUÉ HACER EN TARRAGONA (Sábado 14 Feb):\n\n🎭 **HOY (Carnaval):**\n• 11:00h: XIX Baixada del Pajaritu (Cós del Bou)\n• 18:00h: Gran Rua de l'Artesania (Rambla Nova)\n• 23:30h: Verbenas de Carnaval (Locales Part Alta)\n\n❤️ **SANT VALENTÍ:**\n• Cenas románticas en El Serrallo y Part Alta\n• Conciertos de pequeño formato en cafés del centro\n\n📚 **SIEMPRE:**\n• Anfiteatro Romano: 9-19h (6€)\n• Balcó del Mediterrani: Vistas espectaculares (gratis)";
+    return "🎉 QUÉ HACER EN TARRAGONA (Domingo 15 Feb):\n\n🐎 **MAÑANA (11:30h):**\n• Els Tres Tombs - Bendición y rúa de caballos (Rambla Nova).\n\n✨ **TARDE (18:00h):**\n• Rua de Lluïment - Las 10 mejores comparsas del Carnaval desfilan desde Av. Ramón y Cajal.\n\n🧹 **VECINAL:**\n• Quedada limpieza confeti en Plaza de la Font (10:00h).\n\n📚 **CALMA:**\n• Paseo por la Muralla o Anfiteatro (9-15h).";
   }
 
   // 2.8 EMERGENCIAS Y NÚMEROS ÚTILES
@@ -114,9 +114,9 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     return "Para trámites municipales en Tarragona 🏛️:\n\n• La OMAC (Oficina Municipal d'Atenció Ciutadana) requiere cita previa. Puedes pedirla en la web tarragona.cat o llamando al 010.\n• Empadronamiento: Necesitas DNI/NIE y el contrato de alquiler o escritura de la vivienda.\n• Volante de convivencia: Se puede obtener online con certificado digital al instante.";
   }
 
-  // 7. Noticias y Eventos de Hoy (SÁBADO 14 FEBRERO 2026 - Rua Artesania y Pajaritu)
+  // 7. Noticias y Eventos de Hoy (DOMINGO 15 FEBRERO 2026 - Tres Tombs y Lluïment)
   if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("viento") || p.includes("tiempo") || p.includes("plan")) {
-    return "Resumen para el SÁBADO 14 de febrero 🎭❤️:\n\n• 🎭 CARNAVAL: Hoy es la Gran Rua de l'Artesania (18:00h). ¡Es el desfile principal del año!\n• 🏎️ TRADICIÓN: Esta mañana a las 11h ha sido la Baixada del Pajaritu en la Part Alta.\n• ❤️ SANT VALENTÍ: Muchos planes en pareja combinados con el espíritu festivo del Carnaval.\n• 🚗 MOVILIDAD: Cortes totales en centro ciudad desde media tarde. Mejor ir a pie.";
+    return "Resumen para el DOMINGO 15 de febrero 🐎✨:\n\n• 🐎 TRADICIÓN: Els Tres Tombs a las 11:30h en la Rambla Nova.\n• ✨ CARNAVAL: Rua de Lluïment a las 18:00h. Cierre espectacular de las comparsas ganadoras.\n• 🧹 COMUNIDAD: Operativo de limpieza activo por toda la ciudad tras la Rua de ayer.\n• 📸 GALERÍA: Ya puedes ver las fotos de ayer en la sección HISTORIAS.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)

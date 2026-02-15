@@ -8,9 +8,9 @@ interface EmergencyBroadcastProps {
 export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismiss }) => {
     const [isVisible, setIsVisible] = useState(false);
 
-    // Logic to auto-show if there is an active alert for today (Feb 14 2026)
+    // Logic to auto-show if there is an active alert for today (Feb 15 2026)
     useEffect(() => {
-        const hasSeenAlert = sessionStorage.getItem('hasSeenCautionFeb14');
+        const hasSeenAlert = sessionStorage.getItem('hasSeenCautionFeb15');
         if (!hasSeenAlert) {
             setTimeout(() => {
                 setIsVisible(true);
@@ -28,7 +28,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
 
     const handleDismiss = () => {
         setIsVisible(false);
-        sessionStorage.setItem('hasSeenCautionFeb14', 'true');
+        sessionStorage.setItem('hasSeenCautionFeb15', 'true');
         if (onDismiss) onDismiss();
     };
 
@@ -67,14 +67,14 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
 
                             <div className="bg-blue-50 rounded-3xl p-6 mb-8 border-2 border-blue-100">
                                 <p className="text-xl font-black text-gray-900 leading-tight mb-4 uppercase">
-                                    ⚠️ AFECTACIONES SÁBADO 14 FEB
+                                    ⚠️ AFECTACIONES DOMINGO 15 FEB
                                 </p>
                                 <p className="text-gray-600 font-bold leading-relaxed mb-4">
-                                    Hoy es el día de la <span className="text-primary font-black">Rua de l'Artesania (18:00h)</span> y la <span className="text-orange-600 font-black">Baixada del Pajaritu (11:00h)</span>. Se recomienda transporte público.
+                                    Hoy celebramos <span className="text-amber-600 font-black">Els Tres Tombs (11:30h)</span> y la <span className="text-primary font-black">Rua de Lluïment (18:00h)</span>. Planifica tus desplazamientos al centro.
                                 </p>
                                 <ul className="text-left text-xs font-black text-primary space-y-2 uppercase tracking-wide">
-                                    <li className="flex items-center gap-2">🚜 CÓS DEL BOU CORTADO POR EL PAJARITU (MAÑANA)</li>
-                                    <li className="flex items-center gap-2">🎭 CORTE TOTAL RAMÓN Y CAJAL Y RAMBLA (TARDE)</li>
+                                    <li className="flex items-center gap-2">🐎 RAMBLA NOVA CORTADA TRAMO ALTO (MAÑANA)</li>
+                                    <li className="flex items-center gap-2">✨ CORTE RAMÓN Y CAJAL HASTA MARQUÈS OLIVAR (TARDE)</li>
                                     <li className="flex items-center gap-2">🅿️ PARKING MUNICIPALES: ALTA OCUPACIÓN</li>
                                 </ul>
                             </div>
@@ -87,7 +87,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                             </button>
 
                             <p className="mt-6 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                                INFO ACTUALIZADA - SÁBADO 14 FEB 2026
+                                INFO ACTUALIZADA - DOMINGO 15 FEB 2026
                             </p>
                         </div>
                     </motion.div>

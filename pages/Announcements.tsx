@@ -125,24 +125,24 @@ const Announcements: React.FC = () => {
     const fetchNotices = async () => {
         setLoading(true);
         const weatherAlert: Announcement = {
-            id: 'weather-mon-cloudy',
-            title: "🌤️ LUNES: Sol y Nubes",
-            content: "Arrancamos la semana con cielos despejados y algunas nubes altas. Temperaturas agradables de 14ºC. Ideal para retomar la rutina con energía.",
+            id: 'weather-sun-nice',
+            title: "☀️ DOMINGO: Sol y Rúa",
+            content: "Cielos despejados para los Tres Tombs y la Rua de Lluïment. Temperaturas de 16ºC. Mañana lunes bajan a 12ºC con algunas nubes.",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
             author_name: "AEMET",
-            itinerary: "• Mañana: Soleado (10°C)\n• Tarde: Nubes altas (14°C)\n• Noche: Fresco (8°C)",
+            itinerary: "• Mañana: Soleado (12°C)\n• Tarde: Despejado (16°C)\n• Noche: Despejado (9°C)",
             created_at: new Date().toISOString()
         };
 
-        const paellaAnnouncement: Announcement = {
-            id: 'paella-success-mon',
-            title: "🥘 ÉXITO: Gran Paella Vecinal",
-            content: "¡Gracias a todos! Ayer disfrutamos de un domingo increíble con más de 200 vecinos. La paella fue un éxito y el ambiente inmejorable. ¡Repetiremos pronto!",
+        const carnivalSuccessAnnouncement: Announcement = {
+            id: 'carnaval-success-sun',
+            title: "🎭 ÉXITO: Gran Rua de ayer",
+            content: "¡Increíble ambiente en la Rua de l'Artesania! Más de 3.000 personas en la Rambla. Hoy seguimos con la Rua de Lluïment a las 18:00h.",
             category: "EXITO",
             neighborhood: "GENERAL",
-            author_name: "Asoc. Vecinos",
-            itinerary: "• Asistentes: +200\n• Raciones: 250\n• Donativos: 450€",
+            author_name: "Ayuntamiento / Cultura",
+            itinerary: "• Participantes: 25 comparsas\n• Espectadores: +15.000\n• Incidencias: Mínimas",
             created_at: new Date().toISOString()
         };
 
@@ -186,7 +186,7 @@ const Announcements: React.FC = () => {
                 return diffDays <= 7;
             });
 
-            setNotices([weatherAlert, paellaAnnouncement, coastalWalk, deliverySuccess, ...validFetched]);
+            setNotices([weatherAlert, carnivalSuccessAnnouncement, constructionNotice, deliverySuccess, ...validFetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

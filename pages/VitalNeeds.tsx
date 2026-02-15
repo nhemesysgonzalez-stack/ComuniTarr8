@@ -48,34 +48,34 @@ const VitalNeeds: React.FC = () => {
                 {
                     id: 'mock-n1',
                     creator_id: 'v4',
-                    type: 'company',
-                    title: 'Rosas para los Abuelos',
-                    description: 'Busco voluntarios para repartir unas flores en la residencia Santa Tecla hoy por Sant Valentí.',
-                    contact_info: '622 34 56 78 (Carme)',
-                    is_urgent: true,
-                    neighborhood: 'PART ALTA',
+                    type: 'other',
+                    title: '🧹 Ayuda Limpieza Portal',
+                    description: 'Se ha acumulado mucho confeti y restos de la rúa de ayer. ¿Algún vecino se anima a barrer un poco conmigo?',
+                    contact_info: '611 00 22 33 (Lluís)',
+                    is_urgent: false,
+                    neighborhood: 'CENTRO',
                     created_at: new Date().toISOString()
                 },
                 {
                     id: 'mock-n2',
                     creator_id: 'v5',
-                    type: 'other',
-                    title: 'Tapones de Oído para Mascotas',
-                    description: 'Tengo cajas de tapones para perros que se asustan con los petardos y la música de la Rua de hoy. ¡Gratis!',
-                    contact_info: '655 89 21 00 (Marc)',
-                    is_urgent: false,
+                    type: 'company',
+                    title: '🐾 Cuidado Mascota Asustada',
+                    description: 'Mi perro está estresado por el ruido de ayer. ¿Alguien para pasearlo por zona tranquila (Francolí) mientras trabajo?',
+                    contact_info: '644 33 22 11 (Sara)',
+                    is_urgent: true,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
                     id: 'mock-n3',
                     creator_id: 'v6',
-                    type: 'company',
-                    title: "Acompañamiento Rua l'Artesania",
-                    description: 'Acompaño a personas mayores o con silla de ruedas a ver el desfile principal de las 18:00h.',
-                    contact_info: '611 22 33 44',
+                    type: 'emotional',
+                    title: "☕ Café y Charla: Post-Carnaval",
+                    description: 'Si alguien se siente un poco plof tras la fiesta y quiere bajar a tomar un café y charlar, zona Part Alta.',
+                    contact_info: '622 88 77 66 (Tomàs)',
                     is_urgent: false,
-                    neighborhood: 'CENTRO',
+                    neighborhood: 'PART ALTA',
                     created_at: new Date().toISOString()
                 }
             ];
@@ -178,9 +178,9 @@ const VitalNeeds: React.FC = () => {
                             <span className="px-2 py-0.5 bg-red-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">RED SOLIDARIA</span>
                             <span className="text-[10px] font-bold text-gray-400 uppercase">AYUDA MUTUA</span>
                         </div>
-                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Brigada "Barrio Limpio" 🧹</h2>
+                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Brigada "Recogida de Confeti" 🧹</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            Tras el fuerte viento de ayer, muchos vecinos mayores no pueden retirar las ramas y objetos de sus jardines o balcones. ¡Únete a la brigada de ayuda para dejar el barrio listo para el finde!
+                            Tras la gran rúa de ayer, las calles necesitan un empujón. Nos juntamos hoy para ayudar a las brigadas municipales en los portales y zonas comunes. ¡Hagamos que Tarragona brille de nuevo!
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">

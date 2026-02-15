@@ -102,21 +102,21 @@ const Workshops: React.FC = () => {
             <div className="max-w-6xl mx-auto px-6 mb-12">
                 <div className="bg-white dark:bg-surface-dark rounded-[40px] border-4 border-dashed border-emerald-500/20 p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 hover:border-emerald-500/40 transition-all">
                     <div className="size-32 md:size-48 bg-emerald-100 dark:bg-emerald-900/30 rounded-[35px] flex items-center justify-center shrink-0">
-                        <span className="material-symbols-outlined text-7xl text-emerald-600">school</span>
+                        <span className="material-symbols-outlined text-7xl text-emerald-600">self_improvement</span>
                     </div>
                     <div className="flex-1">
                         <div className="flex items-center gap-3 mb-4">
                             <span className="px-3 py-1 bg-emerald-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">DESTACADO</span>
-                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">APOYO ESCOLAR</span>
+                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">BIENESTAR</span>
                         </div>
-                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Vibrando con la Rua 🥁</h2>
+                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Yoga Detox post-Carnaval 🧘‍♀️</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Taller de percusión express para seguir el ritmo de las comparsas hoy. No necesitas instrumento, ¡ponemos los cascos y el ritmo!
+                            ¿Cansado/a tras la rúa de ayer? Ven a estirar y recuperar energía hoy a las 17:00h en el Parc del Francolí. Sesión gratuita para vecinos. Trae esterilla.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <a href="tel:655892144" className="flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
+                            <a href="tel:677443322" className="flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
                                 <span className="material-symbols-outlined text-sm">call</span>
-                                655 89 21 44
+                                677 44 33 22 (Inma)
                             </a>
                             <span className="px-6 py-3 bg-gray-50 dark:bg-gray-800 dark:text-white rounded-xl text-xs font-black">
                                 GRATIS HOY

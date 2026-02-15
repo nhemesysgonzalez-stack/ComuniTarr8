@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '45%', y: '50%', title: "Gran Rua l'Artesania", desc: 'Más de 3.000 disfraces en la Rambla Nova.', status: 'Hoy 18:00h', color: 'bg-primary', icon: 'theater_comedy', glow: 'shadow-[0_0_50px_rgba(43,140,238,0.8)]' },
-    { id: 2, type: 'event', x: '65%', y: '25%', title: 'Baixada del Pajaritu', desc: 'Carrera de trastos locos en Cós del Bou.', status: 'Hoy 11:00h', color: 'bg-orange-600', icon: 'directions_car', glow: 'shadow-[0_0_35px_rgba(234,88,12,0.5)]' },
-    { id: 3, type: 'incident', x: '40%', y: '30%', title: 'Corte de Tráfico', desc: 'Av. Ramón y Cajal cortada por montaje de carrozas.', status: 'Desde 16:00h', color: 'bg-red-500', icon: 'block' },
-    { id: 4, type: 'shop', x: '70%', y: '60%', title: 'Mercat Central', desc: 'Últimas compras de flores y disfraces.', status: 'Abierto hasta 15h', color: 'bg-emerald-500', icon: 'shopping_basket' },
-    { id: 5, type: 'shop', x: '60%', y: '75%', title: 'Cena Valentín', desc: 'Muchos restaurantes en el Serrallo con menús especiales.', status: 'Reservas activas', color: 'bg-pink-500', icon: 'favorite' }
+    { id: 1, type: 'event', x: '45%', y: '55%', title: "Els Tres Tombs", desc: 'Desfile de caballos y carruajes.', status: 'Hoy 11:30h', color: 'bg-amber-600', icon: 'pest_control_rodent', glow: 'shadow-[0_0_50px_rgba(217,119,6,0.8)]' },
+    { id: 2, type: 'event', x: '42%', y: '45%', title: 'Rua de Lluïment', desc: 'Las 10 mejores comparsas.', status: 'Hoy 18:00h', color: 'bg-primary', icon: 'star', glow: 'shadow-[0_0_35px_rgba(43,140,238,0.5)]' },
+    { id: 3, type: 'incident', x: '50%', y: '60%', title: 'Limpieza Post-Rua', desc: 'Equipos retirando confeti y restos de carrozas.', status: 'En curso', color: 'bg-emerald-500', icon: 'cleaning_services' },
+    { id: 4, type: 'incident', x: '40%', y: '30%', title: 'Corte Tráfico', desc: 'Rambla Nova tramo Balcó cortado por Tres Tombs.', status: 'Hasta 14:30h', color: 'bg-red-500', icon: 'block' },
+    { id: 5, type: 'shop', x: '60%', y: '40%', title: 'Pastelería Sunday', desc: 'Cocas de Dijous Gras disponibles.', status: 'Abierto hasta 14h', color: 'bg-pink-500', icon: 'bakery_dining' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

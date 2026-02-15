@@ -153,14 +153,14 @@ const Forum: React.FC = () => {
     // Priority for Mediator if it's a question or app help
     const isAssistant = isReplyTo && (isQuestion || isHelpRequest || p.includes('@mediador') || p.includes('mediador'));
 
-    // Base initiation scripts (Saturday / Carnival / Valentine)
+    // Base initiation scripts (Sunday / Tres Tombs / Lluïment)
     let scripts = [
-      "¿Sabéis si se puede aparcar hoy en el parking de la Tabacalera? 🚗",
-      "¡Vaya tarde de Carnaval nos espera! El tiempo está perfecto. 🎭🌤️",
-      "He visto un hueco en la Rambla Nova cerca del Monumento a los Castellers. ¡Corred! 🏰",
-      "¿Alguna recomendación para cenar algo romántico después de la Rua? ❤️",
-      "¡Increíble la Baixada del Pajaritu de esta mañana! Qué risas. 🏎️💨",
-      "¡Feliz Sábado de Carnaval y Feliz San Valentín a todos! 🎉💖"
+      "¿Alguien sabe si ya han empezado Els Tres Tombs en la Rambla? 🐎",
+      "¡Qué paliza de rúa ayer! Hoy toca algo más tranquilo con la de Lluïment. ✨",
+      "He visto confeti hasta en el rellano de casa... ¿Alguien se une a limpiar un poco la calle? 🧹",
+      "¿Dónde se puede comer hoy que no esté a tope por los Tres Tombs? 🍴",
+      "¡Increíbles las fotos de la Rua de anoche en la Galería! Hemos salido geniales. 📸",
+      "¡Feliz Domingo de Carnaval a todos! A disfrutar del último desfile. 🎭🎊"
     ];
 
     // Base reply scripts
@@ -231,10 +231,10 @@ const Forum: React.FC = () => {
         let possibleReplies = [];
         if (isGreeting) {
           possibleReplies = [
-            `¡Hola, ${isReplyTo}! A por el sábado de Carnaval con ganas. 🎭💪`,
-            `¡Muy buenas! ¿Vais a la Rua hoy? @${isReplyTo}.`,
-            `¡Hola ${isReplyTo}! Aquí preparativos para Sant Valentí. ❤️☕`,
-            `¡Buenos días! ¿Visteis el Pajaritu de esta mañana?`
+            `¡Hola, ${isReplyTo}! A por el domingo de los Tres Tombs. 🐎💪`,
+            `¡Muy buenas! ¿Vais a la Rua de Lluïment esta tarde? @${isReplyTo}.`,
+            `¡Hola ${isReplyTo}! Aquí recuperándonos de ayer con un café. ☕🎭`,
+            `¡Buenos días! ¿Visteis qué caballos más bonitos hoy?`
           ];
         } else if (isEmojiOnly || isVeryShort) {
           // Respuestas para emojis o mensajes muy cortos
@@ -514,12 +514,12 @@ const Forum: React.FC = () => {
   };
 
   const handleTopicClick = (topicId: string) => {
-    if (topicId === 'rua-artesania-live') {
-      setNewMessage('¿Por dónde va la cabecera de la Rua ahora mismo? 🎭📍');
-    } else if (topicId === 'sant-valenti-planes') {
-      setNewMessage('¿Algún sitio con sitio para cenar pareja hoy? ❤️🍴');
-    } else if (topicId === 'pajaritu-ganadores') {
-      setNewMessage('¡Qué pasada el ganador del Pajaritu de hoy! ¿Alguien tiene fotos? 🏎️🏆');
+    if (topicId === 'rua-lluiment-live') {
+      setNewMessage('¿Ya han salido las primeras comparsas en Ramón y Cajal? ✨🎭');
+    } else if (topicId === 'tres-tombs-fotos') {
+      setNewMessage('¡Qué pasada los caballos! ¿Alguien tiene fotos de la bendición? 🐎📸');
+    } else if (topicId === 'limpieza-vecinal-quedada') {
+      setNewMessage('¿A qué hora quedamos para barrer el confeti de la entrada? 🧹🤝');
     }
     setTimeout(() => {
       inputRef.current?.focus();
@@ -528,22 +528,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'rua-artesania-live',
-      title: "🎭 Rua l'Artesania",
-      description: 'Síguela en directo.',
-      participating: 4250
+      id: 'rua-lluiment-live',
+      title: '✨ Rua de Lluïment',
+      description: 'El cierre de hoy.',
+      participating: 3120
     },
     {
-      id: 'pajaritu-ganadores',
-      title: '🏎️ Pajaritu 2026',
-      description: 'Recopilación fotos.',
-      participating: 2190
+      id: 'tres-tombs-fotos',
+      title: '🐎 Tres Tombs TGN',
+      description: 'Fotos y vídeos.',
+      participating: 2450
     },
     {
-      id: 'sant-valenti-planes',
-      title: '❤️ Sant Valentí',
-      description: 'Planes y cenas.',
-      participating: 1845
+      id: 'limpieza-vecinal-quedada',
+      title: '🧹 Quedada Limpieza',
+      description: '¡Participa y suma XP!',
+      participating: 1120
     }
   ];
 
@@ -654,23 +654,23 @@ const Forum: React.FC = () => {
           </div>
 
           <div className="px-4 py-2 mt-4">
-            <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Sábado Carnaval</h2>
+            <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Domingo Carnaval</h2>
             <ul className="space-y-4 text-xs md:text-sm">
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🍹 <strong>Camareros Extra (Restaurante El Llorito)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Part Alta • 🕔 20h-02h • Refuerzo San Valentín • 14€/h</span>
+                🧹 <strong>Brigada Refuerzo Limpieza (FCC/TGN)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 Centro / Part Alta • 🕔 06h-14h • Operativo Especial • 15€/h</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🛡️ <strong>Seguridad / Control (Highland TGN)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📧 info@highland.com • Asunto: Sábado Noche • Incorporación hoy</span>
+                🛡️ <strong>Seguridad / Control (Rua Lluïment)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📧 tgn.cultura@ajuntament.cat • Refuerzo tarde hoy • 16:30h inicio</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🎨 <strong>Ayudante Carrozas (Urgente)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Av. Ramón y Cajal • 🕔 15h-18h • Ayuda montaje final • ¡Preguntar por Ricard!</span>
+                🥘 <strong>Extras Cocina (Rest. El Serrallo)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 Moll de Pescadors • 🕔 12h-17h • Refuerzo comida Domingo • Urgente</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🌹 <strong>Reparto Flores (Floristería Mimosa)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📞 677 888 999 • Reparto Sant Valentí moto/bici • 10€/hora</span>
+                🚚 <strong>Desmontaje Carrozas (Dilluns Gras)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📞 655 444 333 • Ayuda desmontaje para mañana • 12€/hora</span>
               </li>
             </ul>
             <h4 className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2">Vecinos Online (5/12)</h4>
