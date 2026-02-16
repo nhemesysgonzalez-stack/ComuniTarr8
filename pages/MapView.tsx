@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '45%', y: '55%', title: "Els Tres Tombs", desc: 'Desfile de caballos y carruajes.', status: 'Hoy 11:30h', color: 'bg-amber-600', icon: 'pest_control_rodent', glow: 'shadow-[0_0_50px_rgba(217,119,6,0.8)]' },
-    { id: 2, type: 'event', x: '42%', y: '45%', title: 'Rua de Lluïment', desc: 'Las 10 mejores comparsas.', status: 'Hoy 18:00h', color: 'bg-primary', icon: 'star', glow: 'shadow-[0_0_35px_rgba(43,140,238,0.5)]' },
-    { id: 3, type: 'incident', x: '50%', y: '60%', title: 'Limpieza Post-Rua', desc: 'Equipos retirando confeti y restos de carrozas.', status: 'En curso', color: 'bg-emerald-500', icon: 'cleaning_services' },
-    { id: 4, type: 'incident', x: '40%', y: '30%', title: 'Corte Tráfico', desc: 'Rambla Nova tramo Balcó cortado por Tres Tombs.', status: 'Hasta 14:30h', color: 'bg-red-500', icon: 'block' },
-    { id: 5, type: 'shop', x: '60%', y: '40%', title: 'Pastelería Sunday', desc: 'Cocas de Dijous Gras disponibles.', status: 'Abierto hasta 14h', color: 'bg-pink-500', icon: 'bakery_dining' }
+    { id: 1, type: 'event', x: '46%', y: '50%', title: "Juicio Carnestoltes", desc: 'Teatre Metropol: El destino del Rey en juego.', status: 'Hoy 18:30h', color: 'bg-indigo-600', icon: 'gavel', glow: 'shadow-[0_0_50px_rgba(79,70,229,0.8)]' },
+    { id: 2, type: 'incident', x: '50%', y: '55%', title: 'Operación Confeti', desc: 'Brigadas de limpieza intensa post-Carnaval.', status: 'En curso', color: 'bg-emerald-500', icon: 'cleaning_services' },
+    { id: 3, type: 'incident', x: '42%', y: '45%', title: 'Tráfico Restablecido', desc: 'Circulación normal tras los desfiles del fin de semana.', status: 'Fluido', color: 'bg-sky-500', icon: 'check_circle' },
+    { id: 4, type: 'event', x: '48%', y: '65%', title: 'Duelo Luto TGN', desc: 'Venta de velos y ropa negra para el entierro de mañana.', status: 'Abierto', color: 'bg-slate-900', icon: 'content_cut' },
+    { id: 5, type: 'shop', x: '55%', y: '40%', title: 'Café del Lunes', desc: 'Descuento post-fiesta con tu ComuniPoint.', status: 'Abierto', color: 'bg-amber-700', icon: 'coffee' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

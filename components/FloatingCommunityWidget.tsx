@@ -11,20 +11,20 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🐎 HOY 11:30h: Els Tres Tombs en la Rambla Nova. Venid a ver los caballos decorados. 🎩🐾", neighborhood: 'CENTRO' },
-    { id: 1, user: 'Limpieza TGN', avatar: '/logo.svg', text: '🧹 Operativo especial de limpieza en marcha. Agradecemos vuestra paciencia mientras dejamos las calles impecables. ✨', neighborhood: 'GENERAL' },
-    { id: 2, user: 'TGN Cultura', avatar: '/logo.svg', text: '✨ 18:00h: Rua de Lluïment. Las 10 comparsas ganadoras desfilan hoy. ¡No os lo perdáis! 🎭', neighborhood: 'GENERAL' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "⚖️ HOY 18:30h: Juicio a la Reina Carnestoltes en el Metropol. ¡No os lo perdáis! 🏛️🎭", neighborhood: 'CENTRO' },
+    { id: 1, user: 'Limpieza TGN', avatar: '/logo.svg', text: '🧹 Operativo Especial Post-Rúa en marcha. Trabajamos para dejar las calles listas para la rutina. ✨', neighborhood: 'GENERAL' },
+    { id: 2, user: 'TGN Cultura', avatar: '/logo.svg', text: '📸 Ya podéis subir vuestras fotos de ayer a la Galería Vecinal. ¡Queremos ver vuestros disfraces! ✨', neighborhood: 'GENERAL' },
     { id: 3, user: 'Paco R.', avatar: 'https://i.pravatar.cc/150?u=paco', text: '¡Vaya rúa la de ayer! Las fotos en la Galería son brutales. ¿Alguien sabe quién ganó el primer premio? 🏆📸', neighborhood: 'Part Alta' },
-    { id: 4, user: 'Marta S.', avatar: 'https://i.pravatar.cc/150?u=marta', text: '¿Sabéis si abren hoy los comercios del centro? Necesito recambio de pilas para la cámara. 🔋📸', neighborhood: 'Centro' },
-    { id: 5, user: 'Guille M.', avatar: 'https://i.pravatar.cc/150?u=guille', text: 'Quedada en el Serrallo para comer fideuá post-Carnaval. ¡Quién se apunta! 🥘🌊', neighborhood: 'Serrallo' },
+    { id: 4, user: 'Marta S.', avatar: 'https://i.pravatar.cc/150?u=marta', text: '¿Sabéis si mañana el entierro es puntual a la Plaza de la Font? Tengo que preparar el luto. ⚰️🖤', neighborhood: 'Centro' },
+    { id: 5, user: 'Guille M.', avatar: 'https://i.pravatar.cc/150?u=guille', text: 'Vuelta al curro con un poco de resaca festival... ¡Ánimo a todos con el lunes! ☕💪', neighborhood: 'Serrallo' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '🐎 11:30h: Tres Tombs' },
-    { user: 'Cultura', text: '✨ 18:00h: Rua Lluïment' },
-    { user: 'Limpieza', text: '🧹 Plan Limpieza Activo' },
-    { user: 'G. Urbana', text: '🚗 Cortes Rambla 11-14h' },
-    { user: 'Vecinos', text: '📸 Fotos Rúa en Galeria' }
+    { user: 'Admin', text: '⚖️ 18:30h: Juicio Rey' },
+    { user: 'Cultura', text: '⚰️ Mañana: Entierro' },
+    { user: 'Limpieza', text: '🧹 Operación Confeti' },
+    { user: 'V. Urbana', text: '🚗 Tráfico Normal' },
+    { user: 'Vecinos', text: '📸 Sube tus Fotos!' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

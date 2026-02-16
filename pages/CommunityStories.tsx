@@ -18,7 +18,18 @@ const CommunityStories: React.FC = () => {
             .select('*')
             .order('created_at', { ascending: false });
 
-        if (data) setStories(data);
+        const mockStories = [
+            { id: 'ms1', user_name: 'Ana T.', content: 'Increíble la Rua de Lluïmed ayer! ✨ #CarnavalTGN2026', image_url: 'https://images.unsplash.com/photo-1514525253361-b83a85f5d980', likes: 45, created_at: new Date().toISOString() },
+            { id: 'ms2', user_name: 'Marc G.', content: 'Els Tres Tombs han sido espectaculares. ¡Vaya caballos! 🐎🐾', image_url: 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a', likes: 32, created_at: new Date().toISOString() },
+            { id: 'ms3', user_name: 'Pilar S.', content: 'Todo recogido tras la rúa. ¡Gran trabajo de los vecinos! 🧹✨', image_url: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca', likes: 28, created_at: new Date().toISOString() },
+            { id: 'ms4', user_name: 'Joan R.', content: 'Preparados para el Juicio de esta tarde. ¡A por la Reina! ⚖️🤡', image_url: 'https://images.unsplash.com/photo-1586521995568-39abaa0c2311', likes: 15, created_at: new Date().toISOString() }
+        ];
+
+        if (data && data.length > 0) {
+            setStories(data);
+        } else {
+            setStories(mockStories);
+        }
     };
 
     const handleLike = async (storyId: string, currentLikes: number) => {

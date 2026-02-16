@@ -8,9 +8,9 @@ interface EmergencyBroadcastProps {
 export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismiss }) => {
     const [isVisible, setIsVisible] = useState(false);
 
-    // Logic to auto-show if there is an active alert for today (Feb 15 2026)
+    // Logic to auto-show if there is an active alert for today (Feb 16 2026)
     useEffect(() => {
-        const hasSeenAlert = sessionStorage.getItem('hasSeenCautionFeb15');
+        const hasSeenAlert = sessionStorage.getItem('hasSeenCautionFeb16');
         if (!hasSeenAlert) {
             setTimeout(() => {
                 setIsVisible(true);
@@ -28,7 +28,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
 
     const handleDismiss = () => {
         setIsVisible(false);
-        sessionStorage.setItem('hasSeenCautionFeb15', 'true');
+        sessionStorage.setItem('hasSeenCautionFeb16', 'true');
         if (onDismiss) onDismiss();
     };
 
@@ -58,24 +58,24 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
 
                         <div className="relative z-10 text-center">
                             <div className="size-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl animate-pulse">
-                                <span className="material-symbols-outlined text-white text-5xl">info</span>
+                                <span className="material-symbols-outlined text-white text-5xl">gavel</span>
                             </div>
 
                             <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tighter leading-none mb-6">
-                                AVISO ESPECIAL <br /> CARNAVAL TGN 2026
+                                VEREDICTO FINAL <br /> CARNAVAL TGN 2026
                             </h2>
 
                             <div className="bg-blue-50 rounded-3xl p-6 mb-8 border-2 border-blue-100">
                                 <p className="text-xl font-black text-gray-900 leading-tight mb-4 uppercase">
-                                    ⚠️ AFECTACIONES DOMINGO 15 FEB
+                                    ⚖️ HOY: JUICIO AL CARNESTOLTES
                                 </p>
                                 <p className="text-gray-600 font-bold leading-relaxed mb-4">
-                                    Hoy celebramos <span className="text-amber-600 font-black">Els Tres Tombs (11:30h)</span> y la <span className="text-primary font-black">Rua de Lluïment (18:00h)</span>. Planifica tus desplazamientos al centro.
+                                    Esta tarde se celebra el <span className="text-primary font-black">Juicio a la Reina y su Concubí</span> en el Teatre Metropol. El destino del Carnaval está en juego.
                                 </p>
                                 <ul className="text-left text-xs font-black text-primary space-y-2 uppercase tracking-wide">
-                                    <li className="flex items-center gap-2">🐎 RAMBLA NOVA CORTADA TRAMO ALTO (MAÑANA)</li>
-                                    <li className="flex items-center gap-2">✨ CORTE RAMÓN Y CAJAL HASTA MARQUÈS OLIVAR (TARDE)</li>
-                                    <li className="flex items-center gap-2">🅿️ PARKING MUNICIPALES: ALTA OCUPACIÓN</li>
+                                    <li className="flex items-center gap-2">🏛️ 18:30H Y 20:00H: SESIONES DE JUICIO (METROPOL)</li>
+                                    <li className="flex items-center gap-2">🧹 OPERATIVO LIMPIEZA: CALLES DEL CENTRO EN CURSO</li>
+                                    <li className="flex items-center gap-2">🚗 TRÁFICO: RESTABLECIDO EN RAMBLA Y AV. CATALUNYA</li>
                                 </ul>
                             </div>
 
@@ -87,7 +87,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                             </button>
 
                             <p className="mt-6 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                                INFO ACTUALIZADA - DOMINGO 15 FEB 2026
+                                INFO ACTUALIZADA - LUNES 16 FEB 2026
                             </p>
                         </div>
                     </motion.div>

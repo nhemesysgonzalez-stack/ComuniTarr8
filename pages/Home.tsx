@@ -181,36 +181,36 @@ const Home: React.FC = () => {
           .order('created_at', { ascending: false })
           .limit(3);
 
-        const tresTombsNews = {
-          id: 'tres-tombs-2026',
-          title: "🐎 HOY 11:30h: Els Tres Tombs",
-          content: "Tradición con caballos y carruajes recorriendo la Rambla Nova. Un espectáculo clásico del invierno tarraconense.",
-          category: "TRADICIÓN",
+        const juicioCarnestoltesNews = {
+          id: 'juicio-carnestoltes-2026',
+          title: "⚖️ HOY 18:30h: Juicio a la Reina",
+          content: "El Tribunal de Lucífer juzga a la Reina Carnestoltes y su Concubí por los excesos cometidos. Sátira y humor en el Metropol.",
+          category: "CULTURA",
           neighborhood: "CENTRO",
-          itinerary: "• 11:30h: Inicio en Rambla\n• Recorrido: Círculo por tramo central\n• Final: Bendición de animales",
+          itinerary: "• 18:30h: Primera Sesión\n• 20:00h: Segunda Sesión\n• Lugar: Teatre Metropol",
           link_url: "/calendar",
           created_at: new Date().toISOString()
         };
 
-        const ruaLluimentNews = {
-          id: 'rua-lluiment-2026',
-          title: "✨ HOY 18:00h: Rua de Lluïment",
-          content: "Las 10 comparsas ganadoras del año pasado vuelven a desfilar con sus mejores galas. ¡Cierre de lujo del fin de semana!",
-          category: "CARNAVAL",
+        const postRuaGalleryNews = {
+          id: 'gallery-post-rua-2026',
+          title: "📸 GALERÍA: Resumen de la Rúa",
+          content: "Ya puedes ver las mejores fotos y vídeos de la Rua de Lluïment de ayer domingo. ¡Búscate entre las comparsas!",
+          category: "VECINAL",
           neighborhood: "GENERAL",
-          itinerary: "• Inicio: Av. Ramón y Cajal\n• Recorrido: Hasta Av. Catalunya\n• Ambiente: Familiar y espectacular",
-          link_url: "/calendar",
+          itinerary: "• Fotos: +500 nuevas\n• Vídeos: Alta Calidad\n• Ver en: Historias",
+          link_url: "/stories",
           created_at: new Date().toISOString()
         };
 
-        const postCarnivalCleanupNews = {
-          id: 'post-carnival-cleanup',
-          title: "🧹 LIMPIEZA: Plan Especial",
-          content: "Operativo especial tras la gran afluencia de ayer. Las brigadas trabajan hoy en el centro y Serrallo. ¡Ayúdanos a mantener el barrio limpio!",
-          category: "COMUNIDAD",
+        const mondayCleanupNews = {
+          id: 'monday-cleanup-2026',
+          title: "🧹 Operación Confeti: Lunes",
+          content: "Tras el intenso fin de semana, las brigadas municipales refuerzan la limpieza en Rambla y Part Alta. ¡Gracias por vuestra paciencia!",
+          category: "SERVICIOS",
           neighborhood: "GENERAL",
-          itinerary: "• Zona 1: Rambla Nova\n• Zona 2: Plaza de la Font\n• Reportar: Vía ComuniTarr",
-          link_url: "/forum",
+          itinerary: "• Zona: Todo el Centro\n• Estado: En curso\n• Reportar: Vía 'Incidencias'",
+          link_url: "/incidents",
           created_at: new Date().toISOString()
         };
 
@@ -227,37 +227,29 @@ const Home: React.FC = () => {
         };
         const saturdayJobs = { id: 'j-jobs-sat', title: "💼 EMPLEO: Refuerzo Hostelería", content: "Se buscan camareros extra para la noche de Carnaval y cenas de San Valentín. Alta inmediata.", category: "EMPLEO", neighborhood: "GENERAL", itinerary: "• Ofertas: 8 activas\n• Zona: Part Alta / Serrallo\n• Turno: Noche hoy", link_url: "/forum", created_at: new Date().toISOString() };
 
-        const trafficSunday = {
-          id: 'traffic-sunday-rua',
-          title: "🚧 TRÁFICO: Cortes Domingo",
-          content: "Cortes temporales por los Tres Tombs (mañana) y la Rua de Lluïment (tarde). Planifica tus desplazamientos.",
-          category: "MOVILIDAD",
+        const mondayTraffic = {
+          id: 'traffic-mon',
+          title: "🚗 TRÁFICO: Circulación Normal",
+          content: "Restablecido el tráfico en todas las vías principales. Sin cortes programados para hoy lunes.",
+          category: "TRÁFICO",
           neighborhood: "CENTRO",
-          itinerary: "• 11-14h: Rambla Nova\n• 17-20h: Ramón y Cajal\n• Alt: Av. Roma",
+          itinerary: "• Rambla: Abierta\n• Av. Catalunya: Abierta\n• Estado: Fluido",
+          link_url: "/map",
           created_at: new Date().toISOString()
         };
 
-        const galleryUpdateNews = {
-          id: 'gallery-update-carnival',
-          title: "📸 GALERÍA: Fotos Rua Artesanía",
-          content: "Ya están disponibles las primeras fotos de la gran rúa de ayer. ¡Búscate y comparte las tuyas!",
-          category: "VECINAL",
+        const funeralAnnouncement = {
+          id: 'funeral-carnestoltes-preview',
+          title: "⚰️ MAÑANA: Entierro de la Sardina",
+          content: "Mañana martes a las 20:00h daremos el último adiós al Rey Carnestoltes. Se recomienda vestir de riguroso luto.",
+          category: "EVENTO",
           neighborhood: "GENERAL",
-          itinerary: "• Fotos: +50 nuevas\n• Origen: Vecinos TGN\n• Ver: Galería Vecinal",
-          link_url: "/gallery",
+          itinerary: "• 20:00h: Inicio Velatorio\n• 21:00h: Quema del Ninot\n• Lugar: Pl. de la Font",
+          link_url: "/calendar",
           created_at: new Date().toISOString()
         };
 
-        const talent45News = {
-          id: 'social-talent-45',
-          title: "🌟 TALENTO +45: Nuevas Ayudas",
-          content: "Si tienes más de 45 años y buscas empleo, Tarragona Impulsa lanza un programa de reinserción. Consulta los detalles en Servicios.",
-          category: "EMPLEO",
-          neighborhood: "GENERAL",
-          itinerary: "• Perfil: +45 años\n• Lugar: Tabacalera\n• Info: Sección Servicios",
-          link_url: "/services",
-          created_at: new Date().toISOString()
-        };
+        const mondayJobs = { id: 'j-jobs-mon', title: "💼 EMPLEO: Jornada de Lunes", content: "Nuevas ofertas de empleo administrativo y servicios para arrancar la semana tras las fiestas. Alta inmediata.", category: "EMPLEO", neighborhood: "GENERAL", itinerary: "• Ofertas: 12 nuevas\n• Canal: Foro > Empleo\n• Perfil: Varios", link_url: "/forum", created_at: new Date().toISOString() };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
         const today = new Date();
@@ -271,7 +263,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([tresTombsNews, ruaLluimentNews, postCarnivalCleanupNews, galleryUpdateNews, volunteeringNews, womanSupportNews, saturdayJobs, trafficSunday, talent45News, ...validFetchedNews].slice(0, 9));
+        setNews([juicioCarnestoltesNews, postRuaGalleryNews, mondayCleanupNews, funeralAnnouncement, volunteeringNews, womanSupportNews, mondayJobs, mondayTraffic, ...validFetchedNews].slice(0, 8));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

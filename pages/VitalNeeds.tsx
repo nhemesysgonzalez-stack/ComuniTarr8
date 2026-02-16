@@ -46,36 +46,36 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'mock-n1',
+                    id: 'mock-mon-n1',
                     creator_id: 'v4',
                     type: 'other',
-                    title: '🧹 Ayuda Limpieza Portal',
-                    description: 'Se ha acumulado mucho confeti y restos de la rúa de ayer. ¿Algún vecino se anima a barrer un poco conmigo?',
-                    contact_info: '611 00 22 33 (Lluís)',
+                    title: '📦 Ayuda Desmontaje Decoración',
+                    description: 'Necesito ayuda para bajar una estructura de carroza del balcón. Son 10 min, hoy a las 18h.',
+                    contact_info: '688 22 11 00 (Pere)',
                     is_urgent: false,
                     neighborhood: 'CENTRO',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-n2',
+                    id: 'mock-mon-n2',
                     creator_id: 'v5',
                     type: 'company',
-                    title: '🐾 Cuidado Mascota Asustada',
-                    description: 'Mi perro está estresado por el ruido de ayer. ¿Alguien para pasearlo por zona tranquila (Francolí) mientras trabajo?',
-                    contact_info: '644 33 22 11 (Sara)',
-                    is_urgent: true,
+                    title: '🚗 Compartir Coche (Lunes)',
+                    description: 'Busco a alguien para ir al Polígono Entrevies esta semana a las 08:30h. Compartimos gastos.',
+                    contact_info: '644 33 22 11 (Marta)',
+                    is_urgent: false,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-n3',
+                    id: 'mock-mon-n3',
                     creator_id: 'v6',
-                    type: 'emotional',
-                    title: "☕ Café y Charla: Post-Carnaval",
-                    description: 'Si alguien se siente un poco plof tras la fiesta y quiere bajar a tomar un café y charlar, zona Part Alta.',
-                    contact_info: '622 88 77 66 (Tomàs)',
-                    is_urgent: false,
-                    neighborhood: 'PART ALTA',
+                    type: 'food',
+                    title: "🥘 Tupper Intercambio Festivo",
+                    description: 'Me ha sobrado mucha comida del evento de ayer. Si alguien quiere un tupper de canelones caseros, zona Llevant.',
+                    contact_info: '622 88 77 66 (Carme)',
+                    is_urgent: true,
+                    neighborhood: 'LLEVANT',
                     created_at: new Date().toISOString()
                 }
             ];

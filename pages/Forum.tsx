@@ -153,21 +153,21 @@ const Forum: React.FC = () => {
     // Priority for Mediator if it's a question or app help
     const isAssistant = isReplyTo && (isQuestion || isHelpRequest || p.includes('@mediador') || p.includes('mediador'));
 
-    // Base initiation scripts (Sunday / Tres Tombs / Lluïment)
+    // Base initiation scripts (Monday / Juicio / Cleanup)
     let scripts = [
-      "¿Alguien sabe si ya han empezado Els Tres Tombs en la Rambla? 🐎",
-      "¡Qué paliza de rúa ayer! Hoy toca algo más tranquilo con la de Lluïment. ✨",
-      "He visto confeti hasta en el rellano de casa... ¿Alguien se une a limpiar un poco la calle? 🧹",
-      "¿Dónde se puede comer hoy que no esté a tope por los Tres Tombs? 🍴",
-      "¡Increíbles las fotos de la Rua de anoche en la Galería! Hemos salido geniales. 📸",
-      "¡Feliz Domingo de Carnaval a todos! A disfrutar del último desfile. 🎭🎊"
+      "¿Tenéis ya las entradas para el Juicio de esta tarde en el Metropol? ⚖️",
+      "Vaya paliza de fin de semana... ¡pero ha valido la pena! ¿Alguien tiene fotos de la rúa de ayer? 📸",
+      "He visto a la brigada de limpieza por la Rambla, están dejando todo impecable. 🧹",
+      "¿Algún plan tranquilo para este lunes post-Carnaval? ☕",
+      "Vaya risas ayer con algunas comparsas. ¡La del Tiburón era brutal! 😂✨",
+      "¿Sabemos si el entierro de mañana es a las 20h o a las 21h? ⚰️"
     ];
 
     // Base reply scripts
     let replyScripts = [
-      `¡Totalmente de acuerdo, ${isReplyTo}! Sábado a tope.`,
+      `¡Totalmente de acuerdo, ${isReplyTo}! Seguimos de resaca festiva.`,
       `¿Me puedes dar más detalles sobre eso, ${isReplyTo}?`,
-      `¡Buenos días ${isReplyTo}! Disfruta del Carnaval.`,
+      `¡Buenos días ${isReplyTo}! Ánimo con el lunes.`,
       `Yo también me pasaré luego, nos vemos allí.`,
       `Gracias por el aviso, ${isReplyTo}.`,
       `¡Vaya, no lo sabía! Gracias por comentarlo, ${isReplyTo}.`
@@ -528,22 +528,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'rua-lluiment-live',
-      title: '✨ Rua de Lluïment',
-      description: 'El cierre de hoy.',
-      participating: 3120
+      id: 'juicio-carnestoltes-tgn',
+      title: '⚖️ Juicio al Rey',
+      description: 'Teatre Metropol 18:30h.',
+      participating: 2840
     },
     {
-      id: 'tres-tombs-fotos',
-      title: '🐎 Tres Tombs TGN',
-      description: 'Fotos y vídeos.',
-      participating: 2450
+      id: 'rua-lluiment-fotos-gallery',
+      title: '✨ Fotos Rua Lluïment',
+      description: '¡Nuevas en Galería!',
+      participating: 4210
     },
     {
-      id: 'limpieza-vecinal-quedada',
-      title: '🧹 Quedada Limpieza',
-      description: '¡Participa y suma XP!',
-      participating: 1120
+      id: 'operacion-confeti-lunes',
+      title: '🧹 Operación Confeti',
+      description: 'Limpieza de barrios.',
+      participating: 1560
     }
   ];
 
@@ -654,23 +654,23 @@ const Forum: React.FC = () => {
           </div>
 
           <div className="px-4 py-2 mt-4">
-            <h2 className="text-xl font-black mb-4 text-center">Ofertas Tarragona - Domingo Carnaval</h2>
+            <h2 className="text-xl font-black mb-4 text-center">Ofertas - Lunes Post-Fiestas</h2>
             <ul className="space-y-4 text-xs md:text-sm">
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🧹 <strong>Brigada Refuerzo Limpieza (FCC/TGN)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Centro / Part Alta • 🕔 06h-14h • Operativo Especial • 15€/h</span>
+                🧹 <strong>Operario Limpieza Vial (Brigada Post-Rúa)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 Zona Rambla / Eixample • 🕔 07h-15h • Refuerzo 1 semana • 14€/h</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🛡️ <strong>Seguridad / Control (Rua Lluïment)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📧 tgn.cultura@ajuntament.cat • Refuerzo tarde hoy • 16:30h inicio</span>
+                🛠️ <strong>Carpintería / Reparación Carrozas</strong>
+                <br /><span className="text-gray-500 text-[10px]">📧 carrozas.tgn@carnaval.cat • Desmontaje y reparación • Urgente</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🥘 <strong>Extras Cocina (Rest. El Serrallo)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Moll de Pescadors • 🕔 12h-17h • Refuerzo comida Domingo • Urgente</span>
+                📁 <strong>Auxiliar Administrativo (Tarragona Impulsa)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 Edif. Tabacalera • 🕔 09h-14h • Gestiones municipales • +45 Bienvenid@s</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🚚 <strong>Desmontaje Carrozas (Dilluns Gras)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📞 655 444 333 • Ayuda desmontaje para mañana • 12€/hora</span>
+                📦 <strong>Repartidor Mensajería (Campaña Feb)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📞 677 888 999 • Con furgoneta propia o empresa • Ruta TGN Ciutat</span>
               </li>
             </ul>
             <h4 className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2">Vecinos Online (5/12)</h4>

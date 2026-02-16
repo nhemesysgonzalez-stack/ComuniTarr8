@@ -57,47 +57,47 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'm-1',
+          id: 'm-mon-1',
           user_id: 'v1',
-          title: "🎭 Disfraz 'Medusa' (Rua 2026)",
-          description: "Usado solo ayer en la Rua de l'Artesania. Talla M. Perfecto estado para el último desfile de hoy.",
-          price: '45',
+          title: "🧹 Pack Aspiradora 'Confetiterminador'",
+          description: "Aspiradora de alta potencia especial para decoraciones y restos de fiestas. Solo usada 2 veces.",
+          price: '60',
+          category: 'hogar',
+          neighborhood: 'GENERAL',
+          contact_info: '688 22 11 00 (Marc)',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'm-mon-2',
+          user_id: 'v2',
+          title: '🎭 Lote 10 Disfraces (Varios)',
+          description: "Vendemos los disfraces de nuestra colla para el próximo año o para reciclaje de telas. ¡Lote completo barato!",
+          price: '120',
           category: 'moda',
           neighborhood: 'CENTRO',
-          contact_info: '652 11 00 99 (Carla)',
+          contact_info: '644 33 22 11 (Marta)',
           created_at: new Date().toISOString()
         },
         {
-          id: 'm-2',
-          user_id: 'v2',
-          title: '🧹 Kit Limpieza Intensiva',
-          description: "Spray quita-manchas y escoba especial para restos de purpurina y confeti. ¡Que tu suelo brille otra vez!",
-          price: '12',
+          id: 'm-mon-3',
+          user_id: 'v3',
+          title: '💆 Masajeador de Pies Eléctrico',
+          description: 'Ahorra en fisio después de las rúas. Tres intensidades de calor. Nuevo en caja.',
+          price: '35',
           category: 'hogar',
           neighborhood: 'PART ALTA',
-          contact_info: '633 44 55 66 (Javi)',
+          contact_info: '622 11 99 88 (Rafa)',
           created_at: new Date().toISOString()
         },
         {
-          id: 'm-3',
-          user_id: 'v3',
-          title: '👟 Zapatillas Descanso (Nuevas)',
-          description: 'Ideal para después de estar 5 horas desfilando. Suela de gel. Tallas 38-42.',
-          price: '25',
-          category: 'moda',
-          neighborhood: 'BARRIS MARÍTIMS',
-          contact_info: '611 22 33 44 (Jose)',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'm-4',
+          id: 'm-mon-4',
           user_id: 'v4',
-          title: '🔋 Powerbank 20.000mAh',
-          description: 'Que no te falte batería para grabar la Rua de Lluïment de esta tarde. Carga rápida.',
-          price: '30',
-          category: 'tech',
-          neighborhood: 'NORD',
-          contact_info: '699 88 77 66 (Ana)',
+          title: '📚 Libro: Detox en 3 Días',
+          description: 'Ideal para limpiar el cuerpo después de los excesos de Carnaval. Recetas fáciles.',
+          price: '8',
+          category: 'otros',
+          neighborhood: 'GENERAL',
+          contact_info: '611 00 99 88 (Elena)',
           created_at: new Date().toISOString()
         }
       ];

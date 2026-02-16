@@ -26,13 +26,13 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     p.includes("trabajo") || p.includes("empleo") || p.includes("laboral") || p.includes("curro") || p.includes("busco") || p.includes("paro") || p.includes("oferta") ||
     (isJobContext && (p.includes("busco") || p.includes("necesito")))
   ) {
-    return "Ofertas Laborales Urgentes (Domingo 15 Feb - Especial Recogida & Eventos) 💼:\n\n" +
-      "1. 🧹 Brigada de Limpieza Especial - Refuerzo portales y calles tras la Rúa → 15€/h (Hoy).\n" +
-      "2. 🛡️ Auxiliar de Seguridad - Control Rua de Lluïment → Turno tarde (17:30h).\n" +
-      "3. 🍲 Extras Cocina - Restaurantes El Serrallo → Refuerzo turno comida Domingo.\n" +
-      "4. 🚚 Desmontaje Carrozas - Ayuda para mañana lunes → Trabajo físico remunerado.\n" +
-      "5. 🌟 TALENTO +45: Gestor de Punto de Información Turística - TGN Impulsa pide experiencia previa.\n\n" +
-      "• ¿Buscas trabajo estable? Mañana lunes abre la oficina del SOC en Ponent.";
+    return "Ofertas Laborales Urgentes (Lunes 16 Feb - Recuperación & Servicios) 💼:\n\n" +
+      "1. 🧹 Operario de Limpieza Vial - Refuerzo post-desfiles (07h-15h) → 14€/h.\n" +
+      "2. 🛠️ Carpintería y Montaje - Desmontaje gradas y reparación carrozas → Urgente.\n" +
+      "3. 📁 Auxiliar Administrativo - Tarragona Impulsa (Tabacalera) → Campaña primer trimestre.\n" +
+      "4. 📦 Repartidor Mensajería - Campaña rebajas/febrero → Con vehículo propio.\n" +
+      "5. 🌟 TALENTO +45: Gestor de Proyectos Sociales - Ayto TGN busca experiencia gestión pública.\n\n" +
+      "• ¿Buscas trabajo estable? Pásate por la OMAC para ver las últimas convocatorias públicas.";
   }
 
   // 16. Preppers y Seguridad (Petroquímicas / Viento) - Prioridad en canal Preppers
@@ -56,17 +56,17 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.1 TRÁFICO EN TIEMPO REAL
   if (p.includes("trafico") || p.includes("tráfico") || p.includes("carretera") || p.includes("circulacion") || p.includes("atasco") || p.includes("retenciones") || p.includes("corte")) {
-    return "🚗 TRÁFICO TARRAGONA (Domingo 15 Feb, 10:45h):\n\n• 🐎 RAMBLA NOVA: Cortada tramo Balcó por Els Tres Tombs (11-14:30h).\n• ✨ AV. RAMÓN Y CAJAL: Cierre programado a las 17:30h por Rua Lluïment.\n• 🟢 ACCESOS A-7/AP-7: Sin incidencias.\n• 🟡 CENTRO: Alta ocupación en parkings municipales.\n\n💡 Alternativa: Park & Ride Tabacalera libre.";
+    return "🚗 TRÁFICO TARRAGONA (Lunes 16 Feb, 08:30h):\n\n• 🟢 RAMBLA NOVA: Abierta en todos sus carriles.\n• 🟢 AV. CATALUNYA Y CAJAL: Tráfico fluido tras el desfile de ayer.\n• 🟡 T-11 Y A-7: Alguna retención puntual en hora punta de entrada (Polígonos).\n• 🟢 ACCESOS: Sin incidencias destacables por viento.\n\n💡 Tráfico normalizado de lunes laborable.";
   }
 
   // 2.2 FARMACIAS DE GUARDIA
   if (p.includes("farmacia") || p.includes("guardia") || p.includes("medicamento") || p.includes("parafarmacia")) {
-    return "💊 FARMACIAS DE GUARDIA HOY (Domingo 15 Feb 2026):\n\n• 🏥 Farmacia FULLANA - C/ de la Unió, 1 (24h)\n• 🏥 Farmacia DEL PORT - Pl. Corsini, 12 (hasta 22h)\n• 🏥 Farmacia SANT PERE - C/ Sant Pere, 45 (hasta 23h)\n\n📍 Farmacia de guardia abierta 24h: FULLANA.\n⚕️ Urgencias médicas: CAP 24h o Hospital Joan XXIII.";
+    return "💊 FARMACIAS DE GUARDIA HOY (Lunes 16 Feb 2026):\n\n• 🏥 Farmacia MAS - C/ de l'Assalt, 12 (09-22h)\n• 🏥 Farmacia NAVARRO - Rambla Nova, 88 (24h)\n• 🏥 Farmacia DEL PORT - Pl. Corsini, 12 (hasta 22h)\n\n📍 Farmacia de guardia abierta 24h: NAVARRO.\n⚕️ Urgencias médicas: CAP 24h o Hospital Joan XXIII.";
   }
 
   // 2.3 COLEGIOS Y EDUCACIÓN
   if (p.includes("colegio") || p.includes("escuela") || p.includes("escola") || p.includes("instituto") || p.includes("matricula") || p.includes("matrícula") || p.includes("calendario escolar") || p.includes("menu escolar") || p.includes("menú")) {
-    return "🎓 INFORMACIÓN ESCOLAR (Domingo 15 Feb):\n\n📅 **SEMANA BLANCA:**\n• Mañana lunes NO hay clase en mayoría de centros (Vacaciones Carnaval).\n• 16-20 Feb: Actividades de ocio para niños en Centros Cívicos.\n\n💡 Consejo: Revisa si tu centro hace intensiva el lunes.";
+    return "🎓 INFORMACIÓN ESCOLAR (Lunes 16 Feb):\n\n📅 **SEMANA BLANCA / CARNAVAL:**\n• Hoy Lunes: Muchos centros NO tienen clase (festivo de libre disposición).\n• Mañana Martes: También festivo escolar en varios institutos de TGN.\n• 16-20 Feb: Vacaciones de Carnaval según el centro.\n\n💡 Comprueba la agenda de tu centro específico en su web oficial.";
   }
 
   // 2.4 SERVICIOS MUNICIPALES (AMPLIADO)
@@ -86,7 +86,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.7 ACTIVIDADES Y OCIO
   if (p.includes("actividad") || p.includes("evento") || p.includes("plan") || p.includes("ocio") || p.includes("que hacer") || p.includes("qué hacer")) {
-    return "🎉 QUÉ HACER EN TARRAGONA (Domingo 15 Feb):\n\n🐎 **MAÑANA (11:30h):**\n• Els Tres Tombs - Bendición y rúa de caballos (Rambla Nova).\n\n✨ **TARDE (18:00h):**\n• Rua de Lluïment - Las 10 mejores comparsas del Carnaval desfilan desde Av. Ramón y Cajal.\n\n🧹 **VECINAL:**\n• Quedada limpieza confeti en Plaza de la Font (10:00h).\n\n📚 **CALMA:**\n• Paseo por la Muralla o Anfiteatro (9-15h).";
+    return "🎉 QUÉ HACER EN TARRAGONA (Lunes 16 Feb):\n\n⚖️ **HOY (18:30h y 20:00h):**\n• Juicio a la Reina Carnestoltes y su Concubí (Teatre Metropol). ¡No te pierdas la sátira!\n\n🧹 **VECINAL:**\n• Operativo limpieza confeti en Eixample y Centro. ¡Puedes reportar manchas en el mapa!\n\n📸 **RELAX:**\n• Mirar las fotos de las rúas de ayer en la Galería de esta App.\n\n⚰️ **PREVIEW MAÑANA:**\n• Entierro de la Sardina (20:00h). Empieza a preparar tu luto.";
   }
 
   // 2.8 EMERGENCIAS Y NÚMEROS ÚTILES
@@ -114,9 +114,9 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     return "Para trámites municipales en Tarragona 🏛️:\n\n• La OMAC (Oficina Municipal d'Atenció Ciutadana) requiere cita previa. Puedes pedirla en la web tarragona.cat o llamando al 010.\n• Empadronamiento: Necesitas DNI/NIE y el contrato de alquiler o escritura de la vivienda.\n• Volante de convivencia: Se puede obtener online con certificado digital al instante.";
   }
 
-  // 7. Noticias y Eventos de Hoy (DOMINGO 15 FEBRERO 2026 - Tres Tombs y Lluïment)
+  // 7. Noticias y Eventos de Hoy (LUNES 16 FEBRERO 2026 - Juicio Carnestoltes)
   if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("viento") || p.includes("tiempo") || p.includes("plan")) {
-    return "Resumen para el DOMINGO 15 de febrero 🐎✨:\n\n• 🐎 TRADICIÓN: Els Tres Tombs a las 11:30h en la Rambla Nova.\n• ✨ CARNAVAL: Rua de Lluïment a las 18:00h. Cierre espectacular de las comparsas ganadoras.\n• 🧹 COMUNIDAD: Operativo de limpieza activo por toda la ciudad tras la Rua de ayer.\n• 📸 GALERÍA: Ya puedes ver las fotos de ayer en la sección HISTORIAS.";
+    return "Resumen para el LUNES 16 de febrero ⚖️🧹:\n\n• ⚖️ CULTURA: Juicio al Rey Carnestoltes hoy en el Metropol (18:30h). ¡El veredicto se acerca!\n• 🧹 LIMPIEZA: Operación 'Confeti Cero' activa en todo el centro tras la Rua Lluïment de ayer.\n• 🚗 TRÁFICO: Circulación normalizada de lunes laborable. Rambla abierta.\n• 📸 GALERÍA: Ya puedes ver todas las fotos del fin de semana en la sección HISTORIAS.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)
@@ -124,9 +124,9 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     return "Aparcamiento en Tarragona 🚗:\n\n• Si eres residente, tienes tarifa súper reducida en zona verde (aprox. 0,40€/día). Debes tramitarlo en la OMAC.\n• Parking Saavedra y Lluís Companys son opciones céntricas si la zona azul está completa.\n• Aplicación: Te recomiendo descargar 'AparcarTGN' para gestionar los tickets desde el móvil.";
   }
 
-  // 9. Nàstic y Tres Tombs
+  // 9. Nàstic y Carnaval
   if (p.includes("nastic") || p.includes("futbol") || p.includes("caballos") || p.includes("tres tombs")) {
-    return "¡Actualidad del Barrio! 🐎⚽\n\n• El Nàstic juega este domingo en casa. ¡Hay que ir a apoyar!\n• Los Tres Tombs de este domingo 15 saldrán desde la Rambla Nova. Es el evento más esperado del fin de semana post-Carnaval.";
+    return "¡Actualidad del Barrio! 🐎⚽\n\n• El Nàstic jugó ayer, consulta el resultado en el Diari. ¡Próximo partido fuera!\n• Los Tres Tombs de ayer fueron un éxito rotundo en la Rambla Nova. ¡Vaya desfile de caballos!";
   }
 
   // 10. Mascotas y Animales
