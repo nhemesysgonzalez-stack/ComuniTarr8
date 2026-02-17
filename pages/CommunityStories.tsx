@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'ms1', user_name: 'Ana T.', content: 'Increíble la Rua de Lluïmed ayer! ✨ #CarnavalTGN2026', image_url: 'https://images.unsplash.com/photo-1514525253361-b83a85f5d980', likes: 45, created_at: new Date().toISOString() },
-            { id: 'ms2', user_name: 'Marc G.', content: 'Els Tres Tombs han sido espectaculares. ¡Vaya caballos! 🐎🐾', image_url: 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a', likes: 32, created_at: new Date().toISOString() },
-            { id: 'ms3', user_name: 'Pilar S.', content: 'Todo recogido tras la rúa. ¡Gran trabajo de los vecinos! 🧹✨', image_url: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca', likes: 28, created_at: new Date().toISOString() },
-            { id: 'ms4', user_name: 'Joan R.', content: 'Preparados para el Juicio de esta tarde. ¡A por la Reina! ⚖️🤡', image_url: 'https://images.unsplash.com/photo-1586521995568-39abaa0c2311', likes: 15, created_at: new Date().toISOString() }
+            { id: 'ms1', user_name: 'Ana T.', content: 'Vistas del Juicio de ayer en el Metropol. ¡Qué gran sátira! ⚖️🤡 @CulturaTGN', image_url: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f', likes: 56, created_at: new Date().toISOString() },
+            { id: 'ms2', user_name: 'Marc G.', content: 'Ya tenemos el luto preparado para esta tarde. ¡Adiós Carnestoltes! 🖤⚰️ #TGNLuto', image_url: 'https://images.unsplash.com/photo-1493238792000-8113da705763', likes: 89, created_at: new Date().toISOString() },
+            { id: 'ms3', user_name: 'Pilar S.', content: 'Últimos retoques a la sardina para la quema de hoy a las 20h. 🔥🐟', image_url: 'https://images.unsplash.com/photo-1518173946687-a4c8a9ba332f', likes: 42, created_at: new Date().toISOString() },
+            { id: 'ms4', user_name: 'Joan R.', content: '¿Alguien para ir juntos al entierro? Salimos del Serrallo a las 19:15h. 📞 600 000 111', image_url: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81', likes: 24, created_at: new Date().toISOString() }
         ];
 
         if (data && data.length > 0) {

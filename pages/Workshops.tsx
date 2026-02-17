@@ -100,26 +100,26 @@ const Workshops: React.FC = () => {
 
             {/* Featured Class / Service Ad */}
             <div className="max-w-6xl mx-auto px-6 mb-12">
-                <div className="bg-white dark:bg-surface-dark rounded-[40px] border-4 border-dashed border-orange-500/20 p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 hover:border-orange-500/40 transition-all">
-                    <div className="size-32 md:size-48 bg-orange-100 dark:bg-orange-900/30 rounded-[35px] flex items-center justify-center shrink-0">
-                        <span className="material-symbols-outlined text-7xl text-orange-600">construction</span>
+                <div className="bg-white dark:bg-surface-dark rounded-[40px] border-4 border-dashed border-sky-500/20 p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 hover:border-sky-500/40 transition-all">
+                    <div className="size-32 md:size-48 bg-sky-100 dark:bg-sky-900/30 rounded-[35px] flex items-center justify-center shrink-0">
+                        <span className="material-symbols-outlined text-7xl text-sky-600">set_meal</span>
                     </div>
                     <div className="flex-1">
                         <div className="flex items-center gap-3 mb-4">
-                            <span className="px-3 py-1 bg-orange-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">TALLER HOY</span>
-                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">ARTESANÍA</span>
+                            <span className="px-3 py-1 bg-sky-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">EVENTO HOY</span>
+                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">GASTRONOMÍA</span>
                         </div>
-                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Reparación de Máscaras y Atrezzo 🛠️</h2>
+                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Degustación de la Sardina 🐟</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            ¿Se te rompió el tocado o la máscara en la rúa? No lo tires. Hoy a las 17:30h en el Centro Cívico te ayudamos a repararlo para el próximo año.
+                            Después de la quema, ven al Serrallo a la tradicional degustación de sardinas a la brasa. Música en directo y buen ambiente vecinal.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <a href="tel:655112233" className="flex items-center gap-2 px-6 py-3 bg-orange-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
+                            <a href="tel:644998877" className="flex items-center gap-2 px-6 py-3 bg-sky-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
                                 <span className="material-symbols-outlined text-sm">call</span>
-                                655 11 22 33 (Toni)
+                                644 99 88 77 (Manel)
                             </a>
                             <span className="px-6 py-3 bg-gray-50 dark:bg-gray-800 dark:text-white rounded-xl text-xs font-black">
-                                APORTACIÓN VOLUNTARIA
+                                PRECIO POPULAR: 5€
                             </span>
                         </div>
                     </div>

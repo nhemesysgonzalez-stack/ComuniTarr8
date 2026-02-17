@@ -153,14 +153,14 @@ const Forum: React.FC = () => {
     // Priority for Mediator if it's a question or app help
     const isAssistant = isReplyTo && (isQuestion || isHelpRequest || p.includes('@mediador') || p.includes('mediador'));
 
-    // Base initiation scripts (Monday / Juicio / Cleanup)
+    // Base initiation scripts (Tuesday / Entierro / Mourning)
     let scripts = [
-      "¿Tenéis ya las entradas para el Juicio de esta tarde en el Metropol? ⚖️",
-      "Vaya paliza de fin de semana... ¡pero ha valido la pena! ¿Alguien tiene fotos de la rúa de ayer? 📸",
-      "He visto a la brigada de limpieza por la Rambla, están dejando todo impecable. 🧹",
-      "¿Algún plan tranquilo para este lunes post-Carnaval? ☕",
-      "Vaya risas ayer con algunas comparsas. ¡La del Tiburón era brutal! 😂✨",
-      "¿Sabemos si el entierro de mañana es a las 20h o a las 21h? ⚰️"
+      "¿A qué hora empieza el velatorio en la Plaza de la Font? ⚰️",
+      "Hoy toca sacar la ropa negra del armario... ¡Adiós al Carnaval! 🖤😭",
+      "¿Alguna recomendación para cenar algo de pescado hoy por el Entierro de la Sardina? 🐟",
+      "¡Vaya pena! La quema del Ninot es a las 20h, no os lo perdáis. 🔥",
+      "¿Alguien sabe si el Miércoles de Ceniza hay cole normal? 🕯️",
+      "He subido las fotos del Juicio de ayer a la Galería. ¡Vaya risas! 😂⚖️"
     ];
 
     // Base reply scripts
@@ -528,22 +528,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'juicio-carnestoltes-tgn',
-      title: '⚖️ Juicio al Rey',
-      description: 'Teatre Metropol 18:30h.',
-      participating: 2840
+      id: 'entierro-sardina-tgn',
+      title: '⚰️ Entierro Sardina',
+      description: 'Hoy 20:00h Pl. Font.',
+      participating: 3560
     },
     {
-      id: 'rua-lluiment-fotos-gallery',
-      title: '✨ Fotos Rua Lluïment',
-      description: '¡Nuevas en Galería!',
-      participating: 4210
+      id: 'quema-ninot-live',
+      title: '🔥 Quema del Ninot',
+      description: 'Adiós al Carnaval.',
+      participating: 4890
     },
     {
-      id: 'operacion-confeti-lunes',
-      title: '🧹 Operación Confeti',
-      description: 'Limpieza de barrios.',
-      participating: 1560
+      id: 'luto-vecinal-tgn',
+      title: '🖤 Luto Oficial',
+      description: 'Cortejo fúnebre Part Alta.',
+      participating: 2120
     }
   ];
 
@@ -654,23 +654,23 @@ const Forum: React.FC = () => {
           </div>
 
           <div className="px-4 py-2 mt-4">
-            <h2 className="text-xl font-black mb-4 text-center">Ofertas - Lunes Post-Fiestas</h2>
+            <h2 className="text-xl font-black mb-4 text-center">Ofertas - Martes de Entierro</h2>
             <ul className="space-y-4 text-xs md:text-sm">
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🧹 <strong>Operario Limpieza Vial (Brigada Post-Rúa)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Zona Rambla / Eixample • 🕔 07h-15h • Refuerzo 1 semana • 14€/h</span>
+                🧹 <strong>Brigada Limpieza Nocturna (Post-Quema)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 Plaza de la Font • 🕔 22h-04h • Urgente • 16€/h</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🛠️ <strong>Carpintería / Reparación Carrozas</strong>
-                <br /><span className="text-gray-500 text-[10px]">📧 carrozas.tgn@carnaval.cat • Desmontaje y reparación • Urgente</span>
+                🍛 <strong>Ayudante de Cocina (Cenas de Luto)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📧 restaurante.centro@tgn.cat • Turno tarde-noche • 12€/h</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                📁 <strong>Auxiliar Administrativo (Tarragona Impulsa)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Edif. Tabacalera • 🕔 09h-14h • Gestiones municipales • +45 Bienvenid@s</span>
+                📦 <strong>Mozo Almacén (Logística Feb)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 Pol. Les Gavarres • 🕔 08h-16h • ETT • Incorporación mañana</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                📦 <strong>Repartidor Mensajería (Campaña Feb)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📞 677 888 999 • Con furgoneta propia o empresa • Ruta TGN Ciutat</span>
+                🏢 <strong>Auxiliar Administrativo (Seguros)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📞 611 222 333 • Jornada intensiva • Barrio de Sant Pere i Sant Pau</span>
               </li>
             </ul>
             <h4 className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2">Vecinos Online (5/12)</h4>

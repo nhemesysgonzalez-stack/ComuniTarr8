@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '46%', y: '50%', title: "Juicio Carnestoltes", desc: 'Teatre Metropol: El destino del Rey en juego.', status: 'Hoy 18:30h', color: 'bg-indigo-600', icon: 'gavel', glow: 'shadow-[0_0_50px_rgba(79,70,229,0.8)]' },
-    { id: 2, type: 'incident', x: '50%', y: '55%', title: 'Operación Confeti', desc: 'Brigadas de limpieza intensa post-Carnaval.', status: 'En curso', color: 'bg-emerald-500', icon: 'cleaning_services' },
-    { id: 3, type: 'incident', x: '42%', y: '45%', title: 'Tráfico Restablecido', desc: 'Circulación normal tras los desfiles del fin de semana.', status: 'Fluido', color: 'bg-sky-500', icon: 'check_circle' },
-    { id: 4, type: 'event', x: '48%', y: '65%', title: 'Duelo Luto TGN', desc: 'Venta de velos y ropa negra para el entierro de mañana.', status: 'Abierto', color: 'bg-slate-900', icon: 'content_cut' },
-    { id: 5, type: 'shop', x: '55%', y: '40%', title: 'Café del Lunes', desc: 'Descuento post-fiesta con tu ComuniPoint.', status: 'Abierto', color: 'bg-amber-700', icon: 'coffee' }
+    { id: 1, type: 'event', x: '48%', y: '48%', title: "Velatorio del Rey", desc: 'Plaza de la Font: Dá el último adiós al Carnestoltes.', status: '18:00h - 20:00h', color: 'bg-slate-800', icon: 'visibility', glow: 'shadow-[0_0_50px_rgba(30,41,59,0.8)]' },
+    { id: 2, type: 'event', x: '50%', y: '52%', title: 'Quema del Ninot', desc: 'Espectáculo final de fuego y sátira.', status: 'Hoy 20:00h', color: 'bg-rose-600', icon: 'local_fire_department', glow: 'shadow-[0_0_35px_rgba(225,29,72,0.5)]' },
+    { id: 3, type: 'incident', x: '48%', y: '50%', title: 'Corte Part Alta', desc: 'Acceso restringido por la procesión fúnebre.', status: '19:30h - 22:00h', color: 'bg-orange-500', icon: 'block' },
+    { id: 4, type: 'incident', x: '55%', y: '60%', title: 'Operación Ceniza', desc: 'Limpieza nocturna post-quema.', status: 'Desde las 22h', color: 'bg-emerald-500', icon: 'cleaning_services' },
+    { id: 5, type: 'shop', x: '45%', y: '40%', title: 'Cena de Luto', desc: 'Menú especial post-entierro.', status: 'Reservas abiertas', color: 'bg-purple-600', icon: 'restaurant' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

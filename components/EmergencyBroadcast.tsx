@@ -8,9 +8,9 @@ interface EmergencyBroadcastProps {
 export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismiss }) => {
     const [isVisible, setIsVisible] = useState(false);
 
-    // Logic to auto-show if there is an active alert for today (Feb 16 2026)
+    // Logic to auto-show if there is an active alert for today (Feb 17 2026)
     useEffect(() => {
-        const hasSeenAlert = sessionStorage.getItem('hasSeenCautionFeb16');
+        const hasSeenAlert = sessionStorage.getItem('hasSeenCautionFeb17');
         if (!hasSeenAlert) {
             setTimeout(() => {
                 setIsVisible(true);
@@ -21,14 +21,13 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
 
     const triggerBuzz = () => {
         if ('vibrate' in navigator) {
-            // Emergency pattern: SOS in Morse or just strong pulses
             navigator.vibrate([200, 100, 200, 100, 200]);
         }
     };
 
-    const handleDismiss = () => {
+    const dismissAlert = () => {
         setIsVisible(false);
-        sessionStorage.setItem('hasSeenCautionFeb16', 'true');
+        sessionStorage.setItem('hasSeenCautionFeb17', 'true');
         if (onDismiss) onDismiss();
     };
 
@@ -36,61 +35,51 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
         <AnimatePresence>
             {isVisible && (
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-primary/90 backdrop-blur-xl"
+                    initial={{ y: 100, opacity: 0, scale: 0.9 }}
+                    animate={{ y: 0, opacity: 1, scale: 1 }}
+                    exit={{ y: 50, opacity: 0, scale: 0.9 }}
+                    className="fixed bottom-6 left-6 right-6 z-[100] md:max-w-md md:left-auto"
                 >
-                    <motion.div
-                        initial={{ scale: 0.8, rotate: -5 }}
-                        animate={{
-                            scale: 1,
-                            rotate: 0,
-                        }}
-                        className="bg-white rounded-[40px] p-8 md:p-12 max-w-xl w-full shadow-[0_0_100px_rgba(255,255,255,0.4)] relative overflow-hidden"
-                    >
-                        {/* Visual Pulse Background */}
-                        <motion.div
-                            animate={{ opacity: [0.05, 0.15, 0.05] }}
-                            transition={{ duration: 2, repeat: Infinity }}
-                            className="absolute inset-0 bg-primary"
-                        />
-
-                        <div className="relative z-10 text-center">
-                            <div className="size-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl animate-pulse">
-                                <span className="material-symbols-outlined text-white text-5xl">gavel</span>
-                            </div>
-
-                            <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tighter leading-none mb-6">
-                                VEREDICTO FINAL <br /> CARNAVAL TGN 2026
-                            </h2>
-
-                            <div className="bg-blue-50 rounded-3xl p-6 mb-8 border-2 border-blue-100">
-                                <p className="text-xl font-black text-gray-900 leading-tight mb-4 uppercase">
-                                    ⚖️ HOY: JUICIO AL CARNESTOLTES
-                                </p>
-                                <p className="text-gray-600 font-bold leading-relaxed mb-4">
-                                    Esta tarde se celebra el <span className="text-primary font-black">Juicio a la Reina y su Concubí</span> en el Teatre Metropol. El destino del Carnaval está en juego.
-                                </p>
-                                <ul className="text-left text-xs font-black text-primary space-y-2 uppercase tracking-wide">
-                                    <li className="flex items-center gap-2">🏛️ 18:30H Y 20:00H: SESIONES DE JUICIO (METROPOL)</li>
-                                    <li className="flex items-center gap-2">🧹 OPERATIVO LIMPIEZA: CALLES DEL CENTRO EN CURSO</li>
-                                    <li className="flex items-center gap-2">🚗 TRÁFICO: RESTABLECIDO EN RAMBLA Y AV. CATALUNYA</li>
-                                </ul>
-                            </div>
-
-                            <button
-                                onClick={handleDismiss}
-                                className="w-full bg-primary text-white py-6 rounded-[25px] font-black text-xl uppercase tracking-widest hover:bg-primary/90 active:scale-95 transition-all shadow-2xl shadow-primary/40"
-                            >
-                                ENTENDIDO, ¡GRACIAS!
-                            </button>
-
-                            <p className="mt-6 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                                INFO ACTUALIZADA - LUNES 16 FEB 2026
-                            </p>
+                    <div className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl rounded-[40px] shadow-2xl border-4 border-rose-500 p-8">
+                        <div className="flex items-center gap-2 mb-2">
+                            <span className="material-symbols-outlined text-rose-500 text-sm animate-pulse">local_fire_department</span>
+                            <span className="text-[10px] font-black text-rose-600 uppercase tracking-widest">Final de Carnaval</span>
                         </div>
-                    </motion.div>
+                        <h2 className="text-xl font-black text-gray-900 dark:text-white leading-tight mb-2">
+                            ENCIERO DE LA SARDINA
+                        </h2>
+                        <p className="text-xs font-medium text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                            Hoy Martes de Carnaval despedimos al Rey y la Reina. Velatorio 18h y **Quema a las 20:00h en Pl. de la Font**. Se esperan cortes de tráfico y aglomeraciones en la Part Alta.
+                        </p>
+
+                        <div className="grid grid-cols-2 gap-4 mb-6">
+                            <div className="bg-rose-50 dark:bg-rose-900/20 p-3 rounded-2xl">
+                                <span className="block text-[8px] font-black text-rose-600 uppercase mb-1">Cortes Tráfico</span>
+                                <span className="text-[10px] font-bold text-rose-900 dark:text-rose-200">Plaza de la Font (17-22h)</span>
+                            </div>
+                            <div className="bg-orange-50 dark:bg-orange-900/20 p-3 rounded-2xl">
+                                <span className="block text-[8px] font-black text-orange-600 uppercase mb-1">Aforo</span>
+                                <span className="text-[10px] font-bold text-orange-900 dark:text-orange-200">Plaza limitada</span>
+                            </div>
+                        </div>
+
+                        <div className="flex gap-2">
+                            <button
+                                onClick={dismissAlert}
+                                className="flex-1 py-4 bg-gray-100 dark:bg-gray-800 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-gray-200 transition-all"
+                            >
+                                Entendido
+                            </button>
+                            <button className="flex-1 py-4 bg-rose-500 text-white rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-rose-600 shadow-lg shadow-rose-500/30 transition-all">
+                                Ver Itinerario
+                            </button>
+                        </div>
+
+                        <div className="pt-2 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center text-[8px] font-bold text-gray-400 uppercase tracking-widest">
+                            <span>MARTES 17 FEB 2026</span>
+                            <span>AEMET: Nuboso</span>
+                        </div>
+                    </div>
                 </motion.div>
             )}
         </AnimatePresence>

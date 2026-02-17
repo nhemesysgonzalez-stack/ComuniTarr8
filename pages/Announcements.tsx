@@ -125,44 +125,44 @@ const Announcements: React.FC = () => {
     const fetchNotices = async () => {
         setLoading(true);
         const weatherAlert: Announcement = {
-            id: 'weather-mon-weekly',
-            title: "🌤️ LUNES: Previsión Semanal",
-            content: "Iniciamos la semana con nubes y claros. Las temperaturas bajarán progresivamente hasta los 12ºC el miércoles. Sin lluvias a la vista.",
+            id: 'weather-tue-ash',
+            title: "☁️ MARTES: Nuboso y Luto",
+            content: "Cielos cubiertos para el Entierro de la Sardina. Temperaturas máximas de 13ºC. Mañana miércoles bajan a 11ºC con viento de Mestral.",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
             author_name: "AEMET",
-            itinerary: "• Lunes: Nuboso (14°C)\n• Martes: Despejado (13°C)\n• Miércoles: Frío (11°C)",
+            itinerary: "• Tarde: Nuboso (13°C)\n• Noche: Quema (9°C)\n• Mañana: Frío (11°C)",
             created_at: new Date().toISOString()
         };
 
-        const cleanupAnnouncement: Announcement = {
-            id: 'cleanup-operativo-lunes',
-            title: "🧹 Operativo Confeti Cero",
-            content: "Las brigadas refuerzan la limpieza post-Carnaval. Si tu calle sigue con mucho confeti, repórtalo en la sección Incidencias con una foto.",
-            category: "URGENTE",
-            neighborhood: "GENERAL",
-            author_name: "Ayuntamiento / Limpieza",
-            itinerary: "• Prioridad: Rambla Nova\n• Turno: Mañana y Tarde\n• Meta: 100% Limpio mañana",
-            created_at: new Date().toISOString()
-        };
-
-        const juicioNotice: Announcement = {
-            id: 'juicio-carnestoltes-mon',
-            title: "⚖️ EVENTO: Juicio al Carnestoltes",
-            content: "No te pierdas el evento satírico del año. Hoy lunes en el Teatre Metropol. Venta de entradas online agotada, solo quedan en taquilla.",
+        const entierroAnnouncement: Announcement = {
+            id: 'entierro-sardina-tue',
+            title: "⚰️ AVISO: Entierro de la Sardina",
+            content: "El cortejo fúnebre partirá a las 20:50h desde la Antiga Audiència hacia la Plaza de la Font. Se ruega silencio y respeto.",
             category: "EVENTO",
-            neighborhood: "CENTRO",
-            author_name: "Cultura TGN",
+            neighborhood: "PART ALTA",
+            author_name: "Cultura Tarragona",
+            itinerary: "• 18:00h: Velatorio\n• 20:00h: Testamento\n• 21:00h: Quema Ninot",
             created_at: new Date().toISOString()
         };
 
-        const gallerySuccess: Announcement = {
-            id: 'gallery-stats-mon',
-            title: "📸 ÉXITO: Récord de Visitas",
-            content: "La Galería Vecinal ha recibido más de 5.000 visitas este fin de semana. ¡Gracias por compartir vuestros momentos del Carnaval!",
-            category: "EXITO",
+        const fireAdvisory: Announcement = {
+            id: 'fire-safety-quema',
+            title: "🔥 SEGURIDAD: Quema del Ninot",
+            content: "Mantengan la distancia de seguridad con la hoguera en la Plaza de la Font. Sigan las indicaciones de Protección Civil y Guardia Urbana.",
+            category: "URGENTE",
+            neighborhood: "CENTRO",
+            author_name: "Protección Civil",
+            created_at: new Date().toISOString()
+        };
+
+        const ashNotice: Announcement = {
+            id: 'ash-wednesday-tgn',
+            title: "🕯️ MAÑANA: Miércoles de Ceniza",
+            content: "Tradicional imposición de la ceniza en la Catedral a las 09:00h y 19:30h. Fin oficial del desenfreno de Carnaval.",
+            category: "TRADICIÓN",
             neighborhood: "GENERAL",
-            author_name: "Admin ComuniTarr",
+            author_name: "Arquebisbat",
             created_at: new Date().toISOString()
         };
 
@@ -186,7 +186,7 @@ const Announcements: React.FC = () => {
                 return diffDays <= 7;
             });
 
-            setNotices([weatherAlert, cleanupAnnouncement, juicioNotice, gallerySuccess, ...validFetched]);
+            setNotices([weatherAlert, entierroAnnouncement, fireAdvisory, ashNotice, ...validFetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

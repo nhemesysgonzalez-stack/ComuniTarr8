@@ -181,35 +181,35 @@ const Home: React.FC = () => {
           .order('created_at', { ascending: false })
           .limit(3);
 
-        const juicioCarnestoltesNews = {
-          id: 'juicio-carnestoltes-2026',
-          title: "⚖️ HOY 18:30h: Juicio a la Reina",
-          content: "El Tribunal de Lucífer juzga a la Reina Carnestoltes y su Concubí por los excesos cometidos. Sátira y humor en el Metropol.",
-          category: "CULTURA",
-          neighborhood: "CENTRO",
-          itinerary: "• 18:30h: Primera Sesión\n• 20:00h: Segunda Sesión\n• Lugar: Teatre Metropol",
+        const entierroSardinaNews = {
+          id: 'entierro-sardina-2026',
+          title: "⚰️ HOY 20:00h: Entierro y Quema",
+          content: "El Rey Carnestoltes dice adiós. Lectura del testamento y quema del féretro en la Plaza de la Font. ¡Ven de luto!",
+          category: "FIESTA",
+          neighborhood: "GENERAL",
+          itinerary: "• 18:00h: Velatorio\n• 20:00h: Testamento y Quema\n• 21:00h: Entierro Sardina",
           link_url: "/calendar",
           created_at: new Date().toISOString()
         };
 
-        const postRuaGalleryNews = {
-          id: 'gallery-post-rua-2026',
-          title: "📸 GALERÍA: Resumen de la Rúa",
-          content: "Ya puedes ver las mejores fotos y vídeos de la Rua de Lluïment de ayer domingo. ¡Búscate entre las comparsas!",
-          category: "VECINAL",
-          neighborhood: "GENERAL",
-          itinerary: "• Fotos: +500 nuevas\n• Vídeos: Alta Calidad\n• Ver en: Historias",
-          link_url: "/stories",
+        const juicioResultNews = {
+          id: 'juicio-result-2026',
+          title: "⚖️ SENTENCIA: Culpables!",
+          content: "Tras el juicio de ayer en el Metropol, la Reina y el Concubí han sido condenados a la hoguera pública. Un veredicto esperado.",
+          category: "CULTURA",
+          neighborhood: "CENTRO",
+          itinerary: "• Veredicto: Culpables\n• Pena: Hoguera\n• Lugar: Pl. de la Font",
+          link_url: "/forum",
           created_at: new Date().toISOString()
         };
 
-        const mondayCleanupNews = {
-          id: 'monday-cleanup-2026',
-          title: "🧹 Operación Confeti: Lunes",
-          content: "Tras el intenso fin de semana, las brigadas municipales refuerzan la limpieza en Rambla y Part Alta. ¡Gracias por vuestra paciencia!",
+        const tuesdayCleanupNews = {
+          id: 'tuesday-cleanup-2026',
+          title: "🧹 Operación Ceniza: Martes",
+          content: "Último gran despliegue de las brigadas de limpieza. Mañana Miércoles de Ceniza la ciudad debe estar impecable.",
           category: "SERVICIOS",
           neighborhood: "GENERAL",
-          itinerary: "• Zona: Todo el Centro\n• Estado: En curso\n• Reportar: Vía 'Incidencias'",
+          itinerary: "• Zona: Casco Antiguo\n• Estado: Refuerzo noche\n• Info: 010 Atención",
           link_url: "/incidents",
           created_at: new Date().toISOString()
         };
@@ -227,29 +227,29 @@ const Home: React.FC = () => {
         };
         const saturdayJobs = { id: 'j-jobs-sat', title: "💼 EMPLEO: Refuerzo Hostelería", content: "Se buscan camareros extra para la noche de Carnaval y cenas de San Valentín. Alta inmediata.", category: "EMPLEO", neighborhood: "GENERAL", itinerary: "• Ofertas: 8 activas\n• Zona: Part Alta / Serrallo\n• Turno: Noche hoy", link_url: "/forum", created_at: new Date().toISOString() };
 
-        const mondayTraffic = {
-          id: 'traffic-mon',
-          title: "🚗 TRÁFICO: Circulación Normal",
-          content: "Restablecido el tráfico en todas las vías principales. Sin cortes programados para hoy lunes.",
-          category: "TRÁFICO",
-          neighborhood: "CENTRO",
-          itinerary: "• Rambla: Abierta\n• Av. Catalunya: Abierta\n• Estado: Fluido",
-          link_url: "/map",
-          created_at: new Date().toISOString()
-        };
-
-        const funeralAnnouncement = {
-          id: 'funeral-carnestoltes-preview',
-          title: "⚰️ MAÑANA: Entierro de la Sardina",
-          content: "Mañana martes a las 20:00h daremos el último adiós al Rey Carnestoltes. Se recomienda vestir de riguroso luto.",
-          category: "EVENTO",
-          neighborhood: "GENERAL",
-          itinerary: "• 20:00h: Inicio Velatorio\n• 21:00h: Quema del Ninot\n• Lugar: Pl. de la Font",
+        const ashWednesdayPreview = {
+          id: 'ash-wednesday-preview',
+          title: "🕯️ MAÑANA: Miércoles de Ceniza",
+          content: "Mañana a las 19:30h, imposición de la ceniza en la Catedral y parroquias de la ciudad. Comienza la Cuaresma.",
+          category: "TRADICIÓN",
+          neighborhood: "PART ALTA",
+          itinerary: "• 09:00h: Misa\n• 19:30h: Ceniza Central\n• Lugar: Catedral de TGN",
           link_url: "/calendar",
           created_at: new Date().toISOString()
         };
 
-        const mondayJobs = { id: 'j-jobs-mon', title: "💼 EMPLEO: Jornada de Lunes", content: "Nuevas ofertas de empleo administrativo y servicios para arrancar la semana tras las fiestas. Alta inmediata.", category: "EMPLEO", neighborhood: "GENERAL", itinerary: "• Ofertas: 12 nuevas\n• Canal: Foro > Empleo\n• Perfil: Varios", link_url: "/forum", created_at: new Date().toISOString() };
+        const trafficTuesday = {
+          id: 'traffic-tue-funeral',
+          title: "🚧 TRÁFICO: Cortes por Procesión",
+          content: "Desde las 19:30h cortes en Pl. Font, Baixada Misericòrdia y Portalet. Usa transporte público.",
+          category: "MOVILIDAD",
+          neighborhood: "CENTRO",
+          itinerary: "• 19:30-22:00h\n• Zona: Part Alta\n• Alt: Vía Augusta",
+          link_url: "/map",
+          created_at: new Date().toISOString()
+        };
+
+        const tuesdayJobs = { id: 'j-jobs-tue', title: "💼 EMPLEO: Martes de Oportunidad", content: "Nuevas ofertas en comercio y hostelería para la temporada de primavera. ¡Inscríbete!", category: "EMPLEO", neighborhood: "GENERAL", itinerary: "• Ofertas: 15 nuevas\n• Canal: Empleo\n• Perfil: Atención Cliente", link_url: "/forum", created_at: new Date().toISOString() };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
         const today = new Date();
@@ -263,7 +263,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([juicioCarnestoltesNews, postRuaGalleryNews, mondayCleanupNews, funeralAnnouncement, volunteeringNews, womanSupportNews, mondayJobs, mondayTraffic, ...validFetchedNews].slice(0, 8));
+        setNews([entierroSardinaNews, juicioResultNews, tuesdayCleanupNews, ashWednesdayPreview, volunteeringNews, womanSupportNews, tuesdayJobs, trafficTuesday, ...validFetchedNews].slice(0, 8));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

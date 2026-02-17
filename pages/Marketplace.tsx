@@ -57,47 +57,47 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'm-mon-1',
+          id: 'mock-tue-m1',
           user_id: 'v1',
-          title: "🧹 Pack Aspiradora 'Confetiterminador'",
-          description: "Aspiradora de alta potencia especial para decoraciones y restos de fiestas. Solo usada 2 veces.",
-          price: '60',
-          category: 'hogar',
-          neighborhood: 'GENERAL',
-          contact_info: '688 22 11 00 (Marc)',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'm-mon-2',
-          user_id: 'v2',
-          title: '🎭 Lote 10 Disfraces (Varios)',
-          description: "Vendemos los disfraces de nuestra colla para el próximo año o para reciclaje de telas. ¡Lote completo barato!",
-          price: '120',
-          category: 'moda',
+          title: '🖤 Velo y Ropa de Luto (Pack)',
+          description: 'Ideal para el entierro de hoy. Velo negro, chaqueta y guantes. Talla única.',
+          price: '12',
+          category: 'moda', // Changed to 'moda' as 'ropa' is not in categories
           neighborhood: 'CENTRO',
-          contact_info: '644 33 22 11 (Marta)',
+          contact_info: '',
           created_at: new Date().toISOString()
         },
         {
-          id: 'm-mon-3',
-          user_id: 'v3',
-          title: '💆 Masajeador de Pies Eléctrico',
-          description: 'Ahorra en fisio después de las rúas. Tres intensidades de calor. Nuevo en caja.',
-          price: '35',
-          category: 'hogar',
-          neighborhood: 'PART ALTA',
-          contact_info: '622 11 99 88 (Rafa)',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'm-mon-4',
-          user_id: 'v4',
-          title: '📚 Libro: Detox en 3 Días',
-          description: 'Ideal para limpiar el cuerpo después de los excesos de Carnaval. Recetas fáciles.',
+          id: 'mock-tue-m2',
+          user_id: 'v2',
+          title: '🧼 Kit Desmaquillante "Heavy Duty"',
+          description: 'Leche limpiadora y discos de algodón para quitarse el maquillaje de purpurina más rebelde.',
           price: '8',
           category: 'otros',
           neighborhood: 'GENERAL',
-          contact_info: '611 00 99 88 (Elena)',
+          contact_info: '',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'mock-tue-m3',
+          user_id: 'v3',
+          title: '🐟 Sardina de Goma Gigante',
+          description: 'La usé para un disfraz de broma. Si alguien la quiere para el entierro de hoy, la regalo.',
+          price: '0',
+          category: 'otros',
+          neighborhood: 'LLEVANT',
+          contact_info: '',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'mock-tue-m4',
+          user_id: 'v4',
+          title: '🛋️ Sofá Relax (Urge Venta)',
+          description: 'Para recuperarse de la resaca de Carnaval. Muy cómodo, transporte a cargo del comprador.',
+          price: '60',
+          category: 'hogar',
+          neighborhood: 'GENERAL',
+          contact_info: '',
           created_at: new Date().toISOString()
         }
       ];

@@ -26,13 +26,13 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     p.includes("trabajo") || p.includes("empleo") || p.includes("laboral") || p.includes("curro") || p.includes("busco") || p.includes("paro") || p.includes("oferta") ||
     (isJobContext && (p.includes("busco") || p.includes("necesito")))
   ) {
-    return "Ofertas Laborales Urgentes (Lunes 16 Feb - Recuperación & Servicios) 💼:\n\n" +
-      "1. 🧹 Operario de Limpieza Vial - Refuerzo post-desfiles (07h-15h) → 14€/h.\n" +
-      "2. 🛠️ Carpintería y Montaje - Desmontaje gradas y reparación carrozas → Urgente.\n" +
-      "3. 📁 Auxiliar Administrativo - Tarragona Impulsa (Tabacalera) → Campaña primer trimestre.\n" +
-      "4. 📦 Repartidor Mensajería - Campaña rebajas/febrero → Con vehículo propio.\n" +
-      "5. 🌟 TALENTO +45: Gestor de Proyectos Sociales - Ayto TGN busca experiencia gestión pública.\n\n" +
-      "• ¿Buscas trabajo estable? Pásate por la OMAC para ver las últimas convocatorias públicas.";
+    return "Ofertas Laborales Urgentes (Martes 17 Feb - Entierro & Rutina) 💼:\n\n" +
+      "1. 🧹 Brigada de Limpieza Especial - Turno noche tras la quema del Ninot → 15€/h.\n" +
+      "2. 🛡️ Seguridad / Control de Accesos - Pl. de la Font (19h-22h) → 16€/h.\n" +
+      "3. 🥘 Extra de Cocina - Restaurantes Centro (Cenas de Luto) → Incorporación inmediata.\n" +
+      "4. 📦 Repartidor de Última Milla - Zona Eixample / Ponent → Jornada completa.\n" +
+      "5. 🌟 TALENTO +45: Administrativo Funerario / Gestión - Empresa local busca perfil empático.\n\n" +
+      "• ¿Buscas algo más estable? Mira las convocatorias en 'Tarragona Impulsa' este miércoles.";
   }
 
   // 16. Preppers y Seguridad (Petroquímicas / Viento) - Prioridad en canal Preppers
@@ -56,12 +56,12 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.1 TRÁFICO EN TIEMPO REAL
   if (p.includes("trafico") || p.includes("tráfico") || p.includes("carretera") || p.includes("circulacion") || p.includes("atasco") || p.includes("retenciones") || p.includes("corte")) {
-    return "🚗 TRÁFICO TARRAGONA (Lunes 16 Feb, 08:30h):\n\n• 🟢 RAMBLA NOVA: Abierta en todos sus carriles.\n• 🟢 AV. CATALUNYA Y CAJAL: Tráfico fluido tras el desfile de ayer.\n• 🟡 T-11 Y A-7: Alguna retención puntual en hora punta de entrada (Polígonos).\n• 🟢 ACCESOS: Sin incidencias destacables por viento.\n\n💡 Tráfico normalizado de lunes laborable.";
+    return "🚗 TRÁFICO TARRAGONA (Martes 17 Feb, 09:15h):\n\n• 🟡 PL. DE LA FONT: Acceso restringido por montaje del velatorio del Ninot.\n• 🟢 RAMBLA Y AV. ROMA: Circulación fluida sin incidentes.\n• 🔴 AVISO 20:00h: Cortes previstos en Baixada de la Misericòrdia y calles adyacentes por la procesión del Entierro.\n\n💡 Se recomienda usar parkings subterráneos si vienes a ver la Quema.";
   }
 
   // 2.2 FARMACIAS DE GUARDIA
   if (p.includes("farmacia") || p.includes("guardia") || p.includes("medicamento") || p.includes("parafarmacia")) {
-    return "💊 FARMACIAS DE GUARDIA HOY (Lunes 16 Feb 2026):\n\n• 🏥 Farmacia MAS - C/ de l'Assalt, 12 (09-22h)\n• 🏥 Farmacia NAVARRO - Rambla Nova, 88 (24h)\n• 🏥 Farmacia DEL PORT - Pl. Corsini, 12 (hasta 22h)\n\n📍 Farmacia de guardia abierta 24h: NAVARRO.\n⚕️ Urgencias médicas: CAP 24h o Hospital Joan XXIII.";
+    return "💊 FARMACIAS DE GUARDIA HOY (Martes 17 Feb 2026):\n\n• 🏥 Farmacia BESORA - Rambla Nova, 121 (09-22h)\n• 🏥 Farmacia GUINOVART - C/ Girona, 10 (24h)\n• 🏥 Farmacia CENTRAL - Rambla Vella, 50 (hasta 22h)\n\n📍 Farmacia de guardia abierta 24h: GUINOVART.\n⚕️ Urgencias: CAP Llevant o Hospital Santa Tecla.";
   }
 
   // 2.3 COLEGIOS Y EDUCACIÓN
@@ -86,7 +86,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.7 ACTIVIDADES Y OCIO
   if (p.includes("actividad") || p.includes("evento") || p.includes("plan") || p.includes("ocio") || p.includes("que hacer") || p.includes("qué hacer")) {
-    return "🎉 QUÉ HACER EN TARRAGONA (Lunes 16 Feb):\n\n⚖️ **HOY (18:30h y 20:00h):**\n• Juicio a la Reina Carnestoltes y su Concubí (Teatre Metropol). ¡No te pierdas la sátira!\n\n🧹 **VECINAL:**\n• Operativo limpieza confeti en Eixample y Centro. ¡Puedes reportar manchas en el mapa!\n\n📸 **RELAX:**\n• Mirar las fotos de las rúas de ayer en la Galería de esta App.\n\n⚰️ **PREVIEW MAÑANA:**\n• Entierro de la Sardina (20:00h). Empieza a preparar tu luto.";
+    return "🎉 FIN DEL CARNAVAL: ADIÓS AL REY (Martes 17 Feb):\n\n⚰️ **HOY (18:00h):**\n• Velatorio de la Reina Carnestoltes y el Concubí (Plaza de la Font). Ven a dar el último adiós.\n\n🔥 **HOY (20:00h):**\n• Lectura del Testamento y Quema de los Ninots. El clímax final del Carnaval de Tarragona.\n\n🐟 **HOY (21:00h):**\n• Entierro de la Sardina. Desfile de luto por la Part Alta.\n\n💡 Mañana Miércoles de Ceniza volverá la calma total.";
   }
 
   // 2.8 EMERGENCIAS Y NÚMEROS ÚTILES
@@ -114,9 +114,9 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     return "Para trámites municipales en Tarragona 🏛️:\n\n• La OMAC (Oficina Municipal d'Atenció Ciutadana) requiere cita previa. Puedes pedirla en la web tarragona.cat o llamando al 010.\n• Empadronamiento: Necesitas DNI/NIE y el contrato de alquiler o escritura de la vivienda.\n• Volante de convivencia: Se puede obtener online con certificado digital al instante.";
   }
 
-  // 7. Noticias y Eventos de Hoy (LUNES 16 FEBRERO 2026 - Juicio Carnestoltes)
+  // 7. Noticias y Eventos de Hoy (MARTES 17 FEBRERO 2026 - Entierro de la Sardina)
   if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("viento") || p.includes("tiempo") || p.includes("plan")) {
-    return "Resumen para el LUNES 16 de febrero ⚖️🧹:\n\n• ⚖️ CULTURA: Juicio al Rey Carnestoltes hoy en el Metropol (18:30h). ¡El veredicto se acerca!\n• 🧹 LIMPIEZA: Operación 'Confeti Cero' activa en todo el centro tras la Rua Lluïment de ayer.\n• 🚗 TRÁFICO: Circulación normalizada de lunes laborable. Rambla abierta.\n• 📸 GALERÍA: Ya puedes ver todas las fotos del fin de semana en la sección HISTORIAS.";
+    return "Resumen para el MARTES 17 de febrero ⚰️🔥:\n\n• ⚰️ FINAL: Velatorio y Entierro de la Sardina desde las 18:00h en Pl. de la Font.\n• 🔥 QUEMA: A las 20:00h despedimos a los Ninots con fuego y sátira.\n• 🖤 LUTO: Se invita a los vecinos a vestir de oscuro para el cortejo fúnebre.\n• 🧹 LIMPIEZA: Último operativo nocturno tras la quema para que mañana todo sea gris (ceniza).";
   }
 
   // 8. Aparcar (Zona Blava / Verda)

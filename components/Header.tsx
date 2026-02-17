@@ -253,15 +253,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">⚖️ JUICIO CARNESTOLTES: HOY PRIMERA SESIÓN A LAS 18:30H EN EL TEATRE METROPOL</span>
+          <span className="flex items-center gap-2">⚰️ ENTIERRO DE LA SARDINA: HOY VELATORIO DESDE LAS 18h EN PLAZA DE LA FONT</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🧹 OPERACIÓN CONFETI: BRIGADAS MUNICIPALES TRABAJANDO EN EL EIXAMPLE Y RAMBLA</span>
+          <span className="flex items-center gap-2">🔥 QUEMA DEL NINOT: ÚLTIMA DESPEDIDA AL REY CARNESTOLTES A LAS 20:00H</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">📸 GALERÍA VECINAL: YA DISPONIBLES LAS FOTOS DE LA RUA DE LLUÏMENT DE AYER</span>
+          <span className="flex items-center gap-2">🖤 LUTO VECINAL: SE INVITA A ACUDIR DE OSCURO AL CORTEJO FÚNEBRE DEL NINOT</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚗 TRÁFICO TGN: CIRCULACIÓN NORMALIZADA EN TODO EL CENTRO TRAS LOS DESFILES</span>
+          <span className="flex items-center gap-2">🚗 MOVILIDAD: CORTES EN PART ALTA DESDE LAS 19:30H POR EL CORTEJO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎭 RECTO FINAL: MAÑANA MARTES ENTIERRO DE LA SARDINA A LAS 20:00H</span>
+          <span className="flex items-center gap-2">🕯️ MAÑANA: MIÉRCOLES DE CENIZA - RETORNO A LA CALMA Y LA TRADICIÓN</span>
         </motion.div>
       </div>
 

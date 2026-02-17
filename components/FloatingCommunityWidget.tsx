@@ -11,20 +11,20 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "⚖️ HOY 18:30h: Juicio a la Reina Carnestoltes en el Metropol. ¡No os lo perdáis! 🏛️🎭", neighborhood: 'CENTRO' },
-    { id: 1, user: 'Limpieza TGN', avatar: '/logo.svg', text: '🧹 Operativo Especial Post-Rúa en marcha. Trabajamos para dejar las calles listas para la rutina. ✨', neighborhood: 'GENERAL' },
-    { id: 2, user: 'TGN Cultura', avatar: '/logo.svg', text: '📸 Ya podéis subir vuestras fotos de ayer a la Galería Vecinal. ¡Queremos ver vuestros disfraces! ✨', neighborhood: 'GENERAL' },
-    { id: 3, user: 'Paco R.', avatar: 'https://i.pravatar.cc/150?u=paco', text: '¡Vaya rúa la de ayer! Las fotos en la Galería son brutales. ¿Alguien sabe quién ganó el primer premio? 🏆📸', neighborhood: 'Part Alta' },
-    { id: 4, user: 'Marta S.', avatar: 'https://i.pravatar.cc/150?u=marta', text: '¿Sabéis si mañana el entierro es puntual a la Plaza de la Font? Tengo que preparar el luto. ⚰️🖤', neighborhood: 'Centro' },
-    { id: 5, user: 'Guille M.', avatar: 'https://i.pravatar.cc/150?u=guille', text: 'Vuelta al curro con un poco de resaca festival... ¡Ánimo a todos con el lunes! ☕💪', neighborhood: 'Serrallo' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "⚰️ HOY 20:00h: Entierro de la Sardina y Quema del Ninot en la Plaza de la Font. 🔥🐟", neighborhood: 'CENTRO' },
+    { id: 1, user: 'Limpieza TGN', avatar: '/logo.svg', text: '🧹 Operación Ceniza: Mañana Miércoles reforzamos la limpieza tras la quema de hoy. ✨', neighborhood: 'GENERAL' },
+    { id: 2, user: 'TGN Cultura', avatar: '/logo.svg', text: '🖤 Se invita a todos los vecinos a acudir de riguroso luto al cortejo fúnebre de hoy. 😭', neighborhood: 'GENERAL' },
+    { id: 3, user: 'Paco R.', avatar: 'https://i.pravatar.cc/150?u=paco', text: '¡Vaya pena! Se acaba lo bueno. A ver qué tal el testamento de este año, suelen dar caña. 😂🔥', neighborhood: 'Part Alta' },
+    { id: 4, user: 'Marta S.', avatar: 'https://i.pravatar.cc/150?u=marta', text: '¿Alguien sabe si después de la quema hay alguna cena popular de sardinas? 🐟🥘', neighborhood: 'Centro' },
+    { id: 5, user: 'Guille M.', avatar: 'https://i.pravatar.cc/150?u=guille', text: 'Mañana toca ceniza y vuelta al redil. ¡Disfrutad del último día de locura! 🎭💪', neighborhood: 'Serrallo' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '⚖️ 18:30h: Juicio Rey' },
-    { user: 'Cultura', text: '⚰️ Mañana: Entierro' },
-    { user: 'Limpieza', text: '🧹 Operación Confeti' },
-    { user: 'V. Urbana', text: '🚗 Tráfico Normal' },
-    { user: 'Vecinos', text: '📸 Sube tus Fotos!' }
+    { user: 'Admin', text: '⚰️ 20h: Entierro' },
+    { user: 'Cultura', text: '🔥 Quema Ninot' },
+    { user: 'Limpieza', text: '🧹 Operación Ceniza' },
+    { user: 'V. Urbana', text: '🚗 Cortes Part Alta' },
+    { user: 'Vecinos', text: '🖤 Todos de Luto' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

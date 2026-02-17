@@ -46,36 +46,36 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'mock-mon-n1',
+                    id: 'mock-tue-n1',
                     creator_id: 'v4',
                     type: 'other',
-                    title: '📦 Ayuda Desmontaje Decoración',
-                    description: 'Necesito ayuda para bajar una estructura de carroza del balcón. Son 10 min, hoy a las 18h.',
+                    title: '🕯️ Préstamo Velas para Procesión',
+                    description: 'Busco 3 o 4 velas de procesión para llevar esta noche al entierro de la sardina. ¡Gracias!',
                     contact_info: '688 22 11 00 (Pere)',
                     is_urgent: false,
                     neighborhood: 'CENTRO',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-mon-n2',
+                    id: 'mock-tue-n2',
                     creator_id: 'v5',
                     type: 'company',
-                    title: '🚗 Compartir Coche (Lunes)',
-                    description: 'Busco a alguien para ir al Polígono Entrevies esta semana a las 08:30h. Compartimos gastos.',
+                    title: '🚗 Acompañar a Abuela (Entierro)',
+                    description: 'Busco a alguien que acompañe a mi abuela a ver la quema del Ninot mientras trabajo. Zona Pl. de la Font.',
                     contact_info: '644 33 22 11 (Marta)',
-                    is_urgent: false,
+                    is_urgent: true,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-mon-n3',
+                    id: 'mock-tue-n3',
                     creator_id: 'v6',
-                    type: 'food',
-                    title: "🥘 Tupper Intercambio Festivo",
-                    description: 'Me ha sobrado mucha comida del evento de ayer. Si alguien quiere un tupper de canelones caseros, zona Llevant.',
+                    type: 'emotional',
+                    title: "🎭 Grupo 'Bajón Post-Carnaval'",
+                    description: 'Quedada mañana Miércoles de Ceniza para desayunar y llorar un poco el fin de la fiesta. ¡Ánimo!',
                     contact_info: '622 88 77 66 (Carme)',
-                    is_urgent: true,
-                    neighborhood: 'LLEVANT',
+                    is_urgent: false,
+                    neighborhood: 'PART ALTA',
                     created_at: new Date().toISOString()
                 }
             ];
