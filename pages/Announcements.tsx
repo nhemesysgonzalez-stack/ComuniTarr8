@@ -125,44 +125,44 @@ const Announcements: React.FC = () => {
     const fetchNotices = async () => {
         setLoading(true);
         const weatherAlert: Announcement = {
-            id: 'weather-tue-ash',
-            title: "☁️ MARTES: Nuboso y Luto",
-            content: "Cielos cubiertos para el Entierro de la Sardina. Temperaturas máximas de 13ºC. Mañana miércoles bajan a 11ºC con viento de Mestral.",
+            id: 'weather-wed-ash',
+            title: "🌤️ MIÉRCOLES: Despejado y Fresco",
+            content: "Tras el luto de ayer, el sol vuelve a Tarragona. Temperaturas máximas de 14ºC. Viento flojo de componente norte.",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
             author_name: "AEMET",
-            itinerary: "• Tarde: Nuboso (13°C)\n• Noche: Quema (9°C)\n• Mañana: Frío (11°C)",
+            itinerary: "• Mañana: Soleado (11°C)\n• Tarde: Despejado (14°C)\n• Noche: Frío (8°C)",
             created_at: new Date().toISOString()
         };
 
-        const entierroAnnouncement: Announcement = {
-            id: 'entierro-sardina-tue',
-            title: "⚰️ AVISO: Entierro de la Sardina",
-            content: "El cortejo fúnebre partirá a las 20:50h desde la Antiga Audiència hacia la Plaza de la Font. Se ruega silencio y respeto.",
+        const postCarnivalNotice: Announcement = {
+            id: 'post-carnival-cleanup-wed',
+            title: "🧹 ÉXITO: Ciudad Impecable",
+            content: "Gracias al esfuerzo coordinado de limpieza, la Plaza de la Font y la Part Alta ya lucen limpias tras la quema de ayer. ¡Gracias a todos por la colaboración!",
+            category: "EXITO",
+            neighborhood: "GENERAL",
+            author_name: "Ayuntamiento TGN",
+            created_at: new Date().toISOString()
+        };
+
+        const ashDayAdvisory: Announcement = {
+            id: 'ash-wed-advisory',
+            title: "🕯️ HOY: Miércoles de Ceniza",
+            content: "Se espera gran afluencia en la Catedral para la imposición de la ceniza a las 19:30h. Se recomienda acudir con tiempo para el acceso.",
             category: "EVENTO",
             neighborhood: "PART ALTA",
-            author_name: "Cultura Tarragona",
-            itinerary: "• 18:00h: Velatorio\n• 20:00h: Testamento\n• 21:00h: Quema Ninot",
-            created_at: new Date().toISOString()
-        };
-
-        const fireAdvisory: Announcement = {
-            id: 'fire-safety-quema',
-            title: "🔥 SEGURIDAD: Quema del Ninot",
-            content: "Mantengan la distancia de seguridad con la hoguera en la Plaza de la Font. Sigan las indicaciones de Protección Civil y Guardia Urbana.",
-            category: "URGENTE",
-            neighborhood: "CENTRO",
             author_name: "Protección Civil",
+            itinerary: "• 09:00h: Misa 1\n• 19:30h: Misa Central\n• Lugar: Catedral",
             created_at: new Date().toISOString()
         };
 
-        const ashNotice: Announcement = {
-            id: 'ash-wednesday-tgn',
-            title: "🕯️ MAÑANA: Miércoles de Ceniza",
-            content: "Tradicional imposición de la ceniza en la Catedral a las 09:00h y 19:30h. Fin oficial del desenfreno de Carnaval.",
-            category: "TRADICIÓN",
+        const lentTradition: Announcement = {
+            id: 'lent-tradition-tgn',
+            title: "🐟 TRADICIÓN: Empieza la Cuaresma",
+            content: "Las pescaderías de los mercados de la ciudad inician la campaña de bacalao y productos de vigilia. ¡Consumo de proximidad!",
+            category: "COMERCIO",
             neighborhood: "GENERAL",
-            author_name: "Arquebisbat",
+            author_name: "Mercados de TGN",
             created_at: new Date().toISOString()
         };
 
@@ -186,7 +186,7 @@ const Announcements: React.FC = () => {
                 return diffDays <= 7;
             });
 
-            setNotices([weatherAlert, entierroAnnouncement, fireAdvisory, ashNotice, ...validFetched]);
+            setNotices([weatherAlert, postCarnivalNotice, ashDayAdvisory, lentTradition, ...validFetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

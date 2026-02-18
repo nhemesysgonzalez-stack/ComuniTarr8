@@ -253,15 +253,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">⚰️ ENTIERRO DE LA SARDINA: HOY VELATORIO DESDE LAS 18h EN PLAZA DE LA FONT</span>
+          <span className="flex items-center gap-2">🕯️ MIÉRCOLES DE CENIZA: IMPOSICIÓN DE LA CENIZA EN LA CATEDRAL (19:30H)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🔥 QUEMA DEL NINOT: ÚLTIMA DESPEDIDA AL REY CARNESTOLTES A LAS 20:00H</span>
+          <span className="flex items-center gap-2">🧹 OPERACIÓN LIMPIEZA: BRIGADAS TRABAJAN EN PL. DE LA FONT TRAS EL FIN DE CARNAVAL</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🖤 LUTO VECINAL: SE INVITA A ACUDIR DE OSCURO AL CORTEJO FÚNEBRE DEL NINOT</span>
+          <span className="flex items-center gap-2">🚌 EMT TARRAGONA: TODAS LAS LÍNEAS VUELVEN A SUS RECORRIDOS HABITUALES</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚗 MOVILIDAD: CORTES EN PART ALTA DESDE LAS 19:30H POR EL CORTEJO</span>
+          <span className="flex items-center gap-2">🍳 CUARESMA: EMPIEZA LA TEMPORADA DE BUÑUELOS Y GASTRONOMÍA DE VIGILIA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🕯️ MAÑANA: MIÉRCOLES DE CENIZA - RETORNO A LA CALMA Y LA TRADICIÓN</span>
+          <span className="flex items-center gap-2">🌊 CALMA VECINAL: RETORNO A LA RUTINA DESPUÉS DE LOS DÍAS DE DESENFRENO</span>
         </motion.div>
       </div>
 

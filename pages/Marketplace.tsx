@@ -57,47 +57,47 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'mock-tue-m1',
+          id: 'mock-wed-m1',
           user_id: 'v1',
-          title: '🖤 Velo y Ropa de Luto (Pack)',
-          description: 'Ideal para el entierro de hoy. Velo negro, chaqueta y guantes. Talla única.',
-          price: '12',
-          category: 'moda', // Changed to 'moda' as 'ropa' is not in categories
+          title: '🍩 Pack Buñuelos de Viento (Artesanos)',
+          description: 'Me sobran dos cajas que compré de más en el Horno de la Rambla. Recién hechos de esta mañana.',
+          price: '5',
+          category: 'hogar',
           neighborhood: 'CENTRO',
-          contact_info: '',
+          contact_info: '622 334 455',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-tue-m2',
+          id: 'mock-wed-m2',
           user_id: 'v2',
-          title: '🧼 Kit Desmaquillante "Heavy Duty"',
-          description: 'Leche limpiadora y discos de algodón para quitarse el maquillaje de purpurina más rebelde.',
-          price: '8',
-          category: 'otros',
-          neighborhood: 'GENERAL',
-          contact_info: '',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'mock-tue-m3',
-          user_id: 'v3',
-          title: '🐟 Sardina de Goma Gigante',
-          description: 'La usé para un disfraz de broma. Si alguien la quiere para el entierro de hoy, la regalo.',
-          price: '0',
-          category: 'otros',
-          neighborhood: 'LLEVANT',
-          contact_info: '',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'mock-tue-m4',
-          user_id: 'v4',
-          title: '🛋️ Sofá Relax (Urge Venta)',
-          description: 'Para recuperarse de la resaca de Carnaval. Muy cómodo, transporte a cargo del comprador.',
-          price: '60',
+          title: '🧴 Aspirador de Purpurina (Casi nuevo)',
+          description: 'Especial para tapicerías y suelos. Lo compré para después de Carnival y funciona de lujo.',
+          price: '25',
           category: 'hogar',
           neighborhood: 'GENERAL',
-          contact_info: '',
+          contact_info: '611 998 877',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'mock-wed-m3',
+          user_id: 'v3',
+          title: '🧣 Ropa de Calle (Lote Invierno)',
+          description: 'Vendo lote de bufandas y abrigos en buen estado. Ideal para este frío de febrero.',
+          price: '30',
+          category: 'moda',
+          neighborhood: 'LLEVANT',
+          contact_info: '644 556 677',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'mock-wed-m4',
+          user_id: 'v4',
+          title: '🎭 Retales de Disfraz (Seda/Tul)',
+          description: 'Me han sobrado muchos metros de la comparsa de este año. Los regalo si vienes a por ellos.',
+          price: '0',
+          category: 'ocio',
+          neighborhood: 'GENERAL',
+          contact_info: 'Mandar mensaje por aquí',
           created_at: new Date().toISOString()
         }
       ];

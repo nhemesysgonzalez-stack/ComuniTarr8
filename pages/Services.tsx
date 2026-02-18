@@ -34,50 +34,17 @@ export const Services: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-orange-50 dark:bg-orange-900/10 p-6 rounded-3xl border-2 border-orange-400 dark:border-orange-600 relative overflow-hidden animate-pulse">
-              <div className="absolute top-0 right-0 p-4 opacity-10">
-                <span className="material-symbols-outlined text-9xl text-orange-600">air</span>
-              </div>
-              <div className="flex items-start gap-3 mb-3 relative z-10">
-                <span className="material-symbols-outlined text-3xl text-orange-600 animate-bounce">warning</span>
+            <div className="bg-blue-50 dark:bg-blue-900/10 p-6 rounded-3xl border border-blue-100 dark:border-blue-800/30">
+              <h3 className="text-lg font-black text-blue-600 dark:text-blue-400 mb-4 flex items-center gap-2">
+                <span className="material-symbols-outlined">directions_bus</span> ESTADO DEL TRANSPORTE
+              </h3>
+              <div className="p-4 bg-white dark:bg-surface-dark rounded-xl border border-green-200 dark:border-green-800 flex items-center gap-3">
+                <span className="material-symbols-outlined text-green-500">check_circle</span>
                 <div>
-                  <h3 className="text-xl font-black text-orange-700 dark:text-orange-400">⚠️ ALERTA ACTIVA: VIENTO EXTREMO</h3>
-                  <p className="text-xs text-orange-600 dark:text-orange-300 font-bold uppercase">VENTCAT - Protecció Civil Generalitat</p>
+                  <p className="text-sm font-black text-green-700 dark:text-green-400">SERVICIO NORMALIZADO</p>
+                  <p className="text-[10px] text-gray-500 uppercase">Tras el fin de Carnival, todas las líneas de la EMT vuelven a sus recorridos y paradas habituales.</p>
                 </div>
               </div>
-              <p className="text-sm text-gray-800 dark:text-gray-200 mb-4 relative z-10 leading-relaxed font-medium">
-                <strong>ES-Alert enviado a todos los móviles.</strong> Se prevén rachas de <strong>+100 km/h</strong> hoy y mañana en toda la costa de Tarragona.
-              </p>
-
-              <div className="bg-white dark:bg-surface-dark p-4 rounded-xl mb-4 relative z-10">
-                <p className="text-xs font-black text-red-600 uppercase mb-2">⛔ Medidas Excepcionales (00:00-20:00 Jueves 12):</p>
-                <ul className="text-xs text-gray-700 dark:text-gray-300 space-y-1 ml-4">
-                  <li>• ❌ Suspendidas: Clases, universidad, actividad sanitaria no urgente</li>
-                  <li>• 🏠 Evita desplazamientos innecesarios. Prioriza teletrabajo.</li>
-                  <li>• 🌳 Parques cerrados (Part Alta, Francolí, Miracle)</li>
-                  <li>• 🏛️ Monumentos cerrados (Passeig Arqueològic, Amfiteatre)</li>
-                </ul>
-              </div>
-
-              <div className="bg-red-100 dark:bg-red-900/30 p-3 rounded-xl mb-3 relative z-10">
-                <p className="text-xs font-black text-red-700 dark:text-red-400 uppercase mb-1">🔴 Recomendaciones Urgentes:</p>
-                <ul className="text-[10px] text-red-800 dark:text-red-300 space-y-0.5 ml-3">
-                  <li>• Retira macetas, toldos y objetos de balcones</li>
-                  <li>• Asegura puertas y ventanas</li>
-                  <li>• Aléjate de fachadas, cornisas y árboles</li>
-                  <li>• Vehículos 2 ruedas: extremar precaución o no circular</li>
-                </ul>
-              </div>
-
-              <a
-                href="https://interior.gencat.cat"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-3 bg-orange-600 text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-orange-700 transition-colors shadow-lg shadow-orange-600/50 flex items-center justify-center gap-2 relative z-10"
-              >
-                VER INFO PROTECCIÓ CIVIL
-                <span className="material-symbols-outlined text-sm">open_in_new</span>
-              </a>
             </div>
 
             <div className="bg-green-50 dark:bg-green-900/10 p-6 rounded-3xl border border-green-100 dark:border-green-800/30 relative overflow-hidden">
@@ -177,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
               </p>
-              <button onClick={() => alert("Próximo Taller de Reinvención Laboral: Martes 17 Feb en Tarragona Impulsa (Tabacalera).")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Próximo Taller de Reinvención Laboral: Martes 24 Feb en Tarragona Impulsa (Tabacalera).")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -225,12 +192,12 @@ export const Services: React.FC = () => {
               </h3>
               <div className="flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm mb-3">
                 <div className="size-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 font-bold text-xl">
-                  27
+                  19
                 </div>
                 <div>
                   <p className="text-xs font-black uppercase text-gray-400">Próximo Festivo</p>
-                  <p className="text-sm font-bold text-gray-800 dark:text-white">Día de libre disposición (Carnaval)</p>
-                  <p className="text-[10px] text-gray-500">Quedan 16 días</p>
+                  <p className="text-sm font-bold text-gray-800 dark:text-white">San José (Puente Escolar)</p>
+                  <p className="text-[10px] text-gray-500">Quedan 30 días</p>
                 </div>
               </div>
               <a

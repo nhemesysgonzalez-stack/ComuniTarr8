@@ -181,36 +181,36 @@ const Home: React.FC = () => {
           .order('created_at', { ascending: false })
           .limit(3);
 
-        const entierroSardinaNews = {
-          id: 'entierro-sardina-2026',
-          title: "⚰️ HOY 20:00h: Entierro y Quema",
-          content: "El Rey Carnestoltes dice adiós. Lectura del testamento y quema del féretro en la Plaza de la Font. ¡Ven de luto!",
-          category: "FIESTA",
+        const ashWednesdayNews = {
+          id: 'ash-wednesday-2026',
+          title: "🕯️ HOY: Miércoles de Ceniza",
+          content: "Comienza la Cuaresma. Imposición de la ceniza en la Catedral y parroquias. Un tiempo para la reflexión y la calma tras la fiesta.",
+          category: "TRADICIÓN",
           neighborhood: "GENERAL",
-          itinerary: "• 18:00h: Velatorio\n• 20:00h: Testamento y Quema\n• 21:00h: Entierro Sardina",
+          itinerary: "• 09:00h: Misa matinal\n• 13:00h: Oración mediodía\n• 19:30h: Ceniza (Catedral)",
           link_url: "/calendar",
           created_at: new Date().toISOString()
         };
 
-        const juicioResultNews = {
-          id: 'juicio-result-2026',
-          title: "⚖️ SENTENCIA: Culpables!",
-          content: "Tras el juicio de ayer en el Metropol, la Reina y el Concubí han sido condenados a la hoguera pública. Un veredicto esperado.",
-          category: "CULTURA",
-          neighborhood: "CENTRO",
-          itinerary: "• Veredicto: Culpables\n• Pena: Hoguera\n• Lugar: Pl. de la Font",
-          link_url: "/forum",
+        const postCarnivalCleanupNews = {
+          id: 'cleanup-post-carnival-2026',
+          title: "🧹 Operación Limpieza Final",
+          content: "Las brigadas municipales trabajan intensamente para retirar confeti y restos de la quema de ayer. La ciudad recupera su imagen habitual.",
+          category: "SERVICIOS",
+          neighborhood: "GENERAL",
+          itinerary: "• Zona: Plaza de la Font\n• Estado: En curso\n• Info: 010 Atención",
+          link_url: "/incidents",
           created_at: new Date().toISOString()
         };
 
-        const tuesdayCleanupNews = {
-          id: 'tuesday-cleanup-2026',
-          title: "🧹 Operación Ceniza: Martes",
-          content: "Último gran despliegue de las brigadas de limpieza. Mañana Miércoles de Ceniza la ciudad debe estar impecable.",
-          category: "SERVICIOS",
-          neighborhood: "GENERAL",
-          itinerary: "• Zona: Casco Antiguo\n• Estado: Refuerzo noche\n• Info: 010 Atención",
-          link_url: "/incidents",
+        const lentGastronomyNews = {
+          id: 'lent-gastronomy-2026',
+          title: "🍳 Gastronomía de Cuaresma",
+          content: "Mercados y pastelerías empiezan a ofrecer buñuelos de viento y platos típicos de vigilia. ¡Pruébalos en el Mercado Central!",
+          category: "CULTURA",
+          neighborhood: "CENTRO",
+          itinerary: "• Plato: Buñuelos de Cuaresma\n• Lugar: Mercat Central\n• Horario: 08-20h",
+          link_url: "/business-directory",
           created_at: new Date().toISOString()
         };
 
@@ -225,31 +225,39 @@ const Home: React.FC = () => {
           link_url: "/services",
           created_at: new Date().toISOString()
         };
-        const saturdayJobs = { id: 'j-jobs-sat', title: "💼 EMPLEO: Refuerzo Hostelería", content: "Se buscan camareros extra para la noche de Carnaval y cenas de San Valentín. Alta inmediata.", category: "EMPLEO", neighborhood: "GENERAL", itinerary: "• Ofertas: 8 activas\n• Zona: Part Alta / Serrallo\n• Turno: Noche hoy", link_url: "/forum", created_at: new Date().toISOString() };
 
-        const ashWednesdayPreview = {
-          id: 'ash-wednesday-preview',
-          title: "🕯️ MAÑANA: Miércoles de Ceniza",
-          content: "Mañana a las 19:30h, imposición de la ceniza en la Catedral y parroquias de la ciudad. Comienza la Cuaresma.",
-          category: "TRADICIÓN",
-          neighborhood: "PART ALTA",
-          itinerary: "• 09:00h: Misa\n• 19:30h: Ceniza Central\n• Lugar: Catedral de TGN",
-          link_url: "/calendar",
+        const springJobs = {
+          id: 'j-jobs-spring',
+          title: "💼 EMPLEO: Campaña de Primavera",
+          content: "Empresas del sector turístico y náutico inician procesos de selección para la temporada alta. ¡Prepara tu CV!",
+          category: "EMPLEO",
+          neighborhood: "GENERAL",
+          itinerary: "• Ofertas: 22 activas\n• Zona: Costa / Puerto\n• Perfil: Idiomas / Atención",
+          link_url: "/forum",
           created_at: new Date().toISOString()
         };
 
-        const trafficTuesday = {
-          id: 'traffic-tue-funeral',
-          title: "🚧 TRÁFICO: Cortes por Procesión",
-          content: "Desde las 19:30h cortes en Pl. Font, Baixada Misericòrdia y Portalet. Usa transporte público.",
+        const routineReturnNotice = {
+          id: 'routine-return-2026',
+          title: "🚌 TRANSPORTE: Vuelta a la Rutina",
+          content: "Líneas de la EMT vuelven a sus horarios y recorridos habituales tras el fin de los actos de Carnaval.",
           category: "MOVILIDAD",
-          neighborhood: "CENTRO",
-          itinerary: "• 19:30-22:00h\n• Zona: Part Alta\n• Alt: Vía Augusta",
+          neighborhood: "GENERAL",
+          itinerary: "• Líneas: Todas normalizadas\n• Aviso: Sin cortes previstos\n• App: EMT Tarragona",
           link_url: "/map",
           created_at: new Date().toISOString()
         };
 
-        const tuesdayJobs = { id: 'j-jobs-tue', title: "💼 EMPLEO: Martes de Oportunidad", content: "Nuevas ofertas en comercio y hostelería para la temporada de primavera. ¡Inscríbete!", category: "EMPLEO", neighborhood: "GENERAL", itinerary: "• Ofertas: 15 nuevas\n• Canal: Empleo\n• Perfil: Atención Cliente", link_url: "/forum", created_at: new Date().toISOString() };
+        const wednesdayMarket = {
+          id: 'market-wed-2026',
+          title: "🥬 MERCADILLO: Hoy en el Puerto",
+          content: "Fruta y verdura fresca de proximidad hoy miércoles en el barrio del Serrallo.",
+          category: "COMERCIO",
+          neighborhood: "EL SERRALLO",
+          itinerary: "• Lugar: Puerto / Serrallo\n• Horas: 08:30-14:00\n• Tipo: Proximidad",
+          link_url: "/business-directory",
+          created_at: new Date().toISOString()
+        };
 
         const fetchedNews = !newsError && newsData ? newsData : [];
         const today = new Date();
@@ -263,7 +271,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([entierroSardinaNews, juicioResultNews, tuesdayCleanupNews, ashWednesdayPreview, volunteeringNews, womanSupportNews, tuesdayJobs, trafficTuesday, ...validFetchedNews].slice(0, 8));
+        setNews([ashWednesdayNews, postCarnivalCleanupNews, lentGastronomyNews, springJobs, routineReturnNotice, wednesdayMarket, volunteeringNews, womanSupportNews, ...validFetchedNews].slice(0, 8));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

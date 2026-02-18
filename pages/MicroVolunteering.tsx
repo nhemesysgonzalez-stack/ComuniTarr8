@@ -218,10 +218,10 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Limpieza Playas', d: '¿Alguien se apunta a una jornada de limpieza en la Playa del Miracle este domingo? Me pondré en contacto con la Associació Aurora.', c: 'Coordinar en Foro' },
-                                            { t: 'Paseo APAPT', d: 'Voy a la protectora a pasear perros el martes. ¿Algún vecino se anima a venir conmigo?', c: '633445566' },
-                                            { t: 'Ocio Down TGN', d: 'Acompañamiento para joven con Down a ver los Gigantes de Tarragona. 1 hora aproximada.', c: '611223344' },
-                                            { t: 'Info Abrazos', d: 'Me gustaría saber horarios y requisitos para el voluntariado de abrazos en el Joan XXIII.', c: 'Ver Secc. Servicios' }
+                                            { t: 'Recogida Confeti', d: '¿Alguien se apunta a una jornada de limpieza rápida en el Portalet hoy miércoles? Para dejarlo niquelado.', c: 'Coordinar en Foro' },
+                                            { t: 'Paseo APAPT', d: 'Voy a la protectora a pasear perros el miércoles. ¿Algún vecino se anima a venir conmigo?', c: '633445566' },
+                                            { t: 'Ocio Down TGN', d: 'Acompañamiento para joven con Down a dar un paseo tranquilo por la Vía Augusta. 1 hora aprox.', c: '611223344' },
+                                            { t: 'Info Cuaresma', d: '¿Me podéis pasar el horario exacto de la imposición de la ceniza en el Serrallo?', c: 'Ver Secc. Calendario' }
                                         ].map((idea, i) => (
                                             <button
                                                 key={i}

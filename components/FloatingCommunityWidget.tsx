@@ -11,20 +11,20 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "⚰️ HOY 20:00h: Entierro de la Sardina y Quema del Ninot en la Plaza de la Font. 🔥🐟", neighborhood: 'CENTRO' },
-    { id: 1, user: 'Limpieza TGN', avatar: '/logo.svg', text: '🧹 Operación Ceniza: Mañana Miércoles reforzamos la limpieza tras la quema de hoy. ✨', neighborhood: 'GENERAL' },
-    { id: 2, user: 'TGN Cultura', avatar: '/logo.svg', text: '🖤 Se invita a todos los vecinos a acudir de riguroso luto al cortejo fúnebre de hoy. 😭', neighborhood: 'GENERAL' },
-    { id: 3, user: 'Paco R.', avatar: 'https://i.pravatar.cc/150?u=paco', text: '¡Vaya pena! Se acaba lo bueno. A ver qué tal el testamento de este año, suelen dar caña. 😂🔥', neighborhood: 'Part Alta' },
-    { id: 4, user: 'Marta S.', avatar: 'https://i.pravatar.cc/150?u=marta', text: '¿Alguien sabe si después de la quema hay alguna cena popular de sardinas? 🐟🥘', neighborhood: 'Centro' },
-    { id: 5, user: 'Guille M.', avatar: 'https://i.pravatar.cc/150?u=guille', text: 'Mañana toca ceniza y vuelta al redil. ¡Disfrutad del último día de locura! 🎭💪', neighborhood: 'Serrallo' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🕯️ Hoy Miércoles de Ceniza a las 19:30h imposición de la ceniza en la Catedral. ✨", neighborhood: 'CENTRO' },
+    { id: 1, user: 'Limpieza TGN', avatar: '/logo.svg', text: '🧹 Brigadas en marcha: Limpiando los restos de la quema de ayer en la Pl. de la Font. ✨', neighborhood: 'GENERAL' },
+    { id: 2, user: 'TGN Cultura', avatar: '/logo.svg', text: '🍩 ¿Habéis probado ya los buñuelos de Cuaresma del Mercado? ¡Están increíbles! 😋', neighborhood: 'GENERAL' },
+    { id: 3, user: 'Paco R.', avatar: 'https://i.pravatar.cc/150?u=paco', text: '¡Qué bajón! Vuelta a la realidad. Al menos la ciudad ya se ve más limpia. 👍', neighborhood: 'Part Alta' },
+    { id: 4, user: 'Marta S.', avatar: 'https://i.pravatar.cc/150?u=marta', text: '¿Alguien sabe si hoy abren los museos con horario normal? 🏛️🤔', neighborhood: 'Centro' },
+    { id: 5, user: 'Guille M.', avatar: 'https://i.pravatar.cc/150?u=guille', text: 'A por el Miércoles de Ceniza con energía. ¡Se acabó el desfase! 💪🥗', neighborhood: 'Serrallo' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '⚰️ 20h: Entierro' },
-    { user: 'Cultura', text: '🔥 Quema Ninot' },
-    { user: 'Limpieza', text: '🧹 Operación Ceniza' },
-    { user: 'V. Urbana', text: '🚗 Cortes Part Alta' },
-    { user: 'Vecinos', text: '🖤 Todos de Luto' }
+    { user: 'Admin', text: '🕯️ 19:30 Ceniza' },
+    { user: 'Limpieza', text: '🧹 Ciudad Limpia' },
+    { user: 'Cultura', text: '🍩 Buñuelos ON' },
+    { user: 'V. Urbana', text: '🚌 Bus Normal' },
+    { user: 'Vecinos', text: '🌊 Modo Calma' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

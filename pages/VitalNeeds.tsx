@@ -46,33 +46,33 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'mock-tue-n1',
+                    id: 'mock-wed-n1',
                     creator_id: 'v4',
                     type: 'other',
-                    title: '🕯️ Préstamo Velas para Procesión',
-                    description: 'Busco 3 o 4 velas de procesión para llevar esta noche al entierro de la sardina. ¡Gracias!',
+                    title: '🧴 Préstamo Aspirador Purpurina',
+                    description: '¿Alguien me puede dejar un aspirador potente para hoy? Se me ha quedado el salón lleno de purpurina tras la fiesta de ayer y mi aspiradora no puede con ella.',
                     contact_info: '688 22 11 00 (Pere)',
                     is_urgent: false,
                     neighborhood: 'CENTRO',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-tue-n2',
+                    id: 'mock-wed-n2',
                     creator_id: 'v5',
                     type: 'company',
-                    title: '🚗 Acompañar a Abuela (Entierro)',
-                    description: 'Busco a alguien que acompañe a mi abuela a ver la quema del Ninot mientras trabajo. Zona Pl. de la Font.',
+                    title: '🚗 Acompañar a Abuela (Ceniza)',
+                    description: 'Busco a alguien que acompañe a mi abuela a la misa de la ceniza en la Catedral a las 19:30h. Yo trabajo y no llega sola bien.',
                     contact_info: '644 33 22 11 (Marta)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-tue-n3',
+                    id: 'mock-wed-n3',
                     creator_id: 'v6',
                     type: 'emotional',
-                    title: "🎭 Grupo 'Bajón Post-Carnaval'",
-                    description: 'Quedada mañana Miércoles de Ceniza para desayunar y llorar un poco el fin de la fiesta. ¡Ánimo!',
+                    title: "🎭 Café Post-Carnaval",
+                    description: 'Quedada hoy miércoles para desayunar y comentar las mejores fotos de ayer mientras volvemos a la rutina. ¡Os espero!',
                     contact_info: '622 88 77 66 (Carme)',
                     is_urgent: false,
                     neighborhood: 'PART ALTA',
@@ -178,7 +178,7 @@ const VitalNeeds: React.FC = () => {
                             <span className="px-2 py-0.5 bg-red-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">RED SOLIDARIA</span>
                             <span className="text-[10px] font-bold text-gray-400 uppercase">AYUDA MUTUA</span>
                         </div>
-                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Brigada "Recogida de Confeti" 🧹</h2>
+                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Brigada "Bye Bye Purpurina" 🧹</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
                             Tras la gran rúa de ayer, las calles necesitan un empujón. Nos juntamos hoy para ayudar a las brigadas municipales en los portales y zonas comunes. ¡Hagamos que Tarragona brille de nuevo!
                         </p>

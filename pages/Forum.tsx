@@ -74,12 +74,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Maria J.', text: '💨 Aluciné con el viento de ayer, ¡toda la terraza por el suelo! ¿Alguien sabe si hay brigada hoy?' },
-    { user: 'ComuniTarr 🎭', text: 'Rua Infantil hoy a las 16h. ¡Cuidado con los cortes en Rambla Nova!' },
-    { user: 'Jordi T.', text: '¿Dónde se pueden llevar las ramas caídas? Los contenedores de mi calle están a tope.' },
-    { user: 'Pau B.', text: '🚆 Trenes funcionando con normalidad tras los retrasos de ayer.' },
-    { user: 'Ana G.', text: '¡Vaya disfraces más chulos he visto ya por el centro! Que empiece la fiesta ✨' },
-    { user: 'PrepperTGN', text: 'Recomendado revisar anclajes de toldos hoy, por si vuelve la racha el finde.' }
+    { user: 'Maria J.', text: '🧹 ¡Vaya cambio! Ya no quedan ni rastros del confeti en mi calle. ¡Gran trabajo de limpieza!' },
+    { user: 'ComuniTarr 🕯️', text: 'Hoy Miércoles de Ceniza: Imposición a las 19:30h en la Catedral. Comienza la Cuaresma.' },
+    { user: 'Jordi T.', text: '¿Alguna pastelería recomendada para comprar buñuelos hoy? ¡Me muero por unos!' },
+    { user: 'Pau B.', text: '🚌 EMT funcionando con total normalidad. Se acabaron los desvíos del fin de semana.' },
+    { user: 'Ana G.', text: 'Qué paz se respira hoy... un poco de calma después de tanta fiesta viene bien ✨' },
+    { user: 'Mireia R.', text: 'Recordad que hoy empieza la prohibición de comer carne en vigilia para los que sigan la tradición. 🐟' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -114,8 +114,8 @@ const Forum: React.FC = () => {
   useEffect(() => {
     if (!loading && messages.length === 0) {
       const initialSeeds = [
-        { id: 'seed-1', user_id: 'v2', content: '¿A qué hora empieza la Rua de Lluïment hoy? ¡Mis hijos ya están en modo carnaval! 🎭👶', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'CENTRO', created_at: new Date(Date.now() - 1000 * 60 * 5).toISOString() },
-        { id: 'seed-2', user_id: 'v6', content: 'Acabo de ver a la brigada retirando las ramas en la Rambla. ¡Buen trabajo! 🧹💪', user_metadata: { full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe' }, neighborhood: 'GENERAL', created_at: new Date(Date.now() - 1000 * 60 * 2).toISOString() }
+        { id: 'seed-1', user_id: 'v2', content: '¿A qué hora es la imposición de la ceniza hoy? He oído que hay varias misas. 🕯️🙏', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'CENTRO', created_at: new Date(Date.now() - 1000 * 60 * 5).toISOString() },
+        { id: 'seed-2', user_id: 'v6', content: 'He pasado por la Rambla y está impecable. Las brigadas han currado a saco esta noche. 🧹👏', user_metadata: { full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe' }, neighborhood: 'GENERAL', created_at: new Date(Date.now() - 1000 * 60 * 2).toISOString() }
       ];
       setMessages(initialSeeds as Message[]);
     }
@@ -155,12 +155,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts (Tuesday / Entierro / Mourning)
     let scripts = [
-      "¿A qué hora empieza el velatorio en la Plaza de la Font? ⚰️",
-      "Hoy toca sacar la ropa negra del armario... ¡Adiós al Carnaval! 🖤😭",
-      "¿Alguna recomendación para cenar algo de pescado hoy por el Entierro de la Sardina? 🐟",
-      "¡Vaya pena! La quema del Ninot es a las 20h, no os lo perdáis. 🔥",
-      "¿Alguien sabe si el Miércoles de Ceniza hay cole normal? 🕯️",
-      "He subido las fotos del Juicio de ayer a la Galería. ¡Vaya risas! 😂⚖️"
+      "¿Alguien sabe si en la Catedral dan la ceniza también por la mañana? 🕯️",
+      "Hoy toca limpieza profunda en casa para quitar la purpurina de todos lados... ¡Socorro! 😂🧹",
+      "¿Dónde compran los mejores buñuelos de viento? Los del Mercado Central tienen buena pinta. 🍩",
+      "Qué silencio hay hoy en la ciudad, se nota que se ha acabado el Carnival. 🌊",
+      "¿Alguien sabe si el bus 54 ya para en su sitio habitual en la Rambla? 🚌",
+      "He subido las fotos de la Quema de ayer a la Galería. ¡El Ninot era espectacular! 🔥📸"
     ];
 
     // Base reply scripts
@@ -528,22 +528,22 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'entierro-sardina-tgn',
-      title: '⚰️ Entierro Sardina',
-      description: 'Hoy 20:00h Pl. Font.',
-      participating: 3560
+      id: 'miercoles-ceniza-tgn',
+      title: '🕯️ Miércoles Ceniza',
+      description: 'Cuaresma en TGN.',
+      participating: 2450
     },
     {
-      id: 'quema-ninot-live',
-      title: '🔥 Quema del Ninot',
-      description: 'Adiós al Carnaval.',
-      participating: 4890
+      id: 'limpieza-post-carnaval',
+      title: '🧹 Operación Limpieza',
+      description: 'Pl. Font impecable.',
+      participating: 1890
     },
     {
-      id: 'luto-vecinal-tgn',
-      title: '🖤 Luto Oficial',
-      description: 'Cortejo fúnebre Part Alta.',
-      participating: 2120
+      id: 'bunyols-cuaresma',
+      title: '🍩 Buñuelos ON',
+      description: '¡Ya hay en los hornos!',
+      participating: 3120
     }
   ];
 

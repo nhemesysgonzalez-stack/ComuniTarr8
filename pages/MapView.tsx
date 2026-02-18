@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '48%', y: '48%', title: "Velatorio del Rey", desc: 'Plaza de la Font: Dá el último adiós al Carnestoltes.', status: '18:00h - 20:00h', color: 'bg-slate-800', icon: 'visibility', glow: 'shadow-[0_0_50px_rgba(30,41,59,0.8)]' },
-    { id: 2, type: 'event', x: '50%', y: '52%', title: 'Quema del Ninot', desc: 'Espectáculo final de fuego y sátira.', status: 'Hoy 20:00h', color: 'bg-rose-600', icon: 'local_fire_department', glow: 'shadow-[0_0_35px_rgba(225,29,72,0.5)]' },
-    { id: 3, type: 'incident', x: '48%', y: '50%', title: 'Corte Part Alta', desc: 'Acceso restringido por la procesión fúnebre.', status: '19:30h - 22:00h', color: 'bg-orange-500', icon: 'block' },
-    { id: 4, type: 'incident', x: '55%', y: '60%', title: 'Operación Ceniza', desc: 'Limpieza nocturna post-quema.', status: 'Desde las 22h', color: 'bg-emerald-500', icon: 'cleaning_services' },
-    { id: 5, type: 'shop', x: '45%', y: '40%', title: 'Cena de Luto', desc: 'Menú especial post-entierro.', status: 'Reservas abiertas', color: 'bg-purple-600', icon: 'restaurant' }
+    { id: 1, type: 'event', x: '48%', y: '48%', title: "Misa de Ceniza", desc: 'Catedral de Tarragona: Imposición de la ceniza.', status: '09:00h y 19:30h', color: 'bg-indigo-600', icon: 'auto_awesome', glow: 'shadow-[0_0_50px_rgba(79,70,229,0.5)]' },
+    { id: 2, type: 'cleanup', x: '50%', y: '52%', title: 'Limpieza Pl. Font', desc: 'Retirada de restos de la quema de ayer.', status: 'En curso', color: 'bg-emerald-500', icon: 'cleaning_services', glow: 'shadow-[0_0_35px_rgba(16,185,129,0.4)]' },
+    { id: 3, type: 'shop', x: '52%', y: '45%', title: 'Dulces de Cuaresma', desc: 'Venta de buñuelos artesanos en el Mercado.', status: 'Abierto 08-20h', color: 'bg-amber-600', icon: 'bakery_dining' },
+    { id: 4, type: 'incident', x: '45%', y: '55%', title: 'EMT: Rutas Normales', desc: 'Todas las paradas operativas tras Carnaval.', status: 'Normalizado', color: 'bg-blue-500', icon: 'directions_bus' },
+    { id: 5, type: 'event', x: '55%', y: '40%', title: 'Charla Cuaresma', desc: 'Introducción a la tradición local.', status: 'Hoy 18:30h', color: 'bg-purple-600', icon: 'menu_book' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

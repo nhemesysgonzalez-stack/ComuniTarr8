@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'ms1', user_name: 'Ana T.', content: 'Vistas del Juicio de ayer en el Metropol. ¡Qué gran sátira! ⚖️🤡 @CulturaTGN', image_url: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f', likes: 56, created_at: new Date().toISOString() },
-            { id: 'ms2', user_name: 'Marc G.', content: 'Ya tenemos el luto preparado para esta tarde. ¡Adiós Carnestoltes! 🖤⚰️ #TGNLuto', image_url: 'https://images.unsplash.com/photo-1493238792000-8113da705763', likes: 89, created_at: new Date().toISOString() },
-            { id: 'ms3', user_name: 'Pilar S.', content: 'Últimos retoques a la sardina para la quema de hoy a las 20h. 🔥🐟', image_url: 'https://images.unsplash.com/photo-1518173946687-a4c8a9ba332f', likes: 42, created_at: new Date().toISOString() },
-            { id: 'ms4', user_name: 'Joan R.', content: '¿Alguien para ir juntos al entierro? Salimos del Serrallo a las 19:15h. 📞 600 000 111', image_url: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81', likes: 24, created_at: new Date().toISOString() }
+            { id: 'ms1', user_name: 'Ana T.', content: 'Increíble la Quema del Ninot de ayer en Pl. de la Font. ¡Hasta el año que viene! 🔥🎭', image_url: 'https://images.unsplash.com/photo-1518173946687-a4c8a9ba332f', likes: 124, created_at: new Date(Date.now() - 1000 * 60 * 60 * 12).toISOString() },
+            { id: 'ms2', user_name: 'Marc G.', content: 'Vistas del Serrallo esta mañana... qué paz después de tanta fiesta. ✨🌊', image_url: 'https://images.unsplash.com/photo-1493238792000-8113da705763', likes: 89, created_at: new Date().toISOString() },
+            { id: 'ms3', user_name: 'Pilar S.', content: 'Primeros buñuelos de Cuaresma del Mercado. ¡Vuelan! 🍩😋', image_url: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e', likes: 156, created_at: new Date().toISOString() },
+            { id: 'ms4', user_name: 'Joan R.', content: 'La Catedral luce imponente hoy Miércoles de Ceniza. 🙏🕯️', image_url: 'https://images.unsplash.com/photo-1548543604-a87c9909abec', likes: 78, created_at: new Date().toISOString() }
         ];
 
         if (data && data.length > 0) {

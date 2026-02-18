@@ -101,25 +101,25 @@ const Workshops: React.FC = () => {
             {/* Featured Class / Service Ad */}
             <div className="max-w-6xl mx-auto px-6 mb-12">
                 <div className="bg-white dark:bg-surface-dark rounded-[40px] border-4 border-dashed border-sky-500/20 p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 hover:border-sky-500/40 transition-all">
-                    <div className="size-32 md:size-48 bg-sky-100 dark:bg-sky-900/30 rounded-[35px] flex items-center justify-center shrink-0">
-                        <span className="material-symbols-outlined text-7xl text-sky-600">set_meal</span>
+                    <div className="size-32 md:size-48 bg-indigo-100 dark:bg-indigo-900/30 rounded-[35px] flex items-center justify-center shrink-0">
+                        <span className="material-symbols-outlined text-7xl text-indigo-600">auto_stories</span>
                     </div>
                     <div className="flex-1">
                         <div className="flex items-center gap-3 mb-4">
-                            <span className="px-3 py-1 bg-sky-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">EVENTO HOY</span>
-                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">GASTRONOMÍA</span>
+                            <span className="px-3 py-1 bg-indigo-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">EVENTO HOY</span>
+                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">TRADICIÓN</span>
                         </div>
-                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Degustación de la Sardina 🐟</h2>
+                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Charla: Origen de la Cuaresma 🕯️</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Después de la quema, ven al Serrallo a la tradicional degustación de sardinas a la brasa. Música en directo y buen ambiente vecinal.
+                            Descubre la historia y las curiosidades de la Cuaresma en Tarragona. Una charla amena para entender por qué comemos buñuelos y bacalao.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <a href="tel:644998877" className="flex items-center gap-2 px-6 py-3 bg-sky-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
+                            <a href="tel:655443322" className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
                                 <span className="material-symbols-outlined text-sm">call</span>
-                                644 99 88 77 (Manel)
+                                655 44 33 22 (Isabel)
                             </a>
                             <span className="px-6 py-3 bg-gray-50 dark:bg-gray-800 dark:text-white rounded-xl text-xs font-black">
-                                PRECIO POPULAR: 5€
+                                GRATIS - CENTRO CÍVICO
                             </span>
                         </div>
                     </div>
