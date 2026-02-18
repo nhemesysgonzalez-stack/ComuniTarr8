@@ -32,19 +32,32 @@ const CommunityStories: React.FC = () => {
         }
     };
 
+    const [likedStories, setLikedStories] = useState<string[]>([]);
+
     const handleLike = async (storyId: string, currentLikes: number) => {
+        // Optimistic UI toggle
+        const isLiked = likedStories.includes(storyId);
+        const newLikes = isLiked ? Math.max(0, currentLikes - 1) : (currentLikes || 0) + 1;
+
+        // Update local state immediately
+        setStories(prev => prev.map(s => s.id === storyId ? { ...s, likes: newLikes } : s));
+        setLikedStories(prev => isLiked ? prev.filter(id => id !== storyId) : [...prev, storyId]);
+
+        // Don't update DB if it's a mock story
+        if (storyId.startsWith('ms')) return;
+
         try {
             const { error } = await supabase
                 .from('stories')
-                .update({ likes: (currentLikes || 0) + 1 })
+                .update({ likes: newLikes })
                 .eq('id', storyId);
 
             if (error) throw error;
-
-            // Update local state
-            setStories(prev => prev.map(s => s.id === storyId ? { ...s, likes: (s.likes || 0) + 1 } : s));
         } catch (error) {
             console.error('Error liking story:', error);
+            // Rollback if error
+            setStories(prev => prev.map(s => s.id === storyId ? { ...s, likes: currentLikes } : s));
+            setLikedStories(prev => isLiked ? [...prev, storyId] : prev.filter(id => id !== storyId));
         }
     };
 
@@ -242,7 +255,10 @@ const CommunityStories: React.FC = () => {
                             className="break-inside-avoid bg-white dark:bg-surface-dark rounded-[40px] overflow-hidden shadow-xl border border-gray-100 dark:border-gray-800 hover:shadow-2xl transition-all group"
                         >
                             {story.image_url && (
-                                <div className="relative overflow-hidden aspect-[4/5] bg-black">
+                                <div
+                                    className="relative overflow-hidden aspect-[4/5] bg-black cursor-pointer"
+                                    onDoubleClick={() => handleLike(story.id, story.likes)}
+                                >
                                     {story.image_url.match(/\.(mp4|webm|ogg)$/i) ? (
                                         <video src={story.image_url} className="w-full h-full object-cover" controls />
                                     ) : (
@@ -251,6 +267,20 @@ const CommunityStories: React.FC = () => {
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
                                                 <p className="text-white text-xs font-bold italic">"{story.content}"</p>
                                             </div>
+
+                                            {/* Like Animation Overlay */}
+                                            <AnimatePresence>
+                                                {likedStories.includes(story.id) && (
+                                                    <motion.div
+                                                        initial={{ scale: 0, opacity: 0 }}
+                                                        animate={{ scale: [0, 1.5, 1], opacity: [0, 1, 0] }}
+                                                        exit={{ opacity: 0 }}
+                                                        className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                                                    >
+                                                        <span className="material-symbols-outlined text-white text-9xl drop-shadow-2xl fill-1">favorite</span>
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
                                         </>
                                     )}
                                 </div>
@@ -273,9 +303,14 @@ const CommunityStories: React.FC = () => {
                                 <div className="flex items-center gap-4 pt-4 border-t border-gray-50 dark:border-gray-800">
                                     <button
                                         onClick={() => handleLike(story.id, story.likes)}
-                                        className="flex items-center gap-1.5 text-rose-500 hover:scale-110 transition-transform"
+                                        className={`flex items-center gap-1.5 transition-all active:scale-125 ${likedStories.includes(story.id) ? 'text-rose-500' : 'text-gray-400'}`}
                                     >
-                                        <span className="material-symbols-outlined text-lg">favorite</span>
+                                        <motion.span
+                                            animate={likedStories.includes(story.id) ? { scale: [1, 1.4, 1] } : {}}
+                                            className={`material-symbols-outlined text-lg ${likedStories.includes(story.id) ? 'fill-1' : ''}`}
+                                        >
+                                            {likedStories.includes(story.id) ? 'favorite' : 'favorite'}
+                                        </motion.span>
                                         <span className="text-[10px] font-black">{story.likes || 0}</span>
                                     </button>
                                     <button
