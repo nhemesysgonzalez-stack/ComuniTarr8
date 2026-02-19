@@ -56,7 +56,34 @@ const Incidents: React.FC = () => {
             }
 
             if (data) {
-                setIncidents(data);
+                // Mock Incidents for Demo (Thursday 19th)
+                const mockIncidents: Incident[] = [
+                    {
+                        id: 'mock-inc-1',
+                        user_id: 'admin',
+                        title: '✨ Limpieza Finalizada',
+                        description: 'La Plaza de la Font vuelve a estar impecable tras el paso de las brigadas. ¡Gran trabajo!',
+                        neighborhood: 'PART ALTA',
+                        status: 'resolved',
+                        created_at: new Date().toISOString(),
+                        profiles: { full_name: 'Ayuntamiento TGN', avatar_url: '/logo.svg' },
+                        image_url: 'https://images.unsplash.com/photo-1584620885231-15b026778b75?auto=format&fit=crop&q=80&w=800'
+                    },
+                    {
+                        id: 'mock-inc-2',
+                        user_id: 'user2',
+                        title: '🔑 Llaves perdidas',
+                        description: 'He encontrado un juego de llaves con un llavero de los Minions en la Rambla Nova, cerca del balcón.',
+                        neighborhood: 'CENTRO',
+                        status: 'open',
+                        contact_info: 'Dejadas en la cafetería Viena',
+                        created_at: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(),
+                        profiles: { full_name: 'Carlos M.', avatar_url: 'https://i.pravatar.cc/150?u=carlos' }
+                    }
+                ];
+
+                // Merge real data with mock data, avoiding duplicates if possible (simple merge here)
+                setIncidents([...data, ...mockIncidents]);
             }
         } catch (err) {
             console.error('Error fetching incidents:', err);

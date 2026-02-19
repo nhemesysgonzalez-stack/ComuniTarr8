@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '48%', y: '48%', title: "Misa de Ceniza", desc: 'Catedral de Tarragona: Imposición de la ceniza.', status: '09:00h y 19:30h', color: 'bg-indigo-600', icon: 'auto_awesome', glow: 'shadow-[0_0_50px_rgba(79,70,229,0.5)]' },
-    { id: 2, type: 'cleanup', x: '50%', y: '52%', title: 'Limpieza Pl. Font', desc: 'Retirada de restos de la quema de ayer.', status: 'En curso', color: 'bg-emerald-500', icon: 'cleaning_services', glow: 'shadow-[0_0_35px_rgba(16,185,129,0.4)]' },
+    { id: 1, type: 'event', x: '48%', y: '48%', title: "Reunión AAVV", desc: 'Centro Cívico: Reunión vecinal post-fiestas.', status: '19:00h', color: 'bg-indigo-600', icon: 'groups', glow: 'shadow-[0_0_50px_rgba(79,70,229,0.5)]' },
+    { id: 2, type: 'cleanup', x: '50%', y: '52%', title: 'Ciudad Limpia', desc: 'Brigadas han finalizado la limpieza en Plaza de la Font.', status: 'Completado', color: 'bg-emerald-500', icon: 'check_circle', glow: 'shadow-[0_0_35px_rgba(16,185,129,0.4)]' },
     { id: 3, type: 'shop', x: '52%', y: '45%', title: 'Dulces de Cuaresma', desc: 'Venta de buñuelos artesanos en el Mercado.', status: 'Abierto 08-20h', color: 'bg-amber-600', icon: 'bakery_dining' },
-    { id: 4, type: 'incident', x: '45%', y: '55%', title: 'EMT: Rutas Normales', desc: 'Todas las paradas operativas tras Carnaval.', status: 'Normalizado', color: 'bg-blue-500', icon: 'directions_bus' },
-    { id: 5, type: 'event', x: '55%', y: '40%', title: 'Charla Cuaresma', desc: 'Introducción a la tradición local.', status: 'Hoy 18:30h', color: 'bg-purple-600', icon: 'menu_book' }
+    { id: 4, type: 'incident', x: '45%', y: '55%', title: 'EMT: Rutas Normales', desc: 'Todas las paradas operativas tras retirar gradas.', status: 'Normalizado', color: 'bg-blue-500', icon: 'directions_bus' },
+    { id: 5, type: 'event', x: '55%', y: '40%', title: 'Charla Cuaresma', desc: 'Historia y tradiciones en el museo.', status: 'Hoy 18:30h', color: 'bg-purple-600', icon: 'menu_book' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

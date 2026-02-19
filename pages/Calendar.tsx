@@ -122,16 +122,42 @@ const NeighborhoodCalendar: React.FC = () => {
       created_at: new Date().toISOString()
     },
     {
-      id: 'evt-bunyols-wed',
+      id: 'evt-thu-aavv',
       creator_id: 'admin',
-      title: "🥘 Temporada de Buñuelos",
-      description: "Inicio de la venta de buñuelos de Cuaresma en pastelerías.",
-      event_date: '2026-02-18',
-      event_time: '08:00',
-      location: 'Ciudad',
+      title: "🗣️ Reunión AAVV Centro",
+      description: "Asamblea mensual para discutir mejoras en el barrio tras las fiestas.",
+      event_date: '2026-02-19',
+      event_time: '19:00',
+      location: 'Centro Cívico',
+      category: 'Solidario',
+      neighborhood: 'CENTRO',
+      contact_info: 'Presidenta AAVV',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-imp-tarraco',
+      creator_id: 'admin',
+      title: "🏛️ Ruta Imperial",
+      description: "Visita guiada por las murallas. Gratis para residentes.",
+      event_date: '2026-02-21',
+      event_time: '11:00',
+      location: 'Portal del Roser',
       category: 'Cultura',
-      neighborhood: 'GENERAL',
-      contact_info: 'Gremi de Pastissers',
+      neighborhood: 'PART ALTA',
+      contact_info: 'Museo Historia',
+      created_at: new Date().toISOString()
+    },
+    {
+      id: 'evt-lent-tapas',
+      creator_id: 'admin',
+      title: "🐟 Ruta de Tapas de Cuaresma",
+      description: "Bares del Serrallo ofrecen tapas de pescado y bacalao a 3€.",
+      event_date: '2026-02-22',
+      event_time: '12:00',
+      location: 'El Serrallo',
+      category: 'Ocio',
+      neighborhood: 'EL SERRALLO',
+      contact_info: 'Assoc. Hostelería',
       created_at: new Date().toISOString()
     }
   ];

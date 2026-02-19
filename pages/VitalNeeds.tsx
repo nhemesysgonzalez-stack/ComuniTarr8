@@ -46,33 +46,33 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'mock-wed-n1',
+                    id: 'mock-thu-n1',
                     creator_id: 'v4',
-                    type: 'other',
-                    title: '🧴 Préstamo Aspirador Purpurina',
-                    description: '¿Alguien me puede dejar un aspirador potente para hoy? Se me ha quedado el salón lleno de purpurina tras la fiesta de ayer y mi aspiradora no puede con ella.',
+                    type: 'company',
+                    title: '👵 Paseo al Sol',
+                    description: 'Mi madre necesita salir a caminar un poco ahora que hace buen día, pero yo trabajo. ¿Alguien para acompañarla 30 min?',
                     contact_info: '688 22 11 00 (Pere)',
                     is_urgent: false,
                     neighborhood: 'CENTRO',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-wed-n2',
+                    id: 'mock-thu-n2',
                     creator_id: 'v5',
-                    type: 'company',
-                    title: '🚗 Acompañar a Abuela (Ceniza)',
-                    description: 'Busco a alguien que acompañe a mi abuela a la misa de la ceniza en la Catedral a las 19:30h. Yo trabajo y no llega sola bien.',
+                    type: 'medical',
+                    title: '💊 Farmacia Urgente',
+                    description: 'Estoy con gripe y no puedo bajar a por Paracetamol. ¿Algún vecino va a la farmacia?',
                     contact_info: '644 33 22 11 (Marta)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-wed-n3',
+                    id: 'mock-thu-n3',
                     creator_id: 'v6',
-                    type: 'emotional',
-                    title: "🎭 Café Post-Carnaval",
-                    description: 'Quedada hoy miércoles para desayunar y comentar las mejores fotos de ayer mientras volvemos a la rutina. ¡Os espero!',
+                    type: 'other',
+                    title: "📚 Ayuda Mates ESO",
+                    description: 'Mi hijo tiene examen el lunes y se le han atragantado las ecuaciones. ¿Algún estudiante que le eche una mano?',
                     contact_info: '622 88 77 66 (Carme)',
                     is_urgent: false,
                     neighborhood: 'PART ALTA',
@@ -178,17 +178,17 @@ const VitalNeeds: React.FC = () => {
                             <span className="px-2 py-0.5 bg-red-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">RED SOLIDARIA</span>
                             <span className="text-[10px] font-bold text-gray-400 uppercase">AYUDA MUTUA</span>
                         </div>
-                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Brigada "Bye Bye Purpurina" 🧹</h2>
+                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Recogida Solidaria Post-Carnaval 🎭</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            Tras la gran rúa de ayer, las calles necesitan un empujón. Nos juntamos hoy para ayudar a las brigadas municipales en los portales y zonas comunes. ¡Hagamos que Tarragona brille de nuevo!
+                            ¿Tu disfraz ya no te sirve? No lo tires. Estamos recogiendo telas, accesorios y trajes para el banco de recursos del año que viene y talleres infantiles.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Punto de encuentro: Farmacia de Plaza de la Font a las 11:00h. Traed guantes.'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
-                            <span className="material-symbols-outlined text-sm">front_hand</span>
-                            ME APUNTO A AYUDAR
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Punto de recogida: Centro Cívico Torreforta. Horario: 17h-20h.'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                            <span className="material-symbols-outlined text-sm">inventory_2</span>
+                            DONAR MATERIAL
                         </a>
-                        <p className="text-[9px] text-center font-bold text-gray-400">Coordina: AAVV Torreforta</p>
+                        <p className="text-[9px] text-center font-bold text-gray-400">Coordina: Assoc. Carnaval TGN</p>
                     </div>
                 </section>
 

@@ -41,7 +41,30 @@ const Challenges: React.FC = () => {
           .order('created_at', { ascending: false })
       );
 
-      setChallenges(data || []);
+      const mockChallenges: Challenge[] = [
+        {
+          id: 'mock-ch-1',
+          creator_id: 'admin',
+          title: '🧹 Operación "Barrio Limpio"',
+          description: 'Vamos a repasar los parques infantiles para quitar los últimos restos de confeti y serpentinas. ¡Por nuestros peques!',
+          neighborhood: 'GENERAL',
+          contact_info: 'AAVV Centro',
+          is_example: true,
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'mock-ch-2',
+          creator_id: 'user2',
+          title: '🍲 Recogida de Alimentos',
+          description: 'Campaña post-fiestas para rellenar la despensa del Banco de Alimentos. Se necesita leche y aceite.',
+          neighborhood: 'PONENT',
+          contact_info: 'Parroquia Torreforta',
+          is_example: false,
+          created_at: new Date().toISOString()
+        }
+      ];
+
+      setChallenges(data && data.length > 0 ? data : mockChallenges);
     } catch (e) {
       console.error(e);
     } finally {
@@ -216,9 +239,9 @@ const Challenges: React.FC = () => {
                   <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
                   <div className="flex flex-wrap gap-2 justify-center">
                     {[
-                      { t: 'Recogida de Purpurina', d: 'Quedada para barrer los últimos restos de Carnival de nuestras aceras hoy Miércoles.', c: '611888222' },
+                      { t: 'Limpieza de Playa', d: 'Quedada el sábado para limpiar la playa del Milagro después del temporal.', c: '611888222' },
                       { t: 'Donación de Disfraces', d: 'Recogemos disfraces que ya no uses para donarlos a ludotecas y centros infantiles.', c: '633444555' },
-                      { t: 'Menú de Vigilia', d: 'Cocinamos platos de vigilia para llevar a vecinos mayores que viven solos.', c: '655666777' }
+                      { t: 'Compañía a Mayores', d: 'Grupo para pasear con vecinos mayores ahora que vuelve el buen tiempo.', c: '655666777' }
                     ].map((idea, i) => (
                       <button
                         key={i}

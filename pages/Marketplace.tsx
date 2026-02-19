@@ -57,47 +57,47 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'mock-wed-m1',
+          id: 'mock-thu-m1',
           user_id: 'v1',
-          title: '🍩 Pack Buñuelos de Viento (Artesanos)',
-          description: 'Me sobran dos cajas que compré de más en el Horno de la Rambla. Recién hechos de esta mañana.',
-          price: '5',
+          title: '🍩 Pack Buñuelos de Cuaresma',
+          description: 'Caja de 12 buñuelos surtidos. Me han regalado dos y no me los comeré todos. Están sin abrir.',
+          price: '8',
           category: 'hogar',
           neighborhood: 'CENTRO',
           contact_info: '622 334 455',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-wed-m2',
+          id: 'mock-thu-m2',
           user_id: 'v2',
-          title: '🧴 Aspirador de Purpurina (Casi nuevo)',
-          description: 'Especial para tapicerías y suelos. Lo compré para después de Carnival y funciona de lujo.',
-          price: '25',
-          category: 'hogar',
-          neighborhood: 'GENERAL',
+          title: '👗 Disfraz Medieval (Talla M)',
+          description: 'Vendo disfraz de época para el próximo mercado medieval. Usado solo una vez. Incluye accesorios.',
+          price: '35',
+          category: 'moda',
+          neighborhood: 'PART ALTA',
           contact_info: '611 998 877',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-wed-m3',
+          id: 'mock-thu-m3',
           user_id: 'v3',
-          title: '🧣 Ropa de Calle (Lote Invierno)',
-          description: 'Vendo lote de bufandas y abrigos en buen estado. Ideal para este frío de febrero.',
-          price: '30',
-          category: 'moda',
+          title: '🎮 PlayStation 4 + Juegos',
+          description: 'Vendo consola PS4 con 2 mandos y 5 juegos. Funciona perfectamente. La vendo por falta de uso.',
+          price: '150',
+          category: 'ocio',
           neighborhood: 'LLEVANT',
           contact_info: '644 556 677',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-wed-m4',
+          id: 'mock-thu-m4',
           user_id: 'v4',
-          title: '🎭 Retales de Disfraz (Seda/Tul)',
-          description: 'Me han sobrado muchos metros de la comparsa de este año. Los regalo si vienes a por ellos.',
-          price: '0',
-          category: 'ocio',
+          title: '📱 iPhone 11 64GB',
+          description: 'Vendo iPhone 11 color negro. Pantalla perfecta, batería al 85%. Con caja y cargador.',
+          price: '280',
+          category: 'tech',
           neighborhood: 'GENERAL',
-          contact_info: 'Mandar mensaje por aquí',
+          contact_info: '655 44 33 22',
           created_at: new Date().toISOString()
         }
       ];

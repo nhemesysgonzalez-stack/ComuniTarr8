@@ -44,8 +44,8 @@ const Patrols: React.FC = () => {
         {
           id: 'p-1',
           creator_id: 'v1',
-          name: 'Protección Rua Infantil 🎭',
-          description: 'Acompañamiento a los colegios en el desfile de hoy para asegurar que los recorridos estén libres de obstáculos.',
+          name: 'Caminos Escolares Seguros 🚸',
+          description: 'Grupo de acompañamiento matinal para ir al colegio caminando. Salida desde Plaza Imperial a las 08:30h.',
           neighborhood: 'CENTRO',
           contact_info: '622 33 44 55',
           created_at: new Date().toISOString()
@@ -53,8 +53,8 @@ const Patrols: React.FC = () => {
         {
           id: 'p-2',
           creator_id: 'v2',
-          name: 'Brigada "Ojo de Vecino" 🧹',
-          description: 'Aviso de cornisas o ramas que hayan quedado tocadas tras el viento de ayer para avisar a los servicios municipales.',
+          name: 'Revisión Post-Carnaval 🔍',
+          description: 'Paseo para identificar desperfectos en bancos y papeleras tras las fiestas y reportarlos en la app.',
           neighborhood: 'PART ALTA',
           contact_info: '611 99 88 77',
           created_at: new Date().toISOString()

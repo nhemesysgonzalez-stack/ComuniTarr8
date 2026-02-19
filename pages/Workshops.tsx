@@ -46,7 +46,34 @@ const Workshops: React.FC = () => {
                     .eq('neighborhood', user?.user_metadata?.neighborhood || 'GENERAL')
                     .order('created_at', { ascending: false })
             );
-            setWorkshops(data || []);
+            const mockWorkshops: Workshop[] = [
+                {
+                    id: 'mock-ws-1',
+                    title: 'Cocina de Cuaresma: Buñuelos',
+                    instructor: 'Maria J.',
+                    date: 'Jueves 19, 17:00',
+                    description: 'Aprende a hacer los auténticos buñuelos de viento de la abuela. Traer delantal.',
+                    image: 'https://images.unsplash.com/photo-1614373595357-12b2e04360e2?auto=format&fit=crop&q=80&w=800',
+                    spots: 5,
+                    neighborhood: 'CENTRO',
+                    contact_info: '611 22 33 44',
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'mock-ws-2',
+                    title: 'Reparación de Disfraces',
+                    instructor: 'Taller de Costura',
+                    date: 'Viernes 20, 18:00',
+                    description: 'Taller para arreglar y guardar correctamente los trajes de Carnaval para el año que viene.',
+                    image: 'https://images.unsplash.com/photo-1528186218177-33f7aa8206d0?auto=format&fit=crop&q=80&w=800',
+                    spots: 10,
+                    neighborhood: 'PART ALTA',
+                    contact_info: 'Centro Cívico',
+                    created_at: new Date().toISOString()
+                }
+            ];
+
+            setWorkshops(data && data.length > 0 ? data : mockWorkshops);
         } catch (e) {
             console.error(e);
         } finally {

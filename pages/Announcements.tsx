@@ -125,44 +125,44 @@ const Announcements: React.FC = () => {
     const fetchNotices = async () => {
         setLoading(true);
         const weatherAlert: Announcement = {
-            id: 'weather-wed-ash',
-            title: "🌤️ MIÉRCOLES: Despejado y Fresco",
-            content: "Tras el luto de ayer, el sol vuelve a Tarragona. Temperaturas máximas de 14ºC. Viento flojo de componente norte.",
+            id: 'weather-thu-calm',
+            title: "🌤️ JUEVES: Calma Anticiclónica",
+            content: "Día soleado y agradable con temperaturas suaves (16ºC). Ideal para pasear y disfrutar de la ciudad limpia.",
             category: "COMUNIDAD",
             neighborhood: "GENERAL",
-            author_name: "AEMET",
-            itinerary: "• Mañana: Soleado (11°C)\n• Tarde: Despejado (14°C)\n• Noche: Frío (8°C)",
+            author_name: "Meteo TGN",
+            itinerary: "• Mañana: Sol (12°C)\n• Mediodía: Suave (16°C)\n• Noche: Fresco (10°C)",
             created_at: new Date().toISOString()
         };
 
         const postCarnivalNotice: Announcement = {
-            id: 'post-carnival-cleanup-wed',
-            title: "🧹 ÉXITO: Ciudad Impecable",
-            content: "Gracias al esfuerzo coordinado de limpieza, la Plaza de la Font y la Part Alta ya lucen limpias tras la quema de ayer. ¡Gracias a todos por la colaboración!",
+            id: 'cleanup-finished-thu',
+            title: "✨ CIUDAD LIMPIA: Operativo Finalizado",
+            content: "Las brigadas han completado la limpieza intensiva de confeti y restos de la 'Cremà'. La ciudad recupera su aspecto habitual.",
             category: "EXITO",
             neighborhood: "GENERAL",
             author_name: "Ayuntamiento TGN",
             created_at: new Date().toISOString()
         };
 
-        const ashDayAdvisory: Announcement = {
-            id: 'ash-wed-advisory',
-            title: "🕯️ HOY: Miércoles de Ceniza",
-            content: "Se espera gran afluencia en la Catedral para la imposición de la ceniza a las 19:30h. Se recomienda acudir con tiempo para el acceso.",
-            category: "EVENTO",
-            neighborhood: "PART ALTA",
-            author_name: "Protección Civil",
-            itinerary: "• 09:00h: Misa 1\n• 19:30h: Misa Central\n• Lugar: Catedral",
+        const routineAdvisory: Announcement = {
+            id: 'routine-advisory-thu',
+            title: "🚌 MOVILIDAD: Normalidad Total",
+            content: "Todas las restricciones de tráfico por Carnaval han sido levantadas. Autobuses y vehículos circulan con normalidad por la Rambla.",
+            category: "INFO",
+            neighborhood: "CENTRO",
+            author_name: "Guardia Urbana",
+            itinerary: "• Rambla Nova: Abierta\n• Part Alta: Acceso normal\n• Bus: Horario laboral",
             created_at: new Date().toISOString()
         };
 
         const lentTradition: Announcement = {
-            id: 'lent-tradition-tgn',
-            title: "🐟 TRADICIÓN: Empieza la Cuaresma",
-            content: "Las pescaderías de los mercados de la ciudad inician la campaña de bacalao y productos de vigilia. ¡Consumo de proximidad!",
+            id: 'lent-gastronomy-thu',
+            title: "🍩 GASTRONOMÍA: Buñuelos de Cuaresma",
+            content: "Ya disponibles en todas las pastelerías y mercados los tradicionales buñuelos. ¡No te quedes sin probarlos!",
             category: "COMERCIO",
             neighborhood: "GENERAL",
-            author_name: "Mercados de TGN",
+            author_name: "Gremi Pastissers",
             created_at: new Date().toISOString()
         };
 

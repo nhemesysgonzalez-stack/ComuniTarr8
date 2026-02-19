@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'ms1', user_name: 'Ana T.', content: 'Increíble la Quema del Ninot de ayer en Pl. de la Font. ¡Hasta el año que viene! 🔥🎭', image_url: 'https://images.unsplash.com/photo-1518173946687-a4c8a9ba332f', likes: 124, created_at: new Date(Date.now() - 1000 * 60 * 60 * 12).toISOString() },
-            { id: 'ms2', user_name: 'Marc G.', content: 'Vistas del Serrallo esta mañana... qué paz después de tanta fiesta. ✨🌊', image_url: 'https://images.unsplash.com/photo-1493238792000-8113da705763', likes: 89, created_at: new Date().toISOString() },
-            { id: 'ms3', user_name: 'Pilar S.', content: 'Primeros buñuelos de Cuaresma del Mercado. ¡Vuelan! 🍩😋', image_url: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e', likes: 156, created_at: new Date().toISOString() },
-            { id: 'ms4', user_name: 'Joan R.', content: 'La Catedral luce imponente hoy Miércoles de Ceniza. 🙏🕯️', image_url: 'https://images.unsplash.com/photo-1548543604-a87c9909abec', likes: 78, created_at: new Date().toISOString() }
+            { id: 'ms1', user_name: 'Ana T.', content: 'Increíble la calma en la Plaça de la Font hoy. Ya no queda ni rastro del Carnaval. 🧹✨', image_url: 'https://images.unsplash.com/photo-1518173946687-a4c8a9ba332f', likes: 124, created_at: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString() },
+            { id: 'ms2', user_name: 'Marc G.', content: 'Amanecer en el Balcón del Mediterráneo. Jueves de rutina. 🌅💼', image_url: 'https://images.unsplash.com/photo-1493238792000-8113da705763', likes: 89, created_at: new Date().toISOString() },
+            { id: 'ms3', user_name: 'Pilar S.', content: 'Probando los primeros buñuelos de viento de la temporada. ¡Están de muerte! 🍩😋', image_url: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e', likes: 156, created_at: new Date().toISOString() },
+            { id: 'ms4', user_name: 'Joan R.', content: 'Ayer fue impresionante la ceremonia de la Ceniza en la Catedral. 🙏', image_url: 'https://images.unsplash.com/photo-1548543604-a87c9909abec', likes: 78, created_at: new Date(Date.now() - 1000 * 60 * 60 * 20).toISOString() }
         ];
 
         if (data && data.length > 0) {

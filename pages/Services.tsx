@@ -197,7 +197,7 @@ export const Services: React.FC = () => {
                 <div>
                   <p className="text-xs font-black uppercase text-gray-400">Próximo Festivo</p>
                   <p className="text-sm font-bold text-gray-800 dark:text-white">San José (Puente Escolar)</p>
-                  <p className="text-[10px] text-gray-500">Quedan 30 días</p>
+                  <p className="text-[10px] text-gray-500">Quedan 28 días</p>
                 </div>
               </div>
               <a
@@ -277,11 +277,11 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-red-500">directions_bus</span> EMT TARRAGONA
               </h3>
 
-              <div className="flex items-center gap-3 mb-4 p-3 bg-yellow-50 dark:bg-yellow-900/10 border border-yellow-200 dark:border-yellow-800 rounded-xl">
-                <span className="material-symbols-outlined text-yellow-600">warning</span>
+              <div className="flex items-center gap-3 mb-4 p-3 bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-800 rounded-xl">
+                <span className="material-symbols-outlined text-green-600">check_circle</span>
                 <div>
-                  <p className="text-xs font-black text-yellow-700 dark:text-yellow-500 uppercase">INCIDENCIA ACTIVA</p>
-                  <p className="text-[10px] text-yellow-800 dark:text-yellow-400 font-medium">Líneas 8, 11, 12 desviadas por Rambla Nova (Gradas Carnaval).</p>
+                  <p className="text-xs font-black text-green-700 dark:text-green-500 uppercase">SERVICIO NORMALIZADO</p>
+                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario habitual tras el desmontaje de gradas.</p>
                 </div>
               </div>
 
