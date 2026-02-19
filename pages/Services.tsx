@@ -168,15 +168,19 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Anuncios de Apoyo</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Destacadas</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Se busca operario de mantenimiento con experiencia."</p>
-                    <p className="text-[10px] text-gray-500">Prioridad residentes barrio con +10 años sector. 📞 611 22 33 44</p>
+                    <p className="text-xs font-black dark:text-white">"Mantenimiento General - Colegio Sagrat Cor"</p>
+                    <p className="text-[10px] text-gray-500">Jornada completa. Experiencia en electricidad/fontanería. 📞 977 23 45 67 (Secretaría)</p>
                   </div>
                   <div className="border-l-4 border-blue-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Asesoría contable para PYMES - Socio Senior."</p>
-                    <p className="text-[10px] text-gray-500">¿Eres gestor jubilado o en paro? Colabora con nuestra red. 📧 senior@tgn.cat</p>
+                    <p className="text-xs font-black dark:text-white">"Administrativo/a Contable - Gestoría Rambla"</p>
+                    <p className="text-[10px] text-gray-500">Sustitución baja maternidad. Dominio A3. 📞 977 21 22 23 (RRHH)</p>
+                  </div>
+                  <div className="border-l-4 border-orange-500 pl-4">
+                    <p className="text-xs font-black dark:text-white">"Personal de Supermercado - Bonavista"</p>
+                    <p className="text-[10px] text-gray-500">Cajeros y reponedores. Turnos rotativos. Enviar CV: empleo@supermercatTGN.cat</p>
                   </div>
                 </div>
               </div>

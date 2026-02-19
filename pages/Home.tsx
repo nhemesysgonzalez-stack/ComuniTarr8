@@ -139,30 +139,7 @@ const Home: React.FC = () => {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Carnival Vibes Effect 🎭
-  useEffect(() => {
-    // School of confetti to celebrate Carnival Week
-    const duration = 3 * 1000;
-    const animationEnd = Date.now() + duration;
-    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-
-    const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min;
-
-    const interval: any = setInterval(function () {
-      const timeLeft = animationEnd - Date.now();
-
-      if (timeLeft <= 0) {
-        return clearInterval(interval);
-      }
-
-      const particleCount = 50 * (timeLeft / duration);
-      // since particles fall down, start a bit higher than random
-      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
-      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
-    }, 250);
-
-    return () => clearInterval(interval);
-  }, []);
+  // No confetti effect
 
   // Fetch real news and recent neighbors from Supabase
   useEffect(() => {
@@ -181,81 +158,71 @@ const Home: React.FC = () => {
           .order('created_at', { ascending: false })
           .limit(3);
 
-        const ashWednesdayNews = {
-          id: 'ash-wednesday-2026',
-          title: "🕯️ HOY: Miércoles de Ceniza",
-          content: "Comienza la Cuaresma. Imposición de la ceniza en la Catedral y parroquias. Un tiempo para la reflexión y la calma tras la fiesta.",
-          category: "TRADICIÓN",
-          neighborhood: "GENERAL",
-          itinerary: "• 09:00h: Misa matinal\n• 13:00h: Oración mediodía\n• 19:30h: Ceniza (Catedral)",
-          link_url: "/calendar",
-          created_at: new Date().toISOString()
-        };
-
-        const postCarnivalCleanupNews = {
-          id: 'cleanup-post-carnival-2026',
-          title: "🧹 Operación Limpieza Final",
-          content: "Las brigadas municipales trabajan intensamente para retirar confeti y restos de la quema de ayer. La ciudad recupera su imagen habitual.",
+        const calmAfterStormNews = {
+          id: 'calm-after-storm-2026',
+          title: "🧹 La ciudad recupera la normalidad",
+          content: "Tras el intenso final de Carnaval, las brigadas de limpieza ultiman la retirada de confeti. Tarragona vuelve a su ritmo habitual bajo el sol de invierno.",
           category: "SERVICIOS",
           neighborhood: "GENERAL",
-          itinerary: "• Zona: Plaza de la Font\n• Estado: En curso\n• Info: 010 Atención",
+          itinerary: "• Estado: Limpieza 95% completada\n• Zona: Parte Alta y Centro\n• Info: 010 Atención Ciudadana",
           link_url: "/incidents",
           created_at: new Date().toISOString()
         };
 
         const lentGastronomyNews = {
           id: 'lent-gastronomy-2026',
-          title: "🍳 Gastronomía de Cuaresma",
-          content: "Mercados y pastelerías empiezan a ofrecer buñuelos de viento y platos típicos de vigilia. ¡Pruébalos en el Mercado Central!",
+          title: "🍩 Gastronomía de Cuaresma",
+          content: "Las pastelerías de la ciudad ya ofrecen los tradicionales buñuelos de viento y crema. ¡No te quedes sin probarlos!",
           category: "CULTURA",
           neighborhood: "CENTRO",
-          itinerary: "• Plato: Buñuelos de Cuaresma\n• Lugar: Mercat Central\n• Horario: 08-20h",
+          itinerary: "• Producto: Buñuelos de Cuaresma\n• Lugar: Pastelerías y Mercado\n• Precio medio: 25€/kg",
           link_url: "/business-directory",
           created_at: new Date().toISOString()
         };
 
-        const womanSupportNews = { id: 'w-support', title: "💜 MUJER: SIAD Tarragona", content: "Atención psicológica y jurídica gratuita. C/ de la Unió, 13.", category: "SERVICIOS", neighborhood: "GENERAL", itinerary: "• Hora: 09-14h\n• Red: Activa\n• Info: 977 296 150", link_url: "/services", created_at: new Date().toISOString() };
-        const volunteeringNews = {
-          id: 'v-volunteering-tgn',
-          title: "💖 VOLUNTARIADO: El Valor del Acompañamiento",
-          content: "¿Quieres abrazar bebés en neonatos o acompañar a nuestros mayores? Descubre las redes de Solidaridad en Tarragona.",
-          category: "SOLIDARIO",
-          neighborhood: "GENERAL",
-          itinerary: "• Red: TarracoSalut\n• Red: Amics Gent Gran\n• Info: Ver Servicios",
+        const jobOffer1 = {
+          id: 'job-waiter-port',
+          title: "💼 EMPLEO: Camarero/a con experiencia",
+          content: "Restaurante en el Puerto Deportivo busca personal para fines de semana y temporada de Semana Santa. Imprescindible catalán e inglés.",
+          category: "EMPLEO",
+          neighborhood: "EL SERRALLO",
+          itinerary: "• Contacto: 977 21 45 67 (Jordi)\n• Horario: Fines de semana\n• Salario: Según convenio + propinas",
           link_url: "/services",
           created_at: new Date().toISOString()
         };
 
-        const springJobs = {
-          id: 'j-jobs-spring',
-          title: "💼 EMPLEO: Campaña de Primavera",
-          content: "Empresas del sector turístico y náutico inician procesos de selección para la temporada alta. ¡Prepara tu CV!",
+        const jobOffer2 = {
+          id: 'job-admin-clinic',
+          title: "💼 EMPLEO: Recepcionista Clínica Dental",
+          content: "Clínica en Rambla Nova precisa recepcionista para turno de tarde. Gestión de agenda y atención al paciente.",
           category: "EMPLEO",
-          neighborhood: "GENERAL",
-          itinerary: "• Ofertas: 22 activas\n• Zona: Costa / Puerto\n• Perfil: Idiomas / Atención",
-          link_url: "/forum",
+          neighborhood: "CENTRO",
+          itinerary: "• Contacto: rrHH@clinicadentalTGN.com\n• Tel: 977 23 89 00\n• Contrato: Indefinido",
+          link_url: "/services",
           created_at: new Date().toISOString()
         };
 
-        const routineReturnNotice = {
-          id: 'routine-return-2026',
-          title: "🚌 TRANSPORTE: Vuelta a la Rutina",
-          content: "Líneas de la EMT vuelven a sus horarios y recorridos habituales tras el fin de los actos de Carnaval.",
-          category: "MOVILIDAD",
-          neighborhood: "GENERAL",
-          itinerary: "• Líneas: Todas normalizadas\n• Aviso: Sin cortes previstos\n• App: EMT Tarragona",
+        const thursdayMarket = {
+          id: 'market-thu-2026',
+          title: "🥦 Mercadillo de Tarragona",
+          content: "Hoy jueves, mercado semanal en la Rambla Nova (tramo final). Fruta, verdura, ropa y complementos hasta las 14h.",
+          category: "COMERCIO",
+          neighborhood: "CENTRO",
+          itinerary: "• Lugar: Rambla Nova\n• Horario: 09:00 - 14:00\n• Paradas: +50 puestos",
           link_url: "/map",
           created_at: new Date().toISOString()
         };
 
-        const wednesdayMarket = {
-          id: 'market-wed-2026',
-          title: "🥬 MERCADILLO: Hoy en el Puerto",
-          content: "Fruta y verdura fresca de proximidad hoy miércoles en el barrio del Serrallo.",
-          category: "COMERCIO",
-          neighborhood: "EL SERRALLO",
-          itinerary: "• Lugar: Puerto / Serrallo\n• Horas: 08:30-14:00\n• Tipo: Proximidad",
-          link_url: "/business-directory",
+        const womanSupportNews = { id: 'w-support', title: "💜 MUJER: SIAD Tarragona", content: "Atención psicológica y jurídica gratuita. C/ de la Unió, 13.", category: "SERVICIOS", neighborhood: "GENERAL", itinerary: "• Hora: 09-14h\n• Red: Activa\n• Info: 977 296 150", link_url: "/services", created_at: new Date().toISOString() };
+
+        const culturalAgenda = {
+          id: 'culture-theatre',
+          title: "🎭 Teatro: Programación de Primavera",
+          content: "El Teatro Metropol presenta su nueva temporada. Entradas ya a la venta con descuento para residentes.",
+          category: "CULTURA",
+          neighborhood: "CENTRO",
+          itinerary: "• Web: teatres.tarragona.cat\n• Taquilla: Jueves a Sábado 18-20h",
+          link_url: "/calendar",
           created_at: new Date().toISOString()
         };
 
@@ -271,7 +238,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([ashWednesdayNews, postCarnivalCleanupNews, lentGastronomyNews, springJobs, routineReturnNotice, wednesdayMarket, volunteeringNews, womanSupportNews, ...validFetchedNews].slice(0, 8));
+        setNews([calmAfterStormNews, jobOffer1, jobOffer2, lentGastronomyNews, thursdayMarket, culturalAgenda, womanSupportNews, ...validFetchedNews].slice(0, 8));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

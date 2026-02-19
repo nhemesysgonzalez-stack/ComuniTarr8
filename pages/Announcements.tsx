@@ -186,7 +186,7 @@ const Announcements: React.FC = () => {
                 return diffDays <= 7;
             });
 
-            setNotices([weatherAlert, postCarnivalNotice, ashDayAdvisory, lentTradition, ...validFetched]);
+            setNotices([weatherAlert, postCarnivalNotice, routineAdvisory, lentTradition, ...validFetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

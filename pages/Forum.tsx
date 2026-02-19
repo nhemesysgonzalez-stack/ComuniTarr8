@@ -75,11 +75,11 @@ const Forum: React.FC = () => {
 
   const tickerMessages = [
     { user: 'Maria J.', text: '🧹 ¡Vaya cambio! Ya no quedan ni rastros del confeti en mi calle. ¡Gran trabajo de limpieza!' },
-    { user: 'ComuniTarr 🕯️', text: 'Hoy Miércoles de Ceniza: Imposición a las 19:30h en la Catedral. Comienza la Cuaresma.' },
-    { user: 'Jordi T.', text: '¿Alguna pastelería recomendada para comprar buñuelos hoy? ¡Me muero por unos!' },
+    { user: 'ComuniTarr 🕯️', text: 'Ya en Cuaresma. Recuerda que los viernes son días de abstinencia de carne según la tradición.' },
+    { user: 'Jordi T.', text: '¿Alguna pastelería recomendada para comprar buñuelos? ¡Me muero por unos!' },
     { user: 'Pau B.', text: '🚌 EMT funcionando con total normalidad. Se acabaron los desvíos del fin de semana.' },
-    { user: 'Ana G.', text: 'Qué paz se respira hoy... un poco de calma después de tanta fiesta viene bien ✨' },
-    { user: 'Mireia R.', text: 'Recordad que hoy empieza la prohibición de comer carne en vigilia para los que sigan la tradición. 🐟' }
+    { user: 'Ana G.', text: 'Qué paz se respira hoy jueves... un poco de calma después de tanta fiesta viene bien ✨' },
+    { user: 'Mireia R.', text: '¿Sabéis si el Mercadillo de la Rambla está puesto hoy? Sí, confirmado. 🥦' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -114,7 +114,7 @@ const Forum: React.FC = () => {
   useEffect(() => {
     if (!loading && messages.length === 0) {
       const initialSeeds = [
-        { id: 'seed-1', user_id: 'v2', content: '¿A qué hora es la imposición de la ceniza hoy? He oído que hay varias misas. 🕯️🙏', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'CENTRO', created_at: new Date(Date.now() - 1000 * 60 * 5).toISOString() },
+        { id: 'seed-1', user_id: 'v2', content: '¿Fuisteis ayer a la Catedral? Había mucha gente para la ceniza. 🕯️🙏', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'CENTRO', created_at: new Date(Date.now() - 1000 * 60 * 5).toISOString() },
         { id: 'seed-2', user_id: 'v6', content: 'He pasado por la Rambla y está impecable. Las brigadas han currado a saco esta noche. 🧹👏', user_metadata: { full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe' }, neighborhood: 'GENERAL', created_at: new Date(Date.now() - 1000 * 60 * 2).toISOString() }
       ];
       setMessages(initialSeeds as Message[]);
@@ -153,37 +153,37 @@ const Forum: React.FC = () => {
     // Priority for Mediator if it's a question or app help
     const isAssistant = isReplyTo && (isQuestion || isHelpRequest || p.includes('@mediador') || p.includes('mediador'));
 
-    // Base initiation scripts (Tuesday / Entierro / Mourning)
+    // Base initiation scripts (Thursday / Post-Carnival / Lent)
     let scripts = [
-      "¿Alguien sabe si en la Catedral dan la ceniza también por la mañana? 🕯️",
+      "La Cuaresma ha empezado fuerte, el bacalao ya está a precio de oro en el mercado. 🐟",
       "Hoy toca limpieza profunda en casa para quitar la purpurina de todos lados... ¡Socorro! 😂🧹",
       "¿Dónde compran los mejores buñuelos de viento? Los del Mercado Central tienen buena pinta. 🍩",
       "Qué silencio hay hoy en la ciudad, se nota que se ha acabado el Carnival. 🌊",
       "¿Alguien sabe si el bus 54 ya para en su sitio habitual en la Rambla? 🚌",
-      "He subido las fotos de la Quema de ayer a la Galería. ¡El Ninot era espectacular! 🔥📸"
+      "He subido fotos de la Quema del martes a la Galería. ¡El Ninot era espectacular! 🔥📸"
     ];
 
     // Base reply scripts
     let replyScripts = [
-      `¡Totalmente de acuerdo, ${isReplyTo}! Seguimos de resaca festiva.`,
+      `¡Totalmente de acuerdo, ${isReplyTo}! Vuelta a la calma.`,
       `¿Me puedes dar más detalles sobre eso, ${isReplyTo}?`,
-      `¡Buenos días ${isReplyTo}! Ánimo con el lunes.`,
+      `¡Buenos días ${isReplyTo}! Ánimo con el jueves.`,
       `Yo también me pasaré luego, nos vemos allí.`,
       `Gracias por el aviso, ${isReplyTo}.`,
       `¡Vaya, no lo sabía! Gracias por comentarlo, ${isReplyTo}.`
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
-      scripts = ["¿Habéis visto las nuevas ofertas de Randstad para esta semana? 📦", "Empiezo hoy en el nuevo curro, ¡deseadme suerte! 🤞"];
+      scripts = ["¿Habéis visto las nuevas ofertas para Semana Santa? Ya empiezan a buscar gente en hostelería. 📦", "Empiezo hoy en el nuevo curro, ¡deseadme suerte! 🤞"];
       replyScripts = [`¡Mucha suerte en tu primer día, ${isReplyTo}!`, `Voy a echar un vistazo a Infojobs, gracias.`];
     } else if (currentNeighborhood === 'ENCUENTROS') {
       scripts = [
-        "¿Quién se anima a un afterwork hoy para relajarnos? 🍻",
+        "¿Quién se anima a un afterwork de jueves? 🍻",
         "Busco compi de gym para ir por las tardes. 💪",
-        "¡Mitad de semana! ¿Un café para aguantar? ☕✨",
+        "¡Casi fin de semana! ¿Un café para aguantar? ☕✨",
         "Ayer conocí gente majísima en la asamblea. ¿Repetimos quedada? 😊",
         "Si alguien quiere ir a correr por el milagro a las 19h, avisad. 🏃‍♂️",
-        "¡Hola! Buscando planes tranquilos para entre semana. 👋"
+        "¡Hola! Buscando planes tranquilos para el finde. 👋"
       ];
       replyScripts = [
         `¡Me apunto a ese afterwork, ${isReplyTo}!`,
@@ -231,10 +231,10 @@ const Forum: React.FC = () => {
         let possibleReplies = [];
         if (isGreeting) {
           possibleReplies = [
-            `¡Hola, ${isReplyTo}! A por el domingo de los Tres Tombs. 🐎💪`,
-            `¡Muy buenas! ¿Vais a la Rua de Lluïment esta tarde? @${isReplyTo}.`,
-            `¡Hola ${isReplyTo}! Aquí recuperándonos de ayer con un café. ☕🎭`,
-            `¡Buenos días! ¿Visteis qué caballos más bonitos hoy?`
+            `¡Hola, ${isReplyTo}! A por el jueves. 💪`,
+            `¡Muy buenas! ¿Qué tal la semana? @${isReplyTo}.`,
+            `¡Hola ${isReplyTo}! Aquí recuperándonos de la rutina con un café. ☕`,
+            `¡Buenos días! Vaya sol hace hoy. ☀️`
           ];
         } else if (isEmojiOnly || isVeryShort) {
           // Respuestas para emojis o mensajes muy cortos
@@ -514,12 +514,12 @@ const Forum: React.FC = () => {
   };
 
   const handleTopicClick = (topicId: string) => {
-    if (topicId === 'rua-lluiment-live') {
-      setNewMessage('¿Ya han salido las primeras comparsas en Ramón y Cajal? ✨🎭');
-    } else if (topicId === 'tres-tombs-fotos') {
-      setNewMessage('¡Qué pasada los caballos! ¿Alguien tiene fotos de la bendición? 🐎📸');
-    } else if (topicId === 'limpieza-vecinal-quedada') {
-      setNewMessage('¿A qué hora quedamos para barrer el confeti de la entrada? 🧹🤝');
+    if (topicId === 'cuaresma-2026') {
+      setNewMessage('¿Habéis comprado ya el bacalao para mañana viernes? 🐟');
+    } else if (topicId === 'tgn-limpia') {
+      setNewMessage('¡Qué gusto ver las calles limpias otra vez! Gracias a los servicios de limpieza. 🧹👏');
+    } else if (topicId === 'ruta-bunyuelos') {
+      setNewMessage('¿Dónde estáis comprando los buñuelos? ¡Necesito recomendación! 🍩');
     }
     setTimeout(() => {
       inputRef.current?.focus();
@@ -528,21 +528,21 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'miercoles-ceniza-tgn',
-      title: '🕯️ Miércoles Ceniza',
-      description: 'Cuaresma en TGN.',
+      id: 'cuaresma-2026',
+      title: '🕯️ Cuaresma 2026',
+      description: 'Tradiciones y actos.',
       participating: 2450
     },
     {
-      id: 'limpieza-post-carnaval',
-      title: '🧹 Operación Limpieza',
-      description: 'Pl. Font impecable.',
+      id: 'tgn-limpia',
+      title: '🧹 TGN Limpia',
+      description: 'Fin del operativo.',
       participating: 1890
     },
     {
-      id: 'bunyols-cuaresma',
-      title: '🍩 Buñuelos ON',
-      description: '¡Ya hay en los hornos!',
+      id: 'ruta-bunyuelos',
+      title: '🍩 Ruta Buñuelos',
+      description: '¡Ya en pastelerías!',
       participating: 3120
     }
   ];
@@ -567,7 +567,7 @@ const Forum: React.FC = () => {
               <div className="flex items-center gap-1 opacity-90 cursor-pointer hover:bg-white/20 px-2 py-0.5 rounded-full transition-colors w-fit">
                 <span className="text-[10px] uppercase font-bold tracking-wider">Disponible ▾</span>
               </div>
-              <p className="text-[10px] italic opacity-80 mt-1 truncate">"¡Disfrutando del Carnaval! 🎭"</p>
+              <p className="text-[10px] italic opacity-80 mt-1 truncate">"¡Vuelta a la rutina! ✨"</p>
             </div>
           </div>
           {/* Decorative Circles */}
@@ -632,7 +632,7 @@ const Forum: React.FC = () => {
               </div>
               <div className="flex-1 text-left">
                 <h3 className={`text-xs font-black uppercase tracking-wider ${currentNeighborhood === 'EMPLEO' ? 'text-green-600 dark:text-green-400' : 'text-gray-600 dark:text-gray-400'}`}>Empleo</h3>
-                <p className="text-[10px] text-gray-400 font-bold truncate">Ofertas Carnaval</p>
+                <p className="text-[10px] text-gray-400 font-bold truncate">Ofertas Primavera</p>
               </div>
             </button>
           </div>
@@ -648,29 +648,29 @@ const Forum: React.FC = () => {
               </div>
               <div className="flex-1 text-left">
                 <h3 className={`text-xs font-black uppercase tracking-wider ${currentNeighborhood === 'ENCUENTROS' ? 'text-pink-600 dark:text-pink-400' : 'text-gray-600 dark:text-gray-400'}`}>Encuentros</h3>
-                <p className="text-[10px] text-gray-400 font-bold truncate">Modo Love</p>
+                <p className="text-[10px] text-gray-400 font-bold truncate">Planes Finde</p>
               </div>
             </button>
           </div>
 
           <div className="px-4 py-2 mt-4">
-            <h2 className="text-xl font-black mb-4 text-center">Ofertas - Martes de Entierro</h2>
+            <h2 className="text-xl font-black mb-4 text-center">Ofertas - Semana Post-Carnaval</h2>
             <ul className="space-y-4 text-xs md:text-sm">
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🧹 <strong>Brigada Limpieza Nocturna (Post-Quema)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Plaza de la Font • 🕔 22h-04h • Urgente • 16€/h</span>
+                🛠️ <strong>Mantenimiento General (Colegio)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 Colegio Sagrat Cor • 🕔 Jornada Completa • Urgente • Contacto Secretaría</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🍛 <strong>Ayudante de Cocina (Cenas de Luto)</strong>
+                🍳 <strong>Ayudante de Cocina (Fines de Semana)</strong>
                 <br /><span className="text-gray-500 text-[10px]">📧 restaurante.centro@tgn.cat • Turno tarde-noche • 12€/h</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                📦 <strong>Mozo Almacén (Logística Feb)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Pol. Les Gavarres • 🕔 08h-16h • ETT • Incorporación mañana</span>
+                📦 <strong>Mozo Almacén (Campaña Primavera)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 Pol. Les Gavarres • 🕔 08h-16h • ETT • Incorporación inmediata</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🏢 <strong>Auxiliar Administrativo (Seguros)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📞 611 222 333 • Jornada intensiva • Barrio de Sant Pere i Sant Pau</span>
+                🏢 <strong>Administrativo/a Contable</strong>
+                <br /><span className="text-gray-500 text-[10px]">📞 977 21 22 23 • Sustitución • Gestoría Rambla</span>
               </li>
             </ul>
             <h4 className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2">Vecinos Online (5/12)</h4>
