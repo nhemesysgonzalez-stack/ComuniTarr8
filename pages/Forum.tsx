@@ -74,12 +74,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Maria J.', text: '🧹 ¡Vaya cambio! Ya no quedan ni rastros del confeti en mi calle. ¡Gran trabajo de limpieza!' },
-    { user: 'ComuniTarr 🕯️', text: 'Ya en Cuaresma. Recuerda que los viernes son días de abstinencia de carne según la tradición.' },
-    { user: 'Jordi T.', text: '¿Alguna pastelería recomendada para comprar buñuelos? ¡Me muero por unos!' },
-    { user: 'Pau B.', text: '🚌 EMT funcionando con total normalidad. Se acabaron los desvíos del fin de semana.' },
-    { user: 'Ana G.', text: 'Qué paz se respira hoy jueves... un poco de calma después de tanta fiesta viene bien ✨' },
-    { user: 'Mireia R.', text: '¿Sabéis si el Mercadillo de la Rambla está puesto hoy? Sí, confirmado. 🥦' }
+    { user: 'Maria J.', text: '💨 ¡Vaya viento hace hoy! Asegurad las macetas de los balcones. 🌬️' },
+    { user: 'ComuniTarr 🎭', text: 'Agenda Cultural: Teatro Metropol este sábado. Últimas entradas.' },
+    { user: 'Jordi T.', text: '¿Alguien sabe qué farmacia de guardia toca hoy en la Parte Alta? 💊' },
+    { user: 'Pau B.', text: '🐟 Hoy es viernes de Cuaresma. ¡Toca potaje y bacalao! ¿Recomendaciones?' },
+    { user: 'Ana G.', text: '¡Por fin viernes! Semana intensa post-carnaval. A descansar. ✨' },
+    { user: 'Mireia R.', text: 'Recordad que mañana hay mercadillo de productos frescos en el Fórum. 🥬' }
   ];
 
   // Virtual Neighbors for Simulation
@@ -114,8 +114,8 @@ const Forum: React.FC = () => {
   useEffect(() => {
     if (!loading && messages.length === 0) {
       const initialSeeds = [
-        { id: 'seed-1', user_id: 'v2', content: '¿Fuisteis ayer a la Catedral? Había mucha gente para la ceniza. 🕯️🙏', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'CENTRO', created_at: new Date(Date.now() - 1000 * 60 * 5).toISOString() },
-        { id: 'seed-2', user_id: 'v6', content: 'He pasado por la Rambla y está impecable. Las brigadas han currado a saco esta noche. 🧹👏', user_metadata: { full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe' }, neighborhood: 'GENERAL', created_at: new Date(Date.now() - 1000 * 60 * 2).toISOString() }
+        { id: 'seed-1', user_id: 'v2', content: '¡Qué viento hace esta mañana! Tened cuidado con las ramas en la Rambla. 🌬️', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'CENTRO', created_at: new Date(Date.now() - 1000 * 60 * 5).toISOString() },
+        { id: 'seed-2', user_id: 'v6', content: '¿Alguien se apunta a la ruta de la muralla este domingo? Dicen que hará sol. ☀️', user_metadata: { full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe' }, neighborhood: 'GENERAL', created_at: new Date(Date.now() - 1000 * 60 * 2).toISOString() }
       ];
       setMessages(initialSeeds as Message[]);
     }
@@ -153,24 +153,24 @@ const Forum: React.FC = () => {
     // Priority for Mediator if it's a question or app help
     const isAssistant = isReplyTo && (isQuestion || isHelpRequest || p.includes('@mediador') || p.includes('mediador'));
 
-    // Base initiation scripts (Thursday / Post-Carnival / Lent)
+    // Base initiation scripts (Friday / Weekend / Windy)
     let scripts = [
-      "La Cuaresma ha empezado fuerte, el bacalao ya está a precio de oro en el mercado. 🐟",
-      "Hoy toca limpieza profunda en casa para quitar la purpurina de todos lados... ¡Socorro! 😂🧹",
-      "¿Dónde compran los mejores buñuelos de viento? Los del Mercado Central tienen buena pinta. 🍩",
-      "Qué silencio hay hoy en la ciudad, se nota que se ha acabado el Carnival. 🌊",
-      "¿Alguien sabe si el bus 54 ya para en su sitio habitual en la Rambla? 🚌",
-      "He subido fotos de la Quema del martes a la Galería. ¡El Ninot era espectacular! 🔥📸"
+      "¡Por fin viernes! ¿Qué planes tenéis para el fin de semana? 🎉",
+      "Vaya racha de viento acaba de pegar... ¡Sujetadlo todo! 💨",
+      "¿Habéis visto la programación del Teatro Metropol? Tiene buena pinta. 🎭",
+      "Hoy toca comprar pescado fresco. ¿Alguna pescadería buena en el barrio? 🐟",
+      "¿Sabéis si mañana hay actividades para niños en el Serrallo? 🧒",
+      "He subido fotos del amanecer ventoso a la Galería. ¡El mar está revuelto! 🌊📸"
     ];
 
     // Base reply scripts
     let replyScripts = [
-      `¡Totalmente de acuerdo, ${isReplyTo}! Vuelta a la calma.`,
-      `¿Me puedes dar más detalles sobre eso, ${isReplyTo}?`,
-      `¡Buenos días ${isReplyTo}! Ánimo con el jueves.`,
-      `Yo también me pasaré luego, nos vemos allí.`,
-      `Gracias por el aviso, ${isReplyTo}.`,
-      `¡Vaya, no lo sabía! Gracias por comentarlo, ${isReplyTo}.`
+      `¡Totalmente, ${isReplyTo}! A disfrutar del finde.`,
+      `Ten cuidado con el viento, ${isReplyTo}.`,
+      `¡Buen fin de semana ${isReplyTo}!`,
+      `Yo me apunto si hacéis algo el sábado.`,
+      `Gracias por la info, ${isReplyTo}.`,
+      `¡Qué buena idea! Gracias, ${isReplyTo}.`
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
@@ -514,12 +514,12 @@ const Forum: React.FC = () => {
   };
 
   const handleTopicClick = (topicId: string) => {
-    if (topicId === 'cuaresma-2026') {
-      setNewMessage('¿Habéis comprado ya el bacalao para mañana viernes? 🐟');
-    } else if (topicId === 'tgn-limpia') {
-      setNewMessage('¡Qué gusto ver las calles limpias otra vez! Gracias a los servicios de limpieza. 🧹👏');
-    } else if (topicId === 'ruta-bunyuelos') {
-      setNewMessage('¿Dónde estáis comprando los buñuelos? ¡Necesito recomendación! 🍩');
+    if (topicId === 'agenda-finde') {
+      setNewMessage('¿Dónde puedo comprar las entradas para el teatro del sábado? 🎭');
+    } else if (topicId === 'alerta-viento') {
+      setNewMessage('¡Cuidado zonas arboladas! El viento está soplando fuerte. 💨⚠️');
+    } else if (topicId === 'gastronomia-vigilia') {
+      setNewMessage('Hoy toca potaje de vigilia. ¿Algún restaurante que lo haga rico? 🍲');
     }
     setTimeout(() => {
       inputRef.current?.focus();
@@ -528,21 +528,21 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'cuaresma-2026',
-      title: '🕯️ Cuaresma 2026',
-      description: 'Tradiciones y actos.',
+      id: 'agenda-finde',
+      title: '🎭 Agenda Finde',
+      description: 'Teatro y rutas.',
       participating: 2450
     },
     {
-      id: 'tgn-limpia',
-      title: '🧹 TGN Limpia',
-      description: 'Fin del operativo.',
+      id: 'alerta-viento',
+      title: '💨 Alerta Viento',
+      description: 'Precaución Mistral.',
       participating: 1890
     },
     {
-      id: 'ruta-bunyuelos',
-      title: '🍩 Ruta Buñuelos',
-      description: '¡Ya en pastelerías!',
+      id: 'gastronomia-vigilia',
+      title: '🍲 Menú Vigilia',
+      description: 'Viernes de Cuaresma.',
       participating: 3120
     }
   ];
@@ -567,7 +567,7 @@ const Forum: React.FC = () => {
               <div className="flex items-center gap-1 opacity-90 cursor-pointer hover:bg-white/20 px-2 py-0.5 rounded-full transition-colors w-fit">
                 <span className="text-[10px] uppercase font-bold tracking-wider">Disponible ▾</span>
               </div>
-              <p className="text-[10px] italic opacity-80 mt-1 truncate">"¡Vuelta a la rutina! ✨"</p>
+              <p className="text-[10px] italic opacity-80 mt-1 truncate">"¡Por fin es viernes! 🎉"</p>
             </div>
           </div>
           {/* Decorative Circles */}
@@ -654,23 +654,23 @@ const Forum: React.FC = () => {
           </div>
 
           <div className="px-4 py-2 mt-4">
-            <h2 className="text-xl font-black mb-4 text-center">Ofertas - Semana Post-Carnaval</h2>
+            <h2 className="text-xl font-black mb-4 text-center">Ofertas - Fin de Semana</h2>
             <ul className="space-y-4 text-xs md:text-sm">
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🛠️ <strong>Mantenimiento General (Colegio)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Colegio Sagrat Cor • 🕔 Jornada Completa • Urgente • Contacto Secretaría</span>
+                🍹 <strong>Camarero/a de Barra (Extra Finde)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 Puerto Deportivo • 🕔 Noches V-S • Urgente • Contacto: 611 22 33 44</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🍳 <strong>Ayudante de Cocina (Fines de Semana)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📧 restaurante.centro@tgn.cat • Turno tarde-noche • 12€/h</span>
+                🧹 <strong>Limpieza Locales (Sábado Mañana)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📧 servicios@limpiezatgn.cat • Turno mañana • 12€/h</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                📦 <strong>Mozo Almacén (Campaña Primavera)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Pol. Les Gavarres • 🕔 08h-16h • ETT • Incorporación inmediata</span>
+                👴 <strong>Acompañante Mayor (Domingo)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 San Pedro y San Pablo • 🕔 10h-14h • Paseo y compañía • 15€/h</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🏢 <strong>Administrativo/a Contable</strong>
-                <br /><span className="text-gray-500 text-[10px]">📞 977 21 22 23 • Sustitución • Gestoría Rambla</span>
+                🍕 <strong>Repartidor/a Moto (Noches)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📞 977 11 22 33 • Pizzería Centro • Propia moto valorable</span>
               </li>
             </ul>
             <h4 className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2">Vecinos Online (5/12)</h4>

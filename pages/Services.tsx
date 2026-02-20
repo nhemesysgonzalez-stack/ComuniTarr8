@@ -168,19 +168,19 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Destacadas</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Destacadas (Viernes 20)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Mantenimiento General - Colegio Sagrat Cor"</p>
-                    <p className="text-[10px] text-gray-500">Jornada completa. Experiencia en electricidad/fontanería. 📞 977 23 45 67 (Secretaría)</p>
+                    <p className="text-xs font-black dark:text-white">"Ayudante de Cocina - Fines de Semana"</p>
+                    <p className="text-[10px] text-gray-500">Restaurante zona Alta. Viernes y Sábados noche. 12€/h. 📞 600 11 22 33 (Preguntar por Laura)</p>
                   </div>
                   <div className="border-l-4 border-blue-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Administrativo/a Contable - Gestoría Rambla"</p>
-                    <p className="text-[10px] text-gray-500">Sustitución baja maternidad. Dominio A3. 📞 977 21 22 23 (RRHH)</p>
+                    <p className="text-xs font-black dark:text-white">"Vigilante de Seguridad - Eventos"</p>
+                    <p className="text-[10px] text-gray-500">Para refuerzo en actos culturales fin de semana. TIP en vigor. 📧 rrhh@seguridadtgn.com</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Personal de Supermercado - Bonavista"</p>
-                    <p className="text-[10px] text-gray-500">Cajeros y reponedores. Turnos rotativos. Enviar CV: empleo@supermercatTGN.cat</p>
+                    <p className="text-xs font-black dark:text-white">"Personal Limpieza - Oficinas"</p>
+                    <p className="text-[10px] text-gray-500">Sábados por la mañana (08:00 - 13:00). Zona Rambla Nova. 📞 977 24 00 00 (Limpiezas Brillante)</p>
                   </div>
                 </div>
               </div>

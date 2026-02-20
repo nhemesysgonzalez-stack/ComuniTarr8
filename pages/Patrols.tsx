@@ -44,19 +44,19 @@ const Patrols: React.FC = () => {
         {
           id: 'p-1',
           creator_id: 'v1',
-          name: 'Caminos Escolares Seguros 🚸',
-          description: 'Grupo de acompañamiento matinal para ir al colegio caminando. Salida desde Plaza Imperial a las 08:30h.',
-          neighborhood: 'CENTRO',
-          contact_info: '622 33 44 55',
+          name: 'Patrulla Noche Fin de Semana 🌙',
+          description: 'Ronda nocturna de viernes y sábado noche por la Parte Alta y Rambla Nova. Salida 22:00h desde Plaza Corsini. Objetivo: presencia vecinal y prevención.',
+          neighborhood: 'PART ALTA',
+          contact_info: '622 33 44 55 (Jordi, coordinador)',
           created_at: new Date().toISOString()
         },
         {
           id: 'p-2',
           creator_id: 'v2',
-          name: 'Revisión Post-Carnaval 🔍',
-          description: 'Paseo para identificar desperfectos en bancos y papeleras tras las fiestas y reportarlos en la app.',
-          neighborhood: 'PART ALTA',
-          contact_info: '611 99 88 77',
+          name: 'Caminos Escolares Seguros 🚸',
+          description: 'Grupo de acompañamiento matinal para ir al colegio caminando seguro el lunes. Salida desde Plaza Imperial a las 08:30h. Se buscan voluntarios.',
+          neighborhood: 'CENTRO',
+          contact_info: '611 99 88 77 (Ana, AAVV)',
           created_at: new Date().toISOString()
         }
       ];

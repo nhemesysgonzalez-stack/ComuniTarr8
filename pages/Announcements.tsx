@@ -125,44 +125,46 @@ const Announcements: React.FC = () => {
     const fetchNotices = async () => {
         setLoading(true);
         const weatherAlert: Announcement = {
-            id: 'weather-thu-calm',
-            title: "🌤️ JUEVES: Calma Anticiclónica",
-            content: "Día soleado y agradable con temperaturas suaves (16ºC). Ideal para pasear y disfrutar de la ciudad limpia.",
-            category: "COMUNIDAD",
+            id: 'weather-fri-wind',
+            title: "💨 VIERNES: Alerta de Viento",
+            content: "Viento del norte (Mistral/Tramuntana) moderado-fuerte durante el día (60-80 km/h en zonas altas). Asegurad toldos, macetas y andamios. No aparcar bajo árboles.",
+            category: "URGENTE",
             neighborhood: "GENERAL",
-            author_name: "Meteo TGN",
-            itinerary: "• Mañana: Sol (12°C)\n• Mediodía: Suave (16°C)\n• Noche: Fresco (10°C)",
+            author_name: "Protección Civil TGN",
+            itinerary: "• Mañana: Ráfagas fuertes\n• Mediodía: Suave (15°C)\n• Tarde: Viento remitiendo\n• Sábado: Soleado y tranquilo",
             created_at: new Date().toISOString()
         };
 
-        const postCarnivalNotice: Announcement = {
-            id: 'cleanup-finished-thu',
-            title: "✨ CIUDAD LIMPIA: Operativo Finalizado",
-            content: "Las brigadas han completado la limpieza intensiva de confeti y restos de la 'Cremà'. La ciudad recupera su aspecto habitual.",
-            category: "EXITO",
+        const weekendAgendaNotice: Announcement = {
+            id: 'weekend-agenda-fri',
+            title: "🎭 AGENDA: Fin de Semana Activo",
+            content: "Sábado: Mercat de Productors (Fòrum, 9h), Ruta Muralla (11h), Yoga Anfiteatro (10h). Domingo: Carrera Popular 5K (Paseo Marítimo, 10h). ¡Os esperamos!",
+            category: "EVENTO",
             neighborhood: "GENERAL",
-            author_name: "Ayuntamiento TGN",
+            author_name: "Ajuntament TGN",
+            itinerary: "• Sáb: Mercat Fòrum (9h)\n• Sáb: Ruta Muralla (11h)\n• Sáb: Yoga Anfiteatro (10h)\n• Dom: Carrera 5K (10h)",
+            link_url: "https://www.tarragona.cat/agenda",
             created_at: new Date().toISOString()
         };
 
         const routineAdvisory: Announcement = {
-            id: 'routine-advisory-thu',
-            title: "🚌 MOVILIDAD: Normalidad Total",
-            content: "Todas las restricciones de tráfico por Carnaval han sido levantadas. Autobuses y vehículos circulan con normalidad por la Rambla.",
+            id: 'pharmacy-guard-fri',
+            title: "💊 FARMACIA DE GUARDIA",
+            content: "Turno de guardia esta noche: Farmàcia Sabaté (Rambla Nova, 85). Abierta las 24h. Para el sábado consultar el 117.",
             category: "INFO",
-            neighborhood: "CENTRO",
-            author_name: "Guardia Urbana",
-            itinerary: "• Rambla Nova: Abierta\n• Part Alta: Acceso normal\n• Bus: Horario laboral",
+            neighborhood: "GENERAL",
+            author_name: "Col·legi de Farmàcies",
+            itinerary: "• Hoy viernes noche: Farm. Sabaté\n• Tel: 977 21 00 00\n• Urgencias: 117",
             created_at: new Date().toISOString()
         };
 
         const lentTradition: Announcement = {
-            id: 'lent-gastronomy-thu',
-            title: "🍩 GASTRONOMÍA: Buñuelos de Cuaresma",
-            content: "Ya disponibles en todas las pastelerías y mercados los tradicionales buñuelos. ¡No te quedes sin probarlos!",
-            category: "COMERCIO",
-            neighborhood: "GENERAL",
-            author_name: "Gremi Pastissers",
+            id: 'lent-vigilia-fri',
+            title: "🐟 CUARESMA: Viernes de Vigilia",
+            content: "Hoy primer viernes de Cuaresma. Según la tradición católica, abstinencia de carne. Los restaurantes del Serrallo ofrecen menú de vigilia con bacalao y pescado fresco desde 12€.",
+            category: "COMUNIDAD",
+            neighborhood: "EL SERRALLO",
+            author_name: "Gràcia i Tradició TGN",
             created_at: new Date().toISOString()
         };
 
@@ -186,7 +188,7 @@ const Announcements: React.FC = () => {
                 return diffDays <= 7;
             });
 
-            setNotices([weatherAlert, postCarnivalNotice, routineAdvisory, lentTradition, ...validFetched]);
+            setNotices([weatherAlert, weekendAgendaNotice, routineAdvisory, lentTradition, ...validFetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

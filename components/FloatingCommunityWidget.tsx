@@ -11,20 +11,20 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🕯️ Hoy Miércoles de Ceniza a las 19:30h imposición de la ceniza en la Catedral. ✨", neighborhood: 'CENTRO' },
-    { id: 1, user: 'Limpieza TGN', avatar: '/logo.svg', text: '🧹 Brigadas en marcha: Limpiando los restos de la quema de ayer en la Pl. de la Font. ✨', neighborhood: 'GENERAL' },
-    { id: 2, user: 'TGN Cultura', avatar: '/logo.svg', text: '🍩 ¿Habéis probado ya los buñuelos de Cuaresma del Mercado? ¡Están increíbles! 😋', neighborhood: 'GENERAL' },
-    { id: 3, user: 'Paco R.', avatar: 'https://i.pravatar.cc/150?u=paco', text: '¡Qué bajón! Vuelta a la realidad. Al menos la ciudad ya se ve más limpia. 👍', neighborhood: 'Part Alta' },
-    { id: 4, user: 'Marta S.', avatar: 'https://i.pravatar.cc/150?u=marta', text: '¿Alguien sabe si hoy abren los museos con horario normal? 🏛️🤔', neighborhood: 'Centro' },
-    { id: 5, user: 'Guille M.', avatar: 'https://i.pravatar.cc/150?u=guille', text: 'A por el Miércoles de Ceniza con energía. ¡Se acabó el desfase! 💪🥗', neighborhood: 'Serrallo' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🎭 Agenda Fin de Semana: Teatro Metropol y Rutas Guiadas. ¡No os quedéis en casa! ✨", neighborhood: 'CENTRO' },
+    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '💨 Aviso de viento moderado para el sábado. Asegurad toldos y macetas. 🌬️', neighborhood: 'GENERAL' },
+    { id: 2, user: 'TGN Cultura', avatar: '/logo.svg', text: '🐟 Primer viernes de Cuaresma. Los restaurantes del Serrallo ofrecen menú de vigilia. 🥘', neighborhood: 'SERRALLO' },
+    { id: 3, user: 'Paco R.', avatar: 'https://i.pravatar.cc/150?u=paco', text: '¡Por fin viernes! Semana dura de vuelta a la rutina. ¿Alguien para unas cañas? 🍻', neighborhood: 'Part Alta' },
+    { id: 4, user: 'Marta S.', avatar: 'https://i.pravatar.cc/150?u=marta', text: '¿Sabéis si mañana hay mercado de frutas en el Fórum? 🥦🍎', neighborhood: 'Centro' },
+    { id: 5, user: 'Guille M.', avatar: 'https://i.pravatar.cc/150?u=guille', text: 'Todo limpio y tranquilo por mi calle. Gracias a las brigadas. 🧹👏', neighborhood: 'Torreforta' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '🕯️ 19:30 Ceniza' },
-    { user: 'Limpieza', text: '🧹 Ciudad Limpia' },
-    { user: 'Cultura', text: '🍩 Buñuelos ON' },
+    { user: 'Admin', text: '🎭 Agenda Finde' },
+    { user: 'Meteo', text: '💨 Viento Fuerte' },
+    { user: 'Cultura', text: '🐟 Menú Vigilia' },
     { user: 'V. Urbana', text: '🚌 Bus Normal' },
-    { user: 'Vecinos', text: '🌊 Modo Calma' }
+    { user: 'Vecinos', text: '🎉 Feliz Finde' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

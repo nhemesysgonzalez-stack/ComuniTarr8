@@ -157,63 +157,73 @@ const Home: React.FC = () => {
           .or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`)
           .order('created_at', { ascending: false })
           .limit(3);
-
-        const calmAfterStormNews = {
-          id: 'calm-after-storm-2026',
-          title: "🧹 La ciudad recupera la normalidad",
-          content: "Tras el intenso final de Carnaval, las brigadas de limpieza ultiman la retirada de confeti. Tarragona vuelve a su ritmo habitual bajo el sol de invierno.",
-          category: "SERVICIOS",
+        const fridayLentNews = {
+          id: 'friday-lent-2026',
+          title: "🐟 Viernes de Cuaresma",
+          content: "Hoy es primer viernes de Cuaresma. Los mercados ofrecen el tradicional bacalao y potaje de vigilia. ¡No te quedes sin probarlo!",
+          category: "TRADICIÓN",
           neighborhood: "GENERAL",
-          itinerary: "• Estado: Limpieza 95% completada\n• Zona: Parte Alta y Centro\n• Info: 010 Atención Ciudadana",
-          link_url: "/incidents",
-          created_at: new Date().toISOString()
-        };
-
-        const lentGastronomyNews = {
-          id: 'lent-gastronomy-2026',
-          title: "🍩 Gastronomía de Cuaresma",
-          content: "Las pastelerías de la ciudad ya ofrecen los tradicionales buñuelos de viento y crema. ¡No te quedes sin probarlos!",
-          category: "CULTURA",
-          neighborhood: "CENTRO",
-          itinerary: "• Producto: Buñuelos de Cuaresma\n• Lugar: Pastelerías y Mercado\n• Precio medio: 25€/kg",
+          itinerary: "• Plato: Potaje con bacalao\n• Lugar: Mercat Central / Restaurantes\n• Info: Gastronomía TGN",
           link_url: "/business-directory",
           created_at: new Date().toISOString()
         };
 
-        const jobOffer1 = {
-          id: 'job-waiter-port',
-          title: "💼 EMPLEO: Camarero/a con experiencia",
-          content: "Restaurante en el Puerto Deportivo busca personal para fines de semana y temporada de Semana Santa. Imprescindible catalán e inglés.",
+        const weekendAgendaNews = {
+          id: 'weekend-agenda-feb',
+          title: "🎭 Agenda Cultural: Fin de Semana",
+          content: "Teatro Metropol presenta 'La Vida es Sueño' este sábado. Últimas entradas disponibles. Domingo: Ruta guiada por la Muralla.",
+          category: "CULTURA",
+          neighborhood: "CENTRO",
+          itinerary: "• Sábado: Teatro 20h\n• Domingo: Ruta 11h\n• Tickets: TarracoTicket",
+          link_url: "/calendar",
+          created_at: new Date().toISOString()
+        };
+
+        const pharmacyGuardNews = {
+          id: 'img-pharmacy-weekend',
+          title: "💊 Farmacias de Guardia (Finde)",
+          content: "Consulta las farmacias abiertas 24h para este fin de semana en tu barrio. Prevención ante todo.",
+          category: "SALUD",
+          neighborhood: "GENERAL",
+          itinerary: "• Centro: Fcia. Imperial\n• Ponent: Fcia. Torreforta\n• Norte: Fcia. San Pedro",
+          link_url: "/services",
+          created_at: new Date().toISOString()
+        };
+
+        const civilProtectionNews = { id: 'civil-prot-wind', title: "💨 Aviso: Viento Moderado", content: "Se espera mistral moderado este fin de semana. Asegurad toldos y macetas en balcones.", category: "SEGURIDAD", neighborhood: "GENERAL", itinerary: "• Riesgo: Bajo/Medio\n• Racha máx: 60km/h\n• Fuente: Meteocat", link_url: "/map", created_at: new Date().toISOString() };
+
+        const volunteeringNews = {
+          id: 'vol-weekend-clean',
+          title: "🌿 Voluntariado: Limpieza Playa",
+          content: "Grupo de vecinos organiza recogida de plásticos en la playa del Miracle este sábado por la mañana. ¡Únete!",
+          category: "SOLIDARIO",
+          neighborhood: "BARRIS MARÍTIMS",
+          itinerary: "• Hora: Sábado 10:00h\n• Punto: Fortí de la Reina\n• Traer: Guantes",
+          link_url: "/volunteering",
+          created_at: new Date().toISOString()
+        };
+
+        const jobOfferWeekend = {
+          id: 'job-weekend-waiter',
+          title: "💼 EMPLEO: Camarero/a Extra Finde",
+          content: "Restaurante en el Puerto busca personal para refuerzo de fin de semana. Experiencia requerida.",
           category: "EMPLEO",
           neighborhood: "EL SERRALLO",
-          itinerary: "• Contacto: 977 21 45 67 (Jordi)\n• Horario: Fines de semana\n• Salario: Según convenio + propinas",
+          itinerary: "• Horario: V-S-D Noches\n• Sueldo: Competitivo\n• Contacto: 611 22 33 44 (Jordi)",
           link_url: "/services",
           created_at: new Date().toISOString()
         };
 
-        const jobOffer2 = {
-          id: 'job-admin-clinic',
-          title: "💼 EMPLEO: Recepcionista Clínica Dental",
-          content: "Clínica en Rambla Nova precisa recepcionista para turno de tarde. Gestión de agenda y atención al paciente.",
-          category: "EMPLEO",
-          neighborhood: "CENTRO",
-          itinerary: "• Contacto: rrHH@clinicadentalTGN.com\n• Tel: 977 23 89 00\n• Contrato: Indefinido",
-          link_url: "/services",
-          created_at: new Date().toISOString()
-        };
-
-        const thursdayMarket = {
-          id: 'market-thu-2026',
-          title: "🥦 Mercadillo de Tarragona",
-          content: "Hoy jueves, mercado semanal en la Rambla Nova (tramo final). Fruta, verdura, ropa y complementos hasta las 14h.",
+        const marketSaturday = {
+          id: 'market-sat-2026',
+          title: "🥬 Mercadillo del Fórum",
+          content: "Mañana sábado mercado de frutas y verduras frescas en la Plaza del Fórum. Producto Km0.",
           category: "COMERCIO",
-          neighborhood: "CENTRO",
-          itinerary: "• Lugar: Rambla Nova\n• Horario: 09:00 - 14:00\n• Paradas: +50 puestos",
-          link_url: "/map",
+          neighborhood: "PART ALTA",
+          itinerary: "• Día: Sábado Mañana\n• Puestos: 15\n• Tipo: Ecológico",
+          link_url: "/market",
           created_at: new Date().toISOString()
         };
-
-        const womanSupportNews = { id: 'w-support', title: "💜 MUJER: SIAD Tarragona", content: "Atención psicológica y jurídica gratuita. C/ de la Unió, 13.", category: "SERVICIOS", neighborhood: "GENERAL", itinerary: "• Hora: 09-14h\n• Red: Activa\n• Info: 977 296 150", link_url: "/services", created_at: new Date().toISOString() };
 
         const culturalAgenda = {
           id: 'culture-theatre',
@@ -238,7 +248,7 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([calmAfterStormNews, jobOffer1, jobOffer2, lentGastronomyNews, thursdayMarket, culturalAgenda, womanSupportNews, ...validFetchedNews].slice(0, 8));
+        setNews([fridayLentNews, weekendAgendaNews, pharmacyGuardNews, civilProtectionNews, volunteeringNews, jobOfferWeekend, marketSaturday, ...validFetchedNews].slice(0, 8));
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase

@@ -44,28 +44,28 @@ const SupportCircles: React.FC = () => {
                 {
                     id: 'mock-1',
                     initiator_id: 'v1',
-                    title: 'Apoyo Ansiedad Escolar',
+                    title: 'Apoyo Ansiedad y Estrés Laboral',
                     neighborhood: 'GENERAL',
-                    description: 'Grupo para padres y adolescentes lidiando con el estrés de los exámenes y la presión social. Nos apoyamos y compartimos recursos.',
-                    contact_info: '611 22 33 44',
+                    description: 'Grupo semanal para personas que sufren estrés o ansiedad en el trabajo. Nos reunimos los viernes al salir del trabajo para conversar y compartir técnicas. ¡Hoy a las 19:30h!',
+                    contact_info: '611 22 33 44 (Miguel)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-wed-caregivers',
+                    id: 'mock-fri-mindfulness',
                     initiator_id: 'vadmin',
-                    title: '☕ Café de Cuidadores (Miércoles)',
+                    title: '🧘 Mindfulness de Fin de Semana',
                     neighborhood: 'CENTRO',
-                    description: 'Reunión semanal de los miércoles para cuidadores de personas dependientes. ¡Hoy nos vemos en la cafetería del Centro Cívico para compartir experiencias!',
-                    contact_info: '655 12 34 56 (Elena)',
+                    description: 'Sesión de meditación guiada grupal este sábado por la mañana en el Centro Cívico. Abierta a todos los vecinos. No se requiere experiencia previa.',
+                    contact_info: '655 12 34 56 (Elena, ComuniTarr Salud)',
                     created_at: new Date().toISOString()
                 },
                 {
                     id: 'mock-2',
                     initiator_id: 'v2',
-                    title: 'Círculo de Apoyo: Duelo Animal',
+                    title: 'Círculo de Apoyo: Cuidadores de Mayores',
                     neighborhood: 'GENERAL',
-                    description: 'Iniciativa vecinal para compartir el dolor por la pérdida de una mascota. (Referencia profesional: Duelo Animal / COPC Tarragona).',
-                    contact_info: '622 99 88 77',
+                    description: 'Espacio seguro para cuidadores de personas dependientes. Compartimos recursos, desahogamos y nos apoyamos. Reunión mensual los últimos domingos. Próxima: 22 de febrero.',
+                    contact_info: '622 99 88 77 (Rosa)',
                     created_at: new Date().toISOString()
                 }
             ];
