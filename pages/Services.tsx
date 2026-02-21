@@ -625,6 +625,14 @@ export const Services: React.FC = () => {
         </button>
 
         <button
+          onClick={() => setActiveTab('cultura')}
+          className={`p-4 rounded-2xl flex md:flex-row flex-col items-center gap-4 transition-all ${activeTab === 'cultura' ? 'bg-dr-gold text-white shadow-lg shadow-dr-gold/30' : 'bg-white dark:bg-surface-dark text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+        >
+          <span className="material-symbols-outlined text-2xl">palette</span>
+          <span className="hidden md:block font-black text-xs uppercase tracking-widest">Cultura y Arte</span>
+        </button>
+
+        <button
           onClick={() => setActiveTab('mujer')}
           className={`p-4 rounded-2xl flex md:flex-row flex-col items-center gap-4 transition-all ${activeTab === 'mujer' ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30' : 'bg-white dark:bg-surface-dark text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
         >
@@ -679,18 +687,21 @@ export const Services: React.FC = () => {
           <span className="material-symbols-outlined text-2xl">volunteer_activism</span>
           <span className="hidden md:block font-black text-xs uppercase tracking-widest">Voluntariado</span>
         </button>
-
-        <button
-          onClick={() => setActiveTab('cultura')}
-          className={`p-4 rounded-2xl flex md:flex-row flex-col items-center gap-4 transition-all ${activeTab === 'cultura' ? 'bg-dr-gold text-white shadow-lg shadow-dr-gold/30' : 'bg-white dark:bg-surface-dark text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
-        >
-          <span className="material-symbols-outlined text-2xl">palette</span>
-          <span className="hidden md:block font-black text-xs uppercase tracking-widest">Cultura</span>
-        </button>
       </div>
 
       {/* Content Area */}
-      <div className="flex-1 min-w-0">
+      <div className="flex-1 min-w-0 flex flex-col gap-6">
+        {/* Connection Status Banner (Always showing as requested) */}
+        <div className="flex items-center justify-between bg-white dark:bg-surface-dark px-6 py-3 rounded-full border border-gray-100 dark:border-gray-800 shadow-sm">
+          <div className="flex items-center gap-3">
+            <div className="size-2 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">Conectado en tiempo real: Protecció Civil TGN | VENTCAT | PLASEQTA</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="material-symbols-outlined text-sm text-emerald-500">rss_feed</span>
+          </div>
+        </div>
+
         <div className="bg-white/50 dark:bg-surface-dark/50 backdrop-blur-xl rounded-[40px] p-6 md:p-10 border border-white/20 shadow-xl min-h-[600px]">
           {renderContent()}
         </div>

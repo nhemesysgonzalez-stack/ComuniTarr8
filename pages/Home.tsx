@@ -86,16 +86,27 @@ const HomeNewsItem: React.FC<{ item: any }> = ({ item }) => {
               </div>
             )}
             {item.link_url && (
-              <a
-                href={item.link_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:scale-105 transition-all shadow-lg shadow-primary/20 w-full justify-center"
-              >
-                <span className="material-symbols-outlined text-[18px]">open_in_new</span>
-                Ver noticia oficial
-              </a>
+              item.link_url.startsWith('/') || item.link_url.startsWith('#') ? (
+                <Link
+                  to={item.link_url.replace('#', '')}
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-2 px-6 py-4 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-[1.02] transition-all shadow-lg shadow-primary/30 w-full justify-center group/link"
+                >
+                  <span className="material-symbols-outlined text-[20px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                  Ver ahora en la App
+                </Link>
+              ) : (
+                <a
+                  href={item.link_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:scale-105 transition-all shadow-lg shadow-primary/20 w-full justify-center"
+                >
+                  <span className="material-symbols-outlined text-[18px]">open_in_new</span>
+                  Ver noticia oficial
+                </a>
+              )
             )}
           </motion.div>
         )}
@@ -205,6 +216,7 @@ const Home: React.FC = () => {
             category: "CULTURA",
             neighborhood: "GENERAL",
             itinerary: "• Sección: Servicios > Cultura\n• Info: Centros Cívicos, Literatura y Arte Urbano\n• Participa: Sube tus propios textos hoy",
+            link_url: "/services",
             created_at: new Date().toISOString()
           }
         ];
