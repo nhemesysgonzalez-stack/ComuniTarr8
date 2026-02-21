@@ -40,7 +40,28 @@ const Clubs: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
 
-            setClubs(data || []);
+            const mockClubs: Club[] = [
+                {
+                    id: 'c-sat-1',
+                    creator_id: 'v1',
+                    name: 'Urban Runners TGN 🏃‍♂️',
+                    description: 'Quedada matinal mañana domingo para la carrera. Salida desde el Balcón a las 08:00h para calentar juntos.',
+                    neighborhood: 'GENERAL',
+                    contact_info: '622 33 44 55 (Pau)',
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'c-sat-2',
+                    creator_id: 'v2',
+                    name: 'Club de Fotografía 📸',
+                    description: 'Salida fotográfica este domingo tarde: Atardecer en las murallas. ¡Todos los niveles bienvenidos!',
+                    neighborhood: 'GENERAL',
+                    contact_info: '611 99 88 77 (Marta)',
+                    created_at: new Date().toISOString()
+                }
+            ];
+
+            setClubs(data && data.length > 0 ? data : mockClubs);
         } catch (e) {
             console.error(e);
         } finally {
@@ -49,6 +70,7 @@ const Clubs: React.FC = () => {
     };
 
     const handleClubSubmit = async (e: React.FormEvent) => {
+
         e.preventDefault();
         try {
             const { success } = await safeSupabaseInsert('clubs', {

@@ -46,16 +46,16 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'v1',
                     title: 'Apoyo Ansiedad y Estrés Laboral',
                     neighborhood: 'GENERAL',
-                    description: 'Grupo semanal para personas que sufren estrés o ansiedad en el trabajo. Nos reunimos los viernes al salir del trabajo para conversar y compartir técnicas. ¡Hoy a las 19:30h!',
+                    description: 'Grupo semanal para personas que sufren estrés. Sesión especial de reflexión este sábado tras la semana laboral. ¡Hoy sábado a las 18:30h!',
                     contact_info: '611 22 33 44 (Miguel)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-fri-mindfulness',
+                    id: 'mock-sat-mindfulness',
                     initiator_id: 'vadmin',
                     title: '🧘 Mindfulness de Fin de Semana',
                     neighborhood: 'CENTRO',
-                    description: 'Sesión de meditación guiada grupal este sábado por la mañana en el Centro Cívico. Abierta a todos los vecinos. No se requiere experiencia previa.',
+                    description: 'Sesión de meditación guiada grupal este domingo por la mañana en el Centro Cívico. Abierta a todos los vecinos antes de la Carrera Popular.',
                     contact_info: '655 12 34 56 (Elena, ComuniTarr Salud)',
                     created_at: new Date().toISOString()
                 },
@@ -64,11 +64,12 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'v2',
                     title: 'Círculo de Apoyo: Cuidadores de Mayores',
                     neighborhood: 'GENERAL',
-                    description: 'Espacio seguro para cuidadores de personas dependientes. Compartimos recursos, desahogamos y nos apoyamos. Reunión mensual los últimos domingos. Próxima: 22 de febrero.',
+                    description: 'Espacio seguro para cuidadores. Reunión especial mañana domingo para compartir recursos y apoyo en un entorno tranquilo.',
                     contact_info: '622 99 88 77 (Rosa)',
                     created_at: new Date().toISOString()
                 }
             ];
+
 
             setCircles(data && data.length > 0 ? data : mockCircles);
         } catch (e) {

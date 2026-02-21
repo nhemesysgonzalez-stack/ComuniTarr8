@@ -11,20 +11,20 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🎭 Agenda Fin de Semana: Teatro Metropol y Rutas Guiadas. ¡No os quedéis en casa! ✨", neighborhood: 'CENTRO' },
-    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '💨 Aviso de viento moderado para el sábado. Asegurad toldos y macetas. 🌬️', neighborhood: 'GENERAL' },
-    { id: 2, user: 'TGN Cultura', avatar: '/logo.svg', text: '🐟 Primer viernes de Cuaresma. Los restaurantes del Serrallo ofrecen menú de vigilia. 🥘', neighborhood: 'SERRALLO' },
-    { id: 3, user: 'Paco R.', avatar: 'https://i.pravatar.cc/150?u=paco', text: '¡Por fin viernes! Semana dura de vuelta a la rutina. ¿Alguien para unas cañas? 🍻', neighborhood: 'Part Alta' },
-    { id: 4, user: 'Marta S.', avatar: 'https://i.pravatar.cc/150?u=marta', text: '¿Sabéis si mañana hay mercado de frutas en el Fórum? 🥦🍎', neighborhood: 'Centro' },
-    { id: 5, user: 'Guille M.', avatar: 'https://i.pravatar.cc/150?u=guille', text: 'Todo limpio y tranquilo por mi calle. Gracias a las brigadas. 🧹👏', neighborhood: 'Torreforta' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🎭 Esta noche: Teatro Metropol y salas de conciertos. ¡Tarragona late cultura! ✨", neighborhood: 'CENTRO' },
+    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Sábado radiante. Noche fresca pero despejada. Disfrutad de las terrazas. ⛱️', neighborhood: 'GENERAL' },
+    { id: 2, user: 'TGN Cultura', avatar: '/logo.svg', text: '🥘 Sábado de Gastronomía: El Serrallo está a tope con su cocina marinera hoy. 🦐', neighborhood: 'SERRALLO' },
+    { id: 3, user: 'Paco R.', avatar: 'https://i.pravatar.cc/150?u=paco', text: '¡Vaya tarde de sol! Tomando algo en la Plaça de la Font. Brutal el ambiente. 🍻', neighborhood: 'Part Alta' },
+    { id: 4, user: 'Marta S.', avatar: 'https://i.pravatar.cc/150?u=marta', text: '¿Alguien sabe a qué hora cierra hoy el Mercat Central? 🥦🍎', neighborhood: 'Centro' },
+    { id: 5, user: 'Guille M.', avatar: 'https://i.pravatar.cc/150?u=guille', text: 'Paseo por el Miracle espectacular esta tarde. Tarragona es única. 😍🌊', neighborhood: 'Barris Marítims' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '🎭 Agenda Finde' },
-    { user: 'Meteo', text: '💨 Viento Fuerte' },
-    { user: 'Cultura', text: '🐟 Menú Vigilia' },
+    { user: 'Admin', text: '🎭 Tarde de Teatro' },
+    { user: 'Meteo', text: '☀️ Sol Radiante' },
+    { user: 'Cultura', text: '🥘 Cocina Marinera' },
     { user: 'V. Urbana', text: '🚌 Bus Normal' },
-    { user: 'Vecinos', text: '🎉 Feliz Finde' }
+    { user: 'Vecinos', text: '☀️ ¡Feliz Sábado!' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

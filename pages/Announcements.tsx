@@ -125,48 +125,49 @@ const Announcements: React.FC = () => {
     const fetchNotices = async () => {
         setLoading(true);
         const weatherAlert: Announcement = {
-            id: 'weather-fri-wind',
-            title: "💨 VIERNES: Alerta de Viento",
-            content: "Viento del norte (Mistral/Tramuntana) moderado-fuerte durante el día (60-80 km/h en zonas altas). Asegurad toldos, macetas y andamios. No aparcar bajo árboles.",
-            category: "URGENTE",
+            id: 'weather-sat-sun',
+            title: "☀️ SÁBADO: Tarde Radiante",
+            content: "Tras el viento de ayer, hoy disfrutamos de un sábado soleado y estable en toda Tarragona. Temperaturas agradables de hasta 17°C ideal para pasear.",
+            category: "INFO",
             neighborhood: "GENERAL",
             author_name: "Protección Civil TGN",
-            itinerary: "• Mañana: Ráfagas fuertes\n• Mediodía: Suave (15°C)\n• Tarde: Viento remitiendo\n• Sábado: Soleado y tranquilo",
+            itinerary: "• Tarde: Soleado 17°C\n• Noche: Despejado 9°C\n• Mañana Dom: Intervalos nubosos\n• Viento: Calma total",
             created_at: new Date().toISOString()
         };
 
         const weekendAgendaNotice: Announcement = {
-            id: 'weekend-agenda-fri',
-            title: "🎭 AGENDA: Fin de Semana Activo",
-            content: "Sábado: Mercat de Productors (Fòrum, 9h), Ruta Muralla (11h), Yoga Anfiteatro (10h). Domingo: Carrera Popular 5K (Paseo Marítimo, 10h). ¡Os esperamos!",
+            id: 'weekend-agenda-sat',
+            title: "🎭 HOY: Teatro Metropol y Vermuts",
+            content: "Recordatorio: Función de 'La Vida es Sueño' esta noche 20:30h. Durante la tarde, ambiente festivo en el Serrallo con música en directo.",
             category: "EVENTO",
             neighborhood: "GENERAL",
             author_name: "Ajuntament TGN",
-            itinerary: "• Sáb: Mercat Fòrum (9h)\n• Sáb: Ruta Muralla (11h)\n• Sáb: Yoga Anfiteatro (10h)\n• Dom: Carrera 5K (10h)",
+            itinerary: "• Tarde: Música en Serrallo\n• Noche: Teatro Metropol (20:30h)\n• Mañana Dom: Carrera Popular 5K (10h)",
             link_url: "https://www.tarragona.cat/agenda",
             created_at: new Date().toISOString()
         };
 
         const routineAdvisory: Announcement = {
-            id: 'pharmacy-guard-fri',
-            title: "💊 FARMACIA DE GUARDIA",
-            content: "Turno de guardia esta noche: Farmàcia Sabaté (Rambla Nova, 85). Abierta las 24h. Para el sábado consultar el 117.",
+            id: 'pharmacy-guard-sat',
+            title: "💊 FARMACIA DE GUARDIA (Sábado)",
+            content: "Turno de guardia hoy sábado y mañana domingo: Farmàcia La Font (C/ Colom, 2). Abierta 24h para cualquier urgencia.",
             category: "INFO",
             neighborhood: "GENERAL",
             author_name: "Col·legi de Farmàcies",
-            itinerary: "• Hoy viernes noche: Farm. Sabaté\n• Tel: 977 21 00 00\n• Urgencias: 117",
+            itinerary: "• Todo el finde: Farm. La Font\n• Tel: 977 22 11 00\n• Urgencias: 117",
             created_at: new Date().toISOString()
         };
 
-        const lentTradition: Announcement = {
-            id: 'lent-vigilia-fri',
-            title: "🐟 CUARESMA: Viernes de Vigilia",
-            content: "Hoy primer viernes de Cuaresma. Según la tradición católica, abstinencia de carne. Los restaurantes del Serrallo ofrecen menú de vigilia con bacalao y pescado fresco desde 12€.",
-            category: "COMUNIDAD",
-            neighborhood: "EL SERRALLO",
-            author_name: "Gràcia i Tradició TGN",
+        const cleaningSuccess: Announcement = {
+            id: 'clean-beach-success',
+            title: "🌿 ÉXITO: Limpieza en el Miracle",
+            content: "¡Gran jornada de limpieza esta mañana! Más de 30 voluntarios hemos dejado la playa del Miracle impecable. Gracias a todos los que habéis venido.",
+            category: "EXITO",
+            neighborhood: "BARRIS MARÍTIMS",
+            author_name: "Mare Nostrum TGN",
             created_at: new Date().toISOString()
         };
+
 
         try {
             const data = await safeSupabaseFetch('announcements',
@@ -188,7 +189,7 @@ const Announcements: React.FC = () => {
                 return diffDays <= 7;
             });
 
-            setNotices([weatherAlert, weekendAgendaNotice, routineAdvisory, lentTradition, ...validFetched]);
+            setNotices([weatherAlert, weekendAgendaNotice, routineAdvisory, cleaningSuccess, ...validFetched]);
         } catch (e) {
             console.error(e);
             setNotices([weatherAlert]);

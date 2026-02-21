@@ -74,13 +74,14 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Maria J.', text: '💨 ¡Vaya viento hace hoy! Asegurad las macetas de los balcones. 🌬️' },
-    { user: 'ComuniTarr 🎭', text: 'Agenda Cultural: Teatro Metropol este sábado. Últimas entradas.' },
-    { user: 'Jordi T.', text: '¿Alguien sabe qué farmacia de guardia toca hoy en la Parte Alta? 💊' },
-    { user: 'Pau B.', text: '🐟 Hoy es viernes de Cuaresma. ¡Toca potaje y bacalao! ¿Recomendaciones?' },
-    { user: 'Ana G.', text: '¡Por fin viernes! Semana intensa post-carnaval. A descansar. ✨' },
-    { user: 'Mireia R.', text: 'Recordad que mañana hay mercadillo de productos frescos en el Fórum. 🥬' }
+    { user: 'Maria J.', text: '☀️ ¡Qué tarde más buena! Las terrazas del Serrallo están a tope. 🍹' },
+    { user: 'ComuniTarr 🎭', text: 'Recordatorio: Función de teatro hoy a las 20:30h en el Metropol.' },
+    { user: 'Jordi T.', text: '¿Abren hoy los huertos urbanos por la tarde? 🥬' },
+    { user: 'Pau B.', text: '⚽ ¡Vamos Nàstic! ¿Alguien va al campo mañana? 🔴⚪' },
+    { user: 'Ana G.', text: 'He visto que han puesto un AdBanner nuevo con ofertas locales. ¡Mola! ✨' },
+    { user: 'Mireia R.', text: 'El mercadillo del Fórum ha sido un éxito esta mañana. ¡Buen género! 🥦' }
   ];
+
 
   // Virtual Neighbors for Simulation
   const virtualNeighbors = [
@@ -654,25 +655,26 @@ const Forum: React.FC = () => {
           </div>
 
           <div className="px-4 py-2 mt-4">
-            <h2 className="text-xl font-black mb-4 text-center">Ofertas - Fin de Semana</h2>
+            <h2 className="text-xl font-black mb-4 text-center">Empleo Sábado 21</h2>
             <ul className="space-y-4 text-xs md:text-sm">
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🍹 <strong>Camarero/a de Barra (Extra Finde)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Puerto Deportivo • 🕔 Noches V-S • Urgente • Contacto: 611 22 33 44</span>
+                🍹 <strong>Refuerzo Domingo (Restaurante)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 El Serrallo • 🕔 Mañana y Tarde • Pago al día • 📞 622 11 00 22 (Juan)</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🧹 <strong>Limpieza Locales (Sábado Mañana)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📧 servicios@limpiezatgn.cat • Turno mañana • 12€/h</span>
+                📦 <strong>Mozo Almacén (Turno Noche)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📧 logistica@tgn.es • Polígono Francolí • Incorporación hoy • 📞 977 44 33 22</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                👴 <strong>Acompañante Mayor (Domingo)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 San Pedro y San Pablo • 🕔 10h-14h • Paseo y compañía • 15€/h</span>
+                🧹 <strong>Limpieza Cristales (Pisos)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 Part Alta • 🕔 Flexible • 14€/h • 📞 600 99 88 11 (Silvia)</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🍕 <strong>Repartidor/a Moto (Noches)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📞 977 11 22 33 • Pizzería Centro • Propia moto valorable</span>
+                🚲 <strong>Repartidor/a Bici (Sábado tarde)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📞 611 00 55 44 • Zona Eixample • ¡Buscamos 2 personas ya!</span>
               </li>
             </ul>
+
             <h4 className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2">Vecinos Online (5/12)</h4>
             <div className="space-y-2">
               {activeUsers.slice(0, 5).map((u, i) => (

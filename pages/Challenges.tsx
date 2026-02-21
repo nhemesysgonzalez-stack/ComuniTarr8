@@ -43,26 +43,27 @@ const Challenges: React.FC = () => {
 
       const mockChallenges: Challenge[] = [
         {
-          id: 'mock-ch-1',
+          id: 'mock-ch-sat-1',
           creator_id: 'admin',
-          title: '🧹 Operación "Barrio Limpio"',
-          description: 'Vamos a repasar los parques infantiles para quitar los últimos restos de confeti y serpentinas. ¡Por nuestros peques!',
+          title: '🧹 Operación "Rambla Radiante"',
+          description: 'Quedada este sábado tarde para repasar las zonas de la Rambla donde hubo más afluencia y dejar el pavimento perfecto. ¡Por nuestro barrio!',
           neighborhood: 'GENERAL',
-          contact_info: 'AAVV Centro',
+          contact_info: 'AAVV Centro (Cora)',
           is_example: true,
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-ch-2',
+          id: 'mock-ch-sat-2',
           creator_id: 'user2',
-          title: '🍲 Recogida de Alimentos',
-          description: 'Campaña post-fiestas para rellenar la despensa del Banco de Alimentos. Se necesita leche y aceite.',
+          title: '🔋 Recogida de Pilas y Pequeños RAEE',
+          description: 'Mañana domingo aprovecharemos la Carrera Popular para poner un punto de recogida de pilas usadas y pequeños electrodomésticos.',
           neighborhood: 'PONENT',
-          contact_info: 'Parroquia Torreforta',
+          contact_info: '633 44 55 66 (Joan)',
           is_example: false,
           created_at: new Date().toISOString()
         }
       ];
+
 
       setChallenges(data && data.length > 0 ? data : mockChallenges);
     } catch (e) {

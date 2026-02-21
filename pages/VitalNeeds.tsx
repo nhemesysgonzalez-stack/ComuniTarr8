@@ -46,36 +46,36 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'mock-thu-n1',
+                    id: 'mock-sat-n1',
                     creator_id: 'v4',
                     type: 'company',
-                    title: '👵 Paseo al Sol',
-                    description: 'Mi madre necesita salir a caminar un poco ahora que hace buen día, pero yo trabajo. ¿Alguien para acompañarla 30 min?',
+                    title: '👵 Paseo al Sol (Sábado)',
+                    description: 'Mi madre quiere disfrutar de la tarde soleada en la Rambla. ¿Algún vecino/a para acompañarla 45 min? Yo estoy de guardia.',
                     contact_info: '688 22 11 00 (Pere)',
                     is_urgent: false,
                     neighborhood: 'CENTRO',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-thu-n2',
+                    id: 'mock-sat-n2',
                     creator_id: 'v5',
                     type: 'medical',
-                    title: '💊 Farmacia Urgente',
-                    description: 'Estoy con gripe y no puedo bajar a por Paracetamol. ¿Algún vecino va a la farmacia?',
+                    title: '💊 Medicación Urgente',
+                    description: 'Necesito que alguien recoja una receta en la Farmacia de Guardia. No puedo dejar a los niños solos.',
                     contact_info: '644 33 22 11 (Marta)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-thu-n3',
+                    id: 'mock-sat-n3',
                     creator_id: 'v6',
-                    type: 'other',
-                    title: "📚 Ayuda Mates ESO",
-                    description: 'Mi hijo tiene examen el lunes y se le han atragantado las ecuaciones. ¿Algún estudiante que le eche una mano?',
+                    type: 'emotional',
+                    title: "☕ Charla y Café",
+                    description: 'Me siento un poco sola este finde. ¿Alguna vecina para tomar un café en el Serrallo esta tarde?',
                     contact_info: '622 88 77 66 (Carme)',
                     is_urgent: false,
-                    neighborhood: 'PART ALTA',
+                    neighborhood: 'EL SERRALLO',
                     created_at: new Date().toISOString()
                 }
             ];
@@ -178,19 +178,20 @@ const VitalNeeds: React.FC = () => {
                             <span className="px-2 py-0.5 bg-red-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">RED SOLIDARIA</span>
                             <span className="text-[10px] font-bold text-gray-400 uppercase">AYUDA MUTUA</span>
                         </div>
-                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Recogida Solidaria Post-Carnaval 🎭</h2>
+                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Acompañamiento Fines de Semana 🤝</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            ¿Tu disfraz ya no te sirve? No lo tires. Estamos recogiendo telas, accesorios y trajes para el banco de recursos del año que viene y talleres infantiles.
+                            ¿Tienes 1 hora libre este sábado o domingo? Únete a nuestra red de acompañamiento para personas mayores que viven solas. Un paseo o un café marca la diferencia.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Punto de recogida: Centro Cívico Torreforta. Horario: 17h-20h.'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
-                            <span className="material-symbols-outlined text-sm">inventory_2</span>
-                            DONAR MATERIAL
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Inscripción abierta: Centro Cívico Centro. Próxima reunión informativa: Sábado 18h.'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                            <span className="material-symbols-outlined text-sm">person_add</span>
+                            UNIRME AHORA
                         </a>
-                        <p className="text-[9px] text-center font-bold text-gray-400">Coordina: Assoc. Carnaval TGN</p>
+                        <p className="text-[9px] text-center font-bold text-gray-400">Coordina: Voluntariat TGN</p>
                     </div>
                 </section>
+
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Needs List */}

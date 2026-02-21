@@ -75,8 +75,8 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                         </div>
 
                         <div className="pt-2 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center text-[8px] font-bold text-gray-400 uppercase tracking-widest">
-                            <span>JUEVES 19 FEB 2026</span>
-                            <span>AEMET: Soleado 16ºC</span>
+                            <span>SÁBADO 21 FEB 2026</span>
+                            <span>AEMET: Despejado 17ºC</span>
                         </div>
                     </div>
                 </motion.div>

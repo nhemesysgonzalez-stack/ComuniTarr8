@@ -48,30 +48,31 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'mock-ws-1',
-                    title: 'Cocina de Cuaresma: Buñuelos',
-                    instructor: 'Maria J.',
-                    date: 'Jueves 19, 17:00',
-                    description: 'Aprende a hacer los auténticos buñuelos de viento de la abuela. Traer delantal.',
-                    image: 'https://images.unsplash.com/photo-1614373595357-12b2e04360e2?auto=format&fit=crop&q=80&w=800',
-                    spots: 5,
-                    neighborhood: 'CENTRO',
-                    contact_info: '611 22 33 44',
+                    id: 'mock-ws-sat-1',
+                    title: 'Reparación de Disfraces',
+                    instructor: 'Taller de Costura',
+                    date: 'Sábado 21, 18:00',
+                    description: 'Taller práctico para arreglar, limpiar y guardar correctamente los trajes de Carnaval para el año que viene. ¡No los tires!',
+                    image: 'https://images.unsplash.com/photo-1528186218177-33f7aa8206d0?auto=format&fit=crop&q=80&w=800',
+                    spots: 8,
+                    neighborhood: 'PART ALTA',
+                    contact_info: 'Centro Cívico (Cora)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-ws-2',
-                    title: 'Reparación de Disfraces',
-                    instructor: 'Taller de Costura',
-                    date: 'Viernes 20, 18:00',
-                    description: 'Taller para arreglar y guardar correctamente los trajes de Carnaval para el año que viene.',
-                    image: 'https://images.unsplash.com/photo-1528186218177-33f7aa8206d0?auto=format&fit=crop&q=80&w=800',
-                    spots: 10,
-                    neighborhood: 'PART ALTA',
-                    contact_info: 'Centro Cívico',
+                    id: 'mock-ws-sat-2',
+                    title: 'Iniciación al Running',
+                    instructor: 'Pau B.',
+                    date: 'Sábado 21, 19:00',
+                    description: 'Charla técnica y breve trote suave previo a la Carrera 5K de mañana. Consejos para debutantes.',
+                    image: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&q=80&w=800',
+                    spots: 15,
+                    neighborhood: 'BARRIS MARÍTIMS',
+                    contact_info: '611 22 33 44',
                     created_at: new Date().toISOString()
                 }
             ];
+
 
             setWorkshops(data && data.length > 0 ? data : mockWorkshops);
         } catch (e) {
@@ -136,10 +137,11 @@ const Workshops: React.FC = () => {
                             <span className="px-3 py-1 bg-indigo-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">EVENTO HOY</span>
                             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">TRADICIÓN</span>
                         </div>
-                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Charla: Origen de la Cuaresma 🕯️</h2>
+                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Vermut Musical en el Serrallo 🥂</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Descubre la historia y las curiosidades de la Cuaresma en Tarragona. Una charla amena para entender por qué comemos buñuelos y bacalao.
+                            Disfruta de la tarde de sábado con música en vivo y el mejor ambiente frente al mar. Una iniciativa de los restauradores del barrio para dinamizar el puerto.
                         </p>
+
                         <div className="flex flex-wrap gap-4">
                             <a href="tel:655443322" className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
                                 <span className="material-symbols-outlined text-sm">call</span>
@@ -240,9 +242,10 @@ const Workshops: React.FC = () => {
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
                                             { t: 'Huerto Urbano', i: 'Pedro S.', d: 'Sábado 11:00 AM', desc: 'Aprende a cultivar tus propios tomates y lechugas en el balcón.', c: '688000111' },
-                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Lunes 18:30 PM', desc: 'Sácale provecho a tu móvil: fotos, seguridad y apps útiles.', c: '699222333' },
-                                            { t: 'Costura Básica', i: 'Julia L.', d: 'Miércoles 17:00 PM', desc: 'Aprende a coser botones, bajos y arreglos sencillos.', c: '611444555' },
-                                            { t: 'Voluntariado 101', i: 'Punt Voluntariat', d: 'Jueves 19:00 PM', desc: 'Charla introductoria sobre cómo empezar a ayudar en Tarragona.', c: 'Email Punt Voluntariat' }
+                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Domingo 10:30 AM', desc: 'Sácale provecho a tu móvil: fotos, seguridad y apps útiles.', c: '699222333' },
+                                            { t: 'Cata Vermuts', i: 'Cellar TGN', d: 'Sábado 18:00 PM', desc: 'Aprende a diferenciar los vermuts locales de nuestra tierra.', c: '611444555' },
+                                            { t: 'Pre-Carrera 5K', i: 'Running Club', d: 'Sábado 19:30 PM', desc: 'Sesión de estiramientos y charla técnica para la carrera de mañana.', c: 'Paseo Marítimo' }
+
                                         ].map((idea, i) => (
                                             <button
                                                 key={i}

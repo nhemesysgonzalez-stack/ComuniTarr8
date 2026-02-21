@@ -42,23 +42,24 @@ const Patrols: React.FC = () => {
 
       const mockPatrols: PatrolGroup[] = [
         {
-          id: 'p-1',
+          id: 'p-sat-1',
           creator_id: 'v1',
-          name: 'Patrulla Noche Fin de Semana 🌙',
-          description: 'Ronda nocturna de viernes y sábado noche por la Parte Alta y Rambla Nova. Salida 22:00h desde Plaza Corsini. Objetivo: presencia vecinal y prevención.',
+          name: 'Patrulla Sábado Noche 🌙',
+          description: 'Ronda nocturna especial de sábado noche por la Parte Alta y Marina. Salida 22:30h desde Plaza de la Font. Objetivo: asegurar el descanso vecinal en zonas de ocio.',
           neighborhood: 'PART ALTA',
-          contact_info: '622 33 44 55 (Jordi, coordinador)',
+          contact_info: '622 33 44 55 (Jordi)',
           created_at: new Date().toISOString()
         },
         {
-          id: 'p-2',
+          id: 'p-sun-1',
           creator_id: 'v2',
-          name: 'Caminos Escolares Seguros 🚸',
-          description: 'Grupo de acompañamiento matinal para ir al colegio caminando seguro el lunes. Salida desde Plaza Imperial a las 08:30h. Se buscan voluntarios.',
-          neighborhood: 'CENTRO',
-          contact_info: '611 99 88 77 (Ana, AAVV)',
+          name: 'Apoyo Carrera Popular 🚸',
+          description: 'Grupo de acompañamiento y señalización para la carrera de mañana domingo. Salida desde Paseo Marítimo a las 09:00h. ¡Últimos voluntarios!',
+          neighborhood: 'BARRIS MARÍTIMS',
+          contact_info: '611 99 88 77 (Ana)',
           created_at: new Date().toISOString()
         }
+
       ];
 
       setPatrols(data && data.length > 0 ? data : mockPatrols);

@@ -57,47 +57,39 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'mock-fri-m1',
+          id: 'mock-sat-m1',
           user_id: 'v1',
           title: '🚲 Bicicleta de Paseo Vintage',
-          description: 'Bicicleta azul restaurada. Ideal para pasear por la costa. Incluye cesta. Precio negociable.',
+          description: 'Bicicleta azul restaurada. Ideal para pasear por la costa hoy sábado. Incluye cesta. Precio negociable.',
           price: '85',
           category: 'ocio',
           neighborhood: 'BARRIS MARÍTIMS',
           contact_info: '622 11 22 33',
+          image_url: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-fri-m2',
+          id: 'mock-sat-m2',
           user_id: 'v2',
           title: '🪑 Mesa Jardín + 4 Sillas',
-          description: 'Conjunto de exterior en resina trenzada. Color gris antracita. Perfecto estado.',
-          price: '120',
+          description: 'Conjunto de exterior en resina trenzada. Perfecto para cenas de verano. Aprovecha el buen tiempo de este finde.',
+          price: '110',
           category: 'hogar',
           neighborhood: 'LLEVANT',
           contact_info: '611 99 88 77',
+          image_url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-fri-m3',
-          user_id: 'v3',
-          title: '🎵 Lote Vinilos Rock 80s',
-          description: 'Colección de 20 discos (Queen, Bowie, AC/DC). Se venden juntos o por separado. Escucho ofertas.',
-          price: '150',
-          category: 'ocio',
-          neighborhood: 'CENTRO',
-          contact_info: '644 55 66 77',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'mock-fri-m4',
+          id: 'mock-sat-m3',
           user_id: 'v4',
           title: '👞 Botas Montaña Talla 42',
-          description: 'Marca Salomon. Usadas solo en dos salidas. Las vendo porque me van pequeñas.',
-          price: '45',
+          description: 'Marca Salomon. Usadas solo en dos salidas. Ideales si vas de excursión este domingo.',
+          price: '40',
           category: 'moda',
           neighborhood: 'SANT PERE I SANT PAU',
           contact_info: '655 44 33 22',
+          image_url: 'https://images.unsplash.com/photo-1620987278429-ca17826ddbca?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         }
       ];
@@ -198,7 +190,8 @@ const Marketplace: React.FC = () => {
           </div>
           <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Plaza Parking C/ Unió 🅿️</h2>
           <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed">
-            Alquilo plaza de parking para coche mediano/grande. Puerta automática y fácil maniobra. ¡Olvídate de buscar sitio al llegar de trabajar! Disponible desde hoy 12 de Febrero.
+            Alquilo plaza de parking para coche mediano/grande. Puerta automática y fácil maniobra. ¡Olvídate de buscar sitio al llegar de trabajar! Disponible desde hoy 21 de Febrero.
+
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="tel:641223456" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">

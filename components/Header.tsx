@@ -119,6 +119,16 @@ export const Header: React.FC = () => {
             >
               {language.toUpperCase()}
             </button>
+            {/* Button hidden as per user request (restricted to admin logic in future) */}
+            {user?.user_metadata?.role === 'admin' && (
+              <button
+                onClick={() => setShowCreateModal(true)}
+                className="inline-flex items-center gap-3 px-8 py-5 bg-orange-500 text-white rounded-[30px] shadow-2xl shadow-orange-500/30 hover:scale-105 active:scale-95 transition-all text-xs font-black uppercase tracking-widest"
+              >
+                <span className="material-symbols-outlined font-black">add_circle</span>
+                CREAR GRUPO
+              </button>
+            )}
             <button
               onClick={toggleDarkMode}
               className="flex items-center justify-center size-10 rounded-xl text-gray-400 hover:text-primary hover:bg-white dark:hover:bg-gray-700 transition-all"
@@ -253,15 +263,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">🕯️ MIÉRCOLES DE CENIZA: IMPOSICIÓN DE LA CENIZA EN LA CATEDRAL (19:30H)</span>
+          <span className="flex items-center gap-2">☀️ TARDE DE SOL: LAS TERRAZAS DE LA RAMBLA NOVA ALCANZAN EL 100% DE OCUPACIÓN ESTE SÁBADO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🧹 OPERACIÓN LIMPIEZA: BRIGADAS TRABAJAN EN PL. DE LA FONT TRAS EL FIN DE CARNAVAL</span>
+          <span className="flex items-center gap-2">🎭 CULTURA: ÚLTIMAS ENTRADAS PARA EL CONCIERTO DE ESTA NOCHE EN LA SALA ZERO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚌 EMT TARRAGONA: TODAS LAS LÍNEAS VUELVEN A SUS RECORRIDOS HABITUALES</span>
+          <span className="flex items-center gap-2">⚽ DEPORTES: AMBIENTE PRE-PARTIDO EN EL NÀSTIC, EL ESTADI PREPARA EL LLENO PARA MAÑANA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🍳 CUARESMA: EMPIEZA LA TEMPORADA DE BUÑUELOS Y GASTRONOMÍA DE VIGILIA</span>
+          <span className="flex items-center gap-2">🛒 MERCAT CENTRAL: HORARIO ESPECIAL DE CIERRE SÁBADO TARDE (20:30H)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🌊 CALMA VECINAL: RETORNO A LA RUTINA DESPUÉS DE LOS DÍAS DE DESENFRENO</span>
+          <span className="flex items-center gap-2">🌊 CALMA MARÍTIMA: BANDERA VERDE EN TODAS LAS PLAYAS PARA PASEAR ESTA TARDE</span>
         </motion.div>
       </div>
 
@@ -337,6 +347,14 @@ export const Header: React.FC = () => {
                       {n}
                     </button>
                   ))}
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between px-2">
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
+                  <span className="text-xs font-black dark:text-white">SÁBADO 21 FEB 2026</span>
+                  <span className="text-xs font-black dark:text-white">AEMET: Despejado 17ºC</span>
                 </div>
               </div>
 

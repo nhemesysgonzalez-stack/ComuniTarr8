@@ -168,21 +168,22 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Destacadas (Viernes 20)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Sábado 21 Feb)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Ayudante de Cocina - Fines de Semana"</p>
-                    <p className="text-[10px] text-gray-500">Restaurante zona Alta. Viernes y Sábados noche. 12€/h. 📞 600 11 22 33 (Preguntar por Laura)</p>
+                    <p className="text-xs font-black dark:text-white">"Personal Limpieza - Refuerzo Domingo"</p>
+                    <p className="text-[10px] text-gray-500">Para oficinas en C/ de la Unió. Turno mañana (07:00-11:00). 11€/h. 📞 633 44 55 66 (Marta)</p>
                   </div>
                   <div className="border-l-4 border-blue-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Vigilante de Seguridad - Eventos"</p>
-                    <p className="text-[10px] text-gray-500">Para refuerzo en actos culturales fin de semana. TIP en vigor. 📧 rrhh@seguridadtgn.com</p>
+                    <p className="text-xs font-black dark:text-white">"Vigilante Parking - Fines de Semana"</p>
+                    <p className="text-[10px] text-gray-500">Parking zona Centro. Turno noche. Se requiere TIP. 📞 977 12 34 56 (Seguridad TGN)</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Personal Limpieza - Oficinas"</p>
-                    <p className="text-[10px] text-gray-500">Sábados por la mañana (08:00 - 13:00). Zona Rambla Nova. 📞 977 24 00 00 (Limpiezas Brillante)</p>
+                    <p className="text-xs font-black dark:text-white">"Repartidor/a - Comida a Domicilio"</p>
+                    <p className="text-[10px] text-gray-500">Moto propia. Incorporación inmediata hoy sábado. 📞 611 99 88 77 (Pizzería Di Roma)</p>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>

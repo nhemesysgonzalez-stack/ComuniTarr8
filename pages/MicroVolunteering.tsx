@@ -218,11 +218,12 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Recogida Confeti', d: '¿Alguien se apunta a una jornada de limpieza rápida en el Portalet hoy miércoles? Para dejarlo niquelado.', c: 'Coordinar en Foro' },
-                                            { t: 'Paseo APAPT', d: 'Voy a la protectora a pasear perros el miércoles. ¿Algún vecino se anima a venir conmigo?', c: '633445566' },
-                                            { t: 'Ocio Down TGN', d: 'Acompañamiento para joven con Down a dar un paseo tranquilo por la Vía Augusta. 1 hora aprox.', c: '611223344' },
-                                            { t: 'Info Cuaresma', d: '¿Me podéis pasar el horario exacto de la imposición de la ceniza en el Serrallo?', c: 'Ver Secc. Calendario' }
+                                            { t: 'Recogida Playa', d: '¿Alguien se apunta a una jornada de limpieza rápida en el Miracle hoy sábado tarde? Para dejarlo niquelado.', c: 'Coordinar en Foro' },
+                                            { t: 'Paseo APAPT Sáb', d: 'Voy a la protectora a pasear perros hoy sábado. ¿Algún vecino se anima a venir conmigo?', c: '633445566' },
+                                            { t: 'Ocio Down TGN', d: 'Acompañamiento para joven con Down a dar un paseo tranquilo por la Vía Augusta mañana domingo. 1 hora aprox.', c: '611223344' },
+                                            { t: 'Dorsales Carrera', d: 'Mañana domingo voy a la Carrera 5K. Si alguien necesita que le recoja el dorsal avisad.', c: 'Ver Secc. Calendario' }
                                         ].map((idea, i) => (
+
                                             <button
                                                 key={i}
                                                 type="button"

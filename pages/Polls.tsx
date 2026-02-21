@@ -71,7 +71,26 @@ const Polls: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
 
-            setPolls(data || []);
+            const mockPolls: Poll[] = [
+                {
+                    id: 'poll-sat-1',
+                    creator_id: 'v1',
+                    title: '¿Qué te ha parecido el ambiente festivo de este sábado en la Rambla? 🎭',
+                    options: ['Genial, mucha vida', 'Demasiado ruido', 'Bien, pero falta sombra', 'No he pasado por allí'],
+                    neighborhood: 'GENERAL',
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'poll-sat-2',
+                    creator_id: 'v2',
+                    title: '¿Participarás en la Carrera Popular de mañana domingo? 🏃',
+                    options: ['Sí, como corredor', 'Sí, como voluntario/público', 'No puedo ir', 'No sabía que había carrera'],
+                    neighborhood: 'GENERAL',
+                    created_at: new Date().toISOString()
+                }
+            ];
+
+            setPolls(data && data.length > 0 ? data : mockPolls);
 
             // Cargar los votos del usuario actual
             if (user?.id) {
@@ -90,6 +109,7 @@ const Polls: React.FC = () => {
             setLoading(false);
         }
     };
+
 
     const handlePollSubmit = async (e: React.FormEvent) => {
         e.preventDefault();

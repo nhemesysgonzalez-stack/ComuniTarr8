@@ -59,28 +59,29 @@ const Incidents: React.FC = () => {
                 // Mock Incidents for Demo (Thursday 19th)
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'mock-inc-1',
+                        id: 'mock-inc-sat-1',
                         user_id: 'admin',
-                        title: '✨ Limpieza Finalizada',
-                        description: 'La Plaza de la Font vuelve a estar impecable tras el paso de las brigadas. ¡Gran trabajo!',
-                        neighborhood: 'PART ALTA',
+                        title: '☀️ Sábado de Sol y Playa',
+                        description: 'Las playas de Tarragona están en perfectas condiciones hoy sábado. Bandera verde en todas ellas. ¡Disfrutad del buen tiempo!',
+                        neighborhood: 'BARRIS MARÍTIMS',
                         status: 'resolved',
                         created_at: new Date().toISOString(),
-                        profiles: { full_name: 'Ayuntamiento TGN', avatar_url: '/logo.svg' },
-                        image_url: 'https://images.unsplash.com/photo-1584620885231-15b026778b75?auto=format&fit=crop&q=80&w=800'
+                        profiles: { full_name: 'Protección Civil TGN', avatar_url: '/logo.svg' },
+                        image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800'
                     },
                     {
-                        id: 'mock-inc-2',
-                        user_id: 'user2',
-                        title: '🔑 Llaves perdidas',
-                        description: 'He encontrado un juego de llaves con un llavero de los Minions en la Rambla Nova, cerca del balcón.',
+                        id: 'mock-inc-sat-2',
+                        user_id: 'user3',
+                        title: '🐕 Perro encontrado',
+                        description: 'He encontrado un Beagle cachorro cerca del Parque de la Ciudad hoy a las 12:00. Muy asustado pero bien. Sin collar.',
                         neighborhood: 'CENTRO',
                         status: 'open',
-                        contact_info: 'Dejadas en la cafetería Viena',
-                        created_at: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(),
-                        profiles: { full_name: 'Carlos M.', avatar_url: 'https://i.pravatar.cc/150?u=carlos' }
+                        contact_info: '622 33 44 55 (Marta)',
+                        created_at: new Date(Date.now() - 1000 * 60 * 60 * 3).toISOString(),
+                        profiles: { full_name: 'Marta G.', avatar_url: 'https://i.pravatar.cc/150?u=marta' }
                     }
                 ];
+
 
                 // Merge real data with mock data, avoiding duplicates if possible (simple merge here)
                 setIncidents([...data, ...mockIncidents]);

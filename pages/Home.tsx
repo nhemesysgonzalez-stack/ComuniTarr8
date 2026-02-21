@@ -157,82 +157,60 @@ const Home: React.FC = () => {
           .or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`)
           .order('created_at', { ascending: false })
           .limit(3);
-        const fridayLentNews = {
-          id: 'friday-lent-2026',
-          title: "🐟 Viernes de Cuaresma",
-          content: "Hoy es primer viernes de Cuaresma. Los mercados ofrecen el tradicional bacalao y potaje de vigilia. ¡No te quedes sin probarlo!",
-          category: "TRADICIÓN",
+        const saturdaySunNews = {
+          id: 'saturday-sun-2026',
+          title: "☀️ Sábado de Sol en la Rambla",
+          content: "Tarragona brilla este sábado. Las terrazas de la Rambla Nova y la Part Alta están a rebosar. ¡Disfruta del buen tiempo vecinal!",
+          category: "ACTUALIDAD",
           neighborhood: "GENERAL",
-          itinerary: "• Plato: Potaje con bacalao\n• Lugar: Mercat Central / Restaurantes\n• Info: Gastronomía TGN",
+          itinerary: "• Tiempo: Soleado 17°C\n• Plan: Vermut en el Fórum\n• Ambiente: Familiar y Festivo",
           link_url: "/business-directory",
           created_at: new Date().toISOString()
         };
 
         const weekendAgendaNews = {
           id: 'weekend-agenda-feb',
-          title: "🎭 Agenda Cultural: Fin de Semana",
-          content: "Teatro Metropol presenta 'La Vida es Sueño' este sábado. Últimas entradas disponibles. Domingo: Ruta guiada por la Muralla.",
+          title: "🎭 Teatro: 'La Vida es Sueño'",
+          content: "Esta noche a las 20:30h en el Teatro Metropol. Quedan pocas entradas en taquilla. ¡Cultura de barrio!",
           category: "CULTURA",
           neighborhood: "CENTRO",
-          itinerary: "• Sábado: Teatro 20h\n• Domingo: Ruta 11h\n• Tickets: TarracoTicket",
+          itinerary: "• Hoy: Función 20:30h\n• Mañana: Matinal 12:00h\n• Lugar: Rambla Nova",
           link_url: "/calendar",
           created_at: new Date().toISOString()
         };
 
         const pharmacyGuardNews = {
           id: 'img-pharmacy-weekend',
-          title: "💊 Farmacias de Guardia (Finde)",
-          content: "Consulta las farmacias abiertas 24h para este fin de semana en tu barrio. Prevención ante todo.",
+          title: "💊 Farmacias de Guardia",
+          content: "Recordatorio: Farmacias abiertas hoy sábado tarde y noche en Serrallo, Bonavista y Sant Pere i Sant Pau.",
           category: "SALUD",
           neighborhood: "GENERAL",
-          itinerary: "• Centro: Fcia. Imperial\n• Ponent: Fcia. Torreforta\n• Norte: Fcia. San Pedro",
+          itinerary: "• Serrallo: Fcia. Marítima\n• Centro: Fcia. La Font\n• Ponent: Fcia. Campclar",
           link_url: "/services",
           created_at: new Date().toISOString()
         };
 
-        const civilProtectionNews = { id: 'civil-prot-wind', title: "💨 Aviso: Viento Moderado", content: "Se espera mistral moderado este fin de semana. Asegurad toldos y macetas en balcones.", category: "SEGURIDAD", neighborhood: "GENERAL", itinerary: "• Riesgo: Bajo/Medio\n• Racha máx: 60km/h\n• Fuente: Meteocat", link_url: "/map", created_at: new Date().toISOString() };
+        const civilProtectionNews = { id: 'civil-prot-wind', title: "🌊 Calma en la Costa", content: "Estado del mar excelente para pasear por el Camino de Ronda. Bandera verde en todas las calas.", category: "SEGURIDAD", neighborhood: "GENERAL", itinerary: "• Mar: Llana\n• Viento: Brisa suave\n• Info: Creu Roja TGN", link_url: "/map", created_at: new Date().toISOString() };
 
         const volunteeringNews = {
           id: 'vol-weekend-clean',
-          title: "🌿 Voluntariado: Limpieza Playa",
-          content: "Grupo de vecinos organiza recogida de plásticos en la playa del Miracle este sábado por la mañana. ¡Únete!",
+          title: "🌿 Voluntariado: Éxito en el Miracle",
+          content: "Más de 30 vecinos han participado esta mañana en la limpieza de la playa. ¡Gracias a todos por este gran inicio de sábado!",
           category: "SOLIDARIO",
           neighborhood: "BARRIS MARÍTIMS",
-          itinerary: "• Hora: Sábado 10:00h\n• Punto: Fortí de la Reina\n• Traer: Guantes",
+          itinerary: "• Participantes: 32\n• Recogido: 15kg plásticos\n• Próximo: Sábado que viene",
           link_url: "/volunteering",
           created_at: new Date().toISOString()
         };
 
         const jobOfferWeekend = {
           id: 'job-weekend-waiter',
-          title: "💼 EMPLEO: Camarero/a Extra Finde",
-          content: "Restaurante en el Puerto busca personal para refuerzo de fin de semana. Experiencia requerida.",
+          title: "💼 EMPLEO: Refuerzo para Mañana",
+          content: "Cafetería en la Part Alta busca extra para servicio de domingo mañana. Contacto urgente.",
           category: "EMPLEO",
-          neighborhood: "EL SERRALLO",
-          itinerary: "• Horario: V-S-D Noches\n• Sueldo: Competitivo\n• Contacto: 611 22 33 44 (Jordi)",
-          link_url: "/services",
-          created_at: new Date().toISOString()
-        };
-
-        const marketSaturday = {
-          id: 'market-sat-2026',
-          title: "🥬 Mercadillo del Fórum",
-          content: "Mañana sábado mercado de frutas y verduras frescas en la Plaza del Fórum. Producto Km0.",
-          category: "COMERCIO",
           neighborhood: "PART ALTA",
-          itinerary: "• Día: Sábado Mañana\n• Puestos: 15\n• Tipo: Ecológico",
-          link_url: "/market",
-          created_at: new Date().toISOString()
-        };
-
-        const culturalAgenda = {
-          id: 'culture-theatre',
-          title: "🎭 Teatro: Programación de Primavera",
-          content: "El Teatro Metropol presenta su nueva temporada. Entradas ya a la venta con descuento para residentes.",
-          category: "CULTURA",
-          neighborhood: "CENTRO",
-          itinerary: "• Web: teatres.tarragona.cat\n• Taquilla: Jueves a Sábado 18-20h",
-          link_url: "/calendar",
+          itinerary: "• Horario: Mañana 09-15h\n• Pago: Por jornada\n• Contacto: 622 11 44 55 (Silvia)",
+          link_url: "/services",
           created_at: new Date().toISOString()
         };
 
@@ -248,7 +226,8 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([fridayLentNews, weekendAgendaNews, pharmacyGuardNews, civilProtectionNews, volunteeringNews, jobOfferWeekend, marketSaturday, ...validFetchedNews].slice(0, 8));
+        setNews([saturdaySunNews, weekendAgendaNews, pharmacyGuardNews, civilProtectionNews, volunteeringNews, jobOfferWeekend, ...validFetchedNews].slice(0, 8));
+
 
         // Fetch Top Neighbors by Karma (XP)
         const { data: profilesData, error: profilesError } = await supabase
