@@ -203,6 +203,39 @@ const Home: React.FC = () => {
           created_at: new Date().toISOString()
         };
 
+        const nasticMatchNews = {
+          id: 'nastic-match-sat',
+          title: "⚽ Juega el Nàstic en Casa",
+          content: "Esta tarde a las 19:00h el Nou Estadi se viste de gala. ¡Ven a apoyar al equipo local contra el Sabadell!",
+          category: "DEPORTES",
+          neighborhood: "LLEVANT",
+          itinerary: "• Inicio: 19:00h\n• Lugar: Nou Estadi\n• Entrada: Desde 15€",
+          link_url: "/calendar",
+          created_at: new Date().toISOString()
+        };
+
+        const antiqueMarketNews = {
+          id: 'antique-market-cathedral',
+          title: "💎 Mercadillo de Antigüedades",
+          content: "Últimas horas en la Plaça de la Seu. Muebles, discos y tesoros vintage de nuestros vecinos.",
+          category: "OCIO",
+          neighborhood: "PART ALTA",
+          itinerary: "• Horario: Hasta 14:30h\n• Lugar: Catedral\n• Entrada: Gratuita",
+          link_url: "/marketplace",
+          created_at: new Date().toISOString()
+        };
+
+        const salaZeroNews = {
+          id: 'sala-zero-party',
+          title: "🎸 Concierto: Indie Night en Sala Zero",
+          content: "La mejor música alternativa esta noche en el Puerto. Apertura de puertas a las 23:30h.",
+          category: "NOCHE",
+          neighborhood: "BARRIS MARÍTIMS",
+          itinerary: "• Apertura: 23:30h\n• Estilo: Indie/Rock\n• Ubicación: Carrer Sant Magí",
+          link_url: "/calendar",
+          created_at: new Date().toISOString()
+        };
+
         const jobOfferWeekend = {
           id: 'job-weekend-waiter',
           title: "💼 EMPLEO: Refuerzo para Mañana",
@@ -226,7 +259,18 @@ const Home: React.FC = () => {
           return diffDays <= 7; // Only show news from the last week
         });
 
-        setNews([saturdaySunNews, weekendAgendaNews, pharmacyGuardNews, civilProtectionNews, volunteeringNews, jobOfferWeekend, ...validFetchedNews].slice(0, 8));
+        setNews([
+          saturdaySunNews,
+          nasticMatchNews,
+          antiqueMarketNews,
+          weekendAgendaNews,
+          salaZeroNews,
+          pharmacyGuardNews,
+          civilProtectionNews,
+          volunteeringNews,
+          jobOfferWeekend,
+          ...validFetchedNews
+        ].slice(0, 8));
 
 
         // Fetch Top Neighbors by Karma (XP)
