@@ -40,29 +40,15 @@ const Patrols: React.FC = () => {
           .order('created_at', { ascending: false })
       );
 
-      const mockPatrols: PatrolGroup[] = [
-        {
-          id: 'p-sat-1',
-          creator_id: 'v1',
-          name: 'Patrulla Sábado Noche 🌙',
-          description: 'Ronda nocturna especial de sábado noche por la Parte Alta y Marina. Salida 22:30h desde Plaza de la Font. Objetivo: asegurar el descanso vecinal en zonas de ocio.',
-          neighborhood: 'PART ALTA',
-          contact_info: '622 33 44 55 (Jordi)',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'p-sun-1',
-          creator_id: 'v2',
-          name: 'Apoyo Carrera Popular 🚸',
-          description: 'Grupo de acompañamiento y señalización para la carrera de mañana domingo. Salida desde Paseo Marítimo a las 09:00h. ¡Últimos voluntarios!',
-          neighborhood: 'BARRIS MARÍTIMS',
-          contact_info: '611 99 88 77 (Ana)',
-          created_at: new Date().toISOString()
-        }
+      // Filter out old mock patrols that might be in the database
+      const filteredDbData = (data || []).filter(p =>
+        !p.name.includes("Sábado Noche") &&
+        !p.name.includes("Carrera Popular")
+      );
 
-      ];
+      const patrolExamples: PatrolGroup[] = [];
 
-      setPatrols(data && data.length > 0 ? data : mockPatrols);
+      setPatrols(filteredDbData.length > 0 ? filteredDbData : patrolExamples);
     } catch (e) {
       console.error(e);
     } finally {

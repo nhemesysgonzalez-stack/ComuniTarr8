@@ -157,96 +157,6 @@ const Home: React.FC = () => {
           .or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`)
           .order('created_at', { ascending: false })
           .limit(3);
-        const saturdaySunNews = {
-          id: 'saturday-sun-2026',
-          title: "☀️ Sábado de Sol en la Rambla",
-          content: "Tarragona brilla este sábado. Las terrazas de la Rambla Nova y la Part Alta están a rebosar. ¡Disfruta del buen tiempo vecinal!",
-          category: "ACTUALIDAD",
-          neighborhood: "GENERAL",
-          itinerary: "• Tiempo: Soleado 17°C\n• Plan: Vermut en el Fórum\n• Ambiente: Familiar y Festivo",
-          link_url: "/business-directory",
-          created_at: new Date().toISOString()
-        };
-
-        const weekendAgendaNews = {
-          id: 'weekend-agenda-feb',
-          title: "🎭 Teatro: 'La Vida es Sueño'",
-          content: "Esta noche a las 20:30h en el Teatro Metropol. Quedan pocas entradas en taquilla. ¡Cultura de barrio!",
-          category: "CULTURA",
-          neighborhood: "CENTRO",
-          itinerary: "• Hoy: Función 20:30h\n• Mañana: Matinal 12:00h\n• Lugar: Rambla Nova",
-          link_url: "/calendar",
-          created_at: new Date().toISOString()
-        };
-
-        const pharmacyGuardNews = {
-          id: 'img-pharmacy-weekend',
-          title: "💊 Farmacias de Guardia",
-          content: "Recordatorio: Farmacias abiertas hoy sábado tarde y noche en Serrallo, Bonavista y Sant Pere i Sant Pau.",
-          category: "SALUD",
-          neighborhood: "GENERAL",
-          itinerary: "• Serrallo: Fcia. Marítima\n• Centro: Fcia. La Font\n• Ponent: Fcia. Campclar",
-          link_url: "/services",
-          created_at: new Date().toISOString()
-        };
-
-        const civilProtectionNews = { id: 'civil-prot-wind', title: "🌊 Calma en la Costa", content: "Estado del mar excelente para pasear por el Camino de Ronda. Bandera verde en todas las calas.", category: "SEGURIDAD", neighborhood: "GENERAL", itinerary: "• Mar: Llana\n• Viento: Brisa suave\n• Info: Creu Roja TGN", link_url: "/map", created_at: new Date().toISOString() };
-
-        const volunteeringNews = {
-          id: 'vol-weekend-clean',
-          title: "🌿 Voluntariado: Éxito en el Miracle",
-          content: "Más de 30 vecinos han participado esta mañana en la limpieza de la playa. ¡Gracias a todos por este gran inicio de sábado!",
-          category: "SOLIDARIO",
-          neighborhood: "BARRIS MARÍTIMS",
-          itinerary: "• Participantes: 32\n• Recogido: 15kg plásticos\n• Próximo: Sábado que viene",
-          link_url: "/volunteering",
-          created_at: new Date().toISOString()
-        };
-
-        const nasticMatchNews = {
-          id: 'nastic-match-sat',
-          title: "⚽ Juega el Nàstic en Casa",
-          content: "Esta tarde a las 19:00h el Nou Estadi se viste de gala. ¡Ven a apoyar al equipo local contra el Sabadell!",
-          category: "DEPORTES",
-          neighborhood: "LLEVANT",
-          itinerary: "• Inicio: 19:00h\n• Lugar: Nou Estadi\n• Entrada: Desde 15€",
-          link_url: "/calendar",
-          created_at: new Date().toISOString()
-        };
-
-        const antiqueMarketNews = {
-          id: 'antique-market-cathedral',
-          title: "💎 Mercadillo de Antigüedades",
-          content: "Últimas horas en la Plaça de la Seu. Muebles, discos y tesoros vintage de nuestros vecinos.",
-          category: "OCIO",
-          neighborhood: "PART ALTA",
-          itinerary: "• Horario: Hasta 14:30h\n• Lugar: Catedral\n• Entrada: Gratuita",
-          link_url: "/marketplace",
-          created_at: new Date().toISOString()
-        };
-
-        const salaZeroNews = {
-          id: 'sala-zero-party',
-          title: "🎸 Concierto: Indie Night en Sala Zero",
-          content: "La mejor música alternativa esta noche en el Puerto. Apertura de puertas a las 23:30h.",
-          category: "NOCHE",
-          neighborhood: "BARRIS MARÍTIMS",
-          itinerary: "• Apertura: 23:30h\n• Estilo: Indie/Rock\n• Ubicación: Carrer Sant Magí",
-          link_url: "/calendar",
-          created_at: new Date().toISOString()
-        };
-
-        const jobOfferWeekend = {
-          id: 'job-weekend-waiter',
-          title: "💼 EMPLEO: Refuerzo para Mañana",
-          content: "Cafetería en la Part Alta busca extra para servicio de domingo mañana. Contacto urgente.",
-          category: "EMPLEO",
-          neighborhood: "PART ALTA",
-          itinerary: "• Horario: Mañana 09-15h\n• Pago: Por jornada\n• Contacto: 622 11 44 55 (Silvia)",
-          link_url: "/services",
-          created_at: new Date().toISOString()
-        };
-
         const fetchedNews = !newsError && newsData ? newsData : [];
         const today = new Date();
         today.setHours(0, 0, 0, 0);
@@ -256,21 +166,52 @@ const Home: React.FC = () => {
           const nDate = new Date(n.created_at);
           const diffTime = Math.abs(today.getTime() - nDate.getTime());
           const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-          return diffDays <= 7; // Only show news from the last week
+          return diffDays <= 14; // Only show news from the last 2 weeks
         });
 
-        setNews([
-          saturdaySunNews,
-          nasticMatchNews,
-          antiqueMarketNews,
-          weekendAgendaNews,
-          salaZeroNews,
-          pharmacyGuardNews,
-          civilProtectionNews,
-          volunteeringNews,
-          jobOfferWeekend,
-          ...validFetchedNews
-        ].slice(0, 8));
+        const realNewsExamples = [
+          {
+            id: 'real-hans-zimmer',
+            title: "🕯️ Candlelight: Lo Mejor de Hans Zimmer",
+            content: "Concierto a la luz de las velas en El Seminario de Tarragona. Una experiencia única repasando las bandas sonoras más icónicas del cine.",
+            category: "CULTURA",
+            neighborhood: "PART ALTA",
+            itinerary: "• Hora: 19:00h y 21:00h\n• Lugar: El Seminari Centre Tarraconense\n• Entrada: Consultar web oficial",
+            link_url: "https://feverup.com/es/tarragona/candlelight",
+            created_at: new Date().toISOString()
+          },
+          {
+            id: 'real-rallye-trepat',
+            title: "🏁 III Rallye del Trepat 2026",
+            content: "Llega la adrenalina a las comarcas de Tarragona con el Campeonato de Cataluña de Rallyes de Tierra. Sigue los tramos con precaución.",
+            category: "DEPORTES",
+            neighborhood: "GENERAL",
+            itinerary: "• Sábado: Tramos especiales\n• Domingo: Entrega de trofeos\n• Seguridad: Manténganse en zonas habilitadas",
+            created_at: new Date().toISOString()
+          },
+          {
+            id: 'real-carnaval-cambrils',
+            title: "🎭 Rúa de Carnaval en Cambrils",
+            content: "Hoy sábado se celebra la gran rúa aplazada. Disfraces, música y comparsas recorrerán las calles del Puerto y la Villa.",
+            category: "FIESTAS",
+            neighborhood: "COSTA",
+            itinerary: "• Salida: 17:00h desde Paseo Marítimo\n• Recorrido: Por el Puerto y Centro\n• Final: Fiesta joven",
+            created_at: new Date().toISOString()
+          }
+        ];
+
+        setNews([...realNewsExamples, ...validFetchedNews].slice(0, 8));
+
+        // Poll Example
+        const pollExample = {
+          id: 'poll-parque-ejemplo',
+          question: '¿Qué mejora priorizarías para el Parque de la Ciudad este año?',
+          options: ['Más zonas de sombra y árboles', 'Circuito de Calistenia nuevo', 'Mejorar iluminación nocturna', 'Zonas de juego infantil naturalized'],
+          category: 'MEJORAS URBANA',
+          neighborhood: 'GENERAL',
+          created_at: new Date().toISOString()
+        };
+        setCurrentPoll(pollExample);
 
 
         // Fetch Top Neighbors by Karma (XP)
@@ -433,14 +374,19 @@ const Home: React.FC = () => {
     } catch (err) { console.error(err); }
   };
 
-  const currentPoll = {
-    id: 'poll-rambla-focus',
-    question: '¿Qué prioridad debería tener la reforma de la Rambla?',
-    options: ['Más árboles y zonas de sombra', 'Eliminar carriles de coche', 'Espacios para terrazas y comercio', 'Zonas de juego infantil y bancos'],
-    category: 'PROYECTO RAMBLA',
-    neighborhood: 'CENTRO',
-    created_at: new Date().toISOString()
-  };
+  const [currentPoll, setCurrentPoll] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchPoll = async () => {
+      const { data } = await supabase
+        .from('polls')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(1);
+      if (data && data[0]) setCurrentPoll(data[0]);
+    };
+    fetchPoll();
+  }, []);
 
   return (
     <div className="p-4 md:p-10 max-w-7xl mx-auto space-y-12 font-sans pb-20 relative">
@@ -614,64 +560,52 @@ const Home: React.FC = () => {
               </h2>
               <span className="text-[10px] font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-1 rounded-lg">ACTIVA</span>
             </div>
-            <div className="bg-gradient-to-br from-emerald-600 to-teal-700 rounded-[32px] p-8 text-white shadow-xl shadow-emerald-600/20 space-y-6">
-              <div>
-                <h3 className="text-lg font-black uppercase mb-1">¡Más Verde en la Rambla!</h3>
-                <p className="text-[11px] font-bold opacity-80 leading-relaxed mb-4">
-                  Queremos que la nueva Rambla peatonal sea un pulmón para Tarragona. Únete a la petición formal.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-[10px] font-black uppercase">
-                    <span>857 Apoyos</span>
-                    <span>Objetivo: 1,000</span>
-                  </div>
-                  <div className="h-2 bg-white/20 rounded-full overflow-hidden">
-                    <motion.div initial={{ width: 0 }} animate={{ width: '85.7%' }} className="h-full bg-white shadow-[0_0_10px_rgba(255,255,255,1)]" />
-                  </div>
-                </div>
+            <section className="space-y-4">
+              <div className="flex items-center justify-between">
+                <h2 className="text-xl font-black flex items-center gap-2">
+                  <span className="material-symbols-outlined text-emerald-500">campaign</span>
+                  Iniciativas del Mes
+                </h2>
               </div>
-              <button
-                onClick={() => {
-                  alert('¡Gracias por tu apoyo! Has sumado +50 XP a tu perfil.');
-                  confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-                }}
-                className="w-full py-4 bg-white text-emerald-700 rounded-2xl font-black uppercase text-[10px] tracking-widest hover:scale-105 transition-all shadow-lg"
-              >
-                APOYAR INICIATIVA
-              </button>
-            </div>
+              <div className="bg-gray-50 dark:bg-gray-800/50 p-8 rounded-[32px] border-2 border-dashed border-gray-200 dark:border-gray-700 text-center">
+                <p className="text-xs text-gray-500">Descubre iniciativas en la sección de Solidaridad.</p>
+                <Link to="/support-circles" className="text-[10px] font-black text-primary uppercase mt-2 block tracking-widest">Ver Círculos de Apoyo →</Link>
+              </div>
+            </section>
           </section>
 
-          <section className="space-y-4">
-            <h2 className="text-xl font-black flex items-center gap-2">
-              <span className="material-symbols-outlined text-purple-500">how_to_vote</span>
-              Encuesta del Barrio
-            </h2>
-            <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 border border-gray-100 dark:border-gray-700 shadow-sm space-y-4">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="px-3 py-1 bg-purple-500/10 text-purple-500 rounded-full text-[10px] font-black uppercase tracking-[0.2em]">{currentPoll.category}</span>
-                <span className="text-[10px] font-bold text-gray-400 dark:text-gray-500">• {new Date(currentPoll.created_at).toLocaleDateString()}</span>
+          {currentPoll && (
+            <section className="space-y-4">
+              <h2 className="text-xl font-black flex items-center gap-2">
+                <span className="material-symbols-outlined text-purple-500">how_to_vote</span>
+                Encuesta del Barrio
+              </h2>
+              <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 border border-gray-100 dark:border-gray-700 shadow-sm space-y-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="px-3 py-1 bg-purple-500/10 text-purple-500 rounded-full text-[10px] font-black uppercase tracking-[0.2em]">{currentPoll.category}</span>
+                  <span className="text-[10px] font-bold text-gray-400 dark:text-gray-500">• {new Date(currentPoll.created_at).toLocaleDateString()}</span>
+                </div>
+                <h3 className="text-lg font-black dark:text-white leading-tight mb-4">{currentPoll.question}</h3>
+                <div className="space-y-3">
+                  {(currentPoll.options || []).map((opt: string, i: number) => (
+                    <button
+                      key={i}
+                      onClick={() => {
+                        const confirmVote = window.confirm(`¿Quieres registrar tu voto para ${opt}?`);
+                        if (confirmVote) {
+                          alert(`¡Gracias! Tu voto para ${opt} ha sido registrado correctamente.`);
+                        }
+                      }}
+                      className="p-4 rounded-2xl border-2 border-gray-100 dark:border-gray-800 hover:border-primary hover:bg-primary/5 transition-all text-left group/btn w-full flex items-center justify-between"
+                    >
+                      <span className="text-xs font-black dark:text-gray-200 group-hover/btn:text-primary transition-colors uppercase tracking-tight">{opt}</span>
+                      <span className="material-symbols-outlined text-sm opacity-0 group-hover/btn:opacity-100 transition-all">how_to_vote</span>
+                    </button>
+                  ))}
+                </div>
               </div>
-              <h3 className="text-lg font-black dark:text-white leading-tight mb-4">{currentPoll.question}</h3>
-              <div className="space-y-3">
-                {currentPoll.options.map((opt, i) => (
-                  <button
-                    key={i}
-                    onClick={() => {
-                      const confirmVote = window.confirm(`¿Quieres registrar tu voto para ${opt}?`);
-                      if (confirmVote) {
-                        alert(`¡Gracias! Tu voto para ${opt} ha sido registrado correctamente.`);
-                      }
-                    }}
-                    className="p-4 rounded-2xl border-2 border-gray-100 dark:border-gray-800 hover:border-primary hover:bg-primary/5 transition-all text-left group/btn w-full flex items-center justify-between"
-                  >
-                    <span className="text-xs font-black dark:text-gray-200 group-hover/btn:text-primary transition-colors uppercase tracking-tight">{opt}</span>
-                    <span className="material-symbols-outlined text-sm opacity-0 group-hover/btn:opacity-100 transition-all">how_to_vote</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </section>
+            </section>
+          )}
         </div>
       </div>
 

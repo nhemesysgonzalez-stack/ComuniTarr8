@@ -41,89 +41,6 @@ const NeighborhoodCalendar: React.FC = () => {
     fetchEvents();
   }, [user?.user_metadata?.neighborhood]);
 
-  // Official Events for Friday Feb 20 and upcoming weekend 2026
-  const officialEvents: Event[] = [
-    {
-      id: 'evt-sat-mercat-forum',
-      creator_id: 'admin',
-      title: "🥬 Mercat de Productors - Fòrum",
-      description: "Mercado de productores locales. Fruta, verdura y artesanía de proximidad. ¡Abierto ahora hasta las 14:30h!",
-      event_date: '2026-02-21',
-      event_time: '09:00',
-      location: 'Plaça del Fòrum, Part Alta',
-      category: 'Comercio',
-      neighborhood: 'PART ALTA',
-      contact_info: 'Ajuntament TGN',
-      created_at: new Date().toISOString()
-    },
-    {
-      id: 'evt-sat-teatro-tarde',
-      creator_id: 'admin',
-      title: "🎭 Teatro Metropol: 'La Vida es Sueño'",
-      description: "Función especial de sábado tarde. Últimas entradas en taquilla. ¡No te lo pierdas!",
-      event_date: '2026-02-21',
-      event_time: '20:30',
-      location: 'Teatro Metropol, Rambla Nova',
-      category: 'Cultura',
-      neighborhood: 'CENTRO',
-      contact_info: '977 24 47 95 (Taquilla)',
-      created_at: new Date().toISOString()
-    },
-    {
-      id: 'evt-sat-vermut-serrallo',
-      creator_id: 'admin',
-      title: "🍹 Vermut Musical en el Serrallo",
-      description: "Música en directo y el mejor ambiente del puerto. Tapas de bacalao gratis con tu consumición.",
-      event_date: '2026-02-21',
-      event_time: '12:30',
-      location: 'Moll de la Costa',
-      category: 'Ocio',
-      neighborhood: 'EL SERRALLO',
-      contact_info: 'Bares del Puerto',
-      created_at: new Date().toISOString()
-    },
-    {
-      id: 'evt-sun-running',
-      creator_id: 'admin',
-      title: "🏃 Carrera Popular TGN",
-      description: "5K solidaria por el Paseo Marítimo. Beneficia a Càritas Diocesana. Inscripción en la meta desde las 9h mañana.",
-      event_date: '2026-02-22',
-      event_time: '10:00',
-      location: 'Paseo Marítimo',
-      category: 'Deporte',
-      neighborhood: 'BARRIS MARÍTIMS',
-      contact_info: '📧 carrera@tgnrunning.cat',
-      created_at: new Date().toISOString()
-    },
-    {
-      id: 'evt-sun-castellers',
-      creator_id: 'admin',
-      title: "🏰 Exhibición Castellera",
-      description: "Pilares de honor y figuras de construcción. Inicio de la pre-temporada con las colles locales.",
-      event_date: '2026-02-22',
-      event_time: '12:00',
-      location: 'Plaça de la Font',
-      category: 'Cultura',
-      neighborhood: 'CENTRO',
-      contact_info: 'Coordinadora de Colles',
-      created_at: new Date().toISOString()
-    },
-    {
-      id: 'evt-mon-limpieza',
-      creator_id: 'admin',
-      title: "🧹 Brigada de Limpieza Vecinal",
-      description: "Quedada para mantener el entorno de la Anilla Verde. Traer ganas de colaborar.",
-      event_date: '2026-02-23',
-      event_time: '09:30',
-      location: 'Parking de l\'Anifiteatre',
-      category: 'Solidario',
-      neighborhood: 'CENTRO',
-      contact_info: 'Comissió de Barri',
-      created_at: new Date().toISOString()
-    }
-
-  ];
-
   const fetchEvents = async () => {
     setLoading(true);
     try {
@@ -132,29 +49,67 @@ const NeighborhoodCalendar: React.FC = () => {
           .from('events')
           .select('*')
           .or(`neighborhood.eq.${user?.user_metadata?.neighborhood || 'GENERAL'},neighborhood.eq.GENERAL`)
-          .gte('event_date', new Date().toISOString().split('T')[0]) // Filter strictly future/today events on DB query if possible, or filter locally
+          .gte('event_date', new Date().toISOString().split('T')[0])
           .order('event_date', { ascending: true })
       );
 
       const dbEvents = data || [];
-
-      // Combine official events (filtering only future ones) + DB events
       const today = new Date();
       today.setHours(0, 0, 0, 0);
 
-      const allEvents = [...officialEvents, ...dbEvents].filter((e) => {
+      const realEventsExamples: Event[] = [
+        {
+          id: 'real-hans-zimmer-evt',
+          creator_id: 'admin',
+          title: "🕯️ Candlelight: Lo Mejor de Hans Zimmer",
+          description: "Concierto a la luz de las velas repasando las bandas sonoras más icónicas del cine.",
+          event_date: '2026-02-21',
+          event_time: '19:00',
+          location: 'El Seminari Centre Tarraconense',
+          category: 'Cultura',
+          neighborhood: 'PART ALTA',
+          contact_info: 'Fever Up Official',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'real-rallye-trepat-evt',
+          creator_id: 'admin',
+          title: "🏁 III Rallye del Trepat 2026",
+          description: "Campeonato de Cataluña de Rallyes de Tierra. Máxima precaución en los tramos.",
+          event_date: '2026-02-21',
+          event_time: '09:00',
+          location: 'Valls / Conca de Barberà',
+          category: 'Deporte',
+          neighborhood: 'GENERAL',
+          contact_info: 'Federació Catalana Aut.',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'real-carnaval-cambrils-evt',
+          creator_id: 'admin',
+          title: "🎭 Gran Rúa de Carnaval Cambrils",
+          description: "Desfile de carrozas y comparsas por el centro de Cambrils y el Puerto.",
+          event_date: '2026-02-21',
+          event_time: '17:00',
+          location: 'Cambrils (Puerto)',
+          category: 'Fiesta',
+          neighborhood: 'COSTA',
+          contact_info: 'Ajuntament de Cambrils',
+          created_at: new Date().toISOString()
+        }
+      ];
+
+      const allEvents = [...realEventsExamples, ...dbEvents].filter((e) => {
         const eDate = new Date(e.event_date);
-        return eDate >= today; // Only show events from today onwards
+        return eDate >= today;
       }).sort((a, b) => new Date(a.event_date).getTime() - new Date(b.event_date).getTime());
 
       // Deduplicate by ID just in case
       const uniqueEvents = Array.from(new Map(allEvents.map(item => [item.id, item])).values());
-
       setEvents(uniqueEvents);
     } catch (e) {
       console.error(e);
-      // Fallback to official events if DB fails
-      setEvents(officialEvents.filter(e => new Date(e.event_date) >= new Date()));
+      setEvents([]);
     } finally {
       setLoading(false);
     }
@@ -197,7 +152,6 @@ const NeighborhoodCalendar: React.FC = () => {
       if (!success) throw new Error('Falló la creación');
       alert('¡Evento creado con éxito!');
       setShowEventModal(false);
-      // Reset form
       setEventTitle('');
       setEventDescription('');
       setEventDate('');
@@ -244,7 +198,6 @@ const NeighborhoodCalendar: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        {/* Calendar Grid */}
         <div className="lg:col-span-2 bg-white dark:bg-surface-dark rounded-[40px] p-8 md:p-10 border border-gray-100 dark:border-gray-800 shadow-2xl">
           <div className="grid grid-cols-7 gap-1 md:gap-4 mb-8">
             {['L', 'M', 'X', 'J', 'V', 'S', 'D'].map(d => (
@@ -278,7 +231,6 @@ const NeighborhoodCalendar: React.FC = () => {
           </div>
         </div>
 
-        {/* Upcoming Events */}
         <div className="space-y-8">
           <h2 className="text-xl font-black dark:text-white tracking-widest uppercase px-4">Próximos Eventos</h2>
 
@@ -343,7 +295,6 @@ const NeighborhoodCalendar: React.FC = () => {
         </div>
       </div>
 
-      {/* Event Creation Modal */}
       <AnimatePresence>
         {showEventModal && (
           <motion.div
@@ -375,7 +326,7 @@ const NeighborhoodCalendar: React.FC = () => {
                     value={eventTitle}
                     onChange={(e) => setEventTitle(e.target.value)}
                     required
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
+                    className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
                     placeholder="Ej: Cena de Navidad del Barrio"
                   />
                 </div>
@@ -388,7 +339,7 @@ const NeighborhoodCalendar: React.FC = () => {
                       value={eventDate}
                       onChange={(e) => setEventDate(e.target.value)}
                       required
-                      className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
+                      className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
                     />
                   </div>
                   <div>
@@ -398,7 +349,7 @@ const NeighborhoodCalendar: React.FC = () => {
                       value={eventTime}
                       onChange={(e) => setEventTime(e.target.value)}
                       required
-                      className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
+                      className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
                     />
                   </div>
                 </div>
@@ -408,7 +359,7 @@ const NeighborhoodCalendar: React.FC = () => {
                   <select
                     value={eventCategory}
                     onChange={(e) => setEventCategory(e.target.value)}
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
+                    className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
                   >
                     <option>Ocio</option>
                     <option>Fiesta</option>
@@ -424,7 +375,7 @@ const NeighborhoodCalendar: React.FC = () => {
                     type="text"
                     value={eventLocation}
                     onChange={(e) => setEventLocation(e.target.value)}
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
+                    className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
                     placeholder="Ej: Plaza Mayor"
                   />
                 </div>
@@ -435,7 +386,7 @@ const NeighborhoodCalendar: React.FC = () => {
                     value={eventDescription}
                     onChange={(e) => setEventDescription(e.target.value)}
                     rows={3}
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none resize-none"
+                    className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white resize-none"
                     placeholder="Detalles del evento..."
                   />
                 </div>
@@ -447,7 +398,7 @@ const NeighborhoodCalendar: React.FC = () => {
                     value={eventContact}
                     onChange={(e) => setEventContact(e.target.value)}
                     required
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
+                    className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
                     placeholder="Teléfono o email"
                   />
                 </div>

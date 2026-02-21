@@ -112,7 +112,6 @@ const Announcements: React.FC = () => {
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [loading, setLoading] = useState(true);
 
-    // Form
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [type, setType] = useState('Info');
@@ -124,51 +123,6 @@ const Announcements: React.FC = () => {
 
     const fetchNotices = async () => {
         setLoading(true);
-        const weatherAlert: Announcement = {
-            id: 'weather-sat-sun',
-            title: "☀️ SÁBADO: Tarde Radiante",
-            content: "Tras el viento de ayer, hoy disfrutamos de un sábado soleado y estable en toda Tarragona. Temperaturas agradables de hasta 17°C ideal para pasear.",
-            category: "INFO",
-            neighborhood: "GENERAL",
-            author_name: "Protección Civil TGN",
-            itinerary: "• Tarde: Soleado 17°C\n• Noche: Despejado 9°C\n• Mañana Dom: Intervalos nubosos\n• Viento: Calma total",
-            created_at: new Date().toISOString()
-        };
-
-        const weekendAgendaNotice: Announcement = {
-            id: 'weekend-agenda-sat',
-            title: "🎭 HOY: Teatro Metropol y Vermuts",
-            content: "Recordatorio: Función de 'La Vida es Sueño' esta noche 20:30h. Durante la tarde, ambiente festivo en el Serrallo con música en directo.",
-            category: "EVENTO",
-            neighborhood: "GENERAL",
-            author_name: "Ajuntament TGN",
-            itinerary: "• Tarde: Música en Serrallo\n• Noche: Teatro Metropol (20:30h)\n• Mañana Dom: Carrera Popular 5K (10h)",
-            link_url: "https://www.tarragona.cat/agenda",
-            created_at: new Date().toISOString()
-        };
-
-        const routineAdvisory: Announcement = {
-            id: 'pharmacy-guard-sat',
-            title: "💊 FARMACIA DE GUARDIA (Sábado)",
-            content: "Turno de guardia hoy sábado y mañana domingo: Farmàcia La Font (C/ Colom, 2). Abierta 24h para cualquier urgencia.",
-            category: "INFO",
-            neighborhood: "GENERAL",
-            author_name: "Col·legi de Farmàcies",
-            itinerary: "• Todo el finde: Farm. La Font\n• Tel: 977 22 11 00\n• Urgencias: 117",
-            created_at: new Date().toISOString()
-        };
-
-        const cleaningSuccess: Announcement = {
-            id: 'clean-beach-success',
-            title: "🌿 ÉXITO: Limpieza en el Miracle",
-            content: "¡Gran jornada de limpieza esta mañana! Más de 30 voluntarios hemos dejado la playa del Miracle impecable. Gracias a todos los que habéis venido.",
-            category: "EXITO",
-            neighborhood: "BARRIS MARÍTIMS",
-            author_name: "Mare Nostrum TGN",
-            created_at: new Date().toISOString()
-        };
-
-
         try {
             const data = await safeSupabaseFetch('announcements',
                 supabase
@@ -189,10 +143,44 @@ const Announcements: React.FC = () => {
                 return diffDays <= 7;
             });
 
-            setNotices([weatherAlert, weekendAgendaNotice, routineAdvisory, cleaningSuccess, ...validFetched]);
+            const realAnnouncementsExamples = [
+                {
+                    id: 'real-hans-zimmer-ann',
+                    title: "🕯️ CONCIERTO CANDLELIGHT HOY",
+                    content: "Disfruta de 'Lo Mejor de Hans Zimmer' a la luz de las velas en el Seminari. Últimas entradas disponibles.",
+                    category: "EVENTO",
+                    author_name: "Cultura TGN",
+                    neighborhood: "PART ALTA",
+                    itinerary: "• Pase 1: 19:00h\n• Pase 2: 21:00h\n• Lugar: El Seminari Centre Tarraconense",
+                    link_url: "https://feverup.com/es/tarragona/candlelight",
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'real-rallye-trepat-ann',
+                    title: "🏁 AVISO: III RALLYE DEL TREPAT",
+                    content: "Este fin de semana se celebra el Rallye del Trepat. Se ruega precaución por el paso de vehículos de competición en tramos rurales.",
+                    category: "URGENTE",
+                    author_name: "Seguretat Vial",
+                    neighborhood: "GENERAL",
+                    itinerary: "• Sábado: Tramos activos de tierra\n• Cierres: Consultar mapa oficial del Rally",
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'real-carnaval-cambrils-ann',
+                    title: "🎭 GRAN RÚA DE CARNAVAL",
+                    content: "El Carnaval de Cambrils celebra hoy su rúa aplazada. ¡Ven a disfrutar de las comparsas!",
+                    category: "EVENTO",
+                    author_name: "Aj. Cambrils",
+                    neighborhood: "COSTA",
+                    itinerary: "• Inicio: 17:00h\n• Punto: Paseo Marítimo Cambrils",
+                    created_at: new Date().toISOString()
+                }
+            ];
+
+            setNotices([...realAnnouncementsExamples, ...validFetched]);
         } catch (e) {
             console.error(e);
-            setNotices([weatherAlert]);
+            setNotices([]);
         } finally {
             setLoading(false);
         }
@@ -212,7 +200,7 @@ const Announcements: React.FC = () => {
             });
 
             if (!success) throw new Error('Falló la creación');
-            await addPoints(30, 15); // Recompensa por informar al barrio
+            await addPoints(30, 15);
             alert('¡Aviso publicado con éxito! +30 XP / +15 ComuniPoints');
             setShowCreateModal(false);
             setTitle('');
@@ -269,7 +257,6 @@ const Announcements: React.FC = () => {
                 </div>
             </main>
 
-            {/* Create Modal */}
             <AnimatePresence>
                 {showCreateModal && (
                     <motion.div
