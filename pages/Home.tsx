@@ -197,6 +197,15 @@ const Home: React.FC = () => {
             neighborhood: "COSTA",
             itinerary: "• Salida: 17:00h desde Paseo Marítimo\n• Recorrido: Por el Puerto y Centro\n• Final: Fiesta joven",
             created_at: new Date().toISOString()
+          },
+          {
+            id: 'real-cultura-libros',
+            title: "🎨 ¡Nuevo Espacio de Cultura y Letras!",
+            content: "Ya puedes consultar los itinerarios de los Centros Cívicos y descubrir el talento literario y urbano de tus vecinos en la sección de Servicios.",
+            category: "CULTURA",
+            neighborhood: "GENERAL",
+            itinerary: "• Sección: Servicios > Cultura\n• Info: Centros Cívicos, Literatura y Arte Urbano\n• Participa: Sube tus propios textos hoy",
+            created_at: new Date().toISOString()
           }
         ];
 

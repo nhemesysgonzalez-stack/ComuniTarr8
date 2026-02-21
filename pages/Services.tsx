@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export const Services: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'emergencias' | 'escolar' | 'mujer' | 'empleo45' | 'tramites' | 'transporte' | 'bullying' | 'voluntariado'>('emergencias');
+  const [activeTab, setActiveTab] = useState<'emergencias' | 'escolar' | 'mujer' | 'empleo45' | 'tramites' | 'transporte' | 'bullying' | 'voluntariado' | 'cultura'>('emergencias');
 
   const renderContent = () => {
     switch (activeTab) {
@@ -521,6 +521,92 @@ export const Services: React.FC = () => {
             </div>
           </div>
         );
+      case 'cultura':
+        return (
+          <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
+            <div className="bg-gradient-to-r from-dr-gold to-orange-500 rounded-[35px] p-8 text-white relative overflow-hidden shadow-2xl">
+              <div className="absolute -right-10 -bottom-10 opacity-10">
+                <span className="material-symbols-outlined text-[200px]">palette</span>
+              </div>
+              <h3 className="text-3xl font-black mb-4 relative z-10 flex items-center gap-2">
+                <span className="material-symbols-outlined text-4xl">theater_comedy</span> CULTURA Y ARTE
+              </h3>
+              <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-bold leading-relaxed">
+                Tarragona es un escenario vivo. Aquí todos los artistas, escritores y creadores tienen su espacio para compartir talento y cultura.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Centros Cívicos */}
+              <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
+                <h4 className="font-black text-orange-600 mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
+                  <span className="material-symbols-outlined">account_balance</span> ITINERARIOS CENTROS CÍVICOS
+                </h4>
+                <div className="space-y-3">
+                  <div className="p-4 bg-orange-50 dark:bg-orange-900/10 rounded-2xl">
+                    <p className="text-sm font-black dark:text-white">Centres Cívics Tarragona</p>
+                    <p className="text-xs text-gray-500 mb-2">Talleres de primavera, exposiciones y cursos en toda la red de centros.</p>
+                    <a href="https://www.tarragona.cat/centres-civics" target="_blank" className="text-[10px] font-black underline uppercase text-orange-600">Ver programación completa</a>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
+                      <span className="text-xs font-bold">C.C. Part Alta</span>
+                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full">ABIERTO</span>
+                    </div>
+                    <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
+                      <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
+                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full">ABIERTO</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Espacio Literatura */}
+              <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
+                <h4 className="font-black text-blue-600 mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
+                  <span className="material-symbols-outlined">menu_book</span> LETRAS DEL BARRIO
+                </h4>
+                <div className="space-y-4">
+                  <div className="border-l-4 border-blue-500 pl-4 py-1">
+                    <p className="text-xs font-black dark:text-white">"Ecos de mi Tierra"</p>
+                    <p className="text-[10px] text-gray-400 font-bold uppercase mb-1">Autor: Ramón D. - Vecino de Ponent</p>
+                    <p className="text-[10px] text-gray-600 dark:text-gray-400 italic">Antología poética que fusiona el alma de la República Dominicana con los cielos de Tarragona.</p>
+                  </div>
+                  <button onClick={() => alert("¡Pronto podrás subir tus propios textos! Estamos preparando el club de lectura online.")} className="w-full py-2 bg-blue-50 text-blue-600 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-blue-100 transition-all">
+                    PUBLICAR MIS TEXTOS
+                  </button>
+                </div>
+              </div>
+
+              {/* Artistas Urbanos */}
+              <div className="md:col-span-2 bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
+                <h4 className="font-black text-dr-red mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
+                  <span className="material-symbols-outlined">brush</span> TALENTO CALLEJERO Y URBANO
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl flex flex-col gap-2">
+                    <div className="size-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center">
+                      <span className="material-symbols-outlined text-3xl opacity-20">music_note</span>
+                    </div>
+                    <p className="text-xs font-black">Conexión Urbana TGN</p>
+                    <p className="text-[9px] text-gray-500 uppercase">Música, Rap y Freestyle en las plazas.</p>
+                  </div>
+                  <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl flex flex-col gap-2">
+                    <div className="size-full aspect-video bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center">
+                      <span className="material-symbols-outlined text-3xl opacity-20">format_paint</span>
+                    </div>
+                    <p className="text-xs font-black">Murales Participativos</p>
+                    <p className="text-[9px] text-gray-500 uppercase">Espacios cedidos para graffiti artístico.</p>
+                  </div>
+                  <div className="p-4 bg-primary/5 rounded-2xl flex flex-col items-center justify-center text-center gap-2 border-2 border-dashed border-primary/20">
+                    <span className="material-symbols-outlined text-primary text-3xl">add_circle</span>
+                    <p className="text-[10px] font-black uppercase text-primary">¿Eres artista?<br />Muéstrate aquí</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
       default:
         return null;
     }
@@ -592,6 +678,14 @@ export const Services: React.FC = () => {
         >
           <span className="material-symbols-outlined text-2xl">volunteer_activism</span>
           <span className="hidden md:block font-black text-xs uppercase tracking-widest">Voluntariado</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('cultura')}
+          className={`p-4 rounded-2xl flex md:flex-row flex-col items-center gap-4 transition-all ${activeTab === 'cultura' ? 'bg-dr-gold text-white shadow-lg shadow-dr-gold/30' : 'bg-white dark:bg-surface-dark text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+        >
+          <span className="material-symbols-outlined text-2xl">palette</span>
+          <span className="hidden md:block font-black text-xs uppercase tracking-widest">Cultura</span>
         </button>
       </div>
 
