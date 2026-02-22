@@ -50,6 +50,25 @@ const Emergency: React.FC = () => {
           </div>
         ))}
       </div>
+
+      {/* Farmacias de Guardia (Crucial for Sunday) */}
+      <div className="bg-emerald-50 dark:bg-emerald-950/20 border-2 border-emerald-100 dark:border-emerald-800 p-8 rounded-[40px] flex flex-col md:flex-row items-center gap-8 shadow-sm">
+        <div className="size-20 bg-emerald-500 text-white rounded-3xl flex items-center justify-center shrink-0 shadow-lg">
+          <span className="material-symbols-outlined text-5xl">medical_information</span>
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h3 className="text-2xl font-black text-emerald-900 dark:text-emerald-400 mb-2 uppercase tracking-tight">Farmacias de Guardia</h3>
+          <p className="text-emerald-700 dark:text-emerald-500 font-medium">Consulta qué farmacias están abiertas hoy domingo en Tarragona y alrededores.</p>
+        </div>
+        <a
+          href="https://www.farmaceuticsdetarragona.org.es/farmacies-de-guardia/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-emerald-600 text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-emerald-700 transition-all shadow-md"
+        >
+          Consultar Lista
+        </a>
+      </div>
     </div>
   );
 };

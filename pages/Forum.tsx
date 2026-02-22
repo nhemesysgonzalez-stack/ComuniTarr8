@@ -74,12 +74,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Maria J.', text: '☀️ ¡Qué tarde más buena! Las terrazas del Serrallo están a tope. 🍹' },
-    { user: 'ComuniTarr 🎭', text: 'Recordatorio: Función de teatro hoy a las 20:30h en el Metropol.' },
-    { user: 'Jordi T.', text: '¿Abren hoy los huertos urbanos por la tarde? 🥬' },
-    { user: 'Pau B.', text: '⚽ ¡Vamos Nàstic! ¿Alguien va al campo mañana? 🔴⚪' },
-    { user: 'Ana G.', text: 'He visto que han puesto un AdBanner nuevo con ofertas locales. ¡Mola! ✨' },
-    { user: 'Mireia R.', text: 'El mercadillo del Fórum ha sido un éxito esta mañana. ¡Buen género! 🥦' }
+    { user: 'Maria J.', text: '☀️ ¡Qué domingo más radiante! Ideal para pasear por la Muralla. 🍦' },
+    { user: 'ComuniTarr 🏁', text: 'En directo: Entrega de trofeos del III Rallye del Trepat en el podio.' },
+    { user: 'Jordi T.', text: '¿Abren hoy el Mercat de Antiguitats en la Catedral? 🏺' },
+    { user: 'Pau B.', text: '⚽ ¡Final del partido! Gran ambiente hoy en el Nou Estadi. 🔴⚪' },
+    { user: 'Ana G.', text: 'He visto que en el Serrallo hay vermut musical. ¡Vámonos! 🍹✨' },
+    { user: 'Mireia R.', text: 'Recordatorio marea baja: Cuidado con las rocas en la playa de la Arrabassada. 🌊' }
   ];
 
 
@@ -115,8 +115,8 @@ const Forum: React.FC = () => {
   useEffect(() => {
     if (!loading && messages.length === 0) {
       const initialSeeds = [
-        { id: 'seed-1', user_id: 'v2', content: '¡Qué viento hace esta mañana! Tened cuidado con las ramas en la Rambla. 🌬️', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'CENTRO', created_at: new Date(Date.now() - 1000 * 60 * 5).toISOString() },
-        { id: 'seed-2', user_id: 'v6', content: '¿Alguien se apunta a la ruta de la muralla este domingo? Dicen que hará sol. ☀️', user_metadata: { full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe' }, neighborhood: 'GENERAL', created_at: new Date(Date.now() - 1000 * 60 * 2).toISOString() }
+        { id: 'seed-1', user_id: 'v2', content: 'Qué tranquilidad de domingo... ¿Alguien sabe si el Mercat de Antiguitats está muy lleno? 🏺', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'PART ALTA', created_at: new Date(Date.now() - 1000 * 60 * 5).toISOString() },
+        { id: 'seed-2', user_id: 'v6', content: 'Bajando al Serrallo para el vermut. ¡Hará un día espectacular! 🍹☀️', user_metadata: { full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe' }, neighborhood: 'GENERAL', created_at: new Date(Date.now() - 1000 * 60 * 2).toISOString() }
       ];
       setMessages(initialSeeds as Message[]);
     }
@@ -156,12 +156,12 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts (Friday / Weekend / Windy)
     let scripts = [
-      "¡Por fin viernes! ¿Qué planes tenéis para el fin de semana? 🎉",
-      "Vaya racha de viento acaba de pegar... ¡Sujetadlo todo! 💨",
-      "¿Habéis visto la programación del Teatro Metropol? Tiene buena pinta. 🎭",
-      "Hoy toca comprar pescado fresco. ¿Alguna pescadería buena en el barrio? 🐟",
-      "¿Sabéis si mañana hay actividades para niños en el Serrallo? 🧒",
-      "He subido fotos del amanecer ventoso a la Galería. ¡El mar está revuelto! 🌊📸"
+      "¡Qué buen domingo! ¿Alguien por el mercadillo de la Catedral? 🏺",
+      "Vaya solazo ha salido hoy... Ideal para caminar por la playa. 🏖️",
+      "¿Habéis visto la entrega de premios del Rallye? ¡Menudo nivel! 🏁",
+      "Hoy toca paella familiar. ¿Algún sitio recomendable que no esté a tope? 🥘",
+      "¿Sabéis si esta tarde abren los museos gratis por ser domingo? 🏛️",
+      "He subido fotos del ambientazo en el Serrallo a la Galería. ¡A tope! 🍹📸"
     ];
 
     // Base reply scripts
@@ -175,22 +175,22 @@ const Forum: React.FC = () => {
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
-      scripts = ["¿Habéis visto las nuevas ofertas para Semana Santa? Ya empiezan a buscar gente en hostelería. 📦", "Empiezo hoy en el nuevo curro, ¡deseadme suerte! 🤞"];
-      replyScripts = [`¡Mucha suerte en tu primer día, ${isReplyTo}!`, `Voy a echar un vistazo a Infojobs, gracias.`];
+      scripts = ["¿Alguien sabe de refuerzos para mañana lunes? Busco algo extra. 📦", "Mañana mi primer día en la ofi nueva, ¡un poco de nervios! 🤞"];
+      replyScripts = [`¡A por todas mañana lunes, ${isReplyTo}!`, `Mira en la sección de Servicios, suelen poner ofertas de última hora.`];
     } else if (currentNeighborhood === 'ENCUENTROS') {
       scripts = [
-        "¿Quién se anima a un afterwork de jueves? 🍻",
-        "Busco compi de gym para ir por las tardes. 💪",
-        "¡Casi fin de semana! ¿Un café para aguantar? ☕✨",
-        "Ayer conocí gente majísima en la asamblea. ¿Repetimos quedada? 😊",
-        "Si alguien quiere ir a correr por el milagro a las 19h, avisad. 🏃‍♂️",
-        "¡Hola! Buscando planes tranquilos para el finde. 👋"
+        "¿Quién se anima a un café de domingo tarde por la Rambla? ☕",
+        "Busco gente para jugar al pádel el próximo martes tarde. 🎾",
+        "¡Qué pereza el lunes! ¿Alguien para un último brindis de fin de semana? 🥂✨",
+        "Ayer estuvo genial el concierto de Hans Zimmer. ¿Alguien más fue? 😊",
+        "Mañana salgo a correr temprano, si alguien se apunta avisad. 🏃‍♂️",
+        "¡Hola! Buscando planes tranquilos para cerrar el domingo. 👋"
       ];
       replyScripts = [
-        `¡Me apunto a ese afterwork, ${isReplyTo}!`,
-        `Yo voy al gimnasio del puerto, si te va bien...`,
-        `¡Café necesario! Dime sitio y hora, ${isReplyTo}.`,
-        `Yo también salgo a correr, si quieres hoy coincidimos. 🏃‍♂️`
+        `¡Me apunto a ese café, ${isReplyTo}!`,
+        `Yo juego a pádel si te falta uno...`,
+        `¡Brindis necesario! Dime sitio, ${isReplyTo}.`,
+        `Yo también iré a correr mañana, te digo algo. 🏃‍♂️`
       ];
     } else if (isHelpRequest) {
       replyScripts = [
@@ -568,7 +568,7 @@ const Forum: React.FC = () => {
               <div className="flex items-center gap-1 opacity-90 cursor-pointer hover:bg-white/20 px-2 py-0.5 rounded-full transition-colors w-fit">
                 <span className="text-[10px] uppercase font-bold tracking-wider">Disponible ▾</span>
               </div>
-              <p className="text-[10px] italic opacity-80 mt-1 truncate">"¡Por fin es viernes! 🎉"</p>
+              <p className="text-[10px] italic opacity-80 mt-1 truncate">"Domingo de relax... ☀️"</p>
             </div>
           </div>
           {/* Decorative Circles */}
@@ -655,23 +655,23 @@ const Forum: React.FC = () => {
           </div>
 
           <div className="px-4 py-2 mt-4">
-            <h2 className="text-xl font-black mb-4 text-center">Empleo Sábado 21</h2>
+            <h2 className="text-xl font-black mb-4 text-center">Empleo Domingo 22</h2>
             <ul className="space-y-4 text-xs md:text-sm">
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🍹 <strong>Refuerzo Domingo (Restaurante)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 El Serrallo • 🕔 Mañana y Tarde • Pago al día • 📞 622 11 00 22 (Juan)</span>
+                🍹 <strong>Refuerzo Hoy (Vermut/Comidas)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 El Serrallo • 🕔 Hasta las 18:00h • Pago al finalizar • 📞 622 11 00 22 (Juan)</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                📦 <strong>Mozo Almacén (Turno Noche)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📧 logistica@tgn.es • Polígono Francolí • Incorporación hoy • 📞 977 44 33 22</span>
+                🧹 <strong>Limpieza Urgente Local</strong>
+                <br /><span className="text-gray-500 text-[10px]">📍 Eixample • 🕔 Tarde de hoy • 15€/h • 📞 600 55 44 33 (Ana)</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🧹 <strong>Limpieza Cristales (Pisos)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Part Alta • 🕔 Flexible • 14€/h • 📞 600 99 88 11 (Silvia)</span>
+                🚛 <strong>Chofer Lunes (Carga/Descarga)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📧 logistica@tgn.es • Polígono Francolí • Incorporación mañana • 📞 977 44 33 22</span>
               </li>
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🚲 <strong>Repartidor/a Bici (Sábado tarde)</strong>
-                <br /><span className="text-gray-500 text-[10px]">📞 611 00 55 44 • Zona Eixample • ¡Buscamos 2 personas ya!</span>
+                🚲 <strong>Repartidor/a Extra (Cena hoy)</strong>
+                <br /><span className="text-gray-500 text-[10px]">📞 611 00 55 44 • Zona Centro • ¡Buscamos 2 personas para pico de cena!</span>
               </li>
             </ul>
 

@@ -145,34 +145,33 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'real-hans-zimmer-ann',
-                    title: "🕯️ CONCIERTO CANDLELIGHT HOY",
-                    content: "Disfruta de 'Lo Mejor de Hans Zimmer' a la luz de las velas en el Seminari. Últimas entradas disponibles.",
+                    id: 'real-rallye-trepat-close',
+                    title: "🏁 CLAUSURA III RALLYE DEL TREPAT",
+                    content: "Finaliza el fin de semana de rallye. Hoy entrega de trofeos y apertura progresiva de caminos rurales.",
+                    category: "INFO",
+                    author_name: "Seguretat Vial",
+                    neighborhood: "GENERAL",
+                    itinerary: "• Clausura: 13:00h\n• Podio: Zona de Meta\n• Caminos: Abiertos a partir de las 18:00h",
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'real-mercat-cat-ann',
+                    title: "🏺 MERCAT DE ANTIGUITATS HOY",
+                    content: "No te pierdas el mercadillo dominical de antigüedades. Objetos únicos y ambiente histórico en la Part Alta.",
                     category: "EVENTO",
                     author_name: "Cultura TGN",
                     neighborhood: "PART ALTA",
-                    itinerary: "• Pase 1: 19:00h\n• Pase 2: 21:00h\n• Lugar: El Seminari Centre Tarraconense",
-                    link_url: "https://feverup.com/es/tarragona/candlelight",
+                    itinerary: "• Horario: Hasta las 14:00h\n• Lugar: Plaza de la Catedral",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-rallye-trepat-ann',
-                    title: "🏁 AVISO: III RALLYE DEL TREPAT",
-                    content: "Este fin de semana se celebra el Rallye del Trepat. Se ruega precaución por el paso de vehículos de competición en tramos rurales.",
-                    category: "URGENTE",
-                    author_name: "Seguretat Vial",
-                    neighborhood: "GENERAL",
-                    itinerary: "• Sábado: Tramos activos de tierra\n• Cierres: Consultar mapa oficial del Rally",
-                    created_at: new Date().toISOString()
-                },
-                {
-                    id: 'real-carnaval-cambrils-ann',
-                    title: "🎭 GRAN RÚA DE CARNAVAL",
-                    content: "El Carnaval de Cambrils celebra hoy su rúa aplazada. ¡Ven a disfrutar de las comparsas!",
-                    category: "EVENTO",
-                    author_name: "Aj. Cambrils",
-                    neighborhood: "COSTA",
-                    itinerary: "• Inicio: 17:00h\n• Punto: Paseo Marítimo Cambrils",
+                    id: 'real-vermut-serrallo-ann',
+                    title: "🍹 VERMUT MUSICAL DOMINICAL",
+                    content: "La mejor música y el mejor ambiente para cerrar el fin de semana en el Serrallo. ¡Te esperamos!",
+                    category: "OCIO",
+                    author_name: "Vecinos Serrallo",
+                    neighborhood: "EL SERRALLO",
+                    itinerary: "• Inicio: 12:30h\n• Grupos: Jazz & Bossa Nova",
                     created_at: new Date().toISOString()
                 }
             ];

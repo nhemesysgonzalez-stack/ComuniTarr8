@@ -551,12 +551,13 @@ export const Services: React.FC = () => {
                   <div className="flex flex-col gap-2">
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Part Alta</span>
-                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full">ABIERTO</span>
+                      <span className="text-[9px] font-black bg-red-100 text-red-700 px-2 py-0.5 rounded-full uppercase">CERRADO (DOMINGO)</span>
                     </div>
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
-                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full">ABIERTO</span>
+                      <span className="text-[9px] font-black bg-red-100 text-red-700 px-2 py-0.5 rounded-full uppercase">CERRADO (DOMINGO)</span>
                     </div>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Los domingos recomendamos el Mercat de Antiguitats en la Catedral.</p>
                   </div>
                 </div>
               </div>

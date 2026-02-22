@@ -182,37 +182,36 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'real-hans-zimmer',
-            title: "🕯️ Candlelight: Lo Mejor de Hans Zimmer",
-            content: "Concierto a la luz de las velas en El Seminario de Tarragona. Una experiencia única repasando las bandas sonoras más icónicas del cine.",
-            category: "CULTURA",
-            neighborhood: "PART ALTA",
-            itinerary: "• Hora: 19:00h y 21:00h\n• Lugar: El Seminari Centre Tarraconense\n• Entrada: Consultar web oficial",
-            link_url: "https://feverup.com/es/tarragona/candlelight",
-            created_at: new Date().toISOString()
-          },
-          {
             id: 'real-rallye-trepat',
-            title: "🏁 III Rallye del Trepat 2026",
-            content: "Llega la adrenalina a las comarcas de Tarragona con el Campeonato de Cataluña de Rallyes de Tierra. Sigue los tramos con precaución.",
+            title: "🏆 Entrega de Trofeos: III Rallye del Trepat",
+            content: "Hoy domingo concluye la adrenalina en Tarragona. Gran ceremonia de entrega de trofeos en el podio central tras los tramos de ayer.",
             category: "DEPORTES",
             neighborhood: "GENERAL",
-            itinerary: "• Sábado: Tramos especiales\n• Domingo: Entrega de trofeos\n• Seguridad: Manténganse en zonas habilitadas",
+            itinerary: "• Hora: 13:00h\n• Lugar: Zona Podio Central\n• Entrada: Libre para aficionados",
             created_at: new Date().toISOString()
           },
           {
-            id: 'real-carnaval-cambrils',
-            title: "🎭 Rúa de Carnaval en Cambrils",
-            content: "Hoy sábado se celebra la gran rúa aplazada. Disfraces, música y comparsas recorrerán las calles del Puerto y la Villa.",
-            category: "FIESTAS",
-            neighborhood: "COSTA",
-            itinerary: "• Salida: 17:00h desde Paseo Marítimo\n• Recorrido: Por el Puerto y Centro\n• Final: Fiesta joven",
+            id: 'real-mercat-tgn',
+            title: "🏺 Mercat de Antiguitats y Coleccionismo",
+            content: "Todo un clásico de los domingos en la Catedral. Descubre tesoros vintage, libros antiguos y objetos con historia.",
+            category: "CULTURA",
+            neighborhood: "PART ALTA",
+            itinerary: "• Horario: 09:00h a 14:00h\n• Ubicación: Alrededores de la Catedral\n• Ambiente: Familiar y cultural",
+            created_at: new Date().toISOString()
+          },
+          {
+            id: 'real-vermut-serrallo',
+            title: "🍹 Vermut Musical en el Serrallo",
+            content: "Disfruta del domingo frente al mar con música en vivo. Las terrazas del barrio marinero te esperan para cerrar el fin de semana.",
+            category: "OCIO",
+            neighborhood: "EL SERRALLO",
+            itinerary: "• Hora: A partir de las 12:30h\n• Música: Grupos locales en directo\n• Recomendación: Reservar terraza",
             created_at: new Date().toISOString()
           },
           {
             id: 'real-cultura-libros',
-            title: "🎨 ¡Nuevo Espacio de Cultura y Letras!",
-            content: "Ya puedes consultar los itinerarios de los Centros Cívicos y descubrir el talento literario y urbano de tus vecinos en la sección de Servicios.",
+            title: "🎨 ¡Explora el Nuevo Espacio de Cultura!",
+            content: "Aprovecha la calma del domingo para descubrir el talento literario y los itinerarios culturales de nuestros Centros Cívicos.",
             category: "CULTURA",
             neighborhood: "GENERAL",
             itinerary: "• Sección: Servicios > Cultura\n• Info: Centros Cívicos, Literatura y Arte Urbano\n• Participa: Sube tus propios textos hoy",
