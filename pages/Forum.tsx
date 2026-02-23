@@ -99,28 +99,39 @@ const Forum: React.FC = () => {
     inputRef.current?.focus();
   };
 
-  // Simulation Logic: Seed messages about today Monday 23rd Feb morning
+  // Keep a ref to generateVirtualMessage so the interval always calls the latest version (fixes stale closure)
+  const generateVirtualMessageRef = React.useRef<() => void>(() => { });
+
+  // Simulation Logic — fires every 7s with 60% probability
   useEffect(() => {
     const simulationInterval = setInterval(() => {
-      // 40% chance of a virtual message every 10s (Much more active)
-      if (Math.random() < 0.40) {
-        generateVirtualMessage();
+      if (Math.random() < 0.60) {
+        generateVirtualMessageRef.current();
       }
-    }, 10000);
-
+    }, 7000);
     return () => clearInterval(simulationInterval);
   }, []);
 
-  // Seed initial messages if empty to avoid "dead" feeling
+  // ALWAYS inject seed messages once loading finishes, prepended to whatever exists
+  const seedsInjectedRef = React.useRef(false);
   useEffect(() => {
-    if (!loading && messages.length === 0) {
-      const initialSeeds = [
-        { id: 'seed-1', user_id: 'v2', content: '☀️ ¡Buenos lunes a todos! Qué bien que ya es lunes... o no 😂 ¿Alguien tiene receta de algo rico para la semana?', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(Date.now() - 1000 * 60 * 8).toISOString() },
-        { id: 'seed-2', user_id: 'v6', content: 'Acabo de ver que hay bici pública libre en la estación de la Rambla. 🚴‍♂️ ¿Alguien va al centro esta mañana?', user_metadata: { full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe' }, neighborhood: 'GENERAL', created_at: new Date(Date.now() - 1000 * 60 * 3).toISOString() }
+    if (!loading && !seedsInjectedRef.current) {
+      seedsInjectedRef.current = true;
+      const now = Date.now();
+      const weekdaySeeds = [
+        { id: 'seed-mon-1', user_id: 'v3', content: '☀️ ¡Buenos días! ¿Alguien más tiene el bus lleno hoy de lunes? 😅', user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 22).toISOString() },
+        { id: 'seed-mon-2', user_id: 'v2', content: '☕ ¡Buenos lunes a todos! Qué bien que ya es lunes... o no 😂 ¿Alguien tiene una receta buena para la semana?', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 14).toISOString() },
+        { id: 'seed-mon-3', user_id: 'v5', content: 'Recordatorio: hoy a las 10h hay yoga matinal en el CC Torreforta 🧘 ¡Os esperamos!', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 8).toISOString() },
+        { id: 'seed-mon-4', user_id: 'v6', content: 'Acabo de ver que hay bici pública libre en la estación de la Rambla. 🚴‍♂️ ¿Alguien va al centro esta mañana?', user_metadata: { full_name: 'Pau T.', avatar_url: 'https://i.pravatar.cc/150?u=pau' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 3).toISOString() },
       ];
-      setMessages(initialSeeds as Message[]);
+      // Prepend seeds to existing messages (they appear at the top as older messages)
+      setMessages(prev => {
+        const existingIds = new Set(prev.map((m: Message) => m.id));
+        const newSeeds = weekdaySeeds.filter(s => !existingIds.has(s.id));
+        return [...newSeeds as Message[], ...prev];
+      });
     }
-  }, [loading, messages.length]);
+  }, [loading]);
 
   // Admin Insights Fetching
   useEffect(() => {
@@ -288,6 +299,9 @@ const Forum: React.FC = () => {
       }
     }, delay);
   };
+
+  // Always keep the ref updated to latest generateVirtualMessage (fixes stale closure in interval)
+  generateVirtualMessageRef.current = generateVirtualMessage;
 
   useEffect(() => {
     const timer = setInterval(() => {
