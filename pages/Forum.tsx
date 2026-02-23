@@ -105,15 +105,144 @@ const Forum: React.FC = () => {
   // Keep a ref to generateVirtualMessage so the interval always calls the latest version (fixes stale closure)
   const generateVirtualMessageRef = React.useRef<() => void>(() => { });
 
-  // Simulation Logic — fires every 7s with 60% probability
+  // ============================================================
+  // THREADED CONVERSATION SYSTEM — Scripted flowing dialogues
+  // Each thread is a sequence of messages that play one-by-one
+  // ============================================================
+  const threadIndexRef = useRef(0);
+  const stepIndexRef = useRef(0);
+
+  const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
+    'GENERAL': [
+      [
+        { who: 'Mireia R.', text: '☕ ¿Alguien sabe si la cafetería nueva de la Rambla abre hoy lunes? Me han dicho que hacen unos cruasanes increíbles.' },
+        { who: 'Joan B.', text: '@Mireia Sí, abre a las 8h. He pasado esta mañana y huele de maravilla. Se llama "El Forn de la Rambla".' },
+        { who: 'Pau T.', text: '@Mireia @Joan Yo he ido el sábado. El café con leche de avena está brutal. Y tienen wifi gratis 💯' },
+        { who: 'Mireia R.', text: '@Pau ¡Vendido! Voy esta tarde después del trabajo. ¿Alguien se apunta? ☕' },
+        { who: 'Maria G.', text: '@Mireia ¡Yo me apunto! Quedamos a las 17:30 y así hablamos de la reunión de la AMPA.' },
+        { who: 'Mireia R.', text: '@Maria Perfecto. Te espero allí. ¡Quién más se anime! 🙋‍♀️' },
+      ],
+      [
+        { who: 'Luis M.', text: '⚠️ Ojo vecinos: hay un bache enorme en la calle Gasòmetre, casi me caigo con la bici esta mañana.' },
+        { who: 'Carme S.', text: '@Luis ¿Cerca del cruce con Smith? Ayer vi una señora que casi tropieza ahí. Habría que avisar al Ayuntamiento.' },
+        { who: 'Luis M.', text: '@Carme Exacto, justo ahí. ¿Alguien sabe cómo se reporta? Por la app del Ajuntament o llamando?' },
+        { who: 'Joan B.', text: '@Luis Yo lo hice una vez: llama al 010 o usa la app "Línia Verda TGN". Tardaron 3 días en arreglarlo. 👍' },
+        { who: 'Luis M.', text: '@Joan Gracias, lo hago ahora mismo. Mientras tanto ¡cuidado los que paséis por ahí!' },
+        { who: 'Pau T.', text: 'También lo reporto yo por Línia Verda. Cuantos más lo hagamos, más rápido actúan. 💪' },
+      ],
+      [
+        { who: 'Joe R.', text: '🏃 ¿Alguien se apunta a correr mañana martes por el Passeig Marítim? Salgo a las 7:15h.' },
+        { who: 'Pau T.', text: '@Joe Yo me apunto. ¿Hacemos 5K o 10K? Que vengo de vacaciones y estoy oxidado 😂' },
+        { who: 'Joe R.', text: '@Pau Jajaja empezamos suave, 5K. Nos vemos en la estatua del pescador a las 7:15.' },
+        { who: 'Maria G.', text: '¡Yo también quiero! Pero a las 7:15 es muy temprano... ¿no podéis a las 8? 😅' },
+        { who: 'Joe R.', text: '@Maria Bueno... 7:30 como compromiso. ¡Así luego desayunamos todos juntos! 🥐' },
+        { who: 'Pau T.', text: 'Me llevo la cartera por si alguien quiere desayunar después en el chiringuito. Plan perfecto 🌊' },
+      ],
+    ],
+    'APOYO': [
+      [
+        { who: 'Sandra L.', text: '💜 Hoy he leído que el ciberbullying ha aumentado un 30% entre adolescentes. Como madre, me preocupa mucho. ¿Vuestros hijos usan redes sociales?' },
+        { who: 'Elena V.', text: '@Sandra Sí, mi hija tiene 13 años y usa TikTok e Instagram. Intento supervisar pero no es fácil. Le hemos puesto controles parentales.' },
+        { who: 'Joan B.', text: '@Sandra @Elena En el cole de mi hijo han dado una charla de "Pantallas Amigas" y fue muy útil. Los niños se quedaron impactados con los ejemplos reales.' },
+        { who: 'Nuria P.', text: '@Sandra Como trabajadora social os recomiendo: hablad con vuestros hijos SIN juzgar. Si os dicen algo, no les quitéis el móvil (se cierran). Mejor preguntad: "¿Cómo puedo ayudarte?" 🤝' },
+        { who: 'Sandra L.', text: '@Nuria Eso es justo lo que nos dijeron en ANAR (900 20 20 10). Me costó entenderlo pero funciona. Mi hijo ahora me cuenta más cosas.' },
+        { who: 'Elena V.', text: '@Sandra Me alegro mucho. Yo todavía estoy aprendiendo. ¿Os parece si organizamos una charla para padres en el CC de Torreforta? Podrían venir de Pantallas Amigas.' },
+        { who: 'Joan B.', text: '@Elena ¡Gran idea! Yo puedo hablar con la AMPA del cole para organizar algo conjunto. Así llegamos a más familias.' },
+        { who: 'Nuria P.', text: '@Elena @Joan Desde servicios sociales podemos ayudar con la logística. Escribidme al privado y lo coordinamos. 💪 ¡Esto es lo bonito de la comunidad!' },
+      ],
+      [
+        { who: 'Maria G.', text: '🫂 Hoy he acompañado a Don Manuel (el señor del 3ºB) al médico. Tiene 82 años y vive solo desde que falleció su mujer. Se ha emocionado porque nadie le acompañaba desde hacía meses.' },
+        { who: 'Carme S.', text: '@Maria Qué bonito lo que haces. La soledad en personas mayores es una epidemia silenciosa. ¿Necesitas ayuda para seguir acompañándole?' },
+        { who: 'Maria G.', text: '@Carme Sí, no puedo todos los días. Los lunes y miércoles sí, pero necesitaría que alguien cubriera los viernes.' },
+        { who: 'Elena V.', text: '@Maria Yo tengo los viernes libres. Me apunto sin dudarlo. ¿Me pasas su dirección por privado? 💛' },
+        { who: 'Nuria P.', text: 'Recordad que Cruz Roja Tarragona (977 22 19 07) tiene un programa formal de acompañamiento. Podéis registraros como voluntarias y así tenéis cobertura legal y formación. Lo recomiendo mucho.' },
+        { who: 'Maria G.', text: '@Nuria ¡No lo sabía! Les llamo mañana. Gracias Nuria, siempre con la información justa. 🙏 Entre todos hacemos barrio.' },
+      ],
+      [
+        { who: 'Nuria P.', text: '🟣 Recordatorio importante: si conocéis a alguien en situación de violencia de género, el 016 es 100% confidencial y NO aparece en la factura telefónica. También podéis escribir por WhatsApp al 600 000 016.' },
+        { who: 'Carme S.', text: '@Nuria Gracias por repetirlo. A veces la gente no lo sabe o cree que es solo para emergencias. Se puede llamar también para pedir orientación.' },
+        { who: 'Sandra L.', text: 'En el SIAD de Tarragona (Plaça de la Font, 977 24 47 95) atienden sin cita. Yo fui hace años por una situación complicada y me cambiaron la vida. Sin prejuicios ni burocracia.' },
+        { who: 'Elena V.', text: '@Sandra Gracias por compartir algo tan personal. Es muy valiente. Que sepáis que hay también un punto lila en las fiestas y eventos de Tarragona donde se puede pedir ayuda.' },
+        { who: 'Nuria P.', text: 'Y para jóvenes: el teléfono ANAR (900 20 20 10) atiende a menores las 24h. Y el 024 es la línea de atención a la conducta suicida. Compartid esta info, puede salvar vidas. 💜' },
+      ],
+    ],
+    'EMPLEO': [
+      [
+        { who: 'Luis M.', text: '💼 ¿Alguien sabe de trabajo de tarde? Estoy buscando algo en hostelería o comercio, tengo experiencia.' },
+        { who: 'Pau T.', text: '@Luis En la sección de Servicios de la app hay 3-4 ofertas nuevas. Un bar en Part Alta busca camarero para mediodías.' },
+        { who: 'Joan B.', text: '@Luis También he visto que en el Mercadona del Eixample buscan reponedor, turno de tarde. Pregunta directamente en tienda.' },
+        { who: 'Luis M.', text: '@Joan @Pau ¡Gracias a los dos! Mañana me paso por ambos sitios. Este foro es oro, en serio. 🙏' },
+        { who: 'Carme S.', text: '@Luis ¡Mucha suerte! Si necesitas que alguien te eche un ojo al currículum, dime. Trabajé en RRHH 10 años. 💪' },
+        { who: 'Luis M.', text: '@Carme ¿En serio? Eso sería genial. Te escribo por privado. ¡Qué barrio más majo!' },
+      ],
+    ],
+    'ENCUENTROS': [
+      [
+        { who: 'Joe R.', text: '🎾 ¿Hay alguien para una partida de pádel este miércoles tarde? Somos 3, nos falta uno.' },
+        { who: 'Pau T.', text: '@Joe ¡Yo! ¿A qué hora y dónde? Llevo sin jugar un mes pero las ganas no me faltan 😂' },
+        { who: 'Joe R.', text: '@Pau Genial, a las 18:30 en el polideportivo del Francolí. Traemos pelotas. ¿Nivel principiante-medio va bien?' },
+        { who: 'Pau T.', text: '@Joe Perfecto, ¡ahí estaré! Y si después alguien quiere cenar algo... 🍕' },
+        { who: 'Mireia R.', text: 'Yo no juego a pádel pero me apunto a la cena post-partido si me dejáis 🙋‍♀️ Me vendrá bien desconectar del lunes.' },
+        { who: 'Joe R.', text: '@Mireia ¡Claro! Cuando acabemos (sobre las 20h) buscamos sitio. Plan redondo. 🙌' },
+      ],
+    ],
+  };
+
+  // Threaded conversation engine
   useEffect(() => {
-    const simulationInterval = setInterval(() => {
-      if (Math.random() < 0.60) {
-        generateVirtualMessageRef.current();
+    const threads = conversationThreads[currentNeighborhood] || conversationThreads['GENERAL'];
+    if (!threads || threads.length === 0) return;
+
+    const playNextMessage = () => {
+      const currentThread = threads[threadIndexRef.current % threads.length];
+      if (!currentThread) return;
+
+      const step = currentThread[stepIndexRef.current];
+      if (!step) {
+        // Thread finished — move to next thread, reset step
+        threadIndexRef.current = (threadIndexRef.current + 1) % threads.length;
+        stepIndexRef.current = 0;
+        return;
       }
-    }, 7000);
-    return () => clearInterval(simulationInterval);
-  }, []);
+
+      const neighbor = virtualNeighbors.find(v => v.full_name === step.who) ||
+        { id: `v-${step.who}`, full_name: step.who, avatar_url: `https://i.pravatar.cc/150?u=${step.who.split(' ')[0].toLowerCase()}` };
+
+      // Show typing
+      setIsTyping(neighbor.full_name);
+
+      const typingDelay = 1500 + Math.random() * 2500;
+      setTimeout(() => {
+        const msg: Message = {
+          id: `thread-${Date.now()}-${neighbor.id}`,
+          user_id: neighbor.id,
+          content: step.text,
+          user_metadata: { full_name: neighbor.full_name, avatar_url: neighbor.avatar_url },
+          neighborhood: currentNeighborhood,
+          created_at: new Date().toISOString()
+        };
+        setMessages(prev => [...prev, msg]);
+        setIsTyping(null);
+        playSound('msg');
+
+        // Persist locally
+        const localKey = `local_forum_messages_${currentNeighborhood}`;
+        const existing = JSON.parse(localStorage.getItem(localKey) || '[]');
+        localStorage.setItem(localKey, JSON.stringify([...existing, msg].slice(-60)));
+
+        stepIndexRef.current++;
+      }, typingDelay);
+    };
+
+    // Fire a message every 8-15 seconds for natural pacing
+    const interval = setInterval(() => {
+      if (Math.random() < 0.75) {
+        playNextMessage();
+      }
+    }, 8000 + Math.random() * 7000);
+
+    return () => clearInterval(interval);
+  }, [currentNeighborhood]);
 
   // ALWAYS inject seed messages once loading finishes, prepended to whatever exists
   const seedsInjectedRef = React.useRef<string | null>(null);
