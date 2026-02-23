@@ -91,7 +91,10 @@ const Forum: React.FC = () => {
     { id: 'v4', full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme', status: 'away' },
     { id: 'v5', full_name: 'Luis M.', avatar_url: 'https://i.pravatar.cc/150?u=luis', status: 'online' },
     { id: 'v6', full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe', status: 'online' },
-    { id: 'v7', full_name: 'Maria G.', avatar_url: 'https://i.pravatar.cc/150?u=maria', status: 'busy' }
+    { id: 'v7', full_name: 'Maria G.', avatar_url: 'https://i.pravatar.cc/150?u=maria', status: 'busy' },
+    { id: 'v8', full_name: 'Sandra L.', avatar_url: 'https://i.pravatar.cc/150?u=sandra', status: 'online' },
+    { id: 'v9', full_name: 'Elena V.', avatar_url: 'https://i.pravatar.cc/150?u=elena', status: 'online' },
+    { id: 'v10', full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria', status: 'busy' }
   ];
 
   const handleReply = (name: string) => {
@@ -113,25 +116,43 @@ const Forum: React.FC = () => {
   }, []);
 
   // ALWAYS inject seed messages once loading finishes, prepended to whatever exists
-  const seedsInjectedRef = React.useRef(false);
+  const seedsInjectedRef = React.useRef<string | null>(null);
   useEffect(() => {
-    if (!loading && !seedsInjectedRef.current) {
-      seedsInjectedRef.current = true;
+    if (!loading && seedsInjectedRef.current !== currentNeighborhood) {
+      seedsInjectedRef.current = currentNeighborhood;
       const now = Date.now();
-      const weekdaySeeds = [
-        { id: 'seed-mon-1', user_id: 'v3', content: '☀️ ¡Buenos días! ¿Alguien más tiene el bus lleno hoy de lunes? 😅', user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 22).toISOString() },
-        { id: 'seed-mon-2', user_id: 'v2', content: '☕ ¡Buenos lunes a todos! Qué bien que ya es lunes... o no 😂 ¿Alguien tiene una receta buena para la semana?', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 14).toISOString() },
-        { id: 'seed-mon-3', user_id: 'v5', content: 'Recordatorio: hoy a las 10h hay yoga matinal en el CC Torreforta 🧘 ¡Os esperamos!', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 8).toISOString() },
-        { id: 'seed-mon-4', user_id: 'v6', content: 'Acabo de ver que hay bici pública libre en la estación de la Rambla. 🚴‍♂️ ¿Alguien va al centro esta mañana?', user_metadata: { full_name: 'Pau T.', avatar_url: 'https://i.pravatar.cc/150?u=pau' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 3).toISOString() },
-      ];
+
+      // Seeds per channel
+      const seedsByChannel: Record<string, Message[]> = {
+        'GENERAL': [
+          { id: 'seed-mon-1', user_id: 'v3', content: '☀️ ¡Buenos días! ¿Alguien más tiene el bus lleno hoy de lunes? 😅', user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 22).toISOString() },
+          { id: 'seed-mon-2', user_id: 'v2', content: '☕ ¡Buenos lunes a todos! Qué bien que ya es lunes... o no 😂 ¿Alguien tiene una receta buena para la semana?', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 14).toISOString() },
+          { id: 'seed-mon-3', user_id: 'v5', content: 'Recordatorio: hoy a las 10h hay yoga matinal en el CC Torreforta 🧘 ¡Os esperamos!', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 8).toISOString() },
+          { id: 'seed-mon-4', user_id: 'v6', content: 'Acabo de ver que hay bici pública libre en la estación de la Rambla. 🚴‍♂️ ¿Alguien va al centro esta mañana?', user_metadata: { full_name: 'Pau T.', avatar_url: 'https://i.pravatar.cc/150?u=pau' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 3).toISOString() },
+        ] as Message[],
+        'APOYO': [
+          { id: 'seed-apoyo-1', user_id: 'v8', content: '💜 Buenos días. Quería compartir algo: mi hijo estaba sufriendo acoso en el cole y no sabía a quién acudir. Llamé al teléfono ANAR (900 20 20 10) y nos ayudaron muchísimo. Es gratuito y confidencial. Por si a alguien le sirve.', user_metadata: { full_name: 'Sandra L.', avatar_url: 'https://i.pravatar.cc/150?u=sandra' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 45).toISOString() },
+          { id: 'seed-apoyo-2', user_id: 'v9', content: '@Sandra Gracias por compartirlo. Es muy valiente. Yo pasé por algo parecido con mi hija el año pasado. El SIAD de Tarragona (Servei d\'Informació i Atenció a les Dones) también nos orientó muy bien. Están en la Plaça de la Font. 💪', user_metadata: { full_name: 'Elena V.', avatar_url: 'https://i.pravatar.cc/150?u=elena' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 40).toISOString() },
+          { id: 'seed-apoyo-3', user_id: 'v4', content: '@Sandra @Elena Os abrazo a las dos. 🤗 Esto es justo lo que necesitamos en el barrio: hablar sin miedo. Recordad que también existe el 016 para violencia de género (no deja rastro en la factura del teléfono).', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 35).toISOString() },
+          { id: 'seed-apoyo-4', user_id: 'v10', content: 'Trabajo en servicios sociales y quiero recordar que en Tarragona tenemos recursos GRATUITOS:\n\n🆘 Emergencias: 112\n📞 Bullying escolar: 900 018 018\n📞 ANAR (menores): 900 20 20 10\n📞 Violencia género: 016\n📞 Atención crisis: 024 (línea suicidio)\n🏠 SIAD Tarragona: 977 24 47 95\n\nNadie tiene que pasar por esto solo/a.', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 30).toISOString() },
+          { id: 'seed-apoyo-5', user_id: 'v2', content: '@Nuria Muchas gracias por recopilar todo esto. Yo lo he guardado en el móvil por si conozco a alguien que lo necesite. ¿Sabéis si hay algún grupo de acompañamiento presencial aquí en Tarragona?', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 25).toISOString() },
+          { id: 'seed-apoyo-6', user_id: 'v10', content: '@Mireia ¡Sí! El Centre Cívic de Torreforta tiene un grupo semanal de apoyo emocional los miércoles a las 17h, abierto a todos. Y la Cruz Roja Tarragona (977 22 19 07) ofrece acompañamiento a personas en situación de soledad o vulnerabilidad. 🤝', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 20).toISOString() },
+          { id: 'seed-apoyo-7', user_id: 'v3', content: 'Como padre, esto me preocupa mucho. En el cole de mi hijo hicieron una charla sobre ciberbullying y fue muy útil. Si alguien quiere organizar algo así en su cole, el programa "Pantallas Amigas" ofrece materiales gratuitos. También podemos hablar directamente con la AMPA.', user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 15).toISOString() },
+          { id: 'seed-apoyo-8', user_id: 'v8', content: '@Joan Eso estaría genial. A mí me hubiera gustado detectarlo antes. Hay señales: si tu hijo deja de querer ir al cole, si cambia su humor de repente, si le desaparecen cosas... No os lo calléis. Hablar es el primer paso. ❤️', user_metadata: { full_name: 'Sandra L.', avatar_url: 'https://i.pravatar.cc/150?u=sandra' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 10).toISOString() },
+          { id: 'seed-apoyo-9', user_id: 'v7', content: 'Me ofrezco como voluntaria para acompañar a personas mayores o a quien necesite compañía para ir a trámites, médico, etc. Tengo las tardes libres los lunes y miércoles. Contactadme por aquí o al 644 22 33 88. No estamos solos. 💛', user_metadata: { full_name: 'Maria G.', avatar_url: 'https://i.pravatar.cc/150?u=maria' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 5).toISOString() },
+          { id: 'seed-apoyo-10', user_id: 'v9', content: '@Maria Qué bonito gesto. Yo también puedo los jueves. Entre vecinos nos cuidamos. 🫶 Si alguien necesita hablar, aunque sea solo desahogarse, aquí estamos. Este canal es un espacio seguro.', user_metadata: { full_name: 'Elena V.', avatar_url: 'https://i.pravatar.cc/150?u=elena' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 2).toISOString() },
+        ] as Message[],
+      };
+
+      const channelSeeds = seedsByChannel[currentNeighborhood] || seedsByChannel['GENERAL'] || [];
       // Prepend seeds to existing messages (they appear at the top as older messages)
       setMessages(prev => {
         const existingIds = new Set(prev.map((m: Message) => m.id));
-        const newSeeds = weekdaySeeds.filter(s => !existingIds.has(s.id));
-        return [...newSeeds as Message[], ...prev];
+        const newSeeds = channelSeeds.filter(s => !existingIds.has(s.id));
+        return [...newSeeds, ...prev];
       });
     }
-  }, [loading]);
+  }, [loading, currentNeighborhood]);
 
   // Admin Insights Fetching
   useEffect(() => {
@@ -188,6 +209,29 @@ const Forum: React.FC = () => {
     if (currentNeighborhood === 'EMPLEO') {
       scripts = ["¿Alguien sabe de trabajos de tarde en hostelería esta semana? 🍽️", "Empiezo nuevo trabajo el miércoles. ¡Un poco de ánimo! 🤞"];
       replyScripts = [`¡Mucho ánimo con el nuevo trabajo, ${isReplyTo}!`, `Mira en la sección de Servicios, suelen poner ofertas de última hora.`];
+    } else if (currentNeighborhood === 'APOYO') {
+      scripts = [
+        "💜 ¿Alguien conoce talleres gratuitos de gestión emocional en Tarragona? Me vendría muy bien.",
+        "Hoy he acompañado a una vecina mayor al médico. No tenía a nadie. Estas cosas no deberían pasar. Si alguien necesita compañía, escribid aquí. 🤝",
+        "Mi sobrina está sufriendo ciberbullying. ¿Alguien sabe cómo actuar con el colegio? Necesito consejos. 😔",
+        "Recordatorio: grupo de apoyo emocional MAÑANA miércoles 17h en CC Torreforta. Gratuito y abierto a todos. 🫂",
+        "¿Sabíais que el teléfono 024 es la línea de atención a la conducta suicida? Gratuito, 24h. Nunca se sabe cuándo puede hacer falta. 💛",
+        "En el SIAD (Plaça de la Font) atienden a mujeres en situación de violencia. Sin cita, sin preguntas. Solo ayuda. 977 24 47 95. Compartid por favor. 🟣",
+        "Hoy leí que 1 de cada 4 niños sufre acoso escolar. Como comunidad tenemos que estar atentos. Si veis algo raro, no miréis para otro lado. 🛡️",
+        "¿Hay alguna asociación en TGN que trabaje con personas que viven solas? Mi padre se siente muy aislado desde que falleció mi madre. 💙",
+        "Cruz Roja Tarragona (977 22 19 07) tiene un programa de acompañamiento para personas mayores solas. Lo recomiendo mucho. ❤️",
+        "Propongo que hagamos un grupo de paseo semanal para personas que necesiten hablar o simplemente no estar solas. ¿Os animáis? 🚶‍♀️🚶"
+      ];
+      replyScripts = [
+        `Gracias por compartir esto, ${isReplyTo}. Aquí nadie juzga. 💜`,
+        `@${isReplyTo} Qué importante es hablar de esto. Yo pasé por algo parecido y salí adelante con ayuda. ¡No estás sola/o!`,
+        `@${isReplyTo} Te mando un abrazo enorme. Si necesitas hablar, aquí estamos. 🫂`,
+        `@${isReplyTo} Apuntado el teléfono. Gracias por la información, nunca se sabe cuándo alguien lo puede necesitar.`,
+        `@${isReplyTo} Yo me apunto a lo que sea que ayude al barrio. Entre vecinos nos cuidamos. 💪`,
+        `@${isReplyTo} Mi hija sufrió bullying y lo superamos juntos. La clave es no callarse. Estamos aquí para lo que necesites.`,
+        `@${isReplyTo} Muy valiente por hablar de esto. Ojalá más gente se atreviera. Este canal es un espacio seguro. ❤️`,
+        `@${isReplyTo} La Cruz Roja de Tarragona hace un trabajo increíble. También Càritas tiene programas de apoyo: 977 23 99 34.`
+      ];
     } else if (currentNeighborhood === 'ENCUENTROS') {
       scripts = [
         "¿Quién se apunta a un café de lunes mañana antes del trabajo? ☕",
@@ -543,6 +587,12 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
+      id: 'apoyo-bullying',
+      title: '💜 Stop Bullying TGN',
+      description: 'Recursos y apoyo vecinal.',
+      participating: 3450
+    },
+    {
       id: 'agenda-lunes',
       title: '💼 Vuelta al Cole/Trabajo',
       description: 'Rutinas y motivación lunes.',
@@ -668,6 +718,23 @@ const Forum: React.FC = () => {
             </button>
           </div>
 
+          {/* APOYO Y BIENESTAR */}
+          <div className="mb-2">
+            <button
+              onClick={() => startTransition(() => setCurrentNeighborhood('APOYO'))}
+              className={`w-full flex items-center gap-3 p-3 rounded-2xl transition-all ${currentNeighborhood === 'APOYO' ? 'bg-purple-50 dark:bg-purple-900/20' : 'hover:bg-gray-50 dark:hover:bg-gray-800'}`}
+            >
+              <div className={`size-10 rounded-full flex items-center justify-center shrink-0 ${currentNeighborhood === 'APOYO' ? 'bg-purple-500 text-white shadow-md shadow-purple-500/30' : 'bg-gray-200 dark:bg-gray-700 text-gray-500'}`}>
+                <span className="material-symbols-outlined text-lg">volunteer_activism</span>
+              </div>
+              <div className="flex-1 text-left">
+                <h3 className={`text-xs font-black uppercase tracking-wider ${currentNeighborhood === 'APOYO' ? 'text-purple-600 dark:text-purple-400' : 'text-gray-600 dark:text-gray-400'}`}>Apoyo y Bienestar</h3>
+                <p className="text-[10px] text-gray-400 font-bold truncate">Bullying · Violencia · Acompañamiento</p>
+              </div>
+              <span className="size-5 bg-purple-500 text-white text-[9px] font-black rounded-full flex items-center justify-center">10</span>
+            </button>
+          </div>
+
           <div className="px-4 py-2 mt-4">
             <h2 className="text-xl font-black mb-4 text-center">Empleo Lunes 23 Feb</h2>
             <ul className="space-y-4 text-xs md:text-sm">
@@ -714,17 +781,19 @@ const Forum: React.FC = () => {
         <div className="bg-white dark:bg-gray-800 p-4 shadow-sm border-b border-gray-100 dark:border-gray-700 flex items-center justify-between z-20">
           <div className="flex items-center gap-4">
             {/* Mobile Back / Menu Trigger would go here */}
-            <div className="size-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-500">
+            <div className={`size-10 rounded-full flex items-center justify-center ${currentNeighborhood === 'APOYO' ? 'bg-purple-100 dark:bg-purple-900/30 text-purple-500' : 'bg-blue-100 dark:bg-blue-900/30 text-blue-500'}`}>
               <span className="material-symbols-outlined">
                 {currentNeighborhood === 'GENERAL' ? 'public' :
                   currentNeighborhood === 'PREPPERS' ? 'shield' :
-                    currentNeighborhood === 'EMPLEO' ? 'work' : 'forum'}
+                    currentNeighborhood === 'EMPLEO' ? 'work' :
+                      currentNeighborhood === 'APOYO' ? 'volunteer_activism' : 'forum'}
               </span>
             </div>
             <div>
               <h2 className="text-sm md:text-base font-black text-gray-800 dark:text-white uppercase tracking-tight">
                 {currentNeighborhood === 'GENERAL' ? 'Discusión General' :
-                  currentNeighborhood === 'PREPPERS' ? 'Seguridad y Preppers' : currentNeighborhood}
+                  currentNeighborhood === 'PREPPERS' ? 'Seguridad y Preppers' :
+                    currentNeighborhood === 'APOYO' ? '💜 Apoyo y Bienestar' : currentNeighborhood}
               </h2>
               <p className="text-[10px] font-bold text-gray-400 flex items-center gap-1">
                 <span className="size-2 bg-green-500 rounded-full animate-pulse"></span>

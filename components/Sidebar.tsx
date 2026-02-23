@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -10,6 +10,32 @@ const Sidebar: React.FC = () => {
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
   const [showNeighborhoods, setShowNeighborhoods] = useState(false);
+  const [forumUnread, setForumUnread] = useState(0);
+
+  // Badge: count unread forum messages since user last visited /forum
+  useEffect(() => {
+    const UNREAD_KEY = 'forum_unread_count';
+    const LAST_SEEN_KEY = 'forum_last_seen_ts';
+
+    if (location.pathname === '/forum') {
+      localStorage.setItem(LAST_SEEN_KEY, Date.now().toString());
+      localStorage.setItem(UNREAD_KEY, '0');
+      setForumUnread(0);
+      return;
+    }
+
+    const stored = parseInt(localStorage.getItem(UNREAD_KEY) || '0', 10);
+    setForumUnread(stored);
+
+    const poll = setInterval(() => {
+      if (location.pathname !== '/forum') {
+        const count = parseInt(localStorage.getItem(UNREAD_KEY) || '0', 10);
+        setForumUnread(count);
+      }
+    }, 6000);
+
+    return () => clearInterval(poll);
+  }, [location.pathname]);
 
   const neighborhoods = [
     'Part Alta', 'Serrallo', 'Eixample', 'Nou Eixample',
@@ -26,7 +52,7 @@ const Sidebar: React.FC = () => {
     }
   };
 
-  const NavItem: React.FC<{ to: string; label: string; icon: string; color: string; hasActivity?: boolean }> = ({ to, label, icon, color, hasActivity }) => {
+  const NavItem: React.FC<{ to: string; label: string; icon: string; color: string; hasActivity?: boolean; badge?: number }> = ({ to, label, icon, color, hasActivity, badge }) => {
     const active = isActive(to);
     const [isPending, startTransition] = React.useTransition();
 
@@ -53,9 +79,13 @@ const Sidebar: React.FC = () => {
           <span className="material-symbols-outlined text-[22px]">{icon}</span>
           <span className="text-sm">{label}</span>
         </div>
-        {hasActivity && !active && (
+        {badge && badge > 0 && !active ? (
+          <span className="flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-red-500 text-white text-[10px] font-black shadow-lg shadow-red-500/40 animate-bounce">
+            {badge > 99 ? '99+' : badge}
+          </span>
+        ) : hasActivity && !active ? (
           <span className="flex size-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)] animate-pulse"></span>
-        )}
+        ) : null}
       </Link>
     );
   };
@@ -93,7 +123,7 @@ const Sidebar: React.FC = () => {
               <span className="absolute right-3 top-1/2 -translate-y-1/2 bg-amber-400 text-[8px] font-black px-1.5 py-0.5 rounded-md shadow-sm border border-amber-500 animate-bounce pointer-events-none text-amber-900 uppercase">Ofertas</span>
             </div>
             <NavItem to="/clubs" label={t('clubs')} icon="groups" color="primary" />
-            <NavItem to="/forum" label={t('forum')} icon="chat" color="indigo" hasActivity={true} />
+            <NavItem to="/forum" label={t('forum')} icon="chat" color="indigo" badge={forumUnread} hasActivity={forumUnread === 0} />
             <NavItem to="/workshops" label={t('workshops')} icon="school" color="primary" />
           </div>
         </div>
