@@ -218,10 +218,10 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Recogida Playa', d: '¿Alguien se apunta a una jornada de limpieza rápida en el Miracle hoy sábado tarde? Para dejarlo niquelado.', c: 'Coordinar en Foro' },
-                                            { t: 'Paseo APAPT Sáb', d: 'Voy a la protectora a pasear perros hoy sábado. ¿Algún vecino se anima a venir conmigo?', c: '633445566' },
-                                            { t: 'Ocio Down TGN', d: 'Acompañamiento para joven con Down a dar un paseo tranquilo por la Vía Augusta mañana domingo. 1 hora aprox.', c: '611223344' },
-                                            { t: 'Dorsales Carrera', d: 'Mañana domingo voy a la Carrera 5K. Si alguien necesita que le recoja el dorsal avisad.', c: 'Ver Secc. Calendario' }
+                                            { t: 'Compra Semanal', d: 'Busco vecino/a para ayudar a una señora mayor a hacer la compra este lunes o martes en el Mercadona de la Rambla.', c: '644 33 22 11' },
+                                            { t: 'Paseo Can Peladilles', d: 'Voy a la protectora a pasear perros este lunes a las 11h. ¿Algún vecino se anima?', c: '633 44 55 66' },
+                                            { t: 'Acomp. Médico', d: 'Necesito acompañamiento para abuelo a cita en el CAP Jaume I este martes a las 10:30h. ±1h.', c: '611 22 33 44' },
+                                            { t: 'Ayuda Tecnología', d: 'Vecina mayor necesita ayuda para configurar el móvil nuevo. 30 minutos, esta semana.', c: 'Foro · Canal General' }
                                         ].map((idea, i) => (
 
                                             <button

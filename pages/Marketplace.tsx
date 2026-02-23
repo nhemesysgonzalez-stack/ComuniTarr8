@@ -57,39 +57,39 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'mock-sat-m1',
+          id: 'mock-mon-m1',
           user_id: 'v1',
-          title: '🚲 Bicicleta de Paseo Vintage',
-          description: 'Bicicleta azul restaurada. Ideal para pasear por la costa hoy sábado. Incluye cesta. Precio negociable.',
-          price: '85',
+          title: '👟 Zapatillas Running Nike Talla 41',
+          description: 'Casi nuevas, usadas 3 meses. Ideal para retomar el hábito deportivo esta semana. Precio negociable.',
+          price: '55',
           category: 'ocio',
-          neighborhood: 'BARRIS MARÍTIMS',
-          contact_info: '622 11 22 33',
-          image_url: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'mock-sat-m2',
-          user_id: 'v2',
-          title: '🪑 Mesa Jardín + 4 Sillas',
-          description: 'Conjunto de exterior en resina trenzada. Perfecto para cenas de verano. Aprovecha el buen tiempo de este finde.',
-          price: '110',
-          category: 'hogar',
-          neighborhood: 'LLEVANT',
-          contact_info: '611 99 88 77',
+          neighborhood: 'EIXAMPLE',
+          contact_info: '622 11 22 33 (Marc)',
           image_url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-sat-m3',
+          id: 'mock-mon-m2',
+          user_id: 'v2',
+          title: '💻 Portátil Lenovo ThinkPad i5',
+          description: 'Buen estado, con cargador original. Perfecto para teletrabajar o estudiar. Bateria reciente.',
+          price: '280',
+          category: 'tech',
+          neighborhood: 'PART ALTA',
+          contact_info: '611 99 88 77 (Laia)',
+          image_url: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'mock-mon-m3',
           user_id: 'v4',
-          title: '👞 Botas Montaña Talla 42',
-          description: 'Marca Salomon. Usadas solo en dos salidas. Ideales si vas de excursión este domingo.',
-          price: '40',
-          category: 'moda',
-          neighborhood: 'SANT PERE I SANT PAU',
-          contact_info: '655 44 33 22',
-          image_url: 'https://images.unsplash.com/photo-1620987278429-ca17826ddbca?auto=format&fit=crop&w=800&q=80',
+          title: '🪑 Sofá Rinconera Gris 3+2',
+          description: 'Muy cómodo y en buen estado. Lo cambiamos por reforma del salón. Recogida en domicilio.',
+          price: '150',
+          category: 'hogar',
+          neighborhood: 'BONAVISTA',
+          contact_info: '655 44 33 22 (Rosa)',
+          image_url: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         }
       ];
@@ -185,21 +185,20 @@ const Marketplace: React.FC = () => {
         </div>
         <div className="flex-1">
           <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-blue-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">ALQUILER MENSUAL</span>
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">PARTICULAR - CENTRO</span>
+            <span className="px-3 py-1 bg-emerald-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">ALQUILER MENSUAL</span>
+            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">PARTICULAR - EIXAMPLE</span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Plaza Parking C/ Unió 🅿️</h2>
+          <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Habitación en piso compartido 🏠</h2>
           <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed">
-            Alquilo plaza de parking para coche mediano/grande. Puerta automática y fácil maniobra. ¡Olvídate de buscar sitio al llegar de trabajar! Disponible desde hoy 21 de Febrero.
-
+            Habitación luminosa en piso de 3 personas. Zona Eixample, muy céntrico. Incluye gastos. Perfil tranquilo y responsable. Disponible desde 1 de marzo 2026.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="tel:641223456" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
+            <a href="tel:638991122" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
               <span className="material-symbols-outlined text-sm">call</span>
-              641 22 34 56 (Jordi)
+              638 99 11 22 (Clara)
             </a>
             <span className="px-6 py-3 bg-gray-50 dark:bg-gray-800 dark:text-white rounded-xl text-xs font-black">
-              80€ / MES
+              420€ / MES
             </span>
           </div>
         </div>

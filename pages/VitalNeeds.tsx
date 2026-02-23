@@ -46,36 +46,36 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'mock-sat-n1',
+                    id: 'mock-mon-n1',
                     creator_id: 'v4',
                     type: 'company',
-                    title: '👵 Paseo al Sol (Sábado)',
-                    description: 'Mi madre quiere disfrutar de la tarde soleada en la Rambla. ¿Algún vecino/a para acompañarla 45 min? Yo estoy de guardia.',
+                    title: '👵 Acompañamiento matinal (Lunes)',
+                    description: 'Mi abuela quiere salir a pasear por el Passeig Marítim esta mañana. Soy cuidadora y necesito que alguien la acompañe 1 hora desde las 10h.',
                     contact_info: '688 22 11 00 (Pere)',
                     is_urgent: false,
-                    neighborhood: 'CENTRO',
+                    neighborhood: 'BARRIS MARÍTIMS',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-sat-n2',
+                    id: 'mock-mon-n2',
                     creator_id: 'v5',
-                    type: 'medical',
-                    title: '💊 Medicación Urgente',
-                    description: 'Necesito que alguien recoja una receta en la Farmacia de Guardia. No puedo dejar a los niños solos.',
-                    contact_info: '644 33 22 11 (Marta)',
-                    is_urgent: true,
-                    neighborhood: 'GENERAL',
+                    type: 'food',
+                    title: '🛒 Compra Semanal — Persona Mayor Sola',
+                    description: 'Busco vecino/a que pueda ayudar a una señora mayor a hacer la compra esta semana. Ella vive en el Eixample y no puede cargar bolsas.',
+                    contact_info: '644 33 22 11 (Cruz Roja TGN)',
+                    is_urgent: false,
+                    neighborhood: 'EIXAMPLE',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-sat-n3',
+                    id: 'mock-mon-n3',
                     creator_id: 'v6',
                     type: 'emotional',
-                    title: "☕ Charla y Café",
-                    description: 'Me siento un poco sola este finde. ¿Alguna vecina para tomar un café en el Serrallo esta tarde?',
-                    contact_info: '622 88 77 66 (Carme)',
+                    title: "☕ Café y charla (vuelta a la rutina)",
+                    description: 'Empiezo la semana con ansiedad. ¿Algún vecino/a para tomar un café y charlar este lunes por la mañana? A veces ayuda mucho hablar.',
+                    contact_info: '622 88 77 66 (Ana M.)',
                     is_urgent: false,
-                    neighborhood: 'EL SERRALLO',
+                    neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }
             ];
@@ -178,9 +178,9 @@ const VitalNeeds: React.FC = () => {
                             <span className="px-2 py-0.5 bg-red-500 text-white text-[8px] font-black uppercase tracking-widest rounded-full">RED SOLIDARIA</span>
                             <span className="text-[10px] font-bold text-gray-400 uppercase">AYUDA MUTUA</span>
                         </div>
-                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Acompañamiento Fines de Semana 🤝</h2>
+                        <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Red de Acompañamiento Semanal 🤝</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            ¿Tienes 1 hora libre este sábado o domingo? Únete a nuestra red de acompañamiento para personas mayores que viven solas. Un paseo o un café marca la diferencia.
+                            ¿Tienes 1 hora libre esta semana? Únete a nuestra red de acompañamiento para personas mayores que viven solas. Paseos, compra, o una simple charla. Un pequeño gesto marca la diferencia. Nos reunimos cada lunes a las 10h en el Centro Cívico Centro.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">

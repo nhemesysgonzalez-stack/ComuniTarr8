@@ -182,39 +182,40 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'real-rallye-trepat',
-            title: "🏆 Entrega de Trofeos: III Rallye del Trepat",
-            content: "Hoy domingo concluye la adrenalina en Tarragona. Gran ceremonia de entrega de trofeos en el podio central tras los tramos de ayer.",
-            category: "DEPORTES",
+            id: 'mon-inicio-semana',
+            title: "☀️ Lunes 23 Feb — ¡A por la semana!",
+            content: "Comienza una nueva semana con cielos despejados y temperaturas suaves en Tarragona. La previsión apunta a máximas de 14°C. Buen momento para retomar rutinas saludables y actividades al aire libre.",
+            category: "TIEMPO",
             neighborhood: "GENERAL",
-            itinerary: "• Hora: 13:00h\n• Lugar: Zona Podio Central\n• Entrada: Libre para aficionados",
+            itinerary: "• Máx: 14°C · Mín: 7°C\n• Viento: Flojo del NW\n• Sin lluvia prevista esta semana",
             created_at: new Date().toISOString()
           },
           {
-            id: 'real-mercat-tgn',
-            title: "🏺 Mercat de Antiguitats y Coleccionismo",
-            content: "Todo un clásico de los domingos en la Catedral. Descubre tesoros vintage, libros antiguos y objetos con historia.",
-            category: "CULTURA",
+            id: 'mon-empleo-lunes',
+            title: "💼 Nuevas Ofertas de Empleo Esta Semana",
+            content: "El mercado laboral se activa cada lunes en Tarragona. Hoy se publican nuevas vacantes en hostelería, logística y cuidados. Mira la sección de Empleos para contactar directamente con las empresas.",
+            category: "EMPLEO",
+            neighborhood: "GENERAL",
+            itinerary: "• Hostelería: Camarero/a en zona Centro\n• Logística: Repartidor/a con moto\n• Cuidados: Auxiliar para domicilio",
+            link_url: "/services",
+            created_at: new Date().toISOString()
+          },
+          {
+            id: 'mon-mercat-saptmana',
+            title: "🛒 Mercados Semanales en Tarragona",
+            content: "Esta semana arranca el ciclo de mercados y ferias locales. El mercado de la Part Alta regresa al centro histórico el miércoles y el jueves con verduras de proximidad, artesanía y productos locales.",
+            category: "COMERCIO",
             neighborhood: "PART ALTA",
-            itinerary: "• Horario: 09:00h a 14:00h\n• Ubicación: Alrededores de la Catedral\n• Ambiente: Familiar y cultural",
+            itinerary: "• Miércoles y Jueves: 08:30h a 14:00h\n• Ubicación: Plaça del Fòrum\n• Productores locales de Camp de Tarragona",
             created_at: new Date().toISOString()
           },
           {
-            id: 'real-vermut-serrallo',
-            title: "🍹 Vermut Musical en el Serrallo",
-            content: "Disfruta del domingo frente al mar con música en vivo. Las terrazas del barrio marinero te esperan para cerrar el fin de semana.",
-            category: "OCIO",
-            neighborhood: "EL SERRALLO",
-            itinerary: "• Hora: A partir de las 12:30h\n• Música: Grupos locales en directo\n• Recomendación: Reservar terraza",
-            created_at: new Date().toISOString()
-          },
-          {
-            id: 'real-cultura-libros',
-            title: "🎨 ¡Explora el Nuevo Espacio de Cultura!",
-            content: "Aprovecha la calma del domingo para descubrir el talento literario y los itinerarios culturales de nuestros Centros Cívicos.",
+            id: 'mon-activitats-setmana',
+            title: "📅 Agenda Cultural: Semana del 23 Feb",
+            content: "La semana comienza con propuestas culturales y deportivas en los Centros Cívicos. Talleres de teatro, clases de yoga y reuniones de asociaciones están disponibles sin coste para los vecinos empadronados.",
             category: "CULTURA",
             neighborhood: "GENERAL",
-            itinerary: "• Sección: Servicios > Cultura\n• Info: Centros Cívicos, Literatura y Arte Urbano\n• Participa: Sube tus propios textos hoy",
+            itinerary: "• Lunes: Yoga matinal — CC Torreforta (09:00h)\n• Martes: Taller Teatro adultos — CC Part Alta (18:30h)\n• Miércoles: Cine Forum — CC Sant Pere (19:00h)",
             link_url: "/services",
             created_at: new Date().toISOString()
           }
@@ -225,9 +226,9 @@ const Home: React.FC = () => {
         // Poll Example
         const pollExample = {
           id: 'poll-parque-ejemplo',
-          question: '¿Qué mejora priorizarías para el Parque de la Ciudad este año?',
-          options: ['Más zonas de sombra y árboles', 'Circuito de Calistenia nuevo', 'Mejorar iluminación nocturna', 'Zonas de juego infantil naturalized'],
-          category: 'MEJORAS URBANA',
+          question: '¿Qué actividad te gustaría ver este invierno en el Centro Cívico de tu barrio?',
+          options: ['Taller de cocina saludable', 'Clases de idiomas gratuitas', 'Tarde de juegos de mesa', 'Yoga y meditación matinal'],
+          category: 'OCIO VECINAL',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()
         };
@@ -543,7 +544,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 4</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 9 · Feb</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">

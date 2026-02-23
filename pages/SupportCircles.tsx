@@ -42,29 +42,29 @@ const SupportCircles: React.FC = () => {
 
             const mockCircles: SupportCircle[] = [
                 {
-                    id: 'mock-1',
+                    id: 'mock-mon-sc1',
                     initiator_id: 'v1',
-                    title: 'Apoyo Ansiedad y Estrés Laboral',
+                    title: '💼 Ansiedad y Estrés Laboral — Vuelta a la Rutina',
                     neighborhood: 'GENERAL',
-                    description: 'Grupo semanal para personas que sufren estrés. Sesión especial de reflexión este sábado tras la semana laboral. ¡Hoy sábado a las 18:30h!',
+                    description: 'Grupo semanal para personas que sufren estrés. Esta semana, sesión especial de inicio de semana el lunes a las 19h en el Centro Cívico Centro. Entrada libre.',
                     contact_info: '611 22 33 44 (Miguel)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-sat-mindfulness',
+                    id: 'mock-mon-sc2',
                     initiator_id: 'vadmin',
-                    title: '🧘 Mindfulness de Fin de Semana',
-                    neighborhood: 'CENTRO',
-                    description: 'Sesión de meditación guiada grupal este domingo por la mañana en el Centro Cívico. Abierta a todos los vecinos antes de la Carrera Popular.',
-                    contact_info: '655 12 34 56 (Elena, ComuniTarr Salud)',
+                    title: '🧘 Meditación Matinal de Lunes',
+                    neighborhood: 'GENERAL',
+                    description: 'Cada lunes a las 08:00h, sesión de meditación y respiración para empezar la semana con calma. Plaça del Pallol, Part Alta. Gratis y al aire libre.',
+                    contact_info: '655 12 34 56 (Elena)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-2',
+                    id: 'mock-mon-sc3',
                     initiator_id: 'v2',
-                    title: 'Círculo de Apoyo: Cuidadores de Mayores',
+                    title: '🤝 Círculo de Cuidadores — Reunión Semanal',
                     neighborhood: 'GENERAL',
-                    description: 'Espacio seguro para cuidadores. Reunión especial mañana domingo para compartir recursos y apoyo en un entorno tranquilo.',
+                    description: 'Espacio seguro para cuidadores de personas mayores o dependientes. Nos reunimos cada lunes a las 18h para compartir recursos, experiencias y apoyo emocional.',
                     contact_info: '622 99 88 77 (Rosa)',
                     created_at: new Date().toISOString()
                 }

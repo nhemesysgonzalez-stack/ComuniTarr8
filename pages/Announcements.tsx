@@ -145,33 +145,34 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'real-rallye-trepat-close',
-                    title: "🏁 CLAUSURA III RALLYE DEL TREPAT",
-                    content: "Finaliza el fin de semana de rallye. Hoy entrega de trofeos y apertura progresiva de caminos rurales.",
+                    id: 'real-lunes-semana-inicio',
+                    title: "☀️ INICIO SEMANA — LUNES 23 FEBRERO 2026",
+                    content: "Comienza una nueva semana. Cielos despejados (máx 14°C). Esta semana: mercado los miércoles y jueves, reunión de vecinos el miércoles a las 18h, y Cine Forum el jueves por la noche.",
                     category: "INFO",
-                    author_name: "Seguretat Vial",
+                    author_name: "ComuniTarr",
                     neighborhood: "GENERAL",
-                    itinerary: "• Clausura: 13:00h\n• Podio: Zona de Meta\n• Caminos: Abiertos a partir de las 18:00h",
+                    itinerary: "• Mié. 25 Feb: Mercat Setmanal (08:30h, Plaça Fòrum)\n• Mié. 25 Feb: Asamblea Vecinos (18:00h, CC Part Alta)\n• Jue. 26 Feb: Cine Forum Almodóvar (19:00h, CC Sant Pere)",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-mercat-cat-ann',
-                    title: "🏺 MERCAT DE ANTIGUITATS HOY",
-                    content: "No te pierdas el mercadillo dominical de antigüedades. Objetos únicos y ambiente histórico en la Part Alta.",
+                    id: 'real-farmacia-guardia-lunes',
+                    title: "💊 FARMACIA DE GUARDIA ESTA SEMANA",
+                    content: "Conoced la farmacia de guardia para esta semana en Tarragona ciudad. Disponible 24 horas para emergencias y urgencias menores.",
+                    category: "INFO",
+                    author_name: "Salud TGN",
+                    neighborhood: "GENERAL",
+                    itinerary: "• Farmacia: Farmàcia Fullana\n• Dirección: C/ de la Unió, 1\n• Teléfono: 977 23 30 84\n• Horario: 24 horas / 7 días",
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'real-bolsa-empleo-lunes',
+                    title: "💼 NUEVAS VACANTES DE EMPLEO — SEMANA 9",
+                    content: "El Servei d'Ocupació de Catalunya publica nuevas vacantes esta semana. Hostelería, cuidados y logística son los sectores con más demanda en Tarragona.",
                     category: "EVENTO",
-                    author_name: "Cultura TGN",
-                    neighborhood: "PART ALTA",
-                    itinerary: "• Horario: Hasta las 14:00h\n• Lugar: Plaza de la Catedral",
-                    created_at: new Date().toISOString()
-                },
-                {
-                    id: 'real-vermut-serrallo-ann',
-                    title: "🍹 VERMUT MUSICAL DOMINICAL",
-                    content: "La mejor música y el mejor ambiente para cerrar el fin de semana en el Serrallo. ¡Te esperamos!",
-                    category: "OCIO",
-                    author_name: "Vecinos Serrallo",
-                    neighborhood: "EL SERRALLO",
-                    itinerary: "• Inicio: 12:30h\n• Grupos: Jazz & Bossa Nova",
+                    author_name: "SOC Tarragona",
+                    neighborhood: "GENERAL",
+                    itinerary: "• Hostelería: 4 vacantes (Zona Centro) · 622 11 00 22\n• Cuidados domicilio: 3 puestos (Eixample) · 977 44 33 22\n• Logística: 2 posiciones (Pol. Francolí) · 977 55 66 77\n• Info: Oficina SOC, C/ Lleida 2 · 977 25 11 66",
+                    link_url: "https://empresa.icf.cat/",
                     created_at: new Date().toISOString()
                 }
             ];
