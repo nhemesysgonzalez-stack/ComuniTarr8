@@ -73,18 +73,18 @@ const Polls: React.FC = () => {
 
             const mockPolls: Poll[] = [
                 {
-                    id: 'poll-sat-1',
+                    id: 'poll-tue-1',
                     creator_id: 'v1',
-                    title: '¿Qué te ha parecido el ambiente festivo de este sábado en la Rambla? 🎭',
-                    options: ['Genial, mucha vida', 'Demasiado ruido', 'Bien, pero falta sombra', 'No he pasado por allí'],
+                    title: '¿Qué te parece la previsión de lluvia para hoy martes tarde? 🌧️',
+                    options: ['Hacía falta que lloviera', 'Me fastidia los planes', 'Prefiero el sol de ayer', 'No me afecta, estaré en casa'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-sat-2',
+                    id: 'poll-tue-2',
                     creator_id: 'v2',
-                    title: '¿Participarás en la Carrera Popular de mañana domingo? 🏃',
-                    options: ['Sí, como corredor', 'Sí, como voluntario/público', 'No puedo ir', 'No sabía que había carrera'],
+                    title: '¿Qué opinas del nuevo canal de APOYO en el foro? 💜',
+                    options: ['Muy necesario, me gusta', 'Está bien, pero prefiero ocio', 'Aún no he entrado', 'Debería haber más gente participando'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }

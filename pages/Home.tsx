@@ -182,41 +182,39 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'mon-inicio-semana',
-            title: "☀️ Lunes 23 Feb — ¡A por la semana!",
-            content: "Comienza una nueva semana con cielos despejados y temperaturas suaves en Tarragona. La previsión apunta a máximas de 14°C. Buen momento para retomar rutinas saludables y actividades al aire libre.",
+            id: 'tue-martes-nublado',
+            title: "☁️ Martes 24 Feb — Día Nublado",
+            content: "Hoy martes amanecemos con cielos cubiertos en Tarragona. Se esperan temperaturas máximas de 13°C y mínimas de 8°C. Probabilidad de lluvias ligeras a partir de las 18:00h.",
             category: "TIEMPO",
             neighborhood: "GENERAL",
-            itinerary: "• Máx: 14°C · Mín: 7°C\n• Viento: Flojo del NW\n• Sin lluvia prevista esta semana",
+            itinerary: "• Máx: 13°C · Mín: 8°C\n• Viento: Moderado del E\n• Lluvia: 40% probabilidad tarde",
             created_at: new Date().toISOString()
           },
           {
-            id: 'mon-empleo-lunes',
-            title: "💼 Nuevas Ofertas de Empleo Esta Semana",
-            content: "El mercado laboral se activa cada lunes en Tarragona. Hoy se publican nuevas vacantes en hostelería, logística y cuidados. Mira la sección de Empleos para contactar directamente con las empresas.",
-            category: "EMPLEO",
+            id: 'tue-canal-apoyo',
+            title: "💜 Nuevo Canal APOYO en el Foro",
+            content: "¡Ya puedes entrar al nuevo canal de Apoyo y Bienestar! Un espacio seguro para hablar de bullying, soledad en mayores y recursos sociales en Tarragona. Vecinos ayudando a vecinos.",
+            category: "COMUNIDAD",
             neighborhood: "GENERAL",
-            itinerary: "• Hostelería: Camarero/a en zona Centro\n• Logística: Repartidor/a con moto\n• Cuidados: Auxiliar para domicilio",
-            link_url: "/services",
+            link_url: "/forum",
             created_at: new Date().toISOString()
           },
           {
-            id: 'mon-mercat-saptmana',
-            title: "🛒 Mercados Semanales en Tarragona",
-            content: "Esta semana arranca el ciclo de mercados y ferias locales. El mercado de la Part Alta regresa al centro histórico el miércoles y el jueves con verduras de proximidad, artesanía y productos locales.",
-            category: "COMERCIO",
-            neighborhood: "PART ALTA",
-            itinerary: "• Miércoles y Jueves: 08:30h a 14:00h\n• Ubicación: Plaça del Fòrum\n• Productores locales de Camp de Tarragona",
+            id: 'tue-corte-agua',
+            title: "💧 Aviso EMATSA: Mejora Red de Agua",
+            content: "Mañana miércoles 25 de febrero habrá un corte programado por obras de mejora de 09:00 a 14:00h en las zonas de Nou Eixample Sud. Recomendamos previsión.",
+            category: "AVISO",
+            neighborhood: "EIXAMPLE",
+            itinerary: "• Afectación: C/ Ramón y Cajal, Rovira i Virgili y anexas\n• Motivo: Renovación tuberías primarias",
             created_at: new Date().toISOString()
           },
           {
-            id: 'mon-activitats-setmana',
-            title: "📅 Agenda Cultural: Semana del 23 Feb",
-            content: "La semana comienza con propuestas culturales y deportivas en los Centros Cívicos. Talleres de teatro, clases de yoga y reuniones de asociaciones están disponibles sin coste para los vecinos empadronados.",
+            id: 'tue-biblio-tarda',
+            title: "📚 Martes de Lectura en la Biblioteca",
+            content: "La Biblioteca Pública de Tarragona mantendrá hoy su horario completo de 9 a 20h. Recuerda que los martes tarde hay cuentacuentos infantil a las 17:30h.",
             category: "CULTURA",
-            neighborhood: "GENERAL",
-            itinerary: "• Lunes: Yoga matinal — CC Torreforta (09:00h)\n• Martes: Taller Teatro adultos — CC Part Alta (18:30h)\n• Miércoles: Cine Forum — CC Sant Pere (19:00h)",
-            link_url: "/services",
+            neighborhood: "CENTRE",
+            itinerary: "• Horario: 09:00h a 20:00h\n• Cuentacuentos: 17:30h (Infantil)\n• Acceso: Calle Gasòmetre",
             created_at: new Date().toISOString()
           }
         ];
@@ -225,10 +223,10 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'poll-parque-ejemplo',
-          question: '¿Qué actividad te gustaría ver este invierno en el Centro Cívico de tu barrio?',
-          options: ['Taller de cocina saludable', 'Clases de idiomas gratuitas', 'Tarde de juegos de mesa', 'Yoga y meditación matinal'],
-          category: 'OCIO VECINAL',
+          id: 'poll-martes-lluvia',
+          question: 'Con la previsión de lluvia para hoy tarde, ¿qué plan prefieres?',
+          options: ['Tarde de cine o lectura en casa', 'Ir a la biblioteca del barrio', 'Quedar en una cafetería a charlar', 'Gimnasio o piscina cubierta'],
+          category: 'PLANES MARTES',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()
         };

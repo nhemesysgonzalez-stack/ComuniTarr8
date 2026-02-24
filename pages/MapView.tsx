@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '48%', y: '48%', title: "Vermut Popular", desc: 'Plaza del Fòrum: Gran ambiente de sábado tarde con música en vivo.', status: 'Activo ahora', color: 'bg-amber-500', icon: 'local_bar', glow: 'shadow-[0_0_50px_rgba(245,158,11,0.5)]' },
-    { id: 2, type: 'event', x: '50%', y: '52%', title: 'Teatro Metropol', desc: 'Representación de "La Vida es Sueño" esta noche.', status: '20:30h', color: 'bg-indigo-600', icon: 'theater_comedy', glow: 'shadow-[0_0_35px_rgba(79,70,229,0.4)]' },
-    { id: 3, type: 'cleanup', x: '52%', y: '45%', title: 'Limpieza Miracle', desc: 'Brigada vecinal de limpieza de playas finalizada con éxito.', status: 'Finalizado', color: 'bg-emerald-500', icon: 'waves' },
-    { id: 4, type: 'shop', x: '45%', y: '55%', title: 'Mercado de Productores', desc: 'Últimas horas para comprar producto Km0 en la Part Alta.', status: 'Cierra 15:00h', color: 'bg-green-600', icon: 'shopping_basket' },
-    { id: 5, type: 'incident', x: '55%', y: '40%', title: 'Carrera Popular (Mañana)', desc: 'Preparación de vallas en el Paseo Marítimo.', status: 'Aviso', color: 'bg-orange-500', icon: 'directions_run' }
+    { id: 1, type: 'event', x: '48%', y: '48%', title: "Biblioteca Pública TGN", desc: 'Abierta hoy martes de 9 a 20h. Sala de estudio, WiFi y préstamo. C/ Gasòmetre.', status: 'Abierto', color: 'bg-amber-500', icon: 'menu_book', glow: 'shadow-[0_0_50px_rgba(245,158,11,0.5)]' },
+    { id: 2, type: 'event', x: '50%', y: '52%', title: 'Piscina Municipal Francolí', desc: 'Natación libre hoy martes de 7 a 22h. Cursos de aquagym a las 10h y 18h.', status: '7-22h', color: 'bg-indigo-600', icon: 'pool', glow: 'shadow-[0_0_35px_rgba(79,70,229,0.4)]' },
+    { id: 3, type: 'cleanup', x: '52%', y: '45%', title: 'Mercado Semanal', desc: 'Mercat Central abierto hoy martes con horario completo (8-14h y 17-20:30h).', status: 'Abierto', color: 'bg-emerald-500', icon: 'shopping_basket' },
+    { id: 4, type: 'shop', x: '45%', y: '55%', title: 'Centro Cívico Part Alta', desc: 'Talleres de pintura (17h) y yoga (19h) hoy martes. Inscripción libre.', status: 'Activo', color: 'bg-green-600', icon: 'palette' },
+    { id: 5, type: 'incident', x: '55%', y: '40%', title: 'Bache Calle Gasòmetre', desc: 'Aviso vecinal: bache grande en cruce con Smith. Reportado vía Línia Verda TGN.', status: 'Reportado', color: 'bg-orange-500', icon: 'report_problem' }
 
   ]);
   const [showReportModal, setShowReportModal] = useState(false);

@@ -168,19 +168,23 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Sábado 21 Feb)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Martes 24 Feb)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Personal Limpieza - Refuerzo Domingo"</p>
-                    <p className="text-[10px] text-gray-500">Para oficinas en C/ de la Unió. Turno mañana (07:00-11:00). 11€/h. 📞 633 44 55 66 (Marta)</p>
+                    <p className="text-xs font-black dark:text-white">"Camarero/a — Jornada Completa"</p>
+                    <p className="text-[10px] text-gray-500">Restaurante en Serrallo. Horario partido Lu-Vi. Experiencia mínima 1 año. 1.300€/mes + propinas. 📞 977 22 11 33 (Antonio)</p>
                   </div>
                   <div className="border-l-4 border-blue-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Vigilante Parking - Fines de Semana"</p>
-                    <p className="text-[10px] text-gray-500">Parking zona Centro. Turno noche. Se requiere TIP. 📞 977 12 34 56 (Seguridad TGN)</p>
+                    <p className="text-xs font-black dark:text-white">"Auxiliar Administrativo/a — Media Jornada"</p>
+                    <p className="text-[10px] text-gray-500">Gestoría en Rambla Nova. Lu-Vi mañanas (9-14h). Se valora catalán. 📞 977 24 55 66 (Rosa)</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Repartidor/a - Comida a Domicilio"</p>
-                    <p className="text-[10px] text-gray-500">Moto propia. Incorporación inmediata hoy sábado. 📞 611 99 88 77 (Pizzería Di Roma)</p>
+                    <p className="text-xs font-black dark:text-white">"Repartidor/a — Comida a Domicilio"</p>
+                    <p className="text-[10px] text-gray-500">Moto propia. Incorporación inmediata. Horario flexible tardes. 📞 611 99 88 77 (Pizzería Di Roma)</p>
+                  </div>
+                  <div className="border-l-4 border-purple-500 pl-4">
+                    <p className="text-xs font-black dark:text-white">"Cuidador/a de Persona Mayor — Fines de Semana"</p>
+                    <p className="text-[10px] text-gray-500">Part Alta. Sá-Do 9-14h. Experiencia y referencias. 12€/h. 📞 622 77 88 99 (Carmen)</p>
                   </div>
                 </div>
 
@@ -551,13 +555,13 @@ export const Services: React.FC = () => {
                   <div className="flex flex-col gap-2">
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Part Alta</span>
-                      <span className="text-[9px] font-black bg-red-100 text-red-700 px-2 py-0.5 rounded-full uppercase">CERRADO (DOMINGO)</span>
+                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (MARTES)</span>
                     </div>
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
-                      <span className="text-[9px] font-black bg-red-100 text-red-700 px-2 py-0.5 rounded-full uppercase">CERRADO (DOMINGO)</span>
+                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (MARTES)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Los domingos recomendamos el Mercat de Antiguitats en la Catedral.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy martes hay talleres de pintura y yoga en los centros cívicos.</p>
                   </div>
                 </div>
               </div>

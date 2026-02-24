@@ -115,9 +115,9 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Mireia R.', text: '☕ ¿Alguien sabe si la cafetería nueva de la Rambla abre hoy lunes? Me han dicho que hacen unos cruasanes increíbles.' },
+        { who: 'Mireia R.', text: '☕ ¿Alguien sabe si la cafetería nueva de la Rambla abre hoy martes? Me han dicho que hacen unos cruasanes increíbles.' },
         { who: 'Joan B.', text: '@Mireia Sí, abre a las 8h. He pasado esta mañana y huele de maravilla. Se llama "El Forn de la Rambla".' },
-        { who: 'Pau T.', text: '@Mireia @Joan Yo he ido el sábado. El café con leche de avena está brutal. Y tienen wifi gratis 💯' },
+        { who: 'Pau T.', text: '@Mireia @Joan Yo fui ayer lunes. El café con leche de avena está brutal. Y tienen wifi gratis 💯' },
         { who: 'Mireia R.', text: '@Pau ¡Vendido! Voy esta tarde después del trabajo. ¿Alguien se apunta? ☕' },
         { who: 'Maria G.', text: '@Mireia ¡Yo me apunto! Quedamos a las 17:30 y así hablamos de la reunión de la AMPA.' },
         { who: 'Mireia R.', text: '@Maria Perfecto. Te espero allí. ¡Quién más se anime! 🙋‍♀️' },
@@ -131,12 +131,12 @@ const Forum: React.FC = () => {
         { who: 'Pau T.', text: 'También lo reporto yo por Línia Verda. Cuantos más lo hagamos, más rápido actúan. 💪' },
       ],
       [
-        { who: 'Joe R.', text: '🏃 ¿Alguien se apunta a correr mañana martes por el Passeig Marítim? Salgo a las 7:15h.' },
+        { who: 'Joe R.', text: '🏃 ¿Alguien se apunta a correr hoy martes por el Passeig Marítim? Salgo a las 19:15h (un poco más tarde para evitar la lluvia probable).' },
         { who: 'Pau T.', text: '@Joe Yo me apunto. ¿Hacemos 5K o 10K? Que vengo de vacaciones y estoy oxidado 😂' },
-        { who: 'Joe R.', text: '@Pau Jajaja empezamos suave, 5K. Nos vemos en la estatua del pescador a las 7:15.' },
-        { who: 'Maria G.', text: '¡Yo también quiero! Pero a las 7:15 es muy temprano... ¿no podéis a las 8? 😅' },
-        { who: 'Joe R.', text: '@Maria Bueno... 7:30 como compromiso. ¡Así luego desayunamos todos juntos! 🥐' },
-        { who: 'Pau T.', text: 'Me llevo la cartera por si alguien quiere desayunar después en el chiringuito. Plan perfecto 🌊' },
+        { who: 'Joe R.', text: '@Pau Jajaja empezamos suave, 5K. Nos vemos en la estatua del pescador a las 19:15.' },
+        { who: 'Maria G.', text: '¡Yo también quiero! Pero a las 19:15 es muy tarde... ¿no podéis a las 18? 😅' },
+        { who: 'Joe R.', text: '@Maria Bueno... 18:30 como compromiso. ¡Así luego tomamos algo caliente después por el frío! ☕' },
+        { who: 'Pau T.', text: 'Me llevo la chaqueta por si acaso. Plan perfecto 🌊' },
       ],
     ],
     'APOYO': [
@@ -182,7 +182,7 @@ const Forum: React.FC = () => {
         { who: 'Pau T.', text: '@Joe ¡Yo! ¿A qué hora y dónde? Llevo sin jugar un mes pero las ganas no me faltan 😂' },
         { who: 'Joe R.', text: '@Pau Genial, a las 18:30 en el polideportivo del Francolí. Traemos pelotas. ¿Nivel principiante-medio va bien?' },
         { who: 'Pau T.', text: '@Joe Perfecto, ¡ahí estaré! Y si después alguien quiere cenar algo... 🍕' },
-        { who: 'Mireia R.', text: 'Yo no juego a pádel pero me apunto a la cena post-partido si me dejáis 🙋‍♀️ Me vendrá bien desconectar del lunes.' },
+        { who: 'Mireia R.', text: 'Yo no juego a pádel pero me apunto a la cena post-partido si me dejáis 🙋‍♀️ Me vendrá bien desconectar del martes.' },
         { who: 'Joe R.', text: '@Mireia ¡Claro! Cuando acabemos (sobre las 20h) buscamos sitio. Plan redondo. 🙌' },
       ],
     ],
@@ -254,10 +254,10 @@ const Forum: React.FC = () => {
       // Seeds per channel
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
-          { id: 'seed-mon-1', user_id: 'v3', content: '☀️ ¡Buenos días! ¿Alguien más tiene el bus lleno hoy de lunes? 😅', user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 22).toISOString() },
-          { id: 'seed-mon-2', user_id: 'v2', content: '☕ ¡Buenos lunes a todos! Qué bien que ya es lunes... o no 😂 ¿Alguien tiene una receta buena para la semana?', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 14).toISOString() },
-          { id: 'seed-mon-3', user_id: 'v5', content: 'Recordatorio: hoy a las 10h hay yoga matinal en el CC Torreforta 🧘 ¡Os esperamos!', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 8).toISOString() },
-          { id: 'seed-mon-4', user_id: 'v6', content: 'Acabo de ver que hay bici pública libre en la estación de la Rambla. 🚴‍♂️ ¿Alguien va al centro esta mañana?', user_metadata: { full_name: 'Pau T.', avatar_url: 'https://i.pravatar.cc/150?u=pau' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 3).toISOString() },
+          { id: 'seed-tue-1', user_id: 'v3', content: '☁️ ¡Buenos días de martes! ¿Habéis visto que se ha nublado de golpe? 😅', user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 22).toISOString() },
+          { id: 'seed-tue-2', user_id: 'v2', content: '☕ ¡Buen martes a todos! Aprovechando la mañana antes de que llueva. ¿Alguien tiene una receta buena para sopa?', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 14).toISOString() },
+          { id: 'seed-tue-3', user_id: 'v5', content: 'Recordatorio: hoy a las 18:30h hay Taller de Teatro en el CC Part Alta 🎭 ¡Os esperamos!', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 8).toISOString() },
+          { id: 'seed-tue-4', user_id: 'v6', content: 'La biblio hoy martes abre hasta las 20h. ¡Qué bien me viene para terminar el trabajo! 📖', user_metadata: { full_name: 'Pau T.', avatar_url: 'https://i.pravatar.cc/150?u=pau' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 3).toISOString() },
         ] as Message[],
         'APOYO': [
           { id: 'seed-apoyo-1', user_id: 'v8', content: '💜 Buenos días. Quería compartir algo: mi hijo estaba sufriendo acoso en el cole y no sabía a quién acudir. Llamé al teléfono ANAR (900 20 20 10) y nos ayudaron muchísimo. Es gratuito y confidencial. Por si a alguien le sirve.', user_metadata: { full_name: 'Sandra L.', avatar_url: 'https://i.pravatar.cc/150?u=sandra' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 45).toISOString() },
@@ -317,22 +317,22 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts (Monday 23 Feb / New week energy)
     let scripts = [
-      "☀️ ¡Buenos lunes! ¿Alguien se apunta a desayunar en la Rambla antes del trabajo? ☕",
-      "Empezando la semana con podcast y café. ¿Alguien recomienda algo bueno? 📻",
-      "¿Hay alguien que baje al mercado este miércoles? Busco alguien con quien ir a la compra. 🛒",
-      "Recordatorio: la reunión de la AMPA del cole de Sant Pere es este martes. 🏫",
-      "¿Alguien sabe si la piscina municipal del Francolí abre hoy? Quiero retomar la rutina. 🏊",
-      "Lunes sin lluvia en Tarragona... eso es empezar bien la semana. ¡Ánimo a todos! 💪"
+      "☁️ ¡Buen martes vecinos! ¿Alguien se apunta a un café en la biblioteca esta tarde? ☕",
+      "Día nublado, ideal para quedarse en casa leyendo. ¿Alguna recomendación de libro? 📖",
+      "¿Hay alguien que baje al mercado central esta tarde? Abre a las 17h. 🛒",
+      "Recordatorio: el taller de teatro es hoy a las 18:30h en la Part Alta. 🎭",
+      "¿Alguien sabe si hay problemas con los trenes hoy? He oído algo en la radio. 🚆",
+      "Martes productivo para todos. ¡A darle fuerte! 💪"
     ];
 
     // Base reply scripts
     let replyScripts = [
-      `¡Totalmente, ${isReplyTo}! A por la semana.`,
-      `¡Buen lunes, ${isReplyTo}! Un café y a tope. ☕`,
-      `¡Ánimo ${isReplyTo}! Ya queda menos para el viernes 😄`,
-      `Yo me apunto si hacéis algo esta tarde.`,
-      `Gracias por la info, ${isReplyTo}.`,
-      `¡Qué buena idea! Gracias, ${isReplyTo}. 💪`
+      `¡Totalmente, ${isReplyTo}! A por el martes.`,
+      `¡Buen martes, ${isReplyTo}! Un café y seguimos. ☕`,
+      `¡Pasa rápido el día, ${isReplyTo}! Ánimo 😄`,
+      `Yo me apunto si hacéis algo esta tarde después de la biblio.`,
+      `Gracias por la info de hoy, ${isReplyTo}.`,
+      `¡Qué buena idea para un martes! Gracias, ${isReplyTo}. 💪`
     ];
 
     if (currentNeighborhood === 'EMPLEO') {

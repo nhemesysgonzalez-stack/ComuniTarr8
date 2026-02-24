@@ -59,26 +59,39 @@ const Incidents: React.FC = () => {
                 // Mock Incidents for Demo (Thursday 19th)
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'mock-inc-sat-1',
+                        id: 'mock-inc-tue-1',
                         user_id: 'admin',
-                        title: '☀️ Sábado de Sol y Playa',
-                        description: 'Las playas de Tarragona están en perfectas condiciones hoy sábado. Bandera verde en todas ellas. ¡Disfrutad del buen tiempo!',
-                        neighborhood: 'BARRIS MARÍTIMS',
-                        status: 'resolved',
+                        title: '⚠️ Bache grande en Calle Gasòmetre',
+                        description: 'Bache de unos 30cm en el cruce con Smith. Varios vecinos lo han reportado por Línia Verda TGN y al 010. Cuidado peatones y ciclistas.',
+                        neighborhood: 'CENTRE',
+                        status: 'in_progress',
                         created_at: new Date().toISOString(),
-                        profiles: { full_name: 'Protección Civil TGN', avatar_url: '/logo.svg' },
-                        image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800'
+                        contact_info: '010 (Ajuntament TGN)',
+                        profiles: { full_name: 'Luis M.', avatar_url: 'https://i.pravatar.cc/150?u=luis' },
+                        image_url: 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=800'
                     },
                     {
-                        id: 'mock-inc-sat-2',
+                        id: 'mock-inc-tue-2',
                         user_id: 'user3',
-                        title: '🐕 Perro encontrado',
-                        description: 'He encontrado un Beagle cachorro cerca del Parque de la Ciudad hoy a las 12:00. Muy asustado pero bien. Sin collar.',
+                        title: '🐕 Perro encontrado en Parque de la Ciudad',
+                        description: 'Beagle cachorro encontrado hoy martes sobre las 9h. Muy asustado, sin collar ni chip. Lo tenemos en custodia temporal. Si es tuyo o conoces al dueño, llámanos.',
                         neighborhood: 'CENTRO',
                         status: 'open',
                         contact_info: '622 33 44 55 (Marta)',
-                        created_at: new Date(Date.now() - 1000 * 60 * 60 * 3).toISOString(),
+                        created_at: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(),
                         profiles: { full_name: 'Marta G.', avatar_url: 'https://i.pravatar.cc/150?u=marta' }
+                    },
+                    {
+                        id: 'mock-inc-tue-3',
+                        user_id: 'admin',
+                        title: '💧 Corte de agua programado — Zona Eixample',
+                        description: 'Empresa EMATSA informa: corte de agua previsto mañana miércoles 25 Feb de 9 a 14h en calles Ramón y Cajal, Rovira i Virgili y anexas por trabajos de mejora en la red.',
+                        neighborhood: 'EIXAMPLE',
+                        status: 'open',
+                        created_at: new Date(Date.now() - 1000 * 60 * 60).toISOString(),
+                        contact_info: '977 21 11 11 (EMATSA)',
+                        profiles: { full_name: 'EMATSA Tarragona', avatar_url: '/logo.svg' },
+                        image_url: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&q=80&w=800'
                     }
                 ];
 

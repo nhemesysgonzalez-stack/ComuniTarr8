@@ -48,27 +48,27 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'mock-ws-sat-1',
-                    title: 'Reparación de Disfraces',
-                    instructor: 'Taller de Costura',
-                    date: 'Sábado 21, 18:00',
-                    description: 'Taller práctico para arreglar, limpiar y guardar correctamente los trajes de Carnaval para el año que viene. ¡No los tires!',
-                    image: 'https://images.unsplash.com/photo-1528186218177-33f7aa8206d0?auto=format&fit=crop&q=80&w=800',
-                    spots: 8,
+                    id: 'mock-ws-tue-1',
+                    title: 'Taller de Teatro Adultos',
+                    instructor: 'Cora R.',
+                    date: 'Martes 24, 18:30',
+                    description: 'Sesión semanal de expresión corporal e improvisación. Abierta a todos los niveles. Hoy trabajaremos la comedia.',
+                    image: 'https://images.unsplash.com/photo-1503095396549-807a8bc3667c?auto=format&fit=crop&q=80&w=800',
+                    spots: 12,
                     neighborhood: 'PART ALTA',
-                    contact_info: 'Centro Cívico (Cora)',
+                    contact_info: 'Centro Cívico Part Alta',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-ws-sat-2',
-                    title: 'Iniciación al Running',
-                    instructor: 'Pau B.',
-                    date: 'Sábado 21, 19:00',
-                    description: 'Charla técnica y breve trote suave previo a la Carrera 5K de mañana. Consejos para debutantes.',
-                    image: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&q=80&w=800',
-                    spots: 15,
-                    neighborhood: 'BARRIS MARÍTIMS',
-                    contact_info: '611 22 33 44',
+                    id: 'mock-ws-tue-2',
+                    title: 'Club de Lectura Tarragona',
+                    instructor: 'Biblio TGN',
+                    date: 'Miércoles 25, 18:00',
+                    description: 'Comentamos la novela del mes: "Canto jo i la muntanya balla". En la sala de actos de la Biblioteca Pública.',
+                    image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800',
+                    spots: 20,
+                    neighborhood: 'CENTRE',
+                    contact_info: '977 24 03 31',
                     created_at: new Date().toISOString()
                 }
             ];

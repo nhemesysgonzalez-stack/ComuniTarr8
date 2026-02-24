@@ -11,20 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🎭 Esta noche: Teatro Metropol y salas de conciertos. ¡Tarragona late cultura! ✨", neighborhood: 'CENTRO' },
-    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Sábado radiante. Noche fresca pero despejada. Disfrutad de las terrazas. ⛱️', neighborhood: 'GENERAL' },
-    { id: 2, user: 'TGN Cultura', avatar: '/logo.svg', text: '🥘 Sábado de Gastronomía: El Serrallo está a tope con su cocina marinera hoy. 🦐', neighborhood: 'SERRALLO' },
-    { id: 3, user: 'Paco R.', avatar: 'https://i.pravatar.cc/150?u=paco', text: '¡Vaya tarde de sol! Tomando algo en la Plaça de la Font. Brutal el ambiente. 🍻', neighborhood: 'Part Alta' },
-    { id: 4, user: 'Marta S.', avatar: 'https://i.pravatar.cc/150?u=marta', text: '¿Alguien sabe a qué hora cierra hoy el Mercat Central? 🥦🍎', neighborhood: 'Centro' },
-    { id: 5, user: 'Guille M.', avatar: 'https://i.pravatar.cc/150?u=guille', text: 'Paseo por el Miracle espectacular esta tarde. Tarragona es única. 😍🌊', neighborhood: 'Barris Marítims' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "💜 Nuevo canal APOYO en el Foro: recursos contra bullying, violencia y acompañamiento. ¡Pásate!", neighborhood: 'GENERAL' },
+    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☁️ Martes nublado con posibles lluvias por la tarde. Temperatura 13ºC. Llevad chaqueta. 🌧️', neighborhood: 'GENERAL' },
+    { id: 2, user: 'TGN Empleo', avatar: '/logo.svg', text: '💼 Nuevas ofertas de empleo esta semana en hostelería y comercio. Consulta el Foro > Empleo.', neighborhood: 'EMPLEO' },
+    { id: 3, user: 'Nuria P.', avatar: 'https://i.pravatar.cc/150?u=nuria', text: '🟣 Recordad: 016 para violencia de género (no deja rastro en factura). SIAD Tarragona: 977 24 47 95.', neighborhood: 'APOYO' },
+    { id: 4, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: '📚 ¿Habéis visto la nueva biblioteca del barrio? Abre hoy martes de 9 a 20h. Ideal para estudiar.', neighborhood: 'Part Alta' },
+    { id: 5, user: 'Maria G.', avatar: 'https://i.pravatar.cc/150?u=maria', text: '🤝 Me ofrezco para acompañar vecinos/as mayores al médico. Lunes y miércoles tardes. ¡Escribidme!', neighborhood: 'APOYO' },
+    { id: 6, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '🏊 La piscina municipal del Francolí abre hoy martes de 7 a 22h. ¡A retomar la rutina!', neighborhood: 'Centro' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '🎭 Tarde de Teatro' },
-    { user: 'Meteo', text: '☀️ Sol Radiante' },
-    { user: 'Cultura', text: '🥘 Cocina Marinera' },
-    { user: 'V. Urbana', text: '🚌 Bus Normal' },
-    { user: 'Vecinos', text: '☀️ ¡Feliz Sábado!' }
+    { user: 'Admin', text: '💜 Canal Apoyo Activo' },
+    { user: 'Meteo', text: '☁️ Nublado 13ºC' },
+    { user: 'Empleo', text: '💼 Ofertas Nuevas' },
+    { user: 'Foro', text: '🤝 Apoyo Vecinal' },
+    { user: 'Vecinos', text: '☁️ ¡Buen Martes!' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

@@ -145,34 +145,34 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'real-lunes-semana-inicio',
-                    title: "☀️ INICIO SEMANA — LUNES 23 FEBRERO 2026",
-                    content: "Comienza una nueva semana. Cielos despejados (máx 14°C). Esta semana: mercado los miércoles y jueves, reunión de vecinos el miércoles a las 18h, y Cine Forum el jueves por la noche.",
+                    id: 'real-tue-semana-update',
+                    title: "☁️ MARTES 24 FEBRERO 2026 — ESTADO DEL BARRIO",
+                    content: "Día nublado con probabilidad de lluvia tarde (13°C). Recordamos que hoy la biblioteca abre hasta las 20h. Mañana miércoles corte programado de agua en zona Eixample Sud.",
                     category: "INFO",
                     author_name: "ComuniTarr",
                     neighborhood: "GENERAL",
-                    itinerary: "• Mié. 25 Feb: Mercat Setmanal (08:30h, Plaça Fòrum)\n• Mié. 25 Feb: Asamblea Vecinos (18:00h, CC Part Alta)\n• Jue. 26 Feb: Cine Forum Almodóvar (19:00h, CC Sant Pere)",
+                    itinerary: "• Hoy Martes: Taller Teatro adultos (18:30h, CC Part Alta)\n• Hoy Martes: Biblio TGN abierta hasta las 20:00h\n• Mañana Mié: Corte agua Nou Eixample (09:00-14:00h)",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-farmacia-guardia-lunes',
-                    title: "💊 FARMACIA DE GUARDIA ESTA SEMANA",
-                    content: "Conoced la farmacia de guardia para esta semana en Tarragona ciudad. Disponible 24 horas para emergencias y urgencias menores.",
+                    id: 'real-farmacia-guardia-tue',
+                    title: "💊 FARMACIA DE GUARDIA (HOY MARTES)",
+                    content: "Servicio de guardia 24h disponible en la zona centro. Abierta ininterrumpidamente para urgencias.",
                     category: "INFO",
                     author_name: "Salud TGN",
                     neighborhood: "GENERAL",
-                    itinerary: "• Farmacia: Farmàcia Fullana\n• Dirección: C/ de la Unió, 1\n• Teléfono: 977 23 30 84\n• Horario: 24 horas / 7 días",
+                    itinerary: "• Farmacia: Farmàcia Fullana\n• Dirección: C/ de la Unió, 1\n• Teléfono: 977 23 30 84\n• Horario: 24 horas",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-bolsa-empleo-lunes',
-                    title: "💼 NUEVAS VACANTES DE EMPLEO — SEMANA 9",
-                    content: "El Servei d'Ocupació de Catalunya publica nuevas vacantes esta semana. Hostelería, cuidados y logística son los sectores con más demanda en Tarragona.",
+                    id: 'real-bolsa-empleo-tue',
+                    title: "💼 BOLSA DE TRABAJO ACTUALIZADA (MARTES)",
+                    content: "Nuevas vacantes reales publicadas hoy en la sección de Servicios de ComuniTarr. Se buscan camareros y auxiliares administrativos con incorporación inmediata.",
                     category: "EVENTO",
                     author_name: "SOC Tarragona",
                     neighborhood: "GENERAL",
-                    itinerary: "• Hostelería: 4 vacantes (Zona Centro) · 622 11 00 22\n• Cuidados domicilio: 3 puestos (Eixample) · 977 44 33 22\n• Logística: 2 posiciones (Pol. Francolí) · 977 55 66 77\n• Info: Oficina SOC, C/ Lleida 2 · 977 25 11 66",
-                    link_url: "https://empresa.icf.cat/",
+                    itinerary: "• Restaurante Serrallo: 📞 977 22 11 33\n• Gestoría Rambla: 📞 977 24 55 66\n• Más info: Sección Servicios > Empleo",
+                    link_url: "/services",
                     created_at: new Date().toISOString()
                 }
             ];

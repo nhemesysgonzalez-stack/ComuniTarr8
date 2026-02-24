@@ -10,7 +10,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
 
     // Logic to auto-show if there is an active alert for today (Feb 19 2026)
     useEffect(() => {
-        const hasSeenAlert = sessionStorage.getItem('hasSeenCautionFeb19');
+        const hasSeenAlert = sessionStorage.getItem('hasSeenCautionFeb24');
         if (!hasSeenAlert) {
             setTimeout(() => {
                 setIsVisible(true);
@@ -26,7 +26,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
 
     const dismissAlert = () => {
         setIsVisible(false);
-        sessionStorage.setItem('hasSeenCautionFeb19', 'true');
+        sessionStorage.setItem('hasSeenCautionFeb24', 'true');
         if (onDismiss) onDismiss();
     };
 
@@ -48,7 +48,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                             NORMALIDAD RESTABLECIDA
                         </h2>
                         <p className="text-xs font-medium text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-                            Finalizados los trabajos de limpieza post-Carnaval. Todas las calles y líneas de autobús operan con normalidad. ¡Gracias por vuestra colaboración!
+                            Semana de vuelta a la normalidad total. Buen martes para pasear y disfrutar de los servicios municipales. ¡Tarragona sigue viva!
                         </p>
 
                         <div className="grid grid-cols-2 gap-4 mb-6">
@@ -75,8 +75,8 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                         </div>
 
                         <div className="pt-2 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center text-[8px] font-bold text-gray-400 uppercase tracking-widest">
-                            <span>SÁBADO 21 FEB 2026</span>
-                            <span>AEMET: Despejado 17ºC</span>
+                            <span>MARTES 24 FEB 2026</span>
+                            <span>AEMET: Nublado 13ºC</span>
                         </div>
                     </div>
                 </motion.div>

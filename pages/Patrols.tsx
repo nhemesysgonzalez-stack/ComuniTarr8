@@ -46,7 +46,26 @@ const Patrols: React.FC = () => {
         !p.name.includes("Carrera Popular")
       );
 
-      const patrolExamples: PatrolGroup[] = [];
+      const patrolExamples: PatrolGroup[] = [
+        {
+          id: 'mock-pat-tue-1',
+          creator_id: 'admin',
+          name: '⚠️ Alerta Bache Gasòmetre',
+          description: 'Grupo para vigilar el bache de C/ Gasòmetre esta tarde de lluvia y avisar a conductores despistados hasta que EMATSA lo señalice bien.',
+          neighborhood: 'GENERAL',
+          contact_info: '644 11 22 33 (Luis)',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'mock-pat-tue-2',
+          creator_id: 'user2',
+          name: '🫂 Acompañamiento Biblio/Médico',
+          description: 'Vecinos voluntarios para acompañar a personas mayores a la biblioteca o al CAP hoy martes. ¡No están solos!',
+          neighborhood: 'GENERAL',
+          contact_info: 'Canal APOYO',
+          created_at: new Date().toISOString()
+        }
+      ];
 
       setPatrols(filteredDbData.length > 0 ? filteredDbData : patrolExamples);
     } catch (e) {

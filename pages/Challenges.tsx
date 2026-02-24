@@ -43,22 +43,22 @@ const Challenges: React.FC = () => {
 
       const mockChallenges: Challenge[] = [
         {
-          id: 'mock-ch-sat-1',
+          id: 'mock-ch-tue-1',
           creator_id: 'admin',
-          title: '🧹 Operación "Rambla Radiante"',
-          description: 'Quedada este sábado tarde para repasar las zonas de la Rambla donde hubo más afluencia y dejar el pavimento perfecto. ¡Por nuestro barrio!',
+          title: '🛠️ Revisión de Tapas y Aceras (Gasòmetre)',
+          description: 'Quedada este martes tarde para identificar y marcar con tiza otros puntos peligrosos como el bache del cruce con Smith. ¡Que el ayuntamiento vea que estamos atentos!',
           neighborhood: 'GENERAL',
-          contact_info: 'AAVV Centro (Cora)',
+          contact_info: '644 11 22 33 (Luis)',
           is_example: true,
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-ch-sat-2',
+          id: 'mock-ch-tue-2',
           creator_id: 'user2',
-          title: '🔋 Recogida de Pilas y Pequeños RAEE',
-          description: 'Mañana domingo aprovecharemos la Carrera Popular para poner un punto de recogida de pilas usadas y pequeños electrodomésticos.',
-          neighborhood: 'PONENT',
-          contact_info: '633 44 55 66 (Joan)',
+          title: '📚 Donación de Libros — Biblio TGN',
+          description: 'Aprovechando que hoy martes la biblioteca abre hasta tarde, varios vecinos llevaremos libros infantiles que ya no usamos para renovar el fondo de la sala infantil.',
+          neighborhood: 'CENTRE',
+          contact_info: '977 24 03 31',
           is_example: false,
           created_at: new Date().toISOString()
         }
@@ -240,9 +240,9 @@ const Challenges: React.FC = () => {
                   <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
                   <div className="flex flex-wrap gap-2 justify-center">
                     {[
-                      { t: 'Limpieza de Playa', d: 'Quedada el sábado para limpiar la playa del Milagro después del temporal.', c: '611888222' },
-                      { t: 'Donación de Disfraces', d: 'Recogemos disfraces que ya no uses para donarlos a ludotecas y centros infantiles.', c: '633444555' },
-                      { t: 'Compañía a Mayores', d: 'Grupo para pasear con vecinos mayores ahora que vuelve el buen tiempo.', c: '655666777' }
+                      { t: 'Donación de Libros', d: 'Llevamos libros a la biblioteca del barrio para renovar stock infantil.', c: '977240331' },
+                      { t: 'Paseo con Mayores', d: 'Grupo para pasear con vecinos del barrio que viven solos esta tarde de martes.', c: '655666777' },
+                      { t: 'Marca tu Bache', d: 'Iniciativa para marcar con tiza de colores los baches peligrosos de la calle para que se vean bien.', c: '611888222' }
                     ].map((idea, i) => (
                       <button
                         key={i}

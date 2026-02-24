@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'ms1', user_name: 'Ana T.', content: 'Increíble la tarde de sol en la Rambla hoy sábado. ¡Hacía falta este tiempo! ☀️🌴', image_url: 'https://images.unsplash.com/photo-1518173946687-a4c8a9ba332f', likes: 142, created_at: new Date().toISOString() },
+            { id: 'ms1', user_name: 'Ana T.', content: 'Mañana de biblioteca en Gasòmetre. Silencio, café y concentración. ¡Martes productivo! ☕📚', image_url: 'https://images.unsplash.com/photo-1518173946687-a4c8a9ba332f', likes: 142, created_at: new Date().toISOString() },
             { id: 'ms2', user_name: 'Marc G.', content: 'El Vermut Musical del Serrallo ha sido un éxito total. ¡Qué ambientazo! 🥂🎶', image_url: 'https://images.unsplash.com/photo-1493238792000-8113da705763', likes: 215, created_at: new Date().toISOString() },
             { id: 'ms3', user_name: 'Pilar S.', content: 'Preparando todo para la Carrera Popular de mañana. ¡Suerte a todos los que corráis! 🏃‍♀️💨', image_url: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8', likes: 98, created_at: new Date().toISOString() },
-            { id: 'ms4', user_name: 'Joan R.', content: 'Paseo por el Miracle terminando este sábado de lujo. Tarragona es preciosa. 🌊🏛️', image_url: 'https://images.unsplash.com/photo-1548543604-a87c9909abec', likes: 167, created_at: new Date().toISOString() }
+            { id: 'ms4', user_name: 'Joan R.', content: 'Paseo por el Miracle a la salida del trabajo. Tarragona nublada pero preciosa. 🌊🏛️', image_url: 'https://images.unsplash.com/photo-1548543604-a87c9909abec', likes: 167, created_at: new Date().toISOString() }
         ];
 
 
