@@ -14,6 +14,7 @@ export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showNeighborhoods, setShowNeighborhoods] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
+  const [showCreateModal, setShowCreateModal] = useState(false);
   const [isDark, setIsDark] = useState(document.documentElement.classList.contains('dark'));
 
   const mockNotifications = [
