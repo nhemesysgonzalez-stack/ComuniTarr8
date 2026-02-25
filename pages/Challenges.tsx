@@ -43,22 +43,22 @@ const Challenges: React.FC = () => {
 
       const mockChallenges: Challenge[] = [
         {
-          id: 'mock-ch-tue-1',
+          id: 'mock-ch-wed-1',
           creator_id: 'admin',
-          title: '🛠️ Revisión de Tapas y Aceras (Gasòmetre)',
-          description: 'Quedada este martes tarde para identificar y marcar con tiza otros puntos peligrosos como el bache del cruce con Smith. ¡Que el ayuntamiento vea que estamos atentos!',
+          title: '🛒 Reto: Mercado Sostenible',
+          description: 'Hoy miércoles, ¡ve al mercado de la Part Alta con tus propias bolsas de tela! El reto es no usar ni un solo plástico de un solo uso en toda la compra.',
           neighborhood: 'GENERAL',
-          contact_info: '644 11 22 33 (Luis)',
+          contact_info: 'Comunidad ComuniTarr',
           is_example: true,
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-ch-tue-2',
+          id: 'mock-ch-wed-2',
           creator_id: 'user2',
-          title: '📚 Donación de Libros — Biblio TGN',
-          description: 'Aprovechando que hoy martes la biblioteca abre hasta tarde, varios vecinos llevaremos libros infantiles que ya no usamos para renovar el fondo de la sala infantil.',
-          neighborhood: 'CENTRE',
-          contact_info: '977 24 03 31',
+          title: '💧 Reto Resiliencia: Corte EMATSA',
+          description: 'Para los vecinos del Eixample Sud: compartir si os sobran garrafas o si necesitáis ayuda. El reto es que a ningún vecino le falte agua potable durante el corte.',
+          neighborhood: 'EIXAMPLE',
+          contact_info: 'Canal EMERGENCIA',
           is_example: false,
           created_at: new Date().toISOString()
         }

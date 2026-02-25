@@ -59,25 +59,12 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'real-lunes-yoga',
-          creator_id: 'admin',
-          title: "🧘 Yoga Matinal — Cada Lunes",
-          description: "Sesión semanal de yoga al aire libre para vecinos de todos los niveles. Trae tu esterilla y buena energía.",
-          event_date: '2026-02-23',
-          event_time: '09:00',
-          location: 'Centre Cívic Torreforta',
-          category: 'Deporte',
-          neighborhood: 'GENERAL',
-          contact_info: '977 24 10 80 (CC Torreforta)',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'real-mercat-forum',
+          id: 'real-wed-mercat-forum',
           creator_id: 'admin',
           title: "🛒 Mercat Setmanal Part Alta",
           description: "Mercado local de proximidad con productos de temporada: frutas, verduras, artesania y más de 20 productores del Camp de Tarragona.",
           event_date: '2026-02-25',
-          event_time: '08:30',
+          event_time: '08:00',
           location: 'Plaça del Fòrum, Part Alta',
           category: 'Cultura',
           neighborhood: 'PART ALTA',
@@ -85,29 +72,29 @@ const NeighborhoodCalendar: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'real-cine-forum-santpere',
+          id: 'real-wed-cine-forum',
           creator_id: 'admin',
-          title: "🎥 Cine Forum — 'La Habitación de al Lado'",
-          description: "Proyección y debate. Película de Pedro Almodóvar. Organiza el Centro Cívico Sant Pere. Entrada libre.",
-          event_date: '2026-02-26',
+          title: "🎥 Cine Forum: 'Todo sobre mi madre'",
+          description: "Proyección del clásico de Almodóvar y debate posterior. Organiza el Centro Cívico Sant Pere i Sant Pau. Entrada libre.",
+          event_date: '2026-02-25',
           event_time: '19:00',
           location: 'Centre Cívic Sant Pere i Sant Pau',
           category: 'Cultura',
-          neighborhood: 'SANT PERE I SANT PAU',
-          contact_info: '977 29 58 00',
+          neighborhood: 'GENERAL',
+          contact_info: 'CC Sant Pere i Sant Pau (977 29 58 00)',
           created_at: new Date().toISOString()
         },
         {
-          id: 'real-asamblea-vesins',
+          id: 'real-wed-asamblea',
           creator_id: 'admin',
-          title: "🏠 Asamblea Asociación de Vecinos",
-          description: "Reunión mensual de la Asociación. Orden del día: seguimiento de incidencias, presupuesto participativo y propuesta de actividades de primavera.",
+          title: "🏠 Asamblea Vecinal Extraordinaria",
+          description: "Reunión urgente para tratar el tema de las nuevas zonas peatonales y el mantenimiento de las aceras en la zona Eixample Sud.",
           event_date: '2026-02-25',
-          event_time: '18:00',
-          location: 'Centre Cívic de la Part Alta',
+          event_time: '18:30',
+          location: 'Local Social Asociación de Vecinos',
           category: 'Solidario',
           neighborhood: 'GENERAL',
-          contact_info: 'avpartalta@gmail.com',
+          contact_info: 'avpartalta@tgn.cat',
           created_at: new Date().toISOString()
         }
       ];

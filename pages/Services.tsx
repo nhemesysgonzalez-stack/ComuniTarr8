@@ -168,26 +168,29 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Martes 24 Feb)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Hoy Miércoles 25 Feb)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Camarero/a — Jornada Completa"</p>
-                    <p className="text-[10px] text-gray-500">Restaurante en Serrallo. Horario partido Lu-Vi. Experiencia mínima 1 año. 1.300€/mes + propinas. 📞 977 22 11 33 (Antonio)</p>
+                    <p className="text-xs font-black dark:text-white">"Dependiente/a Frutería Mercado"</p>
+                    <p className="text-[10px] text-gray-500">Plaça del Fòrum (Mercado Semanal). Miércoles mañanas (7h-14h). Se requiere agilidad y trato amable. 50€/mañana. 📞 688 33 22 11 (Marcos)</p>
                   </div>
                   <div className="border-l-4 border-blue-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Auxiliar Administrativo/a — Media Jornada"</p>
-                    <p className="text-[10px] text-gray-500">Gestoría en Rambla Nova. Lu-Vi mañanas (9-14h). Se valora catalán. 📞 977 24 55 66 (Rosa)</p>
+                    <p className="text-xs font-black dark:text-white">"Personal Limpieza Locales"</p>
+                    <p className="text-[10px] text-gray-500">Zonas Centro y Eixample. Incorporación inmediata. Contrato estable, 20h/semanales mañanas. 📞 977 24 88 11 (Limpiezas Tarraco)</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Repartidor/a — Comida a Domicilio"</p>
-                    <p className="text-[10px] text-gray-500">Moto propia. Incorporación inmediata. Horario flexible tardes. 📞 611 99 88 77 (Pizzería Di Roma)</p>
+                    <p className="text-xs font-black dark:text-white">"Repartidor/a con Furgoneta Propia"</p>
+                    <p className="text-[10px] text-gray-500">Paquetería última milla en Tarragona ciudad. Autónomo con vehículo. Alta demanda. 📞 611 22 99 00 (Logística TGN)</p>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Cuidador/a de Persona Mayor — Fines de Semana"</p>
-                    <p className="text-[10px] text-gray-500">Part Alta. Sá-Do 9-14h. Experiencia y referencias. 12€/h. 📞 622 77 88 99 (Carmen)</p>
+                    <p className="text-xs font-black dark:text-white">"Canguro por Horas — Tardes"</p>
+                    <p className="text-[10px] text-gray-500">Zona Sant Pere i Sant Pau. Recoger niños del cole y merienda (17h-19h). Inglés valorable. 10€/h. 📞 633 44 55 66 (Laura)</p>
+                  </div>
+                  <div className="border-l-4 border-indigo-500 pl-4">
+                    <p className="text-xs font-black dark:text-white">"Camarero/a de Barra — Refuerzo Noches"</p>
+                    <p className="text-[10px] text-gray-500">Local nocturno en Marina Port Tàrraco. Jueves a Sábados (22h-03h). Experiencia en coctelería. 📞 977 25 11 00 (Club Nautic)</p>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>

@@ -42,29 +42,29 @@ const SupportCircles: React.FC = () => {
 
             const mockCircles: SupportCircle[] = [
                 {
-                    id: 'mock-mon-sc1',
+                    id: 'mock-wed-sc1',
                     initiator_id: 'v1',
-                    title: '💼 Ansiedad y Estrés Laboral — Vuelta a la Rutina',
+                    title: '💼 Ansiedad y Estrés Laboral — Sesión Miércoles',
                     neighborhood: 'GENERAL',
-                    description: 'Grupo semanal para personas que sufren estrés. Esta semana, sesión especial de inicio de semana el lunes a las 19h en el Centro Cívico Centro. Entrada libre.',
+                    description: 'Sesión presencial hoy miércoles a las 19:00h en el Centro Cívico Centro. Espacio compartido para soltar tensiones acumuladas a mitad de semana.',
                     contact_info: '611 22 33 44 (Miguel)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-mon-sc2',
+                    id: 'mock-wed-sc2',
                     initiator_id: 'vadmin',
-                    title: '🧘 Meditación Matinal de Lunes',
+                    title: '🤱 Círculo de Crianza — Hoy en el Parque',
                     neighborhood: 'GENERAL',
-                    description: 'Cada lunes a las 08:00h, sesión de meditación y respiración para empezar la semana con calma. Plaça del Pallol, Part Alta. Gratis y al aire libre.',
+                    description: 'Cada miércoles a las 11:00h nos reunimos en el Parque de la Ciudad para compartir experiencias sobre crianza. ¡Traed a los peques!',
                     contact_info: '655 12 34 56 (Elena)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-mon-sc3',
+                    id: 'mock-wed-sc3',
                     initiator_id: 'v2',
-                    title: '🤝 Círculo de Cuidadores — Reunión Semanal',
+                    title: '🏠 Vecinos en Duelo — Apoyo Mutuo',
                     neighborhood: 'GENERAL',
-                    description: 'Espacio seguro para cuidadores de personas mayores o dependientes. Nos reunimos cada lunes a las 18h para compartir recursos, experiencias y apoyo emocional.',
+                    description: 'Grupo de apoyo para personas que han perdido a un ser querido. Nos reunimos quincenalmente los miércoles (hoy toca sesión) a las 18h.',
                     contact_info: '622 99 88 77 (Rosa)',
                     created_at: new Date().toISOString()
                 }

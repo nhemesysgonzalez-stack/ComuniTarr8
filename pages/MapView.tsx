@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '48%', y: '48%', title: "Biblioteca Pública TGN", desc: 'Abierta hoy martes de 9 a 20h. Sala de estudio, WiFi y préstamo. C/ Gasòmetre.', status: 'Abierto', color: 'bg-amber-500', icon: 'menu_book', glow: 'shadow-[0_0_50px_rgba(245,158,11,0.5)]' },
-    { id: 2, type: 'event', x: '50%', y: '52%', title: 'Piscina Municipal Francolí', desc: 'Natación libre hoy martes de 7 a 22h. Cursos de aquagym a las 10h y 18h.', status: '7-22h', color: 'bg-indigo-600', icon: 'pool', glow: 'shadow-[0_0_35px_rgba(79,70,229,0.4)]' },
-    { id: 3, type: 'cleanup', x: '52%', y: '45%', title: 'Mercado Semanal', desc: 'Mercat Central abierto hoy martes con horario completo (8-14h y 17-20:30h).', status: 'Abierto', color: 'bg-emerald-500', icon: 'shopping_basket' },
-    { id: 4, type: 'shop', x: '45%', y: '55%', title: 'Centro Cívico Part Alta', desc: 'Talleres de pintura (17h) y yoga (19h) hoy martes. Inscripción libre.', status: 'Activo', color: 'bg-green-600', icon: 'palette' },
-    { id: 5, type: 'incident', x: '55%', y: '40%', title: 'Bache Calle Gasòmetre', desc: 'Aviso vecinal: bache grande en cruce con Smith. Reportado vía Línia Verda TGN.', status: 'Reportado', color: 'bg-orange-500', icon: 'report_problem' }
+    { id: 1, type: 'event', x: '48%', y: '48%', title: "Mercat de la Part Alta", desc: 'Mercado semanal de frutas y verduras hoy miércoles 8-14h. Plaça del Fòrum.', status: 'Activo (8-14h)', color: 'bg-emerald-500', icon: 'local_mall', glow: 'shadow-[0_0_50px_rgba(16,185,129,0.5)]' },
+    { id: 2, type: 'incident', x: '45%', y: '52%', title: 'Corte Agua EMATSA', desc: 'Suministro afectado hoy miércoles hasta las 14:00h en Nou Eixample Sud por obras.', status: 'En curso', color: 'bg-orange-600', icon: 'water_drop', glow: 'shadow-[0_0_35px_rgba(234,88,12,0.4)]' },
+    { id: 3, type: 'event', x: '52%', y: '35%', title: 'Cine Forum Sant Pere', desc: "Proyección hoy miércoles a las 19:00h: 'Todo sobre mi madre'. Centro Cívico.", status: '19:00h Today', color: 'bg-indigo-500', icon: 'movie_edit' },
+    { id: 4, type: 'shop', x: '55%', y: '55%', title: 'Centro Cívico Part Alta', desc: 'Talleres de miércoles: Yoga matinal y reunión de la AAVV a las 18:00h.', status: 'Abierto', color: 'bg-green-600', icon: 'groups' },
+    { id: 5, type: 'incident', x: '42%', y: '40%', title: 'Bache Calle Gasòmetre', desc: 'Aviso vecinal: bache grande en cruce con Smith. Reportado vía Línia Verda TGN.', status: 'Reportado', color: 'bg-red-500', icon: 'report_problem' }
 
   ]);
   const [showReportModal, setShowReportModal] = useState(false);

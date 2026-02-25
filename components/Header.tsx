@@ -264,15 +264,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">☁️ MARTES NUBLADO EN TGN: POSIBLES LLUVIAS POR LA TARDE, LLEVAD PARAGUAS</span>
+          <span className="flex items-center gap-2">☀️ SOL RADIANTE EN TGN: EL MIÉRCOLES EMPIEZA CON CIELOS DESPEJADOS Y 15ºC</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">💜 CANAL APOYO: NUEVO ESPACIO VECINAL CONTRA EL BULLYING Y LA VIOLENCIA — ENTRA EN EL FORO</span>
+          <span className="flex items-center gap-2">🛒 MERCAT SETMANAL: LA PLAÇA DEL FÒRUM SE LLENA DE PRODUCTO LOCAL ESTA MAÑANA (8-14H)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">📚 BIBLIOTECAS: HORARIO NORMAL HOY MARTES 9-20H EN TODAS LAS BIBLIOTECAS MUNICIPALES</span>
+          <span className="flex items-center gap-2">💧 AVISO EMATSA: CORTE DE AGUA EN CURSO HASTA LAS 14:00H EN ZONA NOU EIXAMPLE SUD</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛒 MERCAT CENTRAL: ABIERTO HOY MARTES HORARIO NORMAL (8-14H Y 17-20:30H)</span>
+          <span className="flex items-center gap-2">🎭 CINE FORUM: ESTA TARDE "TODO SOBRE MI MADRE" (19:00H) EN EL CENTRO CÍVICO SANT PERE</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🏊 PISCINA MUNICIPAL FRANCOLÍ: NATACIÓN LIBRE HOY DE 7 A 22H — INFO 977 22 33 44</span>
+          <span className="flex items-center gap-2">⚽ POLIESPORTIU CAMPCLAR: PISCINA Y GIMNASIO ABIERTOS HOY DE 7 A 22H — RENUEVA TU ABONO</span>
         </motion.div>
       </div>
 
@@ -354,8 +354,8 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white">MARTES 24 FEB 2026</span>
-                  <span className="text-xs font-black dark:text-white">AEMET: Nublado 13ºC</span>
+                  <span className="text-xs font-black dark:text-white uppercase">MIÉRCOLES 25 FEB 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Despejado 15ºC</span>
                 </div>
               </div>
 

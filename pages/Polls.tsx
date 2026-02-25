@@ -73,18 +73,26 @@ const Polls: React.FC = () => {
 
             const mockPolls: Poll[] = [
                 {
-                    id: 'poll-tue-1',
+                    id: 'poll-wed-1',
                     creator_id: 'v1',
-                    title: '¿Qué te parece la previsión de lluvia para hoy martes tarde? 🌧️',
-                    options: ['Hacía falta que lloviera', 'Me fastidia los planes', 'Prefiero el sol de ayer', 'No me afecta, estaré en casa'],
+                    title: '💧 ¿Cómo has llevado el corte de agua de EMATSA hoy? 🚰',
+                    options: ['Tenía garrafas listas, sin problema', 'Me ha pillado desprevenido/a', 'Aún sigo esperando que vuelva', 'Mejor de lo que esperaba'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-tue-2',
+                    id: 'poll-wed-2',
                     creator_id: 'v2',
-                    title: '¿Qué opinas del nuevo canal de APOYO en el foro? 💜',
-                    options: ['Muy necesario, me gusta', 'Está bien, pero prefiero ocio', 'Aún no he entrado', 'Debería haber más gente participando'],
+                    title: '📽️ ¿Qué película te gustaría ver en el próximo Cine Forum? 🍿',
+                    options: ['Alguna clásica de Hollywood', 'Cine europeo contemporáneo', 'Más de Almodóvar', 'Documentales sociales'],
+                    neighborhood: 'GENERAL',
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'poll-wed-3',
+                    creator_id: 'v3',
+                    title: '🛒 ¿Sueles ir al Mercado de la Part Alta los miércoles? 🧺',
+                    options: ['Siempre, producto fresco', 'A veces, si tengo tiempo', 'Casi nunca, me pilla lejos', 'Prefiero el mercado de los domingos'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }

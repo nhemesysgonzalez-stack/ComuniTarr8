@@ -74,12 +74,12 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Mireia R.', text: '☀️ ¡Buenos lunes, vecinos! Que empiece la semana con energía. ☕' },
-    { user: 'ComuniTarr 🏁', text: 'Esta semana: Mercado local miércoles y jueves en Plaça del Fòrum.' },
-    { user: 'Joan B.', text: '¿Alguien sabe si hay aparcamiento libre en la zona del Eixample hoy? 🚗' },
-    { user: 'Carme S.', text: '🛡️ Recordatorio: Reunión de la Asociación de Vecinos este miércoles 18h.' },
-    { user: 'Pau T.', text: 'La farmacia de guardia esta semana es Fullana (C/ de la Unió). 💊' },
-    { user: 'Maria G.', text: '☕ ¡Vamos, que el lunes siempre se supera! 💪 Buenos días a todos.' }
+    { user: 'Mireia R.', text: '☀️ ¡Buen miércoles! Hoy toca mercado en la Plaça del Fòrum. 🛒' },
+    { user: 'ComuniTarr 🏁', text: 'Aviso: Corte de agua en Eixample Sud hasta las 14:00h. 💧' },
+    { user: 'Joan B.', text: '¿Alguien para un café rápido por la Part Alta esta mañana? ☕' },
+    { user: 'Carme S.', text: '🎞️ Recordad: Cine Forum hoy a las 19:00h en CC Sant Pere.' },
+    { user: 'Pau T.', text: 'Acabo de comprar unas verduras increíbles en el mercado. 🌽' },
+    { user: 'Maria G.', text: '☕ ¡Ánimo con el ecuador de la semana! Tarragona brilla hoy. ✨' }
   ];
 
 
@@ -115,28 +115,24 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Mireia R.', text: '☕ ¿Alguien sabe si la cafetería nueva de la Rambla abre hoy martes? Me han dicho que hacen unos cruasanes increíbles.' },
-        { who: 'Joan B.', text: '@Mireia Sí, abre a las 8h. He pasado esta mañana y huele de maravilla. Se llama "El Forn de la Rambla".' },
-        { who: 'Pau T.', text: '@Mireia @Joan Yo fui ayer lunes. El café con leche de avena está brutal. Y tienen wifi gratis 💯' },
-        { who: 'Mireia R.', text: '@Pau ¡Vendido! Voy esta tarde después del trabajo. ¿Alguien se apunta? ☕' },
-        { who: 'Maria G.', text: '@Mireia ¡Yo me apunto! Quedamos a las 17:30 y así hablamos de la reunión de la AMPA.' },
-        { who: 'Mireia R.', text: '@Maria Perfecto. Te espero allí. ¡Quién más se anime! 🙋‍♀️' },
+        { who: 'Mireia R.', text: '☕ ¿Alguien ha ido ya al mercado de la Plaça del Fòrum? Quería saber si han traído ya fresones de temporada.' },
+        { who: 'Joan B.', text: '@Mireia ¡Sí! Vengo de allí ahora mismo. Hay un puesto cerca de la catedral con unos fresones espectaculares. 🍓' },
+        { who: 'Pau T.', text: '@Mireia @Joan Y las alcachofas también están muy bien hoy. He llenado el carro por poco dinero. 🛒' },
+        { who: 'Mireia R.', text: '@Joan @Pau ¡Genial! Pues voy volando antes de que cierren a las 14h. ¡Gracias!' },
+        { who: 'Maria G.', text: '@Mireia Si ves a la señora de las flores, pregúntale si tiene ya mimosas, ¡me encantan! ✨' },
       ],
       [
-        { who: 'Luis M.', text: '⚠️ Ojo vecinos: hay un bache enorme en la calle Gasòmetre, casi me caigo con la bici esta mañana.' },
-        { who: 'Carme S.', text: '@Luis ¿Cerca del cruce con Smith? Ayer vi una señora que casi tropieza ahí. Habría que avisar al Ayuntamiento.' },
-        { who: 'Luis M.', text: '@Carme Exacto, justo ahí. ¿Alguien sabe cómo se reporta? Por la app del Ajuntament o llamando?' },
-        { who: 'Joan B.', text: '@Luis Yo lo hice una vez: llama al 010 o usa la app "Línia Verda TGN". Tardaron 3 días en arreglarlo. 👍' },
-        { who: 'Luis M.', text: '@Joan Gracias, lo hago ahora mismo. Mientras tanto ¡cuidado los que paséis por ahí!' },
-        { who: 'Pau T.', text: 'También lo reporto yo por Línia Verda. Cuantos más lo hagamos, más rápido actúan. 💪' },
+        { who: 'Luis M.', text: '💧 Vecinos del Eixample Sud... ¿tenéis agua? En mi bloque (C/ Smith) ya no sale nada.' },
+        { who: 'Carme S.', text: '@Luis Comprueba el aviso de EMATSA. Hay corte programado hoy hasta las 14h por obras en la red.' },
+        { who: 'Luis M.', text: '@Carme ¡Ostras! No lo había visto. Menos mal que tengo un par de garrafas en el balcón...' },
+        { who: 'Joan B.', text: '@Luis Sí, están renovando tuberías en Ramón y Cajal. Toca paciencia hoy. 🛠️' },
+        { who: 'Mireia R.', text: '@Luis Si necesitas algo, yo tengo agua. Pásate por casa si quieres llenar una botella. 🤝' },
       ],
       [
-        { who: 'Joe R.', text: '🏃 ¿Alguien se apunta a correr hoy martes por el Passeig Marítim? Salgo a las 19:15h (un poco más tarde para evitar la lluvia probable).' },
-        { who: 'Pau T.', text: '@Joe Yo me apunto. ¿Hacemos 5K o 10K? Que vengo de vacaciones y estoy oxidado 😂' },
-        { who: 'Joe R.', text: '@Pau Jajaja empezamos suave, 5K. Nos vemos en la estatua del pescador a las 19:15.' },
-        { who: 'Maria G.', text: '¡Yo también quiero! Pero a las 19:15 es muy tarde... ¿no podéis a las 18? 😅' },
-        { who: 'Joe R.', text: '@Maria Bueno... 18:30 como compromiso. ¡Así luego tomamos algo caliente después por el frío! ☕' },
-        { who: 'Pau T.', text: 'Me llevo la chaqueta por si acaso. Plan perfecto 🌊' },
+        { who: 'Joe R.', text: '🎞️ ¿Quién viene hoy al Cine Forum? Proyectan "Todo sobre mi madre" en el CC Sant Pere a las 19:00h.' },
+        { who: 'Pau T.', text: '@Joe ¡Yo voy! Es de mis favoritas de Almodóvar. ¿Quedamos 15 min antes en la puerta?' },
+        { who: 'Maria G.', text: '@Joe @Pau Yo también me apunto. Traigo palomitas de casa si nos dejan entrar con ellas 😂' },
+        { who: 'Joe R.', text: '@Maria ¡Claro! Luego podemos comentar la peli tomando algo por allí cerca.' },
       ],
     ],
     'APOYO': [
@@ -254,10 +250,10 @@ const Forum: React.FC = () => {
       // Seeds per channel
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
-          { id: 'seed-tue-1', user_id: 'v3', content: '☁️ ¡Buenos días de martes! ¿Habéis visto que se ha nublado de golpe? 😅', user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 22).toISOString() },
-          { id: 'seed-tue-2', user_id: 'v2', content: '☕ ¡Buen martes a todos! Aprovechando la mañana antes de que llueva. ¿Alguien tiene una receta buena para sopa?', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 14).toISOString() },
-          { id: 'seed-tue-3', user_id: 'v5', content: 'Recordatorio: hoy a las 18:30h hay Taller de Teatro en el CC Part Alta 🎭 ¡Os esperamos!', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 8).toISOString() },
-          { id: 'seed-tue-4', user_id: 'v6', content: 'La biblio hoy martes abre hasta las 20h. ¡Qué bien me viene para terminar el trabajo! 📖', user_metadata: { full_name: 'Pau T.', avatar_url: 'https://i.pravatar.cc/150?u=pau' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 3).toISOString() },
+          { id: 'seed-wed-1', user_id: 'v3', content: '☀️ ¡Buenos días de miércoles! Menudo solazo hace hoy. Ideal para ir al mercado. 🛒', user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 22).toISOString() },
+          { id: 'seed-wed-2', user_id: 'v2', content: '☕ Café en mano y lista del mercado preparada. ¿Alguien sabe si el puesto de quesos de Albi está hoy?', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 14).toISOString() },
+          { id: 'seed-wed-3', user_id: 'v5', content: '💧 Recordad vecinos del Eixample Sud: corte de agua hasta las 14h. ¡No pongáis lavadoras! 😅', user_metadata: { full_name: 'Luis M.', avatar_url: 'https://i.pravatar.cc/150?u=luis' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 8).toISOString() },
+          { id: 'seed-wed-4', user_id: 'v6', content: '¡Hoy Cine Forum! A ver qué tal Almodóvar en pantalla grande. 🎞️', user_metadata: { full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 3).toISOString() },
         ] as Message[],
         'APOYO': [
           { id: 'seed-apoyo-1', user_id: 'v8', content: '💜 Buenos días. Quería compartir algo: mi hijo estaba sufriendo acoso en el cole y no sabía a quién acudir. Llamé al teléfono ANAR (900 20 20 10) y nos ayudaron muchísimo. Es gratuito y confidencial. Por si a alguien le sirve.', user_metadata: { full_name: 'Sandra L.', avatar_url: 'https://i.pravatar.cc/150?u=sandra' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 45).toISOString() },

@@ -145,33 +145,43 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'real-tue-semana-update',
-                    title: "☁️ MARTES 24 FEBRERO 2026 — ESTADO DEL BARRIO",
-                    content: "Día nublado con probabilidad de lluvia tarde (13°C). Recordamos que hoy la biblioteca abre hasta las 20h. Mañana miércoles corte programado de agua en zona Eixample Sud.",
+                    id: 'real-wed-summary',
+                    title: "☀️ MIÉRCOLES 25 FEBRERO 2026 — RESUMEN BARRIO",
+                    content: "Día despejado (15°C) con sol radiante. Mercado semanal activo hoy en Plaça del Fòrum. Corte de agua programado en marcha hasta las 14:00h en Eixample Sud.",
                     category: "INFO",
                     author_name: "ComuniTarr",
                     neighborhood: "GENERAL",
-                    itinerary: "• Hoy Martes: Taller Teatro adultos (18:30h, CC Part Alta)\n• Hoy Martes: Biblio TGN abierta hasta las 20:00h\n• Mañana Mié: Corte agua Nou Eixample (09:00-14:00h)",
+                    itinerary: "• Hoy Mié: Mercado 8:00h-14:00h (Part Alta)\n• Hoy Mié: Corte agua Nou Eixample (09h-14h)\n• Hoy Mié: Cine Forum CC Sant Pere (19h)",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-farmacia-guardia-tue',
-                    title: "💊 FARMACIA DE GUARDIA (HOY MARTES)",
-                    content: "Servicio de guardia 24h disponible en la zona centro. Abierta ininterrumpidamente para urgencias.",
+                    id: 'real-mercat-forum-wed',
+                    title: "🛒 MERCADO SEMANAL: PLAÇA DEL FÒRUM",
+                    content: "Hoy miércoles se celebra el tradicional mercado de proximidad. Fruta y verdura directa del pagès tarraconense. ¡Llenad el carro con salud local!",
+                    category: "COMUNIDAD",
+                    author_name: "Ayuntamiento TGN",
+                    neighborhood: "PART ALTA",
+                    itinerary: "• Horario: 08:00 a 14:00h\n• Ubicación: Plaça del Fòrum y anexas\n• Más de 20 puestos con producto local",
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'real-farmacia-guardia-wed',
+                    title: "💊 FARMACIA DE GUARDIA (HOY MIÉRCOLES)",
+                    content: "Servicio de guardia 24h disponible hoy en la zona de Sant Pere i Sant Pau para cualquier urgencia médica.",
                     category: "INFO",
                     author_name: "Salud TGN",
                     neighborhood: "GENERAL",
-                    itinerary: "• Farmacia: Farmàcia Fullana\n• Dirección: C/ de la Unió, 1\n• Teléfono: 977 23 30 84\n• Horario: 24 horas",
+                    itinerary: "• Farmacia: Farmàcia Garcia Rivas\n• Dirección: Av. Països Catalans, 51\n• Teléfono: 977 20 18 33\n• Horario: 24 horas",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-bolsa-empleo-tue',
-                    title: "💼 BOLSA DE TRABAJO ACTUALIZADA (MARTES)",
-                    content: "Nuevas vacantes reales publicadas hoy en la sección de Servicios de ComuniTarr. Se buscan camareros y auxiliares administrativos con incorporación inmediata.",
+                    id: 'real-bolsa-empleo-wed',
+                    title: "💼 BOLSA DE TRABAJO (MIÉRCOLES 25 FEB)",
+                    content: "Nuevas ofertas de hoy: Se busca personal para frutería en el mercado y dependiente/a para tienda de moda en Rambla Nova. Incorporación inmediata.",
                     category: "EVENTO",
                     author_name: "SOC Tarragona",
                     neighborhood: "GENERAL",
-                    itinerary: "• Restaurante Serrallo: 📞 977 22 11 33\n• Gestoría Rambla: 📞 977 24 55 66\n• Más info: Sección Servicios > Empleo",
+                    itinerary: "• Frutería Mercado: 📞 688 33 22 11\n• Moda Rambla: 📞 977 24 55 99\n• Envío CV: Sección Servicios > Empleo",
                     link_url: "/services",
                     created_at: new Date().toISOString()
                 }

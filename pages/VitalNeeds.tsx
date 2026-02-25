@@ -46,34 +46,34 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'mock-mon-n1',
+                    id: 'mock-wed-n1',
                     creator_id: 'v4',
                     type: 'company',
-                    title: '👵 Acompañamiento matinal (Lunes)',
-                    description: 'Mi abuela quiere salir a pasear por el Passeig Marítim esta mañana. Soy cuidadora y necesito que alguien la acompañe 1 hora desde las 10h.',
+                    title: '👵 Acompañamiento al Mercado (Miércoles)',
+                    description: 'Busco voluntario/a para acompañar a mi madre (85 años) al mercado de la Plaça del Fòrum esta mañana de 10h a 11:30h. Vive en la Calle Mayor.',
                     contact_info: '688 22 11 00 (Pere)',
                     is_urgent: false,
-                    neighborhood: 'BARRIS MARÍTIMS',
+                    neighborhood: 'PART ALTA',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-mon-n2',
+                    id: 'mock-wed-n2',
                     creator_id: 'v5',
                     type: 'food',
-                    title: '🛒 Compra Semanal — Persona Mayor Sola',
-                    description: 'Busco vecino/a que pueda ayudar a una señora mayor a hacer la compra esta semana. Ella vive en el Eixample y no puede cargar bolsas.',
-                    contact_info: '644 33 22 11 (Cruz Roja TGN)',
-                    is_urgent: false,
+                    title: '💧 Agua potable (Corte EMATSA)',
+                    description: 'Por el corte de agua, me he quedado sin reserva para preparar el biberón. Si algún vecino del Eixample tiene garrafas de sobra, se lo agradecería.',
+                    contact_info: '644 33 22 11 (Mónica)',
+                    is_urgent: true,
                     neighborhood: 'EIXAMPLE',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-mon-n3',
+                    id: 'mock-wed-n3',
                     creator_id: 'v6',
                     type: 'emotional',
-                    title: "☕ Café y charla (vuelta a la rutina)",
-                    description: 'Empiezo la semana con ansiedad. ¿Algún vecino/a para tomar un café y charlar este lunes por la mañana? A veces ayuda mucho hablar.',
-                    contact_info: '622 88 77 66 (Ana M.)',
+                    title: "🎞️ ¿Alguien para ir al Cine Forum?",
+                    description: 'No quiero ir sola al CC Sant Pere esta tarde a las 19:00. ¿Alguna vecina se anima? Me llamo Elena y vivo cerca de la Plaza Imperial.',
+                    contact_info: '622 88 77 66 (Elena V.)',
                     is_urgent: false,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
@@ -276,8 +276,8 @@ const VitalNeeds: React.FC = () => {
                                 <li className="flex items-center gap-3 p-3 bg-red-50 dark:bg-red-900/20 rounded-2xl border border-red-100 dark:border-red-800/30">
                                     <span className="material-symbols-outlined text-red-500">local_pharmacy</span>
                                     <div>
-                                        <strong className="block text-red-700 dark:text-red-300">Farmàcia Fullana (24h)</strong>
-                                        <p className="text-[10px] opacity-70">C/ de la Unió, 1 - 977 23 30 84</p>
+                                        <strong className="block text-red-700 dark:text-red-300">Farmàcia Garcia Rivas (24h)</strong>
+                                        <p className="text-[10px] opacity-70">Av. Països Catalans, 51 - 977 20 18 33</p>
                                     </div>
                                 </li>
                                 <li className="flex items-center gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border border-blue-100 dark:border-blue-800/30">

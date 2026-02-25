@@ -182,39 +182,39 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'tue-martes-nublado',
-            title: "☁️ Martes 24 Feb — Día Nublado",
-            content: "Hoy martes amanecemos con cielos cubiertos en Tarragona. Se esperan temperaturas máximas de 13°C y mínimas de 8°C. Probabilidad de lluvias ligeras a partir de las 18:00h.",
+            id: 'wed-miercoles-sol',
+            title: "☀️ Miércoles 25 Feb — Sol y Mercado",
+            content: "Amanecemos con un sol radiante en Tarragona. Ideal para visitar el Mercado Semanal en la Part Alta. Máximas de 15°C y vientos suaves del mediterráneo.",
             category: "TIEMPO",
             neighborhood: "GENERAL",
-            itinerary: "• Máx: 13°C · Mín: 8°C\n• Viento: Moderado del E\n• Lluvia: 40% probabilidad tarde",
+            itinerary: "• Máx: 15°C · Mín: 9°C\n• Viento: Suave (10 km/h)\n• Humedad: 65%",
             created_at: new Date().toISOString()
           },
           {
-            id: 'tue-canal-apoyo',
-            title: "💜 Nuevo Canal APOYO en el Foro",
-            content: "¡Ya puedes entrar al nuevo canal de Apoyo y Bienestar! Un espacio seguro para hablar de bullying, soledad en mayores y recursos sociales en Tarragona. Vecinos ayudando a vecinos.",
-            category: "COMUNIDAD",
-            neighborhood: "GENERAL",
-            link_url: "/forum",
+            id: 'wed-mercat-forum',
+            title: "🛒 Mercado Semanal: Plaça del Fòrum",
+            content: "Hoy miércoles vuelve el mercado de productos locales a la Part Alta. Frutas, verduras de temporada y artesanía local de 8:00 a 14:00h. ¡Apoya al comercio de proximidad!",
+            category: "COMERCIO",
+            neighborhood: "PART ALTA",
+            itinerary: "• Horario: 08:00h a 14:00h\n• Ubicación: Plaça del Fòrum\n• Recomendación: Alcachofas del Baix Penedès",
             created_at: new Date().toISOString()
           },
           {
-            id: 'tue-corte-agua',
-            title: "💧 Aviso EMATSA: Mejora Red de Agua",
-            content: "Mañana miércoles 25 de febrero habrá un corte programado por obras de mejora de 09:00 a 14:00h en las zonas de Nou Eixample Sud. Recomendamos previsión.",
+            id: 'wed-corte-agua-hoy',
+            title: "💧 EMATSA: Corte de Agua en Curso",
+            content: "Recordamos que hoy de 09:00 a 14:00h se está realizando el corte de suministro programado en Nou Eixample Sud por obras de mejora en la red principal.",
             category: "AVISO",
             neighborhood: "EIXAMPLE",
-            itinerary: "• Afectación: C/ Ramón y Cajal, Rovira i Virgili y anexas\n• Motivo: Renovación tuberías primarias",
+            itinerary: "• Fin previsto: 14:00h (Hoy)\n• Zonas: Nou Eixample Sud y Smith\n• Info: 900 20 33 29",
             created_at: new Date().toISOString()
           },
           {
-            id: 'tue-biblio-tarda',
-            title: "📚 Martes de Lectura en la Biblioteca",
-            content: "La Biblioteca Pública de Tarragona mantendrá hoy su horario completo de 9 a 20h. Recuerda que los martes tarde hay cuentacuentos infantil a las 17:30h.",
+            id: 'wed-cine-forum',
+            title: "🎞️ Cine Forum: Hoy 'Todo sobre mi madre'",
+            content: "Esta tarde a las 19:00h en el Centro Cívico Sant Pere proyectamos el clásico de Almodóvar. Entrada gratuita con debate posterior sobre el cine español.",
             category: "CULTURA",
-            neighborhood: "CENTRE",
-            itinerary: "• Horario: 09:00h a 20:00h\n• Cuentacuentos: 17:30h (Infantil)\n• Acceso: Calle Gasòmetre",
+            neighborhood: "SANT PERE",
+            itinerary: "• Hora: 19:00h (Hoy)\n• Lugar: Sala Actos CC Sant Pere\n• Debate: 20:30h",
             created_at: new Date().toISOString()
           }
         ];
@@ -223,10 +223,10 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'poll-martes-lluvia',
-          question: 'Con la previsión de lluvia para hoy tarde, ¿qué plan prefieres?',
-          options: ['Tarde de cine o lectura en casa', 'Ir a la biblioteca del barrio', 'Quedar en una cafetería a charlar', 'Gimnasio o piscina cubierta'],
-          category: 'PLANES MARTES',
+          id: 'poll-miercoles-ematsa',
+          question: "¿Cómo te está afectando el corte de agua de hoy en el Eixample?",
+          options: ['Había llenado garrafas ayer', 'Me ha pillado desprevenido', 'No me afecta, no vivo/trabajo allí', 'He ido a casa de un familiar'],
+          category: 'COMUNIDAD',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()
         };

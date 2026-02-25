@@ -40,7 +40,37 @@ const MicroVolunteering: React.FC = () => {
                     .order('created_at', { ascending: false })
             );
 
-            setOpportunities(data || []);
+            const realOpportunitiesExamples: VolunteerOpportunity[] = [
+                {
+                    id: 'real-wed-vol-1',
+                    creator_id: 'v7',
+                    title: '🛒 Ayuda bolsas Mercado Part Alta',
+                    description: 'Estaré en la salida del mercado de 11h a 13h hoy miércoles para ayudar a personas mayores a llevar las bolsas pesadas hasta su casa o el coche.',
+                    neighborhood: 'PART ALTA',
+                    contact_info: 'Encuéntrame en el arco de la Catedral con chaleco naranja.',
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'real-wed-vol-2',
+                    creator_id: 'v8',
+                    title: '💧 Reparto garrafas (Corte EMATSA)',
+                    description: 'Tengo coche y puedo subir garrafas de agua a vecinos del Eixample Sud que no puedan cargar peso hoy durante el corte. Gratis, solo avisad.',
+                    neighborhood: 'EIXAMPLE',
+                    contact_info: '611 22 33 44 (Carlos)',
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'real-wed-vol-3',
+                    creator_id: 'v9',
+                    title: '🎞️ Acompañante Cine Forum',
+                    description: 'Me ofrezco para acompañar a vecinos que no quieran ir solos al Centro Cívico Sant Pere esta tarde a las 19:00h. Quedamos en la puerta.',
+                    neighborhood: 'GENERAL',
+                    contact_info: 'Foro · Canal General (Preguntar por Elena)',
+                    created_at: new Date().toISOString()
+                }
+            ];
+
+            setOpportunities([...(data || []), ...realOpportunitiesExamples]);
         } catch (e) {
             console.error(e);
         } finally {
@@ -218,10 +248,10 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Compra Semanal', d: 'Busco vecino/a para ayudar a una señora mayor a hacer la compra este lunes o martes en el Mercadona de la Rambla.', c: '644 33 22 11' },
-                                            { t: 'Paseo Can Peladilles', d: 'Voy a la protectora a pasear perros este lunes a las 11h. ¿Algún vecino se anima?', c: '633 44 55 66' },
-                                            { t: 'Acomp. Médico', d: 'Necesito acompañamiento para abuelo a cita en el CAP Jaume I este martes a las 10:30h. ±1h.', c: '611 22 33 44' },
-                                            { t: 'Ayuda Tecnología', d: 'Vecina mayor necesita ayuda para configurar el móvil nuevo. 30 minutos, esta semana.', c: 'Foro · Canal General' }
+                                            { t: 'Ayuda Mercado', d: 'Busco voluntario para ayudar a bajar 3 pisos sin ascensor y acompañar al mercado de hoy miércoles.', c: '644 33 22 11' },
+                                            { t: 'Paseo Perro', d: '¿Algún vecino pasea su perro por la zona del Eixample y puede sacar al mío hoy tarde? Estoy de baja.', c: '633 44 55 66' },
+                                            { t: 'Reparto Agua', d: 'Me ofrezco a recoger agua potable y llevarla a personas mayores afectadas por el corte de EMATSA hoy.', c: '611 22 33 44' },
+                                            { t: 'Acompañar Cine', d: '¿Algún vecino/a va al cine forum de hoy tarde? Me gustaría ir acompañado para comentar la peli.', c: 'Foro · Canal General' }
                                         ].map((idea, i) => (
 
                                             <button

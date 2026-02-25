@@ -48,25 +48,25 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'mock-ws-tue-1',
+                    id: 'mock-ws-wed-1',
                     title: 'Taller de Teatro Adultos',
                     instructor: 'Cora R.',
-                    date: 'Martes 24, 18:30',
-                    description: 'Sesión semanal de expresión corporal e improvisación. Abierta a todos los niveles. Hoy trabajaremos la comedia.',
+                    date: 'Hoy Miércoles 25, 18:30',
+                    description: 'Expresión corporal e improvisación. Hoy trabajaremos escenas de Almodóvar como previa al Cine Forum.',
                     image: 'https://images.unsplash.com/photo-1503095396549-807a8bc3667c?auto=format&fit=crop&q=80&w=800',
-                    spots: 12,
+                    spots: 5,
                     neighborhood: 'PART ALTA',
                     contact_info: 'Centro Cívico Part Alta',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-ws-tue-2',
+                    id: 'mock-ws-wed-2',
                     title: 'Club de Lectura Tarragona',
                     instructor: 'Biblio TGN',
-                    date: 'Miércoles 25, 18:00',
-                    description: 'Comentamos la novela del mes: "Canto jo i la muntanya balla". En la sala de actos de la Biblioteca Pública.',
+                    date: 'Hoy Miércoles 25, 18:00',
+                    description: 'Comentamos la novela del mes: "Canto jo i la muntanya balla". Sala de actos de la Biblioteca Pública.',
                     image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800',
-                    spots: 20,
+                    spots: 0,
                     neighborhood: 'CENTRE',
                     contact_info: '977 24 03 31',
                     created_at: new Date().toISOString()
@@ -134,21 +134,21 @@ const Workshops: React.FC = () => {
                     </div>
                     <div className="flex-1">
                         <div className="flex items-center gap-3 mb-4">
-                            <span className="px-3 py-1 bg-indigo-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">EVENTO HOY</span>
-                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">TRADICIÓN</span>
+                            <span className="px-3 py-1 bg-indigo-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">EVENTO HOY - 19:00H</span>
+                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">CULTURA VECINAL</span>
                         </div>
-                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Vermut Musical en el Serrallo 🥂</h2>
+                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Cine Forum: Todo sobre mi madre 🎞️</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Disfruta de la tarde de sábado con música en vivo y el mejor ambiente frente al mar. Una iniciativa de los restauradores del barrio para dinamizar el puerto.
+                            Proyección y debate posterior en la sala de actos del Centro Cívico Sant Pere. Entrada gratuita hasta completar aforo. ¡Ven a disfrutar del cine de Almodóvar en comunidad!
                         </p>
 
                         <div className="flex flex-wrap gap-4">
-                            <a href="tel:655443322" className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
-                                <span className="material-symbols-outlined text-sm">call</span>
-                                655 44 33 22 (Isabel)
+                            <a href="#" onClick={(e) => { e.preventDefault(); alert("Reserva tu butaca enviando un WhatsApp al 638 11 22 33"); }} className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
+                                <span className="material-symbols-outlined text-sm">confirmation_number</span>
+                                RESERVAR PLAZA
                             </a>
                             <span className="px-6 py-3 bg-gray-50 dark:bg-gray-800 dark:text-white rounded-xl text-xs font-black">
-                                GRATIS - CENTRO CÍVICO
+                                GRATIS - CC SANT PERE
                             </span>
                         </div>
                     </div>

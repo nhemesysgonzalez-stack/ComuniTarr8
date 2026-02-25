@@ -57,39 +57,39 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'mock-mon-m1',
+          id: 'mock-wed-m1',
           user_id: 'v1',
-          title: '👟 Zapatillas Running Nike Talla 41',
-          description: 'Casi nuevas, usadas 3 meses. Ideal para retomar el hábito deportivo esta semana. Precio negociable.',
-          price: '55',
-          category: 'ocio',
-          neighborhood: 'EIXAMPLE',
-          contact_info: '622 11 22 33 (Marc)',
-          image_url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'mock-mon-m2',
-          user_id: 'v2',
-          title: '💻 Portátil Lenovo ThinkPad i5',
-          description: 'Buen estado, con cargador original. Perfecto para teletrabajar o estudiar. Bateria reciente.',
-          price: '280',
-          category: 'tech',
-          neighborhood: 'PART ALTA',
-          contact_info: '611 99 88 77 (Laia)',
-          image_url: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'mock-mon-m3',
-          user_id: 'v4',
-          title: '🪑 Sofá Rinconera Gris 3+2',
-          description: 'Muy cómodo y en buen estado. Lo cambiamos por reforma del salón. Recogida en domicilio.',
-          price: '150',
+          title: '🛒 Carro de la compra plegable — Casi nuevo',
+          description: 'Ideal para ir hoy al mercado de la Part Alta. Capacidad 40kg, ruedas reforzadas. Lo vendo por mudanza.',
+          price: '15',
           category: 'hogar',
-          neighborhood: 'BONAVISTA',
+          neighborhood: 'PART ALTA',
+          contact_info: '622 11 22 33 (Marc)',
+          image_url: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'mock-wed-m2',
+          user_id: 'v2',
+          title: '💧 Pack 3 Garrafas Agua (10L) Vacías',
+          description: 'Para quien necesite reserva extra por el corte de agua de hoy. Limpias y con tapón. Recogida rápida en Eixample Sud.',
+          price: '2',
+          category: 'hogar',
+          neighborhood: 'EIXAMPLE',
+          contact_info: '611 99 88 77 (Laia)',
+          image_url: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&q=80&w=800',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'mock-wed-m3',
+          user_id: 'v4',
+          title: '🎞️ 2 Entradas Cine Forum (Regalo)',
+          description: 'Me han sobrado dos invitaciones para el Cine Forum de hoy a las 19:00. Las regalo a quien las aproveche. CC Sant Pere.',
+          price: '0',
+          category: 'ocio',
+          neighborhood: 'GENERAL',
           contact_info: '655 44 33 22 (Rosa)',
-          image_url: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80',
+          image_url: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         }
       ];

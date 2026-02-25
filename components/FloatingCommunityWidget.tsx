@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "💜 Nuevo canal APOYO en el Foro: recursos contra bullying, violencia y acompañamiento. ¡Pásate!", neighborhood: 'GENERAL' },
-    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☁️ Martes nublado con posibles lluvias por la tarde. Temperatura 13ºC. Llevad chaqueta. 🌧️', neighborhood: 'GENERAL' },
-    { id: 2, user: 'TGN Empleo', avatar: '/logo.svg', text: '💼 Nuevas ofertas de empleo esta semana en hostelería y comercio. Consulta el Foro > Empleo.', neighborhood: 'EMPLEO' },
-    { id: 3, user: 'Nuria P.', avatar: 'https://i.pravatar.cc/150?u=nuria', text: '🟣 Recordad: 016 para violencia de género (no deja rastro en factura). SIAD Tarragona: 977 24 47 95.', neighborhood: 'APOYO' },
-    { id: 4, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: '📚 ¿Habéis visto la nueva biblioteca del barrio? Abre hoy martes de 9 a 20h. Ideal para estudiar.', neighborhood: 'Part Alta' },
-    { id: 5, user: 'Maria G.', avatar: 'https://i.pravatar.cc/150?u=maria', text: '🤝 Me ofrezco para acompañar vecinos/as mayores al médico. Lunes y miércoles tardes. ¡Escribidme!', neighborhood: 'APOYO' },
-    { id: 6, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '🏊 La piscina municipal del Francolí abre hoy martes de 7 a 22h. ¡A retomar la rutina!', neighborhood: 'Centro' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🛒 Hoy Miércoles: Mercado Semanal en la Part Alta (Pl. Fòrum). ¡Apoya a los productores locales!", neighborhood: 'GENERAL' },
+    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Miércoles despejado y agradable. Máxima de 15ºC. ¡Buen día para pasear! 😎', neighborhood: 'GENERAL' },
+    { id: 2, user: 'EMATSA TGN', avatar: '/logo.svg', text: '💧 Recordatorio: Corte de agua hoy en Nou Eixample Sud hasta las 14:00h por mantenimiento. 🛠️', neighborhood: 'EIXAMPLE' },
+    { id: 3, user: 'Cultura TGN', avatar: '/logo.svg', text: '🎞️ Cine Forum hoy a las 19:00h en el CC Sant Pere. Proyectamos "Todo sobre mi madre". 🍿', neighborhood: 'GENERAL' },
+    { id: 4, user: 'Pau L.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '🥗 He comprado unas alcachofas increíbles en el mercado hoy. ¡Están de temporada!', neighborhood: 'Part Alta' },
+    { id: 5, user: 'Montse F.', avatar: 'https://i.pravatar.cc/150?u=montse', text: '🤝 Si alguien del Eixample Sud necesita garrafas de agua, tengo de sobra. ¡Pasaros! 💜', neighborhood: 'APOYO' },
+    { id: 6, user: 'TGN Esports', avatar: '/logo.svg', text: '⚽ Inscripciones abiertas para el torneo de fútbol sala del barrio. ¡Forma tu equipo!', neighborhood: 'GENERAL' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '💜 Canal Apoyo Activo' },
-    { user: 'Meteo', text: '☁️ Nublado 13ºC' },
-    { user: 'Empleo', text: '💼 Ofertas Nuevas' },
-    { user: 'Foro', text: '🤝 Apoyo Vecinal' },
-    { user: 'Vecinos', text: '☁️ ¡Buen Martes!' }
+    { user: 'Admin', text: '🛒 Mercado hoy en Pl. Fòrum' },
+    { user: 'Meteo', text: '☀️ Soleado 15ºC' },
+    { user: 'EMATSA', text: '💧 Corte agua Eixample Sud' },
+    { user: 'Cultura', text: '🎞️ Cine Forum 19h' },
+    { user: 'TGN', text: '☀️ ¡Buen Miércoles!' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {
