@@ -311,24 +311,24 @@ const Forum: React.FC = () => {
     // Priority for Mediator if it's a question or app help
     const isAssistant = isReplyTo && (isQuestion || isHelpRequest || p.includes('@mediador') || p.includes('mediador'));
 
-    // Base initiation scripts (Monday 23 Feb / New week energy)
+    // Base initiation scripts (Wednesday 25 Feb / Mid-week energy)
     let scripts = [
-      "☁️ ¡Buen martes vecinos! ¿Alguien se apunta a un café en la biblioteca esta tarde? ☕",
-      "Día nublado, ideal para quedarse en casa leyendo. ¿Alguna recomendación de libro? 📖",
-      "¿Hay alguien que baje al mercado central esta tarde? Abre a las 17h. 🛒",
-      "Recordatorio: el taller de teatro es hoy a las 18:30h en la Part Alta. 🎭",
-      "¿Alguien sabe si hay problemas con los trenes hoy? He oído algo en la radio. 🚆",
-      "Martes productivo para todos. ¡A darle fuerte! 💪"
+      "☀️ ¡Feliz miércoles vecinos! ¿Quién va hoy al Mercado de la Part Alta? 🛒",
+      "Día de sol espectacular, ideal para el mercado. ¿Alguien sabe si hay mucha cola? 🧺",
+      "Recordad los del Eixample Sud: garrafas llenas que EMATSA corta el agua hasta las 14h. 💧",
+      "¿Quién viene al Cine Forum de esta tarde? 'Todo sobre mi madre' a las 19h. 🎞️",
+      "¿Alguien sabe si el bache de Gasòmetre está ya arreglado? He visto camiones. 🚧",
+      "Miércoles de mercado y cine. ¡Qué gran día para ser de Tarragona! 💪"
     ];
 
     // Base reply scripts
     let replyScripts = [
-      `¡Totalmente, ${isReplyTo}! A por el martes.`,
-      `¡Buen martes, ${isReplyTo}! Un café y seguimos. ☕`,
-      `¡Pasa rápido el día, ${isReplyTo}! Ánimo 😄`,
-      `Yo me apunto si hacéis algo esta tarde después de la biblio.`,
-      `Gracias por la info de hoy, ${isReplyTo}.`,
-      `¡Qué buena idea para un martes! Gracias, ${isReplyTo}. 💪`
+      `¡Totalmente, ${isReplyTo}! A por el miércoles de mercado. 🧺`,
+      `¡Buen miércoles, ${isReplyTo}! Disfruta del sol. ☀️`,
+      `¡Pasa rápido la semana, ${isReplyTo}! Ánimo con el miércoles. 😄`,
+      `Yo me apunto al cine si vas, ${isReplyTo}. Nos vemos en el CC Sant Pere.`,
+      `Gracias por el recordatorio del agua, ${isReplyTo}. Casi pongo la lavadora. 😅`,
+      `¡Qué buena energía para un miércoles! Gracias, ${isReplyTo}. 💪`
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
@@ -339,7 +339,7 @@ const Forum: React.FC = () => {
         "💜 ¿Alguien conoce talleres gratuitos de gestión emocional en Tarragona? Me vendría muy bien.",
         "Hoy he acompañado a una vecina mayor al médico. No tenía a nadie. Estas cosas no deberían pasar. Si alguien necesita compañía, escribid aquí. 🤝",
         "Mi sobrina está sufriendo ciberbullying. ¿Alguien sabe cómo actuar con el colegio? Necesito consejos. 😔",
-        "Recordatorio: grupo de apoyo emocional MAÑANA miércoles 17h en CC Torreforta. Gratuito y abierto a todos. 🫂",
+        "Recordatorio: grupo de apoyo emocional HOY miércoles 17h en CC Torreforta. Gratuito y abierto a todos. 🫂",
         "¿Sabíais que el teléfono 024 es la línea de atención a la conducta suicida? Gratuito, 24h. Nunca se sabe cuándo puede hacer falta. 💛",
         "En el SIAD (Plaça de la Font) atienden a mujeres en situación de violencia. Sin cita, sin preguntas. Solo ayuda. 977 24 47 95. Compartid por favor. 🟣",
         "Hoy leí que 1 de cada 4 niños sufre acoso escolar. Como comunidad tenemos que estar atentos. Si veis algo raro, no miréis para otro lado. 🛡️",
@@ -359,12 +359,12 @@ const Forum: React.FC = () => {
       ];
     } else if (currentNeighborhood === 'ENCUENTROS') {
       scripts = [
-        "¿Quién se apunta a un café de lunes mañana antes del trabajo? ☕",
-        "Busco gente para pádel este miércoles tarde en el polideportivo. 🎾",
-        "Primer lunes de la semana... ¿quién necesita un plan para motivarse? 💪",
-        "Ayer supergenial el paseo por la costa. ¿Alguien para repetir el miércoles? 🚶",
-        "Mañana salgo a correr por el Passeig Marítim a las 7:15h si alguien se apunta. 🏃‍♂️",
-        "¡Hola! ¿Hay algún plan tranquilo para este lunes tarde? 👋"
+        "☀️ ¡Feliz miércoles! ¿Quién se apunta a un café rápido antes de ir al mercado? ☕",
+        "Busco gente para completar partido de pádel HOY tarde en el polideportivo. 🎾",
+        "Miércoles, mitad de semana... ¿quién necesita un plan para desconectar? 💪",
+        "¿Alguien para ir juntos al Cine Forum de esta tarde en Sant Pere? 🎞️",
+        "Mañana jueves salgo a correr por el Passeig Marítim a las 7:15h si alguien se apunta. 🏃‍♂️",
+        "¡Hola! ¿Hay algún plan tranquilo para este miércoles noche? 👋"
       ];
       replyScripts = [
         `¡Me apunto al café, ${isReplyTo}!`,

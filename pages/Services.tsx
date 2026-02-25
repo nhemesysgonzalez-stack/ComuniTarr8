@@ -209,7 +209,7 @@ export const Services: React.FC = () => {
                 <div>
                   <p className="text-xs font-black uppercase text-gray-400">Próximo Festivo</p>
                   <p className="text-sm font-bold text-gray-800 dark:text-white">San José (Puente Escolar)</p>
-                  <p className="text-[10px] text-gray-500">Quedan 28 días</p>
+                  <p className="text-[10px] text-gray-500">Quedan 22 días</p>
                 </div>
               </div>
               <a
@@ -558,13 +558,13 @@ export const Services: React.FC = () => {
                   <div className="flex flex-col gap-2">
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Part Alta</span>
-                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (MARTES)</span>
+                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (MIÉRCOLES)</span>
                     </div>
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
-                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (MARTES)</span>
+                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (MIÉRCOLES)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy martes hay talleres de pintura y yoga en los centros cívicos.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy miércoles hay talleres de pintura y yoga en los centros cívicos.</p>
                   </div>
                 </div>
               </div>
