@@ -49,7 +49,7 @@ const VitalNeeds: React.FC = () => {
                     id: 'mock-wed-n1',
                     creator_id: 'v4',
                     type: 'company',
-                    title: '👵 Acompañamiento al Mercado (Miércoles)',
+                    title: '👵 Acompañamiento al Mercado (Jueves)',
                     description: 'Busco voluntario/a para acompañar a mi madre (85 años) al mercado de la Plaça del Fòrum esta mañana de 10h a 11:30h. Vive en la Calle Mayor.',
                     contact_info: '688 22 11 00 (Pere)',
                     is_urgent: false,

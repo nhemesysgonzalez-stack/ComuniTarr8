@@ -264,7 +264,7 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">☀️ SOL RADIANTE EN TGN: EL MIÉRCOLES EMPIEZA CON CIELOS DESPEJADOS Y 15ºC</span>
+          <span className="flex items-center gap-2">☀️ SOL RADIANTE EN TGN: EL JUEVES EMPIEZA CON CIELOS DESPEJADOS Y 15ºC</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🛒 MERCAT SETMANAL: LA PLAÇA DEL FÒRUM SE LLENA DE PRODUCTO LOCAL ESTA MAÑANA (8-14H)</span>
           <span className="opacity-30">•</span>
@@ -354,7 +354,7 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase">MIÉRCOLES 25 FEB 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase">JUEVES 25 FEB 2026</span>
                   <span className="text-xs font-black dark:text-white uppercase">AEMET: Despejado 15ºC</span>
                 </div>
               </div>

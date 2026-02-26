@@ -45,7 +45,7 @@ const Clubs: React.FC = () => {
                     id: 'c-wed-1',
                     creator_id: 'v1',
                     name: 'Urban Runners TGN 🏃‍♂️',
-                    description: 'Entrenamiento de series hoy miércoles a las 19:30h. Quedamos frente al Hotel Imperial Tarraco. ¡Apto para todos los niveles!',
+                    description: 'Entrenamiento de series hoy jueves a las 19:30h. Quedamos frente al Hotel Imperial Tarraco. ¡Apto para todos los niveles!',
                     neighborhood: 'GENERAL',
                     contact_info: '622 33 44 55 (Pau)',
                     created_at: new Date().toISOString()
@@ -63,7 +63,7 @@ const Clubs: React.FC = () => {
                     id: 'c-wed-3',
                     creator_id: 'v3',
                     name: 'Tejedoras del Puerto 🧶',
-                    description: 'Nos reunimos cada miércoles en la cafetería del Serrallo a las 17:30h para tejer y charlar. ¡Trae tus agujas!',
+                    description: 'Nos reunimos cada jueves en la cafetería del Serrallo a las 17:30h para tejer y charlar. ¡Trae tus agujas!',
                     neighborhood: 'MARÍTIM',
                     contact_info: '633 44 55 66 (Lola)',
                     created_at: new Date().toISOString()
@@ -242,9 +242,9 @@ const Clubs: React.FC = () => {
                                     <p className="text-[10px] font-black text-pink-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Pádel Miércoles', d: 'Buscamos pareja para jugar hoy a las 20h en las pistas municipales.', c: '611222333' },
+                                            { t: 'Pádel Jueves', d: 'Buscamos pareja para jugar hoy a las 20h en las pistas municipales.', c: '611222333' },
                                             { t: 'Club de Cine', d: 'Quedadas para ir a los Cine Forum y comentar las películas luego con un café.', c: '644555666' },
-                                            { t: 'Intercambio Inglés', d: 'Hablamos inglés los miércoles tarde en la cafetería X de forma relajada.', c: '677888999' }
+                                            { t: 'Intercambio Inglés', d: 'Hablamos inglés los jueves tarde en la cafetería X de forma relajada.', c: '677888999' }
                                         ].map((idea, i) => (
                                             <button
                                                 key={i}

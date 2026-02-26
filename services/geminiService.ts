@@ -32,7 +32,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
       "3. 🥘 Extra de Cocina - Restaurantes Centro (Cenas de Luto) → Incorporación inmediata.\n" +
       "4. 📦 Repartidor de Última Milla - Zona Eixample / Ponent → Jornada completa.\n" +
       "5. 🌟 TALENTO +45: Administrativo Funerario / Gestión - Empresa local busca perfil empático.\n\n" +
-      "• ¿Buscas algo más estable? Mira las convocatorias en 'Tarragona Impulsa' este miércoles.";
+      "• ¿Buscas algo más estable? Mira las convocatorias en 'Tarragona Impulsa' este jueves.";
   }
 
   // 16. Preppers y Seguridad (Petroquímicas / Viento) - Prioridad en canal Preppers
@@ -76,7 +76,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.5 PETROQUÍMICAS Y PLASEQTA (EXPANDIDO)
   if (p.includes("plaseqta") || p.includes("petroqu") || p.includes("alerta quim") || p.includes("sirena") || p.includes("fuga") || p.includes("confinamiento")) {
-    return "🚨 PLASEQTA - PLAN SEGURIDAD PETROQUÍMICAS:\n\n📊 **ESTADO ACTUAL:** 🟢 VERDE (Normalidad)\n\n🔔 **SIRENAS DE ALERTA:**\n• 1 pitido largo (1 min): PRUEBA mensual (primer miércoles)\n• 3 pitidos (3x20 seg): ⚠️ ALERTA QUÍMICA REAL\n\n🏠 **SI SUENA ALERTA:**\n1. Entra en casa INMEDIATAMENTE\n2. Cierra puertas y ventanas\n3. Apaga ventilación/aire acondicionado\n4. Sigue @emergenciescat y 📻 Catalunya Ràdio\n5. NO salgas hasta que se dé el aviso de FIN de alerta\n\n📱 **APP OFICIAL:** ALERTA (Protecció Civil)\n🌐 **INFO EN VIVO:** cetem.gencat.cat\n\n❓ Dudas: ☎️ 112";
+    return "🚨 PLASEQTA - PLAN SEGURIDAD PETROQUÍMICAS:\n\n📊 **ESTADO ACTUAL:** 🟢 VERDE (Normalidad)\n\n🔔 **SIRENAS DE ALERTA:**\n• 1 pitido largo (1 min): PRUEBA mensual (primer jueves)\n• 3 pitidos (3x20 seg): ⚠️ ALERTA QUÍMICA REAL\n\n🏠 **SI SUENA ALERTA:**\n1. Entra en casa INMEDIATAMENTE\n2. Cierra puertas y ventanas\n3. Apaga ventilación/aire acondicionado\n4. Sigue @emergenciescat y 📻 Catalunya Ràdio\n5. NO salgas hasta que se dé el aviso de FIN de alerta\n\n📱 **APP OFICIAL:** ALERTA (Protecció Civil)\n🌐 **INFO EN VIVO:** cetem.gencat.cat\n\n❓ Dudas: ☎️ 112";
   }
 
   // 2.6 TRANSPORTE PÚBLICO
@@ -86,7 +86,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.7 ACTIVIDADES Y OCIO
   if (p.includes("actividad") || p.includes("evento") || p.includes("plan") || p.includes("ocio") || p.includes("que hacer") || p.includes("qué hacer")) {
-    return "🎉 FIN DEL CARNAVAL: ADIÓS AL REY (Martes 17 Feb):\n\n⚰️ **HOY (18:00h):**\n• Velatorio de la Reina Carnestoltes y el Concubí (Plaza de la Font). Ven a dar el último adiós.\n\n🔥 **HOY (20:00h):**\n• Lectura del Testamento y Quema de los Ninots. El clímax final del Carnaval de Tarragona.\n\n🐟 **HOY (21:00h):**\n• Entierro de la Sardina. Desfile de luto por la Part Alta.\n\n💡 Mañana Miércoles de Ceniza volverá la calma total.";
+    return "🎉 FIN DEL CARNAVAL: ADIÓS AL REY (Martes 17 Feb):\n\n⚰️ **HOY (18:00h):**\n• Velatorio de la Reina Carnestoltes y el Concubí (Plaza de la Font). Ven a dar el último adiós.\n\n🔥 **HOY (20:00h):**\n• Lectura del Testamento y Quema de los Ninots. El clímax final del Carnaval de Tarragona.\n\n🐟 **HOY (21:00h):**\n• Entierro de la Sardina. Desfile de luto por la Part Alta.\n\n💡 Mañana Jueves de Ceniza volverá la calma total.";
   }
 
   // 2.8 EMERGENCIAS Y NÚMEROS ÚTILES

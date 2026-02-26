@@ -168,27 +168,27 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Hoy Miércoles 25 Feb)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Hoy Jueves 26 Feb)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Dependiente/a Frutería Mercado"</p>
-                    <p className="text-[10px] text-gray-500">Plaça del Fòrum (Mercado Semanal). Miércoles mañanas (7h-14h). Se requiere agilidad y trato amable. 50€/mañana. 📞 688 33 22 11 (Marcos)</p>
+                    <p className="text-xs font-black dark:text-white">"Técnico/a de Mantenimiento Integral"</p>
+                    <p className="text-[10px] text-gray-500">Se busca profesional con experiencia en mantenimiento de instalaciones (electricidad, fontanería, climatización) para centros cívicos en Tarragona. Contrato indefinido. 📞 977 24 55 60 (RRHH TarracoFacility)</p>
                   </div>
                   <div className="border-l-4 border-blue-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Personal Limpieza Locales"</p>
-                    <p className="text-[10px] text-gray-500">Zonas Centro y Eixample. Incorporación inmediata. Contrato estable, 20h/semanales mañanas. 📞 977 24 88 11 (Limpiezas Tarraco)</p>
+                    <p className="text-xs font-black dark:text-white">"Oficial de 1ª Administrativo/a Contable"</p>
+                    <p className="text-[10px] text-gray-500">Gestoría ubicada en Eixample Norte necesita incorporar un/a contable con experiencia demostrable, dominio de A3 y fiscalidad. Jornada completa intensiva mañanas. 📞 688 33 22 11 (Gestoría Llevant)</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Repartidor/a con Furgoneta Propia"</p>
-                    <p className="text-[10px] text-gray-500">Paquetería última milla en Tarragona ciudad. Autónomo con vehículo. Alta demanda. 📞 611 22 99 00 (Logística TGN)</p>
+                    <p className="text-xs font-black dark:text-white">"Chofer Repartidor/a Carnet C + CAP"</p>
+                    <p className="text-[10px] text-gray-500">Empresa de distribución de bebidas necesita conductor para la zona de Tarragona y Reus. Imprescindible tarjeta tacógrafo y experiencia en el sector. Buen salario base. 📞 611 22 99 00 (Distribució TGN)</p>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Canguro por Horas — Tardes"</p>
-                    <p className="text-[10px] text-gray-500">Zona Sant Pere i Sant Pau. Recoger niños del cole y merienda (17h-19h). Inglés valorable. 10€/h. 📞 633 44 55 66 (Laura)</p>
+                    <p className="text-xs font-black dark:text-white">"Dependiente/a Ferretería y Bricolaje"</p>
+                    <p className="text-[10px] text-gray-500">Buscamos una persona con experiencia previa en venta de materiales de ferretería para local en Torreforta. Buenas condiciones. Capacidad de atención al cliente resolutiva. 📞 977 55 44 22 (Ferretería Central)</p>
                   </div>
                   <div className="border-l-4 border-indigo-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Camarero/a de Barra — Refuerzo Noches"</p>
-                    <p className="text-[10px] text-gray-500">Local nocturno en Marina Port Tàrraco. Jueves a Sábados (22h-03h). Experiencia en coctelería. 📞 977 25 11 00 (Club Nautic)</p>
+                    <p className="text-xs font-black dark:text-white">"Cocinero/a turno continuo"</p>
+                    <p className="text-[10px] text-gray-500">Restaurante zona puerto precisa incorporar cocinero/a experto en cocina mediterránea y arroces. Experiencia liderando equipo. Libranzas correspondientes. 📞 655 44 11 00 (Restaurante El Tast)</p>
                   </div>
                 </div>
               </div>
@@ -558,13 +558,13 @@ export const Services: React.FC = () => {
                   <div className="flex flex-col gap-2">
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Part Alta</span>
-                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (MIÉRCOLES)</span>
+                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (JUEVES)</span>
                     </div>
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
-                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (MIÉRCOLES)</span>
+                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (JUEVES)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy miércoles hay talleres de pintura y yoga en los centros cívicos.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy jueves hay talleres de pintura y yoga en los centros cívicos.</p>
                   </div>
                 </div>
               </div>

@@ -20,38 +20,60 @@ export const alertService = {
      * Conectado a: Protecció Civil Tarragona, Gencat Emergències y PLASEQTA.
      */
     async checkOfficialAlerts(): Promise<ExternalAlert | null> {
-        // Simulación de WebSocket/Fetch a Protecció Civil de Tarragona
+        try {
+            // 1. Primero verificamos alertas en la base de datos local
+            const { data } = await supabase
+                .from('announcements')
+                .select('*')
+                .in('category', ['TIEMPO', 'SEGURIDAD'])
+                .order('created_at', { ascending: false })
+                .limit(1);
 
-        const { data } = await supabase
-            .from('announcements')
-            .select('*')
-            .in('category', ['TIEMPO', 'SEGURIDAD'])
-            .order('created_at', { ascending: false })
-            .limit(1);
-
-        if (data && data[0]) {
-            // Si la noticia es de hoy, la tratamos como alerta en tiempo real
-            const isToday = new Date(data[0].created_at).toDateString() === new Date().toDateString();
-
-            if (isToday) {
-                return {
-                    id: data[0].id,
-                    source: data[0].category === 'TIEMPO' ? 'VENTCAT' : 'PCTGN',
-                    level: 'naranja',
-                    message: data[0].content,
-                    timestamp: data[0].created_at
-                };
+            if (data && data[0]) {
+                const isToday = new Date(data[0].created_at).toDateString() === new Date().toDateString();
+                if (isToday && (data[0].content.includes('PLASEQTA') || data[0].content.includes('Emergencia'))) {
+                    return {
+                        id: data[0].id,
+                        source: data[0].category === 'TIEMPO' ? 'VENTCAT' : 'PCTGN',
+                        level: 'naranja',
+                        message: data[0].content,
+                        timestamp: data[0].created_at
+                    };
+                }
             }
+
+            // 2. Monitor Autónomo: Leer noticias locales de Tarragona para activar emergencias sin intervención
+            const newsUrl = encodeURIComponent('https://www.diaridetarragona.com/sucesos/');
+            const response = await fetch(`https://api.allorigins.win/get?url=${newsUrl}`);
+
+            if (response.ok) {
+                const json = await response.json();
+                const html = json.contents;
+
+                // Expresión regular para buscar alertas del PLASEQTA, VENTCAT, explosiones químicas, etc. en enlaces de noticias
+                const match = html.match(/<a[^>]*href="[^"]*(?:sucesos)[^"]*"[^>]*>(?:[^<]*<span[^>]*>)?(.*?((?:explosión|PLASEQTA|VENTCAT|química|emergencia|fuego).*?))(?:<\/span>)?<\/a>/i);
+
+                if (match && match[1]) {
+                    const cleanTitle = match[1].replace(/<[^>]+>/g, '').trim();
+
+                    if (cleanTitle.length > 10) {
+                        return {
+                            id: `auto-scraper-${Date.now()}`,
+                            source: cleanTitle.toUpperCase().includes('PLASEQTA') ? 'PLASEQTA' : 'PCTGN',
+                            level: 'rojo', // Emergencias detectadas como críticas
+                            message: `⚠️ ALERTA DETECTADA AUTOMÁTICAMENTE: ${cleanTitle}`,
+                            description: 'El sistema autónomo ha detectado una emergencia en las fuentes de noticias locales de Tarragona y Valls.',
+                            timestamp: new Date().toISOString()
+                        };
+                    }
+                }
+            }
+        } catch (error) {
+            console.error("Error en el monitor autónomo de alertas:", error);
         }
 
-        // Mock alert for Carnival Sunday
-        return {
-            id: 'carnaval-sun-2026',
-            source: 'PCTGN',
-            level: 'amarillo',
-            message: "Domingo de Carnaval: Els Tres Tombs a las 11:30h (Rambla Nova) y Rua de Lluïment a las 18:00h.",
-            timestamp: new Date().toISOString()
-        };
+        // Si no hay alertas reales, retornamos null
+        return null;
     },
 
     /**

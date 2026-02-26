@@ -44,9 +44,9 @@ const SupportCircles: React.FC = () => {
                 {
                     id: 'mock-wed-sc1',
                     initiator_id: 'v1',
-                    title: '💼 Ansiedad y Estrés Laboral — Sesión Miércoles',
+                    title: '💼 Ansiedad y Estrés Laboral — Sesión Jueves',
                     neighborhood: 'GENERAL',
-                    description: 'Sesión presencial hoy miércoles a las 19:00h en el Centro Cívico Centro. Espacio compartido para soltar tensiones acumuladas a mitad de semana.',
+                    description: 'Sesión presencial hoy jueves a las 19:00h en el Centro Cívico Centro. Espacio compartido para soltar tensiones acumuladas a mitad de semana.',
                     contact_info: '611 22 33 44 (Miguel)',
                     created_at: new Date().toISOString()
                 },
@@ -55,7 +55,7 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'vadmin',
                     title: '🤱 Círculo de Crianza — Hoy en el Parque',
                     neighborhood: 'GENERAL',
-                    description: 'Cada miércoles a las 11:00h nos reunimos en el Parque de la Ciudad para compartir experiencias sobre crianza. ¡Traed a los peques!',
+                    description: 'Cada jueves a las 11:00h nos reunimos en el Parque de la Ciudad para compartir experiencias sobre crianza. ¡Traed a los peques!',
                     contact_info: '655 12 34 56 (Elena)',
                     created_at: new Date().toISOString()
                 },
@@ -64,7 +64,7 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'v2',
                     title: '🏠 Vecinos en Duelo — Apoyo Mutuo',
                     neighborhood: 'GENERAL',
-                    description: 'Grupo de apoyo para personas que han perdido a un ser querido. Nos reunimos quincenalmente los miércoles (hoy toca sesión) a las 18h.',
+                    description: 'Grupo de apoyo para personas que han perdido a un ser querido. Nos reunimos quincenalmente los jueves (hoy toca sesión) a las 18h.',
                     contact_info: '622 99 88 77 (Rosa)',
                     created_at: new Date().toISOString()
                 }

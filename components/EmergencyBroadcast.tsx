@@ -48,7 +48,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                             Corte Programado EMATSA
                         </h2>
                         <p className="text-xs font-medium text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-                            Miércoles 25 Feb: Se está realizando una mejora en la red en la zona **Nou Eixample Sud**. El suministro se verá afectado hasta las **14:00h**.
+                            Jueves 26 Feb: Se está realizando una mejora en la red en la zona **Nou Eixample Sud**. El suministro se verá afectado hasta las **14:00h**.
                         </p>
 
                         <div className="grid grid-cols-2 gap-4 mb-6">
@@ -75,7 +75,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                         </div>
 
                         <div className="pt-2 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center text-[8px] font-bold text-gray-400 uppercase tracking-widest">
-                            <span>MIÉRCOLES 25 FEB 2026</span>
+                            <span>JUEVES 25 FEB 2026</span>
                             <span>AEMET: Despejado 15ºC</span>
                         </div>
                     </div>

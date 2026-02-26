@@ -146,7 +146,7 @@ const Announcements: React.FC = () => {
             const realAnnouncementsExamples = [
                 {
                     id: 'real-wed-summary',
-                    title: "☀️ MIÉRCOLES 25 FEBRERO 2026 — RESUMEN BARRIO",
+                    title: "☀️ JUEVES 25 FEBRERO 2026 — RESUMEN BARRIO",
                     content: "Día despejado (15°C) con sol radiante. Mercado semanal activo hoy en Plaça del Fòrum. Corte de agua programado en marcha hasta las 14:00h en Eixample Sud.",
                     category: "INFO",
                     author_name: "ComuniTarr",
@@ -157,7 +157,7 @@ const Announcements: React.FC = () => {
                 {
                     id: 'real-mercat-forum-wed',
                     title: "🛒 MERCADO SEMANAL: PLAÇA DEL FÒRUM",
-                    content: "Hoy miércoles se celebra el tradicional mercado de proximidad. Fruta y verdura directa del pagès tarraconense. ¡Llenad el carro con salud local!",
+                    content: "Hoy jueves se celebra el tradicional mercado de proximidad. Fruta y verdura directa del pagès tarraconense. ¡Llenad el carro con salud local!",
                     category: "COMUNIDAD",
                     author_name: "Ayuntamiento TGN",
                     neighborhood: "PART ALTA",
@@ -166,7 +166,7 @@ const Announcements: React.FC = () => {
                 },
                 {
                     id: 'real-farmacia-guardia-wed',
-                    title: "💊 FARMACIA DE GUARDIA (HOY MIÉRCOLES)",
+                    title: "💊 FARMACIA DE GUARDIA (HOY JUEVES)",
                     content: "Servicio de guardia 24h disponible hoy en la zona de Sant Pere i Sant Pau para cualquier urgencia médica.",
                     category: "INFO",
                     author_name: "Salud TGN",
@@ -176,7 +176,7 @@ const Announcements: React.FC = () => {
                 },
                 {
                     id: 'real-bolsa-empleo-wed',
-                    title: "💼 BOLSA DE TRABAJO (MIÉRCOLES 25 FEB)",
+                    title: "💼 BOLSA DE TRABAJO (JUEVES 25 FEB)",
                     content: "Nuevas ofertas de hoy: Se busca personal para frutería en el mercado y dependiente/a para tienda de moda en Rambla Nova. Incorporación inmediata.",
                     category: "EVENTO",
                     author_name: "SOC Tarragona",

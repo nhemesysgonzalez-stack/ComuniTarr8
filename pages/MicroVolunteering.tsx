@@ -45,7 +45,7 @@ const MicroVolunteering: React.FC = () => {
                     id: 'real-wed-vol-1',
                     creator_id: 'v7',
                     title: '🛒 Ayuda bolsas Mercado Part Alta',
-                    description: 'Estaré en la salida del mercado de 11h a 13h hoy miércoles para ayudar a personas mayores a llevar las bolsas pesadas hasta su casa o el coche.',
+                    description: 'Estaré en la salida del mercado de 11h a 13h hoy jueves para ayudar a personas mayores a llevar las bolsas pesadas hasta su casa o el coche.',
                     neighborhood: 'PART ALTA',
                     contact_info: 'Encuéntrame en el arco de la Catedral con chaleco naranja.',
                     created_at: new Date().toISOString()
@@ -248,7 +248,7 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Ayuda Mercado', d: 'Busco voluntario para ayudar a bajar 3 pisos sin ascensor y acompañar al mercado de hoy miércoles.', c: '644 33 22 11' },
+                                            { t: 'Ayuda Mercado', d: 'Busco voluntario para ayudar a bajar 3 pisos sin ascensor y acompañar al mercado de hoy jueves.', c: '644 33 22 11' },
                                             { t: 'Paseo Perro', d: '¿Algún vecino pasea su perro por la zona del Eixample y puede sacar al mío hoy tarde? Estoy de baja.', c: '633 44 55 66' },
                                             { t: 'Reparto Agua', d: 'Me ofrezco a recoger agua potable y llevarla a personas mayores afectadas por el corte de EMATSA hoy.', c: '611 22 33 44' },
                                             { t: 'Acompañar Cine', d: '¿Algún vecino/a va al cine forum de hoy tarde? Me gustaría ir acompañado para comentar la peli.', c: 'Foro · Canal General' }
