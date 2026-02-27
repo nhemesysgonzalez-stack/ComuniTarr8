@@ -91,7 +91,7 @@ const Polls: React.FC = () => {
                 {
                     id: 'poll-wed-3',
                     creator_id: 'v3',
-                    title: '🛒 ¿Sueles ir al Mercado de la Part Alta los jueves? 🧺',
+                    title: '🛒 ¿Sueles ir al Mercado de la Part Alta los viernes? 🧺',
                     options: ['Siempre, producto fresco', 'A veces, si tengo tiempo', 'Casi nunca, me pilla lejos', 'Prefiero el mercado de los domingos'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()

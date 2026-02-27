@@ -168,7 +168,7 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Hoy Jueves 26 Feb)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Hoy Viernes 27 Feb)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
                     <p className="text-xs font-black dark:text-white">"Técnico/a de Mantenimiento Integral"</p>
@@ -564,7 +564,7 @@ export const Services: React.FC = () => {
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
                       <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (JUEVES)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy jueves hay talleres de pintura y yoga en los centros cívicos.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy viernes hay talleres de pintura y yoga en los centros cívicos.</p>
                   </div>
                 </div>
               </div>
