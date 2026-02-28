@@ -74,7 +74,7 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Mireia R.', text: '☀️ ¡Buen viernes! Hoy toca mercado en la Plaça del Fòrum. 🛒' },
+    { user: 'Mireia R.', text: '☀️ ¡Buen sábado! Hoy toca mercado en la Plaça del Fòrum. 🛒' },
     { user: 'ComuniTarr 🏁', text: 'Aviso: Corte de agua en Eixample Sud hasta las 14:00h. 💧' },
     { user: 'Joan B.', text: '¿Alguien para un café rápido por la Part Alta esta mañana? ☕' },
     { user: 'Carme S.', text: '🎞️ Recordad: Cine Forum hoy a las 19:00h en CC Sant Pere.' },
@@ -149,8 +149,8 @@ const Forum: React.FC = () => {
       [
         { who: 'Maria G.', text: '🫂 Hoy he acompañado a Don Manuel (el señor del 3ºB) al médico. Tiene 82 años y vive solo desde que falleció su mujer. Se ha emocionado porque nadie le acompañaba desde hacía meses.' },
         { who: 'Carme S.', text: '@Maria Qué bonito lo que haces. La soledad en personas mayores es una epidemia silenciosa. ¿Necesitas ayuda para seguir acompañándole?' },
-        { who: 'Maria G.', text: '@Carme Sí, no puedo todos los días. Los lunes y viernes sí, pero necesitaría que alguien cubriera los viernes.' },
-        { who: 'Elena V.', text: '@Maria Yo tengo los viernes libres. Me apunto sin dudarlo. ¿Me pasas su dirección por privado? 💛' },
+        { who: 'Maria G.', text: '@Carme Sí, no puedo todos los días. Los lunes y sábado sí, pero necesitaría que alguien cubriera los sábado.' },
+        { who: 'Elena V.', text: '@Maria Yo tengo los sábado libres. Me apunto sin dudarlo. ¿Me pasas su dirección por privado? 💛' },
         { who: 'Nuria P.', text: 'Recordad que Cruz Roja Tarragona (977 22 19 07) tiene un programa formal de acompañamiento. Podéis registraros como voluntarias y así tenéis cobertura legal y formación. Lo recomiendo mucho.' },
         { who: 'Maria G.', text: '@Nuria ¡No lo sabía! Les llamo mañana. Gracias Nuria, siempre con la información justa. 🙏 Entre todos hacemos barrio.' },
       ],
@@ -174,7 +174,7 @@ const Forum: React.FC = () => {
     ],
     'ENCUENTROS': [
       [
-        { who: 'Joe R.', text: '🎾 ¿Hay alguien para una partida de pádel este viernes tarde? Somos 3, nos falta uno.' },
+        { who: 'Joe R.', text: '🎾 ¿Hay alguien para una partida de pádel este sábado tarde? Somos 3, nos falta uno.' },
         { who: 'Pau T.', text: '@Joe ¡Yo! ¿A qué hora y dónde? Llevo sin jugar un mes pero las ganas no me faltan 😂' },
         { who: 'Joe R.', text: '@Pau Genial, a las 18:30 en el polideportivo del Francolí. Traemos pelotas. ¿Nivel principiante-medio va bien?' },
         { who: 'Pau T.', text: '@Joe Perfecto, ¡ahí estaré! Y si después alguien quiere cenar algo... 🍕' },
@@ -250,7 +250,7 @@ const Forum: React.FC = () => {
       // Seeds per channel
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
-          { id: 'seed-wed-1', user_id: 'v3', content: '☀️ ¡Buenos días de viernes! Menudo solazo hace hoy. Ideal para ir al mercado. 🛒', user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 22).toISOString() },
+          { id: 'seed-wed-1', user_id: 'v3', content: '☀️ ¡Buenos días de sábado! Menudo solazo hace hoy. Ideal para ir al mercado. 🛒', user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 22).toISOString() },
           { id: 'seed-wed-2', user_id: 'v2', content: '☕ Café en mano y lista del mercado preparada. ¿Alguien sabe si el puesto de quesos de Albi está hoy?', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 14).toISOString() },
           { id: 'seed-wed-3', user_id: 'v5', content: '💧 Recordad vecinos del Eixample Sud: corte de agua hasta las 14h. ¡No pongáis lavadoras! 😅', user_metadata: { full_name: 'Luis M.', avatar_url: 'https://i.pravatar.cc/150?u=luis' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 8).toISOString() },
           { id: 'seed-wed-4', user_id: 'v6', content: '¡Hoy Cine Forum! A ver qué tal Almodóvar en pantalla grande. 🎞️', user_metadata: { full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 3).toISOString() },
@@ -261,11 +261,11 @@ const Forum: React.FC = () => {
           { id: 'seed-apoyo-3', user_id: 'v4', content: '@Sandra @Elena Os abrazo a las dos. 🤗 Esto es justo lo que necesitamos en el barrio: hablar sin miedo. Recordad que también existe el 016 para violencia de género (no deja rastro en la factura del teléfono).', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 35).toISOString() },
           { id: 'seed-apoyo-4', user_id: 'v10', content: 'Trabajo en servicios sociales y quiero recordar que en Tarragona tenemos recursos GRATUITOS:\n\n🆘 Emergencias: 112\n📞 Bullying escolar: 900 018 018\n📞 ANAR (menores): 900 20 20 10\n📞 Violencia género: 016\n📞 Atención crisis: 024 (línea suicidio)\n🏠 SIAD Tarragona: 977 24 47 95\n\nNadie tiene que pasar por esto solo/a.', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 30).toISOString() },
           { id: 'seed-apoyo-5', user_id: 'v2', content: '@Nuria Muchas gracias por recopilar todo esto. Yo lo he guardado en el móvil por si conozco a alguien que lo necesite. ¿Sabéis si hay algún grupo de acompañamiento presencial aquí en Tarragona?', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 25).toISOString() },
-          { id: 'seed-apoyo-6', user_id: 'v10', content: '@Mireia ¡Sí! El Centre Cívic de Torreforta tiene un grupo semanal de apoyo emocional los viernes a las 17h, abierto a todos. Y la Cruz Roja Tarragona (977 22 19 07) ofrece acompañamiento a personas en situación de soledad o vulnerabilidad. 🤝', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 20).toISOString() },
+          { id: 'seed-apoyo-6', user_id: 'v10', content: '@Mireia ¡Sí! El Centre Cívic de Torreforta tiene un grupo semanal de apoyo emocional los sábado a las 17h, abierto a todos. Y la Cruz Roja Tarragona (977 22 19 07) ofrece acompañamiento a personas en situación de soledad o vulnerabilidad. 🤝', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 20).toISOString() },
           { id: 'seed-apoyo-7', user_id: 'v3', content: 'Como padre, esto me preocupa mucho. En el cole de mi hijo hicieron una charla sobre ciberbullying y fue muy útil. Si alguien quiere organizar algo así en su cole, el programa "Pantallas Amigas" ofrece materiales gratuitos. También podemos hablar directamente con la AMPA.', user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 15).toISOString() },
           { id: 'seed-apoyo-8', user_id: 'v8', content: '@Joan Eso estaría genial. A mí me hubiera gustado detectarlo antes. Hay señales: si tu hijo deja de querer ir al cole, si cambia su humor de repente, si le desaparecen cosas... No os lo calléis. Hablar es el primer paso. ❤️', user_metadata: { full_name: 'Sandra L.', avatar_url: 'https://i.pravatar.cc/150?u=sandra' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 10).toISOString() },
-          { id: 'seed-apoyo-9', user_id: 'v7', content: 'Me ofrezco como voluntaria para acompañar a personas mayores o a quien necesite compañía para ir a trámites, médico, etc. Tengo las tardes libres los lunes y viernes. Contactadme por aquí o al 644 22 33 88. No estamos solos. 💛', user_metadata: { full_name: 'Maria G.', avatar_url: 'https://i.pravatar.cc/150?u=maria' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 5).toISOString() },
-          { id: 'seed-apoyo-10', user_id: 'v9', content: '@Maria Qué bonito gesto. Yo también puedo los viernes. Entre vecinos nos cuidamos. 🫶 Si alguien necesita hablar, aunque sea solo desahogarse, aquí estamos. Este canal es un espacio seguro.', user_metadata: { full_name: 'Elena V.', avatar_url: 'https://i.pravatar.cc/150?u=elena' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 2).toISOString() },
+          { id: 'seed-apoyo-9', user_id: 'v7', content: 'Me ofrezco como voluntaria para acompañar a personas mayores o a quien necesite compañía para ir a trámites, médico, etc. Tengo las tardes libres los lunes y sábado. Contactadme por aquí o al 644 22 33 88. No estamos solos. 💛', user_metadata: { full_name: 'Maria G.', avatar_url: 'https://i.pravatar.cc/150?u=maria' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 5).toISOString() },
+          { id: 'seed-apoyo-10', user_id: 'v9', content: '@Maria Qué bonito gesto. Yo también puedo los sábado. Entre vecinos nos cuidamos. 🫶 Si alguien necesita hablar, aunque sea solo desahogarse, aquí estamos. Este canal es un espacio seguro.', user_metadata: { full_name: 'Elena V.', avatar_url: 'https://i.pravatar.cc/150?u=elena' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 2).toISOString() },
         ] as Message[],
       };
 
@@ -311,35 +311,35 @@ const Forum: React.FC = () => {
     // Priority for Mediator if it's a question or app help
     const isAssistant = isReplyTo && (isQuestion || isHelpRequest || p.includes('@mediador') || p.includes('mediador'));
 
-    // Base initiation scripts (Wednesday 27 Feb / Mid-week energy)
+    // Base initiation scripts (Wednesday 28 Feb / Mid-week energy)
     let scripts = [
-      "☀️ ¡Feliz viernes vecinos! ¿Quién va hoy al Mercado de la Part Alta? 🛒",
+      "☀️ ¡Feliz sábado vecinos! ¿Quién va hoy al Mercado de la Part Alta? 🛒",
       "Día de sol espectacular, ideal para el mercado. ¿Alguien sabe si hay mucha cola? 🧺",
       "Recordad los del Eixample Sud: garrafas llenas que EMATSA corta el agua hasta las 14h. 💧",
       "¿Quién viene al Cine Forum de esta tarde? 'Todo sobre mi madre' a las 19h. 🎞️",
       "¿Alguien sabe si el bache de Gasòmetre está ya arreglado? He visto camiones. 🚧",
-      "Viernes de mercado y cine. ¡Qué gran día para ser de Tarragona! 💪"
+      "Sábado de mercado y cine. ¡Qué gran día para ser de Tarragona! 💪"
     ];
 
     // Base reply scripts
     let replyScripts = [
-      `¡Totalmente, ${isReplyTo}! A por el viernes de mercado. 🧺`,
-      `¡Buen viernes, ${isReplyTo}! Disfruta del sol. ☀️`,
-      `¡Pasa rápido la semana, ${isReplyTo}! Ánimo con el viernes. 😄`,
+      `¡Totalmente, ${isReplyTo}! A por el sábado de mercado. 🧺`,
+      `¡Buen sábado, ${isReplyTo}! Disfruta del sol. ☀️`,
+      `¡Pasa rápido la semana, ${isReplyTo}! Ánimo con el sábado. 😄`,
       `Yo me apunto al cine si vas, ${isReplyTo}. Nos vemos en el CC Sant Pere.`,
       `Gracias por el recordatorio del agua, ${isReplyTo}. Casi pongo la lavadora. 😅`,
-      `¡Qué buena energía para un viernes! Gracias, ${isReplyTo}. 💪`
+      `¡Qué buena energía para un sábado! Gracias, ${isReplyTo}. 💪`
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
-      scripts = ["¿Alguien sabe de trabajos de tarde en hostelería esta semana? 🍽️", "Empiezo nuevo trabajo el viernes. ¡Un poco de ánimo! 🤞"];
+      scripts = ["¿Alguien sabe de trabajos de tarde en hostelería esta semana? 🍽️", "Empiezo nuevo trabajo el sábado. ¡Un poco de ánimo! 🤞"];
       replyScripts = [`¡Mucho ánimo con el nuevo trabajo, ${isReplyTo}!`, `Mira en la sección de Servicios, suelen poner ofertas de última hora.`];
     } else if (currentNeighborhood === 'APOYO') {
       scripts = [
         "💜 ¿Alguien conoce talleres gratuitos de gestión emocional en Tarragona? Me vendría muy bien.",
         "Hoy he acompañado a una vecina mayor al médico. No tenía a nadie. Estas cosas no deberían pasar. Si alguien necesita compañía, escribid aquí. 🤝",
         "Mi sobrina está sufriendo ciberbullying. ¿Alguien sabe cómo actuar con el colegio? Necesito consejos. 😔",
-        "Recordatorio: grupo de apoyo emocional HOY viernes 17h en CC Torreforta. Gratuito y abierto a todos. 🫂",
+        "Recordatorio: grupo de apoyo emocional HOY sábado 17h en CC Torreforta. Gratuito y abierto a todos. 🫂",
         "¿Sabíais que el teléfono 024 es la línea de atención a la conducta suicida? Gratuito, 24h. Nunca se sabe cuándo puede hacer falta. 💛",
         "En el SIAD (Plaça de la Font) atienden a mujeres en situación de violencia. Sin cita, sin preguntas. Solo ayuda. 977 24 47 95. Compartid por favor. 🟣",
         "Hoy leí que 1 de cada 4 niños sufre acoso escolar. Como comunidad tenemos que estar atentos. Si veis algo raro, no miréis para otro lado. 🛡️",
@@ -359,12 +359,12 @@ const Forum: React.FC = () => {
       ];
     } else if (currentNeighborhood === 'ENCUENTROS') {
       scripts = [
-        "☀️ ¡Feliz viernes! ¿Quién se apunta a un café rápido antes de ir al mercado? ☕",
+        "☀️ ¡Feliz sábado! ¿Quién se apunta a un café rápido antes de ir al mercado? ☕",
         "Busco gente para completar partido de pádel HOY tarde en el polideportivo. 🎾",
-        "Viernes, mitad de semana... ¿quién necesita un plan para desconectar? 💪",
+        "Sábado, mitad de semana... ¿quién necesita un plan para desconectar? 💪",
         "¿Alguien para ir juntos al Cine Forum de esta tarde en Sant Pere? 🎞️",
-        "Mañana viernes salgo a correr por el Passeig Marítim a las 7:15h si alguien se apunta. 🏃‍♂️",
-        "¡Hola! ¿Hay algún plan tranquilo para este viernes noche? 👋"
+        "Mañana sábado salgo a correr por el Passeig Marítim a las 7:15h si alguien se apunta. 🏃‍♂️",
+        "¡Hola! ¿Hay algún plan tranquilo para este sábado noche? 👋"
       ];
       replyScripts = [
         `¡Me apunto al café, ${isReplyTo}!`,
@@ -412,7 +412,7 @@ const Forum: React.FC = () => {
         let possibleReplies = [];
         if (isGreeting) {
           possibleReplies = [
-            `¡Hola, ${isReplyTo}! A por el viernes. 💪`,
+            `¡Hola, ${isReplyTo}! A por el sábado. 💪`,
             `¡Muy buenas! ¿Qué tal la semana? @${isReplyTo}.`,
             `¡Hola ${isReplyTo}! Aquí recuperándonos de la rutina con un café. ☕`,
             `¡Buenos días! Vaya sol hace hoy. ☀️`
@@ -726,7 +726,7 @@ const Forum: React.FC = () => {
     {
       id: 'mercado-semanal',
       title: '🛒 Mercado Semanal TGN',
-      description: 'Viernes y viernes Forum.',
+      description: 'Sábado y sábado Forum.',
       participating: 2210
     },
     {

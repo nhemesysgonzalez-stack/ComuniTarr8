@@ -157,7 +157,7 @@ const Announcements: React.FC = () => {
                 {
                     id: 'real-mercat-forum-wed',
                     title: "🛒 MERCADO SEMANAL: PLAÇA DEL FÒRUM",
-                    content: "Hoy viernes se celebra el tradicional mercado de proximidad. Fruta y verdura directa del pagès tarraconense. ¡Llenad el carro con salud local!",
+                    content: "Hoy sábado se celebra el tradicional mercado de proximidad. Fruta y verdura directa del pagès tarraconense. ¡Llenad el carro con salud local!",
                     category: "COMUNIDAD",
                     author_name: "Ayuntamiento TGN",
                     neighborhood: "PART ALTA",

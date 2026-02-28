@@ -48,7 +48,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                             Corte Programado EMATSA
                         </h2>
                         <p className="text-xs font-medium text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-                            Viernes 27 Feb: Se está realizando una mejora en la red en la zona **Nou Eixample Sud**. El suministro se verá afectado hasta las **14:00h**.
+                            Sábado 28 Feb: Se está realizando una mejora en la red en la zona **Nou Eixample Sud**. El suministro se verá afectado hasta las **14:00h**.
                         </p>
 
                         <div className="grid grid-cols-2 gap-4 mb-6">

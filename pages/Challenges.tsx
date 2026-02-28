@@ -46,7 +46,7 @@ const Challenges: React.FC = () => {
           id: 'mock-ch-wed-1',
           creator_id: 'admin',
           title: '🛒 Reto: Mercado Sostenible',
-          description: 'Hoy viernes, ¡ve al mercado de la Part Alta con tus propias bolsas de tela! El reto es no usar ni un solo plástico de un solo uso en toda la compra.',
+          description: 'Hoy sábado, ¡ve al mercado de la Part Alta con tus propias bolsas de tela! El reto es no usar ni un solo plástico de un solo uso en toda la compra.',
           neighborhood: 'GENERAL',
           contact_info: 'Comunidad ComuniTarr',
           is_example: true,

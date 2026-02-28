@@ -51,7 +51,7 @@ const Patrols: React.FC = () => {
           id: 'mock-pat-wed-1',
           creator_id: 'admin',
           name: '🚧 Seguridad Obras Gasòmetre',
-          description: 'Control visual y aviso a conductores hoy viernes mientras la brigada repara el bache de Gasòmetre cruce Smith. Evitemos accidentes.',
+          description: 'Control visual y aviso a conductores hoy sábado mientras la brigada repara el bache de Gasòmetre cruce Smith. Evitemos accidentes.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
           created_at: new Date().toISOString()
