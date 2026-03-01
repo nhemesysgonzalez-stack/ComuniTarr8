@@ -42,7 +42,7 @@ const Patrols: React.FC = () => {
 
       // Filter out old mock patrols that might be in the database
       const filteredDbData = (data || []).filter(p =>
-        !p.name.includes("Sábado Noche") &&
+        !p.name.includes("Domingo Noche") &&
         !p.name.includes("Carrera Popular")
       );
 
@@ -51,7 +51,7 @@ const Patrols: React.FC = () => {
           id: 'mock-pat-wed-1',
           creator_id: 'admin',
           name: '🚧 Seguridad Obras Gasòmetre',
-          description: 'Control visual y aviso a conductores hoy sábado mientras la brigada repara el bache de Gasòmetre cruce Smith. Evitemos accidentes.',
+          description: 'Control visual y aviso a conductores hoy domingo mientras la brigada repara el bache de Gasòmetre cruce Smith. Evitemos accidentes.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
           created_at: new Date().toISOString()

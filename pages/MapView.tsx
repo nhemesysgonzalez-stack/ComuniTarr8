@@ -8,10 +8,10 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '48%', y: '48%', title: "Mercat de la Part Alta", desc: 'Mercado semanal de frutas y verduras hoy sábado 8-14h. Plaça del Fòrum.', status: 'Activo (8-14h)', color: 'bg-emerald-500', icon: 'local_mall', glow: 'shadow-[0_0_50px_rgba(16,185,129,0.5)]' },
-    { id: 2, type: 'incident', x: '45%', y: '52%', title: 'Corte Agua EMATSA', desc: 'Suministro afectado hoy sábado hasta las 14:00h en Nou Eixample Sud por obras.', status: 'En curso', color: 'bg-orange-600', icon: 'water_drop', glow: 'shadow-[0_0_35px_rgba(234,88,12,0.4)]' },
-    { id: 3, type: 'event', x: '52%', y: '35%', title: 'Cine Forum Sant Pere', desc: "Proyección hoy sábado a las 19:00h: 'Todo sobre mi madre'. Centro Cívico.", status: '19:00h Today', color: 'bg-indigo-500', icon: 'movie_edit' },
-    { id: 4, type: 'shop', x: '55%', y: '55%', title: 'Centro Cívico Part Alta', desc: 'Talleres de sábado: Yoga matinal y reunión de la AAVV a las 18:00h.', status: 'Abierto', color: 'bg-green-600', icon: 'groups' },
+    { id: 1, type: 'event', x: '48%', y: '48%', title: "Mercat de la Part Alta", desc: 'Mercado semanal de frutas y verduras hoy domingo 8-14h. Plaça del Fòrum.', status: 'Activo (8-14h)', color: 'bg-emerald-500', icon: 'local_mall', glow: 'shadow-[0_0_50px_rgba(16,185,129,0.5)]' },
+    { id: 2, type: 'incident', x: '45%', y: '52%', title: 'Corte Agua EMATSA', desc: 'Suministro afectado hoy domingo hasta las 14:00h en Nou Eixample Sud por obras.', status: 'En curso', color: 'bg-orange-600', icon: 'water_drop', glow: 'shadow-[0_0_35px_rgba(234,88,12,0.4)]' },
+    { id: 3, type: 'event', x: '52%', y: '35%', title: 'Cine Forum Sant Pere', desc: "Proyección hoy domingo a las 19:00h: 'Todo sobre mi madre'. Centro Cívico.", status: '19:00h Today', color: 'bg-indigo-500', icon: 'movie_edit' },
+    { id: 4, type: 'shop', x: '55%', y: '55%', title: 'Centro Cívico Part Alta', desc: 'Talleres de domingo: Yoga matinal y reunión de la AAVV a las 18:00h.', status: 'Abierto', color: 'bg-green-600', icon: 'groups' },
     { id: 5, type: 'incident', x: '42%', y: '40%', title: 'Bache Calle Gasòmetre', desc: 'Aviso vecinal: bache grande en cruce con Smith. Reportado vía Línia Verda TGN.', status: 'Reportado', color: 'bg-red-500', icon: 'report_problem' }
 
   ]);

@@ -146,18 +146,18 @@ const Announcements: React.FC = () => {
             const realAnnouncementsExamples = [
                 {
                     id: 'real-wed-summary',
-                    title: "☀️ JUEVES 25 FEBRERO 2026 — RESUMEN BARRIO",
+                    title: "☀️ DOMINGO 1 MARZO 2026 — RESUMEN BARRIO",
                     content: "Día despejado (15°C) con sol radiante. Mercado semanal activo hoy en Plaça del Fòrum. Corte de agua programado en marcha hasta las 14:00h en Eixample Sud.",
                     category: "INFO",
                     author_name: "ComuniTarr",
                     neighborhood: "GENERAL",
-                    itinerary: "• Hoy Mié: Mercado 8:00h-14:00h (Part Alta)\n• Hoy Mié: Corte agua Nou Eixample (09h-14h)\n• Hoy Mié: Cine Forum CC Sant Pere (19h)",
+                    itinerary: "• Hoy Dom: Mercado 8:00h-14:00h (Part Alta)\n• Hoy Dom: Corte agua Nou Eixample (09h-14h)\n• Hoy Dom: Cine Forum CC Sant Pere (19h)",
                     created_at: new Date().toISOString()
                 },
                 {
                     id: 'real-mercat-forum-wed',
                     title: "🛒 MERCADO SEMANAL: PLAÇA DEL FÒRUM",
-                    content: "Hoy sábado se celebra el tradicional mercado de proximidad. Fruta y verdura directa del pagès tarraconense. ¡Llenad el carro con salud local!",
+                    content: "Hoy domingo se celebra el tradicional mercado de proximidad. Fruta y verdura directa del pagès tarraconense. ¡Llenad el carro con salud local!",
                     category: "COMUNIDAD",
                     author_name: "Ayuntamiento TGN",
                     neighborhood: "PART ALTA",
@@ -166,7 +166,7 @@ const Announcements: React.FC = () => {
                 },
                 {
                     id: 'real-farmacia-guardia-wed',
-                    title: "💊 FARMACIA DE GUARDIA (HOY JUEVES)",
+                    title: "💊 FARMACIA DE GUARDIA (HOY DOMINGO)",
                     content: "Servicio de guardia 24h disponible hoy en la zona de Sant Pere i Sant Pau para cualquier urgencia médica.",
                     category: "INFO",
                     author_name: "Salud TGN",
@@ -176,7 +176,7 @@ const Announcements: React.FC = () => {
                 },
                 {
                     id: 'real-bolsa-empleo-wed',
-                    title: "💼 BOLSA DE TRABAJO (JUEVES 25 FEB)",
+                    title: "💼 BOLSA DE TRABAJO (Domingo 1 Mar)",
                     content: "Nuevas ofertas de hoy: Se busca personal para frutería en el mercado y dependiente/a para tienda de moda en Rambla Nova. Incorporación inmediata.",
                     category: "EVENTO",
                     author_name: "SOC Tarragona",

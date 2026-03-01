@@ -144,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
               </p>
-              <button onClick={() => alert("Próximo Taller de Reinvención Laboral: Martes 24 Feb en Tarragona Impulsa (Tabacalera).")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Próximo Taller de Reinvención Laboral: Domingo 3 Mar en Tarragona Impulsa (Tabacalera).")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -168,7 +168,7 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Hoy Sábado 28 Feb)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Hoy Domingo 1 Mar)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
                     <p className="text-xs font-black dark:text-white">"Técnico/a de Mantenimiento Integral"</p>
@@ -209,7 +209,7 @@ export const Services: React.FC = () => {
                 <div>
                   <p className="text-xs font-black uppercase text-gray-400">Próximo Festivo</p>
                   <p className="text-sm font-bold text-gray-800 dark:text-white">San José (Puente Escolar)</p>
-                  <p className="text-[10px] text-gray-500">Quedan 21 días</p>
+                  <p className="text-[10px] text-gray-500">Quedan 18 días</p>
                 </div>
               </div>
               <a
@@ -558,13 +558,13 @@ export const Services: React.FC = () => {
                   <div className="flex flex-col gap-2">
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Part Alta</span>
-                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (JUEVES)</span>
+                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">CERRADO (DOMINGO)</span>
                     </div>
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
-                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (JUEVES)</span>
+                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">CERRADO (DOMINGO)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy sábado hay talleres de pintura y yoga en los centros cívicos.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy domingo hay talleres de pintura y yoga en los centros cívicos.</p>
                   </div>
                 </div>
               </div>

@@ -182,8 +182,8 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'wed-sábado-sol',
-            title: "☀️ Sábado 28 Feb — Sol y Mercado",
+            id: 'wed-domingo-sol',
+            title: "☀️ Domingo 1 Mar — Sol y Mercado",
             content: "Amanecemos con un sol radiante en Tarragona. Ideal para visitar el Mercado Semanal en la Part Alta. Máximas de 15°C y vientos suaves del mediterráneo.",
             category: "TIEMPO",
             neighborhood: "GENERAL",
@@ -193,7 +193,7 @@ const Home: React.FC = () => {
           {
             id: 'wed-mercat-forum',
             title: "🛒 Mercado Semanal: Plaça del Fòrum",
-            content: "Hoy sábado vuelve el mercado de productos locales a la Part Alta. Frutas, verduras de temporada y artesanía local de 8:00 a 14:00h. ¡Apoya al comercio de proximidad!",
+            content: "Hoy domingo vuelve el mercado de productos locales a la Part Alta. Frutas, verduras de temporada y artesanía local de 8:00 a 14:00h. ¡Apoya al comercio de proximidad!",
             category: "COMERCIO",
             neighborhood: "PART ALTA",
             itinerary: "• Horario: 08:00h a 14:00h\n• Ubicación: Plaça del Fòrum\n• Recomendación: Alcachofas del Baix Penedès",
@@ -223,7 +223,7 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'poll-sábado-ematsa',
+          id: 'poll-domingo-ematsa',
           question: "¿Cómo te está afectando el corte de agua de hoy en el Eixample?",
           options: ['Había llenado garrafas ayer', 'Me ha pillado desprevenido', 'No me afecta, no vivo/trabajo allí', 'He ido a casa de un familiar'],
           category: 'COMUNIDAD',

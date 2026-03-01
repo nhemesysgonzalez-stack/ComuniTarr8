@@ -74,7 +74,7 @@ const Incidents: React.FC = () => {
                         id: 'mock-inc-wed-2',
                         user_id: 'admin',
                         title: '🚧 REPARACIÓN: Bache Calle Gasòmetre',
-                        description: 'Brigada municipal trabajando hoy sábado en el bache de Gasòmetre cruce Smith. Circulación restringida a un carril durante la mañana.',
+                        description: 'Brigada municipal trabajando hoy domingo en el bache de Gasòmetre cruce Smith. Circulación restringida a un carril durante la mañana.',
                         neighborhood: 'CENTRE',
                         status: 'in_progress',
                         created_at: new Date(Date.now() - 1000 * 60 * 120).toISOString(),

@@ -46,7 +46,7 @@ const Challenges: React.FC = () => {
           id: 'mock-ch-wed-1',
           creator_id: 'admin',
           title: '🛒 Reto: Mercado Sostenible',
-          description: 'Hoy sábado, ¡ve al mercado de la Part Alta con tus propias bolsas de tela! El reto es no usar ni un solo plástico de un solo uso en toda la compra.',
+          description: 'Hoy domingo, ¡ve al mercado de la Part Alta con tus propias bolsas de tela! El reto es no usar ni un solo plástico de un solo uso en toda la compra.',
           neighborhood: 'GENERAL',
           contact_info: 'Comunidad ComuniTarr',
           is_example: true,
@@ -241,7 +241,7 @@ const Challenges: React.FC = () => {
                   <div className="flex flex-wrap gap-2 justify-center">
                     {[
                       { t: 'Donación de Libros', d: 'Llevamos libros a la biblioteca del barrio para renovar stock infantil.', c: '977240331' },
-                      { t: 'Paseo con Mayores', d: 'Grupo para pasear con vecinos del barrio que viven solos esta tarde de martes.', c: '655666777' },
+                      { t: 'Paseo con Mayores', d: 'Grupo para pasear con vecinos del barrio que viven solos esta tarde de domingo.', c: '655666777' },
                       { t: 'Marca tu Bache', d: 'Iniciativa para marcar con tiza de colores los baches peligrosos de la calle para que se vean bien.', c: '611888222' }
                     ].map((idea, i) => (
                       <button

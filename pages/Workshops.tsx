@@ -51,7 +51,7 @@ const Workshops: React.FC = () => {
                     id: 'mock-ws-wed-1',
                     title: 'Taller de Teatro Adultos',
                     instructor: 'Cora R.',
-                    date: 'Hoy Sábado 28, 18:30',
+                    date: 'Hoy Domingo 1, 18:30',
                     description: 'Expresión corporal e improvisación. Hoy trabajaremos escenas de Almodóvar como previa al Cine Forum.',
                     image: 'https://images.unsplash.com/photo-1503095396549-807a8bc3667c?auto=format&fit=crop&q=80&w=800',
                     spots: 5,
@@ -63,7 +63,7 @@ const Workshops: React.FC = () => {
                     id: 'mock-ws-wed-2',
                     title: 'Club de Lectura Tarragona',
                     instructor: 'Biblio TGN',
-                    date: 'Hoy Sábado 28, 18:00',
+                    date: 'Hoy Domingo 1, 18:00',
                     description: 'Comentamos la novela del mes: "Canto jo i la muntanya balla". Sala de actos de la Biblioteca Pública.',
                     image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800',
                     spots: 0,
@@ -241,10 +241,10 @@ const Workshops: React.FC = () => {
                                     <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Huerto Urbano', i: 'Pedro S.', d: 'Sábado 11:00 AM', desc: 'Aprende a cultivar tus propios tomates y lechugas en el balcón.', c: '688000111' },
+                                            { t: 'Huerto Urbano', i: 'Pedro S.', d: 'Domingo 11:00 AM', desc: 'Aprende a cultivar tus propios tomates y lechugas en el balcón.', c: '688000111' },
                                             { t: 'Smartphone Pro', i: 'Marta G.', d: 'Domingo 10:30 AM', desc: 'Sácale provecho a tu móvil: fotos, seguridad y apps útiles.', c: '699222333' },
-                                            { t: 'Cata Vermuts', i: 'Cellar TGN', d: 'Sábado 18:00 PM', desc: 'Aprende a diferenciar los vermuts locales de nuestra tierra.', c: '611444555' },
-                                            { t: 'Pre-Carrera 5K', i: 'Running Club', d: 'Sábado 19:30 PM', desc: 'Sesión de estiramientos y charla técnica para la carrera de mañana.', c: 'Paseo Marítimo' }
+                                            { t: 'Cata Vermuts', i: 'Cellar TGN', d: 'Domingo 18:00 PM', desc: 'Aprende a diferenciar los vermuts locales de nuestra tierra.', c: '611444555' },
+                                            { t: 'Pre-Carrera 5K', i: 'Running Club', d: 'Domingo 19:30 PM', desc: 'Sesión de estiramientos y charla técnica para la carrera de mañana.', c: 'Paseo Marítimo' }
 
                                         ].map((idea, i) => (
                                             <button
@@ -278,7 +278,7 @@ const Workshops: React.FC = () => {
 
                                 <div>
                                     <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Fecha y Hora</label>
-                                    <input type="text" value={date} onChange={e => setDate(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-emerald-500/20 focus:ring-2" placeholder="Ej: Sábados 10:00 AM" />
+                                    <input type="text" value={date} onChange={e => setDate(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-emerald-500/20 focus:ring-2" placeholder="Ej: Domingos 10:00 AM" />
                                 </div>
 
                                 <div>

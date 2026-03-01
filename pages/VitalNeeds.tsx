@@ -49,7 +49,7 @@ const VitalNeeds: React.FC = () => {
                     id: 'mock-wed-n1',
                     creator_id: 'v4',
                     type: 'company',
-                    title: '👵 Acompañamiento al Mercado (Sábado)',
+                    title: '👵 Acompañamiento al Mercado (Domingo)',
                     description: 'Busco voluntario/a para acompañar a mi madre (85 años) al mercado de la Plaça del Fòrum esta mañana de 10h a 11:30h. Vive en la Calle Mayor.',
                     contact_info: '688 22 11 00 (Pere)',
                     is_urgent: false,
@@ -184,7 +184,7 @@ const VitalNeeds: React.FC = () => {
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Inscripción abierta: Centro Cívico Centro. Próxima reunión informativa: Sábado 18h.'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Inscripción abierta: Centro Cívico Centro. Próxima reunión informativa: Domingo 18h.'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
                             <span className="material-symbols-outlined text-sm">person_add</span>
                             UNIRME AHORA
                         </a>

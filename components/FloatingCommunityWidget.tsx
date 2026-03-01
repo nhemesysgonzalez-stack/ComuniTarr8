@@ -11,8 +11,8 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🛒 Hoy Sábado: Mercado Semanal en la Part Alta (Pl. Fòrum). ¡Apoya a los productores locales!", neighborhood: 'GENERAL' },
-    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Sábado despejado y agradable. Máxima de 15ºC. ¡Buen día para pasear! 😎', neighborhood: 'GENERAL' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🛒 Hoy Domingo: Mercado Semanal en la Part Alta (Pl. Fòrum). ¡Apoya a los productores locales!", neighborhood: 'GENERAL' },
+    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Domingo despejado y agradable. Máxima de 15ºC. ¡Buen día para pasear! 😎', neighborhood: 'GENERAL' },
     { id: 2, user: 'EMATSA TGN', avatar: '/logo.svg', text: '💧 Recordatorio: Corte de agua hoy en Nou Eixample Sud hasta las 14:00h por mantenimiento. 🛠️', neighborhood: 'EIXAMPLE' },
     { id: 3, user: 'Cultura TGN', avatar: '/logo.svg', text: '🎞️ Cine Forum hoy a las 19:00h en el CC Sant Pere. Proyectamos "Todo sobre mi madre". 🍿', neighborhood: 'GENERAL' },
     { id: 4, user: 'Pau L.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '🥗 He comprado unas alcachofas increíbles en el mercado hoy. ¡Están de temporada!', neighborhood: 'Part Alta' },
@@ -25,7 +25,7 @@ const tickerMessages = [
     { user: 'Meteo', text: '☀️ Soleado 15ºC' },
     { user: 'EMATSA', text: '💧 Corte agua Eixample Sud' },
     { user: 'Cultura', text: '🎞️ Cine Forum 19h' },
-    { user: 'TGN', text: '☀️ ¡Buen Sábado!' }
+    { user: 'TGN', text: '☀️ ¡Buen Domingo!' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {
