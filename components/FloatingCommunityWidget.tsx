@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🛒 Hoy Domingo: Mercado Semanal en la Part Alta (Pl. Fòrum). ¡Apoya a los productores locales!", neighborhood: 'GENERAL' },
-    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Domingo despejado y agradable. Máxima de 15ºC. ¡Buen día para pasear! 😎', neighborhood: 'GENERAL' },
-    { id: 2, user: 'EMATSA TGN', avatar: '/logo.svg', text: '💧 Recordatorio: Corte de agua hoy en Nou Eixample Sud hasta las 14:00h por mantenimiento. 🛠️', neighborhood: 'EIXAMPLE' },
-    { id: 3, user: 'Cultura TGN', avatar: '/logo.svg', text: '🎞️ Cine Forum hoy a las 19:00h en el CC Sant Pere. Proyectamos "Todo sobre mi madre". 🍿', neighborhood: 'GENERAL' },
-    { id: 4, user: 'Pau L.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '🥗 He comprado unas alcachofas increíbles en el mercado hoy. ¡Están de temporada!', neighborhood: 'Part Alta' },
-    { id: 5, user: 'Montse F.', avatar: 'https://i.pravatar.cc/150?u=montse', text: '🤝 Si alguien del Eixample Sud necesita garrafas de agua, tengo de sobra. ¡Pasaros! 💜', neighborhood: 'APOYO' },
-    { id: 6, user: 'TGN Esports', avatar: '/logo.svg', text: '⚽ Inscripciones abiertas para el torneo de fútbol sala del barrio. ¡Forma tu equipo!', neighborhood: 'GENERAL' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🏢 Hoy Lunes: Todas las oficinas municipales retoman su horario habitual (8:30h - 14:30h). ¡Buen inicio de semana!", neighborhood: 'GENERAL' },
+    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Lunes despejado. Máxima de 16ºC. Ideal para retomar la rutina con energía. 😎', neighborhood: 'GENERAL' },
+    { id: 2, user: 'Trànsit TGN', avatar: '/logo.svg', text: '🚗 Precaución: Retenciones habituales en los accesos por la T-11 y A-7 esta mañana. 🚦', neighborhood: 'GENERAL' },
+    { id: 3, user: 'Tarragona Impulsa', avatar: '/logo.svg', text: '💼 Taller LinkedIn hoy a las 18:00h en Espai Tabacalera. Optimiza tu perfil profesional. 📈', neighborhood: 'GENERAL' },
+    { id: 4, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '☕ ¿Alguien para un café rápido cerca de la Rambla antes de entrar a la oficina? 🥐', neighborhood: 'CENTRE' },
+    { id: 5, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: '💪 ¡Vamos a por el lunes! Semana de nuevos retos en el barrio y en el trabajo. 🤝', neighborhood: 'GENERAL' },
+    { id: 6, user: 'EMATSA', avatar: '/logo.svg', text: '💧 Sin incidencias programadas para hoy. Red operando con normalidad. 🛠️', neighborhood: 'GENERAL' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '🛒 Mercado hoy en Pl. Fòrum' },
-    { user: 'Meteo', text: '☀️ Soleado 15ºC' },
-    { user: 'EMATSA', text: '💧 Corte agua Eixample Sud' },
-    { user: 'Cultura', text: '🎞️ Cine Forum 19h' },
-    { user: 'TGN', text: '☀️ ¡Buen Domingo!' }
+    { user: 'Admin', text: '🏢 Oficinas abiertas 8:30h' },
+    { user: 'Meteo', text: '☀️ Despejado 16ºC' },
+    { user: 'Trànsit', text: '🚗 T-11 densa entrada' },
+    { user: 'Impulsa', text: '💼 Taller LinkedIn 18h' },
+    { user: 'TGN', text: '💪 ¡Buen Lunes!' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

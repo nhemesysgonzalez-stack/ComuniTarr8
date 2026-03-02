@@ -46,33 +46,33 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'mock-wed-n1',
+                    id: 'mock-mon-n1',
                     creator_id: 'v4',
                     type: 'company',
-                    title: '👵 Acompañamiento al Mercado (Domingo)',
-                    description: 'Busco voluntario/a para acompañar a mi madre (85 años) al mercado de la Plaça del Fòrum esta mañana de 10h a 11:30h. Vive en la Calle Mayor.',
+                    title: '👵 Acompañamiento Paseo (Lunes)',
+                    description: 'Busco voluntario/a para acompañar a mi madre (85 años) a dar un pequeño paseo por la Rambla ahora que hace sol. Vive en la Calle Mayor.',
                     contact_info: '688 22 11 00 (Pere)',
                     is_urgent: false,
                     neighborhood: 'PART ALTA',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-wed-n2',
+                    id: 'mock-mon-n2',
                     creator_id: 'v5',
                     type: 'food',
-                    title: '💧 Agua potable (Corte EMATSA)',
-                    description: 'Por el corte de agua, me he quedado sin reserva para preparar el biberón. Si algún vecino del Eixample tiene garrafas de sobra, se lo agradecería.',
+                    title: '🥗 Necesito ayuda con la compra semanal',
+                    description: 'He tenido una lesión en la rodilla y no puedo cargar peso. Busco alguien que pueda traerme la compra básica del Mercadona esta tarde.',
                     contact_info: '644 33 22 11 (Mónica)',
                     is_urgent: true,
                     neighborhood: 'EIXAMPLE',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-wed-n3',
+                    id: 'mock-mon-n3',
                     creator_id: 'v6',
                     type: 'emotional',
-                    title: "🎞️ ¿Alguien para ir al Cine Forum?",
-                    description: 'No quiero ir sola al CC Sant Pere esta tarde a las 19:00. ¿Alguna vecina se anima? Me llamo Elena y vivo cerca de la Plaza Imperial.',
+                    title: "📚 ¿Alguien para ir al Club de Lectura hoy?",
+                    description: 'Me gustaría ir a la biblioteca esta tarde a las 18:00 para el club de lectura pero soy nueva en el barrio. ¿Alguien se anima a ir juntos?',
                     contact_info: '622 88 77 66 (Elena V.)',
                     is_urgent: false,
                     neighborhood: 'GENERAL',

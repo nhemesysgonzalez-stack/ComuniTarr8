@@ -58,7 +58,7 @@ const Emergency: React.FC = () => {
         </div>
         <div className="flex-1 text-center md:text-left">
           <h3 className="text-2xl font-black text-emerald-900 dark:text-emerald-400 mb-2 uppercase tracking-tight">Farmacias de Guardia</h3>
-          <p className="text-emerald-700 dark:text-emerald-500 font-medium">Consulta qué farmacias están abiertas hoy domingo en Tarragona y alrededores.</p>
+          <p className="text-emerald-700 dark:text-emerald-500 font-medium">Consulta qué farmacias están abiertas hoy lunes en Tarragona y alrededores.</p>
         </div>
         <a
           href="https://www.farmaceuticsdetarragona.org.es/farmacies-de-guardia/"

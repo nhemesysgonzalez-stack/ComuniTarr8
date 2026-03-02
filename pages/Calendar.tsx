@@ -59,11 +59,24 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
+          id: 'real-mon-linkedin',
+          creator_id: 'admin',
+          title: "💻 Taller LinkedIn & Marca Personal",
+          description: "Aprende a optimizar tu perfil para la búsqueda de empleo. Trae tu portátil. Plazas limitadas.",
+          event_date: '2026-03-02',
+          event_time: '18:00',
+          location: 'Tarragona Impulsa (Espai Tabacalera)',
+          category: 'Cultura',
+          neighborhood: 'GENERAL',
+          contact_info: '977 29 61 00',
+          created_at: new Date().toISOString()
+        },
+        {
           id: 'real-wed-mercat-forum',
           creator_id: 'admin',
           title: "🛒 Mercat Setmanal Part Alta",
-          description: "Mercado local de proximidad con productos de temporada: frutas, verduras, artesania y más de 20 productores del Camp de Tarragona.",
-          event_date: '2026-02-25',
+          description: "Mercado local de proximidad con productos de temporada: frutas, verduras, artesania y más.",
+          event_date: '2026-03-04',
           event_time: '08:00',
           location: 'Plaça del Fòrum, Part Alta',
           category: 'Cultura',
@@ -72,29 +85,16 @@ const NeighborhoodCalendar: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'real-wed-cine-forum',
+          id: 'real-thu-asamblea',
           creator_id: 'admin',
-          title: "🎥 Cine Forum: 'Todo sobre mi madre'",
-          description: "Proyección del clásico de Almodóvar y debate posterior. Organiza el Centro Cívico Sant Pere i Sant Pau. Entrada libre.",
-          event_date: '2026-02-25',
+          title: "🏠 Asamblea Vecinal: Mantenimiento",
+          description: "Reunión para tratar el tema del mantenimiento de las aceras y nuevas zonas verdes.",
+          event_date: '2026-03-05',
           event_time: '19:00',
-          location: 'Centre Cívic Sant Pere i Sant Pau',
-          category: 'Cultura',
-          neighborhood: 'GENERAL',
-          contact_info: 'CC Sant Pere i Sant Pau (977 29 58 00)',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'real-wed-asamblea',
-          creator_id: 'admin',
-          title: "🏠 Asamblea Vecinal Extraordinaria",
-          description: "Reunión urgente para tratar el tema de las nuevas zonas peatonales y el mantenimiento de las aceras en la zona Eixample Sud.",
-          event_date: '2026-02-25',
-          event_time: '18:30',
-          location: 'Local Social Asociación de Vecinos',
+          location: 'AAVV Sant Pere i Sant Pau',
           category: 'Solidario',
           neighborhood: 'GENERAL',
-          contact_info: 'avpartalta@tgn.cat',
+          contact_info: 'info@veinsstperepau.cat',
           created_at: new Date().toISOString()
         }
       ];

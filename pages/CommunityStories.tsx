@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'ms1', user_name: 'Ana T.', content: '¡Mercado de Domingo! He encontrado unas fresas increíbles en la Plaça del Fòrum. 🍓🛒 #TarragonaBarrio', image_url: 'https://images.unsplash.com/photo-1542838132-92c53300491e', likes: 142, created_at: new Date().toISOString() },
-            { id: 'ms2', user_name: 'Marc G.', content: 'Teletrabajo intenso hoy por el corte de agua en el Eixample. ¡Menos mal que llené garrafas anoche! 💧💻 #ResilienciaVecinal', image_url: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7', likes: 215, created_at: new Date().toISOString() },
-            { id: 'ms3', user_name: 'Pilar S.', content: 'Esperando que empiece el Cine Forum en el CC Sant Pere. ¡Qué ganas de ver a Almodóvar en pantalla grande! 🎞️🍿 #CulturaTGN', image_url: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba', likes: 98, created_at: new Date().toISOString() },
-            { id: 'ms4', user_name: 'Joan R.', content: 'Atardecer de domingo desde el Balcó del Mediterrani. Tarragona nunca deja de sorprender. 🌅🏛️ #VistasÚnicas', image_url: 'https://images.unsplash.com/photo-1548543604-a87c9909abec', likes: 167, created_at: new Date().toISOString() }
+            { id: 'ms1', user_name: 'Ana T.', content: '¡Lunes de mercado! He encontrado unas fresas increíbles en la Plaça del Fòrum esta mañana. 🍓🛒 #TarragonaBarrio #KM0', image_url: 'https://images.unsplash.com/photo-1542838132-92c53300491e', likes: 142, created_at: new Date().toISOString() },
+            { id: 'ms2', user_name: 'Marc G.', content: 'Mañana intensa de teletrabajo. Un café rápido y a seguir con la semana. ¡Ánimo a todos! ☕💻 #RutinaLunes #Tarragona', image_url: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085', likes: 215, created_at: new Date().toISOString() },
+            { id: 'ms3', user_name: 'Pilar S.', content: 'Preparada para el taller de LinkedIn en Tabacalera esta tarde. ¡A por nuevas oportunidades! 💼📈 #TalentoTGN', image_url: 'https://images.unsplash.com/photo-1552664730-d307ca884978', likes: 98, created_at: new Date().toISOString() },
+            { id: 'ms4', user_name: 'Joan R.', content: 'Paseo matutino por la Playa del Milagro antes de entrar a la oficina. Empezar el lunes así no tiene precio. 🌊☀️ #TGNmola', image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e', likes: 167, created_at: new Date().toISOString() }
         ];
 
 

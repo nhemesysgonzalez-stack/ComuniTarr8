@@ -26,13 +26,13 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     p.includes("trabajo") || p.includes("empleo") || p.includes("laboral") || p.includes("curro") || p.includes("busco") || p.includes("paro") || p.includes("oferta") ||
     (isJobContext && (p.includes("busco") || p.includes("necesito")))
   ) {
-    return "Ofertas Laborales Urgentes (Domingo 1 Mar - Entierro & Rutina) 💼:\n\n" +
-      "1. 🧹 Brigada de Limpieza Especial - Turno noche tras la quema del Ninot → 15€/h.\n" +
-      "2. 🛡️ Seguridad / Control de Accesos - Pl. de la Font (19h-22h) → 16€/h.\n" +
-      "3. 🥘 Extra de Cocina - Restaurantes Centro (Cenas de Luto) → Incorporación inmediata.\n" +
-      "4. 📦 Repartidor de Última Milla - Zona Eixample / Ponent → Jornada completa.\n" +
-      "5. 🌟 TALENTO +45: Administrativo Funerario / Gestión - Empresa local busca perfil empático.\n\n" +
-      "• ¿Buscas algo más estable? Mira las convocatorias en 'Tarragona Impulsa' este domingo.";
+    return "Ofertas Laborales Urgentes (Lunes 2 Mar) 💼:\n\n" +
+      "1. 🏢 Administrativo/a - Gestoría en Eixample → 📞 688 33 22 11\n" +
+      "2. 📦 Repartidor/a Carnet C - Logística Entrevies → 📞 611 22 99 00\n" +
+      "3. 👨‍🔧 Técnico Mantenimiento - Centros Cívicos → 📞 977 24 55 60\n" +
+      "4. 🛒 Dependiente/a - Ferretería Torreforta → 📞 977 55 44 22\n" +
+      "5. 👨‍🍳 Cocinero/a - Restaurante Serrallo → 📞 655 44 11 00\n\n" +
+      "• ¿Necesitas orientación? Hoy lunes Tarragona Impulsa atiende de 9h a 14h.";
   }
 
   // 16. Preppers y Seguridad (Petroquímicas / Viento) - Prioridad en canal Preppers
@@ -40,7 +40,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
     // Respuesta específica para el VIENTO (Ventcat)
     if (p.includes("viento") || p.includes("aire") || p.includes("ventcat") || p.includes("hacer")) {
-      return "⚠️ ALERTA VENTCAT (Domingo 12 Feb): Tarragona está en alerta naranja por vientos de >80km/h.\n\n👣 QUÉ HACER:\n1. Evita el Balcó del Mediterrani y zonas con árboles grandes (Rambla, Parcs).\n2. Asegura macetas y toldos en balcones.\n3. Si vas en coche, reduce velocidad y ten cuidado al adelantar camiones.\n4. Aléjate de fachadas en mal estado o andamios.\n\n🛡️ Canal Preppers: ¿Quieres saber cómo preparar tu kit de emergencia por si hay cortes de luz?";
+      return "☀️ TIEMPO (Lunes 2 Mar): Cielos despejados para hoy en Tarragona. Viento suave (15km/h). Ideal para actividades al aire libre.\n\n👣 RECOMENDACIÓN:\n1. Disfruta del Balcó del Mediterrani.\n2. Día perfecto para el inicio de semana laboral.\n3. Sin alertas meteorológicas activas hoy.";
     }
 
     if (neighborhood === 'PREPPERS' && !p.includes("sirena") && !p.includes("kit")) {
@@ -56,17 +56,17 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.1 TRÁFICO EN TIEMPO REAL
   if (p.includes("trafico") || p.includes("tráfico") || p.includes("carretera") || p.includes("circulacion") || p.includes("atasco") || p.includes("retenciones") || p.includes("corte")) {
-    return "🚗 TRÁFICO TARRAGONA (Domingo 1 Mar, 09:15h):\n\n• 🟡 PL. DE LA FONT: Acceso restringido por montaje del velatorio del Ninot.\n• 🟢 RAMBLA Y AV. ROMA: Circulación fluida sin incidentes.\n• 🔴 AVISO 20:00h: Cortes previstos en Baixada de la Misericòrdia y calles adyacentes por la procesión del Entierro.\n\n💡 Se recomienda usar parkings subterráneos si vienes a ver la Quema.";
+    return "🚗 TRÁFICO TARRAGONA (Lunes 2 Mar, 09:15h):\n\n• 🟡 PL. DE LA FONT: Acceso restringido por montaje del velatorio del Ninot.\n• 🟢 RAMBLA Y AV. ROMA: Circulación fluida sin incidentes.\n• 🔴 AVISO 20:00h: Cortes previstos en Baixada de la Misericòrdia y calles adyacentes por la procesión del Entierro.\n\n💡 Se recomienda usar parkings subterráneos si vienes a ver la Quema.";
   }
 
   // 2.2 FARMACIAS DE GUARDIA
   if (p.includes("farmacia") || p.includes("guardia") || p.includes("medicamento") || p.includes("parafarmacia")) {
-    return "💊 FARMACIAS DE GUARDIA HOY (Domingo 1 Mar 2026):\n\n• 🏥 Farmacia BESORA - Rambla Nova, 121 (09-22h)\n• 🏥 Farmacia GUINOVART - C/ Girona, 10 (24h)\n• 🏥 Farmacia CENTRAL - Rambla Vella, 50 (hasta 22h)\n\n📍 Farmacia de guardia abierta 24h: GUINOVART.\n⚕️ Urgencias: CAP Llevant o Hospital Santa Tecla.";
+    return "💊 FARMACIAS DE GUARDIA HOY (Lunes 2 Mar 2026):\n\n• 🏥 Farmacia BESORA - Rambla Nova, 121 (09-22h)\n• 🏥 Farmacia GUINOVART - C/ Girona, 10 (24h)\n• 🏥 Farmacia CENTRAL - Rambla Vella, 50 (hasta 22h)\n\n📍 Farmacia de guardia abierta 24h: GUINOVART.\n⚕️ Urgencias: CAP Llevant o Hospital Santa Tecla.";
   }
 
   // 2.3 COLEGIOS Y EDUCACIÓN
   if (p.includes("colegio") || p.includes("escuela") || p.includes("escola") || p.includes("instituto") || p.includes("matricula") || p.includes("matrícula") || p.includes("calendario escolar") || p.includes("menu escolar") || p.includes("menú")) {
-    return "🎓 INFORMACIÓN ESCOLAR (Lunes 16 Feb):\n\n📅 **SEMANA BLANCA / CARNAVAL:**\n• Hoy Lunes: Muchos centros NO tienen clase (festivo de libre disposición).\n• Mañana Martes: También festivo escolar en varios institutos de TGN.\n• 16-20 Feb: Vacaciones de Carnaval según el centro.\n\n💡 Comprueba la agenda de tu centro específico en su web oficial.";
+    return "🎓 INFORMACIÓN ESCOLAR (Lunes 2 Mar):\n\n📅 **ENTRADA A CLASES:**\n• Hoy Lunes: Jornada escolar normal en todos los centros de TGN.\n• Menú del día: Crema de verduras y pescado al horno (Menú General Educativo).\n• Preinscripción: Recuerda que el periodo abre la próxima semana.\n\n💡 Consulta el calendario oficial en gencat.cat/ensenyament";
   }
 
   // 2.4 SERVICIOS MUNICIPALES (AMPLIADO)
@@ -86,7 +86,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.7 ACTIVIDADES Y OCIO
   if (p.includes("actividad") || p.includes("evento") || p.includes("plan") || p.includes("ocio") || p.includes("que hacer") || p.includes("qué hacer")) {
-    return "🎉 FIN DEL CARNAVAL: ADIÓS AL REY (Domingo 1 Mar):\n\n⚰️ **HOY (18:00h):**\n• Velatorio de la Reina Carnestoltes y el Concubí (Plaza de la Font). Ven a dar el último adiós.\n\n🔥 **HOY (20:00h):**\n• Lectura del Testamento y Quema de los Ninots. El clímax final del Carnaval de Tarragona.\n\n🐟 **HOY (21:00h):**\n• Entierro de la Sardina. Desfile de luto por la Part Alta.\n\n💡 Mañana Domingo de Ceniza volverá la calma total.";
+    return "📅 ACTIVIDADES HOY (Lunes 2 Mar):\n\n🏢 **EMPLEO (11:00h):**\n• Sesión grupal 'Mejora tu currículum' en Tarragona Impulsa (Espai Tabacalera).\n\n📚 **CULTURA (18:00h):**\n• Club de lectura en la Biblioteca Pública (C/ Fortuny). Lectura 'Puente de Hierro'.\n\n🎨 **ARTE:**\n• Exposición 'Legado Romano' abierta en el MANT (Previa reserva).\n\n💡 Mañana Martes: Taller de digitalización para seniors.";
   }
 
   // 2.8 EMERGENCIAS Y NÚMEROS ÚTILES
@@ -116,7 +116,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 7. Noticias y Eventos de Hoy (MARTES 17 FEBRERO 2026 - Entierro de la Sardina)
   if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("viento") || p.includes("tiempo") || p.includes("plan")) {
-    return "Resumen para el MARTES 17 de febrero ⚰️🔥:\n\n• ⚰️ FINAL: Velatorio y Entierro de la Sardina desde las 18:00h en Pl. de la Font.\n• 🔥 QUEMA: A las 20:00h despedimos a los Ninots con fuego y sátira.\n• 🖤 LUTO: Se invita a los vecinos a vestir de oscuro para el cortejo fúnebre.\n• 🧹 LIMPIEZA: Último operativo nocturno tras la quema para que mañana todo sea gris (ceniza).";
+    return "Resumen para el LUNES 2 de marzo ☀️:\n\n• 🏢 TRÁMITES: Oficinas municipales abiertas. Inicio de periodo de impuestos municipales.\n• 💼 TRABAJO: Apertura de nuevas vacantes para la campaña de primavera.\n• ☀️ TIEMPO: Día estable con máximas de 17°C.\n• 🚌 BUSES: Frecuencia habitual de jornada laborable.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)

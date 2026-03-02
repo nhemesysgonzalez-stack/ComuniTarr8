@@ -42,29 +42,29 @@ const SupportCircles: React.FC = () => {
 
             const mockCircles: SupportCircle[] = [
                 {
-                    id: 'mock-wed-sc1',
+                    id: 'mock-mon-sc1',
                     initiator_id: 'v1',
-                    title: '💼 Ansiedad y Estrés Laboral — Sesión Domingo',
+                    title: '💼 Ansiedad y Estrés Laboral — Apoyo Lunes',
                     neighborhood: 'GENERAL',
-                    description: 'Sesión presencial hoy domingo a las 19:00h en el Centro Cívico Centro. Espacio compartido para soltar tensiones acumuladas a mitad de semana.',
+                    description: 'Sesión presencial hoy lunes a las 19:30h en el Centro Cívico. Espacio compartido para gestionar el estrés del inicio de semana.',
                     contact_info: '611 22 33 44 (Miguel)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-wed-sc2',
+                    id: 'mock-mon-sc2',
                     initiator_id: 'vadmin',
-                    title: '🤱 Círculo de Crianza — Hoy en el Parque',
+                    title: '🤱 Círculo de Crianza — Mañanas de Lunes',
                     neighborhood: 'GENERAL',
-                    description: 'Cada domingo a las 11:00h nos reunimos en el Parque de la Ciudad para compartir experiencias sobre crianza. ¡Traed a los peques!',
+                    description: 'Cada lunes a las 10:30h nos reunimos en el Parque de la Ciudad para compartir dudas y experiencias de crianza entre familias.',
                     contact_info: '655 12 34 56 (Elena)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-wed-sc3',
+                    id: 'mock-mon-sc3',
                     initiator_id: 'v2',
-                    title: '🏠 Vecinos en Duelo — Apoyo Mutuo',
+                    title: '🏠 Vecinos Pensionistas — Charlas y Café',
                     neighborhood: 'GENERAL',
-                    description: 'Grupo de apoyo para personas que han perdido a un ser querido. Nos reunimos quincenalmente los domingo (hoy toca sesión) a las 18h.',
+                    description: 'Grupo de acompañamiento para pensionistas. Nos reunimos los lunes a las 17h para charlar, tomar café y organizar salidas culturales.',
                     contact_info: '622 99 88 77 (Rosa)',
                     created_at: new Date().toISOString()
                 }

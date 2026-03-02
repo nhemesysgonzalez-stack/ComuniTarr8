@@ -45,7 +45,7 @@ const Clubs: React.FC = () => {
                     id: 'c-wed-1',
                     creator_id: 'v1',
                     name: 'Urban Runners TGN 🏃‍♂️',
-                    description: 'Entrenamiento de series hoy domingo a las 19:30h. Quedamos frente al Hotel Imperial Tarraco. ¡Apto para todos los niveles!',
+                    description: 'Entrenamiento de series hoy lunes a las 19:30h. Quedamos frente al Hotel Imperial Tarraco. ¡Apto para todos los niveles!',
                     neighborhood: 'GENERAL',
                     contact_info: '622 33 44 55 (Pau)',
                     created_at: new Date().toISOString()

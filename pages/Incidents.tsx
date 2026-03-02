@@ -59,22 +59,22 @@ const Incidents: React.FC = () => {
                 // Mock Incidents for Demo (Thursday 19th)
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'mock-inc-wed-1',
+                        id: 'mock-inc-mon-1',
                         user_id: 'admin',
-                        title: '💧 CORTE DE AGUA EMATSA (EN CURSO)',
-                        description: 'Tal como se anunció, el corte de agua programado en Nou Eixample Sud está en marcha desde las 9:00h. Se prevé el restablecimiento total a las 14:00h.',
-                        neighborhood: 'EIXAMPLE',
+                        title: '🚗 INCIDENCIA TRÁFICO: A-7 (ENTRADA NORTE)',
+                        description: 'Vehículo averiado obstaculizando un carril en el acceso por la A-7 dirección centro. Guardia Urbana en el lugar dirigiendo el tráfico.',
+                        neighborhood: 'GENERAL',
                         status: 'in_progress',
                         created_at: new Date().toISOString(),
-                        contact_info: '977 21 11 11 (EMATSA)',
-                        profiles: { full_name: 'EMATSA Tarragona', avatar_url: '/logo.svg' },
-                        image_url: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&q=80&w=800'
+                        contact_info: '092 (Guardia Urbana)',
+                        profiles: { full_name: 'Trànsit TGN', avatar_url: '/logo.svg' },
+                        image_url: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800'
                     },
                     {
                         id: 'mock-inc-wed-2',
                         user_id: 'admin',
                         title: '🚧 REPARACIÓN: Bache Calle Gasòmetre',
-                        description: 'Brigada municipal trabajando hoy domingo en el bache de Gasòmetre cruce Smith. Circulación restringida a un carril durante la mañana.',
+                        description: 'Brigada municipal trabajando hoy lunes en el bache de Gasòmetre cruce Smith. Circulación restringida a un carril durante la mañana.',
                         neighborhood: 'CENTRE',
                         status: 'in_progress',
                         created_at: new Date(Date.now() - 1000 * 60 * 120).toISOString(),

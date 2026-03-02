@@ -42,28 +42,28 @@ const MicroVolunteering: React.FC = () => {
 
             const realOpportunitiesExamples: VolunteerOpportunity[] = [
                 {
-                    id: 'real-wed-vol-1',
+                    id: 'real-mon-vol-1',
                     creator_id: 'v7',
                     title: '🛒 Ayuda bolsas Mercado Part Alta',
-                    description: 'Estaré en la salida del mercado de 11h a 13h hoy domingo para ayudar a personas mayores a llevar las bolsas pesadas hasta su casa o el coche.',
+                    description: 'Estaré en la salida del mercado de 11h a 13h hoy lunes para ayudar a personas mayores a llevar las bolsas pesadas hasta su casa o el coche.',
                     neighborhood: 'PART ALTA',
                     contact_info: 'Encuéntrame en el arco de la Catedral con chaleco naranja.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-wed-vol-2',
+                    id: 'real-mon-vol-2',
                     creator_id: 'v8',
-                    title: '💧 Reparto garrafas (Corte EMATSA)',
-                    description: 'Tengo coche y puedo subir garrafas de agua a vecinos del Eixample Sud que no puedan cargar peso hoy durante el corte. Gratis, solo avisad.',
-                    neighborhood: 'EIXAMPLE',
+                    title: '💻 Iniciación al móvil para mayores',
+                    description: 'Me ofrezco para ayudar a configurar apps de salud o banca online hoy de 17h a 19h en la cafetería del Centro Cívico.',
+                    neighborhood: 'GENERAL',
                     contact_info: '611 22 33 44 (Carlos)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-wed-vol-3',
+                    id: 'real-mon-vol-3',
                     creator_id: 'v9',
-                    title: '🎞️ Acompañante Cine Forum',
-                    description: 'Me ofrezco para acompañar a vecinos que no quieran ir solos al Centro Cívico Sant Pere esta tarde a las 19:00h. Quedamos en la puerta.',
+                    title: '🎞️ Acompañante Club Lectura',
+                    description: 'Me ofrezco para acompañar a vecinos que no quieran ir solos a la biblioteca esta tarde a las 18:00h para el club de lectura.',
                     neighborhood: 'GENERAL',
                     contact_info: 'Foro · Canal General (Preguntar por Elena)',
                     created_at: new Date().toISOString()
@@ -248,10 +248,10 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Ayuda Mercado', d: 'Busco voluntario para ayudar a bajar 3 pisos sin ascensor y acompañar al mercado de hoy domingo.', c: '644 33 22 11' },
+                                            { t: 'Ayuda Mercado', d: 'Busco voluntario para ayudar a bajar 3 pisos sin ascensor y acompañar al mercado de hoy lunes.', c: '644 33 22 11' },
                                             { t: 'Paseo Perro', d: '¿Algún vecino pasea su perro por la zona del Eixample y puede sacar al mío hoy tarde? Estoy de baja.', c: '633 44 55 66' },
-                                            { t: 'Reparto Agua', d: 'Me ofrezco a recoger agua potable y llevarla a personas mayores afectadas por el corte de EMATSA hoy.', c: '611 22 33 44' },
-                                            { t: 'Acompañar Cine', d: '¿Algún vecino/a va al cine forum de hoy tarde? Me gustaría ir acompañado para comentar la peli.', c: 'Foro · Canal General' }
+                                            { t: 'Ayuda Móvil', d: 'Busco alguien que me enseñe a instalar la app Mi Carpeta Ciudadana para unos trámites hoy.', c: '611 22 33 44' },
+                                            { t: 'Club Lectura', d: '¿Algún vecino/a va a la biblioteca hoy tarde? Me gustaría ir acompañado para no volver solo de noche.', c: 'Foro · Canal General' }
                                         ].map((idea, i) => (
 
                                             <button

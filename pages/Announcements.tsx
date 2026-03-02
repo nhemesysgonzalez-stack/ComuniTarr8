@@ -145,43 +145,43 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'real-wed-summary',
-                    title: "☀️ DOMINGO 1 MARZO 2026 — RESUMEN BARRIO",
-                    content: "Día despejado (15°C) con sol radiante. Mercado semanal activo hoy en Plaça del Fòrum. Corte de agua programado en marcha hasta las 14:00h en Eixample Sud.",
+                    id: 'real-mon-summary',
+                    title: "☀️ LUNES 2 MARZO 2026 — INICIO DE SEMANA",
+                    content: "Arrancamos la semana con cielos despejados y temperaturas agradables (16°C). Movilidad fluida en los accesos a la ciudad. Oficinas municipales abiertas en horario habitual.",
                     category: "INFO",
                     author_name: "ComuniTarr",
                     neighborhood: "GENERAL",
-                    itinerary: "• Hoy Dom: Mercado 8:00h-14:00h (Part Alta)\n• Hoy Dom: Corte agua Nou Eixample (09h-14h)\n• Hoy Dom: Cine Forum CC Sant Pere (19h)",
+                    itinerary: "• Hoy Lun: Trámites OMAC 09:00h-14:00h\n• Hoy Lun: Taller Empleo (Impulsa) 11:00h\n• Hoy Lun: Club de Lectura (Biblioteca) 18:00h",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-mercat-forum-wed',
-                    title: "🛒 MERCADO SEMANAL: PLAÇA DEL FÒRUM",
-                    content: "Hoy domingo se celebra el tradicional mercado de proximidad. Fruta y verdura directa del pagès tarraconense. ¡Llenad el carro con salud local!",
-                    category: "COMUNIDAD",
+                    id: 'real-offices-reopen',
+                    title: "🏢 SERVICIOS MUNICIPALES ACTIVOS",
+                    content: "Tras el fin de semana, todas las dependencias municipales retoman la actividad presencial. Se recomienda usar la sede electrónica para trámites rápidos.",
+                    category: "INFO",
                     author_name: "Ayuntamiento TGN",
-                    neighborhood: "PART ALTA",
-                    itinerary: "• Horario: 08:00 a 14:00h\n• Ubicación: Plaça del Fòrum y anexas\n• Más de 20 puestos con producto local",
+                    neighborhood: "GENERAL",
+                    itinerary: "• Padrón y Tasas: OMAC Rambla\n• Urbanismo: C/ San Lorenzo\n• Juventud: Espai Jove Kesse",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-farmacia-guardia-wed',
-                    title: "💊 FARMACIA DE GUARDIA (HOY DOMINGO)",
-                    content: "Servicio de guardia 24h disponible hoy en la zona de Sant Pere i Sant Pau para cualquier urgencia médica.",
+                    id: 'real-farmacia-guardia-mon',
+                    title: "💊 FARMACIA DE GUARDIA (HOY LUNES)",
+                    content: "Servicio de guardia 24h disponible hoy lunes para cualquier urgencia médica en el centro de la ciudad.",
                     category: "INFO",
                     author_name: "Salud TGN",
                     neighborhood: "GENERAL",
-                    itinerary: "• Farmacia: Farmàcia Garcia Rivas\n• Dirección: Av. Països Catalans, 51\n• Teléfono: 977 20 18 33\n• Horario: 24 horas",
+                    itinerary: "• Farmacia: Farmàcia Central TGN\n• Dirección: Rambla Nova, 45\n• Teléfono: 977 23 44 55\n• Horario: 24 horas",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-bolsa-empleo-wed',
-                    title: "💼 BOLSA DE TRABAJO (Domingo 1 Mar)",
-                    content: "Nuevas ofertas de hoy: Se busca personal para frutería en el mercado y dependiente/a para tienda de moda en Rambla Nova. Incorporación inmediata.",
+                    id: 'real-bolsa-empleo-mon',
+                    title: "💼 BOLSA DE TRABAJO (LUNES 2 MAR)",
+                    content: "Nuevas ofertas publicadas esta mañana: Administrativo/a, Repartidor/a y Personal de Limpieza. Incorporación esta misma semana.",
                     category: "EVENTO",
                     author_name: "SOC Tarragona",
                     neighborhood: "GENERAL",
-                    itinerary: "• Frutería Mercado: 📞 688 33 22 11\n• Moda Rambla: 📞 977 24 55 99\n• Envío CV: Sección Servicios > Empleo",
+                    itinerary: "• Administrativo: 📞 688 33 22 11\n• Repartidor: 📞 977 24 55 99\n• Limpieza: 📞 611 22 33 44",
                     link_url: "/services",
                     created_at: new Date().toISOString()
                 }

@@ -48,19 +48,19 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'mock-pat-wed-1',
+          id: 'mock-pat-mon-1',
           creator_id: 'admin',
           name: '🚧 Seguridad Obras Gasòmetre',
-          description: 'Control visual y aviso a conductores hoy domingo mientras la brigada repara el bache de Gasòmetre cruce Smith. Evitemos accidentes.',
+          description: 'Control visual y aviso a conductores hoy lunes mientras la brigada repara el bache de Gasòmetre cruce Smith. Evitemos accidentes en hora punta.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-pat-wed-2',
+          id: 'mock-pat-mon-2',
           creator_id: 'user2',
-          name: '🤝 Acompañamiento Eventos Hoy',
-          description: 'Grupo para organizar acompañamiento de personas mayores al mercado de la Part Alta (8h-14h) y al Cine Forum CC Sant Pere (19h).',
+          name: '🤝 Acompañamiento Rutinas Lunes',
+          description: 'Grupo para organizar acompañamiento de personas mayores al mercado hoy lunes (8h-14h) y al taller de LinkedIn en Tabacalera (18h).',
           neighborhood: 'GENERAL',
           contact_info: 'Canal APOYO (Preguntar por Marta)',
           created_at: new Date().toISOString()

@@ -182,39 +182,39 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'wed-domingo-sol',
-            title: "☀️ Domingo 1 Mar — Sol y Mercado",
-            content: "Amanecemos con un sol radiante en Tarragona. Ideal para visitar el Mercado Semanal en la Part Alta. Máximas de 15°C y vientos suaves del mediterráneo.",
-            category: "TIEMPO",
+            id: 'mon-morning-rush',
+            title: "🚗 Lunes 2 Mar — Tráfico y Movilidad",
+            content: "Retenciones habituales en los accesos por la T-11 y A-7. Se recomienda precaución en la zona de Rambla Nova por el inicio de la semana laboral. El transporte público opera con frecuencia de laborable.",
+            category: "TRÁFICO",
             neighborhood: "GENERAL",
-            itinerary: "• Máx: 15°C · Mín: 9°C\n• Viento: Suave (10 km/h)\n• Humedad: 65%",
+            itinerary: "• T-11: Tráfico denso\n• A-7: Circulación fluida con precaución\n• EMT: Frecuencia 10-15 min",
             created_at: new Date().toISOString()
           },
           {
-            id: 'wed-mercat-forum',
-            title: "🛒 Mercado Semanal: Plaça del Fòrum",
-            content: "Hoy domingo vuelve el mercado de productos locales a la Part Alta. Frutas, verduras de temporada y artesanía local de 8:00 a 14:00h. ¡Apoya al comercio de proximidad!",
-            category: "COMERCIO",
-            neighborhood: "PART ALTA",
-            itinerary: "• Horario: 08:00h a 14:00h\n• Ubicación: Plaça del Fòrum\n• Recomendación: Alcachofas del Baix Penedès",
-            created_at: new Date().toISOString()
-          },
-          {
-            id: 'wed-corte-agua-hoy',
-            title: "💧 EMATSA: Corte de Agua en Curso",
-            content: "Recordamos que hoy de 09:00 a 14:00h se está realizando el corte de suministro programado en Nou Eixample Sud por obras de mejora en la red principal.",
+            id: 'mon-municipal-offices',
+            title: "🏢 Servicios Municipales: Horario Laboral",
+            content: "Hoy lunes todas las oficinas de atención ciudadana (OMAC) y servicios municipales retoman su horario habitual de 8:30h a 14:30h. Se recomienda cita previa para trámites de padrón.",
             category: "AVISO",
-            neighborhood: "EIXAMPLE",
-            itinerary: "• Fin previsto: 14:00h (Hoy)\n• Zonas: Nou Eixample Sud y Smith\n• Info: 900 20 33 29",
+            neighborhood: "GENERAL",
+            itinerary: "• OMAC Centro: 08:30h a 14:30h\n• Biblioteca Pública: 10:00h a 20:00h\n• Mercados Municipales: Abiertos hasta las 14:00h",
             created_at: new Date().toISOString()
           },
           {
-            id: 'wed-cine-forum',
-            title: "🎞️ Cine Forum: Hoy 'Todo sobre mi madre'",
-            content: "Esta tarde a las 19:00h en el Centro Cívico Sant Pere proyectamos el clásico de Almodóvar. Entrada gratuita con debate posterior sobre el cine español.",
+            id: 'mon-job-market',
+            title: "💼 Lunes de Empleo: Nuevas Vacantes",
+            content: "Iniciamos la semana con 12 nuevas ofertas en el sector servicios y logística en el Polígono Entrevies. Consulta la sección de Servicios > Empleo para más detalles y contactos.",
+            category: "EMPLEO",
+            neighborhood: "GENERAL",
+            itinerary: "• Sector Logística: 5 plazas\n• Sector Comercio: 4 plazas\n• Hostelería: 3 plazas",
+            created_at: new Date().toISOString()
+          },
+          {
+            id: 'mon-cultural-agenda',
+            title: "🎭 Agenda Cultural Semanal",
+            content: "Esta semana destaca la inauguración de la exposición 'Tarragona Obrera' en el MHT, y el ciclo de cine en versión original en el Teatre Metropol a partir de mañana martes.",
             category: "CULTURA",
-            neighborhood: "SANT PERE",
-            itinerary: "• Hora: 19:00h (Hoy)\n• Lugar: Sala Actos CC Sant Pere\n• Debate: 20:30h",
+            neighborhood: "GENERAL",
+            itinerary: "• Exposición MHT: Inauguración 19:00h\n• Teatre Metropol: Próximamente\n• Bibliotecas: Club de lectura hoy 18:00h",
             created_at: new Date().toISOString()
           }
         ];
@@ -223,10 +223,10 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'poll-domingo-ematsa',
-          question: "¿Cómo te está afectando el corte de agua de hoy en el Eixample?",
-          options: ['Había llenado garrafas ayer', 'Me ha pillado desprevenido', 'No me afecta, no vivo/trabajo allí', 'He ido a casa de un familiar'],
-          category: 'COMUNIDAD',
+          id: 'poll-lunes-transporte',
+          question: "¿Cómo has ido hoy al trabajo o a clase?",
+          options: ['Coche particular', 'Autobús (EMT)', 'Caminando / Bici', 'Teletrabajo (¡qué suerte!)'],
+          category: 'MOVILIDAD',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()
         };

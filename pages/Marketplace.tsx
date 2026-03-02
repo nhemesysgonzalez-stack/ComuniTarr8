@@ -57,39 +57,39 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'mock-wed-m1',
+          id: 'mock-mon-m1',
           user_id: 'v1',
-          title: '🛒 Carro de la compra plegable — Casi nuevo',
-          description: 'Ideal para ir hoy al mercado de la Part Alta. Capacidad 40kg, ruedas reforzadas. Lo vendo por mudanza.',
-          price: '15',
-          category: 'hogar',
-          neighborhood: 'PART ALTA',
+          title: '🧥 Abrigo de lana — Estilo clásico',
+          description: 'Abrigo en perfecto estado, talla L. Muy cálido. Vendo por falta de uso. Entrega en mano en Tarragona.',
+          price: '45',
+          category: 'moda',
+          neighborhood: 'GENERAL',
           contact_info: '622 11 22 33 (Marc)',
-          image_url: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80',
+          image_url: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-wed-m2',
+          id: 'mock-mon-m2',
           user_id: 'v2',
-          title: '💧 Pack 3 Garrafas Agua (10L) Vacías',
-          description: 'Para quien necesite reserva extra por el corte de agua de hoy. Limpias y con tapón. Recogida rápida en Eixample Sud.',
-          price: '2',
+          title: '📚 Lote de libros oposiciones (Generalitat)',
+          description: 'Temario actualizado 2025-2026. En perfecto estado, sin subrayar. Ideal para empezar a estudiar este marzo.',
+          price: '30',
           category: 'hogar',
-          neighborhood: 'EIXAMPLE',
+          neighborhood: 'CENTRE',
           contact_info: '611 99 88 77 (Laia)',
-          image_url: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-wed-m3',
+          id: 'mock-mon-m3',
           user_id: 'v4',
-          title: '🎞️ 2 Entradas Cine Forum (Regalo)',
-          description: 'Me han sobrado dos invitaciones para el Cine Forum de hoy a las 19:00. Las regalo a quien las aproveche. CC Sant Pere.',
-          price: '0',
+          title: '🚲 Bicicleta urbana con cesta',
+          description: 'Bici robusta tipo holandesa. Freno contrapedal y delantero. Luz trasera operativa. Ideal para ir al trabajo.',
+          price: '85',
           category: 'ocio',
           neighborhood: 'GENERAL',
           contact_info: '655 44 33 22 (Rosa)',
-          image_url: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80',
+          image_url: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         }
       ];
