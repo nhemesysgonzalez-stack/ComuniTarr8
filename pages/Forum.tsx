@@ -74,12 +74,11 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Mireia R.', text: '☀️ ¡Buen domingo! Hoy toca mercado en la Plaça del Fòrum. 🛒' },
-    { user: 'ComuniTarr 🏁', text: 'Aviso: Corte de agua en Eixample Sud hasta las 14:00h. 💧' },
-    { user: 'Joan B.', text: '¿Alguien para un café rápido por la Part Alta esta mañana? ☕' },
-    { user: 'Carme S.', text: '🎞️ Recordad: Taller Emprendimiento 18:00h en CC Sant Pere.' },
-    { user: 'Pau T.', text: 'Acabo de comprar unas verduras increíbles en el mercado. 🌽' },
-    { user: 'Maria G.', text: '☕ ¡Ánimo con el lunes de oficina! Tarragona brilla hoy. ✨' }
+    { user: 'Admin ComuniTarr', text: '🏢 Oficinas municipales abiertas 08:30h - 14:00h.' },
+    { user: 'Meteo TGN', text: '☀️ Lunes despejado 16ºC. ¡Buen inicio de semana!' },
+    { user: 'Trànsit TGN', text: '🚗 T-11 entrada Tarragona densa. Precaución. 🚦' },
+    { user: 'Tarragona Impulsa', text: '💼 Taller LinkedIn hoy 18h en Tabacalera.' },
+    { user: 'Ayuda Mutua', text: '🤝 ¿Necesitas ayuda esta mañana? Publica en APOYO.' }
   ];
 
 
@@ -148,8 +147,8 @@ const Forum: React.FC = () => {
       [
         { who: 'Maria G.', text: '🫂 Hoy he acompañado a Don Manuel (el señor del 3ºB) al médico. Tiene 82 años y vive solo desde que falleció su mujer. Se ha emocionado porque nadie le acompañaba desde hacía meses.' },
         { who: 'Carme S.', text: '@Maria Qué bonito lo que haces. La soledad en personas mayores es una epidemia silenciosa. ¿Necesitas ayuda para seguir acompañándole?' },
-        { who: 'Maria G.', text: '@Carme Sí, no puedo todos los días. Los lunes y domingo sí, pero necesitaría que alguien cubriera los domingo.' },
-        { who: 'Elena V.', text: '@Maria Yo tengo los domingo libres. Me apunto sin dudarlo. ¿Me pasas su dirección por privado? 💛' },
+        { who: 'Maria G.', text: '@Carme Sí, no puedo todos los días. Hoy lunes sí, pero necesitaría que alguien cubriera los miércoles.' },
+        { who: 'Elena V.', text: '@Maria Yo tengo los miércoles libres. Me apunto sin dudarlo. ¿Me pasas su dirección por privado? 💛' },
         { who: 'Nuria P.', text: 'Recordad que Cruz Roja Tarragona (977 22 19 07) tiene un programa formal de acompañamiento. Podéis registraros como voluntarias y así tenéis cobertura legal y formación. Lo recomiendo mucho.' },
         { who: 'Maria G.', text: '@Nuria ¡No lo sabía! Les llamo mañana. Gracias Nuria, siempre con la información justa. 🙏 Entre todos hacemos barrio.' },
       ],
@@ -305,33 +304,33 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts (Monday 2 Mar / Monday morning rush)
     let scripts = [
-      "☀️ ¡Feliz lunes vecinos! Empezamos semana con fuerza. ¿Quién va hoy al Mercado de la Part Alta? 🛒",
-      "Semana despejada, ideal para retomar tareas. ¿Alguien sabe si hay mucha cola? 🧺",
-      "Recordad los del Eixample Sud: garrafas llenas que EMATSA corta el agua hasta las 14h. 💧",
-      "¿Quién viene al Cine Forum de esta tarde? Networking en Hub TGN a las 18h. 🎞️",
-      "¿Alguien sabe si el bache de Gasòmetre está ya arreglado? He visto camiones. 🚧",
-      "Domingo de mercado y cine. ¡Qué gran día para ser de Tarragona! 💪"
+      "☀️ ¡Feliz lunes vecinos! Empezamos semana con fuerza. ¿Mucho tráfico en la A-7 hoy? 🚗",
+      "Mañana despejada, ideal para retomar la rutina. ¿Alguien va hoy a la OMAC? 🏛️",
+      "Recordad: las oficinas municipales ya han abierto. Sede electrónica activa 24h. 💻",
+      "¿Quién viene al taller de LinkedIn de esta tarde en la Tabacalera? 📈",
+      "¿Alguien sabe si el bache de Gasòmetre está ya arreglado? He visto brigadas. 🚧",
+      "¡Qué buena energía para empezar marzo! Vamos a por el lunes. 💪"
     ];
 
     // Base reply scripts
     let replyScripts = [
-      `¡Totalmente, ${isReplyTo}! A por el domingo de mercado. 🧺`,
-      `¡Buen domingo, ${isReplyTo}! Disfruta del sol. ☀️`,
-      `¡Pasa rápido la semana, ${isReplyTo}! Ánimo con el domingo. 😄`,
-      `Yo me apunto al cine si vas, ${isReplyTo}. Nos vemos en el CC Sant Pere.`,
-      `Gracias por el recordatorio del agua, ${isReplyTo}. Casi pongo la lavadora. 😅`,
-      `¡Qué buena energía para un domingo! Gracias, ${isReplyTo}. 💪`
+      `¡Totalmente, ${isReplyTo}! A por la semana con energía. ☕`,
+      `¡Buen lunes, ${isReplyTo}! Disfruta del sol matinal. ☀️`,
+      `¡Pasa rápido la semana, ${isReplyTo}! Ánimo con el trabajo/estudios. 😄`,
+      `Yo me apunto al taller si vas, ${isReplyTo}. Nos vemos en la Tabacalera.`,
+      `Gracias por la info del tráfico, ${isReplyTo}. Me iré por la N-340. 🚗`,
+      `¡Qué buena energía para empezar el lunes! Gracias, ${isReplyTo}. 💪`
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
-      scripts = ["¿Alguien sabe de trabajos de tarde en hostelería esta semana? 🍽️", "Empiezo nuevo trabajo el domingo. ¡Un poco de ánimo! 🤞"];
-      replyScripts = [`¡Mucho ánimo con el nuevo trabajo, ${isReplyTo}!`, `Mira en la sección de Servicios, suelen poner ofertas de última hora.`];
+      scripts = ["¿Alguien sabe de trabajos de tarde en hostelería esta semana? 🍽️", "Empiezo nuevo trabajo hoy lunes. ¡Un poco de ánimo! 🤞"];
+      replyScripts = [`¡Mucho ánimo con el nuevo trabajo, ${isReplyTo}!`, `Mira en la sección de Servicios de la app, han puesto ofertas hoy.`];
     } else if (currentNeighborhood === 'APOYO') {
       scripts = [
         "💜 ¿Alguien conoce talleres gratuitos de gestión emocional en Tarragona? Me vendría muy bien.",
         "Hoy he acompañado a una vecina mayor al médico. No tenía a nadie. Estas cosas no deberían pasar. Si alguien necesita compañía, escribid aquí. 🤝",
         "Mi sobrina está sufriendo ciberbullying. ¿Alguien sabe cómo actuar con el colegio? Necesito consejos. 😔",
-        "Recordatorio: grupo de apoyo emocional HOY domingo 17h en CC Torreforta. Gratuito y abierto a todos. 🫂",
+        "Recordatorio: grupo de apoyo emocional HOY lunes 19:30h en el Centro Cívico. Gratuito y abierto a todos. 🫂",
         "¿Sabíais que el teléfono 024 es la línea de atención a la conducta suicida? Gratuito, 24h. Nunca se sabe cuándo puede hacer falta. 💛",
         "En el SIAD (Plaça de la Font) atienden a mujeres en situación de violencia. Sin cita, sin preguntas. Solo ayuda. 977 24 47 95. Compartid por favor. 🟣",
         "Hoy leí que 1 de cada 4 niños sufre acoso escolar. Como comunidad tenemos que estar atentos. Si veis algo raro, no miréis para otro lado. 🛡️",
@@ -351,12 +350,12 @@ const Forum: React.FC = () => {
       ];
     } else if (currentNeighborhood === 'ENCUENTROS') {
       scripts = [
-        "☀️ ¡Feliz domingo! ¿Quién se apunta a un café rápido antes de ir al mercado? ☕",
-        "Busco gente para completar partido de pádel HOY tarde en el polideportivo. 🎾",
-        "Domingo, mitad de semana... ¿quién necesita un plan para desconectar? 💪",
-        "¿Alguien para ir juntos al Cine Forum de esta tarde en Sant Pere? 🎞️",
-        "Mañana domingo salgo a correr por el Passeig Marítim a las 7:15h si alguien se apunta. 🏃‍♂️",
-        "¡Hola! ¿Hay algún plan tranquilo para este domingo noche? 👋"
+        "☀️ ¡Feliz lunes! ¿Quién se apunta a un café rápido antes de entrar a la oficina? ☕",
+        "Busco gente para completar partido de pádel HOY tarde en el polideportivo (19h). 🎾",
+        "Lunes superado... ¿quién necesita un plan para desconectar después del trabajo? 💪",
+        "¿Quién viene al taller de LinkedIn de esta tarde en la Tabacalera? 📈",
+        "Mañana martes salgo a correr por el Passeig Marítim a las 7:15h si alguien se apunta. 🏃‍♂️",
+        "¡Hola! ¿Hay algún plan tranquilo para este lunes noche? 👋"
       ];
       replyScripts = [
         `¡Me apunto al café, ${isReplyTo}!`,
@@ -404,7 +403,7 @@ const Forum: React.FC = () => {
         let possibleReplies = [];
         if (isGreeting) {
           possibleReplies = [
-            `¡Hola, ${isReplyTo}! A por el domingo. 💪`,
+            `¡Hola, ${isReplyTo}! A por el lunes con energía. 💪`,
             `¡Muy buenas! ¿Qué tal la semana? @${isReplyTo}.`,
             `¡Hola ${isReplyTo}! Aquí recuperándonos de la rutina con un café. ☕`,
             `¡Buenos días! Vaya sol hace hoy. ☀️`
@@ -691,7 +690,7 @@ const Forum: React.FC = () => {
 
   const handleTopicClick = (topicId: string) => {
     if (topicId === 'agenda-finde') {
-      setNewMessage('¿Dónde puedo comprar las entradas para el teatro del domingo? 🎭');
+      setNewMessage('¿Dónde puedo consultar las ofertas de empleo de este lunes? 💼');
     } else if (topicId === 'alerta-viento') {
       setNewMessage('¡Cuidado zonas arboladas! El viento está soplando fuerte. 💨⚠️');
     } else if (topicId === 'gastronomia-vigilia') {
@@ -704,27 +703,27 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'apoyo-bullying',
-      title: '💜 Stop Bullying TGN',
-      description: 'Recursos y apoyo vecinal.',
+      id: 'marzo-tgn',
+      title: '🗓️ ¡Hola Marzo!',
+      description: 'Nuevos retos en el barrio.',
       participating: 3450
     },
     {
-      id: 'agenda-lunes',
-      title: '💼 Vuelta al Cole/Trabajo',
-      description: 'Rutinas y motivación lunes.',
+      id: 'empleo-tgn',
+      title: '💼 Nuevas Ofertas Lunes',
+      description: 'Bolsa de trabajo abierta.',
       participating: 1830
     },
     {
-      id: 'mercado-semanal',
-      title: '🛒 Mercado Semanal TGN',
-      description: 'Domingo y domingo Forum.',
+      id: 'linkedin-ws',
+      title: '📈 Taller LinkedIn',
+      description: 'Hoy 18h en Tabacalera.',
       participating: 2210
     },
     {
-      id: 'empleo-semana',
-      title: '💻 Empleo esta Semana',
-      description: 'Nuevas vacantes publicadas.',
+      id: 'movilidad-tgn',
+      title: '🚗 Movilidad Lunes',
+      description: 'Info tráfico y transporte.',
       participating: 2970
     }
   ];
@@ -749,7 +748,7 @@ const Forum: React.FC = () => {
               <div className="flex items-center gap-1 opacity-90 cursor-pointer hover:bg-white/20 px-2 py-0.5 rounded-full transition-colors w-fit">
                 <span className="text-[10px] uppercase font-bold tracking-wider">Disponible ▾</span>
               </div>
-              <p className="text-[10px] italic opacity-80 mt-1 truncate">"Domingo de relax... ☀️"</p>
+              <p className="text-[10px] italic opacity-80 mt-1 truncate">"Lunes de oficina... 💻"</p>
             </div>
           </div>
           {/* Decorative Circles */}
@@ -853,7 +852,7 @@ const Forum: React.FC = () => {
           </div>
 
           <div className="px-4 py-2 mt-4">
-            <h2 className="text-xl font-black mb-4 text-center">Empleo Lunes 23 Feb</h2>
+            <h2 className="text-xl font-black mb-4 text-center">Empleo Lunes 2 Mar</h2>
             <ul className="space-y-4 text-xs md:text-sm">
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
                 🍽️ <strong>Camarero/a — Bar Zona Centro</strong>

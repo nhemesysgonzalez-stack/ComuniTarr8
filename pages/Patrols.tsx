@@ -42,7 +42,7 @@ const Patrols: React.FC = () => {
 
       // Filter out old mock patrols that might be in the database
       const filteredDbData = (data || []).filter(p =>
-        !p.name.includes("Domingo Noche") &&
+        !p.name.includes("Domingo") &&
         !p.name.includes("Carrera Popular")
       );
 

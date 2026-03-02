@@ -264,15 +264,15 @@ export const Header: React.FC = () => {
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2">☀️ SOL RADIANTE EN TGN: EL JUEVES EMPIEZA CON CIELOS DESPEJADOS Y 15ºC</span>
+          <span className="flex items-center gap-2">☀️ SOL RADIANTE EN TGN: EL LUNES EMPIEZA CON CIELOS DESPEJADOS Y 16ºC</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛒 MERCAT SETMANAL: LA PLAÇA DEL FÒRUM SE LLENA DE PRODUCTO LOCAL ESTA MAÑANA (8-14H)</span>
+          <span className="flex items-center gap-2">💼 EMPLEO TGN: CONSULTA LAS NUEVAS VACANTES PUBLICADAS HOY LUNES EN LA SECCIÓN DE EMPLEO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">💧 AVISO EMATSA: CORTE DE AGUA EN CURSO HASTA LAS 14:00H EN ZONA NOU EIXAMPLE SUD</span>
+          <span className="flex items-center gap-2">🚗 TRÀNSIT TGN: RETENCIONES EN EL ACCESO POR LA T-11 — SE RECOMIENDA ENTRADA POR LA A-7</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎭 CINE FORUM: ESTA TARDE "TODO SOBRE MI MADRE" (19:00H) EN EL CENTRO CÍVICO SANT PERE</span>
+          <span className="flex items-center gap-2">📈 TALLER LINKEDIN: ESTA TARDE A LAS 18:00H EN TABACALERA — ÚLTIMAS PLAZAS</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">⚽ POLIESPORTIU CAMPCLAR: PISCINA Y GIMNASIO ABIERTOS HOY DE 7 A 22H — RENUEVA TU ABONO</span>
+          <span className="flex items-center gap-2">🏠 ASAMBLEA VECINAL: JUEVES 5 MAR A LAS 19:00H EN EL CENTRO CÍVICO SANT PERE I SANT PAU</span>
         </motion.div>
       </div>
 
@@ -355,7 +355,7 @@ export const Header: React.FC = () => {
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
                   <span className="text-xs font-black dark:text-white uppercase">Lunes 2 Mar 2026</span>
-                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Despejado 15ºC</span>
+                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Despejado 16ºC</span>
                 </div>
               </div>
 

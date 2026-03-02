@@ -43,22 +43,22 @@ const Challenges: React.FC = () => {
 
       const mockChallenges: Challenge[] = [
         {
-          id: 'mock-ch-wed-1',
+          id: 'mock-ch-mon-1',
           creator_id: 'admin',
-          title: '🛒 Reto: Mercado Sostenible',
-          description: 'Hoy lunes, ¡ve al mercado de la Part Alta con tus propias bolsas de tela! El reto es no usar ni un solo plástico de un solo uso en toda la compra.',
+          title: '🛒 Reto: Lunes sin Plástico',
+          description: 'Hoy lunes, ¡ve a comprar al mercado o al súper con tus propias bolsas de tela! El reto es no usar ni un solo plástico de un solo uso en toda la compra semanal.',
           neighborhood: 'GENERAL',
           contact_info: 'Comunidad ComuniTarr',
           is_example: true,
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-ch-wed-2',
+          id: 'mock-ch-mon-2',
           creator_id: 'user2',
-          title: '💧 Reto Resiliencia: Corte EMATSA',
-          description: 'Para los vecinos del Eixample Sud: compartir si os sobran garrafas o si necesitáis ayuda. El reto es que a ningún vecino le falte agua potable durante el corte.',
-          neighborhood: 'EIXAMPLE',
-          contact_info: 'Canal EMERGENCIA',
+          title: '🍎 Red de Alimentos Frescos',
+          description: 'Hemos comprado demasiada fruta en el mercado esta mañana. Si algún vecino necesita o quiere compartir excedentes antes de que se estropeen, ¡contactad!',
+          neighborhood: 'GENERAL',
+          contact_info: '611 22 33 44',
           is_example: false,
           created_at: new Date().toISOString()
         }
@@ -240,9 +240,9 @@ const Challenges: React.FC = () => {
                   <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
                   <div className="flex flex-wrap gap-2 justify-center">
                     {[
-                      { t: 'Donación de Libros', d: 'Llevamos libros a la biblioteca del barrio para renovar stock infantil.', c: '977240331' },
-                      { t: 'Paseo con Mayores', d: 'Grupo para pasear con vecinos del barrio que viven solos esta tarde de domingo.', c: '655666777' },
-                      { t: 'Marca tu Bache', d: 'Iniciativa para marcar con tiza de colores los baches peligrosos de la calle para que se vean bien.', c: '611888222' }
+                      { t: 'Donación de Libros', d: 'Llevamos libros a la biblioteca del barrio para renovar stock infantil tras el lunes de cole.', c: '977240331' },
+                      { t: 'Paseo con Mayores', d: 'Grupo para pasear con vecinos del barrio que viven solos esta tarde de lunes al salir del trabajo.', c: '655666777' },
+                      { t: 'Limpieza de alcorques', d: 'Iniciativa para limpiar la tierra de los árboles de nuestra calle este lunes por la tarde.', c: '611888222' }
                     ].map((idea, i) => (
                       <button
                         key={i}

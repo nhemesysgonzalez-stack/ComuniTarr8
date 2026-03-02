@@ -48,27 +48,27 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'mock-ws-wed-1',
-                    title: 'Taller de Teatro Adultos',
-                    instructor: 'Cora R.',
-                    date: 'Hoy Domingo 1, 18:30',
-                    description: 'Expresión corporal e improvisación. Hoy trabajaremos escenas de Almodóvar como previa al Cine Forum.',
-                    image: 'https://images.unsplash.com/photo-1503095396549-807a8bc3667c?auto=format&fit=crop&q=80&w=800',
-                    spots: 5,
-                    neighborhood: 'PART ALTA',
-                    contact_info: 'Centro Cívico Part Alta',
+                    id: 'mock-ws-mon-1',
+                    title: '💼 LinkedIn para la Búsqueda de Empleo',
+                    instructor: 'Marta G.',
+                    date: 'Hoy Lunes 2, 18:00',
+                    description: 'Optimiza tu perfil, mejora tu red de contactos y aprende a buscar ofertas ocultas en LinkedIn. Tráete tu portátil o tableta.',
+                    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
+                    spots: 8,
+                    neighborhood: 'TABACALERA',
+                    contact_info: 'Tarragona Impulsa',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-ws-wed-2',
-                    title: 'Club de Lectura Tarragona',
-                    instructor: 'Biblio TGN',
-                    date: 'Hoy Domingo 1, 18:00',
-                    description: 'Comentamos la novela del mes: "Canto jo i la muntanya balla". Sala de actos de la Biblioteca Pública.',
-                    image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800',
-                    spots: 0,
-                    neighborhood: 'CENTRE',
-                    contact_info: '977 24 03 31',
+                    id: 'mock-ws-mon-2',
+                    title: '🧘 Yoga Estiramientos Post-Oficina',
+                    instructor: 'Pau T.',
+                    date: 'Hoy Lunes 2, 19:30',
+                    description: 'Sesión suave para relajar espalda y cuello tras el primer día de trabajo. Apto para todos los niveles.',
+                    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800',
+                    spots: 12,
+                    neighborhood: 'GENERAL',
+                    contact_info: 'Centro Cívico Centro',
                     created_at: new Date().toISOString()
                 }
             ];
@@ -137,9 +137,9 @@ const Workshops: React.FC = () => {
                             <span className="px-3 py-1 bg-indigo-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">EVENTO HOY - 19:00H</span>
                             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">CULTURA VECINAL</span>
                         </div>
-                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Cine Forum: Todo sobre mi madre 🎞️</h2>
+                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Masterclass: LinkedIn Pro 📈</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Proyección y debate posterior en la sala de actos del Centro Cívico Sant Pere. Entrada gratuita hasta completar aforo. ¡Ven a disfrutar del cine de Almodóvar en comunidad!
+                            Sácale partido a tu red profesional y encuentra nuevas oportunidades. Hoy lunes a las 18:30h en la Tabacalera. ¡Plazas limitadas!
                         </p>
 
                         <div className="flex flex-wrap gap-4">
@@ -148,7 +148,7 @@ const Workshops: React.FC = () => {
                                 RESERVAR PLAZA
                             </a>
                             <span className="px-6 py-3 bg-gray-50 dark:bg-gray-800 dark:text-white rounded-xl text-xs font-black">
-                                GRATIS - CC SANT PERE
+                                GRATIS - TABACALERA
                             </span>
                         </div>
                     </div>
@@ -241,10 +241,10 @@ const Workshops: React.FC = () => {
                                     <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Huerto Urbano', i: 'Pedro S.', d: 'Domingo 11:00 AM', desc: 'Aprende a cultivar tus propios tomates y lechugas en el balcón.', c: '688000111' },
-                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Domingo 10:30 AM', desc: 'Sácale provecho a tu móvil: fotos, seguridad y apps útiles.', c: '699222333' },
-                                            { t: 'Cata Vermuts', i: 'Cellar TGN', d: 'Domingo 18:00 PM', desc: 'Aprende a diferenciar los vermuts locales de nuestra tierra.', c: '611444555' },
-                                            { t: 'Pre-Carrera 5K', i: 'Running Club', d: 'Domingo 19:30 PM', desc: 'Sesión de estiramientos y charla técnica para la carrera de mañana.', c: 'Paseo Marítimo' }
+                                            { t: 'Office 365 Pro', i: 'Pedro S.', d: 'Lunes 17:00', desc: 'Domina Excel y Word para mejorar tu empleabilidad.', c: '688000111' },
+                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Lunes 10:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: '699222333' },
+                                            { t: 'Gestión del Tiempo', i: 'M. López', d: 'Lunes 18:00', desc: 'Técnicas para organizar tu semana y reducir el estrés laboral.', c: '611444555' },
+                                            { t: 'Networking TGN', i: 'Hub Impulsa', d: 'Lunes 19:30', desc: 'Encuentro informal para conectar con otros profesionales locales.', c: 'Paseo Marítimo' }
 
                                         ].map((idea, i) => (
                                             <button

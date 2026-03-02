@@ -73,26 +73,26 @@ const Polls: React.FC = () => {
 
             const mockPolls: Poll[] = [
                 {
-                    id: 'poll-wed-1',
+                    id: 'poll-mon-1',
                     creator_id: 'v1',
-                    title: '💧 ¿Cómo has llevado el corte de agua de EMATSA hoy? 🚰',
-                    options: ['Tenía garrafas listas, sin problema', 'Me ha pillado desprevenido/a', 'Aún sigo esperando que vuelva', 'Mejor de lo que esperaba'],
+                    title: '🚗 ¿Cómo ha ido el tráfico esta mañana de lunes? 🚦',
+                    options: ['Fluido, como siempre', 'Algo de retención en la T-11', 'Mucho atasco en accesos', 'He ido caminando/bici'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-wed-2',
+                    id: 'poll-mon-2',
                     creator_id: 'v2',
-                    title: '📽️ ¿Qué película te gustaría ver en el próximo Cine Forum? 🍿',
-                    options: ['Alguna clásica de Hollywood', 'Cine europeo contemporáneo', 'Más de Almodóvar', 'Documentales sociales'],
+                    title: '💼 ¿Prefieres teletrabajar o ir a la oficina los lunes? 💻',
+                    options: ['Teletrabajo 100%', 'Híbrido (mejor oficina)', 'Prefiero Presencialidad', 'No puedo teletrabajar'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-wed-3',
+                    id: 'poll-mon-3',
                     creator_id: 'v3',
-                    title: '🛒 ¿Sueles ir al Mercado de la Part Alta los domingo? 🧺',
-                    options: ['Siempre, producto fresco', 'A veces, si tengo tiempo', 'Casi nunca, me pilla lejos', 'Prefiero el mercado de los domingos'],
+                    title: '🏀 ¿Qué actividad extraescolar te gustaría en el barrio? 🏫',
+                    options: ['Deportes de equipo', 'Idiomas / Refuerzo', 'Arte y Creatividad', 'Música y Danza'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }

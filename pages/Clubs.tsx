@@ -42,28 +42,28 @@ const Clubs: React.FC = () => {
 
             const mockClubs: Club[] = [
                 {
-                    id: 'c-wed-1',
+                    id: 'c-mon-1',
                     creator_id: 'v1',
                     name: 'Urban Runners TGN 🏃‍♂️',
-                    description: 'Entrenamiento de series hoy lunes a las 19:30h. Quedamos frente al Hotel Imperial Tarraco. ¡Apto para todos los niveles!',
+                    description: 'Entrenamiento de series hoy lunes a las 19:30h. Quedamos en el Balcó del Mediterrani. ¡Primer trote de la semana!',
                     neighborhood: 'GENERAL',
                     contact_info: '622 33 44 55 (Pau)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'c-wed-2',
+                    id: 'c-mon-2',
                     creator_id: 'v2',
-                    name: 'Cine-Amics Tarragona 🎬',
-                    description: 'Quedada en grupo para ir hoy al Cine Forum en el CC Sant Pere (19:00h). Nos vemos 15 min antes en la puerta.',
+                    name: 'Networking Activo TGN 💼',
+                    description: 'Quedada hoy lunes tras la jornada laboral para compartir ideas de negocio y sinergias. Cafetería de la Rambla, 18:30h.',
                     neighborhood: 'GENERAL',
                     contact_info: '611 99 88 77 (Marta)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'c-wed-3',
+                    id: 'c-mon-3',
                     creator_id: 'v3',
-                    name: 'Tejedoras del Puerto 🧶',
-                    description: 'Nos reunimos cada domingo en la cafetería del Serrallo a las 17:30h para tejer y charlar. ¡Trae tus agujas!',
+                    name: 'Tejedoras del Serrallo 🧶',
+                    description: 'Nos reunimos los lunes por la tarde en el centro cívico para tejer y compartir patrones. ¡Nuevos proyectos para marzo!',
                     neighborhood: 'MARÍTIM',
                     contact_info: '633 44 55 66 (Lola)',
                     created_at: new Date().toISOString()
@@ -242,9 +242,9 @@ const Clubs: React.FC = () => {
                                     <p className="text-[10px] font-black text-pink-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Pádel Domingo', d: 'Buscamos pareja para jugar hoy a las 20h en las pistas municipales.', c: '611222333' },
-                                            { t: 'Club de Cine', d: 'Quedadas para ir a los Cine Forum y comentar las películas luego con un café.', c: '644555666' },
-                                            { t: 'Intercambio Inglés', d: 'Hablamos inglés los domingo tarde en la cafetería X de forma relajada.', c: '677888999' }
+                                            { t: 'Pádel Lunes', d: 'Buscamos pareja para jugar hoy a las 20h en las pistas municipales.', c: '611222333' },
+                                            { t: 'Afterwork TGN', d: 'Quedada para desconectar tras el primer día de la semana con un café o refresco.', c: '644555666' },
+                                            { t: 'Intercambio Inglés', d: 'Hablamos inglés los lunes tarde de forma relajada en el centro.', c: '677888999' }
                                         ].map((idea, i) => (
                                             <button
                                                 key={i}
