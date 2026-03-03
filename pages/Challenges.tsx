@@ -43,23 +43,23 @@ const Challenges: React.FC = () => {
 
       const mockChallenges: Challenge[] = [
         {
-          id: 'mock-ch-mon-1',
+          id: 'mock-ch-tue-1',
           creator_id: 'admin',
-          title: '🛒 Reto: Lunes sin Plástico',
-          description: 'Hoy lunes, ¡ve a comprar al mercado o al súper con tus propias bolsas de tela! El reto es no usar ni un solo plástico de un solo uso en toda la compra semanal.',
+          title: '🚶 Reto: Martes de Escaleras',
+          description: 'Hoy martes, el reto es no usar el ascensor en casa ni en el trabajo. ¡Usa las escaleras para activarte un poco más esta mañana!',
           neighborhood: 'GENERAL',
-          contact_info: 'Comunidad ComuniTarr',
+          contact_info: 'Comunidad ComuniTarr (Salud)',
           is_example: true,
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-ch-mon-2',
+          id: 'mock-ch-tue-2',
           creator_id: 'user2',
-          title: '🍎 Red de Alimentos Frescos',
-          description: 'Hemos comprado demasiada fruta en el mercado esta mañana. Si algún vecino necesita o quiere compartir excedentes antes de que se estropeen, ¡contactad!',
-          neighborhood: 'GENERAL',
-          contact_info: '611 22 33 44',
-          is_example: false,
+          title: '🌱 Huerto Comunitario: Siembra de Marzo',
+          description: 'Hoy martes a las 18:00h estaremos en el huerto urbano de la calle Smith preparando los semilleros. ¿Quién se apunta a un rato de tierra y sol?',
+          neighborhood: 'CENTRE',
+          contact_info: '611 00 22 33 (Isabel)',
+          is_example: true,
           created_at: new Date().toISOString()
         }
       ];

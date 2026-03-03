@@ -26,13 +26,13 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     p.includes("trabajo") || p.includes("empleo") || p.includes("laboral") || p.includes("curro") || p.includes("busco") || p.includes("paro") || p.includes("oferta") ||
     (isJobContext && (p.includes("busco") || p.includes("necesito")))
   ) {
-    return "Ofertas Laborales Urgentes (Lunes 2 Mar) 💼:\n\n" +
-      "1. 🏢 Administrativo/a - Gestoría en Eixample → 📞 688 33 22 11\n" +
-      "2. 📦 Repartidor/a Carnet C - Logística Entrevies → 📞 611 22 99 00\n" +
-      "3. 👨‍🔧 Técnico Mantenimiento - Centros Cívicos → 📞 977 24 55 60\n" +
-      "4. 🛒 Dependiente/a - Ferretería Torreforta → 📞 977 55 44 22\n" +
-      "5. 👨‍🍳 Cocinero/a - Restaurante Serrallo → 📞 655 44 11 00\n\n" +
-      "• ¿Necesitas orientación? Hoy lunes Tarragona Impulsa atiende de 9h a 14h.";
+    return "Ofertas Laborales Urgentes (Martes 3 Mar) 💼:\n\n" +
+      "1. 🍽️ Camarero/a - Bar Zona Centro → 📞 622 11 00 22 (Jordi)\n" +
+      "2. 🚴 Repartidor/a moto propia - TGN Centro → 📞 611 44 55 66 (Ana)\n" +
+      "3. 🏠 Auxiliar Domicilio - Part Alta → 📞 977 44 33 22 (Rosa)\n" +
+      "4. 📦 Mozo Almacén - Polígono Francolí → 📞 977 55 66 77\n" +
+      "5. 🤝 Networking & Estrategia - Espai Tabacalera (18:30h)\n\n" +
+      "• ¿Buscas trabajo? Hoy martes Tarragona Impulsa atiende de 9h a 14h.";
   }
 
   // 16. Preppers y Seguridad (Petroquímicas / Viento) - Prioridad en canal Preppers
@@ -40,7 +40,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
     // Respuesta específica para el VIENTO (Ventcat)
     if (p.includes("viento") || p.includes("aire") || p.includes("ventcat") || p.includes("hacer")) {
-      return "☀️ TIEMPO (Lunes 2 Mar): Cielos despejados para hoy en Tarragona. Viento suave (15km/h). Ideal para actividades al aire libre.\n\n👣 RECOMENDACIÓN:\n1. Disfruta del Balcó del Mediterrani.\n2. Día perfecto para el inicio de semana laboral.\n3. Sin alertas meteorológicas activas hoy.";
+      return "☀️ TIEMPO (Martes 3 Mar): Cielos despejados hoy en Tarragona. Viento flojo (10km/h). Máxima de 17ºC.\n\n👣 RECOMENDACIÓN:\n1. Disfruta de la Anella Verda o el Paseo Marítimo.\n2. Día ideal para el reciclaje de muebles esta noche.\n3. Sin alertas meteorológicas activas hoy.";
     }
 
     if (neighborhood === 'PREPPERS' && !p.includes("sirena") && !p.includes("kit")) {
@@ -56,17 +56,17 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.1 TRÁFICO EN TIEMPO REAL
   if (p.includes("trafico") || p.includes("tráfico") || p.includes("carretera") || p.includes("circulacion") || p.includes("atasco") || p.includes("retenciones") || p.includes("corte")) {
-    return "🚗 TRÁFICO TARRAGONA (Lunes 2 Mar, 09:15h):\n\n• 🟡 PL. DE LA FONT: Acceso restringido por montaje del velatorio del Ninot.\n• 🟢 RAMBLA Y AV. ROMA: Circulación fluida sin incidentes.\n• 🔴 AVISO 20:00h: Cortes previstos en Baixada de la Misericòrdia y calles adyacentes por la procesión del Entierro.\n\n💡 Se recomienda usar parkings subterráneos si vienes a ver la Quema.";
+    return "🚗 TRÁFICO TARRAGONA (Martes 3 Mar, 09:15h):\n\n• 🔴 CALLE UNIÓ: Corte parcial por avería urgente de agua (EMATSA).\n• 🟢 ACCESOS (A-7/T-11): Circulación fluida esta mañana.\n• 🟡 AV. ROMA: Densidad habitual en dirección centro.\n\n💡 Evita Calle Unió si puedes; usa calles paralelas como Apodaca o Gasòmetre.";
   }
 
   // 2.2 FARMACIAS DE GUARDIA
   if (p.includes("farmacia") || p.includes("guardia") || p.includes("medicamento") || p.includes("parafarmacia")) {
-    return "💊 FARMACIAS DE GUARDIA HOY (Lunes 2 Mar 2026):\n\n• 🏥 Farmacia BESORA - Rambla Nova, 121 (09-22h)\n• 🏥 Farmacia GUINOVART - C/ Girona, 10 (24h)\n• 🏥 Farmacia CENTRAL - Rambla Vella, 50 (hasta 22h)\n\n📍 Farmacia de guardia abierta 24h: GUINOVART.\n⚕️ Urgencias: CAP Llevant o Hospital Santa Tecla.";
+    return "💊 FARMACIAS DE GUARDIA HOY (Martes 3 Mar 2026):\n\n• 🏥 Farmacia VALLS - Av. Catalunya, 20 (09-22h)\n• 🏥 Farmacia EIXAMPLE - C/ Unió, 5 (24h) - *Nota: acceso afectado por obras*\n• 🏥 Farmacia SERRALLO - Espigó del Moll (hasta 22h)\n\n📍 Farmacia de guardia abierta 24h: EIXAMPLE.\n⚕️ Urgencias: CAP Llevant o Hospital Santa Tecla.";
   }
 
   // 2.3 COLEGIOS Y EDUCACIÓN
   if (p.includes("colegio") || p.includes("escuela") || p.includes("escola") || p.includes("instituto") || p.includes("matricula") || p.includes("matrícula") || p.includes("calendario escolar") || p.includes("menu escolar") || p.includes("menú")) {
-    return "🎓 INFORMACIÓN ESCOLAR (Lunes 2 Mar):\n\n📅 **ENTRADA A CLASES:**\n• Hoy Lunes: Jornada escolar normal en todos los centros de TGN.\n• Menú del día: Crema de verduras y pescado al horno (Menú General Educativo).\n• Preinscripción: Recuerda que el periodo abre la próxima semana.\n\n💡 Consulta el calendario oficial en gencat.cat/ensenyament";
+    return "🎓 INFORMACIÓN ESCOLAR (Martes 3 Mar):\n\n📅 **JORNADA:**\n• Hoy Martes: Clases normales. Alerta caminata segura en Av. Roma.\n• Menú del día: Lentejas estofadas y tortilla de patatas.\n• Extraescolares: Hoy martes deportes y música en la mayoría de centros.\n\n💡 Mañana Miércoles: Mercadillo escolar en la Part Alta.";
   }
 
   // 2.4 SERVICIOS MUNICIPALES (AMPLIADO)
@@ -86,7 +86,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.7 ACTIVIDADES Y OCIO
   if (p.includes("actividad") || p.includes("evento") || p.includes("plan") || p.includes("ocio") || p.includes("que hacer") || p.includes("qué hacer")) {
-    return "📅 ACTIVIDADES HOY (Lunes 2 Mar):\n\n🏢 **EMPLEO (11:00h):**\n• Sesión grupal 'Mejora tu currículum' en Tarragona Impulsa (Espai Tabacalera).\n\n📚 **CULTURA (18:00h):**\n• Club de lectura en la Biblioteca Pública (C/ Fortuny). Lectura 'Puente de Hierro'.\n\n🎨 **ARTE:**\n• Exposición 'Legado Romano' abierta en el MANT (Previa reserva).\n\n💡 Mañana Martes: Taller de digitalización para seniors.";
+    return "📅 ACTIVIDADES HOY (Martes 3 Mar):\n\n🎞️ **CINE (20:30h):**\n• Estreno Cine V.O. 'Parásitos' en el Teatre Metropol. Descuento con carnet de vecino.\n\n🤝 **COMUNIDAD (18:30h):**\n• Taller Networking & Empleo en Espai Tabacalera. ¡Conecta con profesionales!\n\n♻️ **RECICLAJE (20-22h):**\n• Recogida de voluminosos en Zona Centro. Saca tus trastos al contenedor.\n\n💡 Mañana Miércoles: Mercado semanal de la Part Alta (08-14h).";
   }
 
   // 2.8 EMERGENCIAS Y NÚMEROS ÚTILES
@@ -96,7 +96,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.9 CORTES DE SUMINISTRO Y AVERÍAS
   if (p.includes("corte") || p.includes("luz") || p.includes("agua") || p.includes("averia") || p.includes("avería") || p.includes("apagon") || p.includes("apagón") || p.includes("fuga agua")) {
-    return "⚡💧 AVERÍAS Y CORTES DE SUMINISTRO:\n\n**ELECTRICIDAD (ENDESA):**\n• Averías: ☎️ 800 760 706 (24h)\n• 🌐 endesa.com/averias\n• ⚠️ Hoy: Sin cortes programados en Tarragona\n\n**AGUA (EMATSA):**\n• Averías: ☎️ 900 670 207 (24h)\n• Fugas en vía pública: Mismo teléfono\n• 🌐 ematsa.cat\n\n**GAS (NATURGY):**\n• Fuga de gas: ☎️ 900 750 750 (¡URGENTE!)\n• Averías: ☎️ 900 100 251\n\n⚠️ Si hueles a gas: NO enciendas luces, ventila y llama YA.";
+    return "⚡💧 AVERÍAS Y CORTES (Martes 3 Mar):\n\n**AGUA (EMATSA):**\n• 🔴 URGENTE: Avería en Calle Unió. Suministro afectado en zona Centre hasta las 13:00h.\n• Teléfono Averías 24h: ☎️ 900 670 207\n\n**ELECTRICIDAD (ENDESA):**\n• ⚠️ Sin cortes programados hoy. Averías: ☎️ 800 760 706\n\n**GAS:**\n• Emergencias: ☎️ 900 750 750\n\n💡 Si vives en Calle Unió, rellena botellas o garrafas antes de las 10:00h.";
   }
 
   // 3. Ruidos y Convivencia
@@ -114,9 +114,9 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     return "Para trámites municipales en Tarragona 🏛️:\n\n• La OMAC (Oficina Municipal d'Atenció Ciutadana) requiere cita previa. Puedes pedirla en la web tarragona.cat o llamando al 010.\n• Empadronamiento: Necesitas DNI/NIE y el contrato de alquiler o escritura de la vivienda.\n• Volante de convivencia: Se puede obtener online con certificado digital al instante.";
   }
 
-  // 7. Noticias y Eventos de Hoy (MARTES 17 FEBRERO 2026 - Entierro de la Sardina)
+  // 7. Noticias y Eventos de Hoy (MARTES 3 MARZO 2026)
   if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("viento") || p.includes("tiempo") || p.includes("plan")) {
-    return "Resumen para el LUNES 2 de marzo ☀️:\n\n• 🏢 TRÁMITES: Oficinas municipales abiertas. Inicio de periodo de impuestos municipales.\n• 💼 TRABAJO: Apertura de nuevas vacantes para la campaña de primavera.\n• ☀️ TIEMPO: Día estable con máximas de 17°C.\n• 🚌 BUSES: Frecuencia habitual de jornada laborable.";
+    return "Resumen para el MARTES 3 de marzo ☀️:\n\n• 💧 AVERÍA AGUA: Suministro afectado en Calle Unió hasta las 13:00h.\n• 🎞️ CINE: Sesión V.O. en el Metropol a las 20:30h.\n• ☀️ TIEMPO: Día radiante con máximas de 17°C.\n• ♻️ RECICLAJE: Recogida de voluminosos esta noche (20-22h) en el centro.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)
@@ -124,9 +124,9 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
     return "Aparcamiento en Tarragona 🚗:\n\n• Si eres residente, tienes tarifa súper reducida en zona verde (aprox. 0,40€/día). Debes tramitarlo en la OMAC.\n• Parking Saavedra y Lluís Companys son opciones céntricas si la zona azul está completa.\n• Aplicación: Te recomiendo descargar 'AparcarTGN' para gestionar los tickets desde el móvil.";
   }
 
-  // 9. Nàstic y Carnaval
-  if (p.includes("nastic") || p.includes("futbol") || p.includes("caballos") || p.includes("tres tombs")) {
-    return "¡Actualidad del Barrio! 🐎⚽\n\n• El Nàstic jugó ayer, consulta el resultado en el Diari. ¡Próximo partido fuera!\n• Los Tres Tombs de ayer fueron un éxito rotundo en la Rambla Nova. ¡Vaya desfile de caballos!";
+  // 9. Nàstic y Actualidad
+  if (p.includes("nastic") || p.includes("futbol") || p.includes("caballos")) {
+    return "¡Actualidad del Barrio! 🐎⚽\n\n• El Nàstic jugó el fin de semana, consulta el resultado en el Diari. ¡Próximo partido fuera!\n• El taller de LinkedIn de ayer lunes fue un éxito de participación. ¡Hoy seguimos con Networking!";
   }
 
   // 10. Mascotas y Animales

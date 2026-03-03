@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🏢 Hoy Lunes: Todas las oficinas municipales retoman su horario habitual (8:30h - 14:30h). ¡Buen inicio de semana!", neighborhood: 'GENERAL' },
-    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Lunes despejado. Máxima de 16ºC. Ideal para retomar la rutina con energía. 😎', neighborhood: 'GENERAL' },
-    { id: 2, user: 'Trànsit TGN', avatar: '/logo.svg', text: '🚗 Precaución: Retenciones habituales en los accesos por la T-11 y A-7 esta mañana. 🚦', neighborhood: 'GENERAL' },
-    { id: 3, user: 'Tarragona Impulsa', avatar: '/logo.svg', text: '💼 Taller LinkedIn hoy a las 18:00h en Espai Tabacalera. Optimiza tu perfil profesional. 📈', neighborhood: 'GENERAL' },
-    { id: 4, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '☕ ¿Alguien para un café rápido cerca de la Rambla antes de entrar a la oficina? 🥐', neighborhood: 'CENTRE' },
-    { id: 5, user: 'Joan B.', avatar: 'https://i.pravatar.cc/150?u=joan', text: '💪 ¡Vamos a por el lunes! Semana de nuevos retos en el barrio y en el trabajo. 🤝', neighborhood: 'GENERAL' },
-    { id: 6, user: 'EMATSA', avatar: '/logo.svg', text: '💧 Sin incidencias programadas para hoy. Red operando con normalidad. 🛠️', neighborhood: 'GENERAL' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "♻️ Hoy Martes: Día de recogida de muebles y voluminosos en zona centro. Déjalos junto al contenedor (20-22h).", neighborhood: 'CENTRE' },
+    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Martes soleado. Máxima de 17ºC. Jornada perfecta para pasear por la Anella Verda. 😎', neighborhood: 'GENERAL' },
+    { id: 2, user: 'EMATSA Info', avatar: '/logo.svg', text: '💧 Aviso: Avería en Calle Unió. Suministro afectado hoy martes hasta las 13:00h aprox. 🛠️', neighborhood: 'CENTRE' },
+    { id: 3, user: 'Cine Metropol', avatar: '/logo.svg', text: '🎞️ Hoy 20:30h: Apertura del ciclo de Cine V.O. con la película "Parásitos". ¡Os esperamos! 🍿', neighborhood: 'GENERAL' },
+    { id: 4, user: 'Toni G.', avatar: 'https://i.pravatar.cc/150?u=toni', text: '🎾 Busco pareja para pádel esta tarde a las 19:30h en el Polideportivo. ¿Quién se anima? 🏸', neighborhood: 'GENERAL' },
+    { id: 5, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: '📚 ¡Buenos días! ¿Alguna recomendación para el club de lectura comunitario de mañana? 📖', neighborhood: 'GENERAL' },
+    { id: 6, user: 'Trànsit TGN', avatar: '/logo.svg', text: '🚗 Circulación fluida en los accesos norte y sur. Sin incidencias destacables esta mañana. ✅', neighborhood: 'GENERAL' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '🏢 Oficinas abiertas 8:30h' },
-    { user: 'Meteo', text: '☀️ Despejado 16ºC' },
-    { user: 'Trànsit', text: '🚗 T-11 densa entrada' },
-    { user: 'Impulsa', text: '💼 Taller LinkedIn 18h' },
-    { user: 'TGN', text: '💪 ¡Buen Lunes!' }
+    { user: 'Admin', text: '♻️ Recogida muebles 20h' },
+    { user: 'EMATSA', text: '💧 Calle Unió: Reparación' },
+    { user: 'Metropol', text: '🎞️ Cine V.O. 20:30h' },
+    { user: 'Meteo', text: '☀️ Sol y 17ºC' },
+    { user: 'Vecinos', text: '🎾 ¿Pádel a las 19:30h?' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

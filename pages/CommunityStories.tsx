@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'ms1', user_name: 'Ana T.', content: '¡Lunes de mercado! He encontrado unas fresas increíbles en la Plaça del Fòrum esta mañana. 🍓🛒 #TarragonaBarrio #KM0', image_url: 'https://images.unsplash.com/photo-1542838132-92c53300491e', likes: 142, created_at: new Date().toISOString() },
-            { id: 'ms2', user_name: 'Marc G.', content: 'Mañana intensa de teletrabajo. Un café rápido y a seguir con la semana. ¡Ánimo a todos! ☕💻 #RutinaLunes #Tarragona', image_url: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085', likes: 215, created_at: new Date().toISOString() },
-            { id: 'ms3', user_name: 'Pilar S.', content: 'Preparada para el taller de LinkedIn en Tabacalera esta tarde. ¡A por nuevas oportunidades! 💼📈 #TalentoTGN', image_url: 'https://images.unsplash.com/photo-1552664730-d307ca884978', likes: 98, created_at: new Date().toISOString() },
-            { id: 'ms4', user_name: 'Joan R.', content: 'Paseo matutino por la Playa del Milagro antes de entrar a la oficina. Empezar el lunes así no tiene precio. 🌊☀️ #TGNmola', image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e', likes: 167, created_at: new Date().toISOString() }
+            { id: 'ms1', user_name: 'Ana T.', content: '¡Martes de sol! Aprovechando el buen tiempo para pasear por la Muralla antes de ir a por los niños. ☀️👟 #TarragonaBarrio #HistoriaViva', image_url: 'https://images.unsplash.com/photo-1542838132-92c53300491e', likes: 156, created_at: new Date().toISOString() },
+            { id: 'ms2', user_name: 'Marc G.', content: 'Café de martes superado. ¡Hoy toca repaso de LinkedIn tras el taller de ayer! #TalentoTGN #Networking', image_url: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085', likes: 234, created_at: new Date().toISOString() },
+            { id: 'ms3', user_name: 'Pilar S.', content: 'Preparando trastos viejos para la recogida de voluminosos de esta noche. ¡Limpieza total! #TarragonaLimpia #Reciclaje', image_url: 'https://images.unsplash.com/photo-1552664730-d307ca884978', likes: 112, created_at: new Date().toISOString() },
+            { id: 'ms4', user_name: 'Joan R.', content: 'Atardecer en el Balcó del Mediterrani hoy martes. Espectacular como siempre. 🌊🌅 #TGNmola #TarragonaTurisme', image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e', likes: 189, created_at: new Date().toISOString() }
         ];
 
 

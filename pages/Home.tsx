@@ -182,39 +182,39 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'mon-morning-rush',
-            title: "🚗 Lunes 2 Mar — Tráfico y Movilidad",
-            content: "Retenciones habituales en los accesos por la T-11 y A-7. Se recomienda precaución en la zona de Rambla Nova por el inicio de la semana laboral. El transporte público opera con frecuencia de laborable.",
+            id: 'tue-morning-rush',
+            title: "🚗 Martes 3 Mar — Tránsito Fluido",
+            content: "Mejora la circulación en la T-11 y A-7 respecto ayer. Sin incidentes graves reportados esta mañana. Los transportes públicos (EMT y Renfe) operan con total normalidad.",
             category: "TRÁFICO",
             neighborhood: "GENERAL",
-            itinerary: "• T-11: Tráfico denso\n• A-7: Circulación fluida con precaución\n• EMT: Frecuencia 10-15 min",
+            itinerary: "• T-11: Tráfico moderado\n• A-7: Sin retenciones\n• EMT: Puntualidad del 98%",
             created_at: new Date().toISOString()
           },
           {
-            id: 'mon-municipal-offices',
-            title: "🏢 Servicios Municipales: Horario Laboral",
-            content: "Hoy lunes todas las oficinas de atención ciudadana (OMAC) y servicios municipales retoman su horario habitual de 8:30h a 14:30h. Se recomienda cita previa para trámites de padrón.",
-            category: "AVISO",
-            neighborhood: "GENERAL",
-            itinerary: "• OMAC Centro: 08:30h a 14:30h\n• Biblioteca Pública: 10:00h a 20:00h\n• Mercados Municipales: Abiertos hasta las 14:00h",
-            created_at: new Date().toISOString()
-          },
-          {
-            id: 'mon-job-market',
-            title: "💼 Lunes de Empleo: Nuevas Vacantes",
-            content: "Iniciamos la semana con 12 nuevas ofertas en el sector servicios y logística en el Polígono Entrevies. Consulta la sección de Servicios > Empleo para más detalles y contactos.",
+            id: 'tue-linkedin-success',
+            title: "📈 Éxito en el Taller de LinkedIn",
+            content: "Más de 30 vecinos participaron ayer en el Espai Tabacalera. Hoy martes abrimos una sesión especial de 'Networking Rápido' a las 18:30h para quienes no pudieron asistir.",
             category: "EMPLEO",
             neighborhood: "GENERAL",
-            itinerary: "• Sector Logística: 5 plazas\n• Sector Comercio: 4 plazas\n• Hostelería: 3 plazas",
+            itinerary: "• Sesión Repaso: 18:30h\n• Lugar: Tabacalera\n• Contacto: 977 29 61 00",
             created_at: new Date().toISOString()
           },
           {
-            id: 'mon-cultural-agenda',
-            title: "🎭 Agenda Cultural Semanal",
-            content: "Esta semana destaca la inauguración de la exposición 'Tarragona Obrera' en el MHT, y el ciclo de cine en versión original en el Teatre Metropol a partir de mañana martes.",
+            id: 'tue-garbage-reminder',
+            title: "♻️ Recogida de Voluminosos hoy Martes",
+            content: "Recordamos que hoy martes es el día de recogida de muebles y trastos viejos en la zona centro. Por favor, depositarlos junto a los contenedores entre las 20h y las 22h.",
+            category: "AVISO",
+            neighborhood: "CENTRE",
+            itinerary: "• Horario: 20:00h a 22:00h\n• Teléfono Incidencias: 010\n• Punto Limpio: Abierto hasta las 19h",
+            created_at: new Date().toISOString()
+          },
+          {
+            id: 'tue-cultural-start',
+            title: "🎞️ Ciclo de Cine Metropol: Hoy Estreno",
+            content: "Comienza hoy el ciclo de cine en Versión Original. Sesión inaugural a las 20:30h con entrada reducida para vecinos registrados en ComuniTarr.",
             category: "CULTURA",
             neighborhood: "GENERAL",
-            itinerary: "• Exposición MHT: Inauguración 19:00h\n• Teatre Metropol: Próximamente\n• Bibliotecas: Club de lectura hoy 18:00h",
+            itinerary: "• Película: 'Parásitos' (VOSE)\n• Hora: 20:30h\n• Precio: 5€ con ID de vecino",
             created_at: new Date().toISOString()
           }
         ];
@@ -223,10 +223,10 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'poll-lunes-transporte',
-          question: "¿Cómo has ido hoy al trabajo o a clase?",
-          options: ['Coche particular', 'Autobús (EMT)', 'Caminando / Bici', 'Teletrabajo (¡qué suerte!)'],
-          category: 'MOVILIDAD',
+          id: 'poll-martes-comercio',
+          question: "¿Crees que hacen falta más comercios de proximidad en el barrio?",
+          options: ['Sí, faltan fruterías/panaderías', 'Estamos bien servidos', 'Prefiero comprar online', 'Solo faltan supermercados grandes'],
+          category: 'COMERCIO',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()
         };

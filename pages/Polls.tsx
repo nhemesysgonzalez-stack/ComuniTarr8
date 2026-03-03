@@ -73,26 +73,26 @@ const Polls: React.FC = () => {
 
             const mockPolls: Poll[] = [
                 {
-                    id: 'poll-mon-1',
+                    id: 'poll-tue-1',
                     creator_id: 'v1',
-                    title: '🚗 ¿Cómo ha ido el tráfico esta mañana de lunes? 🚦',
-                    options: ['Fluido, como siempre', 'Algo de retención en la T-11', 'Mucho atasco en accesos', 'He ido caminando/bici'],
+                    title: '♻️ ¿Reciclas los muebles y trastos viejos los martes? 🚛',
+                    options: ['Sí, hoy mismo saco algo', 'No suelo tener trastos', 'Prefiero llevarlo al Punto Limpio', 'No sabía que era hoy'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-mon-2',
+                    id: 'poll-tue-2',
                     creator_id: 'v2',
-                    title: '💼 ¿Prefieres teletrabajar o ir a la oficina los lunes? 💻',
-                    options: ['Teletrabajo 100%', 'Híbrido (mejor oficina)', 'Prefiero Presencialidad', 'No puedo teletrabajar'],
-                    neighborhood: 'GENERAL',
+                    title: '💧 ¿Te ha afectado la avería de agua en Calle Unió? 🚿',
+                    options: ['Sí, sin gota de agua', 'Solo poca presión', 'No me ha afectado', 'Ni me he enterado'],
+                    neighborhood: 'CENTRE',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-mon-3',
+                    id: 'poll-tue-3',
                     creator_id: 'v3',
-                    title: '🏀 ¿Qué actividad extraescolar te gustaría en el barrio? 🏫',
-                    options: ['Deportes de equipo', 'Idiomas / Refuerzo', 'Arte y Creatividad', 'Música y Danza'],
+                    title: '🎞️ ¿Qué tipo de películas prefieres en el Metropol? 🍿',
+                    options: ['Versión Original (V.O.)', 'Estrenos comerciales', 'Cine clásico / Culto', 'Cine infantil / Familiar'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }

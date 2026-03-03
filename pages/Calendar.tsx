@@ -59,16 +59,16 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'real-mon-linkedin',
+          id: 'real-tue-cine-metropol',
           creator_id: 'admin',
-          title: "💻 Taller LinkedIn & Marca Personal",
-          description: "Aprende a optimizar tu perfil para la búsqueda de empleo. Trae tu portátil. Plazas limitadas.",
-          event_date: '2026-03-02',
-          event_time: '18:00',
-          location: 'Tarragona Impulsa (Espai Tabacalera)',
+          title: "🎞️ Ciclo de Cine V.O. — Metropol",
+          description: "Estreno de la temporada: 'Parásitos'. Recordad traer vuestro ID de vecino para el descuento.",
+          event_date: '2026-03-03',
+          event_time: '20:30',
+          location: 'Teatre Metropol',
           category: 'Cultura',
           neighborhood: 'GENERAL',
-          contact_info: '977 29 61 00',
+          contact_info: 'Entradas en taquilla',
           created_at: new Date().toISOString()
         },
         {

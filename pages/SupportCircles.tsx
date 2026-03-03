@@ -42,30 +42,30 @@ const SupportCircles: React.FC = () => {
 
             const mockCircles: SupportCircle[] = [
                 {
-                    id: 'mock-mon-sc1',
+                    id: 'mock-tue-sc1',
                     initiator_id: 'v1',
-                    title: '💼 Ansiedad y Estrés Laboral — Apoyo Lunes',
+                    title: '🤝 Círculo de Cuidadores de Personas Mayores',
                     neighborhood: 'GENERAL',
-                    description: 'Sesión presencial hoy lunes a las 19:30h en el Centro Cívico. Espacio compartido para gestionar el estrés del inicio de semana.',
-                    contact_info: '611 22 33 44 (Miguel)',
+                    description: 'Sesión de apoyo mutuo hoy martes a las 18:00h. Espacio para compartir experiencias y consejos sobre el cuidado de nuestros mayores.',
+                    contact_info: '611 22 33 44 (Miguel). Centro Cívico Centro.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-mon-sc2',
+                    id: 'mock-tue-sc2',
                     initiator_id: 'vadmin',
-                    title: '🤱 Círculo de Crianza — Mañanas de Lunes',
+                    title: '🧘 Bienestar Emocional Saludable',
                     neighborhood: 'GENERAL',
-                    description: 'Cada lunes a las 10:30h nos reunimos en el Parque de la Ciudad para compartir dudas y experiencias de crianza entre familias.',
-                    contact_info: '655 12 34 56 (Elena)',
+                    description: 'Grupo abierto hoy martes a las 19:15h. Charlas sobre gestión del tiempo y reducción del estrés diario. ¡Sin juzgar!',
+                    contact_info: '655 12 34 56 (Elena). Inscripción vía WhatsApp.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-mon-sc3',
+                    id: 'mock-tue-sc3',
                     initiator_id: 'v2',
-                    title: '🏠 Vecinos Pensionistas — Charlas y Café',
+                    title: '☕ Café de la Soledad Elegida',
                     neighborhood: 'GENERAL',
-                    description: 'Grupo de acompañamiento para pensionistas. Nos reunimos los lunes a las 17h para charlar, tomar café y organizar salidas culturales.',
-                    contact_info: '622 99 88 77 (Rosa)',
+                    description: 'Nos reunimos los martes a las 17h para charlar y compartir un café entre vecinos que viven solos pero quieren socializar un rato.',
+                    contact_info: '622 99 88 77 (Rosa). Bar de la Esquina (Rambla).',
                     created_at: new Date().toISOString()
                 }
             ];

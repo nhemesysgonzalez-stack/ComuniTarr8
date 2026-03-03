@@ -350,18 +350,18 @@ const Forum: React.FC = () => {
       ];
     } else if (currentNeighborhood === 'ENCUENTROS') {
       scripts = [
-        "☀️ ¡Feliz lunes! ¿Quién se apunta a un café rápido antes de entrar a la oficina? ☕",
+        "☀️ ¡Feliz martes! ¿Quién se apunta a un café rápido antes de entrar a la oficina? ☕",
         "Busco gente para completar partido de pádel HOY tarde en el polideportivo (19h). 🎾",
-        "Lunes superado... ¿quién necesita un plan para desconectar después del trabajo? 💪",
-        "¿Quién viene al taller de LinkedIn de esta tarde en la Tabacalera? 📈",
-        "Mañana martes salgo a correr por el Passeig Marítim a las 7:15h si alguien se apunta. 🏃‍♂️",
-        "¡Hola! ¿Hay algún plan tranquilo para este lunes noche? 👋"
+        "Lunes superado... ¡ya es martes! ¿Algún plan para desconectar después del trabajo? 💪",
+        "¿Quién asistió ayer al taller de LinkedIn? Estuvo genial. 📈",
+        "Mañana miércoles mercadillo en la Part Alta, ¿alguien se apunta a ir temprano? 🛒",
+        "¡Hola! ¿Hay algún plan tranquilo para este martes noche? 👋"
       ];
       replyScripts = [
-        `¡Me apunto al café, ${isReplyTo}!`,
-        `Yo juego a pádel si te falta uno...`,
-        `¡Primer lunes superado! Dime sitio, ${isReplyTo}.`,
-        `Yo también salgo a correr mañana, te digo algo. 🏃‍♂️`
+        `¡Me apunto al café, ${isReplyTo}! Recordad la avería de agua en Calle Unió...`,
+        `Yo juego a pádel si te falta uno hoy martes...`,
+        `¡Buenos días! ¿Qué tal la semana? @${isReplyTo}`,
+        `¡Nos vemos en el Metropol para la peli! 🎞️ @${isReplyTo}`
       ];
     } else if (isHelpRequest) {
       replyScripts = [
@@ -403,7 +403,7 @@ const Forum: React.FC = () => {
         let possibleReplies = [];
         if (isGreeting) {
           possibleReplies = [
-            `¡Hola, ${isReplyTo}! A por el lunes con energía. 💪`,
+            `¡Hola, ${isReplyTo}! A por el martes con energía. 💪`,
             `¡Muy buenas! ¿Qué tal la semana? @${isReplyTo}.`,
             `¡Hola ${isReplyTo}! Aquí recuperándonos de la rutina con un café. ☕`,
             `¡Buenos días! Vaya sol hace hoy. ☀️`
@@ -704,27 +704,27 @@ const Forum: React.FC = () => {
   const trendingTopics = [
     {
       id: 'marzo-tgn',
-      title: '🗓️ ¡Hola Marzo!',
-      description: 'Nuevos retos en el barrio.',
-      participating: 3450
+      title: '🗓️ Marzo 2026',
+      description: 'Agenda activa en el barrio.',
+      participating: 3510
     },
     {
       id: 'empleo-tgn',
-      title: '💼 Nuevas Ofertas Lunes',
-      description: 'Bolsa de trabajo abierta.',
-      participating: 1830
+      title: '💼 Vacantes Martes',
+      description: 'Nuevas ofertas disponibles.',
+      participating: 1950
     },
     {
-      id: 'linkedin-ws',
-      title: '📈 Taller LinkedIn',
-      description: 'Hoy 18h en Tabacalera.',
-      participating: 2210
+      id: 'metropol-cine',
+      title: '🎞️ Cine Metropol',
+      description: 'Estreno hoy 20:30h.',
+      participating: 2540
     },
     {
       id: 'movilidad-tgn',
-      title: '🚗 Movilidad Lunes',
-      description: 'Info tráfico y transporte.',
-      participating: 2970
+      title: '🚗 Tránsito Martes',
+      description: 'Estado de accesos A-7/T-11.',
+      participating: 2820
     }
   ];
 
@@ -748,7 +748,7 @@ const Forum: React.FC = () => {
               <div className="flex items-center gap-1 opacity-90 cursor-pointer hover:bg-white/20 px-2 py-0.5 rounded-full transition-colors w-fit">
                 <span className="text-[10px] uppercase font-bold tracking-wider">Disponible ▾</span>
               </div>
-              <p className="text-[10px] italic opacity-80 mt-1 truncate">"Lunes de oficina... 💻"</p>
+              <p className="text-[10px] italic opacity-80 mt-1 truncate">"Martes de rutina... 💻"</p>
             </div>
           </div>
           {/* Decorative Circles */}
@@ -852,7 +852,7 @@ const Forum: React.FC = () => {
           </div>
 
           <div className="px-4 py-2 mt-4">
-            <h2 className="text-xl font-black mb-4 text-center">Empleo Lunes 2 Mar</h2>
+            <h2 className="text-xl font-black mb-4 text-center">Empleo Martes 3 Mar</h2>
             <ul className="space-y-4 text-xs md:text-sm">
               <li className="p-2 border-b border-gray-100 dark:border-gray-700">
                 🍽️ <strong>Camarero/a — Bar Zona Centro</strong>

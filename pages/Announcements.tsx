@@ -145,13 +145,13 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'real-mon-summary',
-                    title: "☀️ LUNES 2 MARZO 2026 — INICIO DE SEMANA",
-                    content: "Arrancamos la semana con cielos despejados y temperaturas agradables (16°C). Movilidad fluida en los accesos a la ciudad. Oficinas municipales abiertas en horario habitual.",
+                    id: 'real-tue-summary',
+                    title: "☀️ MARTES 3 MARZO 2026 — JORNADA SOLEADA",
+                    content: "Continuamos la semana con sol y 17°C. Atención a la avería de agua en Calle Unió (Centre) prevista hasta las 13:00h. Resto de servicios operando con normalidad.",
                     category: "INFO",
                     author_name: "ComuniTarr",
                     neighborhood: "GENERAL",
-                    itinerary: "• Hoy Lun: Trámites OMAC 09:00h-14:00h\n• Hoy Lun: Taller Empleo (Impulsa) 11:00h\n• Hoy Lun: Club de Lectura (Biblioteca) 18:00h",
+                    itinerary: "• Hoy Mar: Reparación EMATSA (Unió) 10:00h-13:00h\n• Hoy Mar: Recogida Muebles (Centro) 20:00h-22:00h\n• Hoy Mar: Ciclo Cine V.O. (Metropol) 20:30h",
                     created_at: new Date().toISOString()
                 },
                 {
@@ -165,13 +165,12 @@ const Announcements: React.FC = () => {
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-farmacia-guardia-mon',
-                    title: "💊 FARMACIA DE GUARDIA (HOY LUNES)",
-                    content: "Servicio de guardia 24h disponible hoy lunes para cualquier urgencia médica en el centro de la ciudad.",
-                    category: "INFO",
-                    author_name: "Salud TGN",
+                    id: 'real-farmacia-guardia-tue',
+                    title: "💊 FARMACIA DE GUARDIA (HOY MARTES)",
+                    content: "Servicio de guardia 24h hoy martes en Farmacia Eixample (C/ Unió, 5). Nota: Acceso afectado por reparación de tubería.",
+                    category: "URGENTE",
+                    author_name: "COFT",
                     neighborhood: "GENERAL",
-                    itinerary: "• Farmacia: Farmàcia Central TGN\n• Dirección: Rambla Nova, 45\n• Teléfono: 977 23 44 55\n• Horario: 24 horas",
                     created_at: new Date().toISOString()
                 },
                 {

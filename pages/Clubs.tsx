@@ -42,29 +42,29 @@ const Clubs: React.FC = () => {
 
             const mockClubs: Club[] = [
                 {
-                    id: 'c-mon-1',
+                    id: 'c-tue-1',
                     creator_id: 'v1',
                     name: 'Urban Runners TGN 🏃‍♂️',
-                    description: 'Entrenamiento de series hoy lunes a las 19:30h. Quedamos en el Balcó del Mediterrani. ¡Primer trote de la semana!',
+                    description: 'Trote suave regenerativo hoy martes a las 19:30h. Quedamos en el Balcó del Mediterrani. ¡Manteniendo el ritmo!',
                     neighborhood: 'GENERAL',
                     contact_info: '622 33 44 55 (Pau)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'c-mon-2',
+                    id: 'c-tue-2',
                     creator_id: 'v2',
-                    name: 'Networking Activo TGN 💼',
-                    description: 'Quedada hoy lunes tras la jornada laboral para compartir ideas de negocio y sinergias. Cafetería de la Rambla, 18:30h.',
+                    name: 'Fans del Cine V.O. 🎞️',
+                    description: 'Quedada hoy martes a las 20:15h frente al Teatre Metropol para ver juntos "Parásitos" y comentarla después. ¡Vente!',
                     neighborhood: 'GENERAL',
-                    contact_info: '611 99 88 77 (Marta)',
+                    contact_info: 'Canal ENCUENTROS (Foro)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'c-mon-3',
+                    id: 'c-tue-3',
                     creator_id: 'v3',
-                    name: 'Tejedoras del Serrallo 🧶',
-                    description: 'Nos reunimos los lunes por la tarde en el centro cívico para tejer y compartir patrones. ¡Nuevos proyectos para marzo!',
-                    neighborhood: 'MARÍTIM',
+                    name: 'Pádel Vecinal Mixto 🎾',
+                    description: 'Buscamos gente para completar pista hoy martes a las 19:00h en el Complex Esportiu. Nivel medio-bajo.',
+                    neighborhood: 'GENERAL',
                     contact_info: '633 44 55 66 (Lola)',
                     created_at: new Date().toISOString()
                 }

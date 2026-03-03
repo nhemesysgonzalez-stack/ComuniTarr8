@@ -8,10 +8,10 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '48%', y: '48%', title: "Mercat de la Part Alta", desc: 'Mercado semanal de frutas y verduras hoy lunes 8-14h. Plaça del Fòrum.', status: 'Activo (8-14h)', color: 'bg-emerald-500', icon: 'local_mall', glow: 'shadow-[0_0_50px_rgba(16,185,129,0.5)]' },
-    { id: 2, type: 'incident', x: '45%', y: '52%', title: 'Retención T-11', desc: 'Densidad circulatoria hoy lunes en el acceso por la T-11. Retenciones de 15 min.', status: 'En curso', color: 'bg-orange-600', icon: 'traffic', glow: 'shadow-[0_0_35px_rgba(234,88,12,0.4)]' },
-    { id: 3, type: 'event', x: '52%', y: '35%', title: 'Taller LinkedIn', desc: "Sesión profesional hoy lunes a las 18:00h en Espai Tabacalera. Optimiza tu perfil.", status: '18:00h Today', color: 'bg-indigo-500', icon: 'business_center' },
-    { id: 4, type: 'shop', x: '55%', y: '55%', title: 'Centro Cívico Part Alta', desc: 'Actividades de lunes: Taller de digitalización y reunión de la AAVV a las 18:00h.', status: 'Abierto', color: 'bg-green-600', icon: 'groups' },
+    { id: 1, type: 'incident', x: '48%', y: '48%', title: "Avería Agua Calle Unió", desc: 'Reparación de tubería en curso hoy martes. Suministro afectado en la zona de 10h a 13h.', status: 'Activo (10-13h)', color: 'bg-orange-500', icon: 'water_drop', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.5)]' },
+    { id: 2, type: 'incident', x: '45%', y: '52%', title: 'Retención Av. Roma', desc: 'Densidad circulatoria hoy martes por cierre de carril (mantenimiento).', status: 'En curso', color: 'bg-red-600', icon: 'traffic', glow: 'shadow-[0_0_35px_rgba(220,38,38,0.4)]' },
+    { id: 3, type: 'event', x: '52%', y: '35%', title: 'Cine V.O. Metropol', desc: "Estreno hoy martes a las 20:30h: 'Parásitos'. Trae tu carnet de vecino.", status: '20:30h Today', color: 'bg-indigo-500', icon: 'movie_edit' },
+    { id: 4, type: 'shop', x: '55%', y: '55%', title: 'Centro Cívico Part Alta', desc: 'Actividades de martes: Club de lectura y clases de catalán a las 18:30h.', status: 'Abierto', color: 'bg-green-600', icon: 'groups' },
     { id: 5, type: 'incident', x: '42%', y: '40%', title: 'Bache Calle Gasòmetre', desc: 'Aviso vecinal: bache grande en cruce con Smith. Reportado vía Línia Verda TGN.', status: 'Reportado', color: 'bg-red-500', icon: 'report_problem' }
 
   ]);

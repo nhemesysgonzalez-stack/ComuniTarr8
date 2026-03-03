@@ -42,30 +42,30 @@ const MicroVolunteering: React.FC = () => {
 
             const realOpportunitiesExamples: VolunteerOpportunity[] = [
                 {
-                    id: 'real-mon-vol-1',
+                    id: 'real-tue-vol-1',
                     creator_id: 'v7',
-                    title: '🛒 Ayuda bolsas Mercado Part Alta',
-                    description: 'Estaré en la salida del mercado de 11h a 13h hoy lunes para ayudar a personas mayores a llevar las bolsas pesadas hasta su casa o el coche.',
-                    neighborhood: 'PART ALTA',
-                    contact_info: 'Encuéntrame en el arco de la Catedral con chaleco naranja.',
+                    title: '🤝 Acompañamiento a Cita Médica',
+                    description: 'Me ofrezco para acompañar a alguna persona mayor que tenga cita en el CAP hoy martes por la mañana y no quiera ir sola.',
+                    neighborhood: 'GENERAL',
+                    contact_info: '622 33 44 55 (Marta). Disponible de 9h a 12h.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-mon-vol-2',
+                    id: 'real-tue-vol-2',
                     creator_id: 'v8',
-                    title: '💻 Iniciación al móvil para mayores',
-                    description: 'Me ofrezco para ayudar a configurar apps de salud o banca online hoy de 17h a 19h en la cafetería del Centro Cívico.',
+                    title: '♻️ Batida Limpieza Playa Miracle',
+                    description: '¿Alguien se anima a una recogida rápida de plásticos hoy martes a las 17:30h en la playa del Miracle? Quedamos frente al club náutico.',
                     neighborhood: 'GENERAL',
-                    contact_info: '611 22 33 44 (Carlos)',
+                    contact_info: 'Encuéntranos allí directamente (Grupo Eco-TGN).',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-mon-vol-3',
+                    id: 'real-tue-vol-3',
                     creator_id: 'v9',
-                    title: '🎞️ Acompañante Club Lectura',
-                    description: 'Me ofrezco para acompañar a vecinos que no quieran ir solos a la biblioteca esta tarde a las 18:00h para el club de lectura.',
-                    neighborhood: 'GENERAL',
-                    contact_info: 'Foro · Canal General (Preguntar por Elena)',
+                    title: '💻 Ayuda Trámites Online',
+                    description: 'Si necesitas ayuda para pedir cita previa o instalar el certificado digital, estaré hoy en la biblioteca de 16h a 18h ayudando a quien lo necesite.',
+                    neighborhood: 'CENTRE',
+                    contact_info: 'Preguntar por Marc en la zona de ordenadores.',
                     created_at: new Date().toISOString()
                 }
             ];

@@ -48,27 +48,27 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'mock-ws-mon-1',
-                    title: '💼 LinkedIn para la Búsqueda de Empleo',
-                    instructor: 'Marta G.',
-                    date: 'Hoy Lunes 2, 18:00',
-                    description: 'Optimiza tu perfil, mejora tu red de contactos y aprende a buscar ofertas ocultas en LinkedIn. Tráete tu portátil o tableta.',
-                    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
-                    spots: 8,
-                    neighborhood: 'TABACALERA',
-                    contact_info: 'Tarragona Impulsa',
+                    id: 'mock-ws-tue-1',
+                    title: '🤝 Networking & Estrategia de Empleo',
+                    instructor: 'Pau R.',
+                    date: 'Hoy Martes 3, 18:30',
+                    description: 'Sesión práctica de networking para conectar con otros profesionales del barrio. Continuación del taller de ayer pero abierta a todos.',
+                    image: 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=800',
+                    spots: 12,
+                    neighborhood: 'GENERAL',
+                    contact_info: 'Espai Tabacalera (Sala 3)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-ws-mon-2',
-                    title: '🧘 Yoga Estiramientos Post-Oficina',
-                    instructor: 'Pau T.',
-                    date: 'Hoy Lunes 2, 19:30',
-                    description: 'Sesión suave para relajar espalda y cuello tras el primer día de trabajo. Apto para todos los niveles.',
-                    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800',
-                    spots: 12,
-                    neighborhood: 'GENERAL',
-                    contact_info: 'Centro Cívico Centro',
+                    id: 'mock-ws-wed-1',
+                    title: '🌱 Huerto Urbano para Principiantes',
+                    instructor: 'Jordi Torrent',
+                    date: 'Mañana Miércoles 4, 17:00',
+                    description: 'Aprende a cultivar tus propias verduras en balcones o terrazas pequeñas. ¡Empezamos la temporada!',
+                    image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800',
+                    spots: 5,
+                    neighborhood: 'PART ALTA',
+                    contact_info: 'Centro Cívico Part Alta',
                     created_at: new Date().toISOString()
                 }
             ];

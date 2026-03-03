@@ -48,21 +48,21 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'mock-pat-mon-1',
+          id: 'mock-pat-tue-1',
           creator_id: 'admin',
-          name: '🚧 Seguridad Obras Gasòmetre',
-          description: 'Control visual y aviso a conductores hoy lunes mientras la brigada repara el bache de Gasòmetre cruce Smith. Evitemos accidentes en hora punta.',
-          neighborhood: 'GENERAL',
+          name: '⚠️ Seguridad Avería Calle Unió',
+          description: 'Control visual y aviso a peatones hoy martes mientras EMATSA repara la tubería en Calle Unió. Especial precaución con el suelo mojado y maquinaria.',
+          neighborhood: 'CENTRE',
           contact_info: '644 11 22 33 (Luis)',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-pat-mon-2',
-          creator_id: 'user2',
-          name: '🤝 Acompañamiento Rutinas Lunes',
-          description: 'Grupo para organizar acompañamiento de personas mayores al mercado hoy lunes (8h-14h) y al taller de LinkedIn en Tabacalera (18h).',
+          id: 'mock-pat-tue-2',
+          creator_id: 'user1',
+          name: '🏫 Camino Escolar Seguro Martes',
+          description: 'Acompañamiento a niños en el cruce de Av. Roma con Pere Martell de 8:45 a 9:15. ¡Ayuda a cruzar con seguridad!',
           neighborhood: 'GENERAL',
-          contact_info: 'Canal APOYO (Preguntar por Marta)',
+          contact_info: 'AMPAs TGN Centre',
           created_at: new Date().toISOString()
         }
       ];

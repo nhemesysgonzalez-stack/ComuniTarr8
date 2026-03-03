@@ -59,39 +59,28 @@ const Incidents: React.FC = () => {
                 // Mock Incidents for Demo (Thursday 19th)
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'mock-inc-mon-1',
+                        id: 'mock-inc-tue-1',
                         user_id: 'admin',
-                        title: '🚗 INCIDENCIA TRÁFICO: A-7 (ENTRADA NORTE)',
-                        description: 'Vehículo averiado obstaculizando un carril en el acceso por la A-7 dirección centro. Guardia Urbana en el lugar dirigiendo el tráfico.',
-                        neighborhood: 'GENERAL',
+                        title: '🚿 AVISO AGUA: Reparación Tubería Calle Unió',
+                        description: 'Corte puntual del suministro hoy martes de 10h a 13h por avería imprevista. Técnicos de EMATSA ya trabajando.',
+                        neighborhood: 'CENTRE',
                         status: 'in_progress',
                         created_at: new Date().toISOString(),
+                        contact_info: '977 23 20 20 (EMATSA)',
+                        profiles: { full_name: 'EMATSA Info', avatar_url: '/logo.svg' },
+                        image_url: 'https://images.unsplash.com/photo-1542013936693-8846383242ef?auto=format&fit=crop&q=80&w=800'
+                    },
+                    {
+                        id: 'mock-inc-tue-2',
+                        user_id: 'admin',
+                        title: '🚗 TRÁFICO: Cierre Carril en Av. Roma',
+                        description: 'Trabajos de mantenimiento en el carril derecho dirección salida ciudad. Especial atención en la rotonda del Parc Central.',
+                        neighborhood: 'GENERAL',
+                        status: 'open',
+                        created_at: new Date(Date.now() - 1000 * 60 * 120).toISOString(),
                         contact_info: '092 (Guardia Urbana)',
                         profiles: { full_name: 'Trànsit TGN', avatar_url: '/logo.svg' },
                         image_url: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800'
-                    },
-                    {
-                        id: 'mock-inc-wed-2',
-                        user_id: 'admin',
-                        title: '🚧 REPARACIÓN: Bache Calle Gasòmetre',
-                        description: 'Brigada municipal trabajando hoy lunes en el bache de Gasòmetre cruce Smith. Circulación restringida a un carril durante la mañana.',
-                        neighborhood: 'CENTRE',
-                        status: 'in_progress',
-                        created_at: new Date(Date.now() - 1000 * 60 * 120).toISOString(),
-                        contact_info: '010 (Ajuntament TGN)',
-                        profiles: { full_name: 'Santi R. (Brigada)', avatar_url: 'https://i.pravatar.cc/150?u=santi' },
-                        image_url: 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=800'
-                    },
-                    {
-                        id: 'mock-inc-wed-3',
-                        user_id: 'user3',
-                        title: '🚥 Semáforo averiado en Rambla Nova',
-                        description: 'Semáforo en cruce Rambla Nova con Calle Unió no funciona correctamente (se queda en ámbar intermitente). Ya avisada la Guardia Urbana.',
-                        neighborhood: 'CENTRE',
-                        status: 'open',
-                        contact_info: '092 (Guardia Urbana)',
-                        created_at: new Date(Date.now() - 1000 * 60 * 45).toISOString(),
-                        profiles: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }
                     }
                 ];
 
