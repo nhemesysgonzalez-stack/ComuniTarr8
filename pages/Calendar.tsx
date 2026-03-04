@@ -59,23 +59,10 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'real-tue-cine-metropol',
-          creator_id: 'admin',
-          title: "🎞️ Ciclo de Cine V.O. — Metropol",
-          description: "Estreno de la temporada: 'Parásitos'. Recordad traer vuestro ID de vecino para el descuento.",
-          event_date: '2026-03-03',
-          event_time: '20:30',
-          location: 'Teatre Metropol',
-          category: 'Cultura',
-          neighborhood: 'GENERAL',
-          contact_info: 'Entradas en taquilla',
-          created_at: new Date().toISOString()
-        },
-        {
           id: 'real-wed-mercat-forum',
           creator_id: 'admin',
           title: "🛒 Mercat Setmanal Part Alta",
-          description: "Mercado local de proximidad con productos de temporada: frutas, verduras, artesania y más.",
+          description: "Mercado local de proximidad con productos de temporada: frutas, verduras, artesania y más. Hoy miércoles en la Plaça del Fòrum.",
           event_date: '2026-03-04',
           event_time: '08:00',
           location: 'Plaça del Fòrum, Part Alta',
@@ -85,16 +72,55 @@ const NeighborhoodCalendar: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
+          id: 'real-wed-taller-digital',
+          creator_id: 'admin',
+          title: "💻 Taller Digitalización — C.C. Part Alta",
+          description: "Sesión gratuita de digitalización para vecinos. Aprende a usar la sede electrónica del Ayuntamiento y servicios digitales básicos.",
+          event_date: '2026-03-04',
+          event_time: '17:00',
+          location: 'Centre Cívic Part Alta',
+          category: 'Ocio',
+          neighborhood: 'GENERAL',
+          contact_info: '977 29 61 00',
+          created_at: new Date().toISOString()
+        },
+        {
           id: 'real-thu-asamblea',
           creator_id: 'admin',
           title: "🏠 Asamblea Vecinal: Mantenimiento",
-          description: "Reunión para tratar el tema del mantenimiento de las aceras y nuevas zonas verdes.",
+          description: "Reunión para tratar el tema del mantenimiento de las aceras y nuevas zonas verdes. Abierta a todos los vecinos del barrio.",
           event_date: '2026-03-05',
           event_time: '19:00',
           location: 'AAVV Sant Pere i Sant Pau',
           category: 'Solidario',
           neighborhood: 'GENERAL',
           contact_info: 'info@veinsstperepau.cat',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'real-thu-futsal-campclar',
+          creator_id: 'admin',
+          title: "⚽ Fútbol Sala Vecinal — Campclar",
+          description: "Partido amistoso de fútbol sala organizado por la asociación de vecinos. Apuntarse en recepción del polideportivo.",
+          event_date: '2026-03-05',
+          event_time: '20:00',
+          location: 'Polideportivo Campclar',
+          category: 'Deporte',
+          neighborhood: 'CAMPCLAR',
+          contact_info: '977 23 80 00',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'real-fri-lectura-barrio',
+          creator_id: 'admin',
+          title: "📚 Club de Lectura del Barrio",
+          description: "Sesión mensual del club de lectura comunitario. Este mes: novela histórica. Todos los vecinos son bienvenidos. Trae tu libro.",
+          event_date: '2026-03-06',
+          event_time: '18:30',
+          location: 'Biblioteca Municipal TGN',
+          category: 'Cultura',
+          neighborhood: 'GENERAL',
+          contact_info: '977 29 60 00',
           created_at: new Date().toISOString()
         }
       ];

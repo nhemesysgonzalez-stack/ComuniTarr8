@@ -42,7 +42,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-500">check_circle</span>
                 <div>
                   <p className="text-sm font-black text-green-700 dark:text-green-400">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-gray-500 uppercase">Tras el fin de Carnival, todas las líneas de la EMT vuelven a sus recorridos y paradas habituales.</p>
+                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios y paradas habituales este miércoles.</p>
                 </div>
               </div>
             </div>
@@ -144,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
               </p>
-              <button onClick={() => alert("Próximo Taller de Reinvención Laboral: Martes 3 Mar en Tarragona Impulsa (Tabacalera).")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Próxima Actividad: Miércoles 4 Mar — Taller Digitalización 17:00h en C.C. Part Alta (gratuito).\nJueves 5 Mar — Asamblea Vecinal 19:00h en AAVV Sant Pere.")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -168,27 +168,31 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Hoy Lunes 2 Mar)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Hoy Miércoles 4 Mar)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Técnico/a de Mantenimiento Integral"</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Técnico/a de Mantenimiento Integral&rdquo;</p>
                     <p className="text-[10px] text-gray-500">Se busca profesional con experiencia en mantenimiento de instalaciones (electricidad, fontanería, climatización) para centros cívicos en Tarragona. Contrato indefinido. 📞 977 24 55 60 (RRHH TarracoFacility)</p>
                   </div>
                   <div className="border-l-4 border-blue-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Oficial de 1ª Administrativo/a Contable"</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Oficial de 1ª Administrativo/a Contable&rdquo;</p>
                     <p className="text-[10px] text-gray-500">Gestoría ubicada en Eixample Norte necesita incorporar un/a contable con experiencia demostrable, dominio de A3 y fiscalidad. Jornada completa intensiva mañanas. 📞 688 33 22 11 (Gestoría Llevant)</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Chofer Repartidor/a Carnet C + CAP"</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Chofer Repartidor/a Carnet C + CAP&rdquo;</p>
                     <p className="text-[10px] text-gray-500">Empresa de distribución de bebidas necesita conductor para la zona de Tarragona y Reus. Imprescindible tarjeta tacógrafo y experiencia en el sector. Buen salario base. 📞 611 22 99 00 (Distribució TGN)</p>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Dependiente/a Ferretería y Bricolaje"</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Dependiente/a Ferretería y Bricolaje&rdquo;</p>
                     <p className="text-[10px] text-gray-500">Buscamos una persona con experiencia previa en venta de materiales de ferretería para local en Torreforta. Buenas condiciones. Capacidad de atención al cliente resolutiva. 📞 977 55 44 22 (Ferretería Central)</p>
                   </div>
                   <div className="border-l-4 border-indigo-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">"Cocinero/a turno continuo"</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Cocinero/a turno continuo&rdquo;</p>
                     <p className="text-[10px] text-gray-500">Restaurante zona puerto precisa incorporar cocinero/a experto en cocina mediterránea y arroces. Experiencia liderando equipo. Libranzas correspondientes. 📞 655 44 11 00 (Restaurante El Tast)</p>
+                  </div>
+                  <div className="border-l-4 border-teal-500 pl-4">
+                    <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar de Ayuda a Domicilio (SAD)&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Se precisa personal titulado para atención domiciliaria a personas mayores en Tarragona ciudad. Jornada parcial con posibilidad de ampliación. Carné de conducir valorable. 📞 977 23 10 00 (Coop. Serveis TGN)</p>
                   </div>
                 </div>
               </div>
@@ -293,7 +297,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-600">check_circle</span>
                 <div>
                   <p className="text-xs font-black text-green-700 dark:text-green-500 uppercase">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario habitual tras el desmontaje de gradas.</p>
+                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario habitual este miércoles.</p>
                 </div>
               </div>
 
@@ -558,13 +562,13 @@ export const Services: React.FC = () => {
                   <div className="flex flex-col gap-2">
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Part Alta</span>
-                      <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (MARTES)</span>
+                      <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (MIÉRCOLES)</span>
                     </div>
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
-                      <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (MARTES)</span>
+                      <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (MIÉRCOLES)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy martes hay taller de digitalización y club de lectura en los centros cívicos.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy miércoles hay taller de digitalización (17h) y club de lectura en los centros cívicos.</p>
                   </div>
                 </div>
               </div>

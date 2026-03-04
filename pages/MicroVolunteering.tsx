@@ -42,30 +42,30 @@ const MicroVolunteering: React.FC = () => {
 
             const realOpportunitiesExamples: VolunteerOpportunity[] = [
                 {
-                    id: 'real-tue-vol-1',
+                    id: 'real-wed-vol-1',
                     creator_id: 'v7',
-                    title: '🤝 Acompañamiento a Cita Médica',
-                    description: 'Me ofrezco para acompañar a alguna persona mayor que tenga cita en el CAP hoy martes por la mañana y no quiera ir sola.',
+                    title: '🤝 Acompañamiento al Mercat Part Alta',
+                    description: 'Me ofrezco para acompañar a alguna persona mayor que quiera ir al Mercat Setmanal (Plaça del Fòrum) hoy miércoles por la mañana. Itinerario cómodo.',
                     neighborhood: 'GENERAL',
-                    contact_info: '622 33 44 55 (Marta). Disponible de 9h a 12h.',
+                    contact_info: '622 33 44 55 (Marta). Disponible de 8:30h a 13h.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-tue-vol-2',
+                    id: 'real-wed-vol-2',
                     creator_id: 'v8',
                     title: '♻️ Batida Limpieza Playa Miracle',
-                    description: '¿Alguien se anima a una recogida rápida de plásticos hoy martes a las 17:30h en la playa del Miracle? Quedamos frente al club náutico.',
+                    description: '¿Alguien se anima a una recogida rápida de plásticos hoy miércoles a las 16:00h en la playa del Miracle? Quedamos frente al club náutico. ¡15 minutos son suficientes!',
                     neighborhood: 'GENERAL',
-                    contact_info: 'Encuéntranos allí directamente (Grupo Eco-TGN).',
+                    contact_info: 'Encúéntranos allí directamente (Grupo Eco-TGN).',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-tue-vol-3',
+                    id: 'real-wed-vol-3',
                     creator_id: 'v9',
-                    title: '💻 Ayuda Trámites Online',
-                    description: 'Si necesitas ayuda para pedir cita previa o instalar el certificado digital, estaré hoy en la biblioteca de 16h a 18h ayudando a quien lo necesite.',
-                    neighborhood: 'CENTRE',
-                    contact_info: 'Preguntar por Marc en la zona de ordenadores.',
+                    title: '💻 Apoyo Taller Digitalización C.C. Part Alta',
+                    description: 'Auxilio a vecinos durante el taller de digitalización de hoy miércoles (17h-19h) en el Centre Cívic Part Alta. Si tienes conocimientos en informativa y tiempo libre, únete.',
+                    neighborhood: 'PART ALTA',
+                    contact_info: 'Preguntar por Marc en la recepción del Centre Cívic.',
                     created_at: new Date().toISOString()
                 }
             ];

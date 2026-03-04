@@ -145,42 +145,42 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'real-tue-summary',
-                    title: "☀️ MARTES 3 MARZO 2026 — JORNADA SOLEADA",
-                    content: "Continuamos la semana con sol y 17°C. Atención a la avería de agua en Calle Unió (Centre) prevista hasta las 13:00h. Resto de servicios operando con normalidad.",
+                    id: 'real-wed-summary',
+                    title: "☀️ MIÉRCOLES 4 MARZO 2026 — JORNADA ACTIVA",
+                    content: "Día soleado con máxima de 16°C. Hoy se celebra el mercado semanal en la Part Alta (8-14h). Obras en C/ Unió (2ª jornada). Taller de digitalización en el Centre Cívic a las 17h. Todos los servicios operan con normalidad.",
                     category: "INFO",
                     author_name: "ComuniTarr",
                     neighborhood: "GENERAL",
-                    itinerary: "• Hoy Mar: Reparación EMATSA (Unió) 10:00h-13:00h\n• Hoy Mar: Recogida Muebles (Centro) 20:00h-22:00h\n• Hoy Mar: Ciclo Cine V.O. (Metropol) 20:30h",
+                    itinerary: "• Mercat Part Alta: 08:00h-14:00h (Plaça del Fòrum)\n• Obras C/ Unió: Dia 2 — rodeo por C/ Apodaca\n• Taller Digital: 17:00h — C.C. Part Alta (gratuito)\n• Asamblea Vecinal: Mañana Jue 5, 19h — AAVV Sant Pere",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-offices-reopen',
-                    title: "🏢 SERVICIOS MUNICIPALES ACTIVOS",
-                    content: "Tras el fin de semana, todas las dependencias municipales retoman la actividad presencial. Se recomienda usar la sede electrónica para trámites rápidos.",
-                    category: "INFO",
-                    author_name: "Ayuntamiento TGN",
-                    neighborhood: "GENERAL",
-                    itinerary: "• Padrón y Tasas: OMAC Rambla\n• Urbanismo: C/ San Lorenzo\n• Juventud: Espai Jove Kesse",
+                    id: 'real-wed-obras-unio',
+                    title: "🚧 OBRAS C/ UNIÓ — 2ª JORNADA (CENTRE)",
+                    content: "Continúan las obras de reparación de la calzada en la Calle Unió. Tráfico cortado parcialmente. Rodeo recomendado por Calle Apodaca. Fin previsto: viernes 6 de marzo.",
+                    category: "URGENTE",
+                    author_name: "Obras Públicas TGN",
+                    neighborhood: "CENTRE",
+                    itinerary: "• Acceso peatonal: Garantizado\n• Rodeo vehículos: C/ Apodaca\n• Incidencias: 010\n• Fin previsto: Viernes 6 Mar",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-farmacia-guardia-tue',
-                    title: "💊 FARMACIA DE GUARDIA (HOY MARTES)",
-                    content: "Servicio de guardia 24h hoy martes en Farmacia Eixample (C/ Unió, 5). Nota: Acceso afectado por reparación de tubería.",
+                    id: 'real-wed-farmacia-guardia',
+                    title: "💊 FARMACIA DE GUARDIA (HOY MIÉRCOLES)",
+                    content: "Servicio de guardia 24h hoy miércoles en Farmacia Salud (Avda. Roma, 10). Abierta toda la noche para urgencias y recetas del día.",
                     category: "URGENTE",
                     author_name: "COFT",
                     neighborhood: "GENERAL",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-bolsa-empleo-mon',
-                    title: "💼 BOLSA DE TRABAJO (LUNES 2 MAR)",
-                    content: "Nuevas ofertas publicadas esta mañana: Administrativo/a, Repartidor/a y Personal de Limpieza. Incorporación esta misma semana.",
+                    id: 'real-wed-empleo-nuevas',
+                    title: "💼 NUEVAS OFERTAS DE EMPLEO — MIÉRCOLES 4 MAR",
+                    content: "Esta semana se han publicado nuevas vacantes activas en Tarragona. Perfil técnico, hostelería y administración. Incorporación inmediata en la mayoría de casos.",
                     category: "EVENTO",
                     author_name: "SOC Tarragona",
                     neighborhood: "GENERAL",
-                    itinerary: "• Administrativo: 📞 688 33 22 11\n• Repartidor: 📞 977 24 55 99\n• Limpieza: 📞 611 22 33 44",
+                    itinerary: "• Técnico Mantenimiento: 📞 977 24 55 60\n• Cocinero/a: 📞 655 44 11 00\n• Administrativo/a: 📞 688 33 22 11\n• Dependiente/a Ferretería: 📞 977 55 44 22",
                     link_url: "/services",
                     created_at: new Date().toISOString()
                 }

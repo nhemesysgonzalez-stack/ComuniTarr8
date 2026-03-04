@@ -182,39 +182,39 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'tue-morning-rush',
-            title: "🚗 Martes 3 Mar — Tránsito Fluido",
-            content: "Mejora la circulación en la T-11 y A-7 respecto ayer. Sin incidentes graves reportados esta mañana. Los transportes públicos (EMT y Renfe) operan con total normalidad.",
+            id: 'wed-morning-traffic',
+            title: "🚗 Miércoles 4 Mar — Tránsito Fluido",
+            content: "Sin incidencias destacadas en los accesos norte y sur. La T-11 y la A-7 circulan con fluidez. EMT y Renfe operan con puntualidad normal en toda la red.",
             category: "TRÁFICO",
             neighborhood: "GENERAL",
-            itinerary: "• T-11: Tráfico moderado\n• A-7: Sin retenciones\n• EMT: Puntualidad del 98%",
+            itinerary: "• T-11: Tráfico fluido\n• A-7: Sin retenciones\n• EMT: Sin alteraciones\n• Renfe R14/R15: Servicio normal",
             created_at: new Date().toISOString()
           },
           {
-            id: 'tue-linkedin-success',
-            title: "📈 Éxito en el Taller de LinkedIn",
-            content: "Más de 30 vecinos participaron ayer en el Espai Tabacalera. Hoy martes abrimos una sesión especial de 'Networking Rápido' a las 18:30h para quienes no pudieron asistir.",
-            category: "EMPLEO",
-            neighborhood: "GENERAL",
-            itinerary: "• Sesión Repaso: 18:30h\n• Lugar: Tabacalera\n• Contacto: 977 29 61 00",
+            id: 'wed-market-part-alta',
+            title: "🛒 Mercat Setmanal Part Alta — Hoy Miércoles",
+            content: "Hoy miércoles se celebra el mercado semanal en la Plaça del Fòrum (Part Alta) de 8:00h a 14:00h. Productos frescos de temporada: frutas, verduras, artesanía y más.",
+            category: "CULTURA",
+            neighborhood: "PART ALTA",
+            itinerary: "• Horario: 08:00h a 14:00h\n• Lugar: Plaça del Fòrum\n• Zona de aparcamiento habilitada",
             created_at: new Date().toISOString()
           },
           {
-            id: 'tue-garbage-reminder',
-            title: "♻️ Recogida de Voluminosos hoy Martes",
-            content: "Recordamos que hoy martes es el día de recogida de muebles y trastos viejos en la zona centro. Por favor, depositarlos junto a los contenedores entre las 20h y las 22h.",
+            id: 'wed-obras-calle-unio',
+            title: "🚧 Obras en Calle Unió — Afecta Tráfico Local",
+            content: "Las obras de reparación en Calle Unió entran en su segunda jornada. Acceso peatonal garantizado. Se recomienda rodear por Calle Apodaca. Finalización prevista: viernes 6 de marzo.",
             category: "AVISO",
             neighborhood: "CENTRE",
-            itinerary: "• Horario: 20:00h a 22:00h\n• Teléfono Incidencias: 010\n• Punto Limpio: Abierto hasta las 19h",
+            itinerary: "• Rodeo alternativo: C/ Apodaca\n• Peatones: Acceso garantizado\n• Incidencias: 010\n• Fin obras: Viernes 6 Mar",
             created_at: new Date().toISOString()
           },
           {
-            id: 'tue-cultural-start',
-            title: "🎞️ Ciclo de Cine Metropol: Hoy Estreno",
-            content: "Comienza hoy el ciclo de cine en Versión Original. Sesión inaugural a las 20:30h con entrada reducida para vecinos registrados en ComuniTarr.",
-            category: "CULTURA",
+            id: 'wed-taller-digital',
+            title: "💻 Taller Digitalización Centros Cívicos — Hoy 17h",
+            content: "Hoy miércoles a las 17:00h en el Centre Cívic Part Alta, sesión gratuita de digitalización para vecinos. Aprende a usar las herramientas de la sede electrónica del Ayuntamiento.",
+            category: "EMPLEO",
             neighborhood: "GENERAL",
-            itinerary: "• Película: 'Parásitos' (VOSE)\n• Hora: 20:30h\n• Precio: 5€ con ID de vecino",
+            itinerary: "• Hora: 17:00h\n• Lugar: C.C. Part Alta\n• Info: 977 29 61 00\n• Plazas limitadas — inscripción en puerta",
             created_at: new Date().toISOString()
           }
         ];
@@ -223,9 +223,9 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'poll-martes-comercio',
-          question: "¿Crees que hacen falta más comercios de proximidad en el barrio?",
-          options: ['Sí, faltan fruterías/panaderías', 'Estamos bien servidos', 'Prefiero comprar online', 'Solo faltan supermercados grandes'],
+          id: 'poll-miercoles-barrio',
+          question: "¿Debería el Ayuntamiento ampliar el horario del mercado semanal de la Part Alta?",
+          options: ['Sí, hasta las 16:00h', 'El horario actual está bien (hasta 14h)', 'Mejor abrir también los sábados', 'Prefiero mercados en otras zonas'],
           category: 'COMERCIO',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()
@@ -542,7 +542,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 9 · Feb</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 10 · Mar</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">

@@ -56,28 +56,28 @@ const Incidents: React.FC = () => {
             }
 
             if (data) {
-                // Mock Incidents for Demo (Thursday 19th)
+                // Mock Incidents for Wednesday March 4
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'mock-inc-tue-1',
+                        id: 'mock-inc-wed-1',
                         user_id: 'admin',
-                        title: '🚿 AVISO AGUA: Reparación Tubería Calle Unió',
-                        description: 'Corte puntual del suministro hoy martes de 10h a 13h por avería imprevista. Técnicos de EMATSA ya trabajando.',
+                        title: '🚧 OBRAS C/ UNIÓ: 2ª Jornada — Tráfico Cortado',
+                        description: 'Segunda jornada de obras de reparación de calzada en Calle Unió. Tráfico cortado parcialmente. Rodeo por Calle Apodaca. Fin previsto: viernes 6 de marzo.',
                         neighborhood: 'CENTRE',
                         status: 'in_progress',
                         created_at: new Date().toISOString(),
-                        contact_info: '977 23 20 20 (EMATSA)',
-                        profiles: { full_name: 'EMATSA Info', avatar_url: '/logo.svg' },
+                        contact_info: '010 (Incidencias)',
+                        profiles: { full_name: 'Obras Públicas TGN', avatar_url: '/logo.svg' },
                         image_url: 'https://images.unsplash.com/photo-1542013936693-8846383242ef?auto=format&fit=crop&q=80&w=800'
                     },
                     {
-                        id: 'mock-inc-tue-2',
+                        id: 'mock-inc-wed-2',
                         user_id: 'admin',
-                        title: '🚗 TRÁFICO: Cierre Carril en Av. Roma',
-                        description: 'Trabajos de mantenimiento en el carril derecho dirección salida ciudad. Especial atención en la rotonda del Parc Central.',
+                        title: '🚗 TRÁFICO: Interferencia por obras en Av. Roma',
+                        description: 'Trabajos de señalización y pavimento en el carril derecho de Av. Roma dirección al Parc Central. Tránsito lento en hora punta. Previsto hasta el viernes.',
                         neighborhood: 'GENERAL',
                         status: 'open',
-                        created_at: new Date(Date.now() - 1000 * 60 * 120).toISOString(),
+                        created_at: new Date(Date.now() - 1000 * 60 * 90).toISOString(),
                         contact_info: '092 (Guardia Urbana)',
                         profiles: { full_name: 'Trànsit TGN', avatar_url: '/logo.svg' },
                         image_url: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800'

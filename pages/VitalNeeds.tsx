@@ -46,33 +46,33 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'mock-mon-n1',
+                    id: 'mock-wed-n1',
                     creator_id: 'v4',
                     type: 'company',
-                    title: '👵 Acompañamiento Paseo (Lunes)',
-                    description: 'Busco voluntario/a para acompañar a mi madre (85 años) a dar un pequeño paseo por la Rambla ahora que hace sol. Vive en la Calle Mayor.',
+                    title: '👵 Acompañamiento al Mercado Part Alta (Miércoles)',
+                    description: 'Busco voluntario/a para acompañar a mi madre (85 años) al Mercat Setmanal de la Plaça del Fòrum esta mañana de 9h a 12h. Vive en la Calle Major.',
                     contact_info: '688 22 11 00 (Pere)',
                     is_urgent: false,
                     neighborhood: 'PART ALTA',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-mon-n2',
+                    id: 'mock-wed-n2',
                     creator_id: 'v5',
                     type: 'food',
                     title: '🥗 Necesito ayuda con la compra semanal',
-                    description: 'He tenido una lesión en la rodilla y no puedo cargar peso. Busco alguien que pueda traerme la compra básica del Mercadona esta tarde.',
+                    description: 'He tenido una lesión en la rodilla y no puedo cargar peso. Busco alguien que pueda traerme la compra básica del Mercadona esta tarde (después de las 17h).',
                     contact_info: '644 33 22 11 (Mónica)',
                     is_urgent: true,
                     neighborhood: 'EIXAMPLE',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-mon-n3',
+                    id: 'mock-wed-n3',
                     creator_id: 'v6',
                     type: 'emotional',
-                    title: "📚 ¿Alguien para ir al Club de Lectura hoy?",
-                    description: 'Me gustaría ir a la biblioteca esta tarde a las 18:00 para el club de lectura pero soy nueva en el barrio. ¿Alguien se anima a ir juntos?',
+                    title: "💻 ¿Alguien para el Taller Digital del C.C. hoy?",
+                    description: 'Soy nueva en el barrio y quiero ir al Taller de Digitalización del Centre Cívic Part Alta hoy a las 17h pero no conozco el camino. ¿Alguien se anima a ir juntos?',
                     contact_info: '622 88 77 66 (Elena V.)',
                     is_urgent: false,
                     neighborhood: 'GENERAL',
@@ -184,7 +184,7 @@ const VitalNeeds: React.FC = () => {
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Próxima sesión informativa: Mañana Miércoles a las 10:00h en el Centro Cívico Centro.'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Próxima sesión informativa: Hoy Miércoles a las 10:00h en el Centre Cívic Part Alta. También nos vemos mañana Jueves en la Asamblea Vecinal (19h - AAVV Sant Pere).'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
                             <span className="material-symbols-outlined text-sm">person_add</span>
                             UNIRME AHORA
                         </a>

@@ -42,30 +42,30 @@ const SupportCircles: React.FC = () => {
 
             const mockCircles: SupportCircle[] = [
                 {
-                    id: 'mock-tue-sc1',
+                    id: 'mock-wed-sc1',
                     initiator_id: 'v1',
                     title: '🤝 Círculo de Cuidadores de Personas Mayores',
                     neighborhood: 'GENERAL',
-                    description: 'Sesión de apoyo mutuo hoy martes a las 18:00h. Espacio para compartir experiencias y consejos sobre el cuidado de nuestros mayores.',
-                    contact_info: '611 22 33 44 (Miguel). Centro Cívico Centro.',
+                    description: 'Sesión de apoyo mutuo hoy miércoles a las 18:00h. Espacio para compartir experiencias y consejos sobre el cuidado de nuestros mayores. Siempre bienvenidos nuevos miembros.',
+                    contact_info: '611 22 33 44 (Miguel). Centre Cívic Part Alta.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-tue-sc2',
+                    id: 'mock-wed-sc2',
                     initiator_id: 'vadmin',
                     title: '🧘 Bienestar Emocional Saludable',
                     neighborhood: 'GENERAL',
-                    description: 'Grupo abierto hoy martes a las 19:15h. Charlas sobre gestión del tiempo y reducción del estrés diario. ¡Sin juzgar!',
+                    description: 'Grupo abierto hoy miércoles a las 19:15h. Charlas sobre gestión del tiempo, reducción del estrés diario y mindfulness. ¡Sin juzgar, solo escuchar y apoyar!',
                     contact_info: '655 12 34 56 (Elena). Inscripción vía WhatsApp.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-tue-sc3',
+                    id: 'mock-wed-sc3',
                     initiator_id: 'v2',
-                    title: '☕ Café de la Soledad Elegida',
+                    title: '☕ Café de la Conexión Vecinal',
                     neighborhood: 'GENERAL',
-                    description: 'Nos reunimos los martes a las 17h para charlar y compartir un café entre vecinos que viven solos pero quieren socializar un rato.',
-                    contact_info: '622 99 88 77 (Rosa). Bar de la Esquina (Rambla).',
+                    description: 'Nos reunimos los miércoles a las 17h para charlar y compartir un café entre vecinos. Hoy hablamos sobre el mercado semanal de la Part Alta y qué mejoras podemos proponer.',
+                    contact_info: '622 99 88 77 (Rosa). Bar Can Pere (Rambla).',
                     created_at: new Date().toISOString()
                 }
             ];
