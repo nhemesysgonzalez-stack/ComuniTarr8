@@ -59,36 +59,10 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'real-wed-mercat-forum',
+          id: 'real-thu-asamblea-aavv',
           creator_id: 'admin',
-          title: "🛒 Mercat Setmanal Part Alta",
-          description: "Mercado local de proximidad con productos de temporada: frutas, verduras, artesania y más. Hoy miércoles en la Plaça del Fòrum.",
-          event_date: '2026-03-04',
-          event_time: '08:00',
-          location: 'Plaça del Fòrum, Part Alta',
-          category: 'Cultura',
-          neighborhood: 'PART ALTA',
-          contact_info: 'Mercat Setmanal TGN',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'real-wed-taller-digital',
-          creator_id: 'admin',
-          title: "💻 Taller Digitalización — C.C. Part Alta",
-          description: "Sesión gratuita de digitalización para vecinos. Aprende a usar la sede electrónica del Ayuntamiento y servicios digitales básicos.",
-          event_date: '2026-03-04',
-          event_time: '17:00',
-          location: 'Centre Cívic Part Alta',
-          category: 'Ocio',
-          neighborhood: 'GENERAL',
-          contact_info: '977 29 61 00',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'real-thu-asamblea',
-          creator_id: 'admin',
-          title: "🏠 Asamblea Vecinal: Mantenimiento",
-          description: "Reunión para tratar el tema del mantenimiento de las aceras y nuevas zonas verdes. Abierta a todos los vecinos del barrio.",
+          title: "🏠 Asamblea Vecinal AAVV Sant Pere",
+          description: "Asamblea abierta para tratar el mantenimiento de aceras, nuevas zonas verdes y mejoras en el alumbrado público. Todos los vecinos son bienvenidos.",
           event_date: '2026-03-05',
           event_time: '19:00',
           location: 'AAVV Sant Pere i Sant Pau',
@@ -101,7 +75,7 @@ const NeighborhoodCalendar: React.FC = () => {
           id: 'real-thu-futsal-campclar',
           creator_id: 'admin',
           title: "⚽ Fútbol Sala Vecinal — Campclar",
-          description: "Partido amistoso de fútbol sala organizado por la asociación de vecinos. Apuntarse en recepción del polideportivo.",
+          description: "Partido amistoso de fútbol sala organizado por la AAVV Campclar. Apuntarse en recepción del polideportivo hasta 19:30h.",
           event_date: '2026-03-05',
           event_time: '20:00',
           location: 'Polideportivo Campclar',
@@ -121,6 +95,32 @@ const NeighborhoodCalendar: React.FC = () => {
           category: 'Cultura',
           neighborhood: 'GENERAL',
           contact_info: '977 29 60 00',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'real-fri-obras-fin',
+          creator_id: 'admin',
+          title: "🚧 Fin Obras C/ Unió — Reapertura Total",
+          description: "Fin previsto de las obras de reparación de la calzada en Calle Unió. Reapertura total del tráfico rodado prevista para esta tarde.",
+          event_date: '2026-03-06',
+          event_time: '14:00',
+          location: 'Calle Unió, Centre',
+          category: 'Solidario',
+          neighborhood: 'CENTRE',
+          contact_info: '010',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'real-sat-mercadillo',
+          creator_id: 'admin',
+          title: "🛍️ Mercadillo de Segunda Mano — Vecinal TGN",
+          description: "Sábado 7 de marzo. Mercadillo de intercambio y segunda mano. Libre participación vecinal. Lleva lo que ya no uses y llévate algo nuevo.",
+          event_date: '2026-03-07',
+          event_time: '10:00',
+          location: 'Plaça de la Font',
+          category: 'Cultura',
+          neighborhood: 'GENERAL',
+          contact_info: 'ComuniTarr Mercadillo',
           created_at: new Date().toISOString()
         }
       ];

@@ -46,33 +46,33 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'mock-wed-n1',
+                    id: 'mock-thu-n1',
                     creator_id: 'v4',
                     type: 'company',
-                    title: '👵 Acompañamiento al Mercado Part Alta (Miércoles)',
-                    description: 'Busco voluntario/a para acompañar a mi madre (85 años) al Mercat Setmanal de la Plaça del Fòrum esta mañana de 9h a 12h. Vive en la Calle Major.',
+                    title: '🏠 Acompañamiento a la Asamblea Vecinal (19h)',
+                    description: 'Busco voluntario/a para acompañarme a la Asamblea Vecinal de esta noche en la AAVV Sant Pere (19h). Tengo movilidad reducida y vivo en la Calle Gravina. Ida y vuelta.',
                     contact_info: '688 22 11 00 (Pere)',
                     is_urgent: false,
-                    neighborhood: 'PART ALTA',
+                    neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-wed-n2',
+                    id: 'mock-thu-n2',
                     creator_id: 'v5',
                     type: 'food',
-                    title: '🥗 Necesito ayuda con la compra semanal',
-                    description: 'He tenido una lesión en la rodilla y no puedo cargar peso. Busco alguien que pueda traerme la compra básica del Mercadona esta tarde (después de las 17h).',
+                    title: '🥗 Ayuda con la compra — Jueves tarde',
+                    description: 'Tengo una lesión en la rodilla y el sábado se cierra el mercadillo. Busco alguien que pueda traerme verdúras frescas del Mercadona esta tarde después de las 17h.',
                     contact_info: '644 33 22 11 (Mónica)',
                     is_urgent: true,
                     neighborhood: 'EIXAMPLE',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-wed-n3',
+                    id: 'mock-thu-n3',
                     creator_id: 'v6',
                     type: 'emotional',
-                    title: "💻 ¿Alguien para el Taller Digital del C.C. hoy?",
-                    description: 'Soy nueva en el barrio y quiero ir al Taller de Digitalización del Centre Cívic Part Alta hoy a las 17h pero no conozco el camino. ¿Alguien se anima a ir juntos?',
+                    title: '📚 Necesito pareja de lectura para mañana Club Biblioteca',
+                    description: 'Soy mayor y quiero ir al Club de Lectura de la Biblioteca Municipal mañana viernes a las 18:30h, pero no me atrevo a ir sola por la noche. ¿Alguien me acompaña?',
                     contact_info: '622 88 77 66 (Elena V.)',
                     is_urgent: false,
                     neighborhood: 'GENERAL',
@@ -184,7 +184,7 @@ const VitalNeeds: React.FC = () => {
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Próxima sesión informativa: Hoy Miércoles a las 10:00h en el Centre Cívic Part Alta. También nos vemos mañana Jueves en la Asamblea Vecinal (19h - AAVV Sant Pere).'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Hoy Jueves 5 Mar:\n• 17:00h \u2014 C\u00edrculo de Cuidadores (C.C. Part Alta)\n• 19:00h \u2014 Asamblea Vecinal (AAVV Sant Pere)\n• 20:00h \u2014 F\u00fatbol Sala Vecinal (Polideportivo Campclar)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
                             <span className="material-symbols-outlined text-sm">person_add</span>
                             UNIRME AHORA
                         </a>

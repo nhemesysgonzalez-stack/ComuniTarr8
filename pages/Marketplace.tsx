@@ -57,10 +57,10 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'mock-mon-m1',
+          id: 'mock-thu-m1',
           user_id: 'v1',
           title: '🧥 Abrigo de lana — Estilo clásico',
-          description: 'Abrigo en perfecto estado, talla L. Muy cálido. Vendo por falta de uso. Entrega en mano en Tarragona.',
+          description: 'Abrigo en perfecto estado, talla L. Muy cálido. Vendo por falta de uso. Entrega en mano en Tarragona. Precio negociable.',
           price: '45',
           category: 'moda',
           neighborhood: 'GENERAL',
@@ -69,11 +69,11 @@ const Marketplace: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-mon-m2',
+          id: 'mock-thu-m2',
           user_id: 'v2',
-          title: '📚 Lote de libros oposiciones (Generalitat)',
-          description: 'Temario actualizado 2025-2026. En perfecto estado, sin subrayar. Ideal para empezar a estudiar este marzo.',
-          price: '30',
+          title: '📚 Novela Histórica — Lote Club de Lectura',
+          description: 'Vendo 5 novelas históricas en perfecto estado: Arturo Pérez-Reverte, Ken Follett, Colleen McCullough. Perfectas para el Club de Lectura de la Biblioteca. Sin subrayar.',
+          price: '18',
           category: 'hogar',
           neighborhood: 'CENTRE',
           contact_info: '611 99 88 77 (Laia)',
@@ -81,15 +81,27 @@ const Marketplace: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-mon-m3',
+          id: 'mock-thu-m3',
           user_id: 'v4',
           title: '🚲 Bicicleta urbana con cesta',
-          description: 'Bici robusta tipo holandesa. Freno contrapedal y delantero. Luz trasera operativa. Ideal para ir al trabajo.',
+          description: 'Bici robusta tipo holandesa. Freno contrapedal y delantero. Luz trasera operativa. Ideal para ir al trabajo o al mercado semanal.',
           price: '85',
           category: 'ocio',
           neighborhood: 'GENERAL',
           contact_info: '655 44 33 22 (Rosa)',
           image_url: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'mock-thu-m4',
+          user_id: 'v5',
+          title: '💻 Tablet Samsung Galaxy A7 (2022)',
+          description: 'Tablet en buen estado, cargador original incluido. Pantalla 10.4", 32 GB. Ideal para trámites online y videollamadas. Se entrega mañana en la zona centro.',
+          price: '120',
+          category: 'tech',
+          neighborhood: 'EIXAMPLE',
+          contact_info: '699 77 55 44 (Jordi)',
+          image_url: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         }
       ];

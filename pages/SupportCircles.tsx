@@ -42,29 +42,29 @@ const SupportCircles: React.FC = () => {
 
             const mockCircles: SupportCircle[] = [
                 {
-                    id: 'mock-wed-sc1',
+                    id: 'mock-thu-sc1',
                     initiator_id: 'v1',
                     title: '🤝 Círculo de Cuidadores de Personas Mayores',
                     neighborhood: 'GENERAL',
-                    description: 'Sesión de apoyo mutuo hoy miércoles a las 18:00h. Espacio para compartir experiencias y consejos sobre el cuidado de nuestros mayores. Siempre bienvenidos nuevos miembros.',
+                    description: 'Sesión de apoyo mutuo hoy jueves a las 17:00h (antes de la Asamblea Vecinal de las 19h). Espacio para compartir experiencias sobre el cuidado de mayores. Siempre bienvenidos nuevos miembros.',
                     contact_info: '611 22 33 44 (Miguel). Centre Cívic Part Alta.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-wed-sc2',
+                    id: 'mock-thu-sc2',
                     initiator_id: 'vadmin',
                     title: '🧘 Bienestar Emocional Saludable',
                     neighborhood: 'GENERAL',
-                    description: 'Grupo abierto hoy miércoles a las 19:15h. Charlas sobre gestión del tiempo, reducción del estrés diario y mindfulness. ¡Sin juzgar, solo escuchar y apoyar!',
+                    description: 'Grupo abierto de apoyo emocional. Hoy jueves nos saltamos la sesión habitual por la Asamblea Vecinal de las 19h. Próxima sesión: el martes 10 de marzo a las 19:15h.',
                     contact_info: '655 12 34 56 (Elena). Inscripción vía WhatsApp.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-wed-sc3',
+                    id: 'mock-thu-sc3',
                     initiator_id: 'v2',
                     title: '☕ Café de la Conexión Vecinal',
                     neighborhood: 'GENERAL',
-                    description: 'Nos reunimos los miércoles a las 17h para charlar y compartir un café entre vecinos. Hoy hablamos sobre el mercado semanal de la Part Alta y qué mejoras podemos proponer.',
+                    description: 'Nos reunimos los jueves a las 17h para charlar y compartir un café. Hoy hablamos sobre la Asamblea de esta noche y qué queremos proponer sobre el alumbrado.',
                     contact_info: '622 99 88 77 (Rosa). Bar Can Pere (Rambla).',
                     created_at: new Date().toISOString()
                 }

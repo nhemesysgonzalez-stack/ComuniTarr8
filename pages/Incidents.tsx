@@ -56,13 +56,13 @@ const Incidents: React.FC = () => {
             }
 
             if (data) {
-                // Mock Incidents for Wednesday March 4
+                // Mock Incidents for Thursday March 5
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'mock-inc-wed-1',
+                        id: 'mock-inc-thu-1',
                         user_id: 'admin',
-                        title: '🚧 OBRAS C/ UNIÓ: 2ª Jornada — Tráfico Cortado',
-                        description: 'Segunda jornada de obras de reparación de calzada en Calle Unió. Tráfico cortado parcialmente. Rodeo por Calle Apodaca. Fin previsto: viernes 6 de marzo.',
+                        title: '🚧 OBRAS C/ UNIÓ: 3ª Jornada — Último Día Mañana',
+                        description: 'Tercera y penúltima jornada de obras de reparación de calzada en Calle Unió. Mañana viernes se prevé la finalización y reapertura total. Rodeo por Calle Apodaca.',
                         neighborhood: 'CENTRE',
                         status: 'in_progress',
                         created_at: new Date().toISOString(),
@@ -71,13 +71,13 @@ const Incidents: React.FC = () => {
                         image_url: 'https://images.unsplash.com/photo-1542013936693-8846383242ef?auto=format&fit=crop&q=80&w=800'
                     },
                     {
-                        id: 'mock-inc-wed-2',
+                        id: 'mock-inc-thu-2',
                         user_id: 'admin',
-                        title: '🚗 TRÁFICO: Interferencia por obras en Av. Roma',
-                        description: 'Trabajos de señalización y pavimento en el carril derecho de Av. Roma dirección al Parc Central. Tránsito lento en hora punta. Previsto hasta el viernes.',
+                        title: '🚗 TRÁFICO: Carril Limitado Av. Roma',
+                        description: 'Trabajos de señalización y repintado de marcas viales en el carril derecho de Av. Roma. Flujo reducido en hora punta. Previsto hasta el viernes.',
                         neighborhood: 'GENERAL',
                         status: 'open',
-                        created_at: new Date(Date.now() - 1000 * 60 * 90).toISOString(),
+                        created_at: new Date(Date.now() - 1000 * 60 * 60).toISOString(),
                         contact_info: '092 (Guardia Urbana)',
                         profiles: { full_name: 'Trànsit TGN', avatar_url: '/logo.svg' },
                         image_url: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800'

@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🛒 Hoy Miércoles: Mercat Setmanal en la Plaça del Fòrum (Part Alta) de 8:00h a 14:00h. ¡Productos frescos de temporada!", neighborhood: 'PART ALTA' },
-    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Miércoles soleado. Máxima de 16ºC. Buen día para ir al mercado o la Anella Verda. 🌿', neighborhood: 'GENERAL' },
-    { id: 2, user: 'Obras TGN', avatar: '/logo.svg', text: '🚧 Obras en C/ Unió (2ª jornada). Rodeo por C/ Apodaca recomendado. Fin previsto: viernes. 🛠️', neighborhood: 'CENTRE' },
-    { id: 3, user: 'C.C. Part Alta', avatar: '/logo.svg', text: '💻 ¡Hoy 17:00h! Taller gratuito de Digitalización en el Centre Cívic Part Alta. Plazas limitadas. 📲', neighborhood: 'GENERAL' },
-    { id: 4, user: 'Carles F.', avatar: 'https://i.pravatar.cc/150?u=carles', text: '⚽ ¿Alguien se apunta a fútbol sala esta tarde a las 20h en el Polideportivo Campclar? 🏃', neighborhood: 'CAMPCLAR' },
-    { id: 5, user: 'Montse R.', avatar: 'https://i.pravatar.cc/150?u=montse', text: '📚 ¡Buenos días vecinos! Hoy retoma el club de lectura del barrio. Tema: novela histórica. 📖', neighborhood: 'GENERAL' },
-    { id: 6, user: 'Trànsit TGN', avatar: '/logo.svg', text: '🚗 Circulación fluida en T-11 y A-7 esta mañana. EMT y Renfe sin alteraciones. ✅', neighborhood: 'GENERAL' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🏠 ¡Esta noche Jue 5! Asamblea Vecinal AAVV Sant Pere a las 19:00h. Temas: aceras, zonas verdes y alumbrado. ¡Os esperamos!", neighborhood: 'GENERAL' },
+    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Jueves nublado con claros. Máxima de 15ºC. Sin lluvia prevista. 🌤️', neighborhood: 'GENERAL' },
+    { id: 2, user: 'Obras TGN', avatar: '/logo.svg', text: '🚧 Obras C/ Unió (3ª jornada, penúltimo día). Fin previsto mañana viernes. Rodeo por C/ Apodaca. 🛠️', neighborhood: 'CENTRE' },
+    { id: 3, user: 'AAVV Campclar', avatar: '/logo.svg', text: '⚽ ¡Esta noche a las 20h! Fútbol sala vecinal en el Polideportivo Campclar. ¡Únete! 📞 977 23 80 00', neighborhood: 'CAMPCLAR' },
+    { id: 4, user: 'Biblioteca TGN', avatar: '/logo.svg', text: '📚 Mañana Viernes 18:30h — Club de Lectura mensual (novela histórica). ¡Todos bienvenidos! 📖', neighborhood: 'GENERAL' },
+    { id: 5, user: 'Joan P.', avatar: 'https://i.pravatar.cc/150?u=joanp', text: '🛒 ¿Alguien va hoy al Mercadona de la Rambla? Busco que me traigan leche y pan. Te lo agradezco! 🙏', neighborhood: 'CENTRE' },
+    { id: 6, user: 'Trànsit TGN', avatar: '/logo.svg', text: '🚗 T-11 y A-7 fluidas. Precaución en Av. Roma carril dcho. por señalización. EMT y Renfe normales. ✅', neighborhood: 'GENERAL' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '🛒 Mercat Part Alta 8-14h' },
-    { user: 'Obras', text: '🚧 C/ Unió: 2ª Jornada obras' },
-    { user: 'C.C. Part Alta', text: '💻 Taller Digital 17:00h' },
-    { user: 'Meteo', text: '☀️ Sol y 16ºC' },
-    { user: 'Vecinos', text: '⚽ ¿Fútbol sala a las 20h?' }
+    { user: 'Admin', text: '🏠 Asamblea Vecinal 19h hoy' },
+    { user: 'Obras', text: '🚧 C/ Unió: 3ª Jornada (último día mañana)' },
+    { user: 'AAVV Campclar', text: '⚽ Fútbol Sala 20h hoy' },
+    { user: 'Meteo', text: '☁️ Nublado y 15ºC' },
+    { user: 'Biblioteca', text: '📚 Club Lectura mañana 18:30h' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

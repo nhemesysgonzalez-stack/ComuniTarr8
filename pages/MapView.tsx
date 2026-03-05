@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'incident', x: '48%', y: '48%', title: "Avería Agua Calle Unió", desc: 'Reparación de tubería en curso hoy martes. Suministro afectado en la zona de 10h a 13h.', status: 'Activo (10-13h)', color: 'bg-orange-500', icon: 'water_drop', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.5)]' },
-    { id: 2, type: 'incident', x: '45%', y: '52%', title: 'Retención Av. Roma', desc: 'Densidad circulatoria hoy martes por cierre de carril (mantenimiento).', status: 'En curso', color: 'bg-red-600', icon: 'traffic', glow: 'shadow-[0_0_35px_rgba(220,38,38,0.4)]' },
-    { id: 3, type: 'event', x: '52%', y: '35%', title: 'Cine V.O. Metropol', desc: "Estreno hoy martes a las 20:30h: 'Parásitos'. Trae tu carnet de vecino.", status: '20:30h Today', color: 'bg-indigo-500', icon: 'movie_edit' },
-    { id: 4, type: 'shop', x: '55%', y: '55%', title: 'Centro Cívico Part Alta', desc: 'Actividades de martes: Club de lectura y clases de catalán a las 18:30h.', status: 'Abierto', color: 'bg-green-600', icon: 'groups' },
-    { id: 5, type: 'incident', x: '42%', y: '40%', title: 'Bache Calle Gasòmetre', desc: 'Aviso vecinal: bache grande en cruce con Smith. Reportado vía Línia Verda TGN.', status: 'Reportado', color: 'bg-red-500', icon: 'report_problem' }
+    { id: 1, type: 'incident', x: '48%', y: '48%', title: "Obras C/ Unió (3ª Jornada)", desc: 'Reparación de calzada en su última jornada hoy jueves. Rodeo por C/ Apodaca. Reapertura total prevista mañana viernes.', status: 'Día 3/3 — Fin Mañana', color: 'bg-orange-500', icon: 'construction', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.5)]' },
+    { id: 2, type: 'incident', x: '45%', y: '52%', title: 'Carril Limitado Av. Roma', desc: 'Trabajos de señalización y repintado en carril derecho de Av. Roma. Tránsito lento en hora punta. Previsto hasta el viernes.', status: 'En curso', color: 'bg-red-600', icon: 'traffic', glow: 'shadow-[0_0_35px_rgba(220,38,38,0.4)]' },
+    { id: 3, type: 'event', x: '52%', y: '35%', title: 'Asamblea Vecinal AAVV Sant Pere', desc: "Esta noche jueves a las 19:00h. Temas: aceras, zonas verdes y alumbrado. Todos los vecinos bienvenidos.", status: '19:00h Esta noche', color: 'bg-indigo-500', icon: 'groups' },
+    { id: 4, type: 'shop', x: '55%', y: '55%', title: 'Polideportivo Campclar', desc: 'Esta noche a las 20h: Fútbol sala vecinal organizado por AAVV Campclar. ¡Únete al equipo!', status: 'Evento 20:00h', color: 'bg-green-600', icon: 'sports_soccer' },
+    { id: 5, type: 'incident', x: '42%', y: '40%', title: 'Bache Calle Gasòmetre', desc: 'Aviso vecinal: bache grande en cruce con Smith. Reportado vía Línia Verda TGN. Pendiente de reparación.', status: 'Reportado', color: 'bg-red-500', icon: 'report_problem' }
 
   ]);
   const [showReportModal, setShowReportModal] = useState(false);

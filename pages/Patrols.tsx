@@ -48,21 +48,30 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'mock-pat-tue-1',
+          id: 'mock-pat-thu-1',
           creator_id: 'admin',
-          name: '⚠️ Seguridad Avería Calle Unió',
-          description: 'Control visual y aviso a peatones hoy martes mientras EMATSA repara la tubería en Calle Unió. Especial precaución con el suelo mojado y maquinaria.',
+          name: '⚠️ Vigilancia Obras C/ Unió (Jornada Final)',
+          description: 'Control visual y aviso a peatones hoy jueves mientras continúan las obras en Calle Unió. Mañana se prevé la reapertura. Especial atención en la intersección con Calle Apodaca.',
           neighborhood: 'CENTRE',
           contact_info: '644 11 22 33 (Luis)',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-pat-tue-2',
+          id: 'mock-pat-thu-2',
           creator_id: 'user1',
-          name: '🏫 Camino Escolar Seguro Martes',
-          description: 'Acompañamiento a niños en el cruce de Av. Roma con Pere Martell de 8:45 a 9:15. ¡Ayuda a cruzar con seguridad!',
+          name: '🏫 Camino Escolar Seguro Jueves',
+          description: 'Acompañamiento a niños en el cruce de Av. Roma con Pere Martell de 8:45 a 9:15h y de 16:30 a 17:00h. ¡Ayuda a cruzar con seguridad!',
           neighborhood: 'GENERAL',
           contact_info: 'AMPAs TGN Centre',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'mock-pat-thu-3',
+          creator_id: 'user2',
+          name: '🏠 Acompañamiento Asamblea Vecinal 19h',
+          description: 'Grupo de vecinos que acompaña a personas mayores desde sus casas a la Asamblea Vecinal de esta noche (AAVV Sant Pere, 19h). Solicita acompañamiento antes de las 18h.',
+          neighborhood: 'GENERAL',
+          contact_info: '622 55 44 33 (Maria)',
           created_at: new Date().toISOString()
         }
       ];

@@ -145,43 +145,43 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'real-wed-summary',
-                    title: "☀️ MIÉRCOLES 4 MARZO 2026 — JORNADA ACTIVA",
-                    content: "Día soleado con máxima de 16°C. Hoy se celebra el mercado semanal en la Part Alta (8-14h). Obras en C/ Unió (2ª jornada). Taller de digitalización en el Centre Cívic a las 17h. Todos los servicios operan con normalidad.",
+                    id: 'real-thu-summary',
+                    title: "🌤️ JUEVES 5 MARZO 2026 — JORNADA CÍVICA",
+                    content: "Día nublado con claros, máxima de 15°C. Esta noche: Asamblea Vecinal AAVV Sant Pere (19h) y Fútbol Sala Vecinal en Campclar (20h). Obras C/Unió en su 3ª jornada (fin mañana). Mañana viernes: Club de Lectura (18:30h).",
                     category: "INFO",
                     author_name: "ComuniTarr",
                     neighborhood: "GENERAL",
-                    itinerary: "• Mercat Part Alta: 08:00h-14:00h (Plaça del Fòrum)\n• Obras C/ Unió: Dia 2 — rodeo por C/ Apodaca\n• Taller Digital: 17:00h — C.C. Part Alta (gratuito)\n• Asamblea Vecinal: Mañana Jue 5, 19h — AAVV Sant Pere",
+                    itinerary: "• Asamblea Vecinal: 19:00h — AAVV Sant Pere i Sant Pau\n• Fútbol Sala: 20:00h — Polideportivo Campclar\n• Obras C/ Unió: Día 3 — rodeo por C/ Apodaca\n• Mañana: Club de Lectura 18:30h — Biblioteca Municipal",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-wed-obras-unio',
-                    title: "🚧 OBRAS C/ UNIÓ — 2ª JORNADA (CENTRE)",
-                    content: "Continúan las obras de reparación de la calzada en la Calle Unió. Tráfico cortado parcialmente. Rodeo recomendado por Calle Apodaca. Fin previsto: viernes 6 de marzo.",
+                    id: 'real-thu-asamblea',
+                    title: "🏠 ASAMBLEA VECINAL AAVV SANT PERE — HOY 19h",
+                    content: "Esta noche jueves a las 19:00h en la sede de la AAVV Sant Pere i Sant Pau, asamblea abierta a todos los vecinos. Orden del día: mantenimiento de aceras, zonas verdes y mejoras en el alumbrado público.",
+                    category: "EVENTO",
+                    author_name: "AAVV Sant Pere i Sant Pau",
+                    neighborhood: "GENERAL",
+                    itinerary: "• Hora: 19:00h\n• Lugar: AAVV Sant Pere i Sant Pau\n• Puntos del orden del día:\n  1. Aceras y pavimento\n  2. Nuevas zonas verdes\n  3. Alumbrado público\n• Contacto: info@veinsstperepau.cat",
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'real-thu-obras-unio',
+                    title: "🚧 OBRAS C/ UNIÓ — 3ª JORNADA, ÚLTIMO DÍA MAÑANA",
+                    content: "Hoy día 3/3 de las obras de reparación de calzada en Calle Unió. Mañana viernes se prevé la finalización y reapertura total. Rodeo habitual por Calle Apodaca.",
                     category: "URGENTE",
                     author_name: "Obras Públicas TGN",
                     neighborhood: "CENTRE",
-                    itinerary: "• Acceso peatonal: Garantizado\n• Rodeo vehículos: C/ Apodaca\n• Incidencias: 010\n• Fin previsto: Viernes 6 Mar",
+                    itinerary: "• Rodeo: C/ Apodaca\n• Fin previsto: Viernes 6 Mar\n• Reapertura total: Viernes tarde\n• Incidencias: 010",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-wed-farmacia-guardia',
-                    title: "💊 FARMACIA DE GUARDIA (HOY MIÉRCOLES)",
-                    content: "Servicio de guardia 24h hoy miércoles en Farmacia Salud (Avda. Roma, 10). Abierta toda la noche para urgencias y recetas del día.",
+                    id: 'real-thu-farmacia',
+                    title: "💊 FARMACIA DE GUARDIA (HOY JUEVES)",
+                    content: "Servicio de guardia 24h hoy jueves en Farmàcia Garcia Rivas (Av. Països Catalans, 51). Abierta toda la noche para urgencias y recetas.",
                     category: "URGENTE",
                     author_name: "COFT",
                     neighborhood: "GENERAL",
-                    created_at: new Date().toISOString()
-                },
-                {
-                    id: 'real-wed-empleo-nuevas',
-                    title: "💼 NUEVAS OFERTAS DE EMPLEO — MIÉRCOLES 4 MAR",
-                    content: "Esta semana se han publicado nuevas vacantes activas en Tarragona. Perfil técnico, hostelería y administración. Incorporación inmediata en la mayoría de casos.",
-                    category: "EVENTO",
-                    author_name: "SOC Tarragona",
-                    neighborhood: "GENERAL",
-                    itinerary: "• Técnico Mantenimiento: 📞 977 24 55 60\n• Cocinero/a: 📞 655 44 11 00\n• Administrativo/a: 📞 688 33 22 11\n• Dependiente/a Ferretería: 📞 977 55 44 22",
-                    link_url: "/services",
+                    itinerary: "• Tel: 977 20 18 33\n• Av. Països Catalans, 51",
                     created_at: new Date().toISOString()
                 }
             ];

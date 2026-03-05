@@ -182,39 +182,39 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'wed-morning-traffic',
-            title: "🚗 Miércoles 4 Mar — Tránsito Fluido",
-            content: "Sin incidencias destacadas en los accesos norte y sur. La T-11 y la A-7 circulan con fluidez. EMT y Renfe operan con puntualidad normal en toda la red.",
+            id: 'thu-morning-traffic',
+            title: "🚗 Jueves 5 Mar — Tránsito Fluido",
+            content: "Sin incidencias graves en accesos norte y sur. La T-11 circula con fluidez. Renfe R14/R15 puntual. Precaución en Av. Roma por trabajos de señalización en el carril derecho.",
             category: "TRÁFICO",
             neighborhood: "GENERAL",
-            itinerary: "• T-11: Tráfico fluido\n• A-7: Sin retenciones\n• EMT: Sin alteraciones\n• Renfe R14/R15: Servicio normal",
+            itinerary: "• T-11/A-7: Tráfico fluido\n• Av. Roma: Carril dcho. limitado (mañana)\n• EMT: Sin alteraciones\n• Renfe: Servicio normal",
             created_at: new Date().toISOString()
           },
           {
-            id: 'wed-market-part-alta',
-            title: "🛒 Mercat Setmanal Part Alta — Hoy Miércoles",
-            content: "Hoy miércoles se celebra el mercado semanal en la Plaça del Fòrum (Part Alta) de 8:00h a 14:00h. Productos frescos de temporada: frutas, verduras, artesanía y más.",
+            id: 'thu-asamblea-vecinal',
+            title: "🏠 Asamblea Vecinal AAVV Sant Pere — Esta Noche 19h",
+            content: "Esta noche jueves 5 de marzo a las 19:00h, asamblea en la AAVV Sant Pere i Sant Pau. Temas: mantenimiento de aceras, nuevas zonas verdes y mejoras en el alumbrado del barrio.",
             category: "CULTURA",
-            neighborhood: "PART ALTA",
-            itinerary: "• Horario: 08:00h a 14:00h\n• Lugar: Plaça del Fòrum\n• Zona de aparcamiento habilitada",
+            neighborhood: "GENERAL",
+            itinerary: "• Hora: 19:00h\n• Lugar: AAVV Sant Pere i Sant Pau\n• Puntos: Aceras, zonas verdes, alumbrado\n• Abierta a todos los vecinos",
             created_at: new Date().toISOString()
           },
           {
-            id: 'wed-obras-calle-unio',
-            title: "🚧 Obras en Calle Unió — Afecta Tráfico Local",
-            content: "Las obras de reparación en Calle Unió entran en su segunda jornada. Acceso peatonal garantizado. Se recomienda rodear por Calle Apodaca. Finalización prevista: viernes 6 de marzo.",
+            id: 'thu-obras-calle-unio-3',
+            title: "🚧 Obras C/ Unió — 3ª Jornada (Penúltimo Día)",
+            content: "Las obras de reparación en Calle Unió continúan hoy jueves. Mañana viernes se prevé la finalización y reapertura total del tráfico. Se agradece la paciencia de los vecinos.",
             category: "AVISO",
             neighborhood: "CENTRE",
-            itinerary: "• Rodeo alternativo: C/ Apodaca\n• Peatones: Acceso garantizado\n• Incidencias: 010\n• Fin obras: Viernes 6 Mar",
+            itinerary: "• Rodeo: C/ Apodaca\n• Peatones: Acceso garantizado\n• Incidencias: 010\n• Fin previsto: Viernes 6 Mar",
             created_at: new Date().toISOString()
           },
           {
-            id: 'wed-taller-digital',
-            title: "💻 Taller Digitalización Centros Cívicos — Hoy 17h",
-            content: "Hoy miércoles a las 17:00h en el Centre Cívic Part Alta, sesión gratuita de digitalización para vecinos. Aprende a usar las herramientas de la sede electrónica del Ayuntamiento.",
+            id: 'thu-futsal-campclar',
+            title: "⚽ Fútbol Sala Vecinal — Esta Noche 20h (Campclar)",
+            content: "Esta noche jueves a las 20:00h, partido amistoso de fútbol sala organizado por la AAVV Campclar en el Polideportivo. Pueden apuntarse más participantes hasta media hora antes.",
             category: "EMPLEO",
-            neighborhood: "GENERAL",
-            itinerary: "• Hora: 17:00h\n• Lugar: C.C. Part Alta\n• Info: 977 29 61 00\n• Plazas limitadas — inscripción en puerta",
+            neighborhood: "CAMPCLAR",
+            itinerary: "• Hora: 20:00h\n• Lugar: Polideportivo Campclar\n• Inscripción: Recepción del polideportivo\n• Info: 977 23 80 00",
             created_at: new Date().toISOString()
           }
         ];
@@ -223,10 +223,10 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'poll-miercoles-barrio',
-          question: "¿Debería el Ayuntamiento ampliar el horario del mercado semanal de la Part Alta?",
-          options: ['Sí, hasta las 16:00h', 'El horario actual está bien (hasta 14h)', 'Mejor abrir también los sábados', 'Prefiero mercados en otras zonas'],
-          category: 'COMERCIO',
+          id: 'poll-jueves-barrio',
+          question: "¿Te gustaría que el Ayuntamiento mejorara el alumbrado en las calles del barrio?",
+          options: ['Sí, urge mejorar la iluminación', 'Está bien como está', 'Solo faltan mejoras puntuales', 'Prefiero invertir en otras prioridades'],
+          category: 'URBANISMO',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()
         };
@@ -542,7 +542,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 10 · Mar</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 10 · Jue 5 Mar</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">
