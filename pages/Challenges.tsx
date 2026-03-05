@@ -43,20 +43,20 @@ const Challenges: React.FC = () => {
 
       const mockChallenges: Challenge[] = [
         {
-          id: 'mock-ch-tue-1',
+          id: 'mock-ch-thu-1',
           creator_id: 'admin',
-          title: '🚶 Reto: Martes de Escaleras',
-          description: 'Hoy martes, el reto es no usar el ascensor en casa ni en el trabajo. ¡Usa las escaleras para activarte un poco más esta mañana!',
+          title: '🚶 Reto: Jueves de Asamblea a Pie',
+          description: 'Hoy jueves a las 19:00h tenemos la Asamblea en la AAVV Sant Pere. El reto es ir caminando o en transporte público para evitar el caos de tráfico por las obras de C/ Unió.',
           neighborhood: 'GENERAL',
-          contact_info: 'Comunidad ComuniTarr (Salud)',
+          contact_info: 'Comunidad ComuniTarr (Sostenibilidad)',
           is_example: true,
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-ch-tue-2',
+          id: 'mock-ch-thu-2',
           creator_id: 'user2',
-          title: '🌱 Huerto Comunitario: Siembra de Marzo',
-          description: 'Hoy martes a las 18:00h estaremos en el huerto urbano de la calle Smith preparando los semilleros. ¿Quién se apunta a un rato de tierra y sol?',
+          title: '🧹 Limpieza Pre-Apertura C/ Unió',
+          description: 'Hoy jueves a las 17:30h nos juntamos unos cuantos vecinos para limpiar los restos de polvo y escombros ligeros de las aceras de C/ Unió antes de la reapertura de mañana. ¡Trae tu escoba!',
           neighborhood: 'CENTRE',
           contact_info: '611 00 22 33 (Isabel)',
           is_example: true,

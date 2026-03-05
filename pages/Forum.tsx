@@ -74,11 +74,11 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '🏢 Oficinas municipales abiertas 08:30h - 14:00h.' },
-    { user: 'Meteo TGN', text: '☀️ Lunes despejado 16ºC. ¡Buen inicio de semana!' },
-    { user: 'Trànsit TGN', text: '🚗 T-11 entrada Tarragona densa. Precaución. 🚦' },
-    { user: 'Tarragona Impulsa', text: '💼 Taller LinkedIn hoy 18h en Tabacalera.' },
-    { user: 'Ayuda Mutua', text: '🤝 ¿Necesitas ayuda esta mañana? Publica en APOYO.' }
+    { user: 'Admin ComuniTarr', text: '🏢 Hoy Jueves 5 Mar: Asamblea Vecinal 19:00h en AAVV Sant Pere.' },
+    { user: 'Meteo TGN', text: '☀️ Jueves despejado 17ºC. ¡Buen día de barrio!' },
+    { user: 'Trànsit TGN', text: '🚧 C/ Unió: Último día de obras. Mañana reabrimos al tráfico. 🚦' },
+    { user: 'Tarragona Impulsa', text: '💼 Nuevas ofertas de empleo publicadas hoy en la sección Servicios.' },
+    { user: 'Esports TGN', text: '⚽ Fútbol Sala Vecinal hoy 20h en Polideportivo Campclar.' }
   ];
 
 
@@ -114,50 +114,50 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Mireia R.', text: '☕ ¡Buenos días! Menudo tráfico hay hoy para entrar por la T-11. ¿Alguien sabe si hay algún accidente?' },
-        { who: 'Joan B.', text: '@Mireia Yo he pasado hace 10 min y estaba parado. Parece que hay obras de mantenimiento cerca de Les Gavarres. 🚧' },
-        { who: 'Pau T.', text: '@Mireia @Joan Mejor coged el autobús si podéis, el carril bus está fluyendo bastante bien hoy. 🚌' },
-        { who: 'Mireia R.', text: '@Pau @Joan Gracias por el aviso. Pues me desvío por Constantí a ver si gano algo de tiempo.' },
-        { who: 'Maria G.', text: '¡Ánimo con el lunes a todos! Yo ya estoy en la oficina con mi segundo café. ☕✨' },
+        { who: 'Mireia R.', text: '☕ ¡Buenos días! Menuda cola hay en Av. Roma por el carril cortado. ¿Viene de las obras de C/ Unió?' },
+        { who: 'Joan B.', text: '@Mireia Sí, hoy es el último día gordo de las obras. Mañana ya debería estar todo libre. 🚧' },
+        { who: 'Pau T.', text: '@Mireia @Joan Yo he pasado en bici y se nota el jaleo. Para la Asamblea de esta noche mejor ir con tiempo. 🚲' },
+        { who: 'Mireia R.', text: '@Pau @Joan Cierto, la Asamblea a las 19h. Voy a ver si aparco por la Tabacalera y subo andando.' },
+        { who: 'Maria G.', text: '¡Ánimo con el jueves! Casi rozamos el fin de semana. ☕✨' },
       ],
       [
-        { who: 'Luis M.', text: '🏢 ¿Sabéis si la OMAC de la Rambla abre hoy a las 8:30h? Tengo que renovar el padrón.' },
-        { who: 'Carme S.', text: '@Luis Sí, hoy lunes retoman el horario normal. Pero pide cita previa por la web o te tocará esperar mucho.' },
-        { who: 'Luis M.', text: '@Carme ¡Cierto! Acabo de mirar y hay hueco a las 11:15h. Subiendo solicitud... ¡gracias!' },
-        { who: 'Joan B.', text: '@Luis Trae todos los papeles originales, que los lunes están muy estrictos con la burocracia. 😂' },
+        { who: 'Luis M.', text: '🏢 ¿Sabéis si en la Asamblea de hoy se hablará de la luz en la Calle Smith?' },
+        { who: 'Carme S.', text: '@Luis Sí, está en el orden del día. Zonas verdes, aceras y alumbrado. ¡Es importante ir!' },
+        { who: 'Luis M.', text: '@Carme ¡Genial! Pues allí estaré a las 19h. Gracias por confirmar.' },
+        { who: 'Joan B.', text: '@Luis Trae a los vecinos del bloque, que cuantos más seamos, más caso nos harán. 😂' },
       ],
       [
-        { who: 'Joe R.', text: '💻 ¿Alguien se apunta al taller de LinkedIn que hacen esta tarde en Tarragona Impulsa? Es gratuito.' },
-        { who: 'Pau T.', text: '@Joe ¡Yo voy! Me hace falta actualizar el perfil para la búsqueda activa de este mes.' },
-        { who: 'Maria G.', text: '@Joe @Pau Yo no puedo ir pero compartid los tips que os den por aquí, por fa. 🙏' },
-        { who: 'Joe R.', text: '@Maria ¡Hecho! Pasaremos el resumen del ponente. ¡A por la semana!' },
+        { who: 'Joe R.', text: '⚽ ¿Alguien se apunta al fútbol sala de hoy a las 20h en Campclar? Nos falta un cierre.' },
+        { who: 'Pau T.', text: '@Joe ¡Yo voy! Me viene perfecto después de la oficina y antes de que se haga muy tarde.' },
+        { who: 'Maria G.', text: '@Joe @Pau Yo iré a animar un rato. ¡A por ellos! 🏃‍♀️' },
+        { who: 'Joe R.', text: '@Maria ¡Eso es actitud! Nos vemos en la pista.' },
       ],
     ],
     'APOYO': [
       [
-        { who: 'Sandra L.', text: '💜 Hoy he leído que el ciberbullying ha aumentado un 30% entre adolescentes. Como madre, me preocupa mucho. ¿Vuestros hijos usan redes sociales?' },
-        { who: 'Elena V.', text: '@Sandra Sí, mi hija tiene 13 años y usa TikTok e Instagram. Intento supervisar pero no es fácil. Le hemos puesto controles parentales.' },
-        { who: 'Joan B.', text: '@Sandra @Elena En el cole de mi hijo han dado una charla de "Pantallas Amigas" y fue muy útil. Los niños se quedaron impactados con los ejemplos reales.' },
-        { who: 'Nuria P.', text: '@Sandra Como trabajadora social os recomiendo: hablad con vuestros hijos SIN juzgar. Si os dicen algo, no les quitéis el móvil (se cierran). Mejor preguntad: "¿Cómo puedo ayudarte?" 🤝' },
-        { who: 'Sandra L.', text: '@Nuria Eso es justo lo que nos dijeron en ANAR (900 20 20 10). Me costó entenderlo pero funciona. Mi hijo ahora me cuenta más cosas.' },
-        { who: 'Elena V.', text: '@Sandra Me alegro mucho. Yo todavía estoy aprendiendo. ¿Os parece si organizamos una charla para padres en el CC de Torreforta? Podrían venir de Pantallas Amigas.' },
-        { who: 'Joan B.', text: '@Elena ¡Gran idea! Yo puedo hablar con la AMPA del cole para organizar algo conjunto. Así llegamos a más familias.' },
-        { who: 'Nuria P.', text: '@Elena @Joan Desde servicios sociales podemos ayudar con la logística. Escribidme al privado y lo coordinamos. 💪 ¡Esto es lo bonito de la comunidad!' },
+        { who: 'Sandra L.', text: '💜 Buenos días. Hoy jueves me siento un poco abrumada. ¿Cómo gestionáis vosotros el estrés de final de semana?' },
+        { who: 'Elena V.', text: '@Sandra Yo intento desconectar en el Club de Lectura de los viernes. Mañana a las 18:30h hay sesión en la Biblioteca, ¿te vienes?' },
+        { who: 'Joan B.', text: '@Sandra @Elena Yo camino por la playa del Miracle 20 min al salir. Ayuda mucho a limpiar la cabeza. 🌊' },
+        { who: 'Nuria P.', text: '@Sandra Es normal, Sandra. El jueves es el día de máxima fatiga mental. Respira y prioriza. Mañana ya es viernes. 🫂' },
+        { who: 'Sandra L.', text: '@Nuria Tienes razón. Me apunto lo del Club de Lectura, Elena. Pásame info por privado.' },
+        { who: 'Elena V.', text: '@Sandra ¡Hecho! Es gratuito y los vecinos somos muy majos.' },
+        { who: 'Joan B.', text: '@Elena Contad conmigo también. ¡Mañana nos vemos!' },
+        { who: 'Nuria P.', text: '@Elena @Joan @Sandra ¡Esto es red vecinal! Si alguien más se siente así, que hable. 💪' },
       ],
       [
-        { who: 'Maria G.', text: '🫂 Hoy he acompañado a Don Manuel (el señor del 3ºB) al médico. Tiene 82 años y vive solo desde que falleció su mujer. Se ha emocionado porque nadie le acompañaba desde hacía meses.' },
-        { who: 'Carme S.', text: '@Maria Qué bonito lo que haces. La soledad en personas mayores es una epidemia silenciosa. ¿Necesitas ayuda para seguir acompañándole?' },
-        { who: 'Maria G.', text: '@Carme Sí, no puedo todos los días. Hoy lunes sí, pero necesitaría que alguien cubriera los miércoles.' },
-        { who: 'Elena V.', text: '@Maria Yo tengo los miércoles libres. Me apunto sin dudarlo. ¿Me pasas su dirección por privado? 💛' },
-        { who: 'Nuria P.', text: 'Recordad que Cruz Roja Tarragona (977 22 19 07) tiene un programa formal de acompañamiento. Podéis registraros como voluntarias y así tenéis cobertura legal y formación. Lo recomiendo mucho.' },
-        { who: 'Maria G.', text: '@Nuria ¡No lo sabía! Les llamo mañana. Gracias Nuria, siempre con la información justa. 🙏 Entre todos hacemos barrio.' },
+        { who: 'Maria G.', text: '🫂 Hoy he acompañado a Don Manuel a la farmacia. Estaba un poco mareado por el calor y preferí no dejarle solo.' },
+        { who: 'Carme S.', text: '@Maria Qué buen detalle. Don Manuel es un encanto. ¿Necesita algo más hoy?' },
+        { who: 'Maria G.', text: '@Carme De momento está tranquilo en casa. Por cierto, ¿alguien puede acompañarle mañana al Club de Lectura? Le hace ilusión ir.' },
+        { who: 'Elena V.', text: '@Maria Yo paso a recogerle a las 18h. Me pilla de camino a la Biblioteca. 💛' },
+        { who: 'Nuria P.', text: 'Recordad que tenemos el Círculo de Cuidadores hoy a las 17h para compartir estas experiencias. ¡Os esperamos!' },
+        { who: 'Maria G.', text: '@Nuria ¡Allí estaré! Gracias Elena por lo de Don Manuel. Sois grandes.' },
       ],
       [
-        { who: 'Nuria P.', text: '🟣 Recordatorio importante: si conocéis a alguien en situación de violencia de género, el 016 es 100% confidencial y NO aparece en la factura telefónica. También podéis escribir por WhatsApp al 600 000 016.' },
-        { who: 'Carme S.', text: '@Nuria Gracias por repetirlo. A veces la gente no lo sabe o cree que es solo para emergencias. Se puede llamar también para pedir orientación.' },
-        { who: 'Sandra L.', text: 'En el SIAD de Tarragona (Plaça de la Font, 977 24 47 95) atienden sin cita. Yo fui hace años por una situación complicada y me cambiaron la vida. Sin prejuicios ni burocracia.' },
-        { who: 'Elena V.', text: '@Sandra Gracias por compartir algo tan personal. Es muy valiente. Que sepáis que hay también un punto lila en las fiestas y eventos de Tarragona donde se puede pedir ayuda.' },
-        { who: 'Nuria P.', text: 'Y para jóvenes: el teléfono ANAR (900 20 20 10) atiende a menores las 24h. Y el 024 es la línea de atención a la conducta suicida. Compartid esta info, puede salvar vidas. 💜' },
+        { who: 'Nuria P.', text: '🟣 Recordatorio importante: Hoy jueves, el SIAD de la Plaça de la Font atiende sin cita previa hasta las 14h. El 016 está activo 24h.' },
+        { who: 'Carme S.', text: '@Nuria Gracias. A veces un recordatorio a tiempo puede cambiar una vida.' },
+        { who: 'Sandra L.', text: 'También recordar que el teléfono ANAR (900 20 20 10) atiende a menores que se sientan solos o con problemas en el cole. Pasadlo a los grupos de la AMPA.' },
+        { who: 'Elena V.', text: '@Sandra Muy importante esto ahora que hay exámenes cerca y el estrés sube.' },
+        { who: 'Nuria P.', text: 'Y el 024 para salud mental. Un jueves gris no tiene por qué ser un jueves solo. 🫂💜' },
       ],
     ],
     'EMPLEO': [
@@ -172,12 +172,12 @@ const Forum: React.FC = () => {
     ],
     'ENCUENTROS': [
       [
-        { who: 'Joe R.', text: '🎾 ¿Hay alguien para una partida de pádel este lunes tarde? Se nos ha caído uno del grupo.' },
-        { who: 'Pau T.', text: '@Joe ¡Yo! ¿A qué hora? Si es a partir de las 18:30h me va perfecto al salir de la oficina.' },
-        { who: 'Joe R.', text: '@Pau Genial, reservo en el Polideportivo del Francolí a las 19:00h. ¡Nos vemos allí!' },
-        { who: 'Pau T.', text: '@Joe ¡Hecho! Traigo pelotas nuevas que las mías están ya para jubilarse. 😂' },
-        { who: 'Mireia R.', text: 'Yo paso de deporte hoy pero si hacéis una caña rápida después en el Serrallo me apunto. 🍻' },
-        { who: 'Joe R.', text: '@Mireia ¡Vendido! Te avisamos cuando acabemos el set. 🙌' },
+        { who: 'Joe R.', text: '⚽ ¿Hay alguien para una partida de fútbol sala hoy jueves noche? Se nos ha caído uno del grupo.' },
+        { who: 'Pau T.', text: '@Joe ¡Yo! ¿A qué hora? Si es a las 20h me va perfecto, así voy después de cerrar unos temas.' },
+        { who: 'Joe R.', text: '@Pau Genial, reservado en el Polideportivo Campclar a las 20:00h. ¡Nos vemos allí!' },
+        { who: 'Pau T.', text: '@Joe ¡Hecho! Traigo peto por si acaso. 😂' },
+        { who: 'Mireia R.', text: 'Yo después paso por el bar de al lado para la tercer tiempo. ¡Dadle duro! 🍻' },
+        { who: 'Joe R.', text: '@Mireia ¡Trato hecho! Te vemos allí.' },
       ],
     ],
   };
@@ -248,15 +248,15 @@ const Forum: React.FC = () => {
       // Seeds per channel
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
-          { id: 'seed-mon-1', user_id: 'v3', content: '☀️ ¡Buenos días de lunes! Empezamos semana con fuerza. Mucho ánimo en la oficina y en el cole. 💪', user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 22).toISOString() },
-          { id: 'seed-mon-2', user_id: 'v2', content: '☕ Café doble hoy, por favor. El tráfico por la A-7 está imposible esta mañana. ¿Alguien sabe si hay algún accidente?', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 14).toISOString() },
-          { id: 'seed-mon-3', user_id: 'v5', content: '🏢 Recordad que hoy lunes las OMAC abren a las 8:30h. Aprovechad para los trámites que tengáis pendientes.', user_metadata: { full_name: 'Luis M.', avatar_url: 'https://i.pravatar.cc/150?u=luis' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 8).toISOString() },
-          { id: 'seed-mon-4', user_id: 'v6', content: '¡Hoy toca taller de búsqueda de empleo en el Hub TGN! A ver si salen buenas ofertas esta semana. 💼', user_metadata: { full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 3).toISOString() },
+          { id: 'seed-thu-1', user_id: 'v3', content: '☀️ ¡Buenos días de jueves! Ánimo que ya casi lo tenemos. ¿Cómo van esas obras por vuestras calles? 💪', user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 22).toISOString() },
+          { id: 'seed-thu-2', user_id: 'v2', content: '☕ Café cuádruple hoy. El jaleo de las obras de C/ Unió me tiene agotada. ¡Mañana por fin acaban!', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 14).toISOString() },
+          { id: 'seed-thu-3', user_id: 'v5', content: '🏢 Recordad: Asamblea Vecinal HOY a las 19:00h en la AAVV Sant Pere. ¡Viene el regidor de barrio!', user_metadata: { full_name: 'Luis M.', avatar_url: 'https://i.pravatar.cc/150?u=luis' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 8).toISOString() },
+          { id: 'seed-thu-4', user_id: 'v6', content: '¡Hoy toca fútbol sala en Campclar! A ver si ganamos el partido de hoy. ⚽', user_metadata: { full_name: 'Joe R.', avatar_url: 'https://i.pravatar.cc/150?u=joe' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 60 * 3).toISOString() },
         ] as Message[],
         'APOYO': [
-          { id: 'seed-apoyo-1', user_id: 'v8', content: '💜 Buenos días. Empezamos la semana recordando que nadie está solo. Si el lunes se te hace cuesta arriba, aquí estamos para escucharnos.', user_metadata: { full_name: 'Sandra L.', avatar_url: 'https://i.pravatar.cc/150?u=sandra' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 45).toISOString() },
-          { id: 'seed-apoyo-2', user_id: 'v9', content: '@Sandra Qué importante es eso. Yo hoy empiezo con energía pero sé que hay vecinos pasándolo mal. El SIAD de la Plaça de la Font está abierto hoy de 9 a 14h para quien necesite ayuda. 💪', user_metadata: { full_name: 'Elena V.', avatar_url: 'https://i.pravatar.cc/150?u=elena' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 40).toISOString() },
-          { id: 'seed-apoyo-10', user_id: 'v9', content: 'Si alguien necesita acompañamiento para trámites médicos o legales esta semana, tengo libres las tardes de los martes y jueves. ¡Contad conmigo! 🫶', user_metadata: { full_name: 'Elena V.', avatar_url: 'https://i.pravatar.cc/150?u=elena' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 2).toISOString() },
+          { id: 'seed-apoyo-1', user_id: 'v8', content: '💜 Buenos días. Jueves de apoyo mutuo. Si la semana pesa, aquí estamos para soltar carga.', user_metadata: { full_name: 'Sandra L.', avatar_url: 'https://i.pravatar.cc/150?u=sandra' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 45).toISOString() },
+          { id: 'seed-apoyo-2', user_id: 'v9', content: '@Sandra Qué importante es eso. Yo hoy tengo el Círculo de Cuidadores a las 17h. Si alguien cuida de mayores soli/a, venid al C.C. Part Alta. Nos ayudamos mucho. 💪', user_metadata: { full_name: 'Elena V.', avatar_url: 'https://i.pravatar.cc/150?u=elena' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 40).toISOString() },
+          { id: 'seed-apoyo-10', user_id: 'v9', content: '¿Alguien necesita acompañamiento para la Asamblea de esta noche? Voy en coche y puedo pasar a recoger a alguien. 🫶', user_metadata: { full_name: 'Elena V.', avatar_url: 'https://i.pravatar.cc/150?u=elena' }, neighborhood: 'APOYO', created_at: new Date(now - 1000 * 60 * 2).toISOString() },
         ] as Message[],
       };
 
@@ -304,22 +304,22 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts (Monday 2 Mar / Monday morning rush)
     let scripts = [
-      "☀️ ¡Feliz lunes vecinos! Empezamos semana con fuerza. ¿Mucho tráfico en la A-7 hoy? 🚗",
-      "Mañana despejada, ideal para retomar la rutina. ¿Alguien va hoy a la OMAC? 🏛️",
-      "Recordad: las oficinas municipales ya han abierto. Sede electrónica activa 24h. 💻",
-      "¿Quién viene al taller de LinkedIn de esta tarde en la Tabacalera? 📈",
-      "¿Alguien sabe si el bache de Gasòmetre está ya arreglado? He visto brigadas. 🚧",
-      "¡Qué buena energía para empezar marzo! Vamos a por el lunes. 💪"
+      "☀️ ¡Feliz jueves vecinos! Se acerca el fin de semana. ¿Quién va hoy a la Asamblea? 🏘️",
+      "Mañana despejada... ideal para que terminen por fin las obras de C/ Unió. 🚧",
+      "Recordad: Asamblea Vecinal HOY 19h en la AAVV Sant Pere. ¡Traed propuestas! 📝",
+      "¿Quién se apunta al fútbol sala de las 20h en Campclar? Falta uno aún. ⚽",
+      "¿Habéis visto el mercadillo de hoy? Hay cosas chulas para regalar. 🎁",
+      "¡Venga, que el jueves es el penúltimo esfuerzo! 💪"
     ];
 
     // Base reply scripts
     let replyScripts = [
-      `¡Totalmente, ${isReplyTo}! A por la semana con energía. ☕`,
-      `¡Buen lunes, ${isReplyTo}! Disfruta del sol matinal. ☀️`,
-      `¡Pasa rápido la semana, ${isReplyTo}! Ánimo con el trabajo/estudios. 😄`,
-      `Yo me apunto al taller si vas, ${isReplyTo}. Nos vemos en la Tabacalera.`,
-      `Gracias por la info del tráfico, ${isReplyTo}. Me iré por la N-340. 🚗`,
-      `¡Qué buena energía para empezar el lunes! Gracias, ${isReplyTo}. 💪`
+      `¡Totalmente, ${isReplyTo}! A por el jueves con energía. ☕`,
+      `¡Buen día, ${isReplyTo}! Disfruta del sol antes de la Asamblea. ☀️`,
+      `¡Pasa volando la semana, ${isReplyTo}! Ánimo con lo que queda. 😄`,
+      `Yo voy a la Asamblea si vas tú, ${isReplyTo}. Allí nos vemos.`,
+      `Gracias por el aviso del tráfico en Av. Roma, ${isReplyTo}. Me iré por otro lado. 🚗`,
+      `¡Qué buena energía para este jueves! Gracias, ${isReplyTo}. 💪`
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
@@ -350,18 +350,18 @@ const Forum: React.FC = () => {
       ];
     } else if (currentNeighborhood === 'ENCUENTROS') {
       scripts = [
-        "☀️ ¡Feliz martes! ¿Quién se apunta a un café rápido antes de entrar a la oficina? ☕",
-        "Busco gente para completar partido de pádel HOY tarde en el polideportivo (19h). 🎾",
-        "Lunes superado... ¡ya es martes! ¿Algún plan para desconectar después del trabajo? 💪",
-        "¿Quién asistió ayer al taller de LinkedIn? Estuvo genial. 📈",
-        "Mañana miércoles mercadillo en la Part Alta, ¿alguien se apunta a ir temprano? 🛒",
-        "¡Hola! ¿Hay algún plan tranquilo para este martes noche? 👋"
+        "☀️ ¡Feliz jueves! ¿Quién se apunta a un café rápido antes de ir a la Asamblea? ☕",
+        "Busco gente para completar partido de fútbol sala HOY 20h en Campclar. ⚽",
+        "Jueves casi superado... ¡mañana es viernes! ¿Algún plan para el finde? 💪",
+        "¿Quién va hoy a la AAVV Sant Pere a las 19h? 🏘️",
+        "Mañana toca Club de Lectura en la Biblioteca, ¿alguien se apunta? 📚",
+        "¡Hola! ¿Alguna caña rápida hoy jueves noche por el centro? 👋"
       ];
       replyScripts = [
-        `¡Me apunto al café, ${isReplyTo}! Recordad la avería de agua en Calle Unió...`,
-        `Yo juego a pádel si te falta uno hoy martes...`,
-        `¡Buenos días! ¿Qué tal la semana? @${isReplyTo}`,
-        `¡Nos vemos en el Metropol para la peli! 🎞️ @${isReplyTo}`
+        `¡Me apunto a ese café, ${isReplyTo}!`,
+        `Yo juego si falta uno para las 20h hoy jueves...`,
+        `¡Buenos días! ¿Qué tal el jueves? @${isReplyTo}`,
+        `¡Nos vemos en la Asamblea! 🏘️ @${isReplyTo}`
       ];
     } else if (isHelpRequest) {
       replyScripts = [
@@ -703,28 +703,28 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'marzo-tgn',
-      title: '🗓️ Marzo 2026',
-      description: 'Agenda activa en el barrio.',
-      participating: 3510
+      id: 'asamblea-tgn',
+      title: '🏘️ Asamblea Vecinal',
+      description: 'Hoy 19h AAVV Sant Pere.',
+      participating: 3820
     },
     {
-      id: 'empleo-tgn',
-      title: '💼 Vacantes Martes',
-      description: 'Nuevas ofertas disponibles.',
-      participating: 1950
+      id: 'obras-unio',
+      title: '🚧 Fin Obras C/ Unió',
+      description: 'Mañana reapertura total.',
+      participating: 4250
     },
     {
-      id: 'metropol-cine',
-      title: '🎞️ Cine Metropol',
-      description: 'Estreno hoy 20:30h.',
-      participating: 2540
+      id: 'futsal-vecinal',
+      title: '⚽ Fútbol Sala',
+      description: 'Hoy 20h en Campclar.',
+      participating: 1540
     },
     {
-      id: 'movilidad-tgn',
-      title: '🚗 Tránsito Martes',
-      description: 'Estado de accesos A-7/T-11.',
-      participating: 2820
+      id: 'club-lectura',
+      title: '📚 Club Lectura',
+      description: 'Mañana Biblioteca 18:30h.',
+      participating: 1280
     }
   ];
 
@@ -748,7 +748,7 @@ const Forum: React.FC = () => {
               <div className="flex items-center gap-1 opacity-90 cursor-pointer hover:bg-white/20 px-2 py-0.5 rounded-full transition-colors w-fit">
                 <span className="text-[10px] uppercase font-bold tracking-wider">Disponible ▾</span>
               </div>
-              <p className="text-[10px] italic opacity-80 mt-1 truncate">"Martes de rutina... 💻"</p>
+              <p className="text-[10px] italic opacity-80 mt-1 truncate">"Jueves de Asamblea... 🏢"</p>
             </div>
           </div>
           {/* Decorative Circles */}
