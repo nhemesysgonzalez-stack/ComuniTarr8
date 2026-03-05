@@ -73,26 +73,26 @@ const Polls: React.FC = () => {
 
             const mockPolls: Poll[] = [
                 {
-                    id: 'poll-tue-1',
+                    id: 'poll-thu-1',
                     creator_id: 'v1',
-                    title: '♻️ ¿Reciclas los muebles y trastos viejos los martes? 🚛',
-                    options: ['Sí, hoy mismo saco algo', 'No suelo tener trastos', 'Prefiero llevarlo al Punto Limpio', 'No sabía que era hoy'],
+                    title: '🌳 ¿Apoyas la nueva zona verde propuesta en la Asamblea de hoy? 🌿',
+                    options: ['Sí, es muy necesaria', 'Prefiero más plazas de parking', 'Me parece bien pero en otro sitio', 'No tengo una opinión clara'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-tue-2',
+                    id: 'poll-thu-2',
                     creator_id: 'v2',
-                    title: '💧 ¿Te ha afectado la avería de agua en Calle Unió? 🚿',
-                    options: ['Sí, sin gota de agua', 'Solo poca presión', 'No me ha afectado', 'Ni me he enterado'],
+                    title: '🚧 ¿Cómo has vivido el tráfico hoy jueves por las obras de C/ Unió? 🚗',
+                    options: ['Mucho jaleo, he tardado más', 'Se nota, pero es soportable', 'No me ha afectado para nada', 'He evitado la zona por los avisos'],
                     neighborhood: 'CENTRE',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-tue-3',
+                    id: 'poll-thu-3',
                     creator_id: 'v3',
-                    title: '🎞️ ¿Qué tipo de películas prefieres en el Metropol? 🍿',
-                    options: ['Versión Original (V.O.)', 'Estrenos comerciales', 'Cine clásico / Culto', 'Cine infantil / Familiar'],
+                    title: '⚽ ¿Participarás en el fútbol sala vecinal de esta noche? 👟',
+                    options: ['Sí, allí nos vemos', 'Iré a animar un rato', 'Hoy no puedo, para la próxima', 'No soy de hacer deporte'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }

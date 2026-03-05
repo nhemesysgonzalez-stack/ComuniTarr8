@@ -42,30 +42,30 @@ const Clubs: React.FC = () => {
 
             const mockClubs: Club[] = [
                 {
-                    id: 'c-tue-1',
+                    id: 'c-thu-1',
                     creator_id: 'v1',
                     name: 'Urban Runners TGN 🏃‍♂️',
-                    description: 'Trote suave regenerativo hoy martes a las 19:30h. Quedamos en el Balcó del Mediterrani. ¡Manteniendo el ritmo!',
+                    description: 'Trote suave regenerativo hoy jueves a las 19:30h. Quedamos en el Balcó del Mediterrani. ¡Activando el cuerpo antes del finde!',
                     neighborhood: 'GENERAL',
                     contact_info: '622 33 44 55 (Pau)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'c-tue-2',
+                    id: 'c-thu-2',
                     creator_id: 'v2',
-                    name: 'Fans del Cine V.O. 🎞️',
-                    description: 'Quedada hoy martes a las 20:15h frente al Teatre Metropol para ver juntos "Parásitos" y comentarla después. ¡Vente!',
+                    name: 'Debate Vecinal Viva 🗣️',
+                    description: 'Pre-quedada hoy jueves a las 18:30h para ir juntos a la Asamblea de la AAVV Sant Pere. ¡Tu voz importa!',
                     neighborhood: 'GENERAL',
                     contact_info: 'Canal ENCUENTROS (Foro)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'c-tue-3',
+                    id: 'c-thu-3',
                     creator_id: 'v3',
-                    name: 'Pádel Vecinal Mixto 🎾',
-                    description: 'Buscamos gente para completar pista hoy martes a las 19:00h en el Complex Esportiu. Nivel medio-bajo.',
+                    name: 'Fútbol Sala Vecinal ⚽',
+                    description: 'Buscamos gente para completar equipo hoy jueves a las 20:00h en Polideportivo Campclar. ¡Apúntate!',
                     neighborhood: 'GENERAL',
-                    contact_info: '633 44 55 66 (Lola)',
+                    contact_info: '633 44 55 66 (Joe)',
                     created_at: new Date().toISOString()
                 }
             ];
@@ -242,9 +242,9 @@ const Clubs: React.FC = () => {
                                     <p className="text-[10px] font-black text-pink-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Pádel Lunes', d: 'Buscamos pareja para jugar hoy a las 20h en las pistas municipales.', c: '611222333' },
-                                            { t: 'Afterwork TGN', d: 'Quedada para desconectar tras el primer día de la semana con un café o refresco.', c: '644555666' },
-                                            { t: 'Intercambio Inglés', d: 'Hablamos inglés los lunes tarde de forma relajada en el centro.', c: '677888999' }
+                                            { t: 'Fútbol Jueves', d: 'Buscamos gente para completar partido hoy a las 20h en Campclar.', c: '611222333' },
+                                            { t: 'Pre-Asamblea', d: 'Quedada para comentar los puntos de la asamblea antes de las 19h.', c: '644555666' },
+                                            { t: 'Runners TGN', d: 'Trote suave hoy jueves a las 19:30h por el Balcón.', c: '677888999' }
                                         ].map((idea, i) => (
                                             <button
                                                 key={i}

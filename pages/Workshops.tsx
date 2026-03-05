@@ -48,11 +48,11 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'mock-ws-tue-1',
+                    id: 'mock-ws-thu-1',
                     title: '🤝 Networking & Estrategia de Empleo',
                     instructor: 'Pau R.',
-                    date: 'Hoy Martes 3, 18:30',
-                    description: 'Sesión práctica de networking para conectar con otros profesionales del barrio. Continuación del taller de ayer pero abierta a todos.',
+                    date: 'Hoy Jueves 5, 18:30',
+                    description: 'Sesión práctica de networking para conectar con otros profesionales del barrio. Ideal si buscas nuevas oportunidades laborales.',
                     image: 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=800',
                     spots: 12,
                     neighborhood: 'GENERAL',
@@ -60,15 +60,15 @@ const Workshops: React.FC = () => {
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-ws-wed-1',
-                    title: '🌱 Huerto Urbano para Principiantes',
-                    instructor: 'Jordi Torrent',
-                    date: 'Mañana Miércoles 4, 17:00',
-                    description: 'Aprende a cultivar tus propias verduras en balcones o terrazas pequeñas. ¡Empezamos la temporada!',
-                    image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800',
-                    spots: 5,
-                    neighborhood: 'PART ALTA',
-                    contact_info: 'Centro Cívico Part Alta',
+                    id: 'mock-ws-fri-1',
+                    title: '📚 Club de Lectura de Marzo',
+                    instructor: 'Elena P.',
+                    date: 'Mañana Viernes 6, 18:30',
+                    description: 'Comentamos la obra del mes en un ambiente relajado. Una forma perfecta de terminar la semana con cultura.',
+                    image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800',
+                    spots: 8,
+                    neighborhood: 'GENERAL',
+                    contact_info: 'Biblioteca Pública TGN',
                     created_at: new Date().toISOString()
                 }
             ];
@@ -139,7 +139,7 @@ const Workshops: React.FC = () => {
                         </div>
                         <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Masterclass: LinkedIn Pro 📈</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Sácale partido a tu red profesional y encuentra nuevas oportunidades. Hoy lunes a las 18:30h en la Tabacalera. ¡Plazas limitadas!
+                            Sácale partido a tu red profesional y encuentra nuevas oportunidades. Hoy jueves 5 de marzo a las 18:30h en la Tabacalera. ¡Plazas limitadas!
                         </p>
 
                         <div className="flex flex-wrap gap-4">
@@ -241,11 +241,10 @@ const Workshops: React.FC = () => {
                                     <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Office 365 Pro', i: 'Pedro S.', d: 'Lunes 17:00', desc: 'Domina Excel y Word para mejorar tu empleabilidad.', c: '688000111' },
-                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Lunes 10:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: '699222333' },
-                                            { t: 'Gestión del Tiempo', i: 'M. López', d: 'Lunes 18:00', desc: 'Técnicas para organizar tu semana y reducir el estrés laboral.', c: '611444555' },
-                                            { t: 'Networking TGN', i: 'Hub Impulsa', d: 'Lunes 19:30', desc: 'Encuentro informal para conectar con otros profesionales locales.', c: 'Paseo Marítimo' }
-
+                                            { t: 'Office 365 Pro', i: 'Pedro S.', d: 'Jueves 17:00', desc: 'Domina Excel y Word para mejorar tu empleabilidad.', c: '688000111' },
+                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Jueves 10:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: '699222333' },
+                                            { t: 'Gestión del Tiempo', i: 'M. López', d: 'Hoy Jueves 18:00', desc: 'Técnicas para organizar tu semana y reducir el estrés laboral.', c: '611444555' },
+                                            { t: 'Networking TGN', i: 'Hub Impulsa', d: 'Hoy Jueves 19:30', desc: 'Encuentro informal para conectar con otros profesionales locales.', c: 'Tabacalera Sala 2' }
                                         ].map((idea, i) => (
                                             <button
                                                 key={i}
