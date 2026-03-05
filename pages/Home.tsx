@@ -579,18 +579,10 @@ const Home: React.FC = () => {
               </h2>
               <span className="text-[10px] font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-1 rounded-lg">ACTIVA</span>
             </div>
-            <section className="space-y-4">
-              <div className="flex items-center justify-between">
-                <h2 className="text-xl font-black flex items-center gap-2">
-                  <span className="material-symbols-outlined text-emerald-500">campaign</span>
-                  Iniciativas del Mes
-                </h2>
-              </div>
-              <div className="bg-gray-50 dark:bg-gray-800/50 p-8 rounded-[32px] border-2 border-dashed border-gray-200 dark:border-gray-700 text-center">
-                <p className="text-xs text-gray-500">Descubre iniciativas en la sección de Solidaridad.</p>
-                <Link to="/support-circles" className="text-[10px] font-black text-primary uppercase mt-2 block tracking-widest">Ver Círculos de Apoyo →</Link>
-              </div>
-            </section>
+            <div className="bg-gray-50 dark:bg-gray-800/50 p-8 rounded-[32px] border-2 border-dashed border-gray-200 dark:border-gray-700 text-center">
+              <p className="text-xs text-gray-500">Descubre iniciativas en la sección de Solidaridad.</p>
+              <Link to="/support-circles" className="text-[10px] font-black text-primary uppercase mt-2 block tracking-widest">Ver Círculos de Apoyo →</Link>
+            </div>
           </section>
 
           {currentPoll && (
