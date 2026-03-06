@@ -182,39 +182,39 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'thu-morning-traffic',
-            title: "🚗 Jueves 5 Mar — Tránsito Fluido",
-            content: "Sin incidencias graves en accesos norte y sur. La T-11 circula con fluidez. Renfe R14/R15 puntual. Precaución en Av. Roma por trabajos de señalización en el carril derecho.",
+            id: 'fri-morning-traffic',
+            title: "✅ Viernes 6 Mar — C/ Unió REABIERTA",
+            content: "Tras finalizar las obras, la Calle Unió ya está abierta al tráfico total. La circulación en Av. Roma ha vuelto a la normalidad. ¡Buen viaje!",
             category: "TRÁFICO",
             neighborhood: "GENERAL",
-            itinerary: "• T-11/A-7: Tráfico fluido\n• Av. Roma: Carril dcho. limitado (mañana)\n• EMT: Sin alteraciones\n• Renfe: Servicio normal",
+            itinerary: "• C/ Unió: Abierta 🟢\n• Av. Roma: Normalidad\n• T-11: Fluido\n• EMT: Líneas 22 y 54 horario normal",
             created_at: new Date().toISOString()
           },
           {
-            id: 'thu-asamblea-vecinal',
-            title: "🏠 Asamblea Vecinal AAVV Sant Pere — Esta Noche 19h",
-            content: "Esta noche jueves 5 de marzo a las 19:00h, asamblea en la AAVV Sant Pere i Sant Pau. Temas: mantenimiento de aceras, nuevas zonas verdes y mejoras en el alumbrado del barrio.",
+            id: 'fri-reading-club',
+            title: "📚 Club de Lectura — Esta Tarde 18:30h",
+            content: "Hoy viernes nos vemos en la Biblioteca Pública para comentar 'La Ciudad de los Prodigios'. Todavía puedes apuntarte si vienes un poco antes.",
             category: "CULTURA",
             neighborhood: "GENERAL",
-            itinerary: "• Hora: 19:00h\n• Lugar: AAVV Sant Pere i Sant Pau\n• Puntos: Aceras, zonas verdes, alumbrado\n• Abierta a todos los vecinos",
+            itinerary: "• Hora: 18:30h\n• Lugar: Biblioteca Pública TGN\n• Libro: La Ciudad de los Prodigios\n• Debate posterior: Café local",
             created_at: new Date().toISOString()
           },
           {
-            id: 'thu-obras-calle-unio-3',
-            title: "🚧 Obras C/ Unió — 3ª Jornada (Penúltimo Día)",
-            content: "Las obras de reparación en Calle Unió continúan hoy jueves. Mañana viernes se prevé la finalización y reapertura total del tráfico. Se agradece la paciencia de los vecinos.",
+            id: 'fri-post-assembly',
+            title: "📋 Resumen de la Asamblea de ayer",
+            content: "Ayer jueves se aprobó por mayoría la propuesta de nueva zona verde en el barrio. Cindy publicará el acta completa hoy en la sección Anuncios.",
             category: "AVISO",
-            neighborhood: "CENTRE",
-            itinerary: "• Rodeo: C/ Apodaca\n• Peatones: Acceso garantizado\n• Incidencias: 010\n• Fin previsto: Viernes 6 Mar",
+            neighborhood: "PART ALTA",
+            itinerary: "• Zona Verde: Aprobada\n• Alumbrado: Plan de choque abril\n• Actas: Disponibles hoy 12h\n• Próxima: Abril",
             created_at: new Date().toISOString()
           },
           {
-            id: 'thu-futsal-campclar',
-            title: "⚽ Fútbol Sala Vecinal — Esta Noche 20h (Campclar)",
-            content: "Esta noche jueves a las 20:00h, partido amistoso de fútbol sala organizado por la AAVV Campclar en el Polideportivo. Pueden apuntarse más participantes hasta media hora antes.",
-            category: "EMPLEO",
-            neighborhood: "CAMPCLAR",
-            itinerary: "• Hora: 20:00h\n• Lugar: Polideportivo Campclar\n• Inscripción: Recepción del polideportivo\n• Info: 977 23 80 00",
+            id: 'fri-weekend-prep',
+            title: "🛍️ Mercadillo Mañana Sábado — Part Alta",
+            content: "Recordad que mañana sábado 7 de marzo tendremos el mercadillo vecinal de 09:00h a 14:00h. ¡Últimas plazas para poner mesa!",
+            category: "AVISO",
+            neighborhood: "GENERAL",
+            itinerary: "• Fecha: Sábado 7 Mar\n• Lugar: Pl. del Fòrum\n• Registro: App (Mercadillo)\n• Venta: Libros, ropa, artesania",
             created_at: new Date().toISOString()
           }
         ];
@@ -223,10 +223,10 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'poll-jueves-barrio',
-          question: "¿Te gustaría que el Ayuntamiento mejorara el alumbrado en las calles del barrio?",
-          options: ['Sí, urge mejorar la iluminación', 'Está bien como está', 'Solo faltan mejoras puntuales', 'Prefiero invertir en otras prioridades'],
-          category: 'URBANISMO',
+          id: 'poll-viernes-barrio',
+          question: "¿Estás satisfecho con el resultado de la Asamblea celebrada ayer jueves?",
+          options: ['Muy satisfecho', 'Satisfecho, pero falta concreción', 'No me gustaron los acuerdos', 'No pude asistir'],
+          category: 'COMUNIDAD',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()
         };
@@ -542,7 +542,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 10 · Jue 5 Mar</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 10 · Vie 6 Mar</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">

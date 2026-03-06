@@ -8,12 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'incident', x: '48%', y: '48%', title: "Obras C/ Unió (3ª Jornada)", desc: 'Reparación de calzada en su última jornada hoy jueves. Rodeo por C/ Apodaca. Reapertura total prevista mañana viernes.', status: 'Día 3/3 — Fin Mañana', color: 'bg-orange-500', icon: 'construction', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.5)]' },
-    { id: 2, type: 'incident', x: '45%', y: '52%', title: 'Carril Limitado Av. Roma', desc: 'Trabajos de señalización y repintado en carril derecho de Av. Roma. Tránsito lento en hora punta. Previsto hasta el viernes.', status: 'En curso', color: 'bg-red-600', icon: 'traffic', glow: 'shadow-[0_0_35px_rgba(220,38,38,0.4)]' },
-    { id: 3, type: 'event', x: '52%', y: '35%', title: 'Asamblea Vecinal AAVV Sant Pere', desc: "Esta noche jueves a las 19:00h. Temas: aceras, zonas verdes y alumbrado. Todos los vecinos bienvenidos.", status: '19:00h Esta noche', color: 'bg-indigo-500', icon: 'groups' },
-    { id: 4, type: 'shop', x: '55%', y: '55%', title: 'Polideportivo Campclar', desc: 'Esta noche a las 20h: Fútbol sala vecinal organizado por AAVV Campclar. ¡Únete al equipo!', status: 'Evento 20:00h', color: 'bg-green-600', icon: 'sports_soccer' },
-    { id: 5, type: 'incident', x: '42%', y: '40%', title: 'Bache Calle Gasòmetre', desc: 'Aviso vecinal: bache grande en cruce con Smith. Reportado vía Línia Verda TGN. Pendiente de reparación.', status: 'Reportado', color: 'bg-red-500', icon: 'report_problem' }
-
+    { id: 1, type: 'incident', x: '48%', y: '48%', title: "✅ Calle Unió: REABIERTA", desc: 'Las obras de reparación de calzada han finalizado. Tráfico fluido y servicio de autobuses normalizado.', status: 'Finalizado', color: 'bg-green-500', icon: 'check_circle', glow: 'shadow-[0_0_50px_rgba(34,197,94,0.3)]' },
+    { id: 2, type: 'event', x: '52%', y: '42%', title: '📚 Club de Lectura', desc: 'Esta tarde a las 18:30h en la Biblioteca Pública. Comentamos "La Ciudad de los Prodigios".', status: 'Hoy 18:30h', color: 'bg-indigo-500', icon: 'menu_book', glow: 'shadow-[0_0_35px_rgba(99,102,241,0.4)]' },
+    { id: 3, type: 'event', x: '45%', y: '35%', title: '🛍️ Prep. Mercadillo Vecinal', desc: "Mañana sábado mercadillo de 2ª mano en la Part Alta. Plazas de mesa agotadas.", status: 'Mañana 09:00h', color: 'bg-blue-600', icon: 'storefront' },
+    { id: 4, type: 'incident', x: '55%', y: '50%', title: '🚧 Revisión Alumbrado', desc: 'Pruebas técnicas del alumbrado nocturno en tramo final de Rambla Nova. Posibles parpadeos.', status: 'Hoy Viernes', color: 'bg-orange-500', icon: 'lightbulb' },
+    { id: 5, type: 'incident', x: '42%', y: '40%', title: 'Incidencia en Smith', desc: 'Corte parcial por reparación de tubería de agua. Brigada municipal trabajando.', status: 'En curso', color: 'bg-red-500', icon: 'water_drop' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

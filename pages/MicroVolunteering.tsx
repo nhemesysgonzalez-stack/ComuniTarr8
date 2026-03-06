@@ -42,30 +42,30 @@ const MicroVolunteering: React.FC = () => {
 
             const realOpportunitiesExamples: VolunteerOpportunity[] = [
                 {
-                    id: 'real-thu-vol-1',
+                    id: 'real-fri-vol-1',
                     creator_id: 'v7',
-                    title: '🏠 Acompañamiento a la Asamblea Vecinal (19h)',
-                    description: 'Me ofrezco para acompañar a personas mayores o con movilidad reducida desde sus casas hasta la AAVV Sant Pere para la Asamblea de esta noche (19h). Contactar antes de las 18h.',
+                    title: '📚 Acompañamiento al Club de Lectura (HOY 18:30h)',
+                    description: 'Busco a alguien para ir juntos al Club de Lectura en la Biblioteca Pública esta tarde. Me ofrezco para acompañar a vecinos que vivan cerca de la Rambla Nova.',
                     neighborhood: 'GENERAL',
-                    contact_info: '622 55 44 33 (Maria). Disponible hasta las 18:30h.',
+                    contact_info: '622 55 44 33 (Maria). Nos vemos en la fuente del Centenari a las 18:15h.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-thu-vol-2',
+                    id: 'real-fri-vol-2',
                     creator_id: 'v8',
-                    title: '📚 Acompañamiento al Club de Lectura (Mañana Viernes 18:30h)',
-                    description: '¿Alguien va mañana viernes al Club de Lectura de la Biblioteca (18:30h)? Una vecina mayor busca ir acompañada. El camino es fácil pero prefiere no ir sola de noche.',
+                    title: '🛍️ Ayuda Montaje Mercadillo (Mañana Sábado 07:30h)',
+                    description: "¿Algún voluntario madrugador para ayudar a montar las mesas del mercadillo vecinal mañana sábado en la Pl. Fòrum? Solo será media hora.",
                     neighborhood: 'GENERAL',
-                    contact_info: '622 88 77 66 (Elena V.).',
+                    contact_info: '622 88 77 66 (Elena V. - Org. Mercadillos).',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-thu-vol-3',
+                    id: 'real-fri-vol-3',
                     creator_id: 'v9',
-                    title: '♻️ Micro-batida Limpieza Playa Miracle',
-                    description: 'Pequeña recogida de plásticos hoy jueves a las 16:30h en la Playa del Miracle (entrada por el Club Náutico). Solo 15-20 minutos. Todo el equipo lo ponemos nosotros.',
+                    title: '🚲 Taller Rápido Arreglo Bicis',
+                    description: 'Hoy viernes estaré de 17h a 18h en el Parc de la Ciutat ayudando a engrasar cadenas y ajustar frenos gratis a quien lo necesite. Trae tu bici.',
                     neighborhood: 'GENERAL',
-                    contact_info: 'Encúéntranos allí directamente (Grupo Eco-TGN).',
+                    contact_info: 'Preguntar por Marc en la zona de las pérgolas.',
                     created_at: new Date().toISOString()
                 }
             ];

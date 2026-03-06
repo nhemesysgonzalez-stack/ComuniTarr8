@@ -42,29 +42,29 @@ const SupportCircles: React.FC = () => {
 
             const mockCircles: SupportCircle[] = [
                 {
-                    id: 'mock-thu-sc1',
+                    id: 'mock-fri-sc1',
                     initiator_id: 'v1',
-                    title: '🤝 Círculo de Cuidadores de Personas Mayores',
+                    title: '🤝 Círculo de Cuidadores — Feedback Asamblea',
                     neighborhood: 'GENERAL',
-                    description: 'Sesión de apoyo mutuo hoy jueves a las 17:00h (antes de la Asamblea Vecinal de las 19h). Espacio para compartir experiencias sobre el cuidado de mayores. Siempre bienvenidos nuevos miembros.',
+                    description: 'Tras la asamblea de ayer jueves, hoy nos reunimos a las 17:00h para valorar los compromisos de mejora en el barrio. Espacio abierto para cuidadores y familiares.',
                     contact_info: '611 22 33 44 (Miguel). Centre Cívic Part Alta.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-thu-sc2',
+                    id: 'mock-fri-sc2',
                     initiator_id: 'vadmin',
-                    title: '🧘 Bienestar Emocional Saludable',
+                    title: '🧘 Grupo Meditación Pos-Asamblea',
                     neighborhood: 'GENERAL',
-                    description: 'Grupo abierto de apoyo emocional. Hoy jueves nos saltamos la sesión habitual por la Asamblea Vecinal de las 19h. Próxima sesión: el martes 10 de marzo a las 19:15h.',
-                    contact_info: '655 12 34 56 (Elena). Inscripción vía WhatsApp.',
+                    description: 'Hoy viernes sesión especial de relajación tras una semana intensa. Abierto a todos los vecinos. A las 19:00h en el Centro Cívico.',
+                    contact_info: '655 12 34 56 (Elena). ¡Ven directamente!',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-thu-sc3',
+                    id: 'mock-fri-sc3',
                     initiator_id: 'v2',
-                    title: '☕ Café de la Conexión Vecinal',
+                    title: '☕ Café "Mañana Mercadillo"',
                     neighborhood: 'GENERAL',
-                    description: 'Nos reunimos los jueves a las 17h para charlar y compartir un café. Hoy hablamos sobre la Asamblea de esta noche y qué queremos proponer sobre el alumbrado.',
+                    description: 'Hoy viernes a las 17h quedamos en el Bar Can Pere para organizar los turnos de ayuda para el mercadillo de mañana sábado. ¡Tráete tus ideas!',
                     contact_info: '622 99 88 77 (Rosa). Bar Can Pere (Rambla).',
                     created_at: new Date().toISOString()
                 }

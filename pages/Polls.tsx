@@ -73,26 +73,26 @@ const Polls: React.FC = () => {
 
             const mockPolls: Poll[] = [
                 {
-                    id: 'poll-thu-1',
+                    id: 'poll-fri-1',
                     creator_id: 'v1',
-                    title: '🌳 ¿Apoyas la nueva zona verde propuesta en la Asamblea de hoy? 🌿',
-                    options: ['Sí, es muy necesaria', 'Prefiero más plazas de parking', 'Me parece bien pero en otro sitio', 'No tengo una opinión clara'],
+                    title: '⚖️ ¿Qué te ha parecido el resultado de la Asamblea de ayer jueves? 🌿',
+                    options: ['Muy contento/a con las decisiones', 'Esperaba más compromiso', 'Faltó tiempo para debatir', 'No pude ir ni informarme'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-thu-2',
+                    id: 'poll-fri-2',
                     creator_id: 'v2',
-                    title: '🚧 ¿Cómo has vivido el tráfico hoy jueves por las obras de C/ Unió? 🚗',
-                    options: ['Mucho jaleo, he tardado más', 'Se nota, pero es soportable', 'No me ha afectado para nada', 'He evitado la zona por los avisos'],
-                    neighborhood: 'CENTRE',
+                    title: '📚 ¿Has leído el libro del mes para el Club de Lectura de hoy? 📖',
+                    options: ['Sí, terminado y me ha encantado', 'A medias, pero iré igual', 'No he empezado todavía', 'No me interesa ese género'],
+                    neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-thu-3',
+                    id: 'poll-fri-3',
                     creator_id: 'v3',
-                    title: '⚽ ¿Participarás en el fútbol sala vecinal de esta noche? 👟',
-                    options: ['Sí, allí nos vemos', 'Iré a animar un rato', 'Hoy no puedo, para la próxima', 'No soy de hacer deporte'],
+                    title: '🛍️ ¿Vas a poner mesa en el Mercadillo Vecinal de mañana? ✨',
+                    options: ['¡Sí, ya estoy preparando cajas!', 'Iré solo a mirar y comprar', 'No este sábado, quizás el próximo', 'No sabía que había mercadillo'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }

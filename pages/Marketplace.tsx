@@ -57,11 +57,11 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'mock-thu-m1',
+          id: 'mock-fri-m1',
           user_id: 'v1',
-          title: '🧥 Abrigo de lana — Estilo clásico',
-          description: 'Abrigo en perfecto estado, talla L. Muy cálido. Vendo por falta de uso. Entrega en mano en Tarragona. Precio negociable.',
-          price: '45',
+          title: '🧥 Abrigo de lana — ¡Ideal para este finde!',
+          description: 'Abrigo en perfecto estado, talla L. Muy cálido. Entrega hoy viernes en el centro o mañana en el mercadillo de la Pl. Fòrum.',
+          price: '40',
           category: 'moda',
           neighborhood: 'GENERAL',
           contact_info: '622 11 22 33 (Marc)',
@@ -69,11 +69,11 @@ const Marketplace: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-thu-m2',
+          id: 'mock-fri-m2',
           user_id: 'v2',
-          title: '📚 Novela Histórica — Lote Club de Lectura',
-          description: 'Vendo 5 novelas históricas en perfecto estado: Arturo Pérez-Reverte, Ken Follett, Colleen McCullough. Perfectas para el Club de Lectura de la Biblioteca. Sin subrayar.',
-          price: '18',
+          title: '📚 Lote Libros — Hoy Club de Lectura',
+          description: 'Lote de 3 novelas de Eduardo Mendoza. Si vas hoy al club de lectura en la biblioteca, te los llevo allí directamente. Impecables.',
+          price: '15',
           category: 'hogar',
           neighborhood: 'CENTRE',
           contact_info: '611 99 88 77 (Laia)',
@@ -81,11 +81,11 @@ const Marketplace: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-thu-m3',
+          id: 'mock-fri-m3',
           user_id: 'v4',
-          title: '🚲 Bicicleta urbana con cesta',
-          description: 'Bici robusta tipo holandesa. Freno contrapedal y delantero. Luz trasera operativa. Ideal para ir al trabajo o al mercado semanal.',
-          price: '85',
+          title: '🚲 Bicicleta urbana — Lista para el sábado',
+          description: 'Bici tipo holandesa. Funciona perfecta. Si la quieres para ir mañana al mercadillo vecinal, me avisas y quedamos hoy.',
+          price: '80',
           category: 'ocio',
           neighborhood: 'GENERAL',
           contact_info: '655 44 33 22 (Rosa)',
@@ -93,15 +93,15 @@ const Marketplace: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-thu-m4',
+          id: 'mock-fri-m4',
           user_id: 'v5',
-          title: '💻 Tablet Samsung Galaxy A7 (2022)',
-          description: 'Tablet en buen estado, cargador original incluido. Pantalla 10.4", 32 GB. Ideal para trámites online y videollamadas. Se entrega mañana en la zona centro.',
-          price: '120',
+          title: '📱 iPhone 12 Pro (256GB) — Ganga Viernes',
+          description: 'En perfecto estado, salud batería 88%. Incluye funda y protector. Vendo porque me he comprado el nuevo. Solo hoy este precio.',
+          price: '380',
           category: 'tech',
           neighborhood: 'EIXAMPLE',
           contact_info: '699 77 55 44 (Jordi)',
-          image_url: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=800&q=80',
+          image_url: 'https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         }
       ];

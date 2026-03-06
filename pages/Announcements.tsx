@@ -145,43 +145,43 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'real-thu-summary',
-                    title: "🌤️ JUEVES 5 MARZO 2026 — JORNADA CÍVICA",
-                    content: "Día nublado con claros, máxima de 15°C. Esta noche: Asamblea Vecinal AAVV Sant Pere (19h) y Fútbol Sala Vecinal en Campclar (20h). Obras C/Unió en su 3ª jornada (fin mañana). Mañana viernes: Club de Lectura (18:30h).",
+                    id: 'fri-summary',
+                    title: "👋 RESUMEN DE BARRIO (VIERNES 6 MAR)",
+                    content: "¡Feliz viernes! Hoy destacamos la reapertura de Calle Unió tras las obras. Esta tarde tenemos Club de Lectura (18:30h) y mañana sábado el mercadillo vecinal en la Part Alta. ¡Disfrutad del sol!",
                     category: "INFO",
                     author_name: "ComuniTarr",
                     neighborhood: "GENERAL",
-                    itinerary: "• Asamblea Vecinal: 19:00h — AAVV Sant Pere i Sant Pau\n• Fútbol Sala: 20:00h — Polideportivo Campclar\n• Obras C/ Unió: Día 3 — rodeo por C/ Apodaca\n• Mañana: Club de Lectura 18:30h — Biblioteca Municipal",
+                    itinerary: "• C/ Unió: REABIERTA 🟢\n• Club de Lectura: HOY 18:30h — Biblioteca Pública\n• Mercadillo: Mañana Sábado 09:00h — Pl. Fòrum\n• Tiempo: Soleado 17ºC ☀️",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-thu-asamblea',
-                    title: "🏠 ASAMBLEA VECINAL AAVV SANT PERE — HOY 19h",
-                    content: "Esta noche jueves a las 19:00h en la sede de la AAVV Sant Pere i Sant Pau, asamblea abierta a todos los vecinos. Orden del día: mantenimiento de aceras, zonas verdes y mejoras en el alumbrado público.",
+                    id: 'fri-reading-club',
+                    title: "📚 CLUB DE LECTURA — ESTA TARDE 18:30h",
+                    content: "Hoy viernes nos reunimos en la Biblioteca Pública de Tarragona para comentar 'La Ciudad de los Prodigios'. Sesión abierta a nuevos participantes. ¡Ven a compartir tu pasión por la lectura!",
                     category: "EVENTO",
-                    author_name: "AAVV Sant Pere i Sant Pau",
+                    author_name: "Biblioteca Pública TGN",
                     neighborhood: "GENERAL",
-                    itinerary: "• Hora: 19:00h\n• Lugar: AAVV Sant Pere i Sant Pau\n• Puntos del orden del día:\n  1. Aceras y pavimento\n  2. Nuevas zonas verdes\n  3. Alumbrado público\n• Contacto: info@veinsstperepau.cat",
+                    itinerary: "• Hora: 18:30h\n• Lugar: Biblioteca Pública TGN (Sala d'Actes)\n• Libro: La Ciudad de los Prodigios (Eduardo Mendoza)\n• Próxima lectura: Se decidirá al finalizar la sesión",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-thu-obras-unio',
-                    title: "🚧 OBRAS C/ UNIÓ — 3ª JORNADA, ÚLTIMO DÍA MAÑANA",
-                    content: "Hoy día 3/3 de las obras de reparación de calzada en Calle Unió. Mañana viernes se prevé la finalización y reapertura total. Rodeo habitual por Calle Apodaca.",
-                    category: "URGENTE",
+                    id: 'fri-unio-open',
+                    title: "✅ CALLE UNIÓ: REABIERTA AL TRÁFICO",
+                    content: "Las obras de reparación de calzada han finalizado con éxito. La calle ya es transitable para vehículos y el servicio de autobuses EMT (líneas 22 y 54) ha recuperado su recorrido habitual.",
+                    category: "EXITO",
                     author_name: "Obras Públicas TGN",
                     neighborhood: "CENTRE",
-                    itinerary: "• Rodeo: C/ Apodaca\n• Fin previsto: Viernes 6 Mar\n• Reapertura total: Viernes tarde\n• Incidencias: 010",
+                    itinerary: "• Estado: Abierta 🟢\n• Transporte: Recorrido normal EMT\n• Parking: Plazas operativas\n• Agradecimiento: Gracias por vuestra paciencia",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-thu-farmacia',
-                    title: "💊 FARMACIA DE GUARDIA (HOY JUEVES)",
-                    content: "Servicio de guardia 24h hoy jueves en Farmàcia Garcia Rivas (Av. Països Catalans, 51). Abierta toda la noche para urgencias y recetas.",
+                    id: 'fri-farmacia',
+                    title: "💊 FARMACIA DE GUARDIA (HOY VIERNES)",
+                    content: "Servicio de guardia 24h hoy viernes en Farmàcia Domingo (Rambla Nova, 18). Disponible para cualquier urgencia médica fuera del horario comercial.",
                     category: "URGENTE",
                     author_name: "COFT",
                     neighborhood: "GENERAL",
-                    itinerary: "• Tel: 977 20 18 33\n• Av. Països Catalans, 51",
+                    itinerary: "• Tel: 977 23 45 66\n• Dirección: Rambla Nova, 18\n• Horario: 24h de guardia",
                     created_at: new Date().toISOString()
                 }
             ];

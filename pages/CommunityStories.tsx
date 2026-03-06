@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'ms1', user_name: 'Ana T.', content: '¡Jueves de asamblea! Preparando las notas para la reunión de esta tarde en la AAVV Sant Pere. ¡Nos jugamos el alumbrado del barrio! 💡🏘️ #TarragonaBarrio #AsambleaVecinal', image_url: 'https://images.unsplash.com/photo-1542838132-92c53300491e', likes: 189, created_at: new Date().toISOString() },
-            { id: 'ms2', user_name: 'Marc G.', content: 'Último asalto a las obras de C/ Unió. Mañana por fin reabren. El tráfico hoy está tenso pero la recompensa será buena. 🚧🚗 #MovilidadTGN #ObrasTarragona', image_url: 'https://images.unsplash.com/photo-1504307651254-35680f3366d4', likes: 256, created_at: new Date().toISOString() },
-            { id: 'ms3', user_name: 'Pilar S.', content: '¡Mirad qué joya he encontrado en el mercadillo de hoy para el Club de Lectura de mañana! Nos vemos en la Biblioteca. 📚✨ #CulturaTarragona #ClubLectura', image_url: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6', likes: 145, created_at: new Date().toISOString() },
-            { id: 'ms4', user_name: 'Joan R.', content: 'Atardecer tras el fútbol sala vecinal en Campclar. Gran ambiente hoy jueves. ⚽🌅 #CampclarDeporte #ComunidadTGN', image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e', likes: 210, created_at: new Date().toISOString() }
+            { id: 'ms1', user_name: 'Ana T.', content: '¡Objetivo cumplido! 🏆 El resumen de la asamblea de ayer ya está en la app. Gran avance para el alumbrado del barrio. ¡Gracias a todos los que vinisteis! 💡🏘️ #PoderVecinal #TarragonaBarrio', image_url: 'https://images.unsplash.com/photo-1542838132-92c53300491e', likes: 245, created_at: new Date().toISOString() },
+            { id: 'ms2', user_name: 'Marc G.', content: '¡POR FIN! 🚗 Calle Unió reabierta al tráfico. Se acabó el rodeo por Apodaca. Las obras han quedado impecables. ✅ #TGNLliure #ObrasFinalizadas', image_url: 'https://images.unsplash.com/photo-1504307651254-35680f3366d4', likes: 512, created_at: new Date().toISOString() },
+            { id: 'ms3', user_name: 'Pilar S.', content: 'Todo listo para el Club de Lectura de hoy a las 18:30h. Traigo el libro subrayado y muchas ganas de debatir. 📚✨ #CulturaTarragona #ClubLectura #BibliotecaTGN', image_url: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6', likes: 167, created_at: new Date().toISOString() },
+            { id: 'ms4', user_name: 'Joan R.', content: 'Preparando trastos para el mercadillo de mañana en la Part Alta. ¡He encontrado de todo en el trastero! 🛍️📦 #MercadilloVecinal #TarragonaSegundaMano', image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e', likes: 189, created_at: new Date().toISOString() }
         ];
 
 

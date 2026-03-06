@@ -43,22 +43,22 @@ const Challenges: React.FC = () => {
 
       const mockChallenges: Challenge[] = [
         {
-          id: 'mock-ch-thu-1',
+          id: 'mock-ch-fri-1',
           creator_id: 'admin',
-          title: '🚶 Reto: Jueves de Asamblea a Pie',
-          description: 'Hoy jueves a las 19:00h tenemos la Asamblea en la AAVV Sant Pere. El reto es ir caminando o en transporte público para evitar el caos de tráfico por las obras de C/ Unió.',
+          title: '📖 Reto: Lectura Compartida HOY',
+          description: 'Hoy viernes a las 18:30h en la Biblioteca. El reto es leer un fragmento de la obra de este mes y compartirlo con los demás. ¡Gana puntos de cultura!',
           neighborhood: 'GENERAL',
-          contact_info: 'Comunidad ComuniTarr (Sostenibilidad)',
+          contact_info: 'Biblioteca Pública (Elena)',
           is_example: true,
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-ch-thu-2',
+          id: 'mock-ch-fri-2',
           creator_id: 'user2',
-          title: '🧹 Limpieza Pre-Apertura C/ Unió',
-          description: 'Hoy jueves a las 17:30h nos juntamos unos cuantos vecinos para limpiar los restos de polvo y escombros ligeros de las aceras de C/ Unió antes de la reapertura de mañana. ¡Trae tu escoba!',
-          neighborhood: 'CENTRE',
-          contact_info: '611 00 22 33 (Isabel)',
+          title: '♻️ Residuo Cero: Mercadillo Sábado',
+          description: 'El reto es participar mañana en el mercadillo de la Pl. Fòrum sin generar plásticos de un solo uso. ¡Trae tus bolsas de tela y envases reutilizables!',
+          neighborhood: 'GENERAL',
+          contact_info: 'Comunidad ComuniTarr',
           is_example: true,
           created_at: new Date().toISOString()
         }

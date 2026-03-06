@@ -74,11 +74,11 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '🏢 Hoy Jueves 5 Mar: Asamblea Vecinal 19:00h en AAVV Sant Pere.' },
-    { user: 'Meteo TGN', text: '☀️ Jueves despejado 17ºC. ¡Buen día de barrio!' },
-    { user: 'Trànsit TGN', text: '🚧 C/ Unió: Último día de obras. Mañana reabrimos al tráfico. 🚦' },
-    { user: 'Tarragona Impulsa', text: '💼 Nuevas ofertas de empleo publicadas hoy en la sección Servicios.' },
-    { user: 'Esports TGN', text: '⚽ Fútbol Sala Vecinal hoy 20h en Polideportivo Campclar.' }
+    { user: 'Admin ComuniTarr', text: '✅ Viernes 6 Mar: Calle Unió ya abierta al tráfico total. ¡Buen viaje!' },
+    { user: 'Meteo TGN', text: '☀️ Viernes soleado 17ºC. Ideal para pasear esta tarde.' },
+    { user: 'Biblioteca TGN', text: '📚 Hoy 18:30h: Club de Lectura (La Ciudad de los Prodigios) en Sala d\'Actes.' },
+    { user: 'AAVV Sant Pere', text: '📋 Ya disponible el resumen de la Asamblea de ayer en la sección Anuncios.' },
+    { user: 'Mercadillo TGN', text: '🛍️ Mañana Sábado: Mercadillo Vecinal en Pl. Fòrum (09h-14h). ¡Participa!' }
   ];
 
 
@@ -304,33 +304,33 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts (Monday 2 Mar / Monday morning rush)
     let scripts = [
-      "☀️ ¡Feliz jueves vecinos! Se acerca el fin de semana. ¿Quién va hoy a la Asamblea? 🏘️",
-      "Mañana despejada... ideal para que terminen por fin las obras de C/ Unió. 🚧",
-      "Recordad: Asamblea Vecinal HOY 19h en la AAVV Sant Pere. ¡Traed propuestas! 📝",
-      "¿Quién se apunta al fútbol sala de las 20h en Campclar? Falta uno aún. ⚽",
-      "¿Habéis visto el mercadillo de hoy? Hay cosas chulas para regalar. 🎁",
-      "¡Venga, que el jueves es el penúltimo esfuerzo! 💪"
+      "☀️ ¡Feliz viernes vecinos! Por fin fin de semana. ¿Quién va al Club de Lectura de hoy? 📚",
+      "Mañana soleada... qué bien que ya abrieron C/ Unió. Se nota en el tráfico. ✅",
+      "Recordad: Club de Lectura HOY 18:30h en la Biblioteca. ¡Nos vemos allí! 📖",
+      "¿Algún plan para este finde? Dicen que hará buen tiempo. ☀️",
+      "Preparando las cosas para el mercadillo de mañana en la Part Alta. 🛍️",
+      "¡Venga, que el viernes ya está aquí! A disfrutar. 🥳"
     ];
 
     // Base reply scripts
     let replyScripts = [
-      `¡Totalmente, ${isReplyTo}! A por el jueves con energía. ☕`,
-      `¡Buen día, ${isReplyTo}! Disfruta del sol antes de la Asamblea. ☀️`,
-      `¡Pasa volando la semana, ${isReplyTo}! Ánimo con lo que queda. 😄`,
-      `Yo voy a la Asamblea si vas tú, ${isReplyTo}. Allí nos vemos.`,
-      `Gracias por el aviso del tráfico en Av. Roma, ${isReplyTo}. Me iré por otro lado. 🚗`,
-      `¡Qué buena energía para este jueves! Gracias, ${isReplyTo}. 💪`
+      `¡Totalmente, ${isReplyTo}! A por el viernes con alegría. ☕`,
+      `¡Buen día, ${isReplyTo}! ¿Nos vemos luego en el Club de Lectura? 📚`,
+      `¡Ya estamos a viernes, ${isReplyTo}! Pasa volando el tiempo. 😄`,
+      `Yo voy al mercadillo mañana si vas tú, ${isReplyTo}.`,
+      `Qué alivio lo de Calle Unió, ${isReplyTo}. Ya era hora. 🚗`,
+      `¡Qué buena energía para este viernes! Gracias, ${isReplyTo}. 🥳`
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
-      scripts = ["¿Alguien sabe de trabajos de tarde en hostelería esta semana? 🍽️", "Empiezo nuevo trabajo hoy lunes. ¡Un poco de ánimo! 🤞"];
-      replyScripts = [`¡Mucho ánimo con el nuevo trabajo, ${isReplyTo}!`, `Mira en la sección de Servicios de la app, han puesto ofertas hoy.`];
+      scripts = ["¿Alguien sabe de trabajos de tarde en hostelería para este finde? 🍽️", "Empiezo nuevo trabajo hoy viernes. ¡Un poco de ánimo! 🤞"];
+      replyScripts = [`¡Mucho ánimo con el nuevo trabajo, ${isReplyTo}!`, `Mira en la sección de Servicios de la app, han puesto ofertas para este viernes.`];
     } else if (currentNeighborhood === 'APOYO') {
       scripts = [
         "💜 ¿Alguien conoce talleres gratuitos de gestión emocional en Tarragona? Me vendría muy bien.",
         "Hoy he acompañado a una vecina mayor al médico. No tenía a nadie. Estas cosas no deberían pasar. Si alguien necesita compañía, escribid aquí. 🤝",
         "Mi sobrina está sufriendo ciberbullying. ¿Alguien sabe cómo actuar con el colegio? Necesito consejos. 😔",
-        "Recordatorio: grupo de apoyo emocional HOY lunes 19:30h en el Centro Cívico. Gratuito y abierto a todos. 🫂",
+        "Recordatorio: grupo de apoyo emocional HOY viernes 19:30h en el Centro Cívico. Gratuito y abierto a todos. 🫂",
         "¿Sabíais que el teléfono 024 es la línea de atención a la conducta suicida? Gratuito, 24h. Nunca se sabe cuándo puede hacer falta. 💛",
         "En el SIAD (Plaça de la Font) atienden a mujeres en situación de violencia. Sin cita, sin preguntas. Solo ayuda. 977 24 47 95. Compartid por favor. 🟣",
         "Hoy leí que 1 de cada 4 niños sufre acoso escolar. Como comunidad tenemos que estar atentos. Si veis algo raro, no miréis para otro lado. 🛡️",
@@ -350,18 +350,18 @@ const Forum: React.FC = () => {
       ];
     } else if (currentNeighborhood === 'ENCUENTROS') {
       scripts = [
-        "☀️ ¡Feliz jueves! ¿Quién se apunta a un café rápido antes de ir a la Asamblea? ☕",
-        "Busco gente para completar partido de fútbol sala HOY 20h en Campclar. ⚽",
-        "Jueves casi superado... ¡mañana es viernes! ¿Algún plan para el finde? 💪",
-        "¿Quién va hoy a la AAVV Sant Pere a las 19h? 🏘️",
-        "Mañana toca Club de Lectura en la Biblioteca, ¿alguien se apunta? 📚",
-        "¡Hola! ¿Alguna caña rápida hoy jueves noche por el centro? 👋"
+        "☀️ ¡Feliz viernes! ¿Quién se apunta a un café rápido antes del Club de Lectura? ☕",
+        "¿Quién va al mercadillo mañana sábado? Busco gente para ir juntos. 🛍️",
+        "Viernes superado... ¡por fin! ¿Alguna caña hoy para celebrar? 🍺",
+        "¿Hacemos una caminata por la playa este domingo? 🌊",
+        "Mañana toca Mercadillo en la Pl. Fòrum, ¿alguien pone mesa? 🛍️",
+        "¡Hola! ¿Alguna cena rápida hoy viernes noche por el centro? 👋"
       ];
       replyScripts = [
         `¡Me apunto a ese café, ${isReplyTo}!`,
-        `Yo juego si falta uno para las 20h hoy jueves...`,
-        `¡Buenos días! ¿Qué tal el jueves? @${isReplyTo}`,
-        `¡Nos vemos en la Asamblea! 🏘️ @${isReplyTo}`
+        `Yo voy al mercadillo mañana sin falta...`,
+        `¡Buenos días! ¿Qué tal el viernes? @${isReplyTo}`,
+        `¡Nos vemos en la Biblioteca! 📚 @${isReplyTo}`
       ];
     } else if (isHelpRequest) {
       replyScripts = [
@@ -403,7 +403,7 @@ const Forum: React.FC = () => {
         let possibleReplies = [];
         if (isGreeting) {
           possibleReplies = [
-            `¡Hola, ${isReplyTo}! A por el martes con energía. 💪`,
+            `¡Hola, ${isReplyTo}! A por el viernes con energía. 💪`,
             `¡Muy buenas! ¿Qué tal la semana? @${isReplyTo}.`,
             `¡Hola ${isReplyTo}! Aquí recuperándonos de la rutina con un café. ☕`,
             `¡Buenos días! Vaya sol hace hoy. ☀️`
@@ -703,28 +703,28 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'asamblea-tgn',
-      title: '🏘️ Asamblea Vecinal',
-      description: 'Hoy 19h AAVV Sant Pere.',
-      participating: 3820
-    },
-    {
-      id: 'obras-unio',
-      title: '🚧 Fin Obras C/ Unió',
-      description: 'Mañana reapertura total.',
-      participating: 4250
-    },
-    {
-      id: 'futsal-vecinal',
-      title: '⚽ Fútbol Sala',
-      description: 'Hoy 20h en Campclar.',
-      participating: 1540
+      id: 'unio-open',
+      title: '✅ C/ Unió Abierta',
+      description: 'Tráfico fluido centro.',
+      participating: 5120
     },
     {
       id: 'club-lectura',
       title: '📚 Club Lectura',
-      description: 'Mañana Biblioteca 18:30h.',
-      participating: 1280
+      description: 'Hoy 18:30h en Biblioteca.',
+      participating: 1840
+    },
+    {
+      id: 'mercadillo-tgn',
+      title: '🛍️ Mercadillo Mañana',
+      description: 'Últimas mesas Pl. Fòrum.',
+      participating: 2950
+    },
+    {
+      id: 'finde-sol',
+      title: '☀️ Finde Soleado',
+      description: 'Planes al aire libre.',
+      participating: 3200
     }
   ];
 
@@ -748,7 +748,7 @@ const Forum: React.FC = () => {
               <div className="flex items-center gap-1 opacity-90 cursor-pointer hover:bg-white/20 px-2 py-0.5 rounded-full transition-colors w-fit">
                 <span className="text-[10px] uppercase font-bold tracking-wider">Disponible ▾</span>
               </div>
-              <p className="text-[10px] italic opacity-80 mt-1 truncate">"Jueves de Asamblea... 🏢"</p>
+              <p className="text-[10px] italic opacity-80 mt-1 truncate">"¡Por fin es viernes! 🥳"</p>
             </div>
           </div>
           {/* Decorative Circles */}

@@ -46,35 +46,35 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'mock-thu-n1',
+                    id: 'mock-fri-n1',
                     creator_id: 'v4',
                     type: 'company',
-                    title: '🏠 Acompañamiento a la Asamblea Vecinal (19h)',
-                    description: 'Busco voluntario/a para acompañarme a la Asamblea Vecinal de esta noche en la AAVV Sant Pere (19h). Tengo movilidad reducida y vivo en la Calle Gravina. Ida y vuelta.',
-                    contact_info: '688 22 11 00 (Pere)',
+                    title: '📚 Acompañamiento Club de Lectura (HOY 18:30h)',
+                    description: 'Busco voluntario/a para ir juntos a la Biblioteca hoy viernes. No quiero ir sola al salir de noche. Vivo cerca de la Pl. Imperial.',
+                    contact_info: '688 22 11 00 (Elena V.)',
                     is_urgent: false,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-thu-n2',
+                    id: 'mock-fri-n2',
                     creator_id: 'v5',
-                    type: 'food',
-                    title: '🥗 Ayuda con la compra — Jueves tarde',
-                    description: 'Tengo una lesión en la rodilla y el sábado se cierra el mercadillo. Busco alguien que pueda traerme verdúras frescas del Mercadona esta tarde después de las 17h.',
+                    type: 'other',
+                    title: '🛍️ Ayuda transporte Mercadillo (Mañana Sábado)',
+                    description: 'Tengo varias cajas de ropa para donar al mercadillo de mañana en la Pl. Fòrum pero no tengo coche. ¿Alguien podría ayudarme a llevarlas mañana a las 08:30h?',
                     contact_info: '644 33 22 11 (Mónica)',
-                    is_urgent: true,
+                    is_urgent: false,
                     neighborhood: 'EIXAMPLE',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-thu-n3',
+                    id: 'mock-fri-n3',
                     creator_id: 'v6',
-                    type: 'emotional',
-                    title: '📚 Necesito pareja de lectura para mañana Club Biblioteca',
-                    description: 'Soy mayor y quiero ir al Club de Lectura de la Biblioteca Municipal mañana viernes a las 18:30h, pero no me atrevo a ir sola por la noche. ¿Alguien me acompaña?',
-                    contact_info: '622 88 77 66 (Elena V.)',
-                    is_urgent: false,
+                    type: 'medical',
+                    title: '💊 Recogida Medicación urgente',
+                    description: 'Estoy convaleciente y necesito que alguien recoja una receta urgente en la Farmacia Domingo (Rambla Nova) antes de mediodía.',
+                    contact_info: '622 88 77 66 (Pere)',
+                    is_urgent: true,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }

@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🏠 ¡Esta noche Jue 5! Asamblea Vecinal AAVV Sant Pere a las 19:00h. Temas: aceras, zonas verdes y alumbrado. ¡Os esperamos!", neighborhood: 'GENERAL' },
-    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Jueves nublado con claros. Máxima de 15ºC. Sin lluvia prevista. 🌤️', neighborhood: 'GENERAL' },
-    { id: 2, user: 'Obras TGN', avatar: '/logo.svg', text: '🚧 Obras C/ Unió (3ª jornada, penúltimo día). Fin previsto mañana viernes. Rodeo por C/ Apodaca. 🛠️', neighborhood: 'CENTRE' },
-    { id: 3, user: 'AAVV Campclar', avatar: '/logo.svg', text: '⚽ ¡Esta noche a las 20h! Fútbol sala vecinal en el Polideportivo Campclar. ¡Únete! 📞 977 23 80 00', neighborhood: 'CAMPCLAR' },
-    { id: 4, user: 'Biblioteca TGN', avatar: '/logo.svg', text: '📚 Mañana Viernes 18:30h — Club de Lectura mensual (novela histórica). ¡Todos bienvenidos! 📖', neighborhood: 'GENERAL' },
-    { id: 5, user: 'Joan P.', avatar: 'https://i.pravatar.cc/150?u=joanp', text: '🛒 ¿Alguien va hoy al Mercadona de la Rambla? Busco que me traigan leche y pan. Te lo agradezco! 🙏', neighborhood: 'CENTRE' },
-    { id: 6, user: 'Trànsit TGN', avatar: '/logo.svg', text: '🚗 T-11 y A-7 fluidas. Precaución en Av. Roma carril dcho. por señalización. EMT y Renfe normales. ✅', neighborhood: 'GENERAL' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "✅ ¡Viernes 6 Mar! Calle Unió ya abierta al tráfico. Circulación normalizada en toda la zona centro. ¡Buen fin de semana!", neighborhood: 'GENERAL' },
+    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Viernes soleado. Máxima de 17ºC. Ideal para pasear por la tarde. 🌤️', neighborhood: 'GENERAL' },
+    { id: 2, user: 'AAVV Sant Pere', avatar: '/logo.svg', text: '📋 Resumen Asamblea Jueves: Aprobada nueva zona verde. Acta completa ya en Anuncios. ✅', neighborhood: 'PART ALTA' },
+    { id: 3, user: 'Biblioteca TGN', avatar: '/logo.svg', text: '📚 HOY 18:30h — Club de Lectura (La Ciudad de los Prodigios). ¡Últimas plazas! 📖', neighborhood: 'GENERAL' },
+    { id: 4, user: 'Mercadillo TGN', avatar: '/logo.svg', text: '🛍️ Mañana Sábado 7 Mar: Mercadillo Vecinal en Pl. Fòrum (09h-14h). ¡Ven a vernos! ✨', neighborhood: 'GENERAL' },
+    { id: 5, user: 'Trànsit TGN', avatar: '/logo.svg', text: '🚗 T-11 y A-7 despejadas. Av. Roma abierta sin restricciones. EMT horario normal. ✅', neighborhood: 'GENERAL' },
+    { id: 6, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '☕ ¿Alguien para un café rápido antes del Club de Lectura? Estaré por la Biblioteca a las 18h. 👋', neighborhood: 'CENTRE' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '🏠 Asamblea Vecinal 19h hoy' },
-    { user: 'Obras', text: '🚧 C/ Unió: 3ª Jornada (último día mañana)' },
-    { user: 'AAVV Campclar', text: '⚽ Fútbol Sala 20h hoy' },
-    { user: 'Meteo', text: '☁️ Nublado y 15ºC' },
-    { user: 'Biblioteca', text: '📚 Club Lectura mañana 18:30h' }
+    { user: 'Admin', text: '✅ C/ Unió ya abierta' },
+    { user: 'Biblioteca', text: '📚 Club Lectura 18:30h hoy' },
+    { user: 'Mercadillo', text: '🛍️ Mañana Sábado Pl. Fòrum' },
+    { user: 'Meteo', text: '☀️ Soleado y 17ºC' },
+    { user: 'AAVV Sant Pere', text: '📋 Resultados Asamblea en Anuncios' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

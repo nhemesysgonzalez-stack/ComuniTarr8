@@ -42,28 +42,28 @@ const Clubs: React.FC = () => {
 
             const mockClubs: Club[] = [
                 {
-                    id: 'c-thu-1',
+                    id: 'c-fri-1',
                     creator_id: 'v1',
-                    name: 'Urban Runners TGN 🏃‍♂️',
-                    description: 'Trote suave regenerativo hoy jueves a las 19:30h. Quedamos en el Balcó del Mediterrani. ¡Activando el cuerpo antes del finde!',
+                    name: 'Urban Runners TGN 👟',
+                    description: '¡Trote de viernes noche! Quedamos hoy a las 20:00h en el Balcó. Al acabar nos tomamos algo para empezar el finde. 🏃‍♂️💨',
                     neighborhood: 'GENERAL',
                     contact_info: '622 33 44 55 (Pau)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'c-thu-2',
+                    id: 'c-fri-2',
                     creator_id: 'v2',
-                    name: 'Debate Vecinal Viva 🗣️',
-                    description: 'Pre-quedada hoy jueves a las 18:30h para ir juntos a la Asamblea de la AAVV Sant Pere. ¡Tu voz importa!',
+                    name: 'Cineforum Vecinal 🍿',
+                    description: 'Hoy viernes a las 19:00h proyectamos una peli sorpresa en el local social. ¡Tráete palomitas para compartir!',
                     neighborhood: 'GENERAL',
                     contact_info: 'Canal ENCUENTROS (Foro)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'c-thu-3',
+                    id: 'c-fri-3',
                     creator_id: 'v3',
-                    name: 'Fútbol Sala Vecinal ⚽',
-                    description: 'Buscamos gente para completar equipo hoy jueves a las 20:00h en Polideportivo Campclar. ¡Apúntate!',
+                    name: 'Chess & Coffee TGN ♟️',
+                    description: 'Quedada mañana sábado por la mañana aprovechando el ambiente del mercadillo en la Part Alta. ¡Partidas rápidas!',
                     neighborhood: 'GENERAL',
                     contact_info: '633 44 55 66 (Joe)',
                     created_at: new Date().toISOString()

@@ -48,27 +48,27 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'mock-ws-thu-1',
-                    title: '🤝 Networking & Estrategia de Empleo',
-                    instructor: 'Pau R.',
-                    date: 'Hoy Jueves 5, 18:30',
-                    description: 'Sesión práctica de networking para conectar con otros profesionales del barrio. Ideal si buscas nuevas oportunidades laborales.',
-                    image: 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=800',
-                    spots: 12,
+                    id: 'mock-ws-fri-1',
+                    title: '📚 Club de Lectura: HOY 18:30h',
+                    instructor: 'Elena P.',
+                    date: 'Hoy Viernes 6, 18:30',
+                    description: 'Sesión presencial en la biblioteca para comentar "La Ciudad de los Prodigios". ¡Última oportunidad para participar!',
+                    image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800',
+                    spots: 4,
                     neighborhood: 'GENERAL',
-                    contact_info: 'Espai Tabacalera (Sala 3)',
+                    contact_info: 'Biblioteca Pública TGN',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-ws-fri-1',
-                    title: '📚 Club de Lectura de Marzo',
-                    instructor: 'Elena P.',
-                    date: 'Mañana Viernes 6, 18:30',
-                    description: 'Comentamos la obra del mes en un ambiente relajado. Una forma perfecta de terminar la semana con cultura.',
-                    image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800',
-                    spots: 8,
+                    id: 'mock-ws-sat-1',
+                    title: '🛍️ Taller de Gestión de Mercadillos',
+                    instructor: 'Rosa M.',
+                    date: 'Mañana Sábado 7, 08:30',
+                    description: 'Breve sesión informativa sobre cómo organizar tu puesto en el mercadillo vecinal de la Part Alta. Consejos para vender más y mejor.',
+                    image: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=800',
+                    spots: 15,
                     neighborhood: 'GENERAL',
-                    contact_info: 'Biblioteca Pública TGN',
+                    contact_info: 'Plaza del Fòrum (Zona mesas)',
                     created_at: new Date().toISOString()
                 }
             ];

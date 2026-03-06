@@ -59,27 +59,27 @@ const Incidents: React.FC = () => {
                 // Mock Incidents for Thursday March 5
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'mock-inc-thu-1',
+                        id: 'mock-inc-fri-1',
                         user_id: 'admin',
-                        title: '🚧 OBRAS C/ UNIÓ: 3ª Jornada — Último Día Mañana',
-                        description: 'Tercera y penúltima jornada de obras de reparación de calzada en Calle Unió. Mañana viernes se prevé la finalización y reapertura total. Rodeo por Calle Apodaca.',
+                        title: '✅ OBRAS C/ UNIÓ: FINALIZADAS Y REABIERTO',
+                        description: 'Las obras de reparación de calzada en Calle Unió han finalizado con éxito. La calle ya está abierta al tráfico y el servicio de EMT circula con normalidad.',
                         neighborhood: 'CENTRE',
-                        status: 'in_progress',
+                        status: 'resolved',
                         created_at: new Date().toISOString(),
-                        contact_info: '010 (Incidencias)',
+                        contact_info: '010 (Obras Públicas)',
                         profiles: { full_name: 'Obras Públicas TGN', avatar_url: '/logo.svg' },
                         image_url: 'https://images.unsplash.com/photo-1542013936693-8846383242ef?auto=format&fit=crop&q=80&w=800'
                     },
                     {
-                        id: 'mock-inc-thu-2',
+                        id: 'mock-inc-fri-2',
                         user_id: 'admin',
-                        title: '🚗 TRÁFICO: Carril Limitado Av. Roma',
-                        description: 'Trabajos de señalización y repintado de marcas viales en el carril derecho de Av. Roma. Flujo reducido en hora punta. Previsto hasta el viernes.',
-                        neighborhood: 'GENERAL',
-                        status: 'open',
+                        title: '🚧 REVISIÓN ALUMBRADO: Rambla Nova',
+                        description: 'Hoy viernes revisión técnica del alumbrado nocturno en el tramo final de Rambla Nova. Posibles cortes momentáneos de luz en las farolas durante las pruebas.',
+                        neighborhood: 'CENTRE',
+                        status: 'in_progress',
                         created_at: new Date(Date.now() - 1000 * 60 * 60).toISOString(),
-                        contact_info: '092 (Guardia Urbana)',
-                        profiles: { full_name: 'Trànsit TGN', avatar_url: '/logo.svg' },
+                        contact_info: 'Suministros TGN',
+                        profiles: { full_name: 'Mantenimiento TGN', avatar_url: '/logo.svg' },
                         image_url: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800'
                     }
                 ];
