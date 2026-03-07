@@ -416,8 +416,11 @@ const Home: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative h-[250px] md:h-[400px] rounded-[40px] overflow-hidden shadow-2xl flex items-center px-6 md:px-16 bg-gray-900">
-        <img
+      <section className="relative h-[300px] md:h-[450px] rounded-[50px] overflow-hidden premium-shadow flex items-center group">
+        <motion.img
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
           src="https://images.unsplash.com/photo-1722520592113-1f681393cd8d?q=80&w=1600&auto=format&fit=crop"
           className="absolute inset-0 w-full h-full object-cover"
           alt="Tarragona"
@@ -425,36 +428,67 @@ const Home: React.FC = () => {
             (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1510445740272-d3b16ec28439?auto=format&fit=crop&q=80&w=1600";
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
 
-        <div className="relative z-20 h-full flex flex-col justify-center px-8 md:px-16 max-w-2xl text-white">
-          <h1 className="text-4xl md:text-7xl font-black leading-tight mb-4 tracking-tighter">
-            {t('welcome_home')}, <span className="text-primary-light">{user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino'}</span>
-          </h1>
-          <p className="text-lg md:text-2xl text-gray-200 font-bold opacity-90 max-w-lg mb-8 uppercase tracking-tight">
-            {t('neighbor_desc')}
-          </p>
+        <div className="relative z-20 px-8 md:px-20 max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="glass-card p-10 md:p-14 rounded-[45px] border-white/30 backdrop-blur-2xl transition-all duration-500 hover:border-white/50"
+          >
+            <h1 className="text-4xl md:text-7xl font-black leading-tight mb-4 tracking-tighter text-white">
+              {t('welcome_home')}, <br />
+              <span className="bg-gradient-to-r from-blue-300 to-primary-light bg-clip-text text-transparent">
+                {user?.user_metadata?.full_name?.split(' ')[0] || 'Vecino'}
+              </span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 font-bold uppercase tracking-widest opacity-80">
+              {t('neighbor_desc')}
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Floating Badge */}
+        <div className="absolute top-10 right-10 z-20 hidden md:block">
+          <div className="glass-card px-6 py-3 rounded-full border-white/40 flex items-center gap-3">
+            <div className="size-3 bg-emerald-500 rounded-full animate-ping"></div>
+            <span className="text-white text-[10px] font-black uppercase tracking-widest">Barrio Activo Now</span>
+          </div>
         </div>
       </section>
 
-      {/* Quick Actions */}
-      <section className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-        {quickActions.map((action, i) => (
-          action.to ? (
-            <Link key={i} to={action.to} className="group">
-              <div className={`p-6 rounded-[32px] ${action.color} ${action.shadow} text-white transition-all duration-300 hover:scale-105 hover:-translate-y-2 h-full shadow-lg`}>
-                <span className="material-symbols-outlined text-4xl mb-4 block group-hover:rotate-12 transition-transform">{action.icon}</span>
-                <span className="text-lg font-bold leading-tight block">{action.label}</span>
-              </div>
-            </Link>
-          ) : (
-            <button key={i} onClick={action.action} className="group text-left h-full">
-              <div className={`p-6 rounded-[32px] ${action.color} ${action.shadow} text-white transition-all duration-300 hover:scale-105 hover:-translate-y-2 h-full shadow-lg`}>
-                <span className="material-symbols-outlined text-4xl mb-4 block group-hover:rotate-12 transition-transform">{action.icon}</span>
-                <span className="text-lg font-bold leading-tight block">{action.label}</span>
-              </div>
-            </button>
-          )
+      {/* Quick Actions (Modern Grid) */}
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { icon: 'business_center', label: 'Directorio Negocios', to: '/business-directory', color: 'from-emerald-500 to-teal-600' },
+          { icon: 'report_problem', label: t('report_incident'), action: () => setShowIncidentModal(true), color: 'from-orange-500 to-red-600' },
+          { icon: 'shopping_basket', label: t('publish_product'), to: '/market', color: 'from-sky-500 to-blue-600' },
+          { icon: 'school', label: t('workshops'), to: '/workshops', color: 'from-indigo-500 to-purple-600' }
+        ].map((action, i) => (
+          <motion.div
+            key={i}
+            whileHover={{ y: -10, scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="h-full"
+          >
+            {action.to ? (
+              <Link to={action.to} className="h-full block">
+                <div className={`h-full p-8 rounded-[40px] bg-gradient-to-br ${action.color} text-white transition-all shadow-2xl relative overflow-hidden group`}>
+                  <div className="absolute -right-4 -bottom-4 size-24 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                  <span className="material-symbols-outlined text-5xl mb-6 block group-hover:rotate-12 transition-transform drop-shadow-lg">{action.icon}</span>
+                  <span className="text-xl font-black leading-tight block uppercase tracking-tighter">{action.label}</span>
+                </div>
+              </Link>
+            ) : (
+              <button onClick={action.action} className="w-full h-full text-left">
+                <div className={`h-full p-8 rounded-[40px] bg-gradient-to-br ${action.color} text-white transition-all shadow-2xl relative overflow-hidden group`}>
+                  <div className="absolute -right-4 -bottom-4 size-24 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                  <span className="material-symbols-outlined text-5xl mb-6 block group-hover:rotate-12 transition-transform drop-shadow-lg">{action.icon}</span>
+                  <span className="text-xl font-black leading-tight block uppercase tracking-tighter">{action.label}</span>
+                </div>
+              </button>
+            )}
+          </motion.div>
         ))}
       </section>
 
