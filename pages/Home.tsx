@@ -182,39 +182,39 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'fri-morning-traffic',
-            title: "✅ Viernes 6 Mar — C/ Unió REABIERTA",
-            content: "Tras finalizar las obras, la Calle Unió ya está abierta al tráfico total. La circulación en Av. Roma ha vuelto a la normalidad. ¡Buen viaje!",
-            category: "TRÁFICO",
+            id: 'sat-mercadillo-today',
+            title: "🛍️ ¡HOY! Mercadillo Vecinal en Pl. Fòrum",
+            content: "¡Ya estamos montando! De 09:00h a 14:00h disfruta del mercadillo de segunda mano y artesanía. ¡No faltes!",
+            category: "EVENTO",
             neighborhood: "GENERAL",
-            itinerary: "• C/ Unió: Abierta 🟢\n• Av. Roma: Normalidad\n• T-11: Fluido\n• EMT: Líneas 22 y 54 horario normal",
+            itinerary: "• 08:30: Montaje mesas\n• 09:00: Apertura al público\n• 12:00: Vermut vecinal\n• 14:00: Cierre y limpieza",
             created_at: new Date().toISOString()
           },
           {
-            id: 'fri-reading-club',
-            title: "📚 Club de Lectura — Esta Tarde 18:30h",
-            content: "Hoy viernes nos vemos en la Biblioteca Pública para comentar 'La Ciudad de los Prodigios'. Todavía puedes apuntarte si vienes un poco antes.",
+            id: 'sat-reading-club-success',
+            title: "📚 Gran éxito del Club de Lectura",
+            content: "Ayer viernes disfrutamos de una tarde magnífica comentando 'La Ciudad de los Prodigios'. ¡Gracias a todos por participar!",
             category: "CULTURA",
             neighborhood: "GENERAL",
-            itinerary: "• Hora: 18:30h\n• Lugar: Biblioteca Pública TGN\n• Libro: La Ciudad de los Prodigios\n• Debate posterior: Café local",
+            itinerary: "• Asistentes: 18 personas\n• Próximo libro: Anuncio el lunes\n• Fotos: En Galería vecinal\n• Próxima cita: Abril",
             created_at: new Date().toISOString()
           },
           {
-            id: 'fri-post-assembly',
-            title: "📋 Resumen de la Asamblea de ayer",
-            content: "Ayer jueves se aprobó por mayoría la propuesta de nueva zona verde en el barrio. Cindy publicará el acta completa hoy en la sección Anuncios.",
+            id: 'sat-traffic-weekend',
+            title: "🚗 Tráfico Fluido: C/ Unió Abierta",
+            content: "Tras la reapertura de ayer, el tráfico por el centro fluye sin problemas para las compras del sábado. Parking municipal con plazas libres.",
+            category: "TRÁFICO",
+            neighborhood: "CENTRE",
+            itinerary: "• C/ Unió: Abierta 🟢\n• Av. Roma: Sin retenciones\n• Parking Corsini: Plazas disponibles\n• EMT: Servicio fin de semana",
+            created_at: new Date().toISOString()
+          },
+          {
+            id: 'sat-post-assembly-info',
+            title: "📋 Actas de la Asamblea disponibles",
+            content: "Ya puedes consultar el resumen oficial de la asamblea del pasado jueves. La nueva zona verde está en marcha.",
             category: "AVISO",
             neighborhood: "PART ALTA",
-            itinerary: "• Zona Verde: Aprobada\n• Alumbrado: Plan de choque abril\n• Actas: Disponibles hoy 12h\n• Próxima: Abril",
-            created_at: new Date().toISOString()
-          },
-          {
-            id: 'fri-weekend-prep',
-            title: "🛍️ Mercadillo Mañana Sábado — Part Alta",
-            content: "Recordad que mañana sábado 7 de marzo tendremos el mercadillo vecinal de 09:00h a 14:00h. ¡Últimas plazas para poner mesa!",
-            category: "AVISO",
-            neighborhood: "GENERAL",
-            itinerary: "• Fecha: Sábado 7 Mar\n• Lugar: Pl. del Fòrum\n• Registro: App (Mercadillo)\n• Venta: Libros, ropa, artesania",
+            itinerary: "• Documento: PDF en Anuncios\n• Aprobación: 82% a favor\n• Inicio obras: Estimado mayo\n• Contacto: AAVV Sant Pere",
             created_at: new Date().toISOString()
           }
         ];
@@ -223,9 +223,9 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'poll-viernes-barrio',
-          question: "¿Estás satisfecho con el resultado de la Asamblea celebrada ayer jueves?",
-          options: ['Muy satisfecho', 'Satisfecho, pero falta concreción', 'No me gustaron los acuerdos', 'No pude asistir'],
+          id: 'poll-sabado-mercadillo',
+          question: "¿Qué te está pareciendo el Mercadillo Vecinal de este sábado?",
+          options: ['¡Genial! He comprado cosas buenas', 'Muy bien organizado', 'Faltan más puestos', 'No he ido todavía'],
           category: 'COMUNIDAD',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()

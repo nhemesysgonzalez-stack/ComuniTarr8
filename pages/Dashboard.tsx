@@ -47,7 +47,7 @@ const Dashboard: React.FC = () => {
                 <header className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div>
                         <h1 className="text-5xl font-black text-gray-900 dark:text-white tracking-tight">Mi Resumen</h1>
-                        <p className="text-xl text-gray-500 dark:text-gray-400 font-medium">Actividades, retos y patrullas en las que estás inscrito.</p>
+                        <p className="text-xl text-gray-500 dark:text-gray-400 font-medium">Actividades, retos y patrullas para este fin de semana de marzo.</p>
                     </div>
                     <div className="bg-primary px-8 py-4 rounded-[24px] shadow-xl shadow-primary/20 flex items-center gap-4 text-white">
                         <span className="material-symbols-outlined text-3xl">stars</span>
@@ -112,7 +112,7 @@ const Dashboard: React.FC = () => {
                                 {activities.map((act) => (
                                     <div key={act.id} className="flex items-center gap-6 p-6 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-[24px] transition-all border border-transparent hover:border-gray-100 dark:hover:border-gray-700">
                                         <div className={`size-14 rounded-[20px] flex items-center justify-center shadow-lg ${act.activity_type === 'patrol' ? 'bg-red-500 text-white' :
-                                                act.activity_type === 'challenge' ? 'bg-primary text-white' : 'bg-gray-500 text-white'
+                                            act.activity_type === 'challenge' ? 'bg-primary text-white' : 'bg-gray-500 text-white'
                                             }`}>
                                             <span className="material-symbols-outlined text-3xl">
                                                 {act.activity_type === 'patrol' ? 'shield' : 'trophy'}

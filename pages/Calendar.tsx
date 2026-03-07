@@ -59,48 +59,35 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'real-fri-lectura-barrio',
+          id: 'real-sat-mercadillo-today',
           creator_id: 'admin',
-          title: "📚 Club de Lectura — La Ciudad de los Prodigios",
-          description: "Hoy viernes nos reunimos para comentar la obra de Eduardo Mendoza. Sesión abierta y participativa. ¡Trae tus impresiones!",
-          event_date: '2026-03-06',
-          event_time: '18:30',
-          location: 'Biblioteca Pública TGN',
-          category: 'Cultura',
-          neighborhood: 'GENERAL',
-          contact_info: '977 24 03 31',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'real-fri-unio-reapertura',
-          creator_id: 'admin',
-          title: "✅ Reapertura Calle Unió 🚗",
-          description: "La calle ya está abierta al tráfico tras finalizar las obras de calzada. Los autobuses recuperan su ruta normal.",
-          event_date: '2026-03-06',
-          event_time: '08:00',
-          location: 'Calle Unió, Centre',
-          category: 'Solidario',
-          neighborhood: 'CENTRE',
-          contact_info: 'Obras Públicas',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'real-sat-mercadillo',
-          creator_id: 'admin',
-          title: "🛍️ Mercadillo Vecinal TGN — Mañana",
-          description: "Mañana sábado mercadillo de intercambio y segunda mano. Plazas limitadas para poner mesa. ¡Participa!",
+          title: "🛍️ ¡HOY! Mercadillo Vecinal TGN",
+          description: "Hoy sábado mercadillo de intercambio y segunda mano en la Pl. del Fòrum. Vermut vecinal a las 12h.",
           event_date: '2026-03-07',
           event_time: '09:00',
           location: 'Plaça del Fòrum',
           category: 'Cultura',
           neighborhood: 'GENERAL',
-          contact_info: 'ComuniTarr App',
+          contact_info: 'ComuniTarr Propio',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'real-sat-vermut',
+          creator_id: 'v12',
+          title: "🍹 Vermut Vecinal Post-Mercadillo",
+          description: "Nos juntamos en el local de la AAVV para comentar las compras y pasar un rato agradable en comunidad.",
+          event_date: '2026-03-07',
+          event_time: '12:30',
+          location: 'Sede AAVV Sant Pere',
+          category: 'Ocio',
+          neighborhood: 'PART ALTA',
+          contact_info: 'Pau (AAVV)',
           created_at: new Date().toISOString()
         },
         {
           id: 'real-sun-yoga',
           creator_id: 'admin',
-          title: "🧘 Yoga al Aire Libre — Domingo",
+          title: "🧘 Yoga al Aire Libre — Mañana Domingo",
           description: "Sesión gratuita de yoga para empezar el domingo con energía. Lleva tu esterilla y agua.",
           event_date: '2026-03-08',
           event_time: '10:00',
@@ -108,6 +95,19 @@ const NeighborhoodCalendar: React.FC = () => {
           category: 'Cultura',
           neighborhood: 'GENERAL',
           contact_info: 'Club Yoga TGN',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'real-sun-chess',
+          creator_id: 'v5',
+          title: "♟️ Torneo Relámpago Ajedrez",
+          description: "Mañana domingo partidas rápidas de 10 min. Abierto a todos los niveles. ¡Ven a jugar!",
+          event_date: '2026-03-08',
+          event_time: '11:00',
+          location: 'Plaza Imperial Tarraco',
+          category: 'Ocio',
+          neighborhood: 'GENERAL',
+          contact_info: 'Club de Ajedrez TGN',
           created_at: new Date().toISOString()
         }
       ];

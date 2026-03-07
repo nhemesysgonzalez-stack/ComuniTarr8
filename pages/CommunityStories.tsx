@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'ms1', user_name: 'Ana T.', content: '¡Objetivo cumplido! 🏆 El resumen de la asamblea de ayer ya está en la app. Gran avance para el alumbrado del barrio. ¡Gracias a todos los que vinisteis! 💡🏘️ #PoderVecinal #TarragonaBarrio', image_url: 'https://images.unsplash.com/photo-1542838132-92c53300491e', likes: 245, created_at: new Date().toISOString() },
-            { id: 'ms2', user_name: 'Marc G.', content: '¡POR FIN! 🚗 Calle Unió reabierta al tráfico. Se acabó el rodeo por Apodaca. Las obras han quedado impecables. ✅ #TGNLliure #ObrasFinalizadas', image_url: 'https://images.unsplash.com/photo-1504307651254-35680f3366d4', likes: 512, created_at: new Date().toISOString() },
-            { id: 'ms3', user_name: 'Pilar S.', content: 'Todo listo para el Club de Lectura de hoy a las 18:30h. Traigo el libro subrayado y muchas ganas de debatir. 📚✨ #CulturaTarragona #ClubLectura #BibliotecaTGN', image_url: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6', likes: 167, created_at: new Date().toISOString() },
-            { id: 'ms4', user_name: 'Joan R.', content: 'Preparando trastos para el mercadillo de mañana en la Part Alta. ¡He encontrado de todo en el trastero! 🛍️📦 #MercadilloVecinal #TarragonaSegundaMano', image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e', likes: 189, created_at: new Date().toISOString() }
+            { id: 'ms1', user_name: 'Ana T.', content: '¡Buenos días! Ya estamos en la Pl. Fòrum. Vaya ambientazo hay hoy en el mercadillo. ¡Venid antes de que se agote todo! 🛍️✨ #SábadoVecinal #MercadilloTGN #PartAlta', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 312, created_at: new Date().toISOString() },
+            { id: 'ms2', user_name: 'Joan R.', content: '¡Mirad qué joya he encontrado por 5€! El mercadillo de hoy es una mina. 🏺💎 #TesorosDelBarrio #MercadilloVecinal #ReciclajeCreativo', image_url: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a', likes: 184, created_at: new Date().toISOString() },
+            { id: 'ms3', user_name: 'Marc G.', content: 'Vermut vecinal en marcha. Después de vender un par de cosas, toca relajarse con los vecinos. ¡Salud! 🍸🥘 #VidaDeBarrio #VermutVecinal #SábadoTGN', image_url: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b', likes: 256, created_at: new Date().toISOString() },
+            { id: 'ms4', user_name: 'Pilar S.', content: 'Todavía recordando lo bien que lo pasamos ayer en el Club de Lectura. ¡Qué gran comunidad tenemos! 📚❤️ #Cultura #VecinosUnidos #Tarragona', image_url: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6', likes: 145, created_at: new Date().toISOString() }
         ];
 
 

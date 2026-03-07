@@ -74,11 +74,11 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '✅ Viernes 6 Mar: Calle Unió ya abierta al tráfico total. ¡Buen viaje!' },
-    { user: 'Meteo TGN', text: '☀️ Viernes soleado 17ºC. Ideal para pasear esta tarde.' },
-    { user: 'Biblioteca TGN', text: '📚 Hoy 18:30h: Club de Lectura (La Ciudad de los Prodigios) en Sala d\'Actes.' },
-    { user: 'AAVV Sant Pere', text: '📋 Ya disponible el resumen de la Asamblea de ayer en la sección Anuncios.' },
-    { user: 'Mercadillo TGN', text: '🛍️ Mañana Sábado: Mercadillo Vecinal en Pl. Fòrum (09h-14h). ¡Participa!' }
+    { user: 'Admin ComuniTarr', text: '🛍️ ¡HOY! Mercadillo Vecinal en Pl. Fòrum (09h-14h). ¡Ven a vernos!' },
+    { user: 'Meteo TGN', text: '☀️ Sábado radiante 16ºC. Perfecto para el mercadillo.' },
+    { user: 'Biblioteca TGN', text: '📚 Gran éxito ayer en el Club de Lectura. ¡Gracias a los 18 asistentes!' },
+    { user: 'Trànsit TGN', text: '🚗 C/ Unió ya operativa. Tráfico fluido en el centro para las compras.' },
+    { user: 'AAVV Sant Pere', text: '📋 Actas de la Asamblea del jueves ya en sección Anuncios. ✅' }
   ];
 
 
@@ -114,23 +114,23 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Mireia R.', text: '☕ ¡Buenos días! Menuda cola hay en Av. Roma por el carril cortado. ¿Viene de las obras de C/ Unió?' },
-        { who: 'Joan B.', text: '@Mireia Sí, hoy es el último día gordo de las obras. Mañana ya debería estar todo libre. 🚧' },
-        { who: 'Pau T.', text: '@Mireia @Joan Yo he pasado en bici y se nota el jaleo. Para la Asamblea de esta noche mejor ir con tiempo. 🚲' },
-        { who: 'Mireia R.', text: '@Pau @Joan Cierto, la Asamblea a las 19h. Voy a ver si aparco por la Tabacalera y subo andando.' },
-        { who: 'Maria G.', text: '¡Ánimo con el jueves! Casi rozamos el fin de semana. ☕✨' },
+        { who: 'Mireia R.', text: '🛍️ ¡Buenos días! Ya estoy en la Pl. Fòrum. ¡Vaya ambientazo hay hoy en el mercadillo!' },
+        { who: 'Joan B.', text: '@Mireia ¡Qué bien! Yo bajo en 10 minutos. He guardado un par de libros para donar. 📚' },
+        { who: 'Pau T.', text: '@Mireia @Joan Yo pasaré sobre las 11h. ¿Hacemos un vermut luego por allí? 🍸' },
+        { who: 'Mireia R.', text: '@Pau ¡Te tomo la palabra! Nos vemos en la zona de las mesas.' },
+        { who: 'Maria G.', text: '¡Feliz sábado a todos! Disfrutad del solazo. ☀️✨' },
       ],
       [
-        { who: 'Luis M.', text: '🏢 ¿Sabéis si en la Asamblea de hoy se hablará de la luz en la Calle Smith?' },
-        { who: 'Carme S.', text: '@Luis Sí, está en el orden del día. Zonas verdes, aceras y alumbrado. ¡Es importante ir!' },
-        { who: 'Luis M.', text: '@Carme ¡Genial! Pues allí estaré a las 19h. Gracias por confirmar.' },
-        { who: 'Joan B.', text: '@Luis Trae a los vecinos del bloque, que cuantos más seamos, más caso nos harán. 😂' },
+        { who: 'Luis M.', text: '🚗 ¿Sabéis si se puede aparcar bien hoy cerca de la Part Alta con lo del mercadillo?' },
+        { who: 'Carme S.', text: '@Luis Está complicado, mejor deja el coche en el aparcamiento de la Av. Cataluña y sube andando. Está todo abierto.' },
+        { who: 'Luis M.', text: '@Carme ¡Gracias! Pues haré eso. No quiero dar vueltas.' },
+        { who: 'Joan B.', text: '@Luis C/ Unió está abierta ya, así que el acceso por ese lado es directo. ✅' },
       ],
       [
-        { who: 'Joe R.', text: '⚽ ¿Alguien se apunta al fútbol sala de hoy a las 20h en Campclar? Nos falta un cierre.' },
-        { who: 'Pau T.', text: '@Joe ¡Yo voy! Me viene perfecto después de la oficina y antes de que se haga muy tarde.' },
-        { who: 'Maria G.', text: '@Joe @Pau Yo iré a animar un rato. ¡A por ellos! 🏃‍♀️' },
-        { who: 'Joe R.', text: '@Maria ¡Eso es actitud! Nos vemos en la pista.' },
+        { who: 'Joe R.', text: '⚽ ¿Alguien para un partido rápido de basket esta tarde en el parque de las Granotes?' },
+        { who: 'Pau T.', text: '@Joe ¡Cuenta conmigo! Después del vermut del mercadillo me vendrá bien sudar un poco. 😂' },
+        { who: 'Maria G.', text: '@Joe @Pau Yo me paso a veros. ¡Dadle duro!' },
+        { who: 'Joe R.', text: '@Maria ¡Eso es! A las 17h allí.' },
       ],
     ],
     'APOYO': [
@@ -304,22 +304,22 @@ const Forum: React.FC = () => {
 
     // Base initiation scripts (Monday 2 Mar / Monday morning rush)
     let scripts = [
-      "☀️ ¡Feliz viernes vecinos! Por fin fin de semana. ¿Quién va al Club de Lectura de hoy? 📚",
-      "Mañana soleada... qué bien que ya abrieron C/ Unió. Se nota en el tráfico. ✅",
-      "Recordad: Club de Lectura HOY 18:30h en la Biblioteca. ¡Nos vemos allí! 📖",
-      "¿Algún plan para este finde? Dicen que hará buen tiempo. ☀️",
-      "Preparando las cosas para el mercadillo de mañana en la Part Alta. 🛍️",
-      "¡Venga, que el viernes ya está aquí! A disfrutar. 🥳"
+      "☀️ ¡Buenos días vecinos! ¿Quién está ya por el mercadillo de la Pl. Fòrum? 🛍️",
+      "Qué solecito hace hoy... ideal para pasear por el mercado y tomar algo. ✅",
+      "He visto cosas chulísimas en el mercadillo hoy. ¡Corred que vuela todo! ✨",
+      "¿Alguien se apunta a un vermut vecinal a las 12h en la zona del mercado? 🍸",
+      "Por fin C/ Unió abierta sin obras. Se agradece para moverse el finde. 🚗",
+      "¡Feliz sábado a todos! Disfrutad del barrio. 🥳"
     ];
 
     // Base reply scripts
     let replyScripts = [
-      `¡Totalmente, ${isReplyTo}! A por el viernes con alegría. ☕`,
-      `¡Buen día, ${isReplyTo}! ¿Nos vemos luego en el Club de Lectura? 📚`,
-      `¡Ya estamos a viernes, ${isReplyTo}! Pasa volando el tiempo. 😄`,
-      `Yo voy al mercadillo mañana si vas tú, ${isReplyTo}.`,
-      `Qué alivio lo de Calle Unió, ${isReplyTo}. Ya era hora. 🚗`,
-      `¡Qué buena energía para este viernes! Gracias, ${isReplyTo}. 🥳`
+      `¡Totalmente, ${isReplyTo}! El mercadillo está de 10 hoy. 🛍️`,
+      `¡Buen día, ${isReplyTo}! Allí nos vemos en un rato. ☕`,
+      `¡Sábado por fin, ${isReplyTo}! A disfrutar del buen tiempo. 😄`,
+      `Yo voy al mercadillo ahora mismo, ${isReplyTo}. Espérame.`,
+      `Es un lujo lo de Calle Unió abierta, ${isReplyTo}. Por fin. ✅`,
+      `¡Qué energía de sábado! Gracias, ${isReplyTo}. 🥳`
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
@@ -350,18 +350,18 @@ const Forum: React.FC = () => {
       ];
     } else if (currentNeighborhood === 'ENCUENTROS') {
       scripts = [
-        "☀️ ¡Feliz viernes! ¿Quién se apunta a un café rápido antes del Club de Lectura? ☕",
-        "¿Quién va al mercadillo mañana sábado? Busco gente para ir juntos. 🛍️",
-        "Viernes superado... ¡por fin! ¿Alguna caña hoy para celebrar? 🍺",
-        "¿Hacemos una caminata por la playa este domingo? 🌊",
-        "Mañana toca Mercadillo en la Pl. Fòrum, ¿alguien pone mesa? 🛍️",
-        "¡Hola! ¿Alguna cena rápida hoy viernes noche por el centro? 👋"
+        "☀️ ¡Feliz sábado! ¿Quién se apunta a un vermut en el mercadillo a las 12h? 🍸",
+        "¿Quién está por la Pl. Fòrum? Busco gente para echar un café rápido. ☕",
+        "Mañana soleada... ¡qué maravilla! ¿Hacemos una caminata esta tarde? 🚶‍♂️",
+        "¿Alguien va al cine luego? Ponen una chula en el OCINE. 🍿",
+        "Hoy toca Mercadillo, ¿alguien ha encontrado algún tesoro? 🛍️",
+        "¡Hola! ¿Alguna cena hoy sábado noche por la Part Alta? 👋"
       ];
       replyScripts = [
-        `¡Me apunto a ese café, ${isReplyTo}!`,
-        `Yo voy al mercadillo mañana sin falta...`,
-        `¡Buenos días! ¿Qué tal el viernes? @${isReplyTo}`,
-        `¡Nos vemos en la Biblioteca! 📚 @${isReplyTo}`
+        `¡Me apunto a ese vermut, ${isReplyTo}!`,
+        `Yo estoy en el mercadillo ahora mismo...`,
+        `¡Buenos días! ¿Qué tal el sábado? @${isReplyTo}`,
+        `¡Nos vemos en la zona de las mesas! 🛍️ @${isReplyTo}`
       ];
     } else if (isHelpRequest) {
       replyScripts = [
@@ -703,28 +703,28 @@ const Forum: React.FC = () => {
 
   const trendingTopics = [
     {
-      id: 'unio-open',
-      title: '✅ C/ Unió Abierta',
-      description: 'Tráfico fluido centro.',
-      participating: 5120
-    },
-    {
-      id: 'club-lectura',
-      title: '📚 Club Lectura',
-      description: 'Hoy 18:30h en Biblioteca.',
-      participating: 1840
-    },
-    {
       id: 'mercadillo-tgn',
-      title: '🛍️ Mercadillo Mañana',
-      description: 'Últimas mesas Pl. Fòrum.',
-      participating: 2950
+      title: '🛍️ Mercadillo HOY',
+      description: 'Plaza del Fòrum 09-14h',
+      participating: 5840
+    },
+    {
+      id: 'unio-open',
+      title: '✅ Calle Unió',
+      description: 'Abierta y operativa.',
+      participating: 4210
+    },
+    {
+      id: 'vermut-vecinal',
+      title: '🍸 Vermut Vecinal',
+      description: 'Hoy 12:00h en el mercado.',
+      participating: 2150
     },
     {
       id: 'finde-sol',
-      title: '☀️ Finde Soleado',
+      title: '☀️ Sol de Sábado',
       description: 'Planes al aire libre.',
-      participating: 3200
+      participating: 3500
     }
   ];
 
@@ -748,7 +748,7 @@ const Forum: React.FC = () => {
               <div className="flex items-center gap-1 opacity-90 cursor-pointer hover:bg-white/20 px-2 py-0.5 rounded-full transition-colors w-fit">
                 <span className="text-[10px] uppercase font-bold tracking-wider">Disponible ▾</span>
               </div>
-              <p className="text-[10px] italic opacity-80 mt-1 truncate">"¡Por fin es viernes! 🥳"</p>
+              <p className="text-[10px] italic opacity-80 mt-1 truncate">"¡A por el mercadillo! 🛍️"</p>
             </div>
           </div>
           {/* Decorative Circles */}

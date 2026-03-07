@@ -42,30 +42,30 @@ const MicroVolunteering: React.FC = () => {
 
             const realOpportunitiesExamples: VolunteerOpportunity[] = [
                 {
-                    id: 'real-fri-vol-1',
+                    id: 'real-sat-vol-1',
                     creator_id: 'v7',
-                    title: '📚 Acompañamiento al Club de Lectura (HOY 18:30h)',
-                    description: 'Busco a alguien para ir juntos al Club de Lectura en la Biblioteca Pública esta tarde. Me ofrezco para acompañar a vecinos que vivan cerca de la Rambla Nova.',
+                    title: '🛍️ Ayuda Desmontaje Mercadillo (HOY 14:00h)',
+                    description: 'Necesitamos un par de voluntarios para ayudar a recoger las mesas y limpiar la Plaza del Fòrum al finalizar el mercadillo hoy. ¡Solo 20 minutos!',
                     neighborhood: 'GENERAL',
-                    contact_info: '622 55 44 33 (Maria). Nos vemos en la fuente del Centenari a las 18:15h.',
+                    contact_info: '622 88 77 66 (Elena V. - Org. Mercadillo). Preguntar en el puesto central.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-fri-vol-2',
+                    id: 'real-sat-vol-2',
                     creator_id: 'v8',
-                    title: '🛍️ Ayuda Montaje Mercadillo (Mañana Sábado 07:30h)',
-                    description: "¿Algún voluntario madrugador para ayudar a montar las mesas del mercadillo vecinal mañana sábado en la Pl. Fòrum? Solo será media hora.",
+                    title: '📦 Recogida de Donaciones no vendidas',
+                    description: "¿Te sobran cosas del mercadillo que no quieres llevarte a casa? Estaremos recogiendo donaciones para el Ropero Solidario hoy de 14h a 15h.",
                     neighborhood: 'GENERAL',
-                    contact_info: '622 88 77 66 (Elena V. - Org. Mercadillos).',
+                    contact_info: '611 00 22 33 (Paco). Furgoneta blanca al lado de la Catedral.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-fri-vol-3',
+                    id: 'real-sat-vol-3',
                     creator_id: 'v9',
-                    title: '🚲 Taller Rápido Arreglo Bicis',
-                    description: 'Hoy viernes estaré de 17h a 18h en el Parc de la Ciutat ayudando a engrasar cadenas y ajustar frenos gratis a quien lo necesite. Trae tu bici.',
-                    neighborhood: 'GENERAL',
-                    contact_info: 'Preguntar por Marc en la zona de las pérgolas.',
+                    title: '🚶 Acompañamiento Mañana Domingo',
+                    description: 'Mañana domingo saldré a caminar por el Passeig de Sant Antoni a las 10h. Si algún vecino mayor quiere compañía o ayuda para pasear, que me avise.',
+                    neighborhood: 'PART ALTA',
+                    contact_info: '699 33 22 11 (Lucía). Envíame un WhatsApp hoy para organizarnos.',
                     created_at: new Date().toISOString()
                 }
             ];

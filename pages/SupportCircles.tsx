@@ -42,30 +42,30 @@ const SupportCircles: React.FC = () => {
 
             const mockCircles: SupportCircle[] = [
                 {
-                    id: 'mock-fri-sc1',
+                    id: 'mock-sat-sc1',
                     initiator_id: 'v1',
-                    title: '🤝 Círculo de Cuidadores — Feedback Asamblea',
+                    title: '🤝 Círculo de Cuidadores — Sábado Relax',
                     neighborhood: 'GENERAL',
-                    description: 'Tras la asamblea de ayer jueves, hoy nos reunimos a las 17:00h para valorar los compromisos de mejora en el barrio. Espacio abierto para cuidadores y familiares.',
-                    contact_info: '611 22 33 44 (Miguel). Centre Cívic Part Alta.',
+                    description: 'Hoy sábado de 11h a 12h nos vemos en el Parc del Francolí para compartir experiencias de autocuidado. ¡Trae a los peques si quieres!',
+                    contact_info: '611 22 33 44 (Miguel). Llevaremos globos para que nos reconozcáis.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-fri-sc2',
+                    id: 'mock-sat-sc2',
                     initiator_id: 'vadmin',
-                    title: '🧘 Grupo Meditación Pos-Asamblea',
+                    title: '🧘 Meditación "Vibra Positiva"',
                     neighborhood: 'GENERAL',
-                    description: 'Hoy viernes sesión especial de relajación tras una semana intensa. Abierto a todos los vecinos. A las 19:00h en el Centro Cívico.',
-                    contact_info: '655 12 34 56 (Elena). ¡Ven directamente!',
+                    description: 'Mañana domingo a las 10:00h sesión de yoga y meditación gratuita. Hoy estamos en el mercadillo informando sobre el grupo. ¡Pásate!',
+                    contact_info: '655 12 34 56 (Elena). Stand informativo en Pl. Fòrum.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-fri-sc3',
+                    id: 'mock-sat-sc3',
                     initiator_id: 'v2',
-                    title: '☕ Café "Mañana Mercadillo"',
+                    title: '☕ Tertulia Post-Mercadillo',
                     neighborhood: 'GENERAL',
-                    description: 'Hoy viernes a las 17h quedamos en el Bar Can Pere para organizar los turnos de ayuda para el mercadillo de mañana sábado. ¡Tráete tus ideas!',
-                    contact_info: '622 99 88 77 (Rosa). Bar Can Pere (Rambla).',
+                    description: 'Hoy sábado a las 17h quedamos en el local vecinal para comentar la jornada del mercadillo y relajarnos. ¡Trae algo para picar!',
+                    contact_info: '622 99 88 77 (Rosa). Local AAVV Sant Pere.',
                     created_at: new Date().toISOString()
                 }
             ];

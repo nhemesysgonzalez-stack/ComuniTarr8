@@ -48,29 +48,29 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'mock-pat-fri-1',
+          id: 'mock-pat-sat-1',
           creator_id: 'admin',
-          name: '✅ Control Calle Unió: YA REABIERTA',
-          description: 'Las obras han terminado y la calle está abierta. Hoy patrullamos solo para informar a conductores despistados y peatones sobre el nuevo asfaltado.',
-          neighborhood: 'CENTRE',
+          name: '🛡️ Seguridad Mercadillo (HOY)',
+          description: 'Ronda preventiva por la Pl. Fòrum para evitar hurtos y ayudar a los visitantes. Estaremos identificados con chalecos amarillos.',
+          neighborhood: 'GENERAL',
+          contact_info: 'Punto de información mercadillo.',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'mock-pat-sat-2',
+          creator_id: 'user1',
+          name: '🐕 Patrulla Mascotas: Rambla Nova',
+          description: 'Hoy sábado patrulla informativa para fomentar la recogida de cacas y el uso de correa en zonas concurridas. Regalamos bolsas reciclables.',
+          neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-pat-fri-2',
-          creator_id: 'user1',
-          name: '🏫 Camino Escolar Seguro VIERNES',
-          description: 'Acompañamiento a niños en el cruce de Av. Roma con Pere Martell de 8:45 a 9:15h y de 16:30 a 17:00h. ¡Último día de la semana!',
-          neighborhood: 'GENERAL',
-          contact_info: 'AMPAs TGN Centre',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'mock-pat-fri-3',
+          id: 'mock-pat-sat-3',
           creator_id: 'user2',
-          name: '🛒 Vigilancia Mercadillo (Mañana Sábado)',
-          description: 'Grupo para vigilar la descarga de furgonetas mañana sábado a las 07:00h en la Pl. Fòrum. Evitar conflictos de aparcamiento.',
-          neighborhood: 'GENERAL',
+          name: '🧹 Control Ruidos: Ocio Nocturno',
+          description: 'Patrulla de convivencia para esta noche sábado. Sensibilización en zonas de bares de la Part Alta para respetar el descanso vecinal.',
+          neighborhood: 'PART ALTA',
           contact_info: '622 55 44 33 (Maria)',
           created_at: new Date().toISOString()
         }

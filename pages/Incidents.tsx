@@ -59,26 +59,26 @@ const Incidents: React.FC = () => {
                 // Mock Incidents for Thursday March 5
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'mock-inc-fri-1',
+                        id: 'mock-inc-sat-1',
                         user_id: 'admin',
-                        title: '✅ OBRAS C/ UNIÓ: FINALIZADAS Y REABIERTO',
-                        description: 'Las obras de reparación de calzada en Calle Unió han finalizado con éxito. La calle ya está abierta al tráfico y el servicio de EMT circula con normalidad.',
+                        title: '✅ ACCESO C/ UNIÓ: 100% OPERATIVO',
+                        description: 'Tras la reapertura de ayer, el acceso al centro por Calle Unió funciona sin problemas para el tráfico del sábado. Brigadas de limpieza han retirado los últimos restos de obra.',
                         neighborhood: 'CENTRE',
                         status: 'resolved',
                         created_at: new Date().toISOString(),
-                        contact_info: '010 (Obras Públicas)',
-                        profiles: { full_name: 'Obras Públicas TGN', avatar_url: '/logo.svg' },
+                        contact_info: 'Guàrdia Urbana TGN',
+                        profiles: { full_name: 'Seguridad Ciudadana', avatar_url: '/logo.svg' },
                         image_url: 'https://images.unsplash.com/photo-1542013936693-8846383242ef?auto=format&fit=crop&q=80&w=800'
                     },
                     {
-                        id: 'mock-inc-fri-2',
+                        id: 'mock-inc-sat-2',
                         user_id: 'admin',
-                        title: '🚧 REVISIÓN ALUMBRADO: Rambla Nova',
-                        description: 'Hoy viernes revisión técnica del alumbrado nocturno en el tramo final de Rambla Nova. Posibles cortes momentáneos de luz en las farolas durante las pruebas.',
+                        title: '✅ REVISIÓN ALUMBRADO RAMBLA: OK',
+                        description: 'Las pruebas de ayer viernes finalizaron con éxito. Toda la iluminación de la Rambla Nova está plenamente operativa para el fin de semana.',
                         neighborhood: 'CENTRE',
-                        status: 'in_progress',
-                        created_at: new Date(Date.now() - 1000 * 60 * 60).toISOString(),
-                        contact_info: 'Suministros TGN',
+                        status: 'resolved',
+                        created_at: new Date(Date.now() - 1000 * 60 * 60 * 5).toISOString(),
+                        contact_info: 'Mantenimiento TGN',
                         profiles: { full_name: 'Mantenimiento TGN', avatar_url: '/logo.svg' },
                         image_url: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800'
                     }

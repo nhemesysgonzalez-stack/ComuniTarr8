@@ -42,7 +42,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-500">check_circle</span>
                 <div>
                   <p className="text-sm font-black text-green-700 dark:text-green-400">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios y paradas habituales este viernes.</p>
+                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios y paradas habituales este sábado.</p>
                 </div>
               </div>
             </div>
@@ -168,35 +168,35 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Hoy Viernes 6 Mar)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Hoy Sábado 7 Mar)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;T&eacute;cnico/a de Mantenimiento Integral&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Se busca profesional con experiencia en mantenimiento de instalaciones (electricidad, fontaner&iacute;a, climatizaci&oacute;n) para centros c&iacute;vicos en Tarragona. Contrato indefinido. 📞 977 24 55 60 (RRHH TarracoFacility)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar de Geriatr&iacute;a — Residencia Ponent&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Se busca auxiliar para turnos de fin de semana. Imprescindible titulaci&oacute;n y cari&ntilde;o por los mayores. Incorporaci&oacute;n inmediata. 📞 977 54 88 10 (Sra. Carme)</p>
                   </div>
                   <div className="border-l-4 border-blue-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Oficial de 1&ordf; Administrativo/a Contable&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Gestor&iacute;a ubicada en Eixample Norte necesita incorporar un/a contable con experiencia demostrable, dominio de A3 y fiscalidad. Jornada completa intensiva ma&ntilde;anas. 📞 688 33 22 11 (Gestor&iacute;a Llevant)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Repartidor/a con moto propia (Fines de semana)&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Pizzer&iacute;a en zona Corso precisa refuerzo para viernes, s&aacute;bados y domingos noche. Pago por horas + incentivos por pedido. 📞 622 33 44 55 (Pizzer&iacute;a Llevant)</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Chofer Repartidor/a Carnet C + CAP&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Empresa de distribuci&oacute;n de bebidas necesita conductor para la zona de Tarragona y Reus. Imprescindible tarjeta tac&oacute;grafo y experiencia en el sector. Buen salario base. 📞 611 22 99 00 (Distribuci&oacute; TGN)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Camarero/a de barra y terraza&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Cafeter&iacute;a c&eacute;ntrica busca personal para cubrir temporada de terraza. Jornada completa o media. Se valora buen trato. 📞 611 99 00 22 (Caf&eacute; Imperial)</p>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Dependiente/a Ferreter&iacute;a y Bricolaje&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Buscamos una persona con experiencia previa en venta de materiales de ferreter&iacute;a para local en Torreforta. Buenas condiciones. Capacidad de atenci&oacute;n al cliente resolutiva. 📞 977 55 44 22 (Ferreter&iacute;a Central)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Limpieza de oficinas (Turno ma&ntilde;ana)&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Empresa de servicios necesita personal para limpieza en despachos de Av. Roma. 4 horas diarias de Lunes a S&aacute;bado. 📞 977 22 33 44 (Limpiezas TGN)</p>
                   </div>
                   <div className="border-l-4 border-indigo-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Cocinero/a turno continuo&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Restaurante zona puerto precisa incorporar cocinero/a experto en cocina mediterr&aacute;nea y arroces. Experiencia liderando equipo. Libranzas correspondientes. 📞 655 44 11 00 (Restaurante El Tast)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Mozo/a de almac&eacute;n — Log&iacute;stica Puerto&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Se precisa personal para carga y descarga. Carnet carretillero valorable. Turnos rotativos mañana/tarde. 📞 677 88 99 00 (Puerto Seco TGN)</p>
                   </div>
                   <div className="border-l-4 border-teal-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar de Ayuda a Domicilio (SAD)&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Se precisa personal titulado para atenci&oacute;n domiciliaria a personas mayores en Tarragona ciudad. Jornada parcial con posibilidad de ampliaci&oacute;n. Carn&eacute; de conducir valorable. 📞 977 23 10 00 (Coop. Serveis TGN)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar Administrativo/a Contable&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Peque&ntilde;a empresa familiar busca apoyo administrativo para facturaci&oacute;n y archivo. Conocimientos de Office b&aacute;sico. 📞 977 10 20 30 (Hermanos Garc&iacute;a SL)</p>
                   </div>
                   <div className="border-l-4 border-pink-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Community Manager / Gesti&oacute;n RRSS (nueva oferta)&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Agencia de marketing local busca perfil junior con conocimientos de Instagram, TikTok y Canva. Trabajo h&iacute;brido, jornada flexible. Incorporaci&oacute;n inmediata. 📞 699 88 77 66 (Agencia Mediterr&agrave;nia Digital)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Vendedor/a para Stand Mercadillo (Solo S&aacute;bados)&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Buscamos ayuda para puesto de artesania en el mercadillo vecinal. Persona activa y alegre. Pago al finalizar la jornada. 📞 644 55 66 77 (Artesanies Maria)</p>
                   </div>
                 </div>
               </div>
