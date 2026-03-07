@@ -95,46 +95,46 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <div className="sticky top-0 z-50 w-full max-w-full overflow-x-hidden">
+    <div className="sticky top-0 z-[60] w-full max-w-full overflow-x-hidden">
       {/* Desktop Header Content */}
-      <header className="hidden lg:flex bg-white/70 dark:bg-surface-dark/70 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 h-20 items-center justify-between px-10 transition-all font-sans">
-        <div className="flex items-center gap-6">
-          <div className="flex items-center bg-gray-50/50 dark:bg-gray-800/50 rounded-2xl px-5 py-3 border border-gray-100 dark:border-gray-700 focus-within:ring-2 ring-primary/20 transition-all w-96 group">
-            <span className="material-symbols-outlined text-gray-400 group-focus-within:text-primary transition-colors">search</span>
+      <header className="hidden lg:flex bg-white/40 dark:bg-[#0f172a]/40 backdrop-blur-2xl border-b border-white/20 dark:border-white/5 h-[88px] items-center justify-between px-10 transition-all font-sans relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent dark:via-[#1e293b]/50 pointer-events-none"></div>
+        <div className="flex items-center gap-6 relative z-10">
+          <div className="flex items-center bg-white/50 dark:bg-slate-800/50 rounded-[24px] px-6 py-4 border border-white/40 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.04)] focus-within:shadow-[0_8px_32px_rgba(43,140,238,0.15)] focus-within:border-primary/40 transition-all w-[420px] group backdrop-blur-lg">
+            <span className="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors text-xl">search</span>
             <input
-              className="bg-transparent border-none focus:ring-0 text-sm font-bold dark:text-white placeholder-gray-400 ml-3 w-full"
+              className="bg-transparent border-none focus:ring-0 text-[13px] font-black dark:text-white placeholder-slate-400 ml-3 w-full uppercase tracking-widest"
               placeholder="¿Qué buscas en tu barrio?"
             />
           </div>
-          <Link to="/announcements" className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-primary/5 text-primary text-xs font-black hover:bg-primary/10 transition-all">
-            <span className="material-symbols-outlined text-[18px]">add</span>
-            <span>PUBLICAR ALGO</span>
+          <Link to="/announcements" className="flex items-center gap-2 px-6 py-4 rounded-[20px] bg-gradient-to-br from-primary to-blue-500 text-white shadow-xl shadow-primary/20 hover:scale-[1.02] hover:shadow-primary/30 active:scale-95 transition-all group">
+            <span className="material-symbols-outlined text-lg group-hover:rotate-90 transition-transform duration-300">add</span>
+            <span className="text-[11px] font-black uppercase tracking-[0.2em]">Publicar</span>
           </Link>
         </div>
 
-        <div className="flex items-center gap-5">
-          <div className="flex items-center gap-1 bg-gray-50 dark:bg-gray-800 p-1.5 rounded-2xl border border-gray-100 dark:border-gray-700">
+        <div className="flex items-center gap-6 relative z-10">
+          <div className="flex items-center gap-2 bg-white/40 dark:bg-slate-800/40 p-1.5 rounded-[24px] border border-white/40 dark:border-white/10 backdrop-blur-md shadow-sm">
             <button
               onClick={cycleLanguage}
-              className="flex items-center justify-center size-10 rounded-xl bg-white dark:bg-gray-700 shadow-sm text-primary hover:scale-110 transition-all font-black text-[10px]"
+              className="flex items-center justify-center size-11 rounded-[18px] bg-white dark:bg-slate-700 shadow-sm text-primary hover:scale-105 transition-all font-black text-[10px] uppercase"
             >
-              {language.toUpperCase()}
+              {language}
             </button>
-            {/* Button hidden as per user request (restricted to admin logic in future) */}
             {user?.user_metadata?.role === 'admin' && (
               <button
                 onClick={() => setShowCreateModal(true)}
-                className="inline-flex items-center gap-3 px-8 py-5 bg-orange-500 text-white rounded-[30px] shadow-2xl shadow-orange-500/30 hover:scale-105 active:scale-95 transition-all text-xs font-black uppercase tracking-widest"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-400 to-amber-500 text-white rounded-[18px] shadow-lg shadow-orange-500/20 hover:scale-105 active:scale-95 transition-all text-[10px] font-black uppercase tracking-widest"
               >
-                <span className="material-symbols-outlined font-black">add_circle</span>
-                CREAR GRUPO
+                <span className="material-symbols-outlined font-black text-sm">add_circle</span>
+                Grupo
               </button>
             )}
             <button
               onClick={toggleDarkMode}
-              className="flex items-center justify-center size-10 rounded-xl text-gray-400 hover:text-primary hover:bg-white dark:hover:bg-gray-700 transition-all"
+              className="flex items-center justify-center size-11 rounded-[18px] text-slate-500 hover:text-primary hover:bg-white dark:text-slate-400 dark:hover:bg-slate-700 transition-all"
             >
-              <span className="material-symbols-outlined font-black">
+              <span className="material-symbols-outlined font-black text-xl">
                 {isDark ? 'light_mode' : 'dark_mode'}
               </span>
             </button>
@@ -143,55 +143,59 @@ export const Header: React.FC = () => {
           <div className="relative">
             <button
               onClick={() => setShowNotifications(!showNotifications)}
-              className={`relative size-12 flex items-center justify-center rounded-2xl border-2 transition-all group ${showNotifications ? 'bg-primary text-white border-primary shadow-[0_0_20px_rgba(43,140,238,0.5)]' : 'bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 hover:border-primary/50 hover:scale-110'}`}
+              className={`relative size-14 flex items-center justify-center rounded-[24px] border-2 transition-all duration-300 group shadow-sm ${showNotifications ? 'bg-primary text-white border-primary shadow-[0_10px_40px_rgba(43,140,238,0.4)] scale-105' : 'bg-white/60 dark:bg-slate-800/60 border-white/50 dark:border-white/10 hover:border-primary/50 hover:bg-white dark:hover:bg-slate-800 backdrop-blur-md'}`}
               title="Notificaciones de tu barrio"
             >
-              <span className={`material-symbols-outlined font-black ${showNotifications ? 'text-white' : 'text-gray-400 group-hover:text-primary'}`}>notifications</span>
-              <span className="absolute top-2.5 right-2.5 size-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-800 animate-pulse shadow-lg"></span>
+              <span className={`material-symbols-outlined text-[22px] transition-transform duration-300 ${showNotifications ? 'rotate-12' : 'group-hover:rotate-12'} ${showNotifications ? 'text-white' : 'text-slate-500 dark:text-slate-400 group-hover:text-primary'}`}>notifications</span>
+              <span className="absolute top-3 right-3 size-3.5 bg-red-500 rounded-full border-2 border-white dark:border-slate-800 shadow-[0_0_10px_rgba(239,68,68,0.6)] animate-pulse"></span>
             </button>
 
             {/* Notifications Dropdown */}
             <AnimatePresence>
               {showNotifications && (
                 <motion.div
-                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  initial={{ opacity: 0, y: 15, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                  className="absolute top-16 right-0 w-80 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-[35px] shadow-2xl z-50 p-6 overflow-hidden"
+                  transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+                  className="absolute top-20 right-0 w-[380px] bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl border border-white/50 dark:border-white/10 rounded-[40px] shadow-[0_20px_60px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.4)] z-50 p-8 overflow-hidden"
                 >
-                  <div className="flex items-center justify-between mb-6">
-                    <h4 className="text-xs font-black dark:text-white uppercase tracking-widest">Notificaciones</h4>
-                    <span className="text-[9px] font-black text-primary px-2 py-0.5 bg-primary/10 rounded-full">3 NUEVAS</span>
+                  <div className="flex items-center justify-between mb-8">
+                    <h4 className="text-sm font-black dark:text-white uppercase tracking-widest text-slate-800">Notificaciones</h4>
+                    <span className="text-[9px] font-black text-primary px-3 py-1 bg-primary/10 rounded-full tracking-widest uppercase shadow-inner">3 NUEVAS</span>
                   </div>
                   <div className="space-y-4">
                     {mockNotifications.map(n => (
-                      <div key={n.id} className="flex gap-4 p-3 rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer group">
-                        <div className={`size-10 rounded-xl bg-gray-100 dark:bg-gray-700 flex items-center justify-center shrink-0`}>
-                          <span className={`material-symbols-outlined text-xl ${n.color}`}>{n.icon}</span>
+                      <div key={n.id} className="flex gap-4 p-4 rounded-[24px] bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700/80 transition-all cursor-pointer group border border-slate-100 dark:border-white/5 shadow-sm hover:shadow-md">
+                        <div className={`size-12 rounded-[18px] bg-slate-50 dark:bg-slate-900 flex items-center justify-center shrink-0 shadow-inner group-hover:scale-110 transition-transform`}>
+                          <span className={`material-symbols-outlined text-[22px] ${n.color}`}>{n.icon}</span>
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <p className="text-[11px] font-black dark:text-white uppercase leading-none mb-1">{n.title}</p>
-                          <p className="text-[10px] font-bold text-gray-500 dark:text-gray-400 line-clamp-1">{n.desc}</p>
-                          <p className="text-[8px] font-black text-gray-400/50 uppercase tracking-tighter mt-1">{n.time}</p>
+                        <div className="flex-1 min-w-0 flex flex-col justify-center">
+                          <p className="text-xs font-black text-slate-800 dark:text-white uppercase leading-none mb-1.5 truncate">{n.title}</p>
+                          <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 line-clamp-1">{n.desc}</p>
+                          <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest mt-2">{n.time}</p>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <button className="w-full mt-6 py-3 bg-gray-50 dark:bg-gray-800 rounded-xl text-[10px] font-black text-gray-400 uppercase tracking-widest hover:text-primary transition-colors">Ver todo lo anterior</button>
+                  <button className="w-full mt-6 py-4 rounded-[20px] text-[10px] font-black uppercase tracking-widest text-primary hover:text-white bg-primary/5 hover:bg-primary transition-all border border-primary/10">Historial completo</button>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          <Link to="/profile" className="flex items-center gap-3 p-1.5 pr-4 rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all border border-transparent hover:border-gray-100 dark:hover:border-gray-700">
-            <img
-              src={user?.user_metadata?.avatar_url || 'https://ui-avatars.com/api/?name=' + (user?.user_metadata?.full_name || 'V')}
-              className="size-10 rounded-xl shadow-lg object-cover"
-              alt="V"
-            />
-            <div className="text-right">
-              <p className="text-xs font-black dark:text-white leading-none">{user?.user_metadata?.full_name?.split(' ')[0]}</p>
-              <p className="text-[10px] font-bold text-primary">LVL 24</p>
+          <Link to="/profile" className="flex items-center gap-4 pl-2 pr-6 py-2 rounded-[28px] bg-white/40 dark:bg-slate-800/40 hover:bg-white dark:hover:bg-slate-800 transition-all border border-white/50 dark:border-white/10 backdrop-blur-md shadow-sm hover:shadow-md group">
+            <div className="relative">
+              <img
+                src={user?.user_metadata?.avatar_url || 'https://ui-avatars.com/api/?name=' + (user?.user_metadata?.full_name || 'V')}
+                className="size-12 rounded-[20px] shadow-sm object-cover group-hover:scale-105 transition-transform"
+                alt="V"
+              />
+              <span className="absolute -bottom-1 -right-1 size-3.5 bg-green-500 rounded-full border-2 border-white dark:border-slate-900 animate-pulse"></span>
+            </div>
+            <div className="text-left">
+              <p className="text-xs font-black text-slate-800 dark:text-white leading-none uppercase tracking-tight">{user?.user_metadata?.full_name?.split(' ')[0]}</p>
+              <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mt-1 opacity-80">Vecino Pro</p>
             </div>
           </Link>
         </div>
