@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+// Deployment trigger: ComuniTarr Premium Update - Mar 7 2026
 import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import Sidebar from './components/Sidebar';
