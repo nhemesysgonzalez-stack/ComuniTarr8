@@ -22,11 +22,11 @@
   }
 
   .glass-card {
-    @apply bg-white/70 dark:bg-gray-800/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-[0_8px_32px_rgba(0, 0, 0, 0.05)];
+    @apply bg-white/70 dark:bg-gray-800/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.05)];
   }
 
   .premium-shadow {
-    @apply shadow-[0_20px_50px_rgba(43, 140, 238, 0.15)] dark:shadow-[0_20px_50px_rgba(0, 0, 0, 0.3)];
+    @apply shadow-[0_20px_50px_rgba(43,140,238,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)];
   }
 
   .animated-border {
@@ -71,7 +71,7 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0,0,0,0.05);
   border-radius: 10px;
 }
 
