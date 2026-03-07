@@ -91,129 +91,119 @@ const Sidebar: React.FC = () => {
   };
 
   return (
-    <aside className="w-80 bg-white dark:bg-surface-dark border-r border-gray-100 dark:border-gray-800 min-h-screen p-6 flex flex-col hidden lg:flex sticky top-0 h-screen font-sans">
-      <div className="flex items-center gap-3 mb-8 px-2">
-        <img src="/logo.svg" alt="ComuniTarr" className="w-12 h-12 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700" />
-        <div>
-          <h2 className="text-xl font-black dark:text-white tracking-tight leading-none uppercase">ComuniTarr</h2>
-          <span className="text-[9px] font-black text-primary uppercase tracking-[0.3em]">Vecindario 2.0</span>
+    <aside className="w-80 h-screen sticky top-0 bg-white/60 dark:bg-[#0f172a]/60 backdrop-blur-xl border-r border-slate-200/50 dark:border-white/5 flex flex-col hidden lg:flex z-50 overflow-hidden">
+      {/* Brand Header */}
+      <div className="p-8 flex items-center gap-4">
+        <div className="size-12 rounded-2xl bg-gradient-to-tr from-primary to-blue-400 p-0.5 shadow-lg shadow-primary/20">
+          <div className="size-full bg-white dark:bg-slate-900 rounded-[14px] flex items-center justify-center">
+            <img src="/logo.svg" alt="ComuniTarr" className="size-8" />
+          </div>
+        </div>
+        <div className="min-w-0">
+          <h2 className="text-xl font-black dark:text-white tracking-tighter leading-none uppercase">ComuniTarr</h2>
+          <span className="text-[9px] font-black text-primary uppercase tracking-[0.3em] opacity-70">Vecindario 2.0</span>
         </div>
       </div>
 
-      <nav className="flex-1 space-y-7 overflow-y-auto pr-2 custom-scrollbar pb-10">
+      {/* Navigation Groups */}
+      <nav className="flex-1 overflow-y-auto custom-scrollbar px-5 py-2 space-y-8 pb-10">
         <div>
-          <p className="px-4 text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3">{t('nav_main')}</p>
-          <div className="space-y-1">
+          <p className="px-4 text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4">Explorar Barrio</p>
+          <div className="space-y-1.5">
             <NavItem to="/" label={t('feed')} icon="grid_view" color="primary" />
             <NavItem to="/map" label={t('map')} icon="explore" color="primary" />
             <NavItem to="/announcements" label={t('announcements')} icon="campaign" color="red" hasActivity={true} />
             <NavItem to="/calendar" label={t('calendar')} icon="calendar_today" color="sky" />
+          </div>
+        </div>
+
+        <div>
+          <p className="px-4 text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4">Comunidad</p>
+          <div className="space-y-1.5">
+            <NavItem to="/forum" label={t('forum')} icon="chat" color="indigo" badge={forumUnread} hasActivity={forumUnread === 0} />
             <NavItem to="/neighbors" label={t('neighbors')} icon="waving_hand" color="emerald" />
             <NavItem to="/incidents" label="Incidencias" icon="report_problem" color="red" />
-            <NavItem to="/invite" label="Kits de Difusión" icon="campaign" color="orange" />
-            <NavItem to="/community-info" label={t('about')} icon="info" color="primary" />
-          </div>
-        </div>
-
-        <div>
-          <p className="px-4 text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3">{t('nav_neighborhood')}</p>
-          <div className="space-y-1">
-            <div className="relative group">
-              <NavItem to="/local-businesses" label={t('local_business')} icon="storefront" color="emerald" />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 bg-amber-400 text-[8px] font-black px-1.5 py-0.5 rounded-md shadow-sm border border-amber-500 animate-bounce pointer-events-none text-amber-900 uppercase">Ofertas</span>
-            </div>
+            <NavItem to="/local-businesses" label={t('local_business')} icon="storefront" color="emerald" />
             <NavItem to="/clubs" label={t('clubs')} icon="groups" color="primary" />
-            <NavItem to="/forum" label={t('forum')} icon="chat" color="indigo" badge={forumUnread} hasActivity={forumUnread === 0} />
-            <NavItem to="/workshops" label={t('workshops')} icon="school" color="primary" />
           </div>
         </div>
 
         <div>
-          <p className="px-4 text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3">{t('nav_social')}</p>
-          <div className="space-y-1">
-            <NavItem to="/challenges" label={t('challenges')} icon="military_tech" color="primary" />
-            <NavItem to="/volunteering" label={t('volunteering')} icon="volunteer_activism" color="emerald" />
+          <p className="px-4 text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4">Bienestar</p>
+          <div className="space-y-1.5">
             <NavItem to="/support" label={t('support')} icon="diversity_1" color="purple" />
-            <NavItem to="/stories" label={t('stories')} icon="photo_library" color="orange" />
+            <NavItem to="/volunteering" label={t('volunteering')} icon="volunteer_activism" color="emerald" />
             <NavItem to="/vital" label={t('vital_care')} icon="favorite" color="red" />
           </div>
         </div>
 
-        <div>
-          <p className="px-4 text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3">{t('nav_utils')}</p>
-          <div className="space-y-1">
-            <NavItem to="/market" label={t('market')} icon="shopping_bag" color="primary" />
-            <NavItem to="/services" label={t('mutual_aid')} icon="handshake" color="emerald" />
-            <NavItem to="/patrols" label={t('patrols')} icon="shield" color="red" hasActivity={true} />
-            <NavItem to="/polls" label={t('polls')} icon="how_to_vote" color="primary" hasActivity={true} />
-            <NavItem to="/emergency" label={t('emergency')} icon="emergency" color="red" />
-            <NavItem to="/assistant" label={t('assistant')} icon="handshake" color="emerald" />
-          </div>
-        </div>
-
         {user?.email === 'nhemesysgonzalez@gmail.com' && (
-          <div>
-            <p className="px-4 text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3">Administración</p>
-            <div className="space-y-1">
-              <NavItem to="/admin" label="Panel de Control" icon="shield_person" color="purple" />
-            </div>
+          <div className="pt-4">
+            <p className="px-4 text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4">Administración</p>
+            <NavItem to="/admin" label="Panel de Control" icon="shield_person" color="purple" />
           </div>
         )}
       </nav>
 
-      <RadioPlayer />
+      {/* Footer Area: User Profile & Radio */}
+      <div className="mt-auto p-5 bg-slate-50/50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5 space-y-6 backdrop-blur-md">
+        <RadioPlayer />
 
-      <div className="mt-auto pt-6 border-t border-gray-100 dark:border-gray-800 space-y-4">
-        {/* Language Selector */}
-        <div className="flex justify-center gap-2">
-          {(['es', 'ca', 'en', 'fr'] as const).map(lang => (
-            <button
-              key={lang}
-              onClick={() => setLanguage(lang)}
-              className={`text-[10px] font-black uppercase px-2 py-1 rounded-md transition-all ${language === lang ? 'bg-primary text-white' : 'text-gray-400 hover:text-primary'}`}
-            >
-              {lang.toUpperCase()}
-            </button>
-          ))}
+        <div className="flex items-center gap-3">
+          <Link to="/profile" className="relative group">
+            <div className="size-12 rounded-2xl p-0.5 bg-gradient-to-tr from-primary to-blue-400 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">
+              <img
+                src={user?.user_metadata?.avatar_url || 'https://ui-avatars.com/api/?name=' + (user?.user_metadata?.full_name || 'V')}
+                className="size-full rounded-[14px] object-cover border border-white/20"
+                alt="Perfil"
+              />
+            </div>
+            <span className="absolute -top-1 -right-1 size-4 bg-green-500 border-2 border-white dark:border-slate-900 rounded-full"></span>
+          </Link>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-black dark:text-white truncate tracking-tight">{user?.user_metadata?.full_name || t('my_profile')}</p>
+            <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">{t('active_neighbor')}</p>
+          </div>
+          <button onClick={() => signOut()} className="size-10 flex items-center justify-center rounded-xl text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 transition-all">
+            <span className="material-symbols-outlined text-xl">logout</span>
+          </button>
         </div>
 
+        {/* Neighborhood Quick Switcher */}
         <button
           onClick={() => setShowNeighborhoods(!showNeighborhoods)}
-          className="w-full flex items-center justify-between px-4 py-4 rounded-3xl bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all font-black text-xs dark:text-white border border-gray-100 dark:border-gray-700"
+          className="w-full flex items-center justify-between px-4 py-3.5 rounded-2xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-white/5 hover:border-primary/30 transition-all group"
         >
-          <div className="flex items-center gap-3">
-            <span className="material-symbols-outlined text-primary text-xl">location_on</span>
-            <span>{user?.user_metadata?.neighborhood || t('choose_neighborhood')}</span>
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="size-8 rounded-lg bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-primary">
+              <span className="material-symbols-outlined text-lg">location_on</span>
+            </div>
+            <span className="text-[11px] font-black uppercase tracking-tight truncate dark:text-slate-300">{user?.user_metadata?.neighborhood || t('choose_neighborhood')}</span>
           </div>
-          <span className={`material-symbols-outlined transition-transform ${showNeighborhoods ? 'rotate-180' : ''}`}>expand_more</span>
+          <span className={`material-symbols-outlined text-slate-400 transition-transform ${showNeighborhoods ? 'rotate-180' : ''}`}>expand_more</span>
         </button>
 
         {showNeighborhoods && (
-          <div className="mt-2 bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-700 rounded-3xl shadow-2xl overflow-hidden animate-in slide-in-from-top-2">
+          <div className="absolute bottom-[240px] left-6 right-6 bg-white dark:bg-slate-800 border border-slate-100 dark:border-white/10 rounded-3xl shadow-2xl p-2 z-[60] animate-in slide-in-from-bottom-2">
             {neighborhoods.map(n => (
-              <button key={n} onClick={() => handleNeighborhoodChange(n)} className="w-full text-left px-5 py-3.5 text-xs font-black hover:bg-primary hover:text-white transition-all text-gray-500">
+              <button key={n} onClick={() => handleNeighborhoodChange(n)} className="w-full text-left px-5 py-3 text-[11px] font-black uppercase tracking-tight hover:bg-primary hover:text-white rounded-xl transition-all">
                 {n}
               </button>
             ))}
           </div>
         )}
 
-        <div className="flex items-center gap-4 px-2">
-          <Link to="/profile" className="relative">
-            <img
-              src={user?.user_metadata?.avatar_url || 'https://ui-avatars.com/api/?name=' + (user?.user_metadata?.full_name || 'V')}
-              className="size-12 rounded-2xl shadow-xl border-2 border-white dark:border-gray-700 object-cover"
-              alt="Perfil"
-            />
-            <span className="absolute -top-1 -right-1 size-4 bg-green-500 border-2 border-white dark:border-surface-dark rounded-full animate-pulse"></span>
-          </Link>
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-black dark:text-white truncate">{user?.user_metadata?.full_name || t('my_profile')}</p>
-            <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest">{t('active_neighbor')}</p>
-          </div>
-          <button onClick={() => signOut()} className="size-10 flex items-center justify-center rounded-xl text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-all">
-            <span className="material-symbols-outlined">logout</span>
-          </button>
+        {/* Languages */}
+        <div className="flex justify-center gap-2 pb-2">
+          {(['es', 'ca', 'en', 'fr'] as const).map(lang => (
+            <button
+              key={lang}
+              onClick={() => setLanguage(lang)}
+              className={`text-[10px] font-black uppercase px-2.5 py-1 rounded-lg transition-all ${language === lang ? 'bg-primary text-white shadow-md shadow-primary/20' : 'text-slate-400 hover:text-primary hover:bg-primary/5'}`}
+            >
+              {lang}
+            </button>
+          ))}
         </div>
       </div>
     </aside>
