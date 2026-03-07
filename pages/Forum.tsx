@@ -437,7 +437,7 @@ const Forum: React.FC = () => {
       // Occasional chain follow-up
       if (!isChain && !isAssistant && Math.random() < 0.4) {
         setTimeout(() => {
-          generateVirtualMessage(neighbor.full_name.split(' ')[0], finalContent, true);
+          generateVirtualMessage(selectedNeighbor.full_name.split(' ')[0], finalContent, true);
         }, 4000 + Math.random() * 4000);
       }
     }, delay);
