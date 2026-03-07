@@ -385,70 +385,41 @@ const Forum: React.FC = () => {
     }
 
     // Choose character
-    const neighbor = isAssistant
+    const selectedNeighbor = isAssistant
       ? { id: 'v-ai', full_name: 'Mediador Vecinal ⚖️', avatar_url: 'https://img.icons8.com/isometric/512/scales.png', status: 'online' }
       : virtualNeighbors[Math.floor(Math.random() * virtualNeighbors.length)];
 
-    // Show typing indicator immediately
-    setIsTyping(neighbor.full_name);
+    // Use Gemini for all responses now to ensure intelligence and thread following
+    setIsTyping(selectedNeighbor.full_name);
 
-    // Dynamic delay: faster for AI help, slower for casual chat
-    const delay = isAssistant ? 1500 : (2000 + Math.random() * 3000);
+    const delay = 2000 + Math.random() * 2000;
 
     setTimeout(async () => {
       let finalContent = "";
 
-      if (isAssistant && originalPrompt) {
-        // Real or simulated AI response
-        try {
-          const aiRes = await getAssistantResponse(originalPrompt, currentNeighborhood);
-          finalContent = `@${isReplyTo} ${aiRes.text}`;
-        } catch (e) {
-          finalContent = `@${isReplyTo} ¡Hola! Soy el mediador. Parece que tengo un problema de conexión, but dime: ¿en qué puedo ayudarte?`;
-        }
-      } else if (isReplyTo) {
-        // DETECCIÓN DE MENSAJES SIN CONTEXTO (emojis solos, muy cortos)
-        const isEmojiOnly = originalPrompt.length <= 3 && /[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/u.test(originalPrompt);
-        const isVeryShort = originalPrompt.trim().length <= 2;
+      try {
+        // Enviar el contexto completo del barrio y el mensaje del usuario a Gemini
+        const aiRes = await getAssistantResponse(originalPrompt || "", currentNeighborhood, selectedNeighbor.full_name);
+        finalContent = aiRes.text;
 
-        // Context-aware reply scripts
-        let possibleReplies = [];
-        if (isGreeting) {
-          possibleReplies = [
-            `¡Hola, ${isReplyTo}! A por el viernes con energía. 💪`,
-            `¡Muy buenas! ¿Qué tal la semana? @${isReplyTo}.`,
-            `¡Hola ${isReplyTo}! Aquí recuperándonos de la rutina con un café. ☕`,
-            `¡Buenos días! Vaya sol hace hoy. ☀️`
-          ];
-        } else if (isEmojiOnly || isVeryShort) {
-          // Respuestas para emojis o mensajes muy cortos
-          possibleReplies = [
-            `😊 Igualmente, ${isReplyTo}!`,
-            `👍 ¡Bien visto!`,
-            `¡Jajaja! ${isReplyTo} 😂`,
-            `¡Me too! 🙌`,
-            `💯 Totalmente de acuerdo.`,
-            `❤️ ¡Un abrazo!`
-          ];
-        } else {
-          possibleReplies = replyScripts;
+        // Si es una respuesta a alguien, asegurar que lleva el @
+        if (isReplyTo && !finalContent.includes(isReplyTo)) {
+          finalContent = `@${isReplyTo} ${finalContent}`;
         }
-        finalContent = possibleReplies[Math.floor(Math.random() * possibleReplies.length)];
-        // Ensure it mentions the user if it's a reply and doesn't already
-        if (!finalContent.includes(isReplyTo)) finalContent = `@${isReplyTo} ${finalContent}`;
-      } else {
-        // Random initiation scripts
-        finalContent = scripts[Math.floor(Math.random() * scripts.length)];
+      } catch (e) {
+        // Fallback inteligente si falla la API
+        if (mentionsRain) {
+          finalContent = `@${isReplyTo} ¡Es verdad! Se ha puesto a llover de golpe, qué faena para el mercadillo. 🌧️`;
+        } else {
+          finalContent = `@${isReplyTo} ¡Qué razón tienes! Por cierto, ¿has visto lo bien que está quedando el barrio?`;
+        }
       }
 
-      // Final sanity check for content
-      if (!finalContent) finalContent = "¡Vaya día hace hoy! ✨";
-
       const mockMsg: Message = {
-        id: `sim-${Date.now()}-${neighbor.id}`,
-        user_id: neighbor.id,
+        id: `sim-${Date.now()}-${selectedNeighbor.id}`,
+        user_id: selectedNeighbor.id,
         content: finalContent,
-        user_metadata: { full_name: neighbor.full_name, avatar_url: neighbor.avatar_url },
+        user_metadata: { full_name: selectedNeighbor.full_name, avatar_url: selectedNeighbor.avatar_url },
         neighborhood: currentNeighborhood,
         created_at: new Date().toISOString()
       };

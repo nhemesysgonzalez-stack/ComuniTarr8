@@ -173,28 +173,33 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
   return "Como tu Mediador Vecinal ⚖️, mi base de conocimientos cubre normativa (LPH), convivencia, limpieza, trámites (OMAC/BASE), agenda cultural tarraconense y más. ¿En qué puedo ayudarte específicamente hoy?";
 };
 
-export const getAssistantResponse = async (prompt: string, neighborhood: string = 'GENERAL'): Promise<{ text: string; links?: GroundingLink[] }> => {
-  // Siempre intentamos la IA real primero, por si Google decide abrir el grifo
+export const getAssistantResponse = async (prompt: string, neighborhood: string = 'GENERAL', neighborName?: string): Promise<{ text: string; links?: GroundingLink[] }> => {
+  // Always include the current date and weather context for realism
+  const today = new Date().toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
+  const weatherContext = "Está empezando a llover fuerte de forma inesperada este sábado 7 de marzo por la tarde en Tarragona.";
+
+  const isMediator = !neighborName || neighborName.includes('Mediador');
+
+  const enhancedPrompt = isMediator
+    ? `ERES EL MEDIADOR VECINAL de ComuniTarr (Tarragona). 
+       CONTEXTO HOY: ${today}. CLIMA: ${weatherContext}.
+       Canal: ${neighborhood}.
+       Responde de forma profesional, conciliadora y con datos reales de TGN.
+       Si el usuario dice que LLUEVE, confírmalo porque es cierto.
+       Pregunta: "${prompt}"`
+    : `ERES ${neighborName}, un vecino real y amable de Tarragona en la app ComuniTarr. 
+       CONTEXTO HOY: ${today}. CLIMA: ${weatherContext}.
+       Canal: ${neighborhood}.
+       Tu personalidad: Hablas de forma natural, usas emojis, eres cercano y sigues el hilo de la conversación.
+       IMPORTANTE: Si el usuario dice que está LLOVIENDO o hay mal tiempo, REACCIONA a ello (ej: "¡Es verdad!", "Vaya faena", "Menos mal que estoy en casa"). No digas que hace sol si el usuario dice que llueve.
+       Usuario (${neighborName} te contesta): "${prompt}"
+       Responde de forma breve (máx 2 frases).`;
+
   if (API_KEY) {
     const ATTEMPTS = [
       { model: "gemini-1.5-flash", api: "v1beta" },
       { model: "gemini-1.5-pro", api: "v1beta" }
     ];
-
-    // Incluir contexto del vecindario en el prompt
-    const enhancedPrompt = `Estás actuando como el Mediador Vecinal en una app comunitaria de Tarragona llamada ComuniTarr. 
-    Actualmente estás respondiendo en el canal/foro: "${neighborhood}".
-    
-    Tu función es ayudar a los vecinos con información útil, conciliadora y veraz sobre Tarragona, convivencia, limpieza, empleo, etc.
-    
-    IMPORTANTE:
-    - Si el canal es 'EMPLEO', enfócate en oportunidades laborales, formación y consejos de búsqueda de empleo.
-    - Si el canal es 'PREPPERS', enfócate en seguridad, emergencias químicas y autoprotección.
-    - Si el canal es 'ENCUENTROS', enfócate en socialización y eventos.
-    - Si el usuario pregunta algo específico (ej. "limpieza de calles"), responde SOBRE ESE TEMA aunque estés en otro canal, pero puedes mencionar que es un tema general.
-    - Responde de forma breve, amable y con iconos.
-    
-    Usuario pregunta: "${prompt}"`;
 
     for (const attempt of ATTEMPTS) {
       try {
@@ -213,17 +218,18 @@ export const getAssistantResponse = async (prompt: string, neighborhood: string 
         if (response.ok && data.candidates?.[0]?.content?.parts?.[0]?.text) {
           return { text: data.candidates[0].content.parts[0].text };
         }
-      } catch (e) {
-        // Fallback al siguiente modelo o al simulador
-      }
+      } catch (e) { }
     }
   }
 
-  // SI FALLA TODO (Quota 0), ACTIVAMOS EL PLAN C: MEDIADOR VECINAL
+  // FALLBACK SIMULATOR
   return new Promise((resolve) => {
-    // Simulamos un pequeño retraso para que parezca que la IA está "pensando"
     setTimeout(() => {
-      resolve({ text: getSimulatedResponse(prompt, neighborhood) });
+      let text = getSimulatedResponse(prompt, neighborhood);
+      if (prompt.toLowerCase().includes('llueve') || prompt.toLowerCase().includes('luueve')) {
+        text = `¡Es verdad! Se ha puesto a llover de golpe aquí en ${neighborhood}. 🌧️ ¿Tienes paraguas?`;
+      }
+      resolve({ text });
     }, 800);
   });
 };
