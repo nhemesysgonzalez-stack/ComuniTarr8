@@ -304,7 +304,8 @@ const Forum: React.FC = () => {
 
     // REVISIÓN DE CONTEXTO PARA VECINOS MÁS INTELIGENTES
     const mentionsMercadillo = p.includes('mercadillo') || p.includes('mercado') || p.includes('placa forum') || p.includes('compra');
-    const mentionsWeather = p.includes('sol') || p.includes('tiempo') || p.includes('calor') || p.includes('frio');
+    const mentionsWeather = p.includes('sol') || p.includes('tiempo') || p.includes('calor') || p.includes('frio') || p.includes('viento');
+    const mentionsRain = p.includes('llueve') || p.includes('lluvia') || p.includes('nublado') || p.includes('agua');
     const mentionsFood = p.includes('vermut') || p.includes('cafe') || p.includes('comer') || p.includes('cena');
 
     // Base initiation scripts (Saturday March 7)
@@ -312,19 +313,26 @@ const Forum: React.FC = () => {
       "☀️ ¡Buenos días vecinos! ¿Quién está ya por el mercadillo de la Pl. Fòrum? 🛍️",
       "Qué solecito hace hoy... ideal para pasear por el mercado y tomar algo. ✅",
       "He visto cosas chulísimas en el mercadillo hoy. ¡Corred que vuela todo! ✨",
-      "¿Alguien se apunta a un vermut vecinal a las 12h en la zona del mercado? 🍸",
       "Por fin C/ Unió abierta sin obras. Se agradece para moverse el finde. 🚗",
       "¡Feliz sábado a todos! Disfrutad del barrio. 🥳"
     ];
+
+    // Priority for Weather Change (If user says it's raining)
+    if (mentionsRain) {
+      scripts = [
+        "¡Ostras! ¡Es verdad que se ha puesto a llover! 🌧️",
+        "Menudo cambio de tiempo... ¿Recogemos los puestos del mercado? ☂️",
+        "Con lo bien que estábamos al sol... ¡A cubierto! 🏃‍♂️",
+        "¿Llueve por vuestra zona? Aquí en el centro está cayendo buena."
+      ];
+    }
 
     // Base reply scripts
     let replyScripts = [
       `¡Totalmente, ${isReplyTo}! El mercadillo de hoy está nivel Dios. 🛍️`,
       `¡Buen día, ${isReplyTo}! Allí nos vemos en un rato, guardadme sitio. ☕`,
       `¡Sábado por fin, ${isReplyTo}! A disfrutar del buen tiempo que tenemos. 😄`,
-      `Yo voy al mercadillo ahora mismo, ${isReplyTo}. ¿Nos vemos allí?`,
-      `Es un lujo lo de Calle Unió abierta, ${isReplyTo}. Ya era hora de respirar. ✅`,
-      `¡Qué energía de sábado! Gracias por el saludo, ${isReplyTo}. 🥳`
+      `Yo voy al mercadillo ahora mismo, ${isReplyTo}. ¿Nos vemos allí?`
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
@@ -335,30 +343,7 @@ const Forum: React.FC = () => {
       ];
       replyScripts = [
         `¡Suerte con la búsqueda, ${isReplyTo}! Yo vi ayer algo en la sección Servicios.`,
-        `@${isReplyTo} Prueba a preguntar en los puestos del mercado, siempre necesitan manos hoy.`,
-        `¡Ánimo ${isReplyTo}! El sábado suele haber mucho movimiento en la Part Alta.`
-      ];
-    } else if (currentNeighborhood === 'APOYO') {
-      scripts = [
-        "💜 ¿Alguien conoce talleres de gestión emocional en TGN? Me vendría de lujo.",
-        "Si alguien se siente solo este finde y quiere dar un paseo por el mercado, que escriba. 🤝",
-        "Recordatorio: grupo de apoyo emocional HOY sábado 11:30h en el Centro Cívico. 🫂"
-      ];
-      replyScripts = [
-        `Gracias por compartir esto, ${isReplyTo}. Aquí estamos para apoyarnos. 💜`,
-        `@${isReplyTo} Qué iniciativa más buena. Yo me apunto al paseo si te parece bien.`,
-        `@${isReplyTo} Te mando un abrazo virtual. Este chat es un lugar seguro.`
-      ];
-    } else if (currentNeighborhood === 'ENCUENTROS') {
-      scripts = [
-        "☀️ ¿Quién se apunta a un vermut en el mercadillo a las 12h hoy? 🍸",
-        "¿Alguien por la Pl. Fòrum ahora mismo? ☕",
-        "Mañana soleada... ¿Damos una caminata por la muralla esta tarde? 🚶‍♂️"
-      ];
-      replyScripts = [
-        `¡Me apunto a ese vermut, ${isReplyTo}! ¿Dónde quedamos exactamente?`,
-        `Yo estoy en el mercadillo ahora mismo, ${isReplyTo}. Llevo una camiseta azul.`,
-        `¡Buenos días! Qué buen plan @${isReplyTo}, cuenta conmigo.`
+        `@${isReplyTo} Prueba a preguntar en los puestos del mercado, siempre necesitan manos hoy.`
       ];
     }
 
@@ -367,27 +352,35 @@ const Forum: React.FC = () => {
       replyScripts = [
         `¡Hola, ${isReplyTo}! ¡Qué alegría verte por aquí un sábado! 👋`,
         `¡Muy buenas, ${isReplyTo}! ¿Cómo va el fin de semana?`,
-        `¡Hola! ¿Has ido ya al mercadillo, ${isReplyTo}?`,
         `¡Saludos vecino/a! Disfruta mucho del día. ☀️`
+      ];
+    } else if (mentionsRain) {
+      replyScripts = [
+        `¡Es verdad ${isReplyTo}, me acabo de mojar! 🌧️ Corramos a los soportales.`,
+        `@${isReplyTo} Pues hace un momento hacía sol... qué locura de tiempo.`,
+        `¿En serio llueve? ¡Y yo con la ropa tendida! Gracias por avisar ${isReplyTo}. 🏃‍♀️`
       ];
     } else if (mentionsMercadillo) {
       replyScripts = [
         `¡Yo también voy al mercadillo ahora, ${isReplyTo}! ¿Has visto algo chulo? 🛍️`,
-        `@${isReplyTo} Dicen que hay mucha gente hoy, pero vale la pena por el ambiente.`,
-        `¡El mercadillo es lo mejor de los sábados! ¿Verdad, ${isReplyTo}? ✨`
+        `@${isReplyTo} Dicen que hay mucha gente hoy, pero vale la pena por el ambiente.`
       ];
     } else if (mentionsWeather) {
       replyScripts = [
         `¡Es verdad, ${isReplyTo}! Menudo solazo ha salido hoy. ☀️`,
-        `@${isReplyTo} Ideal para estar en una terracita ahora mismo.`,
-        `Hacía falta este tiempo para el mercadillo, ¿eh ${isReplyTo}?`
+        `@${isReplyTo} Ideal para estar en una terracita ahora mismo.`
       ];
     } else if (isHelpRequest) {
       replyScripts = [
         `¡Bienvenida ${isReplyTo}! Es muy fácil: este es el Foro para hablar. Tienes el Mapa 📍 para avisos y el Inicio 🏠 para noticias.`,
-        `¡Hola! No te preocupes ${isReplyTo}. Usa el menú lateral para moverte y no olvides la Radio 📻.`,
-        `¡Bienvenida! Si participas ganas XP y subes en el Top Vecinos 🏆.`,
-        `¡Hola ${isReplyTo}! Aquí nos ayudamos todos. Si ves algo roto, repórtalo en 'Incidencias' en el Inicio.`
+        `¡Hola! No te preocupes ${isReplyTo}. Usa el menú lateral para moverte.`
+      ];
+    } else {
+      // Si el usuario habla de otra cosa, intentamos seguirle el rollo de forma genérica
+      replyScripts = [
+        `¡Qué bueno lo que dices, ${isReplyTo}! No lo había pensado así.`,
+        `@${isReplyTo} Tienes razón, el barrio está cambiando mucho.`,
+        `Interesante punto, ${isReplyTo}. ¿Alguien más opina igual?`
       ];
     }
 
