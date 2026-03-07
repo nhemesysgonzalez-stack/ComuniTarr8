@@ -20,6 +20,50 @@
   .dark .active-glow::after {
     background: radial-gradient(circle at center, rgba(43, 140, 238, 0.3) 0%, transparent 70%);
   }
+
+  .glass-card {
+    @apply bg-white/70 dark:bg-gray-800/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-[0_8px_32px_rgba(0, 0, 0, 0.05)];
+  }
+
+  .premium-shadow {
+    @apply shadow-[0_20px_50px_rgba(43, 140, 238, 0.15)] dark:shadow-[0_20px_50px_rgba(0, 0, 0, 0.3)];
+  }
+
+  .animated-border {
+    position: relative;
+    border-radius: inherit;
+  }
+
+  .animated-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, #3b82f6, #6366f1, #3b82f6);
+    background-size: 200% 200%;
+    animation: border-flow 4s linear infinite;
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .animated-border:hover::before {
+    opacity: 1;
+  }
+}
+
+@keyframes border-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -127,8 +171,15 @@
 }
 
 @keyframes pulse-slow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
 }
 
 .animate-pulse-slow {

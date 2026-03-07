@@ -13,55 +13,62 @@ const HomeNewsItem: React.FC<{ item: any }> = ({ item }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div
+    <motion.div
+      layout
       onClick={() => setIsExpanded(!isExpanded)}
-      className="bg-white dark:bg-gray-800 p-6 rounded-[32px] shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col gap-4 hover:shadow-md transition-all cursor-pointer group"
+      className="glass-card p-8 rounded-[38px] flex flex-col gap-5 hover:shadow-2xl transition-all cursor-pointer group border-white/40 dark:border-white/5 active:scale-[0.98]"
     >
       <div>
-        <div className="flex items-center gap-2 mb-2">
-          <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-black uppercase tracking-[0.2em]">{item.category || 'AVISO'}</span>
-          <span className="text-[10px] font-bold text-gray-400 dark:text-gray-500">• {new Date(item.created_at).toLocaleDateString()}</span>
-          <span className="flex items-center gap-0.5 text-[9px] font-black text-primary/50 uppercase">
-            <span className="material-symbols-outlined text-[12px]">location_on</span>
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-3">
+            <span className="px-4 py-1.5 bg-primary/10 text-primary-light dark:text-primary-light rounded-full text-[9px] font-black uppercase tracking-[0.15em] backdrop-blur-md border border-primary/20">
+              {item.category || 'AVISO'}
+            </span>
+            <span className="text-[10px] font-bold text-gray-400 dark:text-gray-500 flex items-center gap-1">
+              <span className="material-symbols-outlined text-xs">calendar_today</span>
+              {new Date(item.created_at).toLocaleDateString()}
+            </span>
+          </div>
+          <span className="flex items-center gap-1 text-[10px] font-black text-primary/60 dark:text-white/40 uppercase bg-gray-50/50 dark:bg-white/5 px-3 py-1 rounded-full">
+            <span className="material-symbols-outlined text-[14px]">location_on</span>
             {item.neighborhood}
           </span>
         </div>
-        <h3 className="text-xl font-black dark:text-white leading-tight mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
-        <p className={`text-gray-600 dark:text-gray-400 font-medium leading-relaxed ${!isExpanded ? 'line-clamp-2' : ''}`}>
+
+        <h3 className="text-2xl md:text-3xl font-black dark:text-white leading-[1.1] mb-3 group-hover:text-primary-light transition-colors tracking-tight">
+          {item.title}
+        </h3>
+
+        <p className={`text-gray-600 dark:text-gray-300 font-medium leading-relaxed text-base md:text-lg ${!isExpanded ? 'line-clamp-2' : ''}`}>
           {item.content}
         </p>
       </div>
 
-      <div className="flex gap-4 mt-2">
-        {/* Share Button for Viral Growth */}
+      <div className="flex items-center justify-between mt-auto">
         <button
           onClick={(e) => {
             e.stopPropagation();
             const text = `📢 ¡Mira esta noticia en ComuniTarr!\n\n${item.title}\n${item.content}\n\n👉 ¡Únete a nuestro barrio aquí! https://comunitarr.vercel.app`;
 
-            // Try to share using native navigator
             if (navigator.share) {
               navigator.share({ title: item.title, text: text, url: 'https://comunitarr.vercel.app' })
-                .then(() => {
-                  confetti({ particleCount: 30, spread: 50, origin: { y: 0.8 } });
-                })
-                .catch(() => {
-                  // If canceled or error, copy to clipboard anyway
-                  navigator.clipboard.writeText(text);
-                });
+                .then(() => confetti({ particleCount: 40, spread: 60, origin: { y: 0.8 } }))
+                .catch(() => navigator.clipboard.writeText(text));
             } else {
-              // Desktop Fallback
               navigator.clipboard.writeText(text);
-              alert('✅ ¡Enlace copiado al portapapeles!\nYa puedes pegarlo en WhatsApp, Instagram o Facebook.');
-              confetti({ particleCount: 100, spread: 80, origin: { y: 0.6 }, colors: ['#2563eb', '#ffffff'] });
+              alert('✅ ¡Enlace copiado!');
+              confetti({ particleCount: 100, spread: 80, origin: { y: 0.6 } });
             }
           }}
-          className="relative z-10 flex items-center gap-2 px-4 py-2 rounded-2xl bg-gray-100 dark:bg-gray-700 text-gray-500 hover:text-primary hover:bg-primary/5 transition-all text-[10px] font-black uppercase tracking-widest"
-          title="Compartir en redes"
+          className="flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-primary/5 dark:bg-white/5 text-primary-light dark:text-white hover:bg-primary-light hover:text-white transition-all text-[11px] font-black uppercase tracking-widest border border-primary/10"
         >
-          <span className="material-symbols-outlined text-[16px]">share</span>
+          <span className="material-symbols-outlined text-[18px]">share</span>
           <span>Compartir</span>
         </button>
+
+        <span className="text-[10px] font-black text-primary-light dark:text-white/60 uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
+          {isExpanded ? 'Ver menos ↑' : 'Leer más →'}
+        </span>
       </div>
 
       <AnimatePresence>
@@ -70,52 +77,38 @@ const HomeNewsItem: React.FC<{ item: any }> = ({ item }) => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden space-y-4 pt-4 border-t border-gray-100 dark:border-gray-700"
+            className="overflow-hidden space-y-5 pt-6 border-t border-gray-100 dark:border-white/10"
           >
             {item.itinerary && (
-              <div className="p-4 bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-dashed border-primary/20">
-                <p className="text-[10px] font-black text-primary uppercase tracking-widest mb-3">Itinerario / Detalles</p>
-                <div className="space-y-2">
+              <div className="p-6 bg-primary/5 dark:bg-white/5 rounded-[28px] border border-dashed border-primary/30">
+                <p className="text-[11px] font-black text-primary-light uppercase tracking-[0.2em] mb-4">Detalles del Evento</p>
+                <div className="space-y-3">
                   {item.itinerary.split('\n').map((line: string, i: number) => (
-                    <div key={i} className="flex gap-2 text-xs font-bold dark:text-gray-300">
-                      <span className="text-primary">•</span>
-                      <span>{line}</span>
+                    <div key={i} className="flex gap-3 text-sm md:text-base font-bold dark:text-gray-200">
+                      <div className="size-5 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mt-0.5">
+                        <span className="text-[10px] text-primary-light">✓</span>
+                      </div>
+                      <span>{line.replace('•', '').trim()}</span>
                     </div>
                   ))}
                 </div>
               </div>
             )}
+
             {item.link_url && (
-              item.link_url.startsWith('/') || item.link_url.startsWith('#') ? (
-                <Link
-                  to={item.link_url.replace('#', '')}
-                  onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-2 px-6 py-4 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-[1.02] transition-all shadow-lg shadow-primary/30 w-full justify-center group/link"
-                >
-                  <span className="material-symbols-outlined text-[20px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-                  Ver ahora en la App
-                </Link>
-              ) : (
-                <a
-                  href={item.link_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:scale-105 transition-all shadow-lg shadow-primary/20 w-full justify-center"
-                >
-                  <span className="material-symbols-outlined text-[18px]">open_in_new</span>
-                  Ver noticia oficial
-                </a>
-              )
+              <Link
+                to={item.link_url.replace('#', '')}
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center gap-3 px-8 py-5 bg-primary-light text-white rounded-[24px] font-black text-sm uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-primary/30 w-full justify-center group/btn"
+              >
+                <span>Acceder ahora</span>
+                <span className="material-symbols-outlined text-[24px] group-hover/btn:translate-x-2 transition-transform">arrow_right_alt</span>
+              </Link>
             )}
           </motion.div>
         )}
       </AnimatePresence>
-
-      <div className="flex items-center justify-between text-[10px] font-black text-primary uppercase tracking-widest mt-2">
-        <span className="group-hover:translate-x-1 transition-transform">{isExpanded ? 'Ver menos ↑' : 'Leer más →'}</span>
-      </div>
-    </div>
+    </motion.div>
   );
 };
 

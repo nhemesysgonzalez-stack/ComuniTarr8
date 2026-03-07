@@ -302,7 +302,12 @@ const Forum: React.FC = () => {
     // Priority for Mediator if it's a question or app help
     const isAssistant = isReplyTo && (isQuestion || isHelpRequest || p.includes('@mediador') || p.includes('mediador'));
 
-    // Base initiation scripts (Monday 2 Mar / Monday morning rush)
+    // REVISIÓN DE CONTEXTO PARA VECINOS MÁS INTELIGENTES
+    const mentionsMercadillo = p.includes('mercadillo') || p.includes('mercado') || p.includes('placa forum') || p.includes('compra');
+    const mentionsWeather = p.includes('sol') || p.includes('tiempo') || p.includes('calor') || p.includes('frio');
+    const mentionsFood = p.includes('vermut') || p.includes('cafe') || p.includes('comer') || p.includes('cena');
+
+    // Base initiation scripts (Saturday March 7)
     let scripts = [
       "☀️ ¡Buenos días vecinos! ¿Quién está ya por el mercadillo de la Pl. Fòrum? 🛍️",
       "Qué solecito hace hoy... ideal para pasear por el mercado y tomar algo. ✅",
@@ -314,54 +319,68 @@ const Forum: React.FC = () => {
 
     // Base reply scripts
     let replyScripts = [
-      `¡Totalmente, ${isReplyTo}! El mercadillo está de 10 hoy. 🛍️`,
-      `¡Buen día, ${isReplyTo}! Allí nos vemos en un rato. ☕`,
-      `¡Sábado por fin, ${isReplyTo}! A disfrutar del buen tiempo. 😄`,
-      `Yo voy al mercadillo ahora mismo, ${isReplyTo}. Espérame.`,
-      `Es un lujo lo de Calle Unió abierta, ${isReplyTo}. Por fin. ✅`,
-      `¡Qué energía de sábado! Gracias, ${isReplyTo}. 🥳`
+      `¡Totalmente, ${isReplyTo}! El mercadillo de hoy está nivel Dios. 🛍️`,
+      `¡Buen día, ${isReplyTo}! Allí nos vemos en un rato, guardadme sitio. ☕`,
+      `¡Sábado por fin, ${isReplyTo}! A disfrutar del buen tiempo que tenemos. 😄`,
+      `Yo voy al mercadillo ahora mismo, ${isReplyTo}. ¿Nos vemos allí?`,
+      `Es un lujo lo de Calle Unió abierta, ${isReplyTo}. Ya era hora de respirar. ✅`,
+      `¡Qué energía de sábado! Gracias por el saludo, ${isReplyTo}. 🥳`
     ];
 
     if (currentNeighborhood === 'EMPLEO') {
-      scripts = ["¿Alguien sabe de trabajos de tarde en hostelería para este finde? 🍽️", "Empiezo nuevo trabajo hoy viernes. ¡Un poco de ánimo! 🤞"];
-      replyScripts = [`¡Mucho ánimo con el nuevo trabajo, ${isReplyTo}!`, `Mira en la sección de Servicios de la app, han puesto ofertas para este viernes.`];
-    } else if (currentNeighborhood === 'APOYO') {
       scripts = [
-        "💜 ¿Alguien conoce talleres gratuitos de gestión emocional en Tarragona? Me vendría muy bien.",
-        "Hoy he acompañado a una vecina mayor al médico. No tenía a nadie. Estas cosas no deberían pasar. Si alguien necesita compañía, escribid aquí. 🤝",
-        "Mi sobrina está sufriendo ciberbullying. ¿Alguien sabe cómo actuar con el colegio? Necesito consejos. 😔",
-        "Recordatorio: grupo de apoyo emocional HOY viernes 19:30h en el Centro Cívico. Gratuito y abierto a todos. 🫂",
-        "¿Sabíais que el teléfono 024 es la línea de atención a la conducta suicida? Gratuito, 24h. Nunca se sabe cuándo puede hacer falta. 💛",
-        "En el SIAD (Plaça de la Font) atienden a mujeres en situación de violencia. Sin cita, sin preguntas. Solo ayuda. 977 24 47 95. Compartid por favor. 🟣",
-        "Hoy leí que 1 de cada 4 niños sufre acoso escolar. Como comunidad tenemos que estar atentos. Si veis algo raro, no miréis para otro lado. 🛡️",
-        "¿Hay alguna asociación en TGN que trabaje con personas que viven solas? Mi padre se siente muy aislado desde que falleció mi madre. 💙",
-        "Cruz Roja Tarragona (977 22 19 07) tiene un programa de acompañamiento para personas mayores solas. Lo recomiendo mucho. ❤️",
-        "Propongo que hagamos un grupo de paseo semanal para personas que necesiten hablar o simplemente no estar solas. ¿Os animáis? 🚶‍♀️🚶"
+        "¿Alguna oferta para camarero este finde? Se me ha caído un extra a última hora. 🍽️",
+        "Busco repartidor con moto para hoy sábado noche. ¡Interesados al DM! 🚴",
+        "En el Bar de la Esquina buscan gente para el mercadillo hoy. ¡De nada! ✨"
       ];
       replyScripts = [
-        `Gracias por compartir esto, ${isReplyTo}. Aquí nadie juzga. 💜`,
-        `@${isReplyTo} Qué importante es hablar de esto. Yo pasé por algo parecido y salí adelante con ayuda. ¡No estás sola/o!`,
-        `@${isReplyTo} Te mando un abrazo enorme. Si necesitas hablar, aquí estamos. 🫂`,
-        `@${isReplyTo} Apuntado el teléfono. Gracias por la información, nunca se sabe cuándo alguien lo puede necesitar.`,
-        `@${isReplyTo} Yo me apunto a lo que sea que ayude al barrio. Entre vecinos nos cuidamos. 💪`,
-        `@${isReplyTo} Mi hija sufrió bullying y lo superamos juntos. La clave es no callarse. Estamos aquí para lo que necesites.`,
-        `@${isReplyTo} Muy valiente por hablar de esto. Ojalá más gente se atreviera. Este canal es un espacio seguro. ❤️`,
-        `@${isReplyTo} La Cruz Roja de Tarragona hace un trabajo increíble. También Càritas tiene programas de apoyo: 977 23 99 34.`
+        `¡Suerte con la búsqueda, ${isReplyTo}! Yo vi ayer algo en la sección Servicios.`,
+        `@${isReplyTo} Prueba a preguntar en los puestos del mercado, siempre necesitan manos hoy.`,
+        `¡Ánimo ${isReplyTo}! El sábado suele haber mucho movimiento en la Part Alta.`
+      ];
+    } else if (currentNeighborhood === 'APOYO') {
+      scripts = [
+        "💜 ¿Alguien conoce talleres de gestión emocional en TGN? Me vendría de lujo.",
+        "Si alguien se siente solo este finde y quiere dar un paseo por el mercado, que escriba. 🤝",
+        "Recordatorio: grupo de apoyo emocional HOY sábado 11:30h en el Centro Cívico. 🫂"
+      ];
+      replyScripts = [
+        `Gracias por compartir esto, ${isReplyTo}. Aquí estamos para apoyarnos. 💜`,
+        `@${isReplyTo} Qué iniciativa más buena. Yo me apunto al paseo si te parece bien.`,
+        `@${isReplyTo} Te mando un abrazo virtual. Este chat es un lugar seguro.`
       ];
     } else if (currentNeighborhood === 'ENCUENTROS') {
       scripts = [
-        "☀️ ¡Feliz sábado! ¿Quién se apunta a un vermut en el mercadillo a las 12h? 🍸",
-        "¿Quién está por la Pl. Fòrum? Busco gente para echar un café rápido. ☕",
-        "Mañana soleada... ¡qué maravilla! ¿Hacemos una caminata esta tarde? 🚶‍♂️",
-        "¿Alguien va al cine luego? Ponen una chula en el OCINE. 🍿",
-        "Hoy toca Mercadillo, ¿alguien ha encontrado algún tesoro? 🛍️",
-        "¡Hola! ¿Alguna cena hoy sábado noche por la Part Alta? 👋"
+        "☀️ ¿Quién se apunta a un vermut en el mercadillo a las 12h hoy? 🍸",
+        "¿Alguien por la Pl. Fòrum ahora mismo? ☕",
+        "Mañana soleada... ¿Damos una caminata por la muralla esta tarde? 🚶‍♂️"
       ];
       replyScripts = [
-        `¡Me apunto a ese vermut, ${isReplyTo}!`,
-        `Yo estoy en el mercadillo ahora mismo...`,
-        `¡Buenos días! ¿Qué tal el sábado? @${isReplyTo}`,
-        `¡Nos vemos en la zona de las mesas! 🛍️ @${isReplyTo}`
+        `¡Me apunto a ese vermut, ${isReplyTo}! ¿Dónde quedamos exactamente?`,
+        `Yo estoy en el mercadillo ahora mismo, ${isReplyTo}. Llevo una camiseta azul.`,
+        `¡Buenos días! Qué buen plan @${isReplyTo}, cuenta conmigo.`
+      ];
+    }
+
+    // LÓGICA DE HERENCIA Y CONTEXTO
+    if (isGreeting) {
+      replyScripts = [
+        `¡Hola, ${isReplyTo}! ¡Qué alegría verte por aquí un sábado! 👋`,
+        `¡Muy buenas, ${isReplyTo}! ¿Cómo va el fin de semana?`,
+        `¡Hola! ¿Has ido ya al mercadillo, ${isReplyTo}?`,
+        `¡Saludos vecino/a! Disfruta mucho del día. ☀️`
+      ];
+    } else if (mentionsMercadillo) {
+      replyScripts = [
+        `¡Yo también voy al mercadillo ahora, ${isReplyTo}! ¿Has visto algo chulo? 🛍️`,
+        `@${isReplyTo} Dicen que hay mucha gente hoy, pero vale la pena por el ambiente.`,
+        `¡El mercadillo es lo mejor de los sábados! ¿Verdad, ${isReplyTo}? ✨`
+      ];
+    } else if (mentionsWeather) {
+      replyScripts = [
+        `¡Es verdad, ${isReplyTo}! Menudo solazo ha salido hoy. ☀️`,
+        `@${isReplyTo} Ideal para estar en una terracita ahora mismo.`,
+        `Hacía falta este tiempo para el mercadillo, ¿eh ${isReplyTo}?`
       ];
     } else if (isHelpRequest) {
       replyScripts = [
@@ -756,133 +775,66 @@ const Forum: React.FC = () => {
           <div className="absolute bottom-0 right-0 size-20 bg-blue-300/20 rounded-full blur-xl"></div>
         </div>
 
-        {/* Search Bar */}
-        <div className="p-4">
-          <div className="relative">
-            <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">search</span>
-            <input
-              type="text"
-              placeholder="Buscar vecinos o grupos..."
-              className="w-full bg-gray-100 dark:bg-gray-700/50 rounded-full py-2 pl-9 pr-4 text-xs font-bold text-gray-600 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400/50"
-            />
-          </div>
-        </div>
-
-        {/* Group Lists (Accordion Style) */}
-        <div className="flex-1 overflow-y-auto px-2 space-y-1 custom-scrollbar">
-          {/* GENERAL DISCUSSION */}
-          <div className="mb-2">
-            <button
-              onClick={() => startTransition(() => setCurrentNeighborhood('GENERAL'))}
-              className={`w-full flex items-center gap-3 p-3 rounded-2xl transition-all ${currentNeighborhood === 'GENERAL' ? 'bg-blue-50 dark:bg-blue-900/20' : 'hover:bg-gray-50 dark:hover:bg-gray-800'}`}
-            >
-              <div className={`size-10 rounded-full flex items-center justify-center shrink-0 ${currentNeighborhood === 'GENERAL' ? 'bg-blue-500 text-white shadow-md shadow-blue-500/30' : 'bg-gray-200 dark:bg-gray-700 text-gray-500'}`}>
-                <span className="material-symbols-outlined text-lg">public</span>
-              </div>
-              <div className="flex-1 text-left">
-                <h3 className={`text-xs font-black uppercase tracking-wider ${currentNeighborhood === 'GENERAL' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-400'}`}>Discusión General</h3>
-                <p className="text-[10px] text-gray-400 font-bold truncate">35 vecinos activos</p>
-              </div>
-            </button>
+        <div className="flex-1 overflow-y-auto custom-scrollbar space-y-2 pr-2">
+          {/* LOGO AREA */}
+          <div className="flex flex-col items-center mb-10 mt-4">
+            <div className="size-20 bg-gradient-to-tr from-primary to-blue-400 rounded-[28px] flex items-center justify-center shadow-2xl shadow-primary/30 mb-4 transform -rotate-6">
+              <span className="material-symbols-outlined text-white text-5xl">forum</span>
+            </div>
+            <h1 className="text-2xl font-black text-gray-800 dark:text-white uppercase tracking-tighter">Chat Vecinal</h1>
+            <div className="h-1 w-12 bg-primary rounded-full mt-2"></div>
           </div>
 
-          {/* SECURITY UPDATES */}
-          <div className="mb-2">
-            <button
-              onClick={() => startTransition(() => setCurrentNeighborhood('PREPPERS'))}
-              className={`w-full flex items-center gap-3 p-3 rounded-2xl transition-all ${currentNeighborhood === 'PREPPERS' ? 'bg-orange-50 dark:bg-orange-900/20' : 'hover:bg-gray-50 dark:hover:bg-gray-800'}`}
-            >
-              <div className={`size-10 rounded-full flex items-center justify-center shrink-0 ${currentNeighborhood === 'PREPPERS' ? 'bg-orange-500 text-white shadow-md shadow-orange-500/30' : 'bg-gray-200 dark:bg-gray-700 text-gray-500'}`}>
-                <span className="material-symbols-outlined text-lg">shield</span>
+          <div className="px-2 py-4">
+            <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4 ml-2 opacity-60">Canales de Barrio</h4>
+
+            {[
+              { id: 'GENERAL', label: 'General', icon: 'public', desc: 'Charla libre', color: 'blue' },
+              { id: 'PREPPERS', label: 'Seguridad', icon: 'shield', desc: 'Avisos y ayuda', color: 'red' },
+              { id: 'EMPLEO', label: 'Empleo', icon: 'work', desc: 'Ofertas Mar 7', color: 'green' },
+              { id: 'ENCUENTROS', label: 'Encuentros', icon: 'favorite', desc: 'Planes Finde', color: 'pink' },
+              { id: 'APOYO', label: 'Apoyo', icon: 'volunteer_activism', desc: 'Comunidad', color: 'purple' }
+            ].map(chan => (
+              <div key={chan.id} className="mb-2">
+                <button
+                  onClick={() => startTransition(() => setCurrentNeighborhood(chan.id))}
+                  className={`w-full flex items-center gap-4 p-4 rounded-[24px] transition-all duration-300 group ${currentNeighborhood === chan.id ? 'bg-white dark:bg-gray-800 shadow-xl shadow-gray-200/50 dark:shadow-black/20 scale-[1.02]' : 'hover:bg-gray-50 dark:hover:bg-white/5'}`}
+                >
+                  <div className={`size-12 rounded-2xl flex items-center justify-center shrink-0 transition-transform group-hover:scale-110 ${currentNeighborhood === chan.id ? `bg-blue-500 text-white shadow-lg` : 'bg-gray-100 dark:bg-gray-700 text-gray-500'}`}>
+                    <span className="material-symbols-outlined text-2xl">{chan.icon}</span>
+                  </div>
+                  <div className="flex-1 text-left">
+                    <h3 className={`text-sm font-black uppercase tracking-tight ${currentNeighborhood === chan.id ? `text-blue-600 dark:text-blue-400` : 'text-gray-600 dark:text-gray-400'}`}>{chan.label}</h3>
+                    <p className="text-[10px] text-gray-400 font-bold truncate opacity-80">{chan.desc}</p>
+                  </div>
+                  {chan.id === 'APOYO' && (
+                    <span className="size-6 bg-purple-500 text-white text-[10px] font-black rounded-lg flex items-center justify-center shadow-lg">10</span>
+                  )}
+                </button>
               </div>
-              <div className="flex-1 text-left">
-                <h3 className={`text-xs font-black uppercase tracking-wider ${currentNeighborhood === 'PREPPERS' ? 'text-orange-600 dark:text-orange-400' : 'text-gray-600 dark:text-gray-400'}`}>Seguridad / Preppers</h3>
-                <p className="text-[10px] text-gray-400 font-bold truncate">Avisos Viento</p>
-              </div>
-            </button>
+            ))}
           </div>
 
-          {/* JOB OFFERS */}
-          <div className="mb-2">
-            <button
-              onClick={() => startTransition(() => setCurrentNeighborhood('EMPLEO'))}
-              className={`w-full flex items-center gap-3 p-3 rounded-2xl transition-all ${currentNeighborhood === 'EMPLEO' ? 'bg-green-50 dark:bg-green-900/20' : 'hover:bg-gray-50 dark:hover:bg-gray-800'}`}
-            >
-              <div className={`size-10 rounded-full flex items-center justify-center shrink-0 ${currentNeighborhood === 'EMPLEO' ? 'bg-green-500 text-white shadow-md shadow-green-500/30' : 'bg-gray-200 dark:bg-gray-700 text-gray-500'}`}>
-                <span className="material-symbols-outlined text-lg">work</span>
-              </div>
-              <div className="flex-1 text-left">
-                <h3 className={`text-xs font-black uppercase tracking-wider ${currentNeighborhood === 'EMPLEO' ? 'text-green-600 dark:text-green-400' : 'text-gray-600 dark:text-gray-400'}`}>Empleo</h3>
-                <p className="text-[10px] text-gray-400 font-bold truncate">Ofertas Primavera</p>
-              </div>
-            </button>
-          </div>
-
-          {/* ENCUENTROS */}
-          <div className="mb-2">
-            <button
-              onClick={() => startTransition(() => setCurrentNeighborhood('ENCUENTROS'))}
-              className={`w-full flex items-center gap-3 p-3 rounded-2xl transition-all ${currentNeighborhood === 'ENCUENTROS' ? 'bg-pink-50 dark:bg-pink-900/20' : 'hover:bg-gray-50 dark:hover:bg-gray-800'}`}
-            >
-              <div className={`size-10 rounded-full flex items-center justify-center shrink-0 ${currentNeighborhood === 'ENCUENTROS' ? 'bg-pink-500 text-white shadow-md shadow-pink-500/30' : 'bg-gray-200 dark:bg-gray-700 text-gray-500'}`}>
-                <span className="material-symbols-outlined text-lg">favorite</span>
-              </div>
-              <div className="flex-1 text-left">
-                <h3 className={`text-xs font-black uppercase tracking-wider ${currentNeighborhood === 'ENCUENTROS' ? 'text-pink-600 dark:text-pink-400' : 'text-gray-600 dark:text-gray-400'}`}>Encuentros</h3>
-                <p className="text-[10px] text-gray-400 font-bold truncate">Planes Finde</p>
-              </div>
-            </button>
-          </div>
-
-          {/* APOYO Y BIENESTAR */}
-          <div className="mb-2">
-            <button
-              onClick={() => startTransition(() => setCurrentNeighborhood('APOYO'))}
-              className={`w-full flex items-center gap-3 p-3 rounded-2xl transition-all ${currentNeighborhood === 'APOYO' ? 'bg-purple-50 dark:bg-purple-900/20' : 'hover:bg-gray-50 dark:hover:bg-gray-800'}`}
-            >
-              <div className={`size-10 rounded-full flex items-center justify-center shrink-0 ${currentNeighborhood === 'APOYO' ? 'bg-purple-500 text-white shadow-md shadow-purple-500/30' : 'bg-gray-200 dark:bg-gray-700 text-gray-500'}`}>
-                <span className="material-symbols-outlined text-lg">volunteer_activism</span>
-              </div>
-              <div className="flex-1 text-left">
-                <h3 className={`text-xs font-black uppercase tracking-wider ${currentNeighborhood === 'APOYO' ? 'text-purple-600 dark:text-purple-400' : 'text-gray-600 dark:text-gray-400'}`}>Apoyo y Bienestar</h3>
-                <p className="text-[10px] text-gray-400 font-bold truncate">Bullying · Violencia · Acompañamiento</p>
-              </div>
-              <span className="size-5 bg-purple-500 text-white text-[9px] font-black rounded-full flex items-center justify-center">10</span>
-            </button>
-          </div>
-
-          <div className="px-4 py-2 mt-4">
-            <h2 className="text-xl font-black mb-4 text-center">Empleo Martes 3 Mar</h2>
-            <ul className="space-y-4 text-xs md:text-sm">
-              <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🍽️ <strong>Camarero/a — Bar Zona Centro</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Part Alta • Mediodía-Noche • Jornada parcial • 📞 622 11 00 22 (Jordi)</span>
+          <div className="px-5 py-6 bg-gray-50/50 dark:bg-white/5 rounded-[32px] mx-2 mt-4 border border-gray-100 dark:border-white/5">
+            <h2 className="text-xs font-black mb-4 text-center uppercase tracking-widest text-primary">Empleo Sábado 7 Mar</h2>
+            <ul className="space-y-3 text-[10px] md:text-xs">
+              <li className="p-3 bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-white/5 shadow-sm">
+                🍽️ <strong>Ayudante Mercadillo</strong>
+                <br /><span className="text-gray-500 opacity-80 italic">Part Alta • Solo hoy • 📞 622 11 00 22</span>
               </li>
-              <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🚴 <strong>Repartidor/a con moto propia</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Tarragona centro • Contrato temporal • Comisiones • 📞 611 44 55 66 (Ana)</span>
-              </li>
-              <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                🏠 <strong>Auxiliar Domicilio — Persona Mayor</strong>
-                <br /><span className="text-gray-500 text-[10px]">📍 Part Alta / Eixample • Lu-Vi mañanas • 10€/h • 📞 977 44 33 22 (Rosa)</span>
-              </li>
-              <li className="p-2 border-b border-gray-100 dark:border-gray-700">
-                📦 <strong>Mozo Almacén — Polígono Francolí</strong>
-                <br /><span className="text-gray-500 text-[10px]">📧 logistica@tgn.es • Incorporación inmediata • 📞 977 55 66 77</span>
+              <li className="p-3 bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-white/5 shadow-sm">
+                🚴 <strong>Repartidor Finde</strong>
+                <br /><span className="text-gray-500 opacity-80 italic">Centro • 12€/h • 📞 611 44 55 66</span>
               </li>
             </ul>
 
-            <h4 className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2">Vecinos Online (5/12)</h4>
-            <div className="space-y-2">
-              {activeUsers.slice(0, 5).map((u, i) => (
-                <div key={i} className="flex items-center gap-2 px-1">
-                  <div className="relative">
-                    <img src={u.avatar_url || "/logo.svg"} className="size-8 rounded-full bg-gray-200" alt="" />
-                    <span className={`absolute -bottom-0.5 -right-0.5 size-2.5 border-2 border-white rounded-full ${u.status === 'online' ? 'bg-green-500' : 'bg-amber-500'}`}></span>
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-[10px] font-bold text-gray-700 dark:text-gray-300 truncate">{u.full_name}</p>
-                    <p className="text-[8px] text-gray-400 truncate">{u.status === 'online' ? 'En el barrio' : 'Ocupado'}</p>
+            <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4 mt-6 opacity-60">Vecinos Online</h4>
+            <div className="grid grid-cols-4 gap-3">
+              {activeUsers.slice(0, 8).map((u, i) => (
+                <div key={i} className="relative group cursor-pointer" title={u.full_name}>
+                  <div className="relative size-12">
+                    <img src={u.avatar_url || "/logo.svg"} className="size-full rounded-2xl bg-gray-200 object-cover border-2 border-white dark:border-gray-800 shadow-md group-hover:scale-110 transition-transform" alt="" />
+                    <span className={`absolute -bottom-1 -right-1 size-3.5 border-2 border-white dark:border-gray-800 rounded-full ${u.status === 'online' ? 'bg-green-500' : 'bg-amber-500'} shadow-sm`}></span>
                   </div>
                 </div>
               ))}
@@ -958,37 +910,46 @@ const Forum: React.FC = () => {
             }
 
             return (
-              <div key={msg.id} className={`flex w-full ${isMine ? 'justify-end' : 'justify-start'} group animate-in fade-in slide-in-from-bottom-2`}>
-                <div className={`flex gap-3 max-w-[85%] md:max-w-[70%] ${isMine ? 'flex-row-reverse' : 'flex-row'}`}>
-                  {/* Avatar */}
-                  <div className="shrink-0 pt-1">
-                    <img src={msg.user_metadata?.avatar_url || `https://i.pravatar.cc/100?u=${msg.user_id}`} className="size-8 md:size-10 rounded-full border-2 border-white dark:border-gray-800 shadow-sm object-cover" alt="" />
+              <div key={msg.id} className={`flex w-full ${isMine ? 'justify-end' : 'justify-start'} group animate-in fade-in slide-in-from-bottom-3`}>
+                <div className={`flex gap-4 max-w-[85%] md:max-w-[70%] ${isMine ? 'flex-row-reverse' : 'flex-row'}`}>
+                  {/* Avatar con efecto de pulso si es virtual */}
+                  <div className="shrink-0 pt-2">
+                    <div className={`size-10 md:size-12 rounded-[18px] overflow-hidden border-2 shadow-lg transition-transform group-hover:scale-110 ${isMine ? 'border-primary' : 'border-white dark:border-gray-700'}`}>
+                      <img src={msg.user_metadata?.avatar_url || `https://i.pravatar.cc/100?u=${msg.user_id}`} className="size-full object-cover" alt="" />
+                    </div>
                   </div>
 
                   {/* Message Bubble */}
                   <div className={`flex flex-col ${isMine ? 'items-end' : 'items-start'}`}>
-                    <div className={`px-4 py-3 md:px-6 md:py-4 relative shadow-sm text-sm leading-relaxed ${isMine
-                      ? 'bg-blue-500 text-white rounded-[20px] rounded-tr-sm'
-                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-[20px] rounded-tl-sm border border-gray-100 dark:border-gray-700'
+                    <div className={`px-5 py-4 relative shadow-2xl text-base leading-relaxed ${isMine
+                      ? 'bg-gradient-to-br from-primary to-blue-600 text-white rounded-[24px] rounded-tr-none'
+                      : 'glass-card text-gray-800 dark:text-gray-100 rounded-[24px] rounded-tl-none border-white/50 dark:border-white/10'
                       }`}>
                       {msg.image_url && (
-                        <div className="mb-2 rounded-lg overflow-hidden">
+                        <div className="mb-3 rounded-[18px] overflow-hidden border border-white/20">
                           <img
                             src={msg.image_url}
                             alt="Adjunto"
-                            className="w-full h-auto max-h-60 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                            className="w-full h-auto max-h-72 object-cover cursor-pointer hover:scale-105 transition-transform"
                             onClick={() => window.open(msg.image_url, '_blank')}
                           />
                         </div>
                       )}
-                      {msg.content}
-                      <span className={`text-[9px] font-bold block mt-1 ${isMine ? 'text-blue-200/80 text-right' : 'text-gray-400 text-left'}`}>
-                        {new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                      </span>
+
+                      {/* Name tag for Others */}
+                      {!isMine && (
+                        <p className="text-[10px] font-black uppercase tracking-widest text-primary-light mb-1 opacity-80">{msg.user_metadata?.full_name}</p>
+                      )}
+
+                      <p className="font-medium tracking-tight">{msg.content}</p>
+
+                      <div className={`flex items-center gap-2 mt-2 opacity-60`}>
+                        <span className="text-[9px] font-black uppercase tracking-tighter">
+                          {new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                        </span>
+                        {isMine && <span className="material-symbols-outlined text-[12px]">done_all</span>}
+                      </div>
                     </div>
-                    {!isMine && (
-                      <span className="text-[9px] font-bold text-gray-400 ml-2 mt-1">{msg.user_metadata?.full_name}</span>
-                    )}
                   </div>
                 </div>
               </div>
@@ -1003,64 +964,53 @@ const Forum: React.FC = () => {
         </div>
 
         {/* Input Area (Retro Style) */}
-        <div className="bg-white dark:bg-gray-800 p-4 border-t border-gray-100 dark:border-gray-700 z-20">
-          <form onSubmit={sendMessage} className="max-w-4xl mx-auto flex flex-col gap-3">
+        <div className="bg-white dark:bg-gray-800 p-6 border-t border-gray-100 dark:border-white/5 z-20">
+          <form onSubmit={sendMessage} className="max-w-4xl mx-auto flex flex-col gap-4">
 
             {/* Toolbar: Quick Emojis & Actions */}
-            <div className="flex items-center justify-between px-2">
-              {/* Quick Emojis (3D Style Imitation) */}
-              <div className="flex gap-2 md:gap-4 overflow-x-auto no-scrollbar py-1">
+            <div className="flex items-center justify-between px-3">
+              <div className="flex gap-3 md:gap-5 overflow-x-auto no-scrollbar py-1">
                 {quickEmojis.map(emoji => (
                   <button
                     key={emoji}
                     type="button"
                     onClick={() => { setNewMessage(prev => prev + emoji); inputRef.current?.focus(); }}
-                    className="size-8 md:size-10 flex items-center justify-center text-xl md:text-2xl hover:scale-125 transition-transform cursor-pointer drop-shadow-md filter hover:brightness-110 active:scale-95"
-                    style={{ textShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
+                    className="size-10 flex items-center justify-center text-3xl hover:scale-[1.35] transition-transform cursor-pointer drop-shadow-lg active:scale-95"
                   >
                     {emoji}
                   </button>
                 ))}
-                <button
-                  type="button"
-                  onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-                  className="size-8 md:size-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full text-gray-500 hover:text-blue-500 transition-colors"
-                >
-                  <span className="material-symbols-outlined transform rotate-90">add_reaction</span>
-                </button>
               </div>
 
-              {/* Zumbido Button */}
               <button
                 type="button"
                 onClick={sendBuzz}
-                className="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-blue-50 text-blue-600 rounded-full hover:bg-blue-100 active:scale-95 transition-all text-[10px] md:text-xs font-black uppercase tracking-widest border border-blue-200"
-                title="Enviar Zumbido a todos"
+                className="flex items-center gap-2 px-6 py-2.5 bg-primary/10 text-primary-light rounded-[18px] hover:bg-primary-light hover:text-white active:scale-95 transition-all text-xs font-black uppercase tracking-widest border border-primary/20 shadow-lg shadow-primary/10"
               >
-                <span className="material-symbols-outlined text-base md:text-lg animate-tada">vibration</span>
-                <span className="hidden md:inline">Zumbido</span>
+                <span className="material-symbols-outlined text-xl animate-tada">vibration</span>
+                <span>ZUMBIDO</span>
               </button>
             </div>
 
             {/* Input Field ROW */}
-            <div className="flex items-end gap-3">
-              <div className="flex-1 relative bg-gray-50 dark:bg-gray-900/50 rounded-[24px] border border-gray-200 dark:border-gray-600 focus-within:ring-2 focus-within:ring-blue-400 focus-within:border-transparent transition-all">
+            <div className="flex items-end gap-4">
+              <div className="flex-1 relative glass-card !bg-gray-50/50 dark:!bg-white/5 rounded-[28px] border-2 border-transparent focus-within:border-primary/30 focus-within:ring-4 focus-within:ring-primary/10 transition-all group/input">
                 <input
                   ref={inputRef}
                   type="text"
                   value={newMessage}
                   onChange={(e) => setNewMessage(e.target.value)}
                   onFocus={() => { if (messages.length === 0) unlockAudio(); }}
-                  placeholder={`Escribe un mensaje en ${currentNeighborhood === 'PREPPERS' ? 'Seguridad' : 'el canal'}...`}
-                  className="w-full bg-transparent border-none px-6 py-3.5 focus:ring-0 text-sm font-medium text-gray-800 dark:text-gray-100 placeholder:text-gray-400"
+                  placeholder={`Di algo en ${currentNeighborhood === 'EMPLEO' ? 'Empleo' : 'el canal'}...`}
+                  className="w-full bg-transparent border-none px-8 py-4.5 focus:ring-0 text-base font-bold text-gray-800 dark:text-gray-100 placeholder:text-gray-400"
                 />
-                <div className="absolute right-2 bottom-2 flex gap-1">
+                <div className="absolute right-3 bottom-2.5 flex gap-2">
                   <button
                     type="button"
                     onClick={() => fileInputRef.current?.click()}
-                    className={`p-2 transition-colors rounded-full hover:bg-white/50 ${selectedImage ? 'text-primary bg-primary/10' : 'text-gray-400 hover:text-blue-500'}`}
+                    className={`size-10 flex items-center justify-center transition-all rounded-xl ${selectedImage ? 'bg-primary text-white' : 'text-gray-400 hover:bg-gray-200 dark:hover:bg-white/10 hover:text-primary'}`}
                   >
-                    <span className="material-symbols-outlined text-xl">image</span>
+                    <span className="material-symbols-outlined text-2xl">image</span>
                   </button>
                   <input
                     type="file"
@@ -1072,27 +1022,12 @@ const Forum: React.FC = () => {
                 </div>
               </div>
 
-              {/* Image Preview */}
-              {selectedImage && (
-                <div className="absolute bottom-20 left-4 bg-white p-2 rounded-xl shadow-lg border border-gray-200 z-50">
-                  <div className="relative">
-                    <img src={selectedImage} alt="Preview" className="w-20 h-20 object-cover rounded-lg" />
-                    <button
-                      onClick={() => { setSelectedImage(null); setImageFile(null); }}
-                      className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-0.5 shadow-sm hover:scale-110 transition-transform"
-                    >
-                      <span className="material-symbols-outlined text-sm">close</span>
-                    </button>
-                  </div>
-                </div>
-              )}
-
               <button
                 type="submit"
                 disabled={!newMessage.trim()}
-                className="size-12 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-lg shadow-blue-500/30 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:scale-100 transition-all"
+                className="size-16 rounded-[24px] bg-gradient-to-tr from-primary to-blue-400 text-white flex items-center justify-center shadow-xl shadow-primary/40 hover:scale-105 active:scale-90 disabled:opacity-30 disabled:scale-100 disabled:grayscale transition-all"
               >
-                <span className="material-symbols-outlined text-xl font-bold fill-current">send</span>
+                <span className="material-symbols-outlined text-3xl font-black">send</span>
               </button>
             </div>
           </form>
