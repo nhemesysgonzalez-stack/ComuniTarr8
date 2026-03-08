@@ -175,30 +175,30 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'sat-mercadillo-today',
-            title: "🛍️ ¡HOY! Mercadillo Vecinal en Pl. Fòrum",
-            content: "¡Ya estamos montando! De 09:00h a 14:00h disfruta del mercadillo de segunda mano y artesanía. ¡No faltes!",
+            id: 'sun-8m-today',
+            title: "💜 ¡HOY! Día Internacional de la Mujer",
+            content: "¡Tarragona se viste de lila! A las 12h lectura del manifiesto y a las 18h manifestación principal. ¡Únete!",
             category: "EVENTO",
             neighborhood: "GENERAL",
-            itinerary: "• 08:30: Montaje mesas\n• 09:00: Apertura al público\n• 12:00: Vermut vecinal\n• 14:00: Cierre y limpieza",
+            itinerary: "• 12:00: Lectura manifiesto (Pl. Font)\n• 18:00: Manifestación (Imp. Tarraco)\n• 20:00: Cierre",
             created_at: new Date().toISOString()
           },
           {
             id: 'sat-reading-club-success',
-            title: "📚 Gran éxito del Club de Lectura",
+            title: "💜 Éxito Preparativos 8M",
             content: "Gran jornada de preparación de la manifestación de hoy. ¡Gracias a todos por participar!",
-            category: "CULTURA",
+            category: "DÍA DE LA MUJER",
             neighborhood: "GENERAL",
-            itinerary: "• Asistentes: 18 personas\n• Próximo libro: Anuncio el lunes\n• Fotos: En Galería vecinal\n• Próxima cita: Abril",
+            itinerary: "• Pancartas listas\n• Coordinación completada\n• Nos vemos a las 18h en Imperial Tarraco",
             created_at: new Date().toISOString()
           },
           {
             id: 'sat-traffic-weekend',
-            title: "🚗 Tráfico Fluido: C/ Unió Abierta",
+            title: "🚗 Tráfico: Cortes por el 8M",
             content: "Cortes de tráfico en el centro por el 8M. Por favor, utilizad el transporte público este domingo.",
             category: "TRÁFICO",
             neighborhood: "CENTRE",
-            itinerary: "• C/ Unió: Abierta 🟢\n• Av. Roma: Sin retenciones\n• Parking Corsini: Plazas disponibles\n• EMT: Servicio fin de semana",
+            itinerary: "• Rambla Nova: Cortada (17h)\n• Imperial Tarraco: Accesos limitados\n• Parking Corsini: Lleno\n• EMT: Posibles desvíos",
             created_at: new Date().toISOString()
           },
           {
