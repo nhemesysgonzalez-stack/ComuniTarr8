@@ -11,19 +11,19 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "✅ ¡Viernes 6 Mar! Calle Unió ya abierta al tráfico. Circulación normalizada en toda la zona centro. ¡Buen fin de semana!", neighborhood: 'GENERAL' },
-    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Viernes soleado. Máxima de 17ºC. Ideal para pasear por la tarde. 🌤️', neighborhood: 'GENERAL' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "✅ ¡Domingo 8 Mar! Calle Unió ya abierta al tráfico. Circulación normalizada en toda la zona centro por la mañana.", neighborhood: 'GENERAL' },
+    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☁️ Domingo nublado. Máxima de 14ºC. Ideal para abrigarse un poco. ☁️', neighborhood: 'GENERAL' },
     { id: 2, user: 'AAVV Sant Pere', avatar: '/logo.svg', text: '📋 Resumen Asamblea Jueves: Aprobada nueva zona verde. Acta completa ya en Anuncios. ✅', neighborhood: 'PART ALTA' },
-    { id: 3, user: 'Biblioteca TGN', avatar: '/logo.svg', text: '📚 HOY 18:30h — Club de Lectura (La Ciudad de los Prodigios). ¡Últimas plazas! 📖', neighborhood: 'GENERAL' },
-    { id: 4, user: 'Mercadillo TGN', avatar: '/logo.svg', text: '🛍️ Mañana Sábado 7 Mar: Mercadillo Vecinal en Pl. Fòrum (09h-14h). ¡Ven a vernos! ✨', neighborhood: 'GENERAL' },
+    { id: 3, user: 'Asociación', avatar: '/logo.svg', text: '💜 HOY 18h — Manifestación 8M. ¡Nos vemos en Imperial Tarraco!', neighborhood: 'GENERAL' },
+    { id: 4, user: 'Coordinación 8M', avatar: '/logo.svg', text: '📣 Recordad: El manifiesto se lee a las 12h en la Plaça de la Font. ¡No faltéis! ✨', neighborhood: 'GENERAL' },
     { id: 5, user: 'Trànsit TGN', avatar: '/logo.svg', text: '🚗 T-11 y A-7 despejadas. Av. Roma abierta sin restricciones. EMT horario normal. ✅', neighborhood: 'GENERAL' },
-    { id: 6, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '☕ ¿Alguien para un café rápido antes del Club de Lectura? Estaré por la Biblioteca a las 18h. 👋', neighborhood: 'CENTRE' },
+    { id: 6, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '☕ ¿Alguien para un café rápido antes de la manifestación? Estaré por el centro a las 17h. 👋', neighborhood: 'CENTRE' },
 ];
 
 const tickerMessages = [
     { user: 'Admin', text: '✅ C/ Unió ya abierta' },
     { user: 'Biblioteca', text: '📚 Club Lectura 18:30h hoy' },
-    { user: 'Mercadillo', text: '🛍️ Mañana Sábado Pl. Fòrum' },
+    { user: '8M', text: '💜 Lectura Manifiesto' },
     { user: 'Meteo', text: '☀️ Soleado y 17ºC' },
     { user: 'AAVV Sant Pere', text: '📋 Resultados Asamblea en Anuncios' }
 ];

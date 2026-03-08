@@ -575,7 +575,7 @@ const Forum: React.FC = () => {
             <h2 className="text-[10px] font-black uppercase tracking-widest text-[#3b82f6] mb-4">Empleo Hoy</h2>
             <div className="space-y-3">
               <div className="text-[11px] font-bold text-slate-600 dark:text-slate-300 border-l-2 border-blue-500 pl-3">
-                <p>🍽️ Ayudante Mercadillo</p>
+                <p>💜 Ayudante 8M</p>
                 <p className="text-[9px] opacity-60 font-medium">Llamar: 622 11 00 22</p>
               </div>
             </div>
