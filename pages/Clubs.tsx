@@ -45,7 +45,7 @@ const Clubs: React.FC = () => {
                     id: 'c-fri-1',
                     creator_id: 'v1',
                     name: 'Urban Runners TGN 👟',
-                    description: '¡Trote de viernes noche! Quedamos hoy a las 20:00h en el Balcó. Al acabar nos tomamos algo para empezar el finde. 🏃‍♂️💨',
+                    description: '¡Trote de domingo noche! Quedamos hoy a las 20:00h en el Balcó.',
                     neighborhood: 'GENERAL',
                     contact_info: '622 33 44 55 (Pau)',
                     created_at: new Date().toISOString()
@@ -54,7 +54,7 @@ const Clubs: React.FC = () => {
                     id: 'c-fri-2',
                     creator_id: 'v2',
                     name: 'Cineforum Vecinal 🍿',
-                    description: 'Hoy viernes a las 19:00h proyectamos una peli sorpresa en el local social. ¡Tráete palomitas para compartir!',
+                    description: 'Hoy domingo a las 19:00h proyectamos una peli sorpresa en el local social relacionada con el 8M.',
                     neighborhood: 'GENERAL',
                     contact_info: 'Canal ENCUENTROS (Foro)',
                     created_at: new Date().toISOString()
@@ -63,7 +63,7 @@ const Clubs: React.FC = () => {
                     id: 'c-fri-3',
                     creator_id: 'v3',
                     name: 'Chess & Coffee TGN ♟️',
-                    description: 'Quedada mañana sábado por la mañana aprovechando el ambiente del mercadillo en la Part Alta. ¡Partidas rápidas!',
+                    description: 'Quedada en la plaza de la Font antes de la manifestación. ¡Partidas rápidas!',
                     neighborhood: 'GENERAL',
                     contact_info: '633 44 55 66 (Joe)',
                     created_at: new Date().toISOString()

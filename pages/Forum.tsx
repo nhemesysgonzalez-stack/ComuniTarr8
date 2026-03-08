@@ -74,11 +74,11 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '🛍️ ¡HOY! Mercadillo Vecinal en Pl. Fòrum (09h-14h). ¡Ven a vernos!' },
-    { user: 'Meteo TGN', text: '☀️ Sábado radiante 16ºC. Perfecto para el mercadillo.' },
-    { user: 'Biblioteca TGN', text: '📚 Gran éxito ayer en el Club de Lectura. ¡Gracias a los 18 asistentes!' },
-    { user: 'Trànsit TGN', text: '🚗 C/ Unió ya operativa. Tráfico fluido en el centro para las compras.' },
-    { user: 'AAVV Sant Pere', text: '📋 Actas de la Asamblea del jueves ya en sección Anuncios. ✅' }
+    { user: 'Admin ComuniTarr', text: '💜 Feliz 8M! Manifestación a las 18h desde Plaça de la Font.' },
+    { user: 'Meteo TGN', text: '☁️ Domingo nublado, 13ºC. Sin previsión de lluvia.' },
+    { user: 'Ajuntament TGN', text: '🏛️ Hoy entrada gratuita a todos los recintos monumentales para mujeres.' },
+    { user: 'Trànsit TGN', text: '🚗 Cortes previstos en el centro desde las 17:30h por la manifestación del 8M.' },
+    { user: 'AAVV Part Alta', text: '📋 El mural participativo del 8M ya está terminado en el Fòrum. ✅' }
   ];
 
 
@@ -114,31 +114,31 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Mireia R.', text: '🛍️ ¡Buenos días! Ya estoy en la Pl. Fòrum. ¡Vaya ambientazo hay hoy en el mercadillo!' },
-        { who: 'Joan B.', text: '@Mireia ¡Qué bien! Yo bajo en 10 minutos. He guardado un par de libros para donar. 📚' },
-        { who: 'Pau T.', text: '@Mireia @Joan Yo pasaré sobre las 11h. ¿Hacemos un vermut luego por allí? 🍸' },
-        { who: 'Mireia R.', text: '@Pau ¡Te tomo la palabra! Nos vemos en la zona de las mesas.' },
-        { who: 'Maria G.', text: '¡Feliz sábado a todos! Disfrutad del solazo. ☀️✨' },
+        { who: 'Mireia R.', text: '💜 ¡Feliz Día de la Mujer a todas las vecinas! ¿Nos vemos hoy en la concentración de las 18h?' },
+        { who: 'Joan B.', text: '@Mireia ¡Allí estaremos! Cada año vamos en familia. Importante recordar los cortes de tráfico en el centro.' },
+        { who: 'Carme S.', text: '@Mireia @Joan Hemos preparado pancartas desde la AAVV de Llevant. ¡Nos uniremos en la Imperial!' },
+        { who: 'Mireia R.', text: '@Carme ¡Genial! Estaré atenta a ver si os veo. Cuantas más seamos, mejor.' },
+        { who: 'Maria G.', text: '💜 Seguimos en la lucha compañeras. Un abrazo a todas desde Ponent.' },
       ],
       [
-        { who: 'Luis M.', text: '🚗 ¿Sabéis si se puede aparcar bien hoy cerca de la Part Alta con lo del mercadillo?' },
-        { who: 'Carme S.', text: '@Luis Está complicado, mejor deja el coche en el aparcamiento de la Av. Cataluña y sube andando. Está todo abierto.' },
-        { who: 'Luis M.', text: '@Carme ¡Gracias! Pues haré eso. No quiero dar vueltas.' },
-        { who: 'Joan B.', text: '@Luis C/ Unió está abierta ya, así que el acceso por ese lado es directo. ✅' },
+        { who: 'Luis M.', text: '🚗 ¿Alguien sabe a qué hora exactamente cortan la Rambla hoy por el 8M?' },
+        { who: 'Carme S.', text: '@Luis La Guardia Urbana ha anunciado que sobre las 17:30h cerrarán el paso por Rambla Nova e Imperial.' },
+        { who: 'Luis M.', text: '@Carme ¡Gracias! Intentaré mover el coche antes de las 17h entonces.' },
+        { who: 'Joan B.', text: '@Luis Sí, los domingos como hoy la zona se colapsa en los aledaños. Mejor dejarlo en un parking periférico. ✅' },
       ],
       [
-        { who: 'Joe R.', text: '⚽ ¿Alguien para un partido rápido de basket esta tarde en el parque de las Granotes?' },
-        { who: 'Pau T.', text: '@Joe ¡Cuenta conmigo! Después del vermut del mercadillo me vendrá bien sudar un poco. 😂' },
-        { who: 'Maria G.', text: '@Joe @Pau Yo me paso a veros. ¡Dadle duro!' },
-        { who: 'Joe R.', text: '@Maria ¡Eso es! A las 17h allí.' },
+        { who: 'Joe R.', text: '⚽ ¿Alguien sabe si el polideportivo de Campclar abre hoy domingo con normalidad?' },
+        { who: 'Pau T.', text: '@Joe Sí, abre hasta las 14h como todos los domingos. Yo voy a tirar unas canastas ahora mismo.' },
+        { who: 'Sandra L.', text: '@Joe @Pau Cuidado que hace fresquito y el suelo está un poco húmedo de la noche.' },
+        { who: 'Joe R.', text: '@Sandra ¡Gracias por avisar! Me llevaré chándal largo.' },
       ],
     ],
     'APOYO': [
       [
         { who: 'Sandra L.', text: '💜 Buenos días. Hoy jueves me siento un poco abrumada. ¿Cómo gestionáis vosotros el estrés de final de semana?' },
-        { who: 'Elena V.', text: '@Sandra Yo intento desconectar en el Club de Lectura de los viernes. Mañana a las 18:30h hay sesión en la Biblioteca, ¿te vienes?' },
+        { who: 'Elena V.', text: '@Sandra Yo intento desconectar paseando por la playa los domingos. ¿Te vienes luego?' },
         { who: 'Joan B.', text: '@Sandra @Elena Yo camino por la playa del Miracle 20 min al salir. Ayuda mucho a limpiar la cabeza. 🌊' },
-        { who: 'Nuria P.', text: '@Sandra Es normal, Sandra. El jueves es el día de máxima fatiga mental. Respira y prioriza. Mañana ya es viernes. 🫂' },
+        { who: 'Nuria P.', text: '@Sandra Es normal, Sandra. Mañana a empezar la semana con energía. 🫂' },
         { who: 'Sandra L.', text: '@Nuria Tienes razón. Me apunto lo del Club de Lectura, Elena. Pásame info por privado.' },
         { who: 'Elena V.', text: '@Sandra ¡Hecho! Es gratuito y los vecinos somos muy majos.' },
         { who: 'Joan B.', text: '@Elena Contad conmigo también. ¡Mañana nos vemos!' },
@@ -157,7 +157,8 @@ const Forum: React.FC = () => {
   };
 
   // Determine weather context for simulation
-  const isActuallyRaining = true; // Context for today's TGN weather
+  const isActuallyRaining = false; // Context for today's TGN weather (Nublado but no rain)
+  const isWomensDay = true;
   const todayName = new Date().toLocaleDateString('es-ES', { weekday: 'long' });
 
   // Threaded conversation engine + REALTIME
@@ -249,8 +250,8 @@ const Forum: React.FC = () => {
 
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
-          { id: 'seed-rain-101', user_id: 'v3', content: `☔ ¡Vaya ${todayName} de lluvia! He pasado por la Rambla y está todo empapado. ¿Cómo está por vuestra zona?`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600).toISOString() },
-          { id: 'seed-rain-102', user_id: 'v2', content: '🌧️ He tenido que cerrar el balcón corriendo. ¡Parece el diluvio! Menos mal que el mercadillo ya estaba terminando.', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 1800).toISOString() },
+          { id: 'seed-cloud-101', user_id: 'v3', content: `💜 ¡Feliz ${todayName} amigues! Recordad que hoy por el 8M tenemos actos todo el día en Tarragona.`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600).toISOString() },
+          { id: 'seed-cloud-102', user_id: 'v2', content: '☁️ Hace un poco de fresco hoy, ideal para coger una chaqueta si venís al centro.', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 1800).toISOString() },
         ] as Message[],
       };
 
@@ -549,8 +550,8 @@ const Forum: React.FC = () => {
               {[
                 { id: 'GENERAL', label: 'General', icon: 'public', desc: 'Charla libre' },
                 { id: 'PREPPERS', label: 'Seguridad', icon: 'shield', desc: 'Avisos y ayuda' },
-                { id: 'EMPLEO', label: 'Empleo', icon: 'work', desc: 'Ofertas Mar 7' },
-                { id: 'ENCUENTROS', label: 'Encuentros', icon: 'favorite', desc: 'Planes Finde' }
+                { id: 'EMPLEO', label: 'Empleo', icon: 'work', desc: 'Ofertas 8M' },
+                { id: 'ENCUENTROS', label: 'Encuentros', icon: 'favorite', desc: 'Domingo' }
               ].map(chan => (
                 <button
                   key={chan.id}

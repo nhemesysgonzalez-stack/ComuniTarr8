@@ -186,7 +186,7 @@ const Home: React.FC = () => {
           {
             id: 'sat-reading-club-success',
             title: "📚 Gran éxito del Club de Lectura",
-            content: "Ayer viernes disfrutamos de una tarde magnífica comentando 'La Ciudad de los Prodigios'. ¡Gracias a todos por participar!",
+            content: "Gran jornada de preparación de la manifestación de hoy. ¡Gracias a todos por participar!",
             category: "CULTURA",
             neighborhood: "GENERAL",
             itinerary: "• Asistentes: 18 personas\n• Próximo libro: Anuncio el lunes\n• Fotos: En Galería vecinal\n• Próxima cita: Abril",
@@ -195,7 +195,7 @@ const Home: React.FC = () => {
           {
             id: 'sat-traffic-weekend',
             title: "🚗 Tráfico Fluido: C/ Unió Abierta",
-            content: "Tras la reapertura de ayer, el tráfico por el centro fluye sin problemas para las compras del sábado. Parking municipal con plazas libres.",
+            content: "Cortes de tráfico en el centro por el 8M. Por favor, utilizad el transporte público este domingo.",
             category: "TRÁFICO",
             neighborhood: "CENTRE",
             itinerary: "• C/ Unió: Abierta 🟢\n• Av. Roma: Sin retenciones\n• Parking Corsini: Plazas disponibles\n• EMT: Servicio fin de semana",
@@ -216,8 +216,8 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'poll-sabado-mercadillo',
-          question: "¿Qué te está pareciendo el Mercadillo Vecinal de este sábado?",
+          id: 'poll-domingo-8m',
+          question: "¿Vas a participar en los actos del 8M de este domingo?",
           options: ['¡Genial! He comprado cosas buenas', 'Muy bien organizado', 'Faltan más puestos', 'No he ido todavía'],
           category: 'COMUNIDAD',
           neighborhood: 'GENERAL',

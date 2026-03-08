@@ -48,11 +48,11 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'mock-ws-fri-1',
-                    title: '📚 Club de Lectura: HOY 18:30h',
+                    id: 'ws-8m-1',
+                    title: '💜 Taller de Empoderamiento 8M',
                     instructor: 'Elena P.',
-                    date: 'Hoy Viernes 6, 18:30',
-                    description: 'Sesión presencial en la biblioteca para comentar "La Ciudad de los Prodigios". ¡Última oportunidad para participar!',
+                    date: 'Hoy Domingo 8, 11:30',
+                    description: 'Sesión presencial abierta en la biblioteca centrada en el empoderamiento femenino. Preparación de pancartas para la mani.',
                     image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800',
                     spots: 4,
                     neighborhood: 'GENERAL',
@@ -60,15 +60,15 @@ const Workshops: React.FC = () => {
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-ws-sat-1',
-                    title: '🛍️ Taller de Gestión de Mercadillos',
+                    id: 'ws-8m-2',
+                    title: '🖥️ Masterclass IA y Trabajo (Mujeres Tech)',
                     instructor: 'Rosa M.',
-                    date: 'Mañana Sábado 7, 08:30',
-                    description: 'Breve sesión informativa sobre cómo organizar tu puesto en el mercadillo vecinal de la Part Alta. Consejos para vender más y mejor.',
+                    date: 'Lunes 9, 18:30',
+                    description: 'Taller para impulsar carreras tecnológicas. Aprende a integrar herramientas de inteligencia artificial en tu flujo de trabajo.',
                     image: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=800',
                     spots: 15,
                     neighborhood: 'GENERAL',
-                    contact_info: 'Plaza del Fòrum (Zona mesas)',
+                    contact_info: 'C.C. Part Alta / Online',
                     created_at: new Date().toISOString()
                 }
             ];
@@ -139,7 +139,7 @@ const Workshops: React.FC = () => {
                         </div>
                         <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Masterclass: LinkedIn Pro 📈</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Sácale partido a tu red profesional y encuentra nuevas oportunidades. Hoy jueves 5 de marzo a las 18:30h en la Tabacalera. ¡Plazas limitadas!
+                            Sácale partido a tu red profesional y encuentra nuevas oportunidades. Este lunes a las 18:30h en la Tabacalera. ¡Plazas limitadas!
                         </p>
 
                         <div className="flex flex-wrap gap-4">

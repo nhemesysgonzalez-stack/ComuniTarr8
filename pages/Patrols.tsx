@@ -60,7 +60,7 @@ const Patrols: React.FC = () => {
           id: 'mock-pat-sat-2',
           creator_id: 'user1',
           name: '🐕 Patrulla Mascotas: Rambla Nova',
-          description: 'Hoy sábado patrulla informativa para fomentar la recogida de cacas y el uso de correa en zonas concurridas. Regalamos bolsas reciclables.',
+          description: 'Hoy domingo patrulla informativa para fomentar la recogida de cacas y el uso de correa en zonas concurridas. Regalamos bolsas reciclables.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
           created_at: new Date().toISOString()
@@ -69,7 +69,7 @@ const Patrols: React.FC = () => {
           id: 'mock-pat-sat-3',
           creator_id: 'user2',
           name: '🧹 Control Ruidos: Ocio Nocturno',
-          description: 'Patrulla de convivencia para esta noche sábado. Sensibilización en zonas de bares de la Part Alta para respetar el descanso vecinal.',
+          description: 'Patrulla de convivencia para esta noche de domingo. Sensibilización en zonas de bares de la Part Alta para respetar el descanso vecinal.',
           neighborhood: 'PART ALTA',
           contact_info: '622 55 44 33 (Maria)',
           created_at: new Date().toISOString()

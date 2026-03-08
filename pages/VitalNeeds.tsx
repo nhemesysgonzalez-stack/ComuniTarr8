@@ -49,9 +49,9 @@ const VitalNeeds: React.FC = () => {
                     id: 'mock-sat-n1',
                     creator_id: 'v4',
                     type: 'other',
-                    title: '🛍️ Ayuda transporte Post-Mercadillo (HOY 14:30h)',
-                    description: 'He vendido casi todo pero me quedan 3 cajas que quiero donar. ¿Alguien con coche en el mercadillo me ayuda a bajarlas al local solidario?',
-                    contact_info: 'Mesa 7 (Rosa P.)',
+                    title: '🛍️ Ayuda para bajar al centro (HOY 17:30h)',
+                    description: 'No me atrevo a conducir por los cortes previstos de tráfico. ¿Alguien con coche baja a la manifestación desde Llevant y tiene un hueco?',
+                    contact_info: '633 44 55 66 (Rosa P.)',
                     is_urgent: false,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
@@ -60,8 +60,8 @@ const VitalNeeds: React.FC = () => {
                     id: 'mock-sat-n2',
                     creator_id: 'v5',
                     type: 'company',
-                    title: '☕ Compañía para Vermut Vecinal (Hoy 12:30h)',
-                    description: 'Soy vecina nueva y un poco tímida. ¿Alguien se ofrece para tomar el vermut juntas hoy después del mercadillo y presentarme a gente?',
+                    title: '☕ Compañía para ir al 8M (Hoy 17:00h)',
+                    description: 'Soy vecina nueva y no conozco a nadie. ¿Alguien se ofrece para ir juntas a la concentración de la Imperial Tarraco?',
                     contact_info: '644 33 22 11 (Mónica)',
                     is_urgent: false,
                     neighborhood: 'GENERAL',
@@ -72,7 +72,7 @@ const VitalNeeds: React.FC = () => {
                     creator_id: 'v6',
                     type: 'medical',
                     title: '💊 Farmacia de Guardia Urgente',
-                    description: 'Necesito ayuda para comprar un inhalador. La farmacia de guardia hoy sábado está en Av. Catalunya y me pilla lejos sin coche.',
+                    description: 'Necesito ayuda para comprar un inhalador. La farmacia de guardia hoy domingo está en Av. Catalunya y me pilla lejos sin coche.',
                     contact_info: '622 88 77 66 (Pere)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
@@ -184,7 +184,7 @@ const VitalNeeds: React.FC = () => {
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Hoy Jueves 5 Mar:\n• 17:00h \u2014 C\u00edrculo de Cuidadores (C.C. Part Alta)\n• 19:00h \u2014 Asamblea Vecinal (AAVV Sant Pere)\n• 20:00h \u2014 F\u00fatbol Sala Vecinal (Polideportivo Campclar)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Hoy Domingo 8 Mar:\n• 17:00h \u2014 Encuentro Conjunto 8M (Imperial Tarraco)\n• 19:30h \u2014 Asamblea Vecinal (AAVV Sant Pere)\n• 11:00h \u2014 Paseo acompañados (Parc Francolí)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
                             <span className="material-symbols-outlined text-sm">person_add</span>
                             UNIRME AHORA
                         </a>

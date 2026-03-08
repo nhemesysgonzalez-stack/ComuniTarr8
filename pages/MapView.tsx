@@ -10,7 +10,7 @@ const MapView: React.FC = () => {
   const [pins, setPins] = useState<any[]>([
     { id: 1, type: 'event', x: '45%', y: '35%', title: '🛍️ Mercadillo Vecinal', desc: "¡HOY de 09h a 14h! Segunda mano, artesanía y vermut en la Plaza del Fòrum.", status: 'En curso', color: 'bg-emerald-500', icon: 'storefront', glow: 'shadow-[0_0_50px_rgba(16,185,129,0.3)]' },
     { id: 2, type: 'incident', x: '48%', y: '48%', title: "✅ C/ Unió: OPERATIVA", desc: 'Calle reabierta tras las obras. Tráfico fluyendo con total normalidad para el fin de semana.', status: 'Finalizado', color: 'bg-blue-500', icon: 'check_circle' },
-    { id: 3, type: 'event', x: '52%', y: '42%', title: '📚 Sala Post-Lectura', desc: 'Exposición temporal de las fotos del Club de Lectura de ayer viernes en la Biblioteca.', status: 'Hoy 10-14h', color: 'bg-indigo-500', icon: 'image' },
+    { id: 3, type: 'event', x: '52%', y: '42%', title: '📚 Sala Post-Lectura', desc: 'Exposición temporal de las fotos del Club de Lectura de la semana pasada en la Biblioteca.', status: 'Hoy 10-14h', color: 'bg-indigo-500', icon: 'image' },
     { id: 4, type: 'incident', x: '55%', y: '50%', title: '💡 Alumbrado OK', desc: 'Revisión finalizada. Toda la Rambla Nova vuelve a tener iluminación al 100%.', status: 'Correcto', color: 'bg-yellow-500', icon: 'lightbulb' },
     { id: 5, type: 'incident', x: '42%', y: '40%', title: 'Tubería Smith', desc: 'Avería reparada. Pavimento provisional hasta asfaltado definitivo el lunes.', status: 'Controlado', color: 'bg-orange-500', icon: 'water_drop' }
   ]);

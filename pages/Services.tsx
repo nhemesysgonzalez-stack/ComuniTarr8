@@ -42,7 +42,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-500">check_circle</span>
                 <div>
                   <p className="text-sm font-black text-green-700 dark:text-green-400">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios y paradas habituales este sábado.</p>
+                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de domingo y festivos.</p>
                 </div>
               </div>
             </div>
@@ -144,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
               </p>
-              <button onClick={() => alert("Hoy Viernes 6 Mar:\n\u2022 18:30h \u2014 Club de Lectura Biblioteca Pública (Sala d'Actes)\n\u2022 C/ Unió \u2014 REABIERTA AL TRÁFICO ✅\n\nMañana Sábado:\n\u2022 09:00h \u2014 Mercadillo Vecinal Pl. Fòrum")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Hoy Domingo 8 Mar (8M):\n\u2022 12:00h \u2014 Lectura Manifiesto Pl. de la Font\n\u2022 18:00h \u2014 Manifestación 8M (Desde Imperial Tarraco)\n\nMañana Lunes:\n\u2022 09:00h \u2014 Talleres Tarragona Impulsa")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -168,35 +168,23 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo (Hoy Sábado 7 Mar)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Hoy Dom 8 Mar)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
                     <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar de Geriatr&iacute;a — Residencia Ponent&rdquo;</p>
                     <p className="text-[10px] text-gray-500">Se busca auxiliar para turnos de fin de semana. Imprescindible titulaci&oacute;n y cari&ntilde;o por los mayores. Incorporaci&oacute;n inmediata. 📞 977 54 88 10 (Sra. Carme)</p>
                   </div>
-                  <div className="border-l-4 border-blue-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Repartidor/a con moto propia (Fines de semana)&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Pizzer&iacute;a en zona Corso precisa refuerzo para viernes, s&aacute;bados y domingos noche. Pago por horas + incentivos por pedido. 📞 622 33 44 55 (Pizzer&iacute;a Llevant)</p>
-                  </div>
                   <div className="border-l-4 border-orange-500 pl-4">
                     <p className="text-xs font-black dark:text-white">&ldquo;Camarero/a de barra y terraza&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Cafeter&iacute;a c&eacute;ntrica busca personal para cubrir temporada de terraza. Jornada completa o media. Se valora buen trato. 📞 611 99 00 22 (Caf&eacute; Imperial)</p>
+                    <p className="text-[10px] text-gray-500">Cafeter&iacute;a c&eacute;ntrica busca personal para cubrir temporada de terraza. Jornada completa o media. Se valora buen trato al p&uacute;blico. 📞 611 99 00 22 (Caf&eacute; Imperial)</p>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
                     <p className="text-xs font-black dark:text-white">&ldquo;Limpieza de oficinas (Turno ma&ntilde;ana)&rdquo;</p>
                     <p className="text-[10px] text-gray-500">Empresa de servicios necesita personal para limpieza en despachos de Av. Roma. 4 horas diarias de Lunes a S&aacute;bado. 📞 977 22 33 44 (Limpiezas TGN)</p>
                   </div>
-                  <div className="border-l-4 border-indigo-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Mozo/a de almac&eacute;n — Log&iacute;stica Puerto&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Se precisa personal para carga y descarga. Carnet carretillero valorable. Turnos rotativos mañana/tarde. 📞 677 88 99 00 (Puerto Seco TGN)</p>
-                  </div>
                   <div className="border-l-4 border-teal-500 pl-4">
                     <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar Administrativo/a Contable&rdquo;</p>
                     <p className="text-[10px] text-gray-500">Peque&ntilde;a empresa familiar busca apoyo administrativo para facturaci&oacute;n y archivo. Conocimientos de Office b&aacute;sico. 📞 977 10 20 30 (Hermanos Garc&iacute;a SL)</p>
-                  </div>
-                  <div className="border-l-4 border-pink-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Vendedor/a para Stand Mercadillo (Solo S&aacute;bados)&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Buscamos ayuda para puesto de artesania en el mercadillo vecinal. Persona activa y alegre. Pago al finalizar la jornada. 📞 644 55 66 77 (Artesanies Maria)</p>
                   </div>
                 </div>
               </div>
@@ -301,7 +289,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-600">check_circle</span>
                 <div>
                   <p className="text-xs font-black text-green-700 dark:text-green-500 uppercase">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario habitual este viernes.</p>
+                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de domingo y festivos. Desvíos puntuales por manifestaciones 8M en el centro.</p>
                 </div>
               </div>
 
@@ -566,13 +554,13 @@ export const Services: React.FC = () => {
                   <div className="flex flex-col gap-2">
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Part Alta</span>
-                      <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (VIERNES)</span>
+                      <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DOMINGO 8M)</span>
                     </div>
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
-                      <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (VIERNES)</span>
+                      <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DOMINGO 8M)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy viernes: Club de Lectura 18:30h en la Biblioteca. Mañana sábado: Mercadillo Vecinal Pl. Fòrum.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy Domingo 8 Mar: Actos institucionales Día de la Mujer. Mañana Lunes: Talleres TGN Impulsa.</p>
                   </div>
                 </div>
               </div>

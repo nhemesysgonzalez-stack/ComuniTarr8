@@ -44,9 +44,9 @@ const SupportCircles: React.FC = () => {
                 {
                     id: 'mock-sat-sc1',
                     initiator_id: 'v1',
-                    title: '🤝 Círculo de Cuidadores — Sábado Relax',
+                    title: '🤝 Círculo de Cuidadores — Domingo Relax',
                     neighborhood: 'GENERAL',
-                    description: 'Hoy sábado de 11h a 12h nos vemos en el Parc del Francolí para compartir experiencias de autocuidado. ¡Trae a los peques si quieres!',
+                    description: 'Hoy domingo de 11h a 12h nos vemos en el Parc del Francolí para compartir experiencias de autocuidado. ¡Trae a los peques si quieres!',
                     contact_info: '611 22 33 44 (Miguel). Llevaremos globos para que nos reconozcáis.',
                     created_at: new Date().toISOString()
                 },
@@ -55,17 +55,17 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'vadmin',
                     title: '🧘 Meditación "Vibra Positiva"',
                     neighborhood: 'GENERAL',
-                    description: 'Mañana domingo a las 10:00h sesión de yoga y meditación gratuita. Hoy estamos en el mercadillo informando sobre el grupo. ¡Pásate!',
-                    contact_info: '655 12 34 56 (Elena). Stand informativo en Pl. Fòrum.',
+                    description: 'Mañana lunes a las 10:00h sesión de yoga y meditación gratuita. Hoy estamos pidiendo información tras la marcha del 8M. ¡Pásate!',
+                    contact_info: '655 12 34 56 (Elena).',
                     created_at: new Date().toISOString()
                 },
                 {
                     id: 'mock-sat-sc3',
                     initiator_id: 'v2',
-                    title: '☕ Tertulia Post-Mercadillo',
+                    title: '☕ Tertulia Post-Manifestación 8M',
                     neighborhood: 'GENERAL',
-                    description: 'Hoy sábado a las 17h quedamos en el local vecinal para comentar la jornada del mercadillo y relajarnos. ¡Trae algo para picar!',
-                    contact_info: '622 99 88 77 (Rosa). Local AAVV Sant Pere.',
+                    description: 'Hoy domingo a las 19:30h quedamos en el local vecinal para comentar la jornada del 8M y relajarnos. ¡Trae algo para picar!',
+                    contact_info: '622 99 88 77 (Rosa). Local AAVV.',
                     created_at: new Date().toISOString()
                 }
             ];

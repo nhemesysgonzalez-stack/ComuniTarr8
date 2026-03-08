@@ -92,7 +92,7 @@ const Polls: React.FC = () => {
                     id: 'poll-fri-3',
                     creator_id: 'v3',
                     title: '🛍️ ¿Vas a poner mesa en el Mercadillo Vecinal de mañana? ✨',
-                    options: ['¡Sí, ya estoy preparando cajas!', 'Iré solo a mirar y comprar', 'No este sábado, quizás el próximo', 'No sabía que había mercadillo'],
+                    options: ['¡Sí, ya estoy preparando cajas!', 'Iré solo a mirar y comprar', 'No este domingo, quizás el próximo', 'No sabía que había mercadillo'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }

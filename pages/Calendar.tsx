@@ -62,7 +62,7 @@ const NeighborhoodCalendar: React.FC = () => {
           id: 'real-sat-mercadillo-today',
           creator_id: 'admin',
           title: "🛍️ ¡HOY! Mercadillo Vecinal TGN",
-          description: "Hoy sábado mercadillo de intercambio y segunda mano en la Pl. del Fòrum. Vermut vecinal a las 12h.",
+          description: "Hoy domingo día de la mujer. Diversas manifestaciones y lecturas de manifiestos en toda la ciudad.",
           event_date: '2026-03-07',
           event_time: '09:00',
           location: 'Plaça del Fòrum',

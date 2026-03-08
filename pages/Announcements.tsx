@@ -151,17 +151,17 @@ const Announcements: React.FC = () => {
                     category: "EVENTO",
                     author_name: "ComuniTarr",
                     neighborhood: "GENERAL",
-                    itinerary: "• Mercadillo: HOY 09:00h a 14:00h — Pl. Fòrum\n• Vermut: 12:00h — Zona mesas\n• Recogida sobras: 14:30h (Donación Solidaria)\n• Tiempo: Sábado radiante 16ºC ☀️",
+                    itinerary: "• Lectura Manifiesto: HOY 12:00h — Pl. de la Font\n• Manifestación: 18:00h — Imperial Tarraco\n• Tiempo: Nublado 13ºC ☁️\n• Servicios Mínimos: Sí",
                     created_at: new Date().toISOString()
                 },
                 {
                     id: 'sat-reading-club-thanks',
                     title: "📚 GRAN ÉXITO DEL CLUB DE LECTURA",
-                    content: "Muchas gracias a los 18 vecinos que participaron ayer viernes en la sesión sobre 'La Ciudad de los Prodigios'. Fue un debate apasionante.",
+                    content: "Muchas gracias a las vecinas que participaron en la mesa redonda sobre la mujer trabajadora.",
                     category: "EXITO",
                     author_name: "Biblioteca Pública TGN",
                     neighborhood: "GENERAL",
-                    itinerary: "• Próxima lectura: 'El tiempo entre costuras'\n• Fecha: Viernes 3 abril\n• Inscripciones: Abiertas en la Biblioteca",
+                    itinerary: "• Próxima actividad: 'Taller ciberseguridad'\n• Fecha: Miércoles\n• Inscripciones: Abiertas en la Biblioteca",
                     created_at: new Date().toISOString()
                 },
                 {
@@ -171,13 +171,13 @@ const Announcements: React.FC = () => {
                     category: "INFO",
                     author_name: "Guàrdia Urbana TGN",
                     neighborhood: "CENTRE",
-                    itinerary: "• Calle Unió: Operativa 🟢\n• Acceso Rambla: Normal\n• Parking Corsini: Plazas libres\n• Autobuses: Frecuencia de sábado",
+                    itinerary: "• Calle Unió: Operativa 🟢\n• Acceso Rambla: Cortado 17h\n• Parking Corsini: Lleno\n• Autobuses: Desvíos por mani",
                     created_at: new Date().toISOString()
                 },
                 {
                     id: 'sat-farmacia',
-                    title: "💊 FARMACIA DE GUARDIA (HOY SÁBADO)",
-                    content: "Servicio de guardia 24h hoy sábado en Farmàcia Montserrat (Av. Catalunya, 5). Abierta para urgencias durante todo el fin de semana.",
+                    title: "💊 FARMACIA DE GUARDIA (HOY DOMINGO)",
+                    content: "Servicio de guardia 24h hoy domingo en Farmàcia Montserrat (Av. Catalunya, 5). Abierta para urgencias.",
                     category: "URGENTE",
                     author_name: "COFT",
                     neighborhood: "GENERAL",

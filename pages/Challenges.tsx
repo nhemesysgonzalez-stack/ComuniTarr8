@@ -46,7 +46,7 @@ const Challenges: React.FC = () => {
           id: 'mock-ch-fri-1',
           creator_id: 'admin',
           title: '📖 Reto: Lectura Compartida HOY',
-          description: 'Hoy viernes a las 18:30h en la Biblioteca. El reto es leer un fragmento de la obra de este mes y compartirlo con los demás. ¡Gana puntos de cultura!',
+          description: 'Hoy domingo, por el 8M, comparte una lectura inspiradora de una autora mujer.',
           neighborhood: 'GENERAL',
           contact_info: 'Biblioteca Pública (Elena)',
           is_example: true,
@@ -55,7 +55,7 @@ const Challenges: React.FC = () => {
         {
           id: 'mock-ch-fri-2',
           creator_id: 'user2',
-          title: '♻️ Residuo Cero: Mercadillo Sábado',
+          title: '♻️ Residuo Cero: Calles limpias tras la mani',
           description: 'El reto es participar mañana en el mercadillo de la Pl. Fòrum sin generar plásticos de un solo uso. ¡Trae tus bolsas de tela y envases reutilizables!',
           neighborhood: 'GENERAL',
           contact_info: 'Comunidad ComuniTarr',

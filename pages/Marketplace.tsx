@@ -83,7 +83,7 @@ const Marketplace: React.FC = () => {
         {
           id: 'mock-sat-m3',
           user_id: 'v4',
-          title: '🪴 Plantas de Interior — Oferta Sábado',
+          title: '🪴 Plantas de Interior — Oferta Domingo',
           description: 'He traído esquejes enraizados de Potos y Cintas. Muy baratas. Solo hoy en la Pl. Fòrum.',
           price: '5',
           category: 'hogar',
