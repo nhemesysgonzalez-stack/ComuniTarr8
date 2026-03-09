@@ -72,7 +72,7 @@ const VitalNeeds: React.FC = () => {
                     creator_id: 'v6',
                     type: 'medical',
                     title: '💊 Farmacia de Guardia Urgente',
-                    description: 'Necesito ayuda para comprar un inhalador. La farmacia de guardia hoy domingo está en Av. Catalunya y me pilla lejos sin coche.',
+                    description: 'Necesito ayuda para comprar un inhalador. La farmacia de guardia Hoy lunes está en Av. Catalunya y me pilla lejos sin coche.',
                     contact_info: '622 88 77 66 (Pere)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
@@ -184,7 +184,7 @@ const VitalNeeds: React.FC = () => {
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Hoy Domingo 8 Mar:\n• 17:00h \u2014 Encuentro Conjunto 8M (Imperial Tarraco)\n• 19:30h \u2014 Asamblea Vecinal (AAVV Sant Pere)\n• 11:00h \u2014 Paseo acompañados (Parc Francolí)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Hoy Lunes 9 Mar:\n• 17:00h \u2014 Encuentro Conjunto 8M (Imperial Tarraco)\n• 19:30h \u2014 Asamblea Vecinal (AAVV Sant Pere)\n• 11:00h \u2014 Paseo acompañados (Parc Francolí)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
                             <span className="material-symbols-outlined text-sm">person_add</span>
                             UNIRME AHORA
                         </a>

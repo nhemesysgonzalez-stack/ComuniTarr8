@@ -175,30 +175,21 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'sun-8m-today',
-            title: "💜 ¡HOY! Día Internacional de la Mujer",
-            content: "¡Tarragona se viste de lila! A las 12h lectura del manifiesto y a las 18h manifestación principal. ¡Únete!",
-            category: "EVENTO",
+            id: 'mon-8m-resume',
+            title: "💜 Éxito rotundo de la Manifestación 8M",
+            content: "¡Tarragona se vistió de lila! Miles de personas salieron ayer a las calles para reivindicar la igualdad. Gracias a todas.",
+            category: "NOTICIA",
             neighborhood: "GENERAL",
-            itinerary: "• 12:00: Lectura manifiesto (Pl. Font)\n• 18:00: Manifestación (Imp. Tarraco)\n• 20:00: Cierre",
+            itinerary: "• Asistentes: +5.000 personas\n• Sin incidentes destacables\n• Galería de fotos ya disponible",
             created_at: new Date().toISOString()
           },
           {
-            id: 'sat-reading-club-success',
-            title: "💜 Éxito Preparativos 8M",
-            content: "Gran jornada de preparación de la manifestación de hoy. ¡Gracias a todos por participar!",
-            category: "DÍA DE LA MUJER",
+            id: 'mon-weather-rain',
+            title: "☔ Alerta Lluvia Intensa",
+            content: "Protección Civil avisa de un frente de lluvias fuertes para la tarde de hoy lunes. Precaución en los desplazamientos.",
+            category: "CLIMA",
             neighborhood: "GENERAL",
-            itinerary: "• Pancartas listas\n• Coordinación completada\n• Nos vemos a las 18h en Imperial Tarraco",
-            created_at: new Date().toISOString()
-          },
-          {
-            id: 'sat-traffic-weekend',
-            title: "🚗 Tráfico: Cortes por el 8M",
-            content: "Cortes de tráfico en el centro por el 8M. Por favor, utilizad el transporte público este domingo.",
-            category: "TRÁFICO",
-            neighborhood: "CENTRE",
-            itinerary: "• Rambla Nova: Cortada (17h)\n• Imperial Tarraco: Accesos limitados\n• Parking Corsini: Lleno\n• EMT: Posibles desvíos",
+            itinerary: "• Inicio precipitación: 15:00h\n• Riesgo inundación: Bajo\n• Recomendación: Evitar Riera",
             created_at: new Date().toISOString()
           },
           {
@@ -217,7 +208,7 @@ const Home: React.FC = () => {
         // Poll Example
         const pollExample = {
           id: 'poll-domingo-8m',
-          question: "¿Vas a participar en los actos del 8M de este domingo?",
+          question: "¿Vas a participar en los actos del 8M de este lunes?",
           options: ['¡Genial! He comprado cosas buenas', 'Muy bien organizado', 'Faltan más puestos', 'No he ido todavía'],
           category: 'COMUNIDAD',
           neighborhood: 'GENERAL',
@@ -569,7 +560,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 10 · Dom 8 Mar</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 10 · Lun 9 Mar</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">

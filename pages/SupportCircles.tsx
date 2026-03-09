@@ -46,7 +46,7 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'v1',
                     title: '🤝 Círculo de Cuidadores — Domingo Relax',
                     neighborhood: 'GENERAL',
-                    description: 'Hoy domingo de 11h a 12h nos vemos en el Parc del Francolí para compartir experiencias de autocuidado. ¡Trae a los peques si quieres!',
+                    description: 'Hoy lunes de 11h a 12h nos vemos en el Parc del Francolí para compartir experiencias de autocuidado. ¡Trae a los peques si quieres!',
                     contact_info: '611 22 33 44 (Miguel). Llevaremos globos para que nos reconozcáis.',
                     created_at: new Date().toISOString()
                 },
@@ -64,7 +64,7 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'v2',
                     title: '☕ Tertulia Post-Manifestación 8M',
                     neighborhood: 'GENERAL',
-                    description: 'Hoy domingo a las 19:30h quedamos en el local vecinal para comentar la jornada del 8M y relajarnos. ¡Trae algo para picar!',
+                    description: 'Hoy lunes a las 19:30h quedamos en el local vecinal para comentar la jornada del 8M y relajarnos. ¡Trae algo para picar!',
                     contact_info: '622 99 88 77 (Rosa). Local AAVV.',
                     created_at: new Date().toISOString()
                 }

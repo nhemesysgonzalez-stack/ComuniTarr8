@@ -60,7 +60,7 @@ const Patrols: React.FC = () => {
           id: 'mock-pat-sat-2',
           creator_id: 'user1',
           name: '🐕 Patrulla Mascotas: Rambla Nova',
-          description: 'Hoy domingo patrulla informativa para fomentar la recogida de cacas y el uso de correa en zonas concurridas. Regalamos bolsas reciclables.',
+          description: 'Hoy lunes patrulla informativa para fomentar la recogida de cacas y el uso de correa en zonas concurridas. Regalamos bolsas reciclables.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
           created_at: new Date().toISOString()

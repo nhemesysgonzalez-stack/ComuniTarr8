@@ -176,7 +176,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 export const getAssistantResponse = async (prompt: string, neighborhood: string = 'GENERAL', neighborName?: string): Promise<{ text: string; links?: GroundingLink[] }> => {
   // Always include the current date and weather context for realism
   const today = new Date().toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
-  const weatherContext = "Está empezando a llover fuerte de forma inesperada este sábado 7 de marzo por la tarde en Tarragona.";
+  const weatherContext = "Está empezando a llover fuerte de forma inesperada este domingo 7 de marzo por la tarde en Tarragona.";
 
   const isMediator = !neighborName || neighborName.includes('Mediador');
 

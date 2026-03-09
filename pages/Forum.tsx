@@ -75,7 +75,7 @@ const Forum: React.FC = () => {
 
   const tickerMessages = [
     { user: 'Admin ComuniTarr', text: '💜 Feliz 8M! Manifestación a las 18h desde Plaça de la Font.' },
-    { user: 'Meteo TGN', text: '☁️ Domingo nublado, 13ºC. Sin previsión de lluvia.' },
+    { user: 'Meteo TGN', text: '☁️ lunes lluvioso, 13ºC. Sin previsión de lluvia.' },
     { user: 'Ajuntament TGN', text: '🏛️ Hoy entrada gratuita a todos los recintos monumentales para mujeres.' },
     { user: 'Trànsit TGN', text: '🚗 Cortes previstos en el centro desde las 17:30h por la manifestación del 8M.' },
     { user: 'AAVV Part Alta', text: '📋 El mural participativo del 8M ya está terminado en el Fòrum. ✅' }
@@ -127,7 +127,7 @@ const Forum: React.FC = () => {
         { who: 'Joan B.', text: '@Luis Sí, los domingos como hoy la zona se colapsa en los aledaños. Mejor dejarlo en un parking periférico. ✅' },
       ],
       [
-        { who: 'Joe R.', text: '⚽ ¿Alguien sabe si el polideportivo de Campclar abre hoy domingo con normalidad?' },
+        { who: 'Joe R.', text: '⚽ ¿Alguien sabe si el polideportivo de Campclar abre Hoy lunes con normalidad?' },
         { who: 'Pau T.', text: '@Joe Sí, abre hasta las 14h como todos los domingos. Yo voy a tirar unas canastas ahora mismo.' },
         { who: 'Sandra L.', text: '@Joe @Pau Cuidado que hace fresquito y el suelo está un poco húmedo de la noche.' },
         { who: 'Joe R.', text: '@Sandra ¡Gracias por avisar! Me llevaré chándal largo.' },
@@ -575,7 +575,7 @@ const Forum: React.FC = () => {
             <h2 className="text-[10px] font-black uppercase tracking-widest text-[#3b82f6] mb-4">Empleo Hoy</h2>
             <div className="space-y-3">
               <div className="text-[11px] font-bold text-slate-600 dark:text-slate-300 border-l-2 border-blue-500 pl-3">
-                <p>💜 Ayudante 8M</p>
+                <p>🛵 Repartidor/a Paquetería</p>
                 <p className="text-[9px] opacity-60 font-medium">Llamar: 622 11 00 22</p>
               </div>
             </div>
