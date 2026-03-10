@@ -42,30 +42,30 @@ const SupportCircles: React.FC = () => {
 
             const mockCircles: SupportCircle[] = [
                 {
-                    id: 'mock-sat-sc1',
-                    initiator_id: 'v1',
-                    title: '🤝 Círculo de Cuidadores — Domingo Relax',
+                    id: 'real-siad-dones',
+                    initiator_id: 'ayto',
+                    title: '🤝 SIAD - Atención y Apoyo a Mujeres',
                     neighborhood: 'GENERAL',
-                    description: 'Hoy martes de 11h a 12h nos vemos en el Parc del Francolí para compartir experiencias de autocuidado. ¡Trae a los peques si quieres!',
-                    contact_info: '611 22 33 44 (Miguel). Llevaremos globos para que nos reconozcáis.',
+                    description: 'Servicio público municipal para asesoramiento psicológico, jurídico y social a mujeres, incluyendo apoyo ante la violencia de género.',
+                    contact_info: '977 29 62 79 (Plaça de la Font 1)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-sat-sc2',
-                    initiator_id: 'vadmin',
-                    title: '🧘 Meditación "Vibra Positiva"',
+                    id: 'real-pere-martell',
+                    initiator_id: 'associacio',
+                    title: '👴 Llar de Jubilats Pere Martell',
                     neighborhood: 'GENERAL',
-                    description: 'Mañana lunes a las 10:00h sesión de yoga y meditación gratuita. Hoy estamos pidiendo información tras la marcha del 8M. ¡Pásate!',
-                    contact_info: '655 12 34 56 (Elena).',
+                    description: 'Centro para un envejecimiento activo. Actividades, apoyo mutuo y acompañamiento para nuestros mayores contra la soledad no deseada.',
+                    contact_info: '977 21 55 14 (Tarragona)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-sat-sc3',
-                    initiator_id: 'v2',
-                    title: '☕ Tertulia Post-Manifestación 8M',
+                    id: 'real-atrevete-jovenes',
+                    initiator_id: 'voluntarios',
+                    title: '🌱 Asociación Juvenil Atrévete',
                     neighborhood: 'GENERAL',
-                    description: 'Hoy martes a las 19:30h quedamos en el local vecinal para comentar la jornada del 8M y relajarnos. ¡Trae algo para picar!',
-                    contact_info: '622 99 88 77 (Rosa). Local AAVV.',
+                    description: 'Entidad que trabaja con niños y adolescentes en situación de riesgo de exclusión social. Acompañamiento, refuerzo y apoyo integral.',
+                    contact_info: '639 85 74 82 (Asociación)',
                     created_at: new Date().toISOString()
                 }
             ];
@@ -131,19 +131,15 @@ const SupportCircles: React.FC = () => {
                 {/* Featured Ad - Mental Health */}
                 <div className="mb-16 bg-gradient-to-br from-indigo-600 to-purple-700 rounded-[40px] overflow-hidden shadow-2xl flex flex-col md:flex-row items-center relative group">
                     <div className="md:w-1/2 p-10 md:p-16 relative z-10 text-white">
-                        <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest mb-6">Iniciativa Destacada • Salud Mental</span>
-                        <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight">¿Sientes estrés o ansiedad?</h2>
+                        <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest mb-6">Iniciativa Destacada • Salud y Juventud</span>
+                        <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight">Apoyo a Adolescentes y Jóvenes</h2>
                         <p className="text-lg opacity-90 font-medium mb-8 leading-relaxed">
-                            No estás solo. Ofrecemos acompañamiento gratuito y grupos de apoyo para adolescentes y adultos que luchan con la presión diaria. Aprende técnicas de mindfulness y gestión emocional con vecinos titulados.
+                            Impulsado por el Ayuntamiento de Tarragona, el servicio "Ara t'escolto" ofrece apoyo emocional gratuito, directo y confidencial a jóvenes de 16 a 30 años. Si sientes estrés, ansiedad o solo necesitas hablar, escríbenos.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <a href="tel:611223344" className="px-8 py-4 bg-white text-indigo-700 rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2">
-                                <span className="material-symbols-outlined text-sm">call</span>
-                                611 22 33 44
-                            </a>
-                            <a href="https://wa.me/34611223344" className="px-8 py-4 bg-emerald-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2">
+                            <a href="https://wa.me/34671350671" className="px-8 py-4 bg-emerald-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2">
                                 <span className="material-symbols-outlined text-sm">chat</span>
-                                WHATSAPP
+                                WHATSAPP (671 350 671)
                             </a>
                         </div>
                     </div>
