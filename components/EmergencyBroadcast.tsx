@@ -48,7 +48,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                             Avería en Calle Unió
                         </h2>
                         <p className="text-xs font-medium text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-                            Lunes 9 Mar: Rotura de tubería detectada esta madrugada. El suministro se verá afectado en la zona **Centre / Rambla** hasta las **13:00h**.
+                            Martes 10 Mar: Rotura de tubería detectada esta madrugada. El suministro se verá afectado en la zona **Centre / Rambla** hasta las **13:00h**.
                         </p>
 
                         <div className="grid grid-cols-2 gap-4 mb-6">
@@ -75,7 +75,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                         </div>
 
                         <div className="pt-2 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center text-[8px] font-bold text-gray-400 uppercase tracking-widest">
-                            <span>Lunes 9 Mar 2026</span>
+                            <span>Martes 10 Mar 2026</span>
                             <span>AEMET: Despejado 16ºC</span>
                         </div>
                     </div>

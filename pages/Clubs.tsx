@@ -54,7 +54,7 @@ const Clubs: React.FC = () => {
                     id: 'c-fri-2',
                     creator_id: 'v2',
                     name: 'Cineforum Vecinal 🍿',
-                    description: 'Hoy lunes a las 19:00h proyectamos una peli sorpresa en el local social relacionada con el 8M.',
+                    description: 'Hoy martes a las 19:00h proyectamos una peli sorpresa en el local social relacionada con el 8M.',
                     neighborhood: 'GENERAL',
                     contact_info: 'Canal ENCUENTROS (Foro)',
                     created_at: new Date().toISOString()
