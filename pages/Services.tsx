@@ -484,6 +484,18 @@ export const Services: React.FC = () => {
                   <span className="material-symbols-outlined">pets</span> ANIMALES Y NATURALEZA
                 </h4>
                 <div className="space-y-3">
+                  <div className="p-4 bg-gradient-to-br from-fuchsia-50 to-pink-50 dark:from-fuchsia-900/20 dark:to-pink-900/10 rounded-2xl border-2 border-fuchsia-400 dark:border-fuchsia-600 shadow-lg relative overflow-hidden group">
+                    <div className="absolute -right-4 -top-4 bg-fuchsia-500 text-white text-[8px] px-8 py-2 rotate-45 font-black uppercase shadow-sm">
+                      Destacado
+                    </div>
+                    <p className="text-sm font-black text-fuchsia-800 dark:text-fuchsia-300 pr-8">🐾 Trobada Border Collies i amics XXL</p>
+                    <p className="text-[11px] text-gray-600 dark:text-gray-300 mb-3 mt-1 font-medium leading-relaxed">
+                      ¡Un esdeveniment caní espectacular a Tivissa el 3 y 4 de mayo! Disfruta de exhibiciones de agility, pastoreo, concursos para gossos XXL, zona de food trucks y mucho más.
+                    </p>
+                    <a href="https://firescatalanes.cat/fires/trobada-border-collies-i-amics-xxl/" target="_blank" rel="noopener noreferrer" className="inline-flex py-1.5 px-4 bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-xl text-[10px] font-black uppercase items-center gap-1 transition-all shadow-md">
+                      <span className="material-symbols-outlined text-[14px]">arrow_forward</span> Más Info y Entradas
+                    </a>
+                  </div>
                   <div className="p-3 bg-orange-50 dark:bg-orange-900/10 rounded-2xl border border-orange-100 dark:border-orange-800/30">
                     <p className="text-sm font-black dark:text-white">Protectora Tarragona (APAPT)</p>
                     <p className="text-[11px] text-gray-500 mb-2">Paseo de perros, limpieza y cuidado de colonias felinas.</p>

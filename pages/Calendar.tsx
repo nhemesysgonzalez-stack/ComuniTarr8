@@ -72,6 +72,19 @@ const NeighborhoodCalendar: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
+          id: 'border-collie-xxl',
+          creator_id: 'admin',
+          title: "🐾 Trobada Border Collies i amics XXL",
+          description: "Trobada canina a Tivissa: exhibicions d'agility i pastoreig, concursos per a gossos grans, food trucks i tallers.",
+          event_date: '2026-05-03',
+          event_time: '10:00',
+          location: 'Pista municipal de futbol Tivissa',
+          category: 'Ocio',
+          neighborhood: 'GENERAL',
+          contact_info: 'firescatalanes.cat',
+          created_at: new Date().toISOString()
+        },
+        {
           id: 'real-sat-vermut',
           creator_id: 'v12',
           title: "🍹 Vermut Vecinal Post-Mercadillo",

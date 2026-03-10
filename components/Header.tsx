@@ -262,12 +262,14 @@ export const Header: React.FC = () => {
       </header>
 
       {/* Global Activity Ticker - Part of the Header Unit */}
-      <div className="bg-primary/95 backdrop-blur-md py-1.5 overflow-hidden border-b border-white/10 relative w-full max-w-full">
+      <div className="bg-fuchsia-600/95 backdrop-blur-md py-1.5 overflow-hidden border-b border-white/10 relative w-full max-w-full">
         <motion.div
           animate={{ x: [0, -1200] }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
+          <span className="flex items-center gap-2 text-[10px] text-fuchsia-100"><span className="material-symbols-outlined text-[14px]">pets</span> 🐾 NUEVO GRAN EVENTO: TROBADA BORDER COLLIES I AMICS XXL - 3 Y 4 DE MAYO EN TIVISSA. ¡FOOD TRUCKS, AGILITY Y CONCURSOS PARA TODA LA FAMILIA!</span>
+          <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">☀️ MARTES DESPEJADO: CONTINÚA EL SOL EN TARRAGONA CON 16ºC DISFRUTA DEL DÍA</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">💧 AVERÍA AGUA: TRABAJOS EN CALLE UNIÓ — SUMINISTRO AFECTADO HASTA LAS 13:00H</span>
