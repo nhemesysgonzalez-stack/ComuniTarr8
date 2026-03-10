@@ -155,6 +155,17 @@ const Announcements: React.FC = () => {
                     created_at: new Date().toISOString()
                 },
                 {
+                    id: 'border-collies-tivissa',
+                    title: "🐾 TROBADA BORDER COLLIES I AMICS XXL",
+                    content: "Anunciamos esta fantástica trobada en la pista municipal de futbol de Tivissa para el 3 y 4 de mayo. Ven a disfrutar del agility, food trucks, perros grandes y muchas actividades para toda la familia y peludos.",
+                    category: "EVENTO",
+                    author_name: "Fires Catalanes",
+                    neighborhood: "GENERAL",
+                    itinerary: "• Fechas: 3 y 4 de mayo\n• Lugar: Pista Municipal de Tivissa\n• Actividades: Agility, pastoreo, food trucks\n• Enlace de entradas: firescatalanes.cat",
+                    link_url: "https://firescatalanes.cat/fires/trobada-border-collies-i-amics-xxl/",
+                    created_at: new Date().toISOString()
+                },
+                {
                     id: 'sat-reading-club-thanks',
                     title: "📚 GRAN ÉXITO DEL CLUB DE LECTURA",
                     content: "Muchas gracias a las vecinas que participaron en la mesa redonda sobre la mujer trabajadora.",
