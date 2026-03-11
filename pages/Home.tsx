@@ -186,7 +186,7 @@ const Home: React.FC = () => {
           {
             id: 'mon-weather-rain',
             title: "☀️ Tiempo Primaveral",
-            content: "Protección Civil avisa de un frente de lluvias fuertes para la tarde de Hoy martes. Precaución en los desplazamientos.",
+            content: "Protección Civil avisa de un frente de lluvias fuertes para la tarde de Hoy miércoles. Precaución en los desplazamientos.",
             category: "CLIMA",
             neighborhood: "GENERAL",
             itinerary: "• Cielo despejado\n• Viento: Flojo\n• Recomendación: Disfrutar del día",
@@ -208,7 +208,7 @@ const Home: React.FC = () => {
         // Poll Example
         const pollExample = {
           id: 'poll-domingo-8m',
-          question: "¿Vas a participar en los actos del 8M de este martes?",
+          question: "¿Vas a participar en los actos del 8M de este miércoles?",
           options: ['¡Genial! He comprado cosas buenas', 'Muy bien organizado', 'Faltan más puestos', 'No he ido todavía'],
           category: 'COMUNIDAD',
           neighborhood: 'GENERAL',
@@ -560,7 +560,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 10 · Mar 10 Mar</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 11 · Mié 11 Mar</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">

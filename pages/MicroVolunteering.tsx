@@ -248,7 +248,7 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Ayuda Mercado', d: 'Busco voluntario para ayudar a bajar 3 pisos sin ascensor y acompañar al mercado de Hoy martes.', c: '644 33 22 11' },
+                                            { t: 'Ayuda Mercado', d: 'Busco voluntario para ayudar a bajar 3 pisos sin ascensor y acompañar al mercado de Hoy miércoles.', c: '644 33 22 11' },
                                             { t: 'Paseo Perro', d: '¿Algún vecino pasea su perro por la zona del Eixample y puede sacar al mío hoy tarde? Estoy de baja.', c: '633 44 55 66' },
                                             { t: 'Ayuda Móvil', d: 'Busco alguien que me enseñe a instalar la app Mi Carpeta Ciudadana para unos trámites hoy.', c: '611 22 33 44' },
                                             { t: 'Club Lectura', d: '¿Algún vecino/a va a la biblioteca hoy tarde? Me gustaría ir acompañado para no volver solo de noche.', c: 'Foro · Canal General' }

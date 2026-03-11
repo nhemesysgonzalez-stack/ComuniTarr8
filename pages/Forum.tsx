@@ -75,7 +75,7 @@ const Forum: React.FC = () => {
 
   const tickerMessages = [
     { user: 'Admin ComuniTarr', text: '💜 Feliz 8M! Manifestación a las 18h desde Plaça de la Font.' },
-    { user: 'Meteo TGN', text: '☁️ martes soleado, 13ºC. Sin previsión de lluvia.' },
+    { user: 'Meteo TGN', text: '☁️ miércoles primaveral, 13ºC. Sin previsión de lluvia.' },
     { user: 'Ajuntament TGN', text: '🏛️ Hoy entrada gratuita a todos los recintos monumentales para mujeres.' },
     { user: 'Trànsit TGN', text: '🚗 Cortes previstos en el centro desde las 17:30h por la manifestación del 8M.' },
     { user: 'AAVV Part Alta', text: '📋 El mural participativo del 8M ya está terminado en el Fòrum. ✅' }
@@ -127,7 +127,7 @@ const Forum: React.FC = () => {
         { who: 'Joan B.', text: '@Luis Sí, los domingos como hoy la zona se colapsa en los aledaños. Mejor dejarlo en un parking periférico. ✅' },
       ],
       [
-        { who: 'Joe R.', text: '⚽ ¿Alguien sabe si el polideportivo de Campclar abre Hoy martes con normalidad?' },
+        { who: 'Joe R.', text: '⚽ ¿Alguien sabe si el polideportivo de Campclar abre Hoy miércoles con normalidad?' },
         { who: 'Pau T.', text: '@Joe Sí, abre hasta las 14h como todos los domingos. Yo voy a tirar unas canastas ahora mismo.' },
         { who: 'Sandra L.', text: '@Joe @Pau Cuidado que hace fresquito y el suelo está un poco húmedo de la noche.' },
         { who: 'Joe R.', text: '@Sandra ¡Gracias por avisar! Me llevaré chándal largo.' },
@@ -550,7 +550,7 @@ const Forum: React.FC = () => {
               {[
                 { id: 'GENERAL', label: 'General', icon: 'public', desc: 'Charla libre' },
                 { id: 'PREPPERS', label: 'Seguridad', icon: 'shield', desc: 'Avisos y ayuda' },
-                { id: 'EMPLEO', label: 'Empleo', icon: 'work', desc: 'Ofertas 8M' },
+                { id: 'EMPLEO', label: 'Empleo', icon: 'work', desc: 'Ofertas Activas' },
                 { id: 'ENCUENTROS', label: 'Encuentros', icon: 'favorite', desc: 'Domingo' }
               ].map(chan => (
                 <button

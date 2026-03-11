@@ -144,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
               </p>
-              <button onClick={() => alert("Hoy Martes 10 Mar (8M):\n\u2022 12:00h \u2014 Lectura Manifiesto Pl. de la Font\n\u2022 18:00h \u2014 Manifestación 8M (Desde Imperial Tarraco)\n\nMañana Lunes:\n\u2022 09:00h \u2014 Talleres Tarragona Impulsa")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Hoy Miércoles 11 Mar:\n\u2022 12:00h \u2014 Lectura Manifiesto Pl. de la Font\n\u2022 18:00h \u2014 Manifestación 8M (Desde Imperial Tarraco)\n\nMañana Lunes:\n\u2022 09:00h \u2014 Talleres Tarragona Impulsa")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -168,7 +168,7 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Hoy Mar 10 Mar)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Hoy Mié 11 Mar)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
                     <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar de Geriatr&iacute;a — Residencia Ponent&rdquo;</p>
@@ -566,13 +566,13 @@ export const Services: React.FC = () => {
                   <div className="flex flex-col gap-2">
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Part Alta</span>
-                      <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DOMINGO 8M)</span>
+                      <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DÍA NORMAL)</span>
                     </div>
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
-                      <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DOMINGO 8M)</span>
+                      <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DÍA NORMAL)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy Martes 10 Mar: Actos institucionales Día de la Mujer. Mañana Lunes: Talleres TGN Impulsa.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy Miércoles 11 Mar: Actos institucionales Día de la Mujer. Mañana Lunes: Talleres TGN Impulsa.</p>
                   </div>
                 </div>
               </div>
