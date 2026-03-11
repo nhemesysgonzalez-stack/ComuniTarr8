@@ -144,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
               </p>
-              <button onClick={() => alert("Hoy Miércoles 11 Mar:\n\u2022 12:00h \u2014 Lectura Manifiesto Pl. de la Font\n\u2022 18:00h \u2014 Manifestación 8M (Desde Imperial Tarraco)\n\nMañana Lunes:\n\u2022 09:00h \u2014 Talleres Tarragona Impulsa")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Hoy Miércoles 11 Mar:\n\u2022 12:00h \u2014 Lectura Manifiesto Pl. de la Font\n\u2022 18:00h \u2014 Manifestación normal (Desde Imperial Tarraco)\n\nMañana Lunes:\n\u2022 09:00h \u2014 Talleres Tarragona Impulsa")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -289,7 +289,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-600">check_circle</span>
                 <div>
                   <p className="text-xs font-black text-green-700 dark:text-green-500 uppercase">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de domingo y festivos. Desvíos puntuales por manifestaciones 8M en el centro.</p>
+                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de domingo y festivos. Desvíos puntuales por manifestaciones normal en el centro.</p>
                 </div>
               </div>
 

@@ -175,30 +175,30 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'mon-8m-resume',
-            title: "💜 Éxito rotundo de la Manifestación 8M",
-            content: "¡Tarragona se vistió de lila! Miles de personas salieron ayer a las calles para reivindicar la igualdad. Gracias a todas.",
-            category: "NOTICIA",
+            id: 'trobada-canina',
+            title: "🐾 Trobada Border Collies i amics XXL",
+            content: "¡Gran evento canino en la pista municipal de Tivissa el 3 y 4 de Mayo! Exhibiciones de pastoreo, concursos y food trucks.",
+            category: "EVENTO",
             neighborhood: "GENERAL",
-            itinerary: "• Asistentes: +5.000 personas\n• Sin incidentes destacables\n• Galería de fotos ya disponible",
+            itinerary: "• Agility y actividades\n• Concursos para perros grandes\n• Zona de food trucks",
             created_at: new Date().toISOString()
           },
           {
-            id: 'mon-weather-rain',
+            id: 'mon-weather-spring',
             title: "☀️ Tiempo Primaveral",
-            content: "Protección Civil avisa de un frente de lluvias fuertes para la tarde de Hoy miércoles. Precaución en los desplazamientos.",
+            content: "Hoy disfrutaremos de un día soleado en Tarragona con temperaturas de hasta 19ºC. Ideal para actividades al aire libre.",
             category: "CLIMA",
             neighborhood: "GENERAL",
-            itinerary: "• Cielo despejado\n• Viento: Flojo\n• Recomendación: Disfrutar del día",
+            itinerary: "• Cielo despejado\n• Viento: Flojo\n• Recomendación: Disfrutar al máximo",
             created_at: new Date().toISOString()
           },
           {
             id: 'sat-post-assembly-info',
             title: "📋 Actas de la Asamblea disponibles",
-            content: "Ya puedes consultar el resumen oficial de la asamblea del pasado jueves. La nueva zona verde está en marcha.",
+            content: "Ya puedes consultar el resumen oficial de la asamblea vecinal. La nueva zona verde está aprobada y en macha.",
             category: "AVISO",
             neighborhood: "PART ALTA",
-            itinerary: "• Documento: PDF en Anuncios\n• Aprobación: 82% a favor\n• Inicio obras: Estimado mayo\n• Contacto: AAVV Sant Pere",
+            itinerary: "• Documento: PDF en Anuncios\n• Aprobación: 82% a favor\n• Inicio obras: Estimado mayo",
             created_at: new Date().toISOString()
           }
         ];
@@ -207,9 +207,9 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'poll-domingo-8m',
-          question: "¿Vas a participar en los actos del 8M de este miércoles?",
-          options: ['¡Genial! He comprado cosas buenas', 'Muy bien organizado', 'Faltan más puestos', 'No he ido todavía'],
+          id: 'poll-miércoles',
+          question: "¿Vas a participar en la Trobada canina gigante este fin de semana?",
+          options: ['Sí, seguro', 'Me lo estoy pensando', 'No tengo perro', 'No me va bien'],
           category: 'COMUNIDAD',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()

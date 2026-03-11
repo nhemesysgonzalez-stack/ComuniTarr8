@@ -48,8 +48,8 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'ws-8m-1',
-                    title: '💜 Taller de Empoderamiento 8M',
+                    id: 'ws-11m-1',
+                    title: '💜 Taller de Empoderamiento normal',
                     instructor: 'Elena P.',
                     date: 'Hoy miércoles 8, 11:30',
                     description: 'Sesión presencial abierta en la biblioteca centrada en el empoderamiento femenino. Preparación de pancartas para la mani.',
@@ -60,7 +60,7 @@ const Workshops: React.FC = () => {
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'ws-8m-2',
+                    id: 'ws-11m-2',
                     title: '🖥️ Masterclass IA y Trabajo (Mujeres Tech)',
                     instructor: 'Rosa M.',
                     date: 'Hoy miércoles, 18:30',

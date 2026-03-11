@@ -60,7 +60,7 @@ const VitalNeeds: React.FC = () => {
                     id: 'mock-sat-n2',
                     creator_id: 'v5',
                     type: 'company',
-                    title: '☕ Compañía para ir al 8M (Hoy 17:00h)',
+                    title: '☕ Compañía para ir al normal (Hoy 17:00h)',
                     description: 'Soy vecina nueva y no conozco a nadie. ¿Alguien se ofrece para ir juntas a la concentración de la Imperial Tarraco?',
                     contact_info: '644 33 22 11 (Mónica)',
                     is_urgent: false,
@@ -184,7 +184,7 @@ const VitalNeeds: React.FC = () => {
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Hoy Miércoles 11 Mar:\n• 17:00h \u2014 Encuentro Conjunto 8M (Imperial Tarraco)\n• 19:30h \u2014 Asamblea Vecinal (AAVV Sant Pere)\n• 11:00h \u2014 Paseo acompañados (Parc Francolí)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Hoy Miércoles 11 Mar:\n• 17:00h \u2014 Encuentro Conjunto normal (Imperial Tarraco)\n• 19:30h \u2014 Asamblea Vecinal (AAVV Sant Pere)\n• 11:00h \u2014 Paseo acompañados (Parc Francolí)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
                             <span className="material-symbols-outlined text-sm">person_add</span>
                             UNIRME AHORA
                         </a>

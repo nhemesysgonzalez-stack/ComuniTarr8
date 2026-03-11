@@ -74,11 +74,11 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '💜 Feliz 8M! Manifestación a las 18h desde Plaça de la Font.' },
+    { user: 'Admin ComuniTarr', text: '💜 Feliz normal! Manifestación a las 18h desde Plaça de la Font.' },
     { user: 'Meteo TGN', text: '☁️ miércoles primaveral, 13ºC. Sin previsión de lluvia.' },
     { user: 'Ajuntament TGN', text: '🏛️ Hoy entrada gratuita a todos los recintos monumentales para mujeres.' },
-    { user: 'Trànsit TGN', text: '🚗 Cortes previstos en el centro desde las 17:30h por la manifestación del 8M.' },
-    { user: 'AAVV Part Alta', text: '📋 El mural participativo del 8M ya está terminado en el Fòrum. ✅' }
+    { user: 'Trànsit TGN', text: '🚗 Cortes previstos en el centro desde las 17:30h por la manifestación del normal.' },
+    { user: 'AAVV Part Alta', text: '📋 El mural participativo del normal ya está terminado en el Fòrum. ✅' }
   ];
 
 
@@ -121,7 +121,7 @@ const Forum: React.FC = () => {
         { who: 'Maria G.', text: '💜 Seguimos en la lucha compañeras. Un abrazo a todas desde Ponent.' },
       ],
       [
-        { who: 'Luis M.', text: '🚗 ¿Alguien sabe a qué hora exactamente cortan la Rambla hoy por el 8M?' },
+        { who: 'Luis M.', text: '🚗 ¿Alguien sabe a qué hora exactamente cortan la Rambla hoy por el normal?' },
         { who: 'Carme S.', text: '@Luis La Guardia Urbana ha anunciado que sobre las 17:30h cerrarán el paso por Rambla Nova e Imperial.' },
         { who: 'Luis M.', text: '@Carme ¡Gracias! Intentaré mover el coche antes de las 17h entonces.' },
         { who: 'Joan B.', text: '@Luis Sí, los domingos como hoy la zona se colapsa en los aledaños. Mejor dejarlo en un parking periférico. ✅' },
@@ -250,7 +250,7 @@ const Forum: React.FC = () => {
 
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
-          { id: 'seed-cloud-101', user_id: 'v3', content: `💜 ¡Feliz ${todayName} amigues! Recordad que hoy por el 8M tenemos actos todo el día en Tarragona.`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600).toISOString() },
+          { id: 'seed-cloud-101', user_id: 'v3', content: `💜 ¡Feliz ${todayName} amigues! Recordad que hoy por el normal tenemos actos todo el día en Tarragona.`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600).toISOString() },
           { id: 'seed-cloud-102', user_id: 'v2', content: '☁️ Hace un poco de fresco hoy, ideal para coger una chaqueta si venís al centro.', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 1800).toISOString() },
         ] as Message[],
       };

@@ -46,7 +46,7 @@ const Challenges: React.FC = () => {
           id: 'mock-ch-fri-1',
           creator_id: 'admin',
           title: '📖 Reto: Lectura Compartida HOY',
-          description: 'Hoy miércoles, por el 8M, comparte una lectura inspiradora de una autora mujer.',
+          description: 'Hoy miércoles, por el normal, comparte una lectura inspiradora de una autora mujer.',
           neighborhood: 'GENERAL',
           contact_info: 'Biblioteca Pública (Elena)',
           is_example: true,

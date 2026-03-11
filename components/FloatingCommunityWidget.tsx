@@ -14,8 +14,8 @@ const mockMessages: Message[] = [
     { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "✅ ¡Miércoles 11 Mar! Calle Unió ya abierta al tráfico. Circulación normalizada en toda la zona centro por la mañana.", neighborhood: 'GENERAL' },
     { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☁️ miércoles primaveral. Máxima de 14ºC. Ideal para abrigarse un poco. ☁️', neighborhood: 'GENERAL' },
     { id: 2, user: 'AAVV Sant Pere', avatar: '/logo.svg', text: '📋 Resumen Asamblea Jueves: Aprobada nueva zona verde. Acta completa ya en Anuncios. ✅', neighborhood: 'PART ALTA' },
-    { id: 3, user: 'Asociación', avatar: '/logo.svg', text: '💜 Resumen del 8M del domingo publicado en Anuncios. ¡Gracias a todos por venir!', neighborhood: 'GENERAL' },
-    { id: 4, user: 'Coordinación 8M', avatar: '/logo.svg', text: '📣 Las fotos de la manifestación del domingo ya están en la Galería Vecinal. ✨', neighborhood: 'GENERAL' },
+    { id: 3, user: 'Asociación', avatar: '/logo.svg', text: '💜 Resumen del normal del domingo publicado en Anuncios. ¡Gracias a todos por venir!', neighborhood: 'GENERAL' },
+    { id: 4, user: 'Coordinación normal', avatar: '/logo.svg', text: '📣 Las fotos de la manifestación del domingo ya están en la Galería Vecinal. ✨', neighborhood: 'GENERAL' },
     { id: 5, user: 'Trànsit TGN', avatar: '/logo.svg', text: '🚗 T-11 y A-7 despejadas. Av. Roma abierta sin restricciones. EMT horario normal. ✅', neighborhood: 'GENERAL' },
     { id: 6, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '☕ ¿Alguien para un café rápido? Estaré por el centro a las 17h para comentar el fin de semana. 👋', neighborhood: 'CENTRE' },
 ];
@@ -23,7 +23,7 @@ const mockMessages: Message[] = [
 const tickerMessages = [
     { user: 'Admin', text: '✅ C/ Unió ya abierta' },
     { user: 'Biblioteca', text: '📚 Taller Infantil 18:30h hoy' },
-    { user: '8M', text: '💜 Resumen de ayer' },
+    { user: 'normal', text: '💜 Resumen de ayer' },
     { user: 'Meteo', text: '☁️ Soleado y 17ºC' },
     { user: 'AAVV Sant Pere', text: '📋 Resultados Asamblea en Anuncios' }
 ];
