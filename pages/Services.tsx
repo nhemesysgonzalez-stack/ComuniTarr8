@@ -144,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
               </p>
-              <button onClick={() => alert("Hoy Miércoles 11 Mar:\n\u2022 12:00h \u2014 Lectura Manifiesto Pl. de la Font\n\u2022 18:00h \u2014 Manifestación normal (Desde Imperial Tarraco)\n\nMañana Lunes:\n\u2022 09:00h \u2014 Talleres Tarragona Impulsa")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Hoy Jueves 12 Mar:\n\u2022 12:00h \u2014 Lectura Manifiesto Pl. de la Font\n\u2022 18:00h \u2014 Manifestación normal (Desde Imperial Tarraco)\n\nMañana Lunes:\n\u2022 09:00h \u2014 Talleres Tarragona Impulsa")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -168,23 +168,23 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Hoy Mié 11 Mar)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Hoy Jue 12 Mar)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar de Geriatr&iacute;a — Residencia Ponent&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Se busca auxiliar para turnos de fin de semana. Imprescindible titulaci&oacute;n y cari&ntilde;o por los mayores. Incorporaci&oacute;n inmediata. 📞 977 54 88 10 (Sra. Carme)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Atención al Cliente - Media Jornada&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Se busca personal para atención telefónica y gestión de reservas en centro médico de Tarragona. Valorable catalán. Horario de mañana. 📞 977 22 11 33 (Sra. Laura, RHH)</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Camarero/a de barra y terraza&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Cafeter&iacute;a c&eacute;ntrica busca personal para cubrir temporada de terraza. Jornada completa o media. Se valora buen trato al p&uacute;blico. 📞 611 99 00 22 (Caf&eacute; Imperial)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Conductor/a Repartidor - Furgoneta&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Empresa de paquetería local necesita chófer para ruta en la ciudad. Imprescindible carnet B y conocimiento de las calles. Jornada completa de lunes a viernes. 📞 688 44 22 11 (Logística TGN)</p>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Limpieza de oficinas (Turno ma&ntilde;ana)&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Empresa de servicios necesita personal para limpieza en despachos de Av. Roma. 4 horas diarias de Lunes a S&aacute;bado. 📞 977 22 33 44 (Limpiezas TGN)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Dependiente/a Panadería&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Buscamos persona para atención al público en panadería céntrica. Contrato temporal con posibilidad de fijo. Horarios rotativos. 📞 977 33 44 55 (Forn Central)</p>
                   </div>
                   <div className="border-l-4 border-teal-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar Administrativo/a Contable&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Peque&ntilde;a empresa familiar busca apoyo administrativo para facturaci&oacute;n y archivo. Conocimientos de Office b&aacute;sico. 📞 977 10 20 30 (Hermanos Garc&iacute;a SL)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Limpieza y Mantenimiento de Comunidades&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Empresa de servicios necesita personal para limpieza de escaleras y mantenimiento básico. 30 horas semanales. 📞 655 99 88 77 (Servicios Tarraco)</p>
                   </div>
                 </div>
               </div>
@@ -572,7 +572,7 @@ export const Services: React.FC = () => {
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
                       <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DÍA NORMAL)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy Miércoles 11 Mar: Actos institucionales Día de la Mujer. Mañana Lunes: Talleres TGN Impulsa.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy Jueves 12 Mar: Actos institucionales Día de la Mujer. Mañana Lunes: Talleres TGN Impulsa.</p>
                   </div>
                 </div>
               </div>

@@ -46,7 +46,7 @@ const Challenges: React.FC = () => {
           id: 'mock-ch-fri-1',
           creator_id: 'admin',
           title: '📖 Reto: Lectura Compartida HOY',
-          description: 'Hoy miércoles, por el normal, comparte una lectura inspiradora de una autora mujer.',
+          description: 'Hoy jueves, por el normal, comparte una lectura inspiradora de una autora mujer.',
           neighborhood: 'GENERAL',
           contact_info: 'Biblioteca Pública (Elena)',
           is_example: true,
@@ -240,9 +240,9 @@ const Challenges: React.FC = () => {
                   <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
                   <div className="flex flex-wrap gap-2 justify-center">
                     {[
-                      { t: 'Donación de Libros', d: 'Llevamos libros a la biblioteca del barrio para renovar stock infantil tras el miércoles de cole.', c: '977240331' },
+                      { t: 'Donación de Libros', d: 'Llevamos libros a la biblioteca del barrio para renovar stock infantil tras el jueves de cole.', c: '977240331' },
                       { t: 'Paseo con Mayores', d: 'Grupo para pasear con vecinos del barrio que viven solos esta tarde de lunes al salir del trabajo.', c: '655666777' },
-                      { t: 'Limpieza de alcorques', d: 'Iniciativa para limpiar la tierra de los árboles de nuestra calle este miércoles por la tarde.', c: '611888222' }
+                      { t: 'Limpieza de alcorques', d: 'Iniciativa para limpiar la tierra de los árboles de nuestra calle este jueves por la tarde.', c: '611888222' }
                     ].map((idea, i) => (
                       <button
                         key={i}

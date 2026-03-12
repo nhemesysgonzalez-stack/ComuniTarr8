@@ -74,7 +74,7 @@ const Incidents: React.FC = () => {
                         id: 'mock-inc-sat-2',
                         user_id: 'admin',
                         title: '✅ REVISIÓN ALUMBRADO RAMBLA: OK',
-                        description: 'La iluminación de la Rambla Nova ha sido completamente restaurada para el miércoles.',
+                        description: 'La iluminación de la Rambla Nova ha sido completamente restaurada para el jueves.',
                         neighborhood: 'CENTRE',
                         status: 'resolved',
                         created_at: new Date(Date.now() - 1000 * 60 * 60 * 5).toISOString(),

@@ -51,7 +51,7 @@ const Workshops: React.FC = () => {
                     id: 'ws-11m-1',
                     title: '💜 Taller de Empoderamiento normal',
                     instructor: 'Elena P.',
-                    date: 'Hoy miércoles 8, 11:30',
+                    date: 'Hoy jueves 8, 11:30',
                     description: 'Sesión presencial abierta en la biblioteca centrada en el empoderamiento femenino. Preparación de pancartas para la mani.',
                     image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800',
                     spots: 4,
@@ -63,7 +63,7 @@ const Workshops: React.FC = () => {
                     id: 'ws-11m-2',
                     title: '🖥️ Masterclass IA y Trabajo (Mujeres Tech)',
                     instructor: 'Rosa M.',
-                    date: 'Hoy miércoles, 18:30',
+                    date: 'Hoy jueves, 18:30',
                     description: 'Taller para impulsar carreras tecnológicas. Aprende a integrar herramientas de inteligencia artificial en tu flujo de trabajo.',
                     image: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=800',
                     spots: 15,
@@ -139,7 +139,7 @@ const Workshops: React.FC = () => {
                         </div>
                         <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Masterclass: LinkedIn Pro 📈</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Sácale partido a tu red profesional y encuentra nuevas oportunidades. este miércoles a las 18:30h en la Tabacalera. ¡Plazas limitadas!
+                            Sácale partido a tu red profesional y encuentra nuevas oportunidades. este jueves a las 18:30h en la Tabacalera. ¡Plazas limitadas!
                         </p>
 
                         <div className="flex flex-wrap gap-4">

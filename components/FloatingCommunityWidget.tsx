@@ -11,8 +11,8 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "✅ ¡Miércoles 11 Mar! Calle Unió ya abierta al tráfico. Circulación normalizada en toda la zona centro por la mañana.", neighborhood: 'GENERAL' },
-    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☁️ miércoles primaveral. Máxima de 14ºC. Ideal para abrigarse un poco. ☁️', neighborhood: 'GENERAL' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "✅ ¡Jueves 12 Mar! Calle Unió ya abierta al tráfico. Circulación normalizada en toda la zona centro por la mañana.", neighborhood: 'GENERAL' },
+    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☁️ jueves despejado. Máxima de 14ºC. Ideal para abrigarse un poco. ☁️', neighborhood: 'GENERAL' },
     { id: 2, user: 'AAVV Sant Pere', avatar: '/logo.svg', text: '📋 Resumen Asamblea Jueves: Aprobada nueva zona verde. Acta completa ya en Anuncios. ✅', neighborhood: 'PART ALTA' },
     { id: 3, user: 'Asociación', avatar: '/logo.svg', text: '💜 Resumen del normal del domingo publicado en Anuncios. ¡Gracias a todos por venir!', neighborhood: 'GENERAL' },
     { id: 4, user: 'Coordinación normal', avatar: '/logo.svg', text: '📣 Las fotos de la manifestación del domingo ya están en la Galería Vecinal. ✨', neighborhood: 'GENERAL' },
