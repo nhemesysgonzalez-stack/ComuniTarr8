@@ -177,12 +177,12 @@ const Announcements: React.FC = () => {
                 },
                 {
                     id: 'sat-weekend-traffic',
-                    title: "✅ TRÁFICO NORMALIZADO: C/ UNIÓ",
-                    content: "Se confirma la fluidez total del tráfico en el centro tras la reapertura. El acceso a los comercios de la Rambla Nueva por C/ Unió es directo y sin afectaciones.",
-                    category: "INFO",
-                    author_name: "Guàrdia Urbana TGN",
-                    neighborhood: "CENTRE",
-                    itinerary: "• Calle Unió: Operativa 🟢\n• Acceso Rambla: Cortado 17h\n• Parking Corsini: Lleno\n• Autobuses: Desvíos por mani",
+                    title: "⚠️ CORTE DE AGUA: C/ RÍO TER",
+                    content: "Aviso de EMATSA: Actuación de mejora de servicio en la red general. Suministro afectado en el bloque 4 de calle Río Ter (Bonavista) hasta las 14:00h.",
+                    category: "URGENTE",
+                    author_name: "EMATSA",
+                    neighborhood: "CAMPCLAR / BONAVISTA",
+                    itinerary: "• Zona: Río Ter blq 4\n• Fin previsto: 14:00h\n• Contacto EMATSA: 900 13 42 22",
                     created_at: new Date().toISOString()
                 },
                 {

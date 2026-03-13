@@ -61,13 +61,13 @@ const Incidents: React.FC = () => {
                     {
                         id: 'mock-inc-sat-1',
                         user_id: 'admin',
-                        title: '✅ ACCESO C/ UNIÓ: 100% OPERATIVO',
-                        description: 'Tras la reapertura, el acceso al centro por Calle Unió funciona sin problemas para el tráfico dominical.',
-                        neighborhood: 'CENTRE',
-                        status: 'resolved',
+                        title: '⚠️ CORTES SUMINISTRO DE AGUA - CALLE RÍO TER',
+                        description: 'Actuación de mejora de servicio de EMATSA. Afección en bloque 4. Previsión de restablecimiento: 14:00h.',
+                        neighborhood: 'CAMPCLAR / BONAVISTA',
+                        status: 'in_progress',
                         created_at: new Date().toISOString(),
-                        contact_info: 'Guàrdia Urbana TGN',
-                        profiles: { full_name: 'Seguridad Ciudadana', avatar_url: '/logo.svg' },
+                        contact_info: 'EMATSA',
+                        profiles: { full_name: 'EMATSA Avisos', avatar_url: '/logo.svg' },
                         image_url: 'https://images.unsplash.com/photo-1542013936693-8846383242ef?auto=format&fit=crop&q=80&w=800'
                     },
                     {

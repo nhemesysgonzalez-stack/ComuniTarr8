@@ -272,7 +272,7 @@ export const Header: React.FC = () => {
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">☀️ VIERNES DESPEJADO: CONTINÚA EL SOL EN TARRAGONA CON 16ºC DISFRUTA DEL DÍA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">💧 AVERÍA AGUA: TRABAJOS EN CALLE UNIÓ — SUMINISTRO AFECTADO HASTA LAS 13:00H</span>
+          <span className="flex items-center gap-2">💧 AVERÍA AGUA: TRABAJOS BLQ 4 CALLE RÍO TER — SUMINISTRO AFECTADO HASTA LAS 14:00H</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🚗 TRÀNSIT TGN: CIRCULACIÓN FLUIDA EN LOS ACCESOS PRINCIPALES ESTA MAÑANA (A-7/T-11)</span>
           <span className="opacity-30">•</span>

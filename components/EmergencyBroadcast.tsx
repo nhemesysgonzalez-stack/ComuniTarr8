@@ -45,20 +45,20 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                             <span className="text-[10px] font-black text-orange-600 uppercase tracking-widest">Aviso Suministro Agua</span>
                         </div>
                         <h2 className="text-xl font-black text-gray-900 dark:text-white leading-tight mb-2 uppercase">
-                            Avería en Calle Unió
+                            Corte en Calle del Río Ter
                         </h2>
                         <p className="text-xs font-medium text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-                            Viernes 13 Mar: Rotura de tubería detectada esta madrugada. El suministro se verá afectado en la zona **Centre / Rambla** hasta las **13:00h**.
+                            Viernes 13 Mar: Actuación de mejora de servicio. El suministro se verá afectado en la zona **Campclar / Bonavista** hasta las **14:00h**.
                         </p>
 
                         <div className="grid grid-cols-2 gap-4 mb-6">
                             <div className="bg-orange-50 dark:bg-orange-900/20 p-3 rounded-2xl">
                                 <span className="block text-[8px] font-black text-orange-600 uppercase mb-1">Zona</span>
-                                <span className="text-[10px] font-bold text-orange-900 dark:text-orange-200">Calle Unió</span>
+                                <span className="text-[10px] font-bold text-orange-900 dark:text-orange-200">Calle Río Ter blq. 4</span>
                             </div>
                             <div className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-2xl">
                                 <span className="block text-[8px] font-black text-blue-600 uppercase mb-1">Fin Previsto</span>
-                                <span className="text-[10px] font-bold text-blue-900 dark:text-blue-200">13:00h Hoy</span>
+                                <span className="text-[10px] font-bold text-blue-900 dark:text-blue-200">14:00h Hoy</span>
                             </div>
                         </div>
 
