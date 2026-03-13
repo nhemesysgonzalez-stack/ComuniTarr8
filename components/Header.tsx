@@ -270,7 +270,7 @@ export const Header: React.FC = () => {
         >
           <span className="flex items-center gap-2 text-[10px] text-fuchsia-100"><span className="material-symbols-outlined text-[14px]">pets</span> 🐾 NUEVO GRAN EVENTO: TROBADA BORDER COLLIES I AMICS XXL - 3 Y 4 DE MAYO EN TIVISSA. ¡FOOD TRUCKS, AGILITY Y CONCURSOS PARA TODA LA FAMILIA!</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">☀️ MIÉRCOLES DESPEJADO: CONTINÚA EL SOL EN TARRAGONA CON 16ºC DISFRUTA DEL DÍA</span>
+          <span className="flex items-center gap-2">☀️ VIERNES DESPEJADO: CONTINÚA EL SOL EN TARRAGONA CON 16ºC DISFRUTA DEL DÍA</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">💧 AVERÍA AGUA: TRABAJOS EN CALLE UNIÓ — SUMINISTRO AFECTADO HASTA LAS 13:00H</span>
           <span className="opacity-30">•</span>
