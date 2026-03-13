@@ -485,18 +485,24 @@ const Home: React.FC = () => {
 
 
       {/* Promotion Banner */}
-      <section className="bg-gradient-to-r from-orange-500 to-amber-500 rounded-[40px] p-6 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg shadow-orange-500/20">
-        <div className="flex items-center gap-4">
-          <div className="size-12 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-            <span className="material-symbols-outlined text-3xl">share</span>
+      <section className="bg-gradient-to-r from-pink-500 to-rose-500 rounded-[40px] p-6 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg shadow-pink-500/20 relative overflow-hidden group hover:scale-[1.01] transition-all cursor-pointer" onClick={() => window.location.href = '#/forum'}>
+        <div className="absolute right-0 top-0 opacity-10 transform translate-x-10 -translate-y-10 group-hover:scale-125 transition-transform duration-700">
+          <span className="material-symbols-outlined text-[200px]">favorite</span>
+        </div>
+        <div className="flex items-center gap-4 relative z-10">
+          <div className="size-12 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm group-hover:bg-white/30 transition-all">
+            <span className="material-symbols-outlined text-3xl animate-bounce">favorite</span>
           </div>
           <div>
-            <h3 className="text-xl font-black uppercase tracking-tight leading-none mb-1">¡Haz crecer tu barrio!</h3>
-            <p className="text-sm font-bold opacity-90 max-w-md">Comparte ComuniTarr con tus vecinos y mejora Tarragona juntos.</p>
+            <h3 className="text-xl font-black uppercase tracking-tight leading-none mb-1 flex items-center gap-2">
+              🔥 First Dates Comunitario
+              <span className="px-2 py-0.5 bg-white text-pink-600 text-[9px] rounded-full animate-pulse">NUEVO</span>
+            </h3>
+            <p className="text-sm font-bold opacity-90 max-w-md">Conoce solteros y solteras de tu barrio esta misma noche. ¡Entra al Canal Citas!</p>
           </div>
         </div>
-        <Link to="/invite" className="px-6 py-3 bg-white text-orange-600 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:scale-105 transition-all shadow-xl shrink-0">
-          OBTENER KIT DE DIFUSIÓN
+        <Link to="/forum" className="relative z-10 px-6 py-3 bg-white text-pink-600 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:scale-105 hover:shadow-2xl transition-all shadow-xl shrink-0 flex items-center gap-2">
+          BUSCAR PAREJA <span className="material-symbols-outlined text-sm">arrow_forward</span>
         </Link>
       </section>
 

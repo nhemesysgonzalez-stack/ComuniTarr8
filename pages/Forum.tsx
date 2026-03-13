@@ -154,6 +154,19 @@ const Forum: React.FC = () => {
         { who: 'Carme S.', text: '@Luis ¡Mucha suerte! Si necesitas que alguien te eche un ojo al currículum, dime. Trabajé en RRHH 10 años. 💪' },
       ],
     ],
+    'ENCUENTROS': [
+      [
+        { who: 'Joe R.', text: 'Hola a todos 👋 Soy nuevo en esto del "First Dates Comunitario". ¿Alguien se anima a tomar un café o una caña por la Part Alta este finde?' },
+        { who: 'Elena V.', text: '@Joe ¡Bienvenido! Yo me apunto a esa caña. Hace tiempo que busco conocer gente nueva sin las apps típicas.' },
+        { who: 'Joe R.', text: '@Elena ¡Perfecto! ¿Te parece bien el sábado sobre las 19h en la plaza del Fòrum?' },
+        { who: 'Elena V.', text: '@Joe Hecho. Nos vemos allí 😊' },
+      ],
+      [
+        { who: 'Nuria P.', text: '¡Qué buen ambiente hay por aquí! ¿Algún chico deportista de 35-45 años para hacer rutas y luego vermut?' },
+        { who: 'Pau T.', text: '@Nuria ¡Hola! Yo suelo hacer rutas por el Pont del Diable los domingos. Y el vermut es innegociable 😉' },
+        { who: 'Nuria P.', text: '@Pau ¡Te tomo la palabra! Te escribo por privado y organizamos.' },
+      ],
+    ],
   };
 
   // Determine weather context for simulation
@@ -551,7 +564,7 @@ const Forum: React.FC = () => {
                 { id: 'GENERAL', label: 'General', icon: 'public', desc: 'Charla libre' },
                 { id: 'PREPPERS', label: 'Seguridad', icon: 'shield', desc: 'Avisos y ayuda' },
                 { id: 'EMPLEO', label: 'Empleo', icon: 'work', desc: 'Ofertas Activas' },
-                { id: 'ENCUENTROS', label: 'Encuentros', icon: 'favorite', desc: 'Domingo' }
+                { id: 'ENCUENTROS', label: 'Citas', icon: 'volunteer_activism', desc: 'First Dates Local ❤️' }
               ].map(chan => (
                 <button
                   key={chan.id}
