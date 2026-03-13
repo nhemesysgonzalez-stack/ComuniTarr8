@@ -32,7 +32,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
       "3. 🏠 Auxiliar Domicilio - Part Alta → 📞 977 44 33 22 (Rosa)\n" +
       "4. 📦 Mozo Almacén - Polígono Francolí → 📞 977 55 66 77\n" +
       "5. 🤝 Networking & Estrategia - Espai Tabacalera (18:30h)\n\n" +
-      "• ¿Buscas trabajo? Hoy jueves Tarragona Impulsa atiende de 9h a 14h.";
+      "• ¿Buscas trabajo? Hoy viernes Tarragona Impulsa atiende de 9h a 14h.";
   }
 
   // 16. Preppers y Seguridad (Petroquímicas / Viento) - Prioridad en canal Preppers
@@ -66,7 +66,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.3 COLEGIOS Y EDUCACIÓN
   if (p.includes("colegio") || p.includes("escuela") || p.includes("escola") || p.includes("instituto") || p.includes("matricula") || p.includes("matrícula") || p.includes("calendario escolar") || p.includes("menu escolar") || p.includes("menú")) {
-    return "🎓 INFORMACIÓN ESCOLAR (Miércoles 3 Mar):\n\n📅 **JORNADA:**\n• Hoy jueves: Clases normales. Alerta caminata segura en Av. Roma.\n• Menú del día: Lentejas estofadas y tortilla de patatas.\n• Extraescolares: Hoy jueves deportes y música en la mayoría de centros.\n\n💡 Mañana Miércoles: Mercadillo escolar en la Part Alta.";
+    return "🎓 INFORMACIÓN ESCOLAR (Miércoles 3 Mar):\n\n📅 **JORNADA:**\n• Hoy viernes: Clases normales. Alerta caminata segura en Av. Roma.\n• Menú del día: Lentejas estofadas y tortilla de patatas.\n• Extraescolares: Hoy viernes deportes y música en la mayoría de centros.\n\n💡 Mañana Miércoles: Mercadillo escolar en la Part Alta.";
   }
 
   // 2.4 SERVICIOS MUNICIPALES (AMPLIADO)
@@ -116,7 +116,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 7. Noticias y Eventos de Hoy (MIÉRCOLES 3 MARZO 2026)
   if (p.includes("noticia") || p.includes("pasando") || p.includes("hoy") || p.includes("evento") || p.includes("viento") || p.includes("tiempo") || p.includes("plan")) {
-    return "Resumen para el jueves 3 de marzo ☀️:\n\n• 💧 AVERÍA AGUA: Suministro afectado en Calle Unió hasta las 13:00h.\n• 🎞️ CINE: Sesión V.O. en el Metropol a las 20:30h.\n• ☀️ TIEMPO: Día radiante con máximas de 17°C.\n• ♻️ RECICLAJE: Recogida de voluminosos esta noche (20-22h) en el centro.";
+    return "Resumen para el viernes 3 de marzo ☀️:\n\n• 💧 AVERÍA AGUA: Suministro afectado en Calle Unió hasta las 13:00h.\n• 🎞️ CINE: Sesión V.O. en el Metropol a las 20:30h.\n• ☀️ TIEMPO: Día radiante con máximas de 17°C.\n• ♻️ RECICLAJE: Recogida de voluminosos esta noche (20-22h) en el centro.";
   }
 
   // 8. Aparcar (Zona Blava / Verda)

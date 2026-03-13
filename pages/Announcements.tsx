@@ -187,8 +187,8 @@ const Announcements: React.FC = () => {
                 },
                 {
                     id: 'sat-farmacia',
-                    title: "💊 FARMACIA DE GUARDIA (Hoy jueves)",
-                    content: "Servicio de guardia 24h Hoy jueves en Farmàcia Montserrat (Av. Catalunya, 5). Abierta para urgencias.",
+                    title: "💊 FARMACIA DE GUARDIA (Hoy viernes)",
+                    content: "Servicio de guardia 24h Hoy viernes en Farmàcia Montserrat (Av. Catalunya, 5). Abierta para urgencias.",
                     category: "URGENTE",
                     author_name: "COFT",
                     neighborhood: "GENERAL",

@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
 
   const mockNotifications = [
     { id: 1, title: 'Nueva Incidencia', desc: 'Farola rota en tu zona', time: 'Hace 5m', icon: 'report_problem', color: 'text-red-500' },
-    { id: 2, title: 'Evento Cerca', desc: 'Paella popular este jueves', time: 'Hace 1h', icon: 'event', color: 'text-primary' },
+    { id: 2, title: 'Evento Cerca', desc: 'Paella popular este viernes', time: 'Hace 1h', icon: 'event', color: 'text-primary' },
     { id: 3, title: 'Mercadillo', desc: 'Nuevo sofá gratis en el Serrallo', time: 'Hace 3h', icon: 'shopping_basket', color: 'text-emerald-500' }
   ];
 
@@ -278,7 +278,7 @@ export const Header: React.FC = () => {
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🎞️ CINE METROPOL: ESTA NOCHE CICLO V.O. 'PARÁSITOS' (20:30H) — DESCUENTO VECINAL</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">♻️ RECICLAJE: Hoy jueves RECOGIDA DE MUEBLES Y VOLUMINOSOS EN ZONA CENTRO (20-22H)</span>
+          <span className="flex items-center gap-2">♻️ RECICLAJE: Hoy viernes RECOGIDA DE MUEBLES Y VOLUMINOSOS EN ZONA CENTRO (20-22H)</span>
         </motion.div>
       </div>
 
@@ -360,7 +360,7 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase">Jueves 12 Mar 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase">Viernes 13 Mar 2026</span>
                   <span className="text-xs font-black dark:text-white uppercase">AEMET: Despejado 16ºC</span>
                 </div>
               </div>
