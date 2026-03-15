@@ -46,35 +46,35 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'mock-sat-n1',
+                    id: 'mock-sun-n1',
                     creator_id: 'v4',
-                    type: 'other',
-                    title: '🛍️ Ayuda para bajar al centro (HOY 17:30h)',
-                    description: 'No me atrevo a conducir por los cortes previstos de tráfico. ¿Alguien con coche baja a la manifestación desde Llevant y tiene un hueco?',
+                    type: 'company',
+                    title: '☕ Compañía para paseo por la tarde',
+                    description: 'Soy vecina mayor y me aburro los domingos por la tarde. ¿Alguien se anima a pasear por el Balcón del Mediterráneo conmigo sobre las 17h?',
                     contact_info: '633 44 55 66 (Rosa P.)',
                     is_urgent: false,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-sat-n2',
+                    id: 'mock-sun-n2',
                     creator_id: 'v5',
-                    type: 'company',
-                    title: '☕ Compañía para ir al normal (Hoy 17:00h)',
-                    description: 'Soy vecina nueva y no conozco a nadie. ¿Alguien se ofrece para ir juntas a la concentración de la Imperial Tarraco?',
-                    contact_info: '644 33 22 11 (Mónica)',
-                    is_urgent: false,
+                    type: 'other',
+                    title: '🚗 Necesito ir a Farmacia de Guardia',
+                    description: 'Necesito comprar medicación urgente. La farmacia de guardia hoy domingo está en Av. Països Catalans y no tengo coche. ¿Alguien puede acercarme?',
+                    contact_info: '644 33 22 11 (Pere)',
+                    is_urgent: true,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-sat-n3',
+                    id: 'mock-sun-n3',
                     creator_id: 'v6',
-                    type: 'medical',
-                    title: '💊 Farmacia de Guardia Urgente',
-                    description: 'Necesito ayuda para comprar un inhalador. La farmacia de guardia Hoy viernes está en Av. Catalunya y me pilla lejos sin coche.',
-                    contact_info: '622 88 77 66 (Pere)',
-                    is_urgent: true,
+                    type: 'emotional',
+                    title: '🫂 Los domingos se me hacen largos',
+                    description: 'Vivo sola y los domingos por la tarde son duros. Me gustaría hablar con alguien o quedar para un café.',
+                    contact_info: '622 88 77 66 (Sandra)',
+                    is_urgent: false,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }
@@ -184,7 +184,7 @@ const VitalNeeds: React.FC = () => {
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Hoy Viernes 13 Mar:\n• 17:00h \u2014 Encuentro Conjunto normal (Imperial Tarraco)\n• 19:30h \u2014 Asamblea Vecinal (AAVV Sant Pere)\n• 11:00h \u2014 Paseo acompañados (Parc Francolí)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Domingo 15 Mar:\n• 17:00h \u2014 Paseo acompañados (Balcón del Mediterráneo)\n\nMañana Lunes:\n• 10:00h \u2014 Red de Acompañamiento (Centro Cívico)\n• 09:30h \u2014 Talleres Tarragona Impulsa'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
                             <span className="material-symbols-outlined text-sm">person_add</span>
                             UNIRME AHORA
                         </a>

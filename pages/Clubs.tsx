@@ -54,7 +54,7 @@ const Clubs: React.FC = () => {
                     id: 'c-fri-2',
                     creator_id: 'v2',
                     name: 'Cineforum Vecinal 🍿',
-                    description: 'Hoy viernes a las 19:00h proyectamos una peli sorpresa en el local social relacionada con el normal.',
+                    description: 'Hoy domingo a las 19:00h proyectamos una peli sorpresa en el local social. Palomitas gratis.',
                     neighborhood: 'GENERAL',
                     contact_info: 'Canal ENCUENTROS (Foro)',
                     created_at: new Date().toISOString()
@@ -63,7 +63,7 @@ const Clubs: React.FC = () => {
                     id: 'c-fri-3',
                     creator_id: 'v3',
                     name: 'Chess & Coffee TGN ♟️',
-                    description: 'Quedada en la plaza de la Font antes de la manifestación. ¡Partidas rápidas!',
+                    description: 'Quedada en la plaza de la Font para partidas rápidas. ¡Ambiente dominguero!',
                     neighborhood: 'GENERAL',
                     contact_info: '633 44 55 66 (Joe)',
                     created_at: new Date().toISOString()
@@ -242,9 +242,9 @@ const Clubs: React.FC = () => {
                                     <p className="text-[10px] font-black text-pink-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Fútbol Viernes', d: 'Buscamos gente para completar partido hoy a las 20h en Campclar.', c: '611222333' },
+                                            { t: 'Fútbol Domingo', d: 'Buscamos gente para completar partido hoy a las 18h en Campclar.', c: '611222333' },
                                             { t: 'Pre-Asamblea', d: 'Quedada para comentar los puntos de la asamblea antes de las 19h.', c: '644555666' },
-                                            { t: 'Runners TGN', d: 'Trote suave Hoy viernes a las 19:30h por el Balcón.', c: '677888999' }
+                                            { t: 'Runners TGN', d: 'Trote suave hoy domingo a las 18:00h por el Balcón.', c: '677888999' }
                                         ].map((idea, i) => (
                                             <button
                                                 key={i}

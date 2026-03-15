@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "✅ ¡Viernes 13 Mar! Calle Unió ya abierta al tráfico. Circulación normalizada en toda la zona centro por la mañana.", neighborhood: 'GENERAL' },
-    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☁️ viernes soleado. Máxima de 14ºC. Ideal para abrigarse un poco. ☁️', neighborhood: 'GENERAL' },
-    { id: 2, user: 'AAVV Sant Pere', avatar: '/logo.svg', text: '📋 Resumen Asamblea Viernes: Aprobada nueva zona verde. Acta completa ya en Anuncios. ✅', neighborhood: 'PART ALTA' },
-    { id: 3, user: 'Asociación', avatar: '/logo.svg', text: '💜 Resumen del normal del domingo publicado en Anuncios. ¡Gracias a todos por venir!', neighborhood: 'GENERAL' },
-    { id: 4, user: 'Coordinación normal', avatar: '/logo.svg', text: '📣 Las fotos de la manifestación del domingo ya están en la Galería Vecinal. ✨', neighborhood: 'GENERAL' },
-    { id: 5, user: 'Trànsit TGN', avatar: '/logo.svg', text: '🚗 T-11 y A-7 despejadas. Av. Roma abierta sin restricciones. EMT horario normal. ✅', neighborhood: 'GENERAL' },
-    { id: 6, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '☕ ¿Alguien para un café rápido? Estaré por el centro a las 17h para comentar el fin de semana. 👋', neighborhood: 'CENTRE' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "☀️ ¡Feliz Domingo 15 Mar! Día soleado y 18ºC. Perfecto para pasear por el Balcón del Mediterráneo.", neighborhood: 'GENERAL' },
+    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Domingo primaveral. Máxima de 18ºC y cielos despejados. ¡A disfrutar! 🌸', neighborhood: 'GENERAL' },
+    { id: 2, user: 'AAVV Sant Pere', avatar: '/logo.svg', text: '📋 Recordad: acta de la última asamblea disponible en Anuncios. Nueva zona verde aprobada. ✅', neighborhood: 'PART ALTA' },
+    { id: 3, user: 'Patrimonio TGN', avatar: '/logo.svg', text: '🏛️ Hoy Domingo entrada reducida al Anfiteatro Romano y Museo Arqueológico. ¡Aprovechad!', neighborhood: 'GENERAL' },
+    { id: 4, user: 'EMT TGN', avatar: '/logo.svg', text: '🚌 Servicio de domingos y festivos en todas las líneas. Consulta horarios en emtanem.cat', neighborhood: 'GENERAL' },
+    { id: 5, user: 'Trànsit TGN', avatar: '/logo.svg', text: '🚗 Circulación fluida en todos los accesos. Sin incidencias de tráfico este domingo. ✅', neighborhood: 'GENERAL' },
+    { id: 6, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '☕ ¿Alguien para un vermut en el Serrallo? Estaré por allí a las 13h. ¡Domingo perfecto! 👋', neighborhood: 'CENTRE' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '✅ C/ Unió ya abierta' },
-    { user: 'Biblioteca', text: '📚 Taller Infantil 18:30h hoy' },
-    { user: 'normal', text: '💜 Resumen de ayer' },
-    { user: 'Meteo', text: '☁️ Soleado y 17ºC' },
-    { user: 'AAVV Sant Pere', text: '📋 Resultados Asamblea en Anuncios' }
+    { user: 'Admin', text: '☀️ Domingo soleado 18ºC' },
+    { user: 'Patrimonio', text: '🏛️ Entrada reducida hoy' },
+    { user: 'EMT', text: '🚌 Horario domingos activo' },
+    { user: 'Meteo', text: '☀️ Cielos despejados' },
+    { user: 'AAVV Sant Pere', text: '📋 Acta asamblea en Anuncios' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

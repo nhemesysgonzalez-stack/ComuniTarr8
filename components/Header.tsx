@@ -18,9 +18,9 @@ export const Header: React.FC = () => {
   const [isDark, setIsDark] = useState(document.documentElement.classList.contains('dark'));
 
   const mockNotifications = [
-    { id: 1, title: 'Nueva Incidencia', desc: 'Farola rota en tu zona', time: 'Hace 5m', icon: 'report_problem', color: 'text-red-500' },
-    { id: 2, title: 'Evento Cerca', desc: 'Paella popular este viernes', time: 'Hace 1h', icon: 'event', color: 'text-primary' },
-    { id: 3, title: 'Mercadillo', desc: 'Nuevo sofá gratis en el Serrallo', time: 'Hace 3h', icon: 'shopping_basket', color: 'text-emerald-500' }
+    { id: 1, title: 'Baldosa suelta', desc: 'Nuevo reporte en Passeig de les Palmeres', time: 'Hace 2h', icon: 'report_problem', color: 'text-orange-500' },
+    { id: 2, title: 'Patrimonio Romano', desc: 'Hoy ruta guiada gratuita a las 17h', time: 'Hace 3h', icon: 'event', color: 'text-primary' },
+    { id: 3, title: 'Farmacia Guardia', desc: 'Farm. Garcia Rivas (Av. Països Catalans)', time: 'Hoy', icon: 'local_pharmacy', color: 'text-red-500' }
   ];
 
   const toggleDarkMode = () => {
@@ -268,17 +268,17 @@ export const Header: React.FC = () => {
           transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
         >
-          <span className="flex items-center gap-2 text-[10px] text-fuchsia-100"><span className="material-symbols-outlined text-[14px]">pets</span> 🐾 NUEVO GRAN EVENTO: TROBADA BORDER COLLIES I AMICS XXL - 3 Y 4 DE MAYO EN TIVISSA. ¡FOOD TRUCKS, AGILITY Y CONCURSOS PARA TODA LA FAMILIA!</span>
+          <span className="flex items-center gap-2 text-[10px] text-fuchsia-100"><span className="material-symbols-outlined text-[14px]">pets</span> 🐾 GRAN EVENTO: TROBADA BORDER COLLIES I AMICS XXL - 3 Y 4 DE MAYO EN TIVISSA. ¡FOOD TRUCKS, AGILITY Y DIVERSIÓN!</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">☀️ VIERNES DESPEJADO: CONTINÚA EL SOL EN TARRAGONA CON 16ºC DISFRUTA DEL DÍA</span>
+          <span className="flex items-center gap-2">☀️ DOMINGO PRIMAVERAL: SOL Y 18ºC EN TARRAGONA — PERFECTO PARA PASEAR POR EL BALCÓN DEL MEDITERRÁNEO</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">💧 AVERÍA AGUA: TRABAJOS BLQ 4 CALLE RÍO TER — SUMINISTRO AFECTADO HASTA LAS 14:00H</span>
+          <span className="flex items-center gap-2">🚌 EMT TARRAGONA: SERVICIO DE DOMINGOS Y FESTIVOS EN TODAS LAS LÍNEAS</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚗 TRÀNSIT TGN: CIRCULACIÓN FLUIDA EN LOS ACCESOS PRINCIPALES ESTA MAÑANA (A-7/T-11)</span>
+          <span className="flex items-center gap-2">🛍️ MAÑANA LUNES: VUELTA A LA RUTINA — TALLERES TARRAGONA IMPULSA Y MERCADO SEMANAL EN PL. CORSINI</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎞️ CINE METROPOL: ESTA NOCHE CICLO V.O. 'PARÁSITOS' (20:30H) — DESCUENTO VECINAL</span>
+          <span className="flex items-center gap-2">🎞️ CINE METROPOL: HOY DOMINGO SESIÓN MATINAL 'CODA' (12:00H) Y 'PARÁSITOS' (20:00H)</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">♻️ RECICLAJE: Hoy viernes RECOGIDA DE MUEBLES Y VOLUMINOSOS EN ZONA CENTRO (20-22H)</span>
+          <span className="flex items-center gap-2">🏛️ PATRIMONIO: HOY DOMINGO ENTRADA REDUCIDA AL ANFITEATRO ROMANO Y MUSEO ARQUEOLÓGICO</span>
         </motion.div>
       </div>
 
@@ -360,8 +360,8 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase">Viernes 13 Mar 2026</span>
-                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Despejado 16ºC</span>
+                  <span className="text-xs font-black dark:text-white uppercase">Domingo 15 Mar 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Soleado 18ºC</span>
                 </div>
               </div>
 

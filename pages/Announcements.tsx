@@ -145,54 +145,54 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'sat-mercadillo-tgn',
-                    title: "🛍️ HOY: MERCADILLO VECINAL (09:00 - 14:00)",
-                    content: "¡Ya ha empezado! Te esperamos en la Plaça del Fòrum para el gran mercadillo de segunda mano y artesanía del barrio. Vermut vecinal a mediodía. ¡No te lo pierdas!",
+                    id: 'sun-patrimonio',
+                    title: "🏛️ HOY DOMINGO: ENTRADA REDUCIDA PATRIMONIO",
+                    content: "Hoy domingo aprovecha la entrada reducida al Anfiteatro Romano y al Museo Arqueológico Nacional. Perfecto para una visita familiar con este día soleado de 18ºC.",
                     category: "EVENTO",
-                    author_name: "ComuniTarr",
+                    author_name: "Turisme TGN",
                     neighborhood: "GENERAL",
-                    itinerary: "• Lectura Manifiesto: HOY 12:00h — Pl. de la Font\n• Manifestación: 18:00h — Imperial Tarraco\n• Tiempo: Nublado 13ºC ☁️\n• Servicios Mínimos: Sí",
+                    itinerary: "• Anfiteatro: 10:00 - 18:00h\n• Museo Arqueológico: 10:00 - 14:00h\n• Entrada reducida: 2€\n• Tiempo: Soleado 18ºC",
                     created_at: new Date().toISOString()
                 },
                 {
                     id: 'border-collies-tivissa',
                     title: "🐾 TROBADA BORDER COLLIES I AMICS XXL",
-                    content: "Anunciamos esta fantástica trobada en la pista municipal de futbol de Tivissa para el 3 y 4 de mayo. Ven a disfrutar del agility, food trucks, perros grandes y muchas actividades para toda la familia y peludos.",
+                    content: "Anunciamos esta fantástica trobada en la pista municipal de futbol de Tivissa para el 3 y 4 de mayo. Ven a disfrutar del agility, food trucks y actividades para toda la familia.",
                     category: "EVENTO",
                     author_name: "Fires Catalanes",
                     neighborhood: "GENERAL",
-                    itinerary: "• Fechas: 3 y 4 de mayo\n• Lugar: Pista Municipal de Tivissa\n• Actividades: Agility, pastoreo, food trucks\n• Enlace de entradas: firescatalanes.cat",
+                    itinerary: "• Fechas: 3 y 4 de mayo\n• Lugar: Pista Municipal de Tivissa\n• Actividades: Agility, pastoreo, food trucks\n• Entradas: firescatalanes.cat",
                     link_url: "https://firescatalanes.cat/fires/trobada-border-collies-i-amics-xxl/",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'sat-reading-club-thanks',
-                    title: "📚 GRAN ÉXITO DEL CLUB DE LECTURA",
-                    content: "Muchas gracias a las vecinas que participaron en la mesa redonda sobre la mujer trabajadora.",
+                    id: 'sun-lectura',
+                    title: "📚 CLUB DE LECTURA: NUEVA EDICIÓN MIÉRCOLES",
+                    content: "Esta semana comentamos 'La plaça del Diamant' de Mercè Rodoreda. Inscripciones abiertas en la Biblioteca Pública. ¡Plazas limitadas!",
                     category: "EXITO",
                     author_name: "Biblioteca Pública TGN",
                     neighborhood: "GENERAL",
-                    itinerary: "• Próxima actividad: 'Taller ciberseguridad'\n• Fecha: Miércoles\n• Inscripciones: Abiertas en la Biblioteca",
+                    itinerary: "• Fecha: Miércoles 18 Mar, 18:30h\n• Lugar: Biblioteca Pública TGN\n• Inscripciones: Abiertas\n• Tel: 977 24 03 31",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'sat-weekend-traffic',
-                    title: "⚠️ CORTE DE AGUA: C/ RÍO TER",
-                    content: "Aviso de EMATSA: Actuación de mejora de servicio en la red general. Suministro afectado en el bloque 4 de calle Río Ter (Bonavista) hasta las 14:00h.",
+                    id: 'sun-emt',
+                    title: "🚌 EMT: HORARIO DE DOMINGOS Y FESTIVOS",
+                    content: "Recordamos que hoy domingo todas las líneas de la EMT operan con horario reducido de domingos y festivos. Consultad frecuencias en emtanem.cat.",
                     category: "URGENTE",
-                    author_name: "EMATSA",
-                    neighborhood: "CAMPCLAR / BONAVISTA",
-                    itinerary: "• Zona: Río Ter blq 4\n• Fin previsto: 14:00h\n• Contacto EMATSA: 900 13 42 22",
+                    author_name: "EMT Tarragona",
+                    neighborhood: "GENERAL",
+                    itinerary: "• Todas las líneas: Horario festivo\n• Consulta: emtanem.cat\n• Teléfono: 977 54 94 80",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'sat-farmacia',
-                    title: "💊 FARMACIA DE GUARDIA (Hoy viernes)",
-                    content: "Servicio de guardia 24h Hoy viernes en Farmàcia Montserrat (Av. Catalunya, 5). Abierta para urgencias.",
+                    id: 'sun-farmacia',
+                    title: "💊 FARMACIA DE GUARDIA (Hoy Domingo)",
+                    content: "Servicio de guardia 24h hoy domingo en Farmàcia Garcia Rivas (Av. Països Catalans, 51). Abierta para urgencias.",
                     category: "URGENTE",
                     author_name: "COFT",
                     neighborhood: "GENERAL",
-                    itinerary: "• Tel: 977 23 45 66\n• Dirección: Rambla Nova, 18\n• Horario: 24h de guardia",
+                    itinerary: "• Tel: 977 20 18 33\n• Dirección: Av. Països Catalans, 51\n• Horario: 24h de guardia",
                     created_at: new Date().toISOString()
                 }
             ];

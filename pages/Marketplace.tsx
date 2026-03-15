@@ -57,34 +57,34 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'mock-sat-m1',
+          id: 'mock-sun-m1',
           user_id: 'v1',
-          title: '🧣 Bufandas Artesanas — ¡En el Mercadillo!',
-          description: 'Estamos hoy en la Pl. Fòrum hasta las 14h. Bufandas hechas a mano con lana de calidad. ¡Ven a vernos!',
+          title: '🧣 Bufandas Artesanas — Hechas a mano',
+          description: 'Bufandas de lana de calidad hechas a mano. Varios colores. Entregas en el centro hoy o mañana.',
           price: '12',
           category: 'moda',
           neighborhood: 'GENERAL',
-          contact_info: 'Mesa 4 (Marta)',
+          contact_info: '655 11 22 33 (Marta)',
           image_url: 'https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-sat-m2',
+          id: 'mock-sun-m2',
           user_id: 'v2',
           title: '📚 Lote Libros Eduardo Mendoza',
-          description: 'Vengo del Club de Lectura de ayer. Vendo el lote de novelas que comentamos. Estoy hoy en el mercadillo de la Part Alta.',
+          description: 'Vendo el lote de novelas en perfecto estado. Entrego en mano en el centro o Part Alta.',
           price: '15',
           category: 'hogar',
           neighborhood: 'CENTRE',
-          contact_info: 'Mesa 12 (Laia)',
+          contact_info: '677 88 99 00 (Laia)',
           image_url: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-sat-m3',
+          id: 'mock-sun-m3',
           user_id: 'v4',
-          title: '🪴 Plantas de Interior — Oferta Domingo',
-          description: 'He traído esquejes enraizados de Potos y Cintas. Muy baratas. Solo hoy en la Pl. Fòrum.',
+          title: '🪴 Plantas de Interior — Esquejes enraizados',
+          description: 'Esquejes de Potos y Cintas en perfectas condiciones. Entrego mañana lunes o por la tarde hoy.',
           price: '5',
           category: 'hogar',
           neighborhood: 'GENERAL',
@@ -93,10 +93,10 @@ const Marketplace: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-sat-m4',
+          id: 'mock-sun-m4',
           user_id: 'v5',
           title: '🎮 Nintendo Switch + Mario Kart',
-          description: 'Poco uso. Incluye todo lo original. Entrego hoy mismo por el centro o en el mercadillo si me avisáis.',
+          description: 'Poco uso. Incluye todo lo original. Entrego hoy mismo por el centro o mañana si queréis.',
           price: '180',
           category: 'tech',
           neighborhood: 'GENERAL',

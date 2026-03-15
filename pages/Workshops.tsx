@@ -49,10 +49,10 @@ const Workshops: React.FC = () => {
             const mockWorkshops: Workshop[] = [
                 {
                     id: 'ws-11m-1',
-                    title: '💜 Taller de Empoderamiento normal',
+                    title: '💜 Taller de Empoderamiento Profesional',
                     instructor: 'Elena P.',
-                    date: 'Hoy viernes 8, 11:30',
-                    description: 'Sesión presencial abierta en la biblioteca centrada en el empoderamiento femenino. Preparación de pancartas para la mani.',
+                    date: 'Lunes 16, 11:30',
+                    description: 'Sesión presencial abierta en la biblioteca centrada en el empoderamiento profesional femenino. Técnicas de negociación y liderazgo.',
                     image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800',
                     spots: 4,
                     neighborhood: 'GENERAL',
@@ -63,7 +63,7 @@ const Workshops: React.FC = () => {
                     id: 'ws-11m-2',
                     title: '🖥️ Masterclass IA y Trabajo (Mujeres Tech)',
                     instructor: 'Rosa M.',
-                    date: 'Hoy viernes, 18:30',
+                    date: 'Lunes 16, 18:30',
                     description: 'Taller para impulsar carreras tecnológicas. Aprende a integrar herramientas de inteligencia artificial en tu flujo de trabajo.',
                     image: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=800',
                     spots: 15,
@@ -139,7 +139,7 @@ const Workshops: React.FC = () => {
                         </div>
                         <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Masterclass: LinkedIn Pro 📈</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Sácale partido a tu red profesional y encuentra nuevas oportunidades. este viernes a las 18:30h en la Tabacalera. ¡Plazas limitadas!
+                            Sácale partido a tu red profesional y encuentra nuevas oportunidades. Mañana lunes a las 18:30h en la Tabacalera. ¡Plazas limitadas!
                         </p>
 
                         <div className="flex flex-wrap gap-4">
@@ -241,10 +241,10 @@ const Workshops: React.FC = () => {
                                     <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Office 365 Pro', i: 'Pedro S.', d: 'Viernes 17:00', desc: 'Domina Excel y Word para mejorar tu empleabilidad.', c: '688000111' },
-                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Viernes 10:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: '699222333' },
-                                            { t: 'Gestión del Tiempo', i: 'M. López', d: 'Hoy viernes 18:00', desc: 'Técnicas para organizar tu semana y reducir el estrés laboral.', c: '611444555' },
-                                            { t: 'Networking TGN', i: 'Hub Impulsa', d: 'Hoy viernes 19:30', desc: 'Encuentro informal para conectar con otros profesionales locales.', c: 'Tabacalera Sala 2' }
+                                            { t: 'Office 365 Pro', i: 'Pedro S.', d: 'Miércoles 17:00', desc: 'Domina Excel y Word para mejorar tu empleabilidad.', c: '688000111' },
+                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Jueves 10:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: '699222333' },
+                                            { t: 'Gestión del Tiempo', i: 'M. López', d: 'Lunes 18:00', desc: 'Técnicas para organizar tu semana y reducir el estrés laboral.', c: '611444555' },
+                                            { t: 'Networking TGN', i: 'Hub Impulsa', d: 'Lunes 19:30', desc: 'Encuentro informal para conectar con otros profesionales locales.', c: 'Tabacalera Sala 2' }
                                         ].map((idea, i) => (
                                             <button
                                                 key={i}

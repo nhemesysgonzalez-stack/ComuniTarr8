@@ -8,12 +8,12 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '45%', y: '35%', title: '🛍️ Mercadillo Vecinal', desc: "¡HOY de 09h a 14h! Segunda mano, artesanía y vermut en la Plaza del Fòrum.", status: 'En curso', color: 'bg-emerald-500', icon: 'storefront', glow: 'shadow-[0_0_50px_rgba(16,185,129,0.3)]' },
-    { id: 2, type: 'incident', x: '35%', y: '55%', title: "⚠️ C/ RÍO TER: CORTE AGUA", desc: 'Actuación de EMATSA por mejora de red en bloque 4 (Bonavista). Corte previsto hasta las 14:00h.', status: 'En curso', color: 'bg-orange-500', icon: 'water_drop' },
-    { id: 3, type: 'event', x: '52%', y: '42%', title: '📚 Sala Post-Lectura', desc: 'Exposición temporal de las fotos del Club de Lectura de la semana pasada en la Biblioteca.', status: 'Hoy 10-14h', color: 'bg-indigo-500', icon: 'image' },
-    { id: 4, type: 'incident', x: '55%', y: '50%', title: '💡 Alumbrado OK', desc: 'Revisión finalizada. Toda la Rambla Nova vuelve a tener iluminación al 100%.', status: 'Correcto', color: 'bg-yellow-500', icon: 'lightbulb' },
-    { id: 5, type: 'incident', x: '42%', y: '40%', title: 'Tubería Smith', desc: 'Avería reparada. Pavimento provisional hasta asfaltado definitivo el viernes.', status: 'Controlado', color: 'bg-orange-500', icon: 'water_drop' },
-    { id: 6, type: 'event', x: '68%', y: '80%', title: '🐾 Trobada Border Collies XXL', desc: 'Gran evento canino en la pista municipal de Tivissa el 3 y 4 de Mayo. Exhibiciones de pastoreo, concursos y food trucks. ¡No te lo pierdas!', status: 'Próximamente', color: 'bg-fuchsia-500', icon: 'pets', glow: 'shadow-[0_0_60px_rgba(217,70,239,0.5)]' }
+    { id: 1, type: 'event', x: '45%', y: '35%', title: '🏛️ Paseo Patrimonio Romano', desc: 'HOY Domingo 17:00h: Ruta guiada gratuita por el Anfiteatro, Circo y Murallas. Turisme TGN — 977 25 07 95.', status: 'Hoy 17h', color: 'bg-emerald-500', icon: 'museum', glow: 'shadow-[0_0_50px_rgba(16,185,129,0.3)]' },
+    { id: 2, type: 'event', x: '52%', y: '42%', title: '☀️ Balcón del Mediterráneo', desc: 'Zona de paseo popular hoy domingo. Día soleado y 18ºC, perfecto para caminar.', status: 'Abierto', color: 'bg-sky-500', icon: 'sunny' },
+    { id: 3, type: 'event', x: '48%', y: '45%', title: '🎞️ Cine Metropol', desc: 'Hoy domingo: Parásitos V.O. a las 20:00h con descuento vecinal. ¡No te lo pierdas!', status: 'Hoy 20h', color: 'bg-indigo-500', icon: 'movie' },
+    { id: 4, type: 'incident', x: '55%', y: '50%', title: '✅ Alumbrado Rambla: OK', desc: 'Revisión completada. Toda la iluminación de Rambla Nova funciona al 100%.', status: 'Correcto', color: 'bg-green-500', icon: 'lightbulb' },
+    { id: 5, type: 'incident', x: '42%', y: '40%', title: '🚧 Baldosa suelta Palmeres', desc: 'Baldosas levantadas en Passeig de les Palmeres nº 15. Pendiente de reparación el lunes.', status: 'Pendiente', color: 'bg-orange-500', icon: 'report_problem' },
+    { id: 6, type: 'event', x: '68%', y: '80%', title: '🐾 Trobada Border Collies XXL', desc: 'Gran evento canino en Tivissa el 3 y 4 de Mayo. Agility, pastoreo, concursos y food trucks.', status: 'Próximamente', color: 'bg-fuchsia-500', icon: 'pets', glow: 'shadow-[0_0_60px_rgba(217,70,239,0.5)]' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

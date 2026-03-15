@@ -48,25 +48,25 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'mock-pat-sat-1',
+          id: 'mock-pat-sun-1',
           creator_id: 'admin',
-          name: '🛡️ Seguridad Mercadillo (HOY)',
-          description: 'Ronda preventiva por la Pl. Fòrum para evitar hurtos y ayudar a los visitantes. Estaremos identificados con chalecos amarillos.',
+          name: '🛡️ Patrulla Dominguera: Paseo Marítimo',
+          description: 'Ronda preventiva hoy domingo por el Passeig Marítim y alrededores del Serrallo. Vigilancia y ayuda a paseantes.',
           neighborhood: 'GENERAL',
-          contact_info: 'Punto de información mercadillo.',
+          contact_info: 'Coordinación Vecinal — 611 00 22 33',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-pat-sat-2',
+          id: 'mock-pat-sun-2',
           creator_id: 'user1',
           name: '🐕 Patrulla Mascotas: Rambla Nova',
-          description: 'Hoy viernes patrulla informativa para fomentar la recogida de cacas y el uso de correa en zonas concurridas. Regalamos bolsas reciclables.',
+          description: 'Hoy domingo patrulla informativa para fomentar la recogida de cacas y el uso de correa en zonas concurridas.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-pat-sat-3',
+          id: 'mock-pat-sun-3',
           creator_id: 'user2',
           name: '🧹 Control Ruidos: Ocio Nocturno',
           description: 'Patrulla de convivencia para esta noche de domingo. Sensibilización en zonas de bares de la Part Alta para respetar el descanso vecinal.',

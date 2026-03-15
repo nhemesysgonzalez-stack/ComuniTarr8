@@ -44,17 +44,17 @@ const MicroVolunteering: React.FC = () => {
                 {
                     id: 'real-sat-vol-1',
                     creator_id: 'v7',
-                    title: '🛍️ Ayuda Desmontaje Mercadillo (HOY 14:00h)',
-                    description: 'Necesitamos un par de voluntarios para ayudar a recoger las mesas y limpiar la Plaza del Fòrum al finalizar el mercadillo hoy. ¡Solo 20 minutos!',
+                    title: '🏛️ Guías Voluntarios Patrimonio (HOY 17:00h)',
+                    description: 'Necesitamos voluntarios para ayudar a orientar a visitantes en la ruta por el Anfiteatro y Murallas hoy domingo. ¡Solo 1 hora!',
                     neighborhood: 'GENERAL',
-                    contact_info: '622 88 77 66 (Elena V. - Org. Mercadillo). Preguntar en el puesto central.',
+                    contact_info: '622 88 77 66 (Elena V. - Turisme). Punto de encuentro: puerta del Anfiteatro.',
                     created_at: new Date().toISOString()
                 },
                 {
                     id: 'real-sat-vol-2',
                     creator_id: 'v8',
                     title: '📦 Recogida de Donaciones no vendidas',
-                    description: "¿Te sobran cosas del mercadillo que no quieres llevarte a casa? Estaremos recogiendo donaciones para el Ropero Solidario hoy de 14h a 15h.",
+                    description: "¿Te sobran libros o ropa? Hoy domingo estaré recogiendo donaciones para el Ropero Solidario de 16h a 18h en el Centro Cívico.",
                     neighborhood: 'GENERAL',
                     contact_info: '611 00 22 33 (Paco). Furgoneta blanca al lado de la Catedral.',
                     created_at: new Date().toISOString()
@@ -248,7 +248,7 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Ayuda Mercado', d: 'Busco voluntario para ayudar a bajar 3 pisos sin ascensor y acompañar al mercado de Hoy viernes.', c: '644 33 22 11' },
+                                            { t: 'Ayuda Paseo', d: 'Busco voluntario para acompañar a persona mayor a pasear por el Balcón del Mediterráneo hoy domingo por la tarde.', c: '644 33 22 11' },
                                             { t: 'Paseo Perro', d: '¿Algún vecino pasea su perro por la zona del Eixample y puede sacar al mío hoy tarde? Estoy de baja.', c: '633 44 55 66' },
                                             { t: 'Ayuda Móvil', d: 'Busco alguien que me enseñe a instalar la app Mi Carpeta Ciudadana para unos trámites hoy.', c: '611 22 33 44' },
                                             { t: 'Club Lectura', d: '¿Algún vecino/a va a la biblioteca hoy tarde? Me gustaría ir acompañado para no volver solo de noche.', c: 'Foro · Canal General' }

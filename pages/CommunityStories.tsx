@@ -19,9 +19,9 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'ms1', user_name: 'Ana T.', content: 'Preparadas para salir. ¡Hoy las calles son nuestras! 💜✨ #normal #Primavera #Tarragona', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 312, created_at: new Date().toISOString() },
-            { id: 'ms2', user_name: 'Joan R.', content: '¡Mirad qué joya he encontrado por 5€! El mercadillo de hoy es una mina. 🏺💎 #TesorosDelBarrio #MercadilloVecinal #ReciclajeCreativo', image_url: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a', likes: 184, created_at: new Date().toISOString() },
-            { id: 'ms3', user_name: 'Marc G.', content: 'Increíble el ambientazo en la manifestación. Reivindicación y alegría a partes iguales. ✊ #normalTGN #Igualdad', image_url: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b', likes: 256, created_at: new Date().toISOString() },
+            { id: 'ms1', user_name: 'Ana T.', content: 'Qué domingo más bonito. Tarragona brilla con este sol de primavera. ☀️✨ #DomingoTGN #Primavera #Tarragona', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 312, created_at: new Date().toISOString() },
+            { id: 'ms2', user_name: 'Joan R.', content: '¡Mirad qué vistas desde el Balcón del Mediterráneo! Un domingo perfecto para disfrutar de Tarragona. 🌅💎 #BalcónDelMediterráneo #DomingoPerfecto', image_url: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a', likes: 184, created_at: new Date().toISOString() },
+            { id: 'ms3', user_name: 'Marc G.', content: 'Paseo familiar por el Anfiteatro con entrada reducida. Los peques han disfrutado como nunca. 🏛️❤️ #PatrimonioTGN #DomingoEnFamilia', image_url: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b', likes: 256, created_at: new Date().toISOString() },
             { id: 'ms4', user_name: 'Pilar S.', content: 'Todavía recordando lo bien que lo pasamos ayer en el Club de Lectura. ¡Qué gran comunidad tenemos! 📚❤️ #Cultura #VecinosUnidos #Tarragona', image_url: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6', likes: 145, created_at: new Date().toISOString() }
         ];
 

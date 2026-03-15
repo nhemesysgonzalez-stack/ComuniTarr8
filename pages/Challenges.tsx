@@ -46,7 +46,7 @@ const Challenges: React.FC = () => {
           id: 'mock-ch-fri-1',
           creator_id: 'admin',
           title: '📖 Reto: Lectura Compartida HOY',
-          description: 'Hoy viernes, por el normal, comparte una lectura inspiradora de una autora mujer.',
+          description: 'Hoy domingo, comparte una lectura inspiradora. ¡Cualquier autor vale!',
           neighborhood: 'GENERAL',
           contact_info: 'Biblioteca Pública (Elena)',
           is_example: true,
@@ -55,8 +55,8 @@ const Challenges: React.FC = () => {
         {
           id: 'mock-ch-fri-2',
           creator_id: 'user2',
-          title: '♻️ Residuo Cero: Calles limpias tras la mani',
-          description: 'El reto es participar mañana en el mercadillo de la Pl. Fòrum sin generar plásticos de un solo uso. ¡Trae tus bolsas de tela y envases reutilizables!',
+          title: '♻️ Residuo Cero: Calles limpias en tu barrio',
+          description: '¡Reto semanal! Haz todas tus compras de la semana sin generar plásticos de un solo uso. Lleva bolsas de tela y envases reutilizables.',
           neighborhood: 'GENERAL',
           contact_info: 'Comunidad ComuniTarr',
           is_example: true,
@@ -240,9 +240,9 @@ const Challenges: React.FC = () => {
                   <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
                   <div className="flex flex-wrap gap-2 justify-center">
                     {[
-                      { t: 'Donación de Libros', d: 'Llevamos libros a la biblioteca del barrio para renovar stock infantil tras el viernes de cole.', c: '977240331' },
+                      { t: 'Donación de Libros', d: 'Llevamos libros a la biblioteca del barrio para renovar stock infantil esta semana.', c: '977240331' },
                       { t: 'Paseo con Mayores', d: 'Grupo para pasear con vecinos del barrio que viven solos esta tarde de lunes al salir del trabajo.', c: '655666777' },
-                      { t: 'Limpieza de alcorques', d: 'Iniciativa para limpiar la tierra de los árboles de nuestra calle este viernes por la tarde.', c: '611888222' }
+                      { t: 'Limpieza de alcorques', d: 'Iniciativa para limpiar la tierra de los árboles de nuestra calle esta semana por la tarde.', c: '611888222' }
                     ].map((idea, i) => (
                       <button
                         key={i}
