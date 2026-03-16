@@ -47,7 +47,7 @@ const Dashboard: React.FC = () => {
                 <header className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div>
                         <h1 className="text-5xl font-black text-gray-900 dark:text-white tracking-tight">Mi Resumen</h1>
-                        <p className="text-xl text-gray-500 dark:text-gray-400 font-medium">Actividades, retos y patrullas para este fin de semana de marzo.</p>
+                        <p className="text-xl text-gray-500 dark:text-gray-400 font-medium">Actividades, retos y patrullas para esta semana de marzo.</p>
                     </div>
                     <div className="bg-primary px-8 py-4 rounded-[24px] shadow-xl shadow-primary/20 flex items-center gap-4 text-white">
                         <span className="material-symbols-outlined text-3xl">stars</span>

@@ -43,34 +43,35 @@ const Patrols: React.FC = () => {
       // Filter out old mock patrols that might be in the database
       const filteredDbData = (data || []).filter(p =>
         !p.name.includes("Domingo") &&
-        !p.name.includes("Carrera Popular")
+        !p.name.includes("Carrera Popular") &&
+        !p.name.includes("Patrulla Dominguera")
       );
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'mock-pat-sun-1',
+          id: 'mock-pat-lun-1',
           creator_id: 'admin',
-          name: '🛡️ Patrulla Dominguera: Paseo Marítimo',
-          description: 'Ronda preventiva hoy domingo por el Passeig Marítim y alrededores del Serrallo. Vigilancia y ayuda a paseantes.',
+          name: '🛡️ Seguridad Escolar: Caminos Seguros',
+          description: 'Ronda matinal hoy lunes por los alrededores de los colegios El Miracle y Pax. Ayuda en pasos de cebra y flujos de alumnos.',
           neighborhood: 'GENERAL',
           contact_info: 'Coordinación Vecinal — 611 00 22 33',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-pat-sun-2',
+          id: 'mock-pat-lun-2',
           creator_id: 'user1',
-          name: '🐕 Patrulla Mascotas: Rambla Nova',
-          description: 'Hoy domingo patrulla informativa para fomentar la recogida de cacas y el uso de correa en zonas concurridas.',
+          name: '🚗 Vigilancia Tráfico: Hora Punta',
+          description: 'Hoy lunes patrulla informativa en accesos principales para evitar dobles filas y agilizar el tráfico matinal.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-pat-sun-3',
+          id: 'mock-pat-lun-3',
           creator_id: 'user2',
-          name: '🧹 Control Ruidos: Ocio Nocturno',
-          description: 'Patrulla de convivencia para esta noche de domingo. Sensibilización en zonas de bares de la Part Alta para respetar el descanso vecinal.',
-          neighborhood: 'PART ALTA',
+          name: '🧹 Convivencia: Zonas de Obra',
+          description: 'Patrulla de seguimiento hoy lunes en Passeig de les Palmeres para asegurar que las obras no entorpezcan el paso de vecinos.',
+          neighborhood: 'CENTRE',
           contact_info: '622 55 44 33 (Maria)',
           created_at: new Date().toISOString()
         }

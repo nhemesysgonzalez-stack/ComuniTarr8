@@ -46,33 +46,33 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'mock-sun-n1',
+                    id: 'mock-lun-n1',
                     creator_id: 'v4',
                     type: 'company',
-                    title: '☕ Compañía para paseo por la tarde',
-                    description: 'Soy vecina mayor y me aburro los domingos por la tarde. ¿Alguien se anima a pasear por el Balcón del Mediterráneo conmigo sobre las 17h?',
+                    title: '☕ Acompañamiento por la tarde',
+                    description: 'Soy vecina mayor y me gustaría salir a pasear hoy lunes por el Balcón del Mediterráneo sobre las 17:30h. ¿Algún vecino se anima?',
                     contact_info: '633 44 55 66 (Rosa P.)',
                     is_urgent: false,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-sun-n2',
+                    id: 'mock-lun-n2',
                     creator_id: 'v5',
-                    type: 'other',
-                    title: '🚗 Necesito ir a Farmacia de Guardia',
-                    description: 'Necesito comprar medicación urgente. La farmacia de guardia hoy domingo está en Av. Països Catalans y no tengo coche. ¿Alguien puede acercarme?',
+                    type: 'medical',
+                    title: '💊 Recogida de Receta Médica',
+                    description: 'Tengo dificultades para desplazarme hoy. ¿Alguien podría recoger una receta en el CAP Muralles esta tarde? Vive cerca del Portal de Sant Antoni.',
                     contact_info: '644 33 22 11 (Pere)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-sun-n3',
+                    id: 'mock-lun-n3',
                     creator_id: 'v6',
-                    type: 'emotional',
-                    title: '🫂 Los domingos se me hacen largos',
-                    description: 'Vivo sola y los domingos por la tarde son duros. Me gustaría hablar con alguien o quedar para un café.',
+                    type: 'food',
+                    title: '🥫 Compra para anciana',
+                    description: 'Doña Amalia no puede bajar a por el pan y leche hoy. Vive en C. Cavallers. ¿Alguien que trabaje por allí?',
                     contact_info: '622 88 77 66 (Sandra)',
                     is_urgent: false,
                     neighborhood: 'GENERAL',
@@ -184,7 +184,7 @@ const VitalNeeds: React.FC = () => {
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Domingo 15 Mar:\n• 17:00h \u2014 Paseo acompañados (Balcón del Mediterráneo)\n\nMañana Lunes:\n• 10:00h \u2014 Red de Acompañamiento (Centro Cívico)\n• 09:30h \u2014 Talleres Tarragona Impulsa'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Lunes 16 Mar:\n• 10:00h \u2014 Red de Acompañamiento (Centro Cívico)\n• 09:30h \u2014 Talleres Tarragona Impulsa\n\nMañana Martes:\n• 11:00h \u2014 Café Tertulia Sénior (Part Alta)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
                             <span className="material-symbols-outlined text-sm">person_add</span>
                             UNIRME AHORA
                         </a>

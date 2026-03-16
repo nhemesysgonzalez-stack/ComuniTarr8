@@ -175,30 +175,30 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'trobada-canina',
-            title: "🐾 Trobada Border Collies i amics XXL",
-            content: "¡Gran evento canino en la pista municipal de Tivissa el 3 y 4 de Mayo! Exhibiciones de pastoreo, concursos y food trucks.",
+            id: 'lun-impulsa-news',
+            title: "💼 HOY: Taller Tarragona Impulsa",
+            content: "Comienza la semana con formación. Hoy a las 09:30h en la Tabacalera: Taller de Empleabilidad Digital. ¡Últimas plazas!",
             category: "EVENTO",
             neighborhood: "GENERAL",
-            itinerary: "• Agility y actividades\n• Concursos para perros grandes\n• Zona de food trucks",
+            itinerary: "• Hora: 09:30h\n• Lugar: Tabacalera, Sala 2\n• Temática: Networking y LinkedIn",
             created_at: new Date().toISOString()
           },
           {
-            id: 'mon-weather-spring',
-            title: "☀️ Tiempo Primaveral",
-            content: "Hoy disfrutaremos de un día soleado en Tarragona con temperaturas de hasta 19ºC. Ideal para actividades al aire libre.",
+            id: 'mon-weather-march',
+            title: "☀️ Lunes de Sol y Brisa",
+            content: "Iniciamos el lunes con cielos despejados. Máximas de 17ºC y mínimas de 10ºC. Perfecto para el primer café en la terraza.",
             category: "CLIMA",
             neighborhood: "GENERAL",
-            itinerary: "• Cielo despejado\n• Viento: Flojo\n• Recomendación: Disfrutar al máximo",
+            itinerary: "• Mañana: 11ºC\n• Tarde: 17ºC\n• Recomendación: Chaqueta ligera",
             created_at: new Date().toISOString()
           },
           {
-            id: 'sat-post-assembly-info',
-            title: "📋 Actas de la Asamblea disponibles",
-            content: "Ya puedes consultar el resumen oficial de la asamblea vecinal. La nueva zona verde está aprobada y en macha.",
+            id: 'lun-emt-status',
+            title: "🚌 EMT: Servicio Normalizado",
+            content: "Superada la huelga parcial del fin de semana, hoy lunes todas las líneas operan con horario laboral completo.",
             category: "AVISO",
-            neighborhood: "PART ALTA",
-            itinerary: "• Documento: PDF en Anuncios\n• Aprobación: 82% a favor\n• Inicio obras: Estimado mayo",
+            neighborhood: "GENERAL",
+            itinerary: "• Todas las líneas: 100% activo\n• App EMT: Funcionando\n• Consulta: emtanem.cat",
             created_at: new Date().toISOString()
           }
         ];
@@ -207,9 +207,9 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'poll-miércoles',
-          question: "¿Vas a participar en la Trobada canina gigante este fin de semana?",
-          options: ['Sí, seguro', 'Me lo estoy pensando', 'No tengo perro', 'No me va bien'],
+          id: 'poll-lunes-impulsa',
+          question: "¿Vas a asistir a alguno de los talleres de Tarragona Impulsa esta semana?",
+          options: ['Sí, hoy mismo', 'Quizás el jueves', 'Me gustaría pero trabajo', 'No me interesa'],
           category: 'COMUNIDAD',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()
@@ -495,14 +495,14 @@ const Home: React.FC = () => {
           </div>
           <div>
             <h3 className="text-xl font-black uppercase tracking-tight leading-none mb-1 flex items-center gap-2">
-              🔥 First Dates Comunitario
-              <span className="px-2 py-0.5 bg-white text-pink-600 text-[9px] rounded-full animate-pulse">NUEVO</span>
+              🔥 Mixer Lunes Noche
+              <span className="px-2 py-0.5 bg-white text-pink-600 text-[9px] rounded-full animate-pulse">HOY</span>
             </h3>
-            <p className="text-sm font-bold opacity-90 max-w-md">Conoce solteros y solteras de tu barrio esta misma noche. ¡Entra al Canal Citas!</p>
+            <p className="text-sm font-bold opacity-90 max-w-md">Relájate tras el primer día de trabajo. Conoce solteros y solteras esta noche en el Canal Citas.</p>
           </div>
         </div>
         <Link to="/forum" className="relative z-10 px-6 py-3 bg-white text-pink-600 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:scale-105 hover:shadow-2xl transition-all shadow-xl shrink-0 flex items-center gap-2">
-          BUSCAR PAREJA <span className="material-symbols-outlined text-sm">arrow_forward</span>
+          ENTRAR AL CHAT <span className="material-symbols-outlined text-sm">arrow_forward</span>
         </Link>
       </section>
 
@@ -566,7 +566,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 11 · Dom 15 Mar</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 12 · Lun 16 Mar</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">

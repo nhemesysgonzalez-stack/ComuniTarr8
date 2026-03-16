@@ -43,17 +43,17 @@ const Challenges: React.FC = () => {
 
       const mockChallenges: Challenge[] = [
         {
-          id: 'mock-ch-fri-1',
+          id: 'mock-ch-mon-1',
           creator_id: 'admin',
           title: '📖 Reto: Lectura Compartida HOY',
-          description: 'Hoy domingo, comparte una lectura inspiradora. ¡Cualquier autor vale!',
+          description: 'Lunes de lectura. Comparte hoy una cita inspiradora de tu libro actual en el foro académico.',
           neighborhood: 'GENERAL',
           contact_info: 'Biblioteca Pública (Elena)',
           is_example: true,
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-ch-fri-2',
+          id: 'mock-ch-mon-2',
           creator_id: 'user2',
           title: '♻️ Residuo Cero: Calles limpias en tu barrio',
           description: '¡Reto semanal! Haz todas tus compras de la semana sin generar plásticos de un solo uso. Lleva bolsas de tela y envases reutilizables.',

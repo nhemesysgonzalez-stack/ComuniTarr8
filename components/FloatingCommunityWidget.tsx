@@ -11,20 +11,20 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "☀️ ¡Feliz Domingo 15 Mar! Día soleado y 18ºC. Perfecto para pasear por el Balcón del Mediterráneo.", neighborhood: 'GENERAL' },
-    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '☀️ Domingo primaveral. Máxima de 18ºC y cielos despejados. ¡A disfrutar! 🌸', neighborhood: 'GENERAL' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "☀️ ¡Buenos días! Lunes 16 Mar. Mañana fresca (10ºC→17ºC). ¡Buena semana para todos!", neighborhood: 'GENERAL' },
+    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '🌤️ Lunes soleado. Mínima 10ºC, máxima 17ºC. Viento flojo de poniente. Sin lluvias. 🌸', neighborhood: 'GENERAL' },
     { id: 2, user: 'AAVV Sant Pere', avatar: '/logo.svg', text: '📋 Recordad: acta de la última asamblea disponible en Anuncios. Nueva zona verde aprobada. ✅', neighborhood: 'PART ALTA' },
-    { id: 3, user: 'Patrimonio TGN', avatar: '/logo.svg', text: '🏛️ Hoy Domingo entrada reducida al Anfiteatro Romano y Museo Arqueológico. ¡Aprovechad!', neighborhood: 'GENERAL' },
-    { id: 4, user: 'EMT TGN', avatar: '/logo.svg', text: '🚌 Servicio de domingos y festivos en todas las líneas. Consulta horarios en emtanem.cat', neighborhood: 'GENERAL' },
-    { id: 5, user: 'Trànsit TGN', avatar: '/logo.svg', text: '🚗 Circulación fluida en todos los accesos. Sin incidencias de tráfico este domingo. ✅', neighborhood: 'GENERAL' },
-    { id: 6, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '☕ ¿Alguien para un vermut en el Serrallo? Estaré por allí a las 13h. ¡Domingo perfecto! 👋', neighborhood: 'CENTRE' },
+    { id: 3, user: 'Tarragona Impulsa', avatar: '/logo.svg', text: '💼 HOY Lunes: Taller de Empleabilidad Digital a las 09:30h en la Tabacalera (Sala 2). ¡Plazas disponibles!', neighborhood: 'GENERAL' },
+    { id: 4, user: 'EMT TGN', avatar: '/logo.svg', text: '🚌 Servicio NORMAL en todas las líneas. Horario laborable restablecido. Buen comienzo de semana.', neighborhood: 'GENERAL' },
+    { id: 5, user: 'Trànsit TGN', avatar: '/logo.svg', text: '🚗 Hora punta matinal: densidad habitual en N-340 y AP-7. Sin incidentes destacados. ✅', neighborhood: 'GENERAL' },
+    { id: 6, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '☕ Primer café del lunes en el bar de siempre. ¡Ánimo que la semana acaba de empezar! 💛', neighborhood: 'CENTRE' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '☀️ Domingo soleado 18ºC' },
-    { user: 'Patrimonio', text: '🏛️ Entrada reducida hoy' },
-    { user: 'EMT', text: '🚌 Horario domingos activo' },
-    { user: 'Meteo', text: '☀️ Cielos despejados' },
+    { user: 'Admin', text: '☀️ Lunes 16 Mar, 10-17ºC' },
+    { user: 'Impulsa', text: '💼 Taller 09:30h Tabacalera' },
+    { user: 'EMT', text: '🚌 Horario laborable normal' },
+    { user: 'Meteo', text: '🌤️ Soleado sin lluvias' },
     { user: 'AAVV Sant Pere', text: '📋 Acta asamblea en Anuncios' }
 ];
 

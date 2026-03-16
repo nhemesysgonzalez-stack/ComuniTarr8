@@ -42,30 +42,30 @@ const MicroVolunteering: React.FC = () => {
 
             const realOpportunitiesExamples: VolunteerOpportunity[] = [
                 {
-                    id: 'real-sat-vol-1',
+                    id: 'real-lun-vol-1',
                     creator_id: 'v7',
-                    title: '🏛️ Guías Voluntarios Patrimonio (HOY 17:00h)',
-                    description: 'Necesitamos voluntarios para ayudar a orientar a visitantes en la ruta por el Anfiteatro y Murallas hoy domingo. ¡Solo 1 hora!',
+                    title: '🏛️ Guías Voluntarios Patrimonio (Recap)',
+                    description: 'Buscamos voluntarios para ayudar a digitalizar folletos informativos sobre la ruta romana hoy lunes por la tarde.',
                     neighborhood: 'GENERAL',
-                    contact_info: '622 88 77 66 (Elena V. - Turisme). Punto de encuentro: puerta del Anfiteatro.',
+                    contact_info: '622 88 77 66 (Elena V. - Turisme). Oficina de Turismo.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-sat-vol-2',
+                    id: 'real-lun-vol-2',
                     creator_id: 'v8',
-                    title: '📦 Recogida de Donaciones no vendidas',
-                    description: "¿Te sobran libros o ropa? Hoy domingo estaré recogiendo donaciones para el Ropero Solidario de 16h a 18h en el Centro Cívico.",
+                    title: '📦 Clasificación de Donaciones',
+                    description: "¿Tienes una hora libre hoy lunes? Estamos clasificando la ropa y libros recogidos el fin de semana en el Centro Cívico.",
                     neighborhood: 'GENERAL',
-                    contact_info: '611 00 22 33 (Paco). Furgoneta blanca al lado de la Catedral.',
+                    contact_info: '611 00 22 33 (Paco). Centro Cívico Centre.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-sat-vol-3',
+                    id: 'real-lun-vol-3',
                     creator_id: 'v9',
-                    title: '🚶 Acompañamiento Mañana Domingo',
-                    description: 'Mañana domingo saldré a caminar por el Passeig de Sant Antoni a las 10h. Si algún vecino mayor quiere compañía o ayuda para pasear, que me avise.',
+                    title: '🚶 Acompañamiento a Cita Médica',
+                    description: 'Necesito acompañante para ir al CAP Muralles hoy lunes a las 11:30h. Tengo movilidad reducida.',
                     neighborhood: 'PART ALTA',
-                    contact_info: '699 33 22 11 (Lucía). Envíame un WhatsApp hoy para organizarnos.',
+                    contact_info: '699 33 22 11 (Lucía). Vivo cerca de la Catedral.',
                     created_at: new Date().toISOString()
                 }
             ];
@@ -248,10 +248,10 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Ayuda Paseo', d: 'Busco voluntario para acompañar a persona mayor a pasear por el Balcón del Mediterráneo hoy domingo por la tarde.', c: '644 33 22 11' },
-                                            { t: 'Paseo Perro', d: '¿Algún vecino pasea su perro por la zona del Eixample y puede sacar al mío hoy tarde? Estoy de baja.', c: '633 44 55 66' },
-                                            { t: 'Ayuda Móvil', d: 'Busco alguien que me enseñe a instalar la app Mi Carpeta Ciudadana para unos trámites hoy.', c: '611 22 33 44' },
-                                            { t: 'Club Lectura', d: '¿Algún vecino/a va a la biblioteca hoy tarde? Me gustaría ir acompañado para no volver solo de noche.', c: 'Foro · Canal General' }
+                                            { t: 'Ayuda Paseo', d: 'Busco voluntario para acompañar a persona mayor a pasear hoy lunes por el Balcón del Mediterráneo a las 18h.', c: '644 33 22 11' },
+                                            { t: 'Paseo Perro', d: '¿Algún vecino pasea su perro por la zona del Eixample y puede sacar al mío hoy tarde? No puedo salir hoy lunes.', c: '633 44 55 66' },
+                                            { t: 'Ayuda Móvil', d: 'Busco alguien que me enseñe a instalar la app Mi Carpeta Ciudadana para unos trámites hoy lunes.', c: '611 22 33 44' },
+                                            { t: 'Club Lectura', d: '¿Algún vecino/a va a la biblioteca hoy lunes? Me gustaría ir acompañado por la tarde.', c: 'Foro · Canal General' }
                                         ].map((idea, i) => (
 
                                             <button

@@ -57,10 +57,10 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'mock-sun-m1',
+          id: 'mock-lun-m1',
           user_id: 'v1',
           title: '🧣 Bufandas Artesanas — Hechas a mano',
-          description: 'Bufandas de lana de calidad hechas a mano. Varios colores. Entregas en el centro hoy o mañana.',
+          description: 'Bufandas de lana de calidad hechas a mano. Varios colores. Entregas en el centro durante toda la semana.',
           price: '12',
           category: 'moda',
           neighborhood: 'GENERAL',
@@ -69,10 +69,10 @@ const Marketplace: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-sun-m2',
+          id: 'mock-lun-m2',
           user_id: 'v2',
           title: '📚 Lote Libros Eduardo Mendoza',
-          description: 'Vendo el lote de novelas en perfecto estado. Entrego en mano en el centro o Part Alta.',
+          description: 'Vendo el lote de novelas en perfecto estado. Entrego en mano en el centro o Part Alta hoy lunes.',
           price: '15',
           category: 'hogar',
           neighborhood: 'CENTRE',
@@ -81,10 +81,10 @@ const Marketplace: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-sun-m3',
+          id: 'mock-lun-m3',
           user_id: 'v4',
           title: '🪴 Plantas de Interior — Esquejes enraizados',
-          description: 'Esquejes de Potos y Cintas en perfectas condiciones. Entrego mañana lunes o por la tarde hoy.',
+          description: 'Esquejes de Potos y Cintas en perfectas condiciones. Entrego hoy mismo por la tarde o mañana martes.',
           price: '5',
           category: 'hogar',
           neighborhood: 'GENERAL',
@@ -93,10 +93,10 @@ const Marketplace: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-sun-m4',
+          id: 'mock-lun-m4',
           user_id: 'v5',
           title: '🎮 Nintendo Switch + Mario Kart',
-          description: 'Poco uso. Incluye todo lo original. Entrego hoy mismo por el centro o mañana si queréis.',
+          description: 'Poco uso. Incluye todo lo original. Entrego hoy lunes por el centro o zona Francolí.',
           price: '180',
           category: 'tech',
           neighborhood: 'GENERAL',

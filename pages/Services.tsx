@@ -144,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
               </p>
-              <button onClick={() => alert("Domingo 15 Mar:\n\u2022 17:00h \u2014 Paseo Patrimonio Romano (Anfiteatro)\n\nMañana Lunes:\n\u2022 09:30h \u2014 Talleres Tarragona Impulsa (Tabacalera)")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Lunes 16 Mar:\n\u2022 09:30h \u2014 Talleres Tarragona Impulsa (Tabacalera)\n\nMañana Martes:\n\u2022 10:00h \u2014 Sesión Orientación Laboral (C.C. Centre)")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -168,7 +168,7 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Dom 15 Mar)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Lun 16 Mar)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
                     <p className="text-xs font-black dark:text-white">&ldquo;Atención al Cliente - Media Jornada&rdquo;</p>
@@ -289,7 +289,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-600">check_circle</span>
                 <div>
                   <p className="text-xs font-black text-green-700 dark:text-green-500 uppercase">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de domingo y festivos. Sin desvíos ni incidencias.</p>
+                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario laborable normal. Sin desvíos ni incidencias.</p>
                 </div>
               </div>
 
@@ -572,7 +572,7 @@ export const Services: React.FC = () => {
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
                       <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DÍA NORMAL)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy Domingo 15 Mar: Entrada reducida Patrimonio. Mañana Lunes: Talleres TGN Impulsa.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy Lunes 16 Mar: Talleres TGN Impulsa en Tabacalera. Mañana Martes: Mercado semanal Pl. Corsini.</p>
                   </div>
                 </div>
               </div>

@@ -59,42 +59,29 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'sun-15-paseo',
-          creator_id: 'admin',
-          title: "☀️ HOY: Paseo Guiado Patrimonio Romano",
-          description: "Hoy domingo ruta guiada gratuita por el Anfiteatro, Circo y Murallas. Punto de encuentro a las 17:00h en la puerta del Anfiteatro.",
-          event_date: '2026-03-15',
-          event_time: '17:00',
-          location: 'Anfiteatro Romano',
-          category: 'Cultura',
-          neighborhood: 'GENERAL',
-          contact_info: 'Turisme TGN — 977 25 07 95',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'sun-15-cine',
-          creator_id: 'admin',
-          title: "🎞️ Cine Metropol: Sesión V.O.",
-          description: "Hoy domingo: matinal 'CODA' a las 12:00h (ya pasada) y sesión de noche 'Parásitos' a las 20:00h con descuento vecinal.",
-          event_date: '2026-03-15',
-          event_time: '20:00',
-          location: 'Cine Metropol',
-          category: 'Cultura',
-          neighborhood: 'GENERAL',
-          contact_info: 'Cine Metropol — 977 24 63 00',
-          created_at: new Date().toISOString()
-        },
-        {
           id: 'lun-16-impulsa',
           creator_id: 'admin',
-          title: "💼 Talleres Tarragona Impulsa",
-          description: "Mañana lunes: taller gratuito de empleabilidad digital y networking. Inscripción previa en la web.",
+          title: "💼 HOY: Taller Empleabilidad Digital",
+          description: "Hoy lunes taller gratuito de empleabilidad digital y networking en Tarragona Impulsa. Inscripción previa en la web.",
           event_date: '2026-03-16',
           event_time: '09:30',
           location: 'Tabacalera — Sala 2',
           category: 'Cultura',
           neighborhood: 'GENERAL',
           contact_info: 'Tarragona Impulsa — 977 25 99 99',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'lun-16-acomp',
+          creator_id: 'admin',
+          title: "🤝 Red de Acompañamiento Semanal",
+          description: "Hoy lunes a las 10:00h empieza la sesión semanal de acompañamiento a personas mayores en el Centro Cívico del Centre.",
+          event_date: '2026-03-16',
+          event_time: '10:00',
+          location: 'Centro Cívico Centre',
+          category: 'Cultura',
+          neighborhood: 'GENERAL',
+          contact_info: 'Voluntariat TGN — 977 24 00 34',
           created_at: new Date().toISOString()
         },
         {

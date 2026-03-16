@@ -73,26 +73,26 @@ const Polls: React.FC = () => {
 
             const mockPolls: Poll[] = [
                 {
-                    id: 'poll-fri-1',
+                    id: 'poll-mon-1',
                     creator_id: 'v1',
-                    title: '⚖️ ¿Qué te ha parecido el resultado de la última Asamblea? 🌿',
+                    title: '⚖️ ¿Qué te ha parecido el resultado de la última Asamblea del barrio? 🌿',
                     options: ['Muy contento/a con las decisiones', 'Esperaba más compromiso', 'Faltó tiempo para debatir', 'No pude ir ni informarme'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-fri-2',
+                    id: 'poll-mon-2',
                     creator_id: 'v2',
-                    title: '📚 ¿Has leído el libro del mes para el Club de Lectura de hoy? 📖',
-                    options: ['Sí, terminado y me ha encantado', 'A medias, pero iré igual', 'No he empezado todavía', 'No me interesa ese género'],
+                    title: '📚 ¿Vas a participar en el Club de Lectura de este Miércoles 18? 📖',
+                    options: ['Sí, ya tengo el libro terminado', 'Iré aunque no haya terminado', 'No podré ir esta vez', 'No me interesa la lectura elegida'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-fri-3',
+                    id: 'poll-mon-3',
                     creator_id: 'v3',
-                    title: '🛍️ ¿Vas a poner mesa en el Mercadillo Vecinal de mañana? ✨',
-                    options: ['¡Sí, siempre voy!', 'Iré solo a mirar y comprar', 'No este próximo, quizás el siguiente', 'No sabía que había mercadillo'],
+                    title: '🚌 ¿Qué tal ha funcionado el transporte (EMT/Renfe) este lunes mañana? 🚉',
+                    options: ['Muy bien, puntualidad total', 'Normal, como siempre', 'Algún retraso puntual', 'Poca frecuencia para ser laborable'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }

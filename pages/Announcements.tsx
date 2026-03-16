@@ -145,13 +145,13 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'sun-patrimonio',
-                    title: "🏛️ HOY DOMINGO: ENTRADA REDUCIDA PATRIMONIO",
-                    content: "Hoy domingo aprovecha la entrada reducida al Anfiteatro Romano y al Museo Arqueológico Nacional. Perfecto para una visita familiar con este día soleado de 18ºC.",
+                    id: 'lun-impulsa',
+                    title: "💼 HOY LUNES: TALLERES TARRAGONA IMPULSA",
+                    content: "Hoy lunes taller de empleabilidad digital y networking a las 09:30h en la Tabacalera (Sala 2). Inscripción gratuita en la web. ¡No te lo pierdas!",
                     category: "EVENTO",
-                    author_name: "Turisme TGN",
+                    author_name: "Tarragona Impulsa",
                     neighborhood: "GENERAL",
-                    itinerary: "• Anfiteatro: 10:00 - 18:00h\n• Museo Arqueológico: 10:00 - 14:00h\n• Entrada reducida: 2€\n• Tiempo: Soleado 18ºC",
+                    itinerary: "• Hora: 09:30h\n• Lugar: Tabacalera, Sala 2\n• Inscripción: tarragona.cat/tarragonaimpulsa\n• Tel: 977 25 99 99",
                     created_at: new Date().toISOString()
                 },
                 {
@@ -166,8 +166,8 @@ const Announcements: React.FC = () => {
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'sun-lectura',
-                    title: "📚 CLUB DE LECTURA: NUEVA EDICIÓN MIÉRCOLES",
+                    id: 'lun-lectura',
+                    title: "📚 CLUB DE LECTURA: MIÉRCOLES 18:30H",
                     content: "Esta semana comentamos 'La plaça del Diamant' de Mercè Rodoreda. Inscripciones abiertas en la Biblioteca Pública. ¡Plazas limitadas!",
                     category: "EXITO",
                     author_name: "Biblioteca Pública TGN",
@@ -176,23 +176,23 @@ const Announcements: React.FC = () => {
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'sun-emt',
-                    title: "🚌 EMT: HORARIO DE DOMINGOS Y FESTIVOS",
-                    content: "Recordamos que hoy domingo todas las líneas de la EMT operan con horario reducido de domingos y festivos. Consultad frecuencias en emtanem.cat.",
+                    id: 'lun-emt',
+                    title: "🚌 EMT: HORARIO LABORABLE NORMAL",
+                    content: "Hoy lunes el servicio EMT funciona con normalidad. Horario laboral completo restablecido en todas las líneas.",
                     category: "URGENTE",
                     author_name: "EMT Tarragona",
                     neighborhood: "GENERAL",
-                    itinerary: "• Todas las líneas: Horario festivo\n• Consulta: emtanem.cat\n• Teléfono: 977 54 94 80",
+                    itinerary: "• Todas las líneas: Horario laborable\n• Consulta: emtanem.cat\n• Teléfono: 977 54 94 80",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'sun-farmacia',
-                    title: "💊 FARMACIA DE GUARDIA (Hoy Domingo)",
-                    content: "Servicio de guardia 24h hoy domingo en Farmàcia Garcia Rivas (Av. Països Catalans, 51). Abierta para urgencias.",
+                    id: 'lun-baldosa',
+                    title: "🚧 INCIDENCIA: BALDOSA SUELTA PALMERES",
+                    content: "Pendiente de revisión municipal hoy lunes. Baldosas levantadas a la altura del nº 15 del Passeig de les Palmeres. Precaución para peatones.",
                     category: "URGENTE",
-                    author_name: "COFT",
-                    neighborhood: "GENERAL",
-                    itinerary: "• Tel: 977 20 18 33\n• Dirección: Av. Països Catalans, 51\n• Horario: 24h de guardia",
+                    author_name: "Mantenimiento TGN",
+                    neighborhood: "CENTRE",
+                    itinerary: "• Ubicación: Passeig de les Palmeres, nº 15\n• Estado: Pendiente reparación\n• Contacto: 010",
                     created_at: new Date().toISOString()
                 }
             ];

@@ -270,15 +270,13 @@ export const Header: React.FC = () => {
         >
           <span className="flex items-center gap-2 text-[10px] text-fuchsia-100"><span className="material-symbols-outlined text-[14px]">pets</span> 🐾 GRAN EVENTO: TROBADA BORDER COLLIES I AMICS XXL - 3 Y 4 DE MAYO EN TIVISSA. ¡FOOD TRUCKS, AGILITY Y DIVERSIÓN!</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">☀️ DOMINGO PRIMAVERAL: SOL Y 18ºC EN TARRAGONA — PERFECTO PARA PASEAR POR EL BALCÓN DEL MEDITERRÁNEO</span>
+          <span className="flex items-center gap-2">☀️ LUNES 16 MAR: MAÑANA FRESCA 10ºC, MÁXIMA 17ºC — BUEN COMIENZO DE SEMANA EN TARRAGONA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚌 EMT TARRAGONA: SERVICIO DE DOMINGOS Y FESTIVOS EN TODAS LAS LÍNEAS</span>
+          <span className="flex items-center gap-2">🚌 EMT TARRAGONA: HORARIO LABORABLE NORMAL RESTABLECIDO EN TODAS LAS LÍNEAS</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🛍️ MAÑANA LUNES: VUELTA A LA RUTINA — TALLERES TARRAGONA IMPULSA Y MERCADO SEMANAL EN PL. CORSINI</span>
+          <span className="flex items-center gap-2">💼 HOY: TALLER EMPLEABILIDAD DIGITAL EN TABACALERA (09:30H) — TARRAGONA IMPULSA</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎞️ CINE METROPOL: HOY DOMINGO SESIÓN MATINAL 'CODA' (12:00H) Y 'PARÁSITOS' (20:00H)</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🏛️ PATRIMONIO: HOY DOMINGO ENTRADA REDUCIDA AL ANFITEATRO ROMANO Y MUSEO ARQUEOLÓGICO</span>
+          <span className="flex items-center gap-2">🎓 VUELTA A CLASE: COLEGIOS E INSTITUTOS ABREN CON NORMALIDAD — EXTRAESCOLARES ACTIVAS</span>
         </motion.div>
       </div>
 
@@ -360,7 +358,7 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase">Domingo 15 Mar 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase">Lunes 16 Mar 2026</span>
                   <span className="text-xs font-black dark:text-white uppercase">AEMET: Soleado 18ºC</span>
                 </div>
               </div>

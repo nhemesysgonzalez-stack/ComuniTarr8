@@ -56,31 +56,31 @@ const Incidents: React.FC = () => {
             }
 
             if (data) {
-                // Mock Incidents for Sunday 15 March
+                // Mock Incidents for Monday 16 March
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'mock-inc-sun-1',
+                        id: 'mock-inc-lun-1',
                         user_id: 'admin',
-                        title: '✅ ALUMBRADO RAMBLA NOVA: VERIFICADO',
-                        description: 'Revisión completada. Toda la iluminación de la Rambla Nova funciona correctamente.',
+                        title: '🚧 REPARACIÓN DE BALDOSA EN CURSO',
+                        description: 'Brigada municipal trabajando en la reparación de las baldosas sueltas en Passeig de les Palmeres. Zona señalizada, precaución al pasar.',
                         neighborhood: 'CENTRE',
-                        status: 'resolved',
-                        created_at: new Date(Date.now() - 1000 * 60 * 60 * 3).toISOString(),
-                        contact_info: 'Mantenimiento TGN — 010',
+                        status: 'in_progress',
+                        created_at: new Date().toISOString(),
+                        contact_info: 'Brigada Municipal — 010',
                         profiles: { full_name: 'Mantenimiento TGN', avatar_url: '/logo.svg' },
-                        image_url: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800'
+                        image_url: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80'
                     },
                     {
-                        id: 'mock-inc-sun-2',
+                        id: 'mock-inc-lun-2',
                         user_id: 'v3',
-                        title: '🚧 BALDOSA SUELTA: PASSEIG DE LES PALMERES',
-                        description: 'Algunas baldosas levantadas a la altura del nº 15. Riesgo de tropiezo. Pendiente de revisión municipal el lunes.',
+                        title: '✅ ALUMBRADO RAMBLA NOVA: RESUELTO',
+                        description: 'Se ha verificado el correcto funcionamiento del alumbrado tras los reportes del fin de semana. Incidencia cerrada.',
                         neighborhood: 'CENTRE',
-                        status: 'open',
-                        created_at: new Date().toISOString(),
-                        contact_info: 'Vecino — Joan B.',
+                        status: 'resolved',
+                        created_at: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(),
+                        contact_info: 'Mantenimiento TGN — 010',
                         profiles: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' },
-                        image_url: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80'
+                        image_url: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800'
                     }
                 ];
 

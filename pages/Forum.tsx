@@ -74,10 +74,10 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '☀️ ¡Feliz Domingo! Día soleado y 18ºC. Perfecto para pasear.' },
-    { user: 'Meteo TGN', text: '☀️ Domingo primaveral, 18ºC. Cielos despejados todo el día.' },
-    { user: 'Patrimonio TGN', text: '🏛️ Hoy Domingo entrada reducida al Anfiteatro y Museo Arqueológico.' },
-    { user: 'EMT TGN', text: '🚌 Servicio de domingos y festivos en todas las líneas EMT.' },
+    { user: 'Admin ComuniTarr', text: '☀️ ¡Buenos días! Lunes 16 Mar. Mañana fresca (10ºC→17ºC). ¡Buena semana!' },
+    { user: 'Meteo TGN', text: '🌤️ Lunes soleado, 10-17ºC. Viento flojo de poniente.' },
+    { user: 'Tarragona Impulsa', text: '💼 HOY: Taller Empleabilidad Digital 09:30h en Tabacalera.' },
+    { user: 'EMT TGN', text: '🚌 Horario laborable normal en todas las líneas EMT.' },
     { user: 'AAVV Part Alta', text: '📋 Acta de la asamblea disponible en Anuncios. Zona verde aprobada. ✅' }
   ];
 
@@ -114,57 +114,54 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Mireia R.', text: '☀️ ¡Buenos días vecinos! ¡Qué domingo más bonito! ¿Alguien se anima a pasear por el Balcón del Mediterráneo?' },
-        { who: 'Joan B.', text: '@Mireia ¡Sí! Estoy yendo ahora mismo con los niños. El día está espectacular, 18ºC y sol.' },
-        { who: 'Carme S.', text: '@Mireia @Joan ¡Nos vemos allí! Nosotros bajaremos sobre las 12h. ¿Alguien sabe si hay el vermut hoy?' },
-        { who: 'Mireia R.', text: '@Carme Creo que sí, en el chiringuito del Serrallo hacen vermut dominguero. Luego vamos.' },
-        { who: 'Maria G.', text: '¡Buen plan! Un abrazo a todos desde Ponent. Nosotros iremos al parque del Francolí.' },
+        { who: 'Mireia R.', text: '☀️ ¡Buenos días vecinos! Vuelta a la rutina. ¿Mucho tráfico en la N-340 esta mañana?' },
+        { who: 'Joan B.', text: '@Mireia Lo normal de un lunes. 15 min hasta el centro. Nada preocupante.' },
+        { who: 'Carme S.', text: '@Mireia @Joan Yo he ido en bus y la línea 5 ha llegado puntual. EMT funcionando bien hoy.' },
+        { who: 'Pau T.', text: 'Buen lunes a todos. ¿Alguien va al taller de Impulsa de las 09:30h en la Tabacalera?' },
+        { who: 'Maria G.', text: '@Pau ¡Yo voy! Nos vemos allí. Es de empleabilidad digital.' },
       ],
       [
-        { who: 'Luis M.', text: '🚌 ¿Los buses van con horario de domingo? Necesito ir al centro.' },
-        { who: 'Carme S.', text: '@Luis Sí, la EMT tiene horario reducido de domingos y festivos hoy.' },
-        { who: 'Luis M.', text: '@Carme ¡Gracias! Miraré los horarios en la app de la EMT.' },
-        { who: 'Joan B.', text: '@Luis Ten en cuenta que la frecuencia baja bastante los domingos. Mejor consultar emtanem.cat. ✅' },
+        { who: 'Luis M.', text: '🎓 ¿Los peques ya han entrado al cole? Los míos a las 09:00h como siempre pero no estaba seguro.' },
+        { who: 'Carme S.', text: '@Luis Sí, horario normal de lunes. 09:00h a 16:30h con comedor.' },
+        { who: 'Luis M.', text: '@Carme ¡Gracias! Es que el fin de semana se me pierde el día. 😅' },
+        { who: 'Joan B.', text: '@Luis Normal tras el domingo. Hoy vuelta a la rutina para todos. 💪' },
       ],
       [
-        { who: 'Joe R.', text: '⚽ ¿Alguien sabe si el polideportivo de Campclar abre hoy domingo?' },
-        { who: 'Pau T.', text: '@Joe Sí, abre hasta las 14h como todos los domingos. Yo voy a tirar unas canastas ahora mismo.' },
-        { who: 'Sandra L.', text: '@Joe @Pau ¡Qué envidia! Nosotros nos quedamos con la ruta por la playa. Hace un sol increíble.' },
-        { who: 'Joe R.', text: '@Sandra ¡Disfrutadlo! Luego nos vemos por el foro. 🙌' },
+        { who: 'Joe R.', text: '💡 ¿Alguien sabe si la baldosa suelta del Passeig de les Palmeres ya la han arreglado?' },
+        { who: 'Pau T.', text: '@Joe Creo que hoy lunes vienen los de mantenimiento. Estaba pendiente de revisión.' },
+        { who: 'Sandra L.', text: '@Joe @Pau Ayer cuando pasé seguía levantada. Esperemos que arreglen hoy.' },
+        { who: 'Joe R.', text: 'Lo reporté en Incidencias de la app. Ya tiene seguimiento. 🙌' },
       ],
     ],
     'APOYO': [
       [
-        { who: 'Sandra L.', text: 'Buenos días. Los domingos a veces se hacen un poco largos cuando estás sola. ¿Alguien más se siente así?' },
-        { who: 'Elena V.', text: '@Sandra Yo antes también. Desde que me apunté al Club de Lectura vecinal los domingos se me pasan volando. ¿Te vienes?' },
-        { who: 'Joan B.', text: '@Sandra @Elena Yo camino por la playa del Miracle 20 min por las mañanas. Ayuda mucho a desconectar. 🌊' },
-        { who: 'Nuria P.', text: '@Sandra No estás sola, Sandra. Mañana lunes empezamos la semana con energía. 🫂' },
-        { who: 'Sandra L.', text: '@Nuria @Elena Gracias de verdad. Me apunto al Club. Pásame info por privado, Elena.' },
-        { who: 'Elena V.', text: '@Sandra ¡Hecho! Es gratuito y somos un grupo muy majo. Te encantará.' },
-        { who: 'Joan B.', text: '@Elena Contad conmigo también. ¡Este barrio mola! 💪' },
-        { who: 'Nuria P.', text: '@Elena @Joan @Sandra ¡Esto es lo que significa red vecinal de verdad! 🙏' },
+        { who: 'Sandra L.', text: 'Buenos días. El lunes siempre cuesta. ¿Alguien se apunta a un paseo por la playa a la hora de comer?' },
+        { who: 'Elena V.', text: '@Sandra ¡Yo! Me viene genial desconectar a las 14h. Quedamos en la playa del Miracle.' },
+        { who: 'Joan B.', text: '@Sandra @Elena Ánimo con el lunes. Recordad que el Club de Lectura es el miércoles 18h30 en la Biblioteca. 📚' },
+        { who: 'Nuria P.', text: '@Sandra No estás sola. Empezamos la semana junt@s. 🫂' },
+        { who: 'Sandra L.', text: '@Nuria @Elena Gracias. ¡Nos vemos en la playa a las 14h!' },
       ],
     ],
     'EMPLEO': [
       [
-        { who: 'Luis M.', text: '💼 Mañana lunes empiezo a repartir CVs. ¿Alguien sabe de ofertas en hostelería o comercio?' },
-        { who: 'Pau T.', text: '@Luis En la sección de Servicios de la app hay 4 ofertas verificadas. Un bar en Part Alta busca camarero para mediodías.' },
-        { who: 'Joan B.', text: '@Luis También he visto que en el Mercadona del Eixample buscan reponedor. Pregunta directamente en tienda mañana.' },
-        { who: 'Luis M.', text: '@Joan @Pau ¡Gracias a los dos! Mañana me paso por ambos. Este foro es oro, en serio. 🙏' },
-        { who: 'Carme S.', text: '@Luis ¡Mucha suerte! Si necesitas que alguien te eche un ojo al currículum, dime. Trabajé en RRHH 10 años. 💪' },
+        { who: 'Luis M.', text: '💼 ¡Hoy empiezo a repartir CVs! ¿Alguien sabe de ofertas frescas en hostelería o comercio?' },
+        { who: 'Pau T.', text: '@Luis En la sección de Servicios hay 4 ofertas verificadas. Un bar en Part Alta busca camarero para mediodías.' },
+        { who: 'Joan B.', text: '@Luis También he visto que en el Mercadona del Eixample buscan reponedor. Pregunta directamente en tienda hoy.' },
+        { who: 'Luis M.', text: '@Joan @Pau ¡Gracias! Hoy me paso por ambos sitios. Este foro es oro. 🙏' },
+        { who: 'Carme S.', text: '@Luis ¡Suerte! Si necesitas que alguien te eche un ojo al CV, dime. Trabajé en RRHH 10 años. 💪' },
       ],
     ],
     'ENCUENTROS': [
       [
-        { who: 'Joe R.', text: 'Hola a todos 👋 Soy nuevo en esto del "First Dates Comunitario". ¿Quedamos hoy a tomar un vermut por el Serrallo?' },
-        { who: 'Elena V.', text: '@Joe ¡Bienvenido! Me apunto. ¿Sobre las 13h? El domingo es perfecto para un vermut tranquilo.' },
-        { who: 'Joe R.', text: '@Elena ¡Hecho! Nos vemos en el Serrallo a las 13h. ¿Alguno más?' },
-        { who: 'Elena V.', text: '@Joe Perfecto. Nos vemos allí 😊' },
+        { who: 'Joe R.', text: 'Ayer el vermut en el Serrallo fue genial. ¿Repetimos este finde? 👋' },
+        { who: 'Elena V.', text: '@Joe ¡Sí! Me encantó. Este sábado podemos repetir y que vengan más.' },
+        { who: 'Joe R.', text: '@Elena Hecho. ¡Abro plan para el sábado!' },
+        { who: 'Elena V.', text: '@Joe Perfecto. Lo comparto en el grupo 😊' },
       ],
       [
-        { who: 'Nuria P.', text: '¡Qué buen ambiente hay por aquí! ¿Algún chico deportista de 35-45 años para hacer rutas por la mañana y luego vermut?' },
-        { who: 'Pau T.', text: '@Nuria ¡Hola! Yo suelo hacer rutas por el Pont del Diable los domingos. Y el vermut después es sagrado 😉' },
-        { who: 'Nuria P.', text: '@Pau ¡Te tomo la palabra! Te escribo por privado y organizamos para el próximo domingo.' },
+        { who: 'Nuria P.', text: '¿Algún chico deportista para hacer rutas por la mañana antes del trabajo y luego un café?' },
+        { who: 'Pau T.', text: '@Nuria ¡Hola! Yo suelo correr por el Pont del Diable antes de las 07:30. Si madrugas, te apuntas 😉' },
+        { who: 'Nuria P.', text: '@Pau ¡Trato hecho! Mañana martes a las 07:00 en el Pont del Diable.' },
       ],
     ],
   };
@@ -583,13 +580,29 @@ const Forum: React.FC = () => {
             </div>
           </div>
 
+          {/* Trending Topics - NEW section for Monday 16 March */}
+          <div>
+            <h4 className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 ml-2">Tendencias Hoy</h4>
+            <div className="flex flex-wrap gap-2 px-2">
+              {['#TGNImpulsa', '#EMTNormal', '#LunesEnergía', '#Tabacalera', '#PasseigLesPalmeres'].map(tag => (
+                <button key={tag} className="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full text-[9px] font-black text-slate-500 hover:text-blue-500 hover:bg-blue-50 transition-all uppercase tracking-tighter">
+                  {tag}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Jobs Mini-Card */}
           <div className="p-5 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800/50 dark:to-slate-900/50 rounded-[28px] border border-slate-200/50 dark:border-white/5">
-            <h2 className="text-[10px] font-black uppercase tracking-widest text-[#3b82f6] mb-4">Empleo Hoy</h2>
-            <div className="space-y-3">
-              <div className="text-[11px] font-bold text-slate-600 dark:text-slate-300 border-l-2 border-blue-500 pl-3">
+            <h2 className="text-[10px] font-black uppercase tracking-widest text-[#3b82f6] mb-4">Empleo Lunes 16 Mar</h2>
+            <div className="space-y-4">
+              <div className="text-[11px] font-bold text-slate-600 dark:text-slate-300 border-l-2 border-emerald-500 pl-3">
                 <p>🛵 Repartidor/a Paquetería</p>
-                <p className="text-[9px] opacity-60 font-medium">Llamar: 622 11 00 22</p>
+                <p className="text-[9px] opacity-60 font-medium tracking-tight">Jornada parcial mañanas. 📞 622 11 00 22</p>
+              </div>
+              <div className="text-[11px] font-bold text-slate-600 dark:text-slate-300 border-l-2 border-primary pl-3">
+                <p>☕ Camarero/a Mediodías</p>
+                <p className="text-[9px] opacity-60 font-medium tracking-tight">Restaurante Part Alta. 📞 977 22 11 33</p>
               </div>
             </div>
           </div>
