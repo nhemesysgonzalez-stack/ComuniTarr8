@@ -46,33 +46,33 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'mock-lun-n1',
+                    id: 'mock-mar-n1',
                     creator_id: 'v4',
                     type: 'company',
                     title: '☕ Acompañamiento por la tarde',
-                    description: 'Soy vecina mayor y me gustaría salir a pasear hoy lunes por el Balcón del Mediterráneo sobre las 17:30h. ¿Algún vecino se anima?',
+                    description: 'Soy vecina mayor y me gustaría salir a pasear hoy martes por la tarde (17:30h) antes de que se nuble. ¿Algún vecino se anima?',
                     contact_info: '633 44 55 66 (Rosa P.)',
                     is_urgent: false,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-lun-n2',
+                    id: 'mock-mar-n2',
                     creator_id: 'v5',
                     type: 'medical',
                     title: '💊 Recogida de Receta Médica',
-                    description: 'Tengo dificultades para desplazarme hoy. ¿Alguien podría recoger una receta en el CAP Muralles esta tarde? Vive cerca del Portal de Sant Antoni.',
+                    description: 'Tengo dificultades para desplazarme hoy martes. ¿Alguien podría recoger una receta en el CAP Muralles esta tarde? Vive cerca del Portal de Sant Antoni.',
                     contact_info: '644 33 22 11 (Pere)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-lun-n3',
+                    id: 'mock-mar-n3',
                     creator_id: 'v6',
                     type: 'food',
                     title: '🥫 Compra para anciana',
-                    description: 'Doña Amalia no puede bajar a por el pan y leche hoy. Vive en C. Cavallers. ¿Alguien que trabaje por allí?',
+                    description: 'Doña Amalia no puede bajar a por el pan hoy martes. Vive en C. Cavallers. ¿Alguien que trabaje por allí y le suba la bolsa?',
                     contact_info: '622 88 77 66 (Sandra)',
                     is_urgent: false,
                     neighborhood: 'GENERAL',

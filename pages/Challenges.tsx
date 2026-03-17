@@ -43,20 +43,20 @@ const Challenges: React.FC = () => {
 
       const mockChallenges: Challenge[] = [
         {
-          id: 'mock-ch-mon-1',
+          id: 'mock-ch-tue-1',
           creator_id: 'admin',
-          title: '📖 Reto: Lectura Compartida HOY',
-          description: 'Lunes de lectura. Comparte hoy una cita inspiradora de tu libro actual en el foro académico.',
+          title: '🍏 Mercado Sostenible: Compra en Corsini',
+          description: 'Aprovecha el martes de mercado para comprar producto local sin plásticos. ¡Sube tu foto con tu bolsa de tela!',
           neighborhood: 'GENERAL',
-          contact_info: 'Biblioteca Pública (Elena)',
+          contact_info: 'Comunidad ComuniTarr',
           is_example: true,
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-ch-mon-2',
+          id: 'mock-ch-tue-2',
           creator_id: 'user2',
-          title: '♻️ Residuo Cero: Calles limpias en tu barrio',
-          description: '¡Reto semanal! Haz todas tus compras de la semana sin generar plásticos de un solo uso. Lleva bolsas de tela y envases reutilizables.',
+          title: '♻️ Residuo Cero: Envases Reutilizables',
+          description: '¡Reto semanal activo! Hoy martes intenta comprar todo el fresco en envases reutilizables. ¡Tarragona Limpia!',
           neighborhood: 'GENERAL',
           contact_info: 'Comunidad ComuniTarr',
           is_example: true,

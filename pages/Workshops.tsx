@@ -48,27 +48,27 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'ws-11m-1',
-                    title: '💜 Taller de Empoderamiento Profesional',
-                    instructor: 'Elena P.',
-                    date: 'Lunes 16, 11:30',
-                    description: 'Sesión presencial abierta en la biblioteca centrada en el empoderamiento profesional femenino. Técnicas de negociación y liderazgo.',
+                    id: 'ws-17mar-1',
+                    title: '💼 Sesión: Herramientas Digitales Búsqueda Empleo',
+                    instructor: 'Tarragona Impulsa',
+                    date: 'Martes 17, 10:00',
+                    description: 'Aprende a usar portales de empleo y LinkedIn de forma eficiente. Sesión práctica en el C.C. Centre.',
                     image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800',
-                    spots: 4,
+                    spots: 5,
                     neighborhood: 'GENERAL',
-                    contact_info: 'Biblioteca Pública TGN',
+                    contact_info: 'C.C. Centre - 977 25 99 99',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'ws-11m-2',
-                    title: '🖥️ Masterclass IA y Trabajo (Mujeres Tech)',
+                    id: 'ws-17mar-2',
+                    title: '📱 Taller: WhatsApp para Mayores',
                     instructor: 'Rosa M.',
-                    date: 'Lunes 16, 18:30',
-                    description: 'Taller para impulsar carreras tecnológicas. Aprende a integrar herramientas de inteligencia artificial en tu flujo de trabajo.',
+                    date: 'Martes 17, 17:30',
+                    description: 'Pierde el miedo al móvil. Aprende a hacer videollamadas, enviar fotos y usar grupos de forma segura.',
                     image: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=800',
-                    spots: 15,
+                    spots: 8,
                     neighborhood: 'GENERAL',
-                    contact_info: 'C.C. Part Alta / Online',
+                    contact_info: 'C.C. Part Alta - 977 23 45 67',
                     created_at: new Date().toISOString()
                 }
             ];
@@ -134,21 +134,21 @@ const Workshops: React.FC = () => {
                     </div>
                     <div className="flex-1">
                         <div className="flex items-center gap-3 mb-4">
-                            <span className="px-3 py-1 bg-indigo-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">EVENTO HOY - 18:30H</span>
-                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">CULTURA VECINAL</span>
+                            <span className="px-3 py-1 bg-indigo-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">EVENTO HOY - 10:00H</span>
+                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">ORIENTACIÓN LABORAL</span>
                         </div>
-                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Masterclass: LinkedIn Pro 📈</h2>
+                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Workshop: CV Digital con IA 📈</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Sácale partido a tu red profesional y encuentra nuevas oportunidades. HOY lunes a las 18:30h en la Tabacalera. ¡Plazas limitadas!
+                            Optimiza tu búsqueda de empleo con herramientas de Inteligencia Artificial. HOY martes a las 10:00h en el Centro Cívico Centre. ¡Inscripción gratuita!
                         </p>
 
                         <div className="flex flex-wrap gap-4">
-                            <a href="#" onClick={(e) => { e.preventDefault(); alert("Reserva tu butaca enviando un WhatsApp al 638 11 22 33"); }} className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
+                            <a href="#" onClick={(e) => { e.preventDefault(); alert("Reserva tu plaza enviando un WhatsApp al 611 00 22 33 para HOY Martes."); }} className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
                                 <span className="material-symbols-outlined text-sm">confirmation_number</span>
                                 RESERVAR PLAZA
                             </a>
                             <span className="px-6 py-3 bg-gray-50 dark:bg-gray-800 dark:text-white rounded-xl text-xs font-black">
-                                GRATIS - TABACALERA
+                                GRATIS - CENTRO CÍVICO CENTRE
                             </span>
                         </div>
                     </div>

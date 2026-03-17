@@ -175,30 +175,30 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'lun-impulsa-news',
-            title: "💼 HOY: Taller Tarragona Impulsa",
-            content: "Comienza la semana con formación. Hoy a las 09:30h en la Tabacalera: Taller de Empleabilidad Digital. ¡Últimas plazas!",
+            id: 'mar-orientacion-news',
+            title: "💼 HOY: Sesión de Orientación Laboral",
+            content: "Martes 17 Mar: Sesión grupal de orientación en el C.C. Centre a las 10:00h. Ideal para mayores de 45 que buscan reinserción.",
             category: "EVENTO",
             neighborhood: "GENERAL",
-            itinerary: "• Hora: 09:30h\n• Lugar: Tabacalera, Sala 2\n• Temática: Networking y LinkedIn",
+            itinerary: "• Hora: 10:00h\n• Lugar: Centro Cívico Centre\n• Temática: CV y entrevistas en la era digital",
             created_at: new Date().toISOString()
           },
           {
-            id: 'mon-weather-march',
-            title: "☀️ Lunes de Sol y Brisa",
-            content: "Iniciamos el lunes con cielos despejados. Máximas de 17ºC y mínimas de 10ºC. Perfecto para el primer café en la terraza.",
+            id: 'tue-weather-march',
+            title: "🌤️ Martes: Nubes y Claros",
+            content: "Hoy el cielo estará algo más cubierto. Máximas de 16ºC y mínimas de 11ºC. ¡Perfecto para un paseo por la tarde!",
             category: "CLIMA",
             neighborhood: "GENERAL",
-            itinerary: "• Mañana: 11ºC\n• Tarde: 17ºC\n• Recomendación: Chaqueta ligera",
+            itinerary: "• Mañana: 12ºC\n• Tarde: 16ºC\n• Recomendación: Paraguas por si acaso (20% prob.)",
             created_at: new Date().toISOString()
           },
           {
-            id: 'lun-emt-status',
-            title: "🚌 EMT: Servicio Normalizado",
-            content: "Superada la huelga parcial del fin de semana, hoy lunes todas las líneas operan con horario laboral completo.",
+            id: 'mar-emt-status',
+            title: "🚌 EMT: Servicio Fluido",
+            content: "Todas las líneas funcionan hoy martes según horario laboral. Sin incidencias ni desvíos reportados esta mañana.",
             category: "AVISO",
             neighborhood: "GENERAL",
-            itinerary: "• Todas las líneas: 100% activo\n• App EMT: Funcionando\n• Consulta: emtanem.cat",
+            itinerary: "• Estado: 100% operativo\n• Línea 54: Reforzada para el cole\n• Consulta: emtanem.cat",
             created_at: new Date().toISOString()
           }
         ];
@@ -207,10 +207,10 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'poll-lunes-impulsa',
-          question: "¿Vas a asistir a alguno de los talleres de Tarragona Impulsa esta semana?",
-          options: ['Sí, hoy mismo', 'Quizás el jueves', 'Me gustaría pero trabajo', 'No me interesa'],
-          category: 'COMUNIDAD',
+          id: 'poll-martes-barrio',
+          question: "¿Crees que el servicio de la EMT en tu barrio es suficiente para los martes laborables?",
+          options: ['Sí, es excelente', 'Suficiente pero mejorable', 'Faltan buses en hora punta', 'Debería haber más líneas'],
+          category: 'MOVILIDAD',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()
         };

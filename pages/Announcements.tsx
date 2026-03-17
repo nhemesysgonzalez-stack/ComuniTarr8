@@ -145,24 +145,23 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'lun-impulsa',
-                    title: "💼 HOY LUNES: TALLERES TARRAGONA IMPULSA",
-                    content: "Hoy lunes taller de empleabilidad digital y networking a las 09:30h en la Tabacalera (Sala 2). Inscripción gratuita en la web. ¡No te lo pierdas!",
+                    id: 'mar-orientacion',
+                    title: "💼 HOY MARTES: ORIENTACIÓN LABORAL +45",
+                    content: "Hoy martes sesión grupal en el C.C. Centre a las 10:00h. Aprende a mejorar tu CV y LinkedIn con expertos de Tarragona Impulsa.",
                     category: "EVENTO",
                     author_name: "Tarragona Impulsa",
                     neighborhood: "GENERAL",
-                    itinerary: "• Hora: 09:30h\n• Lugar: Tabacalera, Sala 2\n• Inscripción: tarragona.cat/tarragonaimpulsa\n• Tel: 977 25 99 99",
+                    itinerary: "• Hora: 10:00h\n• Lugar: Centro Cívico Centre\n• Temática: CV y Entrevistas\n• Tel: 977 25 99 99",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'border-collies-tivissa',
-                    title: "🐾 TROBADA BORDER COLLIES I AMICS XXL",
-                    content: "Anunciamos esta fantástica trobada en la pista municipal de futbol de Tivissa para el 3 y 4 de mayo. Ven a disfrutar del agility, food trucks y actividades para toda la familia.",
-                    category: "EVENTO",
-                    author_name: "Fires Catalanes",
+                    id: 'mar-clima',
+                    title: "🌤️ CLIMA: NUBES Y CLAROS (MARTES 17 MAR)",
+                    content: "Día variable con máximas de 16ºC. Se recomienda llevar paraguas por la tarde (20% prob. lluvia debil).",
+                    category: "AVISO",
+                    author_name: "Protección Civil",
                     neighborhood: "GENERAL",
-                    itinerary: "• Fechas: 3 y 4 de mayo\n• Lugar: Pista Municipal de Tivissa\n• Actividades: Agility, pastoreo, food trucks\n• Entradas: firescatalanes.cat",
-                    link_url: "https://firescatalanes.cat/fires/trobada-border-collies-i-amics-xxl/",
+                    itinerary: "• Mañana: 12ºC\n• Tarde: 16ºC\n• Prob. Lluvia: 20%\n• Recomendación: Chaqueta ligera",
                     created_at: new Date().toISOString()
                 },
                 {

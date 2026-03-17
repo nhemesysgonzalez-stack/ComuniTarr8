@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "☀️ ¡Buenos días! Lunes 16 Mar. Mañana fresca (10ºC→17ºC). ¡Buena semana para todos!", neighborhood: 'GENERAL' },
-    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '🌤️ Lunes soleado. Mínima 10ºC, máxima 17ºC. Viento flojo de poniente. Sin lluvias. 🌸', neighborhood: 'GENERAL' },
-    { id: 2, user: 'AAVV Sant Pere', avatar: '/logo.svg', text: '📋 Recordad: acta de la última asamblea disponible en Anuncios. Nueva zona verde aprobada. ✅', neighborhood: 'PART ALTA' },
-    { id: 3, user: 'Tarragona Impulsa', avatar: '/logo.svg', text: '💼 HOY Lunes: Taller de Empleabilidad Digital a las 09:30h en la Tabacalera (Sala 2). ¡Plazas disponibles!', neighborhood: 'GENERAL' },
-    { id: 4, user: 'EMT TGN', avatar: '/logo.svg', text: '🚌 Servicio NORMAL en todas las líneas. Horario laborable restablecido. Buen comienzo de semana.', neighborhood: 'GENERAL' },
-    { id: 5, user: 'Trànsit TGN', avatar: '/logo.svg', text: '🚗 Hora punta matinal: densidad habitual en N-340 y AP-7. Sin incidentes destacados. ✅', neighborhood: 'GENERAL' },
-    { id: 6, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '☕ Primer café del lunes en el bar de siempre. ¡Ánimo que la semana acaba de empezar! 💛', neighborhood: 'CENTRE' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🌤️ ¡Buenos días! Martes 17 Mar. Día variable (11ºC→16ºC). No olvidéis el paraguas. 👍", neighborhood: 'GENERAL' },
+    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '🌤️ Intervalos nubosos. Mínima 11ºC, máxima 16ºC. 20% probabilidad de lluvia débil por la tarde. ☂️', neighborhood: 'GENERAL' },
+    { id: 2, user: 'AAVV Sant Pere', avatar: '/logo.svg', text: '🚶 Recordad: Mañana miércoles Club de Lectura (18:30h). ¡Últimos días para apuntarse! 📚', neighborhood: 'PART ALTA' },
+    { id: 3, user: 'Tarragona Impulsa', avatar: '/logo.svg', text: '💼 HOY Martes: Sesión de Orientación Laboral a las 10:00h en el C.C. Centre. ¡Te esperamos!', neighborhood: 'GENERAL' },
+    { id: 4, user: 'EMT TGN', avatar: '/logo.svg', text: '🚌 Servicio FLUIDO en todas las líneas. Refuerzo en líneas escolares del Eixample y Levante.', neighborhood: 'GENERAL' },
+    { id: 5, user: 'Pilar S.', avatar: 'https://i.pravatar.cc/150?u=pilar', text: '🍏 ¡Qué bien huele el Mercado de Corsini hoy! Los martes siempre hay buenos frescos. 🧺', neighborhood: 'EIXAMPLE' },
+    { id: 6, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '☕ Café rápido y a por el martes. ¿Alguien se apunta a caminar por la tarde si no llueve? 🏃‍♀️', neighborhood: 'CENTRE' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '☀️ Lunes 16 Mar, 10-17ºC' },
-    { user: 'Impulsa', text: '💼 Taller 09:30h Tabacalera' },
-    { user: 'EMT', text: '🚌 Horario laborable normal' },
-    { user: 'Meteo', text: '🌤️ Soleado sin lluvias' },
-    { user: 'AAVV Sant Pere', text: '📋 Acta asamblea en Anuncios' }
+    { user: 'Admin', text: '🌤️ Martes 17 Mar, 11-16ºC' },
+    { user: 'Impulsa', text: '💼 Sesión 10:00h C.C. Centre' },
+    { user: 'EMT', text: '🚌 Servicio fluido y sin retrasos' },
+    { user: 'Meteo', text: '🌤️ Nubosidad variable hoy' },
+    { user: 'Corsini', text: '🍏 Mercado de frescos hoy martes' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

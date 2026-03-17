@@ -168,23 +168,23 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Lun 16 Mar)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Mar 17 Mar)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Atención al Cliente - Media Jornada&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Se busca personal para atención telefónica y gestión de reservas en centro médico de Tarragona. Valorable catalán. Horario de mañana. 📞 977 22 11 33 (Sra. Laura, RHH)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Aux. Administrativo/a - Centro Médico&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Se busca personal para recepción y gestión de agendas en el Eixample. Imprescindible catalán y castellano. 📞 977 11 22 33 (Atención al Cliente)</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Conductor/a Repartidor - Furgoneta&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Empresa de paquetería local necesita chófer para ruta en la ciudad. Imprescindible carnet B y conocimiento de las calles. Jornada completa de lunes a viernes. 📞 688 44 22 11 (Logística TGN)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Mozo/a de Almacén - Polígono Entrevies&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Carga y descarga. Turnos rotativos de mañana/tarde. Incorporación inmediata. 📞 688 55 44 22 (Empresa Logística)</p>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Dependiente/a Panadería&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Buscamos persona para atención al público en panadería céntrica. Contrato temporal con posibilidad de fijo. Horarios rotativos. 📞 977 33 44 55 (Forn Central)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Dependiente/a Panadería - Mañanas&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Buscamos persona puntual de 07:00h a 13:00h. Atención al público y horneado básico. 📞 644 33 22 11 (Forn de la Part Alta)</p>
                   </div>
                   <div className="border-l-4 border-teal-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Limpieza y Mantenimiento de Comunidades&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Empresa de servicios necesita personal para limpieza de escaleras y mantenimiento básico. 30 horas semanales. 📞 655 99 88 77 (Servicios Tarraco)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Personal Limpieza de Oficinas&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Servicio de limpieza en horario nocturno o muy temprano por la mañana. 20h/semana. 📞 655 88 77 66 (Limpiezas TGN)</p>
                   </div>
                 </div>
               </div>
@@ -205,7 +205,7 @@ export const Services: React.FC = () => {
                 <div>
                   <p className="text-xs font-black uppercase text-gray-400">Próximo Festivo</p>
                   <p className="text-sm font-bold text-gray-800 dark:text-white">San José (Puente Escolar)</p>
-                  <p className="text-[10px] text-gray-500">Quedan 17 días</p>
+                  <p className="text-[10px] text-gray-500">Quedan 2 días</p>
                 </div>
               </div>
               <a

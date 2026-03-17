@@ -49,28 +49,28 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'mock-pat-lun-1',
+          id: 'mock-pat-mar-1',
           creator_id: 'admin',
-          name: '🛡️ Seguridad Escolar: Caminos Seguros',
-          description: 'Ronda matinal hoy lunes por los alrededores de los colegios El Miracle y Pax. Ayuda en pasos de cebra y flujos de alumnos.',
-          neighborhood: 'GENERAL',
+          name: '🛒 Entorno Seguro: Mercado Corsini',
+          description: 'Ronda informativa hoy martes en el entorno del Mercado Central. Ayuda a ancianos con la compra y control de accesos.',
+          neighborhood: 'EIXAMPLE',
           contact_info: 'Coordinación Vecinal — 611 00 22 33',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-pat-lun-2',
+          id: 'mock-pat-mar-2',
           creator_id: 'user1',
-          name: '🚗 Vigilancia Tráfico: Hora Punta',
-          description: 'Hoy lunes patrulla informativa en accesos principales para evitar dobles filas y agilizar el tráfico matinal.',
+          name: '🛡️ Seguridad Escolar: Caminos Seguros',
+          description: 'Continuamos hoy martes con las rondas matinales en los colegios El Miracle y Pax. Flujo fluido de alumnos.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-pat-lun-3',
+          id: 'mock-pat-mar-3',
           creator_id: 'user2',
-          name: '🧹 Convivencia: Zonas de Obra',
-          description: 'Patrulla de seguimiento hoy lunes en Passeig de les Palmeres para asegurar que las obras no entorpezcan el paso de vecinos.',
+          name: '🚧 Seguimiento: Obras Palmeres',
+          description: 'Patrulla de convivencia hoy martes para asegurar el tránsito peatonal seguro mientras duran las reparaciones en el paseo.',
           neighborhood: 'CENTRE',
           contact_info: '622 55 44 33 (Maria)',
           created_at: new Date().toISOString()

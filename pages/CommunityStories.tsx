@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'ms1', user_name: 'Ana T.', content: '¡Buenos días Tarragona! Empezamos el lunes con mucha energía. ☕✨ #Lunes #ComienzaLaSemana #Tarragona', image_url: 'https://images.unsplash.com/photo-1511018556340-d16986a1c194', likes: 124, created_at: new Date().toISOString() },
-            { id: 'ms2', user_name: 'Joan R.', content: 'Haciendo un poco de deporte antes de entrar a la oficina. El Balcón del Mediterráneo está precioso hoy. 🏃‍♂️🌅 #Running #MorningRoutine #Tarragona', image_url: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a', likes: 98, created_at: new Date().toISOString() },
-            { id: 'ms3', user_name: 'Marc G.', content: 'Preparados para el taller de empleabilidad en la Tabacalera. ¡A por todas el lunes! 💼📈 #TGNImpulsa #Oportunidades #LunesLaboral', image_url: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174', likes: 156, created_at: new Date().toISOString() },
-            { id: 'ms4', user_name: 'Pilar S.', content: 'Haciendo la compra matinal en el mercado de Corsini. ¡Qué alegría ver la actividad de nuevo! 🍏🧺 #MercatCentral #Tarragona #VidaDeBarrio', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 89, created_at: new Date().toISOString() }
+            { id: 'ms1', user_name: 'Ana T.', content: '🌤️ ¡Buenos días Tarragona! Martes de nubes y claros. ¿Alguien se apunta a un café a media mañana? ☕✨ #Martes #Actitud #Tarragona', image_url: 'https://images.unsplash.com/photo-1511018556340-d16986a1c194', likes: 142, created_at: new Date().toISOString() },
+            { id: 'ms2', user_name: 'Joan R.', content: 'Mañana de trote por el Serrallo. El aire de mar hoy martes está increíble. 🌊🏃‍♂️ #Running #Maritime #Tarragona', image_url: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a', likes: 115, created_at: new Date().toISOString() },
+            { id: "ms3", user_name: "Marc G.", content: "Aquí en el C.C. Centre para la sesión de orientación. ¡Mucha gente hoy martes interesada! 💼📈 #OrientacionLaboral #TGNActiva #Martes", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 167, created_at: new Date().toISOString() },
+            { id: 'ms4', user_name: 'Pilar S.', content: 'Día de mercado en Corsini. ¡Huele de maravilla hoy martes con el pescado fresco! 🍏🧺 #MercatCentral #Tarragona #LocalMarket', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 94, created_at: new Date().toISOString() }
         ];
 
 

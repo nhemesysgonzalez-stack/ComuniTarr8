@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '45%', y: '35%', title: '💼 Taller Tarragona Impulsa', desc: 'HOY Lunes 09:30h: Taller de empleabilidad digital en la Tabacalera. Sala 2. Inscripción en tarragona.cat/tarragonaimpulsa.', status: 'Hoy 09:30h', color: 'bg-emerald-500', icon: 'work', glow: 'shadow-[0_0_50px_rgba(16,185,129,0.3)]' },
-    { id: 2, type: 'event', x: '52%', y: '42%', title: '☀️ Balcón del Mediterráneo', desc: 'Día despejado. Mañana fresca (10-17ºC), ideal para caminar antes de la oficina.', status: 'Despejado', color: 'bg-sky-500', icon: 'sunny' },
-    { id: 3, type: 'event', x: '48%', y: '45%', title: '🚌 EMT Horario Laborable', desc: 'Servicio normal en todas las líneas hoy lunes. Consulta frecuencias en la web emtanem.cat.', status: 'Servicio Normal', color: 'bg-indigo-500', icon: 'directions_bus' },
+    { id: 1, type: 'event', x: '45%', y: '35%', title: '💼 Orientación Laboral', desc: 'HOY Martes 10:00h: Sesión grupal de orientación en el C.C. Centre. CV y herramientas digitales.', status: 'Hoy 10:00h', color: 'bg-emerald-500', icon: 'work', glow: 'shadow-[0_0_50px_rgba(16,185,129,0.3)]' },
+    { id: 2, type: 'event', x: '52%', y: '42%', title: '🌤️ Balcón del Mediterráneo', desc: 'Día variable (11-16ºC). 20% prob. de lluvia racha. Lleva chaqueta ligera.', status: 'Variable', color: 'bg-sky-500', icon: 'cloud' },
+    { id: 3, type: 'event', x: '48%', y: '45%', title: '🚌 EMT Servicio Fluido', desc: 'Circulación normal hoy martes. Refuerzos escolares activos. Consulta emtanem.cat.', status: 'Servicio Fluido', color: 'bg-indigo-500', icon: 'directions_bus' },
     { id: 4, type: 'incident', x: '55%', y: '50%', title: '✅ Alumbrado Rambla Nova', desc: 'Incidencia resuelta. Verificación completada por el equipo de mantenimiento esta mañana.', status: 'Resuelto', color: 'bg-green-500', icon: 'lightbulb' },
-    { id: 5, type: 'incident', x: '42%', y: '40%', title: '🚧 Reparación Baldosa Palmeres', desc: 'Brigada municipal trabajando hoy lunes en el Passeig de les Palmeres nº 15. Precaución.', status: 'En curso', color: 'bg-orange-500', icon: 'construction' },
+    { id: 5, type: 'incident', x: '42%', y: '40%', title: '🚧 Reparación Baldosa Palmeres', desc: 'Brigada municipal continúa hoy martes en el Passeig de les Palmeres nº 15. Finalización prevista mañana.', status: 'En curso', color: 'bg-orange-500', icon: 'construction' },
     { id: 6, type: 'event', x: '68%', y: '80%', title: '🐾 Trobada Border Collies XXL', desc: 'Gran evento canino en Tivissa el 3 y 4 de Mayo. Agility, pastoreo, concursos y food trucks.', status: '3 y 4 Mayo', color: 'bg-fuchsia-500', icon: 'pets', glow: 'shadow-[0_0_60px_rgba(217,70,239,0.5)]' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);

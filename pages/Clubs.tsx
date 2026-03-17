@@ -42,30 +42,30 @@ const Clubs: React.FC = () => {
 
             const mockClubs: Club[] = [
                 {
-                    id: 'c-mon-1',
+                    id: 'c-tue-1',
                     creator_id: 'v1',
                     name: 'Urban Runners TGN 👟',
-                    description: 'Trote suave de lunes tarde. Quedamos hoy a las 19:30h en el Balcó para empezar la semana con energía.',
+                    description: 'Trote suave hoy martes tarde. Quedamos a las 19:30h en el Balcó. ¡Aprovecha la fresca!',
                     neighborhood: 'GENERAL',
                     contact_info: '622 33 44 55 (Pau)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'c-mon-2',
+                    id: 'c-tue-2',
                     creator_id: 'v2',
-                    name: 'Cineforum Vecinal 🍿',
-                    description: 'Quedada hoy lunes a las 21:00h en el local social para ver un documental sobre la Tarragona romana.',
+                    name: 'Fotografía de Barrio 📸',
+                    description: 'Hoy martes salimos a fotografiar el bullicio del Mercado de Corsini a las 11:00h. ¡Vente con tu cámara!',
                     neighborhood: 'GENERAL',
-                    contact_info: 'Canal ENCUENTROS (Foro)',
+                    contact_info: '644 55 66 77 (Sònia)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'c-mon-3',
+                    id: 'c-tue-3',
                     creator_id: 'v3',
-                    name: 'Chess & Coffee TGN ♟️',
-                    description: 'Partidas rápidas en la Plaza de la Font al salir de trabajar. ¡Vente a desestresarte!',
+                    name: 'Club de Lectura (Prep) 📖',
+                    description: 'Recordatorio: Mañana miércoles tenemos la sesión mensual. Hoy martes terminamos de comentar el último capítulo en el chat.',
                     neighborhood: 'GENERAL',
-                    contact_info: '633 44 55 66 (Joe)',
+                    contact_info: 'Canal CULTURA (Foro)',
                     created_at: new Date().toISOString()
                 }
             ];

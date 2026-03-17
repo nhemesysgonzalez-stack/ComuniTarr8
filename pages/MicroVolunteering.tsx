@@ -42,28 +42,28 @@ const MicroVolunteering: React.FC = () => {
 
             const realOpportunitiesExamples: VolunteerOpportunity[] = [
                 {
-                    id: 'real-lun-vol-1',
+                    id: 'real-mar-vol-1',
                     creator_id: 'v7',
-                    title: '🏛️ Guías Voluntarios Patrimonio (Recap)',
-                    description: 'Buscamos voluntarios para ayudar a digitalizar folletos informativos sobre la ruta romana hoy lunes por la tarde.',
+                    title: '🏛️ Guías Voluntarios Patrimonio (Orientación)',
+                    description: 'Buscamos voluntarios para ayudar en la sesión de orientación del C.C. Centre hoy martes de 10:00h a 12:00h.',
                     neighborhood: 'GENERAL',
                     contact_info: '622 88 77 66 (Elena V. - Turisme). Oficina de Turismo.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-lun-vol-2',
+                    id: 'real-mar-vol-2',
                     creator_id: 'v8',
                     title: '📦 Clasificación de Donaciones',
-                    description: "¿Tienes una hora libre hoy lunes? Estamos clasificando la ropa y libros recogidos el fin de semana en el Centro Cívico.",
+                    description: "¿Tienes una hora libre hoy martes? Seguimos clasificando la ropa y libros en el Centro Cívico. ¡Toda ayuda cuenta!",
                     neighborhood: 'GENERAL',
                     contact_info: '611 00 22 33 (Paco). Centro Cívico Centre.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-lun-vol-3',
+                    id: 'real-mar-vol-3',
                     creator_id: 'v9',
                     title: '🚶 Acompañamiento a Cita Médica',
-                    description: 'Necesito acompañante para ir al CAP Muralles hoy lunes a las 11:30h. Tengo movilidad reducida.',
+                    description: 'Necesito acompañante para ir al CAP Muralles hoy martes a las 11:30h. Tengo movilidad reducida.',
                     neighborhood: 'PART ALTA',
                     contact_info: '699 33 22 11 (Lucía). Vivo cerca de la Catedral.',
                     created_at: new Date().toISOString()

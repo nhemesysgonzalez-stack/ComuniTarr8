@@ -73,26 +73,26 @@ const Polls: React.FC = () => {
 
             const mockPolls: Poll[] = [
                 {
-                    id: 'poll-mon-1',
+                    id: 'poll-mar-1',
                     creator_id: 'v1',
-                    title: '⚖️ ¿Qué te ha parecido el resultado de la última Asamblea del barrio? 🌿',
-                    options: ['Muy contento/a con las decisiones', 'Esperaba más compromiso', 'Faltó tiempo para debatir', 'No pude ir ni informarme'],
+                    title: '🍎 ¿Qué te parece la calidad del Mercado de Corsini hoy Martes? 🍏',
+                    options: ['Excelente, muy fresco', 'Normal, nada destacable', 'Algo caro hoy', 'Apenas he visto gente'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-mon-2',
+                    id: 'poll-mar-2',
                     creator_id: 'v2',
-                    title: '📚 ¿Vas a participar en el Club de Lectura de este Miércoles 18? 📖',
+                    title: '📚 Mañana Miércoles: ¿Vienes al Club de Lectura (18:30h)? 📖',
                     options: ['Sí, ya tengo el libro terminado', 'Iré aunque no haya terminado', 'No podré ir esta vez', 'No me interesa la lectura elegida'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-mon-3',
+                    id: 'poll-mar-3',
                     creator_id: 'v3',
-                    title: '🚌 ¿Qué tal ha funcionado el transporte (EMT/Renfe) este lunes mañana? 🚉',
-                    options: ['Muy bien, puntualidad total', 'Normal, como siempre', 'Algún retraso puntual', 'Poca frecuencia para ser laborable'],
+                    title: '🚌 ¿Has notado refuerzo en las líneas de la EMT este martes? 🚌',
+                    options: ['Sí, menos esperas', 'No, sigue igual', 'He visto buses llenos', 'No uso el bus'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }
