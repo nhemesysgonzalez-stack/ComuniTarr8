@@ -144,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
               </p>
-              <button onClick={() => alert("Lunes 16 Mar:\n\u2022 09:30h \u2014 Talleres Tarragona Impulsa (Tabacalera)\n\nMañana Martes:\n\u2022 10:00h \u2014 Sesión Orientación Laboral (C.C. Centre)")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Hoy Miércoles 18 Mar:\n\u2022 11:00h \u2014 Club de Trabajo: Búsqueda Activa (C.C. Sant Pere i Sant Pau)\n\nMañana Jueves:\n\u2022 Festivo Local (San José) - Reducción de actividad administrativa.")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -168,23 +168,23 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Mar 17 Mar)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Miércoles 18 Mar)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Aux. Administrativo/a - Centro Médico&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Se busca personal para recepción y gestión de agendas en el Eixample. Imprescindible catalán y castellano. 📞 977 11 22 33 (Atención al Cliente)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Peón de Obra - TGN Centro&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Empresa Constructora local. Contrato jornada completa. Imprescindible tarjeta profesional de la construcción. 📞 977 22 34 56 (Recursos Humanos)</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Mozo/a de Almacén - Polígono Entrevies&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Carga y descarga. Turnos rotativos de mañana/tarde. Incorporación inmediata. 📞 688 55 44 22 (Empresa Logística)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Personal de Limpieza - Media Jornada&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Limpieza de oficinas en horario de tarde (16:00h a 20:00h). Incorporación hoy mismo o mañana. 📞 633 11 22 33 (Limpiezas Mediterráneas)</p>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Dependiente/a Panadería - Mañanas&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Buscamos persona puntual de 07:00h a 13:00h. Atención al público y horneado básico. 📞 644 33 22 11 (Forn de la Part Alta)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Repartidor/a de Comida - Noches&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Se busca persona con moto propia para repartos en zona centro y Levante. 📞 611 00 99 88 (Pizzería TGN)</p>
                   </div>
                   <div className="border-l-4 border-teal-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Personal Limpieza de Oficinas&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Servicio de limpieza en horario nocturno o muy temprano por la mañana. 20h/semana. 📞 655 88 77 66 (Limpiezas TGN)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Aux. de Seguridad - Control de Accesos&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Para eventos y naves industriales. Turnos de 12h. Pagos semanales. 📞 655 44 33 22 (Seguridad TGN)</p>
                   </div>
                 </div>
               </div>
@@ -205,7 +205,7 @@ export const Services: React.FC = () => {
                 <div>
                   <p className="text-xs font-black uppercase text-gray-400">Próximo Festivo</p>
                   <p className="text-sm font-bold text-gray-800 dark:text-white">San José (Puente Escolar)</p>
-                  <p className="text-[10px] text-gray-500">Quedan 2 días</p>
+                  <p className="text-[10px] text-gray-500">Mañana Jueves (Puente)</p>
                 </div>
               </div>
               <a

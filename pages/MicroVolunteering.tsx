@@ -42,30 +42,30 @@ const MicroVolunteering: React.FC = () => {
 
             const realOpportunitiesExamples: VolunteerOpportunity[] = [
                 {
-                    id: 'real-mar-vol-1',
+                    id: 'real-wed-vol-1',
                     creator_id: 'v7',
-                    title: '🏛️ Guías Voluntarios Patrimonio (Orientación)',
-                    description: 'Buscamos voluntarios para ayudar en la sesión de orientación del C.C. Centre hoy martes de 10:00h a 12:00h.',
+                    title: '📖 Apoyo Club de Lectura (Cofé y Gestión)',
+                    description: 'Buscamos 2 voluntarios para ayudar a preparar el café y las pastas hoy miércoles a las 18:00h en el C.C. Part Alta para el club de lectura.',
                     neighborhood: 'GENERAL',
-                    contact_info: '622 88 77 66 (Elena V. - Turisme). Oficina de Turismo.',
+                    contact_info: '622 88 77 66 (Elena P. - Moderadora). Centro Cívico Part Alta.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-mar-vol-2',
+                    id: 'real-wed-vol-2',
                     creator_id: 'v8',
-                    title: '📦 Clasificación de Donaciones',
-                    description: "¿Tienes una hora libre hoy martes? Seguimos clasificando la ropa y libros en el Centro Cívico. ¡Toda ayuda cuenta!",
+                    title: '📦 Clasificación de Donaciones (Bonavista)',
+                    description: "¿Tienes una hora libre hoy miércoles? Estamos en la carpa de recogida de Bonavista clasificando material tras el mercado. ¡Vente!",
                     neighborhood: 'GENERAL',
-                    contact_info: '611 00 22 33 (Paco). Centro Cívico Centre.',
+                    contact_info: '611 00 22 33 (Paco). Carpa Roja Bonavista.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-mar-vol-3',
+                    id: 'real-wed-vol-3',
                     creator_id: 'v9',
-                    title: '🚶 Acompañamiento a Cita Médica',
-                    description: 'Necesito acompañante para ir al CAP Muralles hoy martes a las 11:30h. Tengo movilidad reducida.',
-                    neighborhood: 'PART ALTA',
-                    contact_info: '699 33 22 11 (Lucía). Vivo cerca de la Catedral.',
+                    title: '🚶 Acompañamiento Paseo Miércoles',
+                    description: 'Necesito acompañante para pasear un rato por el Paseo de las Palmeras hoy miércoles tarde (17:30h). ¡Ya no hay vallas!',
+                    neighborhood: 'CENTRE',
+                    contact_info: '699 33 22 11 (Andreu). Vivo cerca del Balcón.',
                     created_at: new Date().toISOString()
                 }
             ];

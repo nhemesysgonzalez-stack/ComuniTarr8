@@ -56,29 +56,29 @@ const Incidents: React.FC = () => {
             }
 
             if (data) {
-                // Mock Incidents for Tuesday 17 March
+                // Mock Incidents for Wednesday 18 March
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'mock-inc-mar-1',
+                        id: 'mock-inc-wed-1',
                         user_id: 'admin',
-                        title: '🚧 REPARACIÓN DE BALDOSA - DÍA 2',
-                        description: 'La brigada municipal continúa hoy martes con la reparación de baldosas en Passeig de les Palmeres. Finalización prevista para mañana miércoles.',
+                        title: '✅ REPARACIÓN BALDOSA - FINALIZADA',
+                        description: 'Reparación de baldosas en Passeig de les Palmeres completada esta mañana de miércoles. Se han retirado vallas y el paso es seguro.',
                         neighborhood: 'CENTRE',
-                        status: 'in_progress',
+                        status: 'resolved',
                         created_at: new Date().toISOString(),
                         contact_info: 'Brigada Municipal — 010',
                         profiles: { full_name: 'Mantenimiento TGN', avatar_url: '/logo.svg' },
                         image_url: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80'
                     },
                     {
-                        id: 'mock-inc-mar-2',
+                        id: 'mock-inc-wed-2',
                         user_id: 'v3',
-                        title: '✅ REPOSICIÓN CONTENEDOR VACIADO',
-                        description: 'Incidencia sobre acumulación de residuos en Part Alta resuelta esta mañana de martes. El servicio de limpieza ha pasado a las 08:30h.',
-                        neighborhood: 'PART ALTA',
-                        status: 'resolved',
+                        title: '🚧 REFUERZO LIMPIEZA BONAVISTA',
+                        description: 'Hoy miércoles brigada especial de limpieza tras el mercado para asegurar que las paradas de bus y calles queden libres de residuos.',
+                        neighborhood: 'BONAVISTA',
+                        status: 'in_progress',
                         created_at: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(),
-                        contact_info: 'Limpieza TGN — 010',
+                        contact_info: 'Limpieza TGN — 777 66 55 44',
                         profiles: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' },
                         image_url: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800'
                     }

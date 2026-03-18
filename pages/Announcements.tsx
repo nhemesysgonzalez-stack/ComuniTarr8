@@ -145,43 +145,43 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'mar-orientacion',
-                    title: "💼 HOY MARTES: ORIENTACIÓN LABORAL +45",
-                    content: "Hoy martes sesión grupal en el C.C. Centre a las 10:00h. Aprende a mejorar tu CV y LinkedIn con expertos de Tarragona Impulsa.",
+                    id: 'mie-lectura-comunitarr',
+                    title: "📚 HOY MIÉRCOLES: CLUB DE LECTURA MENSUAL",
+                    content: "Nos reunimos hoy miércoles a las 18:30h en el C.C. Part Alta para comentar 'La plaça del Diamant'. ¡Nos visita Elena P.!",
                     category: "EVENTO",
-                    author_name: "Tarragona Impulsa",
+                    author_name: "Elena P. (Moderadora)",
                     neighborhood: "GENERAL",
-                    itinerary: "• Hora: 10:00h\n• Lugar: Centro Cívico Centre\n• Temática: CV y Entrevistas\n• Tel: 977 25 99 99",
+                    itinerary: "• Hora: 18:30h\n• Lugar: Centro Cívico Part Alta\n• Temática: Debate literario\n• Info: Foro Cultura",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mar-clima',
-                    title: "🌤️ CLIMA: NUBES Y CLAROS (MARTES 17 MAR)",
-                    content: "Día variable con máximas de 16ºC. Se recomienda llevar paraguas por la tarde (20% prob. lluvia debil).",
+                    id: 'mie-clima-comunitarr',
+                    title: "⛅ CLIMA: INTERVALOS NUBOSOS (MIÉRCOLES 18 MAR)",
+                    content: "Día agradable hoy miércoles con máximas de 17ºC. Probabilidad de lluvia baja (10%). Ideal para el mercado.",
                     category: "AVISO",
                     author_name: "Protección Civil",
                     neighborhood: "GENERAL",
-                    itinerary: "• Mañana: 12ºC\n• Tarde: 16ºC\n• Prob. Lluvia: 20%\n• Recomendación: Chaqueta ligera",
+                    itinerary: "• Mañana: 13ºC\n• Tarde: 17ºC\n• Prob. Lluvia: 10%\n• Recomendación: Paseos por la playa",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'lun-lectura',
-                    title: "📚 CLUB DE LECTURA: MIÉRCOLES 18:30H",
-                    content: "Esta semana comentamos 'La plaça del Diamant' de Mercè Rodoreda. Inscripciones abiertas en la Biblioteca Pública. ¡Plazas limitadas!",
-                    category: "EXITO",
-                    author_name: "Biblioteca Pública TGN",
-                    neighborhood: "GENERAL",
-                    itinerary: "• Fecha: Miércoles 18 Mar, 18:30h\n• Lugar: Biblioteca Pública TGN\n• Inscripciones: Abiertas\n• Tel: 977 24 03 31",
-                    created_at: new Date().toISOString()
-                },
-                {
-                    id: 'lun-emt',
-                    title: "🚌 EMT: HORARIO LABORABLE NORMAL",
-                    content: "Hoy lunes el servicio EMT funciona con normalidad. Horario laboral completo restablecido en todas las líneas.",
-                    category: "URGENTE",
+                    id: 'mie-bonavista-bus',
+                    title: "🚌 TRANSPORTE: REFUERZO BUS BONAVISTA",
+                    content: "Hoy miércoles refuerzo en las líneas 3, 30 y 54 para facilitar el acceso al Mercado de Bonavista. Frecuencia aumentada.",
+                    category: "AVISO",
                     author_name: "EMT Tarragona",
                     neighborhood: "GENERAL",
-                    itinerary: "• Todas las líneas: Horario laborable\n• Consulta: emtanem.cat\n• Teléfono: 977 54 94 80",
+                    itinerary: "• Estado: Operativo (100%)\n• Línea 54: Cada 15 min\n• Consulta: emtanem.cat\n• Tel: 977 24 00 34",
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'jue-patrulla-comunitarr',
+                    title: "🛡️ MAÑANA JUEVES: PATRULLA VECINAL",
+                    content: "Mañana jueves ronda de seguridad por la zona centro. Quedamos a las 20:00h en la Font. ¡Participa!",
+                    category: "AYUDA",
+                    author_name: "Coordinación Vecinal",
+                    neighborhood: "CENTRE",
+                    itinerary: "• Fecha: Jueves 19 Mar\n• Hora: 20:00h\n• Lugar: Plaça de la Font\n• Contacto: 611 00 22 33",
                     created_at: new Date().toISOString()
                 },
                 {

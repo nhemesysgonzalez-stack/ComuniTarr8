@@ -175,30 +175,30 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'mar-orientacion-news',
-            title: "💼 HOY: Sesión de Orientación Laboral",
-            content: "Martes 17 Mar: Sesión grupal de orientación en el C.C. Centre a las 10:00h. Ideal para mayores de 45 que buscan reinserción.",
-            category: "EVENTO",
+            id: 'wed-book-club-news',
+            title: "📖 HOY: Club de Lectura Mensual",
+            content: "Miércoles 18 Mar: Nos reunimos a las 18:30h en el C.C. Part Alta para comentar la obra del mes. ¡Habrá café y pastas local!",
+            category: "CULTURA",
             neighborhood: "GENERAL",
-            itinerary: "• Hora: 10:00h\n• Lugar: Centro Cívico Centre\n• Temática: CV y entrevistas en la era digital",
+            itinerary: "• Hora: 18:30h\n• Lugar: Centro Cívico Part Alta\n• Moderador: Elena P.",
             created_at: new Date().toISOString()
           },
           {
-            id: 'tue-weather-march',
-            title: "🌤️ Martes: Nubes y Claros",
-            content: "Hoy el cielo estará algo más cubierto. Máximas de 16ºC y mínimas de 11ºC. ¡Perfecto para un paseo por la tarde!",
-            category: "CLIMA",
-            neighborhood: "GENERAL",
-            itinerary: "• Mañana: 12ºC\n• Tarde: 16ºC\n• Recomendación: Paraguas por si acaso (20% prob.)",
-            created_at: new Date().toISOString()
-          },
-          {
-            id: 'mar-emt-status',
-            title: "🚌 EMT: Servicio Fluido",
-            content: "Todas las líneas funcionan hoy martes según horario laboral. Sin incidencias ni desvíos reportados esta mañana.",
+            id: 'wed-bonavista-market',
+            title: "🛒 Miércoles: Mercado de Bonavista",
+            content: "Hoy funciona el mercado de Bonavista de 8:00h a 14:00h. Se recomienda usar las líneas 3, 30 y 54 para evitar problemas de aparcamiento.",
             category: "AVISO",
             neighborhood: "GENERAL",
-            itinerary: "• Estado: 100% operativo\n• Línea 54: Reforzada para el cole\n• Consulta: emtanem.cat",
+            itinerary: "• Estado: 100% operativo\n• Refuerzo: Línea 54 cada 15 min\n• Ubicación: Explanada de Bonavista",
+            created_at: new Date().toISOString()
+          },
+          {
+            id: 'wed-weather-status',
+            title: "⛅ Miércoles: Intervalos Nubosos",
+            content: "Hoy miércoles tendremos nubes y claros. Probabilidad de lluvia baja (10%). Máximas de 17ºC. Ideal para ir al mercado.",
+            category: "CLIMA",
+            neighborhood: "GENERAL",
+            itinerary: "• Mañana: 13ºC\n• Tarde: 17ºC\n• Humedad: 65%",
             created_at: new Date().toISOString()
           }
         ];
@@ -207,10 +207,10 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'poll-martes-barrio',
-          question: "¿Crees que el servicio de la EMT en tu barrio es suficiente para los martes laborables?",
-          options: ['Sí, es excelente', 'Suficiente pero mejorable', 'Faltan buses en hora punta', 'Debería haber más líneas'],
-          category: 'MOVILIDAD',
+          id: 'poll-wednesday-book',
+          question: "¿Vas a venir hoy al Club de Lectura en la Part Alta?",
+          options: ['Sí, ya tengo el libro listo', 'No he terminado el libro pero iré', 'No podré ir esta vez', 'No participo en el club'],
+          category: 'CULTURA',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()
         };

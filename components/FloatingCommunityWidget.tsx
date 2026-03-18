@@ -11,21 +11,21 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "🌤️ ¡Buenos días! Martes 17 Mar. Día variable (11ºC→16ºC). No olvidéis el paraguas. 👍", neighborhood: 'GENERAL' },
-    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '🌤️ Intervalos nubosos. Mínima 11ºC, máxima 16ºC. 20% probabilidad de lluvia débil por la tarde. ☂️', neighborhood: 'GENERAL' },
-    { id: 2, user: 'AAVV Sant Pere', avatar: '/logo.svg', text: '🚶 Recordad: Mañana miércoles Club de Lectura (18:30h). ¡Últimos días para apuntarse! 📚', neighborhood: 'PART ALTA' },
-    { id: 3, user: 'Tarragona Impulsa', avatar: '/logo.svg', text: '💼 HOY Martes: Sesión de Orientación Laboral a las 10:00h en el C.C. Centre. ¡Te esperamos!', neighborhood: 'GENERAL' },
-    { id: 4, user: 'EMT TGN', avatar: '/logo.svg', text: '🚌 Servicio FLUIDO en todas las líneas. Refuerzo en líneas escolares del Eixample y Levante.', neighborhood: 'GENERAL' },
-    { id: 5, user: 'Pilar S.', avatar: 'https://i.pravatar.cc/150?u=pilar', text: '🍏 ¡Qué bien huele el Mercado de Corsini hoy! Los martes siempre hay buenos frescos. 🧺', neighborhood: 'EIXAMPLE' },
-    { id: 6, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '☕ Café rápido y a por el martes. ¿Alguien se apunta a caminar por la tarde si no llueve? 🏃‍♀️', neighborhood: 'CENTRE' },
+    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "⛅ ¡Buenos días! Miércoles 18 Mar. Día agradable (13ºC→17ºC). ¡Aprovecha el día! 👍", neighborhood: 'GENERAL' },
+    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '⛅ Intervalos nubosos hoy miércoles. Mínima 13ºC, máxima 17ºC. 10% probabilidad de lluvia. 🌦️', neighborhood: 'GENERAL' },
+    { id: 2, user: 'AAVV Sant Pere', avatar: '/logo.svg', text: '📚 HOY MIÉRCOLES: Club de Lectura a las 18:30h en el C.C. Part Alta. ¡Os esperamos! ☕', neighborhood: 'PART ALTA' },
+    { id: 3, user: 'Bonavista Market', avatar: '/logo.svg', text: '🛒 Mercado de Bonavista operativo hoy miércoles. Refuerzo en buses L3, L30 y L54. 🚌', neighborhood: 'GENERAL' },
+    { id: 4, user: 'EMT TGN', avatar: '/logo.svg', text: '🚌 Refuerzo ACTIVO para el Mercado de Bonavista. Frecuencia cada 15 min en línea 54.', neighborhood: 'GENERAL' },
+    { id: 5, user: 'Pilar S.', avatar: 'https://i.pravatar.cc/150?u=pilar', text: '🍎 ¡Qué ambiente hoy miércoles en Bonavista! He encontrado unas alcachofas geniales. 🍏', neighborhood: 'BONAVISTA' },
+    { id: 6, user: 'Marc R.', avatar: 'https://i.pravatar.cc/150?u=marc', text: '🎬 ¿Alguien irá al cinefórum mañana jueves? He visto que echan un documental interesante. 🍿', neighborhood: 'CENTRE' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '🌤️ Martes 17 Mar, 11-16ºC' },
-    { user: 'Impulsa', text: '💼 Sesión 10:00h C.C. Centre' },
-    { user: 'EMT', text: '🚌 Servicio fluido y sin retrasos' },
-    { user: 'Meteo', text: '🌤️ Nubosidad variable hoy' },
-    { user: 'Corsini', text: '🍏 Mercado de frescos hoy martes' }
+    { user: 'Admin', text: '⛅ Miércoles 18 Mar, 13-17ºC' },
+    { user: 'Cultura', text: '📚 Club Lectura 18:30h @Part Alta' },
+    { user: 'EMT', text: '🚌 Refuerzo Mercado Bonavista' },
+    { user: 'Meteo', text: '⛅ Nubes y claros hoy' },
+    { user: 'Bonavista', text: '🛒 Marcado de miércoles activo' }
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

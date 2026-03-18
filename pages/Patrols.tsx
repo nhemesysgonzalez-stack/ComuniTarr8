@@ -49,28 +49,28 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'mock-pat-mar-1',
+          id: 'mock-pat-wed-1',
           creator_id: 'admin',
-          name: '🛒 Entorno Seguro: Mercado Corsini',
-          description: 'Ronda informativa hoy martes en el entorno del Mercado Central. Ayuda a ancianos con la compra y control de accesos.',
-          neighborhood: 'EIXAMPLE',
+          name: '🛒 Entorno Seguro: Bonavista Market',
+          description: 'Ronda informativa hoy miércoles en el entorno del Mercado de Bonavista. Refuerzo en paradas de autobús L54.',
+          neighborhood: 'BONAVISTA',
           contact_info: 'Coordinación Vecinal — 611 00 22 33',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-pat-mar-2',
+          id: 'mock-pat-wed-2',
           creator_id: 'user1',
           name: '🛡️ Seguridad Escolar: Caminos Seguros',
-          description: 'Continuamos hoy martes con las rondas matinales en los colegios El Miracle y Pax. Flujo fluido de alumnos.',
+          description: 'Continuamos hoy miércoles con las rondas matinales en los colegios El Miracle y Pax. Mañana jueves será festivo escolar.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-pat-mar-3',
+          id: 'mock-pat-wed-3',
           creator_id: 'user2',
-          name: '🚧 Seguimiento: Obras Palmeres',
-          description: 'Patrulla de convivencia hoy martes para asegurar el tránsito peatonal seguro mientras duran las reparaciones en el paseo.',
+          name: '🌑 Convocatoria: Patrulla Nocturna Jueves',
+          description: 'Reunión hoy miércoles a las 20:00h en el C.C. Centre para organizar la ronda de mañana noche por el Balcón y Rambla.',
           neighborhood: 'CENTRE',
           contact_info: '622 55 44 33 (Maria)',
           created_at: new Date().toISOString()

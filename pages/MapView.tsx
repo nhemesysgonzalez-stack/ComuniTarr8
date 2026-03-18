@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '45%', y: '35%', title: '💼 Orientación Laboral', desc: 'HOY Martes 10:00h: Sesión grupal de orientación en el C.C. Centre. CV y herramientas digitales.', status: 'Hoy 10:00h', color: 'bg-emerald-500', icon: 'work', glow: 'shadow-[0_0_50px_rgba(16,185,129,0.3)]' },
-    { id: 2, type: 'event', x: '52%', y: '42%', title: '🌤️ Balcón del Mediterráneo', desc: 'Día variable (11-16ºC). 20% prob. de lluvia racha. Lleva chaqueta ligera.', status: 'Variable', color: 'bg-sky-500', icon: 'cloud' },
-    { id: 3, type: 'event', x: '48%', y: '45%', title: '🚌 EMT Servicio Fluido', desc: 'Circulación normal hoy martes. Refuerzos escolares activos. Consulta emtanem.cat.', status: 'Servicio Fluido', color: 'bg-indigo-500', icon: 'directions_bus' },
-    { id: 4, type: 'incident', x: '55%', y: '50%', title: '✅ Alumbrado Rambla Nova', desc: 'Incidencia resuelta. Verificación completada por el equipo de mantenimiento esta mañana.', status: 'Resuelto', color: 'bg-green-500', icon: 'lightbulb' },
-    { id: 5, type: 'incident', x: '42%', y: '40%', title: '🚧 Reparación Baldosa Palmeres', desc: 'Brigada municipal continúa hoy martes en el Passeig de les Palmeres nº 15. Finalización prevista mañana.', status: 'En curso', color: 'bg-orange-500', icon: 'construction' },
+    { id: 1, type: 'event', x: '45%', y: '35%', title: '📖 Club de Lectura', desc: 'HOY Miércoles 18:30h: Reunión mensual en el C.C. Part Alta. Café y tertulia literaria.', status: 'Hoy 18:30h', color: 'bg-indigo-500', icon: 'auto_stories', glow: 'shadow-[0_0_50px_rgba(99,102,241,0.3)]' },
+    { id: 2, type: 'event', x: '52%', y: '42%', title: '⛅ Balcón del Mediterráneo', desc: 'Intervalos nubosos (13-17ºC). Temperatura agradable para pasear. Viento flojo de componente mar.', status: 'Variable', color: 'bg-sky-500', icon: 'cloud' },
+    { id: 3, type: 'event', x: '48%', y: '45%', title: '🚌 Bus Bonavista', desc: 'Línea 54 reforzada hoy miércoles por el Mercado de Bonavista. Frecuencia cada 15 min.', status: 'Refuerzo Activo', color: 'bg-orange-500', icon: 'directions_bus' },
+    { id: 4, type: 'incident', x: '55%', y: '50%', title: '✅ Baldosa Palmeres', desc: 'Reparación finalizada esta mañana de miércoles. Los obreros están retirando las vallas ahora mismo.', status: 'Finalizado', color: 'bg-green-500', icon: 'check_circle' },
+    { id: 5, type: 'incident', x: '42%', y: '40%', title: '🚧 Limpieza Bonavista', desc: 'Brigada de limpieza intensiva tras la jornada del mercado. Mantened limpias las paradas de bus.', status: 'En curso', color: 'bg-indigo-500', icon: 'cleaning_services' },
     { id: 6, type: 'event', x: '68%', y: '80%', title: '🐾 Trobada Border Collies XXL', desc: 'Gran evento canino en Tivissa el 3 y 4 de Mayo. Agility, pastoreo, concursos y food trucks.', status: '3 y 4 Mayo', color: 'bg-fuchsia-500', icon: 'pets', glow: 'shadow-[0_0_60px_rgba(217,70,239,0.5)]' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);

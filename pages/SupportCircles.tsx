@@ -42,6 +42,15 @@ const SupportCircles: React.FC = () => {
 
             const mockCircles: SupportCircle[] = [
                 {
+                    id: 'wed-lectura-emocional',
+                    initiator_id: 'vecinal',
+                    title: '🤝 Círculo: Club de Lectura y Bienestar',
+                    neighborhood: 'GENERAL',
+                    description: 'Espacio de encuentro hoy miércoles a las 18:30h. Leer no es solo cultura, es apoyo mutuo y salud mental.',
+                    contact_info: 'C.C. Part Alta (Plaça de Sant Joan)',
+                    created_at: new Date().toISOString()
+                },
+                {
                     id: 'real-siad-dones',
                     initiator_id: 'ayto',
                     title: '🤝 SIAD - Atención y Apoyo a Mujeres',
