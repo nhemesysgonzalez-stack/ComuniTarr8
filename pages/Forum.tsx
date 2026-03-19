@@ -62,6 +62,7 @@ const Forum: React.FC = () => {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [isShaking, setIsShaking] = useState(false);
+
   const [isTyping, setIsTyping] = useState<string | null>(null);
   const [showJobOffers, setShowJobOffers] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -74,8 +75,8 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '☀️ ¡Buenos días! Lunes 16 Mar. Mañana fresca (10ºC→17ºC). ¡Buena semana!' },
-    { user: 'Meteo TGN', text: '🌤️ Lunes soleado, 10-17ºC. Viento flojo de poniente.' },
+    { user: 'Admin ComuniTarr', text: '☀️ ¡Buenos días! Jueves 19 Mar. Mañana fresca (10ºC→17ºC). ¡Feliz San José!' },
+    { user: 'Meteo TGN', text: '🌤️ Jueves soleado, 10-17ºC. Viento flojo de poniente.' },
     { user: 'Tarragona Impulsa', text: '💼 HOY: Taller Empleabilidad Digital 09:30h en Tabacalera.' },
     { user: 'EMT TGN', text: '🚌 Horario laborable normal en todas las líneas EMT.' },
     { user: 'AAVV Part Alta', text: '📋 Acta de la asamblea disponible en Anuncios. Zona verde aprobada. ✅' }
@@ -93,7 +94,18 @@ const Forum: React.FC = () => {
     { id: 'v7', full_name: 'Maria G.', avatar_url: 'https://i.pravatar.cc/150?u=maria', status: 'busy' },
     { id: 'v8', full_name: 'Sandra L.', avatar_url: 'https://i.pravatar.cc/150?u=sandra', status: 'online' },
     { id: 'v9', full_name: 'Elena V.', avatar_url: 'https://i.pravatar.cc/150?u=elena', status: 'online' },
-    { id: 'v10', full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria', status: 'busy' }
+    { id: 'v10', full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria', status: 'busy' },
+    { id: 'v11', full_name: 'Maria P.', avatar_url: 'https://i.pravatar.cc/150?u=mariap', status: 'online' },
+    { id: 'v12', full_name: 'Admin', avatar_url: '/logo.svg', status: 'online' },
+    { id: 'v13', full_name: 'Carme L.', avatar_url: 'https://i.pravatar.cc/150?u=carmel', status: 'online' },
+    { id: 'v14', full_name: 'Andreu T.', avatar_url: 'https://i.pravatar.cc/150?u=andreut', status: 'online' },
+    { id: 'v15', full_name: 'Paco V.', avatar_url: 'https://i.pravatar.cc/150?u=pacov', status: 'online' },
+    { id: 'v16', full_name: 'Servicios TGN', avatar_url: '/logo.svg', status: 'online' },
+    { id: 'v17', full_name: 'Restaurant Sol', avatar_url: 'https://i.pravatar.cc/150?u=restaurantsol', status: 'online' },
+    { id: 'v18', full_name: 'Luis G.', avatar_url: 'https://i.pravatar.cc/150?u=luisg', status: 'online' },
+    { id: 'v19', full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper', status: 'online' },
+    { id: 'v20', full_name: 'Santi G.', avatar_url: 'https://i.pravatar.cc/150?u=santig', status: 'online' },
+    { id: 'v21', full_name: 'Marta L.', avatar_url: 'https://i.pravatar.cc/150?u=martal', status: 'online' },
   ];
 
   const handleReply = (name: string) => {
@@ -114,20 +126,16 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Mireia R.', text: '📖 ¡Buenos días! Miércoles de Club de Lectura. ¿Alguien tiene ya el libro terminado?' },
-        { who: 'Joan B.', text: '@Mireia ¡Sí! Me ha encantado "La plaça del Diamant". Nos vemos a las 18:30h en la Part Alta.' },
-        { who: 'Carme S.', text: '@Mireia Yo voy por la mitad, pero iré igual a escuchar vuestras teorías. 😂' },
-        { who: 'Pau T.', text: 'Intervalos nubosos hoy. Ideal para ir al Mercado de Bonavista sin mucho calor. 🛒' },
-        { who: 'Maria G.', text: '@Pau ¡Cierto! Yo voy en el bus L54 ahora, va reforzado y se va muy cómodo.' },
+        { who: 'Maria P.', text: '¡Felicidades a todos los Pepes y Josefinas! 👔 🎉' },
+        { who: 'Joan B.', text: 'Qué día más bonito hoy jueves para llevar a los niños a la playa. ☀️' },
+        { who: 'Admin', text: 'Recordad que hoy es festivo en muchos locales, consultad horarios. 🚌' }
       ],
       [
-        { who: 'Luis M.', text: '🛒 ¿Ambiente en Bonavista hoy? Busco unas paradas de ropa que suelen ponerse los miércoles.' },
-        { who: 'Carme S.', text: '@Luis Está a tope como siempre. Las paradas de la entrada tienen buenas ofertas hoy. 🧺' },
-        { who: 'Luis M.', text: '@Carme ¡Gracias! Me acerco en un rato.' },
-        { who: 'Joan B.', text: 'Recordad que mañana jueves es la patrulla vecinal nocturna. No faltéis a la reunión previa.' },
+        { who: 'Pau T.', text: 'Cielo despejado hoy jueves. ¡Espectacular para pasear por la Rambla! 🕶️' },
+        { who: 'Maria G.', text: '@Pau ¡Cierto! Yo estoy por el Balcón y se está de lujo al sol.' },
       ],
       [
-        { who: 'Joe R.', text: '✅ ¡Confirmado! La baldosa de Palmeres ya está arreglada. Han quitado las vallas hoy miércoles.' },
+        { who: 'Joe R.', text: '✅ ¡Confirmado! La baldosa de Palmeres ya está arreglada. Han quitado las vallas hoy jueves.' },
         { who: 'Pau T.', text: '@Joe ¡Por fin! Ha quedado impecable. La brigada ha hecho buen trabajo.' },
         { who: 'Sandra L.', text: '@Joe @Pau Sí, lo he visto al pasar con el perro. Da gusto ver el barrio cuidado.' },
         { who: 'Joe R.', text: 'Sigamos reportando en la app, se nota que nos escuchan. 🙌' },
@@ -135,25 +143,30 @@ const Forum: React.FC = () => {
     ],
     'APOYO': [
       [
-        { who: 'Sandra L.', text: '¿Alguien se apunta a un café literario improvisado antes del Club de Lectura?' },
-        { who: 'Elena V.', text: '@Sandra ¡Me apunto! A las 17:00h en la plaza, así comentamos el final del libro.' },
-        { who: 'Joan B.', text: 'Recordad que el Club es HOY miércoles 18:30h en el C.C. Part Alta. 📚' },
-        { who: 'Nuria P.', text: '@Sandra Me paso también. Tengo una duda con el personaje de Quimet.' },
-        { who: 'Sandra L.', text: '@Nuria ¡Perfecto! Cuantos más seamos, mejor debate. 🫂' },
+        { who: 'Carme L.', text: '¿Alguien que pase por C. Cavallers y pueda subirle el pan a Doña Amalia hoy? 🥖' },
+        { who: 'Andreu T.', text: 'Yo paso en 10 min, me encargo yo Carmen. 👍' },
+        { who: 'Paco V.', text: '¿Cuántos somos para la patrulla nocturna de hoy jueves a las 20h? 🛡️' }
+      ],
+      [
+        { who: 'Sandra L.', text: '¿Alguien se apunta a un café post-festivo mañana viernes?' },
+        { who: 'Elena V.', text: '@Sandra ¡Me apunto! A las 17:00h en la plaza, así comentamos las fiestas de hoy.' },
+        { who: 'Joan B.', text: 'Recordad que la patrulla es HOY jueves 20:00h en el C.C. Centre. 🔦' },
       ],
     ],
     'EMPLEO': [
       [
-        { who: 'Luis M.', text: '💼 ¿Habéis visto las ofertas de hoy miércoles? Buscan peón en TGN y personal de limpieza.' },
+        { who: 'Servicios TGN', text: 'Publicadas nuevas ofertas para mantenimiento de parques. Jueves 19. 🌳' },
+        { who: 'Restaurant Sol', text: 'Buscamos extra de cocina para este fin de semana. 🍳 600 00 11 22' },
+        { who: 'Luis G.', text: 'He visto que en el Mercadillo del sábado buscan montadores. 🧺' }
+      ],
+      [
+        { who: 'Luis M.', text: '💼 ¿Habéis visto las ofertas de hoy jueves? Buscan peón en TGN y personal de limpieza.' },
         { who: 'Pau T.', text: '@Luis Sí, acabo de ver la del peón. Piden incorporación inmediata. ¡Voy a llamar!' },
-        { who: 'Joan B.', text: 'Recordad que los miércoles en Bonavista siempre se mueve mucha mano de obra temporal. Suerte.' },
-        { who: 'Luis M.', text: '@Pau ¡Dale! Yo llamaré por la de limpieza para un familiar. Gracias @Joan. 🙏' },
-        { who: 'Carme S.', text: '@Luis ¡Suerte! Si necesitas ayuda con la llamada o el CV, cuenta conmigo. 💪' },
+        { who: 'Luis M.', text: '@Pau ¡Dale! Yo llamaré por la de limpieza para un familiar. Suerte. 🙏' },
       ],
     ],
     'ENCUENTROS': [
       [
-        { who: 'Joe R.', text: '¿Algún plan tranquilo para este miércoles tarde antes del Club de Lectura?' },
         { who: 'Elena V.', text: '@Joe ¡Yo iré al club, pero podemos tomar un café rápido antes!' },
         { who: 'Joe R.', text: '@Elena ¡Perfecto! Nos vemos en el C.C. Part Alta a las 18:00h.' },
         { who: 'Elena V.', text: '@Joe ¡Hecho! Allí nos vemos. 😊' },
@@ -584,7 +597,7 @@ const Forum: React.FC = () => {
           <div>
             <h4 className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 ml-2">Tendencias Hoy</h4>
             <div className="flex flex-wrap gap-2 px-2">
-              {['#LecturaHOY', '#MarketBonavista', '#DimecresTGN', '#CulturaPartAlta', '#TGNExpress'].map(tag => (
+              {['#SanJose', '#DiaDelPadre', '#PatrullaNocturna', '#RamblaSoleada', '#TGNFestivo'].map(tag => (
                 <button key={tag} className="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full text-[9px] font-black text-slate-500 hover:text-blue-500 hover:bg-blue-50 transition-all uppercase tracking-tighter">
                   {tag}
                 </button>
@@ -594,7 +607,7 @@ const Forum: React.FC = () => {
 
           {/* Jobs Mini-Card */}
           <div className="p-5 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800/50 dark:to-slate-900/50 rounded-[28px] border border-slate-200/50 dark:border-white/5">
-            <h2 className="text-[10px] font-black uppercase tracking-widest text-[#3b82f6] mb-4">Empleo Miércoles 18 Mar</h2>
+            <h2 className="text-[10px] font-black uppercase tracking-widest text-[#3b82f6] mb-4">Empleo Jueves 19 Mar</h2>
             <div className="space-y-4">
               <div className="text-[11px] font-bold text-slate-600 dark:text-slate-300 border-l-2 border-emerald-500 pl-3">
                 <p>🏗️ Peón de Obra (TGN)</p>

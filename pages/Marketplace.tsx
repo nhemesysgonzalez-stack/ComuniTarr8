@@ -57,10 +57,22 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'mock-mar-w1',
+          id: 'mock-mar-jue-sanjose',
+          user_id: 'v12',
+          title: '🥮 Crema de San José Casera (19 Mar)',
+          description: '¡Felicidades papás! Hecho esta mañana para el postre del día del padre. ¡Riquísima! Reserva la tuya. Entrego hoy jueves festivo.',
+          price: '8',
+          category: 'hogar',
+          neighborhood: 'GENERAL',
+          contact_info: '600 55 44 33 (Pilar)',
+          image_url: 'https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=800&q=80',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'mock-mar-jue-1',
           user_id: 'v1',
           title: '🧣 Bufandas Artesanas — Hechas a mano',
-          description: 'Bufandas de lana de calidad hechas a mano. Varios colores. Entregas en el centro hoy miércoles y toda la semana.',
+          description: 'Bufandas de lana de calidad hechas a mano. Varios colores. Entregas en el centro hoy jueves festivo o toda la semana.',
           price: '12',
           category: 'moda',
           neighborhood: 'GENERAL',
@@ -69,10 +81,10 @@ const Marketplace: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-mar-w2',
+          id: 'mock-mar-jue-2',
           user_id: 'v2',
           title: '📚 Lote Libros Eduardo Mendoza',
-          description: 'Vendo el lote de novelas en perfecto estado. Entrego hoy miércoles por el centro o Part Alta.',
+          description: 'Vendo el lote de novelas en perfecto estado. Entrego hoy jueves por el centro o Part Alta.',
           price: '15',
           category: 'hogar',
           neighborhood: 'CENTRE',
@@ -81,27 +93,15 @@ const Marketplace: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-mar-w3',
+          id: 'mock-mar-jue-3',
           user_id: 'v4',
           title: '🪴 Plantas de Interior — Esquejes enraizados',
-          description: 'Esquejes de Potos y Cintas en perfectas condiciones. Entrego hoy miércoles por la tarde o a convenir.',
+          description: 'Esquejes de Potos y Cintas en perfectas condiciones. Entrego hoy jueves por la tarde o a convenir.',
           price: '5',
           category: 'hogar',
           neighborhood: 'GENERAL',
           contact_info: '655 44 33 22 (Rosa)',
           image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445?auto=format&fit=crop&w=800&q=80',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'mock-mar-w4',
-          user_id: 'v5',
-          title: '🎮 Nintendo Switch + Mario Kart',
-          description: 'Poco uso. Incluye todo lo original. Entrego hoy miércoles por el centro o zona Francolí.',
-          price: '180',
-          category: 'tech',
-          neighborhood: 'GENERAL',
-          contact_info: '699 88 77 66 (Dani)',
-          image_url: 'https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         }
       ];

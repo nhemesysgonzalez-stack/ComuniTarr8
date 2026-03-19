@@ -14,18 +14,17 @@ const mockMessages: Message[] = [
     { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "⛅ ¡Buenos días! Miércoles 18 Mar. Día agradable (13ºC→17ºC). ¡Aprovecha el día! 👍", neighborhood: 'GENERAL' },
     { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '⛅ Intervalos nubosos hoy miércoles. Mínima 13ºC, máxima 17ºC. 10% probabilidad de lluvia. 🌦️', neighborhood: 'GENERAL' },
     { id: 2, user: 'AAVV Sant Pere', avatar: '/logo.svg', text: '📚 HOY MIÉRCOLES: Club de Lectura a las 18:30h en el C.C. Part Alta. ¡Os esperamos! ☕', neighborhood: 'PART ALTA' },
-    { id: 3, user: 'Bonavista Market', avatar: '/logo.svg', text: '🛒 Mercado de Bonavista operativo hoy miércoles. Refuerzo en buses L3, L30 y L54. 🚌', neighborhood: 'GENERAL' },
-    { id: 4, user: 'EMT TGN', avatar: '/logo.svg', text: '🚌 Refuerzo ACTIVO para el Mercado de Bonavista. Frecuencia cada 15 min en línea 54.', neighborhood: 'GENERAL' },
-    { id: 5, user: 'Pilar S.', avatar: 'https://i.pravatar.cc/150?u=pilar', text: '🍎 ¡Qué ambiente hoy miércoles en Bonavista! He encontrado unas alcachofas geniales. 🍏', neighborhood: 'BONAVISTA' },
-    { id: 6, user: 'Marc R.', avatar: 'https://i.pravatar.cc/150?u=marc', text: '🎬 ¿Alguien irá al cinefórum mañana jueves? He visto que echan un documental interesante. 🍿', neighborhood: 'CENTRE' },
+    { id: 1, user: 'Santi G.', avatar: 'https://i.pravatar.cc/150?u=santi', text: '¡Felicidades a todos los Pepes del barrio! 👔', neighborhood: 'GENERAL' },
+    { id: 2, user: 'Carme R.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'Día espectacular para pasear por la playa hoy jueves ☀️', neighborhood: 'PLATJA' },
+    { id: 3, user: 'Paco V.', avatar: 'https://i.pravatar.cc/150?u=paco', text: '¿Quién se apunta a la patrulla nocturna a las 20h? 🔦', neighborhood: 'CENTRE' },
+    { id: 4, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🎉 ¡Feliz Día de San José! Disfrutad del festivo y el sol. ☀️', neighborhood: 'GENERAL' },
 ];
 
 const tickerMessages = [
-    { user: 'Admin', text: '⛅ Miércoles 18 Mar, 13-17ºC' },
-    { user: 'Cultura', text: '📚 Club Lectura 18:30h @Part Alta' },
-    { user: 'EMT', text: '🚌 Refuerzo Mercado Bonavista' },
-    { user: 'Meteo', text: '⛅ Nubes y claros hoy' },
-    { user: 'Bonavista', text: '🛒 Marcado de miércoles activo' }
+    "👔 ¡Feliz Día del Padre y San José! Celebraciones en toda la ciudad.",
+    "☀️ Jueves despejado y soleado. Máximas de 19ºC.",
+    "🛡️ Patrulla Vecinal Nocturna: Hoy Jueves a las 20:00h en el C.C. Centre.",
+    "🚌 EMT: Horarios de festivo hoy jueves por San José."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

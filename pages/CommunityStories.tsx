@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'ms1', user_name: 'Ana T.', content: '🌤️ ¡Buenos días Tarragona! Martes de nubes y claros. ¿Alguien se apunta a un café a media mañana? ☕✨ #Martes #Actitud #Tarragona', image_url: 'https://images.unsplash.com/photo-1511018556340-d16986a1c194', likes: 142, created_at: new Date().toISOString() },
-            { id: 'ms2', user_name: 'Joan R.', content: 'Mañana de trote por el Serrallo. El aire de mar hoy martes está increíble. 🌊🏃‍♂️ #Running #Maritime #Tarragona', image_url: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a', likes: 115, created_at: new Date().toISOString() },
-            { id: "ms3", user_name: "Marc G.", content: "Aquí en el C.C. Centre para la sesión de orientación. ¡Mucha gente hoy martes interesada! 💼📈 #OrientacionLaboral #TGNActiva #Martes", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 167, created_at: new Date().toISOString() },
-            { id: 'ms4', user_name: 'Pilar S.', content: 'Día de mercado en Corsini. ¡Huele de maravilla hoy martes con el pescado fresco! 🍏🧺 #MercatCentral #Tarragona #LocalMarket', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 94, created_at: new Date().toISOString() }
+            { id: 'jue-s1', user_name: 'Ana T.', content: '👔 ¡Felicidades a todos los papás del barrio! Qué alegría ver a las familias paseando por la Rambla hoy jueves festivo. ☀️✨ #SanJose #DiaDelPadre #Tarragona', image_url: 'https://images.unsplash.com/photo-1511018556340-d16986a1c194', likes: 245, created_at: new Date().toISOString() },
+            { id: 'jue-s2', user_name: 'Joan R.', content: 'Día espectacular hoy jueves para el vermut de San José. ¡El sol calienta de lo lindo! 🌊🍹 #SanJose #Maritime #Tarragona #Sol', image_url: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a', likes: 189, created_at: new Date().toISOString() },
+            { id: "jue-s3", user_name: "Marc G.", content: "He visto un ambiente genial por la Catedral hoy festivo. ¡Tarragona está preciosa hoy 19 de marzo! 💼📈 #TGNFestiva #JuevesSanto #SanJose", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 167, created_at: new Date().toISOString() },
+            { id: 'jue-s4', user_name: 'Pilar S.', content: 'Recordad que hoy jueves es festivo y algunos autobuses van con horario reducido. ¡Disfrutad del día! 🚌🌸 #Tarragona #Aviso #Jueves', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 112, created_at: new Date().toISOString() }
         ];
 
 

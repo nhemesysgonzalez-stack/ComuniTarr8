@@ -175,30 +175,30 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'wed-book-club-news',
-            title: "📖 HOY: Club de Lectura Mensual",
-            content: "Miércoles 18 Mar: Nos reunimos a las 18:30h en el C.C. Part Alta para comentar la obra del mes. ¡Habrá café y pastas local!",
-            category: "CULTURA",
-            neighborhood: "GENERAL",
-            itinerary: "• Hora: 18:30h\n• Lugar: Centro Cívico Part Alta\n• Moderador: Elena P.",
+            id: 'jue-san-jose-news',
+            title: '👔 ¡Felicidades a todos los Pepes y Papás!',
+            content: 'Hoy Jueves 19 de Marzo, Día de San José. Muchas familias lo celebran en las playas y parques de Tarragona. ¡Disfrutad del día!',
+            neighborhood: 'GENERAL',
+            category: 'CULTURA',
+            image_url: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80',
             created_at: new Date().toISOString()
           },
           {
-            id: 'wed-bonavista-market',
-            title: "🛒 Miércoles: Mercado de Bonavista",
-            content: "Hoy funciona el mercado de Bonavista de 8:00h a 14:00h. Se recomienda usar las líneas 3, 30 y 54 para evitar problemas de aparcamiento.",
-            category: "AVISO",
-            neighborhood: "GENERAL",
-            itinerary: "• Estado: 100% operativo\n• Refuerzo: Línea 54 cada 15 min\n• Ubicación: Explanada de Bonavista",
+            id: 'jue-weather-news',
+            title: '☀️ Sol radiante para el Jueves',
+            content: 'Tiempo primaveral hoy jueves. Despejado con máximas de 19ºC. Ideal para pasear por la Rambla. 🕶️',
+            neighborhood: 'GENERAL',
+            category: 'TIEMPO',
+            image_url: 'https://images.unsplash.com/photo-1444312645910-ffa973656eba?auto=format&fit=crop&w=800&q=80',
             created_at: new Date().toISOString()
           },
           {
-            id: 'wed-weather-status',
-            title: "⛅ Miércoles: Intervalos Nubosos",
-            content: "Hoy miércoles tendremos nubes y claros. Probabilidad de lluvia baja (10%). Máximas de 17ºC. Ideal para ir al mercado.",
-            category: "CLIMA",
-            neighborhood: "GENERAL",
-            itinerary: "• Mañana: 13ºC\n• Tarde: 17ºC\n• Humedad: 65%",
+            id: 'jue-patrulla-news',
+            title: '🛡️ Patrulla Vecinal Nocturna Hoy',
+            content: 'Recordatorio: Los voluntarios del Centro se reúnen hoy jueves a las 20:00h para la ronda de seguridad preventiva. 🔦',
+            neighborhood: 'CENTRE',
+            category: 'VECINAL',
+            image_url: 'https://images.unsplash.com/photo-1541888941257-234b6e51f807?auto=format&fit=crop&w=800&q=80',
             created_at: new Date().toISOString()
           }
         ];
@@ -207,9 +207,9 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'poll-wednesday-book',
-          question: "¿Vas a venir hoy al Club de Lectura en la Part Alta?",
-          options: ['Sí, ya tengo el libro listo', 'No he terminado el libro pero iré', 'No podré ir esta vez', 'No participo en el club'],
+          id: 'jue-poll-1',
+          question: "¿Cómo vas a celebrar hoy el Día del Padre (San José)?",
+          options: ['Comida familiar en casa', 'Restaurante en la Part Alta', 'Paseo por la playa/Rambla', 'Regalo especial'],
           category: 'CULTURA',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()

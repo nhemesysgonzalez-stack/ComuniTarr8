@@ -145,53 +145,33 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'mie-lectura-comunitarr',
-                    title: "📚 HOY MIÉRCOLES: CLUB DE LECTURA MENSUAL",
-                    content: "Nos reunimos hoy miércoles a las 18:30h en el C.C. Part Alta para comentar 'La plaça del Diamant'. ¡Nos visita Elena P.!",
-                    category: "EVENTO",
-                    author_name: "Elena P. (Moderadora)",
+                    id: 'jue-san-jose',
+                    title: "👔 ¡FELIZ DÍA DEL PADRE Y SAN JOSÉ!",
+                    content: "Hoy jueves 19 de marzo celebramos el Día del Padre. ¡Felicidades a todos los Pepes y papás del barrio! Ambiente festivo en toda Tarragona.",
+                    category: "CULTURA",
+                    author_name: "Admin ComuniTarr",
                     neighborhood: "GENERAL",
-                    itinerary: "• Hora: 18:30h\n• Lugar: Centro Cívico Part Alta\n• Temática: Debate literario\n• Info: Foro Cultura",
+                    itinerary: "• Día: Jueves 19 Mar\n• Ambiente: Festivo\n• Recomendación: Pasear en familia\n• Info: Ayuntamiento TGN",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mie-clima-comunitarr',
-                    title: "⛅ CLIMA: INTERVALOS NUBOSOS (MIÉRCOLES 18 MAR)",
-                    content: "Día agradable hoy miércoles con máximas de 17ºC. Probabilidad de lluvia baja (10%). Ideal para el mercado.",
-                    category: "AVISO",
+                    id: 'jue-weather',
+                    title: "☀️ CLIMA: SOL RADIANTE (JUEVES 19 MAR)",
+                    content: "Tendremos un día totalmente despejado y soleado hoy jueves. Máximas de 19ºC. Viento muy flojo.",
+                    category: "TIEMPO",
                     author_name: "Protección Civil",
                     neighborhood: "GENERAL",
-                    itinerary: "• Mañana: 13ºC\n• Tarde: 17ºC\n• Prob. Lluvia: 10%\n• Recomendación: Paseos por la playa",
+                    itinerary: "• Mañana: 14ºC\n• Tarde: 19ºC\n• Prob. Lluvia: 0%\n• Recomendación: Disfrutar del sol",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mie-bonavista-bus',
-                    title: "🚌 TRANSPORTE: REFUERZO BUS BONAVISTA",
-                    content: "Hoy miércoles refuerzo en las líneas 3, 30 y 54 para facilitar el acceso al Mercado de Bonavista. Frecuencia aumentada.",
+                    id: 'jue-patrulla',
+                    title: "🛡️ HOY JUEVES: PATRULLA VECINAL NOCTURNA",
+                    content: "Recordamos la cita de hoy jueves a las 20:00h en el C.C. Centre para la ronda preventiva por el casco antiguo.",
                     category: "AVISO",
-                    author_name: "EMT Tarragona",
-                    neighborhood: "GENERAL",
-                    itinerary: "• Estado: Operativo (100%)\n• Línea 54: Cada 15 min\n• Consulta: emtanem.cat\n• Tel: 977 24 00 34",
-                    created_at: new Date().toISOString()
-                },
-                {
-                    id: 'jue-patrulla-comunitarr',
-                    title: "🛡️ MAÑANA JUEVES: PATRULLA VECINAL",
-                    content: "Mañana jueves ronda de seguridad por la zona centro. Quedamos a las 20:00h en la Font. ¡Participa!",
-                    category: "AYUDA",
                     author_name: "Coordinación Vecinal",
                     neighborhood: "CENTRE",
-                    itinerary: "• Fecha: Jueves 19 Mar\n• Hora: 20:00h\n• Lugar: Plaça de la Font\n• Contacto: 611 00 22 33",
-                    created_at: new Date().toISOString()
-                },
-                {
-                    id: 'lun-baldosa',
-                    title: "🚧 INCIDENCIA: BALDOSA SUELTA PALMERES",
-                    content: "Pendiente de revisión municipal hoy lunes. Baldosas levantadas a la altura del nº 15 del Passeig de les Palmeres. Precaución para peatones.",
-                    category: "URGENTE",
-                    author_name: "Mantenimiento TGN",
-                    neighborhood: "CENTRE",
-                    itinerary: "• Ubicación: Passeig de les Palmeres, nº 15\n• Estado: Pendiente reparación\n• Contacto: 010",
+                    itinerary: "• Fecha: Hoy Jueves 19\n• Hora: 20:00h\n• Lugar: C.C. Centre\n• Contacto: 611 00 22 33",
                     created_at: new Date().toISOString()
                 }
             ];

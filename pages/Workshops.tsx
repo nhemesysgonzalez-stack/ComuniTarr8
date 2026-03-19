@@ -48,27 +48,27 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'ws-17mar-1',
-                    title: '💼 Sesión: Herramientas Digitales Búsqueda Empleo',
-                    instructor: 'Tarragona Impulsa',
-                    date: 'Martes 17, 10:00',
-                    description: 'Aprende a usar portales de empleo y LinkedIn de forma eficiente. Sesión práctica en el C.C. Centre.',
-                    image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800',
-                    spots: 5,
+                    id: 'ws-19mar-sanjose',
+                    title: '🥘 Taller Especial: Crema de San José',
+                    instructor: 'Pilar S.',
+                    date: 'Hoy Jueves 19, 11:30 (Online)',
+                    description: 'Aprende a cocinar el postre típico de hoy paso a paso. Sesión por Zoom para disfrutar en familia. ¡Felicidades papás!',
+                    image: 'https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&q=80&w=800',
+                    spots: 50,
                     neighborhood: 'GENERAL',
-                    contact_info: 'C.C. Centre - 977 25 99 99',
+                    contact_info: 'Zoom ID: 123-456-789 (Enviado por chat)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'ws-17mar-2',
-                    title: '📱 Taller: WhatsApp para Mayores',
-                    instructor: 'Rosa M.',
-                    date: 'Martes 17, 17:30',
-                    description: 'Pierde el miedo al móvil. Aprende a hacer videollamadas, enviar fotos y usar grupos de forma segura.',
-                    image: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=800',
-                    spots: 8,
+                    id: 'ws-20mar-empleo',
+                    title: '💼 Búsqueda de Empleo con IA',
+                    instructor: 'Tarragona Impulsa',
+                    date: 'Mañana Viernes 20, 10:00',
+                    description: 'Descubre cómo usar ChatGPT y otras IAs para mejorar tu CV y preparar entrevistas. Sesión en C.C. Centre.',
+                    image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445?auto=format&fit=crop&q=80&w=800',
+                    spots: 10,
                     neighborhood: 'GENERAL',
-                    contact_info: 'C.C. Part Alta - 977 23 45 67',
+                    contact_info: 'C.C. Centre - 977 25 99 99',
                     created_at: new Date().toISOString()
                 }
             ];

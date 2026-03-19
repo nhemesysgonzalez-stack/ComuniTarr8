@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 1, type: 'event', x: '45%', y: '35%', title: '📖 Club de Lectura', desc: 'HOY Miércoles 18:30h: Reunión mensual en el C.C. Part Alta. Café y tertulia literaria.', status: 'Hoy 18:30h', color: 'bg-indigo-500', icon: 'auto_stories', glow: 'shadow-[0_0_50px_rgba(99,102,241,0.3)]' },
-    { id: 2, type: 'event', x: '52%', y: '42%', title: '⛅ Balcón del Mediterráneo', desc: 'Intervalos nubosos (13-17ºC). Temperatura agradable para pasear. Viento flojo de componente mar.', status: 'Variable', color: 'bg-sky-500', icon: 'cloud' },
-    { id: 3, type: 'event', x: '48%', y: '45%', title: '🚌 Bus Bonavista', desc: 'Línea 54 reforzada hoy miércoles por el Mercado de Bonavista. Frecuencia cada 15 min.', status: 'Refuerzo Activo', color: 'bg-orange-500', icon: 'directions_bus' },
-    { id: 4, type: 'incident', x: '55%', y: '50%', title: '✅ Baldosa Palmeres', desc: 'Reparación finalizada esta mañana de miércoles. Los obreros están retirando las vallas ahora mismo.', status: 'Finalizado', color: 'bg-green-500', icon: 'check_circle' },
-    { id: 5, type: 'incident', x: '42%', y: '40%', title: '🚧 Limpieza Bonavista', desc: 'Brigada de limpieza intensiva tras la jornada del mercado. Mantened limpias las paradas de bus.', status: 'En curso', color: 'bg-indigo-500', icon: 'cleaning_services' },
+    { id: 1, type: 'event', x: '45%', y: '35%', title: '👔 Día de San José', desc: 'Ambiente festivo en el centro. ¡Felicidades papás!', status: 'Jueves 19 Marzo', color: 'bg-indigo-500', icon: 'celebration', glow: 'shadow-[0_0_50px_rgba(99,102,241,0.3)]' },
+    { id: 2, type: 'transport', x: '52%', y: '42%', title: '🚌 EMT: Servicio Festivo', desc: 'Horarios de festivo en líneas principales por San José.', status: 'Servicio Normal', color: 'bg-orange-500', icon: 'directions_bus' },
+    { id: 3, type: 'weather', x: '48%', y: '45%', title: '☀️ Jueves Soleado', desc: 'Cielo despejado. 19ºC. ¡Día perfecto para pasear!', status: 'Despejado 19ºC', color: 'bg-sky-500', icon: 'wb_sunny' },
+    { id: 4, type: 'incident', x: '55%', y: '50%', title: '🔦 Patrulla Nocturna', desc: 'Punto de encuentro 20:00h para la ronda de seguridad.', status: '20:00h', color: 'bg-red-500', icon: 'visibility' },
+    { id: 5, type: 'incident', x: '42%', y: '40%', title: '✅ Palmeres Arreglado', desc: 'Baldosa reparada 100%. Paso libre.', status: 'Finalizado', color: 'bg-green-500', icon: 'check_circle' },
     { id: 6, type: 'event', x: '68%', y: '80%', title: '🐾 Trobada Border Collies XXL', desc: 'Gran evento canino en Tivissa el 3 y 4 de Mayo. Agility, pastoreo, concursos y food trucks.', status: '3 y 4 Mayo', color: 'bg-fuchsia-500', icon: 'pets', glow: 'shadow-[0_0_60px_rgba(217,70,239,0.5)]' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
