@@ -49,28 +49,28 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'mock-pat-wed-1',
+          id: 'sab-21-pat-1',
           creator_id: 'admin',
-          name: '🛒 Entorno Seguro: Bonavista Market',
-          description: 'Ronda informativa hoy miércoles en el entorno del Mercado de Bonavista. Refuerzo en paradas de autobús L54.',
+          name: '🛒 Entorno Seguro: Bonavista Sábado',
+          description: 'Refuerzo informativo hoy sábado mañana en los accesos al Mercadillo de Bonavista. Colaboración con buses EMT.',
           neighborhood: 'BONAVISTA',
           contact_info: 'Coordinación Vecinal — 611 00 22 33',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-pat-wed-2',
+          id: 'sab-21-pat-2',
           creator_id: 'user1',
           name: '🛡️ Seguridad Escolar: Caminos Seguros',
-          description: 'Continuamos hoy miércoles con las rondas matinales en los colegios El Miracle y Pax. Mañana jueves será festivo escolar.',
+          description: 'Resumen de la semana: Todas las entradas a los colegios El Miracle y Pax han sido seguras. Volvemos el lunes 23.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-pat-wed-3',
+          id: 'sab-21-pat-3',
           creator_id: 'user2',
-          name: '🌑 Convocatoria: Patrulla Nocturna Jueves',
-          description: 'Reunión hoy miércoles a las 20:00h en el C.C. Centre para organizar la ronda de mañana noche por el Balcón y Rambla.',
+          name: '🌑 Convocatoria: Próxima Patrulla Nocturna',
+          description: 'Reunión el lunes 23 a las 19:00h en el C.C. Centre para organizar la ronda del martes noche por el centro.',
           neighborhood: 'CENTRE',
           contact_info: '622 55 44 33 (Maria)',
           created_at: new Date().toISOString()

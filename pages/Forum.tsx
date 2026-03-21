@@ -126,50 +126,35 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Maria P.', text: '¡Felicidades a todos los Pepes y Josefinas! 👔 🎉' },
-        { who: 'Joan B.', text: 'Qué día más bonito hoy jueves para llevar a los niños a la playa. ☀️' },
-        { who: 'Admin', text: 'Recordad que hoy es festivo en muchos locales, consultad horarios. 🚌' }
+        { who: 'Admin', text: '☀️ ¡Buen Sábado! Recordad que el mercado de Bonavista está abierto hasta las 14:30h. 🛒' },
+        { who: 'Pau T.', text: 'El sol calienta hoy que da gusto. ¡Día ideal para el vermut! 🍹' },
+        { who: 'Joan B.', text: 'Nos vemos a las 13:00h en la Plaça de la Font para brindar. 🥂' }
       ],
       [
-        { who: 'Pau T.', text: 'Cielo despejado hoy jueves. ¡Espectacular para pasear por la Rambla! 🕶️' },
-        { who: 'Maria G.', text: '@Pau ¡Cierto! Yo estoy por el Balcón y se está de lujo al sol.' },
-      ],
-      [
-        { who: 'Joe R.', text: '✅ ¡Confirmado! La baldosa de Palmeres ya está arreglada. Han quitado las vallas hoy jueves.' },
-        { who: 'Pau T.', text: '@Joe ¡Por fin! Ha quedado impecable. La brigada ha hecho buen trabajo.' },
-        { who: 'Sandra L.', text: '@Joe @Pau Sí, lo he visto al pasar con el perro. Da gusto ver el barrio cuidado.' },
-        { who: 'Joe R.', text: 'Sigamos reportando en la app, se nota que nos escuchan. 🙌' },
+        { who: 'Joe R.', text: '✅ Las obras de Av. Roma están casi listas. Solo queda un carril cortado hoy sábado.' },
+        { who: 'Maria G.', text: '@Joe ¡Menos mal! Se nota la mejora en el tráfico. 🚗' },
       ],
     ],
     'APOYO': [
       [
-        { who: 'Carme L.', text: '¿Alguien que pase por C. Cavallers y pueda subirle el pan a Doña Amalia hoy? 🥖' },
-        { who: 'Andreu T.', text: 'Yo paso en 10 min, me encargo yo Carmen. 👍' },
-        { who: 'Paco V.', text: '¿Cuántos somos para la patrulla nocturna de hoy jueves a las 20h? 🛡️' }
+        { who: 'Carme L.', text: '¿Alguien que vaya a Bonavista y pueda traerme un saco de tierra? 🪴' },
+        { who: 'Andreu T.', text: 'Yo voy ahora en la L54, si puedo cargar con él te aviso Carme. 👍' },
       ],
       [
-        { who: 'Sandra L.', text: '¿Alguien se apunta a un café post-festivo mañana viernes?' },
-        { who: 'Elena V.', text: '@Sandra ¡Me apunto! A las 17:00h en la plaza, así comentamos las fiestas de hoy.' },
-        { who: 'Joan B.', text: 'Recordad que la patrulla es HOY jueves 20:00h en el C.C. Centre. 🔦' },
+        { who: 'Sandra L.', text: '¿Alguien se apunta a la caminata de mañana domingo? 09:30h Anfiteatro. 🥾' },
+        { who: 'Elena V.', text: '@Sandra ¡Yo voy! Necesito mover las piernas después de tanto vermut hoy. 😂' },
       ],
     ],
     'EMPLEO': [
       [
-        { who: 'Servicios TGN', text: 'Publicadas nuevas ofertas para mantenimiento de parques. Jueves 19. 🌳' },
-        { who: 'Restaurant Sol', text: 'Buscamos extra de cocina para este fin de semana. 🍳 600 00 11 22' },
-        { who: 'Luis G.', text: 'He visto que en el Mercadillo del sábado buscan montadores. 🧺' }
-      ],
-      [
-        { who: 'Luis M.', text: '💼 ¿Habéis visto las ofertas de hoy jueves? Buscan peón en TGN y personal de limpieza.' },
-        { who: 'Pau T.', text: '@Luis Sí, acabo de ver la del peón. Piden incorporación inmediata. ¡Voy a llamar!' },
-        { who: 'Luis M.', text: '@Pau ¡Dale! Yo llamaré por la de limpieza para un familiar. Suerte. 🙏' },
+        { who: 'Servicios TGN', text: 'Actualizadas ofertas para la campaña de Semana Santa. Sábado 21 Mar. 💼' },
+        { who: 'Restaurant Sol', text: 'Buscamos camareros extra para domingos y festivos. 600 00 11 22' },
       ],
     ],
     'ENCUENTROS': [
       [
-        { who: 'Elena V.', text: '@Joe ¡Yo iré al club, pero podemos tomar un café rápido antes!' },
-        { who: 'Joe R.', text: '@Elena ¡Perfecto! Nos vemos en el C.C. Part Alta a las 18:00h.' },
-        { who: 'Elena V.', text: '@Joe ¡Hecho! Allí nos vemos. 😊' },
+        { who: 'Santi G.', text: 'Sábado de vermut. ¡Estaré con Pepe en la Plaça de la Font a las 13h! 🥂' },
+        { who: 'Marta L.', text: '¡Allí nos vemos! Llevo a unos amigos nuevos del barrio. 😊' }
       ],
       [
         { who: 'Nuria P.', text: '¿Algún chico deportista para hacer rutas por la mañana antes del trabajo y luego un café?' },
@@ -597,7 +582,7 @@ const Forum: React.FC = () => {
           <div>
             <h4 className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 ml-2">Tendencias Hoy</h4>
             <div className="flex flex-wrap gap-2 px-2">
-              {['#SanJose', '#DiaDelPadre', '#PatrullaNocturna', '#RamblaSoleada', '#TGNFestivo'].map(tag => (
+              {['#MercadilloBonavista', '#VermutTGN', '#SabadoSol', '#CaminataDomingo', '#TGNActiva'].map(tag => (
                 <button key={tag} className="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full text-[9px] font-black text-slate-500 hover:text-blue-500 hover:bg-blue-50 transition-all uppercase tracking-tighter">
                   {tag}
                 </button>
@@ -607,7 +592,7 @@ const Forum: React.FC = () => {
 
           {/* Jobs Mini-Card */}
           <div className="p-5 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800/50 dark:to-slate-900/50 rounded-[28px] border border-slate-200/50 dark:border-white/5">
-            <h2 className="text-[10px] font-black uppercase tracking-widest text-[#3b82f6] mb-4">Empleo Jueves 19 Mar</h2>
+            <h2 className="text-[10px] font-black uppercase tracking-widest text-[#3b82f6] mb-4">Empleo Sábado 21 Mar</h2>
             <div className="space-y-4">
               <div className="text-[11px] font-bold text-slate-600 dark:text-slate-300 border-l-2 border-emerald-500 pl-3">
                 <p>🏗️ Peón de Obra (TGN)</p>

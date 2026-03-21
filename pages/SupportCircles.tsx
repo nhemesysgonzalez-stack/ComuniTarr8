@@ -42,12 +42,12 @@ const SupportCircles: React.FC = () => {
 
             const mockCircles: SupportCircle[] = [
                 {
-                    id: 'wed-lectura-emocional',
+                    id: 'sab-21-circulo-vermut',
                     initiator_id: 'vecinal',
-                    title: '🤝 Círculo: Club de Lectura y Bienestar',
+                    title: '🤝 Círculo: Vermut, Gratitud y Bienestar',
                     neighborhood: 'GENERAL',
-                    description: 'Espacio de encuentro hoy miércoles a las 18:30h. Leer no es solo cultura, es apoyo mutuo y salud mental.',
-                    contact_info: 'C.C. Part Alta (Plaça de Sant Joan)',
+                    description: 'Aprovechamos el encuentro de hoy sábado a las 13:00h para un pequeño círculo de escucha y apoyo mutuo. ¡La salud mental empieza en el barrio!',
+                    contact_info: 'Plaça de la Font (Zona central)',
                     created_at: new Date().toISOString()
                 },
                 {

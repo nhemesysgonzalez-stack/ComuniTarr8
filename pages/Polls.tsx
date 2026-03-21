@@ -73,26 +73,26 @@ const Polls: React.FC = () => {
 
             const mockPolls: Poll[] = [
                 {
-                    id: 'poll-mar-1',
+                    id: 'sab-21-poll-1',
                     creator_id: 'v1',
-                    title: '🍎 ¿Qué te parece la calidad del Mercado de Corsini hoy Martes? 🍏',
-                    options: ['Excelente, muy fresco', 'Normal, nada destacable', 'Algo caro hoy', 'Apenas he visto gente'],
+                    title: '🛒 ¿Qué te parece la variedad hoy en Bonavista Sábado? 🍏',
+                    options: ['Muy completa, muy fresco', 'Mucha gente, agobiante', 'Falta algo de fruta', 'No he ido hoy'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-mar-2',
+                    id: 'sab-21-poll-2',
                     creator_id: 'v2',
-                    title: '📚 Mañana Miércoles: ¿Vienes al Club de Lectura (18:30h)? 📖',
-                    options: ['Sí, ya tengo el libro terminado', 'Iré aunque no haya terminado', 'No podré ir esta vez', 'No me interesa la lectura elegida'],
+                    title: '🍹 Vermut Sábado: ¿A qué hora sueles ir a Plaça de la Font?',
+                    options: ['Sobre las 12h, temprano', 'A las 13h, hora punta', 'Tarde, sobre las 14h', 'No suelo hacer vermut'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'poll-mar-3',
+                    id: 'sab-21-poll-3',
                     creator_id: 'v3',
-                    title: '🚌 ¿Has notado refuerzo en las líneas de la EMT este martes? 🚌',
-                    options: ['Sí, menos esperas', 'No, sigue igual', 'He visto buses llenos', 'No uso el bus'],
+                    title: '🥾 ¿Vienes mañana a la caminata Grupal (09:30h)? 🌊',
+                    options: ['Sí, ya tengo las botas listas', 'Iré si sale el sol', 'No puedo mañana', 'Prefiero el vermut'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }

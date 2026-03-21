@@ -175,27 +175,27 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'jue-san-jose-news',
-            title: '👔 ¡Felicidades a todos los Pepes y Papás!',
-            content: 'Hoy Jueves 19 de Marzo, Día de San José. Muchas familias lo celebran en las playas y parques de Tarragona. ¡Disfrutad del día!',
-            neighborhood: 'GENERAL',
-            category: 'CULTURA',
-            image_url: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80',
+            id: 'sab-21-mercadillo-news',
+            title: '🛒 Mercadillo de Bonavista Operativo',
+            content: 'Hoy sábado 21 de marzo el mercado de Bonavista está a pleno rendimiento. Refuerzo en buses L3, L30 y L54 durante toda la mañana.',
+            neighborhood: 'BONAVISTA',
+            category: 'COMERCIO',
+            image_url: 'https://images.unsplash.com/photo-1543083477-4f7f44aad226?auto=format&fit=crop&w=800&q=80',
             created_at: new Date().toISOString()
           },
           {
-            id: 'jue-weather-news',
-            title: '☀️ Sol radiante para el Jueves',
-            content: 'Tiempo primaveral hoy jueves. Despejado con máximas de 19ºC. Ideal para pasear por la Rambla. 🕶️',
+            id: 'sab-21-weather-news',
+            title: '☀️ Fin de Semana Radiante',
+            content: 'Sábado despejado hoy con máximas de 20ºC. Ideal para disfrutar de las playas o caminar por el Camí de Ronda. Brisa suave por la tarde. 🕶️',
             neighborhood: 'GENERAL',
             category: 'TIEMPO',
-            image_url: 'https://images.unsplash.com/photo-1444312645910-ffa973656eba?auto=format&fit=crop&w=800&q=80',
+            image_url: 'https://images.unsplash.com/photo-1510445740272-d3b16ec28439?auto=format&fit=crop&w=800&q=80',
             created_at: new Date().toISOString()
           },
           {
-            id: 'jue-patrulla-news',
-            title: '🛡️ Patrulla Vecinal Nocturna Hoy',
-            content: 'Recordatorio: Los voluntarios del Centro se reúnen hoy jueves a las 20:00h para la ronda de seguridad preventiva. 🔦',
+            id: 'sab-21-patrulla-news',
+            title: '🛡️ Seguridad: Patrulla Nocturna OK',
+            content: 'Tras la ronda de seguridad del pasado jueves, los voluntarios reportan calma en el casco antiguo. Próxima reunión martes 24.',
             neighborhood: 'CENTRE',
             category: 'VECINAL',
             image_url: 'https://images.unsplash.com/photo-1541888941257-234b6e51f807?auto=format&fit=crop&w=800&q=80',
@@ -207,10 +207,10 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'jue-poll-1',
-          question: "¿Cómo vas a celebrar hoy el Día del Padre (San José)?",
-          options: ['Comida familiar en casa', 'Restaurante en la Part Alta', 'Paseo por la playa/Rambla', 'Regalo especial'],
-          category: 'CULTURA',
+          id: 'sab-21-poll-1',
+          question: "¿Qué plan tienes para este fin de semana?",
+          options: ['Ir al Mercado de Bonavista', 'Caminata por la playa/Ronda', 'Vermut en la Plaça de la Font', 'Descanso y lectura'],
+          category: 'OCIO',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()
         };

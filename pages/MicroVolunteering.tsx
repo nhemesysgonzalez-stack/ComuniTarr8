@@ -42,30 +42,30 @@ const MicroVolunteering: React.FC = () => {
 
             const realOpportunitiesExamples: VolunteerOpportunity[] = [
                 {
-                    id: 'real-wed-vol-1',
+                    id: 'sab-21-vol-1',
                     creator_id: 'v7',
-                    title: '📖 Apoyo Club de Lectura (Cofé y Gestión)',
-                    description: 'Buscamos 2 voluntarios para ayudar a preparar el café y las pastas hoy miércoles a las 18:00h en el C.C. Part Alta para el club de lectura.',
+                    title: '📦 Recogida Alimentos: Post-Mercadillo',
+                    description: 'Buscamos 3 voluntarios hoy sábado tarde (16:00h) en Bonavista para clasificar alimentos donados durante la feria del mercado. ¡Solo una hora!',
                     neighborhood: 'GENERAL',
-                    contact_info: '622 88 77 66 (Elena P. - Moderadora). Centro Cívico Part Alta.',
+                    contact_info: '622 88 77 66 (Elena P. - Coordinadora). Carpa Roja Bonavista.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-wed-vol-2',
+                    id: 'sab-21-vol-2',
                     creator_id: 'v8',
-                    title: '📦 Clasificación de Donaciones (Bonavista)',
-                    description: "¿Tienes una hora libre hoy miércoles? Estamos en la carpa de recogida de Bonavista clasificando material tras el mercado. ¡Vente!",
+                    title: '♻️ Limpieza Playa: Atardecer Sábado',
+                    description: "Tras el día de sol intenso hoy sábado, nos juntamos a las 19:30h en la playa del Miracle para una recogida rápida de residuos. ¡Guantes gratis!",
                     neighborhood: 'GENERAL',
-                    contact_info: '611 00 22 33 (Paco). Carpa Roja Bonavista.',
+                    contact_info: '611 00 22 33 (Paco). Punto: Chiringuito 1.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'real-wed-vol-3',
+                    id: 'sab-21-vol-3',
                     creator_id: 'v9',
-                    title: '🚶 Acompañamiento Paseo Miércoles',
-                    description: 'Necesito acompañante para pasear un rato por el Paseo de las Palmeras hoy miércoles tarde (17:30h). ¡Ya no hay vallas!',
+                    title: '🥾 Apoyo Caminata Domingo (Guías)',
+                    description: '¿Conoces bien el Camí de Ronda? Ayúdanos mañana domingo a guiar al grupo a las 09:30h desde el Anfiteatro.',
                     neighborhood: 'CENTRE',
-                    contact_info: '699 33 22 11 (Andreu). Vivo cerca del Balcón.',
+                    contact_info: '699 33 22 11 (Andreu). Escríbeme por chat.',
                     created_at: new Date().toISOString()
                 }
             ];

@@ -46,33 +46,33 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'mock-wed-n1',
+                    id: 'sab-21-n1',
                     creator_id: 'v4',
                     type: 'company',
-                    title: '📖 Acompañamiento Club Lectura',
-                    description: 'Soy vecina mayor y me gustaría ir al Club de Lectura hoy miércoles (18:30h) en la Part Alta. ¿Algún vecino me acompaña y luego bajamos juntos?',
+                    title: '🫂 Acompañamiento Paseo Sábado',
+                    description: 'Soy vecina mayor en la Part Alta y me gustaría aprovechar el sol de hoy sábado para pasear por la Muralla. ¿Algún vecino me acompaña una horita?',
                     contact_info: '633 44 55 66 (Rosa P.)',
                     is_urgent: false,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-wed-n2',
+                    id: 'sab-21-n2',
                     creator_id: 'v5',
                     type: 'medical',
-                    title: '💊 Recogida de Receta Médica',
-                    description: 'Tengo dificultades para desplazarme hoy miércoles. ¿Alguien podría recoger una receta en el CAP Muralles esta tarde? Vive cerca del Portal de Sant Antoni.',
+                    title: '💊 Recogida Medicación Sábado Tarde',
+                    description: 'Necesito una medicación urgente del CAP Muralles hoy sábado antes de que cierren o de guardia. No puedo desplazarme bien.',
                     contact_info: '644 33 22 11 (Pere)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mock-wed-n3',
+                    id: 'sab-21-n3',
                     creator_id: 'v6',
                     type: 'food',
-                    title: '🧺 Compra en Bonavista',
-                    description: 'Doña Amalia no ha podido ir al mercado hoy miércoles. Si alguien vuelve de Bonavista y le puede traer un par de kilos de fruta y verduras frescas. Vive en C. Cavallers.',
+                    title: '🧺 Compra de Sábado (Bonavista)',
+                    description: 'Doña Amalia no ha podido ir al mercado hoy sábado mañana. Si alguien ha traído fruta de sobra de Bonavista y le puede acercar algo a C. Cavallers.',
                     contact_info: '622 88 77 66 (Sandra)',
                     is_urgent: false,
                     neighborhood: 'GENERAL',

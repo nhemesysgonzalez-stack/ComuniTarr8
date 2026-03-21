@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'jue-s1', user_name: 'Ana T.', content: '👔 ¡Felicidades a todos los papás del barrio! Qué alegría ver a las familias paseando por la Rambla hoy jueves festivo. ☀️✨ #SanJose #DiaDelPadre #Tarragona', image_url: 'https://images.unsplash.com/photo-1511018556340-d16986a1c194', likes: 245, created_at: new Date().toISOString() },
-            { id: 'jue-s2', user_name: 'Joan R.', content: 'Día espectacular hoy jueves para el vermut de San José. ¡El sol calienta de lo lindo! 🌊🍹 #SanJose #Maritime #Tarragona #Sol', image_url: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a', likes: 189, created_at: new Date().toISOString() },
-            { id: "jue-s3", user_name: "Marc G.", content: "He visto un ambiente genial por la Catedral hoy festivo. ¡Tarragona está preciosa hoy 19 de marzo! 💼📈 #TGNFestiva #JuevesSanto #SanJose", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 167, created_at: new Date().toISOString() },
-            { id: 'jue-s4', user_name: 'Pilar S.', content: 'Recordad que hoy jueves es festivo y algunos autobuses van con horario reducido. ¡Disfrutad del día! 🚌🌸 #Tarragona #Aviso #Jueves', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 112, created_at: new Date().toISOString() }
+            { id: 'sab-21-s1', user_name: 'Ana T.', content: '🛒 ¡Ambientazo hoy en Bonavista! He encontrado unas joyas vintage increíbles. ¡Vale la pena acercarse hoy sábado! ☀️✨ #Bonavista #Mercadillo #Tarragona', image_url: 'https://images.unsplash.com/photo-1543083477-4f7f44aad226', likes: 156, created_at: new Date().toISOString() },
+            { id: 'sab-21-s2', user_name: 'Joan R.', content: 'Mañana de running por la Arrabassada. El mar está plano y el sol calienta ya. ¡Día de 10! 🌊🏃‍♂️ #Running #Tarragona #Sol #Sabado', image_url: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a', likes: 212, created_at: new Date().toISOString() },
+            { id: "sab-21-s3", user_name: "Marc G.", content: "Preparando las botas para la caminata de mañana domingo. ¿Quién más se apunta? 🥾⛰️ #Hiking #TGNActiva #Caminata", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 124, created_at: new Date().toISOString() },
+            { id: 'sab-21-s4', user_name: 'Pilar S.', content: '¡Vermutito rico en la Plaça de la Font! Disfrutando del sábado con los vecinos. 🍹🧀 #Tarragona #Vermut #Vecinos #Sabado', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 178, created_at: new Date().toISOString() }
         ];
 
 

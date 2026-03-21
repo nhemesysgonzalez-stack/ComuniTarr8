@@ -144,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
               </p>
-              <button onClick={() => alert("Hoy Jueves 19 Mar:\n\u2022 Festivo Local (San José) - Actividad administrativa reducida.\n\u2022 20:00h \u2014 Reunión Patrulla Vecinal (C.C. Centre)")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Hoy Sábado 21 Mar:\n\u2022 Mercadillo Bonavista (Hasta las 14:30h)\n\u2022 13:00h \u2014 Vermut Comunitario (Plaça de la Font)")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -168,23 +168,23 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Jueves 19 Mar)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Sábado 21 Mar)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Peón de Obra - TGN Eixample&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Mantenimiento local. Incorporación inmediata hoy o viernes. 📞 977 22 34 56 (RRHH)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Mozo Almacén - Campaña S. Santa&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Refuerzo para logística. Turnos rotativos. Incorporación inmediata. 📞 977 22 34 56 (Logística TGN)</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Camarero/a Terraza - Festivo&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Extra para hoy jueves por San José y fin de semana. 📞 600 55 44 33 (Restaurante Marina)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Extra de Cocina - Fines de Semana&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Buscamos refuerzo para sábados y domingos en el Serrallo. 📞 600 55 44 33 (Restaurante Marina)</p>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Limpieza Hogar - Zona Levante&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Servicio recurrente martes y jueves. 📞 611 22 33 44 (Servicios Domésticos TGN)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Personal Limpieza Hotel - Mañanas&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Limpieza de habitaciones zona centro. Media jornada. 📞 633 11 22 33 (Limpiezas Mediterráneas)</p>
                   </div>
                   <div className="border-l-4 border-teal-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Recepcionista Turno Noche&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Hotel centro ciudad. Imprescindible inglés. 📞 977 00 11 22 (Hotel Imperial)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Repartidor/a Moto Propia&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Para pizzería zona Levante. Pagos por pedido + fijo. 📞 611 00 99 88 (Pizzería TGN)</p>
                   </div>
                 </div>
               </div>
@@ -199,13 +199,13 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined">school</span> CALENDARIO ESCOLAR
               </h3>
               <div className="flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm mb-3">
-                <div className="size-12 rounded-xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-600 font-bold text-xl anim-pulse">
-                  19
+                <div className="size-12 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 font-bold text-xl">
+                  21
                 </div>
                 <div>
-                  <p className="text-xs font-black uppercase text-orange-500">HOY FESTIVO</p>
-                  <p className="text-sm font-bold text-gray-800 dark:text-white">San José (Día del Padre)</p>
-                  <p className="text-[10px] text-gray-500">No hay clases — Jueves 19 Mar</p>
+                  <p className="text-xs font-black uppercase text-indigo-500">SÁBADO</p>
+                  <p className="text-sm font-bold text-gray-800 dark:text-white">Fin de Semana</p>
+                  <p className="text-[10px] text-gray-500">Sin clases lectivas hoy y mañana.</p>
                 </div>
               </div>
               <a

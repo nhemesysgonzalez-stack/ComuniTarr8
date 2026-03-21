@@ -48,27 +48,27 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'ws-19mar-sanjose',
-                    title: '🥘 Taller Especial: Crema de San José',
-                    instructor: 'Pilar S.',
-                    date: 'Hoy Jueves 19, 11:30 (Online)',
-                    description: 'Aprende a cocinar el postre típico de hoy paso a paso. Sesión por Zoom para disfrutar en familia. ¡Felicidades papás!',
-                    image: 'https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&q=80&w=800',
-                    spots: 50,
+                    id: 'sab-21-pintura',
+                    title: '🎨 Taller: Pintura al Aire Libre',
+                    instructor: 'Marc R.',
+                    date: 'Hoy Sábado 21, 10:30 (Balcón Med.)',
+                    description: 'Ven a pintar el mar con nosotros. No importa el nivel, solo las ganas de crear. Trae tus pinceles, nosotros ponemos el lienzo.',
+                    image: 'https://images.unsplash.com/photo-1510445740272-d3b16ec28439?auto=format&fit=crop&q=80&w=800',
+                    spots: 12,
                     neighborhood: 'GENERAL',
-                    contact_info: 'Zoom ID: 123-456-789 (Enviado por chat)',
+                    contact_info: 'C.C. Part Alta - 977 23 45 67',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'ws-20mar-empleo',
-                    title: '💼 Búsqueda de Empleo con IA',
-                    instructor: 'Tarragona Impulsa',
-                    date: 'Mañana Viernes 20, 10:00',
-                    description: 'Descubre cómo usar ChatGPT y otras IAs para mejorar tu CV y preparar entrevistas. Sesión en C.C. Centre.',
-                    image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445?auto=format&fit=crop&q=80&w=800',
-                    spots: 10,
+                    id: 'sab-28-yoga',
+                    title: '🧘 Sesión: Yoga en la Playa',
+                    instructor: 'Elena V.',
+                    date: 'Sábado 28 Marzo, 09:00',
+                    description: 'Empezamos el día con energía frente al mar. Sesión gratuita. Trae tu esterilla y ropa cómoda.',
+                    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800',
+                    spots: 30,
                     neighborhood: 'GENERAL',
-                    contact_info: 'C.C. Centre - 977 25 99 99',
+                    contact_info: 'Elena V. (Chat Comunitario)',
                     created_at: new Date().toISOString()
                 }
             ];

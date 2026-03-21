@@ -11,20 +11,18 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 0, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: "⛅ ¡Buenos días! Miércoles 18 Mar. Día agradable (13ºC→17ºC). ¡Aprovecha el día! 👍", neighborhood: 'GENERAL' },
-    { id: 1, user: 'Meteo TGN', avatar: '/logo.svg', text: '⛅ Intervalos nubosos hoy miércoles. Mínima 13ºC, máxima 17ºC. 10% probabilidad de lluvia. 🌦️', neighborhood: 'GENERAL' },
-    { id: 2, user: 'AAVV Sant Pere', avatar: '/logo.svg', text: '📚 HOY MIÉRCOLES: Club de Lectura a las 18:30h en el C.C. Part Alta. ¡Os esperamos! ☕', neighborhood: 'PART ALTA' },
-    { id: 1, user: 'Santi G.', avatar: 'https://i.pravatar.cc/150?u=santi', text: '¡Felicidades a todos los Pepes del barrio! 👔', neighborhood: 'GENERAL' },
-    { id: 2, user: 'Carme R.', avatar: 'https://i.pravatar.cc/150?u=carme', text: 'Día espectacular para pasear por la playa hoy jueves ☀️', neighborhood: 'PLATJA' },
-    { id: 3, user: 'Paco V.', avatar: 'https://i.pravatar.cc/150?u=paco', text: '¿Quién se apunta a la patrulla nocturna a las 20h? 🔦', neighborhood: 'CENTRE' },
-    { id: 4, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '🎉 ¡Feliz Día de San José! Disfrutad del festivo y el sol. ☀️', neighborhood: 'GENERAL' },
+    { id: 101, user: 'Carme L.', avatar: 'https://i.pravatar.cc/150?u=carme', text: '🛒 ¿Quién va hoy a Bonavista? ¡Necesito transporte para unas plantas! 🪴', neighborhood: 'CENTRE' },
+    { id: 102, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '☀️ ¡Día espectacular de sol! Me voy a correr por el Francolí ahora mismo. 🏃‍♂️', neighborhood: 'GENERAL' },
+    { id: 103, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '🍹 ¿Vermut hoy en Plaça de la Font? ¡A las 13h nos vemos allí! 🥂', neighborhood: 'PART ALTA' },
+    { id: 104, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '📢 Recordad: Mañana caminata grupal a las 09:30h desde el Anfiteatro. 🥾', neighborhood: 'GENERAL' },
 ];
 
 const tickerMessages = [
-    "👔 ¡Feliz Día del Padre y San José! Celebraciones en toda la ciudad.",
-    "☀️ Jueves despejado y soleado. Máximas de 19ºC.",
-    "🛡️ Patrulla Vecinal Nocturna: Hoy Jueves a las 20:00h en el C.C. Centre.",
-    "🚌 EMT: Horarios de festivo hoy jueves por San José."
+    '🛒 Mercadillo de Bonavista hoy: Bus L3, L30 y L54 con refuerzos.',
+    '🌤️ Previsión Sábado: Soleado, 12ºC a 21ºC. Viento flojo.',
+    '🍹 HOY 13:00h: Vermut Comunitario en Plaça de la Font.',
+    '🚧 Aviso: Obras puntuales en Av. Roma, carril derecho afectado.',
+    '🥾 Mañana DOMINGO: Caminata por el Camí de Ronda. ¡Únete!'
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

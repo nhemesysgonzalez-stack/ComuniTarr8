@@ -145,33 +145,33 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'jue-san-jose',
-                    title: "👔 ¡FELIZ DÍA DEL PADRE Y SAN JOSÉ!",
-                    content: "Hoy jueves 19 de marzo celebramos el Día del Padre. ¡Felicidades a todos los Pepes y papás del barrio! Ambiente festivo en toda Tarragona.",
-                    category: "CULTURA",
+                    id: 'sab-21-mercadillo',
+                    title: "🛒 MERCADILLO DE BONAVISTA HOY",
+                    content: "El mercadillo más grande de la zona está operativo hoy sábado. Recuerda usar el transporte público para evitar colapsos en el acceso.",
+                    category: "COMERCIO",
                     author_name: "Admin ComuniTarr",
                     neighborhood: "GENERAL",
-                    itinerary: "• Día: Jueves 19 Mar\n• Ambiente: Festivo\n• Recomendación: Pasear en familia\n• Info: Ayuntamiento TGN",
+                    itinerary: "• Día: Hoy Sábado 21\n• Horario: Hasta las 14:30h\n• Transporte: L3, L30, L54 reforzadas\n• Lugar: Bonavista",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'jue-weather',
-                    title: "☀️ CLIMA: SOL RADIANTE (JUEVES 19 MAR)",
-                    content: "Tendremos un día totalmente despejado y soleado hoy jueves. Máximas de 19ºC. Viento muy flojo.",
+                    id: 'sab-21-weather',
+                    title: "☀️ CLIMA: SOL Y 21ºC (SÁBADO)",
+                    content: "Día perfecto para estar fuera. El anticiclón nos trae sol y temperaturas agradables hoy sábado y mañana domingo.",
                     category: "TIEMPO",
-                    author_name: "Protección Civil",
+                    author_name: "Meteo TGN",
                     neighborhood: "GENERAL",
-                    itinerary: "• Mañana: 14ºC\n• Tarde: 19ºC\n• Prob. Lluvia: 0%\n• Recomendación: Disfrutar del sol",
+                    itinerary: "• Máxima: 21ºC\n• Estado: Despejado\n• Viento: Brisa marina floja\n• Índice UV: Moderado",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'jue-patrulla',
-                    title: "🛡️ HOY JUEVES: PATRULLA VECINAL NOCTURNA",
-                    content: "Recordamos la cita de hoy jueves a las 20:00h en el C.C. Centre para la ronda preventiva por el casco antiguo.",
+                    id: 'sab-21-caminata',
+                    title: "🥾 MAÑANA DOMINGO: CAMINATA COSTERA",
+                    content: "Organizamos una salida grupal para caminar por el Camí de Ronda. Actividad apta para todas las edades.",
                     category: "AVISO",
-                    author_name: "Coordinación Vecinal",
-                    neighborhood: "CENTRE",
-                    itinerary: "• Fecha: Hoy Jueves 19\n• Hora: 20:00h\n• Lugar: C.C. Centre\n• Contacto: 611 00 22 33",
+                    author_name: "Grup Excursionista",
+                    neighborhood: "GENERAL",
+                    itinerary: "• Fecha: Mañana Domingo 22\n• Hora: 09:30h\n• Salida: Puerta del Anfiteatro\n• Recorrido: 6km (Ida)",
                     created_at: new Date().toISOString()
                 }
             ];
