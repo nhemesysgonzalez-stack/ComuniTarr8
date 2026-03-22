@@ -59,26 +59,26 @@ const Incidents: React.FC = () => {
                 // Mock Incidents for Wednesday 18 March
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'sab-21-inc-1',
+                        id: 'dom-22-inc-1',
                         user_id: 'admin',
-                        title: '✅ REPARACIÓN AV. ROMA - FINALIZADA',
-                        description: 'Tras las obras del jueves, el carril derecho de Av. Roma ya está operativo y sin vallas hoy sábado. Tráfico fluido.',
+                        title: '✅ LIMPIEZA PLAYA MIRACLE - OK',
+                        description: 'Brigada rápida finalizada a las 18:30h tras el paso del grupo de la caminata. Todo despejado hoy domingo.',
                         neighborhood: 'CENTRE',
                         status: 'resolved',
                         created_at: new Date().toISOString(),
-                        contact_info: 'Movilidad TGN — 010',
+                        contact_info: 'Limpieza TGN — 777 66 55 44',
                         profiles: { full_name: 'Mantenimiento TGN', avatar_url: '/logo.svg' },
                         image_url: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80'
                     },
                     {
-                        id: 'sab-21-inc-2',
+                        id: 'dom-22-inc-2',
                         user_id: 'v3',
-                        title: '🚧 LIMPIEZA POST-MERCADILLO',
-                        description: 'Brigada especial trabajando hoy sábado tarde en Bonavista para recoger residuos tras el gran mercado de la mañana.',
-                        neighborhood: 'BONAVISTA',
-                        status: 'in_progress',
-                        created_at: new Date(Date.now() - 1000 * 60 * 60 * 1).toISOString(),
-                        contact_info: 'Limpieza TGN — 777 66 55 44',
+                        title: '📋 AVISO: RUTA RECOGIDA TRASTOS',
+                        description: 'Confirmadas las rutas de recogida para mañana lunes en zona centro. Por favor, no obstaculizar contenedores.',
+                        neighborhood: 'CENTRE',
+                        status: 'open',
+                        created_at: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(),
+                        contact_info: 'Movilidad TGN — 010',
                         profiles: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' },
                         image_url: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800'
                     }

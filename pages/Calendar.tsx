@@ -59,29 +59,42 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'sab-21-vermut',
-          creator_id: 'admin',
-          title: "🍹 Vermut Comunitario en la Plaça",
-          description: "Hoy sábado a las 13:00h nos juntamos en la Plaça de la Font para el vermut del fin de semana. ¡Fomenta el barrio!",
-          event_date: '2026-03-21',
-          event_time: '13:00',
-          location: 'Plaça de la Font',
-          category: 'Ocio',
-          neighborhood: 'GENERAL',
-          contact_info: 'Vecinos TGN',
-          created_at: new Date().toISOString()
-        },
-        {
           id: 'dom-22-caminata',
           creator_id: 'admin',
-          title: "🥾 Caminata Domingo: Camí de Ronda",
-          description: "Mañana domingo 22 salimos a las 09:30h desde el Anfiteatro para recorrer el Camí de Ronda hasta la playa Larga. ¡Trae agua!",
+          title: "🥾 Caminata: Camí de Ronda",
+          description: "Hoy domingo salimos a disfrutar de la costa. El grupo ya está en marcha. ¡Únete en cualquier punto del recorrido!",
           event_date: '2026-03-22',
           event_time: '09:30',
           location: 'Anfiteatro Romano',
           category: 'Deporte',
           neighborhood: 'GENERAL',
           contact_info: 'Grup Excursionista TGN',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'dom-22-sunset',
+          creator_id: 'user1',
+          title: "🌅 Puesta de Sol en el Miracle",
+          description: "Hoy domingo nos juntamos para despedir el fin de semana viendo el atardecer desde la arena. Trae tu bebida.",
+          event_date: '2026-03-22',
+          event_time: '19:15',
+          location: 'Playa del Miracle',
+          category: 'Ocio',
+          neighborhood: 'GENERAL',
+          contact_info: 'Vecinos Playa',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'lun-23-trastos',
+          creator_id: 'ayto',
+          title: "📋 Lunes: Recogida de Trastos",
+          description: "Mañana lunes toca recogida de muebles y trastos viejos en la zona centro. Saca los objetos esta noche.",
+          event_date: '2026-03-23',
+          event_time: '22:00',
+          location: 'Zona Centro TGN',
+          category: 'Aviso',
+          neighborhood: 'CENTRE',
+          contact_info: 'Servicio Limpieza — 010',
           created_at: new Date().toISOString()
         },
         {

@@ -11,18 +11,18 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 101, user: 'Carme L.', avatar: 'https://i.pravatar.cc/150?u=carme', text: '🛒 ¿Quién va hoy a Bonavista? ¡Necesito transporte para unas plantas! 🪴', neighborhood: 'CENTRE' },
-    { id: 102, user: 'Pau T.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '☀️ ¡Día espectacular de sol! Me voy a correr por el Francolí ahora mismo. 🏃‍♂️', neighborhood: 'GENERAL' },
-    { id: 103, user: 'Mireia R.', avatar: 'https://i.pravatar.cc/150?u=mireia', text: '🍹 ¿Vermut hoy en Plaça de la Font? ¡A las 13h nos vemos allí! 🥂', neighborhood: 'PART ALTA' },
-    { id: 104, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '📢 Recordad: Mañana caminata grupal a las 09:30h desde el Anfiteatro. 🥾', neighborhood: 'GENERAL' },
+    { id: 201, user: 'Sandra L.', avatar: 'https://i.pravatar.cc/150?u=sandra', text: '🥾 ¡Qué buen ambiente en la caminata hoy! El Camí de Ronda está precioso. 😍', neighborhood: 'GENERAL' },
+    { id: 202, user: 'Pepe R.', avatar: 'https://i.pravatar.cc/150?u=pepe', text: '☀️ Sol y relax en la Arrabassada. Disfrutando el último día de sol. 🏖️', neighborhood: 'PLATJA' },
+    { id: 203, user: 'Marta G.', avatar: 'https://i.pravatar.cc/150?u=marta', text: '🌅 ¡Nos vemos a las 19:15 en el Miracle para el atardecer! 🥂', neighborhood: 'CENTRE' },
+    { id: 204, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '📢 Recordad: Mañana lunes recogida de trastos en el Centro.  Truck', neighborhood: 'GENERAL' },
 ];
 
 const tickerMessages = [
-    '🛒 Mercadillo de Bonavista hoy: Bus L3, L30 y L54 con refuerzos.',
-    '🌤️ Previsión Sábado: Soleado, 12ºC a 21ºC. Viento flojo.',
-    '🍹 HOY 13:00h: Vermut Comunitario en Plaça de la Font.',
-    '🚧 Aviso: Obras puntuales en Av. Roma, carril derecho afectado.',
-    '🥾 Mañana DOMINGO: Caminata por el Camí de Ronda. ¡Únete!'
+    '🥾 Éxito total en la caminata dominical. ¡Gracias a todos!',
+    '🌤️ Previsión Lunes: Soleado y 20ºC. Estabilidad toda la semana.',
+    '📋 RECORDATORIO: Mañana Lunes recogida de trastos en Zona Centro.',
+    '🌅 HOY 19:15h: Encuentro Puesta de Sol en Playa del Miracle.',
+    '🌸 Agenda: Mañana volvemos con los talleres matinales.'
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

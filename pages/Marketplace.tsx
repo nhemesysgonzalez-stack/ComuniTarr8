@@ -57,11 +57,11 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'sab-21-patinete',
+          id: 'dom-22-patinete',
           user_id: 'v12',
-          title: '🛴 Patinete Eléctrico (Poco uso)',
-          description: 'Xiaomi Mi Scooter en perfecto estado. Incluye cargador y rueda de repuesto. Entrego hoy sábado por el centro.',
-          price: '150',
+          title: '🛴 Patinete Eléctrico (¡Rebajado!)',
+          description: 'Xiaomi Mi Scooter. Lo bajo a 140€ si se recoge hoy domingo antes de las 20h. ¡Perfecto para ir al trabajo mañana!',
+          price: '140',
           category: 'tech',
           neighborhood: 'GENERAL',
           contact_info: '600 55 44 33 (Pilar)',
@@ -69,11 +69,11 @@ const Marketplace: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'sab-21-bici',
+          id: 'dom-22-bici',
           user_id: 'v1',
           title: '🚲 Bici de Carretera — Talla M',
-          description: 'Ideal para empezar. Revisada esta semana. Se puede ver hoy sábado en la zona del Serrallo.',
-          price: '200',
+          description: 'Sigue disponible. Se puede ver hoy domingo tarde en el Serrallo. 190€ solo hoy.',
+          price: '190',
           category: 'ocio',
           neighborhood: 'GENERAL',
           contact_info: '655 11 22 33 (Marta)',
@@ -81,15 +81,15 @@ const Marketplace: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'sab-21-plantas',
-          user_id: 'v4',
-          title: '🪴 Lote de Plantas (Bonavista)',
-          description: 'Traídas hoy del mercado. Potos, cintas y suculentas. Lote completo o por separado. ¡Muy baratas!',
-          price: '10',
+          id: 'dom-22-libros',
+          user_id: 'v2',
+          title: '📚 Lote Libros Suspense (Novela Negra)',
+          description: 'Lote de 5 libros de suspense. Ideales para relajarse este domingo tarde. Entrego en mano zona centro.',
+          price: '15',
           category: 'hogar',
-          neighborhood: 'GENERAL',
-          contact_info: '655 44 33 22 (Rosa)',
-          image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445?auto=format&fit=crop&w=800&q=80',
+          neighborhood: 'CENTRE',
+          contact_info: '677 88 99 00 (Laia)',
+          image_url: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         }
       ];

@@ -73,26 +73,26 @@ const Polls: React.FC = () => {
 
             const mockPolls: Poll[] = [
                 {
-                    id: 'sab-21-poll-1',
+                    id: 'dom-22-poll-1',
                     creator_id: 'v1',
-                    title: '🛒 ¿Qué te parece la variedad hoy en Bonavista Sábado? 🍏',
-                    options: ['Muy completa, muy fresco', 'Mucha gente, agobiante', 'Falta algo de fruta', 'No he ido hoy'],
+                    title: '🥾 ¿Cómo calificarías la caminata de hoy domingo? ⛰️',
+                    options: ['Excelente, repetiré pronto', 'Muy bonita pero cansada', 'Poco ritmo, mucha gente', 'No he podido ir hoy'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'sab-21-poll-2',
+                    id: 'dom-22-poll-2',
                     creator_id: 'v2',
-                    title: '🍹 Vermut Sábado: ¿A qué hora sueles ir a Plaça de la Font?',
-                    options: ['Sobre las 12h, temprano', 'A las 13h, hora punta', 'Tarde, sobre las 14h', 'No suelo hacer vermut'],
+                    title: '🌅 ¿Nos vemos en el Miracle a las 19:15h hoy domingo?',
+                    options: ['¡Allí estaré!', 'Si no hace mucho frío', 'Me quedo descansando', 'Mañana madrugo mucho'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'sab-21-poll-3',
+                    id: 'dom-22-poll-3',
                     creator_id: 'v3',
-                    title: '🥾 ¿Vienes mañana a la caminata Grupal (09:30h)? 🌊',
-                    options: ['Sí, ya tengo las botas listas', 'Iré si sale el sol', 'No puedo mañana', 'Prefiero el vermut'],
+                    title: '📋 ¿Mañana lunes empiezas con teletrabajo o presencial? 💻',
+                    options: ['Teletrabajo (Afortunado)', 'Presencial en TGN', 'Fuera de la ciudad', 'Es mi día libre'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 }

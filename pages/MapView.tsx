@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 'sab-21-mercadillo', type: 'event', x: '45%', y: '35%', title: '🛒 Mercadillo de Bonavista', desc: 'Mercado operativo hoy sábado mañana.', status: 'Sábado Mañana', color: 'bg-indigo-500', icon: 'shopping_cart', glow: 'shadow-[0_0_50px_rgba(99,102,241,0.3)]' },
-    { id: 'sab-21-weather', type: 'weather', x: '52%', y: '42%', title: '☀️ Clima: Despejado 20ºC', desc: 'Día despejado y agradable. Perfecto para actividades al aire libre.', status: 'Despejado 20ºC', color: 'bg-sky-500', icon: 'wb_sunny' },
-    { id: 'sab-21-vermut', type: 'event', x: '48%', y: '45%', title: '🍹 Vermut Comunitario', desc: 'Hoy 13:00h en Plaça de la Font. ¡No te lo pierdas!', status: '13:00h', color: 'bg-orange-500', icon: 'local_bar' },
-    { id: 'sab-21-caminata', type: 'event', x: '55%', y: '50%', title: '🥾 Caminata Mañana (Preparativos)', desc: 'Punto de encuentro 09:30h en el Anfiteatro para la caminata del domingo.', status: '09:30h', color: 'bg-emerald-500', icon: 'hiking' },
-    { id: 'sab-21-patrol-done', type: 'incident', x: '42%', y: '40%', title: '🛡️ Seguridad: Ronda OK', desc: 'Zona vigilada el pasado jueves. Sin incidencias reportadas.', status: 'Finalizado', color: 'bg-green-500', icon: 'check_circle' },
+    { id: 'dom-22-caminata', type: 'event', x: '45%', y: '35%', title: '🥾 Caminata en curso', desc: 'El grupo está recorriendo el Camí de Ronda ahora mismo. ¡Únete!', status: 'En curso', color: 'bg-emerald-500', icon: 'hiking', glow: 'shadow-[0_0_50px_rgba(16,185,129,0.3)]' },
+    { id: 'dom-22-weather', type: 'weather', x: '52%', y: '42%', title: '☀️ Domingo: Soleado 21ºC', desc: 'Tarde despejada y agradable. Ideal para paseos costeros.', status: 'Despejado 21ºC', color: 'bg-sky-500', icon: 'wb_sunny' },
+    { id: 'dom-22-trastos', type: 'event', x: '48%', y: '45%', title: '📋 Recogida Trastos (Lunes)', desc: 'Recordatorio mensual: Mañana lunes recogida de voluminosos en la zona centro.', status: 'Mañana Lunes', color: 'bg-orange-500', icon: 'delete_sweep' },
+    { id: 'dom-22-patrol-done', type: 'incident', x: '55%', y: '50%', title: '🛡️ Vigilancia: OK', desc: 'Sin incidencias reportadas durante el fin de semana. Zona segura.', status: 'Finalizado', color: 'bg-green-500', icon: 'check_circle' },
+    { id: 'dom-22-relax', type: 'event', x: '42%', y: '40%', title: '🌅 Atardecer en la Playa', desc: 'Encuentro informal para ver la puesta de sol hoy 19:15h.', status: '19:15h', color: 'bg-indigo-500', icon: 'bedtime' },
     { id: 6, type: 'event', x: '68%', y: '80%', title: '🐾 Trobada Border Collies XXL', desc: 'Gran evento canino en Tivissa el 3 y 4 de Mayo. Agility, pastoreo, concursos y food trucks.', status: '3 y 4 Mayo', color: 'bg-fuchsia-500', icon: 'pets', glow: 'shadow-[0_0_60px_rgba(217,70,239,0.5)]' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);

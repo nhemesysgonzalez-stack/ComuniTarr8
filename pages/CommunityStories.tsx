@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'sab-21-s1', user_name: 'Ana T.', content: '🛒 ¡Ambientazo hoy en Bonavista! He encontrado unas joyas vintage increíbles. ¡Vale la pena acercarse hoy sábado! ☀️✨ #Bonavista #Mercadillo #Tarragona', image_url: 'https://images.unsplash.com/photo-1543083477-4f7f44aad226', likes: 156, created_at: new Date().toISOString() },
-            { id: 'sab-21-s2', user_name: 'Joan R.', content: 'Mañana de running por la Arrabassada. El mar está plano y el sol calienta ya. ¡Día de 10! 🌊🏃‍♂️ #Running #Tarragona #Sol #Sabado', image_url: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a', likes: 212, created_at: new Date().toISOString() },
-            { id: "sab-21-s3", user_name: "Marc G.", content: "Preparando las botas para la caminata de mañana domingo. ¿Quién más se apunta? 🥾⛰️ #Hiking #TGNActiva #Caminata", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 124, created_at: new Date().toISOString() },
-            { id: 'sab-21-s4', user_name: 'Pilar S.', content: '¡Vermutito rico en la Plaça de la Font! Disfrutando del sábado con los vecinos. 🍹🧀 #Tarragona #Vermut #Vecinos #Sabado', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 178, created_at: new Date().toISOString() }
+            { id: 'dom-22-s1', user_name: 'Ana T.', content: '🥾 ¡Caminata completada! 6km de puro sol y risas por el Camí de Ronda. ¡Lo hemos pasado genial hoy domingo! ☀️✨ #Caminata #Tarragona #Naturaleza #Domingo', image_url: 'https://images.unsplash.com/photo-1551632811-561732d1e306', likes: 210, created_at: new Date().toISOString() },
+            { id: 'dom-22-s2', user_name: 'Joan R.', content: '🌅 Atardecer mágico desde el Miracle hoy. La mejor forma de cerrar el fin de semana. ¡Tarragona nunca decepciona! 🌊🧡 #Tarragona #PuestadeSol #Relax #Domingo', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 256, created_at: new Date().toISOString() },
+            { id: "dom-22-s3", user_name: "Marc G.", content: "☀️ Domingo de desconexión total. Mañana lunes volvemos con energía. ¡Feliz semana a todos! 🔋💪 #TGNActiva #Domingo #LunesCerca", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 145, created_at: new Date().toISOString() },
+            { id: 'dom-22-s4', user_name: 'Pilar S.', content: '📋 Listos para el lunes con las pilas cargadas. Ya huele a primavera en el barrio. 🌸🌿 #Barrio #Tarragona #Primavera #Lunes', image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445', likes: 132, created_at: new Date().toISOString() }
         ];
 
 

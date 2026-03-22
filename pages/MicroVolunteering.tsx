@@ -42,30 +42,30 @@ const MicroVolunteering: React.FC = () => {
 
             const realOpportunitiesExamples: VolunteerOpportunity[] = [
                 {
-                    id: 'sab-21-vol-1',
+                    id: 'dom-22-vol-1',
                     creator_id: 'v7',
-                    title: '📦 Recogida Alimentos: Post-Mercadillo',
-                    description: 'Buscamos 3 voluntarios hoy sábado tarde (16:00h) en Bonavista para clasificar alimentos donados durante la feria del mercado. ¡Solo una hora!',
+                    title: '🥾 Guías Caminata: ¡Gracias!',
+                    description: 'Más de 40 vecinos guiados hoy domingo con éxito. Un agradecimiento especial a los voluntarios que han ido en cola cerrando el grupo.',
                     neighborhood: 'GENERAL',
-                    contact_info: '622 88 77 66 (Elena P. - Coordinadora). Carpa Roja Bonavista.',
+                    contact_info: 'Elena P. (Grup Excursionista)',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'sab-21-vol-2',
+                    id: 'dom-22-vol-2',
                     creator_id: 'v8',
-                    title: '♻️ Limpieza Playa: Atardecer Sábado',
-                    description: "Tras el día de sol intenso hoy sábado, nos juntamos a las 19:30h en la playa del Miracle para una recogida rápida de residuos. ¡Guantes gratis!",
+                    title: '♻️ Limpieza Playa: Hoy 18:30h',
+                    description: "Última llamada: Buscamos 5 voluntarios para una batida rápida hoy domingo tarde en la playa del Miracle tras el buen tiempo. ¡Únete!",
                     neighborhood: 'GENERAL',
-                    contact_info: '611 00 22 33 (Paco). Punto: Chiringuito 1.',
+                    contact_info: '611 00 22 33 (Paco). Nos vemos en Chiringuito 1.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'sab-21-vol-3',
+                    id: 'dom-22-vol-3',
                     creator_id: 'v9',
-                    title: '🥾 Apoyo Caminata Domingo (Guías)',
-                    description: '¿Conoces bien el Camí de Ronda? Ayúdanos mañana domingo a guiar al grupo a las 09:30h desde el Anfiteatro.',
+                    title: '🛡️ Voluntarios Lunes: Colegio Pax',
+                    description: 'Necesitamos 2 personas para el paso de cebra del colegio Pax mañana lunes a las 08:30h. ¿Algún abuelo/a o vecino se apunta?',
                     neighborhood: 'CENTRE',
-                    contact_info: '699 33 22 11 (Andreu). Escríbeme por chat.',
+                    contact_info: '644 11 22 33 (Luis). Avísenme por chat.',
                     created_at: new Date().toISOString()
                 }
             ];

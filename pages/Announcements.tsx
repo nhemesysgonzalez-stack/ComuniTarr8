@@ -145,33 +145,33 @@ const Announcements: React.FC = () => {
 
             const realAnnouncementsExamples = [
                 {
-                    id: 'sab-21-mercadillo',
-                    title: "🛒 MERCADILLO DE BONAVISTA HOY",
-                    content: "El mercadillo más grande de la zona está operativo hoy sábado. Recuerda usar el transporte público para evitar colapsos en el acceso.",
-                    category: "COMERCIO",
+                    id: 'dom-22-weather',
+                    title: "☀️ DOMINGO SOLEADO Y CALMA",
+                    content: "Disfruta de la última tarde del fin de semana. El tiempo seguirá estable hoy domingo con máximas de 21ºC y cielos despejados.",
+                    category: "TIEMPO",
                     author_name: "Admin ComuniTarr",
                     neighborhood: "GENERAL",
-                    itinerary: "• Día: Hoy Sábado 21\n• Horario: Hasta las 14:30h\n• Transporte: L3, L30, L54 reforzadas\n• Lugar: Bonavista",
+                    itinerary: "• Día: Hoy Domingo 22\n• Máxima: 21ºC\n• Estado: Soleado\n• Aviso: Sin lluvias previstas",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'sab-21-weather',
-                    title: "☀️ CLIMA: SOL Y 21ºC (SÁBADO)",
-                    content: "Día perfecto para estar fuera. El anticiclón nos trae sol y temperaturas agradables hoy sábado y mañana domingo.",
-                    category: "TIEMPO",
-                    author_name: "Meteo TGN",
+                    id: 'dom-22-sunset',
+                    title: "🌅 HOY 19:15: PUESTA DE SOL GRUPAL",
+                    content: "Nos reunimos en la playa del Miracle para ver el atardecer. Un momento de relax antes de empezar la semana laboral.",
+                    category: "OCIO",
+                    author_name: "Vecinos TGN",
                     neighborhood: "GENERAL",
-                    itinerary: "• Máxima: 21ºC\n• Estado: Despejado\n• Viento: Brisa marina floja\n• Índice UV: Moderado",
+                    itinerary: "• Hora: 19:15h\n• Lugar: Playa del Miracle\n• Actividad: Social / Relax\n• Info: Abierto a todos",
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'sab-21-caminata',
-                    title: "🥾 MAÑANA DOMINGO: CAMINATA COSTERA",
-                    content: "Organizamos una salida grupal para caminar por el Camí de Ronda. Actividad apta para todas las edades.",
+                    id: 'dom-22-trastos',
+                    title: "📋 MAÑANA LUNES: RECOGIDA DE TRASTOS",
+                    content: "Recordatorio para los vecinos del centro: Mañana lunes se realiza la recogida de voluminosos. Por favor, saca los objetos hoy noche.",
                     category: "AVISO",
-                    author_name: "Grup Excursionista",
-                    neighborhood: "GENERAL",
-                    itinerary: "• Fecha: Mañana Domingo 22\n• Hora: 09:30h\n• Salida: Puerta del Anfiteatro\n• Recorrido: 6km (Ida)",
+                    author_name: "Servicio Limpieza",
+                    neighborhood: "CENTRE",
+                    itinerary: "• Fecha: Lunes 23 Marzo\n• Horario: Noche/Mañana\n• Zona: Centro Ciudad\n• Info: No dejar en aceras estrechas",
                     created_at: new Date().toISOString()
                 }
             ];

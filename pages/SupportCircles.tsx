@@ -42,12 +42,12 @@ const SupportCircles: React.FC = () => {
 
             const mockCircles: SupportCircle[] = [
                 {
-                    id: 'sab-21-circulo-vermut',
+                    id: 'dom-22-circulo-puestadesol',
                     initiator_id: 'vecinal',
-                    title: '🤝 Círculo: Vermut, Gratitud y Bienestar',
+                    title: '🤝 Círculo: Puesta de Sol y Reflexión',
                     neighborhood: 'GENERAL',
-                    description: 'Aprovechamos el encuentro de hoy sábado a las 13:00h para un pequeño círculo de escucha y apoyo mutuo. ¡La salud mental empieza en el barrio!',
-                    contact_info: 'Plaça de la Font (Zona central)',
+                    description: 'Cerramos el fin de semana juntos hoy domingo a las 19:15h. Un espacio para agradecer y compartir calma antes de la nueva semana laboral.',
+                    contact_info: 'Playa del Miracle (Zona arena)',
                     created_at: new Date().toISOString()
                 },
                 {

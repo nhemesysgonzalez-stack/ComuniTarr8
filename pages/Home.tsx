@@ -175,30 +175,30 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'sab-21-mercadillo-news',
-            title: '🛒 Mercadillo de Bonavista Operativo',
-            content: 'Hoy sábado 21 de marzo el mercado de Bonavista está a pleno rendimiento. Refuerzo en buses L3, L30 y L54 durante toda la mañana.',
-            neighborhood: 'BONAVISTA',
-            category: 'COMERCIO',
-            image_url: 'https://images.unsplash.com/photo-1543083477-4f7f44aad226?auto=format&fit=crop&w=800&q=80',
-            created_at: new Date().toISOString()
-          },
-          {
-            id: 'sab-21-weather-news',
-            title: '☀️ Fin de Semana Radiante',
-            content: 'Sábado despejado hoy con máximas de 20ºC. Ideal para disfrutar de las playas o caminar por el Camí de Ronda. Brisa suave por la tarde. 🕶️',
+            id: 'dom-22-caminata-news',
+            title: '🥾 Éxito en la Caminata Grupal',
+            content: 'Más de 40 vecinos participan hoy domingo en la caminata por el Camí de Ronda. Sigue el track en vivo en el Mapa. ¡Buen ambiente!',
             neighborhood: 'GENERAL',
-            category: 'TIEMPO',
-            image_url: 'https://images.unsplash.com/photo-1510445740272-d3b16ec28439?auto=format&fit=crop&w=800&q=80',
+            category: 'DEPORTE',
+            image_url: 'https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80',
             created_at: new Date().toISOString()
           },
           {
-            id: 'sab-21-patrulla-news',
-            title: '🛡️ Seguridad: Patrulla Nocturna OK',
-            content: 'Tras la ronda de seguridad del pasado jueves, los voluntarios reportan calma en el casco antiguo. Próxima reunión martes 24.',
-            neighborhood: 'CENTRE',
-            category: 'VECINAL',
-            image_url: 'https://images.unsplash.com/photo-1541888941257-234b6e51f807?auto=format&fit=crop&w=800&q=80',
+            id: 'dom-22-weather-news',
+            title: '☀️ Domingo de Calma y Familia',
+            content: 'Tarde de domingo soleada con 21ºC. Parques y playas se llenan de familias disfrutando del último día del fin de semana.',
+            neighborhood: 'PART ALTA',
+            category: 'TIEMPO',
+            image_url: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80',
+            created_at: new Date().toISOString()
+          },
+          {
+            id: 'dom-22-lunes-news',
+            title: '📋 Agenda para Mañana Lunes',
+            content: 'Vuelve la actividad habitual. Recuerda: Recogida de trastos zona Centro y apertura de inscripciones en Tarragona Impulsa.',
+            neighborhood: 'GENERAL',
+            category: 'AVISO',
+            image_url: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80',
             created_at: new Date().toISOString()
           }
         ];
@@ -207,10 +207,10 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'sab-21-poll-1',
-          question: "¿Qué plan tienes para este fin de semana?",
-          options: ['Ir al Mercado de Bonavista', 'Caminata por la playa/Ronda', 'Vermut en la Plaça de la Font', 'Descanso y lectura'],
-          category: 'OCIO',
+          id: 'dom-22-poll-1',
+          question: "¿Cómo vas a empezar la semana mañana lunes?",
+          options: ['Con energía a tope', 'Poco a poco, café doble', 'Aún pensando en el finde', 'Teletrabajando desde casa'],
+          category: 'COMUNIDAD',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()
         };

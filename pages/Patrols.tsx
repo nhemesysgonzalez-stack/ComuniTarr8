@@ -49,28 +49,28 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'sab-21-pat-1',
+          id: 'dom-22-pat-1',
           creator_id: 'admin',
-          name: '🛒 Entorno Seguro: Bonavista Sábado',
-          description: 'Refuerzo informativo hoy sábado mañana en los accesos al Mercadillo de Bonavista. Colaboración con buses EMT.',
-          neighborhood: 'BONAVISTA',
+          name: '🛡️ Resumen Finde: Seguridad OK',
+          description: 'Las patrullas vecinales informan de un fin de semana tranquilo hoy domingo. Mañana volvemos a las rondas habituales.',
+          neighborhood: 'GENERAL',
           contact_info: 'Coordinación Vecinal — 611 00 22 33',
           created_at: new Date().toISOString()
         },
         {
-          id: 'sab-21-pat-2',
+          id: 'dom-22-pat-2',
           creator_id: 'user1',
-          name: '🛡️ Seguridad Escolar: Caminos Seguros',
-          description: 'Resumen de la semana: Todas las entradas a los colegios El Miracle y Pax han sido seguras. Volvemos el lunes 23.',
+          name: '🛡️ Seguridad Escolar: Lunes Mañana',
+          description: 'Mañana lunes retomamos los Caminos Seguros en El Miracle y Pax desde las 08:30h. Se buscan acompañantes de refuerzo.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
           created_at: new Date().toISOString()
         },
         {
-          id: 'sab-21-pat-3',
+          id: 'dom-22-pat-3',
           creator_id: 'user2',
-          name: '🌑 Convocatoria: Próxima Patrulla Nocturna',
-          description: 'Reunión el lunes 23 a las 19:00h en el C.C. Centre para organizar la ronda del martes noche por el centro.',
+          name: '🌑 Convocatoria: Patrulla Martes Noche',
+          description: 'Aviso: El martes 24 a las 20:00h realizaremos la ronda nocturna por el Balcón. Inscripciones abiertas hoy domingo.',
           neighborhood: 'CENTRE',
           contact_info: '622 55 44 33 (Maria)',
           created_at: new Date().toISOString()

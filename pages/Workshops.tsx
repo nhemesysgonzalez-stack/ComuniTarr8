@@ -48,27 +48,27 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'sab-21-pintura',
-                    title: '🎨 Taller: Pintura al Aire Libre',
-                    instructor: 'Marc R.',
-                    date: 'Hoy Sábado 21, 10:30 (Balcón Med.)',
-                    description: 'Ven a pintar el mar con nosotros. No importa el nivel, solo las ganas de crear. Trae tus pinceles, nosotros ponemos el lienzo.',
-                    image: 'https://images.unsplash.com/photo-1510445740272-d3b16ec28439?auto=format&fit=crop&q=80&w=800',
-                    spots: 12,
+                    id: 'dom-22-relax',
+                    title: '🧘 Relajación: Post-Caminata',
+                    instructor: 'Elena V.',
+                    date: 'Hoy Domingo 22, 18:00h (Playa Miracle)',
+                    description: 'Sesión suave de estiramientos y respiración para recuperar las piernas tras la caminata de hoy. Trae tu esterilla o una toalla.',
+                    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800',
+                    spots: 25,
                     neighborhood: 'GENERAL',
-                    contact_info: 'C.C. Part Alta - 977 23 45 67',
+                    contact_info: 'Punto: Chiringuito 1',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'sab-28-yoga',
-                    title: '🧘 Sesión: Yoga en la Playa',
-                    instructor: 'Elena V.',
-                    date: 'Sábado 28 Marzo, 09:00',
-                    description: 'Empezamos el día con energía frente al mar. Sesión gratuita. Trae tu esterilla y ropa cómoda.',
-                    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800',
-                    spots: 30,
+                    id: 'lun-23-empleo',
+                    title: '💼 Charla: Orientación Laboral',
+                    instructor: 'Tarragona Impulsa',
+                    date: 'Mañana Lunes 23, 10:00',
+                    description: 'Sesión informativa para jóvenes sobre cómo afrontar la primera entrevista. Inscripciones abiertas hoy domingo.',
+                    image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445?auto=format&fit=crop&q=80&w=800',
+                    spots: 15,
                     neighborhood: 'GENERAL',
-                    contact_info: 'Elena V. (Chat Comunitario)',
+                    contact_info: 'C.C. Centre - Plaça de la Font',
                     created_at: new Date().toISOString()
                 }
             ];
