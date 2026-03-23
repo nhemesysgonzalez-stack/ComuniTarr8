@@ -124,6 +124,7 @@ const Home: React.FC = () => {
   const [loadingNews, setLoadingNews] = useState(true);
   const [loadingNeighbors, setLoadingNeighbors] = useState(true);
   const [forumActiveCount, setForumActiveCount] = useState(0);
+  const [currentPoll, setCurrentPoll] = useState<any>(null);
 
   // Experience calculation
   const karma = user?.user_metadata?.karma || 0;
@@ -506,7 +507,7 @@ const Home: React.FC = () => {
 
           {/* AYUDAS VITALES */}
           <motion.div whileHover={{ y: -5 }} className="group">
-            <Link to="/vital-needs" className="block h-full">
+            <Link to="/vital" className="block h-full">
               <div className="h-full bg-white dark:bg-surface-dark p-8 rounded-[40px] border border-gray-100 dark:border-gray-800 shadow-xl hover:shadow-rose-500/20 transition-all relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:scale-110 transition-transform">
                   <span className="material-symbols-outlined text-6xl">volunteer_activism</span>
@@ -537,7 +538,7 @@ const Home: React.FC = () => {
           { icon: 'shopping_basket', label: 'Mercadillo', to: '/market', color: 'bg-orange-500' },
           { icon: 'calendar_month', label: 'Calendario', to: '/calendar', color: 'bg-sky-500' },
           { icon: 'business_center', label: 'Empleo', to: '/services', color: 'bg-indigo-500' },
-          { icon: 'groups', label: 'Voluntariado', to: '/volunteer', color: 'bg-teal-500' }
+          { icon: 'groups', label: 'Voluntariado', to: '/volunteering', color: 'bg-teal-500' }
         ].map((btn, i) => (
           <Link key={i} to={btn.to} className="shrink-0">
             <div className={`px-6 py-4 ${btn.color} text-white rounded-3xl flex items-center gap-3 shadow-lg hover:scale-105 transition-all`}>
@@ -650,7 +651,7 @@ const Home: React.FC = () => {
             </div>
             <div className="bg-gray-50 dark:bg-gray-800/50 p-8 rounded-[32px] border-2 border-dashed border-gray-200 dark:border-gray-700 text-center">
               <p className="text-xs text-gray-500">Descubre iniciativas en la sección de Solidaridad.</p>
-              <Link to="/support-circles" className="text-[10px] font-black text-primary uppercase mt-2 block tracking-widest">Ver Círculos de Apoyo →</Link>
+              <Link to="/support" className="text-[10px] font-black text-primary uppercase mt-2 block tracking-widest">Ver Círculos de Apoyo →</Link>
             </div>
           </section>
 
