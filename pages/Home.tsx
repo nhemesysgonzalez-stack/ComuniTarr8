@@ -378,7 +378,7 @@ const Home: React.FC = () => {
     } catch (err) { console.error(err); }
   };
 
-  const [currentPoll, setCurrentPoll] = useState<any>(null);
+
 
   useEffect(() => {
     const fetchPoll = async () => {
