@@ -42,30 +42,30 @@ const MicroVolunteering: React.FC = () => {
 
             const realOpportunitiesExamples: VolunteerOpportunity[] = [
                 {
-                    id: 'dom-22-vol-1',
-                    creator_id: 'v7',
-                    title: '🥾 Guías Caminata: ¡Gracias!',
-                    description: 'Más de 40 vecinos guiados hoy domingo con éxito. Un agradecimiento especial a los voluntarios que han ido en cola cerrando el grupo.',
-                    neighborhood: 'GENERAL',
-                    contact_info: 'Elena P. (Grup Excursionista)',
-                    created_at: new Date().toISOString()
-                },
-                {
-                    id: 'dom-22-vol-2',
+                    id: 'lun-23-vol-pax',
                     creator_id: 'v8',
-                    title: '♻️ Limpieza Playa: Hoy 18:30h',
-                    description: "Última llamada: Buscamos 5 voluntarios para una batida rápida hoy domingo tarde en la playa del Miracle tras el buen tiempo. ¡Únete!",
-                    neighborhood: 'GENERAL',
-                    contact_info: '611 00 22 33 (Paco). Nos vemos en Chiringuito 1.',
+                    title: '🛡️ Voluntarios Hoy: Colegio Pax',
+                    description: 'Dispositivo activo hoy lunes 08:30h. Gracias a los 3 voluntarios que han cubierto el turno de acompañamiento hoy.',
+                    neighborhood: 'CENTRE',
+                    contact_info: '644 11 22 33 (Luis). Gracias por vuestro tiempo.',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'dom-22-vol-3',
+                    id: 'mar-24-vol-rambla',
                     creator_id: 'v9',
-                    title: '🛡️ Voluntarios Lunes: Colegio Pax',
-                    description: 'Necesitamos 2 personas para el paso de cebra del colegio Pax mañana lunes a las 08:30h. ¿Algún abuelo/a o vecino se apunta?',
+                    title: '♻️ Limpieza Rambla Mañana',
+                    description: 'Mañana martes 24 realizaremos una batida de limpieza rápida en los tramos centrales de la Rambla Nova. ¿Alguien se une a las 11:00h?',
                     neighborhood: 'CENTRE',
-                    contact_info: '644 11 22 33 (Luis). Avísenme por chat.',
+                    contact_info: '611 00 22 33 (Paco). Nos vemos en la Estatua de los Castells.',
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'lun-23-vol-impulsa',
+                    creator_id: 'v10',
+                    title: '🏢 Apoyo: TGN Impulsa Primavera',
+                    description: 'Buscamos voluntarios para orientar a jóvenes en la feria de empleo de este lunes. Coordinación en stand municipal.',
+                    neighborhood: 'GENERAL',
+                    contact_info: '977 12 34 56 (Oficinas Municipales)',
                     created_at: new Date().toISOString()
                 }
             ];

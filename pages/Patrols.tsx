@@ -49,28 +49,28 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'dom-22-pat-1',
+          id: 'lun-23-pat-escuelas',
           creator_id: 'admin',
-          name: '🛡️ Resumen Finde: Seguridad OK',
-          description: 'Las patrullas vecinales informan de un fin de semana tranquilo hoy domingo. Mañana volvemos a las rondas habituales.',
+          name: '🛡️ Seguridad Escolar: Activa Hoy',
+          description: 'Dispositivo Camino Seguro activado desde las 08:30h en accesos Miracle y Pax. Refuerzo de vigilancia vecinal para la vuelta a clase.',
           neighborhood: 'GENERAL',
-          contact_info: 'Coordinación Vecinal — 611 00 22 33',
+          contact_info: 'Coordinación Escolar — 611 00 22 33',
           created_at: new Date().toISOString()
         },
         {
-          id: 'dom-22-pat-2',
+          id: 'lun-23-pat-morning',
           creator_id: 'user1',
-          name: '🛡️ Seguridad Escolar: Lunes Mañana',
-          description: 'Mañana lunes retomamos los Caminos Seguros en El Miracle y Pax desde las 08:30h. Se buscan acompañantes de refuerzo.',
+          name: '🛡️ Resumen Mañana: Todo en Orden',
+          description: 'Las patrullas nocturnas informan de una noche sin incidentes. Turno de mañana operando con normalidad por el centro.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
           created_at: new Date().toISOString()
         },
         {
-          id: 'dom-22-pat-3',
+          id: 'mar-24-pat-night',
           creator_id: 'user2',
           name: '🌑 Convocatoria: Patrulla Martes Noche',
-          description: 'Aviso: El martes 24 a las 20:00h realizaremos la ronda nocturna por el Balcón. Inscripciones abiertas hoy domingo.',
+          description: 'Mañana martes 24 a las 20:00h realizaremos la ronda nocturna por el Balcón del Mediterráneo. Se buscan 2 voluntarios más.',
           neighborhood: 'CENTRE',
           contact_info: '622 55 44 33 (Maria)',
           created_at: new Date().toISOString()

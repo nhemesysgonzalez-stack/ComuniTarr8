@@ -8,11 +8,10 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 'dom-22-caminata', type: 'event', x: '45%', y: '35%', title: '🥾 Caminata en curso', desc: 'El grupo está recorriendo el Camí de Ronda ahora mismo. ¡Únete!', status: 'En curso', color: 'bg-emerald-500', icon: 'hiking', glow: 'shadow-[0_0_50px_rgba(16,185,129,0.3)]' },
-    { id: 'dom-22-weather', type: 'weather', x: '52%', y: '42%', title: '☀️ Domingo: Soleado 21ºC', desc: 'Tarde despejada y agradable. Ideal para paseos costeros.', status: 'Despejado 21ºC', color: 'bg-sky-500', icon: 'wb_sunny' },
-    { id: 'dom-22-trastos', type: 'event', x: '48%', y: '45%', title: '📋 Recogida Trastos (Lunes)', desc: 'Recordatorio mensual: Mañana lunes recogida de voluminosos en la zona centro.', status: 'Mañana Lunes', color: 'bg-orange-500', icon: 'delete_sweep' },
-    { id: 'dom-22-patrol-done', type: 'incident', x: '55%', y: '50%', title: '🛡️ Vigilancia: OK', desc: 'Sin incidencias reportadas durante el fin de semana. Zona segura.', status: 'Finalizado', color: 'bg-green-500', icon: 'check_circle' },
-    { id: 'dom-22-relax', type: 'event', x: '42%', y: '40%', title: '🌅 Atardecer en la Playa', desc: 'Encuentro informal para ver la puesta de sol hoy 19:15h.', status: '19:15h', color: 'bg-indigo-500', icon: 'bedtime' },
+    { id: 'lun-23-weather', type: 'weather', x: '52%', y: '42%', title: '☀️ Lunes: Soleado 22ºC', desc: 'Arrancamos la semana con cielos despejados e ideal para caminar.', status: 'Despejado 22ºC', color: 'bg-sky-500', icon: 'wb_sunny' },
+    { id: 'lun-23-trastos-1', type: 'event', x: '45%', y: '35%', title: '📋 Recogida Trastos Centro', desc: 'Zona Balmes y Rambla. Sacar muebles antes de las 22h hoy lunes.', status: 'Hoy Activo', color: 'bg-orange-500', icon: 'delete_sweep', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.3)]' },
+    { id: 'lun-23-trastos-2', type: 'event', x: '48%', y: '45%', title: '📋 Recogida Trastos Norte', desc: 'Punto de recogida muebles esta noche. Por favor, mantened libre el paso.', status: 'Hoy Activo', color: 'bg-orange-500', icon: 'delete_sweep' },
+    { id: 'lun-23-seguridad', type: 'incident', x: '55%', y: '50%', title: '🛡️ Seguridad Escolar', desc: 'Refuerzo de patrullas vecinales en el acceso al Colegio Miracle desde las 08:30h.', status: 'Activo Lunes', color: 'bg-emerald-500', icon: 'check_circle' },
     { id: 6, type: 'event', x: '68%', y: '80%', title: '🐾 Trobada Border Collies XXL', desc: 'Gran evento canino en Tivissa el 3 y 4 de Mayo. Agility, pastoreo, concursos y food trucks.', status: '3 y 4 Mayo', color: 'bg-fuchsia-500', icon: 'pets', glow: 'shadow-[0_0_60px_rgba(217,70,239,0.5)]' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);

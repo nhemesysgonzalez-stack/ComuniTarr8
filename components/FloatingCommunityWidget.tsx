@@ -11,18 +11,17 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 201, user: 'Sandra L.', avatar: 'https://i.pravatar.cc/150?u=sandra', text: '🥾 ¡Qué buen ambiente en la caminata hoy! El Camí de Ronda está precioso. 😍', neighborhood: 'GENERAL' },
-    { id: 202, user: 'Pepe R.', avatar: 'https://i.pravatar.cc/150?u=pepe', text: '☀️ Sol y relax en la Arrabassada. Disfrutando el último día de sol. 🏖️', neighborhood: 'PLATJA' },
-    { id: 203, user: 'Marta G.', avatar: 'https://i.pravatar.cc/150?u=marta', text: '🌅 ¡Nos vemos a las 19:15 en el Miracle para el atardecer! 🥂', neighborhood: 'CENTRE' },
-    { id: 204, user: 'Admin ComuniTarr', avatar: '/logo.svg', text: '📢 Recordad: Mañana lunes recogida de trastos en el Centro.  Truck', neighborhood: 'GENERAL' },
+    { id: 301, user: 'Pau G.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¡Buenos días! Un buen café y a por la semana ☕', neighborhood: 'Bonavista' },
+    { id: 302, user: 'Maria V.', avatar: 'https://i.pravatar.cc/150?u=maria', text: 'Ya he bajado el sofá viejo al punto de recogida. ¡Qué alivio! 📦', neighborhood: 'Centre' },
+    { id: 303, user: 'Sergio T.', avatar: 'https://i.pravatar.cc/150?u=sergio', text: '¿Alguien para compartir coche al Centro hacia las 09:30? 🚗', neighborhood: 'Poniente' },
+    { id: 304, user: 'Elena M.', avatar: 'https://i.pravatar.cc/150?u=elena', text: 'Ese sol de lunes cura cualquier madrugón ☀️', neighborhood: 'Serrallo' }
 ];
 
 const tickerMessages = [
-    '🥾 Éxito total en la caminata dominical. ¡Gracias a todos!',
-    '🌤️ Previsión Lunes: Soleado y 20ºC. Estabilidad toda la semana.',
-    '📋 RECORDATORIO: Mañana Lunes recogida de trastos en Zona Centro.',
-    '🌅 HOY 19:15h: Encuentro Puesta de Sol en Playa del Miracle.',
-    '🌸 Agenda: Mañana volvemos con los talleres matinales.'
+    "📦 Recordatorio: Recogida de trastos hoy en zona Centro.",
+    "☀️ Máxima de 22ºC prevista para hoy en Tarragona.",
+    "⚠️ Precaución en accesos escolares (Miracle/Pax) por dispositivo de seguridad.",
+    "💼 5 nuevas ofertas de empleo publicadas hoy lunes."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

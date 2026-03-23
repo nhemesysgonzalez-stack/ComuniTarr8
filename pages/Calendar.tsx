@@ -59,32 +59,6 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'dom-22-caminata',
-          creator_id: 'admin',
-          title: "🥾 Caminata: Camí de Ronda",
-          description: "Hoy domingo salimos a disfrutar de la costa. El grupo ya está en marcha. ¡Únete en cualquier punto del recorrido!",
-          event_date: '2026-03-22',
-          event_time: '09:30',
-          location: 'Anfiteatro Romano',
-          category: 'Deporte',
-          neighborhood: 'GENERAL',
-          contact_info: 'Grup Excursionista TGN',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'dom-22-sunset',
-          creator_id: 'user1',
-          title: "🌅 Puesta de Sol en el Miracle",
-          description: "Hoy domingo nos juntamos para despedir el fin de semana viendo el atardecer desde la arena. Trae tu bebida.",
-          event_date: '2026-03-22',
-          event_time: '19:15',
-          location: 'Playa del Miracle',
-          category: 'Ocio',
-          neighborhood: 'GENERAL',
-          contact_info: 'Vecinos Playa',
-          created_at: new Date().toISOString()
-        },
-        {
           id: 'lun-23-trastos',
           creator_id: 'ayto',
           title: "📋 Lunes: Recogida de Trastos",

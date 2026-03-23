@@ -579,31 +579,6 @@ const Forum: React.FC = () => {
           </div>
 
           {/* Trending Topics - NEW section for Wednesday 18 March */}
-          <div>
-            <h4 className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 ml-2">Tendencias Hoy</h4>
-            <div className="flex flex-wrap gap-2 px-2">
-              {['#CaminataConseguida', '#DomingoRelax', '#AtardecerMiracle', '#LunesAgenda', '#TGNActiva'].map(tag => (
-                <button key={tag} className="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full text-[9px] font-black text-slate-500 hover:text-blue-500 hover:bg-blue-50 transition-all uppercase tracking-tighter">
-                  {tag}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Jobs Mini-Card */}
-          <div className="p-5 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800/50 dark:to-slate-900/50 rounded-[28px] border border-slate-200/50 dark:border-white/5">
-            <h2 className="text-[10px] font-black uppercase tracking-widest text-[#3b82f6] mb-4">Empleo Domingo 22 Mar</h2>
-            <div className="space-y-4">
-              <div className="text-[11px] font-bold text-slate-600 dark:text-slate-300 border-l-2 border-emerald-500 pl-3">
-                <p>🏗️ Peón de Obra (TGN)</p>
-                <p className="text-[9px] opacity-60 font-medium tracking-tight">Incorporación inmediata. 📞 977 22 34 56</p>
-              </div>
-              <div className="text-[11px] font-bold text-slate-600 dark:text-slate-300 border-l-2 border-primary pl-3">
-                <p>🧹 Personal de Limpieza</p>
-                <p className="text-[9px] opacity-60 font-medium tracking-tight">Media jornada tardes. 📞 633 11 22 33</p>
-              </div>
-            </div>
-          </div>
 
           {/* Active Neighbors Grid */}
           <div>

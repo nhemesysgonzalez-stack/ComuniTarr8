@@ -56,31 +56,36 @@ const Incidents: React.FC = () => {
             }
 
             if (data) {
-                // Mock Incidents for Wednesday 18 March
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'dom-22-inc-1',
+                        id: 'lun-23-trastos-active',
                         user_id: 'admin',
-                        title: '✅ LIMPIEZA PLAYA MIRACLE - OK',
-                        description: 'Brigada rápida finalizada a las 18:30h tras el paso del grupo de la caminata. Todo despejado hoy domingo.',
+                        title: '📋 Recogida Trastos Activa',
+                        description: 'Camiones operando en zona comercial. Sacad muebles antes de las 22h.',
+                        status: 'in_progress',
                         neighborhood: 'CENTRE',
-                        status: 'resolved',
                         created_at: new Date().toISOString(),
-                        contact_info: 'Limpieza TGN — 777 66 55 44',
-                        profiles: { full_name: 'Mantenimiento TGN', avatar_url: '/logo.svg' },
-                        image_url: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80'
+                        profiles: { full_name: 'Ayuntamiento TGN', avatar_url: '/logo.svg' }
                     },
                     {
-                        id: 'dom-22-inc-2',
-                        user_id: 'v3',
-                        title: '📋 AVISO: RUTA RECOGIDA TRASTOS',
-                        description: 'Confirmadas las rutas de recogida para mañana lunes en zona centro. Por favor, no obstaculizar contenedores.',
-                        neighborhood: 'CENTRE',
+                        id: 'lun-23-limpieza-finished',
+                        user_id: 'v4',
+                        title: '☀️ Limpieza Post-Finde Miracle',
+                        description: 'Caminata de ayer finalizada. Zona limpia y despejada.',
+                        status: 'resolved',
+                        neighborhood: 'GENERAL',
+                        created_at: new Date().toISOString(),
+                        profiles: { full_name: 'Mantenimiento TGN', avatar_url: 'https://i.pravatar.cc/150?u=man' }
+                    },
+                    {
+                        id: 'lun-23-riego-rambla',
+                        user_id: 'v5',
+                        title: '🚿 Riego Rambla Nova',
+                        description: 'Mantenimiento preventivo zona ajardinada este mediodía.',
                         status: 'open',
-                        created_at: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(),
-                        contact_info: 'Movilidad TGN — 010',
-                        profiles: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' },
-                        image_url: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800'
+                        neighborhood: 'CENTRE',
+                        created_at: new Date().toISOString(),
+                        profiles: { full_name: 'Parques y Jardines', avatar_url: 'https://i.pravatar.cc/150?u=parque' }
                     }
                 ];
 

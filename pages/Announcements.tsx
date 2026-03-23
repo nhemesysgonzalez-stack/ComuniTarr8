@@ -143,40 +143,46 @@ const Announcements: React.FC = () => {
                 return diffDays <= 7;
             });
 
-            const realAnnouncementsExamples = [
+            const realBulletins: Announcement[] = [
                 {
-                    id: 'dom-22-weather',
-                    title: "☀️ DOMINGO SOLEADO Y CALMA",
-                    content: "Disfruta de la última tarde del fin de semana. El tiempo seguirá estable hoy domingo con máximas de 21ºC y cielos despejados.",
-                    category: "TIEMPO",
-                    author_name: "Admin ComuniTarr",
-                    neighborhood: "GENERAL",
-                    itinerary: "• Día: Hoy Domingo 22\n• Máxima: 21ºC\n• Estado: Soleado\n• Aviso: Sin lluvias previstas",
+                    id: 'lun-23-trastos',
+                    title: '📋 Hoy: Recogida de Trastos (Zona Centro)',
+                    content: 'Hoy lunes es día de retirada de muebles y voluminosos. Recordad bajarlos a la acera antes de las 22:00h para no ser sancionados.',
+                    neighborhood: 'CENTRE',
+                    category: 'AVISO',
+                    author_name: 'Ajuntament TGN',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'dom-22-sunset',
-                    title: "🌅 HOY 19:15: PUESTA DE SOL GRUPAL",
-                    content: "Nos reunimos en la playa del Miracle para ver el atardecer. Un momento de relax antes de empezar la semana laboral.",
-                    category: "OCIO",
-                    author_name: "Vecinos TGN",
-                    neighborhood: "GENERAL",
-                    itinerary: "• Hora: 19:15h\n• Lugar: Playa del Miracle\n• Actividad: Social / Relax\n• Info: Abierto a todos",
+                    id: 'lun-23-weather',
+                    title: '☀️ Lunes Primaveral y Despejado',
+                    content: 'Semana de sol y temperaturas agradables. Hoy llegamos a los 22ºC. ¡Perfecto para caminar por la Rambla o ir al Miracle!',
+                    neighborhood: 'GENERAL',
+                    category: 'TIEMPO',
+                    author_name: 'Admin ComuniTarr',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'dom-22-trastos',
-                    title: "📋 MAÑANA LUNES: RECOGIDA DE TRASTOS",
-                    content: "Recordatorio para los vecinos del centro: Mañana lunes se realiza la recogida de voluminosos. Por favor, saca los objetos hoy noche.",
-                    category: "AVISO",
-                    author_name: "Servicio Limpieza",
-                    neighborhood: "CENTRE",
-                    itinerary: "• Fecha: Lunes 23 Marzo\n• Horario: Noche/Mañana\n• Zona: Centro Ciudad\n• Info: No dejar en aceras estrechas",
+                    id: 'lun-23-seguridad',
+                    title: '🛡️ Dispositivo Escolar: Miracle y Pax',
+                    content: 'Vigilancia activa en los accesos escolares hoy lunes (08:30-09:15). Respetad las zonas de carga y descarga de niños.',
+                    neighborhood: 'GENERAL',
+                    category: 'SEGURIDAD',
+                    author_name: 'Guardia Urbana',
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'lun-23-empleo',
+                    title: '💼 Empleo: Nuevas Vacantes Lunes',
+                    content: 'Iniciamos la semana con 5 ofertas verificadas en comercio y hostelería. Entra en "Servicios" para ver los contactos directos.',
+                    neighborhood: 'GENERAL',
+                    category: 'EMPLEO',
+                    author_name: 'Admin ComuniTarr',
                     created_at: new Date().toISOString()
                 }
             ];
 
-            setNotices([...realAnnouncementsExamples, ...validFetched]);
+            setNotices([...realBulletins, ...validFetched]);
         } catch (e) {
             console.error(e);
             setNotices([]);

@@ -57,39 +57,39 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'dom-22-patinete',
+          id: 'lun-23-desk',
           user_id: 'v12',
-          title: '🛴 Patinete Eléctrico (¡Rebajado!)',
-          description: 'Xiaomi Mi Scooter. Lo bajo a 140€ si se recoge hoy domingo antes de las 20h. ¡Perfecto para ir al trabajo mañana!',
-          price: '140',
-          category: 'tech',
-          neighborhood: 'GENERAL',
-          contact_info: '600 55 44 33 (Pilar)',
-          image_url: 'https://images.unsplash.com/photo-1578303321116-b73ca5934440?auto=format&fit=crop&w=800&q=80',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'dom-22-bici',
-          user_id: 'v1',
-          title: '🚲 Bici de Carretera — Talla M',
-          description: 'Sigue disponible. Se puede ver hoy domingo tarde en el Serrallo. 190€ solo hoy.',
-          price: '190',
-          category: 'ocio',
-          neighborhood: 'GENERAL',
-          contact_info: '655 11 22 33 (Marta)',
-          image_url: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80',
-          created_at: new Date().toISOString()
-        },
-        {
-          id: 'dom-22-libros',
-          user_id: 'v2',
-          title: '📚 Lote Libros Suspense (Novela Negra)',
-          description: 'Lote de 5 libros de suspense. Ideales para relajarse este domingo tarde. Entrego en mano zona centro.',
-          price: '15',
+          title: '💻 Escritorio Oficina (Casi nuevo)',
+          description: 'Mesa amplia ideal para despacho o estudios. Medidas 140x80. Desmontado para transporte. 📞 633 11 22 33',
+          price: '45',
           category: 'hogar',
           neighborhood: 'CENTRE',
-          contact_info: '677 88 99 00 (Laia)',
-          image_url: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80',
+          contact_info: '633 11 22 33 (Pau)',
+          image_url: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'lun-23-monitor',
+          user_id: 'v1',
+          title: '🖥️ Monitor 24" para Teletrabajo',
+          description: 'SAMSUNG Full HD. Muy poco uso, perfecto estado. Vendo por cambio a uno mayor. 📞 977 44 55 66',
+          price: '60',
+          category: 'tech',
+          neighborhood: 'PONENT',
+          contact_info: '977 44 55 66 (Maria)',
+          image_url: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=800&q=80',
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'lun-23-chair',
+          user_id: 'v2',
+          title: '💺 Silla Ergonómica Pro',
+          description: 'Silla de oficina cómoda con soporte lumbar. Ideal para pasar muchas horas sentado. 📞 622 88 77 66',
+          price: '35',
+          category: 'hogar',
+          neighborhood: 'SANT PERE',
+          contact_info: '622 88 77 66 (Sergio)',
+          image_url: 'https://images.unsplash.com/photo-1505797149-43c0c3260751?auto=format&fit=crop&w=800&q=80',
           created_at: new Date().toISOString()
         }
       ];

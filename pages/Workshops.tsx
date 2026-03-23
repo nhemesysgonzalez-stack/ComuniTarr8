@@ -48,27 +48,39 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'dom-22-relax',
-                    title: '🧘 Relajación: Post-Caminata',
-                    instructor: 'Elena V.',
-                    date: 'Hoy Domingo 22, 18:00h (Playa Miracle)',
-                    description: 'Sesión suave de estiramientos y respiración para recuperar las piernas tras la caminata de hoy. Trae tu esterilla o una toalla.',
-                    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800',
-                    spots: 25,
-                    neighborhood: 'GENERAL',
-                    contact_info: 'Punto: Chiringuito 1',
+                    id: 'lun-23-empleo',
+                    title: '💼 Charla: Empleo Joven TGN',
+                    instructor: 'Tarragona Impulsa',
+                    date: 'Hoy Lunes 23, 11:00h',
+                    description: 'Sesión informativa para jóvenes sobre cómo afrontar la primera entrevista y buscar en el sector servicios local.',
+                    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80',
+                    spots: 20,
+                    neighborhood: 'CENTRE',
+                    contact_info: 'C.C. Centre - Plaça de la Font',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'lun-23-empleo',
-                    title: '💼 Charla: Orientación Laboral',
-                    instructor: 'Tarragona Impulsa',
-                    date: 'Mañana Lunes 23, 10:00',
-                    description: 'Sesión informativa para jóvenes sobre cómo afrontar la primera entrevista. Inscripciones abiertas hoy domingo.',
-                    image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445?auto=format&fit=crop&q=80&w=800',
-                    spots: 15,
+                    id: 'lun-23-tech',
+                    title: '📱 Taller: Trámites con el Móvil',
+                    instructor: 'Maria P.',
+                    date: 'Hoy Lunes 23, 17:00h',
+                    description: 'Aprende a usar la Carpeta Ciudadana y pedir citas médicas desde tu smartphone. Especial para mayores.',
+                    image: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80',
+                    spots: 12,
+                    neighborhood: 'PONENT',
+                    contact_info: 'Biblioteca de Ponent',
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'mar-24-yoga',
+                    title: '🧘 Yoga Post-Trabajo al aire libre',
+                    instructor: 'Elena V.',
+                    date: 'Mañana Martes 24, 19:00h',
+                    description: 'Clase dinámica para liberar tensiones tras la jornada laboral. Ven con esterilla y ropa cómoda al Miracle.',
+                    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
+                    spots: 25,
                     neighborhood: 'GENERAL',
-                    contact_info: 'C.C. Centre - Plaça de la Font',
+                    contact_info: 'Punto: Chiringuito 1',
                     created_at: new Date().toISOString()
                 }
             ];

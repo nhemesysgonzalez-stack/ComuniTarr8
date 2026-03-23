@@ -175,30 +175,30 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'dom-22-caminata-news',
-            title: '🥾 Éxito en la Caminata Grupal',
-            content: 'Más de 40 vecinos participan hoy domingo en la caminata por el Camí de Ronda. Sigue el track en vivo en el Mapa. ¡Buen ambiente!',
-            neighborhood: 'GENERAL',
-            category: 'DEPORTE',
-            image_url: 'https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80',
-            created_at: new Date().toISOString()
-          },
-          {
-            id: 'dom-22-weather-news',
-            title: '☀️ Domingo de Calma y Familia',
-            content: 'Tarde de domingo soleada con 21ºC. Parques y playas se llenan de familias disfrutando del último día del fin de semana.',
-            neighborhood: 'PART ALTA',
-            category: 'TIEMPO',
-            image_url: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80',
-            created_at: new Date().toISOString()
-          },
-          {
-            id: 'dom-22-lunes-news',
-            title: '📋 Agenda para Mañana Lunes',
-            content: 'Vuelve la actividad habitual. Recuerda: Recogida de trastos zona Centro y apertura de inscripciones en Tarragona Impulsa.',
-            neighborhood: 'GENERAL',
+            id: 'lun-23-trastos-news',
+            title: '📋 Hoy: Recogida de Trastos (Centro)',
+            content: 'Atención vecinos de la zona Centro: Hoy lunes toca recogida de muebles y voluminosos. Por favor, sacad los objetos a la calle antes de las 22:00h.',
+            neighborhood: 'CENTRE',
             category: 'AVISO',
-            image_url: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80',
+            image_url: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80',
+            created_at: new Date().toISOString()
+          },
+          {
+            id: 'lun-23-weather-news',
+            title: '☀️ Comienzo de Semana Primaveral',
+            content: 'Arrancamos el lunes con cielos despejados y una temperatura máxima de 22ºC. Ideal para caminar al trabajo o al colegio.',
+            neighborhood: 'GENERAL',
+            category: 'TIEMPO',
+            image_url: 'https://images.unsplash.com/photo-1414609476228-db04859bc091?auto=format&fit=crop&w=800&q=80',
+            created_at: new Date().toISOString()
+          },
+          {
+            id: 'lun-23-empleo-news',
+            title: '💼 Empleo: Nuevas Vacantes Lunes',
+            content: 'Iniciamos la semana con 5 nuevas ofertas verificadas en el sector servicios y logística. Consulta los detalles en el módulo de Empleo.',
+            neighborhood: 'GENERAL',
+            category: 'EMPLEO',
+            image_url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
             created_at: new Date().toISOString()
           }
         ];
@@ -207,9 +207,9 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'dom-22-poll-1',
-          question: "¿Cómo vas a empezar la semana mañana lunes?",
-          options: ['Con energía a tope', 'Poco a poco, café doble', 'Aún pensando en el finde', 'Teletrabajando desde casa'],
+          id: 'lun-23-poll-1',
+          question: "📊 ¿Cómo ha sido tu vuelta a la rutina hoy lunes?",
+          options: ['Con mucha energía', 'Me ha costado madrugar', 'Deseando que llegue el viernes', 'Aún aterrizando'],
           category: 'COMUNIDAD',
           neighborhood: 'GENERAL',
           created_at: new Date().toISOString()
@@ -449,62 +449,107 @@ const Home: React.FC = () => {
       </section>
 
       {/* Quick Actions (Modern Grid) */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {[
-          { icon: 'business_center', label: 'Directorio Negocios', to: '/business-directory', color: 'from-emerald-500 to-teal-600' },
-          { icon: 'report_problem', label: t('report_incident'), action: () => setShowIncidentModal(true), color: 'from-orange-500 to-red-600' },
-          { icon: 'shopping_basket', label: t('publish_product'), to: '/market', color: 'from-sky-500 to-blue-600' },
-          { icon: 'school', label: t('workshops'), to: '/workshops', color: 'from-indigo-500 to-purple-600' }
-        ].map((action, i) => (
-          <motion.div
-            key={i}
-            whileHover={{ y: -10, scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="h-full"
-          >
-            {action.to ? (
-              <Link to={action.to} className="h-full block">
-                <div className={`h-full p-8 rounded-[40px] bg-gradient-to-br ${action.color} text-white transition-all shadow-2xl relative overflow-hidden group`}>
-                  <div className="absolute -right-4 -bottom-4 size-24 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
-                  <span className="material-symbols-outlined text-5xl mb-6 block group-hover:rotate-12 transition-transform drop-shadow-lg">{action.icon}</span>
-                  <span className="text-xl font-black leading-tight block uppercase tracking-tighter">{action.label}</span>
+      {/* Community Action Hub (Prioritized) */}
+      <section className="space-y-6">
+        <div className="flex items-center justify-between">
+          <h2 className="text-2xl font-black flex items-center gap-3">
+            <span className="material-symbols-outlined text-rose-500">hub</span>
+            Centro de Acción Comunitaria
+          </h2>
+          <span className="px-3 py-1 bg-rose-100 text-rose-600 text-[10px] font-black rounded-full animate-pulse uppercase tracking-widest">Activo Ahora</span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* FORO & CHAT */}
+          <motion.div whileHover={{ y: -5 }} className="group">
+            <Link to="/forum" className="block h-full">
+              <div className="h-full bg-white dark:bg-surface-dark p-8 rounded-[40px] border border-gray-100 dark:border-gray-800 shadow-xl hover:shadow-primary/20 transition-all relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <span className="material-symbols-outlined text-6xl">forum</span>
                 </div>
-              </Link>
-            ) : (
-              <button onClick={action.action} className="w-full h-full text-left">
-                <div className={`h-full p-8 rounded-[40px] bg-gradient-to-br ${action.color} text-white transition-all shadow-2xl relative overflow-hidden group`}>
-                  <div className="absolute -right-4 -bottom-4 size-24 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
-                  <span className="material-symbols-outlined text-5xl mb-6 block group-hover:rotate-12 transition-transform drop-shadow-lg">{action.icon}</span>
-                  <span className="text-xl font-black leading-tight block uppercase tracking-tighter">{action.label}</span>
+                <h3 className="text-xl font-black mb-2 uppercase tracking-tight text-primary">Chat del Barrio</h3>
+                <p className="text-xs font-bold text-gray-400 mb-6 uppercase tracking-widest">¿Qué está pasando ahora?</p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-3 bg-slate-50 dark:bg-slate-900/50 p-3 rounded-2xl">
+                    <div className="size-8 rounded-full bg-blue-100 flex items-center justify-center text-[10px] font-bold">AD</div>
+                    <p className="text-[10px] text-gray-500 font-medium truncate">"Admin: ¡Buenos días! Recordad bajar los trastos hoy..."</p>
+                  </div>
                 </div>
-              </button>
-            )}
+                <div className="flex items-center text-primary font-black text-xs uppercase tracking-widest gap-2">
+                  Entrar al foro <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </div>
+              </div>
+            </Link>
           </motion.div>
+
+          {/* RETOS SOLIDARIOS */}
+          <motion.div whileHover={{ y: -5 }} className="group">
+            <Link to="/challenges" className="block h-full">
+              <div className="h-full bg-gradient-to-br from-indigo-600 to-purple-700 p-8 rounded-[40px] text-white shadow-xl shadow-indigo-500/20 transition-all relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-6 opacity-20 group-hover:rotate-12 transition-transform">
+                  <span className="material-symbols-outlined text-6xl">emoji_events</span>
+                </div>
+                <h3 className="text-xl font-black mb-2 uppercase tracking-tight">Retos Activos</h3>
+                <p className="text-xs font-bold opacity-70 mb-6 uppercase tracking-widest">Gana XP y ComuniPoints</p>
+                <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 mb-6">
+                  <p className="text-[11px] font-black flex items-center gap-2">
+                    <span className="material-symbols-outlined text-sm">wb_twilight</span> Atardecer en el Miracle
+                  </p>
+                  <p className="text-[9px] opacity-80 mt-1">Sube tu foto del atardecer hoy y gana +50 XP</p>
+                </div>
+                <div className="flex items-center font-black text-xs uppercase tracking-widest gap-2">
+                  Ver todos los retos <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* AYUDAS VITALES */}
+          <motion.div whileHover={{ y: -5 }} className="group">
+            <Link to="/vital-needs" className="block h-full">
+              <div className="h-full bg-white dark:bg-surface-dark p-8 rounded-[40px] border border-gray-100 dark:border-gray-800 shadow-xl hover:shadow-rose-500/20 transition-all relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:scale-110 transition-transform">
+                  <span className="material-symbols-outlined text-6xl">volunteer_activism</span>
+                </div>
+                <h3 className="text-xl font-black mb-2 uppercase tracking-tight text-rose-500">Ayuda Vecinal</h3>
+                <p className="text-xs font-bold text-gray-400 mb-6 uppercase tracking-widest">Necesidades urgentes hoy</p>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-3 border-l-4 border-rose-500 pl-3">
+                    <div>
+                      <p className="text-[10px] font-black dark:text-white">Recogida Medicación</p>
+                      <p className="text-[9px] text-gray-400">Para Doña Rosa (Lunes mañana)</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center text-rose-500 font-black text-xs uppercase tracking-widest gap-2">
+                  Echar una mano <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Quick Access Bar */}
+      <section className="flex flex-wrap gap-4 overflow-x-auto pb-4 no-scrollbar">
+        {[
+          { icon: 'map', label: 'Mapa Interactivo', to: '/map', color: 'bg-emerald-500' },
+          { icon: 'shopping_basket', label: 'Mercadillo', to: '/market', color: 'bg-orange-500' },
+          { icon: 'calendar_month', label: 'Calendario', to: '/calendar', color: 'bg-sky-500' },
+          { icon: 'business_center', label: 'Empleo', to: '/services', color: 'bg-indigo-500' },
+          { icon: 'groups', label: 'Voluntariado', to: '/volunteer', color: 'bg-teal-500' }
+        ].map((btn, i) => (
+          <Link key={i} to={btn.to} className="shrink-0">
+            <div className={`px-6 py-4 ${btn.color} text-white rounded-3xl flex items-center gap-3 shadow-lg hover:scale-105 transition-all`}>
+              <span className="material-symbols-outlined text-xl">{btn.icon}</span>
+              <span className="text-[11px] font-black uppercase tracking-widest">{btn.label}</span>
+            </div>
+          </Link>
         ))}
       </section>
 
 
-      {/* Promotion Banner */}
-      <section className="bg-gradient-to-r from-pink-500 to-rose-500 rounded-[40px] p-6 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg shadow-pink-500/20 relative overflow-hidden group hover:scale-[1.01] transition-all cursor-pointer" onClick={() => window.location.href = '#/forum'}>
-        <div className="absolute right-0 top-0 opacity-10 transform translate-x-10 -translate-y-10 group-hover:scale-125 transition-transform duration-700">
-          <span className="material-symbols-outlined text-[200px]">favorite</span>
-        </div>
-        <div className="flex items-center gap-4 relative z-10">
-          <div className="size-12 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm group-hover:bg-white/30 transition-all">
-            <span className="material-symbols-outlined text-3xl animate-bounce">favorite</span>
-          </div>
-          <div>
-            <h3 className="text-xl font-black uppercase tracking-tight leading-none mb-1 flex items-center gap-2">
-              🔥 Mixer Lunes Noche
-              <span className="px-2 py-0.5 bg-white text-pink-600 text-[9px] rounded-full animate-pulse">HOY</span>
-            </h3>
-            <p className="text-sm font-bold opacity-90 max-w-md">Relájate tras el primer día de trabajo. Conoce solteros y solteras esta noche en el Canal Citas.</p>
-          </div>
-        </div>
-        <Link to="/forum" className="relative z-10 px-6 py-3 bg-white text-pink-600 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:scale-105 hover:shadow-2xl transition-all shadow-xl shrink-0 flex items-center gap-2">
-          ENTRAR AL CHAT <span className="material-symbols-outlined text-sm">arrow_forward</span>
-        </Link>
-      </section>
+
 
       <div className="grid lg:grid-cols-3 gap-8">
         <section className="lg:col-span-2 space-y-6">
@@ -566,7 +611,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 12 · Lun 16 Mar</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 13 · Lun 23 Mar</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">

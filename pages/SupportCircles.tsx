@@ -42,12 +42,12 @@ const SupportCircles: React.FC = () => {
 
             const mockCircles: SupportCircle[] = [
                 {
-                    id: 'dom-22-circulo-puestadesol',
+                    id: 'lun-23-motivacion',
                     initiator_id: 'vecinal',
-                    title: '🤝 Círculo: Puesta de Sol y Reflexión',
+                    title: '🤝 Círculo: Motivación y Objetivos Lunes',
                     neighborhood: 'GENERAL',
-                    description: 'Cerramos el fin de semana juntos hoy domingo a las 19:15h. Un espacio para agradecer y compartir calma antes de la nueva semana laboral.',
-                    contact_info: 'Playa del Miracle (Zona arena)',
+                    description: 'Empezamos la semana compartiendo nuestras metas y apoyando los proyectos de cada vecino. Un café para arrancar con fuerza. Hoy 19:30h.',
+                    contact_info: 'C. Union - Cafetería Art',
                     created_at: new Date().toISOString()
                 },
                 {

@@ -46,36 +46,36 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'dom-22-n1',
-                    creator_id: 'v4',
-                    type: 'other',
-                    title: '🧴 Crema Solar (¡Urgente!)',
-                    description: 'Estamos en el Camí de Ronda hoy domingo y un vecino se ha olvidado la crema solar. Si alguien se incorpora ahora al grupo por el Cabo Salou, ¿podría traer un bote?',
-                    contact_info: '633 44 55 66 (Rosa P. - En la caminata)',
-                    is_urgent: true,
-                    neighborhood: 'GENERAL',
-                    created_at: new Date().toISOString()
-                },
-                {
-                    id: 'dom-22-n2',
+                    id: 'lun-23-medical',
                     creator_id: 'v5',
                     type: 'medical',
-                    title: '💊 Medicación Lunes Mañana',
-                    description: 'Necesito una medicación de la farmacia de guardia hoy domingo o para primera hora de mañana lunes. No tengo transporte propio.',
+                    title: '💊 Medicación Urgente (Lunes)',
+                    description: 'Necesito una medicación de la farmacia para hoy lunes a primera hora. No tengo transporte propio. 📞 644 33 22 11 (Pere)',
                     contact_info: '644 33 22 11 (Pere)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'dom-22-n3',
+                    id: 'lun-23-food',
                     creator_id: 'v6',
                     type: 'food',
-                    title: '🛒 Recado: Compra Lunes Mañana',
-                    description: 'Doña Amalia necesita que alguien le acerque el pan y leche mañana lunes temprano (09:00). Vive en C. Cavallers. ¿Algún vecino que trabaje en el centro?',
+                    title: '🛒 Recado: Pan/Leche Doña Amalia (Hoy 09:00)',
+                    description: 'Doña Amalia necesita que alguien le acerque el pan y leche hoy lunes temprano. Vive en C. Cavallers. 📞 622 88 77 66 (Sandra)',
                     contact_info: '622 88 77 66 (Sandra)',
                     is_urgent: false,
-                    neighborhood: 'GENERAL',
+                    neighborhood: 'CENTRE',
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'lun-23-company',
+                    creator_id: 'v8',
+                    type: 'company',
+                    title: '🚶 Acompañamiento: Cita Médica 10:30h',
+                    description: 'Busco a alguien que me acompañe al CAP Jaume I hoy lunes a las 10:30h. Un poco de compañía para la espera. 📞 611 22 33 44 (Elena)',
+                    contact_info: '611 22 33 44 (Elena)',
+                    is_urgent: true,
+                    neighborhood: 'CENTRE',
                     created_at: new Date().toISOString()
                 }
             ];

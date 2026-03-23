@@ -43,22 +43,32 @@ const Challenges: React.FC = () => {
 
       const mockChallenges: Challenge[] = [
         {
-          id: 'mock-ch-tue-1',
+          id: 'dom-22-ch-1',
           creator_id: 'admin',
-          title: '🍏 Mercado Sostenible: Compra en Corsini',
-          description: 'Aprovecha el martes de mercado para comprar producto local sin plásticos. ¡Sube tu foto con tu bolsa de tela!',
+          title: '🌅 Se busca líder: Atardecer Miracle',
+          description: 'Buscamos a alguien que tome la iniciativa hoy domingo (19:15h) para llevar un altavoz o bebidas y dinamizar el grupo en la playa. ¡Gana 100 ComuniPoints por liderar!',
+          neighborhood: 'GENERAL',
+          contact_info: 'Posteado por Admin (Busca voluntario)',
+          is_example: true,
+          created_at: new Date().toISOString()
+        },
+        {
+          id: 'dom-22-ch-2',
+          creator_id: 'user2',
+          title: '🥾 Crónica Viva: Camí de Ronda hoy',
+          description: '¡Reto de hoy domingo! Sube la foto más divertida del grupo durante la caminata de esta mañana. La foto con más likes gana el título de "Cronista del Barrio".',
           neighborhood: 'GENERAL',
           contact_info: 'Comunidad ComuniTarr',
           is_example: true,
           created_at: new Date().toISOString()
         },
         {
-          id: 'mock-ch-tue-2',
-          creator_id: 'user2',
-          title: '♻️ Residuo Cero: Envases Reutilizables',
-          description: '¡Reto semanal activo! Hoy martes intenta comprar todo el fresco en envases reutilizables. ¡Tarragona Limpia!',
-          neighborhood: 'GENERAL',
-          contact_info: 'Comunidad ComuniTarr',
+          id: 'dom-22-ch-3',
+          creator_id: 'v4',
+          title: '📦 Solidaridad: Trastos Lunes Mañana',
+          description: 'Mañana lunes es día de recogida. El reto es ayudar a al menos un vecino que no pueda bajar sus voluminosos a la calle. ¡Iniciativa vecinal pura!',
+          neighborhood: 'CENTRE',
+          contact_info: 'Coordina con tus vecinos de escalera',
           is_example: true,
           created_at: new Date().toISOString()
         }
