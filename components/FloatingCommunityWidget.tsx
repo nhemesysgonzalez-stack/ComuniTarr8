@@ -11,17 +11,17 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 301, user: 'Pau G.', avatar: 'https://i.pravatar.cc/150?u=pau', text: '¡Buenos días! Un buen café y a por la semana ☕', neighborhood: 'Bonavista' },
-    { id: 302, user: 'Maria V.', avatar: 'https://i.pravatar.cc/150?u=maria', text: 'Ya he bajado el sofá viejo al punto de recogida. ¡Qué alivio! 📦', neighborhood: 'Centre' },
-    { id: 303, user: 'Sergio T.', avatar: 'https://i.pravatar.cc/150?u=sergio', text: '¿Alguien para compartir coche al Centro hacia las 09:30? 🚗', neighborhood: 'Poniente' },
-    { id: 304, user: 'Elena M.', avatar: 'https://i.pravatar.cc/150?u=elena', text: 'Ese sol de lunes cura cualquier madrugón ☀️', neighborhood: 'Serrallo' }
+    { id: 301, user: 'Daniel F.', avatar: 'https://i.pravatar.cc/150?u=daniel', text: 'Semana a tope de curro. ¡Feliz martes a todos! 💼', neighborhood: 'Bonavista' },
+    { id: 302, user: 'Maria V.', avatar: 'https://i.pravatar.cc/150?u=maria', text: 'Los operarios del Ayuntamiento están podando los árboles de la plaza. Ya era hora 🌳', neighborhood: 'Centre' },
+    { id: 303, user: 'Sergio T.', avatar: 'https://i.pravatar.cc/150?u=sergio', text: 'Esta tarde bajaré a correr al milagro. Si alguien se anima, que me mande DM 🏃', neighborhood: 'Poniente' },
+    { id: 304, user: 'Elena M.', avatar: 'https://i.pravatar.cc/150?u=elena', text: 'Alguien sabe si hay taller de manualidades hoy? 🎨', neighborhood: 'Serrallo' }
 ];
 
 const tickerMessages = [
-    "📦 Recordatorio: Recogida de trastos hoy en zona Centro.",
-    "☀️ Máxima de 22ºC prevista para hoy en Tarragona.",
-    "⚠️ Precaución en accesos escolares (Miracle/Pax) por dispositivo de seguridad.",
-    "💼 5 nuevas ofertas de empleo publicadas hoy lunes."
+    "📦 Recordatorio: Revisa el módulo de Empleos para nuevas ofertas verificadas.",
+    "☀️ Máxima de 23ºC prevista para hoy martes en Tarragona.",
+    "⚠️ Cortes intermitentes en la calle Real por obras de mejora.",
+    "💼 3 nuevas ofertas de empleo publicadas HOY MARTES."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

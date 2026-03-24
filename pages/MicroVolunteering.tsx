@@ -45,7 +45,7 @@ const MicroVolunteering: React.FC = () => {
                     id: 'lun-23-vol-pax',
                     creator_id: 'v8',
                     title: '🛡️ Voluntarios Hoy: Colegio Pax',
-                    description: 'Dispositivo activo hoy lunes 08:30h. Gracias a los 3 voluntarios que han cubierto el turno de acompañamiento hoy.',
+                    description: 'Dispositivo activo HOY MARTES 08:30h. Gracias a los 3 voluntarios que han cubierto el turno de acompañamiento hoy.',
                     neighborhood: 'CENTRE',
                     contact_info: '644 11 22 33 (Luis). Gracias por vuestro tiempo.',
                     created_at: new Date().toISOString()
@@ -63,7 +63,7 @@ const MicroVolunteering: React.FC = () => {
                     id: 'lun-23-vol-impulsa',
                     creator_id: 'v10',
                     title: '🏢 Apoyo: TGN Impulsa Primavera',
-                    description: 'Buscamos voluntarios para orientar a jóvenes en la feria de empleo de este lunes. Coordinación en stand municipal.',
+                    description: 'Buscamos voluntarios para orientar a jóvenes en la feria de empleo de este martes. Coordinación en stand municipal.',
                     neighborhood: 'GENERAL',
                     contact_info: '977 12 34 56 (Oficinas Municipales)',
                     created_at: new Date().toISOString()
@@ -248,10 +248,10 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Ayuda Paseo', d: 'Busco voluntario para acompañar a persona mayor a pasear hoy lunes por el Balcón del Mediterráneo a las 18h.', c: '644 33 22 11' },
-                                            { t: 'Paseo Perro', d: '¿Algún vecino pasea su perro por la zona del Eixample y puede sacar al mío hoy tarde? No puedo salir hoy lunes.', c: '633 44 55 66' },
-                                            { t: 'Ayuda Móvil', d: 'Busco alguien que me enseñe a instalar la app Mi Carpeta Ciudadana para unos trámites hoy lunes.', c: '611 22 33 44' },
-                                            { t: 'Club Lectura', d: '¿Algún vecino/a va a la biblioteca hoy lunes? Me gustaría ir acompañado por la tarde.', c: 'Foro · Canal General' }
+                                            { t: 'Ayuda Paseo', d: 'Busco voluntario para acompañar a persona mayor a pasear HOY MARTES por el Balcón del Mediterráneo a las 18h.', c: '644 33 22 11' },
+                                            { t: 'Paseo Perro', d: '¿Algún vecino pasea su perro por la zona del Eixample y puede sacar al mío hoy tarde? No puedo salir HOY MARTES.', c: '633 44 55 66' },
+                                            { t: 'Ayuda Móvil', d: 'Busco alguien que me enseñe a instalar la app Mi Carpeta Ciudadana para unos trámites HOY MARTES.', c: '611 22 33 44' },
+                                            { t: 'Club Lectura', d: '¿Algún vecino/a va a la biblioteca HOY MARTES? Me gustaría ir acompañado por la tarde.', c: 'Foro · Canal General' }
                                         ].map((idea, i) => (
 
                                             <button

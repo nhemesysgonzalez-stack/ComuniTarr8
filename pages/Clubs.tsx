@@ -242,7 +242,7 @@ const Clubs: React.FC = () => {
                                     <p className="text-[10px] font-black text-pink-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Fútbol Lunes', d: 'Buscamos gente para completar partido hoy lunes a las 20h en Campclar.', c: '611222333' },
+                                            { t: 'Fútbol Lunes', d: 'Buscamos gente para completar partido HOY MARTES a las 20h en Campclar.', c: '611222333' },
                                             { t: 'Café Literario', d: 'Quedada para comentar el inicio de nuestras lecturas de la semana.', c: '644555666' },
                                             { t: 'Urban Walking', d: 'Caminata rápida por la playa del Miracle después del trabajo.', c: '677888999' }
                                         ].map((idea, i) => (
