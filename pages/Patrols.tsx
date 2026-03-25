@@ -70,7 +70,7 @@ const Patrols: React.FC = () => {
           id: 'mar-24-pat-night',
           creator_id: 'user2',
           name: '🌑 Convocatoria: Patrulla Martes Noche',
-          description: 'Mañana martes 24 a las 20:00h realizaremos la ronda nocturna por el Balcón del Mediterráneo. Se buscan 2 voluntarios más.',
+          description: 'Mañana miércoles 25 a las 20:00h realizaremos la ronda nocturna por el Balcón del Mediterráneo. Se buscan 2 voluntarios más.',
           neighborhood: 'CENTRE',
           contact_info: '622 55 44 33 (Maria)',
           created_at: new Date().toISOString()

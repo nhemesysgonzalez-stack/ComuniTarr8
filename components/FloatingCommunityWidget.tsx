@@ -11,17 +11,17 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 301, user: 'Daniel F.', avatar: 'https://i.pravatar.cc/150?u=daniel', text: 'Semana a tope de curro. ¡Feliz martes a todos! 💼', neighborhood: 'Bonavista' },
-    { id: 302, user: 'Maria V.', avatar: 'https://i.pravatar.cc/150?u=maria', text: 'Los operarios del Ayuntamiento están podando los árboles de la plaza. Ya era hora 🌳', neighborhood: 'Centre' },
-    { id: 303, user: 'Sergio T.', avatar: 'https://i.pravatar.cc/150?u=sergio', text: 'Esta tarde bajaré a correr al milagro. Si alguien se anima, que me mande DM 🏃', neighborhood: 'Poniente' },
-    { id: 304, user: 'Elena M.', avatar: 'https://i.pravatar.cc/150?u=elena', text: 'Alguien sabe si hay taller de manualidades hoy? 🎨', neighborhood: 'Serrallo' }
+    { id: 301, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: 'Ecuador de la semana 💪. ¡Ánimo con el miércoles!', neighborhood: 'Campclar' },
+    { id: 302, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Aviso: Hay un perro suelto cerca del mercado. Parece perdido 🐕', neighborhood: 'Torreforta' },
+    { id: 303, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: 'He dejado un par de libros en la caja de intercambio de la plaza 📚', neighborhood: 'Part Alta' },
+    { id: 304, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Busco electricista barato para un enchufe, ¿recomendaciones? ⚡', neighborhood: 'Eixample' }
 ];
 
 const tickerMessages = [
     "📦 Recordatorio: Revisa el módulo de Empleos para nuevas ofertas verificadas.",
-    "☀️ Máxima de 23ºC prevista para hoy martes en Tarragona.",
-    "⚠️ Cortes intermitentes en la calle Real por obras de mejora.",
-    "💼 3 nuevas ofertas de empleo publicadas HOY MARTES."
+    "☁️ Cielo nublado y máxima de 19ºC hoy en Tarragona.",
+    "🚜 Trabajos de asfaltado en Rambla Nova este mediodía.",
+    "💼 4 nuevas vacantes en el polígono industrial subidas hace unos minutos."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

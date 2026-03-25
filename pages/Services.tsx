@@ -144,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
               </p>
-              <button onClick={() => alert("Hoy Martes 24 Mar:\n\u2022 Caminata Cam\u00ED de Ronda (Exitosa)\n\u2022 19:15h \u2014 Puesta de Sol Grupal (Playa del Miracle)")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Hoy Miércoles 25 Mar:\n\u2022 10:00h \u2014 Taller de Informática Básica (Centro Cívico)\n\u2022 18:00h \u2014 Charla de Orientación Laboral")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -168,23 +168,23 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Martes 24 Mar)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Miércoles 25 Mar)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Recepcionista Hotel - Turno Mañana&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Hotel céntrico TGN. 40h/semana. Se valora inglés. 📞 977 24 10 12 (Hotel TGN Imperial)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Personal de Limpieza - Media Jornada&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Mantenimiento de oficinas en el centro. Turno de mañana. 📞 977 10 20 30 (NetTGN)</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Oficial de 1ª Electricista&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Para instalaciones en polígono Francolí. Imprescindible vehículo propio. 📞 633 45 61 22 (Instalaciones M.G.)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Mecánico/a de Automoción&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Taller multimarca en Torreforta busca oficial de 2ª. Incorporación inmediata. 📞 611 22 33 44 (Talleres Rueda)</p>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Cocinero/a para restaurante en Serrallo&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Experiencia en arroces. Descanso martes y miércoles. 📞 689 31 10 99 (Restaurante El Pescador)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Camarero/a de Sala&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Restaurante en la Part Alta. Fines de semana y festivos. 📞 600 99 88 77 (La Cuina)</p>
                   </div>
                   <div className="border-l-4 border-teal-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar de Farmacia&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Puesto estable en Tarragona nord. Horario partido. 📞 977 40 21 00 (Farmacia Nova)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Mozo/a de Almacén&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Polígono Entrevies. Imprescindible carnet de carretillero. 📞 977 55 44 33 (LogisCamp)</p>
                   </div>
                 </div>
               </div>
@@ -572,7 +572,7 @@ export const Services: React.FC = () => {
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
                       <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DÍA NORMAL)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 HOY MARTES 16 Mar: Talleres TGN Impulsa en Tabacalera. Hoy Martes: Mercado semanal Pl. Corsini.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 HOY MIÉRCOLES 16 Mar: Talleres TGN Impulsa en Tabacalera. HOY MIÉRCOLES: Mercado semanal Pl. Corsini.</p>
                   </div>
                 </div>
               </div>
