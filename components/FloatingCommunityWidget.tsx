@@ -11,17 +11,17 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 301, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: 'Ecuador de la semana 💪. ¡Ánimo con el miércoles!', neighborhood: 'Campclar' },
-    { id: 302, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Aviso: Hay un perro suelto cerca del mercado. Parece perdido 🐕', neighborhood: 'Torreforta' },
-    { id: 303, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: 'He dejado un par de libros en la caja de intercambio de la plaza 📚', neighborhood: 'Part Alta' },
-    { id: 304, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Busco electricista barato para un enchufe, ¿recomendaciones? ⚡', neighborhood: 'Eixample' }
+    { id: 301, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: 'Ya casi es viernes. ¡Ánimo con el jueves! 💃', neighborhood: 'Campclar' },
+    { id: 302, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Hoy toca hacer recados por el centro, ¡qué pereza! 🛍️', neighborhood: 'Torreforta' },
+    { id: 303, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: 'Alguien sabe a qué hora empieza la charla en el centro cívico? 🤔', neighborhood: 'Part Alta' },
+    { id: 304, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Me han recomendado una panadería nueva cerca de la plaza, hoy paso a ver 🥐', neighborhood: 'Eixample' }
 ];
 
 const tickerMessages = [
-    "📦 Recordatorio: Revisa el módulo de Empleos para nuevas ofertas verificadas.",
-    "☁️ Cielo nublado y máxima de 19ºC hoy en Tarragona.",
-    "🚜 Trabajos de asfaltado en Rambla Nova este mediodía.",
-    "💼 4 nuevas vacantes en el polígono industrial subidas hace unos minutos."
+    "📦 Recordatorio: Revisa el módulo de Empleos para nuevas ofertas de Jueves verificadas.",
+    "☀️ Cielo despejado y máxima de 21ºC hoy en Tarragona.",
+    "🚧 Precaución: Obras de mantenimiento en Vía Roma carril derecho.",
+    "💼 Nuevas entrevistas abiertas hoy Jueves. Consulta los detalles."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {
