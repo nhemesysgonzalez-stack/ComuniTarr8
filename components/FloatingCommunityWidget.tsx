@@ -11,17 +11,17 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 301, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: 'Ya casi es viernes. ¡Ánimo con el jueves! 💃', neighborhood: 'Campclar' },
-    { id: 302, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Hoy toca hacer recados por el centro, ¡qué pereza! 🛍️', neighborhood: 'Torreforta' },
-    { id: 303, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: 'Alguien sabe a qué hora empieza la charla en el centro cívico? 🤔', neighborhood: 'Part Alta' },
-    { id: 304, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Me han recomendado una panadería nueva cerca de la plaza, hoy paso a ver 🥐', neighborhood: 'Eixample' }
+    { id: 301, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: 'Domingo de descanso, vermut y playa. ¡A disfrutar! 🌞', neighborhood: 'Campclar' },
+    { id: 302, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Paseo por el mercadillo de Bonavista completado. Mucha gente hoy 🛍️', neighborhood: 'Torreforta' },
+    { id: 303, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: '¿Alguien sabe si las farmacias del centro abren hasta mediodía hoy? 🤔', neighborhood: 'Part Alta' },
+    { id: 304, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Cocinando paella para la familia. ¡Feliz domingo! 🥘', neighborhood: 'Eixample' }
 ];
 
 const tickerMessages = [
-    "📦 Recordatorio: Revisa el módulo de Empleos para nuevas ofertas de Jueves verificadas.",
-    "☀️ Cielo despejado y máxima de 21ºC hoy en Tarragona.",
-    "🚧 Precaución: Obras de mantenimiento en Vía Roma carril derecho.",
-    "💼 Nuevas entrevistas abiertas hoy Jueves. Consulta los detalles."
+    "📦 Recordatorio: Revisa el módulo de Empleos para preparar la oferta de la semana.",
+    "☀️ Domingo soleado y 22ºC. Ideal para paseo por la playa.",
+    "🚧 Afectaciones leves de tráfico cerca de la plaza Corsini por evento dominical.",
+    "💼 Hostelería y comercio local abren nuevas posiciones hoy Domingo."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

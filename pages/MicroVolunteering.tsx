@@ -45,7 +45,7 @@ const MicroVolunteering: React.FC = () => {
                     id: 'lun-23-vol-pax',
                     creator_id: 'v8',
                     title: '🛡️ Voluntarios Hoy: Colegio Pax',
-                    description: 'Dispositivo activo HOY JUEVES 08:30h. Gracias a los 3 voluntarios que han cubierto el turno de acompañamiento hoy.',
+                    description: 'Dispositivo activo HOY DOMINGO 08:30h. Gracias a los 3 voluntarios que han cubierto el turno de acompañamiento hoy.',
                     neighborhood: 'CENTRE',
                     contact_info: '644 11 22 33 (Luis). Gracias por vuestro tiempo.',
                     created_at: new Date().toISOString()
@@ -54,7 +54,7 @@ const MicroVolunteering: React.FC = () => {
                     id: 'mar-24-vol-rambla',
                     creator_id: 'v9',
                     title: '♻️ Limpieza Rambla Mañana',
-                    description: 'Mañana jueves 26 realizaremos una batida de limpieza rápida en los tramos centrales de la Rambla Nova. ¿Alguien se une a las 11:00h?',
+                    description: 'Mañana domingo 29 realizaremos una batida de limpieza rápida en los tramos centrales de la Rambla Nova. ¿Alguien se une a las 11:00h?',
                     neighborhood: 'CENTRE',
                     contact_info: '611 00 22 33 (Paco). Nos vemos en la Estatua de los Castells.',
                     created_at: new Date().toISOString()
@@ -63,7 +63,7 @@ const MicroVolunteering: React.FC = () => {
                     id: 'lun-23-vol-impulsa',
                     creator_id: 'v10',
                     title: '🏢 Apoyo: TGN Impulsa Primavera',
-                    description: 'Buscamos voluntarios para orientar a jóvenes en la feria de empleo de este jueves. Coordinación en stand municipal.',
+                    description: 'Buscamos voluntarios para orientar a jóvenes en la feria de empleo de este domingo. Coordinación en stand municipal.',
                     neighborhood: 'GENERAL',
                     contact_info: '977 12 34 56 (Oficinas Municipales)',
                     created_at: new Date().toISOString()
@@ -248,10 +248,10 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Ayuda Paseo', d: 'Busco voluntario para acompañar a persona mayor a pasear HOY JUEVES por el Balcón del Mediterráneo a las 18h.', c: '644 33 22 11' },
-                                            { t: 'Paseo Perro', d: '¿Algún vecino pasea su perro por la zona del Eixample y puede sacar al mío hoy tarde? No puedo salir HOY JUEVES.', c: '633 44 55 66' },
-                                            { t: 'Ayuda Móvil', d: 'Busco alguien que me enseñe a instalar la app Mi Carpeta Ciudadana para unos trámites HOY JUEVES.', c: '611 22 33 44' },
-                                            { t: 'Club Lectura', d: '¿Algún vecino/a va a la biblioteca HOY JUEVES? Me gustaría ir acompañado por la tarde.', c: 'Foro · Canal General' }
+                                            { t: 'Ayuda Paseo', d: 'Busco voluntario para acompañar a persona mayor a pasear HOY DOMINGO por el Balcón del Mediterráneo a las 18h.', c: '644 33 22 11' },
+                                            { t: 'Paseo Perro', d: '¿Algún vecino pasea su perro por la zona del Eixample y puede sacar al mío hoy tarde? No puedo salir HOY DOMINGO.', c: '633 44 55 66' },
+                                            { t: 'Ayuda Móvil', d: 'Busco alguien que me enseñe a instalar la app Mi Carpeta Ciudadana para unos trámites HOY DOMINGO.', c: '611 22 33 44' },
+                                            { t: 'Club Lectura', d: '¿Algún vecino/a va a la biblioteca HOY DOMINGO? Me gustaría ir acompañado por la tarde.', c: 'Foro · Canal General' }
                                         ].map((idea, i) => (
 
                                             <button

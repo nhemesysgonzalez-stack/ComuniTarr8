@@ -147,7 +147,7 @@ const Announcements: React.FC = () => {
                 {
                     id: 'lun-23-trastos',
                     title: '📋 Hoy: Recogida de Trastos (Zona Centro)',
-                    content: 'HOY JUEVES es día de retirada de muebles y voluminosos. Recordad bajarlos a la acera antes de las 22:00h para no ser sancionados.',
+                    content: 'HOY DOMINGO es día de retirada de muebles y voluminosos. Recordad bajarlos a la acera antes de las 22:00h para no ser sancionados.',
                     neighborhood: 'CENTRE',
                     category: 'AVISO',
                     author_name: 'Ajuntament TGN',
@@ -165,7 +165,7 @@ const Announcements: React.FC = () => {
                 {
                     id: 'lun-23-seguridad',
                     title: '🛡️ Dispositivo Escolar: Miracle y Pax',
-                    content: 'Vigilancia activa en los accesos escolares HOY JUEVES (08:30-09:15). Respetad las zonas de carga y descarga de niños.',
+                    content: 'Vigilancia activa en los accesos escolares HOY DOMINGO (08:30-09:15). Respetad las zonas de carga y descarga de niños.',
                     neighborhood: 'GENERAL',
                     category: 'SEGURIDAD',
                     author_name: 'Guardia Urbana',
