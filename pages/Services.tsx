@@ -144,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
               </p>
-              <button onClick={() => alert("Hoy Domingo 29 Mar:\n\u2022 10:30h \u2014 Paseo Fotográfico (Part Alta)\n\u2022 18:00h \u2014 Juegos de Mesa en el Centro Cívico")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Hoy Jueves 02 Abr:\n\u2022 17:30h \u2014 Formación en Marketing Digital (Online y Presencial)\n\u2022 19:00h \u2014 Simulación de Entrevistas de Trabajo (TGN Impulsa)")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -168,23 +168,23 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Domingo 29 Mar)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Jueves 02 Abr)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Personal de Heladería - Fines de Semana&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Heladería en la Rambla Nova. Refuerzo de temporada. 📞 977 12 30 40 (Gelats TGN)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Mozo/a de Almacén - Campaña Primavera&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Polígono Francolí. Imprescindible carnet de carretillero en vigor. 📞 977 22 11 00 (Logística TGN Sur)</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Recepcionista de Camping&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Camping en zona Levante. Imprescindible idiomas. Turnos rotativos. 📞 611 99 88 77 (Camping Tamarit)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Personal de Limpieza de Oficinas&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Limpieza de oficinas en centro ciudad. Horario de tardes. 📞 611 77 66 55 (NetTarragona)</p>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Ayudante de Cocina - Vermutería&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Local en plaza de la Font. Horario de mediodías. 📞 600 44 55 66 (La Vermuteria Alta)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar Administrativo/a&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Inmobiliaria zona Eixample busca apoyo administrativo. Jornada Completa. 📞 600 99 88 77 (Fincas Costa Dorada)</p>
                   </div>
                   <div className="border-l-4 border-teal-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Repartidor/a Fines de Semana&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Pizzería en Sant Pere y Sant Pau. Moto de empresa. 📞 977 77 88 99 (Pizzas Serrallo)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Peluquero/a Oficial de 1ª&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Salón en zona ponent precisa persona con experiencia en color, corte y recogidos. 📞 977 44 33 22 (Estilistes Ponent)</p>
                   </div>
                 </div>
               </div>
@@ -572,7 +572,7 @@ export const Services: React.FC = () => {
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
                       <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DÍA NORMAL)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 HOY DOMINGO 16 Mar: Talleres TGN Impulsa en Tabacalera. HOY DOMINGO: Mercado semanal Pl. Corsini.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 HOY JUEVES 16 Mar: Talleres TGN Impulsa en Tabacalera. HOY JUEVES: Mercado semanal Pl. Corsini.</p>
                   </div>
                 </div>
               </div>
