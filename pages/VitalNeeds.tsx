@@ -50,7 +50,7 @@ const VitalNeeds: React.FC = () => {
                     creator_id: 'v5',
                     type: 'medical',
                     title: '💊 Medicación Urgente (Lunes)',
-                    description: 'Necesito una medicación de la farmacia para HOY JUEVES a primera hora. No tengo transporte propio. 📞 644 33 22 11 (Pere)',
+                    description: 'Necesito una medicación de la farmacia para HOY LUNES a primera hora. No tengo transporte propio. 📞 644 33 22 11 (Pere)',
                     contact_info: '644 33 22 11 (Pere)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
@@ -61,7 +61,7 @@ const VitalNeeds: React.FC = () => {
                     creator_id: 'v6',
                     type: 'food',
                     title: '🛒 Recado: Pan/Leche Doña Amalia (Hoy 09:00)',
-                    description: 'Doña Amalia necesita que alguien le acerque el pan y leche HOY JUEVES temprano. Vive en C. Cavallers. 📞 622 88 77 66 (Sandra)',
+                    description: 'Doña Amalia necesita que alguien le acerque el pan y leche HOY LUNES temprano. Vive en C. Cavallers. 📞 622 88 77 66 (Sandra)',
                     contact_info: '622 88 77 66 (Sandra)',
                     is_urgent: false,
                     neighborhood: 'CENTRE',
@@ -72,7 +72,7 @@ const VitalNeeds: React.FC = () => {
                     creator_id: 'v8',
                     type: 'company',
                     title: '🚶 Acompañamiento: Cita Médica 10:30h',
-                    description: 'Busco a alguien que me acompañe al CAP Jaume I HOY JUEVES a las 10:30h. Un poco de compañía para la espera. 📞 611 22 33 44 (Elena)',
+                    description: 'Busco a alguien que me acompañe al CAP Jaume I HOY LUNES a las 10:30h. Un poco de compañía para la espera. 📞 611 22 33 44 (Elena)',
                     contact_info: '611 22 33 44 (Elena)',
                     is_urgent: true,
                     neighborhood: 'CENTRE',
@@ -184,7 +184,7 @@ const VitalNeeds: React.FC = () => {
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Jueves 02 Abr:\n• 10:00h \u2014 Red de Acompañamiento (Centro Cívico)\n• 09:30h \u2014 Talleres Tarragona Impulsa\n\nHOY JUEVES:\n• 11:00h \u2014 Café Tertulia Sénior (Part Alta)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Lunes 06 Abr:\n• 10:00h \u2014 Red de Acompañamiento (Centro Cívico)\n• 09:30h \u2014 Talleres Tarragona Impulsa\n\nHOY LUNES:\n• 11:00h \u2014 Café Tertulia Sénior (Part Alta)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
                             <span className="material-symbols-outlined text-sm">person_add</span>
                             UNIRME AHORA
                         </a>

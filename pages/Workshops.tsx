@@ -51,7 +51,7 @@ const Workshops: React.FC = () => {
                     id: 'lun-23-empleo',
                     title: '💼 Charla: Empleo Joven TGN',
                     instructor: 'Tarragona Impulsa',
-                    date: 'Hoy Jueves 02, 11:00h',
+                    date: 'Hoy Lunes 06, 11:00h',
                     description: 'Sesión informativa para jóvenes sobre cómo afrontar la primera entrevista y buscar en el sector servicios local.',
                     image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80',
                     spots: 20,
@@ -63,7 +63,7 @@ const Workshops: React.FC = () => {
                     id: 'lun-23-tech',
                     title: '📱 Taller: Trámites con el Móvil',
                     instructor: 'Maria P.',
-                    date: 'Hoy Jueves 02, 17:00h',
+                    date: 'Hoy Lunes 06, 17:00h',
                     description: 'Aprende a usar la Carpeta Ciudadana y pedir citas médicas desde tu smartphone. Especial para mayores.',
                     image: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80',
                     spots: 12,
@@ -75,7 +75,7 @@ const Workshops: React.FC = () => {
                     id: 'mar-24-yoga',
                     title: '🧘 Yoga Post-Trabajo al aire libre',
                     instructor: 'Elena V.',
-                    date: 'Hoy Jueves 02, 19:00h',
+                    date: 'Hoy Lunes 06, 19:00h',
                     description: 'Clase dinámica para liberar tensiones tras la jornada laboral. Ven con esterilla y ropa cómoda al Miracle.',
                     image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
                     spots: 25,
@@ -151,11 +151,11 @@ const Workshops: React.FC = () => {
                         </div>
                         <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Workshop: CV Digital con IA 📈</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Optimiza tu búsqueda de empleo con herramientas de Inteligencia Artificial. HOY JUEVES a las 10:00h en el Centro Cívico Centre. ¡Inscripción gratuita!
+                            Optimiza tu búsqueda de empleo con herramientas de Inteligencia Artificial. HOY LUNES a las 10:00h en el Centro Cívico Centre. ¡Inscripción gratuita!
                         </p>
 
                         <div className="flex flex-wrap gap-4">
-                            <a href="#" onClick={(e) => { e.preventDefault(); alert("Reserva tu plaza enviando un WhatsApp al 611 00 22 33 para HOY JUEVES."); }} className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
+                            <a href="#" onClick={(e) => { e.preventDefault(); alert("Reserva tu plaza enviando un WhatsApp al 611 00 22 33 para HOY LUNES."); }} className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
                                 <span className="material-symbols-outlined text-sm">confirmation_number</span>
                                 RESERVAR PLAZA
                             </a>

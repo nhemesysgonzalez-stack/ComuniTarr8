@@ -178,7 +178,7 @@ const Home: React.FC = () => {
           {
             id: 'lun-23-trastos-news',
             title: '📋 Hoy: Recogida de Trastos (Centro)',
-            content: 'Atención vecinos de la zona Centro: HOY JUEVES toca recogida de muebles y voluminosos. Por favor, sacad los objetos a la calle antes de las 22:00h.',
+            content: 'Atención vecinos de la zona Centro: HOY LUNES toca recogida de muebles y voluminosos. Por favor, sacad los objetos a la calle antes de las 22:00h.',
             neighborhood: 'CENTRE',
             category: 'AVISO',
             image_url: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80',
@@ -209,7 +209,7 @@ const Home: React.FC = () => {
         // Poll Example
         const pollExample = {
           id: 'lun-23-poll-1',
-          question: "📊 ¿Cómo ha sido tu vuelta a la rutina HOY JUEVES?",
+          question: "📊 ¿Cómo ha sido tu vuelta a la rutina HOY LUNES?",
           options: ['Con mucha energía', 'Me ha costado madrugar', 'Deseando que llegue el viernes', 'Aún aterrizando'],
           category: 'COMUNIDAD',
           neighborhood: 'GENERAL',
@@ -612,7 +612,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 13 · Jue 02 Mar</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 13 · Lun 06 Mar</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">

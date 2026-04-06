@@ -11,17 +11,17 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 301, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: 'Semana Corta, ya casi huele a fin de semana de nuevo 💃', neighborhood: 'Campclar' },
-    { id: 302, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Esta tarde toca entrenamiento en el polideportivo 🏀', neighborhood: 'Torreforta' },
-    { id: 303, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: '¿Algún buen sitio para tomar un café y trabajar con el portátil? 🤔', neighborhood: 'Part Alta' },
-    { id: 304, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Cuidado con el tráfico en la entrada por la T-11, hay atasco 🚗', neighborhood: 'Eixample' }
+    { id: 301, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: 'Feliz comienzo de semana a todos. A por el Lunes 💪', neighborhood: 'Campclar' },
+    { id: 302, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Esta semana toca organizar la comunidad en casa, qué pereza 🧹', neighborhood: 'Torreforta' },
+    { id: 303, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: '¡Hoy empezamos con energía! Nos vemos esta tarde en la clase de pintura 🎨', neighborhood: 'Part Alta' },
+    { id: 304, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'He dejado algo de ropa limpia en la caja solidaria de la parroquia 👕', neighborhood: 'Eixample' }
 ];
 
 const tickerMessages = [
-    "📦 Recordatorio: Revisa el módulo de Empleos para las nuevas ofertas de Abril.",
-    "☀️ Jueves soleado con algunos vientos. 18ºC de máxima.",
-    "🚧 Afectaciones leves de tráfico en la T-11 entrada a Tarragona.",
-    "💼 Nuevas ofertas de empleo confirmadas HOY JUEVES. Consulta los detalles."
+    "📦 Recordatorio: Limpieza de calles habitual HOY LUNES. Evita aparcar en zonas señalizadas.",
+    "☀️ Lunes parcialmente nublado con máxima de 19ºC.",
+    "🚧 Afectaciones leves de tráfico en la rotonda de los caballos.",
+    "💼 Nuevas ofertas de empleo confirmadas HOY LUNES. Consulta los detalles."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {
