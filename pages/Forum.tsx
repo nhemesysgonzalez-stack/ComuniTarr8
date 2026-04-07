@@ -231,7 +231,7 @@ const Forum: React.FC = () => {
         playSound('msg');
 
         // LOCAL PERSISTENCE
-        const localKey = `forum_pers_v3_${currentNeighborhood}`;
+        const localKey = `forum_pers_v4_${currentNeighborhood}`;
         const existing = JSON.parse(localStorage.getItem(localKey) || '[]');
         localStorage.setItem(localKey, JSON.stringify([...existing, msg].slice(-80)));
 
@@ -259,7 +259,7 @@ const Forum: React.FC = () => {
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
           { id: 'seed-cloud-101', user_id: 'v3', content: `☀️ ¡Feliz ${todayName}! Día perfecto en Tarragona: 18ºC y sol. ¡A disfrutar del paseo!`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600).toISOString() },
-          { id: 'seed-cloud-102', user_id: 'v2', content: '🌸 ¡Qué domingo más bonito! Recordad que la EMT va con horario de festivos hoy. Buen día a todos.', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 1800).toISOString() },
+          { id: 'seed-cloud-102', user_id: 'v2', content: '🌸 ¡Qué martes más bonito! La EMT va hoy con horario normal laborable.', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 1800).toISOString() },
         ] as Message[],
       };
 
@@ -329,7 +329,7 @@ const Forum: React.FC = () => {
       setIsTyping(null);
       playSound('msg');
 
-      const localKey = `forum_pers_v3_${currentNeighborhood}`;
+      const localKey = `forum_pers_v4_${currentNeighborhood}`;
       const existing = JSON.parse(localStorage.getItem(localKey) || '[]');
       localStorage.setItem(localKey, JSON.stringify([...existing, mockMsg].slice(-80)));
     }, delay);
@@ -401,7 +401,7 @@ const Forum: React.FC = () => {
           .limit(100)
       );
 
-      const localKey = `forum_pers_v3_${currentNeighborhood}`;
+      const localKey = `forum_pers_v4_${currentNeighborhood}`;
       const localPersistence = JSON.parse(localStorage.getItem(localKey) || '[]');
 
       const combined = [...(data || []), ...localPersistence];
