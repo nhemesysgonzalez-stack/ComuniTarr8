@@ -231,7 +231,7 @@ const Forum: React.FC = () => {
         playSound('msg');
 
         // LOCAL PERSISTENCE
-        const localKey = `forum_pers_v4_${currentNeighborhood}`;
+        const localKey = `forum_pers_v5_${currentNeighborhood}`;
         const existing = JSON.parse(localStorage.getItem(localKey) || '[]');
         localStorage.setItem(localKey, JSON.stringify([...existing, msg].slice(-80)));
 
@@ -258,7 +258,13 @@ const Forum: React.FC = () => {
 
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
-          { id: 'seed-cloud-101', user_id: 'v3', content: `☀️ ¡Feliz ${todayName}! Día perfecto en Tarragona: 18ºC y sol. ¡A disfrutar del paseo!`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600).toISOString() },
+          // Ayer por la tarde / noche
+          { id: 'seed-cloud-98', user_id: 'v10', content: '¿Alguien sabe si el polideportivo ya ha abierto las inscripciones para la liga de verano?', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 20).toISOString() },
+          { id: 'seed-cloud-99', user_id: 'v4', content: '@Nuria P. Hola Nuria, creo que abren el plazo el día 15. A ver si hacen buen precio este año.', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 18).toISOString() },
+          { id: 'seed-cloud-100', user_id: 'v19', content: 'Cuidado los que vengáis por la N-340 ahora mismo, han puesto un control y hay cola.', user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 15).toISOString() },
+
+          // Hoy temprano
+          { id: 'seed-cloud-101', user_id: 'v3', content: `☀️ ¡Feliz ${todayName}! Día perfecto en Tarragona: 18ºC y sol. ¡A disfrutar del paseo!`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 3).toISOString() },
           { id: 'seed-cloud-102', user_id: 'v2', content: '🌸 ¡Qué martes más bonito! La EMT va hoy con horario normal laborable.', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 1800).toISOString() },
         ] as Message[],
       };
@@ -329,7 +335,7 @@ const Forum: React.FC = () => {
       setIsTyping(null);
       playSound('msg');
 
-      const localKey = `forum_pers_v4_${currentNeighborhood}`;
+      const localKey = `forum_pers_v5_${currentNeighborhood}`;
       const existing = JSON.parse(localStorage.getItem(localKey) || '[]');
       localStorage.setItem(localKey, JSON.stringify([...existing, mockMsg].slice(-80)));
     }, delay);
@@ -401,7 +407,7 @@ const Forum: React.FC = () => {
           .limit(100)
       );
 
-      const localKey = `forum_pers_v4_${currentNeighborhood}`;
+      const localKey = `forum_pers_v5_${currentNeighborhood}`;
       const localPersistence = JSON.parse(localStorage.getItem(localKey) || '[]');
 
       const combined = [...(data || []), ...localPersistence];
