@@ -49,7 +49,7 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'lun-23-pat-escuelas',
+          id: 'mar-07-pat-escuelas',
           creator_id: 'admin',
           name: '🛡️ Seguridad Escolar: Activa Hoy',
           description: 'Dispositivo Camino Seguro activado desde las 08:30h en accesos Miracle y Pax. Refuerzo de vigilancia vecinal para la vuelta a clase.',
@@ -58,7 +58,7 @@ const Patrols: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'lun-23-pat-morning',
+          id: 'mar-07-pat-morning',
           creator_id: 'user1',
           name: '🛡️ Resumen Mañana: Todo en Orden',
           description: 'Las patrullas nocturnas informan de una noche sin incidentes. Turno de mañana operando con normalidad por el centro.',
@@ -70,7 +70,7 @@ const Patrols: React.FC = () => {
           id: 'mar-24-pat-night',
           creator_id: 'user2',
           name: '🌑 Convocatoria: Patrulla Martes Noche',
-          description: 'Mañana lunes 06 a las 20:00h realizaremos la ronda nocturna por el Balcón del Mediterráneo. Se buscan 2 voluntarios más.',
+          description: 'Mañana martes 06 a las 20:00h realizaremos la ronda nocturna por el Balcón del Mediterráneo. Se buscan 2 voluntarios más.',
           neighborhood: 'CENTRE',
           contact_info: '622 55 44 33 (Maria)',
           created_at: new Date().toISOString()

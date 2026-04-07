@@ -59,10 +59,10 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'lun-23-trastos',
+          id: 'mar-07-trastos',
           creator_id: 'ayto',
-          title: "📋 Lunes: Recogida de Trastos",
-          description: "Mañana lunes toca recogida de muebles y trastos viejos en la zona centro. Saca los objetos esta noche.",
+          title: "📋 Martes: Recogida de Trastos",
+          description: "Mañana martes toca recogida de muebles y trastos viejos en la zona centro. Saca los objetos esta noche.",
           event_date: '2026-03-23',
           event_time: '22:00',
           location: 'Zona Centro TGN',

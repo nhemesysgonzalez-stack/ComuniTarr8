@@ -57,7 +57,7 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'lun-23-desk',
+          id: 'mar-07-desk',
           user_id: 'v12',
           title: '💻 Escritorio Oficina (Casi nuevo)',
           description: 'Mesa amplia ideal para despacho o estudios. Medidas 140x80. Desmontado para transporte. 📞 633 11 22 33',
@@ -69,7 +69,7 @@ const Marketplace: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'lun-23-monitor',
+          id: 'mar-07-monitor',
           user_id: 'v1',
           title: '🖥️ Monitor 24" para Teletrabajo',
           description: 'SAMSUNG Full HD. Muy poco uso, perfecto estado. Vendo por cambio a uno mayor. 📞 977 44 55 66',
@@ -81,7 +81,7 @@ const Marketplace: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'lun-23-chair',
+          id: 'mar-07-chair',
           user_id: 'v2',
           title: '💺 Silla Ergonómica Pro',
           description: 'Silla de oficina cómoda con soporte lumbar. Ideal para pasar muchas horas sentado. 📞 622 88 77 66',
