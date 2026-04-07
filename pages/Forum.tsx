@@ -75,11 +75,11 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '☀️ ¡Buenos días! Jueves 19 Mar. Mañana fresca (10ºC→17ºC). ¡Feliz San José!' },
-    { user: 'Meteo TGN', text: '🌤️ Jueves soleado, 10-17ºC. Viento flojo de poniente.' },
-    { user: 'Tarragona Impulsa', text: '💼 HOY: Taller Empleabilidad Digital 09:30h en Tabacalera.' },
-    { user: 'EMT TGN', text: '🚌 Horario laborable normal en todas las líneas EMT.' },
-    { user: 'AAVV Part Alta', text: '📋 Acta de la asamblea disponible en Anuncios. Zona verde aprobada. ✅' }
+    { user: 'Admin ComuniTarr', text: '☀️ ¡Buenos días! Martes 07 de Abr. Regateando la semana con energía. Máxima 20ºC.' },
+    { user: 'Meteo TGN', text: '🌤️ Martes con algunas nubes pero sin lluvia. Perfecto para salir.' },
+    { user: 'Tarragona Impulsa', text: '💼 HOY: Nuevas vacantes logísticas en el polígono Riu Clar.' },
+    { user: 'EMT TGN', text: '🚌 Líneas 54 y 3 regulares. Pequeños retrasos por obras en Vía Roma.' },
+    { user: 'AAVV Torreforta', text: '📋 Ya están las fotos de la limpieza vecinal de ayer. ¡Buen trabajo! ✅' }
   ];
 
 
@@ -126,40 +126,40 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Admin', text: '☀️ ¡Buen Sábado! Recordad que el mercado de Bonavista está abierto hasta las 14:30h. 🛒' },
-        { who: 'Pau T.', text: 'El sol calienta hoy que da gusto. ¡Día ideal para el vermut! 🍹' },
-        { who: 'Joan B.', text: 'Nos vemos a las 13:00h en la Plaça de la Font para brindar. 🥂' }
+        { who: 'Admin', text: '☀️ ¡Buen Martes! Recordad que el mercadillo de Bonavista es los domingos, hoy no.' },
+        { who: 'Pau T.', text: 'El sol calienta hoy que da gusto. Quien pudiera estar tomando algo en la Plaça la Font en vez de trabajar 😂' },
+        { who: 'Joan B.', text: 'Ánimo Pau, ya queda menos para el viernes. 💪' }
       ],
       [
-        { who: 'Joe R.', text: '✅ Las obras de Av. Roma están casi listas. Solo queda un carril cortado hoy sábado.' },
-        { who: 'Maria G.', text: '@Joe ¡Menos mal! Se nota la mejora en el tráfico. 🚗' },
+        { who: 'Joe R.', text: '✅ Las obras de Av. Roma siguen fuertes. Tomad la T-11 si podéis.' },
+        { who: 'Maria G.', text: '@Joe ¡Menos mal que avisas! Gracias. 🚗' },
       ],
     ],
     'APOYO': [
       [
-        { who: 'Carme L.', text: '¿Alguien que vaya a Bonavista y pueda traerme un saco de tierra? 🪴' },
-        { who: 'Andreu T.', text: 'Yo voy ahora en la L54, si puedo cargar con él te aviso Carme. 👍' },
+        { who: 'Carme L.', text: '¿Alguien que baje al centro y pueda traerme unos medicamentos de la farmacia de guardia?' },
+        { who: 'Andreu T.', text: 'Yo voy ahora en la L54, dime por privado qué necesitas Carme y te lo acerco. 👍' },
       ],
       [
-        { who: 'Sandra L.', text: '¿Alguien se apunta a la caminata de mañana domingo? 09:30h Anfiteatro. 🥾' },
-        { who: 'Elena V.', text: '@Sandra ¡Yo voy! Necesito mover las piernas después de tanto vermut hoy. 😂' },
+        { who: 'Sandra L.', text: 'Hola a todos, estoy organizando una recolecta de ropa de invierno que ya no uséis. 🧥' },
+        { who: 'Elena V.', text: '@Sandra ¡Yo tengo varios abrigos! Me apunto.' },
       ],
     ],
     'EMPLEO': [
       [
-        { who: 'Servicios TGN', text: 'Actualizadas ofertas para la campaña de Semana Santa. Sábado 21 Mar. 💼' },
-        { who: 'Restaurant Sol', text: 'Buscamos camareros extra para domingos y festivos. 600 00 11 22' },
+        { who: 'Servicios TGN', text: 'Actualizadas ofertas en el polígono industrial. Martes 07 Abril. 💼' },
+        { who: 'Restaurant Sol', text: 'Buscamos cocinero a jornada completa para incorporación inmediata. 600 00 11 22' },
       ],
     ],
     'ENCUENTROS': [
       [
-        { who: 'Santi G.', text: 'Sábado de vermut. ¡Estaré con Pepe en la Plaça de la Font a las 13h! 🥂' },
-        { who: 'Marta L.', text: '¡Allí nos vemos! Llevo a unos amigos nuevos del barrio. 😊' }
+        { who: 'Santi G.', text: 'Si alguien se aburre esta tarde a las 19h, iré a correr por la playa de la Arrabassada. 🏃‍♂️' },
+        { who: 'Marta L.', text: '¡Yo me apunto! Necesito mover las piernas. 😊' }
       ],
       [
-        { who: 'Nuria P.', text: '¿Algún chico deportista para hacer rutas por la mañana antes del trabajo y luego un café?' },
-        { who: 'Pau T.', text: '@Nuria ¡Hola! Yo suelo correr por el Pont del Diable antes de las 07:30. Si madrugas, te apuntas 😉' },
-        { who: 'Nuria P.', text: '@Pau ¡Trato hecho! Mañana martes a las 07:00 en el Pont del Diable.' },
+        { who: 'Nuria P.', text: '¿Algún chico para tomar un café esta tarde-noche después de salir de la oficina?' },
+        { who: 'Pau T.', text: '@Nuria ¡Hola! Yo salgo a las 19h, si te va bien nos vemos en Rambla Nova 😉' },
+        { who: 'Nuria P.', text: '@Pau ¡Trato hecho! A las 19:30 en el Balcón del Mediterráneo.' },
       ],
     ],
   };
@@ -231,7 +231,7 @@ const Forum: React.FC = () => {
         playSound('msg');
 
         // LOCAL PERSISTENCE
-        const localKey = `forum_pers_v2_${currentNeighborhood}`;
+        const localKey = `forum_pers_v3_${currentNeighborhood}`;
         const existing = JSON.parse(localStorage.getItem(localKey) || '[]');
         localStorage.setItem(localKey, JSON.stringify([...existing, msg].slice(-80)));
 
@@ -329,7 +329,7 @@ const Forum: React.FC = () => {
       setIsTyping(null);
       playSound('msg');
 
-      const localKey = `forum_pers_v2_${currentNeighborhood}`;
+      const localKey = `forum_pers_v3_${currentNeighborhood}`;
       const existing = JSON.parse(localStorage.getItem(localKey) || '[]');
       localStorage.setItem(localKey, JSON.stringify([...existing, mockMsg].slice(-80)));
     }, delay);
@@ -401,7 +401,7 @@ const Forum: React.FC = () => {
           .limit(100)
       );
 
-      const localKey = `forum_pers_v2_${currentNeighborhood}`;
+      const localKey = `forum_pers_v3_${currentNeighborhood}`;
       const localPersistence = JSON.parse(localStorage.getItem(localKey) || '[]');
 
       const combined = [...(data || []), ...localPersistence];

@@ -254,7 +254,7 @@ const Workshops: React.FC = () => {
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
                                             { t: 'Office 365 Pro', i: 'Pedro S.', d: 'Miércoles 17:00', desc: 'Domina Excel y Word para mejorar tu empleabilidad.', c: '688000111' },
-                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Jueves 10:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: '699222333' },
+                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'martes 10:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: '699222333' },
                                             { t: 'Gestión del Tiempo', i: 'M. López', d: 'Lunes 18:00', desc: 'Técnicas para organizar tu semana y reducir el estrés laboral.', c: '611444555' },
                                             { t: 'Networking TGN', i: 'Hub Impulsa', d: 'Lunes 19:30', desc: 'Encuentro informal para conectar con otros profesionales locales.', c: 'Tabacalera Sala 2' }
                                         ].map((idea, i) => (
