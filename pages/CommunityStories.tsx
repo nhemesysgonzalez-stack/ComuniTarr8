@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'dom-22-s1', user_name: 'Ana T.', content: '🥾 ¡Caminata completada! 6km de puro sol y risas por el Camí de Ronda. ¡Lo hemos pasado genial HOY LUNES! ☀️✨ #Caminata #Tarragona #Naturaleza #Domingo', image_url: 'https://images.unsplash.com/photo-1551632811-561732d1e306', likes: 210, created_at: new Date().toISOString() },
-            { id: 'dom-22-s2', user_name: 'Joan R.', content: '🌅 Atardecer mágico desde el Miracle hoy. La mejor forma de cerrar el fin de semana. ¡Tarragona nunca decepciona! 🌊🧡 #Tarragona #PuestadeSol #Relax #Domingo', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 256, created_at: new Date().toISOString() },
-            { id: "dom-22-s3", user_name: "Marc G.", content: "☀️ Domingo de desconexión total. Mañana lunes volvemos con energía. ¡Feliz semana a todos! 🔋💪 #TGNActiva #Domingo #LunesCerca", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 145, created_at: new Date().toISOString() },
-            { id: 'dom-22-s4', user_name: 'Pilar S.', content: '📋 Listos para el lunes con las pilas cargadas. Ya huele a primavera en el barrio. 🌸🌿 #Barrio #Tarragona #Primavera #Lunes', image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445', likes: 132, created_at: new Date().toISOString() }
+            { id: 'lun-23-s1', user_name: 'Ana T.', content: '☕ Primer café del Lunes en la Plaça de la Font y al lío. ¿Alguien sabe si ya han abierto la nueva papelería de Rambla Nova? 📚 #Lunes #Tarragona #VueltaALaRutina', image_url: 'https://images.unsplash.com/photo-1551632811-561732d1e306', likes: 210, created_at: new Date().toISOString() },
+            { id: 'lun-23-s2', user_name: 'Joan R.', content: '🚧 Vaya atasco esta mañana en la entrada a Tarragona por las vías del tren. ¡Pacientes, vecinos! Buen inicio de semana a todos 🚗🚙 #Tarragona #Trafico #Lunes', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 256, created_at: new Date().toISOString() },
+            { id: "lun-23-s3", user_name: "Marc G.", content: "💪 Ya hemos dejado limpia la calle de hojas y ramas después del viento de ayer. ¡A cuidar Torreforta entre todos! 🧹🌿 #Barrio #Torreforta #Lunes", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 145, created_at: new Date().toISOString() },
+            { id: 'lun-23-s4', user_name: 'Pilar S.', content: '🌸 Primavera total en el Parc Fina Miralles... paseíto rápido de buena mañana antes de entrar a trabajar. #Barrio #Tarragona #Primavera #Lunes', image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445', likes: 132, created_at: new Date().toISOString() }
         ];
 
 
