@@ -449,104 +449,77 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Quick Actions (Modern Grid) */}
-      {/* Community Action Hub (Prioritized) */}
-      <section className="space-y-6">
-        <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-black flex items-center gap-3">
-            <span className="material-symbols-outlined text-rose-500">hub</span>
-            Centro de Acción Comunitaria
-          </h2>
-          <span className="px-3 py-1 bg-rose-100 text-rose-600 text-[10px] font-black rounded-full animate-pulse uppercase tracking-widest">Activo Ahora</span>
-        </div>
-
+      {/* DAILY UTILITY DASHBOARD (The Toothbrush Test) */}
+      <section className="bg-white dark:bg-surface-dark p-8 rounded-[40px] shadow-sm border border-gray-100 dark:border-gray-800 relative overflow-hidden">
+        <h2 className="text-xl font-black flex items-center gap-2 mb-6 uppercase tracking-tight">
+          <span className="material-symbols-outlined text-emerald-500">dashboard</span>
+          Tu Resumen Diario
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* FORO & CHAT */}
-          <motion.div whileHover={{ y: -5 }} className="group">
-            <Link to="/forum" className="block h-full">
-              <div className="h-full bg-white dark:bg-surface-dark p-8 rounded-[40px] border border-gray-100 dark:border-gray-800 shadow-xl hover:shadow-primary/20 transition-all relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <span className="material-symbols-outlined text-6xl">forum</span>
-                </div>
-                <h3 className="text-xl font-black mb-2 uppercase tracking-tight text-primary">Chat del Barrio</h3>
-                <p className="text-xs font-bold text-gray-400 mb-6 uppercase tracking-widest">¿Qué está pasando ahora?</p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-3 bg-slate-50 dark:bg-slate-900/50 p-3 rounded-2xl">
-                    <div className="size-8 rounded-full bg-blue-100 flex items-center justify-center text-[10px] font-bold">AD</div>
-                    <p className="text-[10px] text-gray-500 font-medium truncate">"Admin: ¡Buenos días! Recordad bajar los trastos hoy..."</p>
-                  </div>
-                </div>
-                <div className="flex items-center text-primary font-black text-xs uppercase tracking-widest gap-2">
-                  Entrar al foro <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </div>
-              </div>
-            </Link>
-          </motion.div>
-
-          {/* RETOS SOLIDARIOS */}
-          <motion.div whileHover={{ y: -5 }} className="group">
-            <Link to="/challenges" className="block h-full">
-              <div className="h-full bg-gradient-to-br from-indigo-600 to-purple-700 p-8 rounded-[40px] text-white shadow-xl shadow-indigo-500/20 transition-all relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-6 opacity-20 group-hover:rotate-12 transition-transform">
-                  <span className="material-symbols-outlined text-6xl">emoji_events</span>
-                </div>
-                <h3 className="text-xl font-black mb-2 uppercase tracking-tight">Retos Activos</h3>
-                <p className="text-xs font-bold opacity-70 mb-6 uppercase tracking-widest">Gana XP y ComuniPoints</p>
-                <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 mb-6">
-                  <p className="text-[11px] font-black flex items-center gap-2">
-                    <span className="material-symbols-outlined text-sm">wb_twilight</span> Atardecer en el Miracle
-                  </p>
-                  <p className="text-[9px] opacity-80 mt-1">Sube tu foto del atardecer hoy y gana +50 XP</p>
-                </div>
-                <div className="flex items-center font-black text-xs uppercase tracking-widest gap-2">
-                  Ver todos los retos <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </div>
-              </div>
-            </Link>
-          </motion.div>
-
-          {/* AYUDAS VITALES */}
-          <motion.div whileHover={{ y: -5 }} className="group">
-            <Link to="/vital" className="block h-full">
-              <div className="h-full bg-white dark:bg-surface-dark p-8 rounded-[40px] border border-gray-100 dark:border-gray-800 shadow-xl hover:shadow-rose-500/20 transition-all relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:scale-110 transition-transform">
-                  <span className="material-symbols-outlined text-6xl">volunteer_activism</span>
-                </div>
-                <h3 className="text-xl font-black mb-2 uppercase tracking-tight text-rose-500">Ayuda Vecinal</h3>
-                <p className="text-xs font-bold text-gray-400 mb-6 uppercase tracking-widest">Necesidades urgentes hoy</p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-3 border-l-4 border-rose-500 pl-3">
-                    <div>
-                      <p className="text-[10px] font-black dark:text-white">Recogida Medicación</p>
-                      <p className="text-[9px] text-gray-400">Para Doña Rosa (Lunes mañana)</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center text-rose-500 font-black text-xs uppercase tracking-widest gap-2">
-                  Echar una mano <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </div>
-              </div>
-            </Link>
-          </motion.div>
+          <div className="p-5 bg-orange-50 dark:bg-orange-900/10 rounded-[30px] flex gap-4 items-center">
+            <span className="material-symbols-outlined text-orange-500 text-3xl">traffic</span>
+            <div>
+              <p className="text-[10px] font-black uppercase text-orange-600 tracking-widest">Tráfico Tarragona</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Retenciones leves en T-11 y accesos Francolí.</p>
+            </div>
+          </div>
+          <div className="p-5 bg-sky-50 dark:bg-sky-900/10 rounded-[30px] flex gap-4 items-center">
+            <span className="material-symbols-outlined text-sky-500 text-3xl">partly_cloudy_day</span>
+            <div>
+              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Clima Lunes</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Máxima 19ºC, Mínima 12ºC. Brisa moderada.</p>
+            </div>
+          </div>
+          <div className="p-5 bg-purple-50 dark:bg-purple-900/10 rounded-[30px] flex gap-4 items-center">
+            <span className="material-symbols-outlined text-purple-500 text-3xl">directions_bus</span>
+            <div>
+              <p className="text-[10px] font-black uppercase text-purple-600 tracking-widest">EMT & Transporte</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Servicio habitual. Línea 54 con desvíos.</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Quick Access Bar */}
-      <section className="flex flex-wrap gap-4 overflow-x-auto pb-4 no-scrollbar">
-        {[
-          { icon: 'map', label: 'Mapa Interactivo', to: '/map', color: 'bg-emerald-500' },
-          { icon: 'shopping_basket', label: 'Mercadillo', to: '/market', color: 'bg-orange-500' },
-          { icon: 'calendar_month', label: 'Calendario', to: '/calendar', color: 'bg-sky-500' },
-          { icon: 'business_center', label: 'Empleo', to: '/services', color: 'bg-indigo-500' },
-          { icon: 'groups', label: 'Voluntariado', to: '/volunteering', color: 'bg-teal-500' }
-        ].map((btn, i) => (
-          <Link key={i} to={btn.to} className="shrink-0">
-            <div className={`px-6 py-4 ${btn.color} text-white rounded-3xl flex items-center gap-3 shadow-lg hover:scale-105 transition-all`}>
-              <span className="material-symbols-outlined text-xl">{btn.icon}</span>
-              <span className="text-[11px] font-black uppercase tracking-widest">{btn.label}</span>
-            </div>
-          </Link>
-        ))}
+      {/* KILLER FEATURES: Foco en lo que funciona */}
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Link to="/services" className="group">
+          <div className="h-full bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 rounded-[40px] text-white shadow-xl shadow-indigo-500/20 transition-transform group-hover:-translate-y-2 relative overflow-hidden">
+            <span className="material-symbols-outlined text-6xl absolute top-6 right-6 opacity-20">work</span>
+            <h3 className="text-2xl font-black mb-2 uppercase tracking-tight">Empleos Locales</h3>
+            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Nuevas ofertas de Hoy Lunes</p>
+            <div className="flex items-center gap-2 text-xs font-black uppercase"><span className="material-symbols-outlined">arrow_forward</span> Entrar</div>
+          </div>
+        </Link>
+        <Link to="/incidents" className="group">
+          <div className="h-full bg-white dark:bg-gray-800 p-8 rounded-[40px] border border-gray-100 dark:border-gray-700 shadow-xl transition-transform group-hover:-translate-y-2 relative overflow-hidden">
+            <span className="material-symbols-outlined text-6xl text-red-500 absolute top-6 right-6 opacity-10">campaign</span>
+            <h3 className="text-2xl font-black mb-2 uppercase tracking-tight text-red-500">Avisos & Alertas</h3>
+            <p className="text-xs font-bold text-gray-400 mb-6 uppercase tracking-widest">Averías y reportes vecinales</p>
+            <div className="flex items-center gap-2 text-xs font-black uppercase text-red-500"><span className="material-symbols-outlined">arrow_forward</span> Ver Avisos</div>
+          </div>
+        </Link>
+        <Link to="/stories" className="group">
+          <div className="h-full bg-gradient-to-br from-orange-500 to-rose-500 p-8 rounded-[40px] text-white shadow-xl shadow-rose-500/30 transition-transform group-hover:-translate-y-2 relative overflow-hidden">
+            <span className="material-symbols-outlined text-6xl absolute top-6 right-6 opacity-20">camera_roll</span>
+            <h3 className="text-2xl font-black mb-2 uppercase tracking-tight">Galería Vecinal</h3>
+            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">La vida de Tarragona en fotos</p>
+            <div className="flex items-center gap-2 text-xs font-black uppercase"><span className="material-symbols-outlined">arrow_forward</span> Conectar</div>
+          </div>
+        </Link>
+      </section>
+
+      {/* NOTIFICATIONS HOOK */}
+      <section className="bg-primary/10 dark:bg-primary/5 p-8 md:p-12 rounded-[40px] border border-primary/20 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div>
+          <h3 className="text-xl md:text-3xl font-black text-primary mb-2 uppercase tracking-tight">Recibe un resumen semanal</h3>
+          <p className="text-sm font-bold text-gray-600 dark:text-gray-300">Te enviamos lo mejor de tu barrio una vez a la semana a tu correo. Cero spam, solo comunidad.</p>
+        </div>
+        <div className="flex w-full md:w-auto flex-col sm:flex-row gap-3">
+          <input type="email" placeholder="Tu correo electrónico..." className="px-6 py-4 rounded-2xl bg-white dark:bg-gray-800 border-none font-bold outline-none flex-1 shadow-sm" />
+          <button className="bg-primary text-white font-black uppercase tracking-widest text-xs px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-transform shadow-lg shadow-primary/30 shrink-0" onClick={() => alert("¡Gracias! Hemos guardado tu email para el resumen semanal.")}>
+            Notificarme
+          </button>
+        </div>
       </section>
 
 

@@ -70,28 +70,11 @@ export const Header: React.FC = () => {
 
   const navItems = [
     { to: '/', label: t('feed'), icon: 'grid_view' },
-    { to: '/map', label: t('map'), icon: 'explore' },
-    { to: '/announcements', label: t('announcements'), icon: 'campaign' },
-    { to: '/calendar', label: t('calendar'), icon: 'calendar_today' },
-    { to: '/neighbors', label: t('neighbors'), icon: 'waving_hand' },
+    { to: '/services', label: 'Empleos y Ayudas', icon: 'work' },
+    { to: '/announcements', label: 'Alertas del Barrio', icon: 'campaign' },
     { to: '/incidents', label: t('incidents_nav'), icon: 'report_problem' },
-    { to: '/community-info', label: t('about'), icon: 'info' },
-    { to: '/local-businesses', label: t('local_business'), icon: 'storefront' },
-    { to: '/business-directory', label: 'Directorio Negocios', icon: 'business_center' },
-    { to: '/clubs', label: t('clubs'), icon: 'groups' },
-    { to: '/forum', label: t('forum'), icon: 'chat' },
-    { to: '/workshops', label: t('workshops'), icon: 'school' },
-    { to: '/challenges', label: t('challenges'), icon: 'military_tech' },
-    { to: '/volunteering', label: t('volunteering'), icon: 'volunteer_activism' },
-    { to: '/support', label: t('support'), icon: 'diversity_1' },
-    { to: '/stories', label: t('stories'), icon: 'sentiment_satisfied' },
-    { to: '/vital', label: t('vital_care'), icon: 'favorite' },
-    { to: '/market', label: t('market'), icon: 'shopping_bag' },
-    { to: '/services', label: t('mutual_aid'), icon: 'handshake' },
-    { to: '/patrols', label: t('patrols'), icon: 'shield' },
-    { to: '/polls', label: t('polls'), icon: 'how_to_vote' },
-    { to: '/emergency', label: t('emergency'), icon: 'emergency' },
-    { to: '/assistant', label: t('assistant'), icon: 'handshake' }
+    { to: '/stories', label: 'Galería Vecinal', icon: 'sentiment_satisfied' },
+    { to: '/emergency', label: t('emergency'), icon: 'emergency' }
   ];
 
   return (
