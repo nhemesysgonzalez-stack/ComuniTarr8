@@ -59,29 +59,29 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'jue-09-trastos',
+          id: 'jue-09-plaseqta',
           creator_id: 'ayto',
-          title: "📋 Jueves: Recogida de Trastos",
-          description: "Mañana jueves toca recogida de muebles y trastos viejos en la zona centro. Saca los objetos esta noche.",
-          event_date: '2026-03-23',
-          event_time: '22:00',
-          location: 'Zona Centro TGN',
+          title: "⚠️ PLASEQTA: Simulacro de Sirenas",
+          description: "Prueba general de sirenas de riesgo químico en el Polígono Sur y Zona Portuaria. No hay que alarmarse ni confinarse. Es solo un simulacro.",
+          event_date: new Date().toISOString().split('T')[0],
+          event_time: '11:00',
+          location: 'Polígon Sur / La Pineda',
           category: 'Aviso',
-          neighborhood: 'CENTRE',
-          contact_info: 'Servicio Limpieza — 010',
+          neighborhood: 'GENERAL',
+          contact_info: 'Protecció Civil TGN',
           created_at: new Date().toISOString()
         },
         {
-          id: 'may-03-border-collie',
+          id: 'jue-09-protectora',
           creator_id: 'admin',
-          title: "🐾 Trobada Border Collies i amics XXL",
-          description: "Gran trobada canina a Tivissa: exhibicions d'agility i pastoreig, food trucks i concursos per a gossos grans. ¡Averigua más en la web!",
-          event_date: '2026-05-03',
-          event_time: '10:00',
-          location: 'Pista municipal de futbol Tivissa',
-          category: 'Ocio',
-          neighborhood: 'GENERAL',
-          contact_info: 'firescatalanes.cat',
+          title: "🐾 Reunión Extraordinaria: Protectora de Animales",
+          description: "Charla informativa y reclutamiento de nuevos voluntarios por el desbordamiento de acogidas. Se necesitan mantas y pienso para cachorros.",
+          event_date: new Date().toISOString().split('T')[0],
+          event_time: '18:30',
+          location: 'Centro Cívico Torreforta',
+          category: 'Solidario',
+          neighborhood: 'TORREFORTA',
+          contact_info: '619 44 22 11 (WhatsApp)',
           created_at: new Date().toISOString()
         }
       ];

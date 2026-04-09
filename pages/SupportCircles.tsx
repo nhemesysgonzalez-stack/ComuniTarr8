@@ -42,12 +42,21 @@ const SupportCircles: React.FC = () => {
 
             const mockCircles: SupportCircle[] = [
                 {
-                    id: 'jue-09-motivacion',
-                    initiator_id: 'vecinal',
-                    title: '🤝 Círculo: Motivación y Objetivos Jueves',
+                    id: 'real-duelo',
+                    initiator_id: 'ayuda_mutua',
+                    title: '🕊️ Grupo de Apoyo al Duelo (Tarragona)',
                     neighborhood: 'GENERAL',
-                    description: 'Empezamos la semana compartiendo nuestras metas y apoyando los proyectos de cada vecino. Un café para arrancar con fuerza. Hoy 19:30h.',
-                    contact_info: 'C. Union - Cafetería Art',
+                    description: 'Acompañamiento profesional y mutuo para afrontar la pérdida de seres queridos. Encuentros presenciales quincenales apoyados por el COPC (Colegi Oficial de Psicologia).',
+                    contact_info: '977 24 49 71 (Cita Previa)',
+                    created_at: new Date().toISOString()
+                },
+                {
+                    id: 'real-animales',
+                    initiator_id: 'protectora',
+                    title: '🐾 Protectora de Animales y Plantas',
+                    neighborhood: 'GENERAL',
+                    description: 'Red de cuidadores, casas de acogida y voluntarios para rescate y paseo de perros/gatos del refugio de Tarragona. Necesitamos manos urgentemente.',
+                    contact_info: '619 44 22 11 (WhatsApp Adopciones)',
                     created_at: new Date().toISOString()
                 },
                 {
@@ -66,15 +75,6 @@ const SupportCircles: React.FC = () => {
                     neighborhood: 'GENERAL',
                     description: 'Centro para un envejecimiento activo. Actividades, apoyo mutuo y acompañamiento para nuestros mayores contra la soledad no deseada.',
                     contact_info: '977 21 55 14 (Tarragona)',
-                    created_at: new Date().toISOString()
-                },
-                {
-                    id: 'real-atrevete-jovenes',
-                    initiator_id: 'voluntarios',
-                    title: '🌱 Asociación Juvenil Atrévete',
-                    neighborhood: 'GENERAL',
-                    description: 'Entidad que trabaja con niños y adolescentes en situación de riesgo de exclusión social. Acompañamiento, refuerzo y apoyo integral.',
-                    contact_info: '639 85 74 82 (Asociación)',
                     created_at: new Date().toISOString()
                 }
             ];

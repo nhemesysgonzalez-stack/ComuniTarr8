@@ -8,11 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 'jue-09-weather', type: 'weather', x: '52%', y: '42%', title: '☀️ Jueves: Soleado 22ºC', desc: 'Arrancamos la semana con cielos despejados e ideal para caminar.', status: 'Despejado 22ºC', color: 'bg-sky-500', icon: 'wb_sunny' },
-    { id: 'jue-09-trastos-1', type: 'event', x: '45%', y: '35%', title: '📋 Recogida Trastos Centro', desc: 'Zona Balmes y Rambla. Sacar muebles antes de las 22h HOY JUEVES.', status: 'Hoy Activo', color: 'bg-orange-500', icon: 'delete_sweep', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.3)]' },
-    { id: 'jue-09-trastos-2', type: 'event', x: '48%', y: '45%', title: '📋 Recogida Trastos Norte', desc: 'Punto de recogida muebles esta noche. Por favor, mantened libre el paso.', status: 'Hoy Activo', color: 'bg-orange-500', icon: 'delete_sweep' },
-    { id: 'jue-09-seguridad', type: 'incident', x: '55%', y: '50%', title: '🛡️ Seguridad Escolar', desc: 'Refuerzo de patrullas vecinales en el acceso al Colegio Miracle desde las 08:30h.', status: 'Activo Jueves', color: 'bg-emerald-500', icon: 'check_circle' },
-    { id: 6, type: 'event', x: '68%', y: '80%', title: '🐾 Trobada Border Collies XXL', desc: 'Gran evento canino en Tivissa el 3 y 4 de Mayo. Agility, pastoreo, concursos y food trucks.', status: '3 y 4 Mayo', color: 'bg-fuchsia-500', icon: 'pets', glow: 'shadow-[0_0_60px_rgba(217,70,239,0.5)]' }
+    { id: 'tgn-plaseqta', type: 'incident', x: '55%', y: '65%', title: '⚠️ Sirena PLASEQTA', desc: 'Simulacro activo de emergencia química en Polígono Sur. No alarmarse, es prueba.', status: 'Activo 11:00', color: 'bg-red-600', icon: 'campaign', glow: 'shadow-[0_0_50px_rgba(220,38,38,0.5)]' },
+    { id: 'tgn-ventcat', type: 'weather', x: '45%', y: '35%', title: '💨 Alerta VENTCAT', desc: 'Protecció Civil advierte de rachas de 80km/h en Tarragonès. Precaución.', status: 'Activo Hoy', color: 'bg-yellow-500', icon: 'air' },
+    { id: 'tgn-traf-11', type: 'incident', x: '42%', y: '50%', title: '🚗 Retenciones T-11', desc: 'Tráfico lento dirección Reus por obras. Tomar rutas alternativas.', status: 'Tráfico Denso', color: 'bg-orange-500', icon: 'traffic' },
+    { id: 'tgn-corte-agua', type: 'event', x: '58%', y: '40%', title: '💧 Ematsa: Corte Agua', desc: 'SPiSP (Sant Pere i Sant Pau) sin suministro temporal por avería en la red.', status: '16:00 - 19:00', color: 'bg-blue-500', icon: 'water_drop' },
+    { id: 'tgn-voluntariado', type: 'event', x: '60%', y: '55%', title: '🐾 Ayuda Protectora', desc: 'Llamamiento urgente para acoger perros tras el temporal de viento. Refugio lleno.', status: 'Urgente', color: 'bg-purple-500', icon: 'pets', glow: 'shadow-[0_0_60px_rgba(168,85,247,0.5)]' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'jue-09-s1', user_name: 'Ana T.', content: '☕ Primer café del Jueves en la Plaça de la Font y al lío. ¿Alguien sabe si ya han abierto la nueva papelería de Rambla Nova? 📚 #Jueves #Tarragona #VueltaALaRutina', image_url: 'https://images.unsplash.com/photo-1551632811-561732d1e306', likes: 210, created_at: new Date().toISOString() },
-            { id: 'jue-09-s2', user_name: 'Joan R.', content: '🚧 Vaya atasco esta mañana en la entrada a Tarragona por las vías del tren. ¡Pacientes, vecinos! Buen inicio de semana a todos 🚗🚙 #Tarragona #Trafico #Jueves', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 256, created_at: new Date().toISOString() },
-            { id: "jue-09-s3", user_name: "Marc G.", content: "💪 Ya hemos dejado limpia la calle de hojas y ramas después del viento de ayer. ¡A cuidar Torreforta entre todos! 🧹🌿 #Barrio #Torreforta #Jueves", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 145, created_at: new Date().toISOString() },
-            { id: 'jue-09-s4', user_name: 'Pilar S.', content: '🌸 Primavera total en el Parc Fina Miralles... paseíto rápido de buena mañana antes de entrar a trabajar. #Barrio #Tarragona #Primavera #Jueves', image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445', likes: 132, created_at: new Date().toISOString() }
+            { id: 'jue-09-s1', user_name: 'Ana T.', content: '☕ Primer café del Jueves en la Plaça de la Font y a escuchar las sirenas del PLASEQTA a las 11h. ¡No os asustéis que es simulacro! 🚨 #Jueves #Tarragona #Plaseqta', image_url: 'https://images.unsplash.com/photo-1551632811-561732d1e306', likes: 210, created_at: new Date().toISOString() },
+            { id: 'jue-09-s2', user_name: 'Joan R.', content: '🚧 Vaya atasco esta mañana en la T-11 dirección Reus por las obras de conexión con la A-7. ¡Pacientes, vecinos, que ya estamos a jueves! 🚗🚙 #Tarragona #Trafico', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 256, created_at: new Date().toISOString() },
+            { id: "jue-09-s3", user_name: "Marc G.", content: "💨 Mucho ojo con los maceteros de los balcones. Protección Civil tiene el VENTCAT activado por rachas fuertes en el Tarragonès. 🌿 #ProteccioCivil #Tarragona", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 145, created_at: new Date().toISOString() },
+            { id: 'jue-09-s4', user_name: 'Pilar S.', content: '🐶 Urgente: La protectora está pidiendo acogidas temporales por desbordamiento tras los daños del temporal de viento. Si alguien tiene sitio en casa, ¡que avise! #AyudaAnimal #Tarragona', image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445', likes: 132, created_at: new Date().toISOString() }
         ];
 
 

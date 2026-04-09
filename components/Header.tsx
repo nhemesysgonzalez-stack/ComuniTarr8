@@ -244,23 +244,17 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Global Activity Ticker - Part of the Header Unit */}
-      <div className="bg-fuchsia-600/95 backdrop-blur-md py-1.5 overflow-hidden border-b border-white/10 relative w-full max-w-full">
-        <motion.div
-          animate={{ x: [0, -1200] }}
-          transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
-          className="flex whitespace-nowrap items-center gap-10 text-white text-[8px] font-black uppercase tracking-[0.2em]"
-        >
-          <span className="flex items-center gap-2 text-[10px] text-fuchsia-100"><span className="material-symbols-outlined text-[14px]">pets</span> 🐾 GRAN EVENTO: TROBADA BORDER COLLIES I AMICS XXL - 3 Y 4 DE MAYO EN TIVISSA. ¡FOOD TRUCKS, AGILITY Y DIVERSIÓN!</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">☀️ JUEVES 16 MAR: MAÑANA FRESCA 10ºC, MÁXIMA 17ºC — BUEN COMIENZO DE SEMANA EN TARRAGONA</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🚌 EMT TARRAGONA: HORARIO LABORABLE NORMAL RESTABLECIDO EN TODAS LAS LÍNEAS</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">💼 HOY: TALLER EMPLEABILIDAD DIGITAL EN TABACALERA (09:30H) — TARRAGONA IMPULSA</span>
-          <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">🎓 VUELTA A CLASE: COLEGIOS E INSTITUTOS ABREN CON NORMALIDAD — EXTRAESCOLARES ACTIVAS</span>
-        </motion.div>
+      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA */}
+      <div className="bg-purple-600 dark:bg-purple-900 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] py-2 overflow-hidden flex items-center whitespace-nowrap z-50 shadow-md">
+        <div className="animate-marquee flex gap-12 sm:gap-24 items-center">
+          <span className="flex items-center gap-2">⚠️ PLASEQTA: Simulacro de sirenas en Polígono Sur a las 11:00h, no alarmarse</span>
+          <span className="flex items-center gap-2 text-yellow-300">💨 PROTECCIÓ CIVIL (VENTCAT): Rachas intensas en el Tarragonès. Precaución en balcones.</span>
+          <span className="flex items-center gap-2">🚗 TRÁFICO: Retenciones habituales en acceso T-11 por obras de la A-7.</span>
+          <span className="flex items-center gap-2">🏥 EMATSA: Corte de agua programado en Sant Pere i Sant Pau de 16h a 19h.</span>
+          
+          <span className="flex items-center gap-2">⚠️ PLASEQTA: Simulacro de sirenas en Polígono Sur a las 11:00h, no alarmarse</span>
+          <span className="flex items-center gap-2 text-yellow-300">💨 PROTECCIÓ CIVIL (VENTCAT): Rachas intensas en el Tarragonès. Precaución en balcones.</span>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}
