@@ -244,16 +244,16 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA */}
+      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA + NUEVO MAPA SOCIAL */}
       <div className="bg-purple-600 dark:bg-purple-900 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] py-2 overflow-hidden flex items-center whitespace-nowrap z-50 shadow-md">
         <div className="animate-marquee flex gap-12 sm:gap-24 items-center">
+          <span className="flex items-center gap-2 text-yellow-300">📍 ¡NUEVO MAPA SOCIAL! Deja un pin con el plan que te apetece hacer hoy y encuentra vecinos para unirse.</span>
           <span className="flex items-center gap-2">⚠️ PLASEQTA: Simulacro de sirenas en Polígono Sur a las 11:00h, no alarmarse</span>
-          <span className="flex items-center gap-2 text-yellow-300">💨 PROTECCIÓ CIVIL (VENTCAT): Rachas intensas en el Tarragonès. Precaución en balcones.</span>
+          <span className="flex items-center gap-2">📍 ¡NUEVO MAPA SOCIAL! No te quedes en casa, pon tu pin y conecta hoy mismo.</span>
           <span className="flex items-center gap-2">🚗 TRÁFICO: Retenciones habituales en acceso T-11 por obras de la A-7.</span>
-          <span className="flex items-center gap-2">🏥 EMATSA: Corte de agua programado en Sant Pere i Sant Pau de 16h a 19h.</span>
           
+          <span className="flex items-center gap-2 text-yellow-300">📍 ¡NUEVO MAPA SOCIAL! Deja un pin con el plan que te apetece hacer hoy y encuentra vecinos para unirse.</span>
           <span className="flex items-center gap-2">⚠️ PLASEQTA: Simulacro de sirenas en Polígono Sur a las 11:00h, no alarmarse</span>
-          <span className="flex items-center gap-2 text-yellow-300">💨 PROTECCIÓ CIVIL (VENTCAT): Rachas intensas en el Tarragonès. Precaución en balcones.</span>
         </div>
       </div>
 

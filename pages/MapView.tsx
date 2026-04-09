@@ -8,17 +8,16 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 'tgn-plaseqta', type: 'incident', x: '55%', y: '65%', title: '⚠️ Sirena PLASEQTA', desc: 'Simulacro activo de emergencia química en Polígono Sur. No alarmarse, es prueba.', status: 'Activo 11:00', color: 'bg-red-600', icon: 'campaign', glow: 'shadow-[0_0_50px_rgba(220,38,38,0.5)]' },
-    { id: 'tgn-ventcat', type: 'weather', x: '45%', y: '35%', title: '💨 Alerta VENTCAT', desc: 'Protecció Civil advierte de rachas de 80km/h en Tarragonès. Precaución.', status: 'Activo Hoy', color: 'bg-yellow-500', icon: 'air' },
-    { id: 'tgn-traf-11', type: 'incident', x: '42%', y: '50%', title: '🚗 Retenciones T-11', desc: 'Tráfico lento dirección Reus por obras. Tomar rutas alternativas.', status: 'Tráfico Denso', color: 'bg-orange-500', icon: 'traffic' },
-    { id: 'tgn-corte-agua', type: 'event', x: '58%', y: '40%', title: '💧 Ematsa: Corte Agua', desc: 'SPiSP (Sant Pere i Sant Pau) sin suministro temporal por avería en la red.', status: '16:00 - 19:00', color: 'bg-blue-500', icon: 'water_drop' },
-    { id: 'tgn-voluntariado', type: 'event', x: '60%', y: '55%', title: '🐾 Ayuda Protectora', desc: 'Llamamiento urgente para acoger perros tras el temporal de viento. Refugio lleno.', status: 'Urgente', color: 'bg-purple-500', icon: 'pets', glow: 'shadow-[0_0_60px_rgba(168,85,247,0.5)]' }
+    { id: 'plan-1', type: 'ocio', x: '45%', y: '45%', title: '☕ Tomar algo por el centro', desc: 'Acabo de salir de teletrabajar. ¿Alguien se apunta a una caña rápida o café por la Plaça de la Font?', status: 'Ahora mismo', color: 'bg-orange-500', icon: 'coffee', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.3)]', creator_name: 'David R.' },
+    { id: 'plan-2', type: 'deporte', x: '65%', y: '70%', title: '🏃 Salir a correr (Ritmo suave)', desc: 'Voy a salir a trotar por el balcón del mediterráneo unos 5km. Si alguien busca motivación que se apunte.', status: 'Hoy 19:00', color: 'bg-blue-500', icon: 'directions_run', creator_name: 'Marta G.' },
+    { id: 'plan-3', type: 'mascotas', x: '55%', y: '35%', title: '🐶 Paseo perruno por el Parc', desc: 'Saldré con mi Golden Retriever por la zona del parque Francolí. Ideal si quieres socializar a tu perrito.', status: 'En 30 mins', color: 'bg-purple-500', icon: 'pets', creator_name: 'Carlos M.' },
+    { id: 'plan-4', type: 'cultura', x: '48%', y: '50%', title: '📚 Intercambio de libros', desc: 'Voy a estar un rato por la biblioteca central si alguien quiere intercambiar novelas de misterio.', status: 'Mañana 10:00', color: 'bg-emerald-500', icon: 'menu_book', creator_name: 'Laura B.' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);
   const [followedPins, setFollowedPins] = useState<number[]>([]);
   const [newReportTitle, setNewReportTitle] = useState('');
-  const [newReportType, setNewReportType] = useState('incident');
+  const [newReportType, setNewReportType] = useState('ocio');
 
   const toggleFollow = (id: number) => {
     if (followedPins.includes(id)) {
@@ -36,83 +35,84 @@ const MapView: React.FC = () => {
       x: '50%', // Por defecto en el centro para demo
       y: '50%',
       title: newReportTitle,
-      desc: 'Nuevo reporte ciudadano generado ahora mismo.',
-      status: 'Nuevo',
-      color: newReportType === 'incident' ? 'bg-red-500' : 'bg-blue-500',
-      icon: newReportType === 'incident' ? 'report_problem' : 'info',
-      creator_name: user?.user_metadata?.full_name || 'Vecino Anónimo',
+      desc: '¡Acabo de crear este plan! Hablemos para coordinarnos.',
+      status: 'Creado ahora',
+      color: newReportType === 'ocio' ? 'bg-orange-500' : newReportType === 'deporte' ? 'bg-blue-500' : 'bg-purple-500',
+      icon: newReportType === 'ocio' ? 'local_bar' : newReportType === 'deporte' ? 'fitness_center' : 'group',
+      creator_name: user?.user_metadata?.full_name || 'Tú',
       creator_neighborhood: user?.user_metadata?.neighborhood || 'General',
       is_demo: false
     };
     setPins([...pins, newPin]);
     setShowReportModal(false);
     setNewReportTitle('');
-    // Feedback visual es suficiente al ver el pin aparecer
   };
 
   return (
-    <div className="h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] w-full relative overflow-hidden font-sans border-l border-gray-100 dark:border-gray-800">
-      {/* Background Simulating Map */}
+    <div className="h-[calc(100vh-80px)] w-full relative overflow-hidden font-sans border-l border-gray-100 dark:border-gray-800 bg-[#e5e7eb]">
       {/* Background Simulating Map - Actualizado a Tarragona */}
-      {/* Background Simulating Map - Taragona Static Placeholder for Demo */}
-      <div className="absolute inset-0 bg-[#e5e7eb] z-0">
+      <div className="absolute inset-0 z-0 opacity-80 mix-blend-multiply filter grayscale contrast-125">
         <iframe
           width="100%"
           height="100%"
           frameBorder="0"
-          style={{ border: 0, opacity: 1, filter: 'contrast(1.05) saturation(1.2)' }}
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11984.664687679365!2d1.2407559134907082!3d41.118021085004576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3f2c525f2af45%3A0x673c683c310c85c3!2sTarragona!5e0!3m2!1ses!2ses!4v1703612345678!5m2!1ses!2ses"
+          style={{ border: 0 }}
+           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11984.664687679365!2d1.2407559134907082!3d41.118021085004576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3f2c525f2af45%3A0x673c683c310c85c3!2sTarragona!5e0!3m2!1ses!2ses!4v1703612345678!5m2!1ses!2ses"
           allowFullScreen
           loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
-        {/* Capa transparente para permitir clicks en los pines flotantes pero dejar ver el mapa debajo */}
-        <div className="absolute inset-0 bg-transparent pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent pointer-events-none"></div>
       </div>
 
-      {/* Banner de Datos de Ejemplo */}
-      {/* Banner de Datos de Ejemplo (Solo visible si hay pines demo activos y NO se ha cerrado) */}
-      {/* Eliminado a petición para dar sensación más real */}
-
-
-      {/* Floating Header */}
+      {/* Floating Header Especial */}
       <div className="absolute top-8 left-8 right-8 z-10 flex flex-col md:flex-row gap-4">
-        <div className="bg-white/80 dark:bg-surface-dark/80 backdrop-blur-xl p-6 rounded-[35px] shadow-2xl border border-white/20 flex-1 flex items-center justify-between">
+        <div className="bg-gradient-to-r from-orange-500 to-pink-500 p-6 rounded-[35px] shadow-[0_20px_50px_rgba(249,115,22,0.3)] border border-white/20 flex-1 flex flex-col md:flex-row items-start md:items-center justify-between text-white">
           <div>
-            <h1 className="text-xl md:text-3xl font-black dark:text-white tracking-tighter uppercase leading-none mb-1">MAPA VIVO</h1>
-            <p className="text-[10px] font-black text-primary uppercase tracking-[0.3em]">Tarragona en tiempo real</p>
+            <h1 className="text-2xl md:text-5xl font-black tracking-tighter uppercase leading-none mb-1">¿QUÉ TE APETECE HACER HOY?</h1>
+            <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] opacity-90 drop-shadow-md">
+              Encuentra a alguien para tomar un café, hacer deporte o pasear al perro.
+            </p>
           </div>
-          <div className="flex gap-2">
-            <button className="size-12 rounded-2xl bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-primary border border-gray-100 dark:border-gray-700 shadow-lg">
-              <span className="material-symbols-outlined font-black">my_location</span>
-            </button>
-            <button
+          <div className="flex gap-2 mt-4 md:mt-0">
+             <button
               onClick={() => setShowReportModal(true)}
-              className="px-6 py-3 rounded-2xl bg-primary text-white text-[10px] font-black shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all uppercase tracking-widest"
+              className="px-8 py-4 rounded-2xl bg-white text-orange-600 text-xs font-black shadow-lg hover:scale-105 active:scale-95 transition-all uppercase tracking-widest flex items-center gap-2"
             >
-              Añadir Reporte
+               <span className="material-symbols-outlined text-base">location_on</span>
+              DEJAR MI PIN
             </button>
           </div>
         </div>
       </div>
 
-      {/* Map Content - SVG or Div with Pins */}
-      {/* Map Content - Floating Pins Re-enabled */}
-      <div className="relative w-full h-full p-20">
+      <div className="relative w-full h-full p-20 z-0">
         {pins.map(pin => (
           <motion.button
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            whileHover={{ scale: 1.2 }}
+            initial={{ scale: 0, opacity: 0, y: -20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.1, translateY: -10 }}
             onClick={() => setSelectedPin(pin)}
             key={pin.id}
-            className={`absolute size-14 md:size-16 rounded-3xl ${pin.color} ${pin.glow || ''} text-white flex items-center justify-center shadow-2xl border-4 border-white dark:border-gray-800 cursor-pointer z-10`}
+            className={`absolute flex flex-col items-center justify-center cursor-pointer z-10 group`}
             style={{ left: pin.x, top: pin.y }}
           >
-            <span className="material-symbols-outlined text-2xl font-black">{pin.icon}</span>
-            <div className={`absolute -bottom-1 -right-1 size-5 rounded-lg bg-white dark:bg-gray-800 flex items-center justify-center shadow-lg border-2 border-white dark:border-gray-700`}>
-              <div className={`size-1.5 rounded-full ${pin.color} animate-ping`}></div>
+             {/* Pin head */}
+            <div className={`size-14 md:size-16 rounded-full ${pin.color} ${pin.glow || 'shadow-2xl'} text-white flex items-center justify-center border-[4px] border-white relative z-10 overflow-hidden`}>
+               {/* Si tiene avatar se podría mostrar aquí, por ahora usamos el icono */}
+               <span className="material-symbols-outlined text-2xl font-black drop-shadow-md">{pin.icon}</span>
             </div>
+            
+             {/* Pin tail */}
+            <div className={`w-1 h-6 ${pin.color} -mt-2 shadow-lg`}></div>
+            <div className="w-4 h-1 bg-black/30 rounded-full blur-[2px] mt-1"></div>
+            
+             <motion.div 
+               initial={{ opacity: 0 }} 
+               animate={{ opacity: 1 }} 
+               className="mt-2 px-3 py-1 bg-white/90 backdrop-blur-md rounded-xl shadow-lg border border-gray-100 font-bold text-[10px] whitespace-nowrap text-gray-800"
+             >
+               {pin.creator_name.split(' ')[0]} busca plan
+             </motion.div>
           </motion.button>
         ))}
       </div>
@@ -120,12 +120,12 @@ const MapView: React.FC = () => {
       {/* Legend */}
       <div className="absolute bottom-8 left-8 z-10 space-y-2">
         {[
-          { id: 1, label: 'INCIDENTES', color: 'bg-red-500' },
-          { id: 2, label: 'EVENTOS', color: 'bg-primary' },
-          { id: 3, label: 'AYUDA', color: 'bg-emerald-500' }
+          { id: 1, label: 'OCIO & CAFÉ', color: 'bg-orange-500' },
+          { id: 2, label: 'DEPORTE', color: 'bg-blue-500' },
+          { id: 3, label: 'MASCOTAS & OTROS', color: 'bg-purple-500' }
         ].map(l => (
           <div key={l.id} className="bg-white/90 dark:bg-surface-dark/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/20 shadow-lg flex items-center gap-3">
-            <span className={`size-3 rounded-full ${l.color}`}></span>
+            <span className={`size-4 rounded-full ${l.color} shadow-inner bg-gradient-to-br from-white/30 to-transparent`}></span>
             <span className="text-[10px] font-black dark:text-white tracking-widest uppercase">{l.label}</span>
           </div>
         ))}
@@ -139,122 +139,59 @@ const MapView: React.FC = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 20 }}
-            className="absolute top-0 right-0 h-full w-full md:w-96 bg-white dark:bg-surface-dark shadow-[-20px_0_60px_rgba(0,0,0,0.1)] z-50 p-10 flex flex-col border-l border-gray-100 dark:border-gray-800"
+            className="absolute top-0 right-0 h-full w-full md:w-[400px] bg-white dark:bg-surface-dark shadow-[-20px_0_60px_rgba(0,0,0,0.15)] z-50 p-8 flex flex-col border-l border-gray-100 dark:border-gray-800"
           >
             <button onClick={() => setSelectedPin(null)} className="absolute top-8 left-0 -translate-x-full size-12 bg-white dark:bg-surface-dark flex items-center justify-center rounded-l-2xl shadow-xl md:shadow-none border-y border-l border-gray-100 dark:border-gray-800 text-gray-400">
               <span className="material-symbols-outlined">chevron_right</span>
             </button>
 
-            <div className={`size-20 rounded-[30px] ${selectedPin.color} text-white flex items-center justify-center shadow-2xl shadow-primary/20 mb-8`}>
-              <span className="material-symbols-outlined text-4xl font-black">{selectedPin.icon}</span>
+            <div className={`mt-10 size-24 rounded-full ${selectedPin.color} text-white flex items-center justify-center shadow-2xl shadow-current mb-6 border-[6px] border-gray-50 dark:border-gray-800 relative`}>
+              <span className="material-symbols-outlined text-4xl font-black drop-shadow-lg">{selectedPin.icon}</span>
+              <div className="absolute -bottom-2 px-3 py-1 bg-black text-white text-[9px] font-black uppercase rounded-full shadow-lg border border-white/20 tracking-widest">
+                {selectedPin.creator_name}
+              </div>
             </div>
 
-            <h2 className="text-3xl font-black dark:text-white tracking-tighter uppercase leading-tight mb-4">{selectedPin.title}</h2>
-            <p className="text-gray-500 dark:text-gray-400 font-bold mb-8 leading-relaxed">{selectedPin.desc}</p>
+            <h2 className="text-3xl font-black dark:text-white tracking-tight leading-tight mb-4">{selectedPin.title}</h2>
+            <p className="text-gray-600 dark:text-gray-300 font-medium mb-8 leading-relaxed text-base">{selectedPin.desc}</p>
 
             <div className="space-y-4 mb-auto">
-              <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800/50 rounded-2xl">
-                <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Estado</span>
-                <span className={`px-3 py-1 rounded-full text-[10px] font-black text-white ${selectedPin.color}`}>{selectedPin.status}</span>
-              </div>
-              <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800/50 rounded-2xl text-[10px] font-black text-gray-400 uppercase tracking-widest">
-                <span>Barrio</span>
-                <span className="dark:text-white">PART ALTA</span>
+              <div className="flex items-center justify-between p-5 bg-gray-50 dark:bg-gray-800/50 rounded-3xl border border-gray-100 dark:border-gray-700/50">
+                <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest flex items-center gap-2"><span className="material-symbols-outlined text-sm">schedule</span> ¿Cuándo?</span>
+                <span className={`px-4 py-1.5 rounded-full text-[10px] font-black text-white shadow-lg ${selectedPin.color}`}>{selectedPin.status}</span>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              {/* Botón Eliminar solo si es el creador */}
-              {/* En una app real, verificaríamos user?.id === selectedPin.creator_id */}
-              {/* Como es demo, permitimos eliminar los que acabamos de crear nosotros (id > 100) */}
+            <div className="grid grid-cols-1 gap-4">
               {selectedPin.id > 100 && (
                 <button
                   onClick={() => {
                     setPins(pins.filter(p => p.id !== selectedPin.id));
                     setSelectedPin(null);
                   }}
-                  className="col-span-2 py-3 bg-red-100 text-red-600 text-[10px] font-black rounded-2xl uppercase tracking-widest hover:bg-red-200 transition-all mb-2"
+                  className="py-4 bg-red-50 text-red-600 text-xs font-black rounded-2xl uppercase tracking-widest hover:bg-red-100 transition-all"
                 >
-                  Eliminar Mi Reporte
+                  Cancelar mi plan
                 </button>
               )}
-              <button
-                onClick={() => setShowDetailModal(true)}
-                className="py-4 bg-primary text-white text-[10px] font-black rounded-2xl shadow-lg shadow-primary/20 uppercase tracking-widest transition-all hover:scale-105 active:scale-95"
-              >
-                Más Info
-              </button>
+              
               <button
                 onClick={() => toggleFollow(selectedPin.id)}
-                className={`py-4 text-[10px] font-black rounded-2xl uppercase tracking-widest transition-all ${followedPins.includes(selectedPin.id) ? 'bg-green-500 text-white shadow-lg shadow-green-500/20' : 'bg-gray-50 dark:bg-gray-800 dark:text-white hover:bg-gray-100'}`}
+                 className={`py-5 text-sm font-black rounded-[25px] uppercase tracking-widest transition-all shadow-xl flex items-center justify-center gap-2 ${followedPins.includes(selectedPin.id) ? 'bg-green-500 text-white shadow-green-500/30' : 'bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-orange-500/20 hover:scale-105 hover:shadow-orange-500/40'}`}
               >
-                {followedPins.includes(selectedPin.id) ? 'Siguiendo' : 'Seguir'}
+                 <span className="material-symbols-outlined">{followedPins.includes(selectedPin.id) ? 'check_circle' : 'waving_hand'}</span>
+                {followedPins.includes(selectedPin.id) ? 'Ya te has apuntado' : 'Me Apunto!'}
               </button>
+              
+               <div className="text-center mt-2">
+                 <p className="text-[10px] text-gray-400 font-medium">Al apuntarte, {selectedPin.creator_name.split(' ')[0]} recibirá una notificación para abrir chat.</p>
+               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Detail Modal (Replacement for Alert) */}
-      <AnimatePresence>
-        {showDetailModal && selectedPin && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] flex items-center justify-center p-4"
-            onClick={() => setShowDetailModal(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white dark:bg-surface-dark rounded-[40px] p-8 max-w-md w-full shadow-2xl relative"
-            >
-              <button onClick={() => setShowDetailModal(false)} className="absolute top-6 right-6 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                <span className="material-symbols-outlined">close</span>
-              </button>
-
-              <div className={`inline-flex items-center justify-center size-16 rounded-2xl ${selectedPin.color} text-white mb-6 shadow-lg`}>
-                <span className="material-symbols-outlined text-3xl">{selectedPin.icon}</span>
-              </div>
-
-              <h3 className="text-2xl font-black dark:text-white mb-2 uppercase leading-tight">{selectedPin.title}</h3>
-              <p className="text-gray-500 dark:text-gray-400 font-bold text-sm mb-6">{selectedPin.desc}</p>
-
-              <div className="space-y-3 bg-gray-50 dark:bg-gray-800/50 p-6 rounded-3xl mb-6">
-                <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-gray-400">schedule</span>
-                  <span className="text-xs font-bold dark:text-white">Horario: {selectedPin.id < 100 ? '09:00 - 20:00 (Est.)' : 'Reciente'}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-gray-400">location_on</span>
-                  <span className="text-xs font-bold dark:text-white">Ubicación: {selectedPin.id < 100 ? 'Centro / Rambla' : 'Marcador Usuario'}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-gray-400">person</span>
-                  <span className="text-xs font-bold dark:text-white line-clamp-1">
-                    Organiza: {selectedPin.creator_name ? selectedPin.creator_name : (selectedPin.id < 100 ? 'Asociación Vecinal (Demo)' : 'Vecino')}
-                  </span>
-                </div>
-                {selectedPin.creator_neighborhood && (
-                  <div className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-gray-400">home_work</span>
-                    <span className="text-xs font-bold dark:text-white">Barrio: {selectedPin.creator_neighborhood}</span>
-                  </div>
-                )}
-              </div>
-
-              <button className="w-full py-4 bg-indigo-600 text-white rounded-2xl font-black uppercase tracking-widest shadow-lg shadow-indigo-600/20 hover:bg-indigo-700 transition-all">
-                Contactar Organizador
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Report Modal */}
+      {/* Report/Plan Modal */}
       <AnimatePresence>
         {showReportModal && (
           <motion.div
@@ -269,36 +206,61 @@ const MapView: React.FC = () => {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white dark:bg-surface-dark rounded-[40px] p-8 max-w-sm w-full shadow-2xl"
+              className="bg-white dark:bg-surface-dark rounded-[40px] p-8 max-w-md w-full shadow-2xl relative overflow-hidden"
             >
-              <h3 className="text-xl font-black dark:text-white mb-4 uppercase">Nuevo Reporte</h3>
-              <form onSubmit={handleAddReport} className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Título del reporte o evento..."
-                  value={newReportTitle}
-                  onChange={(e) => setNewReportTitle(e.target.value)}
-                  className="w-full bg-gray-50 dark:bg-gray-800 p-4 rounded-2xl font-bold text-sm outline-none focus:ring-2 ring-primary/20 dark:text-white"
-                  autoFocus
-                />
-                <select
-                  value={newReportType}
-                  onChange={(e) => setNewReportType(e.target.value)}
-                  className="w-full bg-gray-50 dark:bg-gray-800 p-4 rounded-2xl font-bold text-sm outline-none dark:text-white"
-                >
-                  <option value="incident">Incidente</option>
-                  <option value="event">Evento</option>
-                  <option value="cleanup">Voluntariado</option>
-                </select>
-                <button type="submit" className="w-full py-4 bg-primary text-white rounded-2xl font-black uppercase tracking-widest shadow-lg">
-                  Publicar en Mapa
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-500 to-pink-500"></div>
+              
+              <div className="flex justify-between items-start mb-6 mt-2">
+                <div>
+                   <h3 className="text-2xl font-black dark:text-white uppercase tracking-tight">Crear un Plan</h3>
+                   <p className="text-xs text-gray-500 mt-1 font-medium">Deja tu pin para que los vecinos te encuentren.</p>
+                </div>
+                 <button onClick={() => setShowReportModal(false)} className="size-8 rounded-full bg-gray-100 flex items-center justify-center dark:bg-gray-800">
+                    <span className="material-symbols-outlined text-sm">close</span>
+                 </button>
+              </div>
+
+              <form onSubmit={handleAddReport} className="space-y-5">
+                <div>
+                  <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest pl-2 mb-1 block">¿Qué quieres hacer?</label>
+                  <input
+                    type="text"
+                    placeholder="Ej: Salir a correr suave..."
+                    value={newReportTitle}
+                    onChange={(e) => setNewReportTitle(e.target.value)}
+                    className="w-full bg-gray-50 dark:bg-gray-800 p-4 rounded-2xl font-bold text-sm outline-none focus:ring-2 ring-orange-500/20 dark:text-white"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest pl-2 mb-1 block">Categoría</label>
+                   <div className="grid grid-cols-3 gap-2">
+                      <button type="button" onClick={() => setNewReportType('ocio')} className={`p-4 rounded-2xl flex flex-col items-center justify-center gap-2 border-2 transition-all ${newReportType === 'ocio' ? 'border-orange-500 bg-orange-50 text-orange-600' : 'border-gray-100 bg-gray-50 text-gray-400'}`}>
+                         <span className="material-symbols-outlined filter drop-shadow-sm">local_bar</span>
+                         <span className="text-[9px] font-black uppercase tracking-wider">Ocio</span>
+                      </button>
+                      <button type="button" onClick={() => setNewReportType('deporte')} className={`p-4 rounded-2xl flex flex-col items-center justify-center gap-2 border-2 transition-all ${newReportType === 'deporte' ? 'border-blue-500 bg-blue-50 text-blue-600' : 'border-gray-100 bg-gray-50 text-gray-400'}`}>
+                         <span className="material-symbols-outlined filter drop-shadow-sm">fitness_center</span>
+                         <span className="text-[9px] font-black uppercase tracking-wider">Deporte</span>
+                      </button>
+                      <button type="button" onClick={() => setNewReportType('mascotas')} className={`p-4 rounded-2xl flex flex-col items-center justify-center gap-2 border-2 transition-all ${newReportType === 'mascotas' ? 'border-purple-500 bg-purple-50 text-purple-600' : 'border-gray-100 bg-gray-50 text-gray-400'}`}>
+                         <span className="material-symbols-outlined filter drop-shadow-sm">pets</span>
+                         <span className="text-[9px] font-black uppercase tracking-wider">Mascotas</span>
+                      </button>
+                   </div>
+                </div>
+
+                <button type="submit" className="w-full py-5 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-[20px] font-black uppercase tracking-widest shadow-xl shadow-orange-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 mt-4">
+                  <span className="material-symbols-outlined">place</span>
+                  DEJAR MI PIN EN EL MAPA
                 </button>
               </form>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-    </div >
+    </div>
   );
 };
 
