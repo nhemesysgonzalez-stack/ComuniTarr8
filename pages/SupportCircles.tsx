@@ -42,9 +42,9 @@ const SupportCircles: React.FC = () => {
 
             const mockCircles: SupportCircle[] = [
                 {
-                    id: 'mar-07-motivacion',
+                    id: 'jue-09-motivacion',
                     initiator_id: 'vecinal',
-                    title: '🤝 Círculo: Motivación y Objetivos Martes',
+                    title: '🤝 Círculo: Motivación y Objetivos Jueves',
                     neighborhood: 'GENERAL',
                     description: 'Empezamos la semana compartiendo nuestras metas y apoyando los proyectos de cada vecino. Un café para arrancar con fuerza. Hoy 19:30h.',
                     contact_info: 'C. Union - Cafetería Art',

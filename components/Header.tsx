@@ -253,7 +253,7 @@ export const Header: React.FC = () => {
         >
           <span className="flex items-center gap-2 text-[10px] text-fuchsia-100"><span className="material-symbols-outlined text-[14px]">pets</span> 🐾 GRAN EVENTO: TROBADA BORDER COLLIES I AMICS XXL - 3 Y 4 DE MAYO EN TIVISSA. ¡FOOD TRUCKS, AGILITY Y DIVERSIÓN!</span>
           <span className="opacity-30">•</span>
-          <span className="flex items-center gap-2">☀️ MARTES 16 MAR: MAÑANA FRESCA 10ºC, MÁXIMA 17ºC — BUEN COMIENZO DE SEMANA EN TARRAGONA</span>
+          <span className="flex items-center gap-2">☀️ JUEVES 16 MAR: MAÑANA FRESCA 10ºC, MÁXIMA 17ºC — BUEN COMIENZO DE SEMANA EN TARRAGONA</span>
           <span className="opacity-30">•</span>
           <span className="flex items-center gap-2">🚌 EMT TARRAGONA: HORARIO LABORABLE NORMAL RESTABLECIDO EN TODAS LAS LÍNEAS</span>
           <span className="opacity-30">•</span>
@@ -341,7 +341,7 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase">Martes 07 Abr 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase">Jueves 09 Abr 2026</span>
                   <span className="text-xs font-black dark:text-white uppercase">AEMET: Soleado 18ºC</span>
                 </div>
               </div>

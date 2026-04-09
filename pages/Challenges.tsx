@@ -46,7 +46,7 @@ const Challenges: React.FC = () => {
           id: 'dom-22-ch-1',
           creator_id: 'admin',
           title: '🌅 Se busca líder: Atardecer Miracle',
-          description: 'Buscamos a alguien que tome la iniciativa HOY MARTES (19:15h) para llevar un altavoz o bebidas y dinamizar el grupo en la playa. ¡Gana 100 ComuniPoints por liderar!',
+          description: 'Buscamos a alguien que tome la iniciativa HOY JUEVES (19:15h) para llevar un altavoz o bebidas y dinamizar el grupo en la playa. ¡Gana 100 ComuniPoints por liderar!',
           neighborhood: 'GENERAL',
           contact_info: 'Posteado por Admin (Busca voluntario)',
           is_example: true,
@@ -56,7 +56,7 @@ const Challenges: React.FC = () => {
           id: 'dom-22-ch-2',
           creator_id: 'user2',
           title: '🥾 Crónica Viva: Camí de Ronda hoy',
-          description: '¡Reto de HOY MARTES! Sube la foto más divertida del grupo durante la caminata de esta mañana. La foto con más likes gana el título de "Cronista del Barrio".',
+          description: '¡Reto de HOY JUEVES! Sube la foto más divertida del grupo durante la caminata de esta mañana. La foto con más likes gana el título de "Cronista del Barrio".',
           neighborhood: 'GENERAL',
           contact_info: 'Comunidad ComuniTarr',
           is_example: true,
@@ -65,8 +65,8 @@ const Challenges: React.FC = () => {
         {
           id: 'dom-22-ch-3',
           creator_id: 'v4',
-          title: '📦 Solidaridad: Trastos Martes Mañana',
-          description: 'Mañana martes es día de recogida. El reto es ayudar a al menos un vecino que no pueda bajar sus voluminosos a la calle. ¡Iniciativa vecinal pura!',
+          title: '📦 Solidaridad: Trastos Jueves Mañana',
+          description: 'Mañana jueves es día de recogida. El reto es ayudar a al menos un vecino que no pueda bajar sus voluminosos a la calle. ¡Iniciativa vecinal pura!',
           neighborhood: 'CENTRE',
           contact_info: 'Coordina con tus vecinos de escalera',
           is_example: true,
@@ -251,7 +251,7 @@ const Challenges: React.FC = () => {
                   <div className="flex flex-wrap gap-2 justify-center">
                     {[
                       { t: 'Donación de Libros', d: 'Llevamos libros a la biblioteca del barrio para renovar stock infantil esta semana.', c: '977240331' },
-                      { t: 'Paseo con Mayores', d: 'Grupo para pasear con vecinos del barrio que viven solos esta tarde de martes al salir del trabajo.', c: '655666777' },
+                      { t: 'Paseo con Mayores', d: 'Grupo para pasear con vecinos del barrio que viven solos esta tarde de jueves al salir del trabajo.', c: '655666777' },
                       { t: 'Limpieza de alcorques', d: 'Iniciativa para limpiar la tierra de los árboles de nuestra calle esta semana por la tarde.', c: '611888222' }
                     ].map((idea, i) => (
                       <button

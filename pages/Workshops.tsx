@@ -48,10 +48,10 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'mar-07-empleo',
+                    id: 'jue-09-empleo',
                     title: '💼 Charla: Empleo Joven TGN',
                     instructor: 'Tarragona Impulsa',
-                    date: 'Hoy Martes 07, 11:00h',
+                    date: 'Hoy Jueves 09, 11:00h',
                     description: 'Sesión informativa para jóvenes sobre cómo afrontar la primera entrevista y buscar en el sector servicios local.',
                     image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80',
                     spots: 20,
@@ -60,10 +60,10 @@ const Workshops: React.FC = () => {
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'mar-07-tech',
+                    id: 'jue-09-tech',
                     title: '📱 Taller: Trámites con el Móvil',
                     instructor: 'Maria P.',
-                    date: 'Hoy Martes 07, 17:00h',
+                    date: 'Hoy Jueves 09, 17:00h',
                     description: 'Aprende a usar la Carpeta Ciudadana y pedir citas médicas desde tu smartphone. Especial para mayores.',
                     image: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80',
                     spots: 12,
@@ -75,7 +75,7 @@ const Workshops: React.FC = () => {
                     id: 'mar-24-yoga',
                     title: '🧘 Yoga Post-Trabajo al aire libre',
                     instructor: 'Elena V.',
-                    date: 'Hoy Martes 07, 19:00h',
+                    date: 'Hoy Jueves 09, 19:00h',
                     description: 'Clase dinámica para liberar tensiones tras la jornada laboral. Ven con esterilla y ropa cómoda al Miracle.',
                     image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
                     spots: 25,
@@ -151,11 +151,11 @@ const Workshops: React.FC = () => {
                         </div>
                         <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Workshop: CV Digital con IA 📈</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Optimiza tu búsqueda de empleo con herramientas de Inteligencia Artificial. HOY MARTES a las 10:00h en el Centro Cívico Centre. ¡Inscripción gratuita!
+                            Optimiza tu búsqueda de empleo con herramientas de Inteligencia Artificial. HOY JUEVES a las 10:00h en el Centro Cívico Centre. ¡Inscripción gratuita!
                         </p>
 
                         <div className="flex flex-wrap gap-4">
-                            <a href="#" onClick={(e) => { e.preventDefault(); alert("Reserva tu plaza enviando un WhatsApp al 611 00 22 33 para HOY MARTES."); }} className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
+                            <a href="#" onClick={(e) => { e.preventDefault(); alert("Reserva tu plaza enviando un WhatsApp al 611 00 22 33 para HOY JUEVES."); }} className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
                                 <span className="material-symbols-outlined text-sm">confirmation_number</span>
                                 RESERVAR PLAZA
                             </a>
@@ -254,9 +254,9 @@ const Workshops: React.FC = () => {
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
                                             { t: 'Office 365 Pro', i: 'Pedro S.', d: 'Miércoles 17:00', desc: 'Domina Excel y Word para mejorar tu empleabilidad.', c: '688000111' },
-                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'martes 10:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: '699222333' },
-                                            { t: 'Gestión del Tiempo', i: 'M. López', d: 'Martes 18:00', desc: 'Técnicas para organizar tu semana y reducir el estrés laboral.', c: '611444555' },
-                                            { t: 'Networking TGN', i: 'Hub Impulsa', d: 'Martes 19:30', desc: 'Encuentro informal para conectar con otros profesionales locales.', c: 'Tabacalera Sala 2' }
+                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'jueves 10:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: '699222333' },
+                                            { t: 'Gestión del Tiempo', i: 'M. López', d: 'Jueves 18:00', desc: 'Técnicas para organizar tu semana y reducir el estrés laboral.', c: '611444555' },
+                                            { t: 'Networking TGN', i: 'Hub Impulsa', d: 'Jueves 19:30', desc: 'Encuentro informal para conectar con otros profesionales locales.', c: 'Tabacalera Sala 2' }
                                         ].map((idea, i) => (
                                             <button
                                                 key={i}
@@ -289,7 +289,7 @@ const Workshops: React.FC = () => {
 
                                 <div>
                                     <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Fecha y Hora</label>
-                                    <input type="text" value={date} onChange={e => setDate(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-emerald-500/20 focus:ring-2" placeholder="Ej: Martes 18:30" />
+                                    <input type="text" value={date} onChange={e => setDate(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-emerald-500/20 focus:ring-2" placeholder="Ej: Jueves 18:30" />
                                 </div>
 
                                 <div>
