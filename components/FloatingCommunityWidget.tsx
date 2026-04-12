@@ -11,17 +11,17 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 301, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: 'Semana a toda marcha, ánimo con el Jueves 💪', neighborhood: 'Campclar' },
-    { id: 302, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'A seguir ordenando un poco por aquí hoy jueves 🧹', neighborhood: 'Torreforta' },
-    { id: 303, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: '¡Hoy jueves de rutina! Nos vemos esta tarde en la clase de pintura 🎨', neighborhood: 'Part Alta' },
+    { id: 301, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: 'Semana a toda marcha, ánimo con el Domingo 💪', neighborhood: 'Campclar' },
+    { id: 302, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'A seguir ordenando un poco por aquí hoy domingo 🧹', neighborhood: 'Torreforta' },
+    { id: 303, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: '¡Hoy domingo de rutina! Nos vemos esta tarde en la clase de pintura 🎨', neighborhood: 'Part Alta' },
     { id: 304, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'He dejado algo de ropa limpia en la caja solidaria de la parroquia 👕', neighborhood: 'Eixample' }
 ];
 
 const tickerMessages = [
-    "📦 Recordatorio: Limpieza de calles habitual HOY JUEVES. Evita aparcar en zonas señalizadas.",
-    "☀️ Jueves parcialmente nublado con máxima de 20ºC.",
+    "📦 Recordatorio: Limpieza de calles habitual HOY DOMINGO. Evita aparcar en zonas señalizadas.",
+    "☀️ Domingo parcialmente nublado con máxima de 20ºC.",
     "🚧 Afectaciones leves de tráfico en la rotonda de los caballos.",
-    "💼 Nuevas ofertas de empleo confirmadas HOY JUEVES. Consulta los detalles."
+    "💼 Nuevas ofertas de empleo confirmadas HOY DOMINGO. Consulta los detalles."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

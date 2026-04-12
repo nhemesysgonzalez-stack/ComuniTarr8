@@ -58,7 +58,7 @@ const Incidents: React.FC = () => {
             if (data) {
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'jue-09-trastos-active',
+                        id: 'dom-12-trastos-active',
                         user_id: 'admin',
                         title: '📋 Recogida Trastos Activa',
                         description: 'Camiones operando en zona comercial. Sacad muebles antes de las 22h.',
@@ -68,7 +68,7 @@ const Incidents: React.FC = () => {
                         profiles: { full_name: 'Ayuntamiento TGN', avatar_url: '/logo.svg' }
                     },
                     {
-                        id: 'jue-09-limpieza-finished',
+                        id: 'dom-12-limpieza-finished',
                         user_id: 'v4',
                         title: '☀️ Limpieza Post-Finde Miracle',
                         description: 'Caminata de ayer finalizada. Zona limpia y despejada.',
@@ -78,7 +78,7 @@ const Incidents: React.FC = () => {
                         profiles: { full_name: 'Mantenimiento TGN', avatar_url: 'https://i.pravatar.cc/150?u=man' }
                     },
                     {
-                        id: 'jue-09-riego-rambla',
+                        id: 'dom-12-riego-rambla',
                         user_id: 'v5',
                         title: '🚿 Riego Rambla Nova',
                         description: 'Mantenimiento preventivo zona ajardinada este mediodía.',

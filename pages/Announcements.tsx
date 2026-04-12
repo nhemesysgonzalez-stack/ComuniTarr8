@@ -145,17 +145,17 @@ const Announcements: React.FC = () => {
 
             const realBulletins: Announcement[] = [
                 {
-                    id: 'jue-09-trastos',
+                    id: 'dom-12-trastos',
                     title: '📋 Hoy: Recogida de Trastos (Zona Centro)',
-                    content: 'HOY JUEVES es día de retirada de muebles y voluminosos. Recordad bajarlos a la acera antes de las 22:00h para no ser sancionados.',
+                    content: 'HOY DOMINGO es día de retirada de muebles y voluminosos. Recordad bajarlos a la acera antes de las 22:00h para no ser sancionados.',
                     neighborhood: 'CENTRE',
                     category: 'AVISO',
                     author_name: 'Ajuntament TGN',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'jue-09-weather',
-                    title: '☀️ Jueves Primaveral y Despejado',
+                    id: 'dom-12-weather',
+                    title: '☀️ Domingo Primaveral y Despejado',
                     content: 'Semana de sol y temperaturas agradables. Hoy llegamos a los 22ºC. ¡Perfecto para caminar por la Rambla o ir al Miracle!',
                     neighborhood: 'GENERAL',
                     category: 'TIEMPO',
@@ -163,17 +163,17 @@ const Announcements: React.FC = () => {
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'jue-09-seguridad',
+                    id: 'dom-12-seguridad',
                     title: '🛡️ Dispositivo Escolar: Miracle y Pax',
-                    content: 'Vigilancia activa en los accesos escolares HOY JUEVES (08:30-09:15). Respetad las zonas de carga y descarga de niños.',
+                    content: 'Vigilancia activa en los accesos escolares HOY DOMINGO (08:30-09:15). Respetad las zonas de carga y descarga de niños.',
                     neighborhood: 'GENERAL',
                     category: 'SEGURIDAD',
                     author_name: 'Guardia Urbana',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'jue-09-empleo',
-                    title: '💼 Empleo: Nuevas Vacantes Jueves',
+                    id: 'dom-12-empleo',
+                    title: '💼 Empleo: Nuevas Vacantes Domingo',
                     content: 'Iniciamos la semana con 5 ofertas verificadas en comercio y hostelería. Entra en "Servicios" para ver los contactos directos.',
                     neighborhood: 'GENERAL',
                     category: 'EMPLEO',

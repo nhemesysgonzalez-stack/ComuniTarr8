@@ -46,33 +46,33 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'jue-09-medical',
+                    id: 'dom-12-medical',
                     creator_id: 'v5',
                     type: 'medical',
-                    title: '💊 Medicación Urgente (Jueves)',
-                    description: 'Necesito una medicación de la farmacia para HOY JUEVES a primera hora. No tengo transporte propio. 📞 644 33 22 11 (Pere)',
+                    title: '💊 Medicación Urgente (Domingo)',
+                    description: 'Necesito una medicación de la farmacia para HOY DOMINGO a primera hora. No tengo transporte propio. 📞 644 33 22 11 (Pere)',
                     contact_info: '644 33 22 11 (Pere)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'jue-09-food',
+                    id: 'dom-12-food',
                     creator_id: 'v6',
                     type: 'food',
                     title: '🛒 Recado: Pan/Leche Doña Amalia (Hoy 09:00)',
-                    description: 'Doña Amalia necesita que alguien le acerque el pan y leche HOY JUEVES temprano. Vive en C. Cavallers. 📞 622 88 77 66 (Sandra)',
+                    description: 'Doña Amalia necesita que alguien le acerque el pan y leche HOY DOMINGO temprano. Vive en C. Cavallers. 📞 622 88 77 66 (Sandra)',
                     contact_info: '622 88 77 66 (Sandra)',
                     is_urgent: false,
                     neighborhood: 'CENTRE',
                     created_at: new Date().toISOString()
                 },
                 {
-                    id: 'jue-09-company',
+                    id: 'dom-12-company',
                     creator_id: 'v8',
                     type: 'company',
                     title: '🚶 Acompañamiento: Cita Médica 10:30h',
-                    description: 'Busco a alguien que me acompañe al CAP Jaume I HOY JUEVES a las 10:30h. Un poco de compañía para la espera. 📞 611 22 33 44 (Elena)',
+                    description: 'Busco a alguien que me acompañe al CAP Jaume I HOY DOMINGO a las 10:30h. Un poco de compañía para la espera. 📞 611 22 33 44 (Elena)',
                     contact_info: '611 22 33 44 (Elena)',
                     is_urgent: true,
                     neighborhood: 'CENTRE',
@@ -180,11 +180,11 @@ const VitalNeeds: React.FC = () => {
                         </div>
                         <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Red de Acompañamiento Semanal 🤝</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            ¿Tienes 1 hora libre esta semana? Únete a nuestra red de acompañamiento para personas mayores que viven solas. Paseos, compra, o una simple charla. Un pequeño gesto marca la diferencia. Nos reunimos cada jueves a las 10h en el Centro Cívico Centro.
+                            ¿Tienes 1 hora libre esta semana? Únete a nuestra red de acompañamiento para personas mayores que viven solas. Paseos, compra, o una simple charla. Un pequeño gesto marca la diferencia. Nos reunimos cada domingo a las 10h en el Centro Cívico Centro.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Jueves 09 Abr:\n• 10:00h \u2014 Red de Acompañamiento (Centro Cívico)\n• 09:30h \u2014 Talleres Tarragona Impulsa\n\nHOY JUEVES:\n• 11:00h \u2014 Café Tertulia Sénior (Part Alta)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Domingo 12 Abr:\n• 10:00h \u2014 Red de Acompañamiento (Centro Cívico)\n• 09:30h \u2014 Talleres Tarragona Impulsa\n\nHOY DOMINGO:\n• 11:00h \u2014 Café Tertulia Sénior (Part Alta)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
                             <span className="material-symbols-outlined text-sm">person_add</span>
                             UNIRME AHORA
                         </a>

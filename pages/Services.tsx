@@ -144,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
               </p>
-              <button onClick={() => alert("Hoy Jueves 09 Abr:\n\u2022 17:30h \u2014 Formación en Marketing Digital (Online y Presencial)\n\u2022 19:00h \u2014 Simulación de Entrevistas de Trabajo (TGN Impulsa)")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Hoy Domingo 12 Abr:\n\u2022 17:30h \u2014 Formación en Marketing Digital (Online y Presencial)\n\u2022 19:00h \u2014 Simulación de Entrevistas de Trabajo (TGN Impulsa)")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -168,23 +168,23 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Jueves 09 Abr)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Domingo 12 Abr)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Administrativo Comercial - Jueves a Viernes&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Oficina en Les Gavarres. Incorporación Inmediata. 📞 977 11 22 33 (Oficinas Tarraco)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Recepcionista Clínica Dental (Media Jornada)&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Clínica en el centro de Tarragona. Experiencia valorable. Contacto: 977 23 45 12 (Dra. Martínez)</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Gestor de Almacén - Turno de Mañana&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Control de stock en polígono Riu Clar. 📞 611 77 66 55 (Distribuidora Sur)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Repartidor/a con furgoneta propia&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Ruta Tarragona-Reus. Contrato indefinido. Contacto: 654 32 10 98 (Logística TGN)</p>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Mantenimiento Eléctrico (Oficial 2ª)&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Mantenimiento preventivo en instalaciones deportivas. 📞 600 99 88 77 (Servicios TGN)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Personal de limpieza para oficinas&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Horario de tardes. Zona Les Gavarres. Contacto: 612 34 56 78 (Servinet)</p>
                   </div>
                   <div className="border-l-4 border-teal-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Atención al Cliente (Teletrabajo)&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Soporte técnico a usuarios. Inglés B2. 📞 977 44 33 22 (Tech Solutions)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar de Ayuda a Domicilio (SAD)&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Imprescindible CFGM o Certificado de Profesionalidad. Contacto: 977 44 55 66 (CuraDom)</p>
                   </div>
                 </div>
               </div>
@@ -203,7 +203,7 @@ export const Services: React.FC = () => {
                   09
                 </div>
                 <div>
-                  <p className="text-xs font-black uppercase text-indigo-500">JUEVES</p>
+                  <p className="text-xs font-black uppercase text-indigo-500">DOMINGO</p>
                   <p className="text-sm font-bold text-gray-800 dark:text-white">Día Lectivo Normal</p>
                   <p className="text-[10px] text-gray-500">Último empujón antes del viernes.</p>
                 </div>
@@ -572,7 +572,7 @@ export const Services: React.FC = () => {
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
                       <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DÍA NORMAL)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 HOY JUEVES 16 Mar: Talleres TGN Impulsa en Tabacalera. HOY JUEVES: Mercado semanal Pl. Corsini.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 HOY DOMINGO 16 Mar: Talleres TGN Impulsa en Tabacalera. HOY DOMINGO: Mercado semanal Pl. Corsini.</p>
                   </div>
                 </div>
               </div>

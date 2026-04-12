@@ -75,8 +75,8 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '☀️ ¡Buenos días! Jueves 09 de Abr. Regateando la semana con energía. Máxima 20ºC.' },
-    { user: 'Meteo TGN', text: '🌤️ Jueves con algunas nubes pero sin lluvia. Perfecto para salir.' },
+    { user: 'Admin ComuniTarr', text: '☀️ ¡Buenos días! Domingo 12 de Abr. Regateando la semana con energía. Máxima 20ºC.' },
+    { user: 'Meteo TGN', text: '🌤️ Domingo con algunas nubes pero sin lluvia. Perfecto para salir.' },
     { user: 'Tarragona Impulsa', text: '💼 HOY: Nuevas vacantes logísticas en el polígono Riu Clar.' },
     { user: 'EMT TGN', text: '🚌 Líneas 54 y 3 regulares. Pequeños retrasos por obras en Vía Roma.' },
     { user: 'AAVV Torreforta', text: '📋 Ya están las fotos de la limpieza vecinal de ayer. ¡Buen trabajo! ✅' }
@@ -126,7 +126,7 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Admin', text: '☀️ ¡Buen Jueves! Recordad que el mercadillo de Bonavista es los domingos, hoy no.' },
+        { who: 'Admin', text: '☀️ ¡Buen Domingo! Recordad que el mercadillo de Bonavista es los domingos, hoy no.' },
         { who: 'Pau T.', text: 'El sol calienta hoy que da gusto. Quien pudiera estar tomando algo en la Plaça la Font en vez de trabajar 😂' },
         { who: 'Joan B.', text: 'Ánimo Pau, ya queda menos para el viernes. 💪' }
       ],
@@ -147,7 +147,7 @@ const Forum: React.FC = () => {
     ],
     'EMPLEO': [
       [
-        { who: 'Servicios TGN', text: 'Actualizadas ofertas en el polígono industrial. Jueves 09 Abril. 💼' },
+        { who: 'Servicios TGN', text: 'Actualizadas ofertas en el polígono industrial. Domingo 12 Abril. 💼' },
         { who: 'Restaurant Sol', text: 'Buscamos cocinero a jornada completa para incorporación inmediata. 600 00 11 22' },
       ],
     ],
@@ -231,7 +231,7 @@ const Forum: React.FC = () => {
         playSound('msg');
 
         // LOCAL PERSISTENCE
-        const localKey = `forum_pers_v6_${currentNeighborhood}`;
+        const localKey = `forum_pers_v7_${currentNeighborhood}`;
         const existing = JSON.parse(localStorage.getItem(localKey) || '[]');
         localStorage.setItem(localKey, JSON.stringify([...existing, msg].slice(-80)));
 
@@ -265,7 +265,7 @@ const Forum: React.FC = () => {
 
           // Hoy temprano
           { id: 'seed-cloud-101', user_id: 'v3', content: `☀️ ¡Feliz ${todayName}! Día perfecto en Tarragona: 18ºC y sol. ¡A disfrutar del paseo!`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 3).toISOString() },
-          { id: 'seed-cloud-102', user_id: 'v2', content: '🌸 ¡Qué jueves más bonito! La EMT va hoy con horario normal laborable.', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 1800).toISOString() },
+          { id: 'seed-cloud-102', user_id: 'v2', content: '🌸 ¡Qué domingo más bonito! La EMT va hoy con horario normal laborable.', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 1800).toISOString() },
         ] as Message[],
       };
 
@@ -335,7 +335,7 @@ const Forum: React.FC = () => {
       setIsTyping(null);
       playSound('msg');
 
-      const localKey = `forum_pers_v6_${currentNeighborhood}`;
+      const localKey = `forum_pers_v7_${currentNeighborhood}`;
       const existing = JSON.parse(localStorage.getItem(localKey) || '[]');
       localStorage.setItem(localKey, JSON.stringify([...existing, mockMsg].slice(-80)));
     }, delay);
@@ -407,7 +407,7 @@ const Forum: React.FC = () => {
           .limit(100)
       );
 
-      const localKey = `forum_pers_v6_${currentNeighborhood}`;
+      const localKey = `forum_pers_v7_${currentNeighborhood}`;
       const localPersistence = JSON.parse(localStorage.getItem(localKey) || '[]');
 
       const combined = [...(data || []), ...localPersistence];

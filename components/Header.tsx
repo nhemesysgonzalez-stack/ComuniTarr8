@@ -335,7 +335,7 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase">Jueves 09 Abr 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase">Domingo 12 Abr 2026</span>
                   <span className="text-xs font-black dark:text-white uppercase">AEMET: Soleado 18ºC</span>
                 </div>
               </div>
