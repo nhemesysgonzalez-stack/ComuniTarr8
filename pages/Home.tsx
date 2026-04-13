@@ -176,26 +176,26 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'dom-12-trastos-news',
+            id: 'lun-13-trastos-news',
             title: '📋 Hoy: Recogida de Trastos (Centro)',
-            content: 'Atención vecinos de la zona Centro: HOY DOMINGO toca recogida de muebles y voluminosos. Por favor, sacad los objetos a la calle antes de las 22:00h.',
+            content: 'Atención vecinos de la zona Centro: HOY LUNES toca recogida de muebles y voluminosos. Por favor, sacad los objetos a la calle antes de las 22:00h.',
             neighborhood: 'CENTRE',
             category: 'AVISO',
             image_url: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80',
             created_at: new Date().toISOString()
           },
           {
-            id: 'dom-12-weather-news',
+            id: 'lun-13-weather-news',
             title: '☀️ Comienzo de Semana Primaveral',
-            content: 'Arrancamos el domingo con cielos despejados y una temperatura máxima de 22ºC. Ideal para caminar al trabajo o al colegio.',
+            content: 'Arrancamos el lunes con cielos despejados y una temperatura máxima de 22ºC. Ideal para caminar al trabajo o al colegio.',
             neighborhood: 'GENERAL',
             category: 'TIEMPO',
             image_url: 'https://images.unsplash.com/photo-1414609476228-db04859bc091?auto=format&fit=crop&w=800&q=80',
             created_at: new Date().toISOString()
           },
           {
-            id: 'dom-12-empleo-news',
-            title: '💼 Empleo: Nuevas Vacantes Domingo',
+            id: 'lun-13-empleo-news',
+            title: '💼 Empleo: Nuevas Vacantes Lunes',
             content: 'Iniciamos la semana con 5 nuevas ofertas verificadas en el sector servicios y logística. Consulta los detalles en el módulo de Empleo.',
             neighborhood: 'GENERAL',
             category: 'EMPLEO',
@@ -208,8 +208,8 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'dom-12-poll-1',
-          question: "📊 ¿Cómo ha sido tu vuelta a la rutina HOY DOMINGO?",
+          id: 'lun-13-poll-1',
+          question: "📊 ¿Cómo ha sido tu vuelta a la rutina HOY LUNES?",
           options: ['Con mucha energía', 'Me ha costado madrugar', 'Deseando que llegue el viernes', 'Aún aterrizando'],
           category: 'COMUNIDAD',
           neighborhood: 'GENERAL',
@@ -466,7 +466,7 @@ const Home: React.FC = () => {
           <div className="p-5 bg-sky-50 dark:bg-sky-900/10 rounded-[30px] flex gap-4 items-center">
             <span className="material-symbols-outlined text-sky-500 text-3xl">partly_cloudy_day</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Clima Domingo</p>
+              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Clima Lunes</p>
               <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Máxima 19ºC, Mínima 12ºC. Brisa moderada.</p>
             </div>
           </div>
@@ -486,7 +486,7 @@ const Home: React.FC = () => {
           <div className="h-full bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 rounded-[40px] text-white shadow-xl shadow-indigo-500/20 transition-transform group-hover:-translate-y-2 relative overflow-hidden">
             <span className="material-symbols-outlined text-6xl absolute top-6 right-6 opacity-20">work</span>
             <h3 className="text-2xl font-black mb-2 uppercase tracking-tight">Empleos Locales</h3>
-            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Nuevas ofertas de Hoy Domingo</p>
+            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Nuevas ofertas de Hoy Lunes</p>
             <div className="flex items-center gap-2 text-xs font-black uppercase"><span className="material-symbols-outlined">arrow_forward</span> Entrar</div>
           </div>
         </Link>

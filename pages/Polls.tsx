@@ -75,7 +75,7 @@ const Polls: React.FC = () => {
                 {
                     id: 'dom-22-poll-1',
                     creator_id: 'v1',
-                    title: '🥾 ¿Cómo calificarías la caminata de HOY DOMINGO? ⛰️',
+                    title: '🥾 ¿Cómo calificarías la caminata de HOY LUNES? ⛰️',
                     options: ['Excelente, repetiré pronto', 'Muy bonita pero cansada', 'Poco ritmo, mucha gente', 'No he podido ir hoy'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
@@ -83,7 +83,7 @@ const Polls: React.FC = () => {
                 {
                     id: 'dom-22-poll-2',
                     creator_id: 'v2',
-                    title: '🌅 ¿Nos vemos en el Miracle a las 19:15h HOY DOMINGO?',
+                    title: '🌅 ¿Nos vemos en el Miracle a las 19:15h HOY LUNES?',
                     options: ['¡Allí estaré!', 'Si no hace mucho frío', 'Me quedo descansando', 'Mañana madrugo mucho'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()
@@ -91,7 +91,7 @@ const Polls: React.FC = () => {
                 {
                     id: 'dom-22-poll-3',
                     creator_id: 'v3',
-                    title: '📋 ¿Mañana domingo empiezas con teletrabajo o presencial? 💻',
+                    title: '📋 ¿Mañana lunes empiezas con teletrabajo o presencial? 💻',
                     options: ['Teletrabajo (Afortunado)', 'Presencial en TGN', 'Fuera de la ciudad', 'Es mi día libre'],
                     neighborhood: 'GENERAL',
                     created_at: new Date().toISOString()

@@ -48,7 +48,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                             Corte en Calle del Río Ter
                         </h2>
                         <p className="text-xs font-medium text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-                            Domingo 15 Mar: Sin incidencias activas. La última actuación de EMATSA en **Campclar / Bonavista** fue resuelta. Suministro 100% restablecido.
+                            Lunes 15 Mar: Sin incidencias activas. La última actuación de EMATSA en **Campclar / Bonavista** fue resuelta. Suministro 100% restablecido.
                         </p>
 
                         <div className="grid grid-cols-2 gap-4 mb-6">
@@ -75,7 +75,7 @@ export const EmergencyBroadcast: React.FC<EmergencyBroadcastProps> = ({ onDismis
                         </div>
 
                         <div className="pt-2 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center text-[8px] font-bold text-gray-400 uppercase tracking-widest">
-                            <span>Domingo 15 Mar 2026</span>
+                            <span>Lunes 15 Mar 2026</span>
                             <span>AEMET: Despejado 16ºC</span>
                         </div>
                     </div>

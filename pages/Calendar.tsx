@@ -59,7 +59,7 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'dom-12-plaseqta',
+          id: 'lun-13-plaseqta',
           creator_id: 'ayto',
           title: "⚠️ PLASEQTA: Simulacro de Sirenas",
           description: "Prueba general de sirenas de riesgo químico en el Polígono Sur y Zona Portuaria. No hay que alarmarse ni confinarse. Es solo un simulacro.",
@@ -72,7 +72,7 @@ const NeighborhoodCalendar: React.FC = () => {
           created_at: new Date().toISOString()
         },
         {
-          id: 'dom-12-protectora',
+          id: 'lun-13-protectora',
           creator_id: 'admin',
           title: "🐾 Reunión Extraordinaria: Protectora de Animales",
           description: "Charla informativa y reclutamiento de nuevos voluntarios por el desbordamiento de acogidas. Se necesitan mantas y pienso para cachorros.",
