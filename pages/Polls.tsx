@@ -75,26 +75,26 @@ const Polls: React.FC = () => {
                 {
                     id: 'dom-22-poll-1',
                     creator_id: 'v1',
-                    title: '🥾 ¿Cómo calificarías la caminata de HOY LUNES? ⛰️',
+                    title: '🥾 ¿Cómo calificarías la caminata de LUNES 13? ⛰️',
                     options: ['Excelente, repetiré pronto', 'Muy bonita pero cansada', 'Poco ritmo, mucha gente', 'No he podido ir hoy'],
                     neighborhood: 'GENERAL',
-                    created_at: new Date().toISOString()
+                    created_at: '2026-04-13T08:00:00Z'
                 },
                 {
                     id: 'dom-22-poll-2',
                     creator_id: 'v2',
-                    title: '🌅 ¿Nos vemos en el Miracle a las 19:15h HOY LUNES?',
-                    options: ['¡Allí estaré!', 'Si no hace mucho frío', 'Me quedo descansando', 'Mañana madrugo mucho'],
+                    title: '🌅 ¿Nos vemos en el Miracle a las 19:15h HOY LUNES 13?',
+                    options: ['¡Allí estaré!', 'Si no hace mucho frío', 'Me quedo descansando', 'Mañana martes madrugo'],
                     neighborhood: 'GENERAL',
-                    created_at: new Date().toISOString()
+                    created_at: '2026-04-13T09:00:00Z'
                 },
                 {
                     id: 'dom-22-poll-3',
                     creator_id: 'v3',
-                    title: '📋 ¿Mañana lunes empiezas con teletrabajo o presencial? 💻',
+                    title: '📋 HOY LUNES: ¿Prefieres teletrabajo o presencial? 💻',
                     options: ['Teletrabajo (Afortunado)', 'Presencial en TGN', 'Fuera de la ciudad', 'Es mi día libre'],
                     neighborhood: 'GENERAL',
-                    created_at: new Date().toISOString()
+                    created_at: '2026-04-13T10:00:00Z'
                 }
             ];
 

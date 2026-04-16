@@ -200,12 +200,12 @@ export const Services: React.FC = () => {
               </h3>
               <div className="flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm mb-3">
                 <div className="size-12 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 font-bold text-xl">
-                  09
+                  13
                 </div>
                 <div>
                   <p className="text-xs font-black uppercase text-indigo-500">LUNES</p>
-                  <p className="text-sm font-bold text-gray-800 dark:text-white">Día Lectivo Normal</p>
-                  <p className="text-[10px] text-gray-500">Último empujón antes del viernes.</p>
+                  <p className="text-sm font-bold text-gray-800 dark:text-white">Día Lectivo Normal (Lunes 13)</p>
+                  <p className="text-[10px] text-gray-500">Volvemos a clase con energía.</p>
                 </div>
               </div>
               <a
@@ -572,7 +572,7 @@ export const Services: React.FC = () => {
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
                       <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DÍA NORMAL)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 HOY LUNES 16 Mar: Talleres TGN Impulsa en Tabacalera. HOY LUNES: Mercado semanal Pl. Corsini.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 HOY LUNES 13 Abr: Talleres TGN Impulsa en Tabacalera. Mercado semanal Pl. Corsini.</p>
                   </div>
                 </div>
               </div>

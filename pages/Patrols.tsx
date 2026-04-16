@@ -51,29 +51,29 @@ const Patrols: React.FC = () => {
         {
           id: 'lun-13-pat-escuelas',
           creator_id: 'admin',
-          name: '🛡️ Seguridad Escolar: Activa Hoy',
+          name: '🛡️ Seguridad Escolar: Activa Lunes 13',
           description: 'Dispositivo Camino Seguro activado desde las 08:30h en accesos Miracle y Pax. Refuerzo de vigilancia vecinal para la vuelta a clase.',
           neighborhood: 'GENERAL',
           contact_info: 'Coordinación Escolar — 611 00 22 33',
-          created_at: new Date().toISOString()
+          created_at: '2026-04-13T08:00:00Z'
         },
         {
           id: 'lun-13-pat-morning',
           creator_id: 'user1',
           name: '🛡️ Resumen Mañana: Todo en Orden',
-          description: 'Las patrullas nocturnas informan de una noche sin incidentes. Turno de mañana operando con normalidad por el centro.',
+          description: 'Las patrullas nocturnas informan de una noche tranquila. Turno de mañana operando con normalidad este Lunes 13.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
-          created_at: new Date().toISOString()
+          created_at: '2026-04-13T09:00:00Z'
         },
         {
           id: 'mar-24-pat-night',
           creator_id: 'user2',
-          name: '🌑 Convocatoria: Patrulla Lunes Noche',
-          description: 'Mañana lunes 06 a las 20:00h realizaremos la ronda nocturna por el Balcón del Mediterráneo. Se buscan 2 voluntarios más.',
+          name: '🌑 Convocatoria: Patrulla Martes Noche',
+          description: 'Mañana martes 14 a las 20:00h realizaremos la ronda nocturna por el Balcón del Mediterráneo. Se buscan 2 voluntarios más.',
           neighborhood: 'CENTRE',
           contact_info: '622 55 44 33 (Maria)',
-          created_at: new Date().toISOString()
+          created_at: '2026-04-13T10:00:00Z'
         }
       ];
 

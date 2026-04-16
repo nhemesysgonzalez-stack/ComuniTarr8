@@ -63,26 +63,26 @@ const NeighborhoodCalendar: React.FC = () => {
           creator_id: 'ayto',
           title: "⚠️ PLASEQTA: Simulacro de Sirenas",
           description: "Prueba general de sirenas de riesgo químico en el Polígono Sur y Zona Portuaria. No hay que alarmarse ni confinarse. Es solo un simulacro.",
-          event_date: new Date().toISOString().split('T')[0],
+          event_date: '2026-04-13',
           event_time: '11:00',
           location: 'Polígon Sur / La Pineda',
           category: 'Aviso',
           neighborhood: 'GENERAL',
           contact_info: 'Protecció Civil TGN',
-          created_at: new Date().toISOString()
+          created_at: '2026-04-13T08:00:00Z'
         },
         {
           id: 'lun-13-protectora',
           creator_id: 'admin',
           title: "🐾 Reunión Extraordinaria: Protectora de Animales",
           description: "Charla informativa y reclutamiento de nuevos voluntarios por el desbordamiento de acogidas. Se necesitan mantas y pienso para cachorros.",
-          event_date: new Date().toISOString().split('T')[0],
+          event_date: '2026-04-13',
           event_time: '18:30',
           location: 'Centro Cívico Torreforta',
           category: 'Solidario',
           neighborhood: 'TORREFORTA',
           contact_info: '619 44 22 11 (WhatsApp)',
-          created_at: new Date().toISOString()
+          created_at: '2026-04-13T09:00:00Z'
         }
       ];
 

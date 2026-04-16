@@ -51,37 +51,37 @@ const Workshops: React.FC = () => {
                     id: 'lun-13-empleo',
                     title: '💼 Charla: Empleo Joven TGN',
                     instructor: 'Tarragona Impulsa',
-                    date: 'Hoy Lunes 13, 11:00h',
+                    date: 'Lunes 13 Abr, 11:00h',
                     description: 'Sesión informativa para jóvenes sobre cómo afrontar la primera entrevista y buscar en el sector servicios local.',
                     image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80',
                     spots: 20,
                     neighborhood: 'CENTRE',
                     contact_info: 'C.C. Centre - Plaça de la Font',
-                    created_at: new Date().toISOString()
+                    created_at: '2026-04-13T08:00:00Z'
                 },
                 {
                     id: 'lun-13-tech',
                     title: '📱 Taller: Trámites con el Móvil',
                     instructor: 'Maria P.',
-                    date: 'Hoy Lunes 13, 17:00h',
+                    date: 'Lunes 13 Abr, 17:00h',
                     description: 'Aprende a usar la Carpeta Ciudadana y pedir citas médicas desde tu smartphone. Especial para mayores.',
                     image: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80',
                     spots: 12,
                     neighborhood: 'PONENT',
                     contact_info: 'Biblioteca de Ponent',
-                    created_at: new Date().toISOString()
+                    created_at: '2026-04-13T09:00:00Z'
                 },
                 {
                     id: 'mar-24-yoga',
                     title: '🧘 Yoga Post-Trabajo al aire libre',
                     instructor: 'Elena V.',
-                    date: 'Hoy Lunes 13, 19:00h',
+                    date: 'Lunes 13 Abr, 19:00h',
                     description: 'Clase dinámica para liberar tensiones tras la jornada laboral. Ven con esterilla y ropa cómoda al Miracle.',
                     image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
                     spots: 25,
                     neighborhood: 'GENERAL',
                     contact_info: 'Punto: Chiringuito 1',
-                    created_at: new Date().toISOString()
+                    created_at: '2026-04-13T10:00:00Z'
                 }
             ];
 
@@ -254,9 +254,9 @@ const Workshops: React.FC = () => {
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
                                             { t: 'Office 365 Pro', i: 'Pedro S.', d: 'Miércoles 17:00', desc: 'Domina Excel y Word para mejorar tu empleabilidad.', c: '688000111' },
-                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'lunes 10:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: '699222333' },
-                                            { t: 'Gestión del Tiempo', i: 'M. López', d: 'Lunes 18:00', desc: 'Técnicas para organizar tu semana y reducir el estrés laboral.', c: '611444555' },
-                                            { t: 'Networking TGN', i: 'Hub Impulsa', d: 'Lunes 19:30', desc: 'Encuentro informal para conectar con otros profesionales locales.', c: 'Tabacalera Sala 2' }
+                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Lunes 13, 10:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: '699222333' },
+                                            { t: 'Gestión del Tiempo', i: 'M. López', d: 'Lunes 13, 18:00', desc: 'Técnicas para organizar tu semana y reducir el estrés laboral.', c: '611444555' },
+                                            { t: 'Networking TGN', i: 'Hub Impulsa', d: 'Lunes 13, 19:30', desc: 'Encuentro informal para conectar con otros profesionales locales.', c: 'Tabacalera Sala 2' }
                                         ].map((idea, i) => (
                                             <button
                                                 key={i}

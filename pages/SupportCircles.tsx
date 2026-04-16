@@ -46,36 +46,36 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'ayuda_mutua',
                     title: '🕊️ Grupo de Apoyo al Duelo (Tarragona)',
                     neighborhood: 'GENERAL',
-                    description: 'Acompañamiento profesional y mutuo para afrontar la pérdida de seres queridos. Encuentros presenciales quincenales apoyados por el COPC (Colegi Oficial de Psicologia).',
+                    description: 'Acompañamiento profesional y mutuo para afrontar la pérdida de seres queridos. Encuentros presenciales quincenales apoyados por el COPC. Nueva sesión Lunes 13.',
                     contact_info: '977 24 49 71 (Cita Previa)',
-                    created_at: new Date().toISOString()
+                    created_at: '2026-04-13T08:00:00Z'
                 },
                 {
                     id: 'real-animales',
                     initiator_id: 'protectora',
                     title: '🐾 Protectora de Animales y Plantas',
                     neighborhood: 'GENERAL',
-                    description: 'Red de cuidadores, casas de acogida y voluntarios para rescate y paseo de perros/gatos del refugio de Tarragona. Necesitamos manos urgentemente.',
+                    description: 'Red de cuidadores y voluntarios para rescate. Reunión informativa HOY LUNES 13 a las 18:30h sobre el nuevo refugio.',
                     contact_info: '619 44 22 11 (WhatsApp Adopciones)',
-                    created_at: new Date().toISOString()
+                    created_at: '2026-04-13T09:00:00Z'
                 },
                 {
                     id: 'real-siad-dones',
                     initiator_id: 'ayto',
                     title: '🤝 SIAD - Atención y Apoyo a Mujeres',
                     neighborhood: 'GENERAL',
-                    description: 'Servicio público municipal para asesoramiento psicológico, jurídico y social a mujeres, incluyendo apoyo ante la violencia de género.',
+                    description: 'Servicio público municipal para asesoramiento psicológico y jurídico. Horario Lunes 13: 09:00h a 14:00h.',
                     contact_info: '977 29 62 79 (Plaça de la Font 1)',
-                    created_at: new Date().toISOString()
+                    created_at: '2026-04-13T09:30:00Z'
                 },
                 {
                     id: 'real-pere-martell',
                     initiator_id: 'associacio',
                     title: '👴 Llar de Jubilats Pere Martell',
                     neighborhood: 'GENERAL',
-                    description: 'Centro para un envejecimiento activo. Actividades, apoyo mutuo y acompañamiento para nuestros mayores contra la soledad no deseada.',
+                    description: 'Centro para un envejecimiento activo. Actividades HOY LUNES: Yoga (10h) y Café Tertulia (17h).',
                     contact_info: '977 21 55 14 (Tarragona)',
-                    created_at: new Date().toISOString()
+                    created_at: '2026-04-13T10:00:00Z'
                 }
             ];
 

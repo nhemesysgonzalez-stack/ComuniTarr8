@@ -66,7 +66,7 @@ const Marketplace: React.FC = () => {
           neighborhood: 'CENTRE',
           contact_info: '633 11 22 33 (Pau)',
           image_url: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80',
-          created_at: new Date().toISOString()
+          created_at: '2026-04-13T08:00:00Z'
         },
         {
           id: 'lun-13-monitor',
@@ -78,7 +78,7 @@ const Marketplace: React.FC = () => {
           neighborhood: 'PONENT',
           contact_info: '977 44 55 66 (Maria)',
           image_url: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=800&q=80',
-          created_at: new Date().toISOString()
+          created_at: '2026-04-13T09:00:00Z'
         },
         {
           id: 'lun-13-chair',
@@ -90,7 +90,7 @@ const Marketplace: React.FC = () => {
           neighborhood: 'SANT PERE',
           contact_info: '622 88 77 66 (Sergio)',
           image_url: 'https://images.unsplash.com/photo-1505797149-43c0c3260751?auto=format&fit=crop&w=800&q=80',
-          created_at: new Date().toISOString()
+          created_at: '2026-04-13T10:00:00Z'
         }
       ];
 

@@ -61,30 +61,30 @@ const Incidents: React.FC = () => {
                         id: 'lun-13-trastos-active',
                         user_id: 'admin',
                         title: '📋 Recogida Trastos Activa',
-                        description: 'Camiones operando en zona comercial. Sacad muebles antes de las 22h.',
+                        description: 'Camiones operando en zona comercial LUNES 13. Sacad muebles antes de las 22h.',
                         status: 'in_progress',
                         neighborhood: 'CENTRE',
-                        created_at: new Date().toISOString(),
+                        created_at: '2026-04-13T08:00:00Z',
                         profiles: { full_name: 'Ayuntamiento TGN', avatar_url: '/logo.svg' }
                     },
                     {
                         id: 'lun-13-limpieza-finished',
                         user_id: 'v4',
-                        title: '☀️ Limpieza Post-Finde Miracle',
-                        description: 'Caminata de ayer finalizada. Zona limpia y despejada.',
+                        title: '☀️ Limpieza Miracle Finalizada',
+                        description: 'Caminata de limpieza Lunes 13 finalizada. Zona despejada.',
                         status: 'resolved',
                         neighborhood: 'GENERAL',
-                        created_at: new Date().toISOString(),
+                        created_at: '2026-04-13T09:00:00Z',
                         profiles: { full_name: 'Mantenimiento TGN', avatar_url: 'https://i.pravatar.cc/150?u=man' }
                     },
                     {
                         id: 'lun-13-riego-rambla',
                         user_id: 'v5',
                         title: '🚿 Riego Rambla Nova',
-                        description: 'Mantenimiento preventivo zona ajardinada este mediodía.',
+                        description: 'Mantenimiento preventivo Lunes 13 mediodía.',
                         status: 'open',
                         neighborhood: 'CENTRE',
-                        created_at: new Date().toISOString(),
+                        created_at: '2026-04-13T10:00:00Z',
                         profiles: { full_name: 'Parques y Jardines', avatar_url: 'https://i.pravatar.cc/150?u=parque' }
                     }
                 ];

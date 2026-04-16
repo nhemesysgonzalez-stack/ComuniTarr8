@@ -8,10 +8,10 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 'plan-1', type: 'ocio', x: '45%', y: '45%', title: '☕ Tomar algo por el centro', desc: 'Acabo de salir de teletrabajar. ¿Alguien se apunta a una caña rápida o café por la Plaça de la Font?', status: 'Ahora mismo', color: 'bg-orange-500', icon: 'coffee', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.3)]', creator_name: 'David R.' },
-    { id: 'plan-2', type: 'deporte', x: '65%', y: '70%', title: '🏃 Salir a correr (Ritmo suave)', desc: 'Voy a salir a trotar por el balcón del mediterráneo unos 5km. Si alguien busca motivación que se apunte.', status: 'Hoy 19:00', color: 'bg-blue-500', icon: 'directions_run', creator_name: 'Marta G.' },
-    { id: 'plan-3', type: 'mascotas', x: '55%', y: '35%', title: '🐶 Paseo perruno por el Parc', desc: 'Saldré con mi Golden Retriever por la zona del parque Francolí. Ideal si quieres socializar a tu perrito.', status: 'En 30 mins', color: 'bg-purple-500', icon: 'pets', creator_name: 'Carlos M.' },
-    { id: 'plan-4', type: 'cultura', x: '48%', y: '50%', title: '📚 Intercambio de libros', desc: 'Voy a estar un rato por la biblioteca central si alguien quiere intercambiar novelas de misterio.', status: 'Mañana 10:00', color: 'bg-emerald-500', icon: 'menu_book', creator_name: 'Laura B.' }
+    { id: 'plan-1', type: 'ocio', x: '45%', y: '45%', title: '☕ Tomar algo Lunes 13', desc: 'Acabo de salir de teletrabajar. ¿Alguien se apunta a un café rápido por la Plaça de la Font?', status: 'Ahora mismo', color: 'bg-orange-500', icon: 'coffee', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.3)]', creator_name: 'David R.' },
+    { id: 'plan-2', type: 'deporte', x: '65%', y: '70%', title: '🏃 Correr Lunes 13 (19h)', desc: 'Voy a salir a trotar por el balcón del mediterráneo unos 5km. Si alguien busca motivación que se apunte.', status: 'Lunes 19:00', color: 'bg-blue-500', icon: 'directions_run', creator_name: 'Marta G.' },
+    { id: 'plan-3', type: 'mascotas', x: '55%', y: '35%', title: '🐶 Paseo Lunes 13', desc: 'Saldré con mi Golden Retriever por la zona del parque Francolí. Ideal si quieres socializar a tu perrito.', status: 'En 30 mins', color: 'bg-purple-500', icon: 'pets', creator_name: 'Carlos M.' },
+    { id: 'plan-4', type: 'cultura', x: '48%', y: '50%', title: '📚 Intercambio Novelas', desc: 'Estaré por la biblioteca central mañana MARTES 14 si alguien quiere intercambiar novelas.', status: 'Mañana 10:00', color: 'bg-emerald-500', icon: 'menu_book', creator_name: 'Laura B.' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);
@@ -57,7 +57,7 @@ const MapView: React.FC = () => {
           height="100%"
           frameBorder="0"
           style={{ border: 0 }}
-           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11984.664687679365!2d1.2407559134907082!3d41.118021085004576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3f2c525f2af45%3A0x673c683c310c85c3!2sTarragona!5e0!3m2!1ses!2ses!4v1703612345678!5m2!1ses!2ses"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11984.664687679365!2d1.2407559134907082!3d41.118021085004576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3f2c525f2af45%3A0x673c683c310c85c3!2sTarragona!5e0!3m2!1ses!2ses!4v1703612345678!5m2!1ses!2ses"
           allowFullScreen
           loading="lazy"
         ></iframe>
@@ -74,11 +74,11 @@ const MapView: React.FC = () => {
             </p>
           </div>
           <div className="flex gap-2 mt-4 md:mt-0">
-             <button
+            <button
               onClick={() => setShowReportModal(true)}
               className="px-8 py-4 rounded-2xl bg-white text-orange-600 text-xs font-black shadow-lg hover:scale-105 active:scale-95 transition-all uppercase tracking-widest flex items-center gap-2"
             >
-               <span className="material-symbols-outlined text-base">location_on</span>
+              <span className="material-symbols-outlined text-base">location_on</span>
               DEJAR MI PIN
             </button>
           </div>
@@ -96,23 +96,23 @@ const MapView: React.FC = () => {
             className={`absolute flex flex-col items-center justify-center cursor-pointer z-10 group`}
             style={{ left: pin.x, top: pin.y }}
           >
-             {/* Pin head */}
+            {/* Pin head */}
             <div className={`size-14 md:size-16 rounded-full ${pin.color} ${pin.glow || 'shadow-2xl'} text-white flex items-center justify-center border-[4px] border-white relative z-10 overflow-hidden`}>
-               {/* Si tiene avatar se podría mostrar aquí, por ahora usamos el icono */}
-               <span className="material-symbols-outlined text-2xl font-black drop-shadow-md">{pin.icon}</span>
+              {/* Si tiene avatar se podría mostrar aquí, por ahora usamos el icono */}
+              <span className="material-symbols-outlined text-2xl font-black drop-shadow-md">{pin.icon}</span>
             </div>
-            
-             {/* Pin tail */}
+
+            {/* Pin tail */}
             <div className={`w-1 h-6 ${pin.color} -mt-2 shadow-lg`}></div>
             <div className="w-4 h-1 bg-black/30 rounded-full blur-[2px] mt-1"></div>
-            
-             <motion.div 
-               initial={{ opacity: 0 }} 
-               animate={{ opacity: 1 }} 
-               className="mt-2 px-3 py-1 bg-white/90 backdrop-blur-md rounded-xl shadow-lg border border-gray-100 font-bold text-[10px] whitespace-nowrap text-gray-800"
-             >
-               {pin.creator_name.split(' ')[0]} busca plan
-             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="mt-2 px-3 py-1 bg-white/90 backdrop-blur-md rounded-xl shadow-lg border border-gray-100 font-bold text-[10px] whitespace-nowrap text-gray-800"
+            >
+              {pin.creator_name.split(' ')[0]} busca plan
+            </motion.div>
           </motion.button>
         ))}
       </div>
@@ -174,18 +174,18 @@ const MapView: React.FC = () => {
                   Cancelar mi plan
                 </button>
               )}
-              
+
               <button
                 onClick={() => toggleFollow(selectedPin.id)}
-                 className={`py-5 text-sm font-black rounded-[25px] uppercase tracking-widest transition-all shadow-xl flex items-center justify-center gap-2 ${followedPins.includes(selectedPin.id) ? 'bg-green-500 text-white shadow-green-500/30' : 'bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-orange-500/20 hover:scale-105 hover:shadow-orange-500/40'}`}
+                className={`py-5 text-sm font-black rounded-[25px] uppercase tracking-widest transition-all shadow-xl flex items-center justify-center gap-2 ${followedPins.includes(selectedPin.id) ? 'bg-green-500 text-white shadow-green-500/30' : 'bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-orange-500/20 hover:scale-105 hover:shadow-orange-500/40'}`}
               >
-                 <span className="material-symbols-outlined">{followedPins.includes(selectedPin.id) ? 'check_circle' : 'waving_hand'}</span>
+                <span className="material-symbols-outlined">{followedPins.includes(selectedPin.id) ? 'check_circle' : 'waving_hand'}</span>
                 {followedPins.includes(selectedPin.id) ? 'Ya te has apuntado' : 'Me Apunto!'}
               </button>
-              
-               <div className="text-center mt-2">
-                 <p className="text-[10px] text-gray-400 font-medium">Al apuntarte, {selectedPin.creator_name.split(' ')[0]} recibirá una notificación para abrir chat.</p>
-               </div>
+
+              <div className="text-center mt-2">
+                <p className="text-[10px] text-gray-400 font-medium">Al apuntarte, {selectedPin.creator_name.split(' ')[0]} recibirá una notificación para abrir chat.</p>
+              </div>
             </div>
           </motion.div>
         )}
@@ -209,15 +209,15 @@ const MapView: React.FC = () => {
               className="bg-white dark:bg-surface-dark rounded-[40px] p-8 max-w-md w-full shadow-2xl relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-500 to-pink-500"></div>
-              
+
               <div className="flex justify-between items-start mb-6 mt-2">
                 <div>
-                   <h3 className="text-2xl font-black dark:text-white uppercase tracking-tight">Crear un Plan</h3>
-                   <p className="text-xs text-gray-500 mt-1 font-medium">Deja tu pin para que los vecinos te encuentren.</p>
+                  <h3 className="text-2xl font-black dark:text-white uppercase tracking-tight">Crear un Plan</h3>
+                  <p className="text-xs text-gray-500 mt-1 font-medium">Deja tu pin para que los vecinos te encuentren.</p>
                 </div>
-                 <button onClick={() => setShowReportModal(false)} className="size-8 rounded-full bg-gray-100 flex items-center justify-center dark:bg-gray-800">
-                    <span className="material-symbols-outlined text-sm">close</span>
-                 </button>
+                <button onClick={() => setShowReportModal(false)} className="size-8 rounded-full bg-gray-100 flex items-center justify-center dark:bg-gray-800">
+                  <span className="material-symbols-outlined text-sm">close</span>
+                </button>
               </div>
 
               <form onSubmit={handleAddReport} className="space-y-5">
@@ -232,23 +232,23 @@ const MapView: React.FC = () => {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest pl-2 mb-1 block">Categoría</label>
-                   <div className="grid grid-cols-3 gap-2">
-                      <button type="button" onClick={() => setNewReportType('ocio')} className={`p-4 rounded-2xl flex flex-col items-center justify-center gap-2 border-2 transition-all ${newReportType === 'ocio' ? 'border-orange-500 bg-orange-50 text-orange-600' : 'border-gray-100 bg-gray-50 text-gray-400'}`}>
-                         <span className="material-symbols-outlined filter drop-shadow-sm">local_bar</span>
-                         <span className="text-[9px] font-black uppercase tracking-wider">Ocio</span>
-                      </button>
-                      <button type="button" onClick={() => setNewReportType('deporte')} className={`p-4 rounded-2xl flex flex-col items-center justify-center gap-2 border-2 transition-all ${newReportType === 'deporte' ? 'border-blue-500 bg-blue-50 text-blue-600' : 'border-gray-100 bg-gray-50 text-gray-400'}`}>
-                         <span className="material-symbols-outlined filter drop-shadow-sm">fitness_center</span>
-                         <span className="text-[9px] font-black uppercase tracking-wider">Deporte</span>
-                      </button>
-                      <button type="button" onClick={() => setNewReportType('mascotas')} className={`p-4 rounded-2xl flex flex-col items-center justify-center gap-2 border-2 transition-all ${newReportType === 'mascotas' ? 'border-purple-500 bg-purple-50 text-purple-600' : 'border-gray-100 bg-gray-50 text-gray-400'}`}>
-                         <span className="material-symbols-outlined filter drop-shadow-sm">pets</span>
-                         <span className="text-[9px] font-black uppercase tracking-wider">Mascotas</span>
-                      </button>
-                   </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    <button type="button" onClick={() => setNewReportType('ocio')} className={`p-4 rounded-2xl flex flex-col items-center justify-center gap-2 border-2 transition-all ${newReportType === 'ocio' ? 'border-orange-500 bg-orange-50 text-orange-600' : 'border-gray-100 bg-gray-50 text-gray-400'}`}>
+                      <span className="material-symbols-outlined filter drop-shadow-sm">local_bar</span>
+                      <span className="text-[9px] font-black uppercase tracking-wider">Ocio</span>
+                    </button>
+                    <button type="button" onClick={() => setNewReportType('deporte')} className={`p-4 rounded-2xl flex flex-col items-center justify-center gap-2 border-2 transition-all ${newReportType === 'deporte' ? 'border-blue-500 bg-blue-50 text-blue-600' : 'border-gray-100 bg-gray-50 text-gray-400'}`}>
+                      <span className="material-symbols-outlined filter drop-shadow-sm">fitness_center</span>
+                      <span className="text-[9px] font-black uppercase tracking-wider">Deporte</span>
+                    </button>
+                    <button type="button" onClick={() => setNewReportType('mascotas')} className={`p-4 rounded-2xl flex flex-col items-center justify-center gap-2 border-2 transition-all ${newReportType === 'mascotas' ? 'border-purple-500 bg-purple-50 text-purple-600' : 'border-gray-100 bg-gray-50 text-gray-400'}`}>
+                      <span className="material-symbols-outlined filter drop-shadow-sm">pets</span>
+                      <span className="text-[9px] font-black uppercase tracking-wider">Mascotas</span>
+                    </button>
+                  </div>
                 </div>
 
                 <button type="submit" className="w-full py-5 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-[20px] font-black uppercase tracking-widest shadow-xl shadow-orange-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 mt-4">

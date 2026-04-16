@@ -45,32 +45,32 @@ const Challenges: React.FC = () => {
         {
           id: 'dom-22-ch-1',
           creator_id: 'admin',
-          title: '🌅 Se busca líder: Atardecer Miracle',
+          title: '🌅 Se busca líder: Atardecer Miracle Lunes 13',
           description: 'Buscamos a alguien que tome la iniciativa HOY LUNES (19:15h) para llevar un altavoz o bebidas y dinamizar el grupo en la playa. ¡Gana 100 ComuniPoints por liderar!',
           neighborhood: 'GENERAL',
           contact_info: 'Posteado por Admin (Busca voluntario)',
           is_example: true,
-          created_at: new Date().toISOString()
+          created_at: '2026-04-13T08:00:00Z'
         },
         {
           id: 'dom-22-ch-2',
           creator_id: 'user2',
-          title: '🥾 Crónica Viva: Camí de Ronda hoy',
+          title: '🥾 Crónica Lunes 13: Camí de Ronda',
           description: '¡Reto de HOY LUNES! Sube la foto más divertida del grupo durante la caminata de esta mañana. La foto con más likes gana el título de "Cronista del Barrio".',
           neighborhood: 'GENERAL',
           contact_info: 'Comunidad ComuniTarr',
           is_example: true,
-          created_at: new Date().toISOString()
+          created_at: '2026-04-13T09:00:00Z'
         },
         {
           id: 'dom-22-ch-3',
           creator_id: 'v4',
-          title: '📦 Solidaridad: Trastos Lunes Mañana',
-          description: 'Mañana lunes es día de recogida. El reto es ayudar a al menos un vecino que no pueda bajar sus voluminosos a la calle. ¡Iniciativa vecinal pura!',
+          title: '📦 Solidaridad: Trastos Lunes 13',
+          description: 'Hoy lunes es día de recogida de trastos. El reto es ayudar a al menos un vecino que no pueda bajar sus voluminosos a la calle. ¡Iniciativa vecinal pura!',
           neighborhood: 'CENTRE',
           contact_info: 'Coordina con tus vecinos de escalera',
           is_example: true,
-          created_at: new Date().toISOString()
+          created_at: '2026-04-13T10:00:00Z'
         }
       ];
 

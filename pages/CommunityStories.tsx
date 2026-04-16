@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'lun-13-s1', user_name: 'Ana T.', content: '☕ Primer café del Lunes en la Plaça de la Font y a escuchar las sirenas del PLASEQTA a las 11h. ¡No os asustéis que es simulacro! 🚨 #Lunes #Tarragona #Plaseqta', image_url: 'https://images.unsplash.com/photo-1551632811-561732d1e306', likes: 210, created_at: new Date().toISOString() },
-            { id: 'lun-13-s2', user_name: 'Joan R.', content: '🚧 Vaya atasco esta mañana en la T-11 dirección Reus por las obras de conexión con la A-7. ¡Pacientes, vecinos, que ya estamos a lunes! 🚗🚙 #Tarragona #Trafico', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 256, created_at: new Date().toISOString() },
-            { id: "lun-13-s3", user_name: "Marc G.", content: "💨 Mucho ojo con los maceteros de los balcones. Protección Civil tiene el VENTCAT activado por rachas fuertes en el Tarragonès. 🌿 #ProteccioCivil #Tarragona", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 145, created_at: new Date().toISOString() },
-            { id: 'lun-13-s4', user_name: 'Pilar S.', content: '🐶 Urgente: La protectora está pidiendo acogidas temporales por desbordamiento tras los daños del temporal de viento. Si alguien tiene sitio en casa, ¡que avise! #AyudaAnimal #Tarragona', image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445', likes: 132, created_at: new Date().toISOString() }
+            { id: 'lun-13-s1', user_name: 'Ana T.', content: '☕ Primer café del Lunes 13 en la Plaça de la Font. Listos para el simulacro de las 11h. 🚨 #Lunes #Tarragona #Plaseqta', image_url: 'https://images.unsplash.com/photo-1551632811-561732d1e306', likes: 210, created_at: '2026-04-13T08:00:00Z' },
+            { id: 'lun-13-s2', user_name: 'Joan R.', content: '🚧 Retenciones en la A-7 dirección sur este Lunes 13. ¡Precaución al volante vecinos! 🚗🚙 #Tarragona #A7 #Trafico', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 256, created_at: '2026-04-13T08:30:00Z' },
+            { id: "lun-13-s3", user_name: "Marc G.", content: "💨 Viento moderado hoy en Ponent. Vigilad con la ropa tendida. ¡Buen inicio de semana! 🌿 #TGN #Primavera", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 145, created_at: '2026-04-13T09:00:00Z' },
+            { id: 'lun-13-s4', user_name: 'Pilar S.', content: '🐶 ¡Adopción conseguida! Empezamos el lunes con buenas noticias para Thor. #FinalesFelices #Tarragona', image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445', likes: 132, created_at: '2026-04-13T09:30:00Z' }
         ];
 
 

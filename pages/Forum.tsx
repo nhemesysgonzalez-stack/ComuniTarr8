@@ -75,11 +75,11 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '☀️ ¡Buenos días! Lunes 13 de Abr. Regateando la semana con energía. Máxima 20ºC.' },
-    { user: 'Meteo TGN', text: '🌤️ Lunes con algunas nubes pero sin lluvia. Perfecto para salir.' },
-    { user: 'Tarragona Impulsa', text: '💼 HOY: Nuevas vacantes logísticas en el polígono Riu Clar.' },
-    { user: 'EMT TGN', text: '🚌 Líneas 54 y 3 regulares. Pequeños retrasos por obras en Vía Roma.' },
-    { user: 'AAVV Torreforta', text: '📋 Ya están las fotos de la limpieza vecinal de ayer. ¡Buen trabajo! ✅' }
+    { user: 'Admin ComuniTarr', text: '☀️ ¡Buenos días! Lunes 13 de Abr. Arrancamos la semana con sol. Máxima 22ºC.' },
+    { user: 'Meteo TGN', text: '🌤️ Lunes despejado. Sin riesgo de lluvias para hoy.' },
+    { user: 'Tarragona Impulsa', text: '💼 HOY LUNES: Nuevas vacantes logísticas en el polígono Riu Clar.' },
+    { user: 'EMT TGN', text: '🚌 Servicio normal en todas las líneas. Lunes laborable.' },
+    { user: 'AAVV Torreforta', text: '📋 Reunión vecinal hoy a las 18:30h en el Centro Cívico. ✅' }
   ];
 
 
@@ -126,9 +126,9 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Admin', text: '☀️ ¡Buen Lunes! Recordad que el mercadillo de Bonavista es los luness, hoy no.' },
-        { who: 'Pau T.', text: 'El sol calienta hoy que da gusto. Quien pudiera estar tomando algo en la Plaça la Font en vez de trabajar 😂' },
-        { who: 'Joan B.', text: 'Ánimo Pau, ya queda menos para el viernes. 💪' }
+        { who: 'Admin', text: '☀️ ¡Buen Lunes 13! Recordad que el mercado de Corsini está activo hoy.' },
+        { who: 'Pau T.', text: 'Vaya solazo hace hoy en Tarragona. ¡Aprovechad el lunes!' },
+        { who: 'Joan B.', text: 'Sí, apetece un café en la Rambla. Ánimo con el lunes. 💪' }
       ],
       [
         { who: 'Joe R.', text: '✅ Las obras de Av. Roma siguen fuertes. Tomad la T-11 si podéis.' },
@@ -148,7 +148,7 @@ const Forum: React.FC = () => {
     'EMPLEO': [
       [
         { who: 'Servicios TGN', text: 'Actualizadas ofertas en el polígono industrial. Lunes 13 Abril. 💼' },
-        { who: 'Restaurant Sol', text: 'Buscamos cocinero a jornada completa para incorporación inmediata. 600 00 11 22' },
+        { who: 'Restaurant Sol', text: 'Buscamos camarero/a extra para esta semana. 600 00 11 22' },
       ],
     ],
     'ENCUENTROS': [
@@ -264,8 +264,8 @@ const Forum: React.FC = () => {
           { id: 'seed-cloud-100', user_id: 'v19', content: 'Cuidado los que vengáis por la N-340 ahora mismo, han puesto un control y hay cola.', user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 15).toISOString() },
 
           // Hoy temprano
-          { id: 'seed-cloud-101', user_id: 'v3', content: `☀️ ¡Feliz ${todayName}! Día perfecto en Tarragona: 18ºC y sol. ¡A disfrutar del paseo!`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 3).toISOString() },
-          { id: 'seed-cloud-102', user_id: 'v2', content: '🌸 ¡Qué lunes más bonito! La EMT va hoy con horario normal laborable.', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 1800).toISOString() },
+          { id: 'seed-cloud-101', user_id: 'v3', content: `☀️ ¡Feliz Lunes 13! Día perfecto en Tarragona: 22ºC y sol.`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-04-13T07:00:00Z' },
+          { id: 'seed-cloud-102', user_id: 'v2', content: '🌸 ¡Qué lunes más bonito! La EMT va hoy con horario normal laborable.', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-04-13T08:30:00Z' },
         ] as Message[],
       };
 
@@ -584,7 +584,15 @@ const Forum: React.FC = () => {
             </div>
           </div>
 
-          {/* Trending Topics - NEW section for Wednesday 18 March */}
+          {/* Trending Topics - Updated Lunes 13 Abril */}
+          <div>
+            <h4 className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 ml-2">Trending Topic</h4>
+            <div className="flex flex-wrap gap-2 px-2">
+              <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-lg text-[10px] font-black uppercase">#Lunes13</span>
+              <span className="px-3 py-1 bg-emerald-100 text-emerald-600 rounded-lg text-[10px] font-black uppercase">#TGNImpulsa</span>
+              <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-lg text-[10px] font-black uppercase">#Plaseqta</span>
+            </div>
+          </div>
 
           {/* Active Neighbors Grid */}
           <div>

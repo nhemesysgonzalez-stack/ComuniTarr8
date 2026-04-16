@@ -147,38 +147,38 @@ const Announcements: React.FC = () => {
                 {
                     id: 'lun-13-trastos',
                     title: '📋 Hoy: Recogida de Trastos (Zona Centro)',
-                    content: 'HOY LUNES es día de retirada de muebles y voluminosos. Recordad bajarlos a la acera antes de las 22:00h para no ser sancionados.',
+                    content: 'HOY LUNES 13 es día de retirada de muebles y voluminosos. Recordad bajarlos a la acera antes de las 22:00h para no ser sancionados.',
                     neighborhood: 'CENTRE',
                     category: 'AVISO',
                     author_name: 'Ajuntament TGN',
-                    created_at: new Date().toISOString()
+                    created_at: '2026-04-13T07:00:00Z'
                 },
                 {
                     id: 'lun-13-weather',
-                    title: '☀️ Lunes Primaveral y Despejado',
+                    title: '☀️ Lunes 13: Primaveral y Despejado',
                     content: 'Semana de sol y temperaturas agradables. Hoy llegamos a los 22ºC. ¡Perfecto para caminar por la Rambla o ir al Miracle!',
                     neighborhood: 'GENERAL',
                     category: 'TIEMPO',
                     author_name: 'Admin ComuniTarr',
-                    created_at: new Date().toISOString()
+                    created_at: '2026-04-13T08:00:00Z'
                 },
                 {
                     id: 'lun-13-seguridad',
                     title: '🛡️ Dispositivo Escolar: Miracle y Pax',
-                    content: 'Vigilancia activa en los accesos escolares HOY LUNES (08:30-09:15). Respetad las zonas de carga y descarga de niños.',
+                    content: 'Vigilancia activa en los accesos escolares LUNES 13 (08:30-09:15). Respetad las zonas de carga y descarga de niños.',
                     neighborhood: 'GENERAL',
                     category: 'SEGURIDAD',
                     author_name: 'Guardia Urbana',
-                    created_at: new Date().toISOString()
+                    created_at: '2026-04-13T08:30:00Z'
                 },
                 {
                     id: 'lun-13-empleo',
-                    title: '💼 Empleo: Nuevas Vacantes Lunes',
+                    title: '💼 Empleo: Nuevas Vacantes Lunes 13',
                     content: 'Iniciamos la semana con 5 ofertas verificadas en comercio y hostelería. Entra en "Servicios" para ver los contactos directos.',
                     neighborhood: 'GENERAL',
                     category: 'EMPLEO',
                     author_name: 'Admin ComuniTarr',
-                    created_at: new Date().toISOString()
+                    created_at: '2026-04-13T09:00:00Z'
                 }
             ];
 
