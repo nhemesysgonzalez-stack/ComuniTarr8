@@ -11,17 +11,17 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 301, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: 'Semana a toda marcha, ánimo con el Lunes 13 💪', neighborhood: 'Campclar' },
-    { id: 302, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'A seguir ordenando un poco por aquí hoy Lunes 13 🧹', neighborhood: 'Torreforta' },
-    { id: 303, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: '¡Hoy Lunes 13 de rutina! Nos vemos esta tarde en la clase de pintura 🎨', neighborhood: 'Part Alta' },
-    { id: 304, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'He dejado algo de ropa limpia en la caja solidaria para este inicio de semana 👕', neighborhood: 'Eixample' }
+    { id: 416, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: '☀️ ¡Qué solazo hoy Domingo 19! Ideal para bajar al Mercat de Bonavista.', neighborhood: 'Campclar' },
+    { id: 417, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: '¿Alguien va a la Part Alta a la clausura del Dixieland? 🎺', neighborhood: 'Torreforta' },
+    { id: 418, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: '¡Mañana Lunes 20 vuelven las clases! Disfrutad del domingo. 📚', neighborhood: 'Part Alta' },
+    { id: 419, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Vermut dominical en Pl. de la Font, el ambiente está increíble. 🍹', neighborhood: 'Eixample' }
 ];
 
 const tickerMessages = [
-    "📦 Recordatorio: Limpieza de calles habitual LUNES 13. Evita aparcar en zonas señalizadas.",
-    "☀️ Lunes 13 parcialmente nublado con máxima de 22ºC.",
-    "🚧 Afectaciones leves de tráfico en la rotonda de los caballos.",
-    "💼 Nuevas ofertas de empleo confirmadas LUNES 13. Consulta los detalles."
+    "🎺 CLAUSURA: HOY 12:00h Concierto final Dixieland Festival en la Plaza de la Font.",
+    "🧺 BONAVISTA: Mercado ambulante abierto hasta las 14:00h. Refuerzo Bus L54.",
+    "☀️ TIEMPO: Domingo 19 despejado. Máxima de 23ºC. Día perfecto de playa.",
+    "💼 EMPLEO: Actualizadas ofertas de hostelería para la temporada. Revisa la sección."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

@@ -8,10 +8,10 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 'plan-1', type: 'ocio', x: '45%', y: '45%', title: '☕ Tomar algo Lunes 13', desc: 'Acabo de salir de teletrabajar. ¿Alguien se apunta a un café rápido por la Plaça de la Font?', status: 'Ahora mismo', color: 'bg-orange-500', icon: 'coffee', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.3)]', creator_name: 'David R.' },
-    { id: 'plan-2', type: 'deporte', x: '65%', y: '70%', title: '🏃 Correr Lunes 13 (19h)', desc: 'Voy a salir a trotar por el balcón del mediterráneo unos 5km. Si alguien busca motivación que se apunte.', status: 'Lunes 19:00', color: 'bg-blue-500', icon: 'directions_run', creator_name: 'Marta G.' },
-    { id: 'plan-3', type: 'mascotas', x: '55%', y: '35%', title: '🐶 Paseo Lunes 13', desc: 'Saldré con mi Golden Retriever por la zona del parque Francolí. Ideal si quieres socializar a tu perrito.', status: 'En 30 mins', color: 'bg-purple-500', icon: 'pets', creator_name: 'Carlos M.' },
-    { id: 'plan-4', type: 'cultura', x: '48%', y: '50%', title: '📚 Intercambio Novelas', desc: 'Estaré por la biblioteca central mañana MARTES 14 si alguien quiere intercambiar novelas.', status: 'Mañana 10:00', color: 'bg-emerald-500', icon: 'menu_book', creator_name: 'Laura B.' }
+    { id: 'plan-1', type: 'ocio', x: '45%', y: '45%', title: '🎺 Dixieland Domingo 19', desc: '¡Es el último día del festival! Voy a la Plaza de la Font a ver el concierto de clausura. ¿Quién se apunta a un vermut?', status: 'Ahora mismo', color: 'bg-orange-500', icon: 'theater_comedy', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.3)]', creator_name: 'David R.' },
+    { id: 'plan-2', type: 'deporte', x: '65%', y: '70%', title: '🏃 Running Domingo 19 (18h)', desc: 'Saldré a trotar por la Vía Augusta y la playa del Miracle. Plan tranquilo de domingo tarde.', status: 'Hoy 18:00', color: 'bg-blue-500', icon: 'directions_run', creator_name: 'Marta G.' },
+    { id: 'plan-3', type: 'mascotas', x: '55%', y: '35%', title: '🐶 Paseo Perruno Domingo', desc: 'Saldré con mi perro por la zona del Serrallo. Si alguien quiere que los peques peludos jueguen, avisad.', status: 'En 30 mins', color: 'bg-purple-500', icon: 'pets', creator_name: 'Carlos M.' },
+    { id: 'plan-4', type: 'ocio', x: '48%', y: '50%', title: '🧺 Mercat de Bonavista', desc: 'Estaré por el mercado de Bonavista hasta las 13:30h. Si alguien quiere quedar para un café por allí, ¡aviso!', status: 'Hasta las 14h', color: 'bg-orange-500', icon: 'shopping_basket', creator_name: 'Laura B.' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

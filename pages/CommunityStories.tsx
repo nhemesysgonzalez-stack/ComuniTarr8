@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'lun-13-s1', user_name: 'Ana T.', content: '☕ Primer café del Lunes 13 en la Plaça de la Font. Listos para el simulacro de las 11h. 🚨 #Lunes #Tarragona #Plaseqta', image_url: 'https://images.unsplash.com/photo-1551632811-561732d1e306', likes: 210, created_at: '2026-04-13T08:00:00Z' },
-            { id: 'lun-13-s2', user_name: 'Joan R.', content: '🚧 Retenciones en la A-7 dirección sur este Lunes 13. ¡Precaución al volante vecinos! 🚗🚙 #Tarragona #A7 #Trafico', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 256, created_at: '2026-04-13T08:30:00Z' },
-            { id: "lun-13-s3", user_name: "Marc G.", content: "💨 Viento moderado hoy en Ponent. Vigilad con la ropa tendida. ¡Buen inicio de semana! 🌿 #TGN #Primavera", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 145, created_at: '2026-04-13T09:00:00Z' },
-            { id: 'lun-13-s4', user_name: 'Pilar S.', content: '🐶 ¡Adopción conseguida! Empezamos el lunes con buenas noticias para Thor. #FinalesFelices #Tarragona', image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445', likes: 132, created_at: '2026-04-13T09:30:00Z' }
+            { id: 'dom-19-s1', user_name: 'Ana T.', content: '🎺 Vermut y Jazz en la Plaça de la Font. ¡La clausura del Dixieland está siendo increíble! HOY DOMINGO 19. #Tarragona #Jazz #Dixie', image_url: 'https://images.unsplash.com/photo-1551632811-561732d1e306', likes: 245, created_at: '2026-04-19T12:00:00Z' },
+            { id: 'dom-19-s2', user_name: 'Joan R.', content: '🧺 Mañana de mercado en Bonavista. ¡Hacía tiempo que no veía tanta gente un Domingo! ☀️ #Bonavista #Tarragona #Mercadillo', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 312, created_at: '2026-04-19T10:30:00Z' },
+            { id: "dom-19-s3", user_name: "Marc G.", content: "🌞 Día perfecto de playa en la Arrabassada. El agua ya empieza a estar buena. ¡Feliz Domingo 19! 🏖️ #TGN #Playa #Domingo", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 189, created_at: '2026-04-19T11:00:00Z' },
+            { id: 'dom-19-s4', user_name: 'Pilar S.', content: '☕ Domingo de relax total antes de empezar la semana. ¡Disfrutad lo que queda de sol! #Relax #Tarragona #Ponent', image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445', likes: 156, created_at: '2026-04-19T13:30:00Z' }
         ];
 
 

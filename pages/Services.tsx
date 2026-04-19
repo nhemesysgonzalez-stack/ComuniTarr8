@@ -42,7 +42,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-500">check_circle</span>
                 <div>
                   <p className="text-sm font-black text-green-700 dark:text-green-400">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de lunes y festivos.</p>
+                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de DOMINGOS Y FESTIVOS.</p>
                 </div>
               </div>
             </div>
@@ -144,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
               </p>
-              <button onClick={() => alert("Hoy Lunes 13 Abr:\n\u2022 17:30h \u2014 Formación en Marketing Digital (Online y Presencial)\n\u2022 19:00h \u2014 Simulación de Entrevistas de Trabajo (TGN Impulsa)")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Hoy Domingo 19 Abr:\n\u2022 12:00h \u2014 Taller: Gestión del Tiempo y Experiencia (Presencial)\n\u2022 18:00h \u2014 Networking en el Festival Dixieland (Reunión informal)")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -168,23 +168,23 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Lunes 13 Abr)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Dom 19 Abr)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-emerald-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Recepcionista Clínica Dental (Media Jornada)&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Clínica en el centro de Tarragona. Experiencia valorable. Contacto: 977 23 45 12 (Dra. Martínez)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Mozo de Almacén (Sector Logístico Puerto)&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Contrato inmediato. Turnos rotativos. Contacto: 977 24 12 34 (Recursos Humanos Logística TGN)</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Repartidor/a con furgoneta propia&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Ruta Tarragona-Reus. Contrato indefinido. Contacto: 654 32 10 98 (Logística TGN)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Cocinero/a refuerzo Domingo&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Restaurante en la Part Alta. Incorporación HOY. Contacto: 611 22 33 44 (Sr. Jordi - Rest. El Rincón)</p>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Personal de limpieza para oficinas&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Horario de tardes. Zona Les Gavarres. Contacto: 612 34 56 78 (Servinet)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Dependiente/a tienda moda (Parc Central)&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Horario de jornada completa. Experiencia previa. Contacto: 977 21 00 55 (Tienda Modas TGN)</p>
                   </div>
                   <div className="border-l-4 border-teal-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar de Ayuda a Domicilio (SAD)&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Imprescindible CFGM o Certificado de Profesionalidad. Contacto: 977 44 55 66 (CuraDom)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar Administrativo/a&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Para gestoría en el Eixample. Inglés nivel B2. Contacto: 654 98 76 54 (Gestoría Rebull)</p>
                   </div>
                 </div>
               </div>
@@ -199,13 +199,13 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined">school</span> CALENDARIO ESCOLAR
               </h3>
               <div className="flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm mb-3">
-                <div className="size-12 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 font-bold text-xl">
-                  13
+                <div className="size-12 rounded-xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-600 font-bold text-xl">
+                  19
                 </div>
                 <div>
-                  <p className="text-xs font-black uppercase text-indigo-500">LUNES</p>
-                  <p className="text-sm font-bold text-gray-800 dark:text-white">Día Lectivo Normal (Lunes 13)</p>
-                  <p className="text-[10px] text-gray-500">Volvemos a clase con energía.</p>
+                  <p className="text-xs font-black uppercase text-orange-500">DOMINGO</p>
+                  <p className="text-sm font-bold text-gray-800 dark:text-white">Día No Lectivo (Domingo 19)</p>
+                  <p className="text-[10px] text-gray-500">Descanso escolar.</p>
                 </div>
               </div>
               <a
@@ -289,7 +289,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-600">check_circle</span>
                 <div>
                   <p className="text-xs font-black text-green-700 dark:text-green-500 uppercase">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario laborable normal. Sin desvíos ni incidencias.</p>
+                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de DOMINGOS Y FESTIVOS.</p>
                 </div>
               </div>
 
@@ -572,7 +572,7 @@ export const Services: React.FC = () => {
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
                       <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DÍA NORMAL)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 HOY LUNES 13 Abr: Talleres TGN Impulsa en Tabacalera. Mercado semanal Pl. Corsini.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 HOY DOMINGO 19 Abr: Clausura Dixieland Festival y Mercat de Bonavista.</p>
                   </div>
                 </div>
               </div>

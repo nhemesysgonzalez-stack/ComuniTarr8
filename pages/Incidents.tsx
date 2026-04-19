@@ -58,34 +58,34 @@ const Incidents: React.FC = () => {
             if (data) {
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'lun-13-trastos-active',
+                        id: 'dom-19-dixie-traffic',
                         user_id: 'admin',
-                        title: '📋 Recogida Trastos Activa',
-                        description: 'Camiones operando en zona comercial LUNES 13. Sacad muebles antes de las 22h.',
+                        title: '🎺 Clausura Dixieland: Tráfico',
+                        description: 'Hoy Domingo 19 cortes puntuales en accesos a Plaza de la Font por concierto de clausura (11h-14h).',
                         status: 'in_progress',
                         neighborhood: 'CENTRE',
-                        created_at: '2026-04-13T08:00:00Z',
+                        created_at: '2026-04-19T08:00:00Z',
                         profiles: { full_name: 'Ayuntamiento TGN', avatar_url: '/logo.svg' }
                     },
                     {
-                        id: 'lun-13-limpieza-finished',
+                        id: 'dom-19-cleaning-bonavista',
                         user_id: 'v4',
-                        title: '☀️ Limpieza Miracle Finalizada',
-                        description: 'Caminata de limpieza Lunes 13 finalizada. Zona despejada.',
-                        status: 'resolved',
-                        neighborhood: 'GENERAL',
-                        created_at: '2026-04-13T09:00:00Z',
-                        profiles: { full_name: 'Mantenimiento TGN', avatar_url: 'https://i.pravatar.cc/150?u=man' }
+                        title: '🧹 Limpieza Post-Mercado',
+                        description: 'Dispositivo especial de limpieza en Bonavista activado tras el mercadillo de hoy Domingo 19.',
+                        status: 'in_progress',
+                        neighborhood: 'PONENT',
+                        created_at: '2026-04-19T14:00:00Z',
+                        profiles: { full_name: 'EcoTarraco', avatar_url: 'https://i.pravatar.cc/150?u=man' }
                     },
                     {
-                        id: 'lun-13-riego-rambla',
+                        id: 'dom-19-water-notice',
                         user_id: 'v5',
-                        title: '🚿 Riego Rambla Nova',
-                        description: 'Mantenimiento preventivo Lunes 13 mediodía.',
+                        title: '🚰 Aviso EMATSA: Mañana Lunes',
+                        description: 'Programado corte de suministro por mejora de red para MAÑANA LUNES 20 en zona Sant Pere i Sant Pau (C/ Principal).',
                         status: 'open',
-                        neighborhood: 'CENTRE',
-                        created_at: '2026-04-13T10:00:00Z',
-                        profiles: { full_name: 'Parques y Jardines', avatar_url: 'https://i.pravatar.cc/150?u=parque' }
+                        neighborhood: 'SPiSP',
+                        created_at: '2026-04-19T10:00:00Z',
+                        profiles: { full_name: 'Mantenimiento TGN', avatar_url: 'https://i.pravatar.cc/150?u=parque' }
                     }
                 ];
 

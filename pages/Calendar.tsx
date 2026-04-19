@@ -59,30 +59,43 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'lun-13-plaseqta',
+          id: 'dom-19-dixieland-final',
           creator_id: 'ayto',
-          title: "⚠️ PLASEQTA: Simulacro de Sirenas",
-          description: "Prueba general de sirenas de riesgo químico en el Polígono Sur y Zona Portuaria. No hay que alarmarse ni confinarse. Es solo un simulacro.",
-          event_date: '2026-04-13',
-          event_time: '11:00',
-          location: 'Polígon Sur / La Pineda',
-          category: 'Aviso',
+          title: "🎺 Gran Clausura Dixieland Festival",
+          description: "Hoy Domingo 19 culmina el festival con un concierto multitudinario en la Plaza de la Font. ¡No faltes!",
+          event_date: '2026-04-19',
+          event_time: '12:00',
+          location: 'Plaza de la Font',
+          category: 'Cultura',
           neighborhood: 'GENERAL',
-          contact_info: 'Protecció Civil TGN',
-          created_at: '2026-04-13T08:00:00Z'
+          contact_info: 'Cultura Tarragona',
+          created_at: '2026-04-19T08:00:00Z'
         },
         {
-          id: 'lun-13-protectora',
+          id: 'dom-19-mercado-bonavista',
+          creator_id: 'ayto',
+          title: "🧺 Mercado Ambulante de Bonavista",
+          description: "El mercado más grande de la provincia hoy abierto hasta mediodía. Ven a por tus productos frescos y gangas.",
+          event_date: '2026-04-19',
+          event_time: '09:00',
+          location: 'Bonavista',
+          category: 'Ocio',
+          neighborhood: 'PONENT',
+          contact_info: 'Ayuntamiento de Tarragona',
+          created_at: '2026-04-19T07:00:00Z'
+        },
+        {
+          id: 'lun-20-formacion',
           creator_id: 'admin',
-          title: "🐾 Reunión Extraordinaria: Protectora de Animales",
-          description: "Charla informativa y reclutamiento de nuevos voluntarios por el desbordamiento de acogidas. Se necesitan mantas y pienso para cachorros.",
-          event_date: '2026-04-13',
-          event_time: '18:30',
-          location: 'Centro Cívico Torreforta',
-          category: 'Solidario',
-          neighborhood: 'TORREFORTA',
-          contact_info: '619 44 22 11 (WhatsApp)',
-          created_at: '2026-04-13T09:00:00Z'
+          title: "💼 Formación: Herramientas Digitales",
+          description: "Mañana Lunes 20 inicia el curso de digitalización para mayores de 45 años en Tarragona Impulsa.",
+          event_date: '2026-04-20',
+          event_time: '10:00',
+          location: 'Viver de Empresas',
+          category: 'Cultura',
+          neighborhood: 'GENERAL',
+          contact_info: 'Tarragona Impulsa',
+          created_at: '2026-04-19T09:00:00Z'
         }
       ];
 

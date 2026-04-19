@@ -145,40 +145,40 @@ const Announcements: React.FC = () => {
 
             const realBulletins: Announcement[] = [
                 {
-                    id: 'lun-13-trastos',
-                    title: '📋 Hoy: Recogida de Trastos (Zona Centro)',
-                    content: 'HOY LUNES 13 es día de retirada de muebles y voluminosos. Recordad bajarlos a la acera antes de las 22:00h para no ser sancionados.',
-                    neighborhood: 'CENTRE',
-                    category: 'AVISO',
-                    author_name: 'Ajuntament TGN',
-                    created_at: '2026-04-13T07:00:00Z'
+                    id: 'dom-19-dixieland',
+                    title: '🎺 Final del Dixieland Festival (Hoy)',
+                    content: 'Última oportunidad para disfrutar del jazz en la calle. Concierto clausura a las 12:00h en Pl. de la Font y jam sessions por la tarde.',
+                    neighborhood: 'GENERAL',
+                    category: 'EVENTO',
+                    author_name: 'Cultura TGN',
+                    created_at: '2026-04-19T08:00:00Z'
                 },
                 {
-                    id: 'lun-13-weather',
-                    title: '☀️ Lunes 13: Primaveral y Despejado',
-                    content: 'Semana de sol y temperaturas agradables. Hoy llegamos a los 22ºC. ¡Perfecto para caminar por la Rambla o ir al Miracle!',
+                    id: 'dom-19-weather',
+                    title: '☀️ Domingo 19: Sol y Primavera',
+                    content: 'Día totalmente despejado con temperaturas que rozarán los 23ºC. ¡Perfecto para un paseo por el Serrallo o las playas!',
                     neighborhood: 'GENERAL',
                     category: 'TIEMPO',
                     author_name: 'Admin ComuniTarr',
-                    created_at: '2026-04-13T08:00:00Z'
+                    created_at: '2026-04-19T09:00:00Z'
                 },
                 {
-                    id: 'lun-13-seguridad',
-                    title: '🛡️ Dispositivo Escolar: Miracle y Pax',
-                    content: 'Vigilancia activa en los accesos escolares LUNES 13 (08:30-09:15). Respetad las zonas de carga y descarga de niños.',
-                    neighborhood: 'GENERAL',
-                    category: 'SEGURIDAD',
-                    author_name: 'Guardia Urbana',
-                    created_at: '2026-04-13T08:30:00Z'
+                    id: 'dom-19-bonavista',
+                    title: '🧺 Mercado de Bonavista: Refuerzo Bus L54',
+                    content: 'Recuerda que hoy el mercado atrae a miles de personas. El EMT refuerza la línea 54 durante toda la mañana hasta las 14:30h.',
+                    neighborhood: 'PONENT',
+                    category: 'AVISO',
+                    author_name: 'EMT Tarragona',
+                    created_at: '2026-04-19T08:30:00Z'
                 },
                 {
-                    id: 'lun-13-empleo',
-                    title: '💼 Empleo: Nuevas Vacantes Lunes 13',
-                    content: 'Iniciamos la semana con 5 ofertas verificadas en comercio y hostelería. Entra en "Servicios" para ver los contactos directos.',
+                    id: 'dom-19-empleo',
+                    title: '💼 Empleo: Ofertas Domingo 19 Abr',
+                    content: 'Se buscan refuerzos de hostelería para la temporada alta que empieza. Revisa la sección Servicios para ver 4 ofertas nuevas de hoy.',
                     neighborhood: 'GENERAL',
                     category: 'EMPLEO',
                     author_name: 'Admin ComuniTarr',
-                    created_at: '2026-04-13T09:00:00Z'
+                    created_at: '2026-04-19T10:00:00Z'
                 }
             ];
 

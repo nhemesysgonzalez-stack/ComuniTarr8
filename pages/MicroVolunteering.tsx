@@ -42,31 +42,31 @@ const MicroVolunteering: React.FC = () => {
 
             const realOpportunitiesExamples: VolunteerOpportunity[] = [
                 {
-                    id: 'lun-13-vol-pax',
+                    id: 'dom-19-vol-dixie',
                     creator_id: 'v8',
-                    title: '🛡️ Voluntarios Hoy: Colegio Pax',
-                    description: 'Dispositivo activo LUNES 13, 08:30h. Gracias a los 3 voluntarios que han cubierto el turno de acompañamiento hoy.',
-                    neighborhood: 'CENTRE',
-                    contact_info: '644 11 22 33 (Luis). Gracias por vuestro tiempo.',
-                    created_at: '2026-04-13T07:00:00Z'
-                },
-                {
-                    id: 'mar-24-vol-rambla',
-                    creator_id: 'v9',
-                    title: '♻️ Limpieza Rambla Mañana',
-                    description: 'Mañana martes 14 realizaremos una batida de limpieza rápida en los tramos centrales de la Rambla Nova. ¿Alguien se une a las 11:00h?',
-                    neighborhood: 'CENTRE',
-                    contact_info: '611 00 22 33 (Paco). Nos vemos en la Estatua de los Castells.',
-                    created_at: '2026-04-13T08:00:00Z'
-                },
-                {
-                    id: 'lun-13-vol-impulsa',
-                    creator_id: 'v10',
-                    title: '🏢 Apoyo: TGN Impulsa Primavera',
-                    description: 'Buscamos voluntarios para orientar a jóvenes en la feria de empleo de este lunes 13. Coordinación en stand municipal.',
+                    title: '🎺 Voluntarios Hoy: Clausura Dixieland',
+                    description: 'Necesitamos 2 personas para ayudar en el punto de información de Pl. de la Font durante el concierto de clausura HOY DOMINGO 19 (11:30-13:30h).',
                     neighborhood: 'GENERAL',
-                    contact_info: '977 12 34 56 (Oficinas Municipales)',
-                    created_at: '2026-04-13T09:00:00Z'
+                    contact_info: '644 11 22 33 (Luis). ¡Gracias!',
+                    created_at: '2026-04-19T07:00:00Z'
+                },
+                {
+                    id: 'dom-19-vol-bonavista',
+                    creator_id: 'v9',
+                    title: '♻️ Apoyo Recogida Bonavista',
+                    description: 'Al terminar el mercado de hoy Domingo 19, haremos una recogida rápida de plásticos en la zona perimetral. ¿Alguien se une a las 14:30h?',
+                    neighborhood: 'PONENT',
+                    contact_info: '611 00 22 33 (Paco). Nos vemos en la entrada principal.',
+                    created_at: '2026-04-19T08:00:00Z'
+                },
+                {
+                    id: 'dom-19-vol-compañia',
+                    creator_id: 'v10',
+                    title: '👴 Acompañamiento Domingo Tarde',
+                    description: 'Vecino mayor busca acompañante para paseo tranquilo por el Serrallo hoy Domingo 19 a las 18:00h.',
+                    neighborhood: 'CENTRE',
+                    contact_info: '977 12 34 56 (Servicios Sociales)',
+                    created_at: '2026-04-19T09:00:00Z'
                 }
             ];
 
@@ -248,10 +248,10 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Ayuda Paseo', d: 'Busco voluntario para acompañar a persona mayor a pasear LUNES 13 por el Balcón del Mediterráneo a las 18h.', c: '644 33 22 11' },
-                                            { t: 'Paseo Perro', d: '¿Algún vecino pasea su perro por la zona del Eixample y puede sacar al mío hoy tarde? No puedo salir LUNES 13.', c: '633 44 55 66' },
-                                            { t: 'Ayuda Móvil', d: 'Busco alguien que me enseñe a instalar la app Mi Carpeta Ciudadana para unos trámites LUNES 13.', c: '611 22 33 44' },
-                                            { t: 'Club Lectura', d: '¿Algún vecino/a va a la biblioteca LUNES 13? Me gustaría ir acompañado por la tarde.', c: 'Foro · Canal General' }
+                                            { t: 'Ayuda Paseo', d: 'Busco voluntario para acompañar a persona mayor a pasear DOMINGO 19 por el Serrallo a las 18h.', c: '644 33 22 11' },
+                                            { t: 'Paseo Perro', d: '¿Algún vecino pasea su perro por la zona del Eixample y puede sacar al mío hoy tarde? No puedo salir DOMINGO 19.', c: '633 44 55 66' },
+                                            { t: 'Ayuda Móvil', d: 'Busco alguien que me enseñe a instalar la app ComuniTarr a un vecino mayor hoy DOMINGO 19 tarde.', c: '611 22 33 44' },
+                                            { t: 'Vermut Dixie', d: '¿Algún vecino/a va al concierto clausura DOMINGO 19? Me gustaría ir acompañado.', c: 'Foro · Canal General' }
                                         ].map((idea, i) => (
 
                                             <button

@@ -73,28 +73,28 @@ const Polls: React.FC = () => {
 
             const mockPolls: Poll[] = [
                 {
-                    id: 'dom-22-poll-1',
+                    id: 'dom-19-poll-1',
                     creator_id: 'v1',
-                    title: '🥾 ¿Cómo calificarías la caminata de LUNES 13? ⛰️',
-                    options: ['Excelente, repetiré pronto', 'Muy bonita pero cansada', 'Poco ritmo, mucha gente', 'No he podido ir hoy'],
+                    title: '🎺 ¿Qué te ha parecido la clausura del Dixieland hoy Domingo 19? 🎷',
+                    options: ['Espectacular concierto final', 'Muy bien organizado', 'Falta más música en barrios', 'No he podido asistir'],
                     neighborhood: 'GENERAL',
-                    created_at: '2026-04-13T08:00:00Z'
+                    created_at: '2026-04-19T08:00:00Z'
                 },
                 {
-                    id: 'dom-22-poll-2',
+                    id: 'dom-19-poll-2',
                     creator_id: 'v2',
-                    title: '🌅 ¿Nos vemos en el Miracle a las 19:15h HOY LUNES 13?',
-                    options: ['¡Allí estaré!', 'Si no hace mucho frío', 'Me quedo descansando', 'Mañana martes madrugo'],
+                    title: '🧺 ¿Has ido hoy al Mercado de Bonavista?',
+                    options: ['Sí, he comprado de todo', 'He ido a dar un paseo', 'No, demasiada gente hoy', 'Prefiero el mercado de los martes'],
                     neighborhood: 'GENERAL',
-                    created_at: '2026-04-13T09:00:00Z'
+                    created_at: '2026-04-19T09:00:00Z'
                 },
                 {
-                    id: 'dom-22-poll-3',
+                    id: 'dom-19-poll-3',
                     creator_id: 'v3',
-                    title: '📋 HOY LUNES: ¿Prefieres teletrabajo o presencial? 💻',
-                    options: ['Teletrabajo (Afortunado)', 'Presencial en TGN', 'Fuera de la ciudad', 'Es mi día libre'],
+                    title: '🌅 Plan para este Domingo 19 tarde:',
+                    options: ['Paseo por el Serrallo / Moll de Costa', 'Deporte por el Miracle', 'Tarde de sofá y Netflix', 'Preparar la semana laboral'],
                     neighborhood: 'GENERAL',
-                    created_at: '2026-04-13T10:00:00Z'
+                    created_at: '2026-04-19T10:00:00Z'
                 }
             ];
 

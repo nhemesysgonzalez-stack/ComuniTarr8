@@ -176,31 +176,31 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'lun-13-trastos-news',
-            title: '📋 Hoy: Recogida de Trastos (Centro)',
-            content: 'Atención vecinos de la zona Centro: HOY LUNES 13 toca recogida de muebles y voluminosos. Por favor, sacad los objetos a la calle antes de las 22:00h.',
-            neighborhood: 'CENTRE',
-            category: 'AVISO',
-            image_url: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-04-13T07:00:00Z'
+            id: 'dom-19-dixieland-news',
+            title: '🎺 Clausura del Festival Dixieland',
+            content: 'Hoy Domingo 19 es el último día del festival. No te pierdas el concierto de clausura a mediodía en la Plaza de la Font y actividades en las terrazas.',
+            neighborhood: 'PART ALTA',
+            category: 'CULTURA',
+            image_url: 'https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=800&q=80',
+            created_at: '2026-04-19T08:00:00Z'
           },
           {
-            id: 'lun-13-weather-news',
-            title: '☀️ Lunes 13: Comienzo de Semana Primaveral',
-            content: 'Arrancamos el lunes con cielos despejados y una temperatura máxima de 22ºC. Ideal para caminar al trabajo o al colegio.',
+            id: 'dom-19-weather-news',
+            title: '☀️ Domingo 19: Sol y Primavera',
+            content: 'Día totalmente despejado con temperaturas que rozarán los 23ºC. Ideal para pasear por la Anella Mediterrània o el Serrallo.',
             neighborhood: 'GENERAL',
             category: 'TIEMPO',
-            image_url: 'https://images.unsplash.com/photo-1414609476228-db04859bc091?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-04-13T08:00:00Z'
+            image_url: 'https://images.unsplash.com/photo-1506634064465-7dab4de896ed?auto=format&fit=crop&w=800&q=80',
+            created_at: '2026-04-19T09:00:00Z'
           },
           {
-            id: 'lun-13-empleo-news',
-            title: '💼 Empleo: Nuevas Vacantes Lunes 13',
-            content: 'Iniciamos la semana con 5 nuevas ofertas verificadas en el sector servicios y logística. Consulta los detalles en el módulo de Empleo.',
-            neighborhood: 'GENERAL',
-            category: 'EMPLEO',
-            image_url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-04-13T09:00:00Z'
+            id: 'dom-19-bonavista-news',
+            title: '🧺 Mercado de Bonavista: Hoy Abierto',
+            content: 'Recuerda que hoy domingo el mercado ambulante de Bonavista está operativo hasta las 14h. Refuerzo en las líneas de autobús L54.',
+            neighborhood: 'PONENT',
+            category: 'AVISO',
+            image_url: 'https://images.unsplash.com/photo-1488459711616-2fdcaef2402e?auto=format&fit=crop&w=800&q=80',
+            created_at: '2026-04-19T10:00:00Z'
           }
         ];
 
@@ -208,12 +208,12 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'lun-13-poll-1',
-          question: "📊 ¿Cómo ha sido tu vuelta a la rutina LUNES 13?",
-          options: ['Con mucha energía', 'Me ha costado madrugar', 'Deseando que llegue el viernes', 'Aún aterrizando'],
-          category: 'COMUNIDAD',
+          id: 'dom-19-poll-1',
+          question: "🎺 ¿Qué te ha parecido la edición de este año del Dixieland Festival?",
+          options: ['Espectacular, más música que nunca', 'Bien, pero faltan más escenarios', 'Me gustaría más variedad de jazz', 'No he asistido esta vez'],
+          category: 'CULTURA',
           neighborhood: 'GENERAL',
-          created_at: '2026-04-13T10:00:00Z'
+          created_at: '2026-04-19T11:00:00Z'
         };
         setCurrentPoll(pollExample);
 
@@ -466,8 +466,8 @@ const Home: React.FC = () => {
           <div className="p-5 bg-sky-50 dark:bg-sky-900/10 rounded-[30px] flex gap-4 items-center">
             <span className="material-symbols-outlined text-sky-500 text-3xl">partly_cloudy_day</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Clima Lunes 13</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Máxima 22ºC, Mínima 14ºC. Cielo despejado.</p>
+              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Clima Domingo 19</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Máxima 23ºC, Mínima 14ºC. Cielo despejado y calima suave.</p>
             </div>
           </div>
           <div className="p-5 bg-purple-50 dark:bg-purple-900/10 rounded-[30px] flex gap-4 items-center">
@@ -486,7 +486,7 @@ const Home: React.FC = () => {
           <div className="h-full bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 rounded-[40px] text-white shadow-xl shadow-indigo-500/20 transition-transform group-hover:-translate-y-2 relative overflow-hidden">
             <span className="material-symbols-outlined text-6xl absolute top-6 right-6 opacity-20">work</span>
             <h3 className="text-2xl font-black mb-2 uppercase tracking-tight">Empleos Locales</h3>
-            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Nuevas ofertas Lunes 13</p>
+            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Nuevas ofertas Domingo 19</p>
             <div className="flex items-center gap-2 text-xs font-black uppercase"><span className="material-symbols-outlined">arrow_forward</span> Entrar</div>
           </div>
         </Link>
@@ -585,7 +585,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 15 · Lun 13 Abr</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 15 · Dom 19 Abr</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">

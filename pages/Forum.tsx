@@ -75,11 +75,11 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '☀️ ¡Buenos días! Lunes 13 de Abr. Arrancamos la semana con sol. Máxima 22ºC.' },
-    { user: 'Meteo TGN', text: '🌤️ Lunes despejado. Sin riesgo de lluvias para hoy.' },
-    { user: 'Tarragona Impulsa', text: '💼 HOY LUNES: Nuevas vacantes logísticas en el polígono Riu Clar.' },
-    { user: 'EMT TGN', text: '🚌 Servicio normal en todas las líneas. Lunes laborable.' },
-    { user: 'AAVV Torreforta', text: '📋 Reunión vecinal hoy a las 18:30h en el Centro Cívico. ✅' }
+    { user: 'Admin ComuniTarr', text: '☀️ ¡Feliz Domingo 19 de Abril! Último día del Dixieland Festival y Mercat de Bonavista abierto hasta las 14h.' },
+    { user: 'Meteo TGN', text: '🌤️ Domingo primaveral y despejado. Máxima de 23ºC. ¡Disfrutad del aire libre!' },
+    { user: 'Agenda TGN', text: '🎺 HOY: Clausura del Dixieland Festival con conciertos en plazas y calles.' },
+    { user: 'Bonavista', text: '🧺 Mercat a tope hoy. Recordad el refuerzo de la línea 54 del EMT para llegar.' },
+    { user: 'Cultura', text: '🎭 HOY 19h: Espectáculo "Corta el Cable Rojo" en el Palacio de Congresos. ¡Últimas entradas!' }
   ];
 
 
@@ -126,9 +126,9 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Admin', text: '☀️ ¡Buen Lunes 13! Recordad que el mercado de Corsini está activo hoy.' },
-        { who: 'Pau T.', text: 'Vaya solazo hace hoy en Tarragona. ¡Aprovechad el lunes!' },
-        { who: 'Joan B.', text: 'Sí, apetece un café en la Rambla. Ánimo con el lunes. 💪' }
+        { who: 'Admin', text: '☀️ ¡Buen Domingo 19! Recordad que hoy el mercado de Bonavista está a pleno rendimiento.' },
+        { who: 'Pau T.', text: 'Vengo de allí y hay muchísima gente. ¡Aprovechad el solazo!' },
+        { who: 'Joan B.', text: 'Yo iré luego a la Part Alta a escuchar algo de Dixieland. Planazo de domingo. 🎺' }
       ],
       [
         { who: 'Joe R.', text: '✅ Las obras de Av. Roma siguen fuertes. Tomad la T-11 si podéis.' },
@@ -147,8 +147,8 @@ const Forum: React.FC = () => {
     ],
     'EMPLEO': [
       [
-        { who: 'Servicios TGN', text: 'Actualizadas ofertas en el polígono industrial. Lunes 13 Abril. 💼' },
-        { who: 'Restaurant Sol', text: 'Buscamos camarero/a extra para esta semana. 600 00 11 22' },
+        { who: 'Servicios TGN', text: 'Actualizadas ofertas para la semana entrante. Domingo 19 Abril. 💼' },
+        { who: 'Restaurant Sol', text: 'Buscamos refuerzo extra para hoy domingo al mediodía por el festival. Contactad 600 00 11 22' },
       ],
     ],
     'ENCUENTROS': [
@@ -259,13 +259,13 @@ const Forum: React.FC = () => {
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
           // Ayer por la tarde / noche
-          { id: 'seed-cloud-98', user_id: 'v10', content: '¿Alguien sabe si el polideportivo ya ha abierto las inscripciones para la liga de verano?', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 20).toISOString() },
-          { id: 'seed-cloud-99', user_id: 'v4', content: '@Nuria P. Hola Nuria, creo que abren el plazo el día 15. A ver si hacen buen precio este año.', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 18).toISOString() },
-          { id: 'seed-cloud-100', user_id: 'v19', content: 'Cuidado los que vengáis por la N-340 ahora mismo, han puesto un control y hay cola.', user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 15).toISOString() },
+          { id: 'seed-cloud-98', user_id: 'v10', content: '¿Alguien sabe a qué hora empieza el concierto de clausura del Dixieland hoy domingo?', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 20).toISOString() },
+          { id: 'seed-cloud-99', user_id: 'v4', content: '@Nuria P. Los principales empiezan a mediodía en la Pl. de la Font.', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 18).toISOString() },
+          { id: 'seed-cloud-100', user_id: 'v19', content: 'He visto mucho movimiento en Bonavista, ¿venden flores hoy?', user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 15).toISOString() },
 
           // Hoy temprano
-          { id: 'seed-cloud-101', user_id: 'v3', content: `☀️ ¡Feliz Lunes 13! Día perfecto en Tarragona: 22ºC y sol.`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-04-13T07:00:00Z' },
-          { id: 'seed-cloud-102', user_id: 'v2', content: '🌸 ¡Qué lunes más bonito! La EMT va hoy con horario normal laborable.', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-04-13T08:30:00Z' },
+          { id: 'seed-cloud-101', user_id: 'v3', content: `☀️ ¡Feliz Domingo 19! Día de sol, Dixieland y mercado de los domingos.`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-04-19T08:00:00Z' },
+          { id: 'seed-cloud-102', user_id: 'v2', content: '🌸 ¡Buenos días! Un domingo espectacular para disfrutar de Tarragona.', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-04-19T10:30:00Z' },
         ] as Message[],
       };
 
@@ -584,13 +584,13 @@ const Forum: React.FC = () => {
             </div>
           </div>
 
-          {/* Trending Topics - Updated Lunes 13 Abril */}
+          {/* Trending Topics - Updated Domingo 19 Abril */}
           <div>
             <h4 className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 ml-2">Trending Topic</h4>
             <div className="flex flex-wrap gap-2 px-2">
-              <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-lg text-[10px] font-black uppercase">#Lunes13</span>
-              <span className="px-3 py-1 bg-emerald-100 text-emerald-600 rounded-lg text-[10px] font-black uppercase">#TGNImpulsa</span>
-              <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-lg text-[10px] font-black uppercase">#Plaseqta</span>
+              <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-lg text-[10px] font-black uppercase">#DixielandTGN</span>
+              <span className="px-3 py-1 bg-emerald-100 text-emerald-600 rounded-lg text-[10px] font-black uppercase">#MercatBonavista</span>
+              <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-lg text-[10px] font-black uppercase">#TarragonaSona</span>
             </div>
           </div>
 

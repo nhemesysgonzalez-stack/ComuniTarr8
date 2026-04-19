@@ -251,7 +251,7 @@ export const Header: React.FC = () => {
           <span className="flex items-center gap-2">⚠️ PLASEQTA: Simulacro de sirenas en Polígono Sur a las 11:00h, no alarmarse</span>
           <span className="flex items-center gap-2">📍 ¡NUEVO MAPA SOCIAL! No te quedes en casa, pon tu pin y conecta hoy mismo.</span>
           <span className="flex items-center gap-2">🚗 TRÁFICO: Retenciones habituales en acceso T-11 por obras de la A-7.</span>
-          
+
           <span className="flex items-center gap-2 text-yellow-300">📍 ¡NUEVO MAPA SOCIAL! Deja un pin con el plan que te apetece hacer hoy y encuentra vecinos para unirse.</span>
           <span className="flex items-center gap-2">⚠️ PLASEQTA: Simulacro de sirenas en Polígono Sur a las 11:00h, no alarmarse</span>
         </div>
@@ -335,8 +335,8 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase">Lunes 13 Abr 2026</span>
-                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Soleado 18ºC</span>
+                  <span className="text-xs font-black dark:text-white uppercase">Jueves 16 Abr 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Despejado 21ºC</span>
                 </div>
               </div>
 

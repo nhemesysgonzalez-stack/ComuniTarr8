@@ -46,37 +46,37 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'lun-13-medical',
+                    id: 'dom-19-medical',
                     creator_id: 'v5',
                     type: 'medical',
-                    title: '💊 Medicación Urgente (Lunes 13)',
-                    description: 'Necesito una medicación de la farmacia para HOY LUNES a primera hora. No tengo transporte propio. 📞 644 33 22 11 (Pere)',
+                    title: '💊 Medicación Urgente (Domingo 19)',
+                    description: 'Necesito una medicación de la farmacia de guardia para HOY DOMINGO. No tengo como desplazarme. 📞 644 33 22 11 (Pere)',
                     contact_info: '644 33 22 11 (Pere)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
-                    created_at: '2026-04-13T07:00:00Z'
+                    created_at: '2026-04-19T07:00:00Z'
                 },
                 {
-                    id: 'lun-13-food',
+                    id: 'dom-19-food',
                     creator_id: 'v6',
                     type: 'food',
-                    title: '🛒 Recado: Pan/Leche Doña Amalia (Lunes 13)',
-                    description: 'Doña Amalia necesita que alguien le acerque el pan y leche HOY LUNES temprano. Vive en C. Cavallers. 📞 622 88 77 66 (Sandra)',
+                    title: '🛒 Recado: Compra Domingo Doña Amalia',
+                    description: 'Doña Amalia necesita ayuda con la compra del mercado de Bonavista hoy DOMINGO. Vive en zona centro. 📞 622 88 77 66 (Sandra)',
                     contact_info: '622 88 77 66 (Sandra)',
                     is_urgent: false,
                     neighborhood: 'CENTRE',
-                    created_at: '2026-04-13T08:30:00Z'
+                    created_at: '2026-04-19T08:30:00Z'
                 },
                 {
-                    id: 'lun-13-company',
+                    id: 'dom-19-company',
                     creator_id: 'v8',
                     type: 'company',
-                    title: '🚶 Acompañamiento: Cita Médica 10:30h',
-                    description: 'Busco a alguien que me acompañe al CAP Jaume I HOY LUNES 13 a las 10:30h. Un poco de compañía para la espera. 📞 611 22 33 44 (Elena)',
+                    title: '🚶 Acompañamiento: Paseo Domingo Tarde',
+                    description: 'Busco vecino/a para acompañar a pasear por el Balcón del Mediterráneo HOY DOMINGO 19 a las 18:30h. 📞 611 22 33 44 (Elena)',
                     contact_info: '611 22 33 44 (Elena)',
                     is_urgent: true,
                     neighborhood: 'CENTRE',
-                    created_at: '2026-04-13T09:00:00Z'
+                    created_at: '2026-04-19T10:00:00Z'
                 }
             ];
 
@@ -180,11 +180,11 @@ const VitalNeeds: React.FC = () => {
                         </div>
                         <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Red de Acompañamiento Semanal 🤝</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            ¿Tienes 1 hora libre esta semana? Únete a nuestra red de acompañamiento para personas mayores que viven solas. Paseos, compra, o una simple charla. Un pequeño gesto marca la diferencia. Nos reunimos cada lunes a las 10h en el Centro Cívico Centro.
+                            ¿Tienes 1 hora libre esta semana? Únete a nuestra red de acompañamiento para personas mayores que viven solas. Paseos, compra, o una simple charla. Un pequeño gesto marca la diferencia. Nos reunimos hoy domingo a las 18h en el Serrallo para coordinar la semana.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Lunes 13 Abr:\n• 10:00h \u2014 Red de Acompañamiento (Centro Cívico)\n• 09:30h \u2014 Talleres Tarragona Impulsa\n\nHOY LUNES:\n• 11:00h \u2014 Café Tertulia Sénior (Part Alta)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Hoy Domingo 19 Abr:\n• 12:00h \u2014 Encuentro Solidario (Pl. de la Font)\n• 18:00h \u2014 Paseo Acompañado (Serrallo)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
                             <span className="material-symbols-outlined text-sm">person_add</span>
                             UNIRME AHORA
                         </a>

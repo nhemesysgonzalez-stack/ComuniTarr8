@@ -48,40 +48,40 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'lun-13-empleo',
+                    id: 'dom-19-empleo',
                     title: '💼 Charla: Empleo Joven TGN',
                     instructor: 'Tarragona Impulsa',
-                    date: 'Lunes 13 Abr, 11:00h',
-                    description: 'Sesión informativa para jóvenes sobre cómo afrontar la primera entrevista y buscar en el sector servicios local.',
+                    date: 'MAÑANA Lunes 20 Abr, 17:00h',
+                    description: 'Sesión informativa para jóvenes sobre cómo afrontar la primera entrevista y buscar en el sector servicios local. Ideal para el inicio de semana.',
                     image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80',
                     spots: 20,
                     neighborhood: 'CENTRE',
                     contact_info: 'C.C. Centre - Plaça de la Font',
-                    created_at: '2026-04-13T08:00:00Z'
+                    created_at: '2026-04-19T08:00:00Z'
                 },
                 {
-                    id: 'lun-13-tech',
+                    id: 'dom-19-tech',
                     title: '📱 Taller: Trámites con el Móvil',
                     instructor: 'Maria P.',
-                    date: 'Lunes 13 Abr, 17:00h',
-                    description: 'Aprende a usar la Carpeta Ciudadana y pedir citas médicas desde tu smartphone. Especial para mayores.',
+                    date: 'MAÑANA Lunes 20 Abr, 11:00h',
+                    description: 'Aprende a usar la Carpeta Ciudadana y pedir citas médicas desde tu smartphone. Especial para mayores que quieran aprender esta semana.',
                     image: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80',
                     spots: 12,
                     neighborhood: 'PONENT',
                     contact_info: 'Biblioteca de Ponent',
-                    created_at: '2026-04-13T09:00:00Z'
+                    created_at: '2026-04-19T09:00:00Z'
                 },
                 {
-                    id: 'mar-24-yoga',
-                    title: '🧘 Yoga Post-Trabajo al aire libre',
+                    id: 'dom-19-yoga',
+                    title: '🧘 Yoga al amanecer en la playa',
                     instructor: 'Elena V.',
-                    date: 'Lunes 13 Abr, 19:00h',
-                    description: 'Clase dinámica para liberar tensiones tras la jornada laboral. Ven con esterilla y ropa cómoda al Miracle.',
+                    date: 'MAÑANA Lunes 20 Abr, 07:30h',
+                    description: 'Empieza la semana con energía. Ven con esterilla y ropa cómoda a la Playa de la Arrabassada para recibir al sol del lunes.',
                     image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
                     spots: 25,
                     neighborhood: 'GENERAL',
                     contact_info: 'Punto: Chiringuito 1',
-                    created_at: '2026-04-13T10:00:00Z'
+                    created_at: '2026-04-19T10:00:00Z'
                 }
             ];
 
@@ -146,16 +146,16 @@ const Workshops: React.FC = () => {
                     </div>
                     <div className="flex-1">
                         <div className="flex items-center gap-3 mb-4">
-                            <span className="px-3 py-1 bg-indigo-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">EVENTO HOY - 10:00H</span>
+                            <span className="px-3 py-1 bg-indigo-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">EVENTO MAÑANA - 17:00H</span>
                             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">ORIENTACIÓN LABORAL</span>
                         </div>
                         <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Workshop: CV Digital con IA 📈</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Optimiza tu búsqueda de empleo con herramientas de Inteligencia Artificial. HOY LUNES a las 10:00h en el Centro Cívico Centre. ¡Inscripción gratuita!
+                            Optimiza tu búsqueda de empleo con herramientas de Inteligencia Artificial. MAÑANA LUNES a las 17:00h en el Centro Cívico Centre. ¡Inscripción gratuita!
                         </p>
 
                         <div className="flex flex-wrap gap-4">
-                            <a href="#" onClick={(e) => { e.preventDefault(); alert("Reserva tu plaza enviando un WhatsApp al 611 00 22 33 para HOY LUNES."); }} className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
+                            <a href="#" onClick={(e) => { e.preventDefault(); alert("Reserva tu plaza enviando un WhatsApp al 611 00 22 33 para el Taller de CV IA de MAÑANA LUNES."); }} className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
                                 <span className="material-symbols-outlined text-sm">confirmation_number</span>
                                 RESERVAR PLAZA
                             </a>
@@ -253,10 +253,10 @@ const Workshops: React.FC = () => {
                                     <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Office 365 Pro', i: 'Pedro S.', d: 'Miércoles 17:00', desc: 'Domina Excel y Word para mejorar tu empleabilidad.', c: '688000111' },
-                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Lunes 13, 10:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: '699222333' },
-                                            { t: 'Gestión del Tiempo', i: 'M. López', d: 'Lunes 13, 18:00', desc: 'Técnicas para organizar tu semana y reducir el estrés laboral.', c: '611444555' },
-                                            { t: 'Networking TGN', i: 'Hub Impulsa', d: 'Lunes 13, 19:30', desc: 'Encuentro informal para conectar con otros profesionales locales.', c: 'Tabacalera Sala 2' }
+                                            { t: 'Office 365 Pro', i: 'Pedro S.', d: 'Martes 17:00', desc: 'Domina Excel y Word para mejorar tu empleabilidad.', c: '688000111' },
+                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Mañana Lunes 20, 11:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: '699222333' },
+                                            { t: 'Gestión del Tiempo', i: 'M. López', d: 'Mañana Lunes 20, 18:00', desc: 'Técnicas para organizar tu semana y reducir el estrés laboral.', c: '611444555' },
+                                            { t: 'Networking TGN', i: 'Hub Impulsa', d: 'Mañana Lunes 20, 19:30', desc: 'Encuentro informal para conectar con otros profesionales locales.', c: 'Tabacalera Sala 2' }
                                         ].map((idea, i) => (
                                             <button
                                                 key={i}

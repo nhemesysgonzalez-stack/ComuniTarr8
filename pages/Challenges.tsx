@@ -43,34 +43,34 @@ const Challenges: React.FC = () => {
 
       const mockChallenges: Challenge[] = [
         {
-          id: 'dom-22-ch-1',
+          id: 'dom-19-ch-1',
           creator_id: 'admin',
-          title: '🌅 Se busca líder: Atardecer Miracle Lunes 13',
-          description: 'Buscamos a alguien que tome la iniciativa HOY LUNES (19:15h) para llevar un altavoz o bebidas y dinamizar el grupo en la playa. ¡Gana 100 ComuniPoints por liderar!',
+          title: '🌅 Se busca líder: Atardecer Miracle Domingo 19',
+          description: 'Buscamos a alguien que tome la iniciativa HOY DOMINGO (19:30h) para dinamizar el grupo en el Balcón/Playa. ¡Gana 100 ComuniPoints por liderar el cierre de semana!',
           neighborhood: 'GENERAL',
           contact_info: 'Posteado por Admin (Busca voluntario)',
           is_example: true,
-          created_at: '2026-04-13T08:00:00Z'
+          created_at: '2026-04-19T08:00:00Z'
         },
         {
-          id: 'dom-22-ch-2',
+          id: 'dom-19-ch-2',
           creator_id: 'user2',
-          title: '🥾 Crónica Lunes 13: Camí de Ronda',
-          description: '¡Reto de HOY LUNES! Sube la foto más divertida del grupo durante la caminata de esta mañana. La foto con más likes gana el título de "Cronista del Barrio".',
+          title: '🥾 Crónica Domingo 19: Clausura Dixieland',
+          description: '¡Reto de HOY DOMINGO! Sube la foto más auténtica del concierto de clausura en Pl. de la Font. La foto con más likes gana el título de "Cronista del Barrio".',
           neighborhood: 'GENERAL',
           contact_info: 'Comunidad ComuniTarr',
           is_example: true,
-          created_at: '2026-04-13T09:00:00Z'
+          created_at: '2026-04-19T11:00:00Z'
         },
         {
-          id: 'dom-22-ch-3',
+          id: 'dom-19-ch-3',
           creator_id: 'v4',
-          title: '📦 Solidaridad: Trastos Lunes 13',
-          description: 'Hoy lunes es día de recogida de trastos. El reto es ayudar a al menos un vecino que no pueda bajar sus voluminosos a la calle. ¡Iniciativa vecinal pura!',
-          neighborhood: 'CENTRE',
-          contact_info: 'Coordina con tus vecinos de escalera',
+          title: '📦 Solidaridad: Mercado Bonavista',
+          description: 'Reto de HOY DOMINGO 19: Ayudar a los vecinos mayores con las compras pesadas del mercado de Bonavista. ¡Iniciativa vecinal pura para terminar la semana!',
+          neighborhood: 'PONENT',
+          contact_info: 'Coordina con tus vecinos en el bus L54',
           is_example: true,
-          created_at: '2026-04-13T10:00:00Z'
+          created_at: '2026-04-19T09:00:00Z'
         }
       ];
 
@@ -250,9 +250,9 @@ const Challenges: React.FC = () => {
                   <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
                   <div className="flex flex-wrap gap-2 justify-center">
                     {[
-                      { t: 'Donación de Libros', d: 'Llevamos libros a la biblioteca del barrio para renovar stock infantil esta semana.', c: '977240331' },
-                      { t: 'Paseo con Mayores', d: 'Grupo para pasear con vecinos del barrio que viven solos esta tarde de lunes al salir del trabajo.', c: '655666777' },
-                      { t: 'Limpieza de alcorques', d: 'Iniciativa para limpiar la tierra de los árboles de nuestra calle esta semana por la tarde.', c: '611888222' }
+                      { t: 'Donación de Libros', d: 'Llevamos libros a la biblioteca del barrio para renovar stock infantil esta semana que empieza.', c: '977240331' },
+                      { t: 'Paseo con Mayores', d: 'Grupo para pasear con vecinos del barrio que viven solos esta tarde de Domingo al Serrallo.', c: '655666777' },
+                      { t: 'Limpieza de alcorques', d: 'Iniciativa para limpiar la tierra de los árboles de nuestra calle mañana Lunes por la tarde.', c: '611888222' }
                     ].map((idea, i) => (
                       <button
                         key={i}
