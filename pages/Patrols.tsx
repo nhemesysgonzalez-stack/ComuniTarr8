@@ -49,31 +49,31 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'dom-19-pat-dixie',
+          id: 'tue-21-pat-montaje',
           creator_id: 'admin',
-          name: '🛡️ Seguridad Dixieland: Domingo 19',
-          description: 'Refuerzo de acompañamiento vecinal en las zonas de mayor afluencia por la clausura del festival. Coordinación activa con Guardia Urbana.',
+          name: '🛡️ Prevención Montaje: Martes 21',
+          description: 'Acompañamiento a operarios y libreros durante el montaje nocturno de paradas en la Rambla. Aseguramos que el material esté protegido.',
           neighborhood: 'GENERAL',
-          contact_info: 'Cultura y Seguridad — 611 00 22 33',
-          created_at: '2026-04-19T08:00:00Z'
+          contact_info: 'Seguridad Ciudadana — 611 00 22 33',
+          created_at: '2026-04-21T08:00:00Z'
         },
         {
-          id: 'dom-19-pat-morning',
+          id: 'tue-21-pat-morning',
           creator_id: 'user1',
-          name: '🛡️ Informe Domingo Mañana: OK',
-          description: 'Noche de sábado a domingo sin incidencias destacables en los barrios periféricos. Seguimos con las rondas habituales.',
+          name: '🛡️ Informe Martes Mañana: OK',
+          description: 'Ronda matinal por el centro y barrios. Mucho tráfico en accesos pero sin incidentes de seguridad.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
-          created_at: '2026-04-19T09:00:00Z'
+          created_at: '2026-04-21T09:00:00Z'
         },
         {
-          id: 'dom-19-pat-night',
+          id: 'tue-21-pat-night',
           creator_id: 'user2',
-          name: '🌑 Patrulla Nocturna Domingo 19',
-          description: 'Hoy a las 21:00h realizaremos la ronda de cierre de fin de semana. Especial atención a zonas de parques y descanso vecinal.',
+          name: '🌑 Patrulla Nocturna Martes 21',
+          description: 'Hoy a las 21:00h realizaremos la ronda habitual. Pondremos especial foco en las zonas de carga y descarga de flores.',
           neighborhood: 'GENERAL',
           contact_info: '622 55 44 33 (Maria)',
-          created_at: '2026-04-19T10:00:00Z'
+          created_at: '2026-04-21T10:00:00Z'
         }
       ];
 

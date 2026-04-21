@@ -75,11 +75,11 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '☀️ ¡Feliz Domingo 19 de Abril! Último día del Dixieland Festival y Mercat de Bonavista abierto hasta las 14h.' },
-    { user: 'Meteo TGN', text: '🌤️ Domingo primaveral y despejado. Máxima de 23ºC. ¡Disfrutad del aire libre!' },
-    { user: 'Agenda TGN', text: '🎺 HOY: Clausura del Dixieland Festival con conciertos en plazas y calles.' },
-    { user: 'Bonavista', text: '🧺 Mercat a tope hoy. Recordad el refuerzo de la línea 54 del EMT para llegar.' },
-    { user: 'Cultura', text: '🎭 HOY 19h: Espectáculo "Corta el Cable Rojo" en el Palacio de Congresos. ¡Últimas entradas!' }
+    { user: 'Admin ComuniTarr', text: '🌹 ¡Martes 21 de Abril! Ya se nota Sant Jordi en las calles. ¡A disfrutar de los preparativos!' },
+    { user: 'Meteo TGN', text: '☀️ Tiempo ideal: Cielos despejados y 21ºC. Perfecto para el montaje en la Rambla.' },
+    { user: 'Castellers', text: '🏰 HOY: Ensayos generales pre-Sant Jordi. ¡Ven a ver la piña en Plaça de la Font!' },
+    { user: 'Movilidad', text: '⚠️ Rambla Nova con cortes parciales por montaje de 150 paradas de libros y flores.' },
+    { user: 'Cultura', text: '📚 Novedad: Presentación de libros locales hoy a las 18:30h en el Patio del Ayuntamiento.' }
   ];
 
 
@@ -126,9 +126,9 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Admin', text: '☀️ ¡Buen Domingo 19! Recordad que hoy el mercado de Bonavista está a pleno rendimiento.' },
-        { who: 'Pau T.', text: 'Vengo de allí y hay muchísima gente. ¡Aprovechad el solazo!' },
-        { who: 'Joan B.', text: 'Yo iré luego a la Part Alta a escuchar algo de Dixieland. Planazo de domingo. 🎺' }
+        { who: 'Admin', text: '🌹 ¡Buen Martes 21! ¿Ya habéis fichado vuestro libro para el jueves?' },
+        { who: 'Pau T.', text: 'Yo ya tengo reservado el último de novela negra en La Capona. ¡Qué ganas!' },
+        { who: 'Joan B.', text: 'Esta tarde iré a ver el ensayo de los Xiquets. El espíritu de Sant Jordi ya está aquí. 🏰' }
       ],
       [
         { who: 'Joe R.', text: '✅ Las obras de Av. Roma siguen fuertes. Tomad la T-11 si podéis.' },
@@ -147,8 +147,8 @@ const Forum: React.FC = () => {
     ],
     'EMPLEO': [
       [
-        { who: 'Servicios TGN', text: 'Actualizadas ofertas para la semana entrante. Domingo 19 Abril. 💼' },
-        { who: 'Restaurant Sol', text: 'Buscamos refuerzo extra para hoy domingo al mediodía por el festival. Contactad 600 00 11 22' },
+        { who: 'Servicios TGN', text: 'Actualizadas ofertas para el refuerzo de Sant Jordi. Martes 21 Abril. 💼' },
+        { who: 'Restaurant Sol', text: 'Buscamos camareros extra para el jueves 23. ¡Remuneración especial festival!' },
       ],
     ],
     'ENCUENTROS': [
@@ -264,8 +264,8 @@ const Forum: React.FC = () => {
           { id: 'seed-cloud-100', user_id: 'v19', content: 'He visto mucho movimiento en Bonavista, ¿venden flores hoy?', user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 15).toISOString() },
 
           // Hoy temprano
-          { id: 'seed-cloud-101', user_id: 'v3', content: `☀️ ¡Feliz Domingo 19! Día de sol, Dixieland y mercado de los domingos.`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-04-19T08:00:00Z' },
-          { id: 'seed-cloud-102', user_id: 'v2', content: '🌸 ¡Buenos días! Un domingo espectacular para disfrutar de Tarragona.', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-04-19T10:30:00Z' },
+          { id: 'seed-cloud-101', user_id: 'v3', content: `🌹 Ya se respira Sant Jordi por la Rambla. ¿Sabéis si este año hay firmas de autores locales hoy?`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-04-21T08:00:00Z' },
+          { id: 'seed-cloud-102', user_id: 'v2', content: '🏰 ¡Buenos días! Esta noche ensayo general en la Font. ¡A por la Diada!', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-04-21T10:30:00Z' },
         ] as Message[],
       };
 
@@ -588,9 +588,9 @@ const Forum: React.FC = () => {
           <div>
             <h4 className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 ml-2">Trending Topic</h4>
             <div className="flex flex-wrap gap-2 px-2">
-              <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-lg text-[10px] font-black uppercase">#DixielandTGN</span>
-              <span className="px-3 py-1 bg-emerald-100 text-emerald-600 rounded-lg text-[10px] font-black uppercase">#MercatBonavista</span>
-              <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-lg text-[10px] font-black uppercase">#TarragonaSona</span>
+              <span className="px-3 py-1 bg-red-100 text-red-600 rounded-lg text-[10px] font-black uppercase">#SantJordi2026</span>
+              <span className="px-3 py-1 bg-amber-100 text-amber-600 rounded-lg text-[10px] font-black uppercase">#EnsayosTGN</span>
+              <span className="px-3 py-1 bg-sky-100 text-sky-600 rounded-lg text-[10px] font-black uppercase">#RamblaNova</span>
             </div>
           </div>
 

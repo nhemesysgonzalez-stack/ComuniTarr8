@@ -46,36 +46,36 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'ayuda_mutua',
                     title: '🕊️ Grupo de Apoyo al Duelo (Tarragona)',
                     neighborhood: 'GENERAL',
-                    description: 'Acompañamiento profesional y mutuo para afrontar la pérdida de seres queridos. Encuentros presenciales quincenales apoyados por el COPC. Próxima sesión: Lunes 20 (Mañana).',
+                    description: 'Acompañamiento profesional y mutuo para afrontar la pérdida de seres queridos. Encuentros presenciales quincenales apoyados por el COPC. Sesión especial de Sant Jordi: Jueves 23 (Tarde).',
                     contact_info: '977 24 49 71 (Cita Previa)',
-                    created_at: '2026-04-19T08:00:00Z'
+                    created_at: '2026-04-21T08:00:00Z'
                 },
                 {
                     id: 'real-animales',
                     initiator_id: 'protectora',
                     title: '🐾 Protectora de Animales y Plantas',
                     neighborhood: 'GENERAL',
-                    description: 'Red de cuidadores y voluntarios para rescate. Reunión informativa HOY DOMINGO 19 a las 11:30h en el punto de encuentro habitual para coordinar adopciones.',
+                    description: 'Red de cuidadores y voluntarios para rescate. Reunión informativa MAÑANA MIÉRCOLES 22 a las 11:30h en el punto de encuentro habitual para coordinar el voluntariado de la diada.',
                     contact_info: '619 44 22 11 (WhatsApp Adopciones)',
-                    created_at: '2026-04-19T09:00:00Z'
+                    created_at: '2026-04-21T09:00:00Z'
                 },
                 {
                     id: 'real-siad-dones',
                     initiator_id: 'ayto',
                     title: '🤝 SIAD - Atención y Apoyo a Mujeres',
                     neighborhood: 'GENERAL',
-                    description: 'Servicio público municipal para asesoramiento psicológico y jurídico. Cerrado HOY DOMINGO. Horario Lunes 20: 09:00h a 14:00h.',
+                    description: 'Servicio público municipal para asesoramiento psicológico y jurídico. ABIERTO HOY MARTES 21. Horario: 09:00h a 14:00h y tardes con cita previa.',
                     contact_info: '977 29 62 79 (Plaça de la Font 1)',
-                    created_at: '2026-04-19T09:30:00Z'
+                    created_at: '2026-04-21T09:30:00Z'
                 },
                 {
                     id: 'real-pere-martell',
                     initiator_id: 'associacio',
                     title: '👴 Llar de Jubilats Pere Martell',
                     neighborhood: 'GENERAL',
-                    description: 'Centro para un envejecimiento activo. Actividades MAÑANA LUNES 20: Gimnasia (10h) y Taller de Memoria (17h).',
+                    description: 'Centro para un envejecimiento activo. Actividades HOY MARTES 21: Taller de Lectura Sant Jordi (11h) y Coral (18h).',
                     contact_info: '977 21 55 14 (Tarragona)',
-                    created_at: '2026-04-19T10:00:00Z'
+                    created_at: '2026-04-21T10:00:00Z'
                 }
             ];
 

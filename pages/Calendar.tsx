@@ -59,43 +59,43 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'dom-19-dixieland-final',
-          creator_id: 'ayto',
-          title: "🎺 Gran Clausura Dixieland Festival",
-          description: "Hoy Domingo 19 culmina el festival con un concierto multitudinario en la Plaza de la Font. ¡No faltes!",
-          event_date: '2026-04-19',
-          event_time: '12:00',
-          location: 'Plaza de la Font',
+          id: 'tue-21-castellers-ensayo',
+          creator_id: 'colles',
+          title: "🏰 Ensayo General Sant Jordi",
+          description: "Hoy Martes 21 los Xiquets y la Jove ultiman detalles para la gran diada del jueves. Ensayo abierto en locales y plazas.",
+          event_date: '2026-04-21',
+          event_time: '20:00',
+          location: 'Varios (Part Alta / Centro)',
           category: 'Cultura',
           neighborhood: 'GENERAL',
-          contact_info: 'Cultura Tarragona',
-          created_at: '2026-04-19T08:00:00Z'
+          contact_info: 'Colles Castelleres TGN',
+          created_at: '2026-04-21T08:00:00Z'
         },
         {
-          id: 'dom-19-mercado-bonavista',
+          id: 'thu-23-santjordi',
           creator_id: 'ayto',
-          title: "🧺 Mercado Ambulante de Bonavista",
-          description: "El mercado más grande de la provincia hoy abierto hasta mediodía. Ven a por tus productos frescos y gangas.",
-          event_date: '2026-04-19',
+          title: "🌹 Diada de Sant Jordi 2026",
+          description: "Día de libros y rosas. 150 paradas en Rambla Nova y barrios. Actividades durante todo el día.",
+          event_date: '2026-04-23',
           event_time: '09:00',
-          location: 'Bonavista',
-          category: 'Ocio',
-          neighborhood: 'PONENT',
+          location: 'Rambla Nova',
+          category: 'Fiesta',
+          neighborhood: 'GENERAL',
           contact_info: 'Ayuntamiento de Tarragona',
-          created_at: '2026-04-19T07:00:00Z'
+          created_at: '2026-04-21T07:00:00Z'
         },
         {
-          id: 'lun-20-formacion',
-          creator_id: 'admin',
-          title: "💼 Formación: Herramientas Digitales",
-          description: "Mañana Lunes 20 inicia el curso de digitalización para mayores de 45 años en Tarragona Impulsa.",
-          event_date: '2026-04-20',
-          event_time: '10:00',
-          location: 'Viver de Empresas',
+          id: 'thu-23-sardanes',
+          creator_id: 'cultura',
+          title: "💃 Ballada de Sardanes",
+          description: "Tradicional encuentro sardanista con la Cobla Cossetània en la Plaça Verdaguer.",
+          event_date: '2026-04-23',
+          event_time: '19:00',
+          location: 'Plaça Verdaguer',
           category: 'Cultura',
-          neighborhood: 'GENERAL',
-          contact_info: 'Tarragona Impulsa',
-          created_at: '2026-04-19T09:00:00Z'
+          neighborhood: 'CENTRE',
+          contact_info: 'Cultura TGN',
+          created_at: '2026-04-21T09:00:00Z'
         }
       ];
 

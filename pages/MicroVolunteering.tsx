@@ -42,31 +42,31 @@ const MicroVolunteering: React.FC = () => {
 
             const realOpportunitiesExamples: VolunteerOpportunity[] = [
                 {
-                    id: 'dom-19-vol-dixie',
+                    id: 'tue-21-vol-santjordi',
                     creator_id: 'v8',
-                    title: '🎺 Voluntarios Hoy: Clausura Dixieland',
-                    description: 'Necesitamos 2 personas para ayudar en el punto de información de Pl. de la Font durante el concierto de clausura HOY DOMINGO 19 (11:30-13:30h).',
+                    title: '🌹 Voluntarios Mañana: Montaje paradas',
+                    description: 'Necesitamos 3 personas para colaborar con los puestos locales en la descarga y montaje de estanterías en Rambla Nova mañana MIÉRCOLES 22 (09:00-11:00h).',
                     neighborhood: 'GENERAL',
                     contact_info: '644 11 22 33 (Luis). ¡Gracias!',
-                    created_at: '2026-04-19T07:00:00Z'
+                    created_at: '2026-04-21T07:00:00Z'
                 },
                 {
-                    id: 'dom-19-vol-bonavista',
+                    id: 'tue-21-vol-rosas',
                     creator_id: 'v9',
-                    title: '♻️ Apoyo Recogida Bonavista',
-                    description: 'Al terminar el mercado de hoy Domingo 19, haremos una recogida rápida de plásticos en la zona perimetral. ¿Alguien se une a las 14:30h?',
-                    neighborhood: 'PONENT',
-                    contact_info: '611 00 22 33 (Paco). Nos vemos en la entrada principal.',
-                    created_at: '2026-04-19T08:00:00Z'
+                    title: '📦 Reparto Rosas a Domicilio',
+                    description: 'Buscamos voluntarios para llevar rosas a vecinos con movilidad reducida este JUEVES 23 tarde. Coordinación hoy Martes 21.',
+                    neighborhood: 'CENTRE',
+                    contact_info: '611 00 22 33 (Paco). Reunión en local vecinal.',
+                    created_at: '2026-04-21T08:00:00Z'
                 },
                 {
-                    id: 'dom-19-vol-compañia',
+                    id: 'tue-21-vol-libros',
                     creator_id: 'v10',
-                    title: '👴 Acompañamiento Domingo Tarde',
-                    description: 'Vecino mayor busca acompañante para paseo tranquilo por el Serrallo hoy Domingo 19 a las 18:00h.',
-                    neighborhood: 'CENTRE',
-                    contact_info: '977 12 34 56 (Servicios Sociales)',
-                    created_at: '2026-04-19T09:00:00Z'
+                    title: '📚 Donación Libros: Biblioteca SPiSP',
+                    description: 'Ayuda para clasificar libros donados para el mercadillo solidario de Sant Jordi hoy Martes 21 a las 17:30h.',
+                    neighborhood: 'Sant Pere i Sant Pau',
+                    contact_info: '977 12 34 56 (Biblio SPiSP)',
+                    created_at: '2026-04-21T09:00:00Z'
                 }
             ];
 
@@ -248,10 +248,10 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Ayuda Paseo', d: 'Busco voluntario para acompañar a persona mayor a pasear DOMINGO 19 por el Serrallo a las 18h.', c: '644 33 22 11' },
-                                            { t: 'Paseo Perro', d: '¿Algún vecino pasea su perro por la zona del Eixample y puede sacar al mío hoy tarde? No puedo salir DOMINGO 19.', c: '633 44 55 66' },
-                                            { t: 'Ayuda Móvil', d: 'Busco alguien que me enseñe a instalar la app ComuniTarr a un vecino mayor hoy DOMINGO 19 tarde.', c: '611 22 33 44' },
-                                            { t: 'Vermut Dixie', d: '¿Algún vecino/a va al concierto clausura DOMINGO 19? Me gustaría ir acompañado.', c: 'Foro · Canal General' }
+                                            { t: 'Ayuda Montaje', d: 'Busco 1-2 personas para ayudar a descargar cajas de libros mañana MIÉRCOLES 22 a las 08:30 en la Rambla.', c: '644 33 22 11' },
+                                            { t: 'Paseo Perro', d: '¿Algún vecino puede sacar a mi perro mañana JUEVES 23? Estaré trabajando todo el día en el puesto de libros.', c: '633 44 55 66' },
+                                            { t: 'Ayuda Móvil', d: 'Enseñar a usar la app de reservas de Sant Jordi a vecinos mayores hoy MARTES 21 tarde.', c: '611 22 33 44' },
+                                            { t: 'Ensayo Castells', d: '¿Quién va al ensayo de hoy MARTES 21? Me gustaría ir por primera vez acompañado.', c: 'Foro · Canal Cultura' }
                                         ].map((idea, i) => (
 
                                             <button

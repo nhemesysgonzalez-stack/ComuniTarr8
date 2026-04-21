@@ -11,17 +11,17 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 416, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: '☀️ ¡Qué solazo hoy Domingo 19! Ideal para bajar al Mercat de Bonavista.', neighborhood: 'Campclar' },
-    { id: 417, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: '¿Alguien va a la Part Alta a la clausura del Dixieland? 🎺', neighborhood: 'Torreforta' },
-    { id: 418, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: '¡Mañana Lunes 20 vuelven las clases! Disfrutad del domingo. 📚', neighborhood: 'Part Alta' },
-    { id: 419, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Vermut dominical en Pl. de la Font, el ambiente está increíble. 🍹', neighborhood: 'Eixample' }
+    { id: 416, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: '🌹 ¿Alguien sabe dónde encargan las mejores rosas este año? Ya falta poco para el jueves.', neighborhood: 'Campclar' },
+    { id: 417, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'He pasado por la Rambla y ya están marcando los sitios para las paradas. ¡Qué ganas!', neighborhood: 'Eixample' },
+    { id: 418, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: 'Martes de entrenamiento casteller. ¡Hoy ensayo general para el jueves!', neighborhood: 'SPiSP' },
+    { id: 419, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: '¿Os apuntáis al maratón de lectura del jueves? Yo ya me he inscrito. 📚', neighborhood: 'Part Alta' }
 ];
 
 const tickerMessages = [
-    "🎺 CLAUSURA: HOY 12:00h Concierto final Dixieland Festival en la Plaza de la Font.",
-    "🧺 BONAVISTA: Mercado ambulante abierto hasta las 14:00h. Refuerzo Bus L54.",
-    "☀️ TIEMPO: Domingo 19 despejado. Máxima de 23ºC. Día perfecto de playa.",
-    "💼 EMPLEO: Actualizadas ofertas de hostelería para la temporada. Revisa la sección."
+    "🌹 SANT JORDI: 150 paradas de libros y rosas en Rambla Nova este Jueves 23 (9h-20h).",
+    "📚 MARATÓN LECTURA: Abierta la inscripción para leer en voz alta este jueves al mediodía.",
+    "☀️ TIEMPO: Martes 21 despejado. Máxima de 21ºC. Viento de Mestral flojo.",
+    "🚧 AVISO: Restricciones de aparcamiento en Rambla Nova por montaje de Sant Jordi."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

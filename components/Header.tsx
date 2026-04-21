@@ -223,15 +223,20 @@ export const Header: React.FC = () => {
                     <button onClick={() => setShowNotifications(false)} className="material-symbols-outlined text-gray-400">close</button>
                   </div>
                   <div className="space-y-3">
-                    {mockNotifications.map(n => (
-                      <div key={n.id} className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
-                        <span className={`material-symbols-outlined text-lg ${n.color}`}>{n.icon}</span>
-                        <div>
-                          <p className="text-[10px] font-black dark:text-white leading-none mb-1">{n.title}</p>
-                          <p className="text-[9px] text-gray-500 line-clamp-1">{n.desc}</p>
-                        </div>
+                    <div className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
+                      <span className="material-symbols-outlined text-lg text-rose-500">auto_stories</span>
+                      <div>
+                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Cerca de Sant Jordi</p>
+                        <p className="text-[9px] text-gray-500 line-clamp-1">150 paradas este jueves en la Rambla Nova.</p>
                       </div>
-                    ))}
+                    </div>
+                    <div className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
+                      <span className="material-symbols-outlined text-lg text-amber-500">warning</span>
+                      <div>
+                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Aviso Montaje</p>
+                        <p className="text-[9px] text-gray-500 line-clamp-1">Estructuras en Rambla. Evitad carga y descarga.</p>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               )}
@@ -247,13 +252,10 @@ export const Header: React.FC = () => {
       {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA + NUEVO MAPA SOCIAL */}
       <div className="bg-purple-600 dark:bg-purple-900 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] py-2 overflow-hidden flex items-center whitespace-nowrap z-50 shadow-md">
         <div className="animate-marquee flex gap-12 sm:gap-24 items-center">
-          <span className="flex items-center gap-2 text-yellow-300">📍 ¡NUEVO MAPA SOCIAL! Deja un pin con el plan que te apetece hacer hoy y encuentra vecinos para unirse.</span>
-          <span className="flex items-center gap-2">⚠️ PLASEQTA: Simulacro de sirenas en Polígono Sur a las 11:00h, no alarmarse</span>
-          <span className="flex items-center gap-2">📍 ¡NUEVO MAPA SOCIAL! No te quedes en casa, pon tu pin y conecta hoy mismo.</span>
-          <span className="flex items-center gap-2">🚗 TRÁFICO: Retenciones habituales en acceso T-11 por obras de la A-7.</span>
-
-          <span className="flex items-center gap-2 text-yellow-300">📍 ¡NUEVO MAPA SOCIAL! Deja un pin con el plan que te apetece hacer hoy y encuentra vecinos para unirse.</span>
-          <span className="flex items-center gap-2">⚠️ PLASEQTA: Simulacro de sirenas en Polígono Sur a las 11:00h, no alarmarse</span>
+          <span className="flex items-center gap-2 text-yellow-300">📍 SANT JORDI 2026: 150 paradas de libros y rosas en Rambla Nova este jueves (9h-20h).</span>
+          <span className="flex items-center gap-2">⚠️ TRÁFICO: Cortes parciales en tramos de Rambla Nova por montaje de paradas hoy Martes.</span>
+          <span className="flex items-center gap-2">🌹 ROSAS SOLIDARIAS: Reserva tu rosa en el mercado municipal y apoya a las entidades locales.</span>
+          <span className="flex items-center gap-2">📚 MARATÓN DE LECTURA: Abierta inscripción para leer en voz alta este jueves al mediodía.</span>
         </div>
       </div>
 
@@ -335,7 +337,7 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase">Jueves 16 Abr 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Martes 21 Abril 2026</span>
                   <span className="text-xs font-black dark:text-white uppercase">AEMET: Despejado 21ºC</span>
                 </div>
               </div>

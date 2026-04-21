@@ -73,28 +73,28 @@ const Polls: React.FC = () => {
 
             const mockPolls: Poll[] = [
                 {
-                    id: 'dom-19-poll-1',
+                    id: 'tue-21-poll-stjordi',
                     creator_id: 'v1',
-                    title: '🎺 ¿Qué te ha parecido la clausura del Dixieland hoy Domingo 19? 🎷',
-                    options: ['Espectacular concierto final', 'Muy bien organizado', 'Falta más música en barrios', 'No he podido asistir'],
+                    title: '🌹 ¿Qué te parece el nuevo diseño para las paradas de Sant Jordi en la Rambla?',
+                    options: ['Mucho más espacioso y cómodo', 'Me gustaba más antes', 'Faltan más zonas de sombra', 'No he pasado aún por allí'],
                     neighborhood: 'GENERAL',
-                    created_at: '2026-04-19T08:00:00Z'
+                    created_at: '2026-04-21T08:00:00Z'
                 },
                 {
-                    id: 'dom-19-poll-2',
+                    id: 'tue-21-poll-castells',
                     creator_id: 'v2',
-                    title: '🧺 ¿Has ido hoy al Mercado de Bonavista?',
-                    options: ['Sí, he comprado de todo', 'He ido a dar un paseo', 'No, demasiada gente hoy', 'Prefiero el mercado de los martes'],
+                    title: '🏰 ¿Asistirás a la Diada de Sant Jordi en la Plaça de la Font?',
+                    options: ['¡Allí estaré animando!', 'Lo veré desde el balcón o TV', 'Estaré trabajando', 'No me interesan los castells'],
                     neighborhood: 'GENERAL',
-                    created_at: '2026-04-19T09:00:00Z'
+                    created_at: '2026-04-21T09:00:00Z'
                 },
                 {
-                    id: 'dom-19-poll-3',
+                    id: 'tue-21-poll-books',
                     creator_id: 'v3',
-                    title: '🌅 Plan para este Domingo 19 tarde:',
-                    options: ['Paseo por el Serrallo / Moll de Costa', 'Deporte por el Miracle', 'Tarde de sofá y Netflix', 'Preparar la semana laboral'],
+                    title: '📚 ¿Dónde prefieres comprar tus libros este jueves?',
+                    options: ['En las paradas de la Rambla Nova', 'En la librería de mi barrio', 'Prefiero el mercado de libros antiguos', 'Este año no compraré libros'],
                     neighborhood: 'GENERAL',
-                    created_at: '2026-04-19T10:00:00Z'
+                    created_at: '2026-04-21T10:00:00Z'
                 }
             ];
 

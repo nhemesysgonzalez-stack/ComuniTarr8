@@ -58,34 +58,34 @@ const Incidents: React.FC = () => {
             if (data) {
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'dom-19-dixie-traffic',
+                        id: 'tue-21-stjordi-rambla',
                         user_id: 'admin',
-                        title: '🎺 Clausura Dixieland: Tráfico',
-                        description: 'Hoy Domingo 19 cortes puntuales en accesos a Plaza de la Font por concierto de clausura (11h-14h).',
+                        title: '⚠️ Montaje Sant Jordi: Rambla Nova',
+                        description: 'Corte parcial de carriles laterales en la Rambla Nova (tramos 2 y 3) por montaje de estructuras para las paradas del jueves. Precaución.',
                         status: 'in_progress',
                         neighborhood: 'CENTRE',
-                        created_at: '2026-04-19T08:00:00Z',
-                        profiles: { full_name: 'Ayuntamiento TGN', avatar_url: '/logo.svg' }
+                        created_at: '2026-04-21T07:30:00Z',
+                        profiles: { full_name: 'Guàrdia Urbana TGN', avatar_url: '/logo.svg' }
                     },
                     {
-                        id: 'dom-19-cleaning-bonavista',
-                        user_id: 'v4',
-                        title: '🧹 Limpieza Post-Mercado',
-                        description: 'Dispositivo especial de limpieza en Bonavista activado tras el mercadillo de hoy Domingo 19.',
-                        status: 'in_progress',
-                        neighborhood: 'PONENT',
-                        created_at: '2026-04-19T14:00:00Z',
-                        profiles: { full_name: 'EcoTarraco', avatar_url: 'https://i.pravatar.cc/150?u=man' }
+                        id: 'tue-21-water-plan',
+                        user_id: 'admin',
+                        title: '🚰 EMATSA: Obra de Mejora (SPiSP)',
+                        description: 'Afectación puntual en el tramo final de la calle principal por conexión de nueva tubería. Suministro restablecido a las 02:00h de hoy.',
+                        status: 'resolved',
+                        neighborhood: 'Sant Pere i Sant Pau',
+                        created_at: '2026-04-21T02:00:00Z',
+                        profiles: { full_name: 'Mantenimiento TGN', avatar_url: 'https://i.pravatar.cc/150?u=water' }
                     },
                     {
-                        id: 'dom-19-water-notice',
-                        user_id: 'v5',
-                        title: '🚰 Aviso EMATSA: Mañana Lunes',
-                        description: 'Programado corte de suministro por mejora de red para MAÑANA LUNES 20 en zona Sant Pere i Sant Pau (C/ Principal).',
+                        id: 'tue-21-plaça-rei-castells',
+                        user_id: 'v12',
+                        title: '🏰 Restricción Paso: Plaça del Rei',
+                        description: 'Ensayo general de la Jove esta tarde-noche (19:30h). Se recomienda evitar el acceso con vehículos a la plaza y alrededores.',
                         status: 'open',
-                        neighborhood: 'SPiSP',
-                        created_at: '2026-04-19T10:00:00Z',
-                        profiles: { full_name: 'Mantenimiento TGN', avatar_url: 'https://i.pravatar.cc/150?u=parque' }
+                        neighborhood: 'Part Alta',
+                        created_at: '2026-04-21T09:00:00Z',
+                        profiles: { full_name: 'Marta (Vecina Part Alta)', avatar_url: 'https://i.pravatar.cc/150?u=woman' }
                     }
                 ];
 

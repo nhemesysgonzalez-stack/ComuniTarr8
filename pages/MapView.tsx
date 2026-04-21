@@ -8,10 +8,10 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 'plan-1', type: 'ocio', x: '45%', y: '45%', title: '🎺 Dixieland Domingo 19', desc: '¡Es el último día del festival! Voy a la Plaza de la Font a ver el concierto de clausura. ¿Quién se apunta a un vermut?', status: 'Ahora mismo', color: 'bg-orange-500', icon: 'theater_comedy', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.3)]', creator_name: 'David R.' },
-    { id: 'plan-2', type: 'deporte', x: '65%', y: '70%', title: '🏃 Running Domingo 19 (18h)', desc: 'Saldré a trotar por la Vía Augusta y la playa del Miracle. Plan tranquilo de domingo tarde.', status: 'Hoy 18:00', color: 'bg-blue-500', icon: 'directions_run', creator_name: 'Marta G.' },
-    { id: 'plan-3', type: 'mascotas', x: '55%', y: '35%', title: '🐶 Paseo Perruno Domingo', desc: 'Saldré con mi perro por la zona del Serrallo. Si alguien quiere que los peques peludos jueguen, avisad.', status: 'En 30 mins', color: 'bg-purple-500', icon: 'pets', creator_name: 'Carlos M.' },
-    { id: 'plan-4', type: 'ocio', x: '48%', y: '50%', title: '🧺 Mercat de Bonavista', desc: 'Estaré por el mercado de Bonavista hasta las 13:30h. Si alguien quiere quedar para un café por allí, ¡aviso!', status: 'Hasta las 14h', color: 'bg-orange-500', icon: 'shopping_basket', creator_name: 'Laura B.' }
+    { id: 'plan-1', type: 'ocio', x: '45%', y: '45%', title: '🏰 Quedada Ensayos Martes 21', desc: '¡Hoy hay ensayo general de las colles! Estaremos por la Plaza de la Font desde las 19:30h. ¿Quién viene?', status: 'Hoy 19:30', color: 'bg-orange-500', icon: 'theater_comedy', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.3)]', creator_name: 'David R.' },
+    { id: 'plan-2', type: 'deporte', x: '65%', y: '70%', title: '🏃 Running Martes (19h)', desc: 'Trote por el Miracle para estirar antes de la caminata del jueves por la Rambla.', status: 'Hoy 19:00', color: 'bg-blue-500', icon: 'directions_run', creator_name: 'Marta G.' },
+    { id: 'plan-3', type: 'mascotas', x: '55%', y: '35%', title: '🐶 Paseo Pre-Sant Jordi', desc: 'Saldré con Cooper por el Parc de la Ciutat. Veremos si ya están montando las paradas de flores.', status: 'En 15 mins', color: 'bg-purple-500', icon: 'pets', creator_name: 'Carlos M.' },
+    { id: 'plan-4', type: 'ocio', x: '48%', y: '50%', title: '🌹 Voluntarios Reparto', desc: 'Reunión rápida para coordinar el reparto de rosas a vecinos mayores de la Part Alta.', status: 'Hoy 18:00', color: 'bg-emerald-500', icon: 'volunteer_activism', creator_name: 'Laura B.' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

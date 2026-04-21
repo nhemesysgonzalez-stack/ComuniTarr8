@@ -48,40 +48,40 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'dom-19-empleo',
-                    title: '💼 Charla: Empleo Joven TGN',
-                    instructor: 'Tarragona Impulsa',
-                    date: 'MAÑANA Lunes 20 Abr, 17:00h',
-                    description: 'Sesión informativa para jóvenes sobre cómo afrontar la primera entrevista y buscar en el sector servicios local. Ideal para el inicio de semana.',
-                    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80',
-                    spots: 20,
+                    id: 'tue-21-stjordi-crafts',
+                    title: '🌹 Taller: Rosas de Sant Jordi (Manualidades)',
+                    instructor: 'Asociación Vecinal',
+                    date: 'HOY Martes 21 Abr, 17:30h',
+                    description: 'Aprende a hacer rosas de papel y materiales reciclables para regalar este jueves. Para todas las edades, materiales incluidos.',
+                    image: 'https://images.unsplash.com/photo-1562184552-997c461abbe6?auto=format&fit=crop&w=800&q=80',
+                    spots: 15,
                     neighborhood: 'CENTRE',
-                    contact_info: 'C.C. Centre - Plaça de la Font',
-                    created_at: '2026-04-19T08:00:00Z'
+                    contact_info: 'Local Social - C/ Mayor',
+                    created_at: '2026-04-21T08:00:00Z'
                 },
                 {
-                    id: 'dom-19-tech',
-                    title: '📱 Taller: Trámites con el Móvil',
-                    instructor: 'Maria P.',
-                    date: 'MAÑANA Lunes 20 Abr, 11:00h',
-                    description: 'Aprende a usar la Carpeta Ciudadana y pedir citas médicas desde tu smartphone. Especial para mayores que quieran aprender esta semana.',
-                    image: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80',
-                    spots: 12,
-                    neighborhood: 'PONENT',
-                    contact_info: 'Biblioteca de Ponent',
-                    created_at: '2026-04-19T09:00:00Z'
+                    id: 'tue-21-castells-intro',
+                    title: '🏰 Taller: Iniciación a la "Pinya"',
+                    instructor: 'Xiquets de TGN',
+                    date: 'HOY Martes 21 Abr, 19:30h',
+                    description: '¿Quieres ayudar en la diada de Sant Jordi? Ven al ensayo abierto y aprende cómo posicionarte de forma segura en la base de un castell.',
+                    image: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=800&q=80',
+                    spots: 50,
+                    neighborhood: 'PART ALTA',
+                    contact_info: 'Carrer de Santa Anna',
+                    created_at: '2026-04-21T09:00:00Z'
                 },
                 {
-                    id: 'dom-19-yoga',
-                    title: '🧘 Yoga al amanecer en la playa',
+                    id: 'tue-21-yoga-relax',
+                    title: '🧘 Yoga Pre-Diada: Respira y Disfruta',
                     instructor: 'Elena V.',
-                    date: 'MAÑANA Lunes 20 Abr, 07:30h',
-                    description: 'Empieza la semana con energía. Ven con esterilla y ropa cómoda a la Playa de la Arrabassada para recibir al sol del lunes.',
+                    date: 'Mañana Miércoles 22 Abr, 08:30h',
+                    description: 'Sesión de relajación antes del ajetreo del jueves. Ven a estirar y encontrar calma en el Balcón del Mediterráneo.',
                     image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
-                    spots: 25,
+                    spots: 20,
                     neighborhood: 'GENERAL',
-                    contact_info: 'Punto: Chiringuito 1',
-                    created_at: '2026-04-19T10:00:00Z'
+                    contact_info: 'Punto: Balcó del Mediterrani',
+                    created_at: '2026-04-21T10:00:00Z'
                 }
             ];
 

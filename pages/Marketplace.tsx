@@ -57,40 +57,40 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'dom-19-desk',
+          id: 'tue-21-books',
           user_id: 'v12',
-          title: '💻 Escritorio Oficina (Casi nuevo)',
-          description: 'Mesa amplia ideal para despacho o estudios. Sigue disponible este Domingo 19. Medidas 140x80. 📞 633 11 22 33',
-          price: '45',
-          category: 'hogar',
+          title: '📚 Lote 5 Libros (Ideal Sant Jordi)',
+          description: 'Novela negra y romántica en perfecto estado. Los vendo para hacer espacio para los nuevos de este jueves. 📞 633 11 22 33',
+          price: '20',
+          category: 'ocio',
           neighborhood: 'CENTRE',
           contact_info: '633 11 22 33 (Pau)',
-          image_url: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-04-19T08:00:00Z'
+          image_url: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80',
+          created_at: '2026-04-21T08:00:00Z'
         },
         {
-          id: 'dom-19-monitor',
+          id: 'tue-21-bike',
           user_id: 'v1',
-          title: '🖥️ Monitor 24" para Teletrabajo',
-          description: 'SAMSUNG Full HD. Ideal para empezar con fuerza mañana Lunes. Muy poco uso. 📞 977 44 55 66',
-          price: '60',
-          category: 'tech',
+          title: '🚲 Bicicleta de Paseo (Cesta incluida)',
+          description: 'Perfecta para moverte por Tarragona sin preocuparte por los cortes de tráfico del jueves. 📞 977 44 55 66',
+          price: '85',
+          category: 'ocio',
           neighborhood: 'PONENT',
           contact_info: '977 44 55 66 (Maria)',
-          image_url: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-04-19T09:00:00Z'
+          image_url: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80',
+          created_at: '2026-04-21T09:00:00Z'
         },
         {
-          id: 'dom-19-chair',
+          id: 'tue-21-ipad',
           user_id: 'v2',
-          title: '💺 Silla Ergonómica Pro',
-          description: 'Silla de oficina cómoda con soporte lumbar. Recogida hoy Domingo 19 en Sant Pere. 📞 622 88 77 66',
-          price: '35',
-          category: 'hogar',
+          title: '📱 iPad Air (M1) 64GB',
+          description: 'Para leer tus ebooks este Sant Jordi. Factura y garantía. Impecable. 📞 622 88 77 66',
+          price: '380',
+          category: 'tech',
           neighborhood: 'SANT PERE',
           contact_info: '622 88 77 66 (Sergio)',
-          image_url: 'https://images.unsplash.com/photo-1505797149-43c0c3260751?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-04-19T10:00:00Z'
+          image_url: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=800&q=80',
+          created_at: '2026-04-21T10:00:00Z'
         }
       ];
 
@@ -188,9 +188,9 @@ const Marketplace: React.FC = () => {
             <span className="px-3 py-1 bg-emerald-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">ALQUILER MENSUAL</span>
             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">PARTICULAR - EIXAMPLE</span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Habitación en piso compartido 🏠</h2>
+          <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Habitación libre para Mayo 🏠</h2>
           <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed">
-            Habitación luminosa en piso de 3 personas. Zona Eixample, muy céntrico. Incluye gastos. Perfil tranquilo y responsable. Disponible para entrar MAÑANA LUNES 20 ABR.
+            Habitación luminosa en piso de 3 personas. Zona Eixample, muy céntrico. Incluye gastos. Perfil tranquilo y responsable. Disponible para entrar el 1 de MAYO. ¡Ven a verla esta semana de Sant Jordi!
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="tel:638991122" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">

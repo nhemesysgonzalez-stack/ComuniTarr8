@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'dom-19-s1', user_name: 'Ana T.', content: '🎺 Vermut y Jazz en la Plaça de la Font. ¡La clausura del Dixieland está siendo increíble! HOY DOMINGO 19. #Tarragona #Jazz #Dixie', image_url: 'https://images.unsplash.com/photo-1551632811-561732d1e306', likes: 245, created_at: '2026-04-19T12:00:00Z' },
-            { id: 'dom-19-s2', user_name: 'Joan R.', content: '🧺 Mañana de mercado en Bonavista. ¡Hacía tiempo que no veía tanta gente un Domingo! ☀️ #Bonavista #Tarragona #Mercadillo', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 312, created_at: '2026-04-19T10:30:00Z' },
-            { id: "dom-19-s3", user_name: "Marc G.", content: "🌞 Día perfecto de playa en la Arrabassada. El agua ya empieza a estar buena. ¡Feliz Domingo 19! 🏖️ #TGN #Playa #Domingo", image_url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174", likes: 189, created_at: '2026-04-19T11:00:00Z' },
-            { id: 'dom-19-s4', user_name: 'Pilar S.', content: '☕ Domingo de relax total antes de empezar la semana. ¡Disfrutad lo que queda de sol! #Relax #Tarragona #Ponent', image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445', likes: 156, created_at: '2026-04-19T13:30:00Z' }
+            { id: 'tue-21-s1', user_name: 'Ana T.', content: '🌹 Preparando Sant Jordi. La Rambla Nova ya tiene las paradas casi a punto. ¡Qué ganas de que sea jueves! HOY MARTES 21. #Tarragona #SantJordi2026 #Rambla', image_url: 'https://images.unsplash.com/photo-1722520592113-1f681393cd8d', likes: 156, created_at: '2026-04-21T12:00:00Z' },
+            { id: 'tue-21-s2', user_name: 'Joan R.', content: '🏗️ Montaje a tope en el centro. Este año hay muchísimas paradas de libros. #SantJordi2026 #Tarragona', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 89, created_at: '2026-04-21T10:30:00Z' },
+            { id: "tue-21-s3", user_name: "Marc G.", content: "🏰 Ensayo de los Xiquets de TGN para la diada del jueves. ¡Se respira emoción en la Plaça de la Font! #Castells #TGN #SantJordi", image_url: "https://images.unsplash.com/photo-1544027993-37dbfe43562a", likes: 210, created_at: '2026-04-21T19:00:00Z' },
+            { id: 'tue-21-s4', user_name: 'Pilar S.', content: '📚 Mi primer libro de esta semana. Empezando fuerte los preparativos de Sant Jordi. #Lectura #Tarragona #Ponent', image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445', likes: 124, created_at: '2026-04-21T13:30:00Z' }
         ];
 
 
