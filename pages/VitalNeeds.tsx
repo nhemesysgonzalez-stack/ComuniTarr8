@@ -46,37 +46,37 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'tue-21-medical',
+                    id: 'sun-26-medical',
                     creator_id: 'v5',
                     type: 'medical',
-                    title: '💊 Medicación Urgente (Martes 21)',
-                    description: 'Necesito una medicación de la farmacia de guardia para HOY MARTES. No tengo como desplazarme hasta la Av. Països Catalans. 📞 644 33 22 11 (Pere)',
+                    title: '💊 Farmacia de Guardia',
+                    description: 'Necesito una caja de paracetamol de la farmacia de guardia. Estoy con un trancazo y no puedo conducir con esta niebla hasta el centro. 📞 644 33 22 11 (Pere)',
                     contact_info: '644 33 22 11 (Pere)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
-                    created_at: '2026-04-21T07:00:00Z'
+                    created_at: '2026-04-26T07:00:00Z'
                 },
                 {
-                    id: 'tue-21-food',
+                    id: 'sun-26-food',
                     creator_id: 'v6',
                     type: 'food',
-                    title: '🛒 Recado: Ayuda Compra Doña Amalia',
-                    description: 'Doña Amalia necesita ayuda con la compra semanal hoy MARTES. Vive sola en la Part Alta. 📞 622 88 77 66 (Sandra)',
+                    title: '🛒 Compra Domingo',
+                    description: 'Doña Amalia necesita algunos básicos del súper abierto hoy domingo. Vive en la Part Alta. 📞 622 88 77 66 (Sandra)',
                     contact_info: '622 88 77 66 (Sandra)',
                     is_urgent: false,
                     neighborhood: 'PART ALTA',
-                    created_at: '2026-04-21T08:30:00Z'
+                    created_at: '2026-04-26T08:30:00Z'
                 },
                 {
-                    id: 'tue-21-company',
+                    id: 'sun-26-company',
                     creator_id: 'v8',
                     type: 'company',
-                    title: '🚶 Acompañamiento: Paseo Martes Tarde',
-                    description: 'Busco vecino/a para acompañar a pasear por el Balcón del Mediterráneo HOY MARTES 21 a las 18:30h. 📞 611 22 33 44 (Elena)',
+                    title: '🚶 Acompañamiento: Paseo Domingo Tarde',
+                    description: 'Busco alguien para dar un paseo por la escollera. Necesito mover las piernas tras la comida de domingo. 📞 611 22 33 44 (Elena)',
                     contact_info: '611 22 33 44 (Elena)',
-                    is_urgent: true,
-                    neighborhood: 'CENTRE',
-                    created_at: '2026-04-21T10:00:00Z'
+                    is_urgent: false,
+                    neighborhood: 'Serrallo',
+                    created_at: '2026-04-26T10:00:00Z'
                 }
             ];
 

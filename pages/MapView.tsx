@@ -8,10 +8,10 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 'plan-1', type: 'ocio', x: '45%', y: '45%', title: '🏰 Quedada Ensayos Martes 21', desc: '¡Hoy hay ensayo general de las colles! Estaremos por la Plaza de la Font desde las 19:30h. ¿Quién viene?', status: 'Hoy 19:30', color: 'bg-orange-500', icon: 'theater_comedy', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.3)]', creator_name: 'David R.' },
-    { id: 'plan-2', type: 'deporte', x: '65%', y: '70%', title: '🏃 Running Martes (19h)', desc: 'Trote por el Miracle para estirar antes de la caminata del jueves por la Rambla.', status: 'Hoy 19:00', color: 'bg-blue-500', icon: 'directions_run', creator_name: 'Marta G.' },
-    { id: 'plan-3', type: 'mascotas', x: '55%', y: '35%', title: '🐶 Paseo Pre-Sant Jordi', desc: 'Saldré con Cooper por el Parc de la Ciutat. Veremos si ya están montando las paradas de flores.', status: 'En 15 mins', color: 'bg-purple-500', icon: 'pets', creator_name: 'Carlos M.' },
-    { id: 'plan-4', type: 'ocio', x: '48%', y: '50%', title: '🌹 Voluntarios Reparto', desc: 'Reunión rápida para coordinar el reparto de rosas a vecinos mayores de la Part Alta.', status: 'Hoy 18:00', color: 'bg-emerald-500', icon: 'volunteer_activism', creator_name: 'Laura B.' }
+    { id: 'plan-1', type: 'ocio', x: '45%', y: '55%', title: '💃 Feria Abril Bonavista (17h)', desc: 'La 32a edició de la Feria de Abril ya está abierta en Bonavista. Sevillanas, gastronomía andaluza, casetas y música hasta las 2h. ¡El plan de la semana!', status: 'Hoy 17h-02h', color: 'bg-red-500', icon: 'celebration', glow: 'shadow-[0_0_50px_rgba(239,68,68,0.3)]', creator_name: 'Feria TGN 2026' },
+    { id: 'plan-2', type: 'deporte', x: '65%', y: '70%', title: '🏃 Running Viernes (19h)', desc: 'Sesión de trote por la playa del Miracle para cerrar la semana con energía. Salida desde el Anfiteatro.', status: 'Hoy 19:00', color: 'bg-blue-500', icon: 'directions_run', creator_name: 'Marta G.' },
+    { id: 'plan-3', type: 'cultura', x: '30%', y: '40%', title: '🖼️ Expo "Escenaris" (Teatre TGN)', desc: 'Exposición fotográfica sobre los escenarios más emblemáticos de la ciudad. Entrada libre. Hasta el 9 de mayo.', status: 'Abierto hasta 20h', color: 'bg-purple-500', icon: 'photo_camera', creator_name: 'Teatre Tarragona' },
+    { id: 'plan-4', type: 'ocio', x: '55%', y: '35%', title: '🏰 Visita Romà Teatralizada (Sáb)', desc: 'Mañana sábado a las 12h ensayo de gladiadores en el Anfiteatro Romano. Entradas en taquilla o Tarragona Turisme.', status: 'Mañ. 12:00', color: 'bg-emerald-500', icon: 'history_edu', creator_name: 'Tarragona Turisme' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

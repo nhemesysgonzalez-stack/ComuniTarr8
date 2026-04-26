@@ -145,40 +145,40 @@ const Announcements: React.FC = () => {
 
             const realBulletins: Announcement[] = [
                 {
-                    id: 'tue-21-santjordi',
-                    title: '🌹 Sant Jordi 2026: Preparativos (Hoy)',
-                    content: 'Tarragona se viste de fiesta. Hoy Martes 21 empieza el marcaje de los 150 espacios en Rambla Nova. El jueves será el gran día con libros y rosas de 9h a 20h.',
+                    id: 'sun-26-feria',
+                    title: '💃 Feria de Abril Bonavista (Hoy Domingo)',
+                    content: 'La 32a edición de la Feria de Abril sigue abierta HOY DOMINGO. De 17h a 02h. Sevillanas, gastronomía andaluza, música en vivo y mucho ambiente. Hasta el 3 de mayo.',
                     neighborhood: 'GENERAL',
                     category: 'EVENTO',
                     author_name: 'Cultura TGN',
-                    created_at: '2026-04-21T08:00:00Z'
+                    created_at: '2026-04-26T08:00:00Z'
                 },
                 {
-                    id: 'tue-21-weather',
-                    title: '☀️ Martes 21: Día Primaveral',
-                    content: 'Cielos despejados con máxima de 21ºC. Vientos suaves de componente marítima. Ideal para ver el montaje de paradas en la Rambla.',
-                    neighborhood: 'GENERAL',
-                    category: 'TIEMPO',
-                    author_name: 'Admin ComuniTarr',
-                    created_at: '2026-04-21T09:00:00Z'
-                },
-                {
-                    id: 'tue-21-castellers',
-                    title: '🏰 Hoy: Ensayo Casteller (Plaça de la Font)',
-                    content: 'Las colles ultiman detalles para la Diada del jueves. Hoy Martes a partir de las 20:00h ensayos abiertos en los locales y plazas habituales.',
+                    id: 'sun-26-desmontaje',
+                    title: '🚧 Rambla Nova: Desmontaje Finalizado',
+                    content: 'Las estructuras de Sant Jordi ya han sido recogidas. La Rambla Nova recupera su circulación normal. Agradecemos la paciencia a todos los vecinos.',
                     neighborhood: 'CENTRE',
-                    category: 'EVENTO',
-                    author_name: 'Colles de TGN',
-                    created_at: '2026-04-21T08:30:00Z'
+                    category: 'AVISO',
+                    author_name: 'Guàrdia Urbana TGN',
+                    created_at: '2026-04-26T07:30:00Z'
                 },
                 {
-                    id: 'tue-21-jobs',
-                    title: '💼 Empleo: Nuevas Ofertas (Martes 21 Abr)',
-                    content: 'URGENTE: 2 Camareros para Sant Jordi (611 22 33 44), 1 Conductor reparto rosas (622 33 44 55) y 1 Peón montaje paradas (633 44 55 66). ¡Contacta ya!',
+                    id: 'sun-26-expo',
+                    title: '🖼️ Expo "Escenaris" — Teatre Tarragona',
+                    content: 'Hoy domingo último día para visitar la exposición "Escenaris" esta semana. Continuará hasta el 9 de mayo. Entrada libre. Horario: 10h-20h.',
+                    neighborhood: 'GENERAL',
+                    category: 'CULTURA',
+                    author_name: 'Teatre Tarragona',
+                    created_at: '2026-04-26T09:00:00Z'
+                },
+                {
+                    id: 'sun-26-jobs',
+                    title: '💼 Empleo: Nuevas Ofertas (Dom 26 Abr)',
+                    content: 'Ofertas activas: Camarero/a (977 22 33 11), Aux. Supermercat (977 55 66 77), Mosso magatzem (633 44 55 66), Netejadora Hotel (977 23 67 12). ¡Contacta directamente!',
                     neighborhood: 'GENERAL',
                     category: 'EMPLEO',
                     author_name: 'Admin ComuniTarr',
-                    created_at: '2026-04-21T10:00:00Z'
+                    created_at: '2026-04-26T10:00:00Z'
                 }
             ];
 

@@ -49,31 +49,31 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'tue-21-pat-montaje',
+          id: 'sun-26-pat-bonavista',
           creator_id: 'admin',
-          name: '🛡️ Prevención Montaje: Martes 21',
-          description: 'Acompañamiento a operarios y libreros durante el montaje nocturno de paradas en la Rambla. Aseguramos que el material esté protegido.',
-          neighborhood: 'GENERAL',
+          name: '🛡️ Refuerzo Bonavista: Domingo 26',
+          description: 'Servicio de vigilancia reforzada en los aparcamientos disuasorios cercanos a la Feria de Abril para evitar robos y actos vandálicos.',
+          neighborhood: 'Bonavista',
           contact_info: 'Seguridad Ciudadana — 611 00 22 33',
-          created_at: '2026-04-21T08:00:00Z'
+          created_at: '2026-04-26T08:00:00Z'
         },
         {
-          id: 'tue-21-pat-morning',
+          id: 'sun-26-pat-morning',
           creator_id: 'user1',
-          name: '🛡️ Informe Martes Mañana: OK',
-          description: 'Ronda matinal por el centro y barrios. Mucho tráfico en accesos pero sin incidentes de seguridad.',
+          name: '🛡️ Informe Domingo Mañana: OK',
+          description: 'Ronda matinal por Campclar y Torreforta. Todo en orden, bastante calma. Preparativos logísticos para la tarde.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
-          created_at: '2026-04-21T09:00:00Z'
+          created_at: '2026-04-26T09:00:00Z'
         },
         {
-          id: 'tue-21-pat-night',
+          id: 'sun-26-pat-night',
           creator_id: 'user2',
-          name: '🌑 Patrulla Nocturna Martes 21',
-          description: 'Hoy a las 21:00h realizaremos la ronda habitual. Pondremos especial foco en las zonas de carga y descarga de flores.',
+          name: '🌑 Patrulla Nocturna Domingo 26',
+          description: 'Hoy a las 22:00h realizaremos la ronda de cierre por la zona del centro y frente marítimo. Estaremos atentos a la niebla espesa.',
           neighborhood: 'GENERAL',
           contact_info: '622 55 44 33 (Maria)',
-          created_at: '2026-04-21T10:00:00Z'
+          created_at: '2026-04-26T10:00:00Z'
         }
       ];
 

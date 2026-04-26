@@ -48,40 +48,40 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'tue-21-stjordi-crafts',
-                    title: '🌹 Taller: Rosas de Sant Jordi (Manualidades)',
-                    instructor: 'Asociación Vecinal',
-                    date: 'HOY Martes 21 Abr, 17:30h',
-                    description: 'Aprende a hacer rosas de papel y materiales reciclables para regalar este jueves. Para todas las edades, materiales incluidos.',
+                    id: 'sun-26-sevillanas',
+                    title: '💃 Taller Express: Sevillanas (Especial Fira)',
+                    instructor: 'Centro Cultural Andaluz',
+                    date: 'HOY Dom 26 Abr, 11:30h',
+                    description: 'Aprende los pases básicos antes de ir a Bonavista esta tarde. Especial para principiantes. Material: Trae calzado cómodo.',
                     image: 'https://images.unsplash.com/photo-1562184552-997c461abbe6?auto=format&fit=crop&w=800&q=80',
-                    spots: 15,
-                    neighborhood: 'CENTRE',
-                    contact_info: 'Local Social - C/ Mayor',
-                    created_at: '2026-04-21T08:00:00Z'
+                    spots: 25,
+                    neighborhood: 'GENERAL',
+                    contact_info: 'Centro Cívico Torreforta',
+                    created_at: '2026-04-26T08:00:00Z'
                 },
                 {
-                    id: 'tue-21-castells-intro',
-                    title: '🏰 Taller: Iniciación a la "Pinya"',
-                    instructor: 'Xiquets de TGN',
-                    date: 'HOY Martes 21 Abr, 19:30h',
-                    description: '¿Quieres ayudar en la diada de Sant Jordi? Ven al ensayo abierto y aprende cómo posicionarte de forma segura en la base de un castell.',
+                    id: 'sun-26-photo-walk',
+                    title: '📷 Photo Walk: Boira i Platja',
+                    instructor: 'TGN Fotografia',
+                    date: 'HOY Dom 26 Abr, 18:30h',
+                    description: 'Aprofitarem la boira prevista per a última hora de la tarda per fer fotografia creativa a l\'Arrabassada.',
                     image: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=800&q=80',
-                    spots: 50,
-                    neighborhood: 'PART ALTA',
-                    contact_info: 'Carrer de Santa Anna',
-                    created_at: '2026-04-21T09:00:00Z'
+                    spots: 15,
+                    neighborhood: 'Eixample',
+                    contact_info: 'Punt: Lletres TARRAGONA',
+                    created_at: '2026-04-26T09:00:00Z'
                 },
                 {
-                    id: 'tue-21-yoga-relax',
-                    title: '🧘 Yoga Pre-Diada: Respira y Disfruta',
+                    id: 'sun-26-yoga',
+                    title: '🧘 Ioga a l\'Aire Lliure',
                     instructor: 'Elena V.',
-                    date: 'Mañana Miércoles 22 Abr, 08:30h',
-                    description: 'Sesión de relajación antes del ajetreo del jueves. Ven a estirar y encontrar calma en el Balcón del Mediterráneo.',
+                    date: 'Dilluns 27 Abr, 19:00h',
+                    description: 'Sessió de relaxació post-cap de setmana. Portar màrfega propia i roba d\'abric per si baixa la temperatura.',
                     image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
                     spots: 20,
                     neighborhood: 'GENERAL',
-                    contact_info: 'Punto: Balcó del Mediterrani',
-                    created_at: '2026-04-21T10:00:00Z'
+                    contact_info: 'Punt: Parc del Francolí',
+                    created_at: '2026-04-26T10:00:00Z'
                 }
             ];
 

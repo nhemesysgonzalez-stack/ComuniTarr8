@@ -75,11 +75,11 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '🌹 ¡Martes 21 de Abril! Ya se nota Sant Jordi en las calles. ¡A disfrutar de los preparativos!' },
-    { user: 'Meteo TGN', text: '☀️ Tiempo ideal: Cielos despejados y 21ºC. Perfecto para el montaje en la Rambla.' },
-    { user: 'Castellers', text: '🏰 HOY: Ensayos generales pre-Sant Jordi. ¡Ven a ver la piña en Plaça de la Font!' },
-    { user: 'Movilidad', text: '⚠️ Rambla Nova con cortes parciales por montaje de 150 paradas de libros y flores.' },
-    { user: 'Cultura', text: '📚 Novedad: Presentación de libros locales hoy a las 18:30h en el Patio del Ayuntamiento.' }
+    { user: 'Admin ComuniTarr', text: '🎉 ¡Viernes 25 Abr! Post-Sant Jordi y empieza el fin de semana. ¡La Feria de Abril de Bonavista está en marcha!' },
+    { user: 'Meteo TGN', text: '☀️ Tiempo espléndido: 23ºC y cielos despejados. Perfecto para la Feria de Abril.' },
+    { user: 'Feria Bonavista', text: '💃 FERIA DE ABRIL: Inaugurada ayer. Hoy tarde ven a bailar sevillanas en Bonavista (17h-24h).' },
+    { user: 'Cultura', text: '🖼️ Expo "Escenaris" hasta el 9 de mayo en el Teatre Tarragona. ¡Entrada libre!' },
+    { user: 'Post Sant Jordi', text: '📚 ¿Qué libro compraste el 23? ¡Comparte tu reseña en el canal CULTURA!' }
   ];
 
 
@@ -126,40 +126,41 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Admin', text: '🌹 ¡Buen Martes 21! ¿Ya habéis fichado vuestro libro para el jueves?' },
-        { who: 'Pau T.', text: 'Yo ya tengo reservado el último de novela negra en La Capona. ¡Qué ganas!' },
-        { who: 'Joan B.', text: 'Esta tarde iré a ver el ensayo de los Xiquets. El espíritu de Sant Jordi ya está aquí. 🏰' }
+        { who: 'Admin', text: '🎉 ¡Buen viernes 25! Ya pasó Sant Jordi. ¿Qué libro comprasteis?' },
+        { who: 'Pau T.', text: 'Me pillé «Victus» de Sánchez Piñol y ya voy por la mitad. ¡Fenomenal!' },
+        { who: 'Joan B.', text: 'Yo pillé uno de poesía. ¡Este año la Rambla estaba preciosa con 170 paradas! 🌹' }
       ],
       [
-        { who: 'Joe R.', text: '✅ Las obras de Av. Roma siguen fuertes. Tomad la T-11 si podéis.' },
-        { who: 'Maria G.', text: '@Joe ¡Menos mal que avisas! Gracias. 🚗' },
+        { who: 'Joe R.', text: '💃 ¡Hoy empieza en serio la Feria de Abril de Bonavista! ¿Alguien se apunta esta tarde?' },
+        { who: 'Maria G.', text: '@Joe ¡Yo voy con mis hijos! Hasta qué hora está abierto?' },
+        { who: 'Joe R.', text: '@Maria Hasta la 1 de la madrugada. ¡Hay que bailar sevillanas!' }
       ],
     ],
     'APOYO': [
       [
-        { who: 'Carme L.', text: '¿Alguien que baje al centro y pueda traerme unos medicamentos de la farmacia de guardia?' },
-        { who: 'Andreu T.', text: 'Yo voy ahora en la L54, dime por privado qué necesitas Carme y te lo acerco. 👍' },
+        { who: 'Carme L.', text: '¿Alguien va al CAP de Llevant hoy y me puede traer unos resultados? 🙏' },
+        { who: 'Andreu T.', text: 'Yo paso por allí a las 11. Dame tu DNI por privado y te los traigo, Carme. 👍' },
       ],
       [
-        { who: 'Sandra L.', text: 'Hola a todos, estoy organizando una recolecta de ropa de invierno que ya no uséis. 🧥' },
-        { who: 'Elena V.', text: '@Sandra ¡Yo tengo varios abrigos! Me apunto.' },
+        { who: 'Sandra L.', text: 'Este fin de semana tenemos la recogida de ropa para el Banco Solidario. ¡Pasad la voz!' },
+        { who: 'Elena V.', text: '@Sandra ¡Me apunto como voluntaria para ir a recoger! Dime dónde me necesitas.' },
       ],
     ],
     'EMPLEO': [
       [
-        { who: 'Servicios TGN', text: 'Actualizadas ofertas para el refuerzo de Sant Jordi. Martes 21 Abril. 💼' },
-        { who: 'Restaurant Sol', text: 'Buscamos camareros extra para el jueves 23. ¡Remuneración especial festival!' },
+        { who: 'Servicios TGN', text: '💼 Nuevas ofertas publicadas para mayo. Sector hostelería y comercio. ¡Consultad la sección Empleos!' },
+        { who: 'Restaurant Sol', text: 'Buscamos camarero/a fin de semana. Contrato indefinido. 977 22 11 33.' },
       ],
     ],
     'ENCUENTROS': [
       [
-        { who: 'Santi G.', text: 'Si alguien se aburre esta tarde a las 19h, iré a correr por la playa de la Arrabassada. 🏃‍♂️' },
-        { who: 'Marta L.', text: '¡Yo me apunto! Necesito mover las piernas. 😊' }
+        { who: 'Santi G.', text: 'Esta tarde a las 19h quedada para ir a la Feria de Abril de Bonavista. ¡Apuntaos! 💃' },
+        { who: 'Marta L.', text: '¡Me encanta! Me apunto con una amiga. ¿Quedamos en la entrada?' }
       ],
       [
-        { who: 'Nuria P.', text: '¿Algún chico para tomar un café esta tarde-noche después de salir de la oficina?' },
-        { who: 'Pau T.', text: '@Nuria ¡Hola! Yo salgo a las 19h, si te va bien nos vemos en Rambla Nova 😉' },
-        { who: 'Nuria P.', text: '@Pau ¡Trato hecho! A las 19:30 en el Balcón del Mediterráneo.' },
+        { who: 'Nuria P.', text: '¿Alguien quiere ir este sábado al Anfiteatro? Hacen visita teatralizada con gladiadores.' },
+        { who: 'Pau T.', text: '@Nuria ¡Suena genial! ¿A qué hora es?' },
+        { who: 'Nuria P.', text: '@Pau A las 12h. Entradas en la taquilla o en Tarragona Turisme.' },
       ],
     ],
   };
@@ -258,14 +259,14 @@ const Forum: React.FC = () => {
 
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
-          // Ayer por la tarde / noche
-          { id: 'seed-cloud-98', user_id: 'v10', content: '¿Alguien sabe a qué hora empieza el concierto de clausura del Dixieland hoy domingo?', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 20).toISOString() },
-          { id: 'seed-cloud-99', user_id: 'v4', content: '@Nuria P. Los principales empiezan a mediodía en la Pl. de la Font.', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 18).toISOString() },
-          { id: 'seed-cloud-100', user_id: 'v19', content: 'He visto mucho movimiento en Bonavista, ¿venden flores hoy?', user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 15).toISOString() },
+          // Ayer (Jueves 23 - Post Sant Jordi)
+          { id: 'seed-cloud-98', user_id: 'v10', content: '🌹 ¡Qué Sant Jordi tan bonito el de ayer! La Rambla Nova era un jardín. Ha sido el mejor en años.', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 20).toISOString() },
+          { id: 'seed-cloud-99', user_id: 'v4', content: '@Nuria P. ¡Totalmente de acuerdo! Los Xiquets también estuvieron increíbles. 🏰', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 18).toISOString() },
+          { id: 'seed-cloud-100', user_id: 'v19', content: '💃 Hoy arranca la Feria de Abril de Bonavista. ¡A mí con las sevillanas! ¿Quién viene esta tarde?', user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 3).toISOString() },
 
-          // Hoy temprano
-          { id: 'seed-cloud-101', user_id: 'v3', content: `🌹 Ya se respira Sant Jordi por la Rambla. ¿Sabéis si este año hay firmas de autores locales hoy?`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-04-21T08:00:00Z' },
-          { id: 'seed-cloud-102', user_id: 'v2', content: '🏰 ¡Buenos días! Esta noche ensayo general en la Font. ¡A por la Diada!', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-04-21T10:30:00Z' },
+          // Hoy Viernes 25
+          { id: 'seed-cloud-101', user_id: 'v3', content: `📚 ¿Alguien ya ha empezado su libro de Sant Jordi? Yo llevo ya 50 páginas del mío. 😄`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-04-25T08:30:00Z' },
+          { id: 'seed-cloud-102', user_id: 'v2', content: '🎡 La Feria de Bonavista acaba de abrir. ¡Hay sevillanas, comida andaluza y mucha alegría! ¡Ven esta tarde!', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-04-25T11:00:00Z' },
         ] as Message[],
       };
 
@@ -584,13 +585,13 @@ const Forum: React.FC = () => {
             </div>
           </div>
 
-          {/* Trending Topics - Updated Domingo 19 Abril */}
+          {/* Trending Topics - Actualizado Viernes 25 Abril */}
           <div>
             <h4 className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 ml-2">Trending Topic</h4>
             <div className="flex flex-wrap gap-2 px-2">
-              <span className="px-3 py-1 bg-red-100 text-red-600 rounded-lg text-[10px] font-black uppercase">#SantJordi2026</span>
-              <span className="px-3 py-1 bg-amber-100 text-amber-600 rounded-lg text-[10px] font-black uppercase">#EnsayosTGN</span>
-              <span className="px-3 py-1 bg-sky-100 text-sky-600 rounded-lg text-[10px] font-black uppercase">#RamblaNova</span>
+              <span className="px-3 py-1 bg-red-100 text-red-600 rounded-lg text-[10px] font-black uppercase">#FeiraAbrilTGN</span>
+              <span className="px-3 py-1 bg-amber-100 text-amber-600 rounded-lg text-[10px] font-black uppercase">#PostSantJordi</span>
+              <span className="px-3 py-1 bg-sky-100 text-sky-600 rounded-lg text-[10px] font-black uppercase">#Bonavista2026</span>
             </div>
           </div>
 

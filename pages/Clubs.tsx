@@ -42,31 +42,31 @@ const Clubs: React.FC = () => {
 
             const mockClubs: Club[] = [
                 {
-                    id: 'c-tue-1',
+                    id: 'c-sun-1',
                     creator_id: 'v1',
-                    name: 'Urban Runners TGN 👟',
-                    description: 'Trote suave HOY MARTES tarde. Quedamos a las 19:30h en el Balcó. ¡Aprovecha la fresca antes del jueves!',
+                    name: 'Amantes del Senderismo 🥾',
+                    description: 'Grupo para salir por los caminos de ronda. ¡Hoy Domingo hemos hecho ruta por el Pont del Diable! Subid las fotos al chat.',
                     neighborhood: 'GENERAL',
-                    contact_info: '622 33 44 55 (Pau)',
-                    created_at: '2026-04-21T08:00:00Z'
+                    contact_info: 'Canal DEPORTES (Foro)',
+                    created_at: '2026-04-26T08:00:00Z'
                 },
                 {
-                    id: 'c-tue-2',
+                    id: 'c-sun-2',
                     creator_id: 'v2',
                     name: 'Fotografía de Barrio 📸',
-                    description: 'HOY MARTES salimos a fotografiar el bullicio del montaje de Sant Jordi en la Rambla a las 11:30h. ¡Vente con tu cámara!',
+                    description: 'HOY DOMINGO salimos a la Feria de Abril a fotografiar el ambiente y las luces (19:30h). ¡Vente con tu cámara!',
                     neighborhood: 'GENERAL',
                     contact_info: '644 55 66 77 (Sònia)',
-                    created_at: '2026-04-21T09:00:00Z'
+                    created_at: '2026-04-26T09:00:00Z'
                 },
                 {
-                    id: 'c-tue-3',
+                    id: 'c-sun-3',
                     creator_id: 'v3',
-                    name: 'Club de Lectura (Especial) 📖',
-                    description: 'Recordatorio: MAÑANA MIÉRCOLES tenemos la sesión especial de Sant Jordi. HOY MARTES última oportunidad para intercambiar recomendaciones en el chat.',
+                    name: 'Club de Lectura 📖',
+                    description: 'Esta semana toca comentar los libros que nos regalaron por Sant Jordi. Ya hemos abierto el hilo de debate.',
                     neighborhood: 'GENERAL',
                     contact_info: 'Canal CULTURA (Foro)',
-                    created_at: '2026-04-21T10:00:00Z'
+                    created_at: '2026-04-26T10:00:00Z'
                 }
             ];
 

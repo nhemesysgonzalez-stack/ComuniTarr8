@@ -176,31 +176,31 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'tue-21-stjordi-prep',
-            title: '🌹 Prep Sant Jordi: Montaje en la Rambla',
-            content: 'Ya ha comenzado el montaje de las paradas en la Rambla Nova. Este año contaremos con más de 120 puestos de libros y flores. ¡Se respira la Diada!',
-            neighborhood: 'CENTRE',
+            id: 'sun-26-feria-news',
+            title: '💃 Feria de Abril Bonavista: Fin de Semana',
+            content: 'Continúa el éxito de la 32a edición de la Feria de Abril de Bonavista. Durante el día hay gran afluencia. Abierto hasta las 2h de la madrugada.',
+            neighborhood: 'Bonavista',
             category: 'CULTURA',
             image_url: 'https://images.unsplash.com/photo-1722520592113-1f681393cd8d?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-04-21T08:00:00Z'
+            created_at: '2026-04-26T09:00:00Z'
           },
           {
-            id: 'tue-21-weather-news',
-            title: '☀️ Martes 21: Sol y Primavera',
-            content: 'Día totalmente despejado con temperaturas que rozarán los 21ºC. Ideal para ver cómo Tarragona se prepara para su gran día del libro.',
+            id: 'sun-26-parking-news',
+            title: '🚗 Estación del Camp: Aparcamiento Saturado',
+            content: 'Aviso a viajeros: El aparcamiento gratuito de la Estación del Camp sigue saturado. Se estudian medidas y nuevas zonas. Vaya con tiempo suficiente.',
             neighborhood: 'GENERAL',
-            category: 'TIEMPO',
+            category: 'NOTICIA',
             image_url: 'https://images.unsplash.com/photo-1506634064465-7dab4de896ed?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-04-21T09:00:00Z'
+            created_at: '2026-04-26T08:00:00Z'
           },
           {
-            id: 'tue-21-jobs-news',
-            title: '💼 Empleos: Refuerzo Sant Jordi',
-            content: 'Últimas vacantes para ayudantes de floristería y camareros para este jueves 23. Consulta la sección de Servicios para más info.',
-            neighborhood: 'GENERAL',
-            category: 'EMPLEO',
-            image_url: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-04-21T10:00:00Z'
+            id: 'sun-26-maritim-news',
+            title: '🚢 Retrasos en rutas marítimas por África',
+            content: 'Los buques de mercancías hacia Tarragona registran retrasos cruzando por Buena Esperanza, afectando hasta en 12 días la logística global de importación asiática.',
+            neighborhood: 'Serrallo',
+            category: 'ECONOMÍA',
+            image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445?auto=format&fit=crop&w=800&q=80',
+            created_at: '2026-04-26T10:00:00Z'
           }
         ];
 
@@ -208,12 +208,12 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'tue-21-poll-1',
-          question: "🌹 ¿Qué tipo de rosa prefieres regalar o recibir este Sant Jordi?",
-          options: ['La roja clásica (Ecuatoriana)', 'Rosa local de Valls', 'Rosa de tela/artesanía', 'Rosa blanca o amarilla'],
+          id: 'sun-26-poll-feria',
+          question: "💃 ¿Has visitado ya la Feria de Abril de Bonavista?",
+          options: ['Sí, he ido este finde', 'Iré entre semana', 'Voy el fin de semana que viene', 'No tengo pensado ir'],
           category: 'CULTURA',
           neighborhood: 'GENERAL',
-          created_at: '2026-04-21T11:00:00Z'
+          created_at: '2026-04-26T10:00:00Z'
         };
         setCurrentPoll(pollExample);
 
@@ -459,22 +459,22 @@ const Home: React.FC = () => {
           <div className="p-5 bg-orange-50 dark:bg-orange-900/10 rounded-[30px] flex gap-4 items-center">
             <span className="material-symbols-outlined text-orange-500 text-3xl">traffic</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-orange-600 tracking-widest">Tráfico Tarragona</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Cortes parciales en Rambla Nova por montaje de paradas.</p>
+              <p className="text-[10px] font-black uppercase text-orange-600 tracking-widest">Tráfico / Parking</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Aparcamiento saturado en la Estación del Camp de Tarragona.</p>
             </div>
           </div>
           <div className="p-5 bg-sky-50 dark:bg-sky-900/10 rounded-[30px] flex gap-4 items-center">
-            <span className="material-symbols-outlined text-sky-500 text-3xl">partly_cloudy_day</span>
+            <span className="material-symbols-outlined text-sky-500 text-3xl">cloud</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Clima Martes 21</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Máxima 21ºC, Mínima 12ºC. Día soleado y primaveral.</p>
+              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Clima Domingo 26</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Máxima 21ºC. Nubes altas y posible formación de niebla por la tarde/noche.</p>
             </div>
           </div>
           <div className="p-5 bg-purple-50 dark:bg-purple-900/10 rounded-[30px] flex gap-4 items-center">
             <span className="material-symbols-outlined text-purple-500 text-3xl">directions_bus</span>
             <div>
               <p className="text-[10px] font-black uppercase text-purple-600 tracking-widest">EMT & Transporte</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Líneas 8, 21 y 22 con paradas anuladas en la Rambla.</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Sigue vigente el refuerzo de la L25 hacia Bonavista por la Feria.</p>
             </div>
           </div>
         </div>
@@ -486,7 +486,7 @@ const Home: React.FC = () => {
           <div className="h-full bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 rounded-[40px] text-white shadow-xl shadow-indigo-500/20 transition-transform group-hover:-translate-y-2 relative overflow-hidden">
             <span className="material-symbols-outlined text-6xl absolute top-6 right-6 opacity-20">work</span>
             <h3 className="text-2xl font-black mb-2 uppercase tracking-tight">Empleos Locales</h3>
-            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Nuevas ofertas Martes 21</p>
+            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Nuevas ofertas Domingo 26</p>
             <div className="flex items-center gap-2 text-xs font-black uppercase"><span className="material-symbols-outlined">arrow_forward</span> Entrar</div>
           </div>
         </Link>
@@ -585,7 +585,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 15 · Mar 21 Abr</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 17 · Dom 26 Abr</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">

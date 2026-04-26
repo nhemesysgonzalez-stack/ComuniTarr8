@@ -42,7 +42,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-500">check_circle</span>
                 <div>
                   <p className="text-sm font-black text-green-700 dark:text-green-400">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de DÍAS LABORABLES (Martes 21 Abril).</p>
+                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de DÍAS FESTIVOS (Domingo 26 Abril). L25 reforzada hacia Bonavista.</p>
                 </div>
               </div>
             </div>
@@ -144,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
               </p>
-              <button onClick={() => alert("Hoy Martes 21 Abr:\n\u2022 17:00h \u2014 Taller: Preparación de ventas para Sant Jordi (Presencial)\n\u2022 20:00h \u2014 Networking en ensayos Castellers (Plaça de la Font)")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Actividades Próximas:\n• Lunes 27 Abr \u2014 Taller: CV Digital (Tarragona Impulsa, 10h)\n• Miércoles 29 Abr \u2014 Orientación Laboral Individual (con cita previa)\n• Llamar al 977 29 61 50 para inscribirse")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -168,23 +168,23 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Mar 21 Abr)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Dom 26 Abr)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-rose-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Camarero/a Refuerzo Sant Jordi (Rambla Nova)&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Contrato para jueves y viernes. Imprescindible rapidez. Contacto: 611 22 33 44 (Gestión Hostelería TGN)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Camarero/a — Restaurante La Sal (Serrallo)&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Jornada completa, contrato indefinido. Imprescindible experiencia. Contacto: 977 22 33 11</p>
                   </div>
                   <div className="border-l-4 border-sky-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Repartidor/a de Rosas (Furgoneta o Moto)&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Para el Jueves 23 de 07h a 14h. Pago por horas. Contacto: 622 33 44 55 (Floristería L'Art)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Aux. Supermercat — Esclat Tarragona&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Reposador/a i caixa. Tardes i caps de setmana. Contacto: 977 55 66 77 (RR.HH. Esclat)</p>
                   </div>
                   <div className="border-l-4 border-amber-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Ayudante Librería (Campaña Sant Jordi)&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Apoyo en organización de estands. Contacto: 633 44 55 66 (Librería La Capona)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Mosso/a de magatzem (sector logística)&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Torn de matins. Carnet de carretoner valorat. Contacto: 633 44 55 66 (Treball TGN)</p>
                   </div>
                   <div className="border-l-4 border-teal-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar Limpieza Viaria (Servicio Especial)&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Para turnos de noche post-fiesta. Contacto: 977 29 22 22 (Servicios Municipales)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Netejadora — Hotel Lauria Centre&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Parcial matins (L-V). Incorporació immediata. Contacto: 977 23 67 12</p>
                   </div>
                 </div>
               </div>

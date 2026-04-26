@@ -224,17 +224,17 @@ export const Header: React.FC = () => {
                   </div>
                   <div className="space-y-3">
                     <div className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
-                      <span className="material-symbols-outlined text-lg text-rose-500">auto_stories</span>
+                      <span className="material-symbols-outlined text-lg text-rose-500">celebration</span>
                       <div>
-                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Cerca de Sant Jordi</p>
-                        <p className="text-[9px] text-gray-500 line-clamp-1">150 paradas este jueves en la Rambla Nova.</p>
+                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Feria de Abril Bonavista</p>
+                        <p className="text-[9px] text-gray-500 line-clamp-1">Abierta hoy desde las 17h hasta las 2h. ¡Sevillanas!</p>
                       </div>
                     </div>
                     <div className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
                       <span className="material-symbols-outlined text-lg text-amber-500">warning</span>
                       <div>
-                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Aviso Montaje</p>
-                        <p className="text-[9px] text-gray-500 line-clamp-1">Estructuras en Rambla. Evitad carga y descarga.</p>
+                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Desmontaje Rambla Nova</p>
+                        <p className="text-[9px] text-gray-500 line-clamp-1">Cortes de carril hasta las 22h. Usa C/ Apodaca.</p>
                       </div>
                     </div>
                   </div>

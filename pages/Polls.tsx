@@ -73,28 +73,28 @@ const Polls: React.FC = () => {
 
             const mockPolls: Poll[] = [
                 {
-                    id: 'tue-21-poll-stjordi',
+                    id: 'sun-26-poll-parking',
                     creator_id: 'v1',
-                    title: '🌹 ¿Qué te parece el nuevo diseño para las paradas de Sant Jordi en la Rambla?',
-                    options: ['Mucho más espacioso y cómodo', 'Me gustaba más antes', 'Faltan más zonas de sombra', 'No he pasado aún por allí'],
+                    title: '🚗 ¿Qué solución propones para el aparcamiento en la Estación del Camp?',
+                    options: ['Poner barreras y cobrar', 'Construir un parking de varias plantas', 'Más autobuses y descartar coche', 'El modelo actual está bien'],
                     neighborhood: 'GENERAL',
-                    created_at: '2026-04-21T08:00:00Z'
+                    created_at: '2026-04-26T08:00:00Z'
                 },
                 {
-                    id: 'tue-21-poll-castells',
+                    id: 'sun-26-poll-feria',
                     creator_id: 'v2',
-                    title: '🏰 ¿Asistirás a la Diada de Sant Jordi en la Plaça de la Font?',
-                    options: ['¡Allí estaré animando!', 'Lo veré desde el balcón o TV', 'Estaré trabajando', 'No me interesan los castells'],
+                    title: '💃 ¿Qué te ha parecido la Feria de Abril de este año en Bonavista?',
+                    options: ['Genial, he ido y repetiré', 'Está bien pero muy llena', 'Faltan aparcamientos', 'No me interesa'],
                     neighborhood: 'GENERAL',
-                    created_at: '2026-04-21T09:00:00Z'
+                    created_at: '2026-04-26T09:00:00Z'
                 },
                 {
-                    id: 'tue-21-poll-books',
+                    id: 'sun-26-poll-weather',
                     creator_id: 'v3',
-                    title: '📚 ¿Dónde prefieres comprar tus libros este jueves?',
-                    options: ['En las paradas de la Rambla Nova', 'En la librería de mi barrio', 'Prefiero el mercado de libros antiguos', 'Este año no compraré libros'],
+                    title: '⛅ Con el cambio de tiempo y las nieblas, ¿cambias tus planes del domingo?',
+                    options: ['Sí, me quedo en casa', 'Salgo igual pero abrigado', 'Aprovecharé la mañana que hace sol', 'Me encanta la boira'],
                     neighborhood: 'GENERAL',
-                    created_at: '2026-04-21T10:00:00Z'
+                    created_at: '2026-04-26T10:00:00Z'
                 }
             ];
 

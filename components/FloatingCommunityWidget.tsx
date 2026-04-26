@@ -11,17 +11,17 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 416, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: '🌹 ¿Alguien sabe dónde encargan las mejores rosas este año? Ya falta poco para el jueves.', neighborhood: 'Campclar' },
-    { id: 417, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'He pasado por la Rambla y ya están marcando los sitios para las paradas. ¡Qué ganas!', neighborhood: 'Eixample' },
-    { id: 418, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: 'Martes de entrenamiento casteller. ¡Hoy ensayo general para el jueves!', neighborhood: 'SPiSP' },
-    { id: 419, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: '¿Os apuntáis al maratón de lectura del jueves? Yo ya me he inscrito. 📚', neighborhood: 'Part Alta' }
+    { id: 416, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: '💃 ¿Alguien se apunta esta tarde a la Feria de Abril en Bonavista? ¡Hasta las 2h de la mañana!', neighborhood: 'Campclar' },
+    { id: 417, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'El Sant Jordi del jueves estuvo increíble. ¡Casi me compro 5 libros! 📚🌹', neighborhood: 'Eixample' },
+    { id: 418, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: 'Los Xiquets lo clavaron ayer en la Plaça de la Font. ¡Qué coll! 🏰', neighborhood: 'SPiSP' },
+    { id: 419, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Mañana sábado hay visita teatralizada con gladiadores en el Anfiteatro. ¡A las 12h!', neighborhood: 'Part Alta' }
 ];
 
 const tickerMessages = [
-    "🌹 SANT JORDI: 150 paradas de libros y rosas en Rambla Nova este Jueves 23 (9h-20h).",
-    "📚 MARATÓN LECTURA: Abierta la inscripción para leer en voz alta este jueves al mediodía.",
-    "☀️ TIEMPO: Martes 21 despejado. Máxima de 21ºC. Viento de Mestral flojo.",
-    "🚧 AVISO: Restricciones de aparcamiento en Rambla Nova por montaje de Sant Jordi."
+    "💃 FERIA DE ABRIL: Bonavista (24 Abr - 3 May). Hoy de 17h a 2h. Sevillanas, comida y música andaluza.",
+    "🌹 POST-SANT JORDI: La Rambla batió récord con 170 paradas. ¡Gracias Tarragona!",
+    "☀️ TIEMPO: Viernes 25 Abr despejado. Máxima de 23ºC. Perfecto fin de semana.",
+    "🖼️ EXPO Escenaris: Teatre Tarragona hasta el 9 mayo. Entrada libre."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

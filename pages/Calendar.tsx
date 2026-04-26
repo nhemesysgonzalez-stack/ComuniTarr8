@@ -59,43 +59,56 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'tue-21-castellers-ensayo',
-          creator_id: 'colles',
-          title: "🏰 Ensayo General Sant Jordi",
-          description: "Hoy Martes 21 los Xiquets y la Jove ultiman detalles para la gran diada del jueves. Ensayo abierto en locales y plazas.",
-          event_date: '2026-04-21',
-          event_time: '20:00',
-          location: 'Varios (Part Alta / Centro)',
-          category: 'Cultura',
-          neighborhood: 'GENERAL',
-          contact_info: 'Colles Castelleres TGN',
-          created_at: '2026-04-21T08:00:00Z'
-        },
-        {
-          id: 'thu-23-santjordi',
+          id: 'sun-26-feria-abril',
           creator_id: 'ayto',
-          title: "🌹 Diada de Sant Jordi 2026",
-          description: "Día de libros y rosas. 150 paradas en Rambla Nova y barrios. Actividades durante todo el día.",
-          event_date: '2026-04-23',
-          event_time: '09:00',
-          location: 'Rambla Nova',
+          title: "💃 Feria de Abril de Bonavista (Hoy Dom)",
+          description: "32a edición de la Feria de Abril. Gastronomia andaluza, sevillanes, música en viu i molt més. Avui obert de 17h a 2h. Fins el 3 de maig.",
+          event_date: '2026-04-26',
+          event_time: '17:00',
+          location: 'Recinte Bonavista (13.000 m²)',
           category: 'Fiesta',
-          neighborhood: 'GENERAL',
-          contact_info: 'Ayuntamiento de Tarragona',
-          created_at: '2026-04-21T07:00:00Z'
+          neighborhood: 'Bonavista',
+          contact_info: 'Ajuntament de Tarragona',
+          created_at: '2026-04-26T08:00:00Z'
         },
         {
-          id: 'thu-23-sardanes',
-          creator_id: 'cultura',
-          title: "💃 Ballada de Sardanes",
-          description: "Tradicional encuentro sardanista con la Cobla Cossetània en la Plaça Verdaguer.",
-          event_date: '2026-04-23',
-          event_time: '19:00',
-          location: 'Plaça Verdaguer',
+          id: 'sun-26-romano-gladiadors',
+          creator_id: 'turisme',
+          title: "🏰 Gladiadors a l'Amfiteatre Romà",
+          description: "Visita teatralitzada amb reproductió d'un combat de gladiadors. Especial diumenge. Entrades a la taquilla o a Tarragona Turisme.",
+          event_date: '2026-04-26',
+          event_time: '12:00',
+          location: 'Amfiteatre Romà de Tarragona',
           category: 'Cultura',
-          neighborhood: 'CENTRE',
-          contact_info: 'Cultura TGN',
-          created_at: '2026-04-21T09:00:00Z'
+          neighborhood: 'GENERAL',
+          contact_info: 'Tarragona Turisme | 977 25 07 95',
+          created_at: '2026-04-26T09:00:00Z'
+        },
+        {
+          id: 'may-01-festiu',
+          creator_id: 'admin',
+          title: "🚩 Festa del Treball (Dia Festiu)",
+          description: "1 de Maig: Dia Internacional del Treball. Festiu oficial a Tarragona. Serveis mínims en transport públic. La Feria de Abril continua oberta.",
+          event_date: '2026-05-01',
+          event_time: '00:00',
+          location: 'Tarragona (Festiu General)',
+          category: 'Festiu',
+          neighborhood: 'GENERAL',
+          contact_info: 'Ajuntament de Tarragona',
+          created_at: '2026-04-26T08:00:00Z'
+        },
+        {
+          id: 'may-09-expo-escenaris',
+          creator_id: 'cultura',
+          title: "🖼️ Exp. \"Escenaris\" — Últim dia!",
+          description: "Darrer dia per visitar l'exposició fotogràfica 'Escenaris' al Teatre Tarragona. Entrada lliure.",
+          event_date: '2026-05-09',
+          event_time: '10:00',
+          location: 'Teatre Tarragona',
+          category: 'Cultura',
+          neighborhood: 'GENERAL',
+          contact_info: 'Teatre Tarragona',
+          created_at: '2026-04-26T09:00:00Z'
         }
       ];
 

@@ -42,31 +42,31 @@ const MicroVolunteering: React.FC = () => {
 
             const realOpportunitiesExamples: VolunteerOpportunity[] = [
                 {
-                    id: 'tue-21-vol-santjordi',
+                    id: 'sun-26-vol-feria',
                     creator_id: 'v8',
-                    title: '🌹 Voluntarios Mañana: Montaje paradas',
-                    description: 'Necesitamos 3 personas para colaborar con los puestos locales en la descarga y montaje de estanterías en Rambla Nova mañana MIÉRCOLES 22 (09:00-11:00h).',
-                    neighborhood: 'GENERAL',
-                    contact_info: '644 11 22 33 (Luis). ¡Gracias!',
-                    created_at: '2026-04-21T07:00:00Z'
+                    title: '💃 Info Accessos Fira d\'Abril',
+                    description: 'Busquem parella de voluntaris per ajudar a informar sobre zones d\'aparcament gratuïtes a prop de l\'N-340 (zona Campclar) per als visitants de la Fira aquesta tarda (17h - 20h).',
+                    neighborhood: 'Campclar',
+                    contact_info: '644 11 22 33 (Luis). Gràcies!',
+                    created_at: '2026-04-26T08:00:00Z'
                 },
                 {
-                    id: 'tue-21-vol-rosas',
+                    id: 'sun-26-vol-neteja',
                     creator_id: 'v9',
-                    title: '📦 Reparto Rosas a Domicilio',
-                    description: 'Buscamos voluntarios para llevar rosas a vecinos con movilidad reducida este JUEVES 23 tarde. Coordinación hoy Martes 21.',
-                    neighborhood: 'CENTRE',
-                    contact_info: '611 00 22 33 (Paco). Reunión en local vecinal.',
-                    created_at: '2026-04-21T08:00:00Z'
+                    title: '🧹 Neteja Platja del Miracle',
+                    description: 'Aprofitem que fa bon temps (tot i els núvols alts) per baixar a recollir plàstics a la platja del Miracle. Porteu guants. Avui darrer torn: 18h.',
+                    neighborhood: 'Eixample',
+                    contact_info: '611 00 22 33 (Paco). Trobada a l\'Amfiteatre.',
+                    created_at: '2026-04-26T09:00:00Z'
                 },
                 {
-                    id: 'tue-21-vol-libros',
+                    id: 'sun-26-vol-lectura',
                     creator_id: 'v10',
-                    title: '📚 Donación Libros: Biblioteca SPiSP',
-                    description: 'Ayuda para clasificar libros donados para el mercadillo solidario de Sant Jordi hoy Martes 21 a las 17:30h.',
-                    neighborhood: 'Sant Pere i Sant Pau',
-                    contact_info: '977 12 34 56 (Biblio SPiSP)',
-                    created_at: '2026-04-21T09:00:00Z'
+                    title: '📚 Recollida de llibres sobrants',
+                    description: 'Busquem persones amb cotxe per passar per les llibreries i recollir llibres solidaris de Sant Jordi (que no es van vendre) per portar-los a les biblioteques locals.',
+                    neighborhood: 'GENERAL',
+                    contact_info: '977 12 34 56 (Coordinadora Cultural)',
+                    created_at: '2026-04-26T10:00:00Z'
                 }
             ];
 
