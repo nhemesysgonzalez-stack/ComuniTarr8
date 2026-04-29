@@ -75,11 +75,10 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '🎉 ¡Viernes 25 Abr! Post-Sant Jordi y empieza el fin de semana. ¡La Feria de Abril de Bonavista está en marcha!' },
-    { user: 'Meteo TGN', text: '☀️ Tiempo espléndido: 23ºC y cielos despejados. Perfecto para la Feria de Abril.' },
-    { user: 'Feria Bonavista', text: '💃 FERIA DE ABRIL: Inaugurada ayer. Hoy tarde ven a bailar sevillanas en Bonavista (17h-24h).' },
-    { user: 'Cultura', text: '🖼️ Expo "Escenaris" hasta el 9 de mayo en el Teatre Tarragona. ¡Entrada libre!' },
-    { user: 'Post Sant Jordi', text: '📚 ¿Qué libro compraste el 23? ¡Comparte tu reseña en el canal CULTURA!' }
+    { user: 'Admin ComuniTarr', text: '🚢 ACTUALIDAD: El impresionante yate "Seven Seas" de Spielberg atraca en Tarragona.' },
+    { user: 'MTR', text: '🏖️ Obras Terminadas: La Pineda estrena su nuevo paseo marítimo de cara a verano.' },
+    { user: 'Feria Bonavista', text: '💃 FERIA DE ABRIL: Sigue abierta hasta el 3 de mayo. ¡Aprovecha estos días!' },
+    { user: 'Ayuntamiento', text: '🛴 Recordatorio VMP: Reduzcan velocidad al circular en patinetes.' }
   ];
 
 
@@ -126,41 +125,40 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Admin', text: '🎉 ¡Buen viernes 25! Ya pasó Sant Jordi. ¿Qué libro comprasteis?' },
-        { who: 'Pau T.', text: 'Me pillé «Victus» de Sánchez Piñol y ya voy por la mitad. ¡Fenomenal!' },
-        { who: 'Joan B.', text: 'Yo pillé uno de poesía. ¡Este año la Rambla estaba preciosa con 170 paradas! 🌹' }
+        { who: 'Admin', text: '🚢 ¡Feliz miércoles 29! ¿Alguien ha ido al puerto a ver el yate de Spielberg?' },
+        { who: 'Pau T.', text: 'Yo fui ayer por la tarde. Es una barbaridad, casi 110 metros de eslora. 😱' },
+        { who: 'Joan B.', text: 'Había mucha gente haciéndose fotos allí.' }
       ],
       [
-        { who: 'Joe R.', text: '💃 ¡Hoy empieza en serio la Feria de Abril de Bonavista! ¿Alguien se apunta esta tarde?' },
-        { who: 'Maria G.', text: '@Joe ¡Yo voy con mis hijos! Hasta qué hora está abierto?' },
-        { who: 'Joe R.', text: '@Maria Hasta la 1 de la madrugada. ¡Hay que bailar sevillanas!' }
+        { who: 'Joe R.', text: '🏖️ Por fin han acabado las obras en La Pineda. ¡Tengo ganas de ver cómo ha quedado!' },
+        { who: 'Maria G.', text: '@Joe Han puesto carril bici nuevo y es mucho más ancho. Está genial.' },
+        { who: 'Joe R.', text: '¡Este finde me voy para allá con la bici seguro!' }
       ],
     ],
     'APOYO': [
       [
-        { who: 'Carme L.', text: '¿Alguien va al CAP de Llevant hoy y me puede traer unos resultados? 🙏' },
-        { who: 'Andreu T.', text: 'Yo paso por allí a las 11. Dame tu DNI por privado y te los traigo, Carme. 👍' },
+        { who: 'Carme L.', text: '¿Alguien sabe de alguna farmacia abierta ahora 24h cerca de Rambla Vella?' },
+        { who: 'Andreu T.', text: 'La de calle Unión debería estar de guardia esta noche, Carme.' },
       ],
       [
-        { who: 'Sandra L.', text: 'Este fin de semana tenemos la recogida de ropa para el Banco Solidario. ¡Pasad la voz!' },
-        { who: 'Elena V.', text: '@Sandra ¡Me apunto como voluntaria para ir a recoger! Dime dónde me necesitas.' },
+        { who: 'Sandra L.', text: 'Tenemos la recogida de ropa para el Banco Solidario este finde. ¡Nos faltan manos!' },
+        { who: 'Elena V.', text: '@Sandra ¡Yo el sábado por la mañana puedo!' },
       ],
     ],
     'EMPLEO': [
       [
-        { who: 'Servicios TGN', text: '💼 Nuevas ofertas publicadas para mayo. Sector hostelería y comercio. ¡Consultad la sección Empleos!' },
+        { who: 'Servicios TGN', text: '💼 Ojo que de cara al verano empiezan a salir ofertas top en hostelería. Mirad el nuevo restaurante con estrella.' },
         { who: 'Restaurant Sol', text: 'Buscamos camarero/a fin de semana. Contrato indefinido. 977 22 11 33.' },
       ],
     ],
     'ENCUENTROS': [
       [
-        { who: 'Santi G.', text: 'Esta tarde a las 19h quedada para ir a la Feria de Abril de Bonavista. ¡Apuntaos! 💃' },
-        { who: 'Marta L.', text: '¡Me encanta! Me apunto con una amiga. ¿Quedamos en la entrada?' }
+        { who: 'Santi G.', text: 'Hoy miércoles voy a Bonavista a eso de las 19h a la Feria. ¿Alguien viene?' },
+        { who: 'Marta L.', text: '¡Me apunto! Entre semana se está más tranquilo.' }
       ],
       [
-        { who: 'Nuria P.', text: '¿Alguien quiere ir este sábado al Anfiteatro? Hacen visita teatralizada con gladiadores.' },
-        { who: 'Pau T.', text: '@Nuria ¡Suena genial! ¿A qué hora es?' },
-        { who: 'Nuria P.', text: '@Pau A las 12h. Entradas en la taquilla o en Tarragona Turisme.' },
+        { who: 'Nuria P.', text: 'El sábado iré a patinar por el nuevo paseo de la Pineda. Nivel básico.' },
+        { who: 'Pau T.', text: '@Nuria ¡Yo me apunto a los patines! 🛼' },
       ],
     ],
   };
@@ -585,13 +583,13 @@ const Forum: React.FC = () => {
             </div>
           </div>
 
-          {/* Trending Topics - Actualizado Viernes 25 Abril */}
+          {/* Trending Topics - Actualizado Miércoles 29 Abril */}
           <div>
             <h4 className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 ml-2">Trending Topic</h4>
             <div className="flex flex-wrap gap-2 px-2">
-              <span className="px-3 py-1 bg-red-100 text-red-600 rounded-lg text-[10px] font-black uppercase">#FeiraAbrilTGN</span>
-              <span className="px-3 py-1 bg-amber-100 text-amber-600 rounded-lg text-[10px] font-black uppercase">#PostSantJordi</span>
-              <span className="px-3 py-1 bg-sky-100 text-sky-600 rounded-lg text-[10px] font-black uppercase">#Bonavista2026</span>
+              <span className="px-3 py-1 bg-amber-100 text-amber-600 rounded-lg text-[10px] font-black uppercase">#SevenSeasTGN</span>
+              <span className="px-3 py-1 bg-sky-100 text-sky-600 rounded-lg text-[10px] font-black uppercase">#PaseoLaPineda</span>
+              <span className="px-3 py-1 bg-red-100 text-red-600 rounded-lg text-[10px] font-black uppercase">#FeriaBonavista</span>
             </div>
           </div>
 

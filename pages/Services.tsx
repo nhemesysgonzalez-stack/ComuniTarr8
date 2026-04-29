@@ -572,7 +572,7 @@ export const Services: React.FC = () => {
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
                       <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DÍA NORMAL)</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 HOY MARTES 21 Abr: Preparativos Sant Jordi 2026 y ensayos Castellers.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 HOY MIÉRCOLES 29 Abr: Preparativos feria de entidades y Casales Cívicos.</p>
                   </div>
                 </div>
               </div>

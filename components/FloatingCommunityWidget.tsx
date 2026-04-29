@@ -11,17 +11,17 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 416, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: '💃 ¿Alguien se apunta esta tarde a la Feria de Abril en Bonavista? ¡Hasta las 2h de la mañana!', neighborhood: 'Campclar' },
-    { id: 417, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'El Sant Jordi del jueves estuvo increíble. ¡Casi me compro 5 libros! 📚🌹', neighborhood: 'Eixample' },
-    { id: 418, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: 'Los Xiquets lo clavaron ayer en la Plaça de la Font. ¡Qué coll! 🏰', neighborhood: 'SPiSP' },
-    { id: 419, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Mañana sábado hay visita teatralizada con gladiadores en el Anfiteatro. ¡A las 12h!', neighborhood: 'Part Alta' }
+    { id: 416, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: '🚢 ¿Alguien ha bajado al puerto a ver el yate de Spielberg? ¡Es una pasada!', neighborhood: 'Serrallo' },
+    { id: 417, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Hoy me he pasado por la Feria de Abril en Bonavista para merendar, ¡mucho ambiente incluso entre semana! 💃', neighborhood: 'Bonavista' },
+    { id: 418, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: 'Genial el nuevo paseo de La Pineda, por fin han acabado las obras tras más de un año. 🏖️', neighborhood: 'Vila-seca' },
+    { id: 419, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Mucho cuidado los que vayáis en patinete eléctrico, que con los últimos accidentes están multando mucho. 🛴', neighborhood: 'Centro' }
 ];
 
 const tickerMessages = [
-    "💃 FERIA DE ABRIL: Bonavista (24 Abr - 3 May). Hoy de 17h a 2h. Sevillanas, comida y música andaluza.",
-    "🌹 POST-SANT JORDI: La Rambla batió récord con 170 paradas. ¡Gracias Tarragona!",
-    "☀️ TIEMPO: Viernes 25 Abr despejado. Máxima de 23ºC. Perfecto fin de semana.",
-    "🖼️ EXPO Escenaris: Teatre Tarragona hasta el 9 mayo. Entrada libre."
+    "🚢 ACTUALIDAD: El megayate 'Seven Seas' de Steven Spielberg atraca en el Moll de Costa.",
+    "🚧 INFRAESTRUCTURAS: La Pineda estrena su nuevo paseo marítimo tras 14 meses de obras. ¡A pasear!",
+    "💃 FERIA DE ABRIL: Bonavista continúa abierta toda la semana hasta el 3 de mayo.",
+    "⭐ GASTRONOMÍA: ¡Un nuevo restaurante tarraconense consigue entrar en la prestigiosa Guía Michelin!"
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

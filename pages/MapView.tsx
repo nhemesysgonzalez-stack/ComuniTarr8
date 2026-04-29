@@ -8,10 +8,10 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 'plan-1', type: 'ocio', x: '45%', y: '55%', title: '💃 Feria Abril Bonavista (17h)', desc: 'La 32a edició de la Feria de Abril ya está abierta en Bonavista. Sevillanas, gastronomía andaluza, casetas y música hasta las 2h. ¡El plan de la semana!', status: 'Hoy 17h-02h', color: 'bg-red-500', icon: 'celebration', glow: 'shadow-[0_0_50px_rgba(239,68,68,0.3)]', creator_name: 'Feria TGN 2026' },
-    { id: 'plan-2', type: 'deporte', x: '65%', y: '70%', title: '🏃 Running Viernes (19h)', desc: 'Sesión de trote por la playa del Miracle para cerrar la semana con energía. Salida desde el Anfiteatro.', status: 'Hoy 19:00', color: 'bg-blue-500', icon: 'directions_run', creator_name: 'Marta G.' },
+    { id: 'plan-1', type: 'ocio', x: '45%', y: '55%', title: '💃 Feria Abril Bonavista', desc: 'La 32a edición sigue su curso esta semana. Sevillanas, gastronomía andaluza, casetas y música. ¡Plan perfecto para esta tarde de miércoles!', status: 'Hoy 17h-02h', color: 'bg-red-500', icon: 'celebration', glow: 'shadow-[0_0_50px_rgba(239,68,68,0.3)]', creator_name: 'Feria TGN 2026' },
+    { id: 'plan-2', type: 'ocio', x: '55%', y: '75%', title: '🚢 Yate "Seven Seas"', desc: 'El espectacular megayate de Steven Spielberg está atracado en el Moll de Costa. Acércate a verlo antes de que zarpe.', status: 'Atracado', color: 'bg-blue-500', icon: 'directions_boat', creator_name: 'Moll Costa' },
     { id: 'plan-3', type: 'cultura', x: '30%', y: '40%', title: '🖼️ Expo "Escenaris" (Teatre TGN)', desc: 'Exposición fotográfica sobre los escenarios más emblemáticos de la ciudad. Entrada libre. Hasta el 9 de mayo.', status: 'Abierto hasta 20h', color: 'bg-purple-500', icon: 'photo_camera', creator_name: 'Teatre Tarragona' },
-    { id: 'plan-4', type: 'ocio', x: '55%', y: '35%', title: '🏰 Visita Romà Teatralizada (Sáb)', desc: 'Mañana sábado a las 12h ensayo de gladiadores en el Anfiteatro Romano. Entradas en taquilla o Tarragona Turisme.', status: 'Mañ. 12:00', color: 'bg-emerald-500', icon: 'history_edu', creator_name: 'Tarragona Turisme' }
+    { id: 'plan-4', type: 'deporte', x: '15%', y: '65%', title: '🏖️ Nuevo Paseo La Pineda', desc: 'Por fin se ha inaugurado el nuevo paseo marítimo de La Pineda tras 14 meses de obras. Perfecto para pasear o ir en bici esta tarde soleada.', status: 'Inaugurado', color: 'bg-emerald-500', icon: 'pedal_bike', creator_name: 'Vila-seca' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

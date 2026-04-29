@@ -145,40 +145,40 @@ const Announcements: React.FC = () => {
 
             const realBulletins: Announcement[] = [
                 {
-                    id: 'sun-26-feria',
-                    title: '💃 Feria de Abril Bonavista (Hoy Domingo)',
-                    content: 'La 32a edición de la Feria de Abril sigue abierta HOY DOMINGO. De 17h a 02h. Sevillanas, gastronomía andaluza, música en vivo y mucho ambiente. Hasta el 3 de mayo.',
+                    id: 'wed-29-feria',
+                    title: '💃 Feria de Abril Bonavista (Recta Final)',
+                    content: 'Recuerden que la Feria de Abril continúa hasta este domingo 3 de mayo. Transporte reforzado en la L54 y L3. Disfruten y no cojan el coche si beben.',
                     neighborhood: 'GENERAL',
                     category: 'EVENTO',
                     author_name: 'Cultura TGN',
-                    created_at: '2026-04-26T08:00:00Z'
+                    created_at: '2026-04-29T08:00:00Z'
                 },
                 {
-                    id: 'sun-26-desmontaje',
-                    title: '🚧 Rambla Nova: Desmontaje Finalizado',
-                    content: 'Las estructuras de Sant Jordi ya han sido recogidas. La Rambla Nova recupera su circulación normal. Agradecemos la paciencia a todos los vecinos.',
-                    neighborhood: 'CENTRE',
+                    id: 'wed-29-yate',
+                    title: '🚢 Aviso: Afluencia en Moll de Costa',
+                    content: 'Debido a la presencia del yate "Seven Seas", hay mucha afluencia de personas en el frente marítimo. Precaución circulando con bicis y patinetes.',
+                    neighborhood: 'Serrallo',
                     category: 'AVISO',
                     author_name: 'Guàrdia Urbana TGN',
-                    created_at: '2026-04-26T07:30:00Z'
+                    created_at: '2026-04-29T07:30:00Z'
                 },
                 {
-                    id: 'sun-26-expo',
-                    title: '🖼️ Expo "Escenaris" — Teatre Tarragona',
-                    content: 'Hoy domingo último día para visitar la exposición "Escenaris" esta semana. Continuará hasta el 9 de mayo. Entrada libre. Horario: 10h-20h.',
+                    id: 'wed-29-expo',
+                    title: '🖼️ Expo "Escenaris" — Última semana',
+                    content: 'Aprovechad esta semana para visitar la espectacular exposición fotográfica en el Teatre Tarragona. Entrada libre hasta el próximo 9 de mayo.',
                     neighborhood: 'GENERAL',
                     category: 'CULTURA',
                     author_name: 'Teatre Tarragona',
-                    created_at: '2026-04-26T09:00:00Z'
+                    created_at: '2026-04-29T09:00:00Z'
                 },
                 {
-                    id: 'sun-26-jobs',
-                    title: '💼 Empleo: Nuevas Ofertas (Dom 26 Abr)',
-                    content: 'Ofertas activas: Camarero/a (977 22 33 11), Aux. Supermercat (977 55 66 77), Mosso magatzem (633 44 55 66), Netejadora Hotel (977 23 67 12). ¡Contacta directamente!',
+                    id: 'wed-29-jobs',
+                    title: '💼 Empleos de Temporada de Verano',
+                    content: 'Publicadas nuevas ofertas reales para hostelería de cara al inicio de temporada alta: Camareros, Cocineros y Socorristas. ¡Mirad la sección Empleos!',
                     neighborhood: 'GENERAL',
                     category: 'EMPLEO',
                     author_name: 'Admin ComuniTarr',
-                    created_at: '2026-04-26T10:00:00Z'
+                    created_at: '2026-04-29T10:00:00Z'
                 }
             ];
 

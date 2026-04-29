@@ -59,30 +59,30 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'sun-26-feria-abril',
+          id: 'wed-29-feria-abril',
           creator_id: 'ayto',
-          title: "💃 Feria de Abril de Bonavista (Hoy Dom)",
-          description: "32a edición de la Feria de Abril. Gastronomia andaluza, sevillanes, música en viu i molt més. Avui obert de 17h a 2h. Fins el 3 de maig.",
-          event_date: '2026-04-26',
+          title: "💃 Feria de Abril de Bonavista (Miércoles)",
+          description: "La 32a edición de la Feria de Abril continúa. ¡Mitad de semana! Avui obert de 17h a 2h. Fins el 3 de maig.",
+          event_date: '2026-04-29',
           event_time: '17:00',
           location: 'Recinte Bonavista (13.000 m²)',
           category: 'Fiesta',
           neighborhood: 'Bonavista',
           contact_info: 'Ajuntament de Tarragona',
-          created_at: '2026-04-26T08:00:00Z'
+          created_at: '2026-04-29T08:00:00Z'
         },
         {
-          id: 'sun-26-romano-gladiadors',
+          id: 'wed-29-yacht',
           creator_id: 'turisme',
-          title: "🏰 Gladiadors a l'Amfiteatre Romà",
-          description: "Visita teatralitzada amb reproductió d'un combat de gladiadors. Especial diumenge. Entrades a la taquilla o a Tarragona Turisme.",
-          event_date: '2026-04-26',
-          event_time: '12:00',
-          location: 'Amfiteatre Romà de Tarragona',
-          category: 'Cultura',
-          neighborhood: 'GENERAL',
-          contact_info: 'Tarragona Turisme | 977 25 07 95',
-          created_at: '2026-04-26T09:00:00Z'
+          title: "🚢 Visita al Moll: Yate 'Seven Seas'",
+          description: "Hoy por la tarde es buen momento para ver de cerca el impresionante yate de Spielberg en el Moll de Costa antes de que zarpe.",
+          event_date: '2026-04-29',
+          event_time: '18:00',
+          location: 'Moll de Costa',
+          category: 'Turismo',
+          neighborhood: 'Serrallo',
+          contact_info: 'Port de Tarragona',
+          created_at: '2026-04-29T09:00:00Z'
         },
         {
           id: 'may-01-festiu',

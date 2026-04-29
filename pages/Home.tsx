@@ -176,31 +176,31 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'sun-26-feria-news',
-            title: '💃 Feria de Abril Bonavista: Fin de Semana',
-            content: 'Continúa el éxito de la 32a edición de la Feria de Abril de Bonavista. Durante el día hay gran afluencia. Abierto hasta las 2h de la madrugada.',
+            id: 'wed-29-yacht-news',
+            title: '🚢 El megayate de Spielberg llega al Moll de Costa',
+            content: 'El impresionante "Seven Seas", propiedad del célebre director Steven Spielberg, está atracado en Tarragona llamando la atención de curiosos y turistas.',
+            neighborhood: 'Serrallo',
+            category: 'NOTICIA',
+            image_url: 'https://images.unsplash.com/photo-1563229875-5beac8f6540c?auto=format&fit=crop&w=800&q=80',
+            created_at: '2026-04-29T09:00:00Z'
+          },
+          {
+            id: 'wed-29-pineda-news',
+            title: '🏖️ La Pineda estrena por fin su nuevo paseo marítimo',
+            content: 'Tras 14 meses de obras intermitentes, los vecinos y visitantes ya pueden disfrutar del renovado paseo. Cuenta con más zonas verdes y carril bici ampliado.',
+            neighborhood: 'Vila-seca',
+            category: 'URBANISMO',
+            image_url: 'https://images.unsplash.com/photo-1506634064465-7dab4de896ed?auto=format&fit=crop&w=800&q=80',
+            created_at: '2026-04-29T08:00:00Z'
+          },
+          {
+            id: 'wed-29-feria-news',
+            title: '💃 La Feria de Abril encara su recta final (hasta el domingo 3)',
+            content: 'Si aún no te has pasado por Bonavista, tienes hasta el domingo 3 de mayo para disfrutar de la 32ª edición de esta multitudinaria feria. Aparcamiento habilitado.',
             neighborhood: 'Bonavista',
             category: 'CULTURA',
             image_url: 'https://images.unsplash.com/photo-1722520592113-1f681393cd8d?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-04-26T09:00:00Z'
-          },
-          {
-            id: 'sun-26-parking-news',
-            title: '🚗 Estación del Camp: Aparcamiento Saturado',
-            content: 'Aviso a viajeros: El aparcamiento gratuito de la Estación del Camp sigue saturado. Se estudian medidas y nuevas zonas. Vaya con tiempo suficiente.',
-            neighborhood: 'GENERAL',
-            category: 'NOTICIA',
-            image_url: 'https://images.unsplash.com/photo-1506634064465-7dab4de896ed?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-04-26T08:00:00Z'
-          },
-          {
-            id: 'sun-26-maritim-news',
-            title: '🚢 Retrasos en rutas marítimas por África',
-            content: 'Los buques de mercancías hacia Tarragona registran retrasos cruzando por Buena Esperanza, afectando hasta en 12 días la logística global de importación asiática.',
-            neighborhood: 'Serrallo',
-            category: 'ECONOMÍA',
-            image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-04-26T10:00:00Z'
+            created_at: '2026-04-29T10:00:00Z'
           }
         ];
 
@@ -208,12 +208,12 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'sun-26-poll-feria',
-          question: "💃 ¿Has visitado ya la Feria de Abril de Bonavista?",
-          options: ['Sí, he ido este finde', 'Iré entre semana', 'Voy el fin de semana que viene', 'No tengo pensado ir'],
-          category: 'CULTURA',
+          id: 'wed-29-poll-pineda',
+          question: "¿Has ido a ver el nuevo Paseo Marítimo de La Pineda?",
+          options: ['Sí, ha quedado genial!', 'Faltan aparcamientos alrededor', 'Iré este fin de semana', 'No suelo ir por esa zona'],
+          category: 'URBANISMO',
           neighborhood: 'GENERAL',
-          created_at: '2026-04-26T10:00:00Z'
+          created_at: '2026-04-29T10:00:00Z'
         };
         setCurrentPoll(pollExample);
 
@@ -457,24 +457,24 @@ const Home: React.FC = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-5 bg-orange-50 dark:bg-orange-900/10 rounded-[30px] flex gap-4 items-center">
-            <span className="material-symbols-outlined text-orange-500 text-3xl">traffic</span>
+            <span className="material-symbols-outlined text-orange-500 text-3xl">directions_boat</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-orange-600 tracking-widest">Tráfico / Parking</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Aparcamiento saturado en la Estación del Camp de Tarragona.</p>
+              <p className="text-[10px] font-black uppercase text-orange-600 tracking-widest">Puerto Tarragona</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Yate 'Seven Seas' de Spielberg en el Moll de Costa. Afluencia alta de curiosos.</p>
             </div>
           </div>
           <div className="p-5 bg-sky-50 dark:bg-sky-900/10 rounded-[30px] flex gap-4 items-center">
-            <span className="material-symbols-outlined text-sky-500 text-3xl">cloud</span>
+            <span className="material-symbols-outlined text-sky-500 text-3xl">wb_sunny</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Clima Domingo 26</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Máxima 21ºC. Nubes altas y posible formación de niebla por la tarde/noche.</p>
+              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Clima Miércoles 29</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Día de primavera inmejorable. Temperaturas rozando los 24ºC y sol en toda la costa.</p>
             </div>
           </div>
           <div className="p-5 bg-purple-50 dark:bg-purple-900/10 rounded-[30px] flex gap-4 items-center">
-            <span className="material-symbols-outlined text-purple-500 text-3xl">directions_bus</span>
+            <span className="material-symbols-outlined text-purple-500 text-3xl">pedal_bike</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-purple-600 tracking-widest">EMT & Transporte</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Sigue vigente el refuerzo de la L25 hacia Bonavista por la Feria.</p>
+              <p className="text-[10px] font-black uppercase text-purple-600 tracking-widest">Movilidad</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Precaución con los patinetes (VMP), campaña intensiva de control local activa.</p>
             </div>
           </div>
         </div>
@@ -486,7 +486,7 @@ const Home: React.FC = () => {
           <div className="h-full bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 rounded-[40px] text-white shadow-xl shadow-indigo-500/20 transition-transform group-hover:-translate-y-2 relative overflow-hidden">
             <span className="material-symbols-outlined text-6xl absolute top-6 right-6 opacity-20">work</span>
             <h3 className="text-2xl font-black mb-2 uppercase tracking-tight">Empleos Locales</h3>
-            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Nuevas ofertas Domingo 26</p>
+            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Nuevas ofertas Miércoles 29</p>
             <div className="flex items-center gap-2 text-xs font-black uppercase"><span className="material-symbols-outlined">arrow_forward</span> Entrar</div>
           </div>
         </Link>
@@ -585,7 +585,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 17 · Dom 26 Abr</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 18 · Mié 29 Abr</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">
