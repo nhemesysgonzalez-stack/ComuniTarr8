@@ -46,37 +46,37 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'sun-26-medical',
+                    id: 'fri-01-medical',
                     creator_id: 'v5',
                     type: 'medical',
-                    title: '💊 Farmacia de Guardia',
-                    description: 'Necesito una caja de paracetamol de la farmacia de guardia. Estoy con un trancazo y no puedo conducir con esta niebla hasta el centro. 📞 644 33 22 11 (Pere)',
+                    title: '💊 Farmacia de Guardia (Festivo)',
+                    description: 'Necesito que alguien me acerque un inhalador de la farmacia de guardia. No tengo coche y hoy los buses van con frecuencia de domingo por ser 1 de Mayo. 📞 644 33 22 11 (Pere)',
                     contact_info: '644 33 22 11 (Pere)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
-                    created_at: '2026-04-26T07:00:00Z'
+                    created_at: '2026-05-01T07:00:00Z'
                 },
                 {
-                    id: 'sun-26-food',
+                    id: 'fri-01-food',
                     creator_id: 'v6',
                     type: 'food',
-                    title: '🛒 Compra Domingo',
-                    description: 'Doña Amalia necesita algunos básicos del súper abierto hoy domingo. Vive en la Part Alta. 📞 622 88 77 66 (Sandra)',
+                    title: '🛒 Compra Emergencia (Todo cerrado)',
+                    description: '¿Alguien tiene un paquete de leche de sobra? He olvidado que hoy cerraba todo por ser el Día del Trabajador. Pago o intercambio por huevos. 📞 622 88 77 66 (Sandra)',
                     contact_info: '622 88 77 66 (Sandra)',
                     is_urgent: false,
                     neighborhood: 'PART ALTA',
-                    created_at: '2026-04-26T08:30:00Z'
+                    created_at: '2026-05-01T08:30:00Z'
                 },
                 {
-                    id: 'sun-26-company',
+                    id: 'fri-01-company',
                     creator_id: 'v8',
                     type: 'company',
-                    title: '🚶 Acompañamiento: Paseo Domingo Tarde',
-                    description: 'Busco alguien para dar un paseo por la escollera. Necesito mover las piernas tras la comida de domingo. 📞 611 22 33 44 (Elena)',
+                    title: '🚶 Paseo Puente de Mayo',
+                    description: 'Busco compañía para dar un paseo por el nuevo paseo de La Pineda esta tarde. Iré en bus L2. 📞 611 22 33 44 (Elena)',
                     contact_info: '611 22 33 44 (Elena)',
                     is_urgent: false,
                     neighborhood: 'Serrallo',
-                    created_at: '2026-04-26T10:00:00Z'
+                    created_at: '2026-05-01T10:00:00Z'
                 }
             ];
 

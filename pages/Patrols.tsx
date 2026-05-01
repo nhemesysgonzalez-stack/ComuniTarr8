@@ -49,31 +49,31 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'sun-26-pat-bonavista',
+          id: 'fri-01-pat-manifestation',
           creator_id: 'admin',
-          name: '🛡️ Refuerzo Bonavista: Domingo 26',
-          description: 'Servicio de vigilancia reforzada en los aparcamientos disuasorios cercanos a la Feria de Abril para evitar robos y actos vandálicos.',
-          neighborhood: 'Bonavista',
+          name: '🛡️ Seguridad: Manifestación 1 Mayo',
+          description: 'Acompañamiento preventivo durante las movilizaciones en el centro para asegurar el civismo y la seguridad de los vecinos.',
+          neighborhood: 'Centro',
           contact_info: 'Seguridad Ciudadana — 611 00 22 33',
-          created_at: '2026-04-26T08:00:00Z'
+          created_at: '2026-05-01T08:00:00Z'
         },
         {
-          id: 'sun-26-pat-morning',
+          id: 'fri-01-pat-beach',
           creator_id: 'user1',
-          name: '🛡️ Informe Domingo Mañana: OK',
-          description: 'Ronda matinal por Campclar y Torreforta. Todo en orden, bastante calma. Preparativos logísticos para la tarde.',
+          name: '🛡️ Patrulla Litoral: Inicio Temporada',
+          description: 'Ronda por las playas de l\'Arrabassada y Llarga. Mucha gente hoy por el festivo. Todo en orden, ambiente familiar.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
-          created_at: '2026-04-26T09:00:00Z'
+          created_at: '2026-05-01T09:00:00Z'
         },
         {
-          id: 'sun-26-pat-night',
+          id: 'fri-01-pat-feria',
           creator_id: 'user2',
-          name: '🌑 Patrulla Nocturna Domingo 26',
-          description: 'Hoy a las 22:00h realizaremos la ronda de cierre por la zona del centro y frente marítimo. Estaremos atentos a la niebla espesa.',
-          neighborhood: 'GENERAL',
+          name: '🛡️ Vigilancia Feria Bonavista (Vie/Fest)',
+          description: 'Hoy festivo se espera máxima afluencia. Reforzaremos la presencia en los accesos al recinto ferial por la tarde-noche.',
+          neighborhood: 'Bonavista',
           contact_info: '622 55 44 33 (Maria)',
-          created_at: '2026-04-26T10:00:00Z'
+          created_at: '2026-05-01T10:00:00Z'
         }
       ];
 
