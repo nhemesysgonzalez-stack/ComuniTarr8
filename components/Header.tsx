@@ -249,13 +249,13 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA + NUEVO MAPA SOCIAL */}
+      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 1 MAIG */}
       <div className="bg-purple-600 dark:bg-purple-900 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] py-2 overflow-hidden flex items-center whitespace-nowrap z-50 shadow-md">
         <div className="animate-marquee flex gap-12 sm:gap-24 items-center">
-          <span className="flex items-center gap-2 text-yellow-300">📍 SANT JORDI 2026: 150 paradas de libros y rosas en Rambla Nova este jueves (9h-20h).</span>
-          <span className="flex items-center gap-2">⚠️ TRÁFICO: Cortes parciales en tramos de Rambla Nova por montaje de paradas hoy Martes.</span>
-          <span className="flex items-center gap-2">🌹 ROSAS SOLIDARIAS: Reserva tu rosa en el mercado municipal y apoya a las entidades locales.</span>
-          <span className="flex items-center gap-2">📚 MARATÓN DE LECTURA: Abierta inscripción para leer en voz alta este jueves al mediodía.</span>
+          <span className="flex items-center gap-2 text-yellow-300">📍 1 DE MAYO: Manifestaciones sindicales en Imperial Tàrraco y Rambla Nova (12h-14h).</span>
+          <span className="flex items-center gap-2">⚠️ TRÁFICO: Cortes en el centro por movilizaciones. EMT con horarios de festivo/domingo hoy.</span>
+          <span className="flex items-center gap-2">💃 FERIA BONAVISTA: Último fin de semana de la 32ª edición. Refuerzo L3 y L54 esta noche.</span>
+          <span className="flex items-center gap-2">🚗 OPERACIÓN SALIDA: Mucha afluencia en la A-7 y N-340 por el puente de mayo. Precaución.</span>
         </div>
       </div>
 
@@ -337,8 +337,8 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Martes 21 Abril 2026</span>
-                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Despejado 21ºC</span>
+                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Viernes 1 Mayo 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Sol y Nubes 25ºC</span>
                 </div>
               </div>
 
