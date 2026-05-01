@@ -168,7 +168,7 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Dom 26 Abr)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Vie 1 May)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-rose-500 pl-4">
                     <p className="text-xs font-black dark:text-white">&ldquo;Camarero/a — Restaurante La Sal (Serrallo)&rdquo;</p>
@@ -199,13 +199,13 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined">school</span> CALENDARIO ESCOLAR
               </h3>
               <div className="flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm mb-3">
-                <div className="size-12 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 font-bold text-xl">
-                  21
+                <div className="size-12 rounded-xl bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600 font-bold text-xl">
+                  1
                 </div>
                 <div>
-                  <p className="text-xs font-black uppercase text-green-500">MARTES</p>
-                  <p className="text-sm font-bold text-gray-800 dark:text-white">Día Lectivo (Martes 21)</p>
-                  <p className="text-[10px] text-gray-500">Actividad escolar normal. Preparativos de Sant Jordi en los centros.</p>
+                  <p className="text-xs font-black uppercase text-red-500">VIERNES</p>
+                  <p className="text-sm font-bold text-gray-800 dark:text-white">Día Festivo (1 de Mayo)</p>
+                  <p className="text-[10px] text-gray-500">Día del Trabajador. No hay actividad escolar. Centros cerrados.</p>
                 </div>
               </div>
               <a
@@ -566,13 +566,13 @@ export const Services: React.FC = () => {
                   <div className="flex flex-col gap-2">
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Part Alta</span>
-                      <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DÍA NORMAL)</span>
+                      <span className="text-[9px] font-black bg-red-100 text-red-700 px-2 py-0.5 rounded-full uppercase">CERRADO FESTIVO</span>
                     </div>
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
-                      <span className="text-[9px] font-black bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">ABIERTO (DÍA NORMAL)</span>
+                      <span className="text-[9px] font-black bg-red-100 text-red-700 px-2 py-0.5 rounded-full uppercase">CERRADO FESTIVO</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 HOY MIÉRCOLES 29 Abr: Preparativos feria de entidades y Casales Cívicos.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 HOY VIERNES 1 May: Toda la red de Centros y Casales Cívicos permanecerá cerrada por festividad nacional.</p>
                   </div>
                 </div>
               </div>

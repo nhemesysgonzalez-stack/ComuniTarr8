@@ -59,43 +59,43 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'wed-29-feria-abril',
-          creator_id: 'ayto',
-          title: "💃 Feria de Abril de Bonavista (Miércoles)",
-          description: "La 32a edición de la Feria de Abril continúa. ¡Mitad de semana! Avui obert de 17h a 2h. Fins el 3 de maig.",
-          event_date: '2026-04-29',
-          event_time: '17:00',
-          location: 'Recinte Bonavista (13.000 m²)',
-          category: 'Fiesta',
-          neighborhood: 'Bonavista',
-          contact_info: 'Ajuntament de Tarragona',
-          created_at: '2026-04-29T08:00:00Z'
+          id: 'fri-01-manifestacion',
+          creator_id: 'sindicatos',
+          title: "📣 Manifestación 1 de Mayo",
+          description: "Marcha por los derechos de los trabajadores. Salida desde Plaça Imperial Tàrraco y recorrido por Rambla Nova. Posibles afectaciones al tráfico.",
+          event_date: '2026-05-01',
+          event_time: '12:00',
+          location: 'Plaça Imperial Tàrraco',
+          category: 'Eventos',
+          neighborhood: 'Centro',
+          contact_info: 'Sindicatos TGN',
+          created_at: '2026-05-01T08:00:00Z'
         },
         {
-          id: 'wed-29-yacht',
-          creator_id: 'turisme',
-          title: "🚢 Visita al Moll: Yate 'Seven Seas'",
-          description: "Hoy por la tarde es buen momento para ver de cerca el impresionante yate de Spielberg en el Moll de Costa antes de que zarpe.",
-          event_date: '2026-04-29',
-          event_time: '18:00',
-          location: 'Moll de Costa',
-          category: 'Turismo',
-          neighborhood: 'Serrallo',
-          contact_info: 'Port de Tarragona',
-          created_at: '2026-04-29T09:00:00Z'
+          id: 'fri-01-feria',
+          creator_id: 'ayto',
+          title: "💃 Feria de Abril (Penúltimo día)",
+          description: "La 32a edición de la Feria de Abril encara su gran fin de semana. Apertura oficial y refuerzo de autobuses de la EMT líneas 3 y 54.",
+          event_date: '2026-05-01',
+          event_time: '17:00',
+          location: 'Recinte Bonavista',
+          category: 'Fiesta',
+          neighborhood: 'Bonavista',
+          contact_info: 'Ayuntamiento TGN',
+          created_at: '2026-05-01T09:00:00Z'
         },
         {
           id: 'may-01-festiu',
           creator_id: 'admin',
           title: "🚩 Festa del Treball (Dia Festiu)",
-          description: "1 de Maig: Dia Internacional del Treball. Festiu oficial a Tarragona. Serveis mínims en transport públic. La Feria de Abril continua oberta.",
+          description: "1 de Maig: Dia Internacional del Treball. Festiu oficial a Tarragona. Serveis mínims en transport públic.",
           event_date: '2026-05-01',
           event_time: '00:00',
           location: 'Tarragona (Festiu General)',
           category: 'Festiu',
           neighborhood: 'GENERAL',
           contact_info: 'Ajuntament de Tarragona',
-          created_at: '2026-04-26T08:00:00Z'
+          created_at: '2026-05-01T08:00:00Z'
         },
         {
           id: 'may-09-expo-escenaris',

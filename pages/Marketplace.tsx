@@ -69,28 +69,28 @@ const Marketplace: React.FC = () => {
           created_at: '2026-04-26T08:00:00Z'
         },
         {
-          id: 'sun-26-bike',
+          id: 'fri-01-bike',
           user_id: 'v1',
           title: '🚲 Bicicleta de Paseo (Cesta incluida)',
-          description: 'Estado impecable. Perfecta para moverte por Tarragona estos días de buen tiempo. 📞 977 44 55 66',
+          description: 'Estado impecable. Perfecta para moverte por el nuevo carril bici de La Pineda. 📞 977 44 55 66',
           price: '85',
           category: 'ocio',
           neighborhood: 'PONENT',
           contact_info: '977 44 55 66 (Maria)',
           image_url: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-04-26T09:00:00Z'
+          created_at: '2026-05-01T09:00:00Z'
         },
         {
-          id: 'sun-26-ipad',
+          id: 'fri-01-ipad',
           user_id: 'v2',
           title: '📱 iPad Air (M1) 64GB',
-          description: 'Con funda y teclado. Factura y garantía. Impecable, vendo por cambio de dispositivo. 📞 622 88 77 66',
+          description: 'Con funda y teclado. Factura y garantía. Impecable, perfecto regalo para el día de la madre este finde. 📞 622 88 77 66',
           price: '380',
           category: 'tech',
           neighborhood: 'SANT PERE',
           contact_info: '622 88 77 66 (Sergio)',
           image_url: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-04-26T10:00:00Z'
+          created_at: '2026-05-01T10:00:00Z'
         }
       ];
 

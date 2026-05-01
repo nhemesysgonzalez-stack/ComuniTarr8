@@ -8,10 +8,10 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 'plan-1', type: 'ocio', x: '45%', y: '55%', title: '💃 Feria Abril Bonavista', desc: 'La 32a edición sigue su curso esta semana. Sevillanas, gastronomía andaluza, casetas y música. ¡Plan perfecto para esta tarde de miércoles!', status: 'Hoy 17h-02h', color: 'bg-red-500', icon: 'celebration', glow: 'shadow-[0_0_50px_rgba(239,68,68,0.3)]', creator_name: 'Feria TGN 2026' },
-    { id: 'plan-2', type: 'ocio', x: '55%', y: '75%', title: '🚢 Yate "Seven Seas"', desc: 'El espectacular megayate de Steven Spielberg está atracado en el Moll de Costa. Acércate a verlo antes de que zarpe.', status: 'Atracado', color: 'bg-blue-500', icon: 'directions_boat', creator_name: 'Moll Costa' },
-    { id: 'plan-3', type: 'cultura', x: '30%', y: '40%', title: '🖼️ Expo "Escenaris" (Teatre TGN)', desc: 'Exposición fotográfica sobre los escenarios más emblemáticos de la ciudad. Entrada libre. Hasta el 9 de mayo.', status: 'Abierto hasta 20h', color: 'bg-purple-500', icon: 'photo_camera', creator_name: 'Teatre Tarragona' },
-    { id: 'plan-4', type: 'deporte', x: '15%', y: '65%', title: '🏖️ Nuevo Paseo La Pineda', desc: 'Por fin se ha inaugurado el nuevo paseo marítimo de La Pineda tras 14 meses de obras. Perfecto para pasear o ir en bici esta tarde soleada.', status: 'Inaugurado', color: 'bg-emerald-500', icon: 'pedal_bike', creator_name: 'Vila-seca' }
+    { id: 'plan-1', type: 'ocio', x: '45%', y: '55%', title: '💃 Feria Abril Bonavista', desc: 'Último fin de semana. Sevillanas, gastronomía andaluza, casetas y música. ¡Plan perfecto para este puente de mayo!', status: 'Abierto 12h-03h', color: 'bg-red-500', icon: 'celebration', glow: 'shadow-[0_0_50px_rgba(239,68,68,0.3)]', creator_name: 'Feria TGN 2026' },
+    { id: 'plan-2', type: 'deporte', x: '65%', y: '70%', title: '🏖️ Playa L\'Arrabassada', desc: 'Primeros bañistas del puente. Servicio de socorrismo Cruz Roja activado. Bandera verde.', status: 'Temporada Baño', color: 'bg-blue-500', icon: 'pool', creator_name: 'Protección Civil' },
+    { id: 'plan-3', type: 'cultura', x: '40%', y: '45%', title: '📣 Manifestación 1 Mayo', desc: 'Recorrido desde Plaça Imperial Tàrraco hasta Rambla Nova. Posibles cortes de circulación.', status: 'Hoy 12:00', color: 'bg-orange-500', icon: 'campaign', creator_name: 'Sindicatos' },
+    { id: 'plan-4', type: 'deporte', x: '15%', y: '65%', title: '🏖️ Paseo La Pineda', desc: 'Recién inaugurado. Gran afluencia de ciclistas y patinadores disfrutando del carril bici ampliado.', status: 'Inaugurado', color: 'bg-emerald-500', icon: 'pedal_bike', creator_name: 'Vila-seca' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

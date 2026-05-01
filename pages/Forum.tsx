@@ -125,40 +125,40 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Admin', text: '🚢 ¡Feliz miércoles 29! ¿Alguien ha ido al puerto a ver el yate de Spielberg?' },
-        { who: 'Pau T.', text: 'Yo fui ayer por la tarde. Es una barbaridad, casi 110 metros de eslora. 😱' },
-        { who: 'Joan B.', text: 'Había mucha gente haciéndose fotos allí.' }
+        { who: 'Admin', text: '🏖️ ¡Feliz viernes 1 de Mayo! ¿Qué plan tenéis para este puente?' },
+        { who: 'Pau T.', text: 'Yo he bajado un rato a la playa de L\'Arrabassada a tomar el primer sol.' },
+        { who: 'Joan B.', text: 'Cuidado con bajar al centro, hay cortes por las movilizaciones del día del trabajador.' }
       ],
       [
-        { who: 'Joe R.', text: '🏖️ Por fin han acabado las obras en La Pineda. ¡Tengo ganas de ver cómo ha quedado!' },
-        { who: 'Maria G.', text: '@Joe Han puesto carril bici nuevo y es mucho más ancho. Está genial.' },
-        { who: 'Joe R.', text: '¡Este finde me voy para allá con la bici seguro!' }
+        { who: 'Joe R.', text: '💃 Este finde toca despedirse de la Feria de Abril en Bonavista.' },
+        { who: 'Maria G.', text: '@Joe ¡Cierto! Voy esta noche con los amigos a cenar.' },
+        { who: 'Joe R.', text: 'Comed un buen rebujito por mí.' }
       ],
     ],
     'APOYO': [
       [
-        { who: 'Carme L.', text: '¿Alguien sabe de alguna farmacia abierta ahora 24h cerca de Rambla Vella?' },
-        { who: 'Andreu T.', text: 'La de calle Unión debería estar de guardia esta noche, Carme.' },
+        { who: 'Carme L.', text: '¿Alguien sabe si los supermercados abren hoy festivo?' },
+        { who: 'Andreu T.', text: 'La mayoría cerrados hoy 1 de Mayo, Carme. Igual encuentras algún súper de barrio abierto.' },
       ],
       [
-        { who: 'Sandra L.', text: 'Tenemos la recogida de ropa para el Banco Solidario este finde. ¡Nos faltan manos!' },
-        { who: 'Elena V.', text: '@Sandra ¡Yo el sábado por la mañana puedo!' },
+        { who: 'Sandra L.', text: 'Recuerdo: Mañana sábado seguimos con la recogida de alimentos en el CC de Torreforta.' },
+        { who: 'Elena V.', text: '@Sandra ¡Yo me pasaré sobre las 11h para dejar cosas!' },
       ],
     ],
     'EMPLEO': [
       [
-        { who: 'Servicios TGN', text: '💼 Ojo que de cara al verano empiezan a salir ofertas top en hostelería. Mirad el nuevo restaurante con estrella.' },
-        { who: 'Restaurant Sol', text: 'Buscamos camarero/a fin de semana. Contrato indefinido. 977 22 11 33.' },
+        { who: 'Servicios TGN', text: '💼 ¡Campaña de verano inminente! Id preparando currículums para el sector hostelería.' },
+        { who: 'Restaurant Sol', text: 'Hoy 1 de Mayo trabajamos fuerte. Buscamos refuerzo urgente para camareros los fines de semana.' },
       ],
     ],
     'ENCUENTROS': [
       [
-        { who: 'Santi G.', text: 'Hoy miércoles voy a Bonavista a eso de las 19h a la Feria. ¿Alguien viene?' },
-        { who: 'Marta L.', text: '¡Me apunto! Entre semana se está más tranquilo.' }
+        { who: 'Santi G.', text: 'Mañana sábado por la tarde quedada en la Feria de Abril para la recta final. ¿Alguien se suma?' },
+        { who: 'Marta L.', text: '¡Me apunto! Me pongo el vestido y vamos.' }
       ],
       [
-        { who: 'Nuria P.', text: 'El sábado iré a patinar por el nuevo paseo de la Pineda. Nivel básico.' },
-        { who: 'Pau T.', text: '@Nuria ¡Yo me apunto a los patines! 🛼' },
+        { who: 'Nuria P.', text: 'El domingo quiero inaugurar la bici por el nuevo carril del puente del Francolí.' },
+        { who: 'Pau T.', text: '@Nuria ¡Si hacéis grupeta avisad que me apunto!' },
       ],
     ],
   };
@@ -583,12 +583,12 @@ const Forum: React.FC = () => {
             </div>
           </div>
 
-          {/* Trending Topics - Actualizado Miércoles 29 Abril */}
+          {/* Trending Topics - Actualizado Viernes 1 Mayo */}
           <div>
             <h4 className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 ml-2">Trending Topic</h4>
             <div className="flex flex-wrap gap-2 px-2">
-              <span className="px-3 py-1 bg-amber-100 text-amber-600 rounded-lg text-[10px] font-black uppercase">#SevenSeasTGN</span>
-              <span className="px-3 py-1 bg-sky-100 text-sky-600 rounded-lg text-[10px] font-black uppercase">#PaseoLaPineda</span>
+              <span className="px-3 py-1 bg-amber-100 text-amber-600 rounded-lg text-[10px] font-black uppercase">#1deMayoTGN</span>
+              <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-lg text-[10px] font-black uppercase">#OperacionPuente</span>
               <span className="px-3 py-1 bg-red-100 text-red-600 rounded-lg text-[10px] font-black uppercase">#FeriaBonavista</span>
             </div>
           </div>

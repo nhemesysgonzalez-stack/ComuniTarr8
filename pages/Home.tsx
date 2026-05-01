@@ -176,31 +176,31 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'wed-29-yacht-news',
-            title: '🚢 El megayate de Spielberg llega al Moll de Costa',
-            content: 'El impresionante "Seven Seas", propiedad del célebre director Steven Spielberg, está atracado en Tarragona llamando la atención de curiosos y turistas.',
-            neighborhood: 'Serrallo',
+            id: 'fri-01-may-manifestation',
+            title: '📣 Manifestaciones del 1 de Mayo',
+            content: 'Por motivo del Día Internacional de los Trabajadores, hoy varias manifestaciones recorrerán el centro, saliendo desde la Plaça Imperial Tàrraco y afectando el tráfico.',
+            neighborhood: 'Centro',
             category: 'NOTICIA',
-            image_url: 'https://images.unsplash.com/photo-1563229875-5beac8f6540c?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-04-29T09:00:00Z'
+            image_url: 'https://images.unsplash.com/photo-1577908428800-47b2c01d9f8e?auto=format&fit=crop&w=800&q=80',
+            created_at: '2026-05-01T09:00:00Z'
           },
           {
-            id: 'wed-29-pineda-news',
-            title: '🏖️ La Pineda estrena por fin su nuevo paseo marítimo',
-            content: 'Tras 14 meses de obras intermitentes, los vecinos y visitantes ya pueden disfrutar del renovado paseo. Cuenta con más zonas verdes y carril bici ampliado.',
-            neighborhood: 'Vila-seca',
-            category: 'URBANISMO',
+            id: 'fri-01-may-beach',
+            title: '🏖️ Las playas comienzan a recibir bañistas',
+            content: 'Este puente del 1 de mayo marca el inicio extra-oficial de la temporada de playa. L\'Arrabassada y El Miracle presentan una buena afluencia desde primera hora.',
+            neighborhood: 'El Miracle',
+            category: 'SOCIEDAD',
             image_url: 'https://images.unsplash.com/photo-1506634064465-7dab4de896ed?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-04-29T08:00:00Z'
+            created_at: '2026-05-01T10:00:00Z'
           },
           {
-            id: 'wed-29-feria-news',
-            title: '💃 La Feria de Abril encara su recta final (hasta el domingo 3)',
-            content: 'Si aún no te has pasado por Bonavista, tienes hasta el domingo 3 de mayo para disfrutar de la 32ª edición de esta multitudinaria feria. Aparcamiento habilitado.',
+            id: 'fri-01-may-feria',
+            title: '💃 Último fin de semana de la Feria de Abril',
+            content: 'La 32ª Feria de Abril de Bonavista afronta sus últimos tres días. Se espera un lleno total este puente festivo antes de su clausura el domingo por la noche.',
             neighborhood: 'Bonavista',
             category: 'CULTURA',
             image_url: 'https://images.unsplash.com/photo-1722520592113-1f681393cd8d?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-04-29T10:00:00Z'
+            created_at: '2026-05-01T08:00:00Z'
           }
         ];
 
@@ -208,12 +208,12 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'wed-29-poll-pineda',
-          question: "¿Has ido a ver el nuevo Paseo Marítimo de La Pineda?",
-          options: ['Sí, ha quedado genial!', 'Faltan aparcamientos alrededor', 'Iré este fin de semana', 'No suelo ir por esa zona'],
-          category: 'URBANISMO',
+          id: 'fri-01-poll-puente',
+          question: "¿Qué plan tienes para este puente de mayo?",
+          options: ['Playa y relax', 'Ir a la Feria de Bonavista', 'Escapada fuera de Tarragona', 'Trabajo/Quedarme en casa'],
+          category: 'SOCIEDAD',
           neighborhood: 'GENERAL',
-          created_at: '2026-04-29T10:00:00Z'
+          created_at: '2026-05-01T10:00:00Z'
         };
         setCurrentPoll(pollExample);
 
@@ -457,24 +457,24 @@ const Home: React.FC = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-5 bg-orange-50 dark:bg-orange-900/10 rounded-[30px] flex gap-4 items-center">
-            <span className="material-symbols-outlined text-orange-500 text-3xl">directions_boat</span>
+            <span className="material-symbols-outlined text-orange-500 text-3xl">campaign</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-orange-600 tracking-widest">Puerto Tarragona</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Yate 'Seven Seas' de Spielberg en el Moll de Costa. Afluencia alta de curiosos.</p>
+              <p className="text-[10px] font-black uppercase text-orange-600 tracking-widest">Tráfico Lento</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Cortes intermitentes en Plaça Imperial y Rambla por la manifestación.</p>
             </div>
           </div>
           <div className="p-5 bg-sky-50 dark:bg-sky-900/10 rounded-[30px] flex gap-4 items-center">
             <span className="material-symbols-outlined text-sky-500 text-3xl">wb_sunny</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Clima Miércoles 29</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Día de primavera inmejorable. Temperaturas rozando los 24ºC y sol en toda la costa.</p>
+              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Clima Viernes 1</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Día totalmente despejado, hasta 25ºC. Índice UV alto (7).</p>
             </div>
           </div>
           <div className="p-5 bg-purple-50 dark:bg-purple-900/10 rounded-[30px] flex gap-4 items-center">
-            <span className="material-symbols-outlined text-purple-500 text-3xl">pedal_bike</span>
+            <span className="material-symbols-outlined text-purple-500 text-3xl">beach_access</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-purple-600 tracking-widest">Movilidad</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Precaución con los patinetes (VMP), campaña intensiva de control local activa.</p>
+              <p className="text-[10px] font-black uppercase text-purple-600 tracking-widest">Playas</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Buena mar, bandera verde. Comienza el servicio de socorrismo en l'Arrabassada.</p>
             </div>
           </div>
         </div>
@@ -486,7 +486,7 @@ const Home: React.FC = () => {
           <div className="h-full bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 rounded-[40px] text-white shadow-xl shadow-indigo-500/20 transition-transform group-hover:-translate-y-2 relative overflow-hidden">
             <span className="material-symbols-outlined text-6xl absolute top-6 right-6 opacity-20">work</span>
             <h3 className="text-2xl font-black mb-2 uppercase tracking-tight">Empleos Locales</h3>
-            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Nuevas ofertas Miércoles 29</p>
+            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Nuevas ofertas Viernes 1 May</p>
             <div className="flex items-center gap-2 text-xs font-black uppercase"><span className="material-symbols-outlined">arrow_forward</span> Entrar</div>
           </div>
         </Link>
@@ -585,7 +585,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 18 · Mié 29 Abr</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 18 · Vie 1 May</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">

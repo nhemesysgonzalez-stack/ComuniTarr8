@@ -145,40 +145,40 @@ const Announcements: React.FC = () => {
 
             const realBulletins: Announcement[] = [
                 {
-                    id: 'wed-29-feria',
-                    title: '💃 Feria de Abril Bonavista (Recta Final)',
-                    content: 'Recuerden que la Feria de Abril continúa hasta este domingo 3 de mayo. Transporte reforzado en la L54 y L3. Disfruten y no cojan el coche si beben.',
+                    id: 'fri-01-may-feria',
+                    title: '💃 Últimos días Feria de Abril Bonavista',
+                    content: 'Aprovecha este puente del 1 de Mayo. La Feria cerrará sus puertas definitivamente este domingo. Refuerzo en las líneas 54 y 3 de la EMT.',
                     neighborhood: 'GENERAL',
                     category: 'EVENTO',
                     author_name: 'Cultura TGN',
-                    created_at: '2026-04-29T08:00:00Z'
+                    created_at: '2026-05-01T08:00:00Z'
                 },
                 {
-                    id: 'wed-29-yate',
-                    title: '🚢 Aviso: Afluencia en Moll de Costa',
-                    content: 'Debido a la presencia del yate "Seven Seas", hay mucha afluencia de personas en el frente marítimo. Precaución circulando con bicis y patinetes.',
-                    neighborhood: 'Serrallo',
+                    id: 'fri-01-may-traffic',
+                    title: '⚠️ Aviso de Tráfico: Manifestaciones',
+                    content: 'Cortes intermitentes de tráfico en el eje Imperial Tàrraco - Rambla Nova por las movilizaciones sindicales del Día del Trabajador hasta las 14h.',
+                    neighborhood: 'Centro',
                     category: 'AVISO',
                     author_name: 'Guàrdia Urbana TGN',
-                    created_at: '2026-04-29T07:30:00Z'
+                    created_at: '2026-05-01T07:30:00Z'
                 },
                 {
-                    id: 'wed-29-expo',
-                    title: '🖼️ Expo "Escenaris" — Última semana',
-                    content: 'Aprovechad esta semana para visitar la espectacular exposición fotográfica en el Teatre Tarragona. Entrada libre hasta el próximo 9 de mayo.',
-                    neighborhood: 'GENERAL',
-                    category: 'CULTURA',
-                    author_name: 'Teatre Tarragona',
-                    created_at: '2026-04-29T09:00:00Z'
+                    id: 'fri-01-may-beach',
+                    title: '🏖️ Inicio temporada playas',
+                    content: 'Con el puente arranca la temporada de baño extra-oficial. Servicio de socorrismo activado parcialmente en L\'Arrabassada y El Miracle.',
+                    neighborhood: 'Litoral',
+                    category: 'AVISO',
+                    author_name: 'Protección Civil',
+                    created_at: '2026-05-01T09:00:00Z'
                 },
                 {
-                    id: 'wed-29-jobs',
-                    title: '💼 Empleos de Temporada de Verano',
-                    content: 'Publicadas nuevas ofertas reales para hostelería de cara al inicio de temporada alta: Camareros, Cocineros y Socorristas. ¡Mirad la sección Empleos!',
+                    id: 'fri-01-may-jobs',
+                    title: '💼 Nuevas Ofertas de Empleo (1 Mayo)',
+                    content: 'Hemos depurado la sección de empleos: ahora solo encontrarás ofertas reales, verificadas y con número de teléfono de contacto para el verano.',
                     neighborhood: 'GENERAL',
                     category: 'EMPLEO',
                     author_name: 'Admin ComuniTarr',
-                    created_at: '2026-04-29T10:00:00Z'
+                    created_at: '2026-05-01T10:00:00Z'
                 }
             ];
 

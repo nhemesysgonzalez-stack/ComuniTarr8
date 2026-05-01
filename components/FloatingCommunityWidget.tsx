@@ -11,17 +11,17 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 416, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: '🚢 ¿Alguien ha bajado al puerto a ver el yate de Spielberg? ¡Es una pasada!', neighborhood: 'Serrallo' },
-    { id: 417, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Hoy me he pasado por la Feria de Abril en Bonavista para merendar, ¡mucho ambiente incluso entre semana! 💃', neighborhood: 'Bonavista' },
-    { id: 418, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: 'Genial el nuevo paseo de La Pineda, por fin han acabado las obras tras más de un año. 🏖️', neighborhood: 'Vila-seca' },
-    { id: 419, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Mucho cuidado los que vayáis en patinete eléctrico, que con los últimos accidentes están multando mucho. 🛴', neighborhood: 'Centro' }
+    { id: 416, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: '🏖️ Primer bañito del año en L\'Arrabassada. ¡El agua está helada pero se está genial al sol!', neighborhood: 'Levante' },
+    { id: 417, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Hay bastante tráfico cortado en el centro por las manifestaciones del 1 de Mayo. ¡Cuidado si vais en coche!', neighborhood: 'Centro' },
+    { id: 418, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: '💃 Este finde aprovecharé la Feria en Bonavista, que dicen que termina el domingo.', neighborhood: 'Bonavista' },
+    { id: 419, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Disfrutando del puente en casa, toca descanso merecido. ¡Feliz día del trabajador a todos!', neighborhood: 'Part Alta' }
 ];
 
 const tickerMessages = [
-    "🚢 ACTUALIDAD: El megayate 'Seven Seas' de Steven Spielberg atraca en el Moll de Costa.",
-    "🚧 INFRAESTRUCTURAS: La Pineda estrena su nuevo paseo marítimo tras 14 meses de obras. ¡A pasear!",
-    "💃 FERIA DE ABRIL: Bonavista continúa abierta toda la semana hasta el 3 de mayo.",
-    "⭐ GASTRONOMÍA: ¡Un nuevo restaurante tarraconense consigue entrar en la prestigiosa Guía Michelin!"
+    "📣 MOVILIDAD: Cortes en Plaça Imperial Tàrraco y Rambla por las movilizaciones del Día del Trabajador.",
+    "🏖️ PLAYAS: Temporada de baño no oficial iniciada. Socorrismo activado en L'Arrabassada y El Miracle.",
+    "💃 FERIA ABRIL: Último fin de semana en Bonavista. Cierre domingo noche. Refuerzo línea EMT.",
+    "☀️ TIEMPO: Alerta por altas temperaturas inusuales este fin de semana, rozando 25ºC."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {
