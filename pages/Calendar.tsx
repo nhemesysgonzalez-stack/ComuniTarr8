@@ -59,56 +59,43 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'fri-01-manifestacion',
-          creator_id: 'sindicatos',
-          title: "📣 Manifestación 1 de Mayo",
-          description: "Marcha por los derechos de los trabajadores. Salida desde Plaça Imperial Tàrraco y recorrido por Rambla Nova. Posibles afectaciones al tráfico.",
-          event_date: '2026-05-01',
-          event_time: '12:00',
-          location: 'Plaça Imperial Tàrraco',
-          category: 'Eventos',
-          neighborhood: 'Centro',
-          contact_info: 'Sindicatos TGN',
-          created_at: '2026-05-01T08:00:00Z'
-        },
-        {
-          id: 'fri-01-feria',
-          creator_id: 'ayto',
-          title: "💃 Feria de Abril (Penúltimo día)",
-          description: "La 32a edición de la Feria de Abril encara su gran fin de semana. Apertura oficial y refuerzo de autobuses de la EMT líneas 3 y 54.",
-          event_date: '2026-05-01',
-          event_time: '17:00',
-          location: 'Recinte Bonavista',
-          category: 'Fiesta',
-          neighborhood: 'Bonavista',
-          contact_info: 'Ayuntamiento TGN',
-          created_at: '2026-05-01T09:00:00Z'
-        },
-        {
-          id: 'may-01-festiu',
+          id: 'may-04-routine',
           creator_id: 'admin',
-          title: "🚩 Festa del Treball (Dia Festiu)",
-          description: "1 de Maig: Dia Internacional del Treball. Festiu oficial a Tarragona. Serveis mínims en transport públic.",
-          event_date: '2026-05-01',
-          event_time: '00:00',
-          location: 'Tarragona (Festiu General)',
-          category: 'Festiu',
+          title: "🗓️ Vuelta a la normalidad post-puente",
+          description: "Reapertura de centros cívicos, bibliotecas y servicios municipales tras el puente de mayo.",
+          event_date: '2026-05-04',
+          event_time: '08:00',
+          location: 'Tarragona (General)',
+          category: 'Avisos',
           neighborhood: 'GENERAL',
           contact_info: 'Ajuntament de Tarragona',
-          created_at: '2026-05-01T08:00:00Z'
+          created_at: '2026-05-04T08:00:00Z'
         },
         {
-          id: 'may-09-expo-escenaris',
+          id: 'may-11-tarraco-viva',
           creator_id: 'cultura',
-          title: "🖼️ Exp. \"Escenaris\" — Últim dia!",
-          description: "Darrer dia per visitar l'exposició fotogràfica 'Escenaris' al Teatre Tarragona. Entrada lliure.",
-          event_date: '2026-05-09',
-          event_time: '10:00',
-          location: 'Teatre Tarragona',
+          title: "🏛️ Inicio Tarraco Viva 2026",
+          description: "Gran festival de recreación histórica de Tarragona. Actos de apertura en el Anfiteatro y Recinto Ferial.",
+          event_date: '2026-05-11',
+          event_time: '18:00',
+          location: 'Varios puntos de la ciudad',
           category: 'Cultura',
           neighborhood: 'GENERAL',
-          contact_info: 'Teatre Tarragona',
-          created_at: '2026-04-26T09:00:00Z'
+          contact_info: 'Agenda Cultural TGN',
+          created_at: '2026-05-04T09:00:00Z'
+        },
+        {
+          id: 'may-16-miguel-rios',
+          creator_id: 'ocio',
+          title: "🎸 Concierto: Miguel Ríos",
+          description: "El mítico rockero llega a la Tarraco Arena Plaza con su gira de despedida.",
+          event_date: '2026-05-16',
+          event_time: '21:30',
+          location: 'Tarraco Arena Plaza',
+          category: 'Música',
+          neighborhood: 'GENERAL',
+          contact_info: 'Venta de entradas online',
+          created_at: '2026-05-04T10:00:00Z'
         }
       ];
 

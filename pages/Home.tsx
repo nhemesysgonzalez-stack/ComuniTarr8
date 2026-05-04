@@ -176,31 +176,31 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'fri-01-may-manifestation',
-            title: '📣 Manifestaciones del 1 de Mayo',
-            content: 'Por motivo del Día Internacional de los Trabajadores, hoy varias manifestaciones recorrerán el centro, saliendo desde la Plaça Imperial Tàrraco y afectando el tráfico.',
-            neighborhood: 'Centro',
-            category: 'NOTICIA',
-            image_url: 'https://images.unsplash.com/photo-1577908428800-47b2c01d9f8e?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-05-01T09:00:00Z'
+            id: 'mon-04-may-nastic',
+            title: '⚽ ¡Victoria agónica del Nàstic!',
+            content: 'El Nàstic de Tarragona se lleva los 3 puntos (2-1) contra el Sevilla Atlético con un gol de Óscar Sanz en el último suspiro. ¡El Nou Estadi fue una caldera!',
+            neighborhood: 'Llevant',
+            category: 'DEPORTES',
+            image_url: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80',
+            created_at: '2026-05-04T08:30:00Z'
           },
           {
-            id: 'fri-01-may-beach',
-            title: '🏖️ Las playas comienzan a recibir bañistas',
-            content: 'Este puente del 1 de mayo marca el inicio extra-oficial de la temporada de playa. L\'Arrabassada y El Miracle presentan una buena afluencia desde primera hora.',
-            neighborhood: 'El Miracle',
-            category: 'SOCIEDAD',
-            image_url: 'https://images.unsplash.com/photo-1506634064465-7dab4de896ed?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-05-01T10:00:00Z'
+            id: 'mon-04-may-midwives',
+            title: '🩺 Alerta Sanitaria: Falta de comadronas',
+            content: 'El Colegio de Enfermería de Tarragona (CODITA) denuncia la falta crítica de comadronas en la demarcación. Reclaman medidas urgentes para garantizar la asistencia.',
+            neighborhood: 'GENERAL',
+            category: 'ACTUALIDAD',
+            image_url: 'https://images.unsplash.com/photo-1505751172107-5732488c3ba0?auto=format&fit=crop&w=800&q=80',
+            created_at: '2026-05-04T08:00:00Z'
           },
           {
-            id: 'fri-01-may-feria',
-            title: '💃 Último fin de semana de la Feria de Abril',
-            content: 'La 32ª Feria de Abril de Bonavista afronta sus últimos tres días. Se espera un lleno total este puente festivo antes de su clausura el domingo por la noche.',
-            neighborhood: 'Bonavista',
+            id: 'mon-04-may-tarraco-viva',
+            title: '🏛️ Tarraco Viva: Cuenta atrás para el festival',
+            content: 'Falta justo una semana para el inicio de Tarraco Viva. Del 11 al 24 de mayo, la ciudad volverá a ser la capital del Imperio Romano con recreaciones históricas.',
+            neighborhood: 'Part Alta',
             category: 'CULTURA',
-            image_url: 'https://images.unsplash.com/photo-1722520592113-1f681393cd8d?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-05-01T08:00:00Z'
+            image_url: 'https://images.unsplash.com/photo-1549419102-690226c71be3?auto=format&fit=crop&w=800&q=80',
+            created_at: '2026-05-04T07:45:00Z'
           }
         ];
 
@@ -208,12 +208,12 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'fri-01-poll-puente',
-          question: "¿Qué plan tienes para este puente de mayo?",
-          options: ['Playa y relax', 'Ir a la Feria de Bonavista', 'Escapada fuera de Tarragona', 'Trabajo/Quedarme en casa'],
-          category: 'SOCIEDAD',
+          id: 'mon-04-poll-nastic',
+          question: "¿Crees que el Nàstic logrará el ascenso directo tras la victoria de ayer?",
+          options: ['¡Sí, estamos en racha!', 'Habrá que sufrir en el playoff', 'Todavía es pronto para decir nada', 'No sigo el fútbol'],
+          category: 'DEPORTES',
           neighborhood: 'GENERAL',
-          created_at: '2026-05-01T10:00:00Z'
+          created_at: '2026-05-04T09:00:00Z'
         };
         setCurrentPoll(pollExample);
 
@@ -457,24 +457,24 @@ const Home: React.FC = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-5 bg-orange-50 dark:bg-orange-900/10 rounded-[30px] flex gap-4 items-center">
-            <span className="material-symbols-outlined text-orange-500 text-3xl">campaign</span>
+            <span className="material-symbols-outlined text-orange-500 text-3xl">sports_soccer</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-orange-600 tracking-widest">Tráfico Lento</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Cortes intermitentes en Plaça Imperial y Rambla por la manifestación.</p>
+              <p className="text-[10px] font-black uppercase text-orange-600 tracking-widest">Nàstic 2 - 1 Sevilla At.</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Resaca de euforia en Tarragona tras la victoria en el último minuto.</p>
             </div>
           </div>
           <div className="p-5 bg-sky-50 dark:bg-sky-900/10 rounded-[30px] flex gap-4 items-center">
             <span className="material-symbols-outlined text-sky-500 text-3xl">wb_sunny</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Clima Viernes 1</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Día totalmente despejado, hasta 25ºC. Índice UV alto (7).</p>
+              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Lunes 4 Mayo</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Día algo nublado, bajada de temperaturas a 19ºC. Viento de Mestral.</p>
             </div>
           </div>
           <div className="p-5 bg-purple-50 dark:bg-purple-900/10 rounded-[30px] flex gap-4 items-center">
-            <span className="material-symbols-outlined text-purple-500 text-3xl">beach_access</span>
+            <span className="material-symbols-outlined text-purple-500 text-3xl">history_edu</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-purple-600 tracking-widest">Playas</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Buena mar, bandera verde. Comienza el servicio de socorrismo en l'Arrabassada.</p>
+              <p className="text-[10px] font-black uppercase text-purple-600 tracking-widest">Tarraco Viva</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Falta 1 semana. Ya se pueden ver los primeros andamios en el Pretorio.</p>
             </div>
           </div>
         </div>
@@ -486,7 +486,7 @@ const Home: React.FC = () => {
           <div className="h-full bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 rounded-[40px] text-white shadow-xl shadow-indigo-500/20 transition-transform group-hover:-translate-y-2 relative overflow-hidden">
             <span className="material-symbols-outlined text-6xl absolute top-6 right-6 opacity-20">work</span>
             <h3 className="text-2xl font-black mb-2 uppercase tracking-tight">Empleos Locales</h3>
-            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Nuevas ofertas Viernes 1 May</p>
+            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Nuevas ofertas Lunes 4 May</p>
             <div className="flex items-center gap-2 text-xs font-black uppercase"><span className="material-symbols-outlined">arrow_forward</span> Entrar</div>
           </div>
         </Link>

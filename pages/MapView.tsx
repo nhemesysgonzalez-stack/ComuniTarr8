@@ -8,10 +8,10 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 'plan-1', type: 'ocio', x: '45%', y: '55%', title: '💃 Feria Abril Bonavista', desc: 'Último fin de semana. Sevillanas, gastronomía andaluza, casetas y música. ¡Plan perfecto para este puente de mayo!', status: 'Abierto 12h-03h', color: 'bg-red-500', icon: 'celebration', glow: 'shadow-[0_0_50px_rgba(239,68,68,0.3)]', creator_name: 'Feria TGN 2026' },
-    { id: 'plan-2', type: 'deporte', x: '65%', y: '70%', title: '🏖️ Playa L\'Arrabassada', desc: 'Primeros bañistas del puente. Servicio de socorrismo Cruz Roja activado. Bandera verde.', status: 'Temporada Baño', color: 'bg-blue-500', icon: 'pool', creator_name: 'Protección Civil' },
-    { id: 'plan-3', type: 'cultura', x: '40%', y: '45%', title: '📣 Manifestación 1 Mayo', desc: 'Recorrido desde Plaça Imperial Tàrraco hasta Rambla Nova. Posibles cortes de circulación.', status: 'Hoy 12:00', color: 'bg-orange-500', icon: 'campaign', creator_name: 'Sindicatos' },
-    { id: 'plan-4', type: 'deporte', x: '15%', y: '65%', title: '🏖️ Paseo La Pineda', desc: 'Recién inaugurado. Gran afluencia de ciclistas y patinadores disfrutando del carril bici ampliado.', status: 'Inaugurado', color: 'bg-emerald-500', icon: 'pedal_bike', creator_name: 'Vila-seca' }
+    { id: 'plan-1', type: 'ocio', x: '65%', y: '50%', title: '⚽ Nou Estadi Costa Daurada', desc: 'Resaca de la victoria ayer. ¡Tarragona es del Nàstic! Ven a compartir tu alegría en los bares del barrio.', status: 'Celebración', color: 'bg-red-600', icon: 'sports_soccer', glow: 'shadow-[0_0_50px_rgba(220,38,38,0.3)]', creator_name: 'Afición Nàstic' },
+    { id: 'plan-2', type: 'cultura', x: '45%', y: '45%', title: '🏛️ Pretorio Romano', desc: 'Comienzan los preparativos y montajes para Tarraco Viva del próximo 11 de mayo. Atención a peatones.', status: 'Preparativos', color: 'bg-purple-500', icon: 'history_edu', creator_name: 'Cultura TGN' },
+    { id: 'plan-3', type: 'ocio', x: '35%', y: '60%', title: '☕ Vuelta a la Rutina', desc: 'Tras el puente, las terrazas de la Rambla vuelven a su actividad habitual. ¡Buen inicio de semana!', status: 'Abierto habitual', color: 'bg-emerald-500', icon: 'coffee', creator_name: 'Barrio Centro' },
+    { id: 'plan-4', type: 'deporte', x: '75%', y: '75%', title: '🏖️ Playa L\'Arrabassada', desc: 'Bandera verde. Menos gente que el puente pero ideal para pasear con 19ºC.', status: 'Tranquilo', color: 'bg-sky-500', icon: 'beach_access', creator_name: 'Protección Civil' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

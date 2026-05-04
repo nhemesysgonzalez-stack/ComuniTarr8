@@ -125,20 +125,20 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Admin', text: '🏖️ ¡Feliz viernes 1 de Mayo! ¿Qué plan tenéis para este puente?' },
-        { who: 'Pau T.', text: 'Yo he bajado un rato a la playa de L\'Arrabassada a tomar el primer sol.' },
-        { who: 'Joan B.', text: 'Cuidado con bajar al centro, hay cortes por las movilizaciones del día del trabajador.' }
+        { who: 'Joan B.', text: '⚽ ¡Qué estallido de alegría ayer en el Nou Estadi con el gol de Óscar!' },
+        { who: 'Pau T.', text: 'Hacía falta esa victoria. Ya sigo mirando los horarios del playoff por si acaso.' },
+        { who: 'Maria G.', text: '¡Vaya partidazo! Tarragona hoy se ha levantado con ánimos renovados.' }
       ],
       [
-        { who: 'Joe R.', text: '💃 Este finde toca despedirse de la Feria de Abril en Bonavista.' },
-        { who: 'Maria G.', text: '@Joe ¡Cierto! Voy esta noche con los amigos a cenar.' },
-        { who: 'Joe R.', text: 'Comed un buen rebujito por mí.' }
+        { who: 'Joe R.', text: '🏛️ ¿Alguien ha visto que ya están montando las recreaciones de Tarraco Viva?' },
+        { who: 'Admin', text: 'Sí, @Joe. El lunes que viene arranca oficialmente. ¡Habrá mucha actividad en la Part Alta!' },
+        { who: 'Joe R.', text: 'Qué ganas de ver de nuevo a los gladiadores en el anfiteatro.' }
       ],
     ],
     'APOYO': [
       [
-        { who: 'Carme L.', text: '¿Alguien sabe si los supermercados abren hoy festivo?' },
-        { who: 'Andreu T.', text: 'La mayoría cerrados hoy 1 de Mayo, Carme. Igual encuentras algún súper de barrio abierto.' },
+        { who: 'Carme L.', text: '¿Sabéis si ha reabierto ya el CAP de la Rambla tras el fin de semana largo?' },
+        { who: 'Andreu T.', text: 'Abierto desde las 8h hoy lunes, Carme. Todo volviendo a la normalidad.' },
       ],
       [
         { who: 'Sandra L.', text: 'Recuerdo: Mañana sábado seguimos con la recogida de alimentos en el CC de Torreforta.' },

@@ -249,13 +249,13 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 1 MAIG */}
+      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 4 MAYO */}
       <div className="bg-purple-600 dark:bg-purple-900 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] py-2 overflow-hidden flex items-center whitespace-nowrap z-50 shadow-md">
         <div className="animate-marquee flex gap-12 sm:gap-24 items-center">
-          <span className="flex items-center gap-2 text-yellow-300">📍 1 DE MAYO: Manifestaciones sindicales en Imperial Tàrraco y Rambla Nova (12h-14h).</span>
-          <span className="flex items-center gap-2">⚠️ TRÁFICO: Cortes en el centro por movilizaciones. EMT con horarios de festivo/domingo hoy.</span>
-          <span className="flex items-center gap-2">💃 FERIA BONAVISTA: Último fin de semana de la 32ª edición. Refuerzo L3 y L54 esta noche.</span>
-          <span className="flex items-center gap-2">🚗 OPERACIÓN SALIDA: Mucha afluencia en la A-7 y N-340 por el puente de mayo. Precaución.</span>
+          <span className="flex items-center gap-2 text-yellow-300">⚽ ¡RESACA DE VICTORIA!: El Nàstic vence 2-1 al Sevilla At. con gol de Óscar Sanz en el descuento.</span>
+          <span className="flex items-center gap-2">🩺 SANIDAD: CODITA denuncia la falta crítica de comadronas en los hospitales de Tarragona.</span>
+          <span className="flex items-center gap-2">🏛️ TARRACO VIVA: El festival romano calienta motores. Inicio el próximo lunes 11 de mayo.</span>
+          <span className="flex items-center gap-2">⚠️ MOVILIDAD: Restablecido el tráfico en el centro tras el desmontaje de la Feria y las marchas del puente.</span>
         </div>
       </div>
 
@@ -337,8 +337,8 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Viernes 1 Mayo 2026</span>
-                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Sol y Nubes 25ºC</span>
+                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Lunes 4 Mayo 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Nublado 19ºC</span>
                 </div>
               </div>
 

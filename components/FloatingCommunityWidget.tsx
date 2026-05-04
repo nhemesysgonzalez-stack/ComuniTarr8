@@ -11,17 +11,17 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 416, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: '🏖️ Primer bañito del año en L\'Arrabassada. ¡El agua está helada pero se está genial al sol!', neighborhood: 'Levante' },
-    { id: 417, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Hay bastante tráfico cortado en el centro por las manifestaciones del 1 de Mayo. ¡Cuidado si vais en coche!', neighborhood: 'Centro' },
-    { id: 418, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: '💃 Este finde aprovecharé la Feria en Bonavista, que dicen que termina el domingo.', neighborhood: 'Bonavista' },
-    { id: 419, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Disfrutando del puente en casa, toca descanso merecido. ¡Feliz día del trabajador a todos!', neighborhood: 'Part Alta' }
+    { id: 420, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: '⚽ ¡Increíble el gol de Óscar Sanz ayer! Hacía tiempo que no vibraba así el estadio.', neighborhood: 'Levante' },
+    { id: 421, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Vaya bajada de temperaturas hoy lunes... de los 25ºC del viernes a los 19ºC de hoy. ¡Toca sacar la chaqueta!', neighborhood: 'Centro' },
+    { id: 422, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: '¿Alguien sabe si ya se pueden reservar entradas para Tarraco Viva? He visto que el lunes que viene empieza.', neighborhood: 'Part Alta' },
+    { id: 423, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Vuelta a la rutina tras el puente. Un poco de bajón pero con pilas cargadas. ¡Buen lunes a todos!', neighborhood: 'Serrallo' }
 ];
 
 const tickerMessages = [
-    "📣 MOVILIDAD: Cortes en Plaça Imperial Tàrraco y Rambla por las movilizaciones del Día del Trabajador.",
-    "🏖️ PLAYAS: Temporada de baño no oficial iniciada. Socorrismo activado en L'Arrabassada y El Miracle.",
-    "💃 FERIA ABRIL: Último fin de semana en Bonavista. Cierre domingo noche. Refuerzo línea EMT.",
-    "☀️ TIEMPO: Alerta por altas temperaturas inusuales este fin de semana, rozando 25ºC."
+    "⚽ DEPORTES: El Nàstic suma 3 puntos vitales tras vencer 2-1 al Sevilla Atlético.",
+    "🩺 SALUD: Denuncian la falta sistemática de comadronas en la sanidad pública de Tarragona.",
+    "🏛️ CULTURA: Cuenta atrás para Tarraco Viva 2026. Del 11 al 24 de mayo.",
+    "☁️ TIEMPO: Cielo nuboso este lunes. Temperaturas máximas de 19ºC."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {
