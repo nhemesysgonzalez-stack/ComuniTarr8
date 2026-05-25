@@ -63,7 +63,7 @@ const MicroVolunteering: React.FC = () => {
                     id: 'fri-01-vol-seniors',
                     creator_id: 'v10',
                     title: '📦 Ayuda a Mayores: Compras Puente',
-                    description: 'Muchos comercios de barrio han cerrado hoy 1 de Mayo. Si algún vecino mayor necesita que le acerquemos pan o medicinas de guardia, avisad.',
+                    description: 'Muchos comercios de barrio han cerrado hoy 25 de Mayo. Si algún vecino mayor necesita que le acerquemos pan o medicinas de guardia, avisad.',
                     neighborhood: 'GENERAL',
                     contact_info: '977 12 34 56 (Coordinadora Voluntariado)',
                     created_at: '2026-05-01T10:00:00Z'
@@ -248,10 +248,10 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Ayuda Montaje', d: 'Busco 1-2 personas para ayudar a descargar cajas de libros mañana MIÉRCOLES 22 a las 08:30 en la Rambla.', c: '644 33 22 11' },
-                                            { t: 'Paseo Perro', d: '¿Algún vecino puede sacar a mi perro mañana JUEVES 23? Estaré trabajando todo el día en el puesto de libros.', c: '633 44 55 66' },
-                                            { t: 'Ayuda Móvil', d: 'Enseñar a usar la app de reservas de Sant Jordi a vecinos mayores hoy MARTES 21 tarde.', c: '611 22 33 44' },
-                                            { t: 'Ensayo Castells', d: '¿Quién va al ensayo de hoy MARTES 21? Me gustaría ir por primera vez acompañado.', c: 'Foro · Canal Cultura' }
+                                            { t: 'Ayuda Montaje', d: 'Busco 1-2 personas para ayudar a descargar cajas de libros mañana LUNES 25 a las 08:30 en la Rambla.', c: '644 33 22 11' },
+                                            { t: 'Paseo Perro', d: '¿Algún vecino puede sacar a mi perro mañana Domingo 24? Estaré trabajando todo el día en el puesto de libros.', c: '633 44 55 66' },
+                                            { t: 'Ayuda Móvil', d: 'Enseñar a usar la app de reservas de Sant Jordi a vecinos mayores hoy DOMINGO 24 tarde.', c: '611 22 33 44' },
+                                            { t: 'Ensayo Castells', d: '¿Quién va al ensayo de hoy DOMINGO 24? Me gustaría ir por primera vez acompañado.', c: 'Foro · Canal Cultura' }
                                         ].map((idea, i) => (
 
                                             <button

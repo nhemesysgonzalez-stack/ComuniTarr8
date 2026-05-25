@@ -64,7 +64,7 @@ const Incidents: React.FC = () => {
                         description: 'Trabajos de recogida y limpieza de las estructuras de Sant Jordi en la Rambla Nova (tramos 1-3). Cortes de carril hasta las 22h de hoy. Precaución al circular.',
                         status: 'in_progress',
                         neighborhood: 'CENTRE',
-                        created_at: '2026-04-25T07:00:00Z',
+                        created_at: '2026-05-25T07:00:00Z',
                         profiles: { full_name: 'Guàrdia Urbana TGN', avatar_url: '/logo.svg' }
                     },
                     {
@@ -74,17 +74,17 @@ const Incidents: React.FC = () => {
                         description: 'La Feria de Abril (32a edició) ocupa más de 13.000 m² del recinto. Aparcamiento limitado: se recomienda llegar en transporte público. Horario: 17h-01h (v/s hasta 02h).',
                         status: 'open',
                         neighborhood: 'Bonavista',
-                        created_at: '2026-04-25T09:00:00Z',
+                        created_at: '2026-05-25T09:00:00Z',
                         profiles: { full_name: 'Ajuntament de Tarragona', avatar_url: '/logo.svg' }
                     },
                     {
                         id: 'fri-25-ematsa-llevant',
                         user_id: 'v12',
                         title: '🚧 EMATSA: Renovación tuberia Llevant',
-                        description: 'Corte de agua programado hoy viernes 25 de 09:00h a 13:00h en el Bloc 7 del barrio de Llevant. Suministro se restablecerá antes del mediodía según lo previsto.',
+                        description: 'Corte de agua programado Hoy Lunes 25 de 09:00h a 13:00h en el Bloc 7 del barrio de Llevant. Suministro se restablecerá antes del mediodía según lo previsto.',
                         status: 'in_progress',
                         neighborhood: 'Llevant',
-                        created_at: '2026-04-25T08:30:00Z',
+                        created_at: '2026-05-25T08:30:00Z',
                         profiles: { full_name: 'EMATSA', avatar_url: 'https://i.pravatar.cc/150?u=water' }
                     }
                 ];

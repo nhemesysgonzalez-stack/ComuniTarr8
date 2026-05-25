@@ -147,7 +147,7 @@ const Announcements: React.FC = () => {
                 {
                     id: 'fri-01-may-feria',
                     title: '💃 Últimos días Feria de Abril Bonavista',
-                    content: 'Aprovecha este puente del 1 de Mayo. La Feria cerrará sus puertas definitivamente este domingo. Refuerzo en las líneas 54 y 3 de la EMT.',
+                    content: 'Aprovecha este puente del 25 de Mayo. La Feria cerrará sus puertas definitivamente este domingo. Refuerzo en las líneas 54 y 3 de la EMT.',
                     neighborhood: 'GENERAL',
                     category: 'EVENTO',
                     author_name: 'Cultura TGN',
@@ -173,7 +173,7 @@ const Announcements: React.FC = () => {
                 },
                 {
                     id: 'fri-01-may-jobs',
-                    title: '💼 Nuevas Ofertas de Empleo (1 Mayo)',
+                    title: '💼 Nuevas Ofertas de Empleo (25 Mayo)',
                     content: 'Hemos depurado la sección de empleos: ahora solo encontrarás ofertas reales, verificadas y con número de teléfono de contacto para el verano.',
                     neighborhood: 'GENERAL',
                     category: 'EMPLEO',

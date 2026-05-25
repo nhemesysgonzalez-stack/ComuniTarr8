@@ -254,7 +254,7 @@ export const Header: React.FC = () => {
         <div className="animate-marquee flex gap-12 sm:gap-24 items-center">
           <span className="flex items-center gap-2 text-yellow-300">⚽ ¡RESACA DE VICTORIA!: El Nàstic vence 2-1 al Sevilla At. con gol de Óscar Sanz en el descuento.</span>
           <span className="flex items-center gap-2">🩺 SANIDAD: CODITA denuncia la falta crítica de comadronas en los hospitales de Tarragona.</span>
-          <span className="flex items-center gap-2">🏛️ TARRACO VIVA: El festival romano calienta motores. Inicio el próximo lunes 11 de mayo.</span>
+          <span className="flex items-center gap-2">🏛️ TARRACO VIVA: El festival romano calienta motores. Inicio el próximo lunes 125 de Mayo.</span>
           <span className="flex items-center gap-2">⚠️ MOVILIDAD: Restablecido el tráfico en el centro tras el desmontaje de la Feria y las marchas del puente.</span>
         </div>
       </div>
@@ -337,7 +337,7 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Lunes 4 Mayo 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Lunes 25 Mayo 2026</span>
                   <span className="text-xs font-black dark:text-white uppercase">AEMET: Nublado 19ºC</span>
                 </div>
               </div>

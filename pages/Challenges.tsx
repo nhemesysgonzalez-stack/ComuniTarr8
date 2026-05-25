@@ -43,34 +43,34 @@ const Challenges: React.FC = () => {
 
       const mockChallenges: Challenge[] = [
         {
-          id: 'dom-19-ch-1',
+          id: 'lun-25-ch-1',
           creator_id: 'admin',
-          title: '🌅 Se busca líder: Atardecer Miracle Domingo 19',
-          description: 'Buscamos a alguien que tome la iniciativa HOY DOMINGO (19:30h) para dinamizar el grupo en el Balcón/Playa. ¡Gana 100 ComuniPoints por liderar el cierre de semana!',
+          title: '🌅 Se busca líder: Paseo Lunes 25',
+          description: 'Buscamos a alguien que tome la iniciativa HOY LUNES (19:30h) para dinamizar el grupo en el Balcón/Playa. ¡Gana 100 ComuniPoints por liderar!',
           neighborhood: 'GENERAL',
           contact_info: 'Posteado por Admin (Busca voluntario)',
           is_example: true,
-          created_at: '2026-04-19T08:00:00Z'
+          created_at: '2026-05-25T08:00:00Z'
         },
         {
-          id: 'dom-19-ch-2',
+          id: 'lun-25-ch-2',
           creator_id: 'user2',
-          title: '🥾 Crónica Domingo 19: Clausura Dixieland',
-          description: '¡Reto de HOY DOMINGO! Sube la foto más auténtica del concierto de clausura en Pl. de la Font. La foto con más likes gana el título de "Cronista del Barrio".',
+          title: '🥾 Crónica Lunes 25: Actividad de la ciudad',
+          description: '¡Reto de HOY LUNES! Sube la foto más auténtica de tu barrio esta tarde. La foto con más likes gana el título de "Cronista del Barrio".',
           neighborhood: 'GENERAL',
           contact_info: 'Comunidad ComuniTarr',
           is_example: true,
-          created_at: '2026-04-19T11:00:00Z'
+          created_at: '2026-05-25T11:00:00Z'
         },
         {
-          id: 'dom-19-ch-3',
+          id: 'lun-25-ch-3',
           creator_id: 'v4',
-          title: '📦 Solidaridad: Mercado Bonavista',
-          description: 'Reto de HOY DOMINGO 19: Ayudar a los vecinos mayores con las compras pesadas del mercado de Bonavista. ¡Iniciativa vecinal pura para terminar la semana!',
+          title: '📦 Solidaridad: Ayuda compras lunes',
+          description: 'Reto de HOY LUNES 25: Ayudar a los vecinos mayores con las compras pesadas del inicio de semana. ¡Iniciativa vecinal pura!',
           neighborhood: 'PONENT',
           contact_info: 'Coordina con tus vecinos en el bus L54',
           is_example: true,
-          created_at: '2026-04-19T09:00:00Z'
+          created_at: '2026-05-25T09:00:00Z'
         }
       ];
 

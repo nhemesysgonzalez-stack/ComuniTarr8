@@ -148,7 +148,7 @@ const Forum: React.FC = () => {
     'EMPLEO': [
       [
         { who: 'Servicios TGN', text: '💼 ¡Campaña de verano inminente! Id preparando currículums para el sector hostelería.' },
-        { who: 'Restaurant Sol', text: 'Hoy 1 de Mayo trabajamos fuerte. Buscamos refuerzo urgente para camareros los fines de semana.' },
+        { who: 'Restaurant Sol', text: 'Hoy 25 de Mayo trabajamos fuerte. Buscamos refuerzo urgente para camareros los fines de semana. Tel: 977 12 34 56' },
       ],
     ],
     'ENCUENTROS': [
@@ -257,14 +257,14 @@ const Forum: React.FC = () => {
 
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
-          // Ayer (Jueves 23 - Post Sant Jordi)
+          // Ayer (Domingo 24)
           { id: 'seed-cloud-98', user_id: 'v10', content: '🌹 ¡Qué Sant Jordi tan bonito el de ayer! La Rambla Nova era un jardín. Ha sido el mejor en años.', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 20).toISOString() },
           { id: 'seed-cloud-99', user_id: 'v4', content: '@Nuria P. ¡Totalmente de acuerdo! Los Xiquets también estuvieron increíbles. 🏰', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 18).toISOString() },
           { id: 'seed-cloud-100', user_id: 'v19', content: '💃 Hoy arranca la Feria de Abril de Bonavista. ¡A mí con las sevillanas! ¿Quién viene esta tarde?', user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 3).toISOString() },
 
-          // Hoy Viernes 25
-          { id: 'seed-cloud-101', user_id: 'v3', content: `📚 ¿Alguien ya ha empezado su libro de Sant Jordi? Yo llevo ya 50 páginas del mío. 😄`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-04-25T08:30:00Z' },
-          { id: 'seed-cloud-102', user_id: 'v2', content: '🎡 La Feria de Bonavista acaba de abrir. ¡Hay sevillanas, comida andaluza y mucha alegría! ¡Ven esta tarde!', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-04-25T11:00:00Z' },
+          // Hoy Lunes 25
+          { id: 'seed-cloud-101', user_id: 'v3', content: `📚 ¿Alguien ya ha empezado su libro de Sant Jordi? Yo llevo ya 50 páginas del mío. 😄`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-05-25T08:30:00Z' },
+          { id: 'seed-cloud-102', user_id: 'v2', content: '🎡 La Feria de Bonavista acaba de abrir. ¡Hay sevillanas, comida andaluza y mucha alegría! ¡Ven esta tarde!', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-05-25T11:00:00Z' },
         ] as Message[],
       };
 
@@ -583,7 +583,7 @@ const Forum: React.FC = () => {
             </div>
           </div>
 
-          {/* Trending Topics - Actualizado Viernes 1 Mayo */}
+          {/* Trending Topics - Actualizado Viernes 25 Mayo */}
           <div>
             <h4 className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 ml-2">Trending Topic</h4>
             <div className="flex flex-wrap gap-2 px-2">
