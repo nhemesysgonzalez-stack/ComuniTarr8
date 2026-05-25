@@ -249,13 +249,13 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 4 MAYO */}
+      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 25 MAYO */}
       <div className="bg-purple-600 dark:bg-purple-900 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] py-2 overflow-hidden flex items-center whitespace-nowrap z-50 shadow-md">
         <div className="animate-marquee flex gap-12 sm:gap-24 items-center">
           <span className="flex items-center gap-2 text-yellow-300">⚽ ¡RESACA DE VICTORIA!: El Nàstic vence 2-1 al Sevilla At. con gol de Óscar Sanz en el descuento.</span>
           <span className="flex items-center gap-2">🩺 SANIDAD: CODITA denuncia la falta crítica de comadronas en los hospitales de Tarragona.</span>
-          <span className="flex items-center gap-2">🏛️ TARRACO VIVA: El festival romano calienta motores. Inicio el próximo lunes 125 de Mayo.</span>
-          <span className="flex items-center gap-2">⚠️ MOVILIDAD: Restablecido el tráfico en el centro tras el desmontaje de la Feria y las marchas del puente.</span>
+          <span className="flex items-center gap-2">🏛️ TARRACO VIVA: El festival romano se despide tras una espectacular semana de éxito y asistencia masiva.</span>
+          <span className="flex items-center gap-2">⚠️ MOVILIDAD: Restablecido el tráfico en el centro tras el desmontaje festivalero y las marchas de la mañana.</span>
         </div>
       </div>
 
