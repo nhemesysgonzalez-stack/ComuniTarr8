@@ -20,6 +20,16 @@ export default {
                 "text-main": "#111418",
                 "text-secondary": "#617589",
             },
+            animation: {
+                marquee: 'marquee 25s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+                marquee: {
+                    '0%': { transform: 'translateX(30%)' },
+                    '100%': { transform: 'translateX(-100%)' },
+                }
+            }
         },
     },
     plugins: [],

@@ -195,8 +195,8 @@ const Home: React.FC = () => {
           },
           {
             id: 'mon-25-may-tarraco-viva',
-            title: '🏛️ Tarraco Viva: Cuenta atrás para el festival',
-            content: 'Falta justo una semana para el inicio de Tarraco Viva. Del 11 al 24 de mayo, la ciudad volverá a ser la capital del Imperio Romano con recreaciones históricas.',
+            title: '🏛️ Tarraco Viva: Gran de éxito de asistencia',
+            content: 'La nueva edición de Tarraco Viva finaliza rompiendo el récord de visitantes. La ciudad despide la recreación con gran sabor de boca hasta el próximo año.',
             neighborhood: 'Part Alta',
             category: 'CULTURA',
             image_url: 'https://images.unsplash.com/photo-1549419102-690226c71be3?auto=format&fit=crop&w=800&q=80',
@@ -473,8 +473,8 @@ const Home: React.FC = () => {
           <div className="p-5 bg-purple-50 dark:bg-purple-900/10 rounded-[30px] flex gap-4 items-center">
             <span className="material-symbols-outlined text-purple-500 text-3xl">history_edu</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-purple-600 tracking-widest">Tarraco Viva</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Falta 1 semana. Ya se pueden ver los primeros andamios en el Pretorio.</p>
+              <p className="text-[10px] font-black uppercase text-purple-600 tracking-widest">Tarraco Viva Fin</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Ha finalizado con rotundo éxito. Desmontaje en Pretorio.</p>
             </div>
           </div>
         </div>
