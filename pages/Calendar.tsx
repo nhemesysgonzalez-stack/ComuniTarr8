@@ -63,13 +63,13 @@ const NeighborhoodCalendar: React.FC = () => {
           creator_id: 'admin',
           title: "🗓️ Vuelta a la normalidad post-puente",
           description: "Reapertura de centros cívicos, bibliotecas y servicios municipales tras el puente de mayo.",
-          event_date: '2026-05-25',
+          event_date: '2026-06-02',
           event_time: '08:00',
           location: 'Tarragona (General)',
           category: 'Avisos',
           neighborhood: 'GENERAL',
           contact_info: 'Ajuntament de Tarragona',
-          created_at: '2026-05-25T08:00:00Z'
+          created_at: '2026-06-02T08:00:00Z'
         },
         {
           id: 'may-11-tarraco-viva',
@@ -82,7 +82,7 @@ const NeighborhoodCalendar: React.FC = () => {
           category: 'Cultura',
           neighborhood: 'GENERAL',
           contact_info: 'Agenda Cultural TGN',
-          created_at: '2026-05-25T09:00:00Z'
+          created_at: '2026-06-02T09:00:00Z'
         },
         {
           id: 'may-16-miguel-rios',
@@ -95,7 +95,7 @@ const NeighborhoodCalendar: React.FC = () => {
           category: 'Música',
           neighborhood: 'GENERAL',
           contact_info: 'Venta de entradas online',
-          created_at: '2026-05-25T10:00:00Z'
+          created_at: '2026-06-02T10:00:00Z'
         }
       ];
 

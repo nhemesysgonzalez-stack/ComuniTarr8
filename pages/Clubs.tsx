@@ -48,7 +48,7 @@ const Clubs: React.FC = () => {
                     description: 'Grupo para salir por los caminos de ronda. ¡Hoy Domingo hemos hecho ruta por el Pont del Diable! Subid las fotos al chat.',
                     neighborhood: 'GENERAL',
                     contact_info: 'Canal DEPORTES (Foro)',
-                    created_at: '2026-05-25T08:00:00Z'
+                    created_at: '2026-06-02T08:00:00Z'
                 },
                 {
                     id: 'c-sun-2',
@@ -57,7 +57,7 @@ const Clubs: React.FC = () => {
                     description: 'HOY DOMINGO salimos a la Feria de Abril a fotografiar el ambiente y las luces (19:30h). ¡Vente con tu cámara!',
                     neighborhood: 'GENERAL',
                     contact_info: '644 55 66 77 (Sònia)',
-                    created_at: '2026-05-25T09:00:00Z'
+                    created_at: '2026-06-02T09:00:00Z'
                 },
                 {
                     id: 'c-sun-3',
@@ -66,7 +66,7 @@ const Clubs: React.FC = () => {
                     description: 'Esta semana toca comentar los libros que nos regalaron por Sant Jordi. Ya hemos abierto el hilo de debate.',
                     neighborhood: 'GENERAL',
                     contact_info: 'Canal CULTURA (Foro)',
-                    created_at: '2026-05-25T10:00:00Z'
+                    created_at: '2026-06-02T10:00:00Z'
                 }
             ];
 

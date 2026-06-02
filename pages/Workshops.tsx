@@ -51,25 +51,25 @@ const Workshops: React.FC = () => {
                     id: 'sun-26-sevillanas',
                     title: '💃 Taller Express: Sevillanas (Especial Fira)',
                     instructor: 'Centro Cultural Andaluz',
-                    date: 'HOY Lun 25 May, 11:30h',
+                    date: 'HOY Mar 2 Jun, 11:30h',
                     description: 'Aprende los pases básicos antes de ir a Bonavista esta tarde. Especial para principiantes. Material: Trae calzado cómodo.',
                     image: 'https://images.unsplash.com/photo-1562184552-997c461abbe6?auto=format&fit=crop&w=800&q=80',
                     spots: 25,
                     neighborhood: 'GENERAL',
                     contact_info: 'Centro Cívico Torreforta',
-                    created_at: '2026-05-25T08:00:00Z'
+                    created_at: '2026-06-02T08:00:00Z'
                 },
                 {
                     id: 'sun-26-photo-walk',
                     title: '📷 Photo Walk: Boira i Platja',
                     instructor: 'TGN Fotografia',
-                    date: 'HOY Lun 25 May, 18:30h',
+                    date: 'HOY Mar 2 Jun, 18:30h',
                     description: 'Aprofitarem la boira prevista per a última hora de la tarda per fer fotografia creativa a l\'Arrabassada.',
                     image: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=800&q=80',
                     spots: 15,
                     neighborhood: 'Eixample',
                     contact_info: 'Punt: Lletres TARRAGONA',
-                    created_at: '2026-05-25T09:00:00Z'
+                    created_at: '2026-06-02T09:00:00Z'
                 },
                 {
                     id: 'sun-26-yoga',
@@ -81,7 +81,7 @@ const Workshops: React.FC = () => {
                     spots: 20,
                     neighborhood: 'GENERAL',
                     contact_info: 'Punt: Parc del Francolí',
-                    created_at: '2026-05-25T10:00:00Z'
+                    created_at: '2026-06-02T10:00:00Z'
                 }
             ];
 

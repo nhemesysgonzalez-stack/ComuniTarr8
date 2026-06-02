@@ -78,7 +78,7 @@ const Polls: React.FC = () => {
                     title: '🚗 ¿Qué solución propones para el aparcamiento en la Estación del Camp?',
                     options: ['Poner barreras y cobrar', 'Construir un parking de varias plantas', 'Más autobuses y descartar coche', 'El modelo actual está bien'],
                     neighborhood: 'GENERAL',
-                    created_at: '2026-05-25T08:00:00Z'
+                    created_at: '2026-06-02T08:00:00Z'
                 },
                 {
                     id: 'sun-26-poll-feria',
@@ -86,7 +86,7 @@ const Polls: React.FC = () => {
                     title: '💃 ¿Qué te ha parecido la Feria de Abril de este año en Bonavista?',
                     options: ['Genial, he ido y repetiré', 'Está bien pero muy llena', 'Faltan aparcamientos', 'No me interesa'],
                     neighborhood: 'GENERAL',
-                    created_at: '2026-05-25T09:00:00Z'
+                    created_at: '2026-06-02T09:00:00Z'
                 },
                 {
                     id: 'sun-26-poll-weather',
@@ -94,7 +94,7 @@ const Polls: React.FC = () => {
                     title: '⛅ Con el cambio de tiempo y las nieblas, ¿cambias tus planes del domingo?',
                     options: ['Sí, me quedo en casa', 'Salgo igual pero abrigado', 'Aprovecharé la mañana que hace sol', 'Me encanta la boira'],
                     neighborhood: 'GENERAL',
-                    created_at: '2026-05-25T10:00:00Z'
+                    created_at: '2026-06-02T10:00:00Z'
                 }
             ];
 

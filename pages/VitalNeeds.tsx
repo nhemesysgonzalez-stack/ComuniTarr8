@@ -50,7 +50,7 @@ const VitalNeeds: React.FC = () => {
                     creator_id: 'v5',
                     type: 'medical',
                     title: '💊 Farmacia de Guardia (Festivo)',
-                    description: 'Necesito que alguien me acerque un inhalador de la farmacia de guardia. No tengo coche y hoy los buses van con frecuencia de domingo por ser 25 de Mayo. 📞 644 33 22 11 (Pere)',
+                    description: 'Necesito que alguien me acerque un inhalador de la farmacia de guardia. No tengo coche y hoy los buses van con frecuencia de domingo por ser 2 de Junio. 📞 644 33 22 11 (Pere)',
                     contact_info: '644 33 22 11 (Pere)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',

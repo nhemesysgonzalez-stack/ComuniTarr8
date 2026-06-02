@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'sun-26-s1', user_name: 'Ana T.', content: '💃 Bailando sevillanas en la Feria de Abril de Bonavista. ¡Ambientazo este domingo espectacular! #Tarragona #FeriaDeAbril #Bonavista', image_url: 'https://images.unsplash.com/photo-1722520592113-1f681393cd8d', likes: 156, created_at: '2026-05-25T12:00:00Z' },
-            { id: 'sun-26-s2', user_name: 'Joan R.', content: '🚧 Han terminado de desmontar todo lo de Sant Jordi y la Rambla vuelve a estar despejada. ¡Gran fin de semana! #Tarragona #Domingo', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 89, created_at: '2026-05-25T10:30:00Z' },
-            { id: "sun-26-s3", user_name: "Marc G.", content: "📷 Expo 'Escenaris' en el Teatre TGN. Fotografías muy recomendables para esta tarde de domingo. #Cultura #TGN", image_url: "https://images.unsplash.com/photo-1485955900006-10f4d324d445", likes: 210, created_at: '2026-05-25T15:00:00Z' },
-            { id: 'sun-26-s4', user_name: 'Pilar S.', content: '☁️ Ha bajado un poco la temperatura y vienen nubes, plan de peli y sofá. #Tarragona #Domingo', image_url: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b', likes: 124, created_at: '2026-05-25T13:30:00Z' }
+            { id: 'sun-26-s1', user_name: 'Ana T.', content: '💃 Bailando sevillanas en la Feria de Abril de Bonavista. ¡Ambientazo este domingo espectacular! #Tarragona #FeriaDeAbril #Bonavista', image_url: 'https://images.unsplash.com/photo-1722520592113-1f681393cd8d', likes: 156, created_at: '2026-06-02T12:00:00Z' },
+            { id: 'sun-26-s2', user_name: 'Joan R.', content: '🚧 Han terminado de desmontar todo lo de Sant Jordi y la Rambla vuelve a estar despejada. ¡Gran fin de semana! #Tarragona #Domingo', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 89, created_at: '2026-06-02T10:30:00Z' },
+            { id: "sun-26-s3", user_name: "Marc G.", content: "📷 Expo 'Escenaris' en el Teatre TGN. Fotografías muy recomendables para esta tarde de domingo. #Cultura #TGN", image_url: "https://images.unsplash.com/photo-1485955900006-10f4d324d445", likes: 210, created_at: '2026-06-02T15:00:00Z' },
+            { id: 'sun-26-s4', user_name: 'Pilar S.', content: '☁️ Ha bajado un poco la temperatura y vienen nubes, plan de peli y sofá. #Tarragona #Domingo', image_url: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b', likes: 124, created_at: '2026-06-02T13:30:00Z' }
         ];
 
 

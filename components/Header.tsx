@@ -249,13 +249,13 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 25 MAYO */}
+      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 2 Junio */}
       <div className="bg-purple-600 dark:bg-purple-900 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] py-2 overflow-hidden flex items-center whitespace-nowrap z-50 shadow-md">
         <div className="animate-marquee flex gap-12 sm:gap-24 items-center">
-          <span className="flex items-center gap-2 text-yellow-300">⚽ ¡RESACA DE VICTORIA!: El Nàstic vence 2-1 al Sevilla At. con gol de Óscar Sanz en el descuento.</span>
-          <span className="flex items-center gap-2">🩺 SANIDAD: CODITA denuncia la falta crítica de comadronas en los hospitales de Tarragona.</span>
-          <span className="flex items-center gap-2">🏛️ TARRACO VIVA: El festival romano se despide tras una espectacular semana de éxito y asistencia masiva.</span>
-          <span className="flex items-center gap-2">⚠️ MOVILIDAD: Restablecido el tráfico en el centro tras el desmontaje festivalero y las marchas de la mañana.</span>
+          <span className="flex items-center gap-2 text-yellow-300">⚽ ¡PLAYOFFS A LA VISTA!: El Nàstic se prepara para la fase final del ascenso tras una gran temporada.</span>
+          <span className="flex items-center gap-2">🩺 SANIDAD: Empieza la campaña de donación de sangre de verano en el Hospital Joan XXIII.</span>
+          <span className="flex items-center gap-2">🏖️ TEMPORADA DE PLAYAS: Comienza el servicio completo de salvamento y socorrismo en el litoral tarraconense.</span>
+          <span className="flex items-center gap-2">⚠️ MOVILIDAD: Cortes puntuales en el entorno de la Part Alta por el inicio de las rutas turísticas y obras estivales.</span>
         </div>
       </div>
 
@@ -337,7 +337,7 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Lunes 25 Mayo 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Martes 2 Junio 2026</span>
                   <span className="text-xs font-black dark:text-white uppercase">AEMET: Nublado 19ºC</span>
                 </div>
               </div>

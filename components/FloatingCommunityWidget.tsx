@@ -11,17 +11,17 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 420, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: '⚽ ¡Increíble el gol de Óscar Sanz ayer! Hacía tiempo que no vibraba así el estadio.', neighborhood: 'Levante' },
-    { id: 421, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Vaya bajada de temperaturas hoy lunes... de los 25ºC del viernes a los 19ºC de hoy. ¡Toca sacar la chaqueta!', neighborhood: 'Centro' },
-    { id: 422, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: '¿Alguien sabe si ya se pueden reservar entradas para Tarraco Viva? He visto que el lunes que viene empieza.', neighborhood: 'Part Alta' },
-    { id: 423, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: 'Vuelta a la rutina tras el puente. Un poco de bajón pero con pilas cargadas. ¡Buen lunes a todos!', neighborhood: 'Serrallo' }
+    { id: 420, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: '⚽ ¡Qué ganas de los playoffs del Nàstic! A ver si este año por fin se da la alegría.', neighborhood: 'Levante' },
+    { id: 421, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Ya se empieza a notar el calorcito de junio en Tarragona. ¡Este finde toca primer baño en la Rabassada!', neighborhood: 'Centro' },
+    { id: 422, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: '¿Alguien sabe si las duchas de la playa Larga ya funcionan? He visto a los de la Cruz Roja montar la caseta.', neighborhood: 'Part Alta' },
+    { id: 423, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: '¡Buen martes a todos! Se acerca el verano y hay que ir organizando los casales de los niños. ¡Ánimo!', neighborhood: 'Serrallo' }
 ];
 
 const tickerMessages = [
-    "⚽ DEPORTES: El Nàstic suma 3 puntos vitales tras vencer 2-1 al Sevilla Atlético.",
-    "🩺 SALUD: Denuncian la falta sistemática de comadronas en la sanidad pública de Tarragona.",
-    "🏛️ CULTURA: Cuenta atrás para Tarraco Viva 2026. Del 11 al 24 de mayo.",
-    "☁️ TIEMPO: Cielo nuboso este lunes. Temperaturas máximas de 19ºC."
+    "⚽ DEPORTES: El Nàstic se prepara para los playoffs de ascenso.",
+    "🩺 SALUD: Arranca la campaña de donación de sangre de verano.",
+    "🏖️ PLAYAS: Inicio de temporada oficial. Socorristas ya activos.",
+    "☁️ TIEMPO: Cielo despejado con máximas acercándose a los 26ºC."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {
