@@ -51,7 +51,7 @@ const Patrols: React.FC = () => {
         {
           id: 'fri-01-pat-manifestation',
           creator_id: 'admin',
-          name: '🛡️ Seguridad: Manifestación 2 Junio',
+          name: '🛡️ Seguridad: Manifestación 5 Junio',
           description: 'Acompañamiento preventivo durante las movilizaciones en el centro para asegurar el civismo y la seguridad de los vecinos.',
           neighborhood: 'Centro',
           contact_info: 'Seguridad Ciudadana — 611 00 22 33',

@@ -14,14 +14,14 @@ const mockMessages: Message[] = [
     { id: 420, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: '⚽ ¡Qué ganas de los playoffs del Nàstic! A ver si este año por fin se da la alegría.', neighborhood: 'Levante' },
     { id: 421, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Ya se empieza a notar el calorcito de junio en Tarragona. ¡Este finde toca primer baño en la Rabassada!', neighborhood: 'Centro' },
     { id: 422, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: '¿Alguien sabe si las duchas de la playa Larga ya funcionan? He visto a los de la Cruz Roja montar la caseta.', neighborhood: 'Part Alta' },
-    { id: 423, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: '¡Buen martes a todos! Se acerca el verano y hay que ir organizando los casales de los niños. ¡Ánimo!', neighborhood: 'Serrallo' }
+    { id: 423, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: '¡buen viernes a todos! Se acerca el verano y hay que ir organizando los casales de los niños. ¡Ánimo!', neighborhood: 'Serrallo' }
 ];
 
 const tickerMessages = [
-    "⚽ DEPORTES: El Nàstic se prepara para los playoffs de ascenso.",
-    "🩺 SALUD: Arranca la campaña de donación de sangre de verano.",
-    "🏖️ PLAYAS: Inicio de temporada oficial. Socorristas ya activos.",
-    "☁️ TIEMPO: Cielo despejado con máximas acercándose a los 26ºC."
+    "⚽ DEPORTES: Ambiente de máxima tensión. El Nàstic juega la ida este domingo.",
+    "🍻 OCIO: Terrazas a rebosar este primer viernes de junio.",
+    "🏖️ PLAYAS: Alerta verde este fin de semana en todas las playas tarraconenses.",
+    "☁️ TIEMPO: Fin de semana estupendo. Máximas de 27ºC sin apenas viento."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

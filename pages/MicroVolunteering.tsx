@@ -48,7 +48,7 @@ const MicroVolunteering: React.FC = () => {
                     description: 'Con el fin de curso cerca, buscamos voluntarios para clasificar y organizar la donación de libros escolares antiguos en el centro cívico de Torreforta.',
                     neighborhood: 'Torreforta',
                     contact_info: '644 11 22 33 (AMPA). ¡Gracias!',
-                    created_at: '2026-06-02T08:00:00Z'
+                    created_at: '2026-06-05T08:00:00Z'
                 },
                 {
                     id: 'jun-02-vol-beach',
@@ -57,16 +57,16 @@ const MicroVolunteering: React.FC = () => {
                     description: 'Campaña de concienciación en L\'Arrabassada: reparto de ceniceros portátiles, bolsas de basura y limpieza del entorno marino esta primera semana de verano.',
                     neighborhood: 'Llevant',
                     contact_info: '611 00 22 33 (Paco). Nos vemos en el puesto de Cruz Roja.',
-                    created_at: '2026-06-02T09:00:00Z'
+                    created_at: '2026-06-05T09:00:00Z'
                 },
                 {
                     id: 'jun-02-vol-seniors',
                     creator_id: 'v10',
                     title: '📦 Ayuda a Mayores: Compras de Calor',
-                    description: 'Con la subida de temperaturas hoy 2 de Junio, si algún vecino mayor necesita que le acerquemos pan, frutas o agua sin que salgan al sol, avisad.',
+                    description: 'Con la subida de temperaturas hoy 5 de Junio, si algún vecino mayor necesita que le acerquemos pan, frutas o agua sin que salgan al sol, avisad.',
                     neighborhood: 'GENERAL',
                     contact_info: '977 12 34 56 (Coordinadora Voluntariado)',
-                    created_at: '2026-06-02T10:00:00Z'
+                    created_at: '2026-06-05T10:00:00Z'
                 }
             ];
 
@@ -248,10 +248,10 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Ayuda Montaje', d: 'Busco 1-2 personas para ayudar a descargar cajas de material hoy Martes 2 a las 18:30 en la Rambla.', c: '644 33 22 11' },
-                                            { t: 'Paseo Perro', d: '¿Algún vecino puede sacar a mi perro hoy martes por la tarde? Estaré trabajando hasta tarde de urgencia.', c: '633 44 55 66' },
-                                            { t: 'Ayuda Móvil', d: 'Enseñar a usar la app del autobús a vecinos mayores este Miércoles 3 por la mañana.', c: '611 22 33 44' },
-                                            { t: 'Ensayo Coral', d: '¿Quién va al ensayo de hoy Martes 2? Me gustaría ir por primera vez acompañado.', c: 'Foro · Canal Cultura' }
+                                            { t: 'Ayuda Montaje', d: 'Busco 1-2 personas para ayudar a descargar cajas de material hoy Viernes 5 a las 18:30 en la Rambla.', c: '644 33 22 11' },
+                                            { t: 'Paseo Perro', d: '¿Algún vecino puede sacar a mi perro Hoy Viernes por la tarde? Estaré trabajando hasta tarde de urgencia.', c: '633 44 55 66' },
+                                            { t: 'Ayuda Móvil', d: 'Enseñar a usar la app del autobús a vecinos mayores este Sábado 6 por la mañana.', c: '611 22 33 44' },
+                                            { t: 'Ensayo Coral', d: '¿Quién va al ensayo de hoy Viernes 5? Me gustaría ir por primera vez acompañado.', c: 'Foro · Canal Cultura' }
                                         ].map((idea, i) => (
 
                                             <button

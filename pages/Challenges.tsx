@@ -45,32 +45,32 @@ const Challenges: React.FC = () => {
         {
           id: 'lun-25-ch-1',
           creator_id: 'admin',
-          title: '🌅 Se busca líder: Paseo Martes 2',
-          description: 'Buscamos a alguien que tome la iniciativa HOY MARTES (19:30h) para dinamizar el grupo en el Balcón/Playa. ¡Gana 100 ComuniPoints por liderar!',
+          title: '🌅 Se busca líder: Paseo Viernes 5',
+          description: 'Buscamos a alguien que tome la iniciativa Hoy Viernes (19:30h) para dinamizar el grupo en el Balcón/Playa. ¡Gana 100 ComuniPoints por liderar!',
           neighborhood: 'GENERAL',
           contact_info: 'Posteado por Admin (Busca voluntario)',
           is_example: true,
-          created_at: '2026-06-02T08:00:00Z'
+          created_at: '2026-06-05T08:00:00Z'
         },
         {
           id: 'lun-25-ch-2',
           creator_id: 'user2',
-          title: '🥾 Crónica Martes 2: Actividad de la ciudad',
-          description: '¡Reto de HOY MARTES! Sube la foto más auténtica de tu barrio esta tarde. La foto con más likes gana el título de "Cronista del Barrio".',
+          title: '🥾 Crónica Viernes 5: Actividad de la ciudad',
+          description: '¡Reto de Hoy Viernes! Sube la foto más auténtica de tu barrio esta tarde. La foto con más likes gana el título de "Cronista del Barrio".',
           neighborhood: 'GENERAL',
           contact_info: 'Comunidad ComuniTarr',
           is_example: true,
-          created_at: '2026-06-02T11:00:00Z'
+          created_at: '2026-06-05T11:00:00Z'
         },
         {
           id: 'lun-25-ch-3',
           creator_id: 'v4',
           title: '📦 Solidaridad: Ayuda compras lunes',
-          description: 'Reto de HOY Martes 2: Ayudar a los vecinos mayores con las compras pesadas del inicio de semana. ¡Iniciativa vecinal pura!',
+          description: 'Reto de HOY Viernes 5: Ayudar a los vecinos mayores con las compras pesadas del inicio de semana. ¡Iniciativa vecinal pura!',
           neighborhood: 'PONENT',
           contact_info: 'Coordina con tus vecinos en el bus L54',
           is_example: true,
-          created_at: '2026-06-02T09:00:00Z'
+          created_at: '2026-06-05T09:00:00Z'
         }
       ];
 
