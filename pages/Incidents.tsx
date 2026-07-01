@@ -58,34 +58,34 @@ const Incidents: React.FC = () => {
             if (data) {
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'fri-25-rambla-desmontaje',
+                        id: 'lun-30-jun-rambla-obras',
                         user_id: 'admin',
-                        title: '⚠️ Desmontaje paradas Sant Jordi: Rambla Nova',
-                        description: 'Trabajos de recogida y limpieza de las estructuras de Sant Jordi en la Rambla Nova (tramos 1-3). Cortes de carril hasta las 22h de hoy. Precaución al circular.',
-                        status: 'in_progress',
-                        neighborhood: 'CENTRE',
-                        created_at: '2026-06-05T07:00:00Z',
+                        title: '🚧 Obras Rambla Nova: Corte de carril',
+                        description: 'Inicio de obras de renovación de pavimento en la Rambla Nova (tramos 3-5). Corte del carril derecho de circulación de 08h a 14h de lunes a viernes durante julio. Se recomienda usar vías alternativas.',
+                        status: 'open',
+                        neighborhood: 'Centre',
+                        created_at: '2026-06-30T07:00:00Z',
                         profiles: { full_name: 'Guàrdia Urbana TGN', avatar_url: '/logo.svg' }
                     },
                     {
-                        id: 'fri-25-feria-acceso',
-                        user_id: 'admin',
-                        title: '🎉 Feria de Abril: Accesos Bonavista',
-                        description: 'La Feria de Abril (32a edició) ocupa más de 13.000 m² del recinto. Aparcamiento limitado: se recomienda llegar en transporte público. Horario: 17h-01h (v/s hasta 02h).',
-                        status: 'open',
+                        id: 'lun-30-jun-ematsa-bonavista',
+                        user_id: 'v22',
+                        title: '💧 EMATSA: Corte de agua Bonavista',
+                        description: 'Corte de suministro de agua programado hoy lunes 30 de junio de 09:00h a 13:00h en los bloques 12-18 de Bonavista. Suministro garantizado antes del mediodía.',
+                        status: 'in_progress',
                         neighborhood: 'Bonavista',
-                        created_at: '2026-06-05T09:00:00Z',
-                        profiles: { full_name: 'Ajuntament de Tarragona', avatar_url: '/logo.svg' }
+                        created_at: '2026-06-30T08:00:00Z',
+                        profiles: { full_name: 'EMATSA', avatar_url: 'https://i.pravatar.cc/150?u=water' }
                     },
                     {
-                        id: 'fri-25-ematsa-llevant',
-                        user_id: 'v12',
-                        title: '🚧 EMATSA: Renovación tuberia Llevant',
-                        description: 'Corte de agua programado Hoy Viernes 5 de 09:00h a 13:00h en el Bloc 7 del barrio de Llevant. Suministro se restablecerá antes del mediodía según lo previsto.',
-                        status: 'in_progress',
-                        neighborhood: 'Llevant',
-                        created_at: '2026-06-05T08:30:00Z',
-                        profiles: { full_name: 'EMATSA', avatar_url: 'https://i.pravatar.cc/150?u=water' }
+                        id: 'lun-30-jun-calor-aviso',
+                        user_id: 'admin',
+                        title: '🌡️ Alerta Calor Extremo: 34ºC Previsto',
+                        description: 'Alerta amarilla por calor activada por el Servei Meteorològic. Se habilitan puntos de atención refrescante en los Centros Cívicos (9h-14h) y Biblioteca Pública (9h-20h). Beber agua y evitar la exposición solar directa.',
+                        status: 'open',
+                        neighborhood: 'GENERAL',
+                        created_at: '2026-06-30T06:00:00Z',
+                        profiles: { full_name: 'Protecció Civil TGN', avatar_url: '/logo.svg' }
                     }
                 ];
 

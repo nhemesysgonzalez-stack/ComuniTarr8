@@ -145,40 +145,40 @@ const Announcements: React.FC = () => {
 
             const realBulletins: Announcement[] = [
                 {
-                    id: 'fri-01-may-feria',
-                    title: '💃 Últimos días Feria de Abril Bonavista',
-                    content: 'Aprovecha este puente del 5 de Junio. La Feria cerrará sus puertas definitivamente este domingo. Refuerzo en las líneas 54 y 3 de la EMT.',
+                    id: 'lun-30-jun-calor',
+                    title: '🌡️ Alerta por calor: Máximas de 34ºC',
+                    content: 'El Servei Meteorològic de Catalunya activa alerta amarilla por temperaturas extremas. Se recomienda hidratarse frecuentemente, evitar el sol entre las 12h y las 17h, y prestar atención a personas mayores.',
                     neighborhood: 'GENERAL',
-                    category: 'EVENTO',
-                    author_name: 'Cultura TGN',
-                    created_at: '2026-05-01T08:00:00Z'
+                    category: 'URGENTE',
+                    author_name: 'Protecció Civil TGN',
+                    created_at: '2026-06-30T07:00:00Z'
                 },
                 {
-                    id: 'fri-01-may-traffic',
-                    title: '⚠️ Aviso de Tráfico: Manifestaciones',
-                    content: 'Cortes intermitentes de tráfico en el eje Imperial Tàrraco - Rambla Nova por las movilizaciones sindicales del Día del Trabajador hasta las 14h.',
-                    neighborhood: 'Centro',
-                    category: 'AVISO',
-                    author_name: 'Guàrdia Urbana TGN',
-                    created_at: '2026-05-01T07:30:00Z'
-                },
-                {
-                    id: 'fri-01-may-beach',
-                    title: '🏖️ Inicio temporada playas',
-                    content: 'Con el puente arranca la temporada de baño extra-oficial. Servicio de socorrismo activado parcialmente en L\'Arrabassada y El Miracle.',
+                    id: 'lun-30-jun-playa',
+                    title: '🏖️ Playas: Bandera verde en toda la costa',
+                    content: 'Todas las playas de Tarragona operan con bandera verde este lunes 30 de junio. Temperatura del agua 24ºC. Servicio de socorrismo activo en L\'Arrabassada, El Miracle y Playa Larga de 10h a 18h.',
                     neighborhood: 'Litoral',
                     category: 'AVISO',
-                    author_name: 'Protección Civil',
-                    created_at: '2026-05-01T09:00:00Z'
+                    author_name: 'Servei de Platges TGN',
+                    created_at: '2026-06-30T08:00:00Z'
                 },
                 {
-                    id: 'fri-01-may-jobs',
-                    title: '💼 Nuevas Ofertas de Empleo (5 Junio)',
-                    content: 'Hemos depurado la sección de empleos: ahora solo encontrarás ofertas reales, verificadas y con número de teléfono de contacto para el verano.',
+                    id: 'lun-30-jun-sant-joan',
+                    title: '🔥 Post Sant Joan: Limpieza de playas en marcha',
+                    content: 'Tras la noche de hogueras de Sant Joan, los equipos de limpieza del Ayuntamiento trabajan desde las 6h en todas las playas. Se prevé que estén listas antes de las 10h de esta mañana.',
+                    neighborhood: 'GENERAL',
+                    category: 'INFO',
+                    author_name: 'Ajuntament de Tarragona',
+                    created_at: '2026-06-30T06:30:00Z'
+                },
+                {
+                    id: 'lun-30-jun-empleo',
+                    title: '💼 Empleo de Verano: +300 ofertas publicadas',
+                    content: 'Tarragona Impulsa y ComuniTarr han publicado más de 300 ofertas de trabajo de temporada para julio y agosto. Hostelería, turismo, comercio y servicios. Todas con teléfono de contacto verificado.',
                     neighborhood: 'GENERAL',
                     category: 'EMPLEO',
                     author_name: 'Admin ComuniTarr',
-                    created_at: '2026-05-01T10:00:00Z'
+                    created_at: '2026-06-30T09:00:00Z'
                 }
             ];
 

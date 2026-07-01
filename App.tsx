@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-// Deployment trigger: Mar 23 2026 (Lunes Update)
+// Deployment trigger: Jun 30 2026 (Lunes Verano Update - Actualización Completa de Módulos)
 import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import Sidebar from './components/Sidebar';

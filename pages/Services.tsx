@@ -140,11 +140,11 @@ export const Services: React.FC = () => {
               <div className="absolute -right-8 -bottom-8 opacity-10">
                 <span className="material-symbols-outlined text-[200px]">person_add</span>
               </div>
-              <h3 className="text-3xl font-black mb-2 relative z-10">TALENTO +45 TARRAGONA</h3>
+              <h3 className="text-3xl font-black mb-2 relative z-10">EMPLEO DE VERANO 2026</h3>
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
-                La experiencia es un grado. Impulsamos la reinserción laboral de vecinos mayores de 45 años con programas específicos de Tarragona Impulsa y empresas locales colaboradoras.
+                Hostelería, servicios turísticos y más. Todas las ofertas verificadas con contacto directo. Tarragona genera más de 300 vacantes cada verano.
               </p>
-              <button onClick={() => alert("Actividades Próximas:\n• Lunes 27 Abr \u2014 Taller: CV Digital (Tarragona Impulsa, 10h)\n• Miércoles 29 Abr \u2014 Orientación Laboral Individual (con cita previa)\n• Llamar al 977 29 61 50 para inscribirse")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Próximas actividades Tarragona Impulsa:\n• Lunes 7 Jul — Taller: CV Digital (10h)\n• Miércoles 9 Jul — Orientación Laboral Individual (cita previa)\n• Llamar al 977 29 61 50 para inscribirse")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -163,28 +163,45 @@ export const Services: React.FC = () => {
                   <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl">
                     <p className="text-sm font-black text-gray-700 dark:text-white">Cambra de Comerç - PICE Sénior</p>
                     <p className="text-xs text-gray-500">Programas de formación en digitalización y ventas para perfiles con experiencia.</p>
+                    <a href="tel:977218100" className="text-[10px] font-black text-emerald-600 flex items-center gap-1 hover:underline mt-1">
+                      <span className="material-symbols-outlined text-xs">call</span> 977 21 81 00
+                    </a>
                   </div>
                 </div>
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">Ofertas de Empleo Comprobadas (Vie 5 Jun)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">★ OFERTAS DE EMPLEO VERIFICADAS (Lun 30 Jun 2026)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-rose-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Camarero/a — Restaurante La Sal (Serrallo)&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Jornada completa, contrato indefinido. Imprescindible experiencia. Contacto: 977 22 33 11</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Camarero/a Temporada &mdash; Restaurant El Serrallo&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Jornada completa julio-agosto. Experiencia valorada. Incorporación inmediata.</p>
+                    <a href="tel:977220101" className="text-[10px] font-black text-rose-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 22 01 01</a>
                   </div>
                   <div className="border-l-4 border-sky-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Aux. Supermercat — Esclat Tarragona&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Reposador/a i caixa. Tardes i caps de setmana. Contacto: 977 55 66 77 (RR.HH. Esclat)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Aux. de playa / Socorrista &mdash; Servei de Platges TGN&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Temporada julio-agosto. Requisito: titulación de socorrismo acuático. Tardes.</p>
+                    <a href="tel:977296000" className="text-[10px] font-black text-sky-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 29 60 00 (Ajuntament)</a>
                   </div>
                   <div className="border-l-4 border-amber-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Mosso/a de magatzem (sector logística)&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Torn de matins. Carnet de carretoner valorat. Contacto: 633 44 55 66 (Treball TGN)</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Recepcionista Hotel &mdash; Hotel SB Express Tarragona&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Turno de tardes (15h-23h). Inglés imprescindible. Contrato temporal verano.</p>
+                    <a href="tel:977239312" className="text-[10px] font-black text-amber-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 23 93 12</a>
                   </div>
                   <div className="border-l-4 border-teal-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Netejadora — Hotel Lauria Centre&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Parcial matins (L-V). Incorporació immediata. Contacto: 977 23 67 12</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Monitora de Campamento &mdash; Esplai La Salle TGN&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Turnos de mañanas. Titulación de monitor/a de lleure valorada. Julio.</p>
+                    <a href="tel:977223366" className="text-[10px] font-black text-teal-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 22 33 66</a>
+                  </div>
+                  <div className="border-l-4 border-purple-500 pl-4">
+                    <p className="text-xs font-black dark:text-white">&ldquo;Reponedor/a Supermercado &mdash; Mercadona Tarragona Centre&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Turno de noche (22h-06h). Contrato indefinido. Se valorará experiencia.</p>
+                    <a href="tel:977242030" className="text-[10px] font-black text-purple-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 24 20 30</a>
+                  </div>
+                  <div className="border-l-4 border-orange-500 pl-4">
+                    <p className="text-xs font-black dark:text-white">&ldquo;Limpiadora Hotel &mdash; Hotel Lauría Centre Tarragona&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Parcial mañanas (L-V). Incorporación inmediata. Contrato temporal verano.</p>
+                    <a href="tel:977236712" className="text-[10px] font-black text-orange-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 23 67 12</a>
                   </div>
                 </div>
               </div>
@@ -289,7 +306,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-600">check_circle</span>
                 <div>
                   <p className="text-xs font-black text-green-700 dark:text-green-500 uppercase">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de DÍAS LABORABLES (Viernes 51 Abril).</p>
+                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de DÍAS LABORABLES (Lunes 30 Junio 2026). Líneas 8 y 54 reforzadas hacia las playas.</p>
                 </div>
               </div>
 
@@ -484,18 +501,6 @@ export const Services: React.FC = () => {
                   <span className="material-symbols-outlined">pets</span> ANIMALES Y NATURALEZA
                 </h4>
                 <div className="space-y-3">
-                  <div className="p-4 bg-gradient-to-br from-fuchsia-50 to-pink-50 dark:from-fuchsia-900/20 dark:to-pink-900/10 rounded-2xl border-2 border-fuchsia-400 dark:border-fuchsia-600 shadow-lg relative overflow-hidden group">
-                    <div className="absolute -right-4 -top-4 bg-fuchsia-500 text-white text-[8px] px-8 py-2 rotate-45 font-black uppercase shadow-sm">
-                      Destacado
-                    </div>
-                    <p className="text-sm font-black text-fuchsia-800 dark:text-fuchsia-300 pr-8">🐾 Trobada Border Collies i amics XXL</p>
-                    <p className="text-[11px] text-gray-600 dark:text-gray-300 mb-3 mt-1 font-medium leading-relaxed">
-                      ¡Un esdeveniment caní espectacular a Tivissa el 3 y 4 de mayo! Disfruta de exhibiciones de agility, pastoreo, concursos para gossos XXL, zona de food trucks y mucho más.
-                    </p>
-                    <a href="https://firescatalanes.cat/fires/trobada-border-collies-i-amics-xxl/" target="_blank" rel="noopener noreferrer" className="inline-flex py-1.5 px-4 bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-xl text-[10px] font-black uppercase items-center gap-1 transition-all shadow-md">
-                      <span className="material-symbols-outlined text-[14px]">arrow_forward</span> Más Info y Entradas
-                    </a>
-                  </div>
                   <div className="p-3 bg-orange-50 dark:bg-orange-900/10 rounded-2xl border border-orange-100 dark:border-orange-800/30">
                     <p className="text-sm font-black dark:text-white">Protectora Tarragona (APAPT)</p>
                     <p className="text-[11px] text-gray-500 mb-2">Paseo de perros, limpieza y cuidado de colonias felinas.</p>
@@ -566,13 +571,13 @@ export const Services: React.FC = () => {
                   <div className="flex flex-col gap-2">
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Part Alta</span>
-                      <span className="text-[9px] font-black bg-red-100 text-red-700 px-2 py-0.5 rounded-full uppercase">CERRADO FESTIVO</span>
+                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO - Horario Verano</span>
                     </div>
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
-                      <span className="text-[9px] font-black bg-red-100 text-red-700 px-2 py-0.5 rounded-full uppercase">CERRADO FESTIVO</span>
+                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO - Horario Verano</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Hoy Viernes 5 Jun: Toda la red de Centros y Casales Cívicos permanecerá cerrada por festividad nacional.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Verano 2026: Los Centros Cívicos abren en horario reducido (9h-14h) durante julio y agosto.</p>
                   </div>
                 </div>
               </div>

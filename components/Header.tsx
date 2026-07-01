@@ -226,15 +226,15 @@ export const Header: React.FC = () => {
                     <div className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
                       <span className="material-symbols-outlined text-lg text-rose-500">celebration</span>
                       <div>
-                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Feria de Abril Bonavista</p>
-                        <p className="text-[9px] text-gray-500 line-clamp-1">Abierta hoy desde las 17h hasta las 2h. ¡Sevillanas!</p>
+                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Mercadillo de Bonavista</p>
+                        <p className="text-[9px] text-gray-500 line-clamp-1">Abierto hoy domingo hasta las 14h. Líneas L54 y L3 de la EMT reforzadas.</p>
                       </div>
                     </div>
                     <div className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
                       <span className="material-symbols-outlined text-lg text-amber-500">warning</span>
                       <div>
-                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Desmontaje Rambla Nova</p>
-                        <p className="text-[9px] text-gray-500 line-clamp-1">Cortes de carril hasta las 22h. Usa C/ Apodaca.</p>
+                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Obras en Via Augusta</p>
+                        <p className="text-[9px] text-gray-500 line-clamp-1">Cortes parciales y desvíos en sentido Llevant durante todo el día.</p>
                       </div>
                     </div>
                   </div>
@@ -249,13 +249,13 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 5 Junio */}
+      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 28 Junio */}
       <div className="bg-purple-600 dark:bg-purple-900 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] py-2 overflow-hidden flex items-center whitespace-nowrap z-50 shadow-md">
         <div className="animate-marquee flex gap-12 sm:gap-24 items-center">
           <span className="flex items-center gap-2 text-yellow-300">⚽ ¡FIN DE SEMANA DE PLAYOFFS!: El Nàstic juega el partido decisivo este domingo. ¡Mucha suerte al equipo!</span>
           <span className="flex items-center gap-2">🍻 OCIO: Las terrazas de la ciudad amplían su horario nocturno para este fin de semana de calor.</span>
           <span className="flex items-center gap-2">🏖️ TEMPORADA DE PLAYAS: Primer fin de semana de socorrismo activo. Alta afluencia esperada.</span>
-          <span className="flex items-center gap-2">⚠️ MOVILIDAD: Cortes en la Rambla Nova el sábado por la mañana por la feria de alimentación artesana.</span>
+          <span className="flex items-center gap-2">⚠️ MOVILIDAD: Cortes en la Rambla Nova el domingo por la mañana por la feria de alimentación artesana.</span>
         </div>
       </div>
 
@@ -337,8 +337,8 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Martes 5 Junio 2026</span>
-                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Nublado 19ºC</span>
+                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Domingo 28 Junio 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Soleado 27ºC</span>
                 </div>
               </div>
 

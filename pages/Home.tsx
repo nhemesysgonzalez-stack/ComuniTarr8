@@ -176,31 +176,31 @@ const Home: React.FC = () => {
 
         const realNewsExamples = [
           {
-            id: 'mon-05-jun-nastic',
-            title: '⚽ ¡Victoria agónica del Nàstic!',
-            content: 'El Nàstic de Tarragona se lleva los 3 puntos (2-1) contra el Sevilla Atlético con un gol de Óscar Sanz en el último suspiro. ¡El Nou Estadi fue una caldera!',
-            neighborhood: 'Llevant',
-            category: 'DEPORTES',
-            image_url: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-06-05T08:30:00Z'
-          },
-          {
-            id: 'mon-05-jun-midwives',
-            title: '🩺 Alerta Sanitaria: Falta de comadronas',
-            content: 'El Colegio de Enfermería de Tarragona (CODITA) denuncia la falta crítica de comadronas en la demarcación. Reclaman medidas urgentes para garantizar la asistencia.',
-            neighborhood: 'GENERAL',
+            id: 'lun-30-jun-playa',
+            title: '🏖️ Temporada de verano a pleno rendimiento',
+            content: 'Las playas de Tarragona registran llenos históricos este lunes 30 de junio. L\'Arrabassada, El Miracle y Playa Larga con bandera verde. La Cruz Roja activa en todos los puntos de socorrismo.',
+            neighborhood: 'Litoral',
             category: 'ACTUALIDAD',
-            image_url: 'https://images.unsplash.com/photo-1505751172107-5732488c3ba0?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-06-05T08:00:00Z'
+            image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+            created_at: '2026-06-30T08:00:00Z'
           },
           {
-            id: 'mon-05-jun-tarraco-viva',
-            title: '🏛️ Tarraco Viva: Gran de éxito de asistencia',
-            content: 'La nueva edición de Tarraco Viva finaliza rompiendo el récord de visitantes. La ciudad despide la recreación con gran sabor de boca hasta el próximo año.',
-            neighborhood: 'Part Alta',
-            category: 'CULTURA',
-            image_url: 'https://images.unsplash.com/photo-1549419102-690226c71be3?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-06-05T07:45:00Z'
+            id: 'lun-30-jun-empleos',
+            title: '💼 Boom de empleo de verano en Tarragona',
+            content: 'La hostelería, el turismo y los servicios de playa generan más de 300 nuevas vacantes para julio-agosto. Todas las ofertas verificadas con contacto en la sección Empleos de ComuniTarr.',
+            neighborhood: 'GENERAL',
+            category: 'EMPLEO',
+            image_url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
+            created_at: '2026-06-30T07:30:00Z'
+          },
+          {
+            id: 'lun-30-jun-obras',
+            title: '🚧 Obras en Rambla Nova: Cortes de tráfico',
+            content: 'El Ayuntamiento inicia las obras de renovación del pavimento en el tramo final de la Rambla Nova. Cortes de tráfico de 08h a 14h de lunes a viernes durante julio.',
+            neighborhood: 'Centre',
+            category: 'AVISO',
+            image_url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+            created_at: '2026-06-30T09:00:00Z'
           }
         ];
 
@@ -208,12 +208,12 @@ const Home: React.FC = () => {
 
         // Poll Example
         const pollExample = {
-          id: 'mon-04-poll-nastic',
-          question: "¿Crees que el Nàstic logrará el ascenso directo tras la victoria de ayer?",
-          options: ['¡Sí, estamos en racha!', 'Habrá que sufrir en el playoff', 'Todavía es pronto para decir nada', 'No sigo el fútbol'],
-          category: 'DEPORTES',
+          id: 'lun-30-jun-poll-playa',
+          question: "¿Cuál es tu playa favorita de Tarragona para este verano?",
+          options: ['L\'Arrabassada', 'El Miracle', 'Playa Larga', 'La Savinosa'],
+          category: 'VERANO',
           neighborhood: 'GENERAL',
-          created_at: '2026-06-05T09:00:00Z'
+          created_at: '2026-06-30T09:00:00Z'
         };
         setCurrentPoll(pollExample);
 
@@ -457,24 +457,24 @@ const Home: React.FC = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-5 bg-orange-50 dark:bg-orange-900/10 rounded-[30px] flex gap-4 items-center">
-            <span className="material-symbols-outlined text-orange-500 text-3xl">sports_soccer</span>
+            <span className="material-symbols-outlined text-orange-500 text-3xl">beach_access</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-orange-600 tracking-widest">Nàstic 2 - 1 Sevilla At.</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Resaca de euforia en Tarragona tras la victoria en el último minuto.</p>
+              <p className="text-[10px] font-black uppercase text-orange-600 tracking-widest">Playas Tarragona</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Bandera verde en todas las playas. Agua a 24ºC. Socorrismo activo.</p>
             </div>
           </div>
           <div className="p-5 bg-sky-50 dark:bg-sky-900/10 rounded-[30px] flex gap-4 items-center">
             <span className="material-symbols-outlined text-sky-500 text-3xl">wb_sunny</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Martes 5 Junio</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Día algo nublado, bajada de temperaturas a 19ºC. Viento de Mestral.</p>
+              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Lunes 30 Junio</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Alerta amarilla por calor. Máximas de 34ºC. Evita el sol de 12h a 17h.</p>
             </div>
           </div>
-          <div className="p-5 bg-purple-50 dark:bg-purple-900/10 rounded-[30px] flex gap-4 items-center">
-            <span className="material-symbols-outlined text-purple-500 text-3xl">history_edu</span>
+          <div className="p-5 bg-amber-50 dark:bg-amber-900/10 rounded-[30px] flex gap-4 items-center">
+            <span className="material-symbols-outlined text-amber-500 text-3xl">local_fire_department</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-purple-600 tracking-widest">Tarraco Viva Fin</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Ha finalizado con rotundo éxito. Desmontaje en Pretorio.</p>
+              <p className="text-[10px] font-black uppercase text-amber-600 tracking-widest">Sant Joan 2026</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Hogueras autorizadas anoche. Limpieza de playas en marcha esta mañana.</p>
             </div>
           </div>
         </div>
@@ -486,7 +486,7 @@ const Home: React.FC = () => {
           <div className="h-full bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 rounded-[40px] text-white shadow-xl shadow-indigo-500/20 transition-transform group-hover:-translate-y-2 relative overflow-hidden">
             <span className="material-symbols-outlined text-6xl absolute top-6 right-6 opacity-20">work</span>
             <h3 className="text-2xl font-black mb-2 uppercase tracking-tight">Empleos Locales</h3>
-            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Nuevas ofertas Lunes 5 Jun</p>
+            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Ofertas verificadas Lunes 30 Jun 2026</p>
             <div className="flex items-center gap-2 text-xs font-black uppercase"><span className="material-symbols-outlined">arrow_forward</span> Entrar</div>
           </div>
         </Link>
@@ -585,7 +585,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 18 · Vie 5 Jun</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 26 · Lun 30 Jun</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">

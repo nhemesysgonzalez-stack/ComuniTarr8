@@ -11,17 +11,20 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: 420, user: 'Javier L.', avatar: 'https://i.pravatar.cc/150?u=javier', text: '⚽ ¡Qué ganas de los playoffs del Nàstic! A ver si este año por fin se da la alegría.', neighborhood: 'Levante' },
-    { id: 421, user: 'Sara M.', avatar: 'https://i.pravatar.cc/150?u=sara', text: 'Ya se empieza a notar el calorcito de junio en Tarragona. ¡Este finde toca primer baño en la Rabassada!', neighborhood: 'Centro' },
-    { id: 422, user: 'Pablo P.', avatar: 'https://i.pravatar.cc/150?u=pablo', text: '¿Alguien sabe si las duchas de la playa Larga ya funcionan? He visto a los de la Cruz Roja montar la caseta.', neighborhood: 'Part Alta' },
-    { id: 423, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laura', text: '¡buen viernes a todos! Se acerca el verano y hay que ir organizando los casales de los niños. ¡Ánimo!', neighborhood: 'Serrallo' }
+    { id: 420, user: 'Marta R.', avatar: 'https://i.pravatar.cc/150?u=marta', text: '🔥 ¡Qué calor hace en Tarragona! Hoy toca playa del Miracle sí o sí. ¿Alguien se apunta?', neighborhood: 'Centre' },
+    { id: 421, user: 'Joan F.', avatar: 'https://i.pravatar.cc/150?u=joanf', text: '🎆 ¡Vivan las Festes de Sant Joan! Esta noche hogueras en la playa de la Rabassada. ¡A quemar lo malo del año!', neighborhood: 'Bonavista' },
+    { id: 422, user: 'Ana C.', avatar: 'https://i.pravatar.cc/150?u=anac', text: '🏖️ El socorrismo ya está operativo en Playa Larga y L\'Arrabassada. Las duchas también funcionan. ¡Buenas noticias!', neighborhood: 'Llevant' },
+    { id: 423, user: 'Pep M.', avatar: 'https://i.pravatar.cc/150?u=pepm', text: '🌡️ 34ºC esta tarde en Tarragona. Recuerda hidratarte y evitar el sol de 12h a 17h. ¡Cuídate, vecino!', neighborhood: 'Part Alta' },
+    { id: 424, user: 'Laura V.', avatar: 'https://i.pravatar.cc/150?u=laurav', text: '💼 He visto en ComuniTarr que hay ofertas de trabajo de verano en hostelería. ¡Justo lo que buscaba!', neighborhood: 'Serrallo' },
+    { id: 425, user: 'Carlos D.', avatar: 'https://i.pravatar.cc/150?u=carlosd', text: '🚌 La EMT refuerza las líneas hacia las playas en julio. La L8 hasta La Rabassada pasa cada 20 minutos.', neighborhood: 'Ponent' }
 ];
 
 const tickerMessages = [
-    "⚽ DEPORTES: Ambiente de máxima tensión. El Nàstic juega la ida este domingo.",
-    "🍻 OCIO: Terrazas a rebosar este primer viernes de junio.",
-    "🏖️ PLAYAS: Alerta verde este fin de semana en todas las playas tarraconenses.",
-    "☁️ TIEMPO: Fin de semana estupendo. Máximas de 27ºC sin apenas viento."
+    "🏖️ PLAYAS: Bandera verde en todas las playas. Temperatura del agua: 24ºC.",
+    "🌡️ METEOROLOGÍA: Alerta por calor. Máximas de 34ºC. Mantente hidratado.",
+    "🎆 SANT JOAN: Hogueras autorizadas en La Rabassada esta noche a partir de las 22h.",
+    "💼 EMPLEO: Nuevas ofertas de trabajo de verano publicadas en la sección de Empleos.",
+    "🚌 TRANSPORTE: EMT refuerza líneas a playas durante julio y agosto."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {
