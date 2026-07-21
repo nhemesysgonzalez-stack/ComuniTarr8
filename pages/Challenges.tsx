@@ -45,32 +45,32 @@ const Challenges: React.FC = () => {
         {
           id: 'lun-25-ch-1',
           creator_id: 'admin',
-          title: '🌅 Se busca líder: Paseo Viernes 5',
-          description: 'Buscamos a alguien que tome la iniciativa Hoy Viernes (19:30h) para dinamizar el grupo en el Balcón/Playa. ¡Gana 100 ComuniPoints por liderar!',
+          title: '🌅 Se busca líder: Paseo Lunes 21',
+          description: 'Buscamos a alguien que tome la iniciativa Hoy Lunes (19:30h) para dinamizar el grupo en el Balcón/Playa. ¡Gana 100 ComuniPoints por liderar!',
           neighborhood: 'GENERAL',
           contact_info: 'Posteado por Admin (Busca voluntario)',
           is_example: true,
-          created_at: '2026-06-05T08:00:00Z'
+          created_at: '2026-07-21T08:00:00Z'
         },
         {
           id: 'lun-25-ch-2',
           creator_id: 'user2',
-          title: '🥾 Crónica Viernes 5: Actividad de la ciudad',
-          description: '¡Reto de Hoy Viernes! Sube la foto más auténtica de tu barrio esta tarde. La foto con más likes gana el título de "Cronista del Barrio".',
+          title: '🥾 Crónica Lunes 21: Actividad de la ciudad',
+          description: '¡Reto de Hoy Lunes! Sube la foto más auténtica de tu barrio esta tarde. La foto con más likes gana el título de "Cronista del Barrio".',
           neighborhood: 'GENERAL',
           contact_info: 'Comunidad ComuniTarr',
           is_example: true,
-          created_at: '2026-06-05T11:00:00Z'
+          created_at: '2026-07-21T11:00:00Z'
         },
         {
           id: 'lun-25-ch-3',
           creator_id: 'v4',
           title: '📦 Solidaridad: Ayuda compras lunes',
-          description: 'Reto de HOY Viernes 5: Ayudar a los vecinos mayores con las compras pesadas del inicio de semana. ¡Iniciativa vecinal pura!',
+          description: 'Reto de HOY Lunes 21: Ayudar a los vecinos mayores con las compras pesadas del inicio de semana. ¡Iniciativa vecinal pura!',
           neighborhood: 'PONENT',
           contact_info: 'Coordina con tus vecinos en el bus L54',
           is_example: true,
-          created_at: '2026-06-05T09:00:00Z'
+          created_at: '2026-07-21T09:00:00Z'
         }
       ];
 
@@ -251,8 +251,8 @@ const Challenges: React.FC = () => {
                   <div className="flex flex-wrap gap-2 justify-center">
                     {[
                       { t: 'Donación de Libros', d: 'Llevamos libros a la biblioteca del barrio para renovar stock infantil esta semana que empieza.', c: '977240331' },
-                      { t: 'Paseo con Mayores', d: 'Grupo para pasear con vecinos del barrio que viven solos esta tarde de Domingo al Serrallo.', c: '655666777' },
-                      { t: 'Limpieza de alcorques', d: 'Iniciativa para limpiar la tierra de los árboles de nuestra calle mañana Lunes por la tarde.', c: '611888222' }
+                      { t: 'Paseo con Mayores', d: 'Grupo para pasear con vecinos del barrio que viven solos esta tarde de Lunes al Serrallo.', c: '655666777' },
+                      { t: 'Limpieza de alcorques', d: 'Iniciativa para limpiar la tierra de los árboles de nuestra calle Mañana Martes por la tarde.', c: '611888222' }
                     ].map((idea, i) => (
                       <button
                         key={i}

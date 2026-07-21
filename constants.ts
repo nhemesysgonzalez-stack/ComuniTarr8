@@ -44,7 +44,7 @@ export const CHALLENGES = [
     {
         id: '3',
         title: 'Plantar árboles en la Anilla Verde',
-        description: 'Ayúdanos a reforestar los pulmones de nuestra ciudad este domingo.',
+        description: 'Ayúdanos a reforestar los pulmones de nuestra ciudad este lunes.',
         progress: 20,
         total: 50,
         image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb773b09?auto=format&fit=crop&w=800&q=80',

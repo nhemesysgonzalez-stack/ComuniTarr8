@@ -42,7 +42,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-500">check_circle</span>
                 <div>
                   <p className="text-sm font-black text-green-700 dark:text-green-400">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de DÍAS FESTIVOS (Lunes 5 Junil). L25 reforzada hacia Bonavista.</p>
+                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de DÍAS FESTIVOS (Lunes 21 Julil). L25 reforzada hacia Bonavista.</p>
                 </div>
               </div>
             </div>
@@ -221,7 +221,7 @@ export const Services: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs font-black uppercase text-red-500">VIERNES</p>
-                  <p className="text-sm font-bold text-gray-800 dark:text-white">Día Festivo (5 de Junio)</p>
+                  <p className="text-sm font-bold text-gray-800 dark:text-white">Día Festivo (21 de Julio)</p>
                   <p className="text-[10px] text-gray-500">Día del Trabajador. No hay actividad escolar. Centros cerrados.</p>
                 </div>
               </div>

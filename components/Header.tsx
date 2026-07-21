@@ -227,7 +227,7 @@ export const Header: React.FC = () => {
                       <span className="material-symbols-outlined text-lg text-rose-500">celebration</span>
                       <div>
                         <p className="text-[10px] font-black dark:text-white leading-none mb-1">Mercadillo de Bonavista</p>
-                        <p className="text-[9px] text-gray-500 line-clamp-1">Abierto hoy domingo hasta las 14h. Líneas L54 y L3 de la EMT reforzadas.</p>
+                        <p className="text-[9px] text-gray-500 line-clamp-1">Abierto Hoy Lunes hasta las 14h. Líneas L54 y L3 de la EMT reforzadas.</p>
                       </div>
                     </div>
                     <div className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
@@ -252,7 +252,7 @@ export const Header: React.FC = () => {
       {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 28 Junio */}
       <div className="bg-purple-600 dark:bg-purple-900 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] py-2 overflow-hidden flex items-center whitespace-nowrap z-50 shadow-md">
         <div className="animate-marquee flex gap-12 sm:gap-24 items-center">
-          <span className="flex items-center gap-2 text-yellow-300">⚽ ¡FIN DE SEMANA DE PLAYOFFS!: El Nàstic juega el partido decisivo este domingo. ¡Mucha suerte al equipo!</span>
+          <span className="flex items-center gap-2 text-yellow-300">⚽ ¡FIN DE SEMANA DE PLAYOFFS!: El Nàstic juega el partido decisivo este lunes. ¡Mucha suerte al equipo!</span>
           <span className="flex items-center gap-2">🍻 OCIO: Las terrazas de la ciudad amplían su horario nocturno para este fin de semana de calor.</span>
           <span className="flex items-center gap-2">🏖️ TEMPORADA DE PLAYAS: Primer fin de semana de socorrismo activo. Alta afluencia esperada.</span>
           <span className="flex items-center gap-2">⚠️ MOVILIDAD: Cortes en la Rambla Nova el domingo por la mañana por la feria de alimentación artesana.</span>

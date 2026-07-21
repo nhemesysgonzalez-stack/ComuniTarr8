@@ -151,7 +151,7 @@ const Announcements: React.FC = () => {
                     neighborhood: 'GENERAL',
                     category: 'URGENTE',
                     author_name: 'Protecció Civil TGN',
-                    created_at: '2026-06-30T07:00:00Z'
+                    created_at: '2026-07-21T07:00:00Z'
                 },
                 {
                     id: 'lun-30-jun-playa',
@@ -160,7 +160,7 @@ const Announcements: React.FC = () => {
                     neighborhood: 'Litoral',
                     category: 'AVISO',
                     author_name: 'Servei de Platges TGN',
-                    created_at: '2026-06-30T08:00:00Z'
+                    created_at: '2026-07-21T08:00:00Z'
                 },
                 {
                     id: 'lun-30-jun-sant-joan',
@@ -169,7 +169,7 @@ const Announcements: React.FC = () => {
                     neighborhood: 'GENERAL',
                     category: 'INFO',
                     author_name: 'Ajuntament de Tarragona',
-                    created_at: '2026-06-30T06:30:00Z'
+                    created_at: '2026-07-21T06:30:00Z'
                 },
                 {
                     id: 'lun-30-jun-empleo',
@@ -178,7 +178,7 @@ const Announcements: React.FC = () => {
                     neighborhood: 'GENERAL',
                     category: 'EMPLEO',
                     author_name: 'Admin ComuniTarr',
-                    created_at: '2026-06-30T09:00:00Z'
+                    created_at: '2026-07-21T09:00:00Z'
                 }
             ];
 

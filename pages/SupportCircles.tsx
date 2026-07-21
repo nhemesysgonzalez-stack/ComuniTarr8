@@ -64,7 +64,7 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'ayto',
                     title: '🤝 SIAD - Atención y Apoyo a Mujeres',
                     neighborhood: 'GENERAL',
-                    description: 'Servicio público municipal. Cerrado hoy 5 de Junio por festividad. Urgencias: Teléfono 016 o 900 900 120 activos 24h.',
+                    description: 'Servicio público municipal. Cerrado hoy 21 de Julio por festividad. Urgencias: Teléfono 016 o 900 900 120 activos 24h.',
                     contact_info: '977 29 62 79 (Plaça de la Font 1)',
                     created_at: '2026-05-01T09:30:00Z'
                 },

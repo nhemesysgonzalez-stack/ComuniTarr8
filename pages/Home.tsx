@@ -182,7 +182,7 @@ const Home: React.FC = () => {
             neighborhood: 'Litoral',
             category: 'ACTUALIDAD',
             image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-06-30T08:00:00Z'
+            created_at: '2026-07-21T08:00:00Z'
           },
           {
             id: 'lun-30-jun-empleos',
@@ -191,7 +191,7 @@ const Home: React.FC = () => {
             neighborhood: 'GENERAL',
             category: 'EMPLEO',
             image_url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-06-30T07:30:00Z'
+            created_at: '2026-07-21T07:30:00Z'
           },
           {
             id: 'lun-30-jun-obras',
@@ -200,7 +200,7 @@ const Home: React.FC = () => {
             neighborhood: 'Centre',
             category: 'AVISO',
             image_url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-06-30T09:00:00Z'
+            created_at: '2026-07-21T09:00:00Z'
           }
         ];
 
@@ -213,7 +213,7 @@ const Home: React.FC = () => {
           options: ['L\'Arrabassada', 'El Miracle', 'Playa Larga', 'La Savinosa'],
           category: 'VERANO',
           neighborhood: 'GENERAL',
-          created_at: '2026-06-30T09:00:00Z'
+          created_at: '2026-07-21T09:00:00Z'
         };
         setCurrentPoll(pollExample);
 

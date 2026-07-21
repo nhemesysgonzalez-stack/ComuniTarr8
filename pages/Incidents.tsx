@@ -64,7 +64,7 @@ const Incidents: React.FC = () => {
                         description: 'Inicio de obras de renovación de pavimento en la Rambla Nova (tramos 3-5). Corte del carril derecho de circulación de 08h a 14h de lunes a viernes durante julio. Se recomienda usar vías alternativas.',
                         status: 'open',
                         neighborhood: 'Centre',
-                        created_at: '2026-06-30T07:00:00Z',
+                        created_at: '2026-07-21T07:00:00Z',
                         profiles: { full_name: 'Guàrdia Urbana TGN', avatar_url: '/logo.svg' }
                     },
                     {
@@ -74,7 +74,7 @@ const Incidents: React.FC = () => {
                         description: 'Corte de suministro de agua programado hoy lunes 30 de junio de 09:00h a 13:00h en los bloques 12-18 de Bonavista. Suministro garantizado antes del mediodía.',
                         status: 'in_progress',
                         neighborhood: 'Bonavista',
-                        created_at: '2026-06-30T08:00:00Z',
+                        created_at: '2026-07-21T08:00:00Z',
                         profiles: { full_name: 'EMATSA', avatar_url: 'https://i.pravatar.cc/150?u=water' }
                     },
                     {
@@ -84,7 +84,7 @@ const Incidents: React.FC = () => {
                         description: 'Alerta amarilla por calor activada por el Servei Meteorològic. Se habilitan puntos de atención refrescante en los Centros Cívicos (9h-14h) y Biblioteca Pública (9h-20h). Beber agua y evitar la exposición solar directa.',
                         status: 'open',
                         neighborhood: 'GENERAL',
-                        created_at: '2026-06-30T06:00:00Z',
+                        created_at: '2026-07-21T06:00:00Z',
                         profiles: { full_name: 'Protecció Civil TGN', avatar_url: '/logo.svg' }
                     }
                 ];

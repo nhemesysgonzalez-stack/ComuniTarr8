@@ -51,25 +51,25 @@ const Workshops: React.FC = () => {
                     id: 'sun-26-sevillanas',
                     title: '💃 Taller Express: Sevillanas (Especial Fira)',
                     instructor: 'Centro Cultural Andaluz',
-                    date: 'HOY Mar 5 Jun, 11:30h',
+                    date: 'HOY Lun 211 Jul, 11:30h',
                     description: 'Aprende los pases básicos antes de ir a Bonavista esta tarde. Especial para principiantes. Material: Trae calzado cómodo.',
                     image: 'https://images.unsplash.com/photo-1562184552-997c461abbe6?auto=format&fit=crop&w=800&q=80',
                     spots: 25,
                     neighborhood: 'GENERAL',
                     contact_info: 'Centro Cívico Torreforta',
-                    created_at: '2026-06-05T08:00:00Z'
+                    created_at: '2026-07-21T08:00:00Z'
                 },
                 {
                     id: 'sun-26-photo-walk',
                     title: '📷 Photo Walk: Boira i Platja',
                     instructor: 'TGN Fotografia',
-                    date: 'HOY Mar 5 Jun, 18:30h',
+                    date: 'HOY Lun 211 Jul, 18:30h',
                     description: 'Aprofitarem la boira prevista per a última hora de la tarda per fer fotografia creativa a l\'Arrabassada.',
                     image: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=800&q=80',
                     spots: 15,
                     neighborhood: 'Eixample',
                     contact_info: 'Punt: Lletres TARRAGONA',
-                    created_at: '2026-06-05T09:00:00Z'
+                    created_at: '2026-07-21T09:00:00Z'
                 },
                 {
                     id: 'sun-26-yoga',
@@ -81,7 +81,7 @@ const Workshops: React.FC = () => {
                     spots: 20,
                     neighborhood: 'GENERAL',
                     contact_info: 'Punt: Parc del Francolí',
-                    created_at: '2026-06-05T10:00:00Z'
+                    created_at: '2026-07-21T10:00:00Z'
                 }
             ];
 
@@ -289,7 +289,7 @@ const Workshops: React.FC = () => {
 
                                 <div>
                                     <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Fecha y Hora</label>
-                                    <input type="text" value={date} onChange={e => setDate(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-emerald-500/20 focus:ring-2" placeholder="Ej: Jueves 48:30" />
+                                    <input type="text" value={date} onChange={e => setDate(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-emerald-500/20 focus:ring-2" placeholder="Ej: Domingo 208:30" />
                                 </div>
 
                                 <div>
