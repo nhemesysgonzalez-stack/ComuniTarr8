@@ -45,32 +45,32 @@ const Challenges: React.FC = () => {
         {
           id: 'lun-25-ch-1',
           creator_id: 'admin',
-          title: '🌅 Se busca líder: Paseo Lunes 21',
+          title: '🌅 Se busca líder: Paseo Martes 4',
           description: 'Buscamos a alguien que tome la iniciativa Hoy Lunes (19:30h) para dinamizar el grupo en el Balcón/Playa. ¡Gana 100 ComuniPoints por liderar!',
           neighborhood: 'GENERAL',
           contact_info: 'Posteado por Admin (Busca voluntario)',
           is_example: true,
-          created_at: '2026-07-21T08:00:00Z'
+          created_at: '2026-08-04T08:00:00Z'
         },
         {
           id: 'lun-25-ch-2',
           creator_id: 'user2',
-          title: '🥾 Crónica Lunes 21: Actividad de la ciudad',
+          title: '🥾 Crónica Martes 4: Actividad de la ciudad',
           description: '¡Reto de Hoy Lunes! Sube la foto más auténtica de tu barrio esta tarde. La foto con más likes gana el título de "Cronista del Barrio".',
           neighborhood: 'GENERAL',
           contact_info: 'Comunidad ComuniTarr',
           is_example: true,
-          created_at: '2026-07-21T11:00:00Z'
+          created_at: '2026-08-04T11:00:00Z'
         },
         {
           id: 'lun-25-ch-3',
           creator_id: 'v4',
           title: '📦 Solidaridad: Ayuda compras lunes',
-          description: 'Reto de HOY Lunes 21: Ayudar a los vecinos mayores con las compras pesadas del inicio de semana. ¡Iniciativa vecinal pura!',
+          description: 'Reto de HOY Martes 4: Ayudar a los vecinos mayores con las compras pesadas del inicio de semana. ¡Iniciativa vecinal pura!',
           neighborhood: 'PONENT',
           contact_info: 'Coordina con tus vecinos en el bus L54',
           is_example: true,
-          created_at: '2026-07-21T09:00:00Z'
+          created_at: '2026-08-04T09:00:00Z'
         }
       ];
 

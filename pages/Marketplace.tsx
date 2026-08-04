@@ -59,14 +59,14 @@ const Marketplace: React.FC = () => {
         {
           id: 'sun-26-books-post',
           user_id: 'v12',
-          title: '📚 Libros Variados (Post-Sant Jordi)',
-          description: 'Vendo 6 libros sin estrenar comprados el Domingo 20. Novela negra, histórica y humor. Perfecto estado. 📞 633 11 22 33',
+          title: '📚 Libros de Lectura (Verano)',
+          description: 'Vendo 6 libros ideales para leer en la playa. Novela negra, histórica y humor. Perfecto estado. 📞 633 11 22 33',
           price: '25',
           category: 'ocio',
           neighborhood: 'CENTRE',
           contact_info: '633 11 22 33 (Pau)',
           image_url: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-07-21T08:00:00Z'
+          created_at: '2026-08-04T08:00:00Z'
         },
         {
           id: 'fri-01-bike',
@@ -84,7 +84,7 @@ const Marketplace: React.FC = () => {
           id: 'fri-01-ipad',
           user_id: 'v2',
           title: '📱 iPad Air (M1) 64GB',
-          description: 'Con funda y teclado. Factura y garantía. Impecable, perfecto regalo para el día de la madre este finde. 📞 622 88 77 66',
+          description: 'Con funda y teclado. Factura y garantía. Impecable, perfecto para ver series y trabajar en verano. 📞 622 88 77 66',
           price: '380',
           category: 'tech',
           neighborhood: 'SANT PERE',
@@ -188,9 +188,9 @@ const Marketplace: React.FC = () => {
             <span className="px-3 py-1 bg-emerald-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">ALQUILER MENSUAL</span>
             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">PARTICULAR - EIXAMPLE</span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Habitación libre para Mayo 🏠</h2>
+          <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Habitación libre para Agosto 🏠</h2>
           <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed">
-            Habitación luminosa en piso de 3 personas. Zona Eixample, muy céntrico. Incluye gastos. Perfil tranquilo y responsable. Disponible para entrar el 21 de Julio. ¡Ven a verla esta semana de Sant Jordi!
+            Habitación luminosa en piso de 3 personas. Zona Eixample, muy céntrico. Incluye gastos. Perfil tranquilo y responsable. Disponible para entrar el 4 de Agosto. ¡Ven a verla esta semana!
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="tel:638991122" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">

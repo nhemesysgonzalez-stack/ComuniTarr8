@@ -45,28 +45,28 @@ const MicroVolunteering: React.FC = () => {
                     id: 'jun-02-vol-1',
                     creator_id: 'v8',
                     title: '📚 Recogida de Libros de Texto',
-                    description: 'Con el fin de curso cerca, buscamos voluntarios para clasificar y organizar la donación de libros escolares antiguos en el centro cívico de Torreforta.',
+                    description: 'Con el inicio de curso cerca, buscamos voluntarios para clasificar y organizar la donación de libros escolares en el centro cívico de Torreforta.',
                     neighborhood: 'Torreforta',
                     contact_info: '644 11 22 33 (AMPA). ¡Gracias!',
-                    created_at: '2026-07-21T08:00:00Z'
+                    created_at: '2026-08-04T08:00:00Z'
                 },
                 {
                     id: 'jun-02-vol-beach',
                     creator_id: 'v9',
                     title: '🏖️ Voluntariado Medioambiental Litoral',
-                    description: 'Campaña de concienciación en L\'Arrabassada: reparto de ceniceros portátiles, bolsas de basura y limpieza del entorno marino esta primera semana de verano.',
+                    description: 'Campaña de concienciación en L\'Arrabassada: reparto de ceniceros portátiles, bolsas de basura y limpieza del entorno marino este verano.',
                     neighborhood: 'Llevant',
                     contact_info: '611 00 22 33 (Paco). Nos vemos en el puesto de Cruz Roja.',
-                    created_at: '2026-07-21T09:00:00Z'
+                    created_at: '2026-08-04T09:00:00Z'
                 },
                 {
                     id: 'jun-02-vol-seniors',
                     creator_id: 'v10',
                     title: '📦 Ayuda a Mayores: Compras de Calor',
-                    description: 'Con la subida de temperaturas hoy 21 de Julio, si algún vecino mayor necesita que le acerquemos pan, frutas o agua sin que salgan al sol, avisad.',
+                    description: 'Con la subida de temperaturas hoy 4 de Agosto, si algún vecino mayor necesita que le acerquemos pan, frutas o agua sin que salgan al sol, avisad.',
                     neighborhood: 'GENERAL',
                     contact_info: '977 12 34 56 (Coordinadora Voluntariado)',
-                    created_at: '2026-07-21T10:00:00Z'
+                    created_at: '2026-08-04T10:00:00Z'
                 }
             ];
 
@@ -248,10 +248,10 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Ayuda Montaje', d: 'Busco 1-2 personas para ayudar a descargar cajas de material hoy Lunes 21 a las 18:30 en la Rambla.', c: '644 33 22 11' },
+                                            { t: 'Ayuda Montaje', d: 'Busco 1-2 personas para ayudar a descargar cajas de material hoy Martes 4 a las 18:30 en la Rambla.', c: '644 33 22 11' },
                                             { t: 'Paseo Perro', d: '¿Algún vecino puede sacar a mi perro Hoy Lunes por la tarde? Estaré trabajando hasta tarde de urgencia.', c: '633 44 55 66' },
                                             { t: 'Ayuda Móvil', d: 'Enseñar a usar la app del autobús a vecinos mayores este lunes 22 por la mañana.', c: '611 22 33 44' },
-                                            { t: 'Ensayo Coral', d: '¿Quién va al ensayo de hoy Lunes 21? Me gustaría ir por primera vez acompañado.', c: 'Foro · Canal Cultura' }
+                                            { t: 'Ensayo Coral', d: '¿Quién va al ensayo de hoy Martes 4? Me gustaría ir por primera vez acompañado.', c: 'Foro · Canal Cultura' }
                                         ].map((idea, i) => (
 
                                             <button

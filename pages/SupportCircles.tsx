@@ -46,7 +46,7 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'ayuda_mutua',
                     title: '🕊️ Grupo de Apoyo al Duelo (Tarragona)',
                     neighborhood: 'GENERAL',
-                    description: 'Acompañamiento profesional y mutuo para afrontar la pérdida de seres queridos. Próxima sesión: Martes 5 de Mayo. Hoy festivo descansamos.',
+                    description: 'Acompañamiento profesional y mutuo para afrontar la pérdida de seres queridos. Próxima sesión: Este jueves a las 18:00h.',
                     contact_info: '977 24 49 71 (Cita Previa)',
                     created_at: '2026-05-01T08:00:00Z'
                 },
@@ -55,7 +55,7 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'protectora',
                     title: '🐾 Protectora de Animales y Plantas',
                     neighborhood: 'GENERAL',
-                    description: 'Red de cuidadores y voluntarios. Para este puente de mayo buscamos casas de acogida urgentes por nuevos rescates.',
+                    description: 'Red de cuidadores y voluntarios. Buscamos casas de acogida urgentes para perros y gatos rescatados durante este mes de agosto.',
                     contact_info: '619 44 22 11 (WhatsApp Adopciones)',
                     created_at: '2026-05-01T09:00:00Z'
                 },
@@ -64,7 +64,7 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'ayto',
                     title: '🤝 SIAD - Atención y Apoyo a Mujeres',
                     neighborhood: 'GENERAL',
-                    description: 'Servicio público municipal. Cerrado hoy 21 de Julio por festividad. Urgencias: Teléfono 016 o 900 900 120 activos 24h.',
+                    description: 'Servicio público municipal de información y atención a mujeres. Abierto de lunes a viernes. Urgencias: Teléfono 016 o 900 900 120 activos 24h.',
                     contact_info: '977 29 62 79 (Plaça de la Font 1)',
                     created_at: '2026-05-01T09:30:00Z'
                 },
@@ -73,7 +73,7 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'associacio',
                     title: '👴 Llar de Jubilats Pere Martell',
                     neighborhood: 'GENERAL',
-                    description: 'Centro para un envejecimiento activo. Actividades para este puente: Torneo de Petanca el sábado y baile el domingo.',
+                    description: 'Centro para un envejecimiento activo. Actividades semanales: Talleres de memoria, gimnasia suave y club de petanca los miércoles por la tarde.',
                     contact_info: '977 21 55 14 (Tarragona)',
                     created_at: '2026-05-01T10:00:00Z'
                 }

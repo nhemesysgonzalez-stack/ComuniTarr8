@@ -77,8 +77,8 @@ const Forum: React.FC = () => {
   const tickerMessages = [
     { user: 'Admin ComuniTarr', text: '🚢 ACTUALIDAD: El impresionante yate "Seven Seas" de Spielberg atraca en Tarragona.' },
     { user: 'MTR', text: '🏖️ Obras Terminadas: La Pineda estrena su nuevo paseo marítimo de cara a verano.' },
-    { user: 'Feria Bonavista', text: '💃 FERIA DE ABRIL: Sigue abierta hasta el 3 de mayo. ¡Aprovecha estos días!' },
-    { user: 'Ayuntamiento', text: '🛴 Recordatorio VMP: Reduzcan velocidad al circular en patinetes.' }
+    { user: 'Turismo TGN', text: '🎆 SANT MAGÍ: El programa de fiestas ya está disponible en la web oficial.' },
+    { user: 'Ayuntamiento', text: '🛴 Recordatorio VMP: Reduzcan velocidad al circular por el paseo marítimo.' }
   ];
 
 
@@ -148,13 +148,13 @@ const Forum: React.FC = () => {
     'EMPLEO': [
       [
         { who: 'Servicios TGN', text: '💼 ¡Campaña de verano inminente! Id preparando currículums para el sector hostelería.' },
-        { who: 'Restaurant Sol', text: 'Hoy 21 de Julio trabajamos fuerte. Buscamos refuerzo urgente para camareros los fines de semana. Tel: 977 12 34 56' },
+        { who: 'Restaurant Sol', text: 'Hoy 4 de Agosto trabajamos fuerte. Buscamos refuerzo urgente para camareros los fines de semana. Tel: 977 12 34 56' },
       ],
     ],
     'ENCUENTROS': [
       [
-        { who: 'Santi G.', text: 'Mañana Martes por la tarde quedada en la Feria de Abril para la recta final. ¿Alguien se suma?' },
-        { who: 'Marta L.', text: '¡Me apunto! Me pongo el vestido y vamos.' }
+        { who: 'Santi G.', text: 'Mañana Martes por la tarde quedada en la playa del Miracle para ver el atardecer. ¿Alguien se suma?' },
+        { who: 'Marta L.', text: '¡Me apunto! Llevo algo de picar y vamos.' }
       ],
       [
         { who: 'Nuria P.', text: 'El domingo quiero inaugurar la bici por el nuevo carril del puente del Francolí.' },
@@ -257,14 +257,14 @@ const Forum: React.FC = () => {
 
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
-          // Ayer (Domingo 20)
-          { id: 'seed-cloud-98', user_id: 'v10', content: '🌹 ¡Qué Sant Jordi tan bonito el de ayer! La Rambla Nova era un jardín. Ha sido el mejor en años.', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 20).toISOString() },
-          { id: 'seed-cloud-99', user_id: 'v4', content: '@Nuria P. ¡Totalmente de acuerdo! Los Xiquets también estuvieron increíbles. 🏰', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 18).toISOString() },
-          { id: 'seed-cloud-100', user_id: 'v19', content: '💃 Hoy arranca la Feria de Abril de Bonavista. ¡A mí con las sevillanas! ¿Quién viene esta tarde?', user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 3).toISOString() },
+          // Ayer (Lunes 3)
+          { id: 'seed-cloud-98', user_id: 'v10', content: '🌊 ¡Qué playa tan bonita la de la Arrabassada ayer! El agua estaba perfecta. Ha sido el mejor baño del verano.', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 20).toISOString() },
+          { id: 'seed-cloud-99', user_id: 'v4', content: '@Nuria P. ¡Totalmente de acuerdo! Ya apetece este calorcito. 🏖️', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 18).toISOString() },
+          { id: 'seed-cloud-100', user_id: 'v19', content: '🎆 Hoy arranca la semana fuerte de preparación para Sant Magí. ¡A mí me encanta el ambiente! ¿Quién viene esta tarde al centro?', user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 3).toISOString() },
 
-          // Hoy Lunes 21
-          { id: 'seed-cloud-101', user_id: 'v3', content: `📚 ¿Alguien ya ha empezado su libro de Sant Jordi? Yo llevo ya 50 páginas del mío. 😄`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-07-21T08:30:00Z' },
-          { id: 'seed-cloud-102', user_id: 'v2', content: '🎡 La Feria de Bonavista acaba de abrir. ¡Hay sevillanas, comida andaluza y mucha alegría! ¡Ven esta tarde!', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-07-21T11:00:00Z' },
+          // Hoy Martes 4
+          { id: 'seed-cloud-101', user_id: 'v3', content: `🍉 ¿Alguien ya tiene su entrada para el concierto de las fiestas? Yo ya tengo la mía. 😄`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-08-04T08:30:00Z' },
+          { id: 'seed-cloud-102', user_id: 'v2', content: '🎶 El escenario de la Plaça de la Font ya casi está listo. ¡Qué ganas de conciertos! ¡Ven esta noche!', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-08-04T11:00:00Z' },
         ] as Message[],
       };
 
@@ -583,13 +583,13 @@ const Forum: React.FC = () => {
             </div>
           </div>
 
-          {/* Trending Topics - Actualizado Viernes 21 Julio */}
+          {/* Trending Topics - Actualizado Viernes 4 Agosto */}
           <div>
             <h4 className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 ml-2">Trending Topic</h4>
             <div className="flex flex-wrap gap-2 px-2">
-              <span className="px-3 py-1 bg-amber-100 text-amber-600 rounded-lg text-[10px] font-black uppercase">#1deMayoTGN</span>
-              <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-lg text-[10px] font-black uppercase">#OperacionPuente</span>
-              <span className="px-3 py-1 bg-red-100 text-red-600 rounded-lg text-[10px] font-black uppercase">#FeriaBonavista</span>
+              <span className="px-3 py-1 bg-amber-100 text-amber-600 rounded-lg text-[10px] font-black uppercase">#CalorTGN</span>
+              <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-lg text-[10px] font-black uppercase">#PlayaMiracle</span>
+              <span className="px-3 py-1 bg-red-100 text-red-600 rounded-lg text-[10px] font-black uppercase">#SantMagi2026</span>
             </div>
           </div>
 

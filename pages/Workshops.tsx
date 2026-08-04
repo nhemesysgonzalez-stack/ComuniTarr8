@@ -49,27 +49,27 @@ const Workshops: React.FC = () => {
             const mockWorkshops: Workshop[] = [
                 {
                     id: 'sun-26-sevillanas',
-                    title: '💃 Taller Express: Sevillanas (Especial Fira)',
-                    instructor: 'Centro Cultural Andaluz',
-                    date: 'HOY Lun 211 Jul, 11:30h',
-                    description: 'Aprende los pases básicos antes de ir a Bonavista esta tarde. Especial para principiantes. Material: Trae calzado cómodo.',
+                    title: '💃 Taller Express: Rumba Catalana',
+                    instructor: 'Centro Cultural',
+                    date: 'HOY Mar 4 Ago, 18:30h',
+                    description: 'Aprende los ritmos básicos de la rumba catalana. Especial para principiantes. ¡Trae calzado cómodo y ganas de bailar!',
                     image: 'https://images.unsplash.com/photo-1562184552-997c461abbe6?auto=format&fit=crop&w=800&q=80',
                     spots: 25,
                     neighborhood: 'GENERAL',
                     contact_info: 'Centro Cívico Torreforta',
-                    created_at: '2026-07-21T08:00:00Z'
+                    created_at: '2026-08-04T08:00:00Z'
                 },
                 {
                     id: 'sun-26-photo-walk',
                     title: '📷 Photo Walk: Boira i Platja',
                     instructor: 'TGN Fotografia',
-                    date: 'HOY Lun 211 Jul, 18:30h',
-                    description: 'Aprofitarem la boira prevista per a última hora de la tarda per fer fotografia creativa a l\'Arrabassada.',
+                    date: 'HOY Mar 4 Ago, 20:00h',
+                    description: 'Aprofitarem el capvespre a la platja de l\'Arrabassada per fer fotografia creativa de la posta de sol.',
                     image: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=800&q=80',
                     spots: 15,
                     neighborhood: 'Eixample',
                     contact_info: 'Punt: Lletres TARRAGONA',
-                    created_at: '2026-07-21T09:00:00Z'
+                    created_at: '2026-08-04T09:00:00Z'
                 },
                 {
                     id: 'sun-26-yoga',
@@ -81,7 +81,7 @@ const Workshops: React.FC = () => {
                     spots: 20,
                     neighborhood: 'GENERAL',
                     contact_info: 'Punt: Parc del Francolí',
-                    created_at: '2026-07-21T10:00:00Z'
+                    created_at: '2026-08-04T10:00:00Z'
                 }
             ];
 
@@ -151,11 +151,11 @@ const Workshops: React.FC = () => {
                         </div>
                         <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Workshop: CV Digital con IA 📈</h2>
                         <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Optimiza tu búsqueda de empleo con herramientas de Inteligencia Artificial. MAÑANA LUNES a las 17:00h en el Centro Cívico Centre. ¡Inscripción gratuita!
+                            Optimiza tu búsqueda de empleo con herramientas de Inteligencia Artificial. MAÑANA MIÉRCOLES a las 17:00h en el Centro Cívico Centre. ¡Inscripción gratuita!
                         </p>
 
                         <div className="flex flex-wrap gap-4">
-                            <a href="#" onClick={(e) => { e.preventDefault(); alert("Reserva tu plaza enviando un WhatsApp al 611 00 22 33 para el Taller de CV IA de MAÑANA LUNES."); }} className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
+                            <a href="#" onClick={(e) => { e.preventDefault(); alert("Reserva tu plaza enviando un WhatsApp al 611 00 22 33 para el Taller de CV IA de MAÑANA MIÉRCOLES."); }} className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
                                 <span className="material-symbols-outlined text-sm">confirmation_number</span>
                                 RESERVAR PLAZA
                             </a>
@@ -289,7 +289,7 @@ const Workshops: React.FC = () => {
 
                                 <div>
                                     <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Fecha y Hora</label>
-                                    <input type="text" value={date} onChange={e => setDate(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-emerald-500/20 focus:ring-2" placeholder="Ej: Domingo 208:30" />
+                                    <input type="text" value={date} onChange={e => setDate(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-emerald-500/20 focus:ring-2" placeholder="Ej: Lunes 38:30" />
                                 </div>
 
                                 <div>

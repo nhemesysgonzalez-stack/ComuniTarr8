@@ -249,13 +249,13 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 28 Junio */}
+      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 28 Agosto */}
       <div className="bg-purple-600 dark:bg-purple-900 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] py-2 overflow-hidden flex items-center whitespace-nowrap z-50 shadow-md">
         <div className="animate-marquee flex gap-12 sm:gap-24 items-center">
-          <span className="flex items-center gap-2 text-yellow-300">⚽ ¡FIN DE SEMANA DE PLAYOFFS!: El Nàstic juega el partido decisivo este lunes. ¡Mucha suerte al equipo!</span>
-          <span className="flex items-center gap-2">🍻 OCIO: Las terrazas de la ciudad amplían su horario nocturno para este fin de semana de calor.</span>
-          <span className="flex items-center gap-2">🏖️ TEMPORADA DE PLAYAS: Primer fin de semana de socorrismo activo. Alta afluencia esperada.</span>
-          <span className="flex items-center gap-2">⚠️ MOVILIDAD: Cortes en la Rambla Nova el domingo por la mañana por la feria de alimentación artesana.</span>
+          <span className="flex items-center gap-2 text-yellow-300">⚽ TROFEO CIUTAT DE TARRAGONA: El Nàstic juega su primer partido de pretemporada este sábado.</span>
+          <span className="flex items-center gap-2">🍻 OCIO: Las terrazas de la ciudad amplían su horario nocturno para estas semanas de agosto.</span>
+          <span className="flex items-center gap-2">🏖️ TEMPORADA DE PLAYAS: Alta afluencia esperada. Precaución con las altas temperaturas centrales.</span>
+          <span className="flex items-center gap-2">⚠️ MOVILIDAD: Cortes en la Rambla Nova este domingo por la mañana por preparativos de Sant Magí.</span>
         </div>
       </div>
 
@@ -337,7 +337,7 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Domingo 28 Junio 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Domingo 28 Agosto 2026</span>
                   <span className="text-xs font-black dark:text-white uppercase">AEMET: Soleado 27ºC</span>
                 </div>
               </div>

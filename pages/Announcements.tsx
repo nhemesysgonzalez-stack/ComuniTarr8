@@ -151,16 +151,16 @@ const Announcements: React.FC = () => {
                     neighborhood: 'GENERAL',
                     category: 'URGENTE',
                     author_name: 'Protecció Civil TGN',
-                    created_at: '2026-07-21T07:00:00Z'
+                    created_at: '2026-08-04T07:00:00Z'
                 },
                 {
                     id: 'lun-30-jun-playa',
                     title: '🏖️ Playas: Bandera verde en toda la costa',
-                    content: 'Todas las playas de Tarragona operan con bandera verde este lunes 30 de junio. Temperatura del agua 24ºC. Servicio de socorrismo activo en L\'Arrabassada, El Miracle y Playa Larga de 10h a 18h.',
+                    content: 'Todas las playas de Tarragona operan con bandera verde este Martes 4 de agosto. Temperatura del agua 24ºC. Servicio de socorrismo activo en L\'Arrabassada, El Miracle y Playa Larga de 10h a 18h.',
                     neighborhood: 'Litoral',
                     category: 'AVISO',
                     author_name: 'Servei de Platges TGN',
-                    created_at: '2026-07-21T08:00:00Z'
+                    created_at: '2026-08-04T08:00:00Z'
                 },
                 {
                     id: 'lun-30-jun-sant-joan',
@@ -169,16 +169,16 @@ const Announcements: React.FC = () => {
                     neighborhood: 'GENERAL',
                     category: 'INFO',
                     author_name: 'Ajuntament de Tarragona',
-                    created_at: '2026-07-21T06:30:00Z'
+                    created_at: '2026-08-04T06:30:00Z'
                 },
                 {
                     id: 'lun-30-jun-empleo',
                     title: '💼 Empleo de Verano: +300 ofertas publicadas',
-                    content: 'Tarragona Impulsa y ComuniTarr han publicado más de 300 ofertas de trabajo de temporada para julio y agosto. Hostelería, turismo, comercio y servicios. Todas con teléfono de contacto verificado.',
+                    content: 'Tarragona Impulsa y ComuniTarr han publicado más de 300 ofertas de trabajo de temporada para agosto y agosto. Hostelería, turismo, comercio y servicios. Todas con teléfono de contacto verificado.',
                     neighborhood: 'GENERAL',
                     category: 'EMPLEO',
                     author_name: 'Admin ComuniTarr',
-                    created_at: '2026-07-21T09:00:00Z'
+                    created_at: '2026-08-04T09:00:00Z'
                 }
             ];
 

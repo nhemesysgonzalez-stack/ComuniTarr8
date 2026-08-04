@@ -178,29 +178,29 @@ const Home: React.FC = () => {
           {
             id: 'lun-30-jun-playa',
             title: '🏖️ Temporada de verano a pleno rendimiento',
-            content: 'Las playas de Tarragona registran llenos históricos este lunes 30 de junio. L\'Arrabassada, El Miracle y Playa Larga con bandera verde. La Cruz Roja activa en todos los puntos de socorrismo.',
+            content: 'Las playas de Tarragona registran llenos históricos este Martes 4 de agosto. L\'Arrabassada, El Miracle y Playa Larga con bandera verde. La Cruz Roja activa en todos los puntos de socorrismo.',
             neighborhood: 'Litoral',
             category: 'ACTUALIDAD',
             image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-07-21T08:00:00Z'
+            created_at: '2026-08-04T08:00:00Z'
           },
           {
-            id: 'lun-30-jun-empleos',
+            id: 'mar-04-ago-empleos',
             title: '💼 Boom de empleo de verano en Tarragona',
             content: 'La hostelería, el turismo y los servicios de playa generan más de 300 nuevas vacantes para julio-agosto. Todas las ofertas verificadas con contacto en la sección Empleos de ComuniTarr.',
             neighborhood: 'GENERAL',
             category: 'EMPLEO',
             image_url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-07-21T07:30:00Z'
+            created_at: '2026-08-04T07:30:00Z'
           },
           {
             id: 'lun-30-jun-obras',
             title: '🚧 Obras en Rambla Nova: Cortes de tráfico',
-            content: 'El Ayuntamiento inicia las obras de renovación del pavimento en el tramo final de la Rambla Nova. Cortes de tráfico de 08h a 14h de lunes a viernes durante julio.',
+            content: 'El Ayuntamiento inicia las obras de renovación del pavimento en el tramo final de la Rambla Nova. Cortes de tráfico de 08h a 14h de lunes a viernes durante agosto.',
             neighborhood: 'Centre',
             category: 'AVISO',
             image_url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-07-21T09:00:00Z'
+            created_at: '2026-08-04T09:00:00Z'
           }
         ];
 
@@ -213,7 +213,7 @@ const Home: React.FC = () => {
           options: ['L\'Arrabassada', 'El Miracle', 'Playa Larga', 'La Savinosa'],
           category: 'VERANO',
           neighborhood: 'GENERAL',
-          created_at: '2026-07-21T09:00:00Z'
+          created_at: '2026-08-04T09:00:00Z'
         };
         setCurrentPoll(pollExample);
 
@@ -466,7 +466,7 @@ const Home: React.FC = () => {
           <div className="p-5 bg-sky-50 dark:bg-sky-900/10 rounded-[30px] flex gap-4 items-center">
             <span className="material-symbols-outlined text-sky-500 text-3xl">wb_sunny</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Lunes 30 Junio</p>
+              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Martes 4 Agosto</p>
               <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Alerta amarilla por calor. Máximas de 34ºC. Evita el sol de 12h a 17h.</p>
             </div>
           </div>
@@ -486,7 +486,7 @@ const Home: React.FC = () => {
           <div className="h-full bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 rounded-[40px] text-white shadow-xl shadow-indigo-500/20 transition-transform group-hover:-translate-y-2 relative overflow-hidden">
             <span className="material-symbols-outlined text-6xl absolute top-6 right-6 opacity-20">work</span>
             <h3 className="text-2xl font-black mb-2 uppercase tracking-tight">Empleos Locales</h3>
-            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Ofertas verificadas Lunes 30 Jun 2026</p>
+            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Ofertas verificadas Martes 4 Jun 2026</p>
             <div className="flex items-center gap-2 text-xs font-black uppercase"><span className="material-symbols-outlined">arrow_forward</span> Entrar</div>
           </div>
         </Link>

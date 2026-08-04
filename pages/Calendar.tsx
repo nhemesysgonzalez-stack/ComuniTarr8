@@ -21,7 +21,7 @@ interface Event {
 const NeighborhoodCalendar: React.FC = () => {
   const { user } = useAuth();
   const now = new Date();
-  const monthNames = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'];
+  const monthNames = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'AGOSTO', 'AGOSTO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'];
   const [selectedMonth, setSelectedMonth] = useState(monthNames[now.getMonth()]);
   const [selectedYear, setSelectedYear] = useState(now.getFullYear());
   const [events, setEvents] = useState<Event[]>([]);
@@ -59,43 +59,43 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'may-04-routine',
+          id: 'ago-06-cine',
           creator_id: 'admin',
-          title: "🗓️ Vuelta a la normalidad post-puente",
-          description: "Reapertura de centros cívicos, bibliotecas y servicios municipales tras el puente de mayo.",
-          event_date: '2026-07-21',
-          event_time: '08:00',
-          location: 'Tarragona (General)',
-          category: 'Avisos',
-          neighborhood: 'GENERAL',
-          contact_info: 'Ajuntament de Tarragona',
-          created_at: '2026-07-21T08:00:00Z'
-        },
-        {
-          id: 'may-11-tarraco-viva',
-          creator_id: 'cultura',
-          title: "🏛️ Inicio Tarraco Viva 2026",
-          description: "Gran festival de recreación histórica de Tarragona. Actos de apertura en el Anfiteatro y Recinto Ferial.",
-          event_date: '2026-07-21',
-          event_time: '18:00',
-          location: 'Varios puntos de la ciudad',
+          title: "🎬 Cine de Verano en la Playa",
+          description: "Proyección al aire libre en la Playa del Miracle. Trae tu silla o toalla.",
+          event_date: '2026-08-06',
+          event_time: '22:00',
+          location: 'Playa del Miracle',
           category: 'Cultura',
           neighborhood: 'GENERAL',
-          contact_info: 'Agenda Cultural TGN',
-          created_at: '2026-07-21T09:00:00Z'
+          contact_info: 'Ajuntament de Tarragona',
+          created_at: '2026-08-04T08:00:00Z'
         },
         {
-          id: 'may-16-miguel-rios',
+          id: 'ago-08-visita',
+          creator_id: 'cultura',
+          title: "🏛️ Visita Nocturna al Anfiteatro",
+          description: "Descubre la historia de Tarraco bajo las estrellas con una visita guiada especial.",
+          event_date: '2026-08-08',
+          event_time: '21:00',
+          location: 'Anfiteatro Romano',
+          category: 'Cultura',
+          neighborhood: 'Part Alta',
+          contact_info: 'Agenda Cultural TGN',
+          created_at: '2026-08-04T09:00:00Z'
+        },
+        {
+          id: 'ago-15-sant-magi',
           creator_id: 'ocio',
-          title: "🎸 Concierto: Miguel Ríos",
-          description: "El mítico rockero llega a la Tarraco Arena Plaza con su gira de despedida.",
-          event_date: '2026-07-21',
-          event_time: '21:30',
-          location: 'Tarraco Arena Plaza',
-          category: 'Música',
+          title: "🍉 Fiestas de Sant Magí 2026",
+          description: "Día grande de las fiestas de Sant Magí. Baixada de l'Aigua, diables y conciertos en la plaza.",
+          event_date: '2026-08-15',
+          event_time: '19:00',
+          location: 'Tarragona Centro',
+          category: 'Ocio',
           neighborhood: 'GENERAL',
-          contact_info: 'Venta de entradas online',
-          created_at: '2026-07-21T10:00:00Z'
+          contact_info: 'Ajuntament de Tarragona',
+          created_at: '2026-08-04T10:00:00Z'
         }
       ];
 

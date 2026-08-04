@@ -42,7 +42,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-500">check_circle</span>
                 <div>
                   <p className="text-sm font-black text-green-700 dark:text-green-400">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de DÍAS FESTIVOS (Lunes 21 Julil). L25 reforzada hacia Bonavista.</p>
+                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de DÍAS FESTIVOS (Martes 4 Julil). L25 reforzada hacia Bonavista.</p>
                 </div>
               </div>
             </div>
@@ -144,7 +144,7 @@ export const Services: React.FC = () => {
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
                 Hostelería, servicios turísticos y más. Todas las ofertas verificadas con contacto directo. Tarragona genera más de 300 vacantes cada verano.
               </p>
-              <button onClick={() => alert("Próximas actividades Tarragona Impulsa:\n• Lunes 7 Jul — Taller: CV Digital (10h)\n• Miércoles 9 Jul — Orientación Laboral Individual (cita previa)\n• Llamar al 977 29 61 50 para inscribirse")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Próximas actividades Tarragona Impulsa:\n• Jueves 6 Ago — Taller: CV Digital (10h)\n• Viernes 7 Ago — Orientación Laboral Individual (cita previa)\n• Llamar al 977 29 61 50 para inscribirse")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -171,7 +171,7 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">★ OFERTAS DE EMPLEO VERIFICADAS (Lun 30 Jun 2026)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">★ OFERTAS DE EMPLEO VERIFICADAS (Martes 4 Ago 2026)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-rose-500 pl-4">
                     <p className="text-xs font-black dark:text-white">&ldquo;Camarero/a Temporada &mdash; Restaurant El Serrallo&rdquo;</p>
@@ -180,7 +180,7 @@ export const Services: React.FC = () => {
                   </div>
                   <div className="border-l-4 border-sky-500 pl-4">
                     <p className="text-xs font-black dark:text-white">&ldquo;Aux. de playa / Socorrista &mdash; Servei de Platges TGN&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Temporada julio-agosto. Requisito: titulación de socorrismo acuático. Tardes.</p>
+                    <p className="text-[10px] text-gray-500">Temporada agosto-agosto. Requisito: titulación de socorrismo acuático. Tardes.</p>
                     <a href="tel:977296000" className="text-[10px] font-black text-sky-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 29 60 00 (Ajuntament)</a>
                   </div>
                   <div className="border-l-4 border-amber-500 pl-4">
@@ -190,7 +190,7 @@ export const Services: React.FC = () => {
                   </div>
                   <div className="border-l-4 border-teal-500 pl-4">
                     <p className="text-xs font-black dark:text-white">&ldquo;Monitora de Campamento &mdash; Esplai La Salle TGN&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Turnos de mañanas. Titulación de monitor/a de lleure valorada. Julio.</p>
+                    <p className="text-[10px] text-gray-500">Turnos de mañanas. Titulación de monitor/a de lleure valorada. Agosto.</p>
                     <a href="tel:977223366" className="text-[10px] font-black text-teal-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 22 33 66</a>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
@@ -220,9 +220,9 @@ export const Services: React.FC = () => {
                   1
                 </div>
                 <div>
-                  <p className="text-xs font-black uppercase text-red-500">VIERNES</p>
-                  <p className="text-sm font-bold text-gray-800 dark:text-white">Día Festivo (21 de Julio)</p>
-                  <p className="text-[10px] text-gray-500">Día del Trabajador. No hay actividad escolar. Centros cerrados.</p>
+                  <p className="text-xs font-black uppercase text-red-500">AGOSTO</p>
+                  <p className="text-sm font-bold text-gray-800 dark:text-white">Vacaciones de Verano</p>
+                  <p className="text-[10px] text-gray-500">Mes de agosto. No hay actividad escolar regular. Consulta horarios de ludotecas.</p>
                 </div>
               </div>
               <a
@@ -306,7 +306,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-600">check_circle</span>
                 <div>
                   <p className="text-xs font-black text-green-700 dark:text-green-500 uppercase">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de DÍAS LABORABLES (Lunes 30 Junio 2026). Líneas 8 y 54 reforzadas hacia las playas.</p>
+                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de DÍAS LABORABLES (Martes 4 Agosto 2026). Líneas 8 y 54 reforzadas hacia las playas.</p>
                 </div>
               </div>
 
@@ -577,7 +577,7 @@ export const Services: React.FC = () => {
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
                       <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO - Horario Verano</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Verano 2026: Los Centros Cívicos abren en horario reducido (9h-14h) durante julio y agosto.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Verano 2026: Los Centros Cívicos abren en horario reducido (9h-14h) durante agosto y agosto.</p>
                   </div>
                 </div>
               </div>
@@ -666,7 +666,7 @@ export const Services: React.FC = () => {
           className={`p-4 rounded-2xl flex md:flex-row flex-col items-center gap-4 transition-all ${activeTab === 'empleo45' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/30' : 'bg-white dark:bg-surface-dark text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
         >
           <span className="material-symbols-outlined text-2xl">person_add</span>
-          <span className="hidden md:block font-black text-xs uppercase tracking-widest">Empleo +45</span>
+          <span className="hidden md:block font-black text-xs uppercase tracking-widest">Empleos</span>
         </button>
 
         <button
