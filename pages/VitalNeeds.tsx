@@ -50,7 +50,7 @@ const VitalNeeds: React.FC = () => {
                     creator_id: 'v5',
                     type: 'medical',
                     title: '💊 Farmacia de Guardia (Festivo)',
-                    description: 'Necesito que alguien me acerque un inhalador de la farmacia de guardia. No tengo coche y hoy los buses van con frecuencia de domingo por ser 4 de Agosto. 📞 644 33 22 11 (Pere)',
+                    description: 'Necesito que alguien me acerque un inhalador de la farmacia de guardia. No tengo coche y hoy los buses van con frecuencia de domingo por ser 30 de Agosto. 📞 644 33 22 11 (Pere)',
                     contact_info: '644 33 22 11 (Pere)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
@@ -180,11 +180,11 @@ const VitalNeeds: React.FC = () => {
                         </div>
                         <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Red de Acompañamiento Semanal 🤝</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            ¿Tienes 1 hora libre esta semana? Únete a nuestra red de acompañamiento para personas mayores que viven solas. Paseos, compra, o una simple charla. Un pequeño gesto marca la diferencia. Nos reunimos Hoy Lunes a las 18h en el Serrallo para coordinar las actividades de agosto.
+                            ¿Tienes 1 hora libre esta semana? Únete a nuestra red de acompañamiento para personas mayores que viven solas. Paseos, compra, o una simple charla. Un pequeño gesto marca la diferencia. Nos reunimos Hoy Sábado a las 18h en el Serrallo para coordinar las actividades de agosto.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Hoy Lunes 3 de Agosto:\n• 12:00h \u2014 Encuentro Solidario (Rambla Nova)\n• 18:00h \u2014 Coordinación (Serrallo)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Hoy Sábado 29 de Agosto:\n• 12:00h \u2014 Encuentro Solidario (Rambla Nova)\n• 18:00h \u2014 Coordinación (Serrallo)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
                             <span className="material-symbols-outlined text-sm">person_add</span>
                             UNIRME AHORA
                         </a>

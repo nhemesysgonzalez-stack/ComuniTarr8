@@ -151,25 +151,25 @@ const Announcements: React.FC = () => {
                     neighborhood: 'GENERAL',
                     category: 'URGENTE',
                     author_name: 'Protecció Civil TGN',
-                    created_at: '2026-08-04T07:00:00Z'
+                    created_at: '2026-08-30T07:00:00Z'
                 },
                 {
                     id: 'lun-30-jun-playa',
                     title: '🏖️ Playas: Bandera verde en toda la costa',
-                    content: 'Todas las playas de Tarragona operan con bandera verde este Martes 4 de agosto. Temperatura del agua 24ºC. Servicio de socorrismo activo en L\'Arrabassada, El Miracle y Playa Larga de 10h a 18h.',
+                    content: 'Todas las playas de Tarragona operan con bandera verde este Domingo 30 de agosto. Temperatura del agua 24ºC. Servicio de socorrismo activo en L\'Arrabassada, El Miracle y Playa Larga de 10h a 18h.',
                     neighborhood: 'Litoral',
                     category: 'AVISO',
                     author_name: 'Servei de Platges TGN',
-                    created_at: '2026-08-04T08:00:00Z'
+                    created_at: '2026-08-30T08:00:00Z'
                 },
                 {
                     id: 'lun-30-jun-sant-joan',
-                    title: '🎇 Sant Magí: Inicio de montaje de escenarios',
-                    content: 'Han comenzado los trabajos de montaje de los escenarios de Sant Magí. Rogamos precaución en las zonas afectadas y plazas céntricas de la ciudad.',
+                    title: '🎆 Santa Tecla: Presentación del cartel',
+                    content: 'Ya falta menos para las Fiestas Mayores de Santa Tecla. El Ayuntamiento acaba de presentar el cartel oficial y los primeros conciertos de este año.',
                     neighborhood: 'GENERAL',
                     category: 'INFO',
                     author_name: 'Ajuntament de Tarragona',
-                    created_at: '2026-08-04T06:30:00Z'
+                    created_at: '2026-08-30T06:30:00Z'
                 },
                 {
                     id: 'lun-30-jun-empleo',
@@ -178,7 +178,7 @@ const Announcements: React.FC = () => {
                     neighborhood: 'GENERAL',
                     category: 'EMPLEO',
                     author_name: 'Admin ComuniTarr',
-                    created_at: '2026-08-04T09:00:00Z'
+                    created_at: '2026-08-30T09:00:00Z'
                 }
             ];
 

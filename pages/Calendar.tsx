@@ -69,7 +69,7 @@ const NeighborhoodCalendar: React.FC = () => {
           category: 'Cultura',
           neighborhood: 'GENERAL',
           contact_info: 'Ajuntament de Tarragona',
-          created_at: '2026-08-04T08:00:00Z'
+          created_at: '2026-08-30T08:00:00Z'
         },
         {
           id: 'ago-08-visita',
@@ -82,7 +82,7 @@ const NeighborhoodCalendar: React.FC = () => {
           category: 'Cultura',
           neighborhood: 'Part Alta',
           contact_info: 'Agenda Cultural TGN',
-          created_at: '2026-08-04T09:00:00Z'
+          created_at: '2026-08-30T09:00:00Z'
         },
         {
           id: 'ago-15-sant-magi',
@@ -95,7 +95,7 @@ const NeighborhoodCalendar: React.FC = () => {
           category: 'Ocio',
           neighborhood: 'GENERAL',
           contact_info: 'Ajuntament de Tarragona',
-          created_at: '2026-08-04T10:00:00Z'
+          created_at: '2026-08-30T10:00:00Z'
         }
       ];
 

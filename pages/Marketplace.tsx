@@ -66,7 +66,7 @@ const Marketplace: React.FC = () => {
           neighborhood: 'CENTRE',
           contact_info: '633 11 22 33 (Pau)',
           image_url: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-08-04T08:00:00Z'
+          created_at: '2026-08-30T08:00:00Z'
         },
         {
           id: 'fri-01-bike',
@@ -190,7 +190,7 @@ const Marketplace: React.FC = () => {
           </div>
           <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Habitación libre para Agosto 🏠</h2>
           <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed">
-            Habitación luminosa en piso de 3 personas. Zona Eixample, muy céntrico. Incluye gastos. Perfil tranquilo y responsable. Disponible para entrar el 4 de Agosto. ¡Ven a verla esta semana!
+            Habitación luminosa en piso de 3 personas. Zona Eixample, muy céntrico. Incluye gastos. Perfil tranquilo y responsable. Disponible para entrar el 30 de Agosto. ¡Ven a verla esta semana!
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="tel:638991122" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">

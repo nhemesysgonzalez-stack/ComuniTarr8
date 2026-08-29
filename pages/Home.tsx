@@ -178,11 +178,11 @@ const Home: React.FC = () => {
           {
             id: 'lun-30-jun-playa',
             title: '🏖️ Temporada de verano a pleno rendimiento',
-            content: 'Las playas de Tarragona registran llenos históricos este Martes 4 de agosto. L\'Arrabassada, El Miracle y Playa Larga con bandera verde. La Cruz Roja activa en todos los puntos de socorrismo.',
+            content: 'Las playas de Tarragona registran llenos históricos este Domingo 30 de agosto. L\'Arrabassada, El Miracle y Playa Larga con bandera verde. La Cruz Roja activa en todos los puntos de socorrismo.',
             neighborhood: 'Litoral',
             category: 'ACTUALIDAD',
             image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-08-04T08:00:00Z'
+            created_at: '2026-08-30T08:00:00Z'
           },
           {
             id: 'mar-04-ago-empleos',
@@ -191,7 +191,7 @@ const Home: React.FC = () => {
             neighborhood: 'GENERAL',
             category: 'EMPLEO',
             image_url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-08-04T07:30:00Z'
+            created_at: '2026-08-30T07:30:00Z'
           },
           {
             id: 'lun-30-jun-obras',
@@ -200,7 +200,7 @@ const Home: React.FC = () => {
             neighborhood: 'Centre',
             category: 'AVISO',
             image_url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-08-04T09:00:00Z'
+            created_at: '2026-08-30T09:00:00Z'
           }
         ];
 
@@ -213,7 +213,7 @@ const Home: React.FC = () => {
           options: ['L\'Arrabassada', 'El Miracle', 'Playa Larga', 'La Savinosa'],
           category: 'VERANO',
           neighborhood: 'GENERAL',
-          created_at: '2026-08-04T09:00:00Z'
+          created_at: '2026-08-30T09:00:00Z'
         };
         setCurrentPoll(pollExample);
 
@@ -466,15 +466,15 @@ const Home: React.FC = () => {
           <div className="p-5 bg-sky-50 dark:bg-sky-900/10 rounded-[30px] flex gap-4 items-center">
             <span className="material-symbols-outlined text-sky-500 text-3xl">wb_sunny</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Martes 4 Agosto</p>
+              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Domingo 30 Agosto</p>
               <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Alerta amarilla por calor. Máximas de 34ºC. Evita el sol de 12h a 17h.</p>
             </div>
           </div>
           <div className="p-5 bg-amber-50 dark:bg-amber-900/10 rounded-[30px] flex gap-4 items-center">
             <span className="material-symbols-outlined text-amber-500 text-3xl">local_fire_department</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-amber-600 tracking-widest">Sant Magí 2026</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Preparativos iniciados. Montaje de escenarios en plazas céntricas.</p>
+              <p className="text-[10px] font-black uppercase text-amber-600 tracking-widest">Santa Tecla 2026</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Ya huele a pólvora. El cartel oficial y los primeros actos han sido revelados.</p>
             </div>
           </div>
         </div>
@@ -486,7 +486,7 @@ const Home: React.FC = () => {
           <div className="h-full bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 rounded-[40px] text-white shadow-xl shadow-indigo-500/20 transition-transform group-hover:-translate-y-2 relative overflow-hidden">
             <span className="material-symbols-outlined text-6xl absolute top-6 right-6 opacity-20">work</span>
             <h3 className="text-2xl font-black mb-2 uppercase tracking-tight">Empleos Locales</h3>
-            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Ofertas verificadas Martes 4 Jun 2026</p>
+            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Ofertas verificadas Domingo 30 Jun 2026</p>
             <div className="flex items-center gap-2 text-xs font-black uppercase"><span className="material-symbols-outlined">arrow_forward</span> Entrar</div>
           </div>
         </Link>
@@ -585,7 +585,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 26 · Lun 3 Ago</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 26 · Lun 29 Ago</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">

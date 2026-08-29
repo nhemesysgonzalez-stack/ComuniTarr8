@@ -78,7 +78,7 @@ const Polls: React.FC = () => {
                     title: '🚗 ¿Qué solución propones para el aparcamiento en la Estación del Camp?',
                     options: ['Poner barreras y cobrar', 'Construir un parking de varias plantas', 'Más autobuses y descartar coche', 'El modelo actual está bien'],
                     neighborhood: 'GENERAL',
-                    created_at: '2026-08-04T08:00:00Z'
+                    created_at: '2026-08-30T08:00:00Z'
                 },
                 {
                     id: 'sun-26-poll-feria',
@@ -86,7 +86,7 @@ const Polls: React.FC = () => {
                     title: '🎉 ¿Qué te parece el programa de las fiestas de Sant Magí de este año?',
                     options: ['Genial, iré a casi todo', 'Me faltan más conciertos', 'Muy pensado para familias', 'No me interesa la fiesta'],
                     neighborhood: 'GENERAL',
-                    created_at: '2026-08-04T09:00:00Z'
+                    created_at: '2026-08-30T09:00:00Z'
                 },
                 {
                     id: 'sun-26-poll-weather',
@@ -94,7 +94,7 @@ const Polls: React.FC = () => {
                     title: '🌡️ Con la ola de calor prevista para esta semana, ¿cambias tus planes?',
                     options: ['Me encierro con el aire', 'Playa a primera o última hora', 'Me voy a la montaña', 'El calor no me frena'],
                     neighborhood: 'GENERAL',
-                    created_at: '2026-08-04T10:00:00Z'
+                    created_at: '2026-08-30T10:00:00Z'
                 }
             ];
 

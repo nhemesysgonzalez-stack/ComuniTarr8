@@ -45,19 +45,19 @@ const Clubs: React.FC = () => {
                     id: 'c-sun-1',
                     creator_id: 'v1',
                     name: 'Amantes del Senderismo 🥾',
-                    description: 'Grupo para salir por los caminos de ronda. ¡Hoy Lunes hemos hecho ruta por el Pont del Diable! Subid las fotos al chat.',
+                    description: 'Grupo para salir por los caminos de ronda. ¡Hoy Sábado hemos hecho ruta por el Pont del Diable! Subid las fotos al chat.',
                     neighborhood: 'GENERAL',
                     contact_info: 'Canal DEPORTES (Foro)',
-                    created_at: '2026-08-04T08:00:00Z'
+                    created_at: '2026-08-30T08:00:00Z'
                 },
                 {
                     id: 'c-sun-2',
                     creator_id: 'v2',
                     name: 'Fotografía de Barrio 📸',
-                    description: 'Hoy Lunes salimos al Balcó del Mediterrani a fotografiar el atardecer (19:30h). ¡Vente con tu cámara!',
+                    description: 'Hoy Sábado salimos al Balcó del Mediterrani a fotografiar el atardecer (19:30h). ¡Vente con tu cámara!',
                     neighborhood: 'GENERAL',
                     contact_info: '644 55 66 77 (Sònia)',
-                    created_at: '2026-08-04T09:00:00Z'
+                    created_at: '2026-08-30T09:00:00Z'
                 },
                 {
                     id: 'c-sun-3',
@@ -66,7 +66,7 @@ const Clubs: React.FC = () => {
                     description: 'Esta semana toca comentar los libros de lectura de verano recomendados. Ya hemos abierto el hilo de debate.',
                     neighborhood: 'GENERAL',
                     contact_info: 'Canal CULTURA (Foro)',
-                    created_at: '2026-08-04T10:00:00Z'
+                    created_at: '2026-08-30T10:00:00Z'
                 }
             ];
 
@@ -242,7 +242,7 @@ const Clubs: React.FC = () => {
                                     <p className="text-[10px] font-black text-pink-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Fútbol Martes', d: 'Buscamos gente para completar partido Hoy Lunes a las 20h en Campclar.', c: '611222333' },
+                                            { t: 'Fútbol Domingo', d: 'Buscamos gente para completar partido Hoy Sábado a las 20h en Campclar.', c: '611222333' },
                                             { t: 'Lectura Sant Jordi', d: 'Quedada para comentar nuestras compras de libros anticipadas.', c: '644555666' },
                                             { t: 'Urban Walking', d: 'Caminata rápida por la playa del Miracle después del trabajo.', c: '677888999' }
                                         ].map((idea, i) => (

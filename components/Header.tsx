@@ -227,7 +227,7 @@ export const Header: React.FC = () => {
                       <span className="material-symbols-outlined text-lg text-rose-500">celebration</span>
                       <div>
                         <p className="text-[10px] font-black dark:text-white leading-none mb-1">Mercadillo de Bonavista</p>
-                        <p className="text-[9px] text-gray-500 line-clamp-1">Abierto Hoy Lunes hasta las 14h. Líneas L54 y L3 de la EMT reforzadas.</p>
+                        <p className="text-[9px] text-gray-500 line-clamp-1">Abierto Hoy Sábado hasta las 14h. Líneas L54 y L3 de la EMT reforzadas.</p>
                       </div>
                     </div>
                     <div className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
@@ -249,13 +249,13 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 3 Agosto */}
+      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 29 Agosto */}
       <div className="bg-purple-600 dark:bg-purple-900 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] py-2 overflow-hidden flex items-center whitespace-nowrap z-50 shadow-md">
         <div className="animate-marquee flex gap-12 sm:gap-24 items-center">
           <span className="flex items-center gap-2 text-yellow-300">⚽ TROFEO CIUTAT DE TARRAGONA: El Nàstic juega su primer partido de pretemporada este sábado.</span>
           <span className="flex items-center gap-2">🍻 OCIO: Las terrazas de la ciudad amplían su horario nocturno para estas semanas de agosto.</span>
           <span className="flex items-center gap-2">🏖️ TEMPORADA DE PLAYAS: Alta afluencia esperada. Precaución con las altas temperaturas centrales.</span>
-          <span className="flex items-center gap-2">⚠️ MOVILIDAD: Cortes en la Rambla Nova este domingo por la mañana por preparativos de Sant Magí.</span>
+          <span className="flex items-center gap-2">⚠️ MOVILIDAD: Cortes en la Rambla Nova este domingo por la mañana por preparativos de Santa Tecla.</span>
         </div>
       </div>
 
@@ -337,7 +337,7 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Domingo 28 Agosto 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Viernes 288 Agosto 2026</span>
                   <span className="text-xs font-black dark:text-white uppercase">AEMET: Soleado 27ºC</span>
                 </div>
               </div>

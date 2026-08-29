@@ -138,22 +138,22 @@ const Forum: React.FC = () => {
     'APOYO': [
       [
         { who: 'Carme L.', text: '¿Sabéis si ha reabierto ya el CAP de la Rambla tras el fin de semana largo?' },
-        { who: 'Andreu T.', text: 'Abierto desde las 8h Hoy Lunes, Carme. Todo volviendo a la normalidad.' },
+        { who: 'Andreu T.', text: 'Abierto desde las 8h Hoy Sábado, Carme. Todo volviendo a la normalidad.' },
       ],
       [
-        { who: 'Sandra L.', text: 'Recuerdo: Mañana Martes seguimos con la recogida de alimentos en el CC de Torreforta.' },
+        { who: 'Sandra L.', text: 'Recuerdo: Mañana Domingo seguimos con la recogida de alimentos en el CC de Torreforta.' },
         { who: 'Elena V.', text: '@Sandra ¡Yo me pasaré sobre las 11h para dejar cosas!' },
       ],
     ],
     'EMPLEO': [
       [
         { who: 'Servicios TGN', text: '💼 ¡Campaña de verano inminente! Id preparando currículums para el sector hostelería.' },
-        { who: 'Restaurant Sol', text: 'Hoy 4 de Agosto trabajamos fuerte. Buscamos refuerzo urgente para camareros los fines de semana. Tel: 977 12 34 56' },
+        { who: 'Restaurant Sol', text: 'Hoy 30 de Agosto trabajamos fuerte. Buscamos refuerzo urgente para camareros los fines de semana. Tel: 977 12 34 56' },
       ],
     ],
     'ENCUENTROS': [
       [
-        { who: 'Santi G.', text: 'Mañana Martes por la tarde quedada en la playa del Miracle para ver el atardecer. ¿Alguien se suma?' },
+        { who: 'Santi G.', text: 'Mañana Domingo por la tarde quedada en la playa del Miracle para ver el atardecer. ¿Alguien se suma?' },
         { who: 'Marta L.', text: '¡Me apunto! Llevo algo de picar y vamos.' }
       ],
       [
@@ -257,14 +257,14 @@ const Forum: React.FC = () => {
 
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
-          // Ayer (Lunes 3)
+          // Ayer (Sábado 29)
           { id: 'seed-cloud-98', user_id: 'v10', content: '🌊 ¡Qué playa tan bonita la de la Arrabassada ayer! El agua estaba perfecta. Ha sido el mejor baño del verano.', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 20).toISOString() },
           { id: 'seed-cloud-99', user_id: 'v4', content: '@Nuria P. ¡Totalmente de acuerdo! Ya apetece este calorcito. 🏖️', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 18).toISOString() },
           { id: 'seed-cloud-100', user_id: 'v19', content: '🎆 Hoy arranca la semana fuerte de preparación para Sant Magí. ¡A mí me encanta el ambiente! ¿Quién viene esta tarde al centro?', user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 3).toISOString() },
 
-          // Hoy Martes 4
-          { id: 'seed-cloud-101', user_id: 'v3', content: `🍉 ¿Alguien ya tiene su entrada para el concierto de las fiestas? Yo ya tengo la mía. 😄`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-08-04T08:30:00Z' },
-          { id: 'seed-cloud-102', user_id: 'v2', content: '🎶 El escenario de la Plaça de la Font ya casi está listo. ¡Qué ganas de conciertos! ¡Ven esta noche!', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-08-04T11:00:00Z' },
+          // Hoy Domingo 30
+          { id: 'seed-cloud-101', user_id: 'v3', content: `🍉 ¿Alguien ya tiene su entrada para el concierto de las fiestas? Yo ya tengo la mía. 😄`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-08-30T08:30:00Z' },
+          { id: 'seed-cloud-102', user_id: 'v2', content: '🎶 El escenario de la Plaça de la Font ya casi está listo. ¡Qué ganas de conciertos! ¡Ven esta noche!', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-08-30T11:00:00Z' },
         ] as Message[],
       };
 
@@ -583,7 +583,7 @@ const Forum: React.FC = () => {
             </div>
           </div>
 
-          {/* Trending Topics - Actualizado Viernes 4 Agosto */}
+          {/* Trending Topics - Actualizado Viernes 30 Agosto */}
           <div>
             <h4 className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 ml-2">Trending Topic</h4>
             <div className="flex flex-wrap gap-2 px-2">

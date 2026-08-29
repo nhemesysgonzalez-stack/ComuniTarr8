@@ -14,7 +14,7 @@ interface Message {
 
 const mockMessages: Message[] = [
     { id: '1', user: 'Ana M.', text: '🌴 ¡Qué calor! Recuerden hidratarse bien si bajan a la playa esta tarde. #Verano', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026024d', time: 'Hace 2m' },
-    { id: '2', user: 'Carlos R.', text: '🎉 Ya están poniendo el escenario para los conciertos de Sant Magí. ¡Qué ganas!', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026704d', time: 'Hace 5m' },
+    { id: '2', user: 'Carlos R.', text: '🎉 Ya huele a Santa Tecla. ¡Qué ganas de que lleguen las fiestas mayores!', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026704d', time: 'Hace 5m' },
     { id: '3', user: 'Protección Civil', text: '⚠️ AVISO: Bandera verde en la playa del Miracle. Precaución con el sol central del día.', avatar: 'https://ui-avatars.com/api/?name=PC&background=ef4444&color=fff', time: 'Hace 12m', isOfficial: true },
     { id: '4', user: 'Elena G.', text: '💼 EMPLEO: Nuevas ofertas de trabajo de verano publicadas en la sección de Empleos.', avatar: 'https://i.pravatar.cc/150?u=a04258114e29026702d', time: 'Hace 15m' },
     { id: '5', user: 'Laura P.', text: '🚌 Los autobuses hacia las playas (L-8 y L-54) van bastante llenos, salid con tiempo.', avatar: 'https://i.pravatar.cc/150?u=a048581f4e29026701d', time: 'Hace 22m' },
@@ -24,7 +24,7 @@ const mockMessages: Message[] = [
 const tickerMessages = [
     "🏖️ PLAYAS: Bandera verde en todas las playas. Temperatura del agua: 24ºC.",
     "🌡️ METEOROLOGÍA: Alerta por calor. Máximas de 34ºC. Mantente hidratado.",
-    "🎆 SANT MAGÍ: Empiezan los preparativos para las fiestas. Consulta el programa.",
+    "🎆 SANTA TECLA: Se acerca septiembre y las fiestas mayores. Consulta el pre-programa.",
     "💼 EMPLEO: Nuevas ofertas de trabajo de verano publicadas en la sección de Empleos.",
     "🚌 TRANSPORTE: EMT refuerza líneas a playas durante el mes de agosto."
 ];
