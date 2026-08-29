@@ -249,7 +249,7 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 28 Agosto */}
+      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 3 Agosto */}
       <div className="bg-purple-600 dark:bg-purple-900 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] py-2 overflow-hidden flex items-center whitespace-nowrap z-50 shadow-md">
         <div className="animate-marquee flex gap-12 sm:gap-24 items-center">
           <span className="flex items-center gap-2 text-yellow-300">⚽ TROFEO CIUTAT DE TARRAGONA: El Nàstic juega su primer partido de pretemporada este sábado.</span>

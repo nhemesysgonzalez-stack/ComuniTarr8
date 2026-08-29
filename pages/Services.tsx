@@ -247,7 +247,7 @@ export const Services: React.FC = () => {
                   Escola Pax
                 </a>
                 <a href="https://educacio.gencat.cat" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
-                  Marcel·lí Lunes
+                  Marcel·lí Domingo
                 </a>
                 <a href="https://educacio.gencat.cat" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-surface-dark border border-indigo-100 dark:border-indigo-800 rounded-xl text-xs font-bold text-gray-600 hover:text-indigo-600 hover:border-indigo-300 transition-all">
                   Ver todos...

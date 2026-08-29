@@ -164,8 +164,8 @@ const Announcements: React.FC = () => {
                 },
                 {
                     id: 'lun-30-jun-sant-joan',
-                    title: '🔥 Post Sant Joan: Limpieza de playas en marcha',
-                    content: 'Tras la noche de hogueras de Sant Joan, los equipos de limpieza del Ayuntamiento trabajan desde las 6h en todas las playas. Se prevé que estén listas antes de las 10h de esta mañana.',
+                    title: '🎇 Sant Magí: Inicio de montaje de escenarios',
+                    content: 'Han comenzado los trabajos de montaje de los escenarios de Sant Magí. Rogamos precaución en las zonas afectadas y plazas céntricas de la ciudad.',
                     neighborhood: 'GENERAL',
                     category: 'INFO',
                     author_name: 'Ajuntament de Tarragona',

@@ -21,7 +21,7 @@ interface Event {
 const NeighborhoodCalendar: React.FC = () => {
   const { user } = useAuth();
   const now = new Date();
-  const monthNames = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'AGOSTO', 'AGOSTO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'];
+  const monthNames = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'];
   const [selectedMonth, setSelectedMonth] = useState(monthNames[now.getMonth()]);
   const [selectedYear, setSelectedYear] = useState(now.getFullYear());
   const [events, setEvents] = useState<Event[]>([]);
