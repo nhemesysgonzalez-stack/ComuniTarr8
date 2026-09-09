@@ -55,7 +55,7 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'protectora',
                     title: '🐾 Protectora de Animales y Plantas',
                     neighborhood: 'GENERAL',
-                    description: 'Red de cuidadores y voluntarios. Buscamos casas de acogida urgentes para perros y gatos rescatados durante este mes de agosto.',
+                    description: 'Red de cuidadores y voluntarios. Buscamos casas de acogida urgentes para perros y gatos rescatados durante este mes de septiembre.',
                     contact_info: '619 44 22 11 (WhatsApp Adopciones)',
                     created_at: '2026-05-01T09:00:00Z'
                 },

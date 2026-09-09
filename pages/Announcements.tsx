@@ -146,21 +146,21 @@ const Announcements: React.FC = () => {
             const realBulletins: Announcement[] = [
                 {
                     id: 'lun-30-jun-calor',
-                    title: '🌡️ Alerta por calor: Máximas de 34ºC',
-                    content: 'El Servei Meteorològic de Catalunya activa alerta amarilla por temperaturas extremas. Se recomienda hidratarse frecuentemente, evitar el sol entre las 12h y las 17h, y prestar atención a personas mayores.',
+                    title: '⛈️ Previsión de lluvias intensas (DANA)',
+                    content: 'El Servei Meteorològic de Catalunya activa alerta amarilla por riesgo de precipitaciones intensas esta tarde. Se recomienda precaución en los desplazamientos y evitar zonas inundables.',
                     neighborhood: 'GENERAL',
                     category: 'URGENTE',
                     author_name: 'Protecció Civil TGN',
-                    created_at: '2026-08-30T07:00:00Z'
+                    created_at: '2026-09-10T07:00:00Z'
                 },
                 {
                     id: 'lun-30-jun-playa',
-                    title: '🏖️ Playas: Bandera verde en toda la costa',
-                    content: 'Todas las playas de Tarragona operan con bandera verde este Domingo 30 de agosto. Temperatura del agua 24ºC. Servicio de socorrismo activo en L\'Arrabassada, El Miracle y Playa Larga de 10h a 18h.',
+                    title: '🚌 Movilidad: Refuerzo de líneas de autobús escolar',
+                    content: 'Con el inicio del nuevo curso este miércoles, la EMT de Tarragona ha activado el horario de invierno. Las líneas L-8, L-54 y L-41 contarán con autobuses de refuerzo en las horas punta de entrada y salida de colegios.',
                     neighborhood: 'Litoral',
                     category: 'AVISO',
                     author_name: 'Servei de Platges TGN',
-                    created_at: '2026-08-30T08:00:00Z'
+                    created_at: '2026-09-10T08:00:00Z'
                 },
                 {
                     id: 'lun-30-jun-sant-joan',
@@ -169,16 +169,16 @@ const Announcements: React.FC = () => {
                     neighborhood: 'GENERAL',
                     category: 'INFO',
                     author_name: 'Ajuntament de Tarragona',
-                    created_at: '2026-08-30T06:30:00Z'
+                    created_at: '2026-09-10T06:30:00Z'
                 },
                 {
                     id: 'lun-30-jun-empleo',
-                    title: '💼 Empleo de Verano: +300 ofertas publicadas',
-                    content: 'Tarragona Impulsa y ComuniTarr han publicado más de 300 ofertas de trabajo de temporada para agosto y agosto. Hostelería, turismo, comercio y servicios. Todas con teléfono de contacto verificado.',
+                    title: '💼 Empleo: Ofertas para la campaña de otoño',
+                    content: 'Tarragona Impulsa y ComuniTarr han actualizado las ofertas de trabajo enfocadas a la logística, comercio y educación de cara al inicio de curso y la temporada de otoño. Todas con teléfono de contacto verificado.',
                     neighborhood: 'GENERAL',
                     category: 'EMPLEO',
                     author_name: 'Admin ComuniTarr',
-                    created_at: '2026-08-30T09:00:00Z'
+                    created_at: '2026-09-10T09:00:00Z'
                 }
             ];
 

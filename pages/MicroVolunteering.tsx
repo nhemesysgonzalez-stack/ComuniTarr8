@@ -48,25 +48,25 @@ const MicroVolunteering: React.FC = () => {
                     description: 'Con el inicio de curso cerca, buscamos voluntarios para clasificar y organizar la donación de libros escolares en el centro cívico de Torreforta.',
                     neighborhood: 'Torreforta',
                     contact_info: '644 11 22 33 (AMPA). ¡Gracias!',
-                    created_at: '2026-08-30T08:00:00Z'
+                    created_at: '2026-09-10T08:00:00Z'
                 },
                 {
                     id: 'jun-02-vol-beach',
                     creator_id: 'v9',
-                    title: '🏖️ Voluntariado Medioambiental Litoral',
-                    description: 'Campaña de concienciación en L\'Arrabassada: reparto de ceniceros portátiles, bolsas de basura y limpieza del entorno marino este verano.',
-                    neighborhood: 'Llevant',
+                    title: '🤝 Acompañamiento Diada',
+                    description: 'Buscamos voluntarios para acompañar a personas con movilidad reducida a los actos institucionales del 11 de Septiembre en Tarragona.',
+                    neighborhood: 'GENERAL',
                     contact_info: '611 00 22 33 (Paco). Nos vemos en el puesto de Cruz Roja.',
-                    created_at: '2026-08-30T09:00:00Z'
+                    created_at: '2026-09-10T09:00:00Z'
                 },
                 {
                     id: 'jun-02-vol-seniors',
                     creator_id: 'v10',
-                    title: '📦 Ayuda a Mayores: Compras de Calor',
-                    description: 'Con la subida de temperaturas hoy 30 de Agosto, si algún vecino mayor necesita que le acerquemos pan, frutas o agua sin que salgan al sol, avisad.',
+                    title: '📦 Ayuda a Mayores: Compras bajo la lluvia',
+                    description: 'Con la alerta de tormentas de hoy 10 de Septiembre, si algún vecino mayor necesita que le acerquemos pan o medicinas sin salir a la lluvia, avisad.',
                     neighborhood: 'GENERAL',
                     contact_info: '977 12 34 56 (Coordinadora Voluntariado)',
-                    created_at: '2026-08-30T10:00:00Z'
+                    created_at: '2026-09-10T10:00:00Z'
                 }
             ];
 
@@ -248,10 +248,10 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Ayuda Montaje', d: 'Busco 1-2 personas para ayudar a descargar cajas de material hoy Domingo 30 a las 18:30 en la Rambla.', c: '644 33 22 11' },
-                                            { t: 'Paseo Perro', d: '¿Algún vecino puede sacar a mi perro Hoy Sábado por la tarde? Estaré trabajando hasta tarde de urgencia.', c: '633 44 55 66' },
+                                            { t: 'Ayuda Montaje', d: 'Busco 1-2 personas para ayudar a descargar cajas de material hoy Jueves 10 a las 18:30 en la Rambla.', c: '644 33 22 11' },
+                                            { t: 'Paseo Perro', d: '¿Algún vecino puede sacar a mi perro Hoy Miércoles por la tarde? Estaré trabajando hasta tarde de urgencia.', c: '633 44 55 66' },
                                             { t: 'Ayuda Móvil', d: 'Enseñar a usar la app del autobús a vecinos mayores este lunes 22 por la mañana.', c: '611 22 33 44' },
-                                            { t: 'Ensayo Coral', d: '¿Quién va al ensayo de hoy Domingo 30? Me gustaría ir por primera vez acompañado.', c: 'Foro · Canal Cultura' }
+                                            { t: 'Ensayo Coral', d: '¿Quién va al ensayo de hoy Jueves 10? Me gustaría ir por primera vez acompañado.', c: 'Foro · Canal Cultura' }
                                         ].map((idea, i) => (
 
                                             <button

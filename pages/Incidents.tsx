@@ -61,20 +61,20 @@ const Incidents: React.FC = () => {
                         id: 'lun-30-jun-rambla-obras',
                         user_id: 'admin',
                         title: '🚧 Obras Rambla Nova: Corte de carril',
-                        description: 'Inicio de obras de renovación de pavimento en la Rambla Nova (tramos 3-5). Corte del carril derecho de circulación de 08h a 14h de lunes a viernes durante agosto. Se recomienda usar vías alternativas.',
+                        description: 'Inicio de obras de renovación de pavimento en la Rambla Nova (tramos 3-5). Corte del carril derecho de circulación de 08h a 14h de lunes a viernes durante septiembre. Se recomienda usar vías alternativas.',
                         status: 'open',
                         neighborhood: 'Centre',
-                        created_at: '2026-08-30T07:00:00Z',
+                        created_at: '2026-09-10T07:00:00Z',
                         profiles: { full_name: 'Guàrdia Urbana TGN', avatar_url: '/logo.svg' }
                     },
                     {
                         id: 'lun-30-jun-ematsa-bonavista',
                         user_id: 'v22',
                         title: '💧 EMATSA: Corte de agua Bonavista',
-                        description: 'Corte de suministro de agua programado hoy Domingo 30 de agosto de 09:00h a 13:00h en los bloques 12-18 de Bonavista. Suministro garantizado antes del mediodía.',
+                        description: 'Corte de suministro de agua programado hoy Domingo 10 de septiembre de 09:00h a 13:00h en los bloques 12-18 de Bonavista. Suministro garantizado antes del mediodía.',
                         status: 'in_progress',
                         neighborhood: 'Bonavista',
-                        created_at: '2026-08-30T08:00:00Z',
+                        created_at: '2026-09-10T08:00:00Z',
                         profiles: { full_name: 'EMATSA', avatar_url: 'https://i.pravatar.cc/150?u=water' }
                     },
                     {
@@ -84,7 +84,7 @@ const Incidents: React.FC = () => {
                         description: 'Alerta amarilla por calor activada por el Servei Meteorològic. Se habilitan puntos de atención refrescante en los Centros Cívicos (9h-14h) y Biblioteca Pública (9h-20h). Beber agua y evitar la exposición solar directa.',
                         status: 'open',
                         neighborhood: 'GENERAL',
-                        created_at: '2026-08-30T06:00:00Z',
+                        created_at: '2026-09-10T06:00:00Z',
                         profiles: { full_name: 'Protecció Civil TGN', avatar_url: '/logo.svg' }
                     }
                 ];

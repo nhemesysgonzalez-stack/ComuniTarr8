@@ -42,7 +42,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-500">check_circle</span>
                 <div>
                   <p className="text-sm font-black text-green-700 dark:text-green-400">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de DÍAS FESTIVOS (Domingo 30 Julil). L25 reforzada hacia Bonavista.</p>
+                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de DÍAS FESTIVOS (Jueves 10 Julil). L25 reforzada hacia Bonavista.</p>
                 </div>
               </div>
             </div>
@@ -171,26 +171,26 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">★ OFERTAS DE EMPLEO VERIFICADAS (Domingo 30 Ago 2026)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">★ OFERTAS DE EMPLEO VERIFICADAS (Domingo 10 Sep 2026)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-rose-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Camarero/a Temporada &mdash; Restaurant El Serrallo&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Jornada completa julio-agosto. Experiencia valorada. Incorporación inmediata.</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Profesor/a Repaso Escolar &mdash; Academia Newton TGN&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Tardes (17h-20h) para primaria y ESO. Imprescindible titulación. Incorporación inmediata.</p>
                     <a href="tel:977220101" className="text-[10px] font-black text-rose-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 22 01 01</a>
                   </div>
                   <div className="border-l-4 border-sky-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Aux. de playa / Socorrista &mdash; Servei de Platges TGN&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Temporada agosto-agosto. Requisito: titulación de socorrismo acuático. Tardes.</p>
-                    <a href="tel:977296000" className="text-[10px] font-black text-sky-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 29 60 00 (Ajuntament)</a>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Personal de Vendimia &mdash; Cooperativa Vila-rodona&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Campaña de la verema. Trabajo físico al aire libre. Transporte desde Tarragona incluido.</p>
+                    <a href="tel:977296000" className="text-[10px] font-black text-sky-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 29 60 00 (Oficina Agraria)</a>
                   </div>
                   <div className="border-l-4 border-amber-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Recepcionista Hotel &mdash; Hotel SB Express Tarragona&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Turno de tardes (15h-23h). Inglés imprescindible. Contrato temporal verano.</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Dependiente/a Campaña Otoño &mdash; Parc Central&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Tienda de ropa deportiva. Fines de semana. Contrato inicial de 3 meses.</p>
                     <a href="tel:977239312" className="text-[10px] font-black text-amber-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 23 93 12</a>
                   </div>
                   <div className="border-l-4 border-teal-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Monitora de Campamento &mdash; Esplai La Salle TGN&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Turnos de mañanas. Titulación de monitor/a de lleure valorada. Agosto.</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Monitor/a Comedor Escolar &mdash; Escola Pax&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Turno mediodía (12:30h-15h). Titulación monitor/a de lleure requerida. Curso escolar.</p>
                     <a href="tel:977223366" className="text-[10px] font-black text-teal-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 22 33 66</a>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
@@ -220,9 +220,9 @@ export const Services: React.FC = () => {
                   1
                 </div>
                 <div>
-                  <p className="text-xs font-black uppercase text-red-500">AGOSTO</p>
+                  <p className="text-xs font-black uppercase text-red-500">SEPTIEMBRE</p>
                   <p className="text-sm font-bold text-gray-800 dark:text-white">Vacaciones de Verano</p>
-                  <p className="text-[10px] text-gray-500">Mes de agosto. No hay actividad escolar regular. Consulta horarios de ludotecas.</p>
+                  <p className="text-[10px] text-gray-500">Mes de septiembre. No hay actividad escolar regular. Consulta horarios de ludotecas.</p>
                 </div>
               </div>
               <a
@@ -306,7 +306,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-600">check_circle</span>
                 <div>
                   <p className="text-xs font-black text-green-700 dark:text-green-500 uppercase">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de DÍAS LABORABLES (Domingo 30 Agosto 2026). Líneas 8 y 54 reforzadas hacia las playas.</p>
+                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de DÍAS LABORABLES (Domingo 10 Septiembre 2026). Líneas 8 y 54 reforzadas hacia las playas.</p>
                 </div>
               </div>
 
@@ -577,7 +577,7 @@ export const Services: React.FC = () => {
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
                       <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO - Horario Verano</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Verano 2026: Los Centros Cívicos abren en horario reducido (9h-14h) durante agosto y agosto.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Verano 2026: Los Centros Cívicos abren en horario reducido (9h-14h) durante septiembre y septiembre.</p>
                   </div>
                 </div>
               </div>
