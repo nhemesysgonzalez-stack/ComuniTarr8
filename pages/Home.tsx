@@ -177,21 +177,21 @@ const Home: React.FC = () => {
         const realNewsExamples = [
           {
             id: 'lun-30-jun-playa',
-            title: '🏖️ Temporada de verano a pleno rendimiento',
-            content: 'Las playas de Tarragona registran llenos históricos este Domingo 10 de septiembre. L\'Arrabassada, El Miracle y Playa Larga con bandera verde. La Cruz Roja activa en todos los puntos de socorrismo.',
+            title: '🏖️ Temporada de otoño en marcha',
+            content: 'Los parques y montes de Tarragona registran gran afluencia este Domingo 23 de septiembre. L\'Arrabassada, El Miracle y Playa Larga con bandera verde. La Cruz Roja activa en todos los puntos de socorrismo.',
             neighborhood: 'Litoral',
             category: 'ACTUALIDAD',
             image_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-09-10T08:00:00Z'
+            created_at: '2026-09-23T08:00:00Z'
           },
           {
             id: 'mar-04-ago-empleos',
-            title: '💼 Boom de empleo de verano en Tarragona',
-            content: 'La hostelería, el turismo y los servicios de playa generan más de 300 nuevas vacantes para julio-septiembre. Todas las ofertas verificadas con contacto en la sección Empleos de ComuniTarr.',
+            title: '💼 Boom de empleo de otoño en Tarragona',
+            content: 'La logística, el comercio y la educación generan más de 300 nuevas vacantes para octubre-diciembre. Todas las ofertas verificadas con contacto en la sección Empleos de ComuniTarr.',
             neighborhood: 'GENERAL',
             category: 'EMPLEO',
             image_url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-09-10T07:30:00Z'
+            created_at: '2026-09-23T07:30:00Z'
           },
           {
             id: 'lun-30-jun-obras',
@@ -200,7 +200,7 @@ const Home: React.FC = () => {
             neighborhood: 'Centre',
             category: 'AVISO',
             image_url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-09-10T09:00:00Z'
+            created_at: '2026-09-23T09:00:00Z'
           }
         ];
 
@@ -209,11 +209,11 @@ const Home: React.FC = () => {
         // Poll Example
         const pollExample = {
           id: 'lun-30-jun-poll-playa',
-          question: "¿Cuál es tu playa favorita de Tarragona para este verano?",
-          options: ['L\'Arrabassada', 'El Miracle', 'Playa Larga', 'La Savinosa'],
-          category: 'VERANO',
+          question: "¿Cuál es tu lugar favorito para pasear este otoño?",
+          options: ['El Pont del Diable', 'L\'Anella Mediterrània', 'Bosque de la Marquesa', 'Loreto'],
+          category: 'OTOÑO',
           neighborhood: 'GENERAL',
-          created_at: '2026-09-10T09:00:00Z'
+          created_at: '2026-09-23T09:00:00Z'
         };
         setCurrentPoll(pollExample);
 
@@ -466,7 +466,7 @@ const Home: React.FC = () => {
           <div className="p-5 bg-sky-50 dark:bg-sky-900/10 rounded-[30px] flex gap-4 items-center">
             <span className="material-symbols-outlined text-sky-500 text-3xl">storm</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Jueves 10 Septiembre</p>
+              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Jueves 23 Septiembre</p>
               <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Aviso por tormentas fuertes. Rachas de viento a partir de las 18h.</p>
             </div>
           </div>
@@ -486,7 +486,7 @@ const Home: React.FC = () => {
           <div className="h-full bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 rounded-[40px] text-white shadow-xl shadow-indigo-500/20 transition-transform group-hover:-translate-y-2 relative overflow-hidden">
             <span className="material-symbols-outlined text-6xl absolute top-6 right-6 opacity-20">work</span>
             <h3 className="text-2xl font-black mb-2 uppercase tracking-tight">Empleos Locales</h3>
-            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Ofertas verificadas Jueves 10 Jun 2026</p>
+            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Ofertas verificadas Miércoles 23 Jun 2026</p>
             <div className="flex items-center gap-2 text-xs font-black uppercase"><span className="material-symbols-outlined">arrow_forward</span> Entrar</div>
           </div>
         </Link>
@@ -585,7 +585,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 26 · Lun 9 Sep</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 38 · Lun 22 Sep</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">

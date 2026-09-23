@@ -23,7 +23,7 @@ const mockMessages: Message[] = [
 
 const tickerMessages = [
     "🎒 VUELTA AL COLE: Normalidad en los accesos a los centros escolares de la ciudad.",
-    "🌡️ METEOROLOGÍA: Final del verano. Temperaturas en descenso y riesgo de chubascos esta tarde.",
+    "🌡️ METEOROLOGÍA: Final del otoño. Temperaturas en descenso y riesgo de chubascos esta tarde.",
     "🎆 SANTA TECLA: La programación oficial ya está publicada. Venta de entradas disponible.",
     "💼 EMPLEO: Campaña de otoño. Nuevas ofertas de logística y educación.",
     "🚌 TRANSPORTE: EMT activa los horarios de invierno y refuerzo escolar."

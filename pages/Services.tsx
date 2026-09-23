@@ -42,7 +42,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-500">check_circle</span>
                 <div>
                   <p className="text-sm font-black text-green-700 dark:text-green-400">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de DÍAS FESTIVOS (Jueves 10 Julil). L25 reforzada hacia Bonavista.</p>
+                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de DÍAS FESTIVOS (Miércoles 23 Julil). L25 reforzada hacia Bonavista.</p>
                 </div>
               </div>
             </div>
@@ -140,9 +140,9 @@ export const Services: React.FC = () => {
               <div className="absolute -right-8 -bottom-8 opacity-10">
                 <span className="material-symbols-outlined text-[200px]">person_add</span>
               </div>
-              <h3 className="text-3xl font-black mb-2 relative z-10">EMPLEO DE VERANO 2026</h3>
+              <h3 className="text-3xl font-black mb-2 relative z-10">EMPLEO DE OTOÑO 2026</h3>
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
-                Hostelería, servicios turísticos y más. Todas las ofertas verificadas con contacto directo. Tarragona genera más de 300 vacantes cada verano.
+                Hostelería, servicios turísticos y más. Todas las ofertas verificadas con contacto directo. Tarragona genera más de 300 vacantes cada otoño.
               </p>
               <button onClick={() => alert("Próximas actividades Tarragona Impulsa:\n• Jueves 6 Ago — Taller: CV Digital (10h)\n• Viernes 7 Ago — Orientación Laboral Individual (cita previa)\n• Llamar al 977 29 61 50 para inscribirse")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
@@ -171,7 +171,7 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">★ OFERTAS DE EMPLEO VERIFICADAS (Domingo 10 Sep 2026)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">★ OFERTAS DE EMPLEO VERIFICADAS (Domingo 23 Sep 2026)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-rose-500 pl-4">
                     <p className="text-xs font-black dark:text-white">&ldquo;Profesor/a Repaso Escolar &mdash; Academia Newton TGN&rdquo;</p>
@@ -200,7 +200,7 @@ export const Services: React.FC = () => {
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
                     <p className="text-xs font-black dark:text-white">&ldquo;Limpiadora Hotel &mdash; Hotel Lauría Centre Tarragona&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Parcial mañanas (L-V). Incorporación inmediata. Contrato temporal verano.</p>
+                    <p className="text-[10px] text-gray-500">Parcial mañanas (L-V). Incorporación inmediata. Contrato temporal otoño.</p>
                     <a href="tel:977236712" className="text-[10px] font-black text-orange-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 23 67 12</a>
                   </div>
                 </div>
@@ -221,7 +221,7 @@ export const Services: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs font-black uppercase text-red-500">SEPTIEMBRE</p>
-                  <p className="text-sm font-bold text-gray-800 dark:text-white">Vacaciones de Verano</p>
+                  <p className="text-sm font-bold text-gray-800 dark:text-white">Vacaciones de Otoño</p>
                   <p className="text-[10px] text-gray-500">Mes de septiembre. No hay actividad escolar regular. Consulta horarios de ludotecas.</p>
                 </div>
               </div>
@@ -306,7 +306,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-600">check_circle</span>
                 <div>
                   <p className="text-xs font-black text-green-700 dark:text-green-500 uppercase">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de DÍAS LABORABLES (Domingo 10 Septiembre 2026). Líneas 8 y 54 reforzadas hacia las playas.</p>
+                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de DÍAS LABORABLES (Domingo 23 Septiembre 2026). Líneas 8 y 54 reforzadas hacia las playas.</p>
                 </div>
               </div>
 
@@ -571,13 +571,13 @@ export const Services: React.FC = () => {
                   <div className="flex flex-col gap-2">
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Part Alta</span>
-                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO - Horario Verano</span>
+                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO - Horario Otoño</span>
                     </div>
                     <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex justify-between items-center">
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
-                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO - Horario Verano</span>
+                      <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO - Horario Otoño</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Verano 2026: Los Centros Cívicos abren en horario reducido (9h-14h) durante septiembre y septiembre.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Otoño 2026: Los Centros Cívicos abren en horario reducido (9h-14h) durante septiembre y septiembre.</p>
                   </div>
                 </div>
               </div>

@@ -61,41 +61,41 @@ const NeighborhoodCalendar: React.FC = () => {
         {
           id: 'ago-06-cine',
           creator_id: 'admin',
-          title: "🎬 Cine de Verano en la Playa",
-          description: "Proyección al aire libre en la Playa del Miracle. Trae tu silla o toalla.",
-          event_date: '2026-08-06',
+          title: "🎬 Cine de Otoño en la Playa",
+          description: "Proyección al aire libre en la plaza. Trae tu silla o toalla.",
+          event_date: '2026-09-25',
           event_time: '22:00',
           location: 'Playa del Miracle',
           category: 'Cultura',
           neighborhood: 'GENERAL',
           contact_info: 'Ajuntament de Tarragona',
-          created_at: '2026-09-10T08:00:00Z'
+          created_at: '2026-09-23T08:00:00Z'
         },
         {
           id: 'ago-08-visita',
           creator_id: 'cultura',
           title: "🏛️ Visita Nocturna al Anfiteatro",
           description: "Descubre la historia de Tarraco bajo las estrellas con una visita guiada especial.",
-          event_date: '2026-08-08',
+          event_date: '2026-09-27',
           event_time: '21:00',
           location: 'Anfiteatro Romano',
           category: 'Cultura',
           neighborhood: 'Part Alta',
           contact_info: 'Agenda Cultural TGN',
-          created_at: '2026-09-10T09:00:00Z'
+          created_at: '2026-09-23T09:00:00Z'
         },
         {
           id: 'ago-15-sant-magi',
           creator_id: 'ocio',
           title: "🍉 Fiestas de Sant Magí 2026",
           description: "Día grande de las fiestas de Sant Magí. Baixada de l'Aigua, diables y conciertos en la plaza.",
-          event_date: '2026-08-15',
+          event_date: '2026-09-23',
           event_time: '19:00',
           location: 'Tarragona Centro',
           category: 'Ocio',
           neighborhood: 'GENERAL',
           contact_info: 'Ajuntament de Tarragona',
-          created_at: '2026-09-10T10:00:00Z'
+          created_at: '2026-09-23T10:00:00Z'
         }
       ];
 
@@ -416,3 +416,4 @@ const NeighborhoodCalendar: React.FC = () => {
 };
 
 export default NeighborhoodCalendar;
+
