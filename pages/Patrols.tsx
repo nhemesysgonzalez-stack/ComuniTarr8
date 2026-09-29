@@ -55,7 +55,7 @@ const Patrols: React.FC = () => {
           description: 'Acompañamiento preventivo durante las actividades nocturnas en la Rambla Nova para asegurar el civismo y la tranquilidad vecinal.',
           neighborhood: 'Centro',
           contact_info: 'Seguridad Ciudadana — 611 00 22 33',
-          created_at: '2026-09-23T08:00:00Z'
+          created_at: '2026-09-29T08:00:00Z'
         },
         {
           id: 'fri-01-pat-beach',
@@ -64,7 +64,7 @@ const Patrols: React.FC = () => {
           description: 'Ronda por las playas de l\'Arrabassada y Llarga. Mucha gente hoy por el calor. Todo en orden, ambiente familiar.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
-          created_at: '2026-09-23T09:00:00Z'
+          created_at: '2026-09-29T09:00:00Z'
         },
         {
           id: 'fri-01-pat-feria',
@@ -73,7 +73,7 @@ const Patrols: React.FC = () => {
           description: 'Vigilancia y apoyo de movilidad durante el mercadillo dominical de Bonavista. Colaboración vecinal para facilitar accesos a personas mayores.',
           neighborhood: 'Bonavista',
           contact_info: '622 55 44 33 (Maria)',
-          created_at: '2026-09-23T10:00:00Z'
+          created_at: '2026-09-29T10:00:00Z'
         }
       ];
 

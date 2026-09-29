@@ -42,7 +42,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-500">check_circle</span>
                 <div>
                   <p className="text-sm font-black text-green-700 dark:text-green-400">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de DÍAS FESTIVOS (Miércoles 23 Julil). L25 reforzada hacia Bonavista.</p>
+                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de DÍAS FESTIVOS (Martes 29 Julil). L25 reforzada hacia Bonavista.</p>
                 </div>
               </div>
             </div>
@@ -171,7 +171,7 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">★ OFERTAS DE EMPLEO VERIFICADAS (Domingo 23 Sep 2026)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">★ OFERTAS DE EMPLEO VERIFICADAS (Domingo 29 Sep 2026)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-rose-500 pl-4">
                     <p className="text-xs font-black dark:text-white">&ldquo;Profesor/a Repaso Escolar &mdash; Academia Newton TGN&rdquo;</p>
@@ -306,7 +306,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-600">check_circle</span>
                 <div>
                   <p className="text-xs font-black text-green-700 dark:text-green-500 uppercase">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de DÍAS LABORABLES (Domingo 23 Septiembre 2026). Líneas 8 y 54 reforzadas hacia las playas.</p>
+                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de DÍAS LABORABLES (Domingo 29 Septiembre 2026). Líneas 8 y 54 reforzadas hacia las playas.</p>
                 </div>
               </div>
 

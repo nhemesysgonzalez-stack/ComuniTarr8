@@ -86,7 +86,7 @@ const getSimulatedResponse = (prompt: string, neighborhood: string = 'GENERAL'):
 
   // 2.7 ACTIVIDADES Y OCIO
   if (p.includes("actividad") || p.includes("evento") || p.includes("plan") || p.includes("ocio") || p.includes("que hacer") || p.includes("qué hacer")) {
-    return "📅 ACTIVIDADES HOY (Miércoles 3 Mar):\n\n🎞️ **CINE (20:30h):**\n• Estreno Cine V.O. 'Parásitos' en el Teatre Metropol. Descuento con carnet de vecino.\n\n🤝 **COMUNIDAD (18:30h):**\n• Taller Networking & Empleo en Espai Tabacalera. ¡Conecta con profesionales!\n\n♻️ **RECICLAJE (20-22h):**\n• Recogida de voluminosos en Zona Centro. Saca tus trastos al contenedor.\n\n💡 Mañana Miércoles: Mercado semanal de la Part Alta (08-14h).";
+    return "📅 ACTIVIDADES HOY (Miércoles 3 Mar):\n\n🎞️ **CINE (20:30h):**\n• Estreno Cine V.O. 'Parásitos' en el Teatre Metropol. Descuento con carnet de vecino.\n\n🤝 **COMUNIDAD (18:30h):**\n• Taller Networking & Empleo en Espai Tabacalera. ¡Conecta con profesionales!\n\n♻️ **RECICLAJE (20-22h):**\n• Recogida de voluminosos en Zona Centro. Saca tus trastos al contenedor.\n\n💡 Mañana Martes: Mercado semanal de la Part Alta (08-14h).";
   }
 
   // 2.8 EMERGENCIAS Y NÚMEROS ÚTILES

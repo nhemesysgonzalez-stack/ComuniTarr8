@@ -69,7 +69,7 @@ const NeighborhoodCalendar: React.FC = () => {
           category: 'Cultura',
           neighborhood: 'GENERAL',
           contact_info: 'Ajuntament de Tarragona',
-          created_at: '2026-09-23T08:00:00Z'
+          created_at: '2026-09-29T08:00:00Z'
         },
         {
           id: 'ago-08-visita',
@@ -82,20 +82,20 @@ const NeighborhoodCalendar: React.FC = () => {
           category: 'Cultura',
           neighborhood: 'Part Alta',
           contact_info: 'Agenda Cultural TGN',
-          created_at: '2026-09-23T09:00:00Z'
+          created_at: '2026-09-29T09:00:00Z'
         },
         {
           id: 'ago-15-sant-magi',
           creator_id: 'ocio',
           title: "🍉 Fiestas de Sant Magí 2026",
           description: "Día grande de las fiestas de Sant Magí. Baixada de l'Aigua, diables y conciertos en la plaza.",
-          event_date: '2026-09-23',
+          event_date: '2026-09-29',
           event_time: '19:00',
           location: 'Tarragona Centro',
           category: 'Ocio',
           neighborhood: 'GENERAL',
           contact_info: 'Ajuntament de Tarragona',
-          created_at: '2026-09-23T10:00:00Z'
+          created_at: '2026-09-29T10:00:00Z'
         }
       ];
 

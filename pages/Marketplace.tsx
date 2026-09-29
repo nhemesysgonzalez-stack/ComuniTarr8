@@ -60,13 +60,13 @@ const Marketplace: React.FC = () => {
           id: 'sun-26-books-post',
           user_id: 'v12',
           title: '馃摎 Libros de Lectura (Oto帽o)',
-          description: 'Vendo 6 libros ideales para leer en casa en los d韆s fr韔s. Novela negra, hist贸rica y humor. Perfecto estado. 馃摓 633 11 22 33',
+          description: 'Vendo 6 libros ideales para leer en casa en los d锟絘s fr锟給s. Novela negra, hist贸rica y humor. Perfecto estado. 馃摓 633 11 22 33',
           price: '25',
           category: 'ocio',
           neighborhood: 'CENTRE',
           contact_info: '633 11 22 33 (Pau)',
           image_url: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-09-23T08:00:00Z'
+          created_at: '2026-09-29T08:00:00Z'
         },
         {
           id: 'fri-01-bike',
@@ -190,7 +190,7 @@ const Marketplace: React.FC = () => {
           </div>
           <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Habitaci贸n libre para Septiembre 馃彔</h2>
           <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed">
-            Habitaci贸n luminosa en piso de 3 personas. Zona Eixample, muy c茅ntrico. Incluye gastos. Perfil tranquilo y responsable. Disponible para entrar el 23 de Septiembre. 隆Ven a verla esta semana!
+            Habitaci贸n luminosa en piso de 3 personas. Zona Eixample, muy c茅ntrico. Incluye gastos. Perfil tranquilo y responsable. Disponible para entrar el 29 de Septiembre. 隆Ven a verla esta semana!
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="tel:638991122" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
