@@ -48,16 +48,16 @@ const SupportCircles: React.FC = () => {
                     neighborhood: 'GENERAL',
                     description: 'Acompañamiento profesional y mutuo para afrontar la pérdida de seres queridos. Próxima sesión: Este jueves a las 18:00h.',
                     contact_info: '977 24 49 71 (Cita Previa)',
-                    created_at: '2026-05-01T08:00:00Z'
+                    created_at: '2026-10-01T08:00:00Z'
                 },
                 {
                     id: 'real-animales',
                     initiator_id: 'protectora',
                     title: '🐾 Protectora de Animales y Plantas',
                     neighborhood: 'GENERAL',
-                    description: 'Red de cuidadores y voluntarios. Buscamos casas de acogida urgentes para perros y gatos rescatados durante este mes de septiembre.',
+                    description: 'Red de cuidadores y voluntarios. Buscamos casas de acogida urgentes para perros y gatos rescatados durante este mes de octubre.',
                     contact_info: '619 44 22 11 (WhatsApp Adopciones)',
-                    created_at: '2026-05-01T09:00:00Z'
+                    created_at: '2026-10-02T09:00:00Z'
                 },
                 {
                     id: 'real-siad-dones',
@@ -66,7 +66,7 @@ const SupportCircles: React.FC = () => {
                     neighborhood: 'GENERAL',
                     description: 'Servicio público municipal de información y atención a mujeres. Abierto de lunes a viernes. Urgencias: Teléfono 016 o 900 900 120 activos 24h.',
                     contact_info: '977 29 62 79 (Plaça de la Font 1)',
-                    created_at: '2026-05-01T09:30:00Z'
+                    created_at: '2026-10-03T09:30:00Z'
                 },
                 {
                     id: 'real-jubilats',
@@ -75,7 +75,7 @@ const SupportCircles: React.FC = () => {
                     neighborhood: 'GENERAL',
                     description: 'Centro para un envejecimiento activo. Actividades semanales: Talleres de memoria, gimnasia suave y club de petanca los miércoles por la tarde.',
                     contact_info: '977 21 55 14 (Tarragona)',
-                    created_at: '2026-05-01T10:00:00Z'
+                    created_at: '2026-10-04T10:00:00Z'
                 }
             ];
 

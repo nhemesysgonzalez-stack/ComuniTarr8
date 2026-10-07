@@ -145,40 +145,40 @@ const Announcements: React.FC = () => {
 
             const realBulletins: Announcement[] = [
                 {
-                    id: 'lun-30-jun-calor',
-                    title: '⛈️ Previsión de lluvias intensas (DANA)',
-                    content: 'El Servei Meteorològic de Catalunya activa alerta amarilla por riesgo de precipitaciones intensas esta tarde. Se recomienda precaución en los desplazamientos y evitar zonas inundables.',
+                    id: 'oct-01-dana',
+                    title: '⛈️ Previsión de lluvias intensas',
+                    content: 'El Servei Meteorològic de Catalunya activa alerta amarilla por riesgo de precipitaciones intensas. Se recomienda precaución en los desplazamientos y evitar zonas inundables en el Serrallo y Part Baixa.',
                     neighborhood: 'GENERAL',
                     category: 'URGENTE',
                     author_name: 'Protecció Civil TGN',
-                    created_at: '2026-09-29T07:00:00Z'
+                    created_at: '2026-10-06T07:00:00Z'
                 },
                 {
-                    id: 'lun-30-jun-playa',
-                    title: '🚌 Movilidad: Refuerzo de líneas de autobús escolar',
-                    content: 'Con el inicio del nuevo curso este miércoles, la EMT de Tarragona ha activado el horario de invierno. Las líneas L-8, L-54 y L-41 contarán con autobuses de refuerzo en las horas punta de entrada y salida de colegios.',
-                    neighborhood: 'Litoral',
-                    category: 'AVISO',
-                    author_name: 'Servei de Platges TGN',
-                    created_at: '2026-09-29T08:00:00Z'
-                },
-                {
-                    id: 'lun-30-jun-sant-joan',
-                    title: '🎆 Santa Tecla: Presentación del cartel',
-                    content: 'Ya falta menos para las Fiestas Mayores de Santa Tecla. El Ayuntamiento acaba de presentar el cartel oficial y los primeros conciertos de este año.',
+                    id: 'oct-02-bus',
+                    title: '🚌 Movilidad: Refuerzo de líneas EMT',
+                    content: 'La EMT de Tarragona amplía el horario y las frecuencias de los autobuses. Las líneas L-8, L-54 y L-41 contarán con autobuses de refuerzo en las horas punta.',
                     neighborhood: 'GENERAL',
+                    category: 'AVISO',
+                    author_name: 'EMT Tarragona',
+                    created_at: '2026-10-06T08:00:00Z'
+                },
+                {
+                    id: 'oct-03-teatro',
+                    title: '🎭 Festival de Teatro de Otoño',
+                    content: 'El Ayuntamiento presenta la programación del Festival de Teatro que tendrá lugar en el Teatro Metropol durante todo octubre. Obras para todos los públicos.',
+                    neighborhood: 'Centre',
                     category: 'INFO',
                     author_name: 'Ajuntament de Tarragona',
-                    created_at: '2026-09-29T06:30:00Z'
+                    created_at: '2026-10-05T06:30:00Z'
                 },
                 {
-                    id: 'lun-30-jun-empleo',
+                    id: 'oct-04-empleo',
                     title: '💼 Empleo: Ofertas para la campaña de otoño',
-                    content: 'Tarragona Impulsa y ComuniTarr han actualizado las ofertas de trabajo enfocadas a la logística, comercio y educación de cara al inicio de curso y la temporada de otoño. Todas con teléfono de contacto verificado.',
+                    content: 'Tarragona Impulsa y ComuniTarr han actualizado las ofertas de trabajo enfocadas a la logística y comercio de cara a la temporada de otoño. Todas con teléfono de contacto verificado.',
                     neighborhood: 'GENERAL',
                     category: 'EMPLEO',
                     author_name: 'Admin ComuniTarr',
-                    created_at: '2026-09-29T09:00:00Z'
+                    created_at: '2026-10-06T09:00:00Z'
                 }
             ];
 

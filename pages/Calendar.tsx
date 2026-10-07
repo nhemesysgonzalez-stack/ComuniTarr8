@@ -59,43 +59,43 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'ago-06-cine',
+          id: 'oct-01-castells',
           creator_id: 'admin',
-          title: "🎬 Cine de Otoño en la Playa",
-          description: "Proyección al aire libre en la plaza. Trae tu silla o toalla.",
-          event_date: '2026-09-25',
-          event_time: '22:00',
-          location: 'Playa del Miracle',
+          title: "🏰 Exhibición Castellera",
+          description: "Diada castellera de otoño en la plaza de la Font con las collas locales.",
+          event_date: '2026-10-10',
+          event_time: '12:00',
+          location: 'Plaza de la Font',
           category: 'Cultura',
-          neighborhood: 'GENERAL',
+          neighborhood: 'Part Alta',
           contact_info: 'Ajuntament de Tarragona',
-          created_at: '2026-09-29T08:00:00Z'
+          created_at: '2026-10-06T08:00:00Z'
         },
         {
-          id: 'ago-08-visita',
+          id: 'oct-02-romana',
           creator_id: 'cultura',
-          title: "🏛️ Visita Nocturna al Anfiteatro",
-          description: "Descubre la historia de Tarraco bajo las estrellas con una visita guiada especial.",
-          event_date: '2026-09-27',
-          event_time: '21:00',
-          location: 'Anfiteatro Romano',
+          title: "🏛️ Visita Guiada por la Part Alta",
+          description: "Descubre los secretos mejor guardados de la Tarraco romana. Plazas limitadas.",
+          event_date: '2026-10-15',
+          event_time: '10:00',
+          location: 'Portal del Roser',
           category: 'Cultura',
           neighborhood: 'Part Alta',
           contact_info: 'Agenda Cultural TGN',
-          created_at: '2026-09-29T09:00:00Z'
+          created_at: '2026-10-06T09:00:00Z'
         },
         {
-          id: 'ago-15-sant-magi',
+          id: 'oct-03-mercado',
           creator_id: 'ocio',
-          title: "🍉 Fiestas de Sant Magí 2026",
-          description: "Día grande de las fiestas de Sant Magí. Baixada de l'Aigua, diables y conciertos en la plaza.",
-          event_date: '2026-09-29',
-          event_time: '19:00',
-          location: 'Tarragona Centro',
+          title: "🛍️ Mercadillo de Otoño en Bonavista",
+          description: "El tradicional mercadillo de los domingos con productos de temporada y artesanía.",
+          event_date: '2026-10-18',
+          event_time: '09:00',
+          location: 'Explanada de Bonavista',
           category: 'Ocio',
-          neighborhood: 'GENERAL',
-          contact_info: 'Ajuntament de Tarragona',
-          created_at: '2026-09-29T10:00:00Z'
+          neighborhood: 'Bonavista',
+          contact_info: 'Mercats de Tarragona',
+          created_at: '2026-10-06T10:00:00Z'
         }
       ];
 

@@ -57,7 +57,7 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'sun-26-books-post',
+          id: 'oct-06-books-post',
           user_id: 'v12',
           title: '📚 Libros de Lectura (Otoño)',
           description: 'Vendo 6 libros ideales para leer en casa en los d�as fr�os. Novela negra, histórica y humor. Perfecto estado. 📞 633 11 22 33',
@@ -66,10 +66,10 @@ const Marketplace: React.FC = () => {
           neighborhood: 'CENTRE',
           contact_info: '633 11 22 33 (Pau)',
           image_url: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-09-29T08:00:00Z'
+          created_at: '2026-10-06T08:00:00Z'
         },
         {
-          id: 'fri-01-bike',
+          id: 'oct-04-bike',
           user_id: 'v1',
           title: '🚲 Bicicleta de Paseo (Cesta incluida)',
           description: 'Estado impecable. Perfecta para moverte por el nuevo carril bici de La Pineda. 📞 977 44 55 66',
@@ -78,10 +78,10 @@ const Marketplace: React.FC = () => {
           neighborhood: 'PONENT',
           contact_info: '977 44 55 66 (Maria)',
           image_url: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-05-01T09:00:00Z'
+          created_at: '2026-10-04T09:00:00Z'
         },
         {
-          id: 'fri-01-ipad',
+          id: 'oct-05-ipad',
           user_id: 'v2',
           title: '📱 iPad Air (M1) 64GB',
           description: 'Con funda y teclado. Factura y garantía. Impecable, perfecto para ver series y trabajar en otoño. 📞 622 88 77 66',
@@ -90,7 +90,7 @@ const Marketplace: React.FC = () => {
           neighborhood: 'SANT PERE',
           contact_info: '622 88 77 66 (Sergio)',
           image_url: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-05-01T10:00:00Z'
+          created_at: '2026-10-05T10:00:00Z'
         }
       ];
 
@@ -188,9 +188,9 @@ const Marketplace: React.FC = () => {
             <span className="px-3 py-1 bg-emerald-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">ALQUILER MENSUAL</span>
             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">PARTICULAR - EIXAMPLE</span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Habitación libre para Septiembre 🏠</h2>
+          <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Habitación libre para Octubre 🏠</h2>
           <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed">
-            Habitación luminosa en piso de 3 personas. Zona Eixample, muy céntrico. Incluye gastos. Perfil tranquilo y responsable. Disponible para entrar el 29 de Septiembre. ¡Ven a verla esta semana!
+            Habitación luminosa en piso de 3 personas. Zona Eixample, muy céntrico. Incluye gastos. Perfil tranquilo y responsable. Disponible para entrar de inmediato. ¡Ven a verla esta semana!
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="tel:638991122" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">

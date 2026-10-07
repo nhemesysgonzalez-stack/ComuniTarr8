@@ -42,7 +42,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-500">check_circle</span>
                 <div>
                   <p className="text-sm font-black text-green-700 dark:text-green-400">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios de DÍAS FESTIVOS (Martes 29 Julil). L25 reforzada hacia Bonavista.</p>
+                  <p className="text-[10px] text-gray-500 uppercase">Todas las líneas de la EMT operan según sus horarios habituales. L25 reforzada hacia Bonavista.</p>
                 </div>
               </div>
             </div>
@@ -140,11 +140,11 @@ export const Services: React.FC = () => {
               <div className="absolute -right-8 -bottom-8 opacity-10">
                 <span className="material-symbols-outlined text-[200px]">person_add</span>
               </div>
-              <h3 className="text-3xl font-black mb-2 relative z-10">EMPLEO DE OTOÑO 2026</h3>
+              <h3 className="text-3xl font-black mb-2 relative z-10">EMPLEO 2026</h3>
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
-                Hostelería, servicios turísticos y más. Todas las ofertas verificadas con contacto directo. Tarragona genera más de 300 vacantes cada otoño.
+                Hostelería, servicios turísticos y más. Todas las ofertas verificadas con contacto directo. Tarragona genera más de 300 vacantes.
               </p>
-              <button onClick={() => alert("Próximas actividades Tarragona Impulsa:\n• Jueves 6 Ago — Taller: CV Digital (10h)\n• Viernes 7 Ago — Orientación Laboral Individual (cita previa)\n• Llamar al 977 29 61 50 para inscribirse")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Próximas actividades Tarragona Impulsa:\n• Jueves 15 Oct — Taller: CV Digital (10h)\n• Viernes 16 Oct — Orientación Laboral Individual (cita previa)\n• Llamar al 977 29 61 50 para inscribirse")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -171,37 +171,32 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">★ OFERTAS DE EMPLEO VERIFICADAS (Domingo 29 Sep 2026)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">★ OFERTAS DE EMPLEO VERIFICADAS (Octubre 2026)</h4>
                 <div className="space-y-4">
                   <div className="border-l-4 border-rose-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Profesor/a Repaso Escolar &mdash; Academia Newton TGN&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Tardes (17h-20h) para primaria y ESO. Imprescindible titulación. Incorporación inmediata.</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Administrativo/a Contable &mdash; Asesoría Tarraco&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Jornada completa. Imprescindible experiencia en facturación. Incorporación inmediata.</p>
                     <a href="tel:977220101" className="text-[10px] font-black text-rose-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 22 01 01</a>
                   </div>
                   <div className="border-l-4 border-sky-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Personal de Vendimia &mdash; Cooperativa Vila-rodona&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Campaña de la verema. Trabajo físico al aire libre. Transporte desde Tarragona incluido.</p>
-                    <a href="tel:977296000" className="text-[10px] font-black text-sky-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 29 60 00 (Oficina Agraria)</a>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Operario/a de Logística &mdash; Polígono Riu Clar&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Preparación de pedidos y manejo de carretilla (carnet en vigor). Turnos rotativos.</p>
+                    <a href="tel:977543210" className="text-[10px] font-black text-sky-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 54 32 10</a>
                   </div>
                   <div className="border-l-4 border-amber-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Dependiente/a Campaña Otoño &mdash; Parc Central&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Tienda de ropa deportiva. Fines de semana. Contrato inicial de 3 meses.</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Dependiente/a Tienda &mdash; Parc Central&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Tienda de moda. Fines de semana y festivos. Contrato inicial de 6 meses.</p>
                     <a href="tel:977239312" className="text-[10px] font-black text-amber-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 23 93 12</a>
                   </div>
                   <div className="border-l-4 border-teal-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Monitor/a Comedor Escolar &mdash; Escola Pax&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Turno mediodía (12:30h-15h). Titulación monitor/a de lleure requerida. Curso escolar.</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Cocinero/a &mdash; Restaurante El Serrallo&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Especialidad en arroces y marisco. Turno seguido. Dos días de fiesta semanales.</p>
                     <a href="tel:977223366" className="text-[10px] font-black text-teal-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 22 33 66</a>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Reponedor/a Supermercado &mdash; Mercadona Tarragona Centre&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Turno de noche (22h-06h). Contrato indefinido. Se valorará experiencia.</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Técnico/a Informático &mdash; Tarragona Centro&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Soporte a usuarios y mantenimiento de redes. Contrato indefinido.</p>
                     <a href="tel:977242030" className="text-[10px] font-black text-purple-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 24 20 30</a>
-                  </div>
-                  <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Limpiadora Hotel &mdash; Hotel Lauría Centre Tarragona&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Parcial mañanas (L-V). Incorporación inmediata. Contrato temporal otoño.</p>
-                    <a href="tel:977236712" className="text-[10px] font-black text-orange-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 23 67 12</a>
                   </div>
                 </div>
               </div>
@@ -306,7 +301,7 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined text-green-600">check_circle</span>
                 <div>
                   <p className="text-xs font-black text-green-700 dark:text-green-500 uppercase">SERVICIO NORMALIZADO</p>
-                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario de DÍAS LABORABLES (Domingo 29 Septiembre 2026). Líneas 8 y 54 reforzadas hacia las playas.</p>
+                  <p className="text-[10px] text-green-800 dark:text-green-400 font-medium">Todas las líneas circulan según su horario habitual. Líneas 8 y 54 reforzadas.</p>
                 </div>
               </div>
 

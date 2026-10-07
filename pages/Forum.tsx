@@ -75,9 +75,9 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '🚢 ACTUALIDAD: El impresionante yate "Seven Seas" de Spielberg atraca en Tarragona.' },
-    { user: 'MTR', text: '🏖️ Obras Terminadas: La Pineda estrena su nuevo paseo marítimo de cara a otoño.' },
-    { user: 'Turismo TGN', text: '🎆 SANT MAGÍ: El programa de fiestas ya está disponible en la web oficial.' },
+    { user: 'Admin ComuniTarr', text: '🚢 ACTUALIDAD: Un nuevo crucero turístico atraca hoy en el Port de Tarragona.' },
+    { user: 'MTR', text: '🍂 Obras Terminadas: El Parc del Francolí estrena su nueva zona de picnic de cara al otoño.' },
+    { user: 'Turismo TGN', text: '🍷 FIRA DEL VI: Los stands de la feria del vino ya están listos en la Rambla Nova.' },
     { user: 'Ayuntamiento', text: '🛴 Recordatorio VMP: Reduzcan velocidad al circular por el paseo marítimo.' }
   ];
 
@@ -126,13 +126,13 @@ const Forum: React.FC = () => {
     'GENERAL': [
       [
         { who: 'Joan B.', text: '⚽ ¡Qué estallido de alegría ayer en el Nou Estadi con el gol de Óscar!' },
-        { who: 'Pau T.', text: 'Hacía falta esa victoria. Ya sigo mirando los horarios del playoff por si acaso.' },
+        { who: 'Pau T.', text: 'Hacía falta esa victoria. El Nàstic está imparable este mes.' },
         { who: 'Maria G.', text: '¡Vaya partidazo! Tarragona hoy se ha levantado con ánimos renovados.' }
       ],
       [
-        { who: 'Joe R.', text: '🏛️ ¿Alguien ha visto que ya están montando las recreaciones de Tarraco Viva?' },
-        { who: 'Admin', text: 'Sí, @Joe. la semana que viene arranca oficialmente. ¡Habrá mucha actividad en la Part Alta!' },
-        { who: 'Joe R.', text: 'Qué ganas de ver de nuevo a los gladiadores en el anfiteatro.' }
+        { who: 'Joe R.', text: '🍷 ¿Alguien ha visto que ya están montando las casetas de la Fira del Vi?' },
+        { who: 'Admin', text: 'Sí, @Joe. Este fin de semana arranca oficialmente. ¡Habrá mucha actividad en la Rambla!' },
+        { who: 'Joe R.', text: 'Qué ganas de probar los vinos de la DO Tarragona.' }
       ],
     ],
     'APOYO': [
@@ -153,12 +153,12 @@ const Forum: React.FC = () => {
     ],
     'ENCUENTROS': [
       [
-        { who: 'Santi G.', text: 'Mañana Martes por la tarde quedada para ver los ensayos de los Castellers de cara a Santa Tecla. ¿Alguien se suma?' },
-        { who: 'Marta L.', text: '¡Me apunto! Vamos a la Plaça de la Font y luego tomamos algo.' }
+        { who: 'Santi G.', text: 'Mañana por la tarde quedada para ver el Concurs de Castells en la Tarraco Arena. ¿Alguien se suma?' },
+        { who: 'Marta L.', text: '¡Me apunto! Vamos a verlo y luego tomamos algo por el centro.' }
       ],
       [
         { who: 'Nuria P.', text: 'El domingo quiero inaugurar la bici por el nuevo carril del puente del Francolí.' },
-        { who: 'Pau T.', text: '@Nuria ¡Si hacéis grupeta avisad que me apunto!' },
+        { who: 'Pau T.', text: '@Nuria ¡Si hacéis grupeta avisad que me apunto! Ideal para este tiempo de octubre.' },
       ],
     ],
   };
@@ -257,14 +257,14 @@ const Forum: React.FC = () => {
 
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
-          // Ayer (Lunes 28)
-          { id: 'seed-cloud-98', user_id: 'v10', content: '🌊 ¡Qué playa tan bonita la de la Arrabassada ayer! El agua estaba perfecta. Ha sido el mejor baño del otoño.', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 20).toISOString() },
-          { id: 'seed-cloud-99', user_id: 'v4', content: '@Nuria P. ¡Totalmente de acuerdo! Ya apetece este calorcito. 🏖️', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 18).toISOString() },
-          { id: 'seed-cloud-100', user_id: 'v19', content: '🎆 Hoy arranca la semana fuerte de preparación para Sant Magí. ¡A mí me encanta el ambiente! ¿Quién viene esta tarde al centro?', user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 3).toISOString() },
+          // Ayer
+          { id: 'seed-cloud-98', user_id: 'v10', content: '🌊 ¡Qué bonito está el mar hoy en la Arrabassada! Ya se nota el ambiente de otoño.', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 20).toISOString() },
+          { id: 'seed-cloud-99', user_id: 'v4', content: '@Nuria P. ¡Totalmente de acuerdo! Ideal para pasear con chaqueta fina. 🍂', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 18).toISOString() },
+          { id: 'seed-cloud-100', user_id: 'v19', content: '🌰 Ya empiezan a vender castañas por el centro. ¡A mí me encanta el ambiente! ¿Quién viene esta tarde a dar una vuelta?', user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 3).toISOString() },
 
-          // Hoy Domingo 23
-          { id: 'seed-cloud-101', user_id: 'v3', content: `🍉 ¿Alguien ya tiene su entrada para el concierto de las fiestas? Yo ya tengo la mía. 😄`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-09-29T08:30:00Z' },
-          { id: 'seed-cloud-102', user_id: 'v2', content: '🎶 El escenario de la Plaça de la Font ya casi está listo. ¡Qué ganas de conciertos! ¡Ven esta noche!', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-09-29T11:00:00Z' },
+          // Hoy
+          { id: 'seed-cloud-101', user_id: 'v3', content: `🍇 ¿Alguien ya tiene sus tickets para la feria del vino? Yo ya tengo los míos. 😄`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-10-07T08:30:00Z' },
+          { id: 'seed-cloud-102', user_id: 'v2', content: '🎶 El ambiente en la Plaça de la Font está genial hoy. ¡Venid a tomar algo!', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-10-07T09:15:00Z' },
         ] as Message[],
       };
 
@@ -583,13 +583,13 @@ const Forum: React.FC = () => {
             </div>
           </div>
 
-          {/* Trending Topics - Actualizado Viernes 29 Septiembre */}
+          {/* Trending Topics */}
           <div>
             <h4 className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 ml-2">Trending Topic</h4>
             <div className="flex flex-wrap gap-2 px-2">
-              <span className="px-3 py-1 bg-amber-100 text-amber-600 rounded-lg text-[10px] font-black uppercase">#CalorTGN</span>
-              <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-lg text-[10px] font-black uppercase">#PlayaMiracle</span>
-              <span className="px-3 py-1 bg-red-100 text-red-600 rounded-lg text-[10px] font-black uppercase">#SantMagi2026</span>
+              <span className="px-3 py-1 bg-amber-100 text-amber-600 rounded-lg text-[10px] font-black uppercase">#FiraDelViTGN</span>
+              <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-lg text-[10px] font-black uppercase">#ConcursCastells</span>
+              <span className="px-3 py-1 bg-red-100 text-red-600 rounded-lg text-[10px] font-black uppercase">#OtoñoTarragona</span>
             </div>
           </div>
 

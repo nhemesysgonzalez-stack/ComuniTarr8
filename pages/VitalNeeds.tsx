@@ -46,37 +46,37 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'fri-01-medical',
+                    id: 'oct-01-medical',
                     creator_id: 'v5',
                     type: 'medical',
-                    title: '💊 Farmacia de Guardia (Festivo)',
-                    description: 'Necesito que alguien me acerque un inhalador de la farmacia de guardia. No tengo coche y hoy los buses van con frecuencia de domingo por ser 29 de Septiembre. 📞 644 33 22 11 (Pere)',
+                    title: '💊 Farmacia de Guardia',
+                    description: 'Necesito que alguien me acerque un inhalador de la farmacia de guardia. Estoy con mucha tos y hoy llueve bastante. 📞 644 33 22 11 (Pere)',
                     contact_info: '644 33 22 11 (Pere)',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
-                    created_at: '2026-05-01T07:00:00Z'
+                    created_at: '2026-10-07T07:00:00Z'
                 },
                 {
-                    id: 'fri-01-food',
+                    id: 'oct-01-food',
                     creator_id: 'v6',
                     type: 'food',
-                    title: '🛒 Compra Emergencia (Todo cerrado)',
-                    description: '¿Alguien tiene un paquete de leche de sobra? He olvidado que hoy cerraba todo por ser el Día del Trabajador. Pago o intercambio por huevos. 📞 622 88 77 66 (Sandra)',
+                    title: '🛒 Compra Básica',
+                    description: '¿Alguien podría traerme leche y huevos del súper? Tengo un esguince y no puedo bajar las escaleras. Pago por Bizum. 📞 622 88 77 66 (Sandra)',
                     contact_info: '622 88 77 66 (Sandra)',
                     is_urgent: false,
                     neighborhood: 'PART ALTA',
-                    created_at: '2026-05-01T08:30:00Z'
+                    created_at: '2026-10-07T08:30:00Z'
                 },
                 {
-                    id: 'fri-01-company',
+                    id: 'oct-01-company',
                     creator_id: 'v8',
                     type: 'company',
-                    title: '🚶 Paseo Puente de Mayo',
-                    description: 'Busco compañía para dar un paseo por el nuevo paseo de La Pineda esta tarde. Iré en bus L2. 📞 611 22 33 44 (Elena)',
+                    title: '🚶 Paseo de Otoño',
+                    description: 'Busco compañía para dar un paseo por el balcón del Mediterráneo esta tarde y tomar un café. 📞 611 22 33 44 (Elena)',
                     contact_info: '611 22 33 44 (Elena)',
                     is_urgent: false,
                     neighborhood: 'Serrallo',
-                    created_at: '2026-05-01T10:00:00Z'
+                    created_at: '2026-10-07T10:00:00Z'
                 }
             ];
 
@@ -180,11 +180,11 @@ const VitalNeeds: React.FC = () => {
                         </div>
                         <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Red de Acompañamiento Semanal 🤝</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            ¿Tienes 1 hora libre esta semana? Únete a nuestra red de acompañamiento para personas mayores que viven solas. Paseos, compra, o una simple charla. Un pequeño gesto marca la diferencia. Nos reunimos Hoy Domingo a las 18h en el Serrallo para coordinar las actividades de septiembre.
+                            ¿Tienes 1 hora libre esta semana? Únete a nuestra red de acompañamiento para personas mayores que viven solas. Paseos, compra, o una simple charla. Un pequeño gesto marca la diferencia. Nos reunimos este Domingo a las 18h en el Serrallo para coordinar las actividades de octubre.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Hoy Domingo 28 de Septiembre:\n• 12:00h \u2014 Encuentro Solidario (Rambla Nova)\n• 18:00h \u2014 Coordinación (Serrallo)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
+                        <a href="#" onClick={(e) => { e.preventDefault(); alert('Próximo Domingo de Octubre:\n• 12:00h \u2014 Encuentro Solidario (Rambla Nova)\n• 18:00h \u2014 Coordinación (Serrallo)'); }} className="px-6 py-4 bg-red-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all text-center flex items-center justify-center gap-2">
                             <span className="material-symbols-outlined text-sm">person_add</span>
                             UNIRME AHORA
                         </a>

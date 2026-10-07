@@ -49,31 +49,31 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'fri-01-pat-manifestation',
+          id: 'oct-01-pat-manifestation',
           creator_id: 'admin',
-          name: '🛡️ Seguridad: Conciertos Sant Magí',
-          description: 'Acompañamiento preventivo durante las actividades nocturnas en la Rambla Nova para asegurar el civismo y la tranquilidad vecinal.',
+          name: '🛡️ Seguridad: Castañada y Tots Sants',
+          description: 'Acompañamiento preventivo durante las actividades nocturnas de la Castañada para asegurar el civismo y la tranquilidad vecinal en plazas.',
           neighborhood: 'Centro',
           contact_info: 'Seguridad Ciudadana — 611 00 22 33',
-          created_at: '2026-09-29T08:00:00Z'
+          created_at: '2026-10-07T08:00:00Z'
         },
         {
-          id: 'fri-01-pat-beach',
+          id: 'oct-01-pat-beach',
           creator_id: 'user1',
-          name: '🛡️ Patrulla Litoral: Vigilancia Costera',
-          description: 'Ronda por las playas de l\'Arrabassada y Llarga. Mucha gente hoy por el calor. Todo en orden, ambiente familiar.',
+          name: '🛡️ Patrulla Litoral: Prevención',
+          description: 'Ronda por las playas de l\'Arrabassada y Llarga. Vigilando zonas afectadas por los últimos temporales de otoño. Todo en orden.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
-          created_at: '2026-09-29T09:00:00Z'
+          created_at: '2026-10-07T09:00:00Z'
         },
         {
-          id: 'fri-01-pat-feria',
+          id: 'oct-01-pat-feria',
           creator_id: 'user2',
           name: '🛡️ Apoyo Mercadillo de Bonavista',
           description: 'Vigilancia y apoyo de movilidad durante el mercadillo dominical de Bonavista. Colaboración vecinal para facilitar accesos a personas mayores.',
           neighborhood: 'Bonavista',
           contact_info: '622 55 44 33 (Maria)',
-          created_at: '2026-09-29T10:00:00Z'
+          created_at: '2026-10-07T10:00:00Z'
         }
       ];
 

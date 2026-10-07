@@ -42,31 +42,31 @@ const Clubs: React.FC = () => {
 
             const mockClubs: Club[] = [
                 {
-                    id: 'c-sun-1',
+                    id: 'c-oct-1',
                     creator_id: 'v1',
                     name: 'Amantes del Senderismo 🥾',
-                    description: 'Grupo para salir por los caminos de ronda. ¡Hoy Domingo hemos hecho ruta por el Pont del Diable! Subid las fotos al chat.',
+                    description: 'Grupo para salir por los caminos de ronda. ¡Este fin de semana hacemos ruta por el Pont del Diable! Subid las fotos al chat.',
                     neighborhood: 'GENERAL',
                     contact_info: 'Canal DEPORTES (Foro)',
-                    created_at: '2026-09-29T08:00:00Z'
+                    created_at: '2026-10-04T08:00:00Z'
                 },
                 {
-                    id: 'c-sun-2',
+                    id: 'c-oct-2',
                     creator_id: 'v2',
                     name: 'Fotografía de Barrio 📸',
-                    description: 'Hoy Domingo salimos a fotografiar el ambiente de la Diada en la parte alta (19:30h). ¡Vente con tu cámara!',
+                    description: 'Hoy Domingo salimos a fotografiar el atardecer desde el Balcón del Mediterráneo (19:00h). ¡Vente con tu cámara!',
                     neighborhood: 'GENERAL',
                     contact_info: '644 55 66 77 (Sònia)',
-                    created_at: '2026-09-29T09:00:00Z'
+                    created_at: '2026-10-05T09:00:00Z'
                 },
                 {
-                    id: 'c-sun-3',
+                    id: 'c-oct-3',
                     creator_id: 'v3',
                     name: 'Club de Lectura 📖',
-                    description: 'Vuelta al cole también para nosotros. Esta semana toca decidir el libro de Septiembre. Ya hemos abierto el hilo de debate.',
+                    description: 'Ya ha llegado el otoño. Esta semana toca decidir el libro de Octubre. Ya hemos abierto el hilo de debate.',
                     neighborhood: 'GENERAL',
                     contact_info: 'Canal CULTURA (Foro)',
-                    created_at: '2026-09-29T10:00:00Z'
+                    created_at: '2026-10-06T10:00:00Z'
                 }
             ];
 
@@ -243,7 +243,7 @@ const Clubs: React.FC = () => {
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
                                             { t: 'Fútbol Domingo', d: 'Buscamos gente para completar partido Hoy Domingo a las 20h en Campclar.', c: '611222333' },
-                                            { t: 'Lectura Sant Jordi', d: 'Quedada para comentar nuestras compras de libros anticipadas.', c: '644555666' },
+                                            { t: 'Lectura de Otoño', d: 'Quedada para comentar nuestras lecturas de novela negra tomando un café.', c: '644555666' },
                                             { t: 'Urban Walking', d: 'Caminata rápida por la playa del Miracle después del trabajo.', c: '677888999' }
                                         ].map((idea, i) => (
                                             <button

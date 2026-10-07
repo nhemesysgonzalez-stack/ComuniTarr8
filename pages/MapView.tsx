@@ -8,10 +8,10 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 'plan-1', type: 'ocio', x: '65%', y: '50%', title: '⚽ Nou Estadi Costa Daurada', desc: 'Previa de playoffs. El Nàstic empieza a preparar la fase de ascenso. ¡Sube al estadio a animar al equipo!', status: 'Playoffs', color: 'bg-red-600', icon: 'sports_soccer', glow: 'shadow-[0_0_50px_rgba(220,38,38,0.3)]', creator_name: 'Afición Nàstic' },
+    { id: 'plan-1', type: 'ocio', x: '65%', y: '50%', title: '⚽ Nou Estadi Costa Daurada', desc: 'Previa del partido liguero. ¡Sube al estadio a animar al Nàstic!', status: 'Partido', color: 'bg-red-600', icon: 'sports_soccer', glow: 'shadow-[0_0_50px_rgba(220,38,38,0.3)]', creator_name: 'Afición Nàstic' },
     { id: 'plan-2', type: 'cultura', x: '45%', y: '45%', title: '📸 Rutas de Otoño en el Anfiteatro', desc: 'Comienzan las visitas guiadas de otoño en el Anfiteatro. Entradas ya disponibles en la oficina de turismo.', status: 'Activo', color: 'bg-purple-500', icon: 'theater_comedy', creator_name: 'Cultura TGN' },
-    { id: 'plan-3', type: 'ocio', x: '35%', y: '60%', title: '☕ Terrazas de la Rambla Nova', desc: 'Con este calorcito, ya apetece un buen helado artesano. Mucha actividad en las terrazas esta tarde de martes.', status: 'Animado', color: 'bg-emerald-500', icon: 'icecream', creator_name: 'Barrio Centro' },
-    { id: 'plan-4', type: 'deporte', x: '75%', y: '75%', title: '🏖️ Playa L\'Arrabassada', desc: 'Bandera verde y comienza el servicio de socorrismo ininterrumpido. Agua a buena temperatura.', status: 'Abierta T. Alta', color: 'bg-sky-500', icon: 'pool', creator_name: 'Protección Civil' }
+    { id: 'plan-3', type: 'ocio', x: '35%', y: '60%', title: '☕ Terrazas del Serrallo', desc: 'Con el buen clima de otoño, apetece un buen vermut en el Serrallo. Mucha actividad en las terrazas esta tarde de martes.', status: 'Animado', color: 'bg-emerald-500', icon: 'local_cafe', creator_name: 'Barrio Serrallo' },
+    { id: 'plan-4', type: 'deporte', x: '75%', y: '75%', title: '🌲 Paseo por el Pont del Diable', desc: 'Ruta senderista de 5km por el acueducto romano y sus bosques. Trae buen calzado y agua.', status: 'En ruta', color: 'bg-green-500', icon: 'hiking', creator_name: 'Club Senderismo' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);

@@ -58,33 +58,33 @@ const Incidents: React.FC = () => {
             if (data) {
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'lun-30-jun-rambla-obras',
+                        id: 'oct-01-rambla-obras',
                         user_id: 'admin',
-                        title: '🚧 Obras Rambla Nova: Corte de carril',
-                        description: 'Inicio de obras de renovación de pavimento en la Rambla Nova (tramos 3-5). Corte del carril derecho de circulación de 08h a 14h de lunes a viernes durante septiembre. Se recomienda usar vías alternativas.',
+                        title: '🚧 Obras en la Part Alta',
+                        description: 'Inicio de obras de renovación de pavimento en la calle Major. Corte intermitente de circulación de 08h a 14h de lunes a viernes durante octubre. Se recomienda usar vías alternativas.',
                         status: 'open',
-                        neighborhood: 'Centre',
-                        created_at: '2026-09-29T07:00:00Z',
+                        neighborhood: 'Part Alta',
+                        created_at: '2026-10-06T07:00:00Z',
                         profiles: { full_name: 'Guàrdia Urbana TGN', avatar_url: '/logo.svg' }
                     },
                     {
-                        id: 'lun-30-jun-ematsa-bonavista',
+                        id: 'oct-02-ematsa-serrallo',
                         user_id: 'v22',
-                        title: '💧 EMATSA: Corte de agua Bonavista',
-                        description: 'Corte de suministro de agua programado hoy Domingo 29 de Septiembre de 09:00h a 13:00h en los bloques 12-18 de Bonavista. Suministro garantizado antes del mediodía.',
+                        title: '💧 EMATSA: Corte de agua Serrallo',
+                        description: 'Corte de suministro programado hoy Martes 7 de Octubre de 09:00h a 13:00h en las calles principales del Serrallo por mantenimiento en la red. Suministro garantizado antes del mediodía.',
                         status: 'in_progress',
-                        neighborhood: 'Bonavista',
-                        created_at: '2026-09-29T08:00:00Z',
+                        neighborhood: 'Serrallo',
+                        created_at: '2026-10-07T08:00:00Z',
                         profiles: { full_name: 'EMATSA', avatar_url: 'https://i.pravatar.cc/150?u=water' }
                     },
                     {
-                        id: 'lun-30-jun-calor-aviso',
+                        id: 'oct-03-viento-aviso',
                         user_id: 'admin',
-                        title: '🌡️ Alerta Calor Extremo: 34ºC Previsto',
-                        description: 'Alerta amarilla por calor activada por el Servei Meteorològic. Se habilitan puntos de atención refrescante en los Centros Cívicos (9h-14h) y Biblioteca Pública (9h-20h). Beber agua y evitar la exposición solar directa.',
+                        title: '🍂 Alerta Vientos Fuertes: Rachas de 80km/h',
+                        description: 'Alerta amarilla por viento activada por el Servei Meteorològic. Se recomienda retirar objetos de balcones, toldos y evitar zonas arboladas o parques públicos.',
                         status: 'open',
                         neighborhood: 'GENERAL',
-                        created_at: '2026-09-29T06:00:00Z',
+                        created_at: '2026-10-06T06:00:00Z',
                         profiles: { full_name: 'Protecció Civil TGN', avatar_url: '/logo.svg' }
                     }
                 ];
