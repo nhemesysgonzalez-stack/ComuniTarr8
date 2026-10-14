@@ -13,20 +13,24 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: '1', user: 'Ana M.', text: '🌰 ¡Ya huele a castañas en la Rambla! Primera parada obligatoria del otoño. #Castañada', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026024d', time: 'Hace 2m' },
-    { id: '2', user: 'Carlos R.', text: '🍷 ¿Alguien sabe si quedan tickets anticipados para la Fira del Vi? ¡Las están agotando!', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026704d', time: 'Hace 5m' },
-    { id: '3', user: 'Protección Civil', text: '⚠️ METEO: Aviso por rachas de viento moderadas en la zona litoral esta tarde.', avatar: 'https://ui-avatars.com/api/?name=PC&background=ef4444&color=fff', time: 'Hace 12m', isOfficial: true },
-    { id: '4', user: 'Elena G.', text: '💼 EMPLEO: Abiertas bolsas de trabajo para la campaña comercial de Navidad.', avatar: 'https://i.pravatar.cc/150?u=a04258114e29026702d', time: 'Hace 15m' },
-    { id: '5', user: 'Laura P.', text: '🚌 EMT: Recordatorio de que la línea L-12 tiene desvíos por obras en el centro.', avatar: 'https://i.pravatar.cc/150?u=a048581f4e29026701d', time: 'Hace 22m' },
-    { id: '6', user: 'TGN Cultura', text: '🎭 TEATRO: Este fin de semana estrenamos nueva obra en el Teatre Tarragona. ¡No os lo perdáis!', avatar: 'https://ui-avatars.com/api/?name=TC&background=3b82f6&color=fff', time: 'Hace 30m', isOfficial: true },
+    { id: '1', user: 'Ana M.', text: '🌰 ¡Ya huele a castañas en la Rambla! Primer puesto instalado junto al Mercat Central. #Castañada', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026024d', time: 'Hace 2m', neighborhood: 'Centre' },
+    { id: '2', user: 'Carlos R.', text: '🚧 Ojo: la Calle Major cortada desde el lunes por las obras. Vengo andando por la Baixada del Roser.', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026704d', time: 'Hace 6m', neighborhood: 'Part Alta' },
+    { id: '3', user: 'Protección Civil', text: '⚠️ METEO: Aviso por rachas de viento moderadas en la zona litoral esta tarde. Precaución en el Serrallo.', avatar: 'https://ui-avatars.com/api/?name=PC&background=ef4444&color=fff', time: 'Hace 10m', isOfficial: true },
+    { id: '4', user: 'Elena G.', text: '💼 EMPLEO: Ya abren las bolsas de trabajo para la campaña navideña. ¡Hay vacantes en el Parc Central y el Serrallo!', avatar: 'https://i.pravatar.cc/150?u=a04258114e29026702d', time: 'Hace 18m', neighborhood: 'Eixample' },
+    { id: '5', user: 'Laura P.', text: '🚌 EMT: Líneas L54 y L3 reforzadas hoy. La L-12 tiene desvíos por las obras del Centre.', avatar: 'https://i.pravatar.cc/150?u=a048581f4e29026701d', time: 'Hace 25m', neighborhood: 'Bonavista' },
+    { id: '6', user: 'TGN Cultura', text: '🏛️ HOY 17h: Visita guiada gratuita al Anfiteatro Romano. Plazas limitadas. Punto de encuentro: Portal del Roser.', avatar: 'https://ui-avatars.com/api/?name=TC&background=3b82f6&color=fff', time: 'Hace 32m', isOfficial: true },
+    { id: '7', user: 'Jordi V.', text: '🤝 ¿Alguien se anima al Mercadillo de Bonavista este domingo? Hay cosas muy chulas de temporada.', avatar: 'https://i.pravatar.cc/150?u=b048581f4e29026701d', time: 'Hace 40m', neighborhood: 'Bonavista' },
+    { id: '8', user: 'EMATSA', text: '💧 Recordatorio: Corte de agua programado mañana jue 15 oct en el Serrallo de 09h a 13h. Suministro garantizado antes del mediodía.', avatar: 'https://ui-avatars.com/api/?name=EM&background=0ea5e9&color=fff', time: 'Hace 1h', isOfficial: true }
 ];
 
 const tickerMessages = [
     "🌰 OTOÑO: Los puestos de castañas y boniatos ya están instalados por la ciudad.",
-    "🌡️ METEOROLOGÍA: Temperaturas propias de octubre, con algo de viento racheado.",
-    "🍷 FIRA DEL VI: Preparativos en la Rambla Nova. Venta de tickets disponible.",
-    "💼 EMPLEO: Arrancan las contrataciones para la campaña de invierno y Navidad.",
-    "🚌 TRANSPORTE: Desvíos puntuales en el centro por mantenimiento de vías."
+    "🌡️ METEO: Temperaturas de otoño, 19°C. Rachas de viento moderado en el litoral esta tarde.",
+    "🛒 MERCADILLO BONAVISTA: Este domingo 18 Oct de 09h a 14h. L54 y L3 reforzadas.",
+    "💼 EMPLEO: Abiertas las bolsas de trabajo para la campaña de invierno y Navidad.",
+    "🚧 OBRAS PART ALTA: Cortes en Calle Major de 08h a 14h, lunes a viernes.",
+    "🏛️ CULTURA: Visita guiada gratuita al Anfiteatro Romano hoy a las 17h.",
+    "🚌 EMT: Líneas L54 y L3 reforzadas hoy miércoles. Servicio normal en el resto."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

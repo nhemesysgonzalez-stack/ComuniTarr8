@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-// Deployment trigger: Jun 30 2026 (Lunes Verano Update - Actualización Completa de Módulos)
+// Deployment trigger: Oct 14 2026 (Miércoles Otoño Update - Revisión Completa Módulos + Corrección Cintillo + Mapa + Calendar Bug Fix)
 import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import Sidebar from './components/Sidebar';

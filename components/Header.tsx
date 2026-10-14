@@ -18,9 +18,9 @@ export const Header: React.FC = () => {
   const [isDark, setIsDark] = useState(document.documentElement.classList.contains('dark'));
 
   const mockNotifications = [
-    { id: 1, title: 'Baldosa suelta', desc: 'Nuevo reporte en Passeig de les Palmeres', time: 'Hace 2h', icon: 'report_problem', color: 'text-orange-500' },
-    { id: 2, title: 'Patrimonio Romano', desc: 'Hoy ruta guiada gratuita a las 17h', time: 'Hace 3h', icon: 'event', color: 'text-primary' },
-    { id: 3, title: 'Farmacia Guardia', desc: 'Farm. Garcia Rivas (Av. Països Catalans)', time: 'Hoy', icon: 'local_pharmacy', color: 'text-red-500' }
+    { id: 1, title: '🌰 Castañada Vecinal', desc: 'Sábado 18 Oct · Plaza Font · Castañas gratis para el barrio', time: 'Hoy', icon: 'local_fire_department', color: 'text-orange-500' },
+    { id: 2, title: '🚧 Obras Calle Major', desc: 'Cortes parciales de 08h–14h L–V. Usa vías alternativas.', time: 'Hace 1h', icon: 'construction', color: 'text-amber-500' },
+    { id: 3, title: '💊 Farmacia de Guardia', desc: 'Farm. Urgell (Av. Roma, 12) — Abierta esta noche', time: 'Hoy', icon: 'local_pharmacy', color: 'text-red-500' }
   ];
 
   const toggleDarkMode = () => {
@@ -224,17 +224,24 @@ export const Header: React.FC = () => {
                   </div>
                   <div className="space-y-3">
                     <div className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
-                      <span className="material-symbols-outlined text-lg text-rose-500">celebration</span>
+                      <span className="material-symbols-outlined text-lg text-orange-500">local_fire_department</span>
                       <div>
-                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Mercadillo de Bonavista</p>
-                        <p className="text-[9px] text-gray-500 line-clamp-1">Abierto Hoy Domingo hasta las 14h. Líneas L54 y L3 de la EMT reforzadas.</p>
+                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">🌰 Castañada · Sáb 18 Oct</p>
+                        <p className="text-[9px] text-gray-500 line-clamp-1">Plaza de la Font · 17h. Castañas y boniatos para todos los vecinos.</p>
                       </div>
                     </div>
                     <div className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
-                      <span className="material-symbols-outlined text-lg text-amber-500">warning</span>
+                      <span className="material-symbols-outlined text-lg text-amber-500">construction</span>
                       <div>
-                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Obras en Via Augusta</p>
-                        <p className="text-[9px] text-gray-500 line-clamp-1">Cortes parciales y desvíos en sentido Llevant durante todo el día.</p>
+                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Obras Calle Major — Part Alta</p>
+                        <p className="text-[9px] text-gray-500 line-clamp-1">Cortes L–V de 08h–14h durante todo octubre. Acceso peatonal garantizado.</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
+                      <span className="material-symbols-outlined text-lg text-sky-500">storm</span>
+                      <div>
+                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Aviso Meteo · Viento litoral</p>
+                        <p className="text-[9px] text-gray-500 line-clamp-1">Rachas moderadas esta tarde. Precaución en Serrallo y zona de playa.</p>
                       </div>
                     </div>
                   </div>
@@ -249,13 +256,17 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 28 Septiembre */}
+      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 14 Octubre 2026 */}
       <div className="bg-purple-600 dark:bg-purple-900 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] py-2 overflow-hidden flex items-center whitespace-nowrap z-50 shadow-md">
         <div className="animate-marquee flex gap-12 sm:gap-24 items-center">
-          <span className="flex items-center gap-2 text-yellow-300">🏫 VUELTA AL COLE: Precaución en las zonas escolares. La Guardia Urbana intensifica controles.</span>
-          <span className="flex items-center gap-2">🍁 OTOÑO: Disfruta de la programación cultural en los centros cívicos. Matrículas abiertas.</span>
-          <span className="flex items-center gap-2">🎗️ DIADA: Afecciones al tráfico en la parte alta por la ofrenda del Onze de Setembre.</span>
-          <span className="flex items-center gap-2">⚠️ MOVILIDAD: Cortes en la Rambla Nova este domingo por la mañana por preparativos de Santa Tecla.</span>
+          <span className="flex items-center gap-2 text-yellow-300">🌰 CASTAÑADA VECINAL: Sábado 18 Oct en la Plaza de la Font. Castañas y boniatos para todos. ¡No te lo pierdas!</span>
+          <span className="flex items-center gap-2">🚧 OBRAS PART ALTA: Cortes de tráfico en Calle Major de 08h a 14h, lunes a viernes. Usa rutas alternativas.</span>
+          <span className="flex items-center gap-2 text-sky-200">🌡️ METEO: Rachas de viento moderado en zona litoral esta tarde. Precaución en el Serrallo y playa.</span>
+          <span className="flex items-center gap-2">💼 EMPLEO: +300 vacantes abiertas para la campaña de otoño-invierno. Entra en la sección Empleos.</span>
+          <span className="flex items-center gap-2 text-green-300">🚌 EMT: Líneas L54 y L3 reforzadas hoy miércoles. Servicio normal en el resto de líneas.</span>
+          <span className="flex items-center gap-2 text-rose-300">💊 FARMACIA GUARDIA: Farm. Urgell — Av. Roma, 12 (hoy noche). Llama al 977 22 34 56.</span>
+          <span className="flex items-center gap-2">🏛️ CULTURA: Visita guiada gratuita al Anfiteatro Romano hoy a las 17h. Plazas limitadas.</span>
+          <span className="flex items-center gap-2 text-amber-200">⚠️ EMATSA: Corte de agua programado mañana jue 15 oct en el Serrallo de 09h a 13h.</span>
         </div>
       </div>
 
@@ -337,8 +348,8 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Domingo 2727 Septiembre 2026</span>
-                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Soleado 27ºC</span>
+                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Miércoles 14 Octubre 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Parcialmente nublado 19ºC · Viento NE</span>
                 </div>
               </div>
 

@@ -8,10 +8,11 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 'plan-1', type: 'ocio', x: '65%', y: '50%', title: '⚽ Nou Estadi Costa Daurada', desc: 'Previa del partido liguero. ¡Sube al estadio a animar al Nàstic!', status: 'Partido', color: 'bg-red-600', icon: 'sports_soccer', glow: 'shadow-[0_0_50px_rgba(220,38,38,0.3)]', creator_name: 'Afición Nàstic' },
-    { id: 'plan-2', type: 'cultura', x: '45%', y: '45%', title: '📸 Rutas de Otoño en el Anfiteatro', desc: 'Comienzan las visitas guiadas de otoño en el Anfiteatro. Entradas ya disponibles en la oficina de turismo.', status: 'Activo', color: 'bg-purple-500', icon: 'theater_comedy', creator_name: 'Cultura TGN' },
-    { id: 'plan-3', type: 'ocio', x: '35%', y: '60%', title: '☕ Terrazas del Serrallo', desc: 'Con el buen clima de otoño, apetece un buen vermut en el Serrallo. Mucha actividad en las terrazas esta tarde de martes.', status: 'Animado', color: 'bg-emerald-500', icon: 'local_cafe', creator_name: 'Barrio Serrallo' },
-    { id: 'plan-4', type: 'deporte', x: '75%', y: '75%', title: '🌲 Paseo por el Pont del Diable', desc: 'Ruta senderista de 5km por el acueducto romano y sus bosques. Trae buen calzado y agua.', status: 'En ruta', color: 'bg-green-500', icon: 'hiking', creator_name: 'Club Senderismo' }
+    { id: 'plan-1', type: 'cultura', x: '45%', y: '40%', title: '🌰 Castañada en la Plaza de la Font', desc: 'Este sábado 18 Oct a las 17h. Castañas y boniatos asados gratis para vecinos. Música en vivo y actividades para niños.', status: 'Sáb 18 Oct · 17h', color: 'bg-orange-500', icon: 'local_fire_department', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.4)]', creator_name: 'Ajuntament TGN' },
+    { id: 'plan-2', type: 'cultura', x: '38%', y: '52%', title: '🏛️ Visita Guiada Anfiteatro Romano', desc: 'Hoy a las 17h. Entrada gratuita. Descubre la historia de Tarraco de la mano de un guía especializado. Plazas limitadas.', status: 'Hoy · 17h · Gratis', color: 'bg-purple-500', icon: 'museum', glow: 'shadow-[0_0_40px_rgba(168,85,247,0.3)]', creator_name: 'Cultura TGN' },
+    { id: 'plan-3', type: 'ocio', x: '60%', y: '62%', title: '☕ Terrazas de Otoño en el Serrallo', desc: 'El buen tiempo otoñal anima las terrazas del barrio marinero. Ambiente tranquilo y vistas al puerto. Perfecto para un vermút.', status: 'Animado ahora', color: 'bg-emerald-500', icon: 'local_cafe', creator_name: 'Barrio Serrallo' },
+    { id: 'plan-4', type: 'deporte', x: '72%', y: '72%', title: '🌲 Ruta Senderista Pont del Diable', desc: 'Ruta familiar de 5km por el acueducto romano y el bosque de la Marquesa. Buen calzado recomendado. Salida desde Tarragona Norte.', status: 'Activo · 5km', color: 'bg-green-500', icon: 'hiking', creator_name: 'Club Senderisme TGN' },
+    { id: 'plan-5', type: 'ocio', x: '28%', y: '65%', title: '🛒 Mercadillo de Otoño · Bonavista', desc: 'Domingo 18 Oct de 09h a 14h. Productos de temporada, artesanía y segunda mano en la Explanada de Bonavista. Líneas L54 y L3 reforzadas.', status: 'Dom 18 · 09h–14h', color: 'bg-rose-500', icon: 'storefront', glow: 'shadow-[0_0_40px_rgba(244,63,94,0.3)]', creator_name: 'Mercats TGN' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);
@@ -68,9 +69,9 @@ const MapView: React.FC = () => {
       <div className="absolute top-8 left-8 right-8 z-10 flex flex-col md:flex-row gap-4">
         <div className="bg-gradient-to-r from-orange-500 to-pink-500 p-6 rounded-[35px] shadow-[0_20px_50px_rgba(249,115,22,0.3)] border border-white/20 flex-1 flex flex-col md:flex-row items-start md:items-center justify-between text-white">
           <div>
-            <h1 className="text-2xl md:text-5xl font-black tracking-tighter uppercase leading-none mb-1">¿QUÉ TE APETECE HACER HOY?</h1>
+            <h1 className="text-2xl md:text-5xl font-black tracking-tighter uppercase leading-none mb-1">📍 ACTIVIDADES Y PLANES HOY EN TARRAGONA</h1>
             <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] opacity-90 drop-shadow-md">
-              Encuentra a alguien para tomar un café, hacer deporte o pasear al perro.
+              Miércoles 14 Octubre 2026 · Apunta el plan o únete a uno vecinal.
             </p>
           </div>
           <div className="flex gap-2 mt-4 md:mt-0">
@@ -111,7 +112,7 @@ const MapView: React.FC = () => {
               animate={{ opacity: 1 }}
               className="mt-2 px-3 py-1 bg-white/90 backdrop-blur-md rounded-xl shadow-lg border border-gray-100 font-bold text-[10px] whitespace-nowrap text-gray-800"
             >
-              {pin.creator_name.split(' ')[0]} busca plan
+              {pin.status}
             </motion.div>
           </motion.button>
         ))}
@@ -120,9 +121,10 @@ const MapView: React.FC = () => {
       {/* Legend */}
       <div className="absolute bottom-8 left-8 z-10 space-y-2">
         {[
-          { id: 1, label: 'OCIO & CAFÉ', color: 'bg-orange-500' },
-          { id: 2, label: 'DEPORTE', color: 'bg-blue-500' },
-          { id: 3, label: 'MASCOTAS & OTROS', color: 'bg-purple-500' }
+          { id: 1, label: 'CULTURA & EVENTOS', color: 'bg-purple-500' },
+          { id: 2, label: 'DEPORTE & RUTAS', color: 'bg-green-500' },
+          { id: 3, label: 'OCIO & COMER', color: 'bg-emerald-500' },
+          { id: 4, label: 'MERCADILLOS', color: 'bg-rose-500' }
         ].map(l => (
           <div key={l.id} className="bg-white/90 dark:bg-surface-dark/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/20 shadow-lg flex items-center gap-3">
             <span className={`size-4 rounded-full ${l.color} shadow-inner bg-gradient-to-br from-white/30 to-transparent`}></span>

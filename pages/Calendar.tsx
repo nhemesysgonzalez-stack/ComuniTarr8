@@ -21,7 +21,7 @@ interface Event {
 const NeighborhoodCalendar: React.FC = () => {
   const { user } = useAuth();
   const now = new Date();
-  const monthNames = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'SEPTIEMBRE', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'];
+  const monthNames = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'];
   const [selectedMonth, setSelectedMonth] = useState(monthNames[now.getMonth()]);
   const [selectedYear, setSelectedYear] = useState(now.getFullYear());
   const [events, setEvents] = useState<Event[]>([]);
@@ -59,43 +59,121 @@ const NeighborhoodCalendar: React.FC = () => {
 
       const realEventsExamples: Event[] = [
         {
-          id: 'oct-01-castells',
-          creator_id: 'admin',
-          title: "🏰 Exhibición Castellera",
-          description: "Diada castellera de otoño en la plaza de la Font con las collas locales.",
-          event_date: '2026-10-10',
-          event_time: '12:00',
-          location: 'Plaza de la Font',
+          id: 'oct-14-anfiteatro-hoy',
+          creator_id: 'cultura',
+          title: "🏛️ Visita Guiada Anfiteatro Romano — HOY",
+          description: "Hoy a las 17h. Entrada gratuita. Descubre la historia de Tarraco de la mano de un guía especializado. Plazas limitadas. Punto de encuentro: Portal del Roser.",
+          event_date: '2026-10-14',
+          event_time: '17:00',
+          location: 'Portal del Roser, Part Alta',
           category: 'Cultura',
           neighborhood: 'Part Alta',
-          contact_info: 'Ajuntament de Tarragona',
-          created_at: '2026-10-06T08:00:00Z'
+          contact_info: 'Turisme TGN — 977 25 07 95',
+          created_at: '2026-10-14T08:00:00Z'
         },
         {
-          id: 'oct-02-romana',
+          id: 'oct-15-visita-romana',
           creator_id: 'cultura',
           title: "🏛️ Visita Guiada por la Part Alta",
-          description: "Descubre los secretos mejor guardados de la Tarraco romana. Plazas limitadas.",
+          description: "Descubre los secretos mejor guardados de la Tarraco romana con guía oficial. Plazas limitadas. Inscripción en la Oficina de Turismo.",
           event_date: '2026-10-15',
           event_time: '10:00',
           location: 'Portal del Roser',
           category: 'Cultura',
           neighborhood: 'Part Alta',
-          contact_info: 'Agenda Cultural TGN',
-          created_at: '2026-10-06T09:00:00Z'
+          contact_info: 'Turisme TGN — 977 25 07 95',
+          created_at: '2026-10-14T09:00:00Z'
         },
         {
-          id: 'oct-03-mercado',
+          id: 'oct-17-ematsa-serrallo',
+          creator_id: 'admin',
+          title: "💧 Corte de agua EMATSA — Serrallo",
+          description: "Corte programado de suministro en el Serrallo de 09h a 13h por mantenimiento en la red. Suministro garantizado antes del mediodía.",
+          event_date: '2026-10-15',
+          event_time: '09:00',
+          location: 'Barrio del Serrallo',
+          category: 'Ocio',
+          neighborhood: 'Serrallo',
+          contact_info: 'EMATSA — 977 29 62 22',
+          created_at: '2026-10-14T08:00:00Z'
+        },
+        {
+          id: 'oct-18-castanada',
+          creator_id: 'admin',
+          title: "🌰 Castañada Vecinal — Plaza de la Font",
+          description: "Castañas y boniatos asados gratis para todos los vecinos. Música en vivo desde las 17h. Actividades para niños. Organizado por la Associació de Veïns de la Part Alta.",
+          event_date: '2026-10-18',
+          event_time: '17:00',
+          location: 'Plaza de la Font, Part Alta',
+          category: 'Fiesta',
+          neighborhood: 'Part Alta',
+          contact_info: 'Associació Veïns Part Alta — 977 23 45 67',
+          created_at: '2026-10-14T08:00:00Z'
+        },
+        {
+          id: 'oct-18-mercadillo',
           creator_id: 'ocio',
-          title: "🛍️ Mercadillo de Otoño en Bonavista",
-          description: "El tradicional mercadillo de los domingos con productos de temporada y artesanía.",
+          title: "🛒 Mercadillo de Otoño · Bonavista",
+          description: "El tradicional mercadillo de los domingos con productos de temporada, artesanía local y segunda mano. Líneas L54 y L3 reforzadas.",
           event_date: '2026-10-18',
           event_time: '09:00',
           location: 'Explanada de Bonavista',
           category: 'Ocio',
           neighborhood: 'Bonavista',
           contact_info: 'Mercats de Tarragona',
-          created_at: '2026-10-06T10:00:00Z'
+          created_at: '2026-10-14T10:00:00Z'
+        },
+        {
+          id: 'oct-21-castells',
+          creator_id: 'admin',
+          title: "🎊 Exhibición Castellera — Diada de Otoño",
+          description: "Exhibición castellera con las colles locales de Tarragona. Entrada libre para todos. Lleva tu camiseta del barrio.",
+          event_date: '2026-10-21',
+          event_time: '12:00',
+          location: 'Plaça de la Font',
+          category: 'Cultura',
+          neighborhood: 'Part Alta',
+          contact_info: 'Ajuntament de Tarragona',
+          created_at: '2026-10-14T08:00:00Z'
+        },
+        {
+          id: 'oct-25-senderisme',
+          creator_id: 'deporte',
+          title: "🌲 Ruta Senderista: Pont del Diable",
+          description: "Ruta familiar de 5km por el acueducto romano y el bosque de la Marquesa. Nivel fácil. Buen calzado y agua recomendados.",
+          event_date: '2026-10-25',
+          event_time: '09:30',
+          location: 'Pont del Diable (parking norte)',
+          category: 'Deporte',
+          neighborhood: 'GENERAL',
+          contact_info: 'Club Senderisme TGN — 622 33 44 55',
+          created_at: '2026-10-14T10:00:00Z'
+        },
+        {
+          id: 'nov-01-tots-sants',
+          creator_id: 'admin',
+          title: "🕯️ Tot Sants — Cementerio Municipal",
+          description: "Jornada de Todos los Santos. El servicio de EMT reforzará las líneas hacia el cementerio. Entrada libre.",
+          event_date: '2026-11-01',
+          event_time: '09:00',
+          location: 'Cementerio Municipal de Tarragona',
+          category: 'Cultura',
+          neighborhood: 'GENERAL',
+          contact_info: 'Ajuntament de Tarragona',
+          created_at: '2026-10-14T08:00:00Z'
+        },
+        {
+          id: 'nov-08-taller-civic',
+          creator_id: 'ocio',
+          title: "🎨 Taller de Pintura Otoñal — Cívico Serrallo",
+          description: "Taller gratuito de acuarela y paisaje otoñal para mayores de 16 años. Plazas limitadas. Materiales incluidos.",
+          event_date: '2026-11-08',
+          event_time: '10:00',
+          location: 'Centre Cívic Serrallo',
+          category: 'Cultura',
+          neighborhood: 'Serrallo',
+          contact_info: 'Cívic Serrallo — 977 22 10 50',
+          created_at: '2026-10-14T10:00:00Z'
         }
       ];
 
