@@ -50,8 +50,8 @@ const VitalNeeds: React.FC = () => {
                     creator_id: 'v5',
                     type: 'medical',
                     title: '💊 Farmacia de Guardia',
-                    description: 'Necesito que alguien me acerque un inhalador de la farmacia de guardia. Estoy con mucha tos y hoy llueve bastante. 📞 644 33 22 11 (Pere)',
-                    contact_info: '644 33 22 11 (Pere)',
+                    description: 'Necesito que alguien me acerque un inhalador de la farmacia de guardia. Estoy con mucha tos y hoy llueve bastante. Contactad a través de la app.',
+                    contact_info: 'Contactar por la app',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
                     created_at: '2026-10-07T07:00:00Z'
@@ -61,8 +61,8 @@ const VitalNeeds: React.FC = () => {
                     creator_id: 'v6',
                     type: 'food',
                     title: '🛒 Compra Básica',
-                    description: '¿Alguien podría traerme leche y huevos del súper? Tengo un esguince y no puedo bajar las escaleras. Pago por Bizum. 📞 622 88 77 66 (Sandra)',
-                    contact_info: '622 88 77 66 (Sandra)',
+                    description: '¿Alguien podría traerme leche y huevos del súper? Tengo un esguince y no puedo bajar las escaleras. Pago por Bizum. Contactad a través de la app.',
+                    contact_info: 'Contactar por la app',
                     is_urgent: false,
                     neighborhood: 'PART ALTA',
                     created_at: '2026-10-07T08:30:00Z'
@@ -72,8 +72,8 @@ const VitalNeeds: React.FC = () => {
                     creator_id: 'v8',
                     type: 'company',
                     title: '🚶 Paseo de Otoño',
-                    description: 'Busco compañía para dar un paseo por el balcón del Mediterráneo esta tarde y tomar un café. 📞 611 22 33 44 (Elena)',
-                    contact_info: '611 22 33 44 (Elena)',
+                    description: 'Busco compañía para dar un paseo por el balcón del Mediterráneo esta tarde y tomar un café. ¡Escríbeme por la app!',
+                    contact_info: 'Contactar por la app',
                     is_urgent: false,
                     neighborhood: 'Serrallo',
                     created_at: '2026-10-07T10:00:00Z'

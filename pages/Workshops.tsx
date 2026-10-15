@@ -155,7 +155,7 @@ const Workshops: React.FC = () => {
                         </p>
 
                         <div className="flex flex-wrap gap-4">
-                            <a href="#" onClick={(e) => { e.preventDefault(); alert("Reserva tu plaza enviando un WhatsApp al 611 00 22 33 para el Taller de CV IA de Mañana Martes."); }} className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
+                            <a href="#" onClick={(e) => { e.preventDefault(); alert("Reserva tu plaza en el Taller de CV IA directamente desde la sección de Empleos o en el Centro Cívico Centre."); }} className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
                                 <span className="material-symbols-outlined text-sm">confirmation_number</span>
                                 RESERVAR PLAZA
                             </a>
@@ -253,9 +253,9 @@ const Workshops: React.FC = () => {
                                     <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Office 365 Pro', i: 'Pedro S.', d: 'Domingo 17:00', desc: 'Domina Excel y Word para mejorar tu empleabilidad.', c: '688000111' },
-                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Mañana Viernes 22, 11:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: '699222333' },
-                                            { t: 'Gestión del Tiempo', i: 'M. López', d: 'Mañana Viernes 22, 18:00', desc: 'Técnicas para organizar tu semana y reducir el estrés laboral.', c: '611444555' },
+                                            { t: 'Office 365 Pro', i: 'Pedro S.', d: 'Domingo 17:00', desc: 'Domina Excel y Word para mejorar tu empleabilidad.', c: 'Centro Cívico Centre' },
+                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Mañana Viernes 22, 11:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: 'Centro Cívico Centre' },
+                                            { t: 'Gestión del Tiempo', i: 'M. López', d: 'Mañana Viernes 22, 18:00', desc: 'Técnicas para organizar tu semana y reducir el estrés laboral.', c: 'Centro Cívico Centre' },
                                             { t: 'Networking TGN', i: 'Hub Impulsa', d: 'Mañana Viernes 22, 19:30', desc: 'Encuentro informal para conectar con otros profesionales locales.', c: 'Tabacalera Sala 2' }
                                         ].map((idea, i) => (
                                             <button

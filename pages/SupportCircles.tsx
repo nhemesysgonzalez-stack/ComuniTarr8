@@ -56,7 +56,7 @@ const SupportCircles: React.FC = () => {
                     title: '🐾 Protectora de Animales y Plantas',
                     neighborhood: 'GENERAL',
                     description: 'Red de cuidadores y voluntarios. Buscamos casas de acogida urgentes para perros y gatos rescatados durante este mes de octubre.',
-                    contact_info: '619 44 22 11 (WhatsApp Adopciones)',
+                    contact_info: 'Contacta por la app o visítanos en el refugio',
                     created_at: '2026-10-02T09:00:00Z'
                 },
                 {
@@ -145,9 +145,9 @@ const SupportCircles: React.FC = () => {
                             Impulsado por el Ayuntamiento de Tarragona, el servicio "Ara t'escolto" ofrece apoyo emocional gratuito, directo y confidencial a jóvenes de 16 a 30 años. Si sientes estrés, ansiedad o solo necesitas hablar, escríbenos.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <a href="https://wa.me/34671350671" className="px-8 py-4 bg-emerald-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2">
-                                <span className="material-symbols-outlined text-sm">chat</span>
-                                WHATSAPP (671 350 671)
+                            <a href="https://www.tarragona.cat/serveis-a-la-persona/joventut" target="_blank" rel="noreferrer" className="px-8 py-4 bg-emerald-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2">
+                                <span className="material-symbols-outlined text-sm">open_in_new</span>
+                                MÁS INFORMACIÓN
                             </a>
                         </div>
                     </div>

@@ -68,14 +68,46 @@ export const Header: React.FC = () => {
     }
   };
 
-  const navItems = [
-    { to: '/', label: t('feed'), icon: 'grid_view' },
-    { to: '/services', label: 'Empleos y Ayudas', icon: 'work' },
-    { to: '/announcements', label: 'Alertas del Barrio', icon: 'campaign' },
-    { to: '/incidents', label: t('incidents_nav'), icon: 'report_problem' },
-    { to: '/stories', label: 'Galería Vecinal', icon: 'sentiment_satisfied' },
-    { to: '/emergency', label: t('emergency'), icon: 'emergency' }
+  const navSections = [
+    {
+      label: 'Explorar Barrio',
+      items: [
+        { to: '/', label: t('feed'), icon: 'grid_view' },
+        { to: '/map', label: t('map'), icon: 'explore' },
+        { to: '/announcements', label: t('announcements'), icon: 'campaign' },
+        { to: '/calendar', label: t('calendar'), icon: 'calendar_today' },
+      ]
+    },
+    {
+      label: 'Comunidad',
+      items: [
+        { to: '/forum', label: t('forum'), icon: 'chat' },
+        { to: '/neighbors', label: t('neighbors'), icon: 'waving_hand' },
+        { to: '/incidents', label: 'Incidencias', icon: 'report_problem' },
+        { to: '/local-businesses', label: t('local_business'), icon: 'storefront' },
+        { to: '/clubs', label: t('clubs'), icon: 'groups' },
+      ]
+    },
+    {
+      label: 'Bienestar',
+      items: [
+        { to: '/support', label: t('support'), icon: 'diversity_1' },
+        { to: '/volunteering', label: t('volunteering'), icon: 'volunteer_activism' },
+        { to: '/vital', label: t('vital_care'), icon: 'favorite' },
+      ]
+    },
+    {
+      label: 'Servicios',
+      items: [
+        { to: '/services', label: 'Empleos y Ayudas', icon: 'work' },
+        { to: '/stories', label: 'Galería Vecinal', icon: 'sentiment_satisfied' },
+        { to: '/emergency', label: t('emergency'), icon: 'emergency' },
+      ]
+    },
   ];
+
+  const navItems = navSections.flatMap(s => s.items);
+
 
   return (
     <div className="sticky top-0 z-[60] w-full max-w-full overflow-x-hidden">
@@ -264,7 +296,7 @@ export const Header: React.FC = () => {
           <span className="flex items-center gap-2 text-sky-200">🌡️ METEO: Rachas de viento moderado en zona litoral esta tarde. Precaución en el Serrallo y playa.</span>
           <span className="flex items-center gap-2">💼 EMPLEO: +300 vacantes abiertas para la campaña de otoño-invierno. Entra en la sección Empleos.</span>
           <span className="flex items-center gap-2 text-green-300">🚌 EMT: Líneas L54 y L3 reforzadas hoy miércoles. Servicio normal en el resto de líneas.</span>
-          <span className="flex items-center gap-2 text-rose-300">💊 FARMACIA GUARDIA: Farm. Urgell — Av. Roma, 12 (hoy noche). Llama al 977 22 34 56.</span>
+          <span className="flex items-center gap-2 text-rose-300">💊 FARMACIA GUARDIA: Farm. Urgell — Av. Roma, 12 (hoy noche). Consulta en farmaciasdeturno.es</span>
           <span className="flex items-center gap-2">🏛️ CULTURA: Visita guiada gratuita al Anfiteatro Romano hoy a las 17h. Plazas limitadas.</span>
           <span className="flex items-center gap-2 text-amber-200">⚠️ EMATSA: Corte de agua programado mañana jue 15 oct en el Serrallo de 09h a 13h.</span>
         </div>
@@ -316,19 +348,27 @@ export const Header: React.FC = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 gap-2">
-                {navItems.filter(item => !['/emergency', '/assistant'].includes(item.to)).map(item => (
-                  <Link
-                    key={item.to}
-                    to={item.to}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={`flex items-center gap-4 p-5 rounded-3xl text-sm font-black transition-all ${location.pathname === item.to ? 'bg-primary text-white shadow-xl shadow-primary/30' : 'bg-gray-50 dark:bg-gray-800 dark:text-gray-300'}`}
-                  >
-                    <span className="material-symbols-outlined">{item.icon}</span>
-                    <span className="tracking-tight uppercase">{item.label}</span>
-                  </Link>
+              <div className="space-y-4">
+                {navSections.map(section => (
+                  <div key={section.label}>
+                    <p className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em] px-2 mb-2">{section.label}</p>
+                    <div className="grid grid-cols-1 gap-1.5">
+                      {section.items.map(item => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          onClick={() => setIsMenuOpen(false)}
+                          className={`flex items-center gap-3 px-5 py-3.5 rounded-2xl text-sm font-black transition-all ${location.pathname === item.to ? 'bg-primary text-white shadow-xl shadow-primary/30' : 'bg-gray-50 dark:bg-gray-800 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'}`}
+                        >
+                          <span className="material-symbols-outlined text-[20px]">{item.icon}</span>
+                          <span className="tracking-tight uppercase text-[11px]">{item.label}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
+
 
               <div className="space-y-3">
                 <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] px-2">Cambiar Barrio</p>
