@@ -1,0 +1,23 @@
+.cintillo {
+  width: 100%;
+  overflow: hidden;
+  background: var(--accent-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 0;
+}
+
+.cintillo-content {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: scroll-left 10s linear infinite;
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: var(--text-h);
+  line-height: 2.5rem;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
