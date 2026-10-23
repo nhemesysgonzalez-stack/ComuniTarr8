@@ -18,9 +18,9 @@ export const Header: React.FC = () => {
   const [isDark, setIsDark] = useState(document.documentElement.classList.contains('dark'));
 
   const mockNotifications = [
-    { id: 1, title: '🌰 Castañada Vecinal', desc: 'Sábado 18 Oct · Plaza Font · Castañas gratis para el barrio', time: 'Hoy', icon: 'local_fire_department', color: 'text-orange-500' },
-    { id: 2, title: '🚧 Obras Calle Major', desc: 'Cortes parciales de 08h–14h L–V. Usa vías alternativas.', time: 'Hace 1h', icon: 'construction', color: 'text-amber-500' },
-    { id: 3, title: '💊 Farmacia de Guardia', desc: 'Farm. Urgell (Av. Roma, 12) — Abierta esta noche', time: 'Hoy', icon: 'local_pharmacy', color: 'text-red-500' }
+    { id: 1, title: '🌰 Castanyada Vecinal · Sáb 25 Oct', desc: 'Plaza de la Font · 17h. Castañas gratis y música en vivo.', time: 'Hoy', icon: 'park', color: 'text-orange-500' },
+    { id: 2, title: '🎷 Jazz al Amfiteatre', desc: 'Sábado 25 Oct · 19h. Concert gratuit. Places limitades.', time: 'Hoy', icon: 'music_note', color: 'text-purple-500' },
+    { id: 3, title: '🚧 Obras Calle Major · Part Alta', desc: 'Cortes L-V de 08h-14h durant tot octubre. Accés peatonal garantit.', time: 'Hace 2h', icon: 'construction', color: 'text-amber-500' }
   ];
 
   const toggleDarkMode = () => {
@@ -84,6 +84,8 @@ export const Header: React.FC = () => {
         { to: '/forum', label: t('forum'), icon: 'chat' },
         { to: '/neighbors', label: t('neighbors'), icon: 'waving_hand' },
         { to: '/incidents', label: 'Incidencias', icon: 'report_problem' },
+        { to: '/first-date', label: 'First Date TGN', icon: 'favorite' },
+        { to: '/train-chat', label: 'Vagón RENFE', icon: 'train' },
         { to: '/local-businesses', label: t('local_business'), icon: 'storefront' },
         { to: '/clubs', label: t('clubs'), icon: 'groups' },
       ]
@@ -255,27 +257,15 @@ export const Header: React.FC = () => {
                     <button onClick={() => setShowNotifications(false)} className="material-symbols-outlined text-gray-400">close</button>
                   </div>
                   <div className="space-y-3">
-                    <div className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
-                      <span className="material-symbols-outlined text-lg text-orange-500">local_fire_department</span>
-                      <div>
-                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">🌰 Castañada · Sáb 18 Oct</p>
-                        <p className="text-[9px] text-gray-500 line-clamp-1">Plaza de la Font · 17h. Castañas y boniatos para todos los vecinos.</p>
+                    {mockNotifications.map(n => (
+                      <div key={n.id} className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
+                        <span className={`material-symbols-outlined text-lg ${n.color}`}>{n.icon}</span>
+                        <div>
+                          <p className="text-[10px] font-black dark:text-white leading-none mb-1">{n.title}</p>
+                          <p className="text-[9px] text-gray-500 line-clamp-1">{n.desc}</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
-                      <span className="material-symbols-outlined text-lg text-amber-500">construction</span>
-                      <div>
-                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Obras Calle Major — Part Alta</p>
-                        <p className="text-[9px] text-gray-500 line-clamp-1">Cortes L–V de 08h–14h durante todo octubre. Acceso peatonal garantizado.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-3 p-2 rounded-xl bg-gray-50 dark:bg-gray-800">
-                      <span className="material-symbols-outlined text-lg text-sky-500">storm</span>
-                      <div>
-                        <p className="text-[10px] font-black dark:text-white leading-none mb-1">Aviso Meteo · Viento litoral</p>
-                        <p className="text-[9px] text-gray-500 line-clamp-1">Rachas moderadas esta tarde. Precaución en Serrallo y zona de playa.</p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </motion.div>
               )}
@@ -288,17 +278,17 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 14 Octubre 2026 */}
+      {/* Emergency & Traffic Ticker - REAL TARRAGONA DATA 23 Octubre 2026 */}
       <div className="bg-purple-600 dark:bg-purple-900 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] py-2 overflow-hidden flex items-center whitespace-nowrap z-50 shadow-md">
         <div className="animate-marquee flex gap-12 sm:gap-24 items-center">
-          <span className="flex items-center gap-2 text-yellow-300">🌰 CASTAÑADA VECINAL: Sábado 18 Oct en la Plaza de la Font. Castañas y boniatos para todos. ¡No te lo pierdas!</span>
-          <span className="flex items-center gap-2">🚧 OBRAS PART ALTA: Cortes de tráfico en Calle Major de 08h a 14h, lunes a viernes. Usa rutas alternativas.</span>
-          <span className="flex items-center gap-2 text-sky-200">🌡️ METEO: Rachas de viento moderado en zona litoral esta tarde. Precaución en el Serrallo y playa.</span>
-          <span className="flex items-center gap-2">💼 EMPLEO: +300 vacantes abiertas para la campaña de otoño-invierno. Entra en la sección Empleos.</span>
-          <span className="flex items-center gap-2 text-green-300">🚌 EMT: Líneas L54 y L3 reforzadas hoy miércoles. Servicio normal en el resto de líneas.</span>
-          <span className="flex items-center gap-2 text-rose-300">💊 FARMACIA GUARDIA: Farm. Urgell — Av. Roma, 12 (hoy noche). Consulta en farmaciasdeturno.es</span>
-          <span className="flex items-center gap-2">🏛️ CULTURA: Visita guiada gratuita al Anfiteatro Romano hoy a las 17h. Plazas limitadas.</span>
-          <span className="flex items-center gap-2 text-amber-200">⚠️ EMATSA: Corte de agua programado mañana jue 15 oct en el Serrallo de 09h a 13h.</span>
+          <span className="flex items-center gap-2 text-yellow-300">🌰 CASTANYADA VECINAL: Sábado 25 Oct en la Plaça de la Font. Castañas y música gratis. 17h.</span>
+          <span className="flex items-center gap-2 text-purple-200">🎷 JAZZ AL AMFITEATRE: Concert gratuit dissabte 25 Oct a les 19h. Places limitades!</span>
+          <span className="flex items-center gap-2 text-emerald-300">🥾 SENDERISME PRADES: Excursió dissabte 25 Oct. Sortida 08:30h Estació Renfe. Apunta&apos;t!</span>
+          <span className="flex items-center gap-2">💼 EMPLEO: Campanya Nadal 2026. +200 vacants obiertas. Consulta Empleos.</span>
+          <span className="flex items-center gap-2 text-orange-300">🎃 HALLOWEEN: Festa infantil divendres 31 Oct al Parc de la Ciutat. Gratuït!</span>
+          <span className="flex items-center gap-2 text-rose-300">💊 FARMÀCIA GUARDÍA: Farm. Eixample — C/ Unió, 5. Consulta a farmaciasdeturno.es</span>
+          <span className="flex items-center gap-2 text-amber-200">🚧 OBRAS PART ALTA: Cortes de tráfico en C/ Major de 08h a 14h, L-V. Usa rutas alternativas.</span>
+          <span className="flex items-center gap-2 text-pink-300">😍 FIRST DATE TGN: ¿Buscas plan este finde? Entra en First Date Tarragona en el menú.</span>
         </div>
       </div>
 
@@ -388,8 +378,8 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-2">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Última Actualización</span>
-                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Miércoles 14 Octubre 2026</span>
-                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Parcialmente nublado 19ºC · Viento NE</span>
+                  <span className="text-xs font-black dark:text-white uppercase text-center w-full block">Jueves 23 Octubre 2026</span>
+                  <span className="text-xs font-black dark:text-white uppercase">AEMET: Parcialmente nublado 17ºC · Viento NE moderado</span>
                 </div>
               </div>
 

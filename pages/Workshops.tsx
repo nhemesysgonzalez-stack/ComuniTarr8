@@ -48,40 +48,52 @@ const Workshops: React.FC = () => {
             );
             const mockWorkshops: Workshop[] = [
                 {
-                    id: 'sun-26-sevillanas',
+                    id: 'oct-23-rumba',
                     title: '💃 Taller Express: Rumba Catalana',
-                    instructor: 'Centro Cultural',
-                    date: 'HOY Mar 29 Sep, 18:30h',
-                    description: 'Aprende los ritmos básicos de la rumba catalana. Especial para principiantes. ¡Trae calzado cómodo y ganas de bailar!',
+                    instructor: 'Centre Cultural Tarragona',
+                    date: 'HOY Jue 23 Oct, 18:30h',
+                    description: 'Aprende los ritmos básicos de la rumba catalana. Especial para principiantes. ¡Trae calzado cómodo y ganas de bailar! Centro Cívico Torreforta.',
                     image: 'https://images.unsplash.com/photo-1562184552-997c461abbe6?auto=format&fit=crop&w=800&q=80',
                     spots: 25,
                     neighborhood: 'GENERAL',
-                    contact_info: 'Centro Cívico Torreforta',
-                    created_at: '2026-09-29T08:00:00Z'
+                    contact_info: 'Centre Cívic Torreforta · 977 553 100',
+                    created_at: '2026-10-23T08:00:00Z'
                 },
                 {
-                    id: 'sun-26-photo-walk',
-                    title: '📷 Photo Walk: Boira i Platja',
+                    id: 'oct-24-foto',
+                    title: '📷 Foto Walk Tardor: Llum i Colors',
                     instructor: 'TGN Fotografia',
-                    date: 'HOY Mar 29 Sep, 20:00h',
-                    description: 'Aprofitarem el capvespre a la platja de l\'Arrabassada per fer fotografia creativa de la posta de sol.',
+                    date: 'Vie 24 Oct, 17:00h',
+                    description: 'Aprofitarem la llum de tardor per fer fotografia creativa pels carrers de la Part Alta. Apta per a mòbil i càmera. Punt de trobada: Porta de la Muralla.',
                     image: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=800&q=80',
                     spots: 15,
-                    neighborhood: 'Eixample',
-                    contact_info: 'Punt: Lletres TARRAGONA',
-                    created_at: '2026-09-29T09:00:00Z'
+                    neighborhood: 'Part Alta',
+                    contact_info: 'TGN Fotografia · instagram: @tgnfoto',
+                    created_at: '2026-10-23T09:00:00Z'
                 },
                 {
-                    id: 'sun-26-yoga',
-                    title: '🧘 Ioga a l\'Aire Lliure',
+                    id: 'oct-25-ioga',
+                    title: '🧘 Ioga al Parc del Francolí',
                     instructor: 'Elena V.',
-                    date: 'Dilluns 27 Abr, 19:00h',
-                    description: 'Sessió de relaxació post-cap de setmana. Portar màrfega propia i roba d\'abric per si baixa la temperatura.',
+                    date: 'Sáb 25 Oct, 10:00h',
+                    description: 'Sessió de relaxació a l’aire lliure al Parc del Francolí. Porta màrfega pròpia i roba d’abric. Gratuït i sense inscripció prèvia. Ideal per a tothom.',
                     image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
                     spots: 20,
                     neighborhood: 'GENERAL',
-                    contact_info: 'Punt: Parc del Francolí',
-                    created_at: '2026-09-29T10:00:00Z'
+                    contact_info: 'Punt: Parc del Francolí (entrada principal)',
+                    created_at: '2026-10-23T10:00:00Z'
+                },
+                {
+                    id: 'oct-26-manualitats',
+                    title: '🍁 Taller Decoració Tardor i Halloween',
+                    instructor: 'AMPA Col·legi Sant Pere i Sant Pau',
+                    date: 'Dom 26 Oct, 11:00h',
+                    description: 'Taller familiar para crear decoraciones de otoño y Halloween con materiales reciclados. Para niños de 4 a 12 años acompañados. Centre Cívic Sant Pere.',
+                    image: 'https://images.unsplash.com/photo-1508022713622-df2d8fb7b4cd?auto=format&fit=crop&w=800&q=80',
+                    spots: 30,
+                    neighborhood: 'Sant Pere i Sant Pau',
+                    contact_info: 'AMPA Sant Pere i Sant Pau · 977 221 009',
+                    created_at: '2026-10-23T11:00:00Z'
                 }
             ];
 

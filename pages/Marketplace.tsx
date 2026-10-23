@@ -37,7 +37,8 @@ const Marketplace: React.FC = () => {
     { id: 'hogar', label: 'HOGAR', icon: 'home' },
     { id: 'tech', label: 'TECH', icon: 'devices' },
     { id: 'moda', label: 'MODA', icon: 'apparel' },
-    { id: 'ocio', label: 'OCIO', icon: 'sports_soccer' }
+    { id: 'ocio', label: 'OCIO', icon: 'sports_soccer' },
+    { id: 'deporte', label: 'DEPORTE', icon: 'directions_bike' }
   ];
 
   useEffect(() => {
@@ -57,40 +58,76 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'oct-06-books-post',
+          id: 'oct-26-kit-halloween',
           user_id: 'v12',
-          title: '📚 Libros de Lectura (Otoño)',
-          description: 'Vendo 6 libros ideales para leer en casa en los d�as fr�os. Novela negra, histórica y humor. Perfecto estado. 📞 633 11 22 33',
-          price: '25',
-          category: 'ocio',
-          neighborhood: 'CENTRE',
-          contact_info: '633 11 22 33 (Pau)',
-          image_url: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-10-06T08:00:00Z'
+          title: '🎃 Kit Decoración Halloween',
+          description: 'Set completo: 3 calabazas artificiales, telas de araña, luces LED naranjas. Perfecto estado.',
+          price: '15',
+          category: 'hogar',
+          neighborhood: 'Part Alta',
+          contact_info: 'Contactar por la app',
+          image_url: 'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&w=800&q=80',
+          created_at: '2026-10-23T09:30:00Z'
         },
         {
-          id: 'oct-04-bike',
+          id: 'oct-26-abrigo-zara',
           user_id: 'v1',
-          title: '🚲 Bicicleta de Paseo (Cesta incluida)',
-          description: 'Estado impecable. Perfecta para moverte por el nuevo carril bici de La Pineda. 📞 977 44 55 66',
-          price: '85',
-          category: 'ocio',
-          neighborhood: 'PONENT',
-          contact_info: '977 44 55 66 (Maria)',
-          image_url: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-10-04T09:00:00Z'
+          title: '🧥 Abrigo Invierno Zara Talla M',
+          description: 'Color camel, talla M, usado una temporada. Impecable.',
+          price: '30',
+          category: 'moda',
+          neighborhood: 'Eixample',
+          contact_info: 'Contactar por la app',
+          image_url: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=800&q=80',
+          created_at: '2026-10-22T17:15:00Z'
         },
         {
-          id: 'oct-05-ipad',
+          id: 'oct-26-ipad-air',
           user_id: 'v2',
-          title: '📱 iPad Air (M1) 64GB',
-          description: 'Con funda y teclado. Factura y garantía. Impecable, perfecto para ver series y trabajar en otoño. 📞 622 88 77 66',
-          price: '380',
+          title: '📱 iPad Air M1 64GB + Funda + Teclado',
+          description: 'Con factura y garantía vigente. Estado 10/10. Vendo por cambio de dispositivo.',
+          price: '370',
           category: 'tech',
-          neighborhood: 'SANT PERE',
-          contact_info: '622 88 77 66 (Sergio)',
+          neighborhood: 'Sant Pere i Sant Pau',
+          contact_info: 'Contactar por la app',
           image_url: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-10-05T10:00:00Z'
+          created_at: '2026-10-22T11:45:00Z'
+        },
+        {
+          id: 'oct-26-pack-libros',
+          user_id: 'v13',
+          title: '📚 Pack 6 Libros (novela, histórica, humor)',
+          description: 'Incluye títulos de Almudéna Grandes, Carlos Ruiz Zafón y Tom Sharpe. Perfecto estado.',
+          price: '18',
+          category: 'ocio',
+          neighborhood: 'Centre',
+          contact_info: 'Contactar por la app',
+          image_url: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80',
+          created_at: '2026-10-21T18:20:00Z'
+        },
+        {
+          id: 'oct-26-bici-bh',
+          user_id: 'v8',
+          title: '🚫 Bicicleta Urbana BH (7 velocidades)',
+          description: 'Bici urbana en buen estado. Frenos nuevos, lántas anchas. Ideal para ciudad.',
+          price: '90',
+          category: 'deporte',
+          neighborhood: 'Llevant',
+          contact_info: 'Contactar por la app',
+          image_url: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80',
+          created_at: '2026-10-21T14:10:00Z'
+        },
+        {
+          id: 'oct-26-olla-crockpot',
+          user_id: 'v15',
+          title: '🍝 Olla Cocina Lenta Crock-Pot 6L',
+          description: 'Solo usada 3 veces. Con recetario incluido. Perfecta para los guisos de otoño.',
+          price: '25',
+          category: 'hogar',
+          neighborhood: 'Bonavista',
+          contact_info: 'Contactar por la app',
+          image_url: 'https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=800&q=80',
+          created_at: '2026-10-20T16:00:00Z'
         }
       ];
 
@@ -139,7 +176,8 @@ const Marketplace: React.FC = () => {
       'hogar': 'home',
       'tech': 'devices',
       'moda': 'apparel',
-      'ocio': 'sports_soccer'
+      'ocio': 'sports_soccer',
+      'deporte': 'directions_bike'
     };
     return icons[cat] || 'sell';
   };
@@ -193,10 +231,10 @@ const Marketplace: React.FC = () => {
             Habitación luminosa en piso de 3 personas. Zona Eixample, muy céntrico. Incluye gastos. Perfil tranquilo y responsable. Disponible para entrar de inmediato. ¡Ven a verla esta semana!
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="tel:638991122" className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
-              <span className="material-symbols-outlined text-sm">call</span>
-              638 99 11 22 (Clara)
-            </a>
+            <button className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
+              <span className="material-symbols-outlined text-sm">chat</span>
+              Contactar por la app (Clara)
+            </button>
             <span className="px-6 py-3 bg-gray-50 dark:bg-gray-800 dark:text-white rounded-xl text-xs font-black">
               420€ / MES
             </span>
@@ -253,7 +291,7 @@ const Marketplace: React.FC = () => {
                       </span>
                     </div>
                   )}
-                  <div className={`absolute top-4 right-4 px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest ${item.category === 'tech' ? 'bg-blue-500' : item.category === 'hogar' ? 'bg-orange-500' : item.category === 'moda' ? 'bg-pink-500' : 'bg-emerald-500'} text-white shadow-lg`}>
+                  <div className={`absolute top-4 right-4 px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest ${item.category === 'tech' ? 'bg-blue-500' : item.category === 'hogar' ? 'bg-orange-500' : item.category === 'moda' ? 'bg-pink-500' : item.category === 'deporte' ? 'bg-cyan-500' : 'bg-emerald-500'} text-white shadow-lg`}>
                     {item.category}
                   </div>
                 </div>
@@ -271,7 +309,7 @@ const Marketplace: React.FC = () => {
                       <p className="text-2xl font-black text-primary">{item.price}€</p>
                       {item.contact_info && (
                         <p className="text-[10px] font-bold text-gray-400 mt-1">
-                          📞 {item.contact_info}
+                          {item.contact_info.toLowerCase().includes('app') ? '💬' : '📞'} {item.contact_info}
                         </p>
                       )}
                     </div>
@@ -346,6 +384,7 @@ const Marketplace: React.FC = () => {
                       <option value="tech">Tech</option>
                       <option value="moda">Moda</option>
                       <option value="ocio">Ocio</option>
+                      <option value="deporte">Deporte</option>
                     </select>
                   </div>
                 </div>

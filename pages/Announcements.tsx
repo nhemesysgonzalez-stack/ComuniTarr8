@@ -9,10 +9,10 @@ interface Announcement {
     title: string;
     content: string;
     category: string;
-    author_name: string;
+    author_name?: string;
     created_at: string;
-    neighborhood: string;
-    itinerary?: string;
+    neighborhood?: string;
+    itinerary?: string | string[];
     link_url?: string;
     expires_at?: string;
 }
@@ -67,7 +67,7 @@ const AnnouncementItem: React.FC<{ notice: Announcement }> = ({ notice }) => {
                                 >
                                     <div className="mt-4 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-3xl border border-dashed border-primary/30">
                                         <div className="space-y-3">
-                                            {notice.itinerary.split('\n').map((step, i) => (
+                                            {(Array.isArray(notice.itinerary) ? notice.itinerary : notice.itinerary.split('\n')).map((step, i) => (
                                                 <div key={i} className="flex gap-3 items-start">
                                                     <span className="text-primary font-black">•</span>
                                                     <span className="text-sm font-bold dark:text-gray-300">{step}</span>
@@ -145,40 +145,61 @@ const Announcements: React.FC = () => {
 
             const realBulletins: Announcement[] = [
                 {
-                    id: 'oct-01-dana',
-                    title: '⛈️ Previsión de lluvias intensas',
-                    content: 'El Servei Meteorològic de Catalunya activa alerta amarilla por riesgo de precipitaciones intensas. Se recomienda precaución en los desplazamientos y evitar zonas inundables en el Serrallo y Part Baixa.',
+                    id: 'oct-23-castanyada',
+                    title: '🌰 Castanyada Popular · Sábado 25 de Octubre',
+                    content: 'La tradicional Castanyada vecinal de la Part Alta será ESTE SÁBADO 25 de octubre a partir de las 17h en la Plaça de la Font. Castañas y boniatos asados gratis, música en vivo y actividades infantiles. ¡No te la pierdas!',
+                    itinerary: [
+                        '17:00h: Apertura y encendido de los braseros',
+                        '17:30h: Castanyes i moniatos per a tothom!',
+                        '18:30h: Actuació musical grup tradicional',
+                        '19:30h: Activitats infantils i jocs',
+                        '21:00h: Tancament'
+                    ],
+                    link_url: 'https://www.tarragona.cat',
+                    neighborhood: 'Part Alta',
+                    category: 'EVENTO',
+                    author_name: 'Ajuntament de Tarragona',
+                    created_at: '2026-10-23T08:00:00Z'
+                },
+                {
+                    id: 'oct-23-meteo',
+                    title: '🌧️ Alerta Meteorológica: Mestral débil esta tarde',
+                    content: 'AEMET prevé viento del norte moderado esta tarde (jueves 23 oct) a partir de las 16h. Rachas de hasta 40 km/h en zonas costeras del Serrallo y la Platja Llarga. Precaución en paseos marítimos y al aparcar bajo árboles.',
+                    link_url: 'https://www.aemet.es',
                     neighborhood: 'GENERAL',
                     category: 'URGENTE',
                     author_name: 'Protecció Civil TGN',
-                    created_at: '2026-10-06T07:00:00Z'
+                    created_at: '2026-10-23T07:00:00Z'
                 },
                 {
-                    id: 'oct-02-bus',
-                    title: '🚌 Movilidad: Refuerzo de líneas EMT',
-                    content: 'La EMT de Tarragona amplía el horario y las frecuencias de los autobuses. Las líneas L-8, L-54 y L-41 contarán con autobuses de refuerzo en las horas punta.',
+                    id: 'oct-23-jazz-amfiteatre',
+                    title: '🎷 Concert de Jazz al Amfiteatre · Sábado 25 Oct',
+                    content: 'El cicle Tarragona en Tardor acull un concert de jazz gratuit al Amfiteatre Romà. Sàbat 25 octubre a les 19h. Places limitades, acudir amb antelació. Aportació voluntaria.',
+                    link_url: 'https://www.tarragona.cat',
+                    neighborhood: 'Part Alta',
+                    category: 'EVENTO',
+                    author_name: 'Tarragona Cultura',
+                    created_at: '2026-10-23T09:00:00Z'
+                },
+                {
+                    id: 'oct-23-empleo-nadal',
+                    title: '💼 Oferta Laboral: Campanya Nadal 2026',
+                    content: 'Oberta la borsa de treball per la campanya de Nadal en comerços i logística. Més de 200 vacants a Tarragona i àrea metropolitana. Consulta totes les ofertes a la secció Empleos.',
+                    link_url: 'https://www.sepe.es',
                     neighborhood: 'GENERAL',
-                    category: 'AVISO',
-                    author_name: 'EMT Tarragona',
-                    created_at: '2026-10-06T08:00:00Z'
-                },
-                {
-                    id: 'oct-03-teatro',
-                    title: '🎭 Festival de Teatro de Otoño',
-                    content: 'El Ayuntamiento presenta la programación del Festival de Teatro que tendrá lugar en el Teatro Metropol durante todo octubre. Obras para todos los públicos.',
-                    neighborhood: 'Centre',
                     category: 'INFO',
-                    author_name: 'Ajuntament de Tarragona',
-                    created_at: '2026-10-05T06:30:00Z'
+                    author_name: 'Servei d\'Ocupació',
+                    created_at: '2026-10-23T09:30:00Z'
                 },
                 {
-                    id: 'oct-04-empleo',
-                    title: '💼 Empleo: Ofertas para la campaña de otoño',
-                    content: 'Tarragona Impulsa y ComuniTarr han actualizado las ofertas de trabajo enfocadas a la logística y comercio de cara a la temporada de otoño. Todas con teléfono de contacto verificado.',
-                    neighborhood: 'GENERAL',
-                    category: 'EMPLEO',
-                    author_name: 'Admin ComuniTarr',
-                    created_at: '2026-10-06T09:00:00Z'
+                    id: 'oct-23-halloween-infantil',
+                    title: '🎃 Halloween Infantil · Parc de la Ciutat · Divendres 31 Oct',
+                    content: 'L\'AMPA organitza una festa de Halloween gratuita al Parc de la Ciutat el divendres 31 d\'octubre a les 17h. Disfresses, jocs i berenar per als nens. Inscripció oberta fins el 28 d\'octubre al Centre Cívic.',
+                    link_url: 'https://www.tarragona.cat',
+                    neighborhood: 'Eixample',
+                    category: 'EXITO',
+                    author_name: 'AMPA Parc de la Ciutat',
+                    created_at: '2026-10-23T10:00:00Z'
                 }
             ];
 

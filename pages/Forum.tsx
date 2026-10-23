@@ -75,10 +75,10 @@ const Forum: React.FC = () => {
   const isAdmin = user?.email === 'nhemesysgonzalez@gmail.com';
 
   const tickerMessages = [
-    { user: 'Admin ComuniTarr', text: '🚢 ACTUALIDAD: Un nuevo crucero turístico atraca hoy en el Port de Tarragona.' },
-    { user: 'MTR', text: '🍂 Obras Terminadas: El Parc del Francolí estrena su nueva zona de picnic de cara al otoño.' },
-    { user: 'Turismo TGN', text: '🍷 FIRA DEL VI: Los stands de la feria del vino ya están listos en la Rambla Nova.' },
-    { user: 'Ayuntamiento', text: '🛴 Recordatorio VMP: Reduzcan velocidad al circular por el paseo marítimo.' }
+    { user: 'Admin ComuniTarr', text: '🏰 Nit de Castellers: Anunciada en la Plaça de la Font para el próximo miércoles 29 de octubre.' },
+    { user: 'MTR', text: '🎷 Concierto de Jazz: Este sábado en el Amfiteatre Romano de Tarragona con entrada libre y gratuita.' },
+    { user: 'Turismo TGN', text: '🛒 Mercado Semanal: Hoy jueves puestos de artesanía y productos frescos en la Rambla Nova.' },
+    { user: 'Ayuntamiento', text: '🍂 Tiempo hoy: Parcialmente nublado, 17°C y brisa suave del NE en Tarragona.' }
   ];
 
 
@@ -125,46 +125,99 @@ const Forum: React.FC = () => {
   const conversationThreads: Record<string, Array<Array<{ who: string; text: string }>>> = {
     'GENERAL': [
       [
-        { who: 'Joan B.', text: '⚽ ¡Qué estallido de alegría ayer en el Nou Estadi con el gol de Óscar!' },
-        { who: 'Pau T.', text: 'Hacía falta esa victoria. El Nàstic está imparable este mes.' },
-        { who: 'Maria G.', text: '¡Vaya partidazo! Tarragona hoy se ha levantado con ánimos renovados.' }
+        { who: 'Joan B.', text: '🏰 ¿Habéis visto que han anunciado la Nit de Castellers en la Plaça de la Font para el miércoles 29?' },
+        { who: 'Pau T.', text: '¡Qué gran noticia! Con las cuatro colles de la ciudad iluminadas por la noche.' },
+        { who: 'Maria G.', text: 'Allí estaré sin falta. Siempre se crea un ambientazo impresionante en la plaza.' }
       ],
       [
-        { who: 'Joe R.', text: '🍷 ¿Alguien ha visto que ya están montando las casetas de la Fira del Vi?' },
-        { who: 'Admin', text: 'Sí, @Joe. Este fin de semana arranca oficialmente. ¡Habrá mucha actividad en la Rambla!' },
-        { who: 'Joe R.', text: 'Qué ganas de probar los vinos de la DO Tarragona.' }
+        { who: 'Joe R.', text: '🎷 Este sábado hay concierto de jazz al aire libre en el Amfiteatre.' },
+        { who: 'Admin', text: 'Sí, @Joe. Entrada libre y gratuita a partir de las 19:30h con vistas al mar. ¡Recomendamos ir con tiempo!' },
+        { who: 'Joe R.', text: 'Planazo total para el sábado por la tarde. Ya tengo grupo para ir.' }
+      ],
+    ],
+    // Barrio: Part Alta
+    'PART ALTA': [
+      [
+        { who: 'Carme S.', text: '🏛️ ¡Qué bien se está en la Part Alta con el fresquito de octubre! La Catedral preciosa.' },
+        { who: 'Joan B.', text: 'Sí, es el mejor momento para disfrutar de las callejuelas sin aglomeraciones.' },
+        { who: 'Maria G.', text: 'He visto que han puesto luces nuevas en la Baixada de la Misericòrdia. ¡Genial!' }
+      ],
+      [
+        { who: 'Pau T.', text: '¿Alguien sabe si el Bar Pax de la Part Alta sigue haciendo el vermut de los domingos?' },
+        { who: 'Mireia R.', text: 'Sí @Pau! Empiezan a las 12:00h. Además han puesto mesas nuevas en la terraza.' }
+      ],
+    ],
+    // Barrio: El Serrallo
+    'EL SERRALLO': [
+      [
+        { who: 'Luis M.', text: '⚓ Qué buenas vistas al puerto esta mañana desde el Moll de Pescadors. Buen otoño estamos teniendo.' },
+        { who: 'Pepe R.', text: 'Han entrado los atuneros grandes en el puerto. El olor a mar es inconfundible.' },
+        { who: 'Santi G.', text: 'Los restaurantes de la Punta están a tope este finde. 🦐' }
+      ],
+      [
+        { who: 'Elena V.', text: 'Ojo: han acondicionado el tramo del muelle para pasear. Acceso despejado desde el Serrallo.' },
+        { who: 'Luis M.', text: 'Gracias @Elena, saldré a caminar por allí esta tarde con este tiempo tan agradable.' }
+      ],
+    ],
+    // Barrio: Eixample / Nou Eixample
+    'EIXAMPLE': [
+      [
+        { who: 'Sandra L.', text: '🛒 Hoy jueves mercadillo en la Rambla Nova, sección Eixample. Hay puestos de artesanía preciosos.' },
+        { who: 'Nuria P.', text: 'He comprado productos de la comarca buenísimos. ¡Os recomiendo dar una vuelta hoy!' }
+      ],
+      [
+        { who: 'Andreu T.', text: '🚲 El nuevo carril bici de la Av. Catalunya es una pasada. Ya fui en bici al trabajo hoy.' },
+        { who: 'Marta L.', text: '@Andreu ¡Qué envidia! Yo tengo que atravesar el centro todavía.' }
+      ],
+    ],
+    // Barrio: Llevant / Barris Marítims
+    'LLEVANT': [
+      [
+        { who: 'Joe R.', text: '🌊 Las olas en la Platja del Miracle están increíbles hoy con el viento suave de nordeste.' },
+        { who: 'Maria G.', text: 'Para los paseantes de Llevant, el Miracle está precioso hoy. ¡A disfrutar del paseo!' }
+      ],
+      [
+        { who: 'Pau T.', text: 'Reunión de vecinos mañana viernes en el CC de Llevant a las 19:00h sobre las zonas verdes.' },
+        { who: 'Mireia R.', text: 'Importante, @Pau. Yo iré. El tema del parque infantil lleva semanas pendiente.' }
+      ],
+    ],
+    'BARRIS MARÍTIMS': [
+      [
+        { who: 'Pepe R.', text: '🚢 Día muy tranquilo por el Moll de Costa y el barrio marítimo hoy jueves.' },
+        { who: 'Carme S.', text: 'Se está de lujo paseando a 17 grados por el paseo del puerto.' }
       ],
     ],
     'APOYO': [
       [
-        { who: 'Carme L.', text: '¿Sabéis si ha reabierto ya el CAP de la Rambla tras el fin de semana largo?' },
-        { who: 'Andreu T.', text: 'Abierto desde las 8h Hoy Domingo, Carme. Todo volviendo a la normalidad.' },
+        { who: 'Carme L.', text: '¿Sabéis si el CAP Jaume I de la Rambla Nova atiende consultas hoy jueves por la tarde?' },
+        { who: 'Andreu T.', text: 'Sí Carme, abierto con horario continuo hasta las 20:00h.' },
       ],
       [
-        { who: 'Sandra L.', text: 'Recuerdo: Mañana Martes seguimos con la recogida de alimentos en el CC de Torreforta.' },
+        { who: 'Sandra L.', text: 'Recordatorio: Mañana viernes seguimos con la recogida solidaria en el CC de Torreforta.' },
         { who: 'Elena V.', text: '@Sandra ¡Yo me pasaré sobre las 11h para dejar cosas!' },
       ],
     ],
     'EMPLEO': [
       [
-        { who: 'Servicios TGN', text: '💼 Se precisa personal logístico para campaña de otoño en polígono Entrevies. Imprescindible carnet carretillero. Tel: 977 44 55 66' },
-        { who: 'Academia Newton', text: 'Hoy 29 de Septiembre abrimos matrículas. Buscamos profesores de refuerzo escolar urgente para las tardes. Tel: 977 12 34 56' },
+        { who: 'Servicios TGN', text: '💼 Oferta logística: Se precisan 15 mozos de almacén para campaña de Navidad en Polígono Entrevies. Enviar CV a empleo@tarragonalogistica.com o llamar al 977 44 55 66' },
+        { who: 'Admin ComuniTarr', text: '📦 Campaña de Navidad: Centro logístico del Port de Tarragona selecciona carretilleros y preparadores de pedidos. Info en rrhh@porttarragona.cat o tel. 977 25 94 00' },
       ],
     ],
     'ENCUENTROS': [
       [
-        { who: 'Santi G.', text: 'Mañana por la tarde quedada para ver el Concurs de Castells en la Tarraco Arena. ¿Alguien se suma?' },
-        { who: 'Marta L.', text: '¡Me apunto! Vamos a verlo y luego tomamos algo por el centro.' }
+        { who: 'Santi G.', text: '🥾 ¿Quién se anima este sábado 25 a una excursión de senderismo por las Muntanyes de Prades? Salida a las 8:30h.' },
+        { who: 'Marta L.', text: '¡Me apunto! Los bosques de Prades en otoño con los tonos dorados están espectaculares.' },
+        { who: 'Pau T.', text: 'Salgo desde la Rambla con mi coche y tengo 3 plazas disponibles. Contactar por la app.' }
       ],
       [
-        { who: 'Nuria P.', text: 'El domingo quiero inaugurar la bici por el nuevo carril del puente del Francolí.' },
-        { who: 'Pau T.', text: '@Nuria ¡Si hacéis grupeta avisad que me apunto! Ideal para este tiempo de octubre.' },
+        { who: 'Nuria P.', text: 'El domingo quiero hacer ruta tranquila en bici por el paseo del Francolí.' },
+        { who: 'Joe R.', text: '@Nuria Si montáis grupeta avisad por la app y me uno encantado.' },
       ],
     ],
   };
 
   // Determine weather context for simulation
-  const isActuallyRaining = false; // Context for today's TGN weather (Soleado 18ºC)
+  const isActuallyRaining = false; // Context for today's TGN weather (Parcialmente nublado, 17ºC)
   const isWomensDay = false;
   const todayName = new Date().toLocaleDateString('es-ES', { weekday: 'long' });
 
@@ -257,14 +310,38 @@ const Forum: React.FC = () => {
 
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
-          // Ayer
-          { id: 'seed-cloud-98', user_id: 'v10', content: '🌊 ¡Qué bonito está el mar hoy en la Arrabassada! Ya se nota el ambiente de otoño.', user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 20).toISOString() },
-          { id: 'seed-cloud-99', user_id: 'v4', content: '@Nuria P. ¡Totalmente de acuerdo! Ideal para pasear con chaqueta fina. 🍂', user_metadata: { full_name: 'Carme S.', avatar_url: 'https://i.pravatar.cc/150?u=carme' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 18).toISOString() },
-          { id: 'seed-cloud-100', user_id: 'v19', content: '🌰 Ya empiezan a vender castañas por el centro. ¡A mí me encanta el ambiente! ¿Quién viene esta tarde a dar una vuelta?', user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' }, neighborhood: 'GENERAL', created_at: new Date(now - 1000 * 3600 * 3).toISOString() },
-
-          // Hoy
-          { id: 'seed-cloud-101', user_id: 'v3', content: `🍇 ¿Alguien ya tiene sus tickets para la feria del vino? Yo ya tengo los míos. 😄`, user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' }, neighborhood: 'GENERAL', created_at: '2026-10-07T08:30:00Z' },
-          { id: 'seed-cloud-102', user_id: 'v2', content: '🎶 El ambiente en la Plaça de la Font está genial hoy. ¡Venid a tomar algo!', user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' }, neighborhood: 'GENERAL', created_at: '2026-10-07T09:15:00Z' },
+          {
+            id: 'seed-oct23-1',
+            user_id: 'v10',
+            content: 'Qué bien se está en Tarragona con este tiempo de otoño. 17 grados y sol a ratos. 🍂',
+            user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' },
+            neighborhood: 'GENERAL',
+            created_at: '2026-10-23T08:15:00Z'
+          },
+          {
+            id: 'seed-oct23-2',
+            user_id: 'v3',
+            content: 'He visto que el Nastic juga dissabte a casa. Alguno se anima para el partido?',
+            user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' },
+            neighborhood: 'GENERAL',
+            created_at: '2026-10-23T09:20:00Z'
+          },
+          {
+            id: 'seed-oct23-3',
+            user_id: 'v2',
+            content: 'Recordad que esta tarde hay concierto de jazz en el Amfiteatre. ¡Es gratis!',
+            user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' },
+            neighborhood: 'GENERAL',
+            created_at: '2026-10-23T10:10:00Z'
+          },
+          {
+            id: 'seed-oct23-4',
+            user_id: 'v19',
+            content: '🎃 Solo faltan 8 días para Halloween. Mi barrio ya tiene las mejores decoraciones jaja',
+            user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' },
+            neighborhood: 'GENERAL',
+            created_at: '2026-10-23T10:45:00Z'
+          },
         ] as Message[],
       };
 
@@ -447,9 +524,12 @@ const Forum: React.FC = () => {
   const sendBuzz = async () => {
     if (loading) return;
     try {
+      // Unlock audio context FIRST (before play) to bypass browser autoplay policy
+      unlockAudio();
       playSound('buzz');
       setIsShaking(true);
-      setTimeout(() => setIsShaking(false), 500);
+      // Extended visual buzz: 2s with animated ring effect
+      setTimeout(() => setIsShaking(false), 2000);
       await logActivity('Enviar Zumbido', { neighborhood: currentNeighborhood });
       await safeSupabaseInsert('forum_messages', {
         user_id: user?.id,
@@ -587,8 +667,8 @@ const Forum: React.FC = () => {
           <div>
             <h4 className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 ml-2">Trending Topic</h4>
             <div className="flex flex-wrap gap-2 px-2">
-              <span className="px-3 py-1 bg-amber-100 text-amber-600 rounded-lg text-[10px] font-black uppercase">#FiraDelViTGN</span>
-              <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-lg text-[10px] font-black uppercase">#ConcursCastells</span>
+              <span className="px-3 py-1 bg-amber-100 text-amber-600 rounded-lg text-[10px] font-black uppercase">#NitCastellers</span>
+              <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-lg text-[10px] font-black uppercase">#JazzAmfiteatre</span>
               <span className="px-3 py-1 bg-red-100 text-red-600 rounded-lg text-[10px] font-black uppercase">#OtoñoTarragona</span>
             </div>
           </div>
@@ -615,19 +695,38 @@ const Forum: React.FC = () => {
         {/* Modern Header */}
         <div className="h-24 px-8 flex items-center justify-between border-b border-slate-100 dark:border-white/5 bg-white/50 dark:bg-[#0f172a]/50 backdrop-blur-md z-20">
           <div className="flex items-center gap-4">
-            <div className="size-12 rounded-2xl bg-gradient-to-tr from-blue-500 to-blue-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+            <div className={`size-12 rounded-2xl flex items-center justify-center text-white shadow-lg ${isShaking ? 'bg-gradient-to-tr from-blue-600 to-blue-400 ring-4 ring-blue-400/50 ring-offset-2 animate-pulse' : 'bg-gradient-to-tr from-blue-500 to-blue-400 shadow-blue-500/20'}`}>
               <span className="material-symbols-outlined text-2xl">
                 {currentNeighborhood === 'GENERAL' ? 'public' :
                   currentNeighborhood === 'PREPPERS' ? 'shield' :
                     currentNeighborhood === 'EMPLEO' ? 'work' :
-                      currentNeighborhood === 'APOYO' ? 'volunteer_activism' : 'forum'}
+                      currentNeighborhood === 'APOYO' ? 'volunteer_activism' :
+                        currentNeighborhood === 'PART ALTA' ? 'location_city' :
+                          currentNeighborhood === 'EL SERRALLO' ? 'anchor' :
+                            currentNeighborhood === 'EIXAMPLE' ? 'apartment' :
+                              currentNeighborhood === 'LLEVANT' ? 'waves' : 'forum'}
               </span>
             </div>
             <div>
-              <h2 className="text-lg font-black text-slate-800 dark:text-white uppercase tracking-tight">{currentNeighborhood === 'APOYO' ? '💜 Apoyo y Bienestar' : currentNeighborhood}</h2>
+              <div className="flex items-center gap-2">
+                <h2 className="text-lg font-black text-slate-800 dark:text-white uppercase tracking-tight">
+                  {currentNeighborhood === 'APOYO' ? '💜 Apoyo y Bienestar' :
+                    currentNeighborhood === 'PART ALTA' ? '🏛️ Part Alta' :
+                      currentNeighborhood === 'EL SERRALLO' ? '⚓ El Serrallo' :
+                        currentNeighborhood === 'EIXAMPLE' ? '🏙️ Eixample' :
+                          currentNeighborhood === 'LLEVANT' ? '🌊 Llevant' :
+                            currentNeighborhood}
+                </h2>
+                {isShaking && (
+                  <span className="flex items-center gap-1 px-2 py-0.5 bg-blue-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full animate-bounce">
+                    <span className="material-symbols-outlined text-sm">vibration</span>
+                    ZUMBIDO
+                  </span>
+                )}
+              </div>
               <p className="text-[10px] font-bold text-slate-400 flex items-center gap-1.5">
                 <span className="size-2 bg-green-500 rounded-full animate-pulse"></span>
-                <span>En vivo • {messages.length} mensajes</span>
+                <span>En vivo • {messages.length} mensajes • {user?.user_metadata?.neighborhood || 'General'}</span>
               </p>
             </div>
           </div>
@@ -712,8 +811,12 @@ const Forum: React.FC = () => {
                   <button key={emoji} type="button" onClick={() => { setNewMessage(prev => prev + emoji); inputRef.current?.focus(); }} className="text-3xl hover:scale-150 transition-all opacity-80 hover:opacity-100">{emoji}</button>
                 ))}
               </div>
-              <button type="button" onClick={sendBuzz} className="flex items-center gap-2.5 px-6 py-3 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-2xl border border-blue-100 dark:border-blue-900/30 font-black uppercase tracking-widest text-[11px] shadow-sm transform hover:scale-105 active:scale-95 transition-all">
-                <span className="material-symbols-outlined text-xl">vibration</span>
+              <button
+                type="button"
+                onClick={() => { unlockAudio(); sendBuzz(); }}
+                className={`flex items-center gap-2.5 px-6 py-3 rounded-2xl font-black uppercase tracking-widest text-[11px] shadow-sm transform hover:scale-105 active:scale-95 transition-all ${isShaking ? 'bg-blue-500 text-white shadow-blue-500/40 shadow-lg ring-2 ring-blue-400' : 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-900/30'}`}
+              >
+                <span className={`material-symbols-outlined text-xl ${isShaking ? 'animate-bounce' : ''}`}>vibration</span>
                 <span>ZUMBIDO</span>
               </button>
             </div>

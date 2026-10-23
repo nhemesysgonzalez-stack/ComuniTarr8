@@ -123,6 +123,8 @@ const Sidebar: React.FC = () => {
             <NavItem to="/forum" label={t('forum')} icon="chat" color="indigo" badge={forumUnread} hasActivity={forumUnread === 0} />
             <NavItem to="/neighbors" label={t('neighbors')} icon="waving_hand" color="emerald" />
             <NavItem to="/incidents" label="Incidencias" icon="report_problem" color="red" />
+            <NavItem to="/first-date" label="First Date TGN" icon="favorite" color="red" />
+            <NavItem to="/train-chat" label="Vagón RENFE" icon="train" color="sky" />
             <NavItem to="/local-businesses" label={t('local_business')} icon="storefront" color="emerald" />
             <NavItem to="/clubs" label={t('clubs')} icon="groups" color="primary" />
           </div>

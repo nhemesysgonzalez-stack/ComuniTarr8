@@ -8,11 +8,12 @@ const MapView: React.FC = () => {
   const [selectedPin, setSelectedPin] = useState<any>(null);
 
   const [pins, setPins] = useState<any[]>([
-    { id: 'plan-1', type: 'cultura', x: '45%', y: '40%', title: '🌰 Castañada en la Plaza de la Font', desc: 'Este sábado 18 Oct a las 17h. Castañas y boniatos asados gratis para vecinos. Música en vivo y actividades para niños.', status: 'Sáb 18 Oct · 17h', color: 'bg-orange-500', icon: 'local_fire_department', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.4)]', creator_name: 'Ajuntament TGN' },
-    { id: 'plan-2', type: 'cultura', x: '38%', y: '52%', title: '🏛️ Visita Guiada Anfiteatro Romano', desc: 'Hoy a las 17h. Entrada gratuita. Descubre la historia de Tarraco de la mano de un guía especializado. Plazas limitadas.', status: 'Hoy · 17h · Gratis', color: 'bg-purple-500', icon: 'museum', glow: 'shadow-[0_0_40px_rgba(168,85,247,0.3)]', creator_name: 'Cultura TGN' },
-    { id: 'plan-3', type: 'ocio', x: '60%', y: '62%', title: '☕ Terrazas de Otoño en el Serrallo', desc: 'El buen tiempo otoñal anima las terrazas del barrio marinero. Ambiente tranquilo y vistas al puerto. Perfecto para un vermút.', status: 'Animado ahora', color: 'bg-emerald-500', icon: 'local_cafe', creator_name: 'Barrio Serrallo' },
-    { id: 'plan-4', type: 'deporte', x: '72%', y: '72%', title: '🌲 Ruta Senderista Pont del Diable', desc: 'Ruta familiar de 5km por el acueducto romano y el bosque de la Marquesa. Buen calzado recomendado. Salida desde Tarragona Norte.', status: 'Activo · 5km', color: 'bg-green-500', icon: 'hiking', creator_name: 'Club Senderisme TGN' },
-    { id: 'plan-5', type: 'ocio', x: '28%', y: '65%', title: '🛒 Mercadillo de Otoño · Bonavista', desc: 'Domingo 18 Oct de 09h a 14h. Productos de temporada, artesanía y segunda mano en la Explanada de Bonavista. Líneas L54 y L3 reforzadas.', status: 'Dom 18 · 09h–14h', color: 'bg-rose-500', icon: 'storefront', glow: 'shadow-[0_0_40px_rgba(244,63,94,0.3)]', creator_name: 'Mercats TGN' }
+    { id: 'plan-1', type: 'cultura', x: '45%', y: '40%', title: '🌰 Castañada Popular · Plaza de la Font', desc: 'Este sábado 25 Oct a las 17h. Castañas y boniatos asados gratis para vecinos. Música en vivo y actividades para niños. Organiza el Ajuntament de Tarragona.', status: 'Sáb 25 Oct · 17h', color: 'bg-orange-500', icon: 'local_fire_department', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.4)]', creator_name: 'Ajuntament TGN' },
+    { id: 'plan-2', type: 'cultura', x: '38%', y: '52%', title: '🏛️ Visita Guiada Part Alta Romana', desc: 'Hoy jueves 23 Oct a las 17h. Entrada gratuita. Descubre los secretos de la Tarraco romana: murallas, foro y circo. Plazas limitadas. Tel: 977 250 795', status: 'Hoy Jue 23 · 17h · Gratis', color: 'bg-purple-500', icon: 'museum', glow: 'shadow-[0_0_40px_rgba(168,85,247,0.3)]', creator_name: 'Turisme TGN' },
+    { id: 'plan-3', type: 'ocio', x: '60%', y: '62%', title: '☕ Terrazas de Otoño en el Serrallo', desc: 'El buen tiempo otoñal anima las terrazas del barrio marinero. Ambiente tranquilo y vistas al puerto. Perfecto para un vermút de jueves.', status: 'Animado ahora · Jue 23', color: 'bg-emerald-500', icon: 'local_cafe', creator_name: 'Barrio Serrallo' },
+    { id: 'plan-4', type: 'deporte', x: '72%', y: '72%', title: '🥾 Senderisme Muntanyes de Prades', desc: 'Sábado 25 Oct. Ruta guiada de otoño. Salida puntual a las 08:30h desde la Estació RENFE. Buen calzado y mochila con agua. Tel: 977 250 795', status: 'Sáb 25 · 08:30h · RENFE', color: 'bg-green-500', icon: 'hiking', creator_name: 'Club Senderisme TGN' },
+    { id: 'plan-5', type: 'ocio', x: '28%', y: '65%', title: '🛒 Mercadillo Segunda Mano · Bonavista', desc: 'Domingo 26 Oct de 09h a 14h. Productos de temporada, artesanía local, ropa vintage y segunda mano en la Explanada de Bonavista. Líneas L54 y L3 reforzadas.', status: 'Dom 26 · 09h–14h', color: 'bg-rose-500', icon: 'storefront', glow: 'shadow-[0_0_40px_rgba(244,63,94,0.3)]', creator_name: 'Mercats TGN' },
+    { id: 'plan-6', type: 'cultura', x: '55%', y: '30%', title: '🎷 Concert Jazz · Amfiteatre Romà', desc: 'Sábado 25 Oct a las 19h. Concierto de jazz al aire libre en el recinto histórico del Amfiteatre. Gratis. Plazas muy limitadas — llega pronto!', status: 'Sáb 25 · 19h · Gratis', color: 'bg-indigo-500', icon: 'music_note', glow: 'shadow-[0_0_40px_rgba(99,102,241,0.3)]', creator_name: 'Cultura TGN' }
   ]);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);
@@ -71,7 +72,7 @@ const MapView: React.FC = () => {
           <div>
             <h1 className="text-2xl md:text-5xl font-black tracking-tighter uppercase leading-none mb-1">📍 ACTIVIDADES Y PLANES HOY EN TARRAGONA</h1>
             <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] opacity-90 drop-shadow-md">
-              Miércoles 14 Octubre 2026 · Apunta el plan o únete a uno vecinal.
+              Jueves 23 Octubre 2026 · Apunta el plan o únete a uno vecinal.
             </p>
           </div>
           <div className="flex gap-2 mt-4 md:mt-0">

@@ -50,33 +50,33 @@ const VitalNeeds: React.FC = () => {
                     creator_id: 'v5',
                     type: 'medical',
                     title: '💊 Farmacia de Guardia',
-                    description: 'Necesito que alguien me acerque un inhalador de la farmacia de guardia. Estoy con mucha tos y hoy llueve bastante. Contactad a través de la app.',
+                    description: 'Necesito que alguien me acerque un inhalador de la farmacia de guardia. Hoy jueves 23 oct, farmacia de guardia: Farm. Eixample (C/ Unió, 5). Contactad por la app.',
                     contact_info: 'Contactar por la app',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
-                    created_at: '2026-10-07T07:00:00Z'
+                    created_at: '2026-10-23T08:00:00Z'
                 },
                 {
                     id: 'oct-01-food',
                     creator_id: 'v6',
                     type: 'food',
                     title: '🛒 Compra Básica',
-                    description: '¿Alguien podría traerme leche y huevos del súper? Tengo un esguince y no puedo bajar las escaleras. Pago por Bizum. Contactad a través de la app.',
+                    description: '¿Alguien podría acercarme pan y fruta del mercado? Tengo una lesion en la rodilla y no puedo bajar. Pago por Bizum. Contactad por la app.',
                     contact_info: 'Contactar por la app',
                     is_urgent: false,
                     neighborhood: 'PART ALTA',
-                    created_at: '2026-10-07T08:30:00Z'
+                    created_at: '2026-10-23T09:00:00Z'
                 },
                 {
-                    id: 'oct-01-company',
+                    id: 'oct-23-company',
                     creator_id: 'v8',
                     type: 'company',
-                    title: '🚶 Paseo de Otoño',
-                    description: 'Busco compañía para dar un paseo por el balcón del Mediterráneo esta tarde y tomar un café. ¡Escríbeme por la app!',
+                    title: '👥 Companyia per anar a la Castanyada',
+                    description: 'Soy una persona mayor y me gustaría ir a la Castanyada del sábado pero no tengo con quien ir. ¿Algún vecino se anima a acompañarme? Contactad por la app.',
                     contact_info: 'Contactar por la app',
                     is_urgent: false,
-                    neighborhood: 'Serrallo',
-                    created_at: '2026-10-07T10:00:00Z'
+                    neighborhood: 'Part Alta',
+                    created_at: '2026-10-23T10:00:00Z'
                 }
             ];
 
@@ -276,8 +276,8 @@ const VitalNeeds: React.FC = () => {
                                 <li className="flex items-center gap-3 p-3 bg-red-50 dark:bg-red-900/20 rounded-2xl border border-red-100 dark:border-red-800/30">
                                     <span className="material-symbols-outlined text-red-500">local_pharmacy</span>
                                     <div>
-                                        <strong className="block text-red-700 dark:text-red-300">Farmàcia Garcia Rivas (24h)</strong>
-                                        <p className="text-[10px] opacity-70">Av. Països Catalans, 51 - 977 20 18 33</p>
+                                        <strong className="block text-red-700 dark:text-red-300">Farmacia de Guardia</strong>
+                                        <p className="text-[10px] opacity-70">Farm. Eixample — C/ Unió, 5 (hoy 23 oct)</p>
                                     </div>
                                 </li>
                                 <li className="flex items-center gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border border-blue-100 dark:border-blue-800/30">

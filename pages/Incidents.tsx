@@ -58,33 +58,33 @@ const Incidents: React.FC = () => {
             if (data) {
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'oct-01-rambla-obras',
+                        id: 'oct-20-calle-major-obras',
                         user_id: 'admin',
-                        title: '🚧 Obras en la Part Alta',
-                        description: 'Inicio de obras de renovación de pavimento en la calle Major. Corte intermitente de circulación de 08h a 14h de lunes a viernes durante octubre. Se recomienda usar vías alternativas.',
-                        status: 'open',
+                        title: '🚧 Obras Calle Major: Cortes continuan',
+                        description: 'Las obras de renovación del pavimento histórico de la Calle Major (Part Alta) continúan esta semana. Cortes de circulación de 08h a 14h de lunes a viernes. Acceso peatonal garantizado. Prevista finalización: 31 de octubre.',
+                        status: 'in_progress',
                         neighborhood: 'Part Alta',
-                        created_at: '2026-10-06T07:00:00Z',
+                        created_at: '2026-10-20T07:00:00Z',
                         profiles: { full_name: 'Guàrdia Urbana TGN', avatar_url: '/logo.svg' }
                     },
                     {
-                        id: 'oct-02-ematsa-serrallo',
-                        user_id: 'v22',
-                        title: '💧 EMATSA: Corte de agua Serrallo',
-                        description: 'Corte de suministro programado hoy Martes 7 de Octubre de 09:00h a 13:00h en las calles principales del Serrallo por mantenimiento en la red. Suministro garantizado antes del mediodía.',
-                        status: 'in_progress',
-                        neighborhood: 'Serrallo',
-                        created_at: '2026-10-07T08:00:00Z',
+                        id: 'oct-20-ematsa-partbaixa',
+                        user_id: 'admin',
+                        title: '💧 EMATSA: Corte de agua miércoles 22 Oct',
+                        description: 'Corte de suministro de agua programado el miércoles 22 de octubre de 09:00h a 12:00h en zonas de la Part Baixa por mantenimiento preventivo en la red. EMATSA garantiza el suministro antes del mediodía.',
+                        status: 'open',
+                        neighborhood: 'Part Baixa',
+                        created_at: '2026-10-20T08:00:00Z',
                         profiles: { full_name: 'EMATSA', avatar_url: 'https://i.pravatar.cc/150?u=water' }
                     },
                     {
-                        id: 'oct-03-viento-aviso',
+                        id: 'oct-20-lluvias-alerta',
                         user_id: 'admin',
-                        title: '🍂 Alerta Vientos Fuertes: Rachas de 80km/h',
-                        description: 'Alerta amarilla por viento activada por el Servei Meteorològic. Se recomienda retirar objetos de balcones, toldos y evitar zonas arboladas o parques públicos.',
+                        title: '🌧️ Alerta: Lluvias débiles esta tarde',
+                        description: 'Alerta amarilla por lluvias activada a partir de las 15h de hoy lunes 20 de octubre. Precaución al conducir y en zonas bajas del litoral. Se recomienda revisar el estado de toldos y balcones. Posibles acumulaciones de 10-20 mm.',
                         status: 'open',
                         neighborhood: 'GENERAL',
-                        created_at: '2026-10-06T06:00:00Z',
+                        created_at: '2026-10-20T06:00:00Z',
                         profiles: { full_name: 'Protecció Civil TGN', avatar_url: '/logo.svg' }
                     }
                 ];

@@ -13,24 +13,27 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: '1', user: 'Ana M.', text: '🌰 ¡Ya huele a castañas en la Rambla! Primer puesto instalado junto al Mercat Central. #Castañada', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026024d', time: 'Hace 2m', neighborhood: 'Centre' },
-    { id: '2', user: 'Carlos R.', text: '🚧 Ojo: la Calle Major cortada desde el lunes por las obras. Vengo andando por la Baixada del Roser.', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026704d', time: 'Hace 6m', neighborhood: 'Part Alta' },
-    { id: '3', user: 'Protección Civil', text: '⚠️ METEO: Aviso por rachas de viento moderadas en la zona litoral esta tarde. Precaución en el Serrallo.', avatar: 'https://ui-avatars.com/api/?name=PC&background=ef4444&color=fff', time: 'Hace 10m', isOfficial: true },
-    { id: '4', user: 'Elena G.', text: '💼 EMPLEO: Ya abren las bolsas de trabajo para la campaña navideña. ¡Hay vacantes en el Parc Central y el Serrallo!', avatar: 'https://i.pravatar.cc/150?u=a04258114e29026702d', time: 'Hace 18m', neighborhood: 'Eixample' },
-    { id: '5', user: 'Laura P.', text: '🚌 EMT: Líneas L54 y L3 reforzadas hoy. La L-12 tiene desvíos por las obras del Centre.', avatar: 'https://i.pravatar.cc/150?u=a048581f4e29026701d', time: 'Hace 25m', neighborhood: 'Bonavista' },
-    { id: '6', user: 'TGN Cultura', text: '🏛️ HOY 17h: Visita guiada gratuita al Anfiteatro Romano. Plazas limitadas. Punto de encuentro: Portal del Roser.', avatar: 'https://ui-avatars.com/api/?name=TC&background=3b82f6&color=fff', time: 'Hace 32m', isOfficial: true },
-    { id: '7', user: 'Jordi V.', text: '🤝 ¿Alguien se anima al Mercadillo de Bonavista este domingo? Hay cosas muy chulas de temporada.', avatar: 'https://i.pravatar.cc/150?u=b048581f4e29026701d', time: 'Hace 40m', neighborhood: 'Bonavista' },
-    { id: '8', user: 'EMATSA', text: '💧 Recordatorio: Corte de agua programado mañana jue 15 oct en el Serrallo de 09h a 13h. Suministro garantizado antes del mediodía.', avatar: 'https://ui-avatars.com/api/?name=EM&background=0ea5e9&color=fff', time: 'Hace 1h', isOfficial: true }
+    { id: '1', user: 'Anna M.', text: '🌰 ¡Castañada este sábado 25 Oct en la Plaza de la Font! Castañas gratis, música y actividades para niños a las 17h. ¡Vamos todos!', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026024d', time: 'Hace 3m', neighborhood: 'Centre' },
+    { id: '2', user: 'Protecció Civil', text: '⚠️ METEO: Rachas de viento moderado esta tarde en la zona litoral. Precaución en el Serrallo y playa. Máximas de 17ºC.', avatar: 'https://ui-avatars.com/api/?name=PC&background=ef4444&color=fff', time: 'Hace 8m', isOfficial: true },
+    { id: '3', user: 'Gatuninos TGN', text: '🐈 URGENTE: Gatuninos Torreforta necesita mantas y toallas para los gatos de las colonias este invierno. Déjalas en el Centre Cívic Torreforta. ¡Gracias!', avatar: 'https://ui-avatars.com/api/?name=GT&background=f97316&color=fff', time: 'Hace 10m', neighborhood: 'Torreforta' },
+    { id: '4', user: 'Elena G.', text: '💼 EMPLEO: Parc Central busca personal para la campaña de Navidad 2026. Turnos de tarde. ¡Mira la sección Empleos de ComuniTarr!', avatar: 'https://i.pravatar.cc/150?u=a04258114e29026702d', time: 'Hace 22m', neighborhood: 'Eixample' },
+    { id: '5', user: 'Carlos R.', text: '🚧 Ojo: la Calle Major sigue cortada de 08h a 14h por las obras. Pasad por la Baixada del Roser.', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026704d', time: 'Hace 30m', neighborhood: 'Part Alta' },
+    { id: '6', user: 'TGN Cultura', text: '🎷 Concert de Jazz gratuito al Amfiteatre Romà el sábado 25 Oct a las 19h. ¡Plazas limitadas — llega pronto!', avatar: 'https://ui-avatars.com/api/?name=TC&background=3b82f6&color=fff', time: 'Hace 45m', isOfficial: true },
+    { id: '7', user: 'Laura P.', text: '🛒 Mercadillo de Segunda Mano en Bonavista este domingo 26 Oct, de 09h a 14h. Ropa vintage, productos de temporada...', avatar: 'https://i.pravatar.cc/150?u=a048581f4e29026701d', time: 'Hace 1h', neighborhood: 'Bonavista' },
+    { id: '8', user: 'Jordi V.', text: '🎃 ¡8 días para Halloween! La Ruta de Terror de la Part Alta ya tiene inscripciones abiertas. ¡Gratis en los Centros Cívicos!', avatar: 'https://i.pravatar.cc/150?u=b048581f4e29026701d', time: 'Hace 1h 20m', neighborhood: 'Part Alta' },
+    { id: '9', user: 'EMATSA', text: '💧 Corte de suministro agua previsto viernes 24 Oct de 09h a 12h en zonas de Torreforta. Suministro garantizado antes del mediodía.', avatar: 'https://ui-avatars.com/api/?name=EM&background=0ea5e9&color=fff', time: 'Hace 2h', isOfficial: true },
+    { id: '10', user: 'Cruz Roja TGN', text: '🔴 Cruz Roja Tarragona busca voluntarios para este otoño 2026. Contacta: 977 221 009. ¡Tu tiempo puede cambiar una vida!', avatar: 'https://ui-avatars.com/api/?name=CR&background=dc2626&color=fff', time: 'Hace 2h 30m', isOfficial: true }
 ];
 
 const tickerMessages = [
-    "🌰 OTOÑO: Los puestos de castañas y boniatos ya están instalados por la ciudad.",
-    "🌡️ METEO: Temperaturas de otoño, 19°C. Rachas de viento moderado en el litoral esta tarde.",
-    "🛒 MERCADILLO BONAVISTA: Este domingo 18 Oct de 09h a 14h. L54 y L3 reforzadas.",
-    "💼 EMPLEO: Abiertas las bolsas de trabajo para la campaña de invierno y Navidad.",
-    "🚧 OBRAS PART ALTA: Cortes en Calle Major de 08h a 14h, lunes a viernes.",
-    "🏛️ CULTURA: Visita guiada gratuita al Anfiteatro Romano hoy a las 17h.",
-    "🚌 EMT: Líneas L54 y L3 reforzadas hoy miércoles. Servicio normal en el resto."
+    "🌰 CASTANYADA: Sábado 25 Oct · 17h · Plaza de la Font. ¡Gratis! Castañas, boniatos y música.",
+    "🐈 GATUNINOS TORREFORTA: Necesitan mantas y toallas para colonias felinas. Entrega en Centre Cívic Torreforta.",
+    "🎃 HALLOWEEN: Ruta de Terror Part Alta · Viernes 31 Oct. Inscripción gratuita en Centros Cívicos.",
+    "🎷 JAZZ AL AMFITEATRE: Concert gratuito sábado 25 Oct a las 19h. Plazas limitadas.",
+    "💼 EMPLEO NAVIDAD 2026: Abiertas bolsas de trabajo en Parc Central, Riu Clar y comercio local.",
+    "🚧 OBRAS PART ALTA: Calle Major cortada de 08h a 14h, lunes a viernes. Usa la Baixada del Roser.",
+    "🛒 MERCADILLO BONAVISTA: Domingo 26 Oct de 09h a 14h. Productos de temporada y segunda mano.",
+    "🔴 CRUZ ROJA TGN: Busca voluntarios para otoño 2026. Tel: 977 221 009. ¡Incorporación inmediata!"
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {

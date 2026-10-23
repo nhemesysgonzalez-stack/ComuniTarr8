@@ -42,31 +42,49 @@ const MicroVolunteering: React.FC = () => {
 
             const realOpportunitiesExamples: VolunteerOpportunity[] = [
                 {
-                    id: 'jun-02-vol-1',
-                    creator_id: 'v8',
-                    title: '📚 Recogida de Libros de Texto',
-                    description: 'Con el inicio de curso cerca, buscamos voluntarios para clasificar y organizar la donación de libros escolares en el centro cívico de Torreforta.',
-                    neighborhood: 'Torreforta',
-                    contact_info: '644 11 22 33 (AMPA). ¡Gracias!',
-                    created_at: '2026-09-29T08:00:00Z'
+                    id: 'oct-26-vol-1',
+                    creator_id: 'v-halloween',
+                    title: '🎃 Decoración Halloween Infantil',
+                    description: 'Jueves 23 Oct, preparar la zona de juegos del Parc de la Ciutat para la fiesta del viernes.',
+                    neighborhood: 'Eixample',
+                    contact_info: 'Contactar por la app',
+                    created_at: '2026-10-23T08:30:00Z'
                 },
                 {
-                    id: 'jun-02-vol-beach',
-                    creator_id: 'v9',
-                    title: '🤝 Acompañamiento Diada',
-                    description: 'Buscamos voluntarios para acompañar a personas con movilidad reducida a los actos institucionales del 11 de Septiembre en Tarragona.',
+                    id: 'oct-26-vol-2',
+                    creator_id: 'v-caritas',
+                    title: '📦 Banco de Alimentos Cáritas',
+                    description: 'Recogida y clasificación alimentos en Cáritas TGN (C/ Apodaca, 8). Martes y jueves, 10-13h.',
                     neighborhood: 'GENERAL',
-                    contact_info: '611 00 22 33 (Paco). Nos vemos en el puesto de Cruz Roja.',
-                    created_at: '2026-09-29T09:00:00Z'
+                    contact_info: 'Contactar por la app',
+                    created_at: '2026-10-23T07:15:00Z'
                 },
                 {
-                    id: 'jun-02-vol-seniors',
-                    creator_id: 'v10',
-                    title: '📦 Ayuda a Mayores: Compras bajo la lluvia',
-                    description: 'Con la alerta de tormentas de hoy 29 de Septiembre, si algún vecino mayor necesita que le acerquemos pan o medicinas sin salir a la lluvia, avisad.',
+                    id: 'oct-26-vol-3',
+                    creator_id: 'v-arbres',
+                    title: '🌳 Plantada Arbres Tardor',
+                    description: 'Plantación de árboles con el Ayuntamiento en el Parc del Francolí. Sábado 25 Oct, 09:30h.',
                     neighborhood: 'GENERAL',
-                    contact_info: '977 12 34 56 (Coordinadora Voluntariado)',
-                    created_at: '2026-09-29T10:00:00Z'
+                    contact_info: 'Contactar por la app',
+                    created_at: '2026-10-22T14:00:00Z'
+                },
+                {
+                    id: 'oct-26-vol-4',
+                    creator_id: 'v-gent-gran',
+                    title: '👴 Acompañamiento Gent Gran',
+                    description: 'Acompañar a personas mayores a hacer gestiones. Flor de Tardor (C/ Lleida, 4). Cualquier día laboral.',
+                    neighborhood: 'GENERAL',
+                    contact_info: 'Contactar por la app',
+                    created_at: '2026-10-21T09:30:00Z'
+                },
+                {
+                    id: 'oct-26-vol-5',
+                    creator_id: 'v-biblioteca',
+                    title: '📚 Biblioteca Itinerant',
+                    description: 'Llevar libros a vecinos con movilidad reducida de la Part Alta. Sábados 10-12h.',
+                    neighborhood: 'Part Alta',
+                    contact_info: 'Contactar por la app',
+                    created_at: '2026-10-20T16:45:00Z'
                 }
             ];
 
@@ -175,19 +193,34 @@ const MicroVolunteering: React.FC = () => {
                                                     Publicado por vecino
                                                 </span>
                                             </div>
+                                            <div className="flex items-center gap-2">
+                                                <span className="material-symbols-outlined text-sm text-blue-500">location_on</span>
+                                                <span className="text-xs font-bold text-gray-500 dark:text-gray-400">
+                                                    {opportunity.neighborhood}
+                                                </span>
+                                            </div>
                                             {opportunity.contact_info && (
                                                 <>
                                                     <div className="h-4 w-px bg-gray-200 dark:bg-gray-700"></div>
-                                                    <a
-                                                        href={`tel:${opportunity.contact_info}`}
-                                                        className="flex items-center gap-2 px-4 py-2 bg-blue-500/10 text-blue-500 rounded-xl text-xs font-black hover:bg-blue-500 hover:text-white transition-all"
-                                                    >
-                                                        <span className="material-symbols-outlined text-sm">call</span>
-                                                        AYUDAR
-                                                    </a>
-                                                    <span className="text-[10px] font-bold text-gray-400">
-                                                        📞 {opportunity.contact_info}
-                                                    </span>
+                                                    {opportunity.contact_info.toLowerCase().includes('app') ? (
+                                                        <span className="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-xl text-xs font-black">
+                                                            <span className="material-symbols-outlined text-sm">chat</span>
+                                                            {opportunity.contact_info}
+                                                        </span>
+                                                    ) : (
+                                                        <>
+                                                            <a
+                                                                href={`tel:${opportunity.contact_info.replace(/\s+/g, '')}`}
+                                                                className="flex items-center gap-2 px-4 py-2 bg-blue-500/10 text-blue-500 rounded-xl text-xs font-black hover:bg-blue-500 hover:text-white transition-all"
+                                                            >
+                                                                <span className="material-symbols-outlined text-sm">call</span>
+                                                                AYUDAR
+                                                            </a>
+                                                            <span className="text-[10px] font-bold text-gray-400">
+                                                                📞 {opportunity.contact_info}
+                                                            </span>
+                                                        </>
+                                                    )}
                                                 </>
                                             )}
                                         </div>
@@ -248,10 +281,10 @@ const MicroVolunteering: React.FC = () => {
                                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Ayuda Montaje', d: 'Busco 1-2 personas para ayudar a descargar cajas de material hoy Martes 29 a las 18:30 en la Rambla.', c: '644 33 22 11' },
-                                            { t: 'Paseo Perro', d: '¿Algún vecino puede sacar a mi perro Hoy Domingo por la tarde? Estaré trabajando hasta tarde de urgencia.', c: '633 44 55 66' },
-                                            { t: 'Ayuda Móvil', d: 'Enseñar a usar la app del autobús a vecinos mayores este lunes 22 por la mañana.', c: '611 22 33 44' },
-                                            { t: 'Ensayo Coral', d: '¿Quién va al ensayo de hoy Martes 29? Me gustaría ir por primera vez acompañado.', c: 'Foro · Canal Cultura' }
+                                            { t: 'Ayuda Montaje', d: 'Busco 1-2 personas para ayudar a descargar cajas de material hoy Jueves 23 a las 18:30 en la Rambla.', c: 'Contactar por la app' },
+                                            { t: 'Paseo Perro', d: '¿Algún vecino puede sacar a mi perro este sábado 25 por la tarde? Estaré trabajando hasta tarde de urgencia.', c: 'Contactar por la app' },
+                                            { t: 'Ayuda Móvil', d: 'Enseñar a usar la app del autobús a vecinos mayores este viernes 24 por la mañana.', c: 'Contactar por la app' },
+                                            { t: 'Ensayo Coral', d: '¿Quién va al ensayo de hoy Jueves 23? Me gustaría ir por primera vez acompañado.', c: 'Contactar por la app' }
                                         ].map((idea, i) => (
 
                                             <button
@@ -302,7 +335,7 @@ const MicroVolunteering: React.FC = () => {
                                         onChange={(e) => setOpportunityContact(e.target.value)}
                                         required
                                         className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-blue-500/20 outline-none"
-                                        placeholder="Teléfono o email"
+                                        placeholder="Ej: Contactar por la app o 977 xx xx xx"
                                     />
                                     <p className="text-[10px] text-gray-400 mt-2">
                                         Los voluntarios te contactarán para ayudarte

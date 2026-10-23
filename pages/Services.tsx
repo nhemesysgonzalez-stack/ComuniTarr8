@@ -140,11 +140,11 @@ export const Services: React.FC = () => {
               <div className="absolute -right-8 -bottom-8 opacity-10">
                 <span className="material-symbols-outlined text-[200px]">person_add</span>
               </div>
-              <h3 className="text-3xl font-black mb-2 relative z-10">EMPLEO 2026</h3>
+              <h3 className="text-3xl font-black mb-2 relative z-10">CAMPAÑA NAVIDAD 2026</h3>
               <p className="text-lg opacity-90 mb-6 max-w-2xl relative z-10 font-medium">
-                Hostelería, servicios turísticos y más. Todas las ofertas verificadas con contacto directo. Tarragona genera más de 300 vacantes.
+                Logística, comercio y hostelería. Todas las ofertas verificadas esta semana de octubre 2026 con contacto directo. La campaña de Navidad genera más de 400 vacantes en Tarragona.
               </p>
-              <button onClick={() => alert("Próximas actividades Tarragona Impulsa:\n• Jueves 15 Oct — Taller: CV Digital (10h)\n• Viernes 16 Oct — Orientación Laboral Individual (cita previa)\n• Llamar al 977 29 61 50 para inscribirse")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+              <button onClick={() => alert("Próximas actividades y formación:\n• Orientació Laboral — Tarragona Impulsa — Jue 23 Oct, 9-14h. Cita previa: 977 296 150\n• Taller CV Digital con IA — Martes 28 Oct, 17h, Centre Cívic Centre. Gratuito.")} className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                 VER PRÓXIMAS ACTIVIDADES
               </button>
             </div>
@@ -152,16 +152,23 @@ export const Services: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border-2 border-dashed border-emerald-500/30 shadow-sm">
                 <h4 className="font-black text-emerald-600 mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
-                  <span className="material-symbols-outlined text-base">work_history</span> PROGRAMA "TALENT SÉNIOR"
+                  <span className="material-symbols-outlined text-base">work_history</span> FORMACIÓN &amp; ORIENTACIÓN LABORAL
                 </h4>
                 <div className="space-y-3">
                   <div className="p-4 bg-emerald-50 dark:bg-emerald-900/10 rounded-2xl">
-                    <p className="text-sm font-black text-emerald-700">Tarragona Impulsa (Ajuntament)</p>
-                    <p className="text-xs text-gray-500 mb-2">Servicio especializado en orientación para mayores de 45.</p>
-                    <a href="https://www.tarragona.cat/tarragonaimpulsa" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black underline uppercase text-emerald-600">Pedir cita orientación</a>
+                    <p className="text-sm font-black text-emerald-700">Orientació Laboral &mdash; Tarragona Impulsa</p>
+                    <p className="text-xs text-gray-500 mb-2">Jue 23 Oct, 9-14h. Cita previa: 977 296 150</p>
+                    <a href="tel:977296150" className="text-[10px] font-black text-emerald-600 flex items-center gap-1 hover:underline">
+                      <span className="material-symbols-outlined text-xs">call</span> 977 296 150 (Cita previa)
+                    </a>
                   </div>
                   <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl">
-                    <p className="text-sm font-black text-gray-700 dark:text-white">Cambra de Comerç - PICE Sénior</p>
+                    <p className="text-sm font-black text-gray-700 dark:text-white">Taller CV Digital con IA</p>
+                    <p className="text-xs text-gray-500 mb-2">Martes 28 Oct, 17h, Centre Cívic Centre. Gratuito.</p>
+                    <a href="https://www.tarragona.cat/centres-civics" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black underline uppercase text-emerald-600">Inscripción libre en Centre Cívic</a>
+                  </div>
+                  <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+                    <p className="text-sm font-black text-gray-700 dark:text-white">Cambra de Comerç - PICE Sénior (+45)</p>
                     <p className="text-xs text-gray-500">Programas de formación en digitalización y ventas para perfiles con experiencia.</p>
                     <a href="tel:977218100" className="text-[10px] font-black text-emerald-600 flex items-center gap-1 hover:underline mt-1">
                       <span className="material-symbols-outlined text-xs">call</span> 977 21 81 00
@@ -171,32 +178,42 @@ export const Services: React.FC = () => {
               </div>
 
               <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm">
-                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">★ OFERTAS DE EMPLEO VERIFICADAS (Octubre 2026)</h4>
+                <h4 className="font-black text-gray-400 mb-4 uppercase tracking-widest text-[9px]">★ OFERTAS VERIFICADAS · ESTA SEMANA (23 OCT 2026) · CAMPAÑA NAVIDAD</h4>
                 <div className="space-y-4">
+                  <div className="border-l-4 border-indigo-500 pl-4">
+                    <p className="text-xs font-black dark:text-white">&ldquo;Monitor/a activitats Halloween &mdash; AMPA Col&middot;legis TGN&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Jornada puntual 31 oct, actividades infantiles, requiere titulación. Contacto: ampa.tgn@gmail.com</p>
+                    <a href="mailto:ampa.tgn@gmail.com" className="text-[10px] font-black text-indigo-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">mail</span> ampa.tgn@gmail.com</a>
+                  </div>
                   <div className="border-l-4 border-rose-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Administrativo/a Contable &mdash; Asesoría Tarraco&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Jornada completa. Imprescindible experiencia en facturación. Incorporación inmediata.</p>
-                    <a href="tel:977220101" className="text-[10px] font-black text-rose-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 22 01 01</a>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Repartidor/a Logística &mdash; Amazon Logistics Tarragona&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Reparto de paquetería campaña Navidad. Carnet de conducir B. Nov-Ene. Jornada completa.</p>
+                    <a href="tel:977543200" className="text-[10px] font-black text-rose-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 54 32 00</a>
                   </div>
                   <div className="border-l-4 border-sky-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Operario/a de Logística &mdash; Polígono Riu Clar&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Preparación de pedidos y manejo de carretilla (carnet en vigor). Turnos rotativos.</p>
-                    <a href="tel:977543210" className="text-[10px] font-black text-sky-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 54 32 10</a>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Dependiente/a Campaña &mdash; Parc Central (varias tiendas)&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Contrato temporal Nov-Ene. Atención al cliente y reposición. Fines de semana obligatorios.</p>
+                    <a href="tel:977239312" className="text-[10px] font-black text-sky-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 23 93 12</a>
                   </div>
                   <div className="border-l-4 border-amber-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Dependiente/a Tienda &mdash; Parc Central&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Tienda de moda. Fines de semana y festivos. Contrato inicial de 6 meses.</p>
-                    <a href="tel:977239312" className="text-[10px] font-black text-amber-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 23 93 12</a>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Operario/a Almacén &mdash; Polígono Riu Clar (empresa logística)&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Preparación de pedidos y picking. Turno de mañana o tarde. Incorporación inmediata.</p>
+                    <a href="tel:977543210" className="text-[10px] font-black text-amber-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 54 32 10</a>
                   </div>
                   <div className="border-l-4 border-teal-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Cocinero/a &mdash; Restaurante El Serrallo&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Especialidad en arroces y marisco. Turno seguido. Dos días de fiesta semanales.</p>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Camarero/a &mdash; Restaurante El Serrallo (temporada invierno)&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Jornada completa. Especialidad en arroces y marisco. Dos días libres semanales.</p>
                     <a href="tel:977223366" className="text-[10px] font-black text-teal-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 22 33 66</a>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="text-xs font-black dark:text-white">&ldquo;Técnico/a Informático &mdash; Tarragona Centro&rdquo;</p>
-                    <p className="text-[10px] text-gray-500">Soporte a usuarios y mantenimiento de redes. Contrato indefinido.</p>
-                    <a href="tel:977242030" className="text-[10px] font-black text-purple-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 24 20 30</a>
+                    <p className="text-xs font-black dark:text-white">&ldquo;Auxiliar Administrativo/a &mdash; Gestoría Tarragona Centre&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Atención al cliente y gestión de documentación. Contrato indefinido. Experiencia valorada.</p>
+                    <a href="tel:977220101" className="text-[10px] font-black text-purple-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 22 01 01</a>
+                  </div>
+                  <div className="border-l-4 border-orange-500 pl-4">
+                    <p className="text-xs font-black dark:text-white">&ldquo;Monitor/a de Lleure &mdash; Extraescolar Colegio La Salle TGN&rdquo;</p>
+                    <p className="text-[10px] text-gray-500">Actividades extraescolares tardes (16h-18h). Titulación de monitor/a requerida.</p>
+                    <a href="tel:977242030" className="text-[10px] font-black text-orange-600 flex items-center gap-1 hover:underline mt-1"><span className="material-symbols-outlined text-xs">call</span> 977 24 20 30</a>
                   </div>
                 </div>
               </div>
@@ -211,13 +228,13 @@ export const Services: React.FC = () => {
                 <span className="material-symbols-outlined">school</span> CALENDARIO ESCOLAR
               </h3>
               <div className="flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-sm mb-3">
-                <div className="size-12 rounded-xl bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600 font-bold text-xl">
-                  1
+                <div className="size-12 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600 font-bold text-xl">
+                  31
                 </div>
                 <div>
-                  <p className="text-xs font-black uppercase text-red-500">SEPTIEMBRE</p>
-                  <p className="text-sm font-bold text-gray-800 dark:text-white">Vacaciones de Otoño</p>
-                  <p className="text-[10px] text-gray-500">Mes de septiembre. No hay actividad escolar regular. Consulta horarios de ludotecas.</p>
+                  <p className="text-xs font-black uppercase text-amber-600">31 OCTUBRE 2026</p>
+                  <p className="text-sm font-bold text-gray-800 dark:text-white">Castanyada y Todos los Santos</p>
+                  <p className="text-[10px] text-gray-500">Próximo festivo escolar y puente de otoño. Actividades y castañadas populares en los centros escolares.</p>
                 </div>
               </div>
               <a
@@ -491,23 +508,31 @@ export const Services: React.FC = () => {
               </div>
 
               {/* Categoría 3: Animales y Medio Ambiente */}
-              <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all">
+              <div className="bg-white dark:bg-surface-dark p-6 rounded-3xl border border-orange-200 dark:border-orange-800/50 shadow-sm hover:shadow-md transition-all relative overflow-hidden">
+                <div className="absolute top-3 right-3 px-2 py-1 bg-red-500 text-white text-[9px] font-black uppercase rounded-full animate-pulse">URGENTE</div>
                 <h4 className="font-black text-orange-600 mb-4 uppercase tracking-widest text-xs flex items-center gap-2">
-                  <span className="material-symbols-outlined">pets</span> ANIMALES Y NATURALEZA
+                  <span className="material-symbols-outlined">pets</span> ANIMALES Y COLONIAS FELINAS
                 </h4>
                 <div className="space-y-3">
+                  <div className="p-4 bg-orange-50 dark:bg-orange-900/10 rounded-2xl border-2 border-dashed border-orange-300 dark:border-orange-700">
+                    <p className="text-sm font-black dark:text-white flex items-center gap-2">🐈 Gatuninos Torreforta — <span className="text-red-500">SE NECESITAN MANTAS</span></p>
+                    <p className="text-[11px] text-gray-600 dark:text-gray-400 mt-1 mb-3 leading-relaxed">URGENTE para este invierno 2026: necesitan mantas, toallas y ropa de hogar usada (limpias, sin plumas) para las colonias felinas del barrio Torreforta. Entrega en el Centre Cívic Torreforta. ¡Toda ayuda cuenta!</p>
+                    <a href="https://www.facebook.com/GatuninosTorreforta" target="_blank" rel="noopener noreferrer" className="px-3 py-2 bg-blue-600 text-white rounded-lg text-[10px] font-black uppercase tracking-widest inline-flex items-center gap-1">
+                      <span className="material-symbols-outlined text-xs">thumb_up</span> Facebook: Gatuninos Torreforta
+                    </a>
+                  </div>
                   <div className="p-3 bg-orange-50 dark:bg-orange-900/10 rounded-2xl border border-orange-100 dark:border-orange-800/30">
-                    <p className="text-sm font-black dark:text-white">Protectora Tarragona (APAPT)</p>
-                    <p className="text-[11px] text-gray-500 mb-2">Paseo de perros, limpieza y cuidado de colonias felinas.</p>
-                    <a href="https://apapt.org" target="_blank" className="text-[10px] font-black text-orange-600 flex items-center gap-1 hover:underline">
-                      <span className="material-symbols-outlined text-xs">volunteer_activism</span> Ver cómo ayudar
+                    <p className="text-sm font-black dark:text-white">Sociedad Protectora d'Animals TGN (APAPT)</p>
+                    <p className="text-[11px] text-gray-500 mb-2">Paseo de perros, limpieza y cuidado de colonias felinas. Polígono Riu Clar.</p>
+                    <a href="tel:977238100" className="text-[10px] font-black text-orange-600 flex items-center gap-1 hover:underline">
+                      <span className="material-symbols-outlined text-xs">call</span> 977 238 100
                     </a>
                   </div>
                   <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-2xl">
-                    <p className="text-sm font-black dark:text-white">Associació Aurora</p>
-                    <p className="text-[11px] text-gray-500 mb-2">Proyectos de recuperación del litoral y limpieza de playas.</p>
-                    <a href="mailto:info@associacioaurora.org" className="text-[10px] font-black text-orange-600 flex items-center gap-1 hover:underline">
-                      <span className="material-symbols-outlined text-xs">mail</span> Enviar solicitud
+                    <p className="text-sm font-black dark:text-white">Fundació d'Animals de Companyia TGN</p>
+                    <p className="text-[11px] text-gray-500 mb-2">Rescates y adopciones en Camp de Tarragona. Buscan casas de acogida urgentes.</p>
+                    <a href="https://fundacioanimals.org" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-orange-600 flex items-center gap-1 hover:underline">
+                      <span className="material-symbols-outlined text-xs">open_in_new</span> fundacioanimals.org
                     </a>
                   </div>
                 </div>
@@ -560,7 +585,7 @@ export const Services: React.FC = () => {
                 <div className="space-y-3">
                   <div className="p-4 bg-orange-50 dark:bg-orange-900/10 rounded-2xl">
                     <p className="text-sm font-black dark:text-white">Centres Cívics Tarragona</p>
-                    <p className="text-xs text-gray-500 mb-2">Talleres de primavera, exposiciones y cursos en toda la red de centros.</p>
+                    <p className="text-xs text-gray-500 mb-2">Talleres de otoño, exposiciones y cursos en toda la red de centros.</p>
                     <a href="https://www.tarragona.cat/centres-civics" target="_blank" className="text-[10px] font-black underline uppercase text-orange-600">Ver programación completa</a>
                   </div>
                   <div className="flex flex-col gap-2">
@@ -572,7 +597,7 @@ export const Services: React.FC = () => {
                       <span className="text-xs font-bold">C.C. Sant Pere i Sant Pau</span>
                       <span className="text-[9px] font-black bg-green-100 text-green-700 px-2 py-0.5 rounded-full uppercase">ABIERTO - Horario Otoño</span>
                     </div>
-                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Otoño 2026: Los Centros Cívicos abren en horario reducido (9h-14h) durante septiembre y septiembre.</p>
+                    <p className="text-[9px] text-gray-400 font-bold mt-2">💡 Otoño 2026: Cursos y actividades del trimestre de otoño en marcha (octubre - diciembre 2026). Consulta plazas disponibles en tu centro cívico.</p>
                   </div>
                 </div>
               </div>

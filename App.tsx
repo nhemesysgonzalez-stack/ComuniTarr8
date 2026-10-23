@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-// Deployment trigger: Oct 14 2026 (Miércoles Otoño Update - Revisión Completa Módulos + Corrección Cintillo + Mapa + Calendar Bug Fix)
+// Deployment trigger: Oct 20 2026 (Lunes Otoño - Halloween, Castanyada, Campaña Navidad, Empleos actualizados)
 import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import Sidebar from './components/Sidebar';
@@ -35,6 +35,8 @@ import Neighbors from './pages/Neighbors';
 import Invite from './pages/Invite';
 import Incidents from './pages/Incidents';
 import BusinessDirectory from './pages/BusinessDirectory';
+import FirstDate from './pages/FirstDate';
+import TrainChat from './pages/TrainChat';
 import { SOSButton } from './components/SOSButton';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -156,6 +158,8 @@ function App() {
                       <Route path="/invite" element={<Invite />} />
                       <Route path="/incidents" element={<Incidents />} />
                       <Route path="/business-directory" element={<BusinessDirectory />} />
+                      <Route path="/first-date" element={<FirstDate />} />
+                      <Route path="/train-chat" element={<TrainChat />} />
                     </Routes>
                   </Layout>
                 </ProtectedRoute>

@@ -46,36 +46,63 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'ayuda_mutua',
                     title: '🕊️ Grupo de Apoyo al Duelo (Tarragona)',
                     neighborhood: 'GENERAL',
-                    description: 'Acompañamiento profesional y mutuo para afrontar la pérdida de seres queridos. Próxima sesión: Este jueves a las 18:00h.',
+                    description: 'Acompañamiento profesional y mutuo para afrontar la pérdida de seres queridos. Próxima sesión: jueves 23 de octubre a las 18:00h en Centre Cívic Centre.',
                     contact_info: '977 24 49 71 (Cita Previa)',
-                    created_at: '2026-10-01T08:00:00Z'
+                    created_at: '2026-10-23T08:00:00Z'
                 },
                 {
-                    id: 'real-animales',
-                    initiator_id: 'protectora',
-                    title: '🐾 Protectora de Animales y Plantas',
+                    id: 'real-gatuninos',
+                    initiator_id: 'gatuninos',
+                    title: '🐈 Gatuninos Torreforta — Se Necesitan Mantas',
+                    neighborhood: 'Torreforta',
+                    description: 'URGENTE (Jue 23 Oct 2026): Gatuninos Torreforta pide mantas, toallas y ropa de hogar en desuso para las colonias felinas del barrio este invierno. Entrega en el Centro Cívico Torreforta. ¡Gracias a todos los que ayudan!',
+                    contact_info: 'Buscar en Facebook: Gatuninos Torreforta',
+                    created_at: '2026-10-23T07:00:00Z'
+                },
+                {
+                    id: 'real-cruzroja',
+                    initiator_id: 'cruzroja',
+                    title: '🔴 Cruz Roja Tarragona — Voluntariado Activo',
                     neighborhood: 'GENERAL',
-                    description: 'Red de cuidadores y voluntarios. Buscamos casas de acogida urgentes para perros y gatos rescatados durante este mes de octubre.',
-                    contact_info: 'Contacta por la app o visítanos en el refugio',
-                    created_at: '2026-10-02T09:00:00Z'
+                    description: 'Cruz Roja Tarragona busca voluntarios para apoyo social, acompañamiento a personas mayores y banco de alimentos. Actividad continua, incorporación inmediata este octubre 2026.',
+                    contact_info: '977 221 009 | tarragona@cruzroja.es',
+                    created_at: '2026-10-23T08:30:00Z'
+                },
+                {
+                    id: 'real-amslm',
+                    initiator_id: 'amslm',
+                    title: '🧠 AMSLM La Muralla — Salud Mental y Apoyo Mutuo',
+                    neighborhood: 'GENERAL',
+                    description: 'La Associació Ment i Salut La Muralla (AMSLM) organiza grupos de apoyo mutuo para personas con problemas de salud mental y sus familias. Hotel d’Entitats, C/ Pons d’Icart.',
+                    contact_info: 'amslm@amslm.cat | 977 235 700',
+                    created_at: '2026-10-23T09:00:00Z'
                 },
                 {
                     id: 'real-siad-dones',
                     initiator_id: 'ayto',
                     title: '🤝 SIAD - Atención y Apoyo a Mujeres',
                     neighborhood: 'GENERAL',
-                    description: 'Servicio público municipal de información y atención a mujeres. Abierto de lunes a viernes. Urgencias: Teléfono 016 o 900 900 120 activos 24h.',
+                    description: 'Servicio público municipal de información y atención a mujeres de Tarragona. Horario: L-V de 9:00 a 14:00h. Urgencias: 016 o 900 900 120 (activos 24h gratuitos).',
                     contact_info: '977 29 62 79 (Plaça de la Font 1)',
-                    created_at: '2026-10-03T09:30:00Z'
+                    created_at: '2026-10-23T09:30:00Z'
+                },
+                {
+                    id: 'real-caritas',
+                    initiator_id: 'caritas',
+                    title: '📦 Càritas Diocesana Tarragona',
+                    neighborhood: 'GENERAL',
+                    description: 'Càritas Tarragona busca voluntarios para el banco de alimentos y apoyo a familias en situación vulnerable. Martes y jueves, 10-13h. C/ Apodaca, 8.',
+                    contact_info: '977 219 058 | tarragona@caritasdtarragona.cat',
+                    created_at: '2026-10-23T10:00:00Z'
                 },
                 {
                     id: 'real-jubilats',
                     initiator_id: 'associacio',
                     title: '👴 Llar de Jubilats Pere Martell',
                     neighborhood: 'GENERAL',
-                    description: 'Centro para un envejecimiento activo. Actividades semanales: Talleres de memoria, gimnasia suave y club de petanca los miércoles por la tarde.',
+                    description: 'Centro para un envejecimiento activo en Tarragona. Actividades de otoño 2026: talleres de memòria, gimnàstica suau y petanca los miércoles por la tarde.',
                     contact_info: '977 21 55 14 (Tarragona)',
-                    created_at: '2026-10-04T10:00:00Z'
+                    created_at: '2026-10-23T10:00:00Z'
                 }
             ];
 
@@ -123,7 +150,7 @@ const SupportCircles: React.FC = () => {
                         CÍRCULOS DE APOYO
                     </h1>
                     <p className="text-gray-600 dark:text-gray-300 text-lg font-bold max-w-2xl mx-auto mb-8">
-                        Grupos de apoyo emocional, crianza, cuidados o cualquier situación que requiera acompañamiento.
+                        Grupos de apoyo emocional, crianza, cuidados o cualquier situación que requiera acompañamiento en este otoño 2026 en Tarragona.
                     </p>
                     <button
                         onClick={() => setShowCreateModal(true)}
@@ -142,12 +169,16 @@ const SupportCircles: React.FC = () => {
                         <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest mb-6">Iniciativa Destacada • Salud y Juventud</span>
                         <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight">Apoyo a Adolescentes y Jóvenes</h2>
                         <p className="text-lg opacity-90 font-medium mb-8 leading-relaxed">
-                            Impulsado por el Ayuntamiento de Tarragona, el servicio "Ara t'escolto" ofrece apoyo emocional gratuito, directo y confidencial a jóvenes de 16 a 30 años. Si sientes estrés, ansiedad o solo necesitas hablar, escríbenos.
+                            Impulsado por el Ayuntamiento de Tarragona, el servicio municipal "Ara t'escolto" ofrece apoyo emocional gratuito, directo y confidencial a jóvenes de 16 a 30 años. El servicio funciona presencialmente y también por email (joventut@tarragona.cat). Si sientes estrés, ansiedad o solo necesitas hablar, no dudes en ponerte en contacto.
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <a href="https://www.tarragona.cat/serveis-a-la-persona/joventut" target="_blank" rel="noreferrer" className="px-8 py-4 bg-emerald-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2">
                                 <span className="material-symbols-outlined text-sm">open_in_new</span>
-                                MÁS INFORMACIÓN
+                                INFORMACIÓN AYUNTAMIENTO
+                            </a>
+                            <a href="mailto:joventut@tarragona.cat" className="px-8 py-4 bg-white/20 hover:bg-white/30 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2 backdrop-blur-md">
+                                <span className="material-symbols-outlined text-sm">mail</span>
+                                CONTACTAR POR EMAIL
                             </a>
                         </div>
                     </div>
@@ -191,7 +222,7 @@ const SupportCircles: React.FC = () => {
                         <div className="flex items-center justify-between px-6 pb-6 border-b border-purple-500/10 mb-8">
                             <h2 className="text-3xl font-black dark:text-white uppercase tracking-tight">Círculos en {user?.user_metadata?.neighborhood || 'Part Alta'}</h2>
                             <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-[9px] font-black uppercase tracking-widest border border-purple-200 shadow-sm">
-                                Dinámica de Simulación
+                                Actualizado Octubre 2026
                             </span>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -226,14 +257,23 @@ const SupportCircles: React.FC = () => {
                                         {circle.contact_info && (
                                             <>
                                                 <span className="text-[10px] font-bold text-gray-400">
-                                                    📞 {circle.contact_info}
+                                                    {circle.contact_info.includes('977') ? '📞' : '💬'} {circle.contact_info}
                                                 </span>
-                                                <a
-                                                    href={`tel:${circle.contact_info}`}
-                                                    className="px-5 py-2.5 bg-purple-500/10 text-purple-500 rounded-xl text-xs font-black hover:bg-purple-500 hover:text-white transition-all"
-                                                >
-                                                    UNIRME
-                                                </a>
+                                                {circle.contact_info.includes('977') ? (
+                                                    <a
+                                                        href={`tel:${circle.contact_info.replace(/[^0-9]/g, '').slice(0, 9)}`}
+                                                        className="px-5 py-2.5 bg-purple-500/10 text-purple-500 rounded-xl text-xs font-black hover:bg-purple-500 hover:text-white transition-all"
+                                                    >
+                                                        UNIRME
+                                                    </a>
+                                                ) : (
+                                                    <button
+                                                        onClick={() => alert(`Para unirte a "${circle.title}", contacta al iniciador a través de la app.`)}
+                                                        className="px-5 py-2.5 bg-purple-500/10 text-purple-500 rounded-xl text-xs font-black hover:bg-purple-500 hover:text-white transition-all"
+                                                    >
+                                                        UNIRME
+                                                    </button>
+                                                )}
                                             </>
                                         )}
                                     </div>

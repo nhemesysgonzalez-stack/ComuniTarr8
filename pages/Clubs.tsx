@@ -44,29 +44,47 @@ const Clubs: React.FC = () => {
                 {
                     id: 'c-oct-1',
                     creator_id: 'v1',
-                    name: 'Amantes del Senderismo 🥾',
-                    description: 'Grupo para salir por los caminos de ronda. ¡Este fin de semana hacemos ruta por el Pont del Diable! Subid las fotos al chat.',
+                    name: 'Excursió Senderisme Muntanyes de Prades 🥾',
+                    description: 'Sábado 25 oct, salida a las 08:30 desde Estación Renfe Tarragona. Distancia: 12km, dificultad media. Llevar agua y bocadillo. Canal DEPORTES del foro.',
                     neighborhood: 'GENERAL',
-                    contact_info: 'Canal DEPORTES (Foro)',
-                    created_at: '2026-10-04T08:00:00Z'
+                    contact_info: 'Contactar por la app',
+                    created_at: '2026-10-20T08:30:00Z'
                 },
                 {
                     id: 'c-oct-2',
                     creator_id: 'v2',
-                    name: 'Fotografía de Barrio 📸',
-                    description: 'Hoy Domingo salimos a fotografiar el atardecer desde el Balcón del Mediterráneo (19:00h). ¡Vente con tu cámara!',
-                    neighborhood: 'GENERAL',
-                    contact_info: '644 55 66 77 (Sònia)',
-                    created_at: '2026-10-05T09:00:00Z'
+                    name: 'Fotografia Otoñal 📸',
+                    description: 'Este sábado 25 oct, quedada para fotografiar el atardecer desde el Balcón del Mediterráneo a las 18:30. Traer cámara o móvil.',
+                    neighborhood: 'Part Alta',
+                    contact_info: 'Contactar por la app',
+                    created_at: '2026-10-21T09:00:00Z'
                 },
                 {
                     id: 'c-oct-3',
                     creator_id: 'v3',
-                    name: 'Club de Lectura 📖',
-                    description: 'Ya ha llegado el otoño. Esta semana toca decidir el libro de Octubre. Ya hemos abierto el hilo de debate.',
+                    name: 'Club de Lectura Octubre 📖',
+                    description: "Debatimos 'El nom del vent' de Rothfuss. Martes 28 oct a las 19h en el Café Txoko (C/ Apodaca).",
                     neighborhood: 'GENERAL',
-                    contact_info: 'Canal CULTURA (Foro)',
-                    created_at: '2026-10-06T10:00:00Z'
+                    contact_info: 'Contactar por la app',
+                    created_at: '2026-10-21T18:00:00Z'
+                },
+                {
+                    id: 'c-oct-4',
+                    creator_id: 'v4',
+                    name: 'Halloween Infantil Parc de la Ciutat 🎃',
+                    description: "Viernes 31 oct a las 17h. Disfraces, juegos y merienda gratis. Organizado por l'AMPA. Llevar disfraz.",
+                    neighborhood: 'GENERAL',
+                    contact_info: 'Contactar por la app',
+                    created_at: '2026-10-22T10:00:00Z'
+                },
+                {
+                    id: 'c-oct-5',
+                    creator_id: 'v5',
+                    name: "Cinema al Barri: 'La Sala' 🎥",
+                    description: 'Proyección gratuita en el CC Torreforta, viernes 24 oct a las 20h.',
+                    neighborhood: 'Torreforta',
+                    contact_info: 'Contactar por la app',
+                    created_at: '2026-10-22T16:00:00Z'
                 }
             ];
 
@@ -180,7 +198,7 @@ const Clubs: React.FC = () => {
                                         </div>
                                         {club.contact_info && (
                                             <a
-                                                href={`tel:${club.contact_info}`}
+                                                href={club.contact_info.toLowerCase().includes('app') ? '#!' : `tel:${club.contact_info}`}
                                                 className="px-4 py-2 bg-pink-500/10 text-pink-500 rounded-xl text-xs font-black hover:bg-pink-500 hover:text-white transition-all"
                                             >
                                                 CONTACTAR
@@ -189,7 +207,7 @@ const Clubs: React.FC = () => {
                                     </div>
                                     {club.contact_info && (
                                         <p className="text-[10px] font-bold text-gray-400 mt-3">
-                                            📞 {club.contact_info}
+                                            {club.contact_info.toLowerCase().includes('app') ? '💬' : '📞'} {club.contact_info}
                                         </p>
                                     )}
                                 </div>
@@ -242,9 +260,9 @@ const Clubs: React.FC = () => {
                                     <p className="text-[10px] font-black text-pink-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {[
-                                            { t: 'Fútbol Domingo', d: 'Buscamos gente para completar partido Hoy Domingo a las 20h en Campclar.', c: '611222333' },
-                                            { t: 'Lectura de Otoño', d: 'Quedada para comentar nuestras lecturas de novela negra tomando un café.', c: '644555666' },
-                                            { t: 'Urban Walking', d: 'Caminata rápida por la playa del Miracle después del trabajo.', c: '677888999' }
+                                            { t: 'Senderisme Tardor', d: 'Ruta senderista de otoño por el Pont del Diable y Anella Verda. Dificultad media, traer calzado adecuado.', c: 'Contactar por la app' },
+                                            { t: 'Club de Lectura Novembre', d: 'Propuestas de lecturas para noviembre y encuentro mensual en cafetería céntrica para comentar el libro elegido.', c: 'Contactar por la app' },
+                                            { t: 'Halloween Party', d: 'Organización de actividades, disfraces y merienda infantil para la fiesta comunitaria de Halloween.', c: 'Contactar por la app' }
                                         ].map((idea, i) => (
                                             <button
                                                 key={i}
