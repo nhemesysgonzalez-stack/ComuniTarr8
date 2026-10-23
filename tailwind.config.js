@@ -21,7 +21,7 @@ export default {
                 "text-secondary": "#617589",
             },
             animation: {
-                marquee: 'marquee 25s linear infinite',
+                marquee: 'marquee 60s linear infinite',
                 'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             },
             keyframes: {

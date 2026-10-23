@@ -58,33 +58,33 @@ const Incidents: React.FC = () => {
             if (data) {
                 const mockIncidents: Incident[] = [
                     {
-                        id: 'oct-20-calle-major-obras',
+                        id: 'oct-23-calle-major-obras',
                         user_id: 'admin',
-                        title: '🚧 Obras Calle Major: Cortes continuan',
-                        description: 'Las obras de renovación del pavimento histórico de la Calle Major (Part Alta) continúan esta semana. Cortes de circulación de 08h a 14h de lunes a viernes. Acceso peatonal garantizado. Prevista finalización: 31 de octubre.',
+                        title: '🚧 Obras Calle Major: Cortes esta semana',
+                        description: 'Las obras de renovación del pavimento histórico de la Calle Major (Part Alta) continúan esta semana. Cortes de circulación de 08h a 14h de lunes a viernes. Acceso peatonal garantizado. Prevista finalización: 31 de octubre 2026.',
                         status: 'in_progress',
                         neighborhood: 'Part Alta',
-                        created_at: '2026-10-20T07:00:00Z',
+                        created_at: '2026-10-23T07:00:00Z',
                         profiles: { full_name: 'Guàrdia Urbana TGN', avatar_url: '/logo.svg' }
                     },
                     {
-                        id: 'oct-20-ematsa-partbaixa',
+                        id: 'oct-24-ematsa-torreforta',
                         user_id: 'admin',
-                        title: '💧 EMATSA: Corte de agua miércoles 22 Oct',
-                        description: 'Corte de suministro de agua programado el miércoles 22 de octubre de 09:00h a 12:00h en zonas de la Part Baixa por mantenimiento preventivo en la red. EMATSA garantiza el suministro antes del mediodía.',
+                        title: '💧 EMATSA: Corte de agua viernes 24 Oct',
+                        description: 'Corte de suministro de agua programado el viernes 24 de octubre de 09:00h a 12:00h en zonas de Torreforta por mantenimiento preventivo en la red. EMATSA garantiza el suministro antes del mediodía. Más info: 977 296 100.',
                         status: 'open',
-                        neighborhood: 'Part Baixa',
-                        created_at: '2026-10-20T08:00:00Z',
-                        profiles: { full_name: 'EMATSA', avatar_url: 'https://i.pravatar.cc/150?u=water' }
+                        neighborhood: 'Torreforta',
+                        created_at: '2026-10-23T08:00:00Z',
+                        profiles: { full_name: 'EMATSA', avatar_url: '/logo.svg' }
                     },
                     {
-                        id: 'oct-20-lluvias-alerta',
+                        id: 'oct-23-viento-mestral',
                         user_id: 'admin',
-                        title: '🌧️ Alerta: Lluvias débiles esta tarde',
-                        description: 'Alerta amarilla por lluvias activada a partir de las 15h de hoy lunes 20 de octubre. Precaución al conducir y en zonas bajas del litoral. Se recomienda revisar el estado de toldos y balcones. Posibles acumulaciones de 10-20 mm.',
+                        title: '🌬️ Alerta: Viento Mestral esta tarde (Jue 23 Oct)',
+                        description: 'AEMET activa aviso amarillo por viento del norte moderado esta tarde a partir de las 16h. Rachas de hasta 40 km/h en zonas costeras del Serrallo y Platja Llarga. Precaución en paseos marítimos. Fuente: aemet.es',
                         status: 'open',
                         neighborhood: 'GENERAL',
-                        created_at: '2026-10-20T06:00:00Z',
+                        created_at: '2026-10-23T06:00:00Z',
                         profiles: { full_name: 'Protecció Civil TGN', avatar_url: '/logo.svg' }
                     }
                 ];
