@@ -49,31 +49,31 @@ const Patrols: React.FC = () => {
 
       const patrolExamples: PatrolGroup[] = [
         {
-          id: 'oct-01-pat-manifestation',
+          id: 'oct-27-pat-castanyada',
           creator_id: 'admin',
           name: '🛡️ Seguridad: Castañada y Tots Sants',
-          description: 'Acompañamiento preventivo durante las actividades nocturnas de la Castañada para asegurar el civismo y la tranquilidad vecinal en plazas.',
+          description: 'Acompañamiento preventivo esta semana para las celebraciones de la Castañada y víspera de Tots Sants, asegurando el civismo en plazas y parques del centro.',
           neighborhood: 'Centro',
           contact_info: 'Seguridad Ciudadana — 611 00 22 33',
-          created_at: '2026-10-07T08:00:00Z'
+          created_at: '2026-10-27T08:00:00Z'
         },
         {
-          id: 'oct-01-pat-beach',
+          id: 'oct-27-pat-beach',
           creator_id: 'user1',
           name: '🛡️ Patrulla Litoral: Prevención',
-          description: 'Ronda por las playas de l\'Arrabassada y Llarga. Vigilando zonas afectadas por los últimos temporales de otoño. Todo en orden.',
+          description: 'Ronda preventiva por las playas de l\'Arrabassada y Llarga tras el oleaje otoñal de este fin de semana. Supervisión de paseos y accesos.',
           neighborhood: 'GENERAL',
           contact_info: '644 11 22 33 (Luis)',
-          created_at: '2026-10-07T09:00:00Z'
+          created_at: '2026-10-27T09:00:00Z'
         },
         {
-          id: 'oct-01-pat-feria',
+          id: 'oct-27-pat-bonavista',
           creator_id: 'user2',
           name: '🛡️ Apoyo Mercadillo de Bonavista',
-          description: 'Vigilancia y apoyo de movilidad durante el mercadillo dominical de Bonavista. Colaboración vecinal para facilitar accesos a personas mayores.',
+          description: 'Vigilancia vecinal y apoyo de movilidad para el mercadillo del próximo domingo 2 de noviembre en Bonavista. Asistencia a personas mayores y control de accesos.',
           neighborhood: 'Bonavista',
           contact_info: '622 55 44 33 (Maria)',
-          created_at: '2026-10-07T10:00:00Z'
+          created_at: '2026-10-27T10:00:00Z'
         }
       ];
 

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-// Deployment trigger: Oct 20 2026 (Lunes Otoño - Halloween, Castanyada, Campaña Navidad, Empleos actualizados)
+// Deployment trigger: Oct 26 2026 (Domingo Pre-Halloween — Mercadillo Bonavista, Halloween 5 días, Empleos Navidad actualizados, Calendario 27-31 Oct, Avisos y Flotante actualizados)
 import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import Sidebar from './components/Sidebar';

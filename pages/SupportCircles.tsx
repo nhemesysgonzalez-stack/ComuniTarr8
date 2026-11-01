@@ -46,18 +46,18 @@ const SupportCircles: React.FC = () => {
                     initiator_id: 'ayuda_mutua',
                     title: '🕊️ Grupo de Apoyo al Duelo (Tarragona)',
                     neighborhood: 'GENERAL',
-                    description: 'Acompañamiento profesional y mutuo para afrontar la pérdida de seres queridos. Próxima sesión: jueves 23 de octubre a las 18:00h en Centre Cívic Centre.',
+                    description: 'Acompañamiento profesional y mutuo para afrontar la pérdida de seres queridos. Próxima sesión: jueves 30 de octubre a las 18:00h en Centre Cívic Centre.',
                     contact_info: '977 24 49 71 (Cita Previa)',
-                    created_at: '2026-10-23T08:00:00Z'
+                    created_at: '2026-10-27T08:00:00Z'
                 },
                 {
                     id: 'real-gatuninos',
                     initiator_id: 'gatuninos',
                     title: '🐈 Gatuninos Torreforta — Se Necesitan Mantas',
                     neighborhood: 'Torreforta',
-                    description: 'URGENTE (Jue 23 Oct 2026): Gatuninos Torreforta pide mantas, toallas y ropa de hogar en desuso para las colonias felinas del barrio este invierno. Entrega en el Centro Cívico Torreforta. ¡Gracias a todos los que ayudan!',
+                    description: 'URGENTE (Lun 27 Oct 2026): Gatuninos Torreforta pide mantas, toallas y ropa de hogar en desuso para las colonias felinas del barrio este invierno. Entrega en el Centro Cívico Torreforta. ¡Gracias a todos los que ayudan!',
                     contact_info: 'Buscar en Facebook: Gatuninos Torreforta',
-                    created_at: '2026-10-23T07:00:00Z'
+                    created_at: '2026-10-27T07:00:00Z'
                 },
                 {
                     id: 'real-cruzroja',
@@ -66,7 +66,7 @@ const SupportCircles: React.FC = () => {
                     neighborhood: 'GENERAL',
                     description: 'Cruz Roja Tarragona busca voluntarios para apoyo social, acompañamiento a personas mayores y banco de alimentos. Actividad continua, incorporación inmediata este octubre 2026.',
                     contact_info: '977 221 009 | tarragona@cruzroja.es',
-                    created_at: '2026-10-23T08:30:00Z'
+                    created_at: '2026-10-27T08:30:00Z'
                 },
                 {
                     id: 'real-amslm',
@@ -75,7 +75,7 @@ const SupportCircles: React.FC = () => {
                     neighborhood: 'GENERAL',
                     description: 'La Associació Ment i Salut La Muralla (AMSLM) organiza grupos de apoyo mutuo para personas con problemas de salud mental y sus familias. Hotel d’Entitats, C/ Pons d’Icart.',
                     contact_info: 'amslm@amslm.cat | 977 235 700',
-                    created_at: '2026-10-23T09:00:00Z'
+                    created_at: '2026-10-27T09:00:00Z'
                 },
                 {
                     id: 'real-siad-dones',
@@ -84,7 +84,7 @@ const SupportCircles: React.FC = () => {
                     neighborhood: 'GENERAL',
                     description: 'Servicio público municipal de información y atención a mujeres de Tarragona. Horario: L-V de 9:00 a 14:00h. Urgencias: 016 o 900 900 120 (activos 24h gratuitos).',
                     contact_info: '977 29 62 79 (Plaça de la Font 1)',
-                    created_at: '2026-10-23T09:30:00Z'
+                    created_at: '2026-10-27T09:30:00Z'
                 },
                 {
                     id: 'real-caritas',
@@ -93,7 +93,7 @@ const SupportCircles: React.FC = () => {
                     neighborhood: 'GENERAL',
                     description: 'Càritas Tarragona busca voluntarios para el banco de alimentos y apoyo a familias en situación vulnerable. Martes y jueves, 10-13h. C/ Apodaca, 8.',
                     contact_info: '977 219 058 | tarragona@caritasdtarragona.cat',
-                    created_at: '2026-10-23T10:00:00Z'
+                    created_at: '2026-10-27T10:00:00Z'
                 },
                 {
                     id: 'real-jubilats',
@@ -102,7 +102,7 @@ const SupportCircles: React.FC = () => {
                     neighborhood: 'GENERAL',
                     description: 'Centro para un envejecimiento activo en Tarragona. Actividades de otoño 2026: talleres de memòria, gimnàstica suau y petanca los miércoles por la tarde.',
                     contact_info: '977 21 55 14 (Tarragona)',
-                    created_at: '2026-10-23T10:00:00Z'
+                    created_at: '2026-10-27T10:00:00Z'
                 }
             ];
 

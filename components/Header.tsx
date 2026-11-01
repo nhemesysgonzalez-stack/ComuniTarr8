@@ -18,9 +18,9 @@ export const Header: React.FC = () => {
   const [isDark, setIsDark] = useState(document.documentElement.classList.contains('dark'));
 
   const mockNotifications = [
-    { id: 1, title: '🌰 Castanyada Vecinal · Sáb 25 Oct', desc: 'Plaza de la Font · 17h. Castañas gratis y música en vivo.', time: 'Hoy', icon: 'park', color: 'text-orange-500' },
-    { id: 2, title: '🎷 Jazz al Amfiteatre', desc: 'Sábado 25 Oct · 19h. Concert gratuit. Places limitades.', time: 'Hoy', icon: 'music_note', color: 'text-purple-500' },
-    { id: 3, title: '🚧 Obras Calle Major · Part Alta', desc: 'Cortes L-V de 08h-14h durant tot octubre. Accés peatonal garantit.', time: 'Hace 2h', icon: 'construction', color: 'text-amber-500' }
+    { id: 1, title: '🎃 Halloween en 4 días · Ruta de Terror Part Alta', desc: 'Viernes 31 Oct. Inscripciones cierran miércoles 29. ¡Últimas plazas!', time: 'Hoy', icon: 'celebration', color: 'text-orange-500' },
+    { id: 2, title: '⚡ Corte de luz MAÑANA · Eixample Sur', desc: 'Martes 28 Oct · 08h-11h. FECSA-ENDESA. Prepárense.', time: 'Hoy', icon: 'bolt', color: 'text-amber-500' },
+    { id: 3, title: '🚧 Obras Calle Major · Part Alta', desc: 'Continúan L-V de 08h-17h hasta el 7 Nov. Acceso peatonal por Baixada del Roser.', time: 'Hace 2h', icon: 'construction', color: 'text-amber-500' }
   ];
 
   const toggleDarkMode = () => {

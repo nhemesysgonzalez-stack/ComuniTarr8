@@ -1,357 +1,164 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../services/supabaseClient';
-import { safeSupabaseFetch, safeSupabaseInsert } from '../services/dataHandler';
+import { barrioDeUsuario } from '../services/barrios';
+import { esTelefonoValido, formatearTelefono } from '../services/contacto';
+import { etiquetaDia, fechaLocalISO, useTabla } from '../services/datos';
+import {
+  AvisoBaseDatos, BotonesContacto, CabeceraModulo, Cargando, EstadoVacio,
+  InsigniaFuente, SelectorBarrio, barriosDeVista,
+} from '../components/Modulos';
 
-interface VolunteerOpportunity {
-    id: string;
-    creator_id: string;
-    title: string;
-    description: string;
-    neighborhood: string;
-    contact_info: string;
-    created_at: string;
+interface Voluntariado {
+  id: string;
+  titulo: string;
+  descripcion: string | null;
+  entidad: string | null;
+  barrio: string;
+  ubicacion: string | null;
+  telefono: string | null;
+  email: string | null;
+  url: string | null;
+  fecha_actividad: string | null;
+  hora: string | null;
+  fuente: string;
+  verificado: boolean;
+  creador_id: string | null;
+  fecha_publicacion: string;
 }
 
 const MicroVolunteering: React.FC = () => {
-    const { user } = useAuth();
-    const [opportunities, setOpportunities] = useState<VolunteerOpportunity[]>([]);
-    const [showCreateModal, setShowCreateModal] = useState(false);
-    const [loading, setLoading] = useState(true);
+  const { user, addPoints } = useAuth();
+  const miBarrio = barrioDeUsuario(user);
+  const hoy = fechaLocalISO();
+  const [vista, setVista] = useState(miBarrio);
+  const [modal, setModal] = useState(false);
+  const [guardando, setGuardando] = useState(false);
+  const [errorForm, setErrorForm] = useState('');
 
-    // Form state
-    const [opportunityTitle, setOpportunityTitle] = useState('');
-    const [opportunityDescription, setOpportunityDescription] = useState('');
-    const [opportunityContact, setOpportunityContact] = useState('');
+  const { datos, cargando, error, faltaTabla, recargar } = useTabla<Voluntariado>('voluntariados', {
+    barrios: barriosDeVista(vista),
+    clave: hoy,
+    // Solo lo vigente: sin fecha (continuo) o de hoy en adelante
+    filtro: q => q.or(`fecha_actividad.is.null,fecha_actividad.gte.${hoy}`),
+    orden: { col: 'fecha_actividad', asc: true },
+  });
 
-    useEffect(() => {
-        fetchOpportunities();
-    }, [user?.user_metadata?.neighborhood]);
+  const publicar = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setErrorForm('');
+    const f = new FormData(e.currentTarget);
+    const telefono = String(f.get('telefono') || '').trim();
+    if (!esTelefonoValido(telefono)) { setErrorForm('Introduce un teléfono de contacto español válido (9 cifras).'); return; }
+    if (!user) { setErrorForm('Inicia sesión para publicar.'); return; }
+    setGuardando(true);
+    const { error: err } = await supabase.from('voluntariados').insert({
+      titulo: String(f.get('titulo')).trim(),
+      descripcion: String(f.get('descripcion') || '').trim() || null,
+      entidad: String(f.get('entidad') || '').trim() || null,
+      ubicacion: String(f.get('ubicacion') || '').trim() || null,
+      telefono: formatearTelefono(telefono),
+      email: String(f.get('email') || '').trim() || null,
+      fecha_actividad: String(f.get('fecha') || '') || null,
+      hora: String(f.get('hora') || '') || null,
+      barrio: miBarrio,
+      fuente: 'vecino',
+      creador_id: user.id,
+    });
+    setGuardando(false);
+    if (err) { setErrorForm(`No se pudo publicar: ${err.message}`); return; }
+    try { await addPoints(15, 1); } catch { /* opcional */ }
+    setModal(false);
+    recargar();
+  };
 
-    const fetchOpportunities = async () => {
-        setLoading(true);
-        try {
-            const data = await safeSupabaseFetch('volunteer_opportunities',
-                supabase
-                    .from('volunteer_opportunities')
-                    .select('*')
-                    .eq('neighborhood', user?.user_metadata?.neighborhood || 'GENERAL')
-                    .order('created_at', { ascending: false })
-            );
+  const borrar = async (id: string) => {
+    if (!confirm('¿Eliminar esta propuesta de voluntariado?')) return;
+    const { error: err } = await supabase.from('voluntariados').delete().eq('id', id);
+    if (err) alert(err.message); else recargar();
+  };
 
-            const realOpportunitiesExamples: VolunteerOpportunity[] = [
-                {
-                    id: 'oct-26-vol-1',
-                    creator_id: 'v-halloween',
-                    title: '🎃 Decoración Halloween Infantil',
-                    description: 'Jueves 23 Oct, preparar la zona de juegos del Parc de la Ciutat para la fiesta del viernes.',
-                    neighborhood: 'Eixample',
-                    contact_info: 'Contactar por la app',
-                    created_at: '2026-10-23T08:30:00Z'
-                },
-                {
-                    id: 'oct-26-vol-2',
-                    creator_id: 'v-caritas',
-                    title: '📦 Banco de Alimentos Cáritas',
-                    description: 'Recogida y clasificación alimentos en Cáritas TGN (C/ Apodaca, 8). Martes y jueves, 10-13h.',
-                    neighborhood: 'GENERAL',
-                    contact_info: 'Contactar por la app',
-                    created_at: '2026-10-23T07:15:00Z'
-                },
-                {
-                    id: 'oct-26-vol-3',
-                    creator_id: 'v-arbres',
-                    title: '🌳 Plantada Arbres Tardor',
-                    description: 'Plantación de árboles con el Ayuntamiento en el Parc del Francolí. Sábado 25 Oct, 09:30h.',
-                    neighborhood: 'GENERAL',
-                    contact_info: 'Contactar por la app',
-                    created_at: '2026-10-22T14:00:00Z'
-                },
-                {
-                    id: 'oct-26-vol-4',
-                    creator_id: 'v-gent-gran',
-                    title: '👴 Acompañamiento Gent Gran',
-                    description: 'Acompañar a personas mayores a hacer gestiones. Flor de Tardor (C/ Lleida, 4). Cualquier día laboral.',
-                    neighborhood: 'GENERAL',
-                    contact_info: 'Contactar por la app',
-                    created_at: '2026-10-21T09:30:00Z'
-                },
-                {
-                    id: 'oct-26-vol-5',
-                    creator_id: 'v-biblioteca',
-                    title: '📚 Biblioteca Itinerant',
-                    description: 'Llevar libros a vecinos con movilidad reducida de la Part Alta. Sábados 10-12h.',
-                    neighborhood: 'Part Alta',
-                    contact_info: 'Contactar por la app',
-                    created_at: '2026-10-20T16:45:00Z'
-                }
-            ];
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-background-dark pb-24 font-sans">
+      <div className="max-w-5xl mx-auto p-4 md:p-8 space-y-6">
+        <CabeceraModulo
+          icono="volunteer_activism"
+          titulo="Voluntariado por barrios"
+          subtitulo="Propuestas reales de vecinos y entidades de tu barrio. Cada una incluye un teléfono de contacto directo."
+          gradiente="from-rose-600 via-pink-500 to-orange-400"
+          accion={{ texto: 'Ofrecer o pedir ayuda', onClick: () => setModal(true) }}
+        />
+        <SelectorBarrio vista={vista} miBarrio={miBarrio} onChange={setVista} />
+        <AvisoBaseDatos faltaTabla={faltaTabla} error={error} />
 
-            setOpportunities([...(data || []), ...realOpportunitiesExamples]);
-        } catch (e) {
-            console.error(e);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const handleOpportunitySubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        try {
-            const { success } = await safeSupabaseInsert('volunteer_opportunities', {
-                creator_id: user?.id,
-                title: opportunityTitle,
-                description: opportunityDescription,
-                contact_info: opportunityContact,
-                neighborhood: user?.user_metadata?.neighborhood || 'GENERAL'
-            });
-
-            if (!success) throw new Error('Falló la creación');
-            alert('¡Oportunidad de voluntariado creada!');
-            setShowCreateModal(false);
-            setOpportunityTitle('');
-            setOpportunityDescription('');
-            setOpportunityContact('');
-            fetchOpportunities();
-        } catch (e) {
-            console.error(e);
-            alert('Error al crear oportunidad');
-        }
-    };
-
-    return (
-        <div className="min-h-screen bg-gray-50 dark:bg-background-dark pb-20 font-sans">
-            <div className="bg-gradient-to-br from-blue-500/10 to-indigo-500/10 dark:from-blue-500/20 dark:to-indigo-500/20 py-24 px-6 border-b border-gray-100 dark:border-gray-800 text-center relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-[100px]"></div>
-                <div className="relative z-10 max-w-3xl mx-auto">
-                    <span className="inline-block px-4 py-2 bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-6">
-                        Ayuda Rápida
-                    </span>
-                    <h1 className="text-5xl md:text-7xl font-black dark:text-white tracking-tighter uppercase leading-none mb-6">
-                        MICRO-VOLUNTARIADO
-                    </h1>
-                    <p className="text-gray-600 dark:text-gray-300 text-lg font-bold max-w-2xl mx-auto mb-8">
-                        Pequeñas acciones, gran impacto. Ofrece o encuentra ayuda puntual en tu barrio.
-                    </p>
-                    <button
-                        onClick={() => setShowCreateModal(true)}
-                        className="inline-flex items-center gap-3 px-8 py-5 bg-blue-500 text-white rounded-[30px] shadow-2xl shadow-blue-500/30 hover:scale-105 active:scale-95 transition-all text-xs font-black uppercase tracking-widest"
-                    >
-                        <span className="material-symbols-outlined font-black">add_circle</span>
-                        PUBLICAR TAREA
+        {cargando ? <Cargando texto="Buscando voluntariados…" /> : datos.length === 0 ? (
+          <EstadoVacio
+            icono="volunteer_activism"
+            titulo="Aún no hay propuestas en esta zona"
+            texto="Este espacio lo llenan los vecinos y las entidades del barrio. Sé la primera persona en publicar una necesidad o una oferta de ayuda."
+            accion={{ texto: 'Publicar propuesta', onClick: () => setModal(true) }}
+          />
+        ) : (
+          <div className="grid gap-4 md:grid-cols-2">
+            {datos.map(v => (
+              <motion.article key={v.id} layout initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
+                className="bg-white dark:bg-surface-dark rounded-3xl p-5 border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <span className="text-[10px] font-black uppercase tracking-wider bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-0.5 rounded-full">📍 {v.barrio === 'GENERAL' ? 'Toda la ciudad' : v.barrio}</span>
+                  <InsigniaFuente fuente={v.fuente} verificado={v.verificado} />
+                  {v.verificado && <span className="text-[10px] font-black uppercase bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">Entidad verificada</span>}
+                </div>
+                <h3 className="text-lg font-black text-gray-900 dark:text-white leading-snug">{v.titulo}</h3>
+                {v.entidad && <p className="text-sm font-bold text-rose-600">{v.entidad}</p>}
+                <div className="mt-1 text-sm text-gray-500 dark:text-gray-400 space-y-0.5">
+                  {v.fecha_actividad && <p className="flex items-center gap-1.5"><span className="material-symbols-outlined text-base">event</span><span className="capitalize">{etiquetaDia(v.fecha_actividad)}</span>{v.hora && ` · ${v.hora}`}</p>}
+                  {!v.fecha_actividad && <p className="flex items-center gap-1.5"><span className="material-symbols-outlined text-base">autorenew</span>Voluntariado continuo</p>}
+                  {v.ubicacion && <p className="flex items-center gap-1.5"><span className="material-symbols-outlined text-base">location_on</span>{v.ubicacion}</p>}
+                </div>
+                {v.descripcion && <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">{v.descripcion}</p>}
+                <div className="mt-auto">
+                  <BotonesContacto telefono={v.telefono} email={v.email} url={v.url} textoUrl="Web de la entidad" />
+                  {user?.id && v.creador_id === user.id && (
+                    <button onClick={() => borrar(v.id)} className="mt-3 text-[11px] font-black uppercase tracking-wider text-red-500 hover:underline flex items-center gap-1">
+                      <span className="material-symbols-outlined text-sm">delete</span>Eliminar mi propuesta
                     </button>
+                  )}
                 </div>
-            </div>
+              </motion.article>
+            ))}
+          </div>
+        )}
+      </div>
 
-            <div className="max-w-7xl mx-auto px-4 md:px-10 py-16">
-                {loading ? (
-                    <div className="flex flex-col items-center gap-4 py-20 opacity-20">
-                        <div className="size-10 border-4 border-blue-500 border-t-transparent animate-spin rounded-full"></div>
-                        <p className="text-xs font-black uppercase tracking-widest">Cargando oportunidades...</p>
-                    </div>
-                ) : opportunities.length === 0 ? (
-                    <div className="bg-gradient-to-br from-blue-500/5 to-indigo-500/5 dark:from-blue-500/10 dark:to-indigo-500/10 p-12 rounded-[40px] border-2 border-dashed border-blue-500/20 text-center max-w-2xl mx-auto">
-                        <span className="material-symbols-outlined text-blue-500 text-6xl mb-4 block">handshake</span>
-                        <h3 className="text-lg font-black dark:text-white mb-2">No hay tareas de voluntariado aún</h3>
-                        <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-                            Sé el primero en publicar una tarea de micro-voluntariado en {user?.user_metadata?.neighborhood || 'tu barrio'}.
-                            Puede ser ayudar a un vecino mayor con la compra, pasear un perro, acompañar a alguien al médico, o cualquier ayuda puntual.
-                        </p>
-                        <button
-                            onClick={() => setShowCreateModal(true)}
-                            className="px-6 py-3 bg-blue-500 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/20"
-                        >
-                            PUBLICAR PRIMERA TAREA
-                        </button>
-                    </div>
-                ) : (
-                    <div className="space-y-6">
-                        {opportunities.map((opportunity, idx) => (
-                            <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: idx * 0.1 }}
-                                key={opportunity.id}
-                                className="group bg-white dark:bg-surface-dark rounded-[35px] p-6 md:p-8 border border-gray-100 dark:border-gray-800 hover:shadow-2xl hover:border-blue-500/30 transition-all"
-                            >
-                                <div className="flex gap-6 items-start">
-                                    <div className="shrink-0 size-16 md:size-20 rounded-2xl bg-gradient-to-br from-blue-500/20 to-indigo-500/20 flex items-center justify-center">
-                                        <span className="material-symbols-outlined text-3xl text-blue-500">handshake</span>
-                                    </div>
-                                    <div className="flex-1 min-w-0">
-                                        <h3 className="text-lg md:text-xl font-black dark:text-white leading-tight mb-3 group-hover:text-blue-500 transition-colors">
-                                            {opportunity.title}
-                                        </h3>
-                                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                                            {opportunity.description}
-                                        </p>
-                                        <div className="flex flex-wrap items-center gap-4">
-                                            <div className="flex items-center gap-2">
-                                                <span className="material-symbols-outlined text-sm text-blue-500">person</span>
-                                                <span className="text-xs font-bold text-gray-500 dark:text-gray-400">
-                                                    Publicado por vecino
-                                                </span>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <span className="material-symbols-outlined text-sm text-blue-500">location_on</span>
-                                                <span className="text-xs font-bold text-gray-500 dark:text-gray-400">
-                                                    {opportunity.neighborhood}
-                                                </span>
-                                            </div>
-                                            {opportunity.contact_info && (
-                                                <>
-                                                    <div className="h-4 w-px bg-gray-200 dark:bg-gray-700"></div>
-                                                    {opportunity.contact_info.toLowerCase().includes('app') ? (
-                                                        <span className="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-xl text-xs font-black">
-                                                            <span className="material-symbols-outlined text-sm">chat</span>
-                                                            {opportunity.contact_info}
-                                                        </span>
-                                                    ) : (
-                                                        <>
-                                                            <a
-                                                                href={`tel:${opportunity.contact_info.replace(/\s+/g, '')}`}
-                                                                className="flex items-center gap-2 px-4 py-2 bg-blue-500/10 text-blue-500 rounded-xl text-xs font-black hover:bg-blue-500 hover:text-white transition-all"
-                                                            >
-                                                                <span className="material-symbols-outlined text-sm">call</span>
-                                                                AYUDAR
-                                                            </a>
-                                                            <span className="text-[10px] font-bold text-gray-400">
-                                                                📞 {opportunity.contact_info}
-                                                            </span>
-                                                        </>
-                                                    )}
-                                                </>
-                                            )}
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                )}
-
-                {/* Info Box */}
-                <div className="mt-16 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 dark:from-blue-500/10 dark:to-indigo-500/10 p-8 rounded-[35px] border border-blue-500/20">
-                    <div className="flex items-start gap-4">
-                        <span className="material-symbols-outlined text-blue-500 text-3xl">info</span>
-                        <div>
-                            <h3 className="text-sm font-black dark:text-white mb-2 uppercase tracking-widest">Qué es el micro-voluntariado</h3>
-                            <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
-                                Son pequeñas tareas puntuales que no requieren compromiso a largo plazo. Perfectas para ayudar cuando tienes un rato libre.
-                            </p>
-                            <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
-                                <li>✓ Ayuda con la compra a vecinos mayores</li>
-                                <li>✓ Pasear mascotas</li>
-                                <li>✓ Acompañamiento a citas médicas</li>
-                                <li>✓ Ayuda con tecnología</li>
-                                <li>✓ Pequeñas reparaciones</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Create Opportunity Modal */}
-            <AnimatePresence>
-                {showCreateModal && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-                        onClick={() => setShowCreateModal(false)}
-                    >
-                        <motion.div
-                            initial={{ scale: 0.9, y: 20 }}
-                            animate={{ scale: 1, y: 0 }}
-                            exit={{ scale: 0.9, y: 20 }}
-                            onClick={(e) => e.stopPropagation()}
-                            className="bg-white dark:bg-surface-dark rounded-[40px] p-8 max-w-lg w-full shadow-2xl"
-                        >
-                            <div className="flex items-center justify-between mb-6">
-                                <h3 className="text-2xl font-black dark:text-white uppercase tracking-tight">Publicar Tarea</h3>
-                                <button onClick={() => setShowCreateModal(false)} className="size-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all">
-                                    <span className="material-symbols-outlined">close</span>
-                                </button>
-                            </div>
-
-                            <form onSubmit={handleOpportunitySubmit} className="space-y-4">
-                                <div className="p-4 bg-blue-50 dark:bg-blue-900/10 rounded-3xl mb-4">
-                                    <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-3 text-center">Ideas Rápidas (Click para rellenar)</p>
-                                    <div className="flex flex-wrap gap-2 justify-center">
-                                        {[
-                                            { t: 'Ayuda Montaje', d: 'Busco 1-2 personas para ayudar a descargar cajas de material hoy Jueves 23 a las 18:30 en la Rambla.', c: 'Contactar por la app' },
-                                            { t: 'Paseo Perro', d: '¿Algún vecino puede sacar a mi perro este sábado 25 por la tarde? Estaré trabajando hasta tarde de urgencia.', c: 'Contactar por la app' },
-                                            { t: 'Ayuda Móvil', d: 'Enseñar a usar la app del autobús a vecinos mayores este viernes 24 por la mañana.', c: 'Contactar por la app' },
-                                            { t: 'Ensayo Coral', d: '¿Quién va al ensayo de hoy Jueves 23? Me gustaría ir por primera vez acompañado.', c: 'Contactar por la app' }
-                                        ].map((idea, i) => (
-
-                                            <button
-                                                key={i}
-                                                type="button"
-                                                onClick={() => {
-                                                    setOpportunityTitle(idea.t);
-                                                    setOpportunityDescription(idea.d);
-                                                    setOpportunityContact(idea.c);
-                                                }}
-                                                className="px-3 py-1.5 bg-white dark:bg-gray-800 border border-blue-200 dark:border-blue-700 rounded-xl text-[9px] font-black uppercase text-blue-500 hover:bg-blue-500 hover:text-white transition-all shadow-sm"
-                                            >
-                                                + {idea.t}
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">¿Qué necesitas?</label>
-                                    <input
-                                        type="text"
-                                        value={opportunityTitle}
-                                        onChange={(e) => setOpportunityTitle(e.target.value)}
-                                        required
-                                        className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-blue-500/20 outline-none"
-                                        placeholder="Ej: Ayuda para llevar la compra a casa"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Detalles</label>
-                                    <textarea
-                                        value={opportunityDescription}
-                                        onChange={(e) => setOpportunityDescription(e.target.value)}
-                                        required
-                                        rows={4}
-                                        className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-blue-500/20 outline-none resize-none"
-                                        placeholder="Describe la tarea: cuándo, dónde, cuánto tiempo aproximado..."
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Tu Contacto</label>
-                                    <input
-                                        type="text"
-                                        value={opportunityContact}
-                                        onChange={(e) => setOpportunityContact(e.target.value)}
-                                        required
-                                        className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-blue-500/20 outline-none"
-                                        placeholder="Ej: Contactar por la app o 977 xx xx xx"
-                                    />
-                                    <p className="text-[10px] text-gray-400 mt-2">
-                                        Los voluntarios te contactarán para ayudarte
-                                    </p>
-                                </div>
-
-                                <button type="submit" className="w-full bg-blue-500 text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-blue-600 transition-all shadow-lg shadow-blue-500/20">
-                                    Publicar Tarea
-                                </button>
-                            </form>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
-    );
+      <AnimatePresence>
+        {modal && (
+          <motion.div className="fixed inset-0 z-[90] bg-black/60 backdrop-blur-sm flex items-end md:items-center justify-center p-0 md:p-6"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setModal(false)}>
+            <motion.form onSubmit={publicar} onClick={e => e.stopPropagation()} initial={{ y: 60 }} animate={{ y: 0 }} exit={{ y: 60 }}
+              className="w-full max-w-lg max-h-[92vh] overflow-y-auto bg-white dark:bg-surface-dark rounded-t-[32px] md:rounded-[32px] p-6 space-y-3 shadow-2xl">
+              <h2 className="text-xl font-black dark:text-white">Publicar voluntariado en {miBarrio === 'GENERAL' ? 'Tarragona' : miBarrio}</h2>
+              <input name="titulo" required maxLength={120} placeholder="¿Qué se necesita u ofreces?" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              <textarea name="descripcion" rows={3} maxLength={500} placeholder="Detalles: tareas, horario, requisitos…" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              <input name="entidad" maxLength={120} placeholder="Entidad u organización (opcional)" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              <input name="ubicacion" maxLength={140} placeholder="Lugar o dirección" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              <div className="grid grid-cols-2 gap-3">
+                <input name="fecha" type="date" min={hoy} className="rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" aria-label="Fecha (vacío = continuo)" />
+                <input name="hora" type="time" className="rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              </div>
+              <input name="telefono" type="tel" required placeholder="Teléfono de contacto (obligatorio)" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              <input name="email" type="email" placeholder="Email (opcional)" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              {errorForm && <p className="text-sm font-bold text-red-500" role="alert">{errorForm}</p>}
+              <div className="flex gap-3 pt-2">
+                <button type="button" onClick={() => setModal(false)} className="flex-1 py-3 rounded-xl font-black text-xs uppercase tracking-widest bg-gray-100 dark:bg-gray-800 dark:text-gray-200">Cancelar</button>
+                <button type="submit" disabled={guardando} className="flex-1 py-3 rounded-xl font-black text-xs uppercase tracking-widest bg-rose-600 text-white disabled:opacity-60">{guardando ? 'Publicando…' : 'Publicar'}</button>
+              </div>
+            </motion.form>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 };
 
 export default MicroVolunteering;

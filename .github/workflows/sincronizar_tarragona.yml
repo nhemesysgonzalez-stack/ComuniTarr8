@@ -1,0 +1,35 @@
+name: Sincronizar Tarragona
+
+# Robot diario: descarga eventos, ofertas de empleo y centros cívicos reales de fuentes
+# abiertas y los guarda en Supabase. La web (Vercel) lee de Supabase, así que NO hace falta redesplegar.
+on:
+  schedule:
+    - cron: '0 5 * * *'   # 05:00 UTC = 06:00/07:00 en Tarragona
+  workflow_dispatch: {}    # botón "Run workflow" para lanzarlo a mano
+
+concurrency:
+  group: sincronizar-tarragona
+  cancel-in-progress: false
+
+jobs:
+  sincronizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Sincronizar fuentes abiertas → Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          # Opcional: ciudades extra para empleo, separadas por comas (por defecto solo TARRAGONA)
+          SYNC_MUNICIPIOS_EMPLEO: ${{ vars.SYNC_MUNICIPIOS_EMPLEO }}
+        run: npm run sync:all

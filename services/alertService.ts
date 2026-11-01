@@ -1,8 +1,11 @@
 import { supabase } from './supabaseClient';
 
 /**
- * Servicio de Alertas Externas (Simulación de Conexión VENTCAT / PLASEQTA)
- * Este servicio conecta ComuniTarr con los feeds oficiales de Protección Civil.
+ * Servicio de Alertas Oficiales – ComuniTarr
+ *
+ * Solo lee alertas reales almacenadas en la tabla `announcements` con las
+ * categorías TIEMPO, SEGURIDAD o ALERTA. No rasca noticias externas ni
+ * genera falsas emergencias automáticamente.
  */
 
 export interface ExternalAlert {
@@ -16,104 +19,52 @@ export interface ExternalAlert {
 
 export const alertService = {
     /**
-     * Suscribe la aplicación a cambios en la base de datos o simula consulta a API externa
-     * Conectado a: Protecció Civil Tarragona, Gencat Emergències y PLASEQTA.
+     * Devuelve la alerta oficial más reciente del día, si existe en `announcements`.
+     * Categorías admitidas: TIEMPO, SEGURIDAD, ALERTA.
+     * Nunca genera alertas automáticas desde fuentes externas no verificadas.
      */
     async checkOfficialAlerts(): Promise<ExternalAlert | null> {
         try {
-            // 1. Primero verificamos alertas en la base de datos local
             const { data } = await supabase
                 .from('announcements')
-                .select('*')
-                .in('category', ['TIEMPO', 'SEGURIDAD'])
+                .select('id, category, title, content, created_at')
+                .in('category', ['TIEMPO', 'SEGURIDAD', 'ALERTA'])
                 .order('created_at', { ascending: false })
                 .limit(1);
 
             if (data && data[0]) {
-                const isToday = new Date(data[0].created_at).toDateString() === new Date().toDateString();
-                if (isToday && (data[0].content.includes('PLASEQTA') || data[0].content.includes('Emergencia'))) {
+                const hoyStr = new Date().toDateString();
+                const esDeHoy = new Date(data[0].created_at).toDateString() === hoyStr;
+                if (esDeHoy) {
                     return {
                         id: data[0].id,
                         source: data[0].category === 'TIEMPO' ? 'VENTCAT' : 'PCTGN',
                         level: 'naranja',
-                        message: data[0].content,
-                        timestamp: data[0].created_at
+                        message: data[0].content ?? data[0].title,
+                        timestamp: data[0].created_at,
                     };
                 }
             }
-
-            // 2. Monitor Autónomo: Leer noticias locales de Tarragona para activar emergencias sin intervención
-            const newsUrl = encodeURIComponent('https://www.diaridetarragona.com/sucesos/');
-            const response = await fetch(`https://api.allorigins.win/get?url=${newsUrl}`);
-
-            if (response.ok) {
-                const json = await response.json();
-                const html = json.contents;
-
-                // Expresión regular para buscar alertas del PLASEQTA, VENTCAT, explosiones químicas, etc. en enlaces de noticias
-                const match = html.match(/<a[^>]*href="[^"]*(?:sucesos)[^"]*"[^>]*>(?:[^<]*<span[^>]*>)?(.*?((?:explosión|PLASEQTA|VENTCAT|química|emergencia|fuego).*?))(?:<\/span>)?<\/a>/i);
-
-                if (match && match[1]) {
-                    const cleanTitle = match[1].replace(/<[^>]+>/g, '').trim();
-
-                    if (cleanTitle.length > 10) {
-                        return {
-                            id: `auto-scraper-${Date.now()}`,
-                            source: cleanTitle.toUpperCase().includes('PLASEQTA') ? 'PLASEQTA' : 'PCTGN',
-                            level: 'rojo', // Emergencias detectadas como críticas
-                            message: `⚠️ ALERTA DETECTADA AUTOMÁTICAMENTE: ${cleanTitle}`,
-                            description: 'El sistema autónomo ha detectado una emergencia en las fuentes de noticias locales de Tarragona y Valls.',
-                            timestamp: new Date().toISOString()
-                        };
-                    }
-                }
-            }
         } catch (error) {
-            console.error("Error en el monitor autónomo de alertas:", error);
+            console.error('Error al comprobar alertas oficiales:', error);
         }
 
-        // Si no hay alertas reales, retornamos null
         return null;
     },
 
     /**
-     * Lógica para enviar Notificación Push del Sistema (Browser) con branding oficial
+     * Envía una notificación push del navegador solo cuando hay una alerta real.
      */
     sendSystemNotification(alert: ExternalAlert) {
-        if (!("Notification" in window)) return;
+        if (!('Notification' in window)) return;
+        if (Notification.permission !== 'granted') return;
 
         const sourceLabel = alert.source === 'PCTGN' ? 'PROTECCIÓ CIVIL TARRAGONA' : alert.source;
-
-        if (Notification.permission === "granted") {
-            new Notification(`🚨 ${sourceLabel}: AVISO`, {
-                body: alert.message,
-                icon: '/favicon.ico',
-                tag: 'emergency-alert',
-                silent: false,
-                badge: '/favicon.ico'
-            });
-        }
+        new Notification(`🚨 ${sourceLabel}: AVISO`, {
+            body: alert.message,
+            icon: '/favicon.ico',
+            tag: 'emergency-alert',
+            silent: false,
+        });
     },
-
-    // Mock alerts for Sunday Feb 15th
-    mockAlerts: [
-        {
-            id: 'festive-info-tres-tombs',
-            title: "DOMINGO: ELS TRES TOMBS",
-            description: "A partir de las 11:30h, desfile de caballos y carruajes por la Rambla Nova. Tradición y cultura en el centro.",
-            severity: 'info',
-            source: 'Protecció Civil TGN',
-            date: '2026-02-15T09:00:00Z',
-            neighborhood: 'CENTRO'
-        },
-        {
-            id: 'festive-info-rua-lluiment',
-            title: "ESTA TARDE: RUA DE LLUÏMENT",
-            description: "A las 18:00h comienza el desfile de las 10 mejores comparsas del año pasado. Recorrido: Av. Ramón y Cajal hasta Av. Catalunya.",
-            severity: 'info',
-            source: 'Protecció Civil TGN',
-            date: '2026-02-15T13:00:00Z',
-            neighborhood: 'GENERAL'
-        }
-    ]
 };

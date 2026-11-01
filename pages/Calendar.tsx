@@ -1,543 +1,287 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../services/supabaseClient';
-import { safeSupabaseFetch, safeSupabaseInsert } from '../services/dataHandler';
+import { barrioDeUsuario } from '../services/barrios';
+import { esTelefonoValido, formatearTelefono } from '../services/contacto';
+import { etiquetaDia, fechaLocalISO, useTabla } from '../services/datos';
+import {
+  AvisoBaseDatos, BotonesContacto, CabeceraModulo, Cargando, EstadoVacio,
+  InsigniaFuente, SelectorBarrio, barriosDeVista,
+} from '../components/Modulos';
 
-interface Event {
+interface Evento {
   id: string;
-  creator_id: string;
-  title: string;
-  description: string;
-  event_date: string;
-  event_time: string;
-  location: string;
-  category: string;
-  neighborhood: string;
-  contact_info: string;
-  created_at: string;
+  titulo: string;
+  descripcion: string | null;
+  categoria: string | null;
+  barrio: string;
+  fecha_actividad: string;
+  fecha_fin: string | null;
+  hora: string | null;
+  ubicacion: string | null;
+  direccion: string | null;
+  lat: number | null;
+  lng: number | null;
+  telefono: string | null;
+  email: string | null;
+  url: string | null;
+  gratuito: boolean | null;
+  fuente: string;
+  verificado: boolean;
+  creador_id: string | null;
 }
 
+const MESES = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+const DIAS = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
+const CATEGORIAS = ['Cultura', 'Ocio', 'Deporte', 'Taller', 'Infantil', 'Música', 'Solidario', 'Otro'];
+
+const iso = (y: number, m: number, d: number) => fechaLocalISO(new Date(y, m, d));
+
 const NeighborhoodCalendar: React.FC = () => {
-  const { user } = useAuth();
-  const now = new Date();
-  const monthNames = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'];
-  const [selectedMonth, setSelectedMonth] = useState(monthNames[now.getMonth()]);
-  const [selectedYear, setSelectedYear] = useState(now.getFullYear());
-  const [events, setEvents] = useState<Event[]>([]);
-  const [showEventModal, setShowEventModal] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const { user, addPoints } = useAuth();
+  const miBarrio = barrioDeUsuario(user);
+  const hoy = fechaLocalISO();
 
-  // Form state
-  const [eventTitle, setEventTitle] = useState('');
-  const [eventDescription, setEventDescription] = useState('');
-  const [eventDate, setEventDate] = useState('');
-  const [eventTime, setEventTime] = useState('');
-  const [eventLocation, setEventLocation] = useState('');
-  const [eventCategory, setEventCategory] = useState('Ocio');
-  const [eventContact, setEventContact] = useState('');
+  const [vista, setVista] = useState(miBarrio);
+  const [cursor, setCursor] = useState(() => { const n = new Date(); return { y: n.getFullYear(), m: n.getMonth() }; });
+  const [diaSel, setDiaSel] = useState(hoy);
+  const [modal, setModal] = useState(false);
+  const [guardando, setGuardando] = useState(false);
+  const [errorForm, setErrorForm] = useState('');
 
-  useEffect(() => {
-    fetchEvents();
-  }, [user?.user_metadata?.neighborhood]);
+  const primerDia = iso(cursor.y, cursor.m, 1);
+  const ultimoDia = iso(cursor.y, cursor.m + 1, 0);
 
-  const fetchEvents = async () => {
-    setLoading(true);
-    try {
-      const data = await safeSupabaseFetch('events',
-        supabase
-          .from('events')
-          .select('*')
-          .or(`neighborhood.eq.${user?.user_metadata?.neighborhood || 'GENERAL'},neighborhood.eq.GENERAL`)
-          .gte('event_date', new Date().toISOString().split('T')[0])
-          .order('event_date', { ascending: true })
-      );
+  const { datos, cargando, error, faltaTabla, recargar } = useTabla<Evento>('eventos', {
+    barrios: barriosDeVista(vista),
+    orden: { col: 'fecha_actividad', asc: true },
+    clave: `${primerDia}|${ultimoDia}`,
+    limite: 1500,
+    filtro: q => q
+      .lte('fecha_actividad', ultimoDia)
+      .or(`fecha_fin.gte.${primerDia},and(fecha_fin.is.null,fecha_actividad.gte.${primerDia})`),
+  });
 
-      const dbEvents = data || [];
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-
-      const realEventsExamples: Event[] = [
-        {
-          id: 'oct-23-mercado',
-          creator_id: 'admin',
-          title: "🛒 Mercado Semanal Part Alta",
-          description: "Mercado tradicional con paradas de fruta, verdura de proximidad y productos artesanos del Camp de Tarragona (08:00 a 14:00).",
-          event_date: '2026-10-23',
-          event_time: '08:00',
-          location: 'Rambla de la Part Alta',
-          category: 'Ocio',
-          neighborhood: 'Part Alta',
-          contact_info: 'Ajuntament de Tarragona — 977 296 100',
-          created_at: '2026-10-20T08:00:00Z'
-        },
-        {
-          id: 'oct-23-cine-conclave',
-          creator_id: 'cultura',
-          title: "🎬 Cine en V.O. 'Conclave'",
-          description: "Proyección en versión original subtitulada del thriller 'Conclave' en Cines Tarragona a las 19:00.",
-          event_date: '2026-10-23',
-          event_time: '19:00',
-          location: 'Cines Tarragona (Av. Roma)',
-          category: 'Cultura',
-          neighborhood: 'Nou Eixample',
-          contact_info: 'Ajuntament de Tarragona — 977 296 100',
-          created_at: '2026-10-20T09:00:00Z'
-        },
-        {
-          id: 'oct-24-taller-foto',
-          creator_id: 'cultura',
-          title: "📷 Taller de fotografía otoñal",
-          description: "Taller práctico para capturar la luz y colores de otoño en el barrio. Para cámaras digitales y smartphones.",
-          event_date: '2026-10-24',
-          event_time: '16:00',
-          location: 'Centre Cívic Torreforta',
-          category: 'Cultura',
-          neighborhood: 'Torreforta',
-          contact_info: 'Ajuntament de Tarragona — 977 296 100',
-          created_at: '2026-10-20T10:00:00Z'
-        },
-        {
-          id: 'oct-25-senderismo-prades',
-          creator_id: 'deporte',
-          title: "🥾 Excursión senderismo Muntanyes de Prades",
-          description: "Ruta guiada de senderismo de otoño por las Muntanyes de Prades. Salida puntual en grupo desde la estación RENFE a las 08:30.",
-          event_date: '2026-10-25',
-          event_time: '08:30',
-          location: 'Estació RENFE Tarragona',
-          category: 'Deporte',
-          neighborhood: 'GENERAL',
-          contact_info: 'Turisme Tarragona — 977 250 795',
-          created_at: '2026-10-20T11:00:00Z'
-        },
-        {
-          id: 'oct-25-jazz',
-          creator_id: 'cultura',
-          title: "🎷 Concert Jazz — Amfiteatre Romà",
-          description: "Concierto de jazz al aire libre en el recinto histórico del Amfiteatre Romà a las 19:00. Gratis, plazas limitadas.",
-          event_date: '2026-10-25',
-          event_time: '19:00',
-          location: 'Amfiteatre Romà',
-          category: 'Cultura',
-          neighborhood: 'Part Alta',
-          contact_info: 'Turisme Tarragona — 977 250 795',
-          created_at: '2026-10-20T12:00:00Z'
-        },
-        {
-          id: 'oct-26-mercadillo-segundamano',
-          creator_id: 'ocio',
-          title: "🔄 Mercadillo de Segunda Mano",
-          description: "Gran mercadillo vecinal de segunda mano, ropa vintage, antigüedades y objetos reciclados (09:00 a 14:00).",
-          event_date: '2026-10-26',
-          event_time: '09:00',
-          location: 'Explanada Bonavista',
-          category: 'Ocio',
-          neighborhood: 'Bonavista',
-          contact_info: 'Ajuntament de Tarragona — 977 296 100',
-          created_at: '2026-10-20T13:00:00Z'
-        },
-        {
-          id: 'oct-26-visita-partalta',
-          creator_id: 'cultura',
-          title: "🏛️ Visita guiada Part Alta Romana",
-          description: "Ruta guiada a las 10:00 para descubrir los secretos de la Tarraco romana: murallas, foro provincial y circo.",
-          event_date: '2026-10-26',
-          event_time: '10:00',
-          location: 'Portal del Roser',
-          category: 'Cultura',
-          neighborhood: 'Part Alta',
-          contact_info: 'Turisme Tarragona — 977 250 795',
-          created_at: '2026-10-20T14:00:00Z'
-        },
-        {
-          id: 'oct-29-nit-castellers',
-          creator_id: 'cultura',
-          title: "🏰 Nit de Castellers — Plaça de la Font",
-          description: "Ensayo especial y exhibición castellera a cargo de la Col·la Joves Xiquets de Tarragona a las 20:00.",
-          event_date: '2026-10-29',
-          event_time: '20:00',
-          location: 'Plaça de la Font',
-          category: 'Fiesta',
-          neighborhood: 'Part Alta',
-          contact_info: 'Ajuntament de Tarragona — 977 296 100',
-          created_at: '2026-10-21T08:00:00Z'
-        },
-        {
-          id: 'oct-31-halloween-infantil',
-          creator_id: 'ocio',
-          title: "🎃 Halloween Infantil — Parc de la Ciutat",
-          description: "Fiesta de disfraces, pintacaras, concurso infantil y actividades al aire libre a partir de las 17:00. Gratis.",
-          event_date: '2026-10-31',
-          event_time: '17:00',
-          location: 'Parc de la Ciutat',
-          category: 'Fiesta',
-          neighborhood: 'Nou Eixample',
-          contact_info: 'Ajuntament de Tarragona — 977 296 100',
-          created_at: '2026-10-21T09:00:00Z'
-        },
-        {
-          id: 'nov-01-todos-santos',
-          creator_id: 'cultura',
-          title: "🕯️ Todos los Santos — Cementerio y Catedral",
-          description: "Jornada de Todos los Santos. Refuerzo de buses EMT hacia el Cementerio Municipal y Missa Pontifical en la Catedral a las 11:00.",
-          event_date: '2026-11-01',
-          event_time: '11:00',
-          location: 'Cementerio Municipal / Catedral de Tarragona',
-          category: 'Cultura',
-          neighborhood: 'GENERAL',
-          contact_info: 'Ajuntament de Tarragona — 977 296 100',
-          created_at: '2026-10-21T10:00:00Z'
-        },
-        {
-          id: 'nov-06-mercado-partalta',
-          creator_id: 'admin',
-          title: "🛒 Mercado Semanal Part Alta",
-          description: "Edición semanal del mercado de proximidad con paradas de alimentación fresca, embutidos y productos artesanos (08:00 a 14:00).",
-          event_date: '2026-11-06',
-          event_time: '08:00',
-          location: 'Rambla de la Part Alta',
-          category: 'Ocio',
-          neighborhood: 'Part Alta',
-          contact_info: 'Ajuntament de Tarragona — 977 296 100',
-          created_at: '2026-10-21T11:00:00Z'
-        },
-        {
-          id: 'nov-08-fira-sant-andreu',
-          creator_id: 'cultura',
-          title: "🎪 Fira de Sant Andreu — Rambla Nova",
-          description: "Feria tradicional a lo largo de la Rambla Nova (10:00 a 20:00). Puestos artesanos, productos de la tierra y animación.",
-          event_date: '2026-11-08',
-          event_time: '10:00',
-          location: 'Rambla Nova',
-          category: 'Fiesta',
-          neighborhood: 'Eixample',
-          contact_info: 'Ajuntament de Tarragona — 977 296 100',
-          created_at: '2026-10-21T12:00:00Z'
-        },
-        {
-          id: 'nov-09-taller-reciclaje',
-          creator_id: 'solidario',
-          title: "♻️ Taller Reciclaje Creativo — CC Torreforta",
-          description: "Taller para todas las edades de transformación de residuos en objetos útiles y decorativos. 11:00 en el Centre Cívic.",
-          event_date: '2026-11-09',
-          event_time: '11:00',
-          location: 'Centre Cívic Torreforta',
-          category: 'Solidario',
-          neighborhood: 'Torreforta',
-          contact_info: 'Ajuntament de Tarragona — 977 296 100',
-          created_at: '2026-10-21T13:00:00Z'
-        }
-      ];
-
-      const allEvents = [...realEventsExamples, ...dbEvents].filter((e) => {
-        const eDate = new Date(e.event_date);
-        return eDate >= today;
-      }).sort((a, b) => new Date(a.event_date).getTime() - new Date(b.event_date).getTime());
-
-      // Deduplicate by ID just in case
-      const uniqueEvents = Array.from(new Map(allEvents.map(item => [item.id, item])).values());
-      setEvents(uniqueEvents);
-    } catch (e) {
-      console.error(e);
-      setEvents([]);
-    } finally {
-      setLoading(false);
+  // Día → eventos que ocurren ese día (los eventos de varios días marcan todos sus días)
+  const porDia = useMemo(() => {
+    const mapa: Record<string, Evento[]> = {};
+    for (const ev of datos) {
+      const ini = ev.fecha_actividad < primerDia ? primerDia : ev.fecha_actividad;
+      const finReal = ev.fecha_fin || ev.fecha_actividad;
+      const fin = finReal > ultimoDia ? ultimoDia : finReal;
+      for (let d = new Date(ini + 'T12:00:00'); fechaLocalISO(d) <= fin; d.setDate(d.getDate() + 1)) {
+        const k = fechaLocalISO(d);
+        (mapa[k] ||= []).push(ev);
+      }
     }
+    return mapa;
+  }, [datos, primerDia, ultimoDia]);
+
+  const eventosDia = useMemo(() => {
+    const lista = [...(porDia[diaSel] || [])];
+    const duracion = (e: Evento) => (new Date((e.fecha_fin || e.fecha_actividad) + 'T12:00:00').getTime() - new Date(e.fecha_actividad + 'T12:00:00').getTime());
+    // Primero lo puntual (un día), luego exposiciones y ciclos largos
+    return lista.sort((a, b) => duracion(a) - duracion(b) || a.titulo.localeCompare(b.titulo));
+  }, [porDia, diaSel]);
+
+  // Rejilla del mes (semana empieza en lunes)
+  const celdas = useMemo(() => {
+    const offset = (new Date(cursor.y, cursor.m, 1).getDay() + 6) % 7;
+    const total = new Date(cursor.y, cursor.m + 1, 0).getDate();
+    return [...Array(offset).fill(null), ...Array.from({ length: total }, (_, i) => i + 1)];
+  }, [cursor]);
+
+  const cambiarMes = (delta: number) => {
+    const f = new Date(cursor.y, cursor.m + delta, 1);
+    setCursor({ y: f.getFullYear(), m: f.getMonth() });
   };
 
-  const changeMonth = (offset: number) => {
-    let newMonthIdx = monthNames.indexOf(selectedMonth) + offset;
-    let newYear = selectedYear;
-    if (newMonthIdx < 0) {
-      newMonthIdx = 11;
-      newYear--;
-    } else if (newMonthIdx > 11) {
-      newMonthIdx = 0;
-      newYear++;
-    }
-    setSelectedMonth(monthNames[newMonthIdx]);
-    setSelectedYear(newYear);
-  };
-
-  const getDaysInMonth = (month: string, year: number) => {
-    const monthIdx = monthNames.indexOf(month);
-    return new Date(year, monthIdx + 1, 0).getDate();
-  };
-
-  const handleEventSubmit = async (e: React.FormEvent) => {
+  const crearEvento = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      const { success } = await safeSupabaseInsert('events', {
-        creator_id: user?.id,
-        title: eventTitle,
-        description: eventDescription,
-        event_date: eventDate,
-        event_time: eventTime,
-        location: eventLocation,
-        category: eventCategory,
-        contact_info: eventContact,
-        neighborhood: user?.user_metadata?.neighborhood || 'GENERAL'
-      });
-
-      if (!success) throw new Error('Falló la creación');
-      alert('¡Evento creado con éxito!');
-      setShowEventModal(false);
-      setEventTitle('');
-      setEventDescription('');
-      setEventDate('');
-      setEventTime('');
-      setEventLocation('');
-      setEventCategory('Ocio');
-      setEventContact('');
-      fetchEvents();
-    } catch (e) {
-      console.error(e);
-      alert('Error al crear evento');
-    }
+    setErrorForm('');
+    const f = new FormData(e.currentTarget);
+    const telefono = String(f.get('telefono') || '').trim();
+    if (!esTelefonoValido(telefono)) { setErrorForm('Introduce un teléfono de contacto español válido (9 cifras).'); return; }
+    if (!user) { setErrorForm('Inicia sesión para publicar.'); return; }
+    setGuardando(true);
+    const fecha = String(f.get('fecha'));
+    const { error: err } = await supabase.from('eventos').insert({
+      titulo: String(f.get('titulo')).trim(),
+      descripcion: String(f.get('descripcion') || '').trim() || null,
+      categoria: String(f.get('categoria')),
+      fecha_actividad: fecha,
+      hora: String(f.get('hora') || '') || null,
+      ubicacion: String(f.get('ubicacion') || '').trim() || null,
+      telefono: formatearTelefono(telefono),
+      email: String(f.get('email') || '').trim() || null,
+      barrio: miBarrio,
+      fuente: 'vecino',
+      creador_id: user.id,
+    });
+    setGuardando(false);
+    if (err) { setErrorForm(`No se pudo publicar: ${err.message}`); return; }
+    try { await addPoints(10, 1); } catch { /* los puntos son opcionales */ }
+    setModal(false);
+    setDiaSel(fecha);
+    const d = new Date(fecha + 'T12:00:00');
+    setCursor({ y: d.getFullYear(), m: d.getMonth() });
+    recargar();
   };
 
-  const days = Array.from({ length: getDaysInMonth(selectedMonth, selectedYear) }, (_, i) => i + 1);
-
-  const getEventColor = (category: string) => {
-    const colors: Record<string, string> = {
-      'Fiesta': 'bg-red-500',
-      'Solidario': 'bg-emerald-500',
-      'Cultura': 'bg-primary',
-      'Ocio': 'bg-indigo-500',
-      'Deporte': 'bg-orange-500'
-    };
-    return colors[category] || 'bg-gray-500';
+  const borrar = async (id: string) => {
+    if (!confirm('¿Eliminar esta actividad?')) return;
+    const { error: err } = await supabase.from('eventos').delete().eq('id', id);
+    if (err) alert(err.message); else recargar();
   };
+
+  const diaSelDate = new Date(diaSel + 'T12:00:00');
 
   return (
-    <div className="p-4 md:p-10 max-w-7xl mx-auto pb-20 font-sans">
-      <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
-        <div>
-          <h1 className="text-4xl md:text-6xl font-black dark:text-white tracking-tighter uppercase leading-none mb-4">CALENDARIO</h1>
-          <p className="text-[10px] font-black text-primary uppercase tracking-[0.4em]">¿Qué pasa hoy en {user?.user_metadata?.neighborhood || 'tu barrio'}?</p>
-        </div>
-        <div className="flex items-center gap-4 bg-white dark:bg-surface-dark p-2 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl">
-          <button onClick={() => changeMonth(-1)} className="size-10 flex items-center justify-center rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
-            <span className="material-symbols-outlined font-black">chevron_left</span>
-          </button>
-          <span className="text-sm font-black dark:text-white w-32 text-center tracking-widest">{selectedMonth} {selectedYear}</span>
-          <button onClick={() => changeMonth(1)} className="size-10 flex items-center justify-center rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
-            <span className="material-symbols-outlined font-black">chevron_right</span>
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-gray-50 dark:bg-background-dark pb-24 font-sans">
+      <div className="max-w-6xl mx-auto p-4 md:p-8 space-y-6">
+        <CabeceraModulo
+          icono="calendar_month"
+          titulo="Calendario de Tarragona"
+          subtitulo="Actividades reales de tu barrio y de toda la ciudad, actualizadas cada día desde la Agenda Cultural y los propios vecinos."
+          gradiente="from-indigo-600 via-primary to-sky-500"
+          accion={{ texto: 'Publicar actividad', onClick: () => setModal(true) }}
+        />
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        <div className="lg:col-span-2 bg-white dark:bg-surface-dark rounded-[40px] p-8 md:p-10 border border-gray-100 dark:border-gray-800 shadow-2xl">
-          <div className="grid grid-cols-7 gap-1 md:gap-4 mb-8">
-            {['L', 'M', 'X', 'J', 'V', 'S', 'D'].map(d => (
-              <div key={d} className="text-center text-[10px] font-black text-gray-400 uppercase tracking-widest">{d}</div>
-            ))}
-            {days.map(d => {
-              const hasEvent = events.find(e => {
-                const dObj = new Date(e.event_date);
-                return dObj.getDate() === d &&
-                  monthNames[dObj.getMonth()] === selectedMonth &&
-                  dObj.getFullYear() === selectedYear;
-              });
-              return (
-                <div key={d} className="aspect-square flex flex-col items-center justify-center relative rounded-2xl md:rounded-[25px] hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all cursor-pointer group">
-                  <span className={`text-xs md:text-sm font-black ${hasEvent ? 'text-primary' : 'text-gray-400 dark:text-gray-600'}`}>{d}</span>
-                  {hasEvent && (
-                    <span className={`absolute bottom-2 md:bottom-4 size-1.5 md:size-2 rounded-full ${getEventColor(hasEvent.category)} shadow-lg animate-pulse`}></span>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-          <div className="mt-8 pt-8 border-t border-gray-100 dark:border-gray-800">
-            <button
-              onClick={() => setShowEventModal(true)}
-              className="w-full py-5 border-4 border-dashed border-gray-100 dark:border-gray-800 rounded-[30px] flex items-center justify-center gap-3 text-gray-400 hover:border-primary hover:text-primary transition-all group"
-            >
-              <span className="material-symbols-outlined font-black">add_circle</span>
-              <span className="text-[10px] font-black uppercase tracking-[0.2em]">Crear Evento</span>
-            </button>
-          </div>
-        </div>
+        <SelectorBarrio vista={vista} miBarrio={miBarrio} onChange={setVista} />
+        <AvisoBaseDatos faltaTabla={faltaTabla} error={error} />
 
-        <div className="space-y-8">
-          <h2 className="text-xl font-black dark:text-white tracking-widest uppercase px-4">Próximos Eventos</h2>
-
-          {loading ? (
-            <div className="flex flex-col items-center gap-4 py-10 opacity-20">
-              <div className="size-10 border-4 border-primary border-t-transparent animate-spin rounded-full"></div>
-              <p className="text-xs font-black uppercase tracking-widest">Cargando...</p>
-            </div>
-          ) : events.length === 0 ? (
-            <div className="bg-gradient-to-br from-primary/5 to-indigo-500/5 dark:from-primary/10 dark:to-indigo-500/10 p-8 rounded-[35px] border-2 border-dashed border-primary/20">
-              <span className="material-symbols-outlined text-primary text-4xl mb-4 block">event_available</span>
-              <h3 className="text-sm font-black dark:text-white mb-2">No hay eventos aún</h3>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">Sé el primero en organizar algo en {user?.user_metadata?.neighborhood || 'tu barrio'}</p>
-              <button
-                onClick={() => setShowEventModal(true)}
-                className="text-xs font-black text-primary hover:underline"
-              >
-                CREAR PRIMER EVENTO →
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+          {/* Mes */}
+          <section className="lg:col-span-2 bg-white dark:bg-surface-dark rounded-3xl p-5 shadow-sm border border-gray-100 dark:border-gray-800 h-fit" aria-label="Calendario mensual">
+            <div className="flex items-center justify-between mb-4">
+              <button onClick={() => cambiarMes(-1)} className="size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center justify-center" aria-label="Mes anterior">
+                <span className="material-symbols-outlined">chevron_left</span>
+              </button>
+              <h2 className="font-black text-lg uppercase tracking-widest text-gray-800 dark:text-white">{MESES[cursor.m]} {cursor.y}</h2>
+              <button onClick={() => cambiarMes(1)} className="size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center justify-center" aria-label="Mes siguiente">
+                <span className="material-symbols-outlined">chevron_right</span>
               </button>
             </div>
-          ) : (
-            <div className="space-y-6">
-              {events.slice(0, 5).map((event, idx) => (
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: idx * 0.1 }}
-                  key={event.id}
-                  className="group bg-white dark:bg-surface-dark p-6 rounded-[35px] border border-gray-100 dark:border-gray-800 hover:shadow-2xl transition-all relative overflow-hidden"
-                >
-                  <div className="flex gap-5">
-                    <div className={`shrink-0 size-16 md:size-20 rounded-2xl flex flex-col items-center justify-center text-white ${getEventColor(event.category)} shadow-lg font-black`}>
-                      <span className="text-[10px] leading-none uppercase opacity-80">
-                        {new Date(event.event_date).toLocaleDateString('es', { month: 'short' })}
-                      </span>
-                      <span className="text-2xl leading-none">{new Date(event.event_date).getDate()}</span>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">
-                        {event.category} • {event.event_time}
-                      </p>
-                      <h3 className="text-sm md:text-base font-black dark:text-white leading-tight mb-2 group-hover:text-primary transition-colors">
-                        {event.title}
-                      </h3>
-                      {event.location && (
-                        <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 flex items-center gap-1">
-                          <span className="material-symbols-outlined text-xs">location_on</span>
-                          {event.location}
-                        </p>
-                      )}
-                      {event.contact_info && (
-                        <p className="text-[10px] font-bold text-primary">
-                          Contacto: {event.contact_info}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="grid grid-cols-7 gap-1 text-center mb-1">
+              {DIAS.map(d => <span key={d} className="text-[10px] font-black text-gray-400">{d}</span>)}
             </div>
-          )}
+            <div className="grid grid-cols-7 gap-1">
+              {celdas.map((dia, i) => {
+                if (!dia) return <span key={`v${i}`} />;
+                const k = iso(cursor.y, cursor.m, dia);
+                const n = porDia[k]?.length || 0;
+                const esHoy = k === hoy;
+                const sel = k === diaSel;
+                return (
+                  <button
+                    key={k}
+                    onClick={() => setDiaSel(k)}
+                    aria-label={`${dia} de ${MESES[cursor.m]}${n ? `, ${n} actividades` : ''}`}
+                    className={`relative aspect-square rounded-xl text-sm font-bold flex flex-col items-center justify-center transition-all
+                      ${sel ? 'bg-primary text-white shadow-lg scale-105' : esHoy ? 'ring-2 ring-primary text-primary' : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200'}`}
+                  >
+                    {dia}
+                    {n > 0 && (
+                      <span className={`absolute bottom-1 flex items-center gap-0.5 text-[8px] font-black ${sel ? 'text-white/90' : 'text-emerald-600'}`}>
+                        <span className={`size-1.5 rounded-full ${sel ? 'bg-white' : 'bg-emerald-500'}`} />{n > 9 ? '9+' : n}
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+            <p className="mt-4 text-[11px] text-gray-400 flex items-center gap-1.5">
+              <span className="size-2 rounded-full bg-emerald-500" /> Días con actividades registradas · se actualiza en tiempo real
+            </p>
+          </section>
+
+          {/* Lista del día */}
+          <section className="lg:col-span-3 space-y-4" aria-live="polite">
+            <h2 className="text-xl font-black text-gray-800 dark:text-white capitalize">
+              {etiquetaDia(diaSel) === 'Hoy' ? 'Hoy · ' : ''}
+              {diaSelDate.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' })}
+              <span className="ml-2 text-sm font-bold text-gray-400">{eventosDia.length} actividad{eventosDia.length === 1 ? '' : 'es'}</span>
+            </h2>
+
+            {cargando ? <Cargando texto="Cargando actividades…" /> : eventosDia.length === 0 ? (
+              <EstadoVacio
+                icono="event_busy"
+                titulo="Sin actividades este día"
+                texto="Prueba con otro día marcado en el calendario, cambia de barrio o publica tú una actividad para tus vecinos."
+                accion={{ texto: 'Publicar actividad', onClick: () => setModal(true) }}
+              />
+            ) : (
+              <AnimatePresence initial={false}>
+                {eventosDia.map(ev => (
+                  <motion.article key={ev.id} layout initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+                    className="bg-white dark:bg-surface-dark rounded-3xl p-5 border border-gray-100 dark:border-gray-800 shadow-sm">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className="text-[10px] font-black uppercase tracking-wider bg-primary/10 text-primary px-2 py-0.5 rounded-full">{ev.categoria || 'Cultura'}</span>
+                      <span className="text-[10px] font-black uppercase tracking-wider bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-0.5 rounded-full">📍 {ev.barrio === 'GENERAL' ? 'Toda la ciudad' : ev.barrio}</span>
+                      {ev.gratuito === true && <span className="text-[10px] font-black uppercase bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">Gratis</span>}
+                      <InsigniaFuente fuente={ev.fuente} verificado={ev.verificado} />
+                    </div>
+                    <h3 className="text-lg font-black text-gray-900 dark:text-white leading-snug">{ev.titulo}</h3>
+                    <div className="mt-1 text-sm text-gray-500 dark:text-gray-400 space-y-0.5">
+                      {ev.hora && <p className="flex items-center gap-1.5"><span className="material-symbols-outlined text-base">schedule</span>{ev.hora}</p>}
+                      {(ev.ubicacion || ev.direccion) && (
+                        <p className="flex items-center gap-1.5"><span className="material-symbols-outlined text-base">location_on</span>{[ev.ubicacion, ev.direccion].filter(Boolean).join(' · ')}</p>
+                      )}
+                      {ev.fecha_fin && ev.fecha_fin !== ev.fecha_actividad && (
+                        <p className="flex items-center gap-1.5"><span className="material-symbols-outlined text-base">date_range</span>Del {new Date(ev.fecha_actividad + 'T12:00:00').toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })} al {new Date(ev.fecha_fin + 'T12:00:00').toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })}</p>
+                      )}
+                    </div>
+                    {ev.descripcion && <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 line-clamp-3">{ev.descripcion}</p>}
+                    <BotonesContacto telefono={ev.telefono} email={ev.email} url={ev.url} textoUrl="Más información" />
+                    <div className="flex gap-3 mt-3">
+                      {ev.lat != null && ev.lng != null && (
+                        <Link to={`/map?evento=${ev.id}`} className="text-[11px] font-black uppercase tracking-wider text-primary hover:underline flex items-center gap-1">
+                          <span className="material-symbols-outlined text-sm">map</span>Ver en el mapa
+                        </Link>
+                      )}
+                      {user?.id && ev.creador_id === user.id && (
+                        <button onClick={() => borrar(ev.id)} className="text-[11px] font-black uppercase tracking-wider text-red-500 hover:underline flex items-center gap-1">
+                          <span className="material-symbols-outlined text-sm">delete</span>Eliminar
+                        </button>
+                      )}
+                    </div>
+                  </motion.article>
+                ))}
+              </AnimatePresence>
+            )}
+          </section>
         </div>
       </div>
 
+      {/* Modal publicar */}
       <AnimatePresence>
-        {showEventModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={() => setShowEventModal(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white dark:bg-surface-dark rounded-[40px] p-8 max-w-lg w-full shadow-2xl max-h-[90vh] overflow-y-auto"
-            >
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-black dark:text-white uppercase tracking-tight">Crear Evento</h3>
-                <button onClick={() => setShowEventModal(false)} className="size-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all">
-                  <span className="material-symbols-outlined">close</span>
-                </button>
+        {modal && (
+          <motion.div className="fixed inset-0 z-[90] bg-black/60 backdrop-blur-sm flex items-end md:items-center justify-center p-0 md:p-6"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setModal(false)}>
+            <motion.form onSubmit={crearEvento} onClick={e => e.stopPropagation()}
+              initial={{ y: 60 }} animate={{ y: 0 }} exit={{ y: 60 }}
+              className="w-full max-w-lg max-h-[92vh] overflow-y-auto bg-white dark:bg-surface-dark rounded-t-[32px] md:rounded-[32px] p-6 space-y-3 shadow-2xl">
+              <h2 className="text-xl font-black dark:text-white">Publicar actividad en {miBarrio === 'GENERAL' ? 'Tarragona' : miBarrio}</h2>
+              <input name="titulo" required maxLength={120} placeholder="Título de la actividad" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              <textarea name="descripcion" rows={3} maxLength={500} placeholder="Descripción (qué, para quién, cómo apuntarse…)" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              <div className="grid grid-cols-2 gap-3">
+                <input name="fecha" type="date" required min={hoy} defaultValue={diaSel >= hoy ? diaSel : hoy} className="rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+                <input name="hora" type="time" className="rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
               </div>
-
-              <form onSubmit={handleEventSubmit} className="space-y-4">
-                <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Título del Evento</label>
-                  <input
-                    type="text"
-                    value={eventTitle}
-                    onChange={(e) => setEventTitle(e.target.value)}
-                    required
-                    className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
-                    placeholder="Ej: Cena de Navidad del Barrio"
-                  />
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Fecha</label>
-                    <input
-                      type="date"
-                      value={eventDate}
-                      onChange={(e) => setEventDate(e.target.value)}
-                      required
-                      className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Hora</label>
-                    <input
-                      type="time"
-                      value={eventTime}
-                      onChange={(e) => setEventTime(e.target.value)}
-                      required
-                      className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Categoría</label>
-                  <select
-                    value={eventCategory}
-                    onChange={(e) => setEventCategory(e.target.value)}
-                    className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
-                  >
-                    <option>Ocio</option>
-                    <option>Fiesta</option>
-                    <option>Solidario</option>
-                    <option>Cultura</option>
-                    <option>Deporte</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Ubicación</label>
-                  <input
-                    type="text"
-                    value={eventLocation}
-                    onChange={(e) => setEventLocation(e.target.value)}
-                    className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
-                    placeholder="Ej: Plaza Mayor"
-                  />
-                </div>
-
-                <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Descripción</label>
-                  <textarea
-                    value={eventDescription}
-                    onChange={(e) => setEventDescription(e.target.value)}
-                    rows={3}
-                    className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white resize-none"
-                    placeholder="Detalles del evento..."
-                  />
-                </div>
-
-                <div>
-                  <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Contacto</label>
-                  <input
-                    type="text"
-                    value={eventContact}
-                    onChange={(e) => setEventContact(e.target.value)}
-                    required
-                    className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white focus:ring-2 ring-primary/20 outline-none"
-                    placeholder="Teléfono o email"
-                  />
-                </div>
-
-                <button type="submit" className="w-full bg-primary text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-primary-hover transition-all shadow-lg shadow-primary/20">
-                  Publicar Evento
-                </button>
-              </form>
-            </motion.div>
+              <input name="ubicacion" maxLength={140} placeholder="Lugar (calle, plaza, centro cívico…)" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              <select name="categoria" defaultValue="Ocio" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm">
+                {CATEGORIAS.map(c => <option key={c}>{c}</option>)}
+              </select>
+              <input name="telefono" type="tel" required placeholder="Teléfono de contacto (obligatorio)" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              <input name="email" type="email" placeholder="Email (opcional)" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              {errorForm && <p className="text-sm font-bold text-red-500" role="alert">{errorForm}</p>}
+              <div className="flex gap-3 pt-2">
+                <button type="button" onClick={() => setModal(false)} className="flex-1 py-3 rounded-xl font-black text-xs uppercase tracking-widest bg-gray-100 dark:bg-gray-800 dark:text-gray-200">Cancelar</button>
+                <button type="submit" disabled={guardando} className="flex-1 py-3 rounded-xl font-black text-xs uppercase tracking-widest bg-primary text-white disabled:opacity-60">{guardando ? 'Publicando…' : 'Publicar'}</button>
+              </div>
+            </motion.form>
           </motion.div>
         )}
       </AnimatePresence>
@@ -546,4 +290,3 @@ const NeighborhoodCalendar: React.FC = () => {
 };
 
 export default NeighborhoodCalendar;
-

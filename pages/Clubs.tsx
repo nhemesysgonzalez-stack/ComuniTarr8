@@ -45,19 +45,19 @@ const Clubs: React.FC = () => {
                     id: 'c-oct-1',
                     creator_id: 'v1',
                     name: 'Excursió Senderisme Muntanyes de Prades 🥾',
-                    description: 'Sábado 25 oct, salida a las 08:30 desde Estación Renfe Tarragona. Distancia: 12km, dificultad media. Llevar agua y bocadillo. Canal DEPORTES del foro.',
+                    description: 'Sábado 1 nov, salida a las 08:30 desde Estación Renfe Tarragona. Distancia: 12km, dificultad media. Llevar agua y bocadillo. Canal DEPORTES del foro.',
                     neighborhood: 'GENERAL',
                     contact_info: 'Contactar por la app',
-                    created_at: '2026-10-20T08:30:00Z'
+                    created_at: '2026-10-27T08:30:00Z'
                 },
                 {
                     id: 'c-oct-2',
                     creator_id: 'v2',
                     name: 'Fotografia Otoñal 📸',
-                    description: 'Este sábado 25 oct, quedada para fotografiar el atardecer desde el Balcón del Mediterráneo a las 18:30. Traer cámara o móvil.',
+                    description: 'Este sábado 1 nov, quedada para fotografiar el atardecer desde el Balcón del Mediterráneo a las 18:30. Traer cámara o móvil.',
                     neighborhood: 'Part Alta',
                     contact_info: 'Contactar por la app',
-                    created_at: '2026-10-21T09:00:00Z'
+                    created_at: '2026-10-27T09:00:00Z'
                 },
                 {
                     id: 'c-oct-3',
@@ -66,7 +66,7 @@ const Clubs: React.FC = () => {
                     description: "Debatimos 'El nom del vent' de Rothfuss. Martes 28 oct a las 19h en el Café Txoko (C/ Apodaca).",
                     neighborhood: 'GENERAL',
                     contact_info: 'Contactar por la app',
-                    created_at: '2026-10-21T18:00:00Z'
+                    created_at: '2026-10-27T10:00:00Z'
                 },
                 {
                     id: 'c-oct-4',
@@ -75,16 +75,16 @@ const Clubs: React.FC = () => {
                     description: "Viernes 31 oct a las 17h. Disfraces, juegos y merienda gratis. Organizado por l'AMPA. Llevar disfraz.",
                     neighborhood: 'GENERAL',
                     contact_info: 'Contactar por la app',
-                    created_at: '2026-10-22T10:00:00Z'
+                    created_at: '2026-10-27T11:00:00Z'
                 },
                 {
                     id: 'c-oct-5',
                     creator_id: 'v5',
                     name: "Cinema al Barri: 'La Sala' 🎥",
-                    description: 'Proyección gratuita en el CC Torreforta, viernes 24 oct a las 20h.',
+                    description: 'Proyección gratuita en el CC Torreforta, viernes 31 oct a las 20h.',
                     neighborhood: 'Torreforta',
                     contact_info: 'Contactar por la app',
-                    created_at: '2026-10-22T16:00:00Z'
+                    created_at: '2026-10-27T12:00:00Z'
                 }
             ];
 

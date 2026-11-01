@@ -1,268 +1,251 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 import { useAuth } from '../contexts/AuthContext';
+import { barrioDeUsuario, BARRIOS } from '../services/barrios';
+import { fechaLocalISO, useTabla } from '../services/datos';
+import { formatearTelefono, telHref, urlSegura } from '../services/contacto';
+import { AvisoBaseDatos, CabeceraModulo, Cargando, SelectorBarrio, barriosDeVista } from '../components/Modulos';
+
+type Capa = 'eventos' | 'centros' | 'voluntariados' | 'trabajos';
+type Rango = 'hoy' | 'semana' | 'todo';
+
+interface Pin {
+  id: string;
+  capa: Capa;
+  lat: number;
+  lng: number;
+  titulo: string;
+  lineas: string[];
+  telefono?: string | null;
+  url?: string | null;
+  barrio: string;
+}
+
+const CAPAS: Record<Capa, { nombre: string; color: string; icono: string }> = {
+  eventos: { nombre: 'Actividades', color: '#2b8cee', icono: 'event' },
+  centros: { nombre: 'Centros cívicos', color: '#7c3aed', icono: 'groups' },
+  voluntariados: { nombre: 'Voluntariado', color: '#e11d48', icono: 'volunteer_activism' },
+  trabajos: { nombre: 'Empleo', color: '#059669', icono: 'work' },
+};
+
+const CENTRO_TARRAGONA: [number, number] = [41.1189, 1.2445];
+
+function icono(capa: Capa, activo = false): L.DivIcon {
+  const c = CAPAS[capa];
+  return L.divIcon({
+    className: 'pin-comunitarr',
+    html: `<div style="background:${c.color};width:${activo ? 40 : 32}px;height:${activo ? 40 : 32}px;border-radius:50% 50% 50% 4px;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,0,0,.35);border:2px solid #fff">
+      <span class="material-symbols-outlined" style="transform:rotate(45deg);color:#fff;font-size:${activo ? 22 : 18}px">${c.icono}</span></div>`,
+    iconSize: [activo ? 40 : 32, activo ? 40 : 32],
+    iconAnchor: [activo ? 8 : 6, activo ? 38 : 30],
+    popupAnchor: [8, -30],
+  });
+}
+
+/** Popup construido con nodos DOM (textContent) para no inyectar HTML de terceros. */
+function crearPopup(p: Pin): HTMLElement {
+  const raiz = document.createElement('div');
+  raiz.style.minWidth = '210px';
+  const etiqueta = document.createElement('div');
+  etiqueta.textContent = CAPAS[p.capa].nombre.toUpperCase();
+  etiqueta.style.cssText = `font:900 9px sans-serif;letter-spacing:.12em;color:${CAPAS[p.capa].color}`;
+  const h = document.createElement('div');
+  h.textContent = p.titulo;
+  h.style.cssText = 'font:800 14px sans-serif;margin:2px 0 6px;line-height:1.25';
+  raiz.append(etiqueta, h);
+  p.lineas.filter(Boolean).forEach(t => {
+    const l = document.createElement('div');
+    l.textContent = t;
+    l.style.cssText = 'font:500 12px sans-serif;color:#555;margin-bottom:2px';
+    raiz.append(l);
+  });
+  const acciones = document.createElement('div');
+  acciones.style.cssText = 'display:flex;gap:6px;flex-wrap:wrap;margin-top:8px';
+  const boton = (texto: string, href: string, fondo: string, externo = false) => {
+    const a = document.createElement('a');
+    a.href = href; a.textContent = texto;
+    if (externo) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+    a.style.cssText = `background:${fondo};color:#fff;font:800 11px sans-serif;padding:7px 11px;border-radius:10px;text-decoration:none`;
+    acciones.append(a);
+  };
+  const tel = telHref(p.telefono);
+  if (tel) boton(`📞 ${formatearTelefono(p.telefono)}`, tel, '#059669');
+  const web = urlSegura(p.url);
+  if (web) boton('Más información', web, '#2b8cee', true);
+  boton('Cómo llegar', `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}`, '#374151', true);
+  raiz.append(acciones);
+  return raiz;
+}
 
 const MapView: React.FC = () => {
   const { user } = useAuth();
-  const [selectedPin, setSelectedPin] = useState<any>(null);
+  const miBarrio = barrioDeUsuario(user);
+  const [params] = useSearchParams();
+  const focoId = params.get('evento');
 
-  const [pins, setPins] = useState<any[]>([
-    { id: 'plan-1', type: 'cultura', x: '45%', y: '40%', title: '🌰 Castañada Popular · Plaza de la Font', desc: 'Este sábado 25 Oct a las 17h. Castañas y boniatos asados gratis para vecinos. Música en vivo y actividades para niños. Organiza el Ajuntament de Tarragona.', status: 'Sáb 25 Oct · 17h', color: 'bg-orange-500', icon: 'local_fire_department', glow: 'shadow-[0_0_50px_rgba(249,115,22,0.4)]', creator_name: 'Ajuntament TGN' },
-    { id: 'plan-2', type: 'cultura', x: '38%', y: '52%', title: '🏛️ Visita Guiada Part Alta Romana', desc: 'Hoy jueves 23 Oct a las 17h. Entrada gratuita. Descubre los secretos de la Tarraco romana: murallas, foro y circo. Plazas limitadas. Tel: 977 250 795', status: 'Hoy Jue 23 · 17h · Gratis', color: 'bg-purple-500', icon: 'museum', glow: 'shadow-[0_0_40px_rgba(168,85,247,0.3)]', creator_name: 'Turisme TGN' },
-    { id: 'plan-3', type: 'ocio', x: '60%', y: '62%', title: '☕ Terrazas de Otoño en el Serrallo', desc: 'El buen tiempo otoñal anima las terrazas del barrio marinero. Ambiente tranquilo y vistas al puerto. Perfecto para un vermút de jueves.', status: 'Animado ahora · Jue 23', color: 'bg-emerald-500', icon: 'local_cafe', creator_name: 'Barrio Serrallo' },
-    { id: 'plan-4', type: 'deporte', x: '72%', y: '72%', title: '🥾 Senderisme Muntanyes de Prades', desc: 'Sábado 25 Oct. Ruta guiada de otoño. Salida puntual a las 08:30h desde la Estació RENFE. Buen calzado y mochila con agua. Tel: 977 250 795', status: 'Sáb 25 · 08:30h · RENFE', color: 'bg-green-500', icon: 'hiking', creator_name: 'Club Senderisme TGN' },
-    { id: 'plan-5', type: 'ocio', x: '28%', y: '65%', title: '🛒 Mercadillo Segunda Mano · Bonavista', desc: 'Domingo 26 Oct de 09h a 14h. Productos de temporada, artesanía local, ropa vintage y segunda mano en la Explanada de Bonavista. Líneas L54 y L3 reforzadas.', status: 'Dom 26 · 09h–14h', color: 'bg-rose-500', icon: 'storefront', glow: 'shadow-[0_0_40px_rgba(244,63,94,0.3)]', creator_name: 'Mercats TGN' },
-    { id: 'plan-6', type: 'cultura', x: '55%', y: '30%', title: '🎷 Concert Jazz · Amfiteatre Romà', desc: 'Sábado 25 Oct a las 19h. Concierto de jazz al aire libre en el recinto histórico del Amfiteatre. Gratis. Plazas muy limitadas — llega pronto!', status: 'Sáb 25 · 19h · Gratis', color: 'bg-indigo-500', icon: 'music_note', glow: 'shadow-[0_0_40px_rgba(99,102,241,0.3)]', creator_name: 'Cultura TGN' }
-  ]);
-  const [showReportModal, setShowReportModal] = useState(false);
-  const [showDetailModal, setShowDetailModal] = useState(false);
-  const [followedPins, setFollowedPins] = useState<number[]>([]);
-  const [newReportTitle, setNewReportTitle] = useState('');
-  const [newReportType, setNewReportType] = useState('ocio');
+  const [vista, setVista] = useState(miBarrio);
+  const [rango, setRango] = useState<Rango>('semana');
+  const [capas, setCapas] = useState<Record<Capa, boolean>>({ eventos: true, centros: true, voluntariados: true, trabajos: true });
+  const [seleccion, setSeleccion] = useState<string | null>(focoId);
 
-  const toggleFollow = (id: number) => {
-    if (followedPins.includes(id)) {
-      setFollowedPins(followedPins.filter(pid => pid !== id));
-    } else {
-      setFollowedPins([...followedPins, id]);
+  const hoy = fechaLocalISO();
+  const limite = rango === 'hoy' ? hoy : rango === 'semana' ? fechaLocalISO(new Date(Date.now() + 7 * 86_400_000)) : '9999-12-31';
+  const barrios = barriosDeVista(vista);
+
+  const ev = useTabla<any>('eventos', {
+    barrios, clave: `${hoy}|${limite}`,
+    filtro: q => q.not('lat', 'is', null).lte('fecha_actividad', limite)
+      .or(`fecha_fin.gte.${hoy},and(fecha_fin.is.null,fecha_actividad.gte.${hoy})`),
+    orden: { col: 'fecha_actividad', asc: true }, limite: 400,
+  });
+  const ce = useTabla<any>('centros_civicos', { barrios, filtro: q => q.not('lat', 'is', null) });
+  const vo = useTabla<any>('voluntariados', { barrios, clave: hoy, filtro: q => q.not('lat', 'is', null) });
+  const tr = useTabla<any>('trabajos', { barrios, clave: hoy, filtro: q => q.not('lat', 'is', null).or(`fecha_caducidad.is.null,fecha_caducidad.gte.${hoy}`) });
+
+  const pins = useMemo<Pin[]>(() => {
+    const lista: Pin[] = [];
+    if (capas.eventos) ev.datos.forEach(e => lista.push({
+      id: e.id, capa: 'eventos', lat: e.lat, lng: e.lng, titulo: e.titulo, barrio: e.barrio, telefono: e.telefono, url: e.url,
+      lineas: [e.hora || '', e.ubicacion || '', e.fecha_fin && e.fecha_fin !== e.fecha_actividad ? `Hasta el ${new Date(e.fecha_fin + 'T12:00:00').toLocaleDateString('es-ES', { day: 'numeric', month: 'long' })}` : new Date(e.fecha_actividad + 'T12:00:00').toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' })],
+    }));
+    if (capas.centros) ce.datos.forEach(c => lista.push({
+      id: c.id, capa: 'centros', lat: c.lat, lng: c.lng, titulo: c.nombre, barrio: c.barrio, telefono: c.telefono, url: c.web,
+      lineas: [c.direccion || '', c.horario || ''],
+    }));
+    if (capas.voluntariados) vo.datos.forEach(v => lista.push({
+      id: v.id, capa: 'voluntariados', lat: v.lat, lng: v.lng, titulo: v.titulo, barrio: v.barrio, telefono: v.telefono, url: v.url,
+      lineas: [v.entidad || '', v.ubicacion || ''],
+    }));
+    if (capas.trabajos) tr.datos.forEach(t => lista.push({
+      id: t.id, capa: 'trabajos', lat: t.lat, lng: t.lng, titulo: t.titulo, barrio: t.barrio, telefono: t.telefono, url: t.url_inscripcion,
+      lineas: [t.empresa || '', t.jornada || ''],
+    }));
+    return lista.filter(p => typeof p.lat === 'number' && typeof p.lng === 'number');
+  }, [ev.datos, ce.datos, vo.datos, tr.datos, capas]);
+
+  /* ---- Mapa Leaflet ---- */
+  const contenedor = useRef<HTMLDivElement>(null);
+  const mapa = useRef<L.Map | null>(null);
+  const capaPins = useRef<L.LayerGroup | null>(null);
+  const marcadores = useRef<Record<string, L.Marker>>({});
+  const primerEncuadre = useRef(true);
+
+  useEffect(() => {
+    if (!contenedor.current || mapa.current) return;
+    const m = L.map(contenedor.current, { zoomControl: true, scrollWheelZoom: true }).setView(CENTRO_TARRAGONA, 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',
+    }).addTo(m);
+    capaPins.current = L.layerGroup().addTo(m);
+    mapa.current = m;
+    setTimeout(() => m.invalidateSize(), 150);
+    return () => { m.remove(); mapa.current = null; };
+  }, []);
+
+  // Pinta/actualiza los pins cuando cambian los datos de Supabase
+  useEffect(() => {
+    const m = mapa.current; const grupo = capaPins.current;
+    if (!m || !grupo) return;
+    grupo.clearLayers();
+    marcadores.current = {};
+    pins.forEach(p => {
+      const mk = L.marker([p.lat, p.lng], { icon: icono(p.capa, p.id === seleccion), title: p.titulo }).bindPopup(() => crearPopup(p));
+      mk.on('click', () => setSeleccion(p.id));
+      mk.addTo(grupo);
+      marcadores.current[p.id] = mk;
+    });
+    if (primerEncuadre.current && pins.length) {
+      m.fitBounds(L.latLngBounds(pins.map(p => [p.lat, p.lng] as [number, number])).pad(0.2), { maxZoom: 15 });
+      primerEncuadre.current = false;
     }
-  };
+  }, [pins, seleccion]);
 
-  const handleAddReport = (e: React.FormEvent) => {
-    e.preventDefault();
-    const newPin = {
-      id: Date.now(),
-      type: newReportType,
-      x: '50%', // Por defecto en el centro para demo
-      y: '50%',
-      title: newReportTitle,
-      desc: '¡Acabo de crear este plan! Hablemos para coordinarnos.',
-      status: 'Creado ahora',
-      color: newReportType === 'ocio' ? 'bg-orange-500' : newReportType === 'deporte' ? 'bg-blue-500' : 'bg-purple-500',
-      icon: newReportType === 'ocio' ? 'local_bar' : newReportType === 'deporte' ? 'fitness_center' : 'group',
-      creator_name: user?.user_metadata?.full_name || 'Tú',
-      creator_neighborhood: user?.user_metadata?.neighborhood || 'General',
-      is_demo: false
-    };
-    setPins([...pins, newPin]);
-    setShowReportModal(false);
-    setNewReportTitle('');
-  };
+  // Al cambiar de barrio, reencuadrar
+  useEffect(() => { primerEncuadre.current = true; }, [vista, rango]);
+
+  // Enfocar un pin concreto (desde el calendario o desde la lista)
+  useEffect(() => {
+    if (!seleccion || !mapa.current) return;
+    const mk = marcadores.current[seleccion];
+    if (mk) { mapa.current.setView(mk.getLatLng(), Math.max(mapa.current.getZoom(), 16), { animate: true }); mk.openPopup(); }
+  }, [seleccion, pins]);
+
+  const cargando = ev.cargando || ce.cargando || vo.cargando || tr.cargando;
+  const errorPrincipal = ev.error || ce.error;
+  const centroBarrio = BARRIOS.find(b => b.nombre === vista);
+  useEffect(() => {
+    if (centroBarrio && mapa.current && !pins.length) mapa.current.setView([centroBarrio.lat, centroBarrio.lng], 15);
+  }, [centroBarrio, pins.length]);
 
   return (
-    <div className="h-[calc(100vh-80px)] w-full relative overflow-hidden font-sans border-l border-gray-100 dark:border-gray-800 bg-[#e5e7eb]">
-      {/* Background Simulating Map - Actualizado a Tarragona */}
-      <div className="absolute inset-0 z-0 opacity-80 mix-blend-multiply filter grayscale contrast-125">
-        <iframe
-          width="100%"
-          height="100%"
-          frameBorder="0"
-          style={{ border: 0 }}
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11984.664687679365!2d1.2407559134907082!3d41.118021085004576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3f2c525f2af45%3A0x673c683c310c85c3!2sTarragona!5e0!3m2!1ses!2ses!4v1703612345678!5m2!1ses!2ses"
-          allowFullScreen
-          loading="lazy"
-        ></iframe>
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent pointer-events-none"></div>
-      </div>
+    <div className="min-h-screen bg-gray-50 dark:bg-background-dark pb-24 font-sans">
+      <div className="max-w-7xl mx-auto p-4 md:p-8 space-y-5">
+        <CabeceraModulo
+          icono="map"
+          titulo="Mapa vivo de Tarragona"
+          subtitulo="Cada pin sale de la base de datos: actividades de hoy y de la semana, centros cívicos, voluntariado y empleo con ubicación. Se actualiza solo."
+          gradiente="from-emerald-600 via-teal-500 to-sky-500"
+        />
 
-      {/* Floating Header Especial */}
-      <div className="absolute top-8 left-8 right-8 z-10 flex flex-col md:flex-row gap-4">
-        <div className="bg-gradient-to-r from-orange-500 to-pink-500 p-6 rounded-[35px] shadow-[0_20px_50px_rgba(249,115,22,0.3)] border border-white/20 flex-1 flex flex-col md:flex-row items-start md:items-center justify-between text-white">
-          <div>
-            <h1 className="text-2xl md:text-5xl font-black tracking-tighter uppercase leading-none mb-1">📍 ACTIVIDADES Y PLANES HOY EN TARRAGONA</h1>
-            <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] opacity-90 drop-shadow-md">
-              Jueves 23 Octubre 2026 · Apunta el plan o únete a uno vecinal.
-            </p>
-          </div>
-          <div className="flex gap-2 mt-4 md:mt-0">
-            <button
-              onClick={() => setShowReportModal(true)}
-              className="px-8 py-4 rounded-2xl bg-white text-orange-600 text-xs font-black shadow-lg hover:scale-105 active:scale-95 transition-all uppercase tracking-widest flex items-center gap-2"
-            >
-              <span className="material-symbols-outlined text-base">location_on</span>
-              DEJAR MI PIN
+        <SelectorBarrio vista={vista} miBarrio={miBarrio} onChange={v => { setVista(v); setSeleccion(null); }} />
+
+        <div className="flex flex-wrap items-center gap-2">
+          {(['hoy', 'semana', 'todo'] as Rango[]).map(r => (
+            <button key={r} onClick={() => setRango(r)}
+              className={`px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider border transition-all ${rango === r ? 'bg-gray-900 text-white border-gray-900 dark:bg-white dark:text-gray-900' : 'bg-white dark:bg-surface-dark text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700'}`}>
+              {r === 'hoy' ? 'Hoy' : r === 'semana' ? 'Próximos 7 días' : 'Todo lo vigente'}
             </button>
+          ))}
+          <span className="hidden md:block w-px h-6 bg-gray-300 dark:bg-gray-700 mx-1" />
+          {(Object.keys(CAPAS) as Capa[]).map(c => (
+            <button key={c} onClick={() => setCapas(p => ({ ...p, [c]: !p[c] }))} aria-pressed={capas[c]}
+              className={`px-3 py-2 rounded-full text-xs font-black uppercase tracking-wider border flex items-center gap-1.5 transition-all ${capas[c] ? 'text-white border-transparent shadow-md' : 'bg-white dark:bg-surface-dark text-gray-400 border-gray-200 dark:border-gray-700'}`}
+              style={capas[c] ? { background: CAPAS[c].color } : undefined}>
+              <span className="material-symbols-outlined text-base">{CAPAS[c].icono}</span>{CAPAS[c].nombre}
+            </button>
+          ))}
+        </div>
+
+        <AvisoBaseDatos faltaTabla={ev.faltaTabla || ce.faltaTabla} error={errorPrincipal} />
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+          <div className="lg:col-span-2 relative rounded-3xl overflow-hidden shadow-xl border border-gray-200 dark:border-gray-800" style={{ isolation: 'isolate' }}>
+            <div ref={contenedor} className="h-[60vh] lg:h-[70vh] w-full" role="application" aria-label="Mapa interactivo de Tarragona" />
+            {cargando && (
+              <div className="absolute top-3 left-1/2 -translate-x-1/2 z-[500] bg-white/95 dark:bg-surface-dark/95 rounded-full px-4 py-2 shadow-lg text-xs font-black flex items-center gap-2">
+                <span className="material-symbols-outlined text-base animate-spin">progress_activity</span>Actualizando pins…
+              </div>
+            )}
           </div>
+
+          <aside className="bg-white dark:bg-surface-dark rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm p-4 h-[40vh] lg:h-[70vh] overflow-y-auto" aria-label="Lista de lugares en el mapa">
+            <h2 className="font-black text-sm uppercase tracking-widest text-gray-500 mb-3">{pins.length} lugar{pins.length === 1 ? '' : 'es'} en el mapa</h2>
+            {cargando && pins.length === 0 ? <Cargando /> : pins.length === 0 ? (
+              <p className="text-sm text-gray-500 py-8 text-center">No hay pins con ubicación para este barrio y rango. Prueba “Toda la ciudad” o “Todo lo vigente”.</p>
+            ) : (
+              <ul className="space-y-2">
+                {pins.map(p => (
+                  <li key={`${p.capa}-${p.id}`}>
+                    <button onClick={() => setSeleccion(p.id)}
+                      className={`w-full text-left rounded-2xl p-3 border transition-all flex gap-3 items-start ${seleccion === p.id ? 'border-primary bg-primary/5' : 'border-gray-100 dark:border-gray-800 hover:border-gray-300'}`}>
+                      <span className="size-9 shrink-0 rounded-xl flex items-center justify-center text-white" style={{ background: CAPAS[p.capa].color }}>
+                        <span className="material-symbols-outlined text-lg">{CAPAS[p.capa].icono}</span>
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-sm font-black text-gray-900 dark:text-white leading-snug line-clamp-2">{p.titulo}</span>
+                        <span className="block text-[11px] text-gray-500 mt-0.5 truncate">{p.lineas.filter(Boolean)[0]} · {p.barrio === 'GENERAL' ? 'Toda la ciudad' : p.barrio}</span>
+                      </span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </aside>
         </div>
       </div>
-
-      <div className="relative w-full h-full p-20 z-0">
-        {pins.map(pin => (
-          <motion.button
-            initial={{ scale: 0, opacity: 0, y: -20 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            whileHover={{ scale: 1.1, translateY: -10 }}
-            onClick={() => setSelectedPin(pin)}
-            key={pin.id}
-            className={`absolute flex flex-col items-center justify-center cursor-pointer z-10 group`}
-            style={{ left: pin.x, top: pin.y }}
-          >
-            {/* Pin head */}
-            <div className={`size-14 md:size-16 rounded-full ${pin.color} ${pin.glow || 'shadow-2xl'} text-white flex items-center justify-center border-[4px] border-white relative z-10 overflow-hidden`}>
-              {/* Si tiene avatar se podría mostrar aquí, por ahora usamos el icono */}
-              <span className="material-symbols-outlined text-2xl font-black drop-shadow-md">{pin.icon}</span>
-            </div>
-
-            {/* Pin tail */}
-            <div className={`w-1 h-6 ${pin.color} -mt-2 shadow-lg`}></div>
-            <div className="w-4 h-1 bg-black/30 rounded-full blur-[2px] mt-1"></div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="mt-2 px-3 py-1 bg-white/90 backdrop-blur-md rounded-xl shadow-lg border border-gray-100 font-bold text-[10px] whitespace-nowrap text-gray-800"
-            >
-              {pin.status}
-            </motion.div>
-          </motion.button>
-        ))}
-      </div>
-
-      {/* Legend */}
-      <div className="absolute bottom-8 left-8 z-10 space-y-2">
-        {[
-          { id: 1, label: 'CULTURA & EVENTOS', color: 'bg-purple-500' },
-          { id: 2, label: 'DEPORTE & RUTAS', color: 'bg-green-500' },
-          { id: 3, label: 'OCIO & COMER', color: 'bg-emerald-500' },
-          { id: 4, label: 'MERCADILLOS', color: 'bg-rose-500' }
-        ].map(l => (
-          <div key={l.id} className="bg-white/90 dark:bg-surface-dark/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/20 shadow-lg flex items-center gap-3">
-            <span className={`size-4 rounded-full ${l.color} shadow-inner bg-gradient-to-br from-white/30 to-transparent`}></span>
-            <span className="text-[10px] font-black dark:text-white tracking-widest uppercase">{l.label}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* Detail Overlay */}
-      <AnimatePresence>
-        {selectedPin && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 20 }}
-            className="absolute top-0 right-0 h-full w-full md:w-[400px] bg-white dark:bg-surface-dark shadow-[-20px_0_60px_rgba(0,0,0,0.15)] z-50 p-8 flex flex-col border-l border-gray-100 dark:border-gray-800"
-          >
-            <button onClick={() => setSelectedPin(null)} className="absolute top-8 left-0 -translate-x-full size-12 bg-white dark:bg-surface-dark flex items-center justify-center rounded-l-2xl shadow-xl md:shadow-none border-y border-l border-gray-100 dark:border-gray-800 text-gray-400">
-              <span className="material-symbols-outlined">chevron_right</span>
-            </button>
-
-            <div className={`mt-10 size-24 rounded-full ${selectedPin.color} text-white flex items-center justify-center shadow-2xl shadow-current mb-6 border-[6px] border-gray-50 dark:border-gray-800 relative`}>
-              <span className="material-symbols-outlined text-4xl font-black drop-shadow-lg">{selectedPin.icon}</span>
-              <div className="absolute -bottom-2 px-3 py-1 bg-black text-white text-[9px] font-black uppercase rounded-full shadow-lg border border-white/20 tracking-widest">
-                {selectedPin.creator_name}
-              </div>
-            </div>
-
-            <h2 className="text-3xl font-black dark:text-white tracking-tight leading-tight mb-4">{selectedPin.title}</h2>
-            <p className="text-gray-600 dark:text-gray-300 font-medium mb-8 leading-relaxed text-base">{selectedPin.desc}</p>
-
-            <div className="space-y-4 mb-auto">
-              <div className="flex items-center justify-between p-5 bg-gray-50 dark:bg-gray-800/50 rounded-3xl border border-gray-100 dark:border-gray-700/50">
-                <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest flex items-center gap-2"><span className="material-symbols-outlined text-sm">schedule</span> ¿Cuándo?</span>
-                <span className={`px-4 py-1.5 rounded-full text-[10px] font-black text-white shadow-lg ${selectedPin.color}`}>{selectedPin.status}</span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-4">
-              {selectedPin.id > 100 && (
-                <button
-                  onClick={() => {
-                    setPins(pins.filter(p => p.id !== selectedPin.id));
-                    setSelectedPin(null);
-                  }}
-                  className="py-4 bg-red-50 text-red-600 text-xs font-black rounded-2xl uppercase tracking-widest hover:bg-red-100 transition-all"
-                >
-                  Cancelar mi plan
-                </button>
-              )}
-
-              <button
-                onClick={() => toggleFollow(selectedPin.id)}
-                className={`py-5 text-sm font-black rounded-[25px] uppercase tracking-widest transition-all shadow-xl flex items-center justify-center gap-2 ${followedPins.includes(selectedPin.id) ? 'bg-green-500 text-white shadow-green-500/30' : 'bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-orange-500/20 hover:scale-105 hover:shadow-orange-500/40'}`}
-              >
-                <span className="material-symbols-outlined">{followedPins.includes(selectedPin.id) ? 'check_circle' : 'waving_hand'}</span>
-                {followedPins.includes(selectedPin.id) ? 'Ya te has apuntado' : 'Me Apunto!'}
-              </button>
-
-              <div className="text-center mt-2">
-                <p className="text-[10px] text-gray-400 font-medium">Al apuntarte, {selectedPin.creator_name.split(' ')[0]} recibirá una notificación para abrir chat.</p>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Report/Plan Modal */}
-      <AnimatePresence>
-        {showReportModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={() => setShowReportModal(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white dark:bg-surface-dark rounded-[40px] p-8 max-w-md w-full shadow-2xl relative overflow-hidden"
-            >
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-500 to-pink-500"></div>
-
-              <div className="flex justify-between items-start mb-6 mt-2">
-                <div>
-                  <h3 className="text-2xl font-black dark:text-white uppercase tracking-tight">Crear un Plan</h3>
-                  <p className="text-xs text-gray-500 mt-1 font-medium">Deja tu pin para que los vecinos te encuentren.</p>
-                </div>
-                <button onClick={() => setShowReportModal(false)} className="size-8 rounded-full bg-gray-100 flex items-center justify-center dark:bg-gray-800">
-                  <span className="material-symbols-outlined text-sm">close</span>
-                </button>
-              </div>
-
-              <form onSubmit={handleAddReport} className="space-y-5">
-                <div>
-                  <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest pl-2 mb-1 block">¿Qué quieres hacer?</label>
-                  <input
-                    type="text"
-                    placeholder="Ej: Salir a correr suave..."
-                    value={newReportTitle}
-                    onChange={(e) => setNewReportTitle(e.target.value)}
-                    className="w-full bg-gray-50 dark:bg-gray-800 p-4 rounded-2xl font-bold text-sm outline-none focus:ring-2 ring-orange-500/20 dark:text-white"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest pl-2 mb-1 block">Categoría</label>
-                  <div className="grid grid-cols-3 gap-2">
-                    <button type="button" onClick={() => setNewReportType('ocio')} className={`p-4 rounded-2xl flex flex-col items-center justify-center gap-2 border-2 transition-all ${newReportType === 'ocio' ? 'border-orange-500 bg-orange-50 text-orange-600' : 'border-gray-100 bg-gray-50 text-gray-400'}`}>
-                      <span className="material-symbols-outlined filter drop-shadow-sm">local_bar</span>
-                      <span className="text-[9px] font-black uppercase tracking-wider">Ocio</span>
-                    </button>
-                    <button type="button" onClick={() => setNewReportType('deporte')} className={`p-4 rounded-2xl flex flex-col items-center justify-center gap-2 border-2 transition-all ${newReportType === 'deporte' ? 'border-blue-500 bg-blue-50 text-blue-600' : 'border-gray-100 bg-gray-50 text-gray-400'}`}>
-                      <span className="material-symbols-outlined filter drop-shadow-sm">fitness_center</span>
-                      <span className="text-[9px] font-black uppercase tracking-wider">Deporte</span>
-                    </button>
-                    <button type="button" onClick={() => setNewReportType('mascotas')} className={`p-4 rounded-2xl flex flex-col items-center justify-center gap-2 border-2 transition-all ${newReportType === 'mascotas' ? 'border-purple-500 bg-purple-50 text-purple-600' : 'border-gray-100 bg-gray-50 text-gray-400'}`}>
-                      <span className="material-symbols-outlined filter drop-shadow-sm">pets</span>
-                      <span className="text-[9px] font-black uppercase tracking-wider">Mascotas</span>
-                    </button>
-                  </div>
-                </div>
-
-                <button type="submit" className="w-full py-5 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-[20px] font-black uppercase tracking-widest shadow-xl shadow-orange-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 mt-4">
-                  <span className="material-symbols-outlined">place</span>
-                  DEJAR MI PIN EN EL MAPA
-                </button>
-              </form>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };

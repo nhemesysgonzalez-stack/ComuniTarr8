@@ -1,344 +1,201 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../services/supabaseClient';
-import { safeSupabaseFetch, safeSupabaseInsert } from '../services/dataHandler';
+import { barrioDeUsuario } from '../services/barrios';
+import { fechaLocalISO, useTabla } from '../services/datos';
+import { urlSegura } from '../services/contacto';
+import {
+  AvisoBaseDatos, CabeceraModulo, Cargando, EstadoVacio, SelectorBarrio, barriosDeVista,
+} from '../components/Modulos';
 
-interface Announcement {
-    id: string;
-    title: string;
-    content: string;
-    category: string;
-    author_name?: string;
-    created_at: string;
-    neighborhood?: string;
-    itinerary?: string | string[];
-    link_url?: string;
-    expires_at?: string;
+interface Aviso {
+  id: string;
+  title: string;
+  content: string;
+  category: string | null;
+  author_name?: string | null;
+  created_at: string;
+  barrio: string | null;
+  neighborhood?: string | null;
+  itinerary?: string | string[] | null;
+  link_url?: string | null;
+  expires_at?: string | null;
 }
 
-const AnnouncementItem: React.FC<{ notice: Announcement }> = ({ notice }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className={`bg-white dark:bg-surface-dark rounded-[32px] p-8 shadow-xl border-l-[12px] flex flex-col gap-4 items-start transition-all hover:scale-[1.01] ${notice.category === 'URGENTE' ? 'border-l-red-500' :
-                notice.category === 'EVENTO' ? 'border-l-sky-500' :
-                    notice.category === 'EXITO' ? 'border-l-green-500' : 'border-l-blue-500'
-                }`}
-        >
-            <div className="w-full">
-                <div className="flex items-center gap-3 mb-4">
-                    <span className={`px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${notice.category === 'URGENTE' ? 'bg-red-100 text-red-600' :
-                        notice.category === 'EVENTO' ? 'bg-sky-100 text-sky-600' :
-                            notice.category === 'EXITO' ? 'bg-green-100 text-green-600' : 'bg-blue-100 text-blue-600'
-                        }`}>
-                        {notice.category}
-                    </span>
-                    <span className="text-gray-400 font-bold text-[10px]">• {new Date(notice.created_at).toLocaleDateString()}</span>
-                    <span className="flex items-center gap-1 px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded-md text-[9px] font-black text-gray-500 uppercase tracking-tighter">
-                        <span className="material-symbols-outlined text-[12px]">location_on</span>
-                        {notice.neighborhood || 'GENERAL'}
-                    </span>
-                </div>
-                <h3 className="text-2xl font-black dark:text-white mb-2 leading-tight">{notice.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-4">
-                    {notice.content}
-                </p>
-
-                {notice.itinerary && (
-                    <div className="mb-4">
-                        <button
-                            onClick={() => setIsExpanded(!isExpanded)}
-                            className="flex items-center gap-2 text-primary font-black text-xs uppercase tracking-widest hover:underline"
-                        >
-                            <span className="material-symbols-outlined">{isExpanded ? 'expand_less' : 'expand_more'}</span>
-                            {isExpanded ? 'Ocultar Itinerario' : 'Ver Itinerario Completo'}
-                        </button>
-                        <AnimatePresence>
-                            {isExpanded && (
-                                <motion.div
-                                    initial={{ height: 0, opacity: 0 }}
-                                    animate={{ height: 'auto', opacity: 1 }}
-                                    exit={{ height: 0, opacity: 0 }}
-                                    className="overflow-hidden"
-                                >
-                                    <div className="mt-4 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-3xl border border-dashed border-primary/30">
-                                        <div className="space-y-3">
-                                            {(Array.isArray(notice.itinerary) ? notice.itinerary : notice.itinerary.split('\n')).map((step, i) => (
-                                                <div key={i} className="flex gap-3 items-start">
-                                                    <span className="text-primary font-black">•</span>
-                                                    <span className="text-sm font-bold dark:text-gray-300">{step}</span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
-                )}
-
-                <div className="flex flex-wrap items-center justify-between gap-4 mt-2">
-                    <div className="flex items-center gap-2">
-                        <div className="size-8 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center text-[10px] font-black text-primary">
-                            {notice.author_name ? notice.author_name.charAt(0) : 'V'}
-                        </div>
-                        <span className="text-xs font-black text-gray-400 uppercase tracking-widest">{notice.author_name || 'Vecino'}</span>
-                    </div>
-
-                    {notice.link_url && (
-                        <a
-                            href={notice.link_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-sm"
-                        >
-                            <span className="material-symbols-outlined text-[18px]">open_in_new</span>
-                            Fuente Oficial
-                        </a>
-                    )}
-                </div>
-            </div>
-        </motion.div>
-    );
+/** Tipos de aviso: alertas, cortes de agua y luz, averías, obras… cada uno con su color. */
+const TIPOS: Record<string, { label: string; icono: string; chip: string; borde: string }> = {
+  URGENTE:   { label: 'Urgente',        icono: 'priority_high',  chip: 'bg-red-100 text-red-700',       borde: 'border-l-red-500' },
+  ALERTA:    { label: 'Alerta / alarma', icono: 'emergency',      chip: 'bg-rose-100 text-rose-700',     borde: 'border-l-rose-500' },
+  CORTE_AGUA:{ label: 'Corte de agua',  icono: 'water_drop',     chip: 'bg-sky-100 text-sky-700',       borde: 'border-l-sky-500' },
+  CORTE_LUZ: { label: 'Corte de luz',   icono: 'bolt',           chip: 'bg-amber-100 text-amber-700',   borde: 'border-l-amber-500' },
+  AVERIA:    { label: 'Avería',         icono: 'build',          chip: 'bg-orange-100 text-orange-700', borde: 'border-l-orange-500' },
+  OBRAS:     { label: 'Obras y tráfico', icono: 'construction',   chip: 'bg-yellow-100 text-yellow-800', borde: 'border-l-yellow-500' },
+  TIEMPO:    { label: 'Tiempo',         icono: 'thunderstorm',   chip: 'bg-indigo-100 text-indigo-700', borde: 'border-l-indigo-500' },
+  SEGURIDAD: { label: 'Seguridad',      icono: 'shield',         chip: 'bg-purple-100 text-purple-700', borde: 'border-l-purple-500' },
+  EVENTO:    { label: 'Evento',         icono: 'event',          chip: 'bg-teal-100 text-teal-700',     borde: 'border-l-teal-500' },
+  INFO:      { label: 'Información',    icono: 'info',           chip: 'bg-blue-100 text-blue-700',     borde: 'border-l-blue-500' },
+  COMUNIDAD: { label: 'Comunidad',      icono: 'groups',         chip: 'bg-green-100 text-green-700',   borde: 'border-l-green-500' },
 };
+const TIPOS_PUBLICABLES = ['CORTE_AGUA', 'CORTE_LUZ', 'AVERIA', 'OBRAS', 'ALERTA', 'SEGURIDAD', 'EVENTO', 'INFO', 'COMUNIDAD'];
+
+const tipoDe = (cat?: string | null) => TIPOS[(cat || 'INFO').toUpperCase().replace(/Ó/g, 'O').replace(/É/g, 'E')] || TIPOS.INFO;
 
 const Announcements: React.FC = () => {
-    const { user, addPoints } = useAuth();
-    const [notices, setNotices] = useState<Announcement[]>([]);
-    const [showCreateModal, setShowCreateModal] = useState(false);
-    const [loading, setLoading] = useState(true);
+  const { user, addPoints } = useAuth();
+  const miBarrio = barrioDeUsuario(user);
+  const hoy = fechaLocalISO();
+  const [vista, setVista] = useState(miBarrio);
+  const [filtroTipo, setFiltroTipo] = useState<string>('TODOS');
+  const [modal, setModal] = useState(false);
+  const [guardando, setGuardando] = useState(false);
+  const [errorForm, setErrorForm] = useState('');
 
-    const [title, setTitle] = useState('');
-    const [content, setContent] = useState('');
-    const [type, setType] = useState('Info');
-    const [expiresAt, setExpiresAt] = useState('');
+  const hace30 = fechaLocalISO(new Date(Date.now() - 30 * 86_400_000));
+  const { datos, cargando, error, faltaTabla, recargar } = useTabla<Aviso>('announcements', {
+    barrios: barriosDeVista(vista),
+    clave: hoy,
+    filtro: q => q
+      .gte('created_at', `${hace30}T00:00:00`)
+      .or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`),
+    orden: { col: 'created_at', asc: false },
+    limite: 200,
+  });
 
-    useEffect(() => {
-        fetchNotices();
-    }, [user?.user_metadata?.neighborhood]);
+  const visibles = useMemo(
+    () => (filtroTipo === 'TODOS' ? datos : datos.filter(a => (a.category || 'INFO').toUpperCase().replace(/Ó/g, 'O') === filtroTipo)),
+    [datos, filtroTipo],
+  );
+  const tiposPresentes = useMemo(() => Array.from(new Set(datos.map(a => (a.category || 'INFO').toUpperCase().replace(/Ó/g, 'O')))).filter(t => TIPOS[t]), [datos]);
 
-    const fetchNotices = async () => {
-        setLoading(true);
-        try {
-            const data = await safeSupabaseFetch('announcements',
-                supabase
-                    .from('announcements')
-                    .select('*')
-                    .or(`neighborhood.eq.${user?.user_metadata?.neighborhood || 'GENERAL'},neighborhood.eq.GENERAL`)
-                    .or(`expires_at.is.null,expires_at.gt.${new Date().toISOString()}`)
-                    .order('created_at', { ascending: false })
-            );
-            const fetched = data || [];
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
+  const publicar = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setErrorForm('');
+    if (!user) { setErrorForm('Inicia sesión para publicar.'); return; }
+    const f = new FormData(e.currentTarget);
+    const caduca = String(f.get('caduca') || '');
+    setGuardando(true);
+    const { error: err } = await supabase.from('announcements').insert({
+      title: String(f.get('titulo')).trim(),
+      content: String(f.get('contenido')).trim(),
+      category: String(f.get('tipo')),
+      author_name: user.user_metadata?.full_name || 'Vecino/a',
+      neighborhood: miBarrio,
+      barrio: miBarrio,
+      link_url: urlSegura(String(f.get('enlace') || '')) || null,
+      expires_at: caduca ? new Date(caduca).toISOString() : null,
+    });
+    setGuardando(false);
+    if (err) { setErrorForm(`No se pudo publicar: ${err.message}`); return; }
+    try { await addPoints(15, 5); } catch { /* opcional */ }
+    setModal(false);
+    recargar();
+  };
 
-            const validFetched = fetched.filter((n: any) => {
-                const nDate = new Date(n.created_at);
-                const diffTime = Math.abs(today.getTime() - nDate.getTime());
-                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                return diffDays <= 7;
-            });
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-background-dark pb-24 font-sans">
+      <div className="max-w-4xl mx-auto p-4 md:p-8 space-y-6">
+        <CabeceraModulo
+          icono="campaign"
+          titulo="Avisos de tu barrio"
+          subtitulo="Alertas, cortes de agua y luz, averías, obras y novedades que afectan a tu barrio. Solo se muestra lo vigente."
+          gradiente="from-red-600 via-rose-500 to-orange-500"
+          accion={{ texto: 'Publicar aviso', onClick: () => setModal(true) }}
+        />
+        <SelectorBarrio vista={vista} miBarrio={miBarrio} onChange={setVista} />
 
-            const realBulletins: Announcement[] = [
-                {
-                    id: 'oct-23-castanyada',
-                    title: '🌰 Castanyada Popular · Sábado 25 de Octubre',
-                    content: 'La tradicional Castanyada vecinal de la Part Alta será ESTE SÁBADO 25 de octubre a partir de las 17h en la Plaça de la Font. Castañas y boniatos asados gratis, música en vivo y actividades infantiles. ¡No te la pierdas!',
-                    itinerary: [
-                        '17:00h: Apertura y encendido de los braseros',
-                        '17:30h: Castanyes i moniatos per a tothom!',
-                        '18:30h: Actuació musical grup tradicional',
-                        '19:30h: Activitats infantils i jocs',
-                        '21:00h: Tancament'
-                    ],
-                    link_url: 'https://www.tarragona.cat',
-                    neighborhood: 'Part Alta',
-                    category: 'EVENTO',
-                    author_name: 'Ajuntament de Tarragona',
-                    created_at: '2026-10-23T08:00:00Z'
-                },
-                {
-                    id: 'oct-23-meteo',
-                    title: '🌧️ Alerta Meteorológica: Mestral débil esta tarde',
-                    content: 'AEMET prevé viento del norte moderado esta tarde (jueves 23 oct) a partir de las 16h. Rachas de hasta 40 km/h en zonas costeras del Serrallo y la Platja Llarga. Precaución en paseos marítimos y al aparcar bajo árboles.',
-                    link_url: 'https://www.aemet.es',
-                    neighborhood: 'GENERAL',
-                    category: 'URGENTE',
-                    author_name: 'Protecció Civil TGN',
-                    created_at: '2026-10-23T07:00:00Z'
-                },
-                {
-                    id: 'oct-23-jazz-amfiteatre',
-                    title: '🎷 Concert de Jazz al Amfiteatre · Sábado 25 Oct',
-                    content: 'El cicle Tarragona en Tardor acull un concert de jazz gratuit al Amfiteatre Romà. Sàbat 25 octubre a les 19h. Places limitades, acudir amb antelació. Aportació voluntaria.',
-                    link_url: 'https://www.tarragona.cat',
-                    neighborhood: 'Part Alta',
-                    category: 'EVENTO',
-                    author_name: 'Tarragona Cultura',
-                    created_at: '2026-10-23T09:00:00Z'
-                },
-                {
-                    id: 'oct-23-empleo-nadal',
-                    title: '💼 Oferta Laboral: Campanya Nadal 2026',
-                    content: 'Oberta la borsa de treball per la campanya de Nadal en comerços i logística. Més de 200 vacants a Tarragona i àrea metropolitana. Consulta totes les ofertes a la secció Empleos.',
-                    link_url: 'https://www.sepe.es',
-                    neighborhood: 'GENERAL',
-                    category: 'INFO',
-                    author_name: 'Servei d\'Ocupació',
-                    created_at: '2026-10-23T09:30:00Z'
-                },
-                {
-                    id: 'oct-23-halloween-infantil',
-                    title: '🎃 Halloween Infantil · Parc de la Ciutat · Divendres 31 Oct',
-                    content: 'L\'AMPA organitza una festa de Halloween gratuita al Parc de la Ciutat el divendres 31 d\'octubre a les 17h. Disfresses, jocs i berenar per als nens. Inscripció oberta fins el 28 d\'octubre al Centre Cívic.',
-                    link_url: 'https://www.tarragona.cat',
-                    neighborhood: 'Eixample',
-                    category: 'EXITO',
-                    author_name: 'AMPA Parc de la Ciutat',
-                    created_at: '2026-10-23T10:00:00Z'
-                }
-            ];
+        {tiposPresentes.length > 0 && (
+          <div className="flex gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Filtrar por tipo de aviso">
+            {['TODOS', ...tiposPresentes].map(t => (
+              <button key={t} role="tab" aria-selected={filtroTipo === t} onClick={() => setFiltroTipo(t)}
+                className={`shrink-0 px-3 py-1.5 rounded-full text-[11px] font-black uppercase tracking-wider border transition-all ${filtroTipo === t ? 'bg-gray-900 text-white border-gray-900 dark:bg-white dark:text-gray-900' : 'bg-white dark:bg-surface-dark text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700'}`}>
+                {t === 'TODOS' ? 'Todos' : TIPOS[t].label}
+              </button>
+            ))}
+          </div>
+        )}
 
-            setNotices([...realBulletins, ...validFetched]);
-        } catch (e) {
-            console.error(e);
-            setNotices([]);
-        } finally {
-            setLoading(false);
-        }
-    };
+        <AvisoBaseDatos faltaTabla={faltaTabla} error={error} />
 
-    const handleNoticeSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        try {
-            const { success } = await safeSupabaseInsert('announcements', {
-                user_id: user?.id,
-                author_name: user?.user_metadata?.full_name || 'Vecino',
-                title: title,
-                content: content,
-                category: type.toUpperCase(),
-                neighborhood: user?.user_metadata?.neighborhood || 'GENERAL',
-                expires_at: expiresAt || null
-            });
+        {cargando ? <Cargando texto="Cargando avisos…" /> : visibles.length === 0 ? (
+          <EstadoVacio icono="notifications_off" titulo="No hay avisos vigentes en esta zona"
+            texto="Cuando haya una alerta, un corte de agua o luz, una avería u obras en tu barrio aparecerá aquí. Si ves algo, avisa a tus vecinos."
+            accion={{ texto: 'Publicar aviso', onClick: () => setModal(true) }} />
+        ) : (
+          <div className="space-y-4">
+            {visibles.map(a => {
+              const t = tipoDe(a.category);
+              const enlace = urlSegura(a.link_url);
+              const pasos = a.itinerary ? (Array.isArray(a.itinerary) ? a.itinerary : String(a.itinerary).split('\n')) : [];
+              const b = a.barrio || a.neighborhood || 'GENERAL';
+              return (
+                <motion.article key={a.id} layout initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+                  className={`bg-white dark:bg-surface-dark rounded-3xl p-6 shadow-sm border border-gray-100 dark:border-gray-800 border-l-[10px] ${t.borde}`}>
+                  <div className="flex flex-wrap items-center gap-2 mb-3">
+                    <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${t.chip}`}>
+                      <span className="material-symbols-outlined text-sm">{t.icono}</span>{t.label}
+                    </span>
+                    <span className="text-[11px] font-bold text-gray-400">
+                      {new Date(a.created_at).toLocaleString('es-ES', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}
+                    </span>
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded-md text-[10px] font-black text-gray-500 uppercase">
+                      <span className="material-symbols-outlined text-[12px]">location_on</span>{b === 'GENERAL' ? 'Toda la ciudad' : b}
+                    </span>
+                    {a.expires_at && (
+                      <span className="text-[10px] font-bold text-gray-400">Vigente hasta {new Date(a.expires_at).toLocaleString('es-ES', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</span>
+                    )}
+                  </div>
+                  <h2 className="text-xl font-black text-gray-900 dark:text-white leading-snug">{a.title}</h2>
+                  <p className="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line">{a.content}</p>
+                  {pasos.length > 0 && (
+                    <ul className="mt-3 space-y-1.5 text-sm text-gray-700 dark:text-gray-300">
+                      {pasos.map((p, i) => <li key={i} className="flex gap-2"><span className="text-primary font-black">•</span>{p}</li>)}
+                    </ul>
+                  )}
+                  <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+                    <span className="text-xs font-black uppercase tracking-widest text-gray-400">{a.author_name || 'Vecino/a'}</span>
+                    {enlace && (
+                      <a href={enlace} target="_blank" rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white text-[11px] font-black uppercase tracking-wider hover:bg-primary hover:text-white transition-all">
+                        <span className="material-symbols-outlined text-base">open_in_new</span>Fuente oficial
+                      </a>
+                    )}
+                  </div>
+                </motion.article>
+              );
+            })}
+          </div>
+        )}
+      </div>
 
-            if (!success) throw new Error('Falló la creación');
-            await addPoints(30, 15);
-            alert('¡Aviso publicado con éxito! +30 XP / +15 ComuniPoints');
-            setShowCreateModal(false);
-            setTitle('');
-            setContent('');
-            setExpiresAt('');
-            fetchNotices();
-        } catch (e) {
-            console.error(e);
-            alert('Error al publicar aviso');
-        }
-    };
-
-    return (
-        <div className="min-h-screen bg-gray-50 dark:bg-background-dark pb-20 font-sans">
-            <div className="bg-red-600 text-white py-16 px-6">
-                <div className="max-w-4xl mx-auto flex items-center gap-10">
-                    <div className="hidden md:block">
-                        <span className="material-symbols-outlined text-[120px] opacity-20">campaign</span>
-                    </div>
-                    <div>
-                        <h1 className="text-5xl font-black mb-4 tracking-tight">Avisos de Barrio</h1>
-                        <p className="text-xl opacity-90 max-w-xl font-medium leading-relaxed">Información oficial y vecinal de última hora. Mantente al día de lo que afecta a {user?.user_metadata?.neighborhood || 'tu zona'}.</p>
-                    </div>
-                </div>
-            </div>
-
-            <main className="max-w-4xl mx-auto p-6 md:p-12 -mt-10">
-                {loading ? (
-                    <div className="flex flex-col items-center gap-4 py-20 opacity-50">
-                        <div className="size-10 border-4 border-red-500 border-t-transparent animate-spin rounded-full"></div>
-                        <p className="text-xs font-black uppercase tracking-widest">Cargando avisos...</p>
-                    </div>
-                ) : notices.length === 0 ? (
-                    <div className="bg-white dark:bg-surface-dark rounded-[32px] p-12 text-center shadow-xl">
-                        <span className="material-symbols-outlined text-gray-300 text-6xl mb-4">notifications_off</span>
-                        <h3 className="text-xl font-black dark:text-white mb-2">No hay avisos recientes</h3>
-                        <p className="text-gray-500 mb-6">Sé el primero en informar de algo importante en el barrio.</p>
-                        <button onClick={() => setShowCreateModal(true)} className="bg-red-600 text-white px-8 py-3 rounded-2xl font-black uppercase tracking-widest hover:bg-red-700 transition-all">
-                            PUBLICAR PRIMER AVISO
-                        </button>
-                    </div>
-                ) : (
-                    <div className="space-y-6">
-                        {notices.map(notice => (
-                            <AnnouncementItem key={notice.id} notice={notice} />
-                        ))}
-                    </div>
-                )}
-
-                <div className="mt-16 text-center">
-                    <button onClick={() => setShowCreateModal(true)} className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-12 py-5 rounded-3xl font-black text-xl hover:shadow-2xl transition-all">
-                        PUBLICAR AVISO
-                    </button>
-                </div>
-            </main>
-
-            <AnimatePresence>
-                {showCreateModal && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-                        onClick={() => setShowCreateModal(false)}
-                    >
-                        <motion.div
-                            initial={{ scale: 0.9, y: 20 }}
-                            animate={{ scale: 1, y: 0 }}
-                            exit={{ scale: 0.9, y: 20 }}
-                            onClick={(e) => e.stopPropagation()}
-                            className="bg-white dark:bg-surface-dark rounded-[40px] p-8 max-w-lg w-full shadow-2xl"
-                        >
-                            <div className="flex items-center justify-between mb-6">
-                                <h3 className="text-2xl font-black dark:text-white uppercase tracking-tight">Nuevo Aviso</h3>
-                                <button onClick={() => setShowCreateModal(false)} className="size-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all">
-                                    <span className="material-symbols-outlined">close</span>
-                                </button>
-                            </div>
-
-                            <form onSubmit={handleNoticeSubmit} className="space-y-4">
-                                <div>
-                                    <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Tipo de Aviso</label>
-                                    <select value={type} onChange={(e) => setType(e.target.value)} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-red-500/20 focus:ring-2">
-                                        <option value="Info">Información</option>
-                                        <option value="Urgente">Urgente</option>
-                                        <option value="Comunidad">Comunidad</option>
-                                        <option value="Éxito">Éxito</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Título</label>
-                                    <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-red-500/20 focus:ring-2" placeholder="Ej: Corte de calle por obras" />
-                                </div>
-                                <div>
-                                    <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Descripción</label>
-                                    <textarea value={content} onChange={(e) => setContent(e.target.value)} required rows={4} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-red-500/20 focus:ring-2 resize-none" placeholder="Detalles del aviso..." />
-                                </div>
-                                <div>
-                                    <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Fecha de Caducidad (Opcional)</label>
-                                    <input type="datetime-local" value={expiresAt} onChange={(e) => setExpiresAt(e.target.value)} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-red-500/20 focus:ring-2" />
-                                    <p className="text-[10px] text-gray-400 mt-1 font-bold">El aviso desaparecerá automáticamente después de esta fecha.</p>
-                                </div>
-                                <button type="submit" className="w-full bg-red-600 text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-red-700 transition-all shadow-lg shadow-red-500/20">
-                                    PUBLICAR
-                                </button>
-                            </form>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
-    );
+      <AnimatePresence>
+        {modal && (
+          <motion.div className="fixed inset-0 z-[90] bg-black/60 backdrop-blur-sm flex items-end md:items-center justify-center p-0 md:p-6"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setModal(false)}>
+            <motion.form onSubmit={publicar} onClick={e => e.stopPropagation()} initial={{ y: 60 }} animate={{ y: 0 }} exit={{ y: 60 }}
+              className="w-full max-w-lg max-h-[92vh] overflow-y-auto bg-white dark:bg-surface-dark rounded-t-[32px] md:rounded-[32px] p-6 space-y-3 shadow-2xl">
+              <h2 className="text-xl font-black dark:text-white">Nuevo aviso en {miBarrio === 'GENERAL' ? 'Tarragona' : miBarrio}</h2>
+              <select name="tipo" defaultValue="INFO" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm font-bold">
+                {TIPOS_PUBLICABLES.map(k => <option key={k} value={k}>{TIPOS[k].label}</option>)}
+              </select>
+              <input name="titulo" required maxLength={120} placeholder="Ej: Corte de agua en C/ Unió" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              <textarea name="contenido" required rows={4} maxLength={800} placeholder="Qué pasa, dónde y desde/hasta cuándo…" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              <input name="enlace" type="url" placeholder="Enlace a la fuente oficial (opcional)" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              <label className="block text-[11px] font-black uppercase tracking-widest text-gray-500">Caduca el (opcional)
+                <input name="caduca" type="datetime-local" className="mt-1 w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              </label>
+              <p className="text-[11px] text-gray-400">Publica solo información verificable. El aviso desaparece solo al caducar.</p>
+              {errorForm && <p className="text-sm font-bold text-red-500" role="alert">{errorForm}</p>}
+              <div className="flex gap-3 pt-2">
+                <button type="button" onClick={() => setModal(false)} className="flex-1 py-3 rounded-xl font-black text-xs uppercase tracking-widest bg-gray-100 dark:bg-gray-800 dark:text-gray-200">Cancelar</button>
+                <button type="submit" disabled={guardando} className="flex-1 py-3 rounded-xl font-black text-xs uppercase tracking-widest bg-red-600 text-white disabled:opacity-60">{guardando ? 'Publicando…' : 'Publicar'}</button>
+              </div>
+            </motion.form>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 };
 
 export default Announcements;

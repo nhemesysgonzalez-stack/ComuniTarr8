@@ -1,329 +1,114 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
-import { supabase } from '../services/supabaseClient';
-import { safeSupabaseFetch, safeSupabaseInsert } from '../services/dataHandler';
+import { barrioDeUsuario } from '../services/barrios';
+import { fechaLocalISO, useTabla } from '../services/datos';
+import {
+  AvisoBaseDatos, BotonesContacto, CabeceraModulo, Cargando, EstadoVacio,
+  InsigniaFuente, SelectorBarrio, barriosDeVista,
+} from '../components/Modulos';
 
-interface Workshop {
-    id: string;
-    title: string;
-    instructor: string;
-    date: string;
-    description: string;
-    image: string;
-    spots: number;
-    neighborhood: string;
-    contact_info: string;
-    created_at: string;
+interface Centro {
+  id: string; nombre: string; descripcion: string | null; barrio: string; direccion: string | null;
+  lat: number | null; lng: number | null; telefono: string | null; email: string | null;
+  web: string | null; horario: string | null; fuente: string; verificado: boolean;
+}
+interface Taller {
+  id: string; titulo: string; descripcion: string | null; categoria: string | null; barrio: string;
+  fecha_actividad: string; fecha_fin: string | null; hora: string | null; ubicacion: string | null;
+  telefono: string | null; email: string | null; url: string | null; fuente: string; verificado: boolean;
 }
 
+/** Centros cívicos del barrio (con teléfono y mapa) + talleres y cursos vigentes. */
 const Workshops: React.FC = () => {
-    const { user } = useAuth();
-    const [workshops, setWorkshops] = useState<Workshop[]>([]);
-    const [showCreateModal, setShowCreateModal] = useState(false);
-    const [loading, setLoading] = useState(true);
+  const { user } = useAuth();
+  const miBarrio = barrioDeUsuario(user);
+  const hoy = fechaLocalISO();
+  const [vista, setVista] = useState(miBarrio);
+  const barrios = barriosDeVista(vista);
 
-    // Form State
-    const [title, setTitle] = useState('');
-    const [instructor, setInstructor] = useState('');
-    const [date, setDate] = useState('');
-    const [description, setDescription] = useState('');
-    const [image, setImage] = useState('');
-    const [spots, setSpots] = useState('10');
-    const [contact, setContact] = useState('');
+  const centros = useTabla<Centro>('centros_civicos', { barrios, orden: { col: 'nombre', asc: true } });
+  const talleres = useTabla<Taller>('eventos', {
+    barrios, clave: hoy,
+    filtro: q => q.in('categoria', ['Talleres y cursos', 'Taller', 'Charlas', 'Infantil'])
+      .or(`fecha_fin.gte.${hoy},and(fecha_fin.is.null,fecha_actividad.gte.${hoy})`),
+    orden: { col: 'fecha_actividad', asc: true },
+  });
 
-    useEffect(() => {
-        fetchWorkshops();
-    }, [user?.user_metadata?.neighborhood]);
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-background-dark pb-24 font-sans">
+      <div className="max-w-5xl mx-auto p-4 md:p-8 space-y-6">
+        <CabeceraModulo
+          icono="apartment"
+          titulo="Centros cívicos y talleres"
+          subtitulo="Los centros de tu barrio con teléfono y ubicación real, y los talleres y cursos que hay ahora mismo."
+          gradiente="from-violet-600 via-purple-500 to-fuchsia-500"
+        />
+        <SelectorBarrio vista={vista} miBarrio={miBarrio} onChange={setVista} />
+        <AvisoBaseDatos faltaTabla={centros.faltaTabla || talleres.faltaTabla} error={centros.error || talleres.error} />
 
-    const fetchWorkshops = async () => {
-        setLoading(true);
-        try {
-            const data = await safeSupabaseFetch('workshops',
-                supabase
-                    .from('workshops')
-                    .select('*')
-                    .eq('neighborhood', user?.user_metadata?.neighborhood || 'GENERAL')
-                    .order('created_at', { ascending: false })
-            );
-            const mockWorkshops: Workshop[] = [
-                {
-                    id: 'oct-23-rumba',
-                    title: '💃 Taller Express: Rumba Catalana',
-                    instructor: 'Centre Cultural Tarragona',
-                    date: 'HOY Jue 23 Oct, 18:30h',
-                    description: 'Aprende los ritmos básicos de la rumba catalana. Especial para principiantes. ¡Trae calzado cómodo y ganas de bailar! Centro Cívico Torreforta.',
-                    image: 'https://images.unsplash.com/photo-1562184552-997c461abbe6?auto=format&fit=crop&w=800&q=80',
-                    spots: 25,
-                    neighborhood: 'GENERAL',
-                    contact_info: 'Centre Cívic Torreforta · 977 553 100',
-                    created_at: '2026-10-23T08:00:00Z'
-                },
-                {
-                    id: 'oct-24-foto',
-                    title: '📷 Foto Walk Tardor: Llum i Colors',
-                    instructor: 'TGN Fotografia',
-                    date: 'Vie 24 Oct, 17:00h',
-                    description: 'Aprofitarem la llum de tardor per fer fotografia creativa pels carrers de la Part Alta. Apta per a mòbil i càmera. Punt de trobada: Porta de la Muralla.',
-                    image: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=800&q=80',
-                    spots: 15,
-                    neighborhood: 'Part Alta',
-                    contact_info: 'TGN Fotografia · instagram: @tgnfoto',
-                    created_at: '2026-10-23T09:00:00Z'
-                },
-                {
-                    id: 'oct-25-ioga',
-                    title: '🧘 Ioga al Parc del Francolí',
-                    instructor: 'Elena V.',
-                    date: 'Sáb 25 Oct, 10:00h',
-                    description: 'Sessió de relaxació a l’aire lliure al Parc del Francolí. Porta màrfega pròpia i roba d’abric. Gratuït i sense inscripció prèvia. Ideal per a tothom.',
-                    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
-                    spots: 20,
-                    neighborhood: 'GENERAL',
-                    contact_info: 'Punt: Parc del Francolí (entrada principal)',
-                    created_at: '2026-10-23T10:00:00Z'
-                },
-                {
-                    id: 'oct-26-manualitats',
-                    title: '🍁 Taller Decoració Tardor i Halloween',
-                    instructor: 'AMPA Col·legi Sant Pere i Sant Pau',
-                    date: 'Dom 26 Oct, 11:00h',
-                    description: 'Taller familiar para crear decoraciones de otoño y Halloween con materiales reciclados. Para niños de 4 a 12 años acompañados. Centre Cívic Sant Pere.',
-                    image: 'https://images.unsplash.com/photo-1508022713622-df2d8fb7b4cd?auto=format&fit=crop&w=800&q=80',
-                    spots: 30,
-                    neighborhood: 'Sant Pere i Sant Pau',
-                    contact_info: 'AMPA Sant Pere i Sant Pau · 977 221 009',
-                    created_at: '2026-10-23T11:00:00Z'
-                }
-            ];
-
-
-            setWorkshops(data && data.length > 0 ? data : mockWorkshops);
-        } catch (e) {
-            console.error(e);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        try {
-            const { success } = await safeSupabaseInsert('workshops', {
-                creator_id: user?.id,
-                title,
-                instructor,
-                date,
-                description,
-                image: image || 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80',
-                spots: parseInt(spots),
-                contact_info: contact,
-                neighborhood: user?.user_metadata?.neighborhood || 'GENERAL'
-            });
-
-            if (!success) throw new Error('Falló la creación');
-            alert('¡Taller propuesto con éxito!');
-            setShowCreateModal(false);
-            setTitle('');
-            setDescription('');
-            setInstructor('');
-            setDate('');
-            setContact('');
-            fetchWorkshops();
-        } catch (e) {
-            console.error(e);
-            alert('Error al crear taller');
-        }
-    };
-
-    return (
-        <div className="min-h-screen bg-gray-50 dark:bg-background-dark pb-20 font-sans">
-            {/* Header */}
-            <div className="bg-emerald-900 text-white py-24 px-6 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-10 blur-sm"></div>
-                <div className="relative z-10 text-center max-w-4xl mx-auto">
-                    <span className="inline-block px-5 py-2 mb-6 text-xs font-black bg-emerald-500/20 backdrop-blur-md rounded-full uppercase tracking-[0.2em] text-emerald-300 border border-emerald-500/30">
-                        Aprendizaje Comunitario
-                    </span>
-                    <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tight">Talleres Gratuitos</h1>
-                    <p className="text-xl md:text-2xl text-emerald-100/90 font-medium leading-relaxed max-w-3xl mx-auto">Comparte tu conocimiento o aprende algo nuevo. Iniciativa abierta para vecinos.</p>
-                </div>
+        <section aria-labelledby="h-centros" className="space-y-3">
+          <h2 id="h-centros" className="text-xl font-black text-gray-800 dark:text-white flex items-center gap-2">
+            <span className="material-symbols-outlined text-violet-600">groups</span>Centros y espacios comunitarios
+          </h2>
+          {centros.cargando ? <Cargando /> : centros.datos.length === 0 ? (
+            <EstadoVacio icono="apartment" titulo="Sin centros registrados en esta zona"
+              texto="Cuando el robot diario encuentre centros en este barrio aparecerán aquí. Prueba con “Toda la ciudad”." />
+          ) : (
+            <div className="grid gap-4 md:grid-cols-2">
+              {centros.datos.map(c => (
+                <motion.article key={c.id} layout initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+                  className="bg-white dark:bg-surface-dark rounded-3xl p-5 border border-gray-100 dark:border-gray-800 shadow-sm">
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    <span className="text-[10px] font-black uppercase tracking-wider bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-0.5 rounded-full">📍 {c.barrio === 'GENERAL' ? 'Toda la ciudad' : c.barrio}</span>
+                    <InsigniaFuente fuente={c.fuente} verificado={c.verificado} />
+                  </div>
+                  <h3 className="text-lg font-black text-gray-900 dark:text-white">{c.nombre}</h3>
+                  {c.direccion && <p className="text-sm text-gray-500 flex items-center gap-1.5 mt-1"><span className="material-symbols-outlined text-base">location_on</span>{c.direccion}</p>}
+                  {c.horario && <p className="text-sm text-gray-500 flex items-center gap-1.5 mt-0.5"><span className="material-symbols-outlined text-base">schedule</span>{c.horario}</p>}
+                  <BotonesContacto telefono={c.telefono} email={c.email} url={c.web} textoUrl="Web" />
+                  {c.lat != null && c.lng != null && (
+                    <a href={`https://www.google.com/maps/dir/?api=1&destination=${c.lat},${c.lng}`} target="_blank" rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-1 text-[11px] font-black uppercase tracking-wider text-primary hover:underline">
+                      <span className="material-symbols-outlined text-sm">directions</span>Cómo llegar
+                    </a>
+                  )}
+                </motion.article>
+              ))}
             </div>
+          )}
+        </section>
 
-            {/* Featured Class / Service Ad */}
-            <div className="max-w-6xl mx-auto px-6 mb-12">
-                <div className="bg-white dark:bg-surface-dark rounded-[40px] border-4 border-dashed border-sky-500/20 p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 hover:border-sky-500/40 transition-all">
-                    <div className="size-32 md:size-48 bg-indigo-100 dark:bg-indigo-900/30 rounded-[35px] flex items-center justify-center shrink-0">
-                        <span className="material-symbols-outlined text-7xl text-indigo-600">auto_stories</span>
-                    </div>
-                    <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-4">
-                            <span className="px-3 py-1 bg-indigo-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">EVENTO MAÑANA - 17:00H</span>
-                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">ORIENTACIÓN LABORAL</span>
-                        </div>
-                        <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Workshop: CV Digital con IA 📈</h2>
-                        <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Optimiza tu búsqueda de empleo con herramientas de Inteligencia Artificial. Mañana Martes a las 17:00h en el Centro Cívico Centre. ¡Inscripción gratuita!
-                        </p>
-
-                        <div className="flex flex-wrap gap-4">
-                            <a href="#" onClick={(e) => { e.preventDefault(); alert("Reserva tu plaza en el Taller de CV IA directamente desde la sección de Empleos o en el Centro Cívico Centre."); }} className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl text-xs font-black hover:scale-105 transition-all">
-                                <span className="material-symbols-outlined text-sm">confirmation_number</span>
-                                RESERVAR PLAZA
-                            </a>
-                            <span className="px-6 py-3 bg-gray-50 dark:bg-gray-800 dark:text-white rounded-xl text-xs font-black">
-                                GRATIS - CENTRO CÍVICO CENTRE
-                            </span>
-                        </div>
-                    </div>
-                </div>
+        <section aria-labelledby="h-talleres" className="space-y-3">
+          <h2 id="h-talleres" className="text-xl font-black text-gray-800 dark:text-white flex items-center gap-2">
+            <span className="material-symbols-outlined text-fuchsia-600">palette</span>Talleres, cursos y charlas vigentes
+          </h2>
+          {talleres.cargando ? <Cargando /> : talleres.datos.length === 0 ? (
+            <EstadoVacio icono="school" titulo="No hay talleres vigentes ahora"
+              texto="Los cursos y talleres de la Agenda Cultural y los que publiquen los vecinos en el calendario aparecerán aquí automáticamente." />
+          ) : (
+            <div className="grid gap-4 md:grid-cols-2">
+              {talleres.datos.map(t => (
+                <article key={t.id} className="bg-white dark:bg-surface-dark rounded-3xl p-5 border border-gray-100 dark:border-gray-800 shadow-sm">
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    <span className="text-[10px] font-black uppercase tracking-wider bg-fuchsia-100 text-fuchsia-700 px-2 py-0.5 rounded-full">{t.categoria}</span>
+                    <InsigniaFuente fuente={t.fuente} verificado={t.verificado} />
+                  </div>
+                  <h3 className="text-base font-black text-gray-900 dark:text-white leading-snug">{t.titulo}</h3>
+                  <p className="text-sm text-gray-500 mt-1">
+                    {new Date(t.fecha_actividad + 'T12:00:00').toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })}
+                    {t.fecha_fin && t.fecha_fin !== t.fecha_actividad && ` → ${new Date(t.fecha_fin + 'T12:00:00').toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })}`}
+                    {t.hora && ` · ${t.hora}`}{t.ubicacion && ` · ${t.ubicacion}`}
+                  </p>
+                  <BotonesContacto telefono={t.telefono} email={t.email} url={t.url} compacto />
+                </article>
+              ))}
             </div>
-
-            <div className="max-w-7xl mx-auto px-6 pb-10 text-center">
-                <button
-                    onClick={() => setShowCreateModal(true)}
-                    className="bg-emerald-600 text-white px-10 py-4 rounded-2xl font-black text-sm hover:scale-105 transition-all shadow-xl shadow-emerald-600/20"
-                >
-                    CONVERTIRME EN INSTRUCTOR
-                </button>
-            </div>
-
-            {/* List */}
-            <div className="max-w-6xl mx-auto p-6 md:p-12 relative z-20 space-y-10">
-                {loading ? (
-                    <div className="text-center opacity-50 font-bold uppercase tracking-widest">Cargando talleres...</div>
-                ) : workshops.length === 0 ? (
-                    <div className="bg-white dark:bg-surface-dark p-12 rounded-[40px] text-center border-2 border-dashed border-gray-200 dark:border-gray-700">
-                        <span className="material-symbols-outlined text-gray-300 text-6xl mb-4">school</span>
-                        <h3 className="text-xl font-black dark:text-white mb-2">No hay talleres programados</h3>
-                        <p className="text-gray-500 dark:text-gray-400 mb-6">Sé el primero en enseñar algo a tus vecinos.</p>
-                    </div>
-                ) : (
-                    workshops.map(workshop => (
-                        <div key={workshop.id} className="bg-white dark:bg-surface-dark p-8 md:p-10 rounded-[40px] shadow-2xl border border-gray-100 dark:border-gray-800 flex flex-col md:flex-row gap-10 hover:translate-y-[-4px] transition-all duration-500 group">
-                            <div className="w-full md:w-[350px] h-[250px] shrink-0 rounded-[32px] overflow-hidden relative shadow-xl">
-                                <img src={workshop.image} alt={workshop.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl text-xs font-black text-emerald-600 shadow-lg">
-                                    {workshop.spots} plazas
-                                </div>
-                            </div>
-                            <div className="flex-1 flex flex-col justify-center">
-                                <h3 className="text-3xl font-black text-gray-900 dark:text-white mb-4 leading-tight group-hover:text-emerald-500 transition-colors">{workshop.title}</h3>
-                                <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 dark:text-gray-400 mb-6 font-bold">
-                                    <span className="flex items-center gap-2 px-3 py-1 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                                        <span className="material-symbols-outlined text-emerald-500">school</span>
-                                        {workshop.instructor}
-                                    </span>
-                                    <span className="flex items-center gap-2 px-3 py-1 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                                        <span className="material-symbols-outlined text-emerald-500">calendar_month</span>
-                                        {workshop.date}
-                                    </span>
-                                </div>
-                                <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed text-lg">
-                                    {workshop.description}
-                                </p>
-                                {workshop.contact_info && (
-                                    <div className="mb-4 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-2xl border border-emerald-100 dark:border-emerald-800">
-                                        <p className="text-xs font-black text-emerald-600 uppercase tracking-widest mb-1">Contacto para inscripciones</p>
-                                        <p className="font-bold text-gray-700 dark:text-gray-300">{workshop.contact_info}</p>
-                                    </div>
-                                )}
-                                <button onClick={() => alert(`Contacta a ${workshop.instructor} en ${workshop.contact_info}`)} className="bg-emerald-600 text-white px-10 py-5 rounded-[24px] font-black text-lg hover:bg-emerald-700 transition-all w-full md:w-fit shadow-2xl shadow-emerald-600/20 active:scale-95">
-                                    CONTACTAR ORGANIZADOR
-                                </button>
-                            </div>
-                        </div>
-                    )))}
-            </div>
-
-            {/* Create Modal */}
-            <AnimatePresence>
-                {showCreateModal && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-                        onClick={() => setShowCreateModal(false)}
-                    >
-                        <motion.div
-                            initial={{ scale: 0.9, y: 20 }}
-                            animate={{ scale: 1, y: 0 }}
-                            exit={{ scale: 0.9, y: 20 }}
-                            onClick={(e) => e.stopPropagation()}
-                            className="bg-white dark:bg-surface-dark rounded-[40px] p-8 max-w-lg w-full shadow-2xl max-h-[90vh] overflow-y-auto"
-                        >
-                            <div className="flex items-center justify-between mb-6">
-                                <h3 className="text-2xl font-black dark:text-white uppercase tracking-tight">Proponer Taller</h3>
-                                <button onClick={() => setShowCreateModal(false)} className="size-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all">
-                                    <span className="material-symbols-outlined">close</span>
-                                </button>
-                            </div>
-
-                            <form onSubmit={handleSubmit} className="space-y-4">
-                                <div className="p-4 bg-emerald-50 dark:bg-emerald-900/10 rounded-3xl mb-4 text-center">
-                                    <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-3">Ideas Rápidas (Click para rellenar)</p>
-                                    <div className="flex flex-wrap gap-2 justify-center">
-                                        {[
-                                            { t: 'Office 365 Pro', i: 'Pedro S.', d: 'Domingo 17:00', desc: 'Domina Excel y Word para mejorar tu empleabilidad.', c: 'Centro Cívico Centre' },
-                                            { t: 'Smartphone Pro', i: 'Marta G.', d: 'Mañana Viernes 22, 11:30', desc: 'Sácale provecho a tu móvil para gestiones y búsqueda activa.', c: 'Centro Cívico Centre' },
-                                            { t: 'Gestión del Tiempo', i: 'M. López', d: 'Mañana Viernes 22, 18:00', desc: 'Técnicas para organizar tu semana y reducir el estrés laboral.', c: 'Centro Cívico Centre' },
-                                            { t: 'Networking TGN', i: 'Hub Impulsa', d: 'Mañana Viernes 22, 19:30', desc: 'Encuentro informal para conectar con otros profesionales locales.', c: 'Tabacalera Sala 2' }
-                                        ].map((idea, i) => (
-                                            <button
-                                                key={i}
-                                                type="button"
-                                                onClick={() => {
-                                                    setTitle(idea.t);
-                                                    setInstructor(idea.i);
-                                                    setDate(idea.d);
-                                                    setDescription(idea.desc);
-                                                    setContact(idea.c);
-                                                }}
-                                                className="px-3 py-1.5 bg-white dark:bg-gray-800 border border-emerald-200 dark:border-emerald-700 rounded-xl text-[9px] font-black uppercase text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all shadow-sm"
-                                            >
-                                                + {idea.t}
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Título</label>
-                                        <input type="text" value={title} onChange={e => setTitle(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-emerald-500/20 focus:ring-2" placeholder="Ej: Taller de Pintura" />
-                                    </div>
-                                    <div>
-                                        <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Instructor</label>
-                                        <input type="text" value={instructor} onChange={e => setInstructor(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-emerald-500/20 focus:ring-2" placeholder="Tu nombre" />
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Fecha y Hora</label>
-                                    <input type="text" value={date} onChange={e => setDate(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-emerald-500/20 focus:ring-2" placeholder="Ej: Lunes 288:30" />
-                                </div>
-
-                                <div>
-                                    <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Descripción</label>
-                                    <textarea value={description} onChange={e => setDescription(e.target.value)} required rows={4} className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-emerald-500/20 focus:ring-2 resize-none" placeholder="¿Qué aprenderán los alumnos?" />
-                                </div>
-
-                                <div>
-                                    <label className="text-xs font-black text-gray-500 uppercase tracking-widest mb-2 block">Tu Contacto (Email/Telf)</label>
-                                    <input type="text" value={contact} onChange={e => setContact(e.target.value)} required className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 font-bold dark:text-white outline-none ring-emerald-500/20 focus:ring-2" placeholder="Para que los alumnos se inscriban" />
-                                </div>
-
-                                <button type="submit" className="w-full bg-emerald-600 text-white py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/20">
-                                    PUBLICAR TALLER
-                                </button>
-                            </form>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
-    );
+          )}
+        </section>
+      </div>
+    </div>
+  );
 };
 
 export default Workshops;

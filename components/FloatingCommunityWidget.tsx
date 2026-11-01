@@ -13,27 +13,29 @@ interface Message {
 }
 
 const mockMessages: Message[] = [
-    { id: '1', user: 'Anna M.', text: '🌰 ¡Castañada este sábado 25 Oct en la Plaza de la Font! Castañas gratis, música y actividades para niños a las 17h. ¡Vamos todos!', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026024d', time: 'Hace 3m', neighborhood: 'Centre' },
-    { id: '2', user: 'Protecció Civil', text: '⚠️ METEO: Rachas de viento moderado esta tarde en la zona litoral. Precaución en el Serrallo y playa. Máximas de 17ºC.', avatar: 'https://ui-avatars.com/api/?name=PC&background=ef4444&color=fff', time: 'Hace 8m', isOfficial: true },
-    { id: '3', user: 'Gatuninos TGN', text: '🐈 URGENTE: Gatuninos Torreforta necesita mantas y toallas para los gatos de las colonias este invierno. Déjalas en el Centre Cívic Torreforta. ¡Gracias!', avatar: 'https://ui-avatars.com/api/?name=GT&background=f97316&color=fff', time: 'Hace 10m', neighborhood: 'Torreforta' },
-    { id: '4', user: 'Elena G.', text: '💼 EMPLEO: Parc Central busca personal para la campaña de Navidad 2026. Turnos de tarde. ¡Mira la sección Empleos de ComuniTarr!', avatar: 'https://i.pravatar.cc/150?u=a04258114e29026702d', time: 'Hace 22m', neighborhood: 'Eixample' },
-    { id: '5', user: 'Carlos R.', text: '🚧 Ojo: la Calle Major sigue cortada de 08h a 14h por las obras. Pasad por la Baixada del Roser.', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026704d', time: 'Hace 30m', neighborhood: 'Part Alta' },
-    { id: '6', user: 'TGN Cultura', text: '🎷 Concert de Jazz gratuito al Amfiteatre Romà el sábado 25 Oct a las 19h. ¡Plazas limitadas — llega pronto!', avatar: 'https://ui-avatars.com/api/?name=TC&background=3b82f6&color=fff', time: 'Hace 45m', isOfficial: true },
-    { id: '7', user: 'Laura P.', text: '🛒 Mercadillo de Segunda Mano en Bonavista este domingo 26 Oct, de 09h a 14h. Ropa vintage, productos de temporada...', avatar: 'https://i.pravatar.cc/150?u=a048581f4e29026701d', time: 'Hace 1h', neighborhood: 'Bonavista' },
-    { id: '8', user: 'Jordi V.', text: '🎃 ¡8 días para Halloween! La Ruta de Terror de la Part Alta ya tiene inscripciones abiertas. ¡Gratis en los Centros Cívicos!', avatar: 'https://i.pravatar.cc/150?u=b048581f4e29026701d', time: 'Hace 1h 20m', neighborhood: 'Part Alta' },
-    { id: '9', user: 'EMATSA', text: '💧 Corte de suministro agua previsto viernes 24 Oct de 09h a 12h en zonas de Torreforta. Suministro garantizado antes del mediodía.', avatar: 'https://ui-avatars.com/api/?name=EM&background=0ea5e9&color=fff', time: 'Hace 2h', isOfficial: true },
-    { id: '10', user: 'Cruz Roja TGN', text: '🔴 Cruz Roja Tarragona busca voluntarios para este otoño 2026. Contacta: 977 221 009. ¡Tu tiempo puede cambiar una vida!', avatar: 'https://ui-avatars.com/api/?name=CR&background=dc2626&color=fff', time: 'Hace 2h 30m', isOfficial: true }
+    { id: '1', user: 'Laura P.', text: '🛒 ¡Éxito total en el Mercadillo de Bonavista ayer domingo! Más de 300 visitantes. El próximo será el 2 de noviembre.', avatar: 'https://i.pravatar.cc/150?u=a048581f4e29026701d', time: 'Hace 2h', neighborhood: 'Bonavista' },
+    { id: '2', user: 'Protecció Civil', text: '☁️ METEO Lun 27 Oct: Parcialmente nublado, 17°C máxima. Viento moderado del Oeste. Sin lluvia prevista.', avatar: 'https://ui-avatars.com/api/?name=PC&background=ef4444&color=fff', time: 'Hace 10m', isOfficial: true },
+    { id: '3', user: 'Jordi V.', text: '🎃 ¡Solo 4 días para Halloween! Ruta de Terror Part Alta — últimas plazas. Inscríbete antes del miércoles 29 en Centros Cívicos. ¡Gratis!', avatar: 'https://i.pravatar.cc/150?u=b048581f4e29026701d', time: 'Hace 18m', neighborhood: 'Part Alta' },
+    { id: '4', user: 'TGN Cultura', text: '🏛️ Exposición "Tarraco Viva" abierta HOY en el Museu Nacional Arqueològic. Entrada gratuita los lunes. Horario: 10h-14h.', avatar: 'https://ui-avatars.com/api/?name=TC&background=3b82f6&color=fff', time: 'Hace 25m', isOfficial: true },
+    { id: '5', user: 'FECSA-ENDESA', text: '⚡ RECORDATORIO: Corte de luz MAÑANA martes 28 Oct de 08h a 11h en Eixample Sur. Prepárense.', avatar: 'https://ui-avatars.com/api/?name=FE&background=f59e0b&color=fff', time: 'Hace 35m', isOfficial: true },
+    { id: '6', user: 'Carlos R.', text: '🚧 Obras Calle Major continúan hasta el 7 Nov. Inicio de semana con atasco fuerte — usad la Baixada del Roser. Lunes a viernes 08-17h.', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026704d', time: 'Hace 42m', neighborhood: 'Part Alta' },
+    { id: '7', user: 'Elena G.', text: '💼 EMPLEO: Esta semana entrevistas en Parc Central para campaña de Navidad. ¡Mira la sección Empleos!', avatar: 'https://i.pravatar.cc/150?u=a04258114e29026702d', time: 'Hace 58m', neighborhood: 'Eixample' },
+    { id: '8', user: 'Gatuninos TGN', text: '🐈 Seguimos necesitando mantas, toallas y pienso para las colonias felinas de Torreforta. Depósito: Centre Cívic Torreforta. ¡Gracias!', avatar: 'https://ui-avatars.com/api/?name=GT&background=f97316&color=fff', time: 'Hace 1h 15m', neighborhood: 'Torreforta' },
+    { id: '9', user: 'Cruz Roja TGN', text: '🔴 Cruz Roja lanza campaña de ropa de abrigo para el invierno 2026. Puntos de recogida en todos los Centros Cívicos. Tel: 977 221 009.', avatar: 'https://ui-avatars.com/api/?name=CR&background=dc2626&color=fff', time: 'Hace 1h 35m', isOfficial: true },
+    { id: '10', user: 'Anna M.', text: '🌰 ¡Qué bonita quedó la Castanyada del sábado! Más de 400 vecinos en la Plaza de la Font. Fotos ya en la Galería Vecinal 📸', avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026024d', time: 'Hace 2h 10m', neighborhood: 'Centre' },
+    { id: '11', user: 'Marc T.', text: '🥾 La excursión por Prades del sábado fue espectacular. Colores de otoño increíbles. Organizamos otra el 8 Nov. ¿Apuntados?', avatar: 'https://i.pravatar.cc/150?u=c048581f4e29026701d', time: 'Hace 2h 45m', neighborhood: 'Bonavista' },
+    { id: '12', user: 'Marta F.', text: '🎷 El concierto de Jazz en el Amfiteatre Romà del sábado fue impresionante. ¡Qué ambiente bajo las estrellas! ¿Habrá otro?', avatar: 'https://i.pravatar.cc/150?u=d048581f4e29026701d', time: 'Hace 3h 20m', neighborhood: 'Part Alta' }
 ];
 
 const tickerMessages = [
-    "🌰 CASTANYADA: Sábado 25 Oct · 17h · Plaza de la Font. ¡Gratis! Castañas, boniatos y música.",
-    "🐈 GATUNINOS TORREFORTA: Necesitan mantas y toallas para colonias felinas. Entrega en Centre Cívic Torreforta.",
-    "🎃 HALLOWEEN: Ruta de Terror Part Alta · Viernes 31 Oct. Inscripción gratuita en Centros Cívicos.",
-    "🎷 JAZZ AL AMFITEATRE: Concert gratuito sábado 25 Oct a las 19h. Plazas limitadas.",
-    "💼 EMPLEO NAVIDAD 2026: Abiertas bolsas de trabajo en Parc Central, Riu Clar y comercio local.",
-    "🚧 OBRAS PART ALTA: Calle Major cortada de 08h a 14h, lunes a viernes. Usa la Baixada del Roser.",
-    "🛒 MERCADILLO BONAVISTA: Domingo 26 Oct de 09h a 14h. Productos de temporada y segunda mano.",
-    "🔴 CRUZ ROJA TGN: Busca voluntarios para otoño 2026. Tel: 977 221 009. ¡Incorporación inmediata!"
+    "🛒 MERCADILLO BONAVISTA: ÉXITO AYER. Próximo: Dom 2 Nov — Explanada Bonavista. Ropa vintage, muebles y productos de temporada.",
+    "🎃 HALLOWEEN 31 OCT: Ruta de Terror Part Alta · Inscripciones gratuitas hasta el miércoles 29 en Centros Cívicos.",
+    "⚡ CORTE LUZ: MAÑANA Martes 28 Oct 08h-11h en Eixample Sur. FECSA-ENDESA. Suministro garantizado antes del mediodía.",
+    "🏛️ MUSEU ARQUEOLÒGIC: Exposición \"Tarraco Viva\" abierta HOY · Entrada gratuita los lunes de 10h a 14h.",
+    "💼 EMPLEO NAVIDAD 2026: Entrevistas en Parc Central, Polígono Riu Clar y comercio local esta semana.",
+    "🚧 OBRAS C/ MAJOR: Continúan hasta el 7 Nov · Usa la Baixada del Roser. Lunes-Viernes 08h-17h.",
+    "🐈 GATUNINOS TORREFORTA: Recogen mantas y pienso para colonias felinas en el Centre Cívic.",
+    "🔴 CRUZ ROJA TGN: Campaña ropa de abrigo invierno 2026. Puntos de recogida en Centros Cívicos. Tel: 977 221 009."
 ];
 
 export const FloatingCommunityWidget: React.FC = () => {
@@ -41,31 +43,23 @@ export const FloatingCommunityWidget: React.FC = () => {
 
     useEffect(() => {
         const cycleMessages = () => {
-            // Pick a message
             const randomMsg = mockMessages[Math.floor(Math.random() * mockMessages.length)];
             const newMsg = { ...randomMsg, id: Date.now() };
-
             setMessages([newMsg]);
-
-            // Hide after 10 seconds
             setTimeout(() => {
                 setMessages([]);
             }, 10000);
         };
 
-        // Initial run
         cycleMessages();
-
-        // Repeat every 45 seconds (Active!)
         const interval = setInterval(cycleMessages, 45000);
-
         return () => clearInterval(interval);
     }, []);
 
     return (
         <div className="fixed bottom-24 md:bottom-10 left-4 md:left-[420px] z-[60] flex flex-col items-start gap-3 pointer-events-none">
             <AnimatePresence>
-                {messages.map((msg, idx) => (
+                {messages.map((msg) => (
                     <motion.div
                         key={msg.id}
                         initial={{ opacity: 0, x: -50, scale: 0.8 }}

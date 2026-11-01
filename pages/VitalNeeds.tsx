@@ -46,18 +46,18 @@ const VitalNeeds: React.FC = () => {
 
             const mockNeeds: VitalNeed[] = [
                 {
-                    id: 'oct-01-medical',
+                    id: 'oct-27-medical',
                     creator_id: 'v5',
                     type: 'medical',
                     title: '💊 Farmacia de Guardia',
-                    description: 'Necesito que alguien me acerque un inhalador de la farmacia de guardia. Hoy jueves 23 oct, farmacia de guardia: Farm. Eixample (C/ Unió, 5). Contactad por la app.',
+                    description: 'Necesito que alguien me acerque un inhalador de la farmacia de guardia. Hoy lunes 27 oct, farmacia de guardia: Farm. Eixample (C/ Unió, 5). Contactad por la app.',
                     contact_info: 'Contactar por la app',
                     is_urgent: true,
                     neighborhood: 'GENERAL',
-                    created_at: '2026-10-23T08:00:00Z'
+                    created_at: '2026-10-27T08:00:00Z'
                 },
                 {
-                    id: 'oct-01-food',
+                    id: 'oct-27-food',
                     creator_id: 'v6',
                     type: 'food',
                     title: '🛒 Compra Básica',
@@ -65,10 +65,10 @@ const VitalNeeds: React.FC = () => {
                     contact_info: 'Contactar por la app',
                     is_urgent: false,
                     neighborhood: 'PART ALTA',
-                    created_at: '2026-10-23T09:00:00Z'
+                    created_at: '2026-10-27T09:00:00Z'
                 },
                 {
-                    id: 'oct-23-company',
+                    id: 'oct-27-company',
                     creator_id: 'v8',
                     type: 'company',
                     title: '👥 Companyia per anar a la Castanyada',
@@ -76,7 +76,7 @@ const VitalNeeds: React.FC = () => {
                     contact_info: 'Contactar por la app',
                     is_urgent: false,
                     neighborhood: 'Part Alta',
-                    created_at: '2026-10-23T10:00:00Z'
+                    created_at: '2026-10-27T10:00:00Z'
                 }
             ];
 
@@ -180,7 +180,7 @@ const VitalNeeds: React.FC = () => {
                         </div>
                         <h2 className="text-xl md:text-3xl font-black dark:text-white mb-2">Red de Acompañamiento Semanal 🤝</h2>
                         <p className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
-                            ¿Tienes 1 hora libre esta semana? Únete a nuestra red de acompañamiento para personas mayores que viven solas. Paseos, compra, o una simple charla. Un pequeño gesto marca la diferencia. Nos reunimos este Domingo a las 18h en el Serrallo para coordinar las actividades de octubre.
+                            ¿Tienes 1 hora libre esta semana? Únete a nuestra red de acompañamiento para personas mayores que viven solas. Paseos, compra, o una simple charla. Un pequeño gesto marca la diferencia. Nos reunimos este domingo 2 Nov a las 18h en el Serrallo para coordinar las actividades de octubre.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
@@ -211,7 +211,6 @@ const VitalNeeds: React.FC = () => {
                             <div className="space-y-6">
                                 <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-100 dark:border-gray-800">
                                     <h2 className="text-2xl font-black dark:text-white uppercase tracking-tight">Tablón Comunitario</h2>
-                                    <span className="px-3 py-1 bg-amber-100 text-amber-600 rounded-full text-[9px] font-black uppercase tracking-widest border border-amber-200">Simulación del Sistema</span>
                                 </div>
                                 {needs.map(need => (
                                     <motion.div
@@ -277,7 +276,7 @@ const VitalNeeds: React.FC = () => {
                                     <span className="material-symbols-outlined text-red-500">local_pharmacy</span>
                                     <div>
                                         <strong className="block text-red-700 dark:text-red-300">Farmacia de Guardia</strong>
-                                        <p className="text-[10px] opacity-70">Farm. Eixample — C/ Unió, 5 (hoy 23 oct)</p>
+                                        <p className="text-[10px] opacity-70">Farm. Eixample — C/ Unió, 5 (hoy 27 oct)</p>
                                     </div>
                                 </li>
                                 <li className="flex items-center gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border border-blue-100 dark:border-blue-800/30">

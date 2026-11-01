@@ -174,48 +174,9 @@ const Home: React.FC = () => {
           return diffDays <= 14; // Only show news from the last 2 weeks
         });
 
-        const realNewsExamples = [
-          {
-            id: 'oct-23-castanyada',
-            title: '🌰 Castanyada Vecinal este Sábado 25 Oct en la Plaza de la Font',
-            content: 'El Ajuntament y las asociaciones de vecinos organizan la Castanyada popular. Castañas y boniatos asados gratis, música tradicional en directo, actividades para niños y concurso de disfraces. ¡Este sábado 25 de octubre a las 17h!',
-            neighborhood: 'GENERAL',
-            category: 'EVENTO',
-            image_url: 'https://images.unsplash.com/photo-1508022713622-df2d8fb7b4cd?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-10-23T08:00:00Z'
-          },
-          {
-            id: 'oct-23-halloween',
-            title: '🎃 Halloween en el Barrio: Ruta de Terror Part Alta',
-            content: 'La Part Alta de Tarragona se convierte en escenario de una ruta de terror nocturna el viernes 31 de octubre. Organizada por las AMPA y comercios del barrio. Inscripción gratuita en los Centros Cívicos.',
-            neighborhood: 'Part Alta',
-            category: 'EVENTO',
-            image_url: 'https://images.unsplash.com/photo-1509557965875-b88c97052f0e?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-10-23T07:30:00Z'
-          },
-          {
-            id: 'oct-23-empleo-nadal',
-            title: '💼 Campaña de Navidad: Empleo en Logística y Comercio',
-            content: 'Los grandes centros comerciales y empresas logísticas de Tarragona abren sus bolsas de trabajo para la campaña de Navidad. Ofertas en Parc Central, Polígono Riu Clar y comercio local. Todas con teléfono verificado en la sección Empleos.',
-            neighborhood: 'GENERAL',
-            category: 'EMPLEO',
-            image_url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
-            created_at: '2026-10-23T09:00:00Z'
-          }
-        ];
+        setNews(validFetchedNews.slice(0, 8));
 
-        setNews([...realNewsExamples, ...validFetchedNews].slice(0, 8));
-
-        // Poll Example - 23 Oct 2026
-        const pollExample = {
-          id: 'oct-23-poll-castanyada',
-          question: "¿A qué actividad de otoño asistirás este fin de semana?",
-          options: ['Excursió Senderisme Prades (Sáb 25)', 'Castanyada Popular (Sáb 25)', 'Concert Jazz Amfiteatre (Sáb 25)', 'Me quedo en casa con una serie'],
-          category: 'OTOÑO 2026',
-          neighborhood: 'GENERAL',
-          created_at: '2026-10-23T09:00:00Z'
-        };
-        setCurrentPoll(pollExample);
+        // Las encuestas se cargan desde la tabla polls en Supabase
 
 
         // Fetch Top Neighbors by Karma (XP)
@@ -228,11 +189,7 @@ const Home: React.FC = () => {
         if (!profilesError && profilesData && profilesData.length > 0) {
           setRecentNeighbors(profilesData);
         } else {
-          setRecentNeighbors([
-            { id: 'f1', full_name: 'Maria Garcia', neighborhood: barrio, avatar_url: null },
-            { id: 'f2', full_name: 'Joan Rebull', neighborhood: barrio, avatar_url: null },
-            { id: 'f3', full_name: 'Elena Tarrago', neighborhood: barrio, avatar_url: null }
-          ]);
+          setRecentNeighbors([]);
         }
 
         // Fetch Forum Activity
@@ -457,24 +414,24 @@ const Home: React.FC = () => {
         </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-5 bg-orange-50 dark:bg-orange-900/10 rounded-[30px] flex gap-4 items-center">
-            <span className="material-symbols-outlined text-orange-500 text-3xl">eco</span>
+            <span className="material-symbols-outlined text-orange-500 text-3xl">storefront</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-orange-600 tracking-widest">Castanyada este Sábado</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Sáb 25 Oct · 17h · Plaza de la Font. ¡Gratis para todos!</p>
+              <p className="text-[10px] font-black uppercase text-orange-600 tracking-widest">Próximo Mercadillo — Dom 2 Nov</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Lun 27 Oct · Próxima edición: Dom 2 Nov 09h-14h · Explanada Bonavista.</p>
             </div>
           </div>
           <div className="p-5 bg-sky-50 dark:bg-sky-900/10 rounded-[30px] flex gap-4 items-center">
             <span className="material-symbols-outlined text-sky-500 text-3xl">wb_cloudy</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Jueves 23 Octubre</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Parcialmente nublado 17ºC. Viento suave del NE.</p>
+              <p className="text-[10px] font-black uppercase text-sky-600 tracking-widest">Lunes 27 Octubre</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Parcialmente nublado, 17ºC. Viento moderado del Oeste.</p>
             </div>
           </div>
           <div className="p-5 bg-purple-50 dark:bg-purple-900/10 rounded-[30px] flex gap-4 items-center">
             <span className="material-symbols-outlined text-purple-500 text-3xl">skull</span>
             <div>
-              <p className="text-[10px] font-black uppercase text-purple-600 tracking-widest">Halloween en 8 días</p>
-              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Ruta de Terror Part Alta · Vie 31 Oct · Inscripción gratuita.</p>
+              <p className="text-[10px] font-black uppercase text-purple-600 tracking-widest">Halloween en 4 días 🎃</p>
+              <p className="text-xs font-bold text-gray-700 dark:text-gray-300">Ruta de Terror Part Alta · Vie 31 Oct · Inscripciones cierran miércoles.</p>
             </div>
           </div>
           </div>
@@ -486,7 +443,7 @@ const Home: React.FC = () => {
           <div className="h-full bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 rounded-[40px] text-white shadow-xl shadow-indigo-500/20 transition-transform group-hover:-translate-y-2 relative overflow-hidden">
             <span className="material-symbols-outlined text-6xl absolute top-6 right-6 opacity-20">work</span>
             <h3 className="text-2xl font-black mb-2 uppercase tracking-tight">Empleos Locales</h3>
-            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Campaña Navidad · Jue 23 Oct 2026</p>
+            <p className="text-xs font-bold opacity-80 mb-6 uppercase tracking-widest">Campaña Navidad · Sem. 27 Oct 2026</p>
             <div className="flex items-center gap-2 text-xs font-black uppercase"><span className="material-symbols-outlined">arrow_forward</span> Entrar</div>
           </div>
         </Link>
@@ -585,7 +542,7 @@ const Home: React.FC = () => {
                 <span className="material-symbols-outlined text-yellow-500">emoji_events</span>
                 Top Vecinos
               </h2>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 43 · Jue 23 Oct</span>
+              <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/10 px-2 py-1 rounded-lg">Semana 44 · Lun 27 Oct</span>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-[32px] p-6 shadow-sm border border-gray-100 dark:border-gray-700 space-y-4">

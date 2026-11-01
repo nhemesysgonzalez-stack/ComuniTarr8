@@ -1,278 +1,209 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useMemo, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
-import { useLanguage } from '../contexts/LanguageContext';
 import { supabase } from '../services/supabaseClient';
-import { safeSupabaseFetch } from '../services/dataHandler';
+import { barrioDeUsuario } from '../services/barrios';
+import { esTelefonoValido } from '../services/contacto';
+import { useTabla } from '../services/datos';
+import {
+  AvisoBaseDatos, BotonesContacto, CabeceraModulo, Cargando, EstadoVacio, SelectorBarrio, barriosDeVista,
+} from '../components/Modulos';
 
-interface Incident {
-    id: string;
-    user_id: string;
-    title: string;
-    description: string;
-    contact_info?: string;
-    neighborhood: string;
-    image_url?: string;
-    status: 'open' | 'in_progress' | 'resolved';
-    created_at: string;
-    profiles?: {
-        full_name: string;
-        avatar_url?: string;
-    };
+interface Incidencia {
+  id: string;
+  user_id: string | null;
+  title: string;
+  description: string;
+  contact_info?: string | null;
+  neighborhood?: string | null;
+  barrio?: string | null;
+  image_url?: string | null;
+  status: 'open' | 'in_progress' | 'resolved';
+  created_at: string;
+}
+
+/** La categoría se guarda como prefijo "[CLAVE] " en el título (la tabla no tiene columna propia). */
+const CATEGORIAS: Record<string, { label: string; icono: string; color: string }> = {
+  AVERIA:    { label: 'Avería',               icono: 'build',        color: 'bg-orange-100 text-orange-700' },
+  AGUA:      { label: 'Agua / fuga',          icono: 'water_drop',   color: 'bg-sky-100 text-sky-700' },
+  LUZ:       { label: 'Luz / alumbrado',      icono: 'lightbulb',    color: 'bg-amber-100 text-amber-700' },
+  OBRAS:     { label: 'Obras / vía pública',  icono: 'construction', color: 'bg-yellow-100 text-yellow-800' },
+  LIMPIEZA:  { label: 'Limpieza / residuos',  icono: 'delete',       color: 'bg-lime-100 text-lime-700' },
+  SEGURIDAD: { label: 'Seguridad',            icono: 'shield',       color: 'bg-purple-100 text-purple-700' },
+  OTROS:     { label: 'Otros',                icono: 'report',       color: 'bg-gray-100 text-gray-700' },
+};
+const ESTADOS: Record<string, { label: string; color: string }> = {
+  open:        { label: 'Abierta',     color: 'bg-red-100 text-red-700' },
+  in_progress: { label: 'En curso',    color: 'bg-amber-100 text-amber-700' },
+  resolved:    { label: 'Resuelta',    color: 'bg-emerald-100 text-emerald-700' },
+};
+
+function separarTitulo(titulo: string): { cat: string; texto: string } {
+  const m = /^\[([A-Z]+)\]\s*(.*)$/.exec(titulo || '');
+  if (m && CATEGORIAS[m[1]]) return { cat: m[1], texto: m[2] };
+  return { cat: 'OTROS', texto: titulo };
 }
 
 const Incidents: React.FC = () => {
-    const { user } = useAuth();
-    const { t } = useLanguage();
-    const [incidents, setIncidents] = useState<Incident[]>([]);
-    const [loading, setLoading] = useState(true);
+  const { user } = useAuth();
+  const miBarrio = barrioDeUsuario(user);
+  const [vista, setVista] = useState(miBarrio);
+  const [filtroCat, setFiltroCat] = useState('TODAS');
+  const [filtroEstado, setFiltroEstado] = useState<'activas' | 'resueltas'>('activas');
+  const [modal, setModal] = useState(false);
+  const [guardando, setGuardando] = useState(false);
+  const [errorForm, setErrorForm] = useState('');
 
-    useEffect(() => {
-        fetchIncidents();
-    }, [user]);
+  const { datos, cargando, error, faltaTabla, recargar } = useTabla<Incidencia>('incidents', {
+    barrios: barriosDeVista(vista),
+    orden: { col: 'created_at', asc: false },
+    limite: 200,
+  });
 
-    const fetchIncidents = async () => {
-        setLoading(true);
-        try {
-            // 1. Try fetching with profiles join
-            let query = supabase
-                .from('incidents')
-                .select(`*, profiles(full_name, avatar_url)`)
-                .order('created_at', { ascending: false });
+  const visibles = useMemo(() => datos.filter(i => {
+    const resuelta = i.status === 'resolved';
+    if (filtroEstado === 'activas' ? resuelta : !resuelta) return false;
+    if (filtroCat !== 'TODAS' && separarTitulo(i.title).cat !== filtroCat) return false;
+    return true;
+  }), [datos, filtroCat, filtroEstado]);
 
-            let data = await safeSupabaseFetch('incidents', query);
+  const publicar = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setErrorForm('');
+    if (!user) { setErrorForm('Inicia sesión para reportar una incidencia.'); return; }
+    const f = new FormData(e.currentTarget);
+    const tel = String(f.get('telefono') || '').trim();
+    if (tel && !esTelefonoValido(tel)) { setErrorForm('El teléfono no es válido (9 dígitos).'); return; }
+    setGuardando(true);
+    const { error: err } = await supabase.from('incidents').insert({
+      user_id: user.id,
+      title: `[${String(f.get('categoria'))}] ${String(f.get('titulo')).trim()}`,
+      description: String(f.get('descripcion')).trim(),
+      contact_info: tel || null,
+      neighborhood: miBarrio,
+      barrio: miBarrio,
+      status: 'open',
+    });
+    setGuardando(false);
+    if (err) { setErrorForm(`No se pudo guardar: ${err.message}`); return; }
+    setModal(false);
+    recargar();
+  };
 
-            // 2. If no data or fail, try a flat fetch (without join) to be safe
-            if (!data || data.length === 0) {
-                let simpleQuery = supabase
-                    .from('incidents')
-                    .select('*')
-                    .order('created_at', { ascending: false });
+  const cambiarEstado = async (id: string, status: Incidencia['status']) => {
+    const { error: err } = await supabase.from('incidents').update({ status }).eq('id', id);
+    if (err) alert(`No se pudo actualizar: ${err.message}`);
+    else recargar();
+  };
 
-                const backupData = await safeSupabaseFetch('incidents', simpleQuery);
-                if (backupData && backupData.length > 0) {
-                    data = backupData;
-                }
-            }
+  const borrar = async (id: string) => {
+    if (!window.confirm('¿Eliminar esta incidencia?')) return;
+    const { error: err } = await supabase.from('incidents').delete().eq('id', id);
+    if (err) alert(`No se pudo eliminar: ${err.message}`);
+    else recargar();
+  };
 
-            if (data) {
-                const mockIncidents: Incident[] = [
-                    {
-                        id: 'oct-23-calle-major-obras',
-                        user_id: 'admin',
-                        title: '🚧 Obras Calle Major: Cortes esta semana',
-                        description: 'Las obras de renovación del pavimento histórico de la Calle Major (Part Alta) continúan esta semana. Cortes de circulación de 08h a 14h de lunes a viernes. Acceso peatonal garantizado. Prevista finalización: 31 de octubre 2026.',
-                        status: 'in_progress',
-                        neighborhood: 'Part Alta',
-                        created_at: '2026-10-23T07:00:00Z',
-                        profiles: { full_name: 'Guàrdia Urbana TGN', avatar_url: '/logo.svg' }
-                    },
-                    {
-                        id: 'oct-24-ematsa-torreforta',
-                        user_id: 'admin',
-                        title: '💧 EMATSA: Corte de agua viernes 24 Oct',
-                        description: 'Corte de suministro de agua programado el viernes 24 de octubre de 09:00h a 12:00h en zonas de Torreforta por mantenimiento preventivo en la red. EMATSA garantiza el suministro antes del mediodía. Más info: 977 296 100.',
-                        status: 'open',
-                        neighborhood: 'Torreforta',
-                        created_at: '2026-10-23T08:00:00Z',
-                        profiles: { full_name: 'EMATSA', avatar_url: '/logo.svg' }
-                    },
-                    {
-                        id: 'oct-23-viento-mestral',
-                        user_id: 'admin',
-                        title: '🌬️ Alerta: Viento Mestral esta tarde (Jue 23 Oct)',
-                        description: 'AEMET activa aviso amarillo por viento del norte moderado esta tarde a partir de las 16h. Rachas de hasta 40 km/h en zonas costeras del Serrallo y Platja Llarga. Precaución en paseos marítimos. Fuente: aemet.es',
-                        status: 'open',
-                        neighborhood: 'GENERAL',
-                        created_at: '2026-10-23T06:00:00Z',
-                        profiles: { full_name: 'Protecció Civil TGN', avatar_url: '/logo.svg' }
-                    }
-                ];
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-background-dark pb-24 font-sans">
+      <div className="max-w-4xl mx-auto p-4 md:p-8 space-y-6">
+        <CabeceraModulo
+          icono="report"
+          titulo="Incidencias del barrio"
+          subtitulo="Averías, fugas de agua, alumbrado, obras y problemas en la vía pública, reportados por los vecinos de cada barrio."
+          gradiente="from-orange-600 via-amber-500 to-yellow-500"
+          accion={{ texto: 'Reportar incidencia', onClick: () => setModal(true) }}
+        />
+        <SelectorBarrio vista={vista} miBarrio={miBarrio} onChange={setVista} />
 
-
-                // Merge real data with mock data, avoiding duplicates if possible (simple merge here)
-                setIncidents([...data, ...mockIncidents]);
-            }
-        } catch (err) {
-            console.error('Error fetching incidents:', err);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const handleDelete = async (id: string, imageUrl?: string) => {
-        if (!window.confirm('¿Estás seguro de que quieres eliminar esta incidencia?')) return;
-
-        try {
-            // 1. Delete from DB (Remote)
-            const { error } = await supabase.from('incidents').delete().eq('id', id);
-
-            // 2. Delete from LocalStorage (Important: This is why it reappears)
-            const localKey = 'local_incidents';
-            const localData = JSON.parse(localStorage.getItem(localKey) || '[]');
-            const updatedLocalData = localData.filter((inc: any) => inc.id !== id);
-            localStorage.setItem(localKey, JSON.stringify(updatedLocalData));
-
-            // 3. Delete Image from Storage if exists
-            if (imageUrl && !imageUrl.includes('unsplash.com')) {
-                const fileName = imageUrl.split('/').pop();
-                if (fileName) {
-                    await supabase.storage.from('incidents').remove([fileName]);
-                }
-            }
-
-            setIncidents(prev => prev.filter(inc => inc.id !== id));
-            alert('Incidencia eliminada correctamente de la nube y del dispositivo.');
-        } catch (err: any) {
-            console.error('Error deleting incident:', err);
-            alert('No se pudo eliminar: ' + err.message);
-        }
-    };
-
-    return (
-        <div className="p-4 md:p-10 max-w-7xl mx-auto space-y-8 pb-20">
-            {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div>
-                    <h1 className="text-4xl md:text-5xl font-black dark:text-white uppercase tracking-tight flex items-center gap-3">
-                        <span className="material-symbols-outlined text-5xl text-red-500">campaign</span>
-                        Avisos Civis
-                    </h1>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 font-bold mt-2">
-                        Gestiona tus avisos y consulta los reportes del barrio.
-                    </p>
-                </div>
-            </div>
-
-
-
-            {/* Incidents List */}
-            {loading ? (
-                <div className="grid gap-4 md:grid-cols-2">
-                    {[1, 2, 3, 4].map((i) => (
-                        <div key={i} className="bg-white dark:bg-gray-800 rounded-3xl p-6 animate-pulse">
-                            <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-4"></div>
-                            <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full mb-2"></div>
-                            <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-2/3"></div>
-                        </div>
-                    ))}
-                </div>
-            ) : incidents.length === 0 ? (
-                <div className="text-center py-20">
-                    <span className="material-symbols-outlined text-8xl text-gray-300 dark:text-gray-700 mb-4">notifications_off</span>
-                    <h3 className="text-2xl font-black text-gray-400 dark:text-gray-600 uppercase italic">
-                        No hay avisos publicados
-                    </h3>
-                </div>
-            ) : (
-                <div className="grid gap-4 md:grid-cols-2">
-                    {incidents.map((incident, idx) => (
-                        <motion.div
-                            key={incident.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: idx * 0.05 }}
-                            className="bg-white dark:bg-gray-800 rounded-3xl p-6 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all group relative"
-                        >
-                            {/* Actions (Delete if owner) */}
-                            {user?.id === incident.user_id && (
-                                <button
-                                    onClick={() => handleDelete(incident.id, incident.image_url)}
-                                    className="absolute top-6 right-6 size-10 rounded-full bg-red-50 text-red-500 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all z-20 shadow-sm"
-                                    title="Eliminar reporte"
-                                >
-                                    <span className="material-symbols-outlined text-xl">delete</span>
-                                </button>
-                            )}
-
-                            {/* Header */}
-                            <div className="flex items-start justify-between mb-4 pr-12">
-                                <div className="flex items-center gap-3 flex-1">
-                                    <img
-                                        src={incident.profiles?.avatar_url || `https://ui-avatars.com/api/?name=${incident.profiles?.full_name || 'V'}`}
-                                        className="size-10 rounded-full border-2 border-primary/20"
-                                        alt="Avatar"
-                                    />
-                                    <div className="flex-1 min-w-0">
-                                        <p className="text-xs font-black dark:text-white truncate">{incident.profiles?.full_name || 'Vecino'}</p>
-                                        <p className="text-[10px] text-gray-400 dark:text-gray-500 font-bold">
-                                            {new Date(incident.created_at).toLocaleDateString()}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Content */}
-                            <h3 className="text-lg font-black dark:text-white mb-2 leading-tight group-hover:text-primary transition-colors">
-                                {incident.title}
-                            </h3>
-                            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
-                                {incident.description}
-                            </p>
-
-                            {/* Image Preview if exists */}
-                            <div className="mb-4 rounded-2xl overflow-hidden h-48 border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 flex items-center justify-center relative group">
-                                {incident.image_url ? (
-                                    <img
-                                        src={incident.image_url}
-                                        alt={incident.title}
-                                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                                        onError={(e) => {
-                                            console.error("Error cargando imagen:", incident.image_url);
-                                            (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80'; // Fallback city image
-                                        }}
-                                    />
-                                ) : (
-                                    <div className="flex flex-col items-center gap-2 opacity-20">
-                                        <span className="material-symbols-outlined text-4xl">image_not_supported</span>
-                                        <span className="text-[10px] font-black uppercase">Sin imagen</span>
-                                    </div>
-                                )}
-                            </div>
-
-                            {/* Footer */}
-                            <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
-                                <div className="flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-sm text-primary">location_on</span>
-                                    <span className="text-[10px] font-black text-primary uppercase tracking-widest">{incident.neighborhood}</span>
-                                </div>
-                                {incident.contact_info && (
-                                    <button className="text-[10px] font-black text-gray-400 hover:text-primary transition-colors uppercase tracking-widest flex items-center gap-1">
-                                        <span className="material-symbols-outlined text-sm">contact_page</span>
-                                        {t('contact_button')}
-                                    </button>
-                                )}
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-            )}
-
-            {/* Info Banner */}
-            <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 dark:from-red-500/20 dark:to-orange-500/20 rounded-3xl p-6 border border-red-500/20">
-                <div className="flex items-start gap-4">
-                    <span className="material-symbols-outlined text-4xl text-red-500">info</span>
-                    <div>
-                        <h3 className="text-lg font-black dark:text-white mb-2">{t('how_it_works')}</h3>
-                        <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                            <li className="flex items-start gap-2">
-                                <span className="material-symbols-outlined text-sm text-red-500 mt-0.5">check_circle</span>
-                                <span><strong>{t('report_step')}:</strong> {t('report_step_desc')}</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <span className="material-symbols-outlined text-sm text-yellow-500 mt-0.5">check_circle</span>
-                                <span><strong>{t('visibility_step')}:</strong> {t('visibility_step_desc')}</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <span className="material-symbols-outlined text-sm text-green-500 mt-0.5">check_circle</span>
-                                <span><strong>{t('notify_step')}:</strong> {t('notify_step_desc')}</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div className="flex flex-wrap gap-2">
+          {(['activas', 'resueltas'] as const).map(s => (
+            <button key={s} onClick={() => setFiltroEstado(s)}
+              className={`px-4 py-1.5 rounded-full text-[11px] font-black uppercase tracking-wider border ${filtroEstado === s ? 'bg-gray-900 text-white border-gray-900 dark:bg-white dark:text-gray-900' : 'bg-white dark:bg-surface-dark text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700'}`}>
+              {s === 'activas' ? 'Activas' : 'Resueltas'}
+            </button>
+          ))}
+          <span className="w-px bg-gray-200 dark:bg-gray-700 mx-1" />
+          {['TODAS', ...Object.keys(CATEGORIAS)].map(c => (
+            <button key={c} onClick={() => setFiltroCat(c)}
+              className={`px-3 py-1.5 rounded-full text-[11px] font-black uppercase tracking-wider border ${filtroCat === c ? 'bg-primary text-white border-primary' : 'bg-white dark:bg-surface-dark text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700'}`}>
+              {c === 'TODAS' ? 'Todas' : CATEGORIAS[c].label}
+            </button>
+          ))}
         </div>
-    );
+
+        <AvisoBaseDatos faltaTabla={faltaTabla} error={error} />
+
+        {cargando ? <Cargando texto="Cargando incidencias…" /> : visibles.length === 0 ? (
+          <EstadoVacio icono="task_alt" titulo="Sin incidencias en esta zona"
+            texto="Si ves una avería, una fuga o algo roto en tu barrio, repórtalo para que tus vecinos lo sepan."
+            accion={{ texto: 'Reportar incidencia', onClick: () => setModal(true) }} />
+        ) : (
+          <div className="grid gap-4 md:grid-cols-2">
+            {visibles.map(i => {
+              const { cat, texto } = separarTitulo(i.title);
+              const c = CATEGORIAS[cat];
+              const est = ESTADOS[i.status] || ESTADOS.open;
+              const mia = !!user && user.id === i.user_id;
+              const b = i.barrio || i.neighborhood || 'GENERAL';
+              return (
+                <motion.article key={i.id} layout initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+                  className="bg-white dark:bg-surface-dark rounded-3xl p-5 border border-gray-100 dark:border-gray-800 shadow-sm">
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider ${c.color}`}>
+                      <span className="material-symbols-outlined text-sm">{c.icono}</span>{c.label}
+                    </span>
+                    <span className={`px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider ${est.color}`}>{est.label}</span>
+                  </div>
+                  <h2 className="text-lg font-black text-gray-900 dark:text-white leading-snug">{texto}</h2>
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-300 whitespace-pre-line">{i.description}</p>
+                  <div className="mt-3 flex items-center justify-between text-[11px] font-bold text-gray-400">
+                    <span className="inline-flex items-center gap-1"><span className="material-symbols-outlined text-sm">location_on</span>{b === 'GENERAL' ? 'Toda la ciudad' : b}</span>
+                    <span>{new Date(i.created_at).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })}</span>
+                  </div>
+                  <BotonesContacto telefono={i.contact_info} compacto />
+                  {mia && (
+                    <div className="mt-3 flex flex-wrap gap-2 pt-3 border-t border-gray-100 dark:border-gray-800">
+                      {i.status !== 'resolved' && (
+                        <button onClick={() => cambiarEstado(i.id, 'resolved')} className="px-3 py-1.5 rounded-xl bg-emerald-600 text-white text-[10px] font-black uppercase tracking-wider">Marcar resuelta</button>
+                      )}
+                      {i.status === 'open' && (
+                        <button onClick={() => cambiarEstado(i.id, 'in_progress')} className="px-3 py-1.5 rounded-xl bg-amber-500 text-white text-[10px] font-black uppercase tracking-wider">En curso</button>
+                      )}
+                      <button onClick={() => borrar(i.id)} className="px-3 py-1.5 rounded-xl bg-red-50 text-red-600 text-[10px] font-black uppercase tracking-wider ml-auto">Eliminar</button>
+                    </div>
+                  )}
+                </motion.article>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
+      <AnimatePresence>
+        {modal && (
+          <motion.div className="fixed inset-0 z-[90] bg-black/60 backdrop-blur-sm flex items-end md:items-center justify-center p-0 md:p-6"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setModal(false)}>
+            <motion.form onSubmit={publicar} onClick={e => e.stopPropagation()} initial={{ y: 60 }} animate={{ y: 0 }} exit={{ y: 60 }}
+              className="w-full max-w-lg max-h-[92vh] overflow-y-auto bg-white dark:bg-surface-dark rounded-t-[32px] md:rounded-[32px] p-6 space-y-3 shadow-2xl">
+              <h2 className="text-xl font-black dark:text-white">Reportar incidencia en {miBarrio === 'GENERAL' ? 'Tarragona' : miBarrio}</h2>
+              <select name="categoria" defaultValue="AVERIA" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm font-bold">
+                {Object.entries(CATEGORIAS).map(([k, v]) => <option key={k} value={k}>{v.label}</option>)}
+              </select>
+              <input name="titulo" required maxLength={100} placeholder="Ej: Fuga de agua en C/ Unió" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              <textarea name="descripcion" required rows={4} maxLength={600} placeholder="Dónde está y qué ocurre…" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              <input name="telefono" type="tel" placeholder="Teléfono de contacto (opcional)" className="w-full rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-white px-4 py-3 text-sm" />
+              <p className="text-[11px] text-gray-400">Para emergencias llama al 112. Esta lista no sustituye a los servicios de emergencia.</p>
+              {errorForm && <p className="text-sm font-bold text-red-500" role="alert">{errorForm}</p>}
+              <div className="flex gap-3 pt-2">
+                <button type="button" onClick={() => setModal(false)} className="flex-1 py-3 rounded-xl font-black text-xs uppercase tracking-widest bg-gray-100 dark:bg-gray-800 dark:text-gray-200">Cancelar</button>
+                <button type="submit" disabled={guardando} className="flex-1 py-3 rounded-xl font-black text-xs uppercase tracking-widest bg-orange-600 text-white disabled:opacity-60">{guardando ? 'Guardando…' : 'Reportar'}</button>
+              </div>
+            </motion.form>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 };
 
 export default Incidents;

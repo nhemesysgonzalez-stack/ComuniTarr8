@@ -76,9 +76,9 @@ const Forum: React.FC = () => {
 
   const tickerMessages = [
     { user: 'Admin ComuniTarr', text: '🏰 Nit de Castellers: Anunciada en la Plaça de la Font para el próximo miércoles 29 de octubre.' },
-    { user: 'MTR', text: '🎷 Concierto de Jazz: Este sábado en el Amfiteatre Romano de Tarragona con entrada libre y gratuita.' },
-    { user: 'Turismo TGN', text: '🛒 Mercado Semanal: Hoy jueves puestos de artesanía y productos frescos en la Rambla Nova.' },
-    { user: 'Ayuntamiento', text: '🍂 Tiempo hoy: Parcialmente nublado, 17°C y brisa suave del NE en Tarragona.' }
+    { user: 'MTR', text: '🎷 Concierto de Jazz: Este fin de semana en el Amfiteatre Romano de Tarragona con entrada libre y gratuita.' },
+    { user: 'Turismo TGN', text: '🛒 Mercado Semanal: Hoy lunes puestos de productos frescos y proximidad en la Part Alta.' },
+    { user: 'Ayuntamiento', text: '🍂 Tiempo hoy: Parcialmente nublado, 17°C y brisa suave en Tarragona.' }
   ];
 
 
@@ -162,7 +162,7 @@ const Forum: React.FC = () => {
     // Barrio: Eixample / Nou Eixample
     'EIXAMPLE': [
       [
-        { who: 'Sandra L.', text: '🛒 Hoy jueves mercadillo en la Rambla Nova, sección Eixample. Hay puestos de artesanía preciosos.' },
+        { who: 'Sandra L.', text: '🛒 Hoy lunes mercadillo en la Rambla Nova, sección Eixample. Hay puestos de artesanía preciosos.' },
         { who: 'Nuria P.', text: 'He comprado productos de la comarca buenísimos. ¡Os recomiendo dar una vuelta hoy!' }
       ],
       [
@@ -177,23 +177,23 @@ const Forum: React.FC = () => {
         { who: 'Maria G.', text: 'Para los paseantes de Llevant, el Miracle está precioso hoy. ¡A disfrutar del paseo!' }
       ],
       [
-        { who: 'Pau T.', text: 'Reunión de vecinos mañana viernes en el CC de Llevant a las 19:00h sobre las zonas verdes.' },
+        { who: 'Pau T.', text: 'Reunión de vecinos este viernes en el CC de Llevant a las 19:00h sobre las zonas verdes.' },
         { who: 'Mireia R.', text: 'Importante, @Pau. Yo iré. El tema del parque infantil lleva semanas pendiente.' }
       ],
     ],
     'BARRIS MARÍTIMS': [
       [
-        { who: 'Pepe R.', text: '🚢 Día muy tranquilo por el Moll de Costa y el barrio marítimo hoy jueves.' },
+        { who: 'Pepe R.', text: '🚢 Día muy tranquilo por el Moll de Costa y el barrio marítimo hoy lunes.' },
         { who: 'Carme S.', text: 'Se está de lujo paseando a 17 grados por el paseo del puerto.' }
       ],
     ],
     'APOYO': [
       [
-        { who: 'Carme L.', text: '¿Sabéis si el CAP Jaume I de la Rambla Nova atiende consultas hoy jueves por la tarde?' },
+        { who: 'Carme L.', text: '¿Sabéis si el CAP Jaume I de la Rambla Nova atiende consultas hoy lunes por la tarde?' },
         { who: 'Andreu T.', text: 'Sí Carme, abierto con horario continuo hasta las 20:00h.' },
       ],
       [
-        { who: 'Sandra L.', text: 'Recordatorio: Mañana viernes seguimos con la recogida solidaria en el CC de Torreforta.' },
+        { who: 'Sandra L.', text: 'Recordatorio: Este viernes seguimos con la recogida solidaria en el CC de Torreforta.' },
         { who: 'Elena V.', text: '@Sandra ¡Yo me pasaré sobre las 11h para dejar cosas!' },
       ],
     ],
@@ -205,7 +205,7 @@ const Forum: React.FC = () => {
     ],
     'ENCUENTROS': [
       [
-        { who: 'Santi G.', text: '🥾 ¿Quién se anima este sábado 25 a una excursión de senderismo por las Muntanyes de Prades? Salida a las 8:30h.' },
+        { who: 'Santi G.', text: '🥾 ¿Quién se anima este fin de semana a una excursión de senderismo por las Muntanyes de Prades? Salida a las 8:30h.' },
         { who: 'Marta L.', text: '¡Me apunto! Los bosques de Prades en otoño con los tonos dorados están espectaculares.' },
         { who: 'Pau T.', text: 'Salgo desde la Rambla con mi coche y tengo 3 plazas disponibles. Contactar por la app.' }
       ],
@@ -311,36 +311,36 @@ const Forum: React.FC = () => {
       const seedsByChannel: Record<string, Message[]> = {
         'GENERAL': [
           {
-            id: 'seed-oct23-1',
+            id: 'seed-oct27-1',
             user_id: 'v10',
-            content: 'Qué bien se está en Tarragona con este tiempo de otoño. 17 grados y sol a ratos. 🍂',
+            content: '¡Bon dia Tarragona! Qué agradable empezar el lunes paseando por la Rambla. Fresquito otoñal de 16°C y sol radiante 🍂☕',
             user_metadata: { full_name: 'Nuria P.', avatar_url: 'https://i.pravatar.cc/150?u=nuria' },
             neighborhood: 'GENERAL',
-            created_at: '2026-10-23T08:15:00Z'
+            created_at: '2026-10-27T08:15:00Z'
           },
           {
-            id: 'seed-oct23-2',
+            id: 'seed-oct27-2',
             user_id: 'v3',
-            content: 'He visto que el Nastic juga dissabte a casa. Alguno se anima para el partido?',
+            content: '¿Visteis el partido del Nàstic este fin de semana? ¡Vaya ambientazo hubo en el Nou Estadi! Qué buena forma de arrancar la semana 💪⚽',
             user_metadata: { full_name: 'Joan B.', avatar_url: 'https://i.pravatar.cc/150?u=joan' },
             neighborhood: 'GENERAL',
-            created_at: '2026-10-23T09:20:00Z'
+            created_at: '2026-10-27T08:45:00Z'
           },
           {
-            id: 'seed-oct23-3',
+            id: 'seed-oct27-3',
             user_id: 'v2',
-            content: 'Recordad que esta tarde hay concierto de jazz en el Amfiteatre. ¡Es gratis!',
+            content: 'Recordad que hoy lunes toca mercado semanal en la Part Alta y sesión de yoga en el Parc de la Primavera. ¡Buena semana a todos! 🧘‍♀️',
             user_metadata: { full_name: 'Mireia R.', avatar_url: 'https://i.pravatar.cc/150?u=mireia' },
             neighborhood: 'GENERAL',
-            created_at: '2026-10-23T10:10:00Z'
+            created_at: '2026-10-27T09:15:00Z'
           },
           {
-            id: 'seed-oct23-4',
+            id: 'seed-oct27-4',
             user_id: 'v19',
-            content: '🎃 Solo faltan 8 días para Halloween. Mi barrio ya tiene las mejores decoraciones jaja',
+            content: '🎃 ¡Solo faltan 4 días para Halloween y la Castañada! ¿Ya tenéis listos los disfraces y los panellets? 🌰👻',
             user_metadata: { full_name: 'Pepe R.', avatar_url: 'https://i.pravatar.cc/150?u=peper' },
             neighborhood: 'GENERAL',
-            created_at: '2026-10-23T10:45:00Z'
+            created_at: '2026-10-27T09:45:00Z'
           },
         ] as Message[],
       };

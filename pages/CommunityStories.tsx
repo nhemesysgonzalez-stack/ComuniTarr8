@@ -19,10 +19,10 @@ const CommunityStories: React.FC = () => {
             .order('created_at', { ascending: false });
 
         const mockStories = [
-            { id: 'oct-06-s1', user_name: 'Ana T.', content: '💃 Cenando al fresco con los vecinos en la plaza. ¡Ambientazo este martes espectacular! #Tarragona #Otoño #Serrallo', image_url: 'https://images.unsplash.com/photo-1722520592113-1f681393cd8d', likes: 156, created_at: '2026-10-06T12:00:00Z' },
-            { id: 'oct-05-s2', user_name: 'Joan R.', content: '🚧 Los operarios de limpieza han dejado la Playa del Miracle impecable tras el fin de semana. ¡Gran trabajo! #Tarragona #Otoño', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 89, created_at: '2026-10-05T10:30:00Z' },
-            { id: "oct-04-s3", user_name: "Marc G.", content: "📷 Concierto al aire libre en el Paseo Arqueológico esta tarde de Domingo. ¡Muy recomendable! #Cultura #TGN", image_url: "https://images.unsplash.com/photo-1485955900006-10f4d324d445", likes: 210, created_at: '2026-10-04T15:00:00Z' },
-            { id: 'oct-04-s4', user_name: 'Pilar S.', content: '☁️ Ha bajado un poco la temperatura con la brisa marina esta tarde de Domingo. ¡Ideal para pasear! #Tarragona #Otoño', image_url: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b', likes: 124, created_at: '2026-10-04T13:30:00Z' }
+            { id: 'oct-27-s1', user_name: 'Ana T.', content: '🍁 Paseo matinal de lunes por la Rambla Nova con los colores del otoño tarraconense en su esplendor. ¡Buen inicio de semana a todos los vecinos! #Tarragona #Otoño #Lunes', image_url: 'https://images.unsplash.com/photo-1722520592113-1f681393cd8d', likes: 156, created_at: '2026-10-27T11:00:00Z' },
+            { id: 'oct-26-s2', user_name: 'Joan R.', content: '🌅 Atardecer mágico de domingo desde el Balcó del Mediterrani. La luz dorada de finales de octubre en nuestra costa no tiene igual. #Tarragona #Domingo #Otoño', image_url: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e', likes: 89, created_at: '2026-10-26T18:30:00Z' },
+            { id: 'oct-25-s3', user_name: 'Marc G.', content: '🌰 Primeras castañas asadas y panellets artesanales este sábado en la Plaça de la Font. ¡Ambientazo vecinal anticipando la Castanyada! #Tarragona #Castanyada #Tradicion', image_url: 'https://images.unsplash.com/photo-1485955900006-10f4d324d445', likes: 210, created_at: '2026-10-25T17:00:00Z' },
+            { id: 'oct-25-s4', user_name: 'Pilar S.', content: '🚶‍♂️ Ruta del sábado por el Paseo Arqueológico y la Muralla romana. El aire fresco de otoño es perfecto para redescubrir nuestra historia. #Tarragona #Cultura #PartAlta', image_url: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b', likes: 124, created_at: '2026-10-25T12:30:00Z' }
         ];
 
 

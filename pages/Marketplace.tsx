@@ -58,7 +58,7 @@ const Marketplace: React.FC = () => {
 
       const mockItems: MarketItem[] = [
         {
-          id: 'oct-26-kit-halloween',
+          id: 'oct-27-kit-halloween',
           user_id: 'v12',
           title: '🎃 Kit Decoración Halloween',
           description: 'Set completo: 3 calabazas artificiales, telas de araña, luces LED naranjas. Perfecto estado.',
@@ -67,10 +67,10 @@ const Marketplace: React.FC = () => {
           neighborhood: 'Part Alta',
           contact_info: 'Contactar por la app',
           image_url: 'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-10-23T09:30:00Z'
+          created_at: '2026-10-27T08:30:00Z'
         },
         {
-          id: 'oct-26-abrigo-zara',
+          id: 'oct-27-abrigo-zara',
           user_id: 'v1',
           title: '🧥 Abrigo Invierno Zara Talla M',
           description: 'Color camel, talla M, usado una temporada. Impecable.',
@@ -79,10 +79,10 @@ const Marketplace: React.FC = () => {
           neighborhood: 'Eixample',
           contact_info: 'Contactar por la app',
           image_url: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-10-22T17:15:00Z'
+          created_at: '2026-10-27T07:15:00Z'
         },
         {
-          id: 'oct-26-ipad-air',
+          id: 'oct-27-ipad-air',
           user_id: 'v2',
           title: '📱 iPad Air M1 64GB + Funda + Teclado',
           description: 'Con factura y garantía vigente. Estado 10/10. Vendo por cambio de dispositivo.',
@@ -91,10 +91,10 @@ const Marketplace: React.FC = () => {
           neighborhood: 'Sant Pere i Sant Pau',
           contact_info: 'Contactar por la app',
           image_url: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-10-22T11:45:00Z'
+          created_at: '2026-10-27T06:45:00Z'
         },
         {
-          id: 'oct-26-pack-libros',
+          id: 'oct-27-pack-libros',
           user_id: 'v13',
           title: '📚 Pack 6 Libros (novela, histórica, humor)',
           description: 'Incluye títulos de Almudéna Grandes, Carlos Ruiz Zafón y Tom Sharpe. Perfecto estado.',
@@ -103,10 +103,10 @@ const Marketplace: React.FC = () => {
           neighborhood: 'Centre',
           contact_info: 'Contactar por la app',
           image_url: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-10-21T18:20:00Z'
+          created_at: '2026-10-26T18:20:00Z'
         },
         {
-          id: 'oct-26-bici-bh',
+          id: 'oct-27-bici-bh',
           user_id: 'v8',
           title: '🚫 Bicicleta Urbana BH (7 velocidades)',
           description: 'Bici urbana en buen estado. Frenos nuevos, lántas anchas. Ideal para ciudad.',
@@ -115,10 +115,10 @@ const Marketplace: React.FC = () => {
           neighborhood: 'Llevant',
           contact_info: 'Contactar por la app',
           image_url: 'https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-10-21T14:10:00Z'
+          created_at: '2026-10-26T14:10:00Z'
         },
         {
-          id: 'oct-26-olla-crockpot',
+          id: 'oct-27-olla-crockpot',
           user_id: 'v15',
           title: '🍝 Olla Cocina Lenta Crock-Pot 6L',
           description: 'Solo usada 3 veces. Con recetario incluido. Perfecta para los guisos de otoño.',
@@ -127,7 +127,7 @@ const Marketplace: React.FC = () => {
           neighborhood: 'Bonavista',
           contact_info: 'Contactar por la app',
           image_url: 'https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=800&q=80',
-          created_at: '2026-10-20T16:00:00Z'
+          created_at: '2026-10-26T10:00:00Z'
         }
       ];
 
@@ -226,7 +226,7 @@ const Marketplace: React.FC = () => {
             <span className="px-3 py-1 bg-emerald-500 text-white text-[9px] font-black uppercase tracking-widest rounded-full">ALQUILER MENSUAL</span>
             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">PARTICULAR - EIXAMPLE</span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Habitación libre para Octubre 🏠</h2>
+          <h2 className="text-2xl md:text-4xl font-black dark:text-white mb-4 leading-tight">Habitación libre para Noviembre 🏠</h2>
           <p className="text-gray-600 dark:text-gray-400 font-medium mb-6 max-w-2xl leading-relaxed">
             Habitación luminosa en piso de 3 personas. Zona Eixample, muy céntrico. Incluye gastos. Perfil tranquilo y responsable. Disponible para entrar de inmediato. ¡Ven a verla esta semana!
           </p>
