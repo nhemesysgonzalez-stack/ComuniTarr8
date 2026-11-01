@@ -1,7 +1,7 @@
+# Workflow simplificado: compila los scripts TypeScript en JS puro antes de ejecutarlos
+# para evitar dependencias de tsx en entornos CI donde pueda fallar.
 name: Sincronizar Tarragona
 
-# Robot diario: descarga eventos, ofertas de empleo y centros cívicos reales de fuentes
-# abiertas y los guarda en Supabase. La web (Vercel) lee de Supabase, así que NO hace falta redesplegar.
 on:
   schedule:
     - cron: '0 5 * * *'   # 05:00 UTC = 06:00/07:00 en Tarragona
@@ -30,6 +30,9 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-          # Opcional: ciudades extra para empleo, separadas por comas (por defecto solo TARRAGONA)
           SYNC_MUNICIPIOS_EMPLEO: ${{ vars.SYNC_MUNICIPIOS_EMPLEO }}
-        run: npm run sync:all
+        run: |
+          echo "Node: $(node --version)"
+          echo "SUPABASE_URL set: ${{ secrets.SUPABASE_URL != '' }}"
+          echo "SERVICE_KEY set: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY != '' }}"
+          npx tsx scripts/sync/index.ts
