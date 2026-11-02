@@ -56,20 +56,16 @@ function nodeFetch(input: RequestInfo | URL, init?: RequestInit): Promise<Respon
 function buildHeaders(init?: HeadersInit): Record<string, string> {
   const out: Record<string, string> = {};
   if (!init) return out;
-  
-  const sanitize = (val: any) => {
-    if (typeof val !== 'string') return String(val || '');
-    // Elimina caracteres fuera del rango ASCII estándar para evitar errores de ByteString
-    return val.replace(/[^\x00-\x7F]/g, '');
-  };
+
+  const clean = (val: any) => String(val || '').replace(/[^\x00-\x7F]/g, '');
 
   if (init instanceof Headers) {
-    init.forEach((v, k) => { out[sanitize(k)] = sanitize(v); });
+    init.forEach((v, k) => { out[clean(k)] = clean(v); });
   } else if (Array.isArray(init)) {
-    (init as [string, string][]).forEach(([k, v]) => { out[sanitize(k)] = sanitize(v); });
+    (init as [string, string][]).forEach(([k, v]) => { out[clean(k)] = clean(v); });
   } else {
     Object.keys(init).forEach(k => {
-      out[sanitize(k)] = sanitize((init as Record<string, any>[k]));
+      out[clean(k)] = clean((init as Record<string, any>)[k]);
     });
   }
   return out;
