@@ -57,7 +57,7 @@ function buildHeaders(init?: HeadersInit): Record<string, string> {
   const out: Record<string, string> = {};
   if (!init) return out;
 
-  const clean = (val: any) => String(val || '').replace(/[^\x00-\x7F]/g, '');
+ const clean = (val: any) => String(val || '').replace(/\u2192/g, '->').replace(/[^\x00-\x7F]/g, (c) => encodeURIComponent(c));
 
   if (init instanceof Headers) {
     init.forEach((v, k) => { out[clean(k)] = clean(v); });
