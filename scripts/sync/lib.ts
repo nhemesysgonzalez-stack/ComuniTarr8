@@ -18,7 +18,7 @@ function nodeFetch(input: RequestInfo | URL, init?: RequestInit): Promise<Respon
  const rawUrl = typeof input === 'string' ? input : input instanceof URL ? input.toString() : (input as Request).url;
 const url = new URL(rawUrl.replace(/\u2192/g, '->'));
     const method = init?.method || (input instanceof Request ? input.method : 'GET');
-    const bodyData = init?.body ? Buffer.from(String(init.body).replace(/\u2192/g, '->'), 'utf8') : undefined;
+    const bodyData = init?.body ? Buffer.from(String(limpiarTexto(init.body)), 'utf8') : undefined;
 
     if (bodyData) {
       headers['content-length'] = String(bodyData.length);
@@ -183,3 +183,19 @@ function sanitizar(val: any): any {
   }
   return val;
 }
+const limpiarTexto = (val: unknown): unknown => {
+  if (typeof val === 'string') {
+    return val.replace(/\u2192/g, '->').replace(/[^\x00-\x7F]/g, (c) => encodeURIComponent(c));
+  }
+  if (Array.isArray(val)) {
+    return val.map(limpiarTexto);
+  }
+  if (val !== null && typeof val === 'object') {
+    const obj: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(val)) {
+      obj[limpiarTexto(k) as string] = limpiarTexto(v);
+    }
+    return obj;
+  }
+  return val;
+};
