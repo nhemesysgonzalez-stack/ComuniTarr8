@@ -16,7 +16,7 @@ export const DRY_RUN = process.env.DRY_RUN === '1';
 function nodeFetch(input: RequestInfo | URL, init?: RequestInit): Promise<Response> {
   return new Promise((resolve, reject) => {
  const rawUrl = typeof input === 'string' ? input : input instanceof URL ? input.toString() : (input as Request).url;
-const url = new URL(rawUrl.replace(/\u2192/g, '->'));
+const url = new URL(String(rawUrl).replace(/\u2192/g, '->'));
     const method = init?.method || (input instanceof Request ? input.method : 'GET');
     const bodyData = init?.body ? Buffer.from(String(limpiarTexto(init.body)), 'utf8') : undefined;
 
