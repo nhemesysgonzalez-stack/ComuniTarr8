@@ -144,6 +144,7 @@ export async function reemplazarFuente(
   fuente: string,
   filas: Record<string, unknown>[],
 ): Promise<{ insertadas: number; borradas: number }> {
+ filas = sanitizar(filas) as Record<string, unknown>[];
   if (filas.length === 0) {
     throw new Error(`La fuente "${fuente}" devolvió 0 filas: se aborta para no vaciar la tabla ${tabla}.`);
   }
