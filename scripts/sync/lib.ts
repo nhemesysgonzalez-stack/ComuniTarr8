@@ -20,9 +20,12 @@ const url = new URL(String(rawUrl).replace(/\u2192/g, '->'));
     const method = init?.method || (input instanceof Request ? input.method : 'GET');
     const bodyData = init?.body ? Buffer.from(String(limpiarTexto(init.body)), 'utf8') : undefined;
 
-    if (bodyData) {
-      headers['content-length'] = String(bodyData.length);
-    }
+  const headers: Record<string, string> = {};
+new Headers(init?.headers as HeadersInit).forEach((v, k) => { headers[k] = v; });
+
+if (bodyData) {
+  headers['content-length'] = String(bodyData.length);
+}
 
     const options = {
       hostname: url.hostname,
