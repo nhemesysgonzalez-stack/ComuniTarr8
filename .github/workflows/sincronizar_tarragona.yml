@@ -3,7 +3,7 @@ name: Sincronizar Tarragona
 on:
   schedule:
     - cron: '0 5 * * *'   # 05:00 UTC = 06:00/07:00 en Tarragona
-  workflow_dispatch: {}    # botón "Run workflow" para lanzarlo a mano
+  workflow_dispatch: {}    # boton Run workflow para lanzarlo a mano
 
 concurrency:
   group: sincronizar-tarragona
@@ -24,39 +24,26 @@ jobs:
       - name: Instalar dependencias
         run: npm ci
 
-      - name: Diagnóstico de entorno
+      - name: Verificar secretos
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
-          echo "=== DIAGNÓSTICO ==="
           echo "Node: $(node --version)"
-          echo "npm: $(npm --version)"
           echo "SUPABASE_URL configurada: ${{ secrets.SUPABASE_URL != '' }}"
-          echo "SERVICE_ROLE_KEY configurada: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY != '' }}"
-          # Verificar que tsx está disponible
-          npx tsx --version || echo "tsx no disponible, instalando..."
-          # Test de conectividad básica con Supabase
+          echo "SERVICE_KEY configurada: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY != '' }}"
           node -e "
-            const url = process.env.SUPABASE_URL;
-            if (!url || url === '') {
-              console.error('ERROR CRITICO: SUPABASE_URL no configurada. Ve a GitHub → Settings → Secrets → Actions y añade SUPABASE_URL');
-              process.exit(1);
-            }
-            if (!process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY === '') {
-              console.error('ERROR CRITICO: SUPABASE_SERVICE_ROLE_KEY no configurada. Ve a GitHub → Settings → Secrets → Actions y añade SUPABASE_SERVICE_ROLE_KEY');
-              process.exit(1);
-            }
-            console.log('Secrets OK. URL proyecto:', url.replace(/\/\/.*@/, '//***@'));
+            if (!process.env.SUPABASE_URL) { console.error('ERROR: SUPABASE_URL no configurada'); process.exit(1); }
+            if (!process.env.SUPABASE_SERVICE_ROLE_KEY) { console.error('ERROR: SUPABASE_SERVICE_ROLE_KEY no configurada'); process.exit(1); }
+            console.log('Secretos OK - proyecto:', process.env.SUPABASE_URL.split('.')[0].split('//')[1]);
           "
 
-      - name: Sincronizar fuentes abiertas → Supabase
+      - name: Sincronizar fuentes abiertas con Supabase
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           SYNC_MUNICIPIOS_EMPLEO: ${{ vars.SYNC_MUNICIPIOS_EMPLEO }}
-          NODE_OPTIONS: "--no-experimental-fetch"
         run: |
-          echo "=== INICIO SINCRONIZACIÓN ==="
+          echo "=== INICIO SINCRONIZACION $(date -u) ==="
           npx tsx scripts/sync/index.ts
-          echo "=== FIN SINCRONIZACIÓN ==="
+          echo "=== FIN SINCRONIZACION ==="

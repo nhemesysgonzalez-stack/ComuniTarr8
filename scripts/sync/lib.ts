@@ -1,9 +1,70 @@
 // Utilidades comunes del robot de sincronización (se ejecuta en GitHub Actions o en local).
+// NOTA: Usamos node-https como fetch custom para el cliente de Supabase porque el fetch nativo
+// de Node 20 (undici) rechaza caracteres no-Latin-1 en cabeceras HTTP (ByteString error).
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import https from 'node:https';
+import http from 'node:http';
 
 export const USER_AGENT = 'ComuniTarr-sync/1.0 (https://github.com/nhemesysgonzalez-stack/ComuniTarr8)';
 
 export const DRY_RUN = process.env.DRY_RUN === '1';
+
+/**
+ * Fetch personalizado usando node:https que NO tiene las restricciones de undici.
+ * Compatible con la API de fetch (devuelve Response-like).
+ */
+function nodeFetch(input: RequestInfo | URL, init?: RequestInit): Promise<Response> {
+  return new Promise((resolve, reject) => {
+    const url = typeof input === 'string' ? new URL(input) : input instanceof URL ? input : new URL((input as Request).url);
+    const method = init?.method || (input instanceof Request ? input.method : 'GET');
+    const headers = buildHeaders(init?.headers);
+    const bodyData = init?.body ? Buffer.from(String(init.body), 'utf8') : undefined;
+
+    if (bodyData) {
+      headers['content-length'] = String(bodyData.length);
+    }
+
+    const options = {
+      hostname: url.hostname,
+      port: url.port || (url.protocol === 'https:' ? 443 : 80),
+      path: url.pathname + url.search,
+      method,
+      headers,
+    };
+
+    const mod = url.protocol === 'https:' ? https : http;
+    const req = (mod as typeof https).request(options, (res) => {
+      const chunks: Buffer[] = [];
+      res.on('data', (c: Buffer) => chunks.push(c));
+      res.on('end', () => {
+        const body = Buffer.concat(chunks);
+        const responseHeaders = new Headers();
+        for (const [k, v] of Object.entries(res.headers)) {
+          if (v) responseHeaders.set(k, Array.isArray(v) ? v.join(', ') : String(v));
+        }
+        const status = res.statusCode || 200;
+        const bodyText = body.toString('utf8');
+        resolve(new Response(bodyText, { status, headers: responseHeaders }));
+      });
+    });
+    req.on('error', reject);
+    if (bodyData) req.write(bodyData);
+    req.end();
+  });
+}
+
+function buildHeaders(init?: HeadersInit): Record<string, string> {
+  const out: Record<string, string> = {};
+  if (!init) return out;
+  if (init instanceof Headers) {
+    init.forEach((v, k) => { out[k] = v; });
+  } else if (Array.isArray(init)) {
+    (init as [string, string][]).forEach(([k, v]) => { out[k] = v; });
+  } else {
+    Object.assign(out, init);
+  }
+  return out;
+}
 
 export function crearCliente(): SupabaseClient {
   const url = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'http://dry-run.invalid';
@@ -11,7 +72,10 @@ export function crearCliente(): SupabaseClient {
   if (!url || !key) {
     throw new Error('Faltan SUPABASE_URL y/o SUPABASE_SERVICE_ROLE_KEY (secretos del repositorio en GitHub).');
   }
-  return createClient(url, key, { auth: { persistSession: false } });
+  return createClient(url, key, {
+    auth: { persistSession: false },
+    global: { fetch: nodeFetch as unknown as typeof fetch },
+  });
 }
 
 /** Fecha de hoy (YYYY-MM-DD) en horario de Madrid, no en UTC. */
@@ -58,14 +122,17 @@ export function limpiarTelefono(valor?: string | null): string | null {
 
 export function recortar(texto: string | undefined | null, max: number): string | null {
   if (!texto) return null;
-  const limpio = String(texto).replace(/\s+/g, ' ').trim();
+  // Eliminar caracteres no-Latin-1 que undici rechaza + limpiar espacios
+  const limpio = String(texto)
+    .replace(/[^\x00-\xFF]/g, ' ')  // quita caracteres fuera de Latin-1
+    .replace(/\s+/g, ' ')
+    .trim();
   if (!limpio) return null;
-  return limpio.length > max ? limpio.slice(0, max - 1).trimEnd() + '…' : limpio;
+  return limpio.length > max ? limpio.slice(0, max - 1).trimEnd() + '...' : limpio;
 }
 
 /**
- * Sustituye los datos de una fuente: hace upsert del lote y borra lo que ya no está en el feed
- * (eventos pasados, ofertas retiradas, datos de ejemplo antiguos de esa misma fuente).
+ * Sustituye los datos de una fuente: hace upsert del lote y borra lo que ya no está en el feed.
  */
 export async function reemplazarFuente(
   db: SupabaseClient,
@@ -84,9 +151,9 @@ export async function reemplazarFuente(
     console.log('  [DRY_RUN] por barrio:', porBarrio);
     return { insertadas: filas.length, borradas: 0 };
   }
-  // Upsert por lotes
-  for (let i = 0; i < filas.length; i += 200) {
-    const lote = filas.slice(i, i + 200);
+  // Upsert por lotes de 50 (más pequeño para evitar timeouts y errores de tamaño)
+  for (let i = 0; i < filas.length; i += 50) {
+    const lote = filas.slice(i, i + 50);
     const { error } = await db.from(tabla).upsert(lote, { onConflict: 'id_externo' });
     if (error) throw new Error(`Upsert en ${tabla}: ${error.message}`);
   }
