@@ -29,7 +29,7 @@ export async function sincronizarTrabajos(db: SupabaseClient) {
 
   const locales = anuncios.filter(a =>
     String(a.status || 'PUBLISHED') === 'PUBLISHED' && municipios.includes(quitarAcentos(String(a.city || ''))));
-  console.log(`  → ${locales.length} ofertas en ${municipios.join(', ')}`);
+  console.log(`  -> ${locales.length} ofertas en ${municipios.join(', ')}`);
 
   const filas = locales.map(a => {
     const publicada = fechaISO(a.date) || hoy;
