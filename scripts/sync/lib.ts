@@ -1,7 +1,7 @@
 // Utilidades comunes del robot de sincronización (se ejecuta en GitHub Actions o en local).
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-export const USER_AGENT = 'ComuniTarr-sync/1.0 (+https://github.com/nhemesysgonzalez-stack/ComuniTarr8)';
+export const USER_AGENT = 'ComuniTarr-sync/1.0 (https://github.com/nhemesysgonzalez-stack/ComuniTarr8)';
 
 export const DRY_RUN = process.env.DRY_RUN === '1';
 

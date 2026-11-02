@@ -1,5 +1,3 @@
-# Workflow simplificado: compila los scripts TypeScript en JS puro antes de ejecutarlos
-# para evitar dependencias de tsx en entornos CI donde pueda fallar.
 name: Sincronizar Tarragona
 
 on:
@@ -14,7 +12,7 @@ concurrency:
 jobs:
   sincronizar:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -26,13 +24,39 @@ jobs:
       - name: Instalar dependencias
         run: npm ci
 
+      - name: Diagnóstico de entorno
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          echo "=== DIAGNÓSTICO ==="
+          echo "Node: $(node --version)"
+          echo "npm: $(npm --version)"
+          echo "SUPABASE_URL configurada: ${{ secrets.SUPABASE_URL != '' }}"
+          echo "SERVICE_ROLE_KEY configurada: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY != '' }}"
+          # Verificar que tsx está disponible
+          npx tsx --version || echo "tsx no disponible, instalando..."
+          # Test de conectividad básica con Supabase
+          node -e "
+            const url = process.env.SUPABASE_URL;
+            if (!url || url === '') {
+              console.error('ERROR CRITICO: SUPABASE_URL no configurada. Ve a GitHub → Settings → Secrets → Actions y añade SUPABASE_URL');
+              process.exit(1);
+            }
+            if (!process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY === '') {
+              console.error('ERROR CRITICO: SUPABASE_SERVICE_ROLE_KEY no configurada. Ve a GitHub → Settings → Secrets → Actions y añade SUPABASE_SERVICE_ROLE_KEY');
+              process.exit(1);
+            }
+            console.log('Secrets OK. URL proyecto:', url.replace(/\/\/.*@/, '//***@'));
+          "
+
       - name: Sincronizar fuentes abiertas → Supabase
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           SYNC_MUNICIPIOS_EMPLEO: ${{ vars.SYNC_MUNICIPIOS_EMPLEO }}
+          NODE_OPTIONS: "--no-experimental-fetch"
         run: |
-          echo "Node: $(node --version)"
-          echo "SUPABASE_URL set: ${{ secrets.SUPABASE_URL != '' }}"
-          echo "SERVICE_KEY set: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY != '' }}"
+          echo "=== INICIO SINCRONIZACIÓN ==="
           npx tsx scripts/sync/index.ts
+          echo "=== FIN SINCRONIZACIÓN ==="
