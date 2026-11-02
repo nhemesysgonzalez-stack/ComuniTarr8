@@ -174,14 +174,7 @@ export async function reemplazarFuente(
   return { insertadas: filas.length, borradas: obsoletos.length };
 }
 function sanitizar(val: any): any {
-  if (typeof val === 'string') return val.replace(/\u2192/g, '->');
-  if (Array.isArray(val)) return val.map(sanitizar);
-  if (val !== null && typeof val === 'object') {
-    const res: Record<string, any> = {};
-    for (const k of Object.keys(val)) res[k] = sanitizar(val[k]);
-    return res;
-  }
-  return val;
+  return limpiarTexto(val);
 }
 const limpiarTexto = (val: unknown): unknown => {
   if (typeof val === 'string') {
