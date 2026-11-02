@@ -15,10 +15,10 @@ export const DRY_RUN = process.env.DRY_RUN === '1';
  */
 function nodeFetch(input: RequestInfo | URL, init?: RequestInit): Promise<Response> {
   return new Promise((resolve, reject) => {
-    const url = typeof input === 'string' ? new URL(input) : input instanceof URL ? input : new URL((input as Request).url);
+ const rawUrl = typeof input === 'string' ? input : input instanceof URL ? input.toString() : (input as Request).url;
+const url = new URL(rawUrl.replace(/\u2192/g, '->'));
     const method = init?.method || (input instanceof Request ? input.method : 'GET');
-    const headers = buildHeaders(init?.headers);
-    const bodyData = init?.body ? Buffer.from(String(init.body), 'utf8') : undefined;
+    const bodyData = init?.body ? Buffer.from(String(init.body).replace(/\u2192/g, '->'), 'utf8') : undefined;
 
     if (bodyData) {
       headers['content-length'] = String(bodyData.length);
