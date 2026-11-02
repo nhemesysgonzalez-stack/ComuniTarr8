@@ -162,7 +162,7 @@ export async function reemplazarFuente(
   // Upsert por lotes de 50 (más pequeño para evitar timeouts y errores de tamaño)
   for (let i = 0; i < filas.length; i += 50) {
     const lote = filas.slice(i, i + 50);
-    const { error } = await db.from(tabla).upsert(lote, { onConflict: 'id_externo' });
+    const { error } = await db.from(tabla).upsert(sanitizar(lote), { onConflict: 'id_externo' });
     if (error) throw new Error(`Upsert en ${tabla}: ${error.message}`);
   }
   // Borrar lo obsoleto de esa fuente
@@ -175,4 +175,14 @@ export async function reemplazarFuente(
     if (error) throw new Error(`Borrado en ${tabla}: ${error.message}`);
   }
   return { insertadas: filas.length, borradas: obsoletos.length };
+}
+function sanitizar(val: any): any {
+  if (typeof val === 'string') return val.replace(/\u2192/g, '->');
+  if (Array.isArray(val)) return val.map(sanitizar);
+  if (val !== null && typeof val === 'object') {
+    const res: Record<string, any> = {};
+    for (const k of Object.keys(val)) res[k] = sanitizar(val[k]);
+    return res;
+  }
+  return val;
 }
